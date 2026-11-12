@@ -19,6 +19,7 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 | `prompts/` | die Anweisung an die Vision-Language-Modelle |
 | `scripts/tei_pages.py` | TEI → Seiten (Text, Zeilen, Entitäten mit Offsets) |
 | `scripts/build_site.py` | baut `site/data/` aus TEI und Lesungen; misst jede Lesung gegen die Edition (CER) |
+| `scripts/import_readings.py` | Lesungen anderer Engines übernehmen (Text, PAGE XML, ALTO, JSONL) |
 | `scripts/ner.py` | lernt die Auszeichnung aus den TEI-Dateien und wendet sie auf eine Lesung an (5-fach kreuzvalidiert nach Brief) |
 | `site/` | der Viewer (statisch, IIIF-Bilder direkt vom Server der Edition) |
 
@@ -26,6 +27,8 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 uv run --with lxml --with rapidfuzz python scripts/build_site.py
 python3 -m http.server -d site
 ```
+
+Eine weitere Lesung (z. B. aus Transkribus, eScriptorium, kraken oder einem anderen Modell) hinzufügen: [docs/ADDING_READINGS.md](docs/ADDING_READINGS.md).
 
 Die Fehlerquote (CER) misst den Abstand zu den Konventionen *dieser* Edition, nicht die
 paläographische Leistung. Das feinjustierte Qwen3.5-4B hat 90 % der Seiten dieser Edition
