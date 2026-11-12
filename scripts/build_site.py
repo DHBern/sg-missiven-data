@@ -97,9 +97,42 @@ def registers() -> dict[str, dict]:
     return reg
 
 
+FACS = re.compile(r"^StadtASG_Missive_(\d+)_(\d+)", re.I)
+
+
+def unedited_letters(edited: list[dict], readings: dict[str, dict[str, dict]]) -> list[dict]:
+    """Pages that some reader has read but the edition does not contain, grouped
+    into letters by the letter number in the image name. They have no edited
+    text, so they are read but never scored."""
+    known = {p["facs"].lower() for letter in edited for p in letter["pages"]}
+    known_stems = {Path(f).stem for f in known}
+    by_letter: dict[int, dict[str, int]] = {}
+    for pages in readings.values():
+        for facs in pages:
+            if facs.lower() in known or Path(facs.lower()).stem in known_stems:
+                continue
+            m = FACS.match(facs)
+            if not m:
+                continue
+            by_letter.setdefault(int(m.group(1)), {})[facs] = int(m.group(2))
+    out = []
+    for nr, pages in sorted(by_letter.items()):
+        out.append({
+            "id": f"stasg_missiv_unedited_{nr:05d}", "edited": False,
+            "title": f"StadtASG Missive, Nr. {nr}", "idno": f"StadtASG Missive_{nr}",
+            "date": "", "sender": [], "recipient": [], "regest": "", "keywords": [],
+            "pages": [{"facs": f, "n": str(i + 1), "html": "", "text": "", "entities": []}
+                      for i, f in enumerate(sorted(pages, key=pages.get))],
+        })
+    return out
+
+
 def main() -> None:
     letters = read_edition(ROOT / "data")
+    for letter in letters:
+        letter["edited"] = True
     readings = load_readings()
+    letters += unedited_letters(letters, readings)
     entities = load_entities()
     readers = json.loads((ROOT / "readings" / "readers.json").read_text(encoding="utf-8"))
     (OUT / "letters").mkdir(parents=True, exist_ok=True)
@@ -140,6 +173,7 @@ def main() -> None:
             "sender": [a["text"] for a in letter["sender"] if a["type"] != "place"],
             "recipient": [a["text"] for a in letter["recipient"] if a["type"] != "place"],
             "regest": letter["regest"], "pages": len(letter["pages"]),
+            "edited": letter["edited"],
         })
 
     for reader in readers:
@@ -152,11 +186,17 @@ def main() -> None:
                       median_page_cer=round(statistics.median(t["per_page"]), 4))
     readers = [r for r in readers if r["id"] == "edition" or r.get("pages_read")]
 
+    def nr(e):
+        m = re.search(r"Nr\.\s*(\d+)", e["title"])
+        return (int(m.group(1)) if m else 1 << 30, not e["edited"], e["id"])
+    index.sort(key=nr)
     (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (OUT / "readers.json").write_text(json.dumps(readers, ensure_ascii=False, indent=1), encoding="utf-8")
     (OUT / "registers.json").write_text(json.dumps(registers(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     pages = sum(len(letter["pages"]) for letter in letters)
-    print(f"{len(letters)} letters, {pages} pages")
+    unedited = [letter for letter in letters if not letter["edited"]]
+    print(f"{len(letters)} letters, {pages} pages; not yet edited: {len(unedited)} letters, "
+          f"{sum(len(letter['pages']) for letter in unedited)} pages")
     for r in readers:
         if r.get("cer") is not None:
             print(f"  {r['id']:<48} read {r['pages_read']:>5}  scored {r['pages_scored']:>5}"
