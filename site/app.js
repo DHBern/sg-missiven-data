@@ -93,9 +93,11 @@
       document.getElementById("list").innerHTML = rows.slice(0, 400).map((l) => `
         <a class="row" href="#/letter/${l.id}/1">
           <span class="num">${esc(nrOf(l))}</span>
-          <span class="date">${l.edited === false ? "" : esc(fmtDate(l.date))}</span>
+          <span class="date">${l.edited === false ? (l.year ? esc(l.year) + "?" : "") : esc(fmtDate(l.date))}</span>
           ${l.edited === false
-            ? `<span><span class="who muted">Not yet edited</span><span class="reg">${l.pages} page${l.pages === 1 ? "" : "s"}, machine readings only</span></span>`
+            ? (l.draft
+              ? `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")} <span class="muted small">· not yet edited · draft</span></span><span class="reg">${esc(l.regest)}</span></span>`
+              : `<span><span class="who muted">Not yet edited</span><span class="reg">${l.pages} page${l.pages === 1 ? "" : "s"}, machine readings only</span></span>`)
             : `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span>
           <span class="reg">${esc(l.regest)}</span></span>`}
         </a>`).join("") + (rows.length > 400 ? `<p class="muted small">Showing 400 of ${rows.length} — narrow the search.</p>` : "");
@@ -208,8 +210,10 @@
             <p>${esc(letter.regest)}</p>
             ${letter.keywords.length ? `<div class="kw">${letter.keywords.map((k) => `<span>${esc(k)}</span>`).join("")}</div>` : ""}
           </details>` : `
-          <h1>${esc(nrOf(letter))}</h1>
-          <p class="caveat">Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.</p>`}
+          <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}?</span>` : ""}</h1>
+          <p class="caveat">Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.</p>
+          ${draftBlock(letter.auto_regest, true)}`}
+          ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
           <div class="pages"><span class="lbl">Page</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
           <div class="readers" role="tablist" aria-label="Readings">${readerButtons(page, reader)}</div>
@@ -236,6 +240,19 @@
     }
     wireLetter(letter, id, pageNo, page);
   }
+
+  /* A regest drafted by a language model from a machine reading: always marked as such. */
+  function draftBlock(d, open) {
+    if (!d) return "";
+    const who = d.sender || d.recipient ? `<div class="meta"><span class="parties">${esc(d.sender || "?")} → ${esc(d.recipient || "?")}</span></div>` : "";
+    const when = [d.place, d.date_text].filter(Boolean).map(esc).join(", ");
+    return `<details class="regest draft" ${open ? "open" : ""}><summary>Automatic regest (draft${open ? "" : ", for comparison"})</summary>
+      ${who}${when ? `<p class="small muted">${when}${d.year ? ` · year read as ${esc(d.year)} (unchecked)` : ""}</p>` : ""}
+      <p>${esc(d.regest)}</p>
+      <p class="small muted">Drafted by ${esc(d.model || "a language model")} from the ${esc(readerLabel(d.reader))} reading, without correction. Names and dates may be wrong.</p>
+    </details>`;
+  }
+  function readerLabel(id) { const r = state.readers.find((x) => x.id === id); return r ? r.label : (id || "machine"); }
 
   function readerButtons(page, current) {
     return state.readers.map((r) => {
