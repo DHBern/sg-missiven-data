@@ -29,7 +29,7 @@
   async function boot() {
     [state.index, state.readers, state.registers, state.config] = await Promise.all([
       json("data/index.json"), json("data/readers.json"), json("data/registers.json"),
-      json("config.json").catch(() => ({}))]);
+      fetch("config.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}))]);
     window.addEventListener("hashchange", route);
     route();
   }
@@ -232,7 +232,7 @@
       destroyOsd();
       app.innerHTML = html;
       app.dataset.facs = page.facs;
-      openImage(page.facs);
+      openImage(page.facs, edited);
     }
     wireLetter(letter, id, pageNo, page);
   }
@@ -396,29 +396,42 @@
     if (el) el.innerHTML = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>` : "";
   }
 
-  async function openImage(facs) {
+  /* Images of letters not yet edited are shown only inside the agreed window,
+     even though the archive's IIIF server holds most of them: showing them is
+     the Stadtarchiv's decision, not a technical question. */
+  function notPublic(w) {
+    document.getElementById("osd").innerHTML =
+      `<p class="noimg">The image of this page is not shown here: the letter has not yet been published by the Stadtarchiv St. Gallen.</p>`;
+    setImgLink(null);
+  }
+
+  async function openImage(facs, edited = true) {
     if (!window.OpenSeadragon) return;
-    const base = `${IIIF}${encodeURIComponent(facs)}`;
-    let info = null;
-    try { info = await json(`${base}/info.json`); } catch { info = null; }
+    const w = edited ? null : windowOpen();
+    if (!edited && !w) { notPublic(); return; }
+    /* A page outside the edition is keyed by our working copy (<stem>.jpg);
+       the archive's server may hold it as .JPG, so try both spellings. */
+    const swapped = facs.replace(/\.(jpe?g)$/i, (m, ext) => "." + (ext === ext.toLowerCase() ? ext.toUpperCase() : ext.toLowerCase()));
+    let info = null, base = null;
+    for (const name of facs === swapped ? [facs] : [facs, swapped]) {
+      const b = `${IIIF}${encodeURIComponent(name)}`;
+      try { info = await json(`${b}/info.json`); base = b; break; } catch { info = null; }
+    }
     if (app.dataset.facs !== facs || !document.getElementById("osd")) return;
     if (info) {
       info["@id"] = base;
       delete info.sizes;
       osd(info);
-      setImgLink(`${base}/full/max/0/default.jpg`, "Full image");
+      setImgLink(`${base}/full/max/0/default.jpg`, edited ? "Full image" : `Full image (shown until ${fmtDate(w.until)})`);
       return;
     }
-    const w = windowOpen();
     if (w) {
       const url = w.base.replace(/\/?$/, "/") + encodeURIComponent(facs.replace(/\.[^.]+$/, "")) + ".jpg";
       osd({ type: "image", url }, false);
       setImgLink(url, `Image (available until ${fmtDate(w.until)})`);
       return;
     }
-    document.getElementById("osd").innerHTML =
-      `<p class="noimg">The image of this page is not public: the letter has not yet been published by the Stadtarchiv St. Gallen.</p>`;
-    setImgLink(null);
+    notPublic();
   }
 
   boot().catch((err) => { app.innerHTML = `<p>Could not load the data: ${esc(err.message)}</p>`; });

@@ -1,19 +1,26 @@
 # Showing images of unpublished letters for a limited time
 
-The viewer always takes a page image from the edition's IIIF server
-(`media.sources-online.org`). That covers every published page and some of the
-others. For letters the Stadtarchiv St. Gallen has **not** published (Dropbox
-folder `12_in-process`), only the machine readings are public. The viewer says
-so where the image would be.
+For letters the Stadtarchiv St. Gallen has **not** published (Dropbox folder
+`12_in-process`), the machine readings are public, but the viewer shows **no
+image**. It says so where the image would be.
 
-If the Stadtarchiv agrees to show those images for a while (a workshop, a
-review week), the viewer and tei.dh.unibe.ch can serve our working copies
-inside a fixed window. **The window is closed by default.** It closes on its
-own at its end on both sides:
+The edition's IIIF server (`media.sources-online.org`) does hold most of these
+images: all 80 of a random sample of 80 unedited pages, on 12.11.2026, mostly
+with a lower-case `.jpg`. The edition simply doesn't link them. Whether they are
+shown is the Stadtarchiv's decision, not a technical question, so the viewer
+does not show them outside the window either.
+
+When images of unpublished letters are to be shown for a while (a workshop, a
+review by the edition team), the viewer opens a fixed window. Inside it, the
+viewer takes the archive's own IIIF image and falls back to our working copy on
+tei.dh.unibe.ch for pages the IIIF server lacks. Edited letters are not affected.
+**The window is closed by default.** It closes on its own at its end on both
+sides:
 
 - **Viewer:** `site/config.json` holds `image_window: {base, from, until}`. Outside
-  those dates (the visitor's date) the viewer neither requests nor links the
-  images.
+  those dates (the visitor's date) the viewer neither requests nor links any
+  image of an unedited letter. It revalidates `config.json` on every load, so a
+  change reaches visitors as soon as Pages has deployed it.
 - **Server:** the nginx snippet allows only the window's calendar days (server
   time). On every other day it answers `410 Gone`, even if nobody takes the
   snippet out.
@@ -36,7 +43,7 @@ onto tei's own disk.
 2. In this repository:
 
    ```bash
-   python3 scripts/image_window.py open --from 2026-11-20 --until 2026-11-26
+   python3 scripts/image_window.py open --from 2026-11-18 --until 2026-12-01
    ```
 
    This writes `site/config.json` and `deploy/nginx/sg-missiven-images.conf`.
