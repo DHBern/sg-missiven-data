@@ -45,8 +45,13 @@ def main() -> None:
             continue
         facs = by_stem.get(path.stem)
         if not facs:
-            print(f"  no facs for {path}", file=sys.stderr)
-            continue
+            # A page the edition does not contain (a letter not yet edited): it is
+            # keyed by its working copy's name, <stem>.jpg, which is also the
+            # name the image window serves it under.
+            if not path.stem.startswith("StadtASG_Missive_"):
+                print(f"  not a Missiven page: {path}", file=sys.stderr)
+                continue
+            facs = path.stem + ".jpg"
         readers.setdefault(rec["model"], {})[facs] = {
             "key": facs, "text": rec.get("text") or "", "truncated": bool(rec.get("truncated")),
             "segmented_by": rec.get("segmented_by"), "gateway_version": rec.get("gateway_version")}

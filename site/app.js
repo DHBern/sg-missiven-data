@@ -21,12 +21,15 @@
     if (!m) return d;
     return [m[3], m[2], m[1]].filter(Boolean).map((x) => String(+x)).join(".");
   };
-  const num = (id) => +String(id).replace(/\D+/g, "");
+  /* "Nr. 177 Beilage 1" from the title; the id's digits would read 17701 */
+  const nrOf = (l) => { const m = /Nr\.\s*(.+)$/.exec(l.title || ""); return m ? "Nr. " + m[1] : l.id; };
+  const byId = (id) => state.index.find((l) => l.id === id);
   const json = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p + ": " + r.status); return r.json(); });
 
   async function boot() {
-    [state.index, state.readers, state.registers] = await Promise.all([
-      json("data/index.json"), json("data/readers.json"), json("data/registers.json")]);
+    [state.index, state.readers, state.registers, state.config] = await Promise.all([
+      json("data/index.json"), json("data/readers.json"), json("data/registers.json"),
+      fetch("config.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}))]);
     window.addEventListener("hashchange", route);
     route();
   }
@@ -53,14 +56,19 @@
     app.innerHTML = `
       <section class="intro">
         <h1>The letters of St. Gallen, read by machines</h1>
-        <p>${state.index.length} letters to and from the city of St. Gallen, 1400–1650, from the edition of the
-        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>.
-        Every page is shown with the edition's transcription and with ${machineReaders()}.
+        <p>${state.index.filter((l) => l.edited !== false).length} letters to and from the city of St. Gallen, 1400–1650, from the edition of the
+        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>${unedited() ? `, and ${unedited()} letters of the series the edition has not yet published` : ""}.
+        Every page is shown with the edition's transcription, where there is one, and with ${machineReaders()}.
         Switch between them on the left, compare any of them with the edition, and see where they differ.</p>
         ${best ? `<p class="muted small">Closest to the edition over all scored pages: <b>${esc(best.label)}</b>, ${pct(best.cer)} character error rate. <a href="#/readers">All readers</a>.</p>` : ""}
       </section>
       <div class="filters">
         <input id="q" type="search" placeholder="Search sender, recipient, regest, number…" value="${esc(state.filter)}" aria-label="Search letters">
+        <select id="ed" aria-label="Edited or not">
+          <option value="">All letters</option>
+          <option value="1" ${state.edited === "1" ? "selected" : ""}>Edited</option>
+          <option value="0" ${state.edited === "0" ? "selected" : ""}>Not yet edited</option>
+        </select>
         <select id="yr" aria-label="Century">
           <option value="">All years</option>
           ${years.map((y) => `<option value="${y}" ${state.year === y ? "selected" : ""}>${y.slice(0, 2)}th c. (${y}s)</option>`).join("")}
@@ -70,10 +78,12 @@
       <div class="list" id="list"></div>`;
     const q = document.getElementById("q");
     const yr = document.getElementById("yr");
+    const ed = document.getElementById("ed");
     const draw = () => {
-      state.filter = q.value; state.year = yr.value;
+      state.filter = q.value; state.year = yr.value; state.edited = ed.value;
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
       const rows = state.index.filter((l) => {
+        if (ed.value && String(+(l.edited !== false)) !== ed.value) return false;
         if (yr.value && (l.date || "").slice(0, 2) !== yr.value.slice(0, 2)) return false;
         if (!words.length) return true;
         const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
@@ -82,16 +92,21 @@
       document.getElementById("count").textContent = `${rows.length} letters`;
       document.getElementById("list").innerHTML = rows.slice(0, 400).map((l) => `
         <a class="row" href="#/letter/${l.id}/1">
-          <span class="num">Nr. ${num(l.id)}</span>
-          <span class="date">${esc(fmtDate(l.date))}</span>
-          <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span>
-          <span class="reg">${esc(l.regest)}</span></span>
+          <span class="num">${esc(nrOf(l))}</span>
+          <span class="date">${l.edited === false ? "" : esc(fmtDate(l.date))}</span>
+          ${l.edited === false
+            ? `<span><span class="who muted">Not yet edited</span><span class="reg">${l.pages} page${l.pages === 1 ? "" : "s"}, machine readings only</span></span>`
+            : `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span>
+          <span class="reg">${esc(l.regest)}</span></span>`}
         </a>`).join("") + (rows.length > 400 ? `<p class="muted small">Showing 400 of ${rows.length} — narrow the search.</p>` : "");
     };
     q.addEventListener("input", draw);
     yr.addEventListener("change", draw);
+    ed.addEventListener("change", draw);
     draw();
   }
+
+  function unedited() { return state.index.filter((l) => l.edited === false).length; }
 
   function machineReaders() {
     const rs = state.readers.filter((r) => r.id !== "edition");
@@ -164,7 +179,12 @@
     const page = pages[pageNo - 1];
     if (readerId) { state.reader = readerId; store.set("reader", readerId); }
     let reader = state.reader;
+    const edited = letter.edited !== false;
     if (reader !== "edition" && !page.readings[reader]) reader = "edition";
+    if (!edited && reader === "edition") {
+      const firstRead = state.readers.find((x) => x.id !== "edition" && page.readings[x.id]);
+      reader = firstRead ? firstRead.id : "edition";
+    }
 
     const pos = state.index.findIndex((l) => l.id === id);
     const prev = state.index[pos - 1], next = state.index[pos + 1];
@@ -176,17 +196,20 @@
       <div class="letter">
         <section class="pane textpane">
           <div class="lnav">
-            ${prev ? `<a href="#/letter/${prev.id}/1">← Nr. ${num(prev.id)}</a>` : "<span></span>"}
+            ${prev ? `<a href="#/letter/${prev.id}/1">← ${esc(nrOf(prev))}</a>` : "<span></span>"}
             <a href="#/">All letters</a>
-            ${next ? `<a href="#/letter/${next.id}/1">Nr. ${num(next.id)} →</a>` : "<span></span>"}
+            ${next ? `<a href="#/letter/${next.id}/1">${esc(nrOf(next))} →</a>` : "<span></span>"}
           </div>
           <div class="muted small">${esc(letter.title)} · ${esc(letter.idno)}</div>
+          ${edited ? `
           <h1>${esc(fmtDate(letter.date))}</h1>
           <div class="meta"><span class="parties">${esc(s || "?")} → ${esc(r || "?")}</span></div>
           <details class="regest" ${store.get("regest", true) ? "open" : ""}><summary>Regest</summary>
             <p>${esc(letter.regest)}</p>
             ${letter.keywords.length ? `<div class="kw">${letter.keywords.map((k) => `<span>${esc(k)}</span>`).join("")}</div>` : ""}
-          </details>
+          </details>` : `
+          <h1>${esc(nrOf(letter))}</h1>
+          <p class="caveat">Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.</p>`}
           <div class="pages"><span class="lbl">Page</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
           <div class="readers" role="tablist" aria-label="Readings">${readerButtons(page, reader)}</div>
@@ -198,8 +221,7 @@
         </section>
         <section class="pane imgpane">
           <div id="osd" role="img" aria-label="Facsimile of ${esc(page.facs)}"></div>
-          <div class="imgbar"><span class="muted">${esc(page.facs)}</span>
-            <a href="${IIIF}${encodeURIComponent(page.facs)}/full/max/0/default.jpg" target="_blank" rel="noopener">Full image ↗</a></div>
+          <div class="imgbar"><span class="muted">${esc(page.facs)}</span><span id="imglink"></span></div>
         </section>
       </div>
       <footer class="foot">Edition: Stadtarchiv St. Gallen (CC BY-SA 4.0) · Readings: DH Bern</footer>`;
@@ -210,14 +232,14 @@
       destroyOsd();
       app.innerHTML = html;
       app.dataset.facs = page.facs;
-      openImage(page.facs);
+      openImage(page.facs, edited);
     }
     wireLetter(letter, id, pageNo, page);
   }
 
   function readerButtons(page, current) {
     return state.readers.map((r) => {
-      const has = r.id === "edition" ? true : !!page.readings[r.id];
+      const has = r.id === "edition" ? !!page.html : !!page.readings[r.id];
       const rd = page.readings[r.id];
       const badge = r.id === "edition" ? "" : rd && rd.cer != null ? `<span class="cer" title="character error rate on this page">${pct(rd.cer)}</span>` : rd ? `<span class="cer">not scored</span>` : "";
       return `<button class="rd ${r.id === current ? "on" : ""}" role="tab" aria-selected="${r.id === current}" data-reader="${esc(r.id)}" ${has ? "" : "disabled title=\"not read on this page\""}>
@@ -348,23 +370,68 @@
   /* ---------- image ---------- */
   function destroyOsd() { if (state.osd) { state.osd.destroy(); state.osd = null; } delete app.dataset.facs; }
   /* The server's info.json lists `sizes` and an @id without the /cantaloupe
-     prefix; with `sizes` OpenSeadragon 4.1 stops at the 94 px thumbnail. */
-  async function openImage(facs) {
-    if (!window.OpenSeadragon) return;
-    const base = `${IIIF}${encodeURIComponent(facs)}`;
-    let info;
-    try { info = await json(`${base}/info.json`); } catch { return; }
-    if (app.dataset.facs !== facs || !document.getElementById("osd")) return;
-    info["@id"] = base;
-    delete info.sizes;
+     prefix; with `sizes` OpenSeadragon 4.1 stops at the 94 px thumbnail.
+     Order: the edition's IIIF server (all published pages and some others);
+     else, while config.json's image window is open, our own copy; else a notice. */
+  function windowOpen() {
+    const w = state.config && state.config.image_window;
+    if (!w || !w.base || !w.until) return null;
+    const today = new Date().toISOString().slice(0, 10);
+    return (!w.from || today >= w.from) && today <= w.until ? w : null;
+  }
+
+  function osd(tileSources, cors = "Anonymous") {
     state.osd = OpenSeadragon({
       id: "osd",
       prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
-      tileSources: info,
+      tileSources,
       showNavigator: true, navigatorPosition: "BOTTOM_RIGHT",
       gestureSettingsMouse: { clickToZoom: false },
-      crossOriginPolicy: "Anonymous",
+      crossOriginPolicy: cors,
     });
+  }
+
+  function setImgLink(url, label) {
+    const el = document.getElementById("imglink");
+    if (el) el.innerHTML = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>` : "";
+  }
+
+  /* Images of letters not yet edited are shown only inside the agreed window,
+     even though the archive's IIIF server holds most of them: showing them is
+     the Stadtarchiv's decision, not a technical question. */
+  function notPublic(w) {
+    document.getElementById("osd").innerHTML =
+      `<p class="noimg">The image of this page is not shown here: the letter has not yet been published by the Stadtarchiv St. Gallen.</p>`;
+    setImgLink(null);
+  }
+
+  async function openImage(facs, edited = true) {
+    if (!window.OpenSeadragon) return;
+    const w = edited ? null : windowOpen();
+    if (!edited && !w) { notPublic(); return; }
+    /* A page outside the edition is keyed by our working copy (<stem>.jpg);
+       the archive's server may hold it as .JPG, so try both spellings. */
+    const swapped = facs.replace(/\.(jpe?g)$/i, (m, ext) => "." + (ext === ext.toLowerCase() ? ext.toUpperCase() : ext.toLowerCase()));
+    let info = null, base = null;
+    for (const name of facs === swapped ? [facs] : [facs, swapped]) {
+      const b = `${IIIF}${encodeURIComponent(name)}`;
+      try { info = await json(`${b}/info.json`); base = b; break; } catch { info = null; }
+    }
+    if (app.dataset.facs !== facs || !document.getElementById("osd")) return;
+    if (info) {
+      info["@id"] = base;
+      delete info.sizes;
+      osd(info);
+      setImgLink(`${base}/full/max/0/default.jpg`, edited ? "Full image" : `Full image (shown until ${fmtDate(w.until)})`);
+      return;
+    }
+    if (w) {
+      const url = w.base.replace(/\/?$/, "/") + encodeURIComponent(facs.replace(/\.[^.]+$/, "")) + ".jpg";
+      osd({ type: "image", url }, false);
+      setImgLink(url, `Image (available until ${fmtDate(w.until)})`);
+      return;
+    }
+    notPublic();
   }
 
   boot().catch((err) => { app.innerHTML = `<p>Could not load the data: ${esc(err.message)}</p>`; });

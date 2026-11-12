@@ -20,6 +20,8 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 | `scripts/tei_pages.py` | TEI → Seiten (Text, Zeilen, Entitäten mit Offsets) |
 | `scripts/build_site.py` | baut `site/data/` aus TEI und Lesungen; misst jede Lesung gegen die Edition (CER) |
 | `scripts/import_readings.py` | Lesungen anderer Engines übernehmen (Text, PAGE XML, ALTO, JSONL) |
+| `scripts/dropbox_fetch.py` | lädt Bilder der ganzen Missiven-Serie aus der Dropbox-Freigabe (Tageslimit, Arbeitskopien 1500 px) |
+| `scripts/image_window.py` | öffnet/schliesst ein befristetes Fenster für Bilder noch nicht edierter Briefe ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)) |
 | `scripts/ner.py` | lernt die Auszeichnung aus den TEI-Dateien und wendet sie auf eine Lesung an (5-fach kreuzvalidiert nach Brief) |
 | `site/` | der Viewer (statisch, IIIF-Bilder direkt vom Server der Edition) |
 
@@ -27,6 +29,8 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 uv run --with lxml --with rapidfuzz python scripts/build_site.py
 python3 -m http.server -d site
 ```
+
+Noch nicht edierte Briefe der Serie erscheinen mit ihren maschinellen Lesungen, ohne Bild; die Bilder können befristet freigegeben werden ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)).
 
 Eine weitere Lesung (z. B. aus Transkribus, eScriptorium, kraken oder einem anderen Modell) hinzufügen: [docs/ADDING_READINGS.md](docs/ADDING_READINGS.md).
 
