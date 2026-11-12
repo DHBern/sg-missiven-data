@@ -127,6 +127,23 @@ def unedited_letters(edited: list[dict], readings: dict[str, dict[str, dict]]) -
     return out
 
 
+def load_drafts() -> dict[str, dict]:
+    """Regests drafted by a language model from a machine reading (scripts/regest.py).
+    Shown only as drafts, never in place of the edition's regest."""
+    out: dict[str, dict] = {}
+    for path in sorted((ROOT / "regests").glob("*.jsonl")) if (ROOT / "regests").exists() else []:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            d = r.get("draft") or {}
+            if d.get("error") or not d.get("regest"):
+                continue
+            out[r["id"]] = {k: d.get(k) for k in ("sender", "recipient", "place", "date_text", "year", "regest")} | {
+                "reader": r.get("reader"), "model": r.get("model")}
+    return out
+
+
 def main() -> None:
     letters = read_edition(ROOT / "data")
     for letter in letters:
@@ -134,6 +151,7 @@ def main() -> None:
     readings = load_readings()
     letters += unedited_letters(letters, readings)
     entities = load_entities()
+    drafts = load_drafts()
     readers = json.loads((ROOT / "readings" / "readers.json").read_text(encoding="utf-8"))
     (OUT / "letters").mkdir(parents=True, exist_ok=True)
 
@@ -165,6 +183,8 @@ def main() -> None:
             for reader, pages in entities.items():
                 if page["facs"] in pages:
                     page.setdefault("auto_entities", {})[reader] = pages[page["facs"]]
+        if letter["id"] in drafts:
+            letter["auto_regest"] = drafts[letter["id"]]
         (OUT / "letters" / f"{letter['id']}.json").write_text(
             json.dumps(letter, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         index.append({
@@ -175,6 +195,11 @@ def main() -> None:
             "regest": letter["regest"], "pages": len(letter["pages"]),
             "edited": letter["edited"],
         })
+        d = drafts.get(letter["id"])
+        if d and not letter["edited"]:
+            index[-1].update(sender=[d.get("sender") or ""], recipient=[d.get("recipient") or ""],
+                             regest=d.get("regest") or "", draft=True,
+                             year=d.get("year"), date_text=d.get("date_text"))
 
     for reader in readers:
         t = totals.get(reader["id"])
