@@ -4,8 +4,9 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-# the script lives in the checkout it resets; run a copy so the reset cannot pull it away mid-run
-ExecStartPre=/usr/bin/install -m 755 %h/sg-missiven-data/scripts/pipeline.sh %h/sgm-pipeline/pipeline.sh
+# the script lives in the checkout it resets; run a copy of main's version, so the reset cannot
+# change it mid-run and a fix merged to main is used at once (not a cycle later)
+ExecStartPre=/bin/sh -c 'mkdir -p %h/sgm-pipeline && git -C %h/sg-missiven-data fetch -q origin && git -C %h/sg-missiven-data show origin/main:scripts/pipeline.sh > %h/sgm-pipeline/pipeline.sh && chmod 755 %h/sgm-pipeline/pipeline.sh'
 ExecStart=%h/sgm-pipeline/pipeline.sh
 Environment=PATH=/usr/local/bin:/usr/bin:/bin
 Nice=10
