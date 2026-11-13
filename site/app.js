@@ -35,6 +35,7 @@
   }
 
   function setNav(which) {
+    if (!["places", "names", "map"].includes(which)) destroyMaps();
     document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
   }
 
@@ -43,6 +44,10 @@
     const parts = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
     if (parts[0] === "letter" && parts[1]) return showLetter(parts[1], +(parts[2] || 1), parts[3]);
     if (parts[0] === "readers") return showReaders();
+    if (parts[0] === "places") return showRegister("places");
+    if (parts[0] === "names") return showRegister("names");
+    if (parts[0] === "map") return showMap();
+    if (parts[0] === "entry" && parts[1]) return showEntry(parts[1]);
     if (parts[0] === "about") return showAbout();
     return showList();
   }
@@ -164,6 +169,156 @@
       <h2>Data and code</h2>
       <p><a href="https://github.com/DHBern/sg-missiven-data" target="_blank" rel="noopener">github.com/DHBern/sg-missiven-data</a> — the readings are in <code>readings/</code>, one JSON line per page and reader.</p>
     </section>`;
+  }
+
+  /* ---------- registers and map ---------- */
+  /* The edition's registers with every edited letter that names an entry, in the
+     text or in the header. Built from the TEI by scripts/build_site.py; the
+     automatic tagging of letters not yet edited will add to it later. */
+  const FTYPE = { P: "Settlement", A: "Region, state", S: "Building, site", H: "Water", L: "Area", T: "Mountain", R: "Road", V: "Forest", U: "Undersea" };
+  const KIND = { place: "Place", person: "Person", org: "Organisation" };
+  const ROLE = { sender: "sender", recipient: "recipient", place: "place of writing" };
+  const lettersOf = (e) => new Set((e.occ || []).map((o) => o[0])).size;
+  let leafletMaps = [];
+  function destroyMaps() { leafletMaps.forEach((m) => m.remove()); leafletMaps = []; }
+
+  function baseMap(el, opts = {}) {
+    const m = L.map(el, { scrollWheelZoom: false, ...opts });
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(m);
+    leafletMaps.push(m);
+    return m;
+  }
+
+  function marker(id, e, m) {
+    const n = lettersOf(e);
+    return L.circleMarker(e.geo, { radius: Math.min(22, 4 + Math.sqrt(n) * 1.6), className: "lf-place", weight: 1.5, fillOpacity: 0.45 })
+      .bindTooltip(`${esc(e.name)} · ${n} letter${n === 1 ? "" : "s"}`)
+      .on("click", () => { location.hash = `#/entry/${id}`; })
+      .addTo(m);
+  }
+
+  function showRegister(which) {
+    setNav(which);
+    destroyOsd(); destroyMaps();
+    const kinds = which === "places" ? ["place"] : ["person", "org"];
+    const all = Object.entries(state.registers).filter(([, e]) => kinds.includes(e.kind))
+      .sort((a, b) => (a[1].sort || a[1].name).localeCompare(b[1].sort || b[1].name, "de"));
+    const f = state.regFilter = state.regFilter || {};
+    const noGeo = all.filter(([, e]) => !e.geo).length;
+    app.innerHTML = `
+      <section class="intro">
+        <h1>${which === "places" ? "Places" : "Names"}</h1>
+        <p>${which === "places"
+          ? `The edition's place register: ${all.length} places, ${all.length - noGeo} of them with coordinates (<a href="#/map">map</a>).`
+          : `The edition's register of persons and organisations: ${all.filter(([, e]) => e.kind === "person").length} persons, ${all.filter(([, e]) => e.kind === "org").length} organisations.`}
+        Each entry lists the edited letters that name it, in the text or as sender, recipient or place of writing.
+        Letters not yet edited are not counted here yet: their names come from the automatic tagging, once it has been checked against the register.</p>
+      </section>
+      <div class="filters">
+        <input id="rq" type="search" placeholder="Search names, description, country…" value="${esc(f[which] || "")}" aria-label="Search the register">
+        ${which === "places"
+          ? `<select id="rt" aria-label="Type"><option value="">All types</option>${Object.entries(FTYPE).filter(([k]) => all.some(([, e]) => e.ftype === k)).map(([k, v]) => `<option value="${k}" ${f.ftype === k ? "selected" : ""}>${v}</option>`).join("")}</select>
+             <label class="small"><input type="checkbox" id="rg" ${f.nogeo ? "checked" : ""}> without coordinates (${noGeo})</label>`
+          : `<select id="rt" aria-label="Kind"><option value="">Persons and organisations</option><option value="person" ${f.kind === "person" ? "selected" : ""}>Persons</option><option value="org" ${f.kind === "org" ? "selected" : ""}>Organisations</option></select>`}
+        <span id="rcount" class="muted small"></span>
+      </div>
+      <div class="list reg" id="rlist"></div>`;
+    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg");
+    const draw = () => {
+      f[which] = q.value;
+      if (which === "places") { f.ftype = t.value; f.nogeo = g.checked; } else f.kind = t.value;
+      const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+      const rows = all.filter(([, e]) => {
+        if (which === "places" && t.value && e.ftype !== t.value) return false;
+        if (which === "places" && g.checked && e.geo) return false;
+        if (which === "names" && t.value && e.kind !== t.value) return false;
+        if (!words.length) return true;
+        const hay = [e.name, e.desc, e.country, ...(e.occ || []).map((o) => o[1])].join(" ").toLowerCase();
+        return words.every((w) => hay.includes(w));
+      });
+      document.getElementById("rcount").textContent = `${rows.length} ${rows.length === 1 ? "entry" : "entries"}`;
+      document.getElementById("rlist").innerHTML = rows.slice(0, 500).map(([id, e]) => {
+        const n = lettersOf(e);
+        return `<a class="row" href="#/entry/${encodeURIComponent(id)}">
+          <span class="num">${n || "–"}<span class="muted small"> ${n === 1 ? "letter" : "letters"}</span></span>
+          <span><span class="who">${esc(e.name)}${which === "places" && !e.geo ? ` <span class="badge">no coordinates</span>` : ""}</span>
+          <span class="reg">${esc([which === "places" ? FTYPE[e.ftype] : KIND[e.kind], e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
+        </a>`;
+      }).join("") + (rows.length > 500 ? `<p class="muted small">Showing 500 of ${rows.length} — narrow the search.</p>` : "");
+    };
+    q.addEventListener("input", draw);
+    t.addEventListener("change", draw);
+    g && g.addEventListener("change", draw);
+    draw();
+  }
+
+  function showEntry(id) {
+    destroyOsd(); destroyMaps();
+    const e = state.registers[id];
+    if (!e) { app.innerHTML = `<p>No register entry ${esc(id)}.</p>`; return; }
+    setNav(e.kind === "place" ? "places" : "names");
+    const groups = new Map();
+    for (const [lid, form, role] of e.occ || []) {
+      if (!groups.has(lid)) groups.set(lid, { forms: new Set(), roles: new Set() });
+      const g = groups.get(lid);
+      if (form) g.forms.add(form);
+      if (role) g.roles.add(role);
+    }
+    const rows = [...groups.entries()].map(([lid, g]) => ({ l: byId(lid), ...g })).filter((r) => r.l)
+      .sort((a, b) => state.index.indexOf(a.l) - state.index.indexOf(b.l));
+    const links = e.links.filter((l) => /^https?:/.test(l.url));
+    app.innerHTML = `
+      <section class="entry">
+        <p class="muted small"><a href="#/${e.kind === "place" ? "places" : "names"}">← ${e.kind === "place" ? "Places" : "Names"}</a></p>
+        <h1>${esc(e.name)}</h1>
+        <p class="muted">${esc([e.kind === "place" ? FTYPE[e.ftype] || "Place" : KIND[e.kind], e.country, e.desc].filter(Boolean).join(" · "))}</p>
+        ${links.length ? `<p class="links">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.type)}</a>`).join("")}</p>` : ""}
+        <p class="small muted">Register <code>${esc(id)}</code>${e.kind === "place" && e.geo ? ` · ${e.geo[0].toFixed(4)}, ${e.geo[1].toFixed(4)}` : ""} ·
+          <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">in the edition ↗</a></p>
+        ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">The register has no coordinates for this place, so it is not on the map.</p>`) : ""}
+        <h2>${rows.length} edited letter${rows.length === 1 ? "" : "s"}</h2>
+        <div class="list">${rows.map((r) => `
+          <a class="row" href="#/letter/${r.l.id}/1">
+            <span class="num">${esc(nrOf(r.l))}</span>
+            <span class="date">${esc(fmtDate(r.l.date))}</span>
+            <span><span class="who">${esc(r.l.sender.join(", ") || "?")} → ${esc(r.l.recipient.join(", ") || "?")}</span>
+            <span class="reg">${r.forms.size ? `<i>${[...r.forms].map(esc).join("</i>, <i>")}</i>` : ""}${r.roles.size ? `${r.forms.size ? " · " : ""}${[...r.roles].map((x) => ROLE[x] || x).join(", ")}` : ""}</span></span>
+          </a>`).join("")}</div>
+      </section>`;
+    if (e.geo && window.L) {
+      const m = baseMap("emap", { center: e.geo, zoom: e.ftype === "A" ? 7 : 10 });
+      for (const [oid, o] of Object.entries(state.registers)) if (o.kind === "place" && o.geo && oid !== id) marker(oid, o, m).setStyle({ opacity: 0.35, fillOpacity: 0.15 });
+      const me = marker(id, e, m).bringToFront(); me.getElement && me.getElement().classList.add("on");
+    }
+  }
+
+  function showMap() {
+    setNav("map");
+    destroyOsd(); destroyMaps();
+    const places = Object.entries(state.registers).filter(([, e]) => e.kind === "place");
+    const geo = places.filter(([, e]) => e.geo);
+    const missing = places.filter(([, e]) => !e.geo).sort((a, b) => lettersOf(b[1]) - lettersOf(a[1]));
+    app.innerHTML = `
+      <section class="intro">
+        <h1>Map</h1>
+        <p>${geo.length} of the ${places.length} places in the edition's register, each sized by the number of edited letters that name it.
+        Click a place for its letters. <a href="#/places">All places</a>.</p>
+      </section>
+      <div id="bigmap" class="bigmap" role="region" aria-label="Map of the places named in the letters"></div>
+      <section class="prose">
+        <h2>Not on the map: ${missing.length} places without coordinates</h2>
+        <p class="muted small">The register gives no coordinates for these. Most are regions, rivers or buildings; the list with links is in
+        <a href="https://github.com/DHBern/sg-missiven-data/blob/main/docs/places_without_coordinates.md" target="_blank" rel="noopener">docs/places_without_coordinates.md</a>.</p>
+        <p class="chips">${missing.map(([id, e]) => `<a href="#/entry/${encodeURIComponent(id)}">${esc(e.name)} <span class="muted">${lettersOf(e)}</span></a>`).join("")}</p>
+      </section>`;
+    if (!window.L) { document.getElementById("bigmap").innerHTML = `<p class="noimg">The map library did not load.</p>`; return; }
+    const m = baseMap("bigmap", { scrollWheelZoom: true });
+    geo.sort((a, b) => lettersOf(b[1]) - lettersOf(a[1])).forEach(([id, e]) => marker(id, e, m));
+    /* open on the places named in several letters; the far ones are a zoom away */
+    const core = geo.filter(([, e]) => lettersOf(e) >= 3);
+    m.fitBounds(L.latLngBounds((core.length > 5 ? core : geo).map(([, e]) => e.geo)), { padding: [20, 20] });
   }
 
   /* ---------- letter ---------- */
@@ -367,7 +522,8 @@
     let body = `<b>${esc(kindName)}${el.dataset.auto ? " · automatic" : ""}</b>`;
     if (kind === "date" && ref) body += esc(ref);
     else if (reg) {
-      body += esc(reg.name);
+      body += `<a href="#/entry/${encodeURIComponent(ref)}">${esc(reg.name)}</a>`;
+      if (reg.occ) body += ` <span class="muted">· ${lettersOf(reg)} letters</span>`;
       const links = reg.links.filter((l) => /^https?:/.test(l.url)).slice(0, 4);
       if (links.length) body += `<div>${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.type)}</a>`).join("")}</div>`;
     } else if (el.dataset.auto) body += `<span class="muted">not linked to the register</span>`;

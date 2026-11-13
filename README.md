@@ -32,6 +32,8 @@ python3 -m http.server -d site
 
 Noch nicht edierte Briefe der Serie erscheinen mit ihren maschinellen Lesungen, ohne Bild; die Bilder können befristet freigegeben werden ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)).
 
+Register und Karte: Orte, Personen und Organisationen der Register (`place/`, `person/`) mit allen edierten Briefen, die sie nennen (im Text mit der Schreibung dort, oder als Absender, Empfänger, Ausstellungsort), und eine Karte der Orte mit Koordinaten. Die 57 Orte ohne Koordinaten stehen in [docs/places_without_coordinates.md](docs/places_without_coordinates.md) (vom Build geschrieben). Noch nicht edierte Briefe kommen hinzu, sobald ihre automatische Auszeichnung mit den Registern verknüpft ist.
+
 Eine weitere Lesung (z. B. aus Transkribus, eScriptorium, kraken oder einem anderen Modell) hinzufügen: [docs/ADDING_READINGS.md](docs/ADDING_READINGS.md).
 
 Die Fehlerquote (CER) misst den Abstand zu den Konventionen *dieser* Edition, nicht die
