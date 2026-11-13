@@ -31,6 +31,8 @@ status() {  # status <state> <message> [pr]
   echo "[$1] $2"
 }
 fail() { status failed "$1"; exit 1; }
+# any other error (set -e) is recorded too, not only the ones checked below
+trap 'status failed "line $LINENO: $BASH_COMMAND"' ERR
 
 cd "$REPO"
 git fetch -q origin
@@ -63,7 +65,8 @@ fi
 
 # 3. publish: one rolling branch, one PR, merged here when the checks passed
 git switch -q -C "$BRANCH"
-git add -- "${DATA_PATHS[@]}"
+existing=(); for p in "${DATA_PATHS[@]}"; do [ -e "$p" ] && existing+=("$p"); done
+git add -A -- "${existing[@]}"
 git commit -q -F - <<EOF
 readings: automatic collection on tei, $(date '+%d.%m.%Y %H:%M')
 
