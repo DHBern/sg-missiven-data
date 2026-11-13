@@ -22,6 +22,10 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 | `scripts/import_readings.py` | Lesungen anderer Engines übernehmen (Text, PAGE XML, ALTO, JSONL) |
 | `scripts/dropbox_fetch.py` | lädt Bilder der ganzen Missiven-Serie aus der Dropbox-Freigabe (Tageslimit, Arbeitskopien 1500 px) |
 | `scripts/image_window.py` | öffnet/schliesst ein befristetes Fenster für Bilder noch nicht edierter Briefe ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)) |
+| `scripts/regest.py` | Regestentwürfe für noch nicht edierte Briefe (Qwen3.8-27B auf GPUStack), Evaluation gegen die Regesten der Edition; Plan für den Lauf über die ganze Serie: [docs/REGESTS.md](docs/REGESTS.md) |
+| `scripts/dates.py` | Jahr aus der Datumszeile, das Jahrhundert abgekürzter Jahre aus den benachbarten Briefen (die Serie ist chronologisch nummeriert) |
+| `scripts/tei_export.py` | TEI für die noch nicht edierten Briefe in der Form der Edition → `tei_unedited/` (Lesung, Regestentwurf, Auszeichnung; alles mit `@resp`, nichts geprüft; nicht nach `data/` kopieren). Erst nach dem NER-Lauf: schreibt nur getaggte Briefe |
+| `readings/series_pages.txt` | alle 16.434 Bilder der Serie (nur Dateinamen), für Vollständigkeit und Originalnamen |
 | `scripts/ner.py` | lernt die Auszeichnung aus den TEI-Dateien und wendet sie auf eine Lesung an (5-fach kreuzvalidiert nach Brief) |
 | `site/` | der Viewer (statisch, IIIF-Bilder direkt vom Server der Edition) |
 
