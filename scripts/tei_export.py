@@ -139,7 +139,7 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
     lid = f"stasg_missiv_unedited_{nr:05d}"
     parts = [FACS.match(k).group(2) for k in keys]
     idno = f"StadtASG Missive_{nr}_{parts[0]}" + (f"/{parts[-1]}" if len(parts) > 1 else "")
-    used, tagged = set(), False
+    used, tagged, methods = set(), False, set()
     body, line_no = [], 0
     for i, key in enumerate(keys):
         facs = names.get(Path(key).stem.lower(), key)
@@ -147,8 +147,11 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
         for reader, pages in readings:
             if key in pages:
                 used.add(reader)
-                spans = ents.get(reader, {}).get(key, {}).get("entities", [])
+                rec = ents.get(reader, {}).get(key, {})
+                spans = rec.get("entities", [])
                 tagged |= bool(spans)
+                if spans:
+                    methods.add(rec.get("method") or "hmbert")
                 chunk, line_no = page_xml(pages[key].get("text") or "", spans, line_no, reg)
                 body.append(chunk)
                 break
@@ -160,8 +163,12 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
         resp.append('<respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp>'
                     f"<name>{escape(draft.get('model') or 'Sprachmodell')}, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt>")
     if tagged:
+        who = ("hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; "
+               "gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; "
+               "Sprachmodelle auf dem GPUStack der Universität Bern)") if "combined" in methods else \
+              "hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py)"
         resp.append('<respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp>'
-                    "<name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py)</name></respStmt>")
+                    f"<name>{escape(who)}</name></respStmt>")
 
     corresp = abstract = ""
     if draft:
