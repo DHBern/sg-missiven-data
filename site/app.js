@@ -85,35 +85,38 @@
     if (parts[0] === "map") return showMap();
     if (parts[0] === "entry" && parts[1]) return showEntry(parts[1]);
     if (parts[0] === "about") return showAbout();
-    return showList();
+    return showList(new URLSearchParams(qs || ""));
   }
 
   /* ---------- letters list ---------- */
-  function showList() {
+  function showList(params) {
     setNav("letters");
+    state.edited = params && ["0", "1"].includes(params.get("ed")) ? params.get("ed") : "";
     destroyOsd();
-    const years = [...new Set(state.index.map((l) => (l.date || "").slice(0, 2) + "00"))].filter((y) => /^\d{4}$/.test(y)).sort();
+    const yearOf = (l) => l.date || (l.year ? String(l.year) : "");
+    const years = [...new Set(state.index.map((l) => yearOf(l).slice(0, 2) + "00"))].filter((y) => /^\d{4}$/.test(y)).sort();
     const best = state.readers.filter((r) => r.cer != null).sort((a, b) => a.cer - b.cer)[0];
     app.innerHTML = `
       <section class="intro">
         <h1>${T("The letters of St. Gallen, read by machines", "Die St. Galler Missiven, von Maschinen gelesen")}</h1>
         <p>${T(`${state.index.filter((l) => l.edited !== false).length} letters to and from the city of St. Gallen, 1400–1650, from the edition of the
-        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>${unedited() ? `, and ${unedited()} letters of the series the edition has not yet published` : ""}.
+        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>${unedited() ? `, and <a href="#/?ed=0">${unedited()} letters of the series the edition has not yet published</a>` : ""}.
         Every page is shown with the edition's transcription, where there is one, and with ${machineReaders()}.
         Switch between them on the left, compare any of them with the edition, and see where they differ.`,
         `${state.index.filter((l) => l.edited !== false).length} Briefe an die und von der Stadt St. Gallen, 1400–1650, aus der Edition des
-        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchivs St. Gallen</a>${unedited() ? `, dazu ${unedited()} Briefe der Serie, die die Edition noch nicht veröffentlicht hat` : ""}.
+        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchivs St. Gallen</a>${unedited() ? `, dazu <a href="#/?ed=0">${unedited()} Briefe der Serie, die die Edition noch nicht veröffentlicht hat</a>` : ""}.
         Jede Seite erscheint mit der Transkription der Edition, wo es eine gibt, und mit ${machineReaders()}.
         Links lässt sich zwischen ihnen wechseln; jede Lesung lässt sich mit der Edition vergleichen.`)}</p>
         ${best ? `<p class="muted small">${T("Closest to the edition over all scored pages:", "Am nächsten an der Edition über alle bewerteten Seiten:")} <b>${esc(loc(best, "label"))}</b>, ${pct(best.cer)} ${T("character error rate", "Zeichenfehlerrate")}. <a href="#/readers">${T("All readers", "Alle Leser")}</a>.</p>` : ""}
       </section>
       <div class="filters">
         <input id="q" type="search" placeholder="${T("Search sender, recipient, regest, number…", "Absender, Empfänger, Regest, Nummer suchen…")}" value="${esc(state.filter)}" aria-label="${T("Search letters", "Briefe durchsuchen")}">
-        <select id="ed" aria-label="${T("Edited or not", "Ediert oder nicht")}">
-          <option value="">${T("All letters", "Alle Briefe")}</option>
-          <option value="1" ${state.edited === "1" ? "selected" : ""}>${T("Edited", "Ediert")}</option>
-          <option value="0" ${state.edited === "0" ? "selected" : ""}>${T("Not yet edited", "Noch nicht ediert")}</option>
-        </select>
+        <div class="seg" id="ed" role="group" aria-label="${T("Edited or not", "Ediert oder nicht")}">
+          ${[["", T("All", "Alle"), state.index.length],
+             ["1", T("Edited", "Ediert"), state.index.length - unedited()],
+             ["0", T("Not yet edited", "Noch nicht ediert"), unedited()]].map(([v, label, n]) =>
+            `<button type="button" data-v="${v}" aria-pressed="${(state.edited || "") === v}" class="${(state.edited || "") === v ? "on" : ""}">${label} <span class="n">${n}</span></button>`).join("")}
+        </div>
         <select id="yr" aria-label="${T("Century", "Jahrhundert")}">
           <option value="">${T("All years", "Alle Jahre")}</option>
           ${years.map((y) => `<option value="${y}" ${state.year === y ? "selected" : ""}>${T(`${+y.slice(0, 2) + 1}th c. (${y}s)`, `${+y.slice(0, 2) + 1}. Jh. (${y}er)`)}</option>`).join("")}
@@ -125,11 +128,11 @@
     const yr = document.getElementById("yr");
     const ed = document.getElementById("ed");
     const draw = () => {
-      state.filter = q.value; state.year = yr.value; state.edited = ed.value;
+      state.filter = q.value; state.year = yr.value;
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
       const rows = state.index.filter((l) => {
-        if (ed.value && String(+(l.edited !== false)) !== ed.value) return false;
-        if (yr.value && (l.date || "").slice(0, 2) !== yr.value.slice(0, 2)) return false;
+        if (state.edited && String(+(l.edited !== false)) !== state.edited) return false;
+        if (yr.value && yearOf(l).slice(0, 2) !== yr.value.slice(0, 2)) return false;
         if (!words.length) return true;
         const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
         return words.every((w) => hay.includes(w));
@@ -149,7 +152,15 @@
     };
     q.addEventListener("input", draw);
     yr.addEventListener("change", draw);
-    ed.addEventListener("change", draw);
+    ed.addEventListener("click", (ev) => {
+      const b = ev.target.closest("button[data-v]");
+      if (!b) return;
+      state.edited = b.dataset.v;
+      ed.querySelectorAll("button").forEach((x) => { const on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+      const h = state.edited ? `#/?ed=${state.edited}` : "#/";
+      if (location.hash !== h) history.replaceState(null, "", location.pathname + location.search + h);
+      draw();
+    });
     draw();
   }
 
