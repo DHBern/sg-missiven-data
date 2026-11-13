@@ -13,10 +13,41 @@
   state.diff = store.get("diff", false);
   state.reader = store.get("reader", "edition");
 
+  /* Language: ?lang=de|en, else the viewer's last choice, else the browser's. */
+  const urlLang = new URLSearchParams(location.search).get("lang");
+  let LANG = ["de", "en"].includes(urlLang) ? urlLang
+    : store.get("lang", (navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en");
+  /* T("English", "Deutsch"): every visible string in both languages, side by side */
+  const T = (en, de) => (LANG === "de" ? de : en);
+  const P = (n, en1, enN, de1, deN) => (n === 1 ? T(en1, de1) : T(enN, deN));
+  const loc = (r, k) => (LANG === "de" && r[k + "_de"]) || r[k] || "";
+  function applyLang() {
+    document.documentElement.lang = LANG;
+    document.title = T("St. Gallen Missives Readings", "St. Galler Missiven: Lesungen");
+    const nav = { letters: T("Letters", "Briefe"), search: T("Search", "Suche"), places: T("Places", "Orte"), names: T("Names", "Namen"),
+                  map: T("Map", "Karte"), readers: T("Readers", "Leser"), about: T("About", "Über") };
+    document.querySelectorAll("[data-nav]").forEach((a) => { a.textContent = nav[a.dataset.nav]; });
+    const brand = document.querySelector(".brand");
+    if (brand) brand.innerHTML = `${T("St. Gallen Missives", "St. Galler Missiven")} <span>· ${T("readings", "Lesungen")}</span>`;
+    document.querySelectorAll("[data-lang]").forEach((b) => {
+      b.classList.toggle("on", b.dataset.lang === LANG);
+      b.setAttribute("aria-pressed", String(b.dataset.lang === LANG));
+    });
+  }
+  function setLang(l) {
+    LANG = l;
+    store.set("lang", l);
+    const u = new URL(location.href);
+    u.searchParams.set("lang", l);
+    history.replaceState(null, "", u);
+    applyLang();
+    route();
+  }
+
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const pct = (x) => (x == null ? "–" : (x * 100).toFixed(1).replace(".", ".") + " %");
+  const pct = (x) => (x == null ? "–" : (x * 100).toFixed(1).replace(".", LANG === "de" ? "," : ".") + " %");
   const fmtDate = (d) => {
-    if (!d) return "undated";
+    if (!d) return T("undated", "undatiert");
     const m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/.exec(d);
     if (!m) return d;
     return [m[3], m[2], m[1]].filter(Boolean).map((x) => String(+x)).join(".");
@@ -31,17 +62,22 @@
       json("data/index.json"), json("data/readers.json"), json("data/registers.json"),
       fetch("config.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}))]);
     window.addEventListener("hashchange", route);
+    document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
+    applyLang();
     route();
   }
 
   function setNav(which) {
     if (!["places", "names", "map"].includes(which)) destroyMaps();
+    if (which !== "search") clearTimeout(searchTimer);
     document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
   }
 
   function route() {
     hideTip();
-    const parts = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
+    const [path, qs] = location.hash.replace(/^#\/?/, "").split("?");
+    const parts = path.split("/").map(decodeURIComponent);
+    if (parts[0] === "search") return showSearch(new URLSearchParams(qs || ""));
     if (parts[0] === "letter" && parts[1]) return showLetter(parts[1], +(parts[2] || 1), parts[3]);
     if (parts[0] === "readers") return showReaders();
     if (parts[0] === "places") return showRegister("places");
@@ -60,23 +96,27 @@
     const best = state.readers.filter((r) => r.cer != null).sort((a, b) => a.cer - b.cer)[0];
     app.innerHTML = `
       <section class="intro">
-        <h1>The letters of St. Gallen, read by machines</h1>
-        <p>${state.index.filter((l) => l.edited !== false).length} letters to and from the city of St. Gallen, 1400–1650, from the edition of the
+        <h1>${T("The letters of St. Gallen, read by machines", "Die St. Galler Missiven, von Maschinen gelesen")}</h1>
+        <p>${T(`${state.index.filter((l) => l.edited !== false).length} letters to and from the city of St. Gallen, 1400–1650, from the edition of the
         <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>${unedited() ? `, and ${unedited()} letters of the series the edition has not yet published` : ""}.
         Every page is shown with the edition's transcription, where there is one, and with ${machineReaders()}.
-        Switch between them on the left, compare any of them with the edition, and see where they differ.</p>
-        ${best ? `<p class="muted small">Closest to the edition over all scored pages: <b>${esc(best.label)}</b>, ${pct(best.cer)} character error rate. <a href="#/readers">All readers</a>.</p>` : ""}
+        Switch between them on the left, compare any of them with the edition, and see where they differ.`,
+        `${state.index.filter((l) => l.edited !== false).length} Briefe an die und von der Stadt St. Gallen, 1400–1650, aus der Edition des
+        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchivs St. Gallen</a>${unedited() ? `, dazu ${unedited()} Briefe der Serie, die die Edition noch nicht veröffentlicht hat` : ""}.
+        Jede Seite erscheint mit der Transkription der Edition, wo es eine gibt, und mit ${machineReaders()}.
+        Links lässt sich zwischen ihnen wechseln; jede Lesung lässt sich mit der Edition vergleichen.`)}</p>
+        ${best ? `<p class="muted small">${T("Closest to the edition over all scored pages:", "Am nächsten an der Edition über alle bewerteten Seiten:")} <b>${esc(loc(best, "label"))}</b>, ${pct(best.cer)} ${T("character error rate", "Zeichenfehlerrate")}. <a href="#/readers">${T("All readers", "Alle Leser")}</a>.</p>` : ""}
       </section>
       <div class="filters">
-        <input id="q" type="search" placeholder="Search sender, recipient, regest, number…" value="${esc(state.filter)}" aria-label="Search letters">
-        <select id="ed" aria-label="Edited or not">
-          <option value="">All letters</option>
-          <option value="1" ${state.edited === "1" ? "selected" : ""}>Edited</option>
-          <option value="0" ${state.edited === "0" ? "selected" : ""}>Not yet edited</option>
+        <input id="q" type="search" placeholder="${T("Search sender, recipient, regest, number…", "Absender, Empfänger, Regest, Nummer suchen…")}" value="${esc(state.filter)}" aria-label="${T("Search letters", "Briefe durchsuchen")}">
+        <select id="ed" aria-label="${T("Edited or not", "Ediert oder nicht")}">
+          <option value="">${T("All letters", "Alle Briefe")}</option>
+          <option value="1" ${state.edited === "1" ? "selected" : ""}>${T("Edited", "Ediert")}</option>
+          <option value="0" ${state.edited === "0" ? "selected" : ""}>${T("Not yet edited", "Noch nicht ediert")}</option>
         </select>
-        <select id="yr" aria-label="Century">
-          <option value="">All years</option>
-          ${years.map((y) => `<option value="${y}" ${state.year === y ? "selected" : ""}>${y.slice(0, 2)}th c. (${y}s)</option>`).join("")}
+        <select id="yr" aria-label="${T("Century", "Jahrhundert")}">
+          <option value="">${T("All years", "Alle Jahre")}</option>
+          ${years.map((y) => `<option value="${y}" ${state.year === y ? "selected" : ""}>${T(`${+y.slice(0, 2) + 1}th c. (${y}s)`, `${+y.slice(0, 2) + 1}. Jh. (${y}er)`)}</option>`).join("")}
         </select>
         <span id="count" class="muted small"></span>
       </div>
@@ -94,18 +134,18 @@
         const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
         return words.every((w) => hay.includes(w));
       });
-      document.getElementById("count").textContent = `${rows.length} letters`;
+      document.getElementById("count").textContent = `${rows.length} ${P(rows.length, "letter", "letters", "Brief", "Briefe")}`;
       document.getElementById("list").innerHTML = rows.slice(0, 400).map((l) => `
         <a class="row" href="#/letter/${l.id}/1">
           <span class="num">${esc(nrOf(l))}</span>
           <span class="date">${l.edited === false ? (l.year ? esc(l.year) + "?" : "") : esc(fmtDate(l.date))}</span>
           ${l.edited === false
             ? (l.draft
-              ? `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")} <span class="muted small">· not yet edited · draft</span></span><span class="reg">${esc(l.regest)}</span></span>`
-              : `<span><span class="who muted">Not yet edited</span><span class="reg">${l.pages} page${l.pages === 1 ? "" : "s"}, machine readings only</span></span>`)
+              ? `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")} <span class="muted small">· ${T("not yet edited · draft", "noch nicht ediert · Entwurf")}</span></span><span class="reg">${esc(l.regest)}</span></span>`
+              : `<span><span class="who muted">${T("Not yet edited", "Noch nicht ediert")}</span><span class="reg">${l.pages} ${P(l.pages, "page", "pages", "Seite", "Seiten")}, ${T("machine readings only", "nur maschinelle Lesungen")}</span></span>`)
             : `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span>
           <span class="reg">${esc(l.regest)}</span></span>`}
-        </a>`).join("") + (rows.length > 400 ? `<p class="muted small">Showing 400 of ${rows.length} — narrow the search.</p>` : "");
+        </a>`).join("") + (rows.length > 400 ? `<p class="muted small">${T(`Showing 400 of ${rows.length} — narrow the search.`, `400 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
     yr.addEventListener("change", draw);
@@ -117,9 +157,9 @@
 
   function machineReaders() {
     const rs = state.readers.filter((r) => r.id !== "edition");
-    const names = rs.map((r) => esc(r.label));
-    const list = names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names[0] || "";
-    return `the readings of ${list}`;
+    const names = rs.map((r) => esc(loc(r, "label")));
+    const list = names.length > 1 ? names.slice(0, -1).join(", ") + T(" and ", " und ") + names[names.length - 1] : names[0] || "";
+    return T(`the readings of ${list}`, `den Lesungen von ${list}`);
   }
 
   /* ---------- readers ---------- */
@@ -130,29 +170,52 @@
     const max = Math.max(...scored.map((r) => r.cer), 0.01);
     app.innerHTML = `
       <section class="prose">
-        <h1>Readers</h1>
-        <p>Each automatic reading is compared with the edition's text of the same page: character error rate
+        <h1>${T("Readers", "Leser")}</h1>
+        <p>${T(`Each automatic reading is compared with the edition's text of the same page: character error rate
         (CER) = edits needed to turn the reading into the edition ÷ characters of the edition, with whitespace
-        collapsed. Corpus CER sums over all scored pages; the median is the typical page.</p>
-        <p class="muted small">A distance to <em>this edition's</em> conventions, not a verdict on palaeography. A reader that writes
+        collapsed. Corpus CER sums over all scored pages; the median is the typical page.`,
+        `Jede automatische Lesung wird mit dem Text der Edition auf derselben Seite verglichen: Zeichenfehlerrate
+        (CER) = Änderungen, die aus der Lesung den Text der Edition machen ÷ Zeichen der Edition, Leerraum
+        zusammengefasst. Die Korpus-CER summiert über alle bewerteten Seiten; der Median ist die typische Seite.`)}</p>
+        <p class="muted small">${T(`A distance to <em>this edition's</em> conventions, not a verdict on palaeography. A reader that writes
         <i>ů</i> where the edition writes <i>uo</i>, keeps <i>ſ</i>, or reads the archivist's later docket is counted as wrong.
-        Pages without edition text (blank backs, address leaves the edition leaves out) are read but not scored.</p>
+        Pages without edition text (blank backs, address leaves the edition leaves out) are read but not scored.`,
+        `Gemessen wird der Abstand zu den Konventionen <em>dieser</em> Edition, kein Urteil über Paläographie. Wer
+        <i>ů</i> schreibt, wo die Edition <i>uo</i> schreibt, <i>ſ</i> beibehält oder den späteren Dorsalvermerk des Archivars liest, wird als Fehler gezählt.
+        Seiten ohne Text der Edition (leere Rückseiten, Adressblätter, die die Edition weglässt) werden gelesen, aber nicht bewertet.`)}</p>
       </section>
       <div class="scroll"><table class="scores">
-        <thead><tr><th>Reader</th><th>Kind</th><th>CER</th><th>Median page</th><th>Pages read / scored</th><th>About</th></tr></thead>
+        <thead><tr><th>${T("Reader", "Leser")}</th><th>${T("Kind", "Art")}</th><th>CER</th><th>${T("Median page", "Median pro Seite")}</th><th>${T("Pages read / scored", "Seiten gelesen / bewertet")}</th><th>${T("About", "Beschreibung")}</th></tr></thead>
         <tbody>${state.readers.filter((r) => r.id !== "edition").map((r) => `
-          <tr><td><b>${esc(r.label)}</b></td><td>${esc(r.kind)}</td>
+          <tr><td><b>${esc(loc(r, "label"))}</b></td><td>${esc(loc(r, "kind"))}</td>
           <td class="n">${pct(r.cer)}<div class="bar"><i style="width:${r.cer == null ? 0 : (100 * r.cer / max).toFixed(1)}%"></i></div></td>
           <td class="n">${pct(r.median_page_cer)}</td>
           <td class="n">${r.pages_read ?? 0} / ${r.pages_scored ?? 0}</td>
-          <td class="small">${esc(r.about || "")}${r.caveat ? `<div class="caveat">${esc(r.caveat)}</div>` : ""}${r.note ? `<div class="muted">${esc(r.note)}</div>` : ""}</td></tr>`).join("")}
+          <td class="small">${esc(loc(r, "about"))}${r.caveat ? `<div class="caveat">${esc(loc(r, "caveat"))}</div>` : ""}${r.note ? `<div class="muted">${esc(loc(r, "note"))}</div>` : ""}</td></tr>`).join("")}
         </tbody></table></div>`;
   }
 
   function showAbout() {
     setNav("about");
     destroyOsd();
-    app.innerHTML = `<section class="prose">
+    app.innerHTML = LANG === "de" ? `<section class="prose">
+      <h1>Über diese Seite</h1>
+      <p>Eine Demonstration der <a href="https://www.dh.unibe.ch/" target="_blank" rel="noopener">Digital Humanities der Universität Bern</a>
+      an der Edition <i>Briefverkehr der Stadt St. Gallen 1400–1650</i> des Stadtarchivs und der Vadianischen Sammlung der Ortsbürgergemeinde St. Gallen
+      (<a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">missiven.stadtarchiv.ch</a>).
+      Das TEI der Edition steht unter CC BY-SA 4.0; die Bilder kommen vom IIIF-Server der Edition.</p>
+      <h2>Was zu sehen ist</h2>
+      <ul>
+        <li><b>Edition</b>: die edierte Transkription mit der Auszeichnung von Personen, Organisationen, Orten und Daten durch die Editorinnen und Editoren. Ein Name zeigt beim Darüberfahren seinen Registereintrag.</li>
+        <li><b>Maschinelle Lesungen</b>: jedes Seitenbild ohne Hilfe der Edition gelesen, als ganze Seite (Vision-Language-Modelle) oder Zeile für Zeile nach automatischer Segmentierung (kraken, TrOCR).</li>
+        <li><b>Gemeinsame Lesung</b>: die maschinellen Lesungen aneinander ausgerichtet und zu einer zusammengeführt; wie, steht auf der Seite <a href="#/readers">Leser</a>.</li>
+        <li><b>Mit der Edition vergleichen</b>: Wörter, die die Lesung hat und die Edition nicht, sind <ins>grün</ins>, Wörter der Edition, die der Lesung fehlen, <del>rot</del> markiert.</li>
+        <li><b>Entitäten</b>: in der Edition die Auszeichnung der Editorinnen und Editoren; in den Lesungen die automatische Auszeichnung, gelernt aus der Auszeichnung der Edition und mit ihren Registern verknüpft.</li>
+        <li><b>Orte, Namen, Karte</b>: die Register der Edition mit allen edierten Briefen, die einen Eintrag nennen; Funde in noch nicht edierten Briefen stehen getrennt und sind automatisch.</li>
+      </ul>
+      <h2>Daten und Code</h2>
+      <p><a href="https://github.com/DHBern/sg-missiven-data" target="_blank" rel="noopener">github.com/DHBern/sg-missiven-data</a> – die Lesungen liegen in <code>readings/</code>, eine JSON-Zeile pro Seite und Leser.</p>
+    </section>` : `<section class="prose">
       <h1>About</h1>
       <p>A demonstration by <a href="https://www.dh.unibe.ch/" target="_blank" rel="noopener">Digital Humanities, University of Bern</a>,
       on the edition <i>Briefverkehr der Stadt St. Gallen 1400–1650</i> of the Stadtarchiv und Vadianische Sammlung der Ortsbürgergemeinde St. Gallen
@@ -164,7 +227,8 @@
         <li><b>Machine readings</b>: every page image read without the edition's help, as whole pages (vision-language models) or line by line after automatic segmentation (kraken, TrOCR).</li>
         <li><b>Joint reading</b>: the machine readings aligned and combined into one; how it is built is on the <a href="#/readers">readers</a> page.</li>
         <li><b>Compare with edition</b>: words the reading has and the edition does not are marked <ins>green</ins>, words of the edition the reading misses <del>red</del>.</li>
-        <li><b>Entities</b>: on the edition the editors' tagging; on the joint reading the automatic tagging, learned from the edition's own tagging and linked to its registers.</li>
+        <li><b>Entities</b>: on the edition the editors' tagging; on the machine readings the automatic tagging, learned from the edition's own tagging and linked to its registers.</li>
+        <li><b>Places, Names, Map</b>: the edition's registers with every edited letter that names an entry; finds in letters not yet edited are listed apart and are automatic.</li>
       </ul>
       <h2>Data and code</h2>
       <p><a href="https://github.com/DHBern/sg-missiven-data" target="_blank" rel="noopener">github.com/DHBern/sg-missiven-data</a> — the readings are in <code>readings/</code>, one JSON line per page and reader.</p>
@@ -175,9 +239,12 @@
   /* The edition's registers with every edited letter that names an entry, in the
      text or in the header. Built from the TEI by scripts/build_site.py; the
      automatic tagging of letters not yet edited will add to it later. */
-  const FTYPE = { P: "Settlement", A: "Region, state", S: "Building, site", H: "Water", L: "Area", T: "Mountain", R: "Road", V: "Forest", U: "Undersea" };
-  const KIND = { place: "Place", person: "Person", org: "Organisation" };
-  const ROLE = { sender: "sender", recipient: "recipient", place: "place of writing" };
+  const FTYPE_EN = { P: "Settlement", A: "Region, state", S: "Building, site", H: "Water", L: "Area", T: "Mountain", R: "Road", V: "Forest", U: "Undersea" };
+  const FTYPE_DE = { P: "Siedlung", A: "Region, Staat", S: "Gebäude, Stätte", H: "Gewässer", L: "Gebiet", T: "Berg", R: "Strasse", V: "Wald", U: "Unterwasser" };
+  const ftype = (k) => (LANG === "de" ? FTYPE_DE : FTYPE_EN)[k];
+  const kindName = (k) => ({ place: T("Place", "Ort"), person: T("Person", "Person"), org: T("Organisation", "Organisation") }[k]);
+  const roleName = (r) => ({ sender: T("sender", "Absender"), recipient: T("recipient", "Empfänger"), issuer: T("issuer", "Aussteller"),
+                             place: T("place of writing", "Ausstellungsort") }[r] || r);
   const lettersOf = (e) => new Set((e.occ || []).map((o) => o[0])).size;
   const autoLettersOf = (e) => new Set((e.occ_auto || []).map((o) => o[0])).size;
   let leafletMaps = [];
@@ -195,7 +262,7 @@
   function marker(id, e, m) {
     const n = lettersOf(e);
     return L.circleMarker(e.geo, { radius: Math.min(22, 4 + Math.sqrt(n) * 1.6), className: "lf-place", weight: 1.5, fillOpacity: 0.45 })
-      .bindTooltip(`${esc(e.name)} · ${n} letter${n === 1 ? "" : "s"}`)
+      .bindTooltip(`${esc(e.name)} · ${n} ${P(n, "letter", "letters", "Brief", "Briefe")}`)
       .on("click", () => { location.hash = `#/entry/${id}`; })
       .addTo(m);
   }
@@ -210,20 +277,24 @@
     const noGeo = all.filter(([, e]) => !e.geo).length;
     app.innerHTML = `
       <section class="intro">
-        <h1>${which === "places" ? "Places" : "Names"}</h1>
+        <h1>${which === "places" ? T("Places", "Orte") : T("Names", "Namen")}</h1>
         <p>${which === "places"
-          ? `The edition's place register: ${all.length} places, ${all.length - noGeo} of them with coordinates (<a href="#/map">map</a>).`
-          : `The edition's register of persons and organisations: ${all.filter(([, e]) => e.kind === "person").length} persons, ${all.filter(([, e]) => e.kind === "org").length} organisations.`}
-        Each entry lists the edited letters that name it, in the text or as sender, recipient or place of writing.
-        Letters not yet edited are listed apart: their names come from the automatic tagging of the machine readings, linked to the register by rule and not checked.</p>
+          ? T(`The edition's place register: ${all.length} places, ${all.length - noGeo} of them with coordinates (<a href="#/map">map</a>).`,
+              `Das Ortsregister der Edition: ${all.length} Orte, ${all.length - noGeo} davon mit Koordinaten (<a href="#/map">Karte</a>).`)
+          : T(`The edition's register of persons and organisations: ${all.filter(([, e]) => e.kind === "person").length} persons, ${all.filter(([, e]) => e.kind === "org").length} organisations.`,
+              `Das Personen- und Organisationsregister der Edition: ${all.filter(([, e]) => e.kind === "person").length} Personen, ${all.filter(([, e]) => e.kind === "org").length} Organisationen.`)}
+        ${T(`Each entry lists the edited letters that name it, in the text or as sender, recipient or place of writing.
+        Letters not yet edited are listed apart: their names come from the automatic tagging of the machine readings, linked to the register by rule and not checked.`,
+        `Jeder Eintrag nennt die edierten Briefe, die ihn erwähnen, im Text oder als Absender, Empfänger oder Ausstellungsort.
+        Noch nicht edierte Briefe stehen getrennt: ihre Namen stammen aus der automatischen Auszeichnung der maschinellen Lesungen, sind nach Regeln mit dem Register verknüpft und nicht geprüft.`)}</p>
       </section>
       <div class="filters">
-        <input id="rq" type="search" placeholder="Search names, description, country…" value="${esc(f[which] || "")}" aria-label="Search the register">
+        <input id="rq" type="search" placeholder="${T("Search names, description, country…", "Namen, Beschreibung, Land suchen…")}" value="${esc(f[which] || "")}" aria-label="${T("Search the register", "Register durchsuchen")}">
         ${which === "places"
-          ? `<select id="rt" aria-label="Type"><option value="">All types</option>${Object.entries(FTYPE).filter(([k]) => all.some(([, e]) => e.ftype === k)).map(([k, v]) => `<option value="${k}" ${f.ftype === k ? "selected" : ""}>${v}</option>`).join("")}</select>
-             <label class="small"><input type="checkbox" id="rg" ${f.nogeo ? "checked" : ""}> without coordinates (${noGeo})</label>`
-          : `<select id="rt" aria-label="Kind"><option value="">Persons and organisations</option><option value="person" ${f.kind === "person" ? "selected" : ""}>Persons</option><option value="org" ${f.kind === "org" ? "selected" : ""}>Organisations</option></select>`}
-        <label class="small"><input type="checkbox" id="ru" ${f.auto ? "checked" : ""}> in letters not yet edited (${all.filter(([, e]) => e.occ_auto).length})</label>
+          ? `<select id="rt" aria-label="${T("Type", "Typ")}"><option value="">${T("All types", "Alle Typen")}</option>${Object.keys(FTYPE_EN).filter((k) => all.some(([, e]) => e.ftype === k)).map((k) => `<option value="${k}" ${f.ftype === k ? "selected" : ""}>${ftype(k)}</option>`).join("")}</select>
+             <label class="small"><input type="checkbox" id="rg" ${f.nogeo ? "checked" : ""}> ${T("without coordinates", "ohne Koordinaten")} (${noGeo})</label>`
+          : `<select id="rt" aria-label="${T("Kind", "Art")}"><option value="">${T("Persons and organisations", "Personen und Organisationen")}</option><option value="person" ${f.kind === "person" ? "selected" : ""}>${T("Persons", "Personen")}</option><option value="org" ${f.kind === "org" ? "selected" : ""}>${T("Organisations", "Organisationen")}</option></select>`}
+        <label class="small"><input type="checkbox" id="ru" ${f.auto ? "checked" : ""}> ${T("in letters not yet edited", "in noch nicht edierten Briefen")} (${all.filter(([, e]) => e.occ_auto).length})</label>
         <span id="rcount" class="muted small"></span>
       </div>
       <div class="list reg" id="rlist"></div>`;
@@ -242,15 +313,15 @@
         const hay = [e.name, e.desc, e.country, ...(e.occ || []).map((o) => o[1]), ...(e.occ_auto || []).map((o) => o[1])].join(" ").toLowerCase();
         return words.every((w) => hay.includes(w));
       });
-      document.getElementById("rcount").textContent = `${rows.length} ${rows.length === 1 ? "entry" : "entries"}`;
+      document.getElementById("rcount").textContent = `${rows.length} ${P(rows.length, "entry", "entries", "Eintrag", "Einträge")}`;
       document.getElementById("rlist").innerHTML = rows.slice(0, 500).map(([id, e]) => {
         const n = lettersOf(e);
         return `<a class="row" href="#/entry/${encodeURIComponent(id)}">
-          <span class="num">${n || "–"}<span class="muted small"> ${n === 1 ? "letter" : "letters"}</span></span>
-          <span><span class="who">${esc(e.name)}${which === "places" && !e.geo ? ` <span class="badge">no coordinates</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} not yet edited</span>` : ""}</span>
-          <span class="reg">${esc([which === "places" ? FTYPE[e.ftype] : KIND[e.kind], e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
+          <span class="num">${n || "–"}<span class="muted small"> ${P(n, "letter", "letters", "Brief", "Briefe")}</span></span>
+          <span><span class="who">${esc(e.name)}${which === "places" && !e.geo ? ` <span class="badge">${T("no coordinates", "ohne Koordinaten")}</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} ${T("not yet edited", "noch nicht ediert")}</span>` : ""}</span>
+          <span class="reg">${esc([which === "places" ? ftype(e.ftype) : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
         </a>`;
-      }).join("") + (rows.length > 500 ? `<p class="muted small">Showing 500 of ${rows.length} — narrow the search.</p>` : "");
+      }).join("") + (rows.length > 500 ? `<p class="muted small">${T(`Showing 500 of ${rows.length} — narrow the search.`, `500 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
     t.addEventListener("change", draw);
@@ -262,7 +333,7 @@
   function showEntry(id) {
     destroyOsd(); destroyMaps();
     const e = state.registers[id];
-    if (!e) { app.innerHTML = `<p>No register entry ${esc(id)}.</p>`; return; }
+    if (!e) { app.innerHTML = `<p>${T("No register entry", "Kein Registereintrag")} ${esc(id)}.</p>`; return; }
     setNav(e.kind === "place" ? "places" : "names");
     const groups = new Map();
     for (const [lid, form, role] of e.occ || []) {
@@ -284,33 +355,35 @@
     const links = e.links.filter((l) => /^https?:/.test(l.url));
     app.innerHTML = `
       <section class="entry">
-        <p class="muted small"><a href="#/${e.kind === "place" ? "places" : "names"}">← ${e.kind === "place" ? "Places" : "Names"}</a></p>
+        <p class="muted small"><a href="#/${e.kind === "place" ? "places" : "names"}">← ${e.kind === "place" ? T("Places", "Orte") : T("Names", "Namen")}</a></p>
         <h1>${esc(e.name)}</h1>
-        <p class="muted">${esc([e.kind === "place" ? FTYPE[e.ftype] || "Place" : KIND[e.kind], e.country, e.desc].filter(Boolean).join(" · "))}</p>
+        <p class="muted">${esc([e.kind === "place" ? ftype(e.ftype) || kindName("place") : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</p>
         ${links.length ? `<p class="links">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.type)}</a>`).join("")}</p>` : ""}
         <p class="small muted">Register <code>${esc(id)}</code>${e.kind === "place" && e.geo ? ` · ${e.geo[0].toFixed(4)}, ${e.geo[1].toFixed(4)}` : ""} ·
-          <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">in the edition ↗</a></p>
-        ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">The register has no coordinates for this place, so it is not on the map.</p>`) : ""}
-        <h2>${rows.length} edited letter${rows.length === 1 ? "" : "s"}</h2>
+          <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">${T("in the edition", "in der Edition")} ↗</a></p>
+        ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">${T("The register has no coordinates for this place, so it is not on the map.", "Das Register gibt für diesen Ort keine Koordinaten, darum fehlt er auf der Karte.")}</p>`) : ""}
+        <h2>${rows.length} ${P(rows.length, "edited letter", "edited letters", "edierter Brief", "edierte Briefe")}</h2>
 
         <div class="list">${rows.map((r) => `
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
             <span class="date">${esc(fmtDate(r.l.date))}</span>
             <span><span class="who">${esc(r.l.sender.join(", ") || "?")} → ${esc(r.l.recipient.join(", ") || "?")}</span>
-            <span class="reg">${r.forms.size ? `<i>${[...r.forms].map(esc).join("</i>, <i>")}</i>` : ""}${r.roles.size ? `${r.forms.size ? " · " : ""}${[...r.roles].map((x) => ROLE[x] || x).join(", ")}` : ""}</span></span>
+            <span class="reg">${r.forms.size ? `<i>${[...r.forms].map(esc).join("</i>, <i>")}</i>` : ""}${r.roles.size ? `${r.forms.size ? " · " : ""}${[...r.roles].map(roleName).join(", ")}` : ""}</span></span>
           </a>`).join("")}</div>
-        <h2>${autoRows.length ? autoRows.length + " " : ""}Letter${autoRows.length === 1 ? "" : "s"} not yet edited <span class="badge">automatic</span></h2>
+        <h2>${autoRows.length ? autoRows.length + " " : ""}${P(autoRows.length, "Letter not yet edited", "Letters not yet edited", "noch nicht edierter Brief", "Noch nicht edierte Briefe")} <span class="badge">${T("automatic", "automatisch")}</span></h2>
         ${autoRows.length
-          ? `<p class="muted small">Found by the automatic tagging of the machine reading and linked to this entry by rule; neither is checked.</p>`
-          : `<p class="muted small">${unedited() ? `None found so far in the ${unedited()} letters not yet edited.` : "No letters not yet edited are read yet."}
-             Names are found by the automatic tagging of the machine readings and linked to the register only where the link is reliable enough${e.kind === "person" ? " (persons: only if the edition attests them within 40 years of the letter)" : ""}.</p>`}
+          ? `<p class="muted small">${T("Found by the automatic tagging of the machine reading and linked to this entry by rule; neither is checked.",
+              "Gefunden von der automatischen Auszeichnung der maschinellen Lesung und nach Regeln mit diesem Eintrag verknüpft; beides ist nicht geprüft.")}</p>`
+          : `<p class="muted small">${unedited() ? T(`None found so far in the ${unedited()} letters not yet edited.`, `Bisher in keinem der ${unedited()} noch nicht edierten Briefe gefunden.`) : T("No letters not yet edited are read yet.", "Noch kein nicht edierter Brief ist gelesen.")}
+             ${T("Names are found by the automatic tagging of the machine readings and linked to the register only where the link is reliable enough",
+                 "Namen findet die automatische Auszeichnung der maschinellen Lesungen; mit dem Register verknüpft werden sie nur, wo die Verknüpfung verlässlich genug ist")}${e.kind === "person" ? T(" (persons: only if the edition attests them within 40 years of the letter)", " (Personen: nur, wenn die Edition sie innerhalb von 40 Jahren um den Brief belegt)") : ""}.</p>`}
         <div class="list">${autoRows.map((r) => `
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
             <span class="date">${r.l.year ? esc(r.l.year) + "?" : ""}</span>
-            <span><span class="who">${esc(r.l.sender.join(", ") || "Not yet edited")}${r.l.recipient.length ? " → " + esc(r.l.recipient.join(", ")) : ""}</span>
-            <span class="reg"><i>${[...r.forms].map(esc).join("</i>, <i>")}</i>${r.roles.size ? " · " + [...r.roles].map((x) => ROLE[x] || x).join(", ") : ""}</span></span>
+            <span><span class="who">${esc(r.l.sender.join(", ") || T("Not yet edited", "Noch nicht ediert"))}${r.l.recipient.length ? " → " + esc(r.l.recipient.join(", ")) : ""}</span>
+            <span class="reg"><i>${[...r.forms].map(esc).join("</i>, <i>")}</i>${r.roles.size ? " · " + [...r.roles].map(roleName).join(", ") : ""}</span></span>
           </a>`).join("")}</div>
       </section>`;
     if (e.geo && window.L) {
@@ -328,23 +401,303 @@
     const missing = places.filter(([, e]) => !e.geo).sort((a, b) => lettersOf(b[1]) - lettersOf(a[1]));
     app.innerHTML = `
       <section class="intro">
-        <h1>Map</h1>
-        <p>${geo.length} of the ${places.length} places in the edition's register, each sized by the number of edited letters that name it.
-        Click a place for its letters. <a href="#/places">All places</a>.</p>
+        <h1>${T("Map", "Karte")}</h1>
+        <p>${T(`${geo.length} of the ${places.length} places in the edition's register, each sized by the number of edited letters that name it.
+        Click a place for its letters.`, `${geo.length} der ${places.length} Orte im Register der Edition, jeder so gross wie die Zahl der edierten Briefe, die ihn nennen.
+        Ein Klick auf einen Ort zeigt seine Briefe.`)} <a href="#/places">${T("All places", "Alle Orte")}</a>.</p>
       </section>
-      <div id="bigmap" class="bigmap" role="region" aria-label="Map of the places named in the letters"></div>
+      <div id="bigmap" class="bigmap" role="region" aria-label="${T("Map of the places named in the letters", "Karte der in den Briefen genannten Orte")}"></div>
       <section class="prose">
-        <h2>Not on the map: ${missing.length} places without coordinates</h2>
-        <p class="muted small">The register gives no coordinates for these. Most are regions, rivers or buildings; the list with links is in
+        <h2>${T(`Not on the map: ${missing.length} places without coordinates`, `Nicht auf der Karte: ${missing.length} Orte ohne Koordinaten`)}</h2>
+        <p class="muted small">${T("The register gives no coordinates for these. Most are regions, rivers or buildings; the list with links is in",
+          "Für diese gibt das Register keine Koordinaten. Meist sind es Regionen, Flüsse oder Gebäude; die Liste mit Links steht in")}
         <a href="https://github.com/DHBern/sg-missiven-data/blob/main/docs/places_without_coordinates.md" target="_blank" rel="noopener">docs/places_without_coordinates.md</a>.</p>
         <p class="chips">${missing.map(([id, e]) => `<a href="#/entry/${encodeURIComponent(id)}">${esc(e.name)} <span class="muted">${lettersOf(e)}</span></a>`).join("")}</p>
       </section>`;
-    if (!window.L) { document.getElementById("bigmap").innerHTML = `<p class="noimg">The map library did not load.</p>`; return; }
+    if (!window.L) { document.getElementById("bigmap").innerHTML = `<p class="noimg">${T("The map library did not load.", "Die Kartenbibliothek wurde nicht geladen.")}</p>`; return; }
     const m = baseMap("bigmap", { scrollWheelZoom: true });
     geo.sort((a, b) => lettersOf(b[1]) - lettersOf(a[1])).forEach(([id, e]) => marker(id, e, m));
     /* open on the places named in several letters; the far ones are a zoom away */
     const core = geo.filter(([, e]) => lettersOf(e) >= 3);
     m.fitBounds(L.latLngBounds((core.length > 5 ? core : geo).map(([, e]) => e.geo)), { padding: [20, 20] });
+  }
+
+  /* ---------- search ---------- */
+  /* A dedicated search over every letter of the series: full text (the edition's
+     text, else the best machine reading) and every facet the data holds. The
+     facets come from site/data/search/meta.json; the text is loaded, in
+     parallel shards, only once a text query is typed. The whole search lives in
+     the URL (#/search?q=…&kw=…), so a search can be bookmarked and sent. */
+  const FACETS = [
+    { k: "st", en: "Status", de: "Status" },
+    { k: "dec", en: "Decade", de: "Jahrzehnt" },
+    { k: "snd", en: "Sender", de: "Absender" },
+    { k: "rcp", en: "Recipient", de: "Empfänger" },
+    { k: "op", en: "Place of writing", de: "Ausstellungsort" },
+    { k: "kw", en: "Keyword", de: "Schlagwort" },
+    { k: "per", en: "Person named", de: "Genannte Person" },
+    { k: "org", en: "Organisation named", de: "Genannte Organisation" },
+    { k: "pl", en: "Place named", de: "Genannter Ort" },
+    { k: "dr", en: "Regest", de: "Regest" },
+    { k: "src", en: "Text from", de: "Text aus" },
+  ];
+  const search = { meta: null, refs: null, texts: null, loading: null };
+  let searchTimer = null;
+
+  async function searchMeta() {
+    if (!search.meta) {
+      search.meta = await json("data/search/meta.json");
+      /* letters -> register entries they name, from the registers (edited: the
+         editors' tags; not yet edited: the automatic tagging) */
+      const refs = new Map(search.meta.letters.map((m) => [m.id, { per: new Set(), org: new Set(), pl: new Set() }]));
+      for (const [ref, e] of Object.entries(state.registers)) {
+        const k = e.kind === "place" ? "pl" : e.kind === "person" ? "per" : "org";
+        for (const [lid] of [...(e.occ || []), ...(e.occ_auto || [])]) if (refs.has(lid)) refs.get(lid)[k].add(ref);
+      }
+      search.refs = refs;
+    }
+    return search.meta;
+  }
+
+  function searchTexts() {
+    if (!search.loading) {
+      search.loading = Promise.all(Array.from({ length: search.meta.shards }, (_, i) => json(`data/search/text-${i}.json`)))
+        .then((shards) => { search.texts = Object.assign({}, ...shards); return search.texts; });
+    }
+    return search.loading;
+  }
+
+  /* Normalise for matching, keeping for every output character the position it
+     came from (for highlighting). Tolerant: the old spelling's variants count as
+     one: u/v/w, i/y/j, ſ/s, doubled letters, ů = uo = u, ä = ae = a, and a word
+     broken at the line end. */
+  function normText(str, tol) {
+    let out = "", map = [], last = " ";
+    for (let i = 0; i < str.length; i++) {
+      const c = str[i];
+      if (tol && (c === "-" || c === "¬" || c === "=") && /^[ \t]*\n/.test(str.slice(i + 1, i + 4))) {
+        while (i + 1 < str.length && str[i + 1] !== "\n") i++;
+        i++; // the line break: the word continues on the next line
+        continue;
+      }
+      let d = c.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace("ß", "ss").replace("ſ", "s");
+      if (tol) d = d.replace(/[vw]/g, "u").replace(/[yj]/g, "i");
+      for (let ch of d) {
+        if (!/[a-z0-9]/.test(ch)) ch = " ";
+        if (ch === " " && last === " ") continue;
+        if (tol && ch !== " " && ch === last) continue;
+        if (tol && ((ch === "e" && /[aou]/.test(last)) || (ch === "o" && last === "u"))) continue;
+        out += ch; map.push(i); last = ch;
+      }
+    }
+    return { s: out, map };
+  }
+
+  function parseQuery(q, tol) {
+    const terms = [];
+    q.replace(/"([^"]+)"|(\S+)/g, (_, ph, w) => { const t = normText(ph || w, tol).s.trim(); if (t) terms.push(t); });
+    return terms;
+  }
+
+  function facetValues(m, k) {
+    const r = search.refs.get(m.id);
+    switch (k) {
+      case "st": return [m.ed ? "ed" : "un"];
+      case "dec": return m.y ? [String(Math.floor(m.y / 10) * 10)] : [];
+      case "snd": return m.s.filter(Boolean);
+      case "rcp": return m.r.filter(Boolean);
+      case "op": return m.op;
+      case "kw": return m.kw;
+      case "per": case "org": case "pl": return [...r[k]];
+      case "dr": return [m.dr ? "yes" : "no"];
+      case "src": return m.src;
+    }
+    return [];
+  }
+  function facetLabel(k, v) {
+    if (k === "st") return v === "ed" ? T("Edited", "Ediert") : T("Not yet edited", "Noch nicht ediert");
+    if (k === "dec") return T(`${v}s`, `${v}er`);
+    if (k === "dr") return v === "yes" ? T("Drafted automatically", "automatisch entworfen") : T("None drafted", "kein Entwurf");
+    if (k === "src") return v === "edition" ? T("Edition", "Edition") : T("Machine reading", "Maschinelle Lesung");
+    if (["per", "org", "pl"].includes(k)) return (state.registers[v] || {}).name || v;
+    return v;
+  }
+
+  async function showSearch(params) {
+    setNav("search");
+    destroyOsd();
+    const meta = await searchMeta();
+    const sel = Object.fromEntries(FACETS.map((f) => [f.k, new Set(params.getAll(f.k))]));
+    const ui = { q: params.get("q") || "", tol: params.get("tol") !== "0", sort: params.get("sort") || "date",
+                 from: params.get("from") || "", to: params.get("to") || "", shown: 50, open: new Set(params.getAll("open")) };
+    app.innerHTML = `
+      <section class="intro">
+        <h1>${T("Search", "Suche")}</h1>
+        <p>${T(`All ${meta.letters.length} letters: the text of the edition, and for letters and pages the edition does not have, the machine reading (${esc(readerLabel(meta.reader))}). Narrow the results with the facets; every count shows how many letters remain with it.`,
+              `Alle ${meta.letters.length} Briefe: der Text der Edition, und für Briefe und Seiten, die die Edition nicht hat, die maschinelle Lesung (${esc(readerLabel(meta.reader))}). Die Facetten grenzen ein; jede Zahl sagt, wie viele Briefe damit bleiben.`)}</p>
+      </section>
+      <div class="sbar">
+        <input id="sq" type="search" value="${esc(ui.q)}" placeholder="${T('Words or "a phrase" in the text…', 'Wörter oder «eine Wendung» im Text…')}" aria-label="${T("Search the text", "Text durchsuchen")}">
+        <label class="small"><input type="checkbox" id="stol" ${ui.tol ? "checked" : ""}> ${T("tolerant spelling", "Schreibvarianten zulassen")}</label>
+        <span class="yr">${T("Years", "Jahre")} <input id="sfrom" type="number" min="1300" max="1700" value="${esc(ui.from)}" aria-label="${T("from year", "ab Jahr")}"> – <input id="sto" type="number" min="1300" max="1700" value="${esc(ui.to)}" aria-label="${T("to year", "bis Jahr")}"></span>
+        <select id="ssort" aria-label="${T("Sort", "Sortierung")}">
+          <option value="date" ${ui.sort === "date" ? "selected" : ""}>${T("by date", "nach Datum")}</option>
+          <option value="hits" ${ui.sort === "hits" ? "selected" : ""}>${T("most hits first", "meiste Treffer zuerst")}</option>
+        </select>
+        <button type="button" id="sreset" class="linkish">${T("Reset", "Zurücksetzen")}</button>
+      </div>
+      <div class="search">
+        <div class="facetwrap">
+          <button type="button" id="ftoggle" class="ftoggle" aria-expanded="false" aria-controls="facets">${T("Facets", "Facetten")} <span id="fsel"></span></button>
+          <aside class="facets" id="facets" aria-label="${T("Facets", "Facetten")}"></aside>
+        </div>
+        <section class="results"><p id="scount" class="muted small"></p><div id="sres" class="list"></div></section>
+      </div>`;
+
+    const $ = (id) => document.getElementById(id);
+    const toUrl = () => {
+      const u = new URLSearchParams();
+      if (ui.q) u.set("q", ui.q);
+      if (!ui.tol) u.set("tol", "0");
+      if (ui.sort !== "date") u.set("sort", ui.sort);
+      if (ui.from) u.set("from", ui.from);
+      if (ui.to) u.set("to", ui.to);
+      for (const f of FACETS) for (const v of sel[f.k]) u.append(f.k, v);
+      const h = "#/search" + (u.toString() ? "?" + u : "");
+      if (location.hash !== h) history.replaceState(null, "", location.pathname + location.search + h);
+    };
+
+    const run = async () => {
+      toUrl();
+      const terms = parseQuery(ui.q, ui.tol);
+      let texts = null;
+      if (terms.length) {
+        if (!search.texts) $("scount").textContent = T("Loading the texts…", "Die Texte werden geladen…");
+        texts = await searchTexts();
+      }
+      /* text and years first: they hold for every facet count */
+      const hits = new Map();
+      const base = meta.letters.filter((m) => {
+        if (ui.from && (!m.y || m.y < +ui.from)) return false;
+        if (ui.to && (!m.y || m.y > +ui.to)) return false;
+        if (!terms.length) return true;
+        const pages = texts[m.id] || [];
+        const found = [];
+        let all = new Set();
+        for (const [n, text, src] of pages) {
+          const t = normText(text, ui.tol).s;
+          const here = terms.filter((x) => t.includes(x));
+          if (here.length) { found.push({ n, text, src, here }); here.forEach((x) => all.add(x)); }
+        }
+        if (all.size < terms.length) return false;
+        hits.set(m.id, found);
+        return true;
+      });
+      const passes = (m, except) => FACETS.every((f) => f.k === except || !sel[f.k].size || facetValues(m, f.k).some((v) => sel[f.k].has(v)));
+      const rows = base.filter((m) => passes(m, null));
+      renderFacets(base, passes);
+      renderResults(rows, hits, terms);
+    };
+
+    function renderFacets(base, passes) {
+      const nSel = FACETS.reduce((n, f) => n + sel[f.k].size, 0);
+      $("fsel").textContent = nSel ? `(${nSel} ${T("selected", "gewählt")})` : "";
+      $("facets").innerHTML = FACETS.map((f) => {
+        const counts = new Map();
+        for (const m of base) if (passes(m, f.k)) for (const v of new Set(facetValues(m, f.k))) counts.set(v, (counts.get(v) || 0) + 1);
+        for (const v of sel[f.k]) if (!counts.has(v)) counts.set(v, 0);
+        let vals = [...counts.entries()];
+        if (f.k === "dec") vals.sort((a, b) => a[0].localeCompare(b[0]));
+        else vals.sort((a, b) => b[1] - a[1] || facetLabel(f.k, a[0]).localeCompare(facetLabel(f.k, b[0]), "de"));
+        if (!vals.length) return "";
+        const long = vals.length > 12 && f.k !== "dec";
+        const filt = (ui["ff_" + f.k] || "").toLowerCase();
+        let show = filt ? vals.filter(([v]) => facetLabel(f.k, v).toLowerCase().includes(filt)) : vals;
+        const full = ui.open.has(f.k) || f.k === "dec";
+        const rest = full ? 0 : Math.max(0, show.length - 12);
+        if (!full) show = show.slice(0, 12).concat(show.slice(12).filter(([v]) => sel[f.k].has(v)));
+        /* on a phone the facets start closed, so the results are not pushed off-screen */
+        const isOpen = sel[f.k].size || (!window.matchMedia("(max-width: 800px)").matches && ["st", "dec", "snd", "kw", "pl"].includes(f.k));
+        return `<details class="facet" ${isOpen ? "open" : ""} data-k="${f.k}">
+          <summary>${T(f.en, f.de)}${sel[f.k].size ? ` <span class="badge">${sel[f.k].size}</span>` : ""} <span class="muted small">${vals.length}</span></summary>
+          ${long ? `<input class="ffilter" type="search" data-k="${f.k}" value="${esc(ui["ff_" + f.k] || "")}" placeholder="${T("Filter…", "Filtern…")}" aria-label="${T("Filter", "Filtern")} ${T(f.en, f.de)}">` : ""}
+          <ul>${show.map(([v, n]) => `<li><label class="${n ? "" : "zero"}"><input type="checkbox" data-k="${f.k}" value="${esc(v)}" ${sel[f.k].has(v) ? "checked" : ""}>
+            <span class="fl">${esc(facetLabel(f.k, v))}</span><span class="fc">${n}</span></label></li>`).join("")}</ul>
+          ${rest ? `<button type="button" class="linkish more" data-k="${f.k}">${T(`show all ${vals.length}`, `alle ${vals.length} zeigen`)}</button>` : ""}
+        </details>`;
+      }).join("");
+    }
+
+    function snippet(text, terms, tol) {
+      const { s: t, map } = normText(text, tol);
+      const spans = [];
+      for (const x of terms) { let i = t.indexOf(x); while (i >= 0 && spans.length < 40) { spans.push([map[i], map[i + x.length - 1] + 1]); i = t.indexOf(x, i + x.length); } }
+      spans.sort((a, b) => a[0] - b[0]);
+      if (!spans.length) return "";
+      const a = Math.max(0, spans[0][0] - 70), b = Math.min(text.length, spans[0][1] + 110);
+      let out = "", at = a;
+      for (const [x, y] of spans) { if (x < at || y > b) continue; out += esc(text.slice(at, x)) + `<mark>${esc(text.slice(x, y))}</mark>`; at = y; }
+      out += esc(text.slice(at, b));
+      return (a > 0 ? "…" : "") + out.replace(/\n/g, " / ") + (b < text.length ? "…" : "") + (spans.length > 1 ? ` <span class="muted">(${spans.length}×)</span>` : "");
+    }
+
+    function renderResults(rows, hits, terms) {
+      const byIndex = new Map(state.index.map((l, i) => [l.id, i]));
+      const nHits = (m) => (hits.get(m.id) || []).reduce((s, h) => s + h.here.length, 0);
+      rows = [...rows].sort(ui.sort === "hits" && terms.length ? (a, b) => nHits(b) - nHits(a) || byIndex.get(a.id) - byIndex.get(b.id)
+                                                                 : (a, b) => byIndex.get(a.id) - byIndex.get(b.id));
+      $("scount").innerHTML = `${rows.length} ${P(rows.length, "letter", "letters", "Brief", "Briefe")}` +
+        (terms.length ? T(` with `, ` mit `) + (ui.q.match(/"[^"]+"|\S+/g) || []).map((t) => `<b>${esc(t)}</b>`).join(" + ") : "");
+      $("sres").innerHTML = rows.slice(0, ui.shown).map((m) => {
+        const l = state.index[byIndex.get(m.id)] || {};
+        const hs = hits.get(m.id) || [];
+        const date = m.ed ? fmtDate(l.date) : m.y ? m.y + "?" : "";
+        return `<div class="row srow">
+          <span class="num"><a href="#/letter/${m.id}/1">${esc(nrOf(l))}</a></span>
+          <span class="date">${esc(date)}</span>
+          <span><a class="who" href="#/letter/${m.id}/1">${esc((l.sender || []).join(", ") || "?")} → ${esc((l.recipient || []).join(", ") || "?")}</a>
+          ${!m.ed ? `<span class="badge auto">${T("not yet edited", "noch nicht ediert")}</span>` : ""}
+          ${hs.length ? hs.slice(0, 3).map((h) => `<a class="hit" href="#/letter/${m.id}/${h.n}/${h.src === "edition" ? "edition" : esc(h.src)}">
+              <span class="muted small">${T("p.", "S.")} ${h.n} · ${h.src === "edition" ? T("edition", "Edition") : esc(readerLabel(h.src))}</span> ${snippet(h.text, terms, ui.tol)}</a>`).join("")
+              + (hs.length > 3 ? `<span class="muted small">${T(`and ${hs.length - 3} more pages`, `und ${hs.length - 3} weitere Seiten`)}</span>` : "")
+            : `<span class="reg">${esc(l.regest || "")}</span>`}</span>
+        </div>`;
+      }).join("") + (rows.length > ui.shown ? `<button type="button" class="linkish" id="smore">${T(`Show ${Math.min(50, rows.length - ui.shown)} more of ${rows.length - ui.shown}`, `${Math.min(50, rows.length - ui.shown)} weitere von ${rows.length - ui.shown} zeigen`)}</button>` : "")
+        + (!rows.length ? `<p class="empty">${T("No letter matches. Remove a facet or a word.", "Kein Brief passt. Eine Facette oder ein Wort entfernen.")}</p>` : "");
+      const more = $("smore");
+      more && more.addEventListener("click", () => { ui.shown += 50; renderResults(rows, hits, terms); });
+    }
+
+    const later = (f, ms = 250) => { clearTimeout(searchTimer); searchTimer = setTimeout(f, ms); };
+    $("sq").addEventListener("input", () => { ui.q = $("sq").value; ui.shown = 50; later(run); });
+    $("stol").addEventListener("change", () => { ui.tol = $("stol").checked; run(); });
+    $("ssort").addEventListener("change", () => { ui.sort = $("ssort").value; run(); });
+    $("sfrom").addEventListener("input", () => { ui.from = $("sfrom").value; later(run, 400); });
+    $("sto").addEventListener("input", () => { ui.to = $("sto").value; later(run, 400); });
+    $("sreset").addEventListener("click", () => { location.hash = "#/search"; });
+    $("ftoggle").addEventListener("click", () => {
+      const open = $("facets").classList.toggle("shown");
+      $("ftoggle").setAttribute("aria-expanded", String(open));
+    });
+    $("facets").addEventListener("change", (ev) => {
+      const box = ev.target.closest("input[type=checkbox][data-k]");
+      if (!box) return;
+      const set = sel[box.dataset.k];
+      box.checked ? set.add(box.value) : set.delete(box.value);
+      ui.shown = 50;
+      run();
+    });
+    $("facets").addEventListener("input", (ev) => {
+      const f = ev.target.closest(".ffilter");
+      if (!f) return;
+      ui["ff_" + f.dataset.k] = f.value;
+      later(() => { run().then(() => { const el = app.querySelector(`.ffilter[data-k="${f.dataset.k}"]`); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } }); }, 150);
+    });
+    $("facets").addEventListener("click", (ev) => {
+      const b = ev.target.closest("button.more");
+      if (b) { ui.open.add(b.dataset.k); run(); }
+    });
+    await run();
   }
 
   /* ---------- letter ---------- */
@@ -356,7 +709,7 @@
   async function showLetter(id, pageNo, readerId) {
     setNav("letters");
     let letter;
-    try { letter = await getLetter(id); } catch { app.innerHTML = `<p>No letter ${esc(id)}. <a href="#/">All letters</a></p>`; return; }
+    try { letter = await getLetter(id); } catch { app.innerHTML = `<p>${T("No letter", "Kein Brief")} ${esc(id)}. <a href="#/">${T("All letters", "Alle Briefe")}</a></p>`; return; }
     const pages = letter.pages;
     pageNo = Math.min(Math.max(pageNo || 1, 1), pages.length);
     const page = pages[pageNo - 1];
@@ -380,7 +733,7 @@
         <section class="pane textpane">
           <div class="lnav">
             ${prev ? `<a href="#/letter/${prev.id}/1">← ${esc(nrOf(prev))}</a>` : "<span></span>"}
-            <a href="#/">All letters</a>
+            <a href="#/">${T("All letters", "Alle Briefe")}</a>
             ${next ? `<a href="#/letter/${next.id}/1">${esc(nrOf(next))} →</a>` : "<span></span>"}
           </div>
           <div class="muted small">${esc(letter.title)} · ${esc(letter.idno)}</div>
@@ -392,24 +745,25 @@
             ${letter.keywords.length ? `<div class="kw">${letter.keywords.map((k) => `<span>${esc(k)}</span>`).join("")}</div>` : ""}
           </details>` : `
           <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}?</span>` : ""}</h1>
-          <p class="caveat">Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.</p>
+          <p class="caveat">${T("Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.",
+            "Noch nicht ediert: Das Stadtarchiv hat diesen Brief nicht veröffentlicht. Was folgt, sind nur maschinelle Lesungen, ohne Edition zum Vergleich.")}</p>
           ${draftBlock(letter.auto_regest, true)}`}
           ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
-          <div class="pages"><span class="lbl">Page</span>${pages.map((p, i) =>
+          <div class="pages"><span class="lbl">${T("Page", "Seite")}</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
-          <div class="readers" role="tablist" aria-label="Readings">${readerButtons(page, reader)}</div>
+          <div class="readers" role="tablist" aria-label="${T("Readings", "Lesungen")}">${readerButtons(page, reader)}</div>
           <div class="toggles">
-            <label><input type="checkbox" id="t-diff" ${state.diff ? "checked" : ""} ${reader === "edition" || !page.text ? "disabled" : ""}><span>Compare with edition</span></label>
-            <label><input type="checkbox" id="t-ents" ${state.ents ? "checked" : ""} ${hasEnts(page, reader) ? "" : "disabled"}><span>Entities</span></label>
+            <label><input type="checkbox" id="t-diff" ${state.diff ? "checked" : ""} ${reader === "edition" || !page.text ? "disabled" : ""}><span>${T("Compare with edition", "Mit Edition vergleichen")}</span></label>
+            <label><input type="checkbox" id="t-ents" ${state.ents ? "checked" : ""} ${hasEnts(page, reader) ? "" : "disabled"}><span>${T("Entities", "Entitäten")}</span></label>
           </div>
           <div id="reading">${readingHtml(page, reader)}</div>
         </section>
         <section class="pane imgpane">
-          <div id="osd" role="img" aria-label="Facsimile of ${esc(page.facs)}"></div>
+          <div id="osd" role="img" aria-label="${T("Facsimile of", "Faksimile von")} ${esc(page.facs)}"></div>
           <div class="imgbar"><span class="muted">${esc(page.facs)}</span><span id="imglink"></span></div>
         </section>
       </div>
-      <footer class="foot">Edition: Stadtarchiv St. Gallen (CC BY-SA 4.0) · Readings: DH Bern</footer>`;
+      <footer class="foot">Edition: Stadtarchiv St. Gallen (CC BY-SA 4.0) · ${T("Readings", "Lesungen")}: DH Bern</footer>`;
 
     if (keepImage) {
       app.querySelector(".textpane").outerHTML = new DOMParser().parseFromString(html, "text/html").querySelector(".textpane").outerHTML;
@@ -427,21 +781,22 @@
     if (!d) return "";
     const who = d.sender || d.recipient ? `<div class="meta"><span class="parties">${esc(d.sender || "?")} → ${esc(d.recipient || "?")}</span></div>` : "";
     const when = [d.place, d.date_text].filter(Boolean).map(esc).join(", ");
-    return `<details class="regest draft" ${open ? "open" : ""}><summary>Automatic regest (draft${open ? "" : ", for comparison"})</summary>
-      ${who}${when ? `<p class="small muted">${when}${d.year ? ` · year read as ${esc(d.year)} (unchecked)` : ""}</p>` : ""}
+    return `<details class="regest draft" ${open ? "open" : ""}><summary>${T(`Automatic regest (draft${open ? "" : ", for comparison"})`, `Automatisches Regest (Entwurf${open ? "" : ", zum Vergleich"})`)}</summary>
+      ${who}${when ? `<p class="small muted">${when}${d.year ? T(` · year read as ${esc(d.year)} (unchecked)`, ` · Jahr gelesen als ${esc(d.year)} (ungeprüft)`) : ""}</p>` : ""}
       <p>${esc(d.regest)}</p>
-      <p class="small muted">Drafted by ${esc(d.model || "a language model")} from the ${esc(readerLabel(d.reader))} reading, without correction. Names and dates may be wrong.</p>
+      <p class="small muted">${T(`Drafted by ${esc(d.model || "a language model")} from the ${esc(readerLabel(d.reader))} reading, without correction. Names and dates may be wrong.`,
+        `Entworfen von ${esc(d.model || "einem Sprachmodell")} aus der Lesung von ${esc(readerLabel(d.reader))}, ohne Korrektur. Namen und Daten können falsch sein.`)}</p>
     </details>`;
   }
-  function readerLabel(id) { const r = state.readers.find((x) => x.id === id); return r ? r.label : (id || "machine"); }
+  function readerLabel(id) { const r = state.readers.find((x) => x.id === id); return r ? loc(r, "label") : (id || T("machine", "Maschine")); }
 
   function readerButtons(page, current) {
     return state.readers.map((r) => {
       const has = r.id === "edition" ? !!page.html : !!page.readings[r.id];
       const rd = page.readings[r.id];
-      const badge = r.id === "edition" ? "" : rd && rd.cer != null ? `<span class="cer" title="character error rate on this page">${pct(rd.cer)}</span>` : rd ? `<span class="cer">not scored</span>` : "";
-      return `<button class="rd ${r.id === current ? "on" : ""}" role="tab" aria-selected="${r.id === current}" data-reader="${esc(r.id)}" ${has ? "" : "disabled title=\"not read on this page\""}>
-        <span>${esc(r.label)}<span class="k">${esc(r.kind)}</span></span>${badge}</button>`;
+      const badge = r.id === "edition" ? "" : rd && rd.cer != null ? `<span class="cer" title="${T("character error rate on this page", "Zeichenfehlerrate auf dieser Seite")}">${pct(rd.cer)}</span>` : rd ? `<span class="cer">${T("not scored", "nicht bewertet")}</span>` : "";
+      return `<button class="rd ${r.id === current ? "on" : ""}" role="tab" aria-selected="${r.id === current}" data-reader="${esc(r.id)}" ${has ? "" : `disabled title="${T("not read on this page", "auf dieser Seite nicht gelesen")}"`}>
+        <span>${esc(loc(r, "label"))}<span class="k">${esc(loc(r, "kind"))}</span></span>${badge}</button>`;
     }).join("");
   }
 
@@ -451,21 +806,21 @@
   }
 
   function legend() {
-    return `<div class="legend"><span class="per"><i></i>person</span><span class="org"><i></i>organisation</span><span class="place"><i></i>place</span><span class="date"><i></i>date</span></div>`;
+    return `<div class="legend"><span class="per"><i></i>${T("person", "Person")}</span><span class="org"><i></i>${T("organisation", "Organisation")}</span><span class="place"><i></i>${T("place", "Ort")}</span><span class="date"><i></i>${T("date", "Datum")}</span></div>`;
   }
 
   function readingHtml(page, readerId) {
     const r = state.readers.find((x) => x.id === readerId) || state.readers[0];
-    const head = `${r.about ? `<p class="about-reader">${esc(r.about)}</p>` : ""}${r.caveat ? `<p class="caveat">${esc(r.caveat)}</p>` : ""}`;
+    const head = `${r.about ? `<p class="about-reader">${esc(loc(r, "about"))}</p>` : ""}${r.caveat ? `<p class="caveat">${esc(loc(r, "caveat"))}</p>` : ""}`;
     const showEnts = state.ents && hasEnts(page, readerId);
     if (readerId === "edition") {
-      if (!page.html) return head + `<p class="empty">The edition has no text on this page.</p>`;
+      if (!page.html) return head + `<p class="empty">${T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
       return head + (showEnts ? legend() : "") + `<div class="text edition ${showEnts ? "ents" : ""}">${lineify(page.html)}</div>`;
     }
     const rd = page.readings[readerId];
-    if (!rd) return head + `<p class="empty">Not read on this page.</p>`;
-    if (!rd.text) return head + `<p class="empty">Empty reading${page.text ? "" : " — the edition has no text here either"}.</p>`;
-    const trunc = rd.truncated ? `<p class="caveat">This reading hit the model's length limit and stops early.</p>` : "";
+    if (!rd) return head + `<p class="empty">${T("Not read on this page.", "Auf dieser Seite nicht gelesen.")}</p>`;
+    if (!rd.text) return head + `<p class="empty">${T("Empty reading", "Leere Lesung")}${page.text ? "" : T(" — the edition has no text here either", " – auch die Edition hat hier keinen Text")}.</p>`;
+    const trunc = rd.truncated ? `<p class="caveat">${T("This reading hit the model's length limit and stops early.", "Diese Lesung hat die Längengrenze des Modells erreicht und bricht vorzeitig ab.")}</p>` : "";
     let body;
     if (state.diff && page.text) body = diffHtml(page.text, rd.text);
     else if (showEnts) body = entHtml(rd.text, page.auto_entities[readerId]);
@@ -546,19 +901,19 @@
     const ref = el.dataset.ref || "";
     const reg = state.registers[ref];
     const kind = [...el.classList].find((c) => ["per", "place", "org", "date"].includes(c));
-    const kindName = { per: "Person", place: "Place", org: "Organisation", date: "Date" }[kind] || "";
-    const sub = { origPlace: "place of writing", origDate: "date line" }[el.dataset.el] || "";
-    let body = `<b>${esc(kindName)}${sub ? " · " + sub : ""}${el.dataset.auto ? " · automatic" : ""}</b>`;
+    const kn = { per: T("Person", "Person"), place: T("Place", "Ort"), org: T("Organisation", "Organisation"), date: T("Date", "Datum") }[kind] || "";
+    const sub = { origPlace: T("place of writing", "Ausstellungsort"), origDate: T("date line", "Datierung") }[el.dataset.el] || "";
+    let body = `<b>${esc(kn)}${sub ? " · " + sub : ""}${el.dataset.auto ? T(" · automatic", " · automatisch") : ""}</b>`;
     if (kind === "date" && ref) body += esc(ref);
     else if (reg) {
       body += `<a href="#/entry/${encodeURIComponent(ref)}">${esc(reg.name)}</a>`;
-      if (reg.occ) body += ` <span class="muted">· ${lettersOf(reg)} letters</span>`;
+      if (reg.occ) body += ` <span class="muted">· ${lettersOf(reg)} ${P(lettersOf(reg), "letter", "letters", "Brief", "Briefe")}</span>`;
       const links = reg.links.filter((l) => /^https?:/.test(l.url)).slice(0, 4);
       if (links.length) body += `<div>${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.type)}</a>`).join("")}</div>`;
-    } else if (el.dataset.auto) body += `<span class="muted">not linked to the register</span>`;
+    } else if (el.dataset.auto) body += `<span class="muted">${T("not linked to the register", "nicht mit dem Register verknüpft")}</span>`;
     else if (ref) body += esc(ref);
-    if (el.dataset.role) body += `<div class="muted">role: ${esc(el.dataset.role)}</div>`;
-    if (el.dataset.auto && el.dataset.cert) body += `<div class="muted">${kind === "date" ? "year inferred from the neighbouring letters" : "uncertain link (close spelling)"}</div>`;
+    if (el.dataset.role) body += `<div class="muted">${T("role", "Rolle")}: ${esc(roleName(el.dataset.role))}</div>`;
+    if (el.dataset.auto && el.dataset.cert) body += `<div class="muted">${kind === "date" ? T("year inferred from the neighbouring letters", "Jahr aus den benachbarten Briefen erschlossen") : T("uncertain link (close spelling)", "unsichere Verknüpfung (ähnliche Schreibung)")}</div>`;
     hideTip();
     tipEl = document.createElement("div");
     tipEl.className = "tip";
@@ -604,7 +959,8 @@
      the Stadtarchiv's decision, not a technical question. */
   function notPublic(w) {
     document.getElementById("osd").innerHTML =
-      `<p class="noimg">The image of this page is not shown here: the letter has not yet been published by the Stadtarchiv St. Gallen.</p>`;
+      `<p class="noimg">${T("The image of this page is not shown here: the letter has not yet been published by the Stadtarchiv St. Gallen.",
+        "Das Bild dieser Seite wird hier nicht gezeigt: Das Stadtarchiv St. Gallen hat den Brief noch nicht veröffentlicht.")}</p>`;
     setImgLink(null);
   }
 
@@ -625,17 +981,17 @@
       info["@id"] = base;
       delete info.sizes;
       osd(info);
-      setImgLink(`${base}/full/max/0/default.jpg`, edited ? "Full image" : `Full image (shown until ${fmtDate(w.until)})`);
+      setImgLink(`${base}/full/max/0/default.jpg`, edited ? T("Full image", "Ganzes Bild") : T(`Full image (shown until ${fmtDate(w.until)})`, `Ganzes Bild (sichtbar bis ${fmtDate(w.until)})`));
       return;
     }
     if (w) {
       const url = w.base.replace(/\/?$/, "/") + encodeURIComponent(facs.replace(/\.[^.]+$/, "")) + ".jpg";
       osd({ type: "image", url }, false);
-      setImgLink(url, `Image (available until ${fmtDate(w.until)})`);
+      setImgLink(url, T(`Image (available until ${fmtDate(w.until)})`, `Bild (verfügbar bis ${fmtDate(w.until)})`));
       return;
     }
     notPublic();
   }
 
-  boot().catch((err) => { app.innerHTML = `<p>Could not load the data: ${esc(err.message)}</p>`; });
+  boot().catch((err) => { app.innerHTML = `<p>${T("Could not load the data", "Die Daten konnten nicht geladen werden")}: ${esc(err.message)}</p>`; });
 })();
