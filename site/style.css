@@ -76,6 +76,29 @@ h2 { font-size: 1.15rem; margin: 24px 0 8px; }
 .seg button .n { color: var(--muted); font-size: .85em; }
 .seg button.on { background: var(--chip-on); color: var(--chip-on-ink); font-weight: 600; }
 .seg button.on .n { color: inherit; }
+.yrange { flex: 1 1 240px; min-width: 200px; max-width: 420px; }
+.yr-head { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); line-height: 1.2; }
+.yr-head b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.yr-track { position: relative; height: 34px; }
+.yr-hist { position: absolute; left: 8px; right: 8px; top: 2px; bottom: 11px; display: flex; align-items: flex-end; gap: 1px; }
+.yr-hist i { flex: 1; background: var(--line); border-radius: 1px 1px 0 0; }
+.yr-hist i.in { background: var(--muted); }
+.yr-track input[type=range] {
+  position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 18px; margin: 0;
+  background: none; border: 0; border-radius: 0; padding: 0; pointer-events: none; -webkit-appearance: none; appearance: none; z-index: 2;
+}
+@media (max-width: 640px) { .yrange { flex-basis: 100%; max-width: none; } }
+.yr-track input[type=range]::-webkit-slider-runnable-track { height: 2px; background: var(--line); }
+.yr-track input[type=range]::-moz-range-track { height: 2px; background: var(--line); }
+.yr-track input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; pointer-events: auto; width: 16px; height: 16px; margin-top: -7px;
+  border-radius: 50%; background: var(--chip-on); border: 2px solid var(--panel); box-shadow: 0 0 0 1px var(--chip-on); cursor: pointer;
+}
+.yr-track input[type=range]::-moz-range-thumb {
+  pointer-events: auto; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--chip-on); border: 2px solid var(--panel); box-shadow: 0 0 0 1px var(--chip-on); cursor: pointer;
+}
+.yr-track input[type=range]:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--chip-on); outline-offset: 2px; }
 .list { border-top: 1px solid var(--line); }
 .row {
   display: grid; grid-template-columns: 5.5rem 7rem 1fr; gap: 12px; padding: 10px 4px;

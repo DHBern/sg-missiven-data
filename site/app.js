@@ -4,7 +4,7 @@
   const IIIF = "https://media.sources-online.org/cantaloupe/iiif/2/sg-missiven!";
   const app = document.getElementById("app");
   const state = { index: null, readers: null, registers: null, letters: new Map(),
-                  osd: null, ents: true, diff: false, reader: "edition", filter: "", year: "" };
+                  osd: null, ents: true, diff: false, reader: "edition", filter: "", from: null, to: null };
   const store = {
     get(k, d) { try { const v = localStorage.getItem("sgm:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
     set(k, v) { try { localStorage.setItem("sgm:" + k, JSON.stringify(v)); } catch { /* private mode */ } },
@@ -93,8 +93,15 @@
     setNav("letters");
     state.edited = params && ["0", "1"].includes(params.get("ed")) ? params.get("ed") : "";
     destroyOsd();
-    const yearOf = (l) => l.date || (l.year ? String(l.year) : "");
-    const years = [...new Set(state.index.map((l) => yearOf(l).slice(0, 2) + "00"))].filter((y) => /^\d{4}$/.test(y)).sort();
+    // Edited letters carry a date, unedited ones only an estimated year.
+    const yNum = (l) => { const y = parseInt((l.date || String(l.year || "")).slice(0, 4), 10); return Number.isFinite(y) ? y : null; };
+    const ys = state.index.map(yNum).filter((y) => y != null);
+    const yMin = Math.min(...ys), yMax = Math.max(...ys);
+    const yArg = (v, d) => { const n = parseInt(v, 10); return Number.isFinite(n) ? Math.min(yMax, Math.max(yMin, n)) : d; };
+    state.from = yArg(params && params.get("from"), yMin);
+    state.to = yArg(params && params.get("to"), yMax);
+    if (state.from > state.to) [state.from, state.to] = [state.to, state.from];
+    const BIN = 10, b0 = Math.floor(yMin / BIN) * BIN, nBins = Math.floor(yMax / BIN) - b0 / BIN + 1;
     const best = state.readers.filter((r) => r.cer != null).sort((a, b) => a.cer - b.cer)[0];
     app.innerHTML = `
       <section class="intro">
@@ -117,26 +124,49 @@
              ["0", T("Not yet edited", "Noch nicht ediert"), unedited()]].map(([v, label, n]) =>
             `<button type="button" data-v="${v}" aria-pressed="${(state.edited || "") === v}" class="${(state.edited || "") === v ? "on" : ""}">${label} <span class="n">${n}</span></button>`).join("")}
         </div>
-        <select id="yr" aria-label="${T("Century", "Jahrhundert")}">
-          <option value="">${T("All years", "Alle Jahre")}</option>
-          ${years.map((y) => `<option value="${y}" ${state.year === y ? "selected" : ""}>${T(`${+y.slice(0, 2) + 1}th c. (${y}s)`, `${+y.slice(0, 2) + 1}. Jh. (${y}er)`)}</option>`).join("")}
-        </select>
+        <div class="yrange">
+          <div class="yr-head"><span>${T("Years", "Jahre")}</span><b id="yrlab"></b></div>
+          <div class="yr-track" title="${T("Letters not yet edited are placed by their estimated year.", "Noch nicht edierte Briefe stehen bei ihrem geschätzten Jahr.")}">
+            <div class="yr-hist" id="yrhist" aria-hidden="true"></div>
+            <input type="range" id="yfrom" min="${yMin}" max="${yMax}" step="1" value="${state.from}" aria-label="${T("From year", "Von Jahr")}">
+            <input type="range" id="yto" min="${yMin}" max="${yMax}" step="1" value="${state.to}" aria-label="${T("To year", "Bis Jahr")}">
+          </div>
+        </div>
         <span id="count" class="muted small"></span>
       </div>
       <div class="list" id="list"></div>`;
     const q = document.getElementById("q");
-    const yr = document.getElementById("yr");
     const ed = document.getElementById("ed");
+    const yf = document.getElementById("yfrom"), yt = document.getElementById("yto");
+    const sync = () => {
+      const p = new URLSearchParams();
+      if (state.edited) p.set("ed", state.edited);
+      if (state.from > yMin) p.set("from", state.from);
+      if (state.to < yMax) p.set("to", state.to);
+      const h = "#/" + (p.toString() ? "?" + p : "");
+      if (location.hash !== h && (location.hash || h !== "#/")) history.replaceState(null, "", location.pathname + location.search + h);
+    };
     const draw = () => {
-      state.filter = q.value; state.year = yr.value;
+      state.filter = q.value;
+      const narrowed = state.from > yMin || state.to < yMax;
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+      const bins = new Array(nBins).fill(0);
       const rows = state.index.filter((l) => {
         if (state.edited && String(+(l.edited !== false)) !== state.edited) return false;
-        if (yr.value && yearOf(l).slice(0, 2) !== yr.value.slice(0, 2)) return false;
-        if (!words.length) return true;
-        const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
-        return words.every((w) => hay.includes(w));
+        if (words.length) {
+          const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
+          if (!words.every((w) => hay.includes(w))) return false;
+        }
+        const y = yNum(l);
+        if (y != null) bins[Math.floor(y / BIN) - b0 / BIN]++;
+        return !narrowed || (y != null && y >= state.from && y <= state.to);
       });
+      const top = Math.max(1, ...bins);
+      document.getElementById("yrhist").innerHTML = bins.map((n, i) => {
+        const lo = b0 + i * BIN;
+        return `<i class="${lo + BIN - 1 >= state.from && lo <= state.to ? "in" : ""}" style="height:${n ? Math.max(6, Math.round(100 * n / top)) : 0}%"></i>`;
+      }).join("");
+      document.getElementById("yrlab").textContent = `${state.from}–${state.to}`;
       document.getElementById("count").textContent = `${rows.length} ${P(rows.length, "letter", "letters", "Brief", "Briefe")}`;
       document.getElementById("list").innerHTML = rows.slice(0, 400).map((l) => `
         <a class="row" href="#/letter/${l.id}/1">
@@ -151,14 +181,22 @@
         </a>`).join("") + (rows.length > 400 ? `<p class="muted small">${T(`Showing 400 of ${rows.length} — narrow the search.`, `400 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
-    yr.addEventListener("change", draw);
+    const slide = (ev) => {
+      let a = +yf.value, b = +yt.value;
+      if (a > b) { if (ev.target === yf) a = b; else b = a; yf.value = a; yt.value = b; }
+      state.from = a; state.to = b;
+      // the handle last moved stays on top, so two handles at one end can still be pulled apart
+      yf.style.zIndex = ev.target === yf ? 3 : 2; yt.style.zIndex = ev.target === yt ? 3 : 2;
+      draw();
+    };
+    yf.addEventListener("input", slide); yt.addEventListener("input", slide);
+    yf.addEventListener("change", sync); yt.addEventListener("change", sync);
     ed.addEventListener("click", (ev) => {
       const b = ev.target.closest("button[data-v]");
       if (!b) return;
       state.edited = b.dataset.v;
       ed.querySelectorAll("button").forEach((x) => { const on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
-      const h = state.edited ? `#/?ed=${state.edited}` : "#/";
-      if (location.hash !== h) history.replaceState(null, "", location.pathname + location.search + h);
+      sync();
       draw();
     });
     draw();
