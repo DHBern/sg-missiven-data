@@ -93,14 +93,23 @@ def outer(spans: list[dict], length: int) -> list[dict]:
     return keep
 
 
-def page_xml(text: str, spans: list[dict], line_no: int, reg: dict) -> tuple[str, int]:
+JOINT: dict[str, dict] = {}  # readings/joint.jsonl, for the uncertain words
+
+
+def page_xml(text: str, spans: list[dict], line_no: int, reg: dict,
+             marks: list | None = None) -> tuple[str, int, int]:
     """The page's lines as TEI: '<lb n="k"/>' before each line, entities wrapped.
-    An entity may run across a line break, as in the edition."""
-    text = "\n".join(line.rstrip() for line in text.strip("\n").splitlines())
+    An entity may run across a line break, as in the edition. ``marks`` are the
+    joint reading's uncertain words on this text, (start, end, 1|2), written as
+    <unclear cert="low|medium">; one that would cross an entity's edge is left out.
+    The text is taken as the tagger and the joint reading take it (its non-empty
+    lines), so that their offsets hold."""
+    text = "\n".join(line for line in text.splitlines() if line.strip())
     if not text.strip():
-        return "", line_no
+        return "", line_no, 0
     opens: dict[int, list[str]] = {}
     closes: dict[int, list[str]] = {}
+    written: list[tuple[int, int]] = []
     for s in outer(spans, len(text)):
         # the edition's element and role (scripts/ner.py learns them); older
         # entity files only have the coarse type
@@ -120,6 +129,17 @@ def page_xml(text: str, spans: list[dict], line_no: int, reg: dict) -> tuple[str
         attrs += ' resp="#ner"'
         opens.setdefault(s["start"], []).append(f"<{name}{attrs}>")
         closes.setdefault(s["end"], []).insert(0, f"</{name}>")
+        written.append((s["start"], s["end"]))
+    n_unc = 0
+    for start, end, level in sorted(marks or []):
+        if not (0 <= start < end <= len(text)) or "\n" in text[start:end]:
+            continue
+        if any(not (end <= a or start >= b or (a <= start and end <= b)) for a, b in written):
+            continue  # would cross an entity's edge
+        cert = "low" if level == 1 else "medium"
+        opens.setdefault(start, []).append(f'<unclear cert="{cert}" resp="#joint">')
+        closes.setdefault(end, []).insert(0, "</unclear>")
+        n_unc += 1
     line_no += 1
     out = [f'\n<lb n="{line_no}"/>']
     for i, ch in enumerate(text):
@@ -131,7 +151,7 @@ def page_xml(text: str, spans: list[dict], line_no: int, reg: dict) -> tuple[str
         else:
             out.append(escape(ch))
     out += closes.get(len(text), [])
-    return "".join(out), line_no
+    return "".join(out), line_no, n_unc
 
 
 def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents: dict,
@@ -140,6 +160,7 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
     parts = [FACS.match(k).group(2) for k in keys]
     idno = f"StadtASG Missive_{nr}_{parts[0]}" + (f"/{parts[-1]}" if len(parts) > 1 else "")
     used, tagged, methods = set(), False, set()
+    n_unclear = 0
     body, line_no = [], 0
     for i, key in enumerate(keys):
         facs = names.get(Path(key).stem.lower(), key)
@@ -152,7 +173,10 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
                 tagged |= bool(spans)
                 if spans:
                     methods.add(rec.get("method") or "hmbert")
-                chunk, line_no = page_xml(pages[key].get("text") or "", spans, line_no, reg)
+                j = JOINT.get(key)
+                marks = [(m[0], m[1], m[4]) for m in j.get("unc", [])] if j and j.get("backbone") == reader else None
+                chunk, line_no, n = page_xml(pages[key].get("text") or "", spans, line_no, reg, marks)
+                n_unclear += n
                 body.append(chunk)
                 break
     resp = []
@@ -162,6 +186,11 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
     if draft:
         resp.append('<respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp>'
                     f"<name>{escape(draft.get('model') or 'Sprachmodell')}, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt>")
+    if n_unclear:
+        resp.append('<respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander '
+                    '(cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; '
+                    'cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten '
+                    'VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt>')
     if tagged:
         who = ("hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; "
                "gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; "
@@ -258,6 +287,7 @@ def main() -> None:
                     help="write letters the tagger has not tagged (testing only; the TEI waits for the NER run)")
     args = ap.parse_args()
     order = args.reader or ["gemini-4-argon"]
+    JOINT.update(load_jsonl(ROOT / "readings" / "joint.jsonl"))
     readings = [(r, load_jsonl(ROOT / "readings" / f"{r}.jsonl")) for r in order]
     readings = [(r, p) for r, p in readings if p]
     if not readings:

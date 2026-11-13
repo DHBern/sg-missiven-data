@@ -1,0 +1,120 @@
+{
+ "pages": 218,
+ "examples": [
+  "StadtASG_Missive_10_19.JPG",
+  "StadtASG_Missive_185_371.JPG",
+  "StadtASG_Missive_588_1232.JPG"
+ ],
+ "tagger": "qwen3.8-27b",
+ "judge": "gpt-oss-120b",
+ "usage": {
+  "proposed": 814,
+  "missed": 9,
+  "tag_unreadable": 0,
+  "judge_unreadable": 0,
+  "tag_s": 667.7000000000002,
+  "judge_s": 479.9000000000004,
+  "tag_tokens": 16759,
+  "judge_tokens": 62760,
+  "undecided": 0,
+  "tag_cut": 0,
+  "judge_cut": 0
+ },
+ "minutes": 0.1,
+ "qwen": {
+  "coarse": {
+   "per": 0.6837,
+   "org": 0.7151,
+   "place": 0.7039,
+   "date": 0.5792,
+   "all": 0.6802
+  },
+  "fine": {
+   "persName": 0.6945,
+   "persName@issuer": 0.5797,
+   "persName@recipient": 0.5,
+   "orgName": 0.1408,
+   "orgName@issuer": 0.844,
+   "orgName@recipient": 0.8537,
+   "placeName": 0.6888,
+   "origPlace": 0.7636,
+   "origDate": 0.6944,
+   "date": 0.313,
+   "all": 0.6619
+  },
+  "linking": {
+   "gold_linked": 445,
+   "linked": 223,
+   "correct": 213,
+   "recall": 0.4787,
+   "precision_by_kind": {
+    "org/seen": {
+     "written": 23,
+     "right": 22,
+     "precision": 0.9565
+    },
+    "place/seen": {
+     "written": 73,
+     "right": 69,
+     "precision": 0.9452
+    },
+    "place/fuzzy": {
+     "written": 73,
+     "right": 68,
+     "precision": 0.9315
+    },
+    "org/fuzzy": {
+     "written": 54,
+     "right": 54,
+     "precision": 1.0
+    }
+   }
+  }
+ },
+ "qwen+judge": {
+  "coarse": {
+   "per": 0.6772,
+   "org": 0.7516,
+   "place": 0.7181,
+   "date": 0.5759,
+   "all": 0.6901
+  },
+  "fine": {
+   "persName": 0.6865,
+   "persName@issuer": 0.5797,
+   "persName@recipient": 0.4444,
+   "orgName": 0.1515,
+   "orgName@issuer": 0.8381,
+   "orgName@recipient": 0.9272,
+   "placeName": 0.7011,
+   "origPlace": 0.717,
+   "origDate": 0.719,
+   "date": 0.3077,
+   "all": 0.6739
+  },
+  "linking": {
+   "gold_linked": 435,
+   "linked": 281,
+   "correct": 269,
+   "recall": 0.6184,
+   "precision_by_kind": {
+    "per/judge": {
+     "written": 1,
+     "right": 1,
+     "precision": 1.0
+    },
+    "org/judge": {
+     "written": 109,
+     "right": 104,
+     "precision": 0.9541
+    },
+    "place/judge": {
+     "written": 171,
+     "right": 164,
+     "precision": 0.9591
+    }
+   }
+  }
+ },
+ "hmbert_late_reference": "entities/gemini-4-argon.report.json, late_letters"
+}

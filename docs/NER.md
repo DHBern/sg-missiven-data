@@ -103,3 +103,44 @@ The policy follows from this:
    - the viewer shows the tags on the unedited letters;
    - the register pages list them separately, as automatic;
    - `scripts/tei_export.py` may write the TEI.
+
+## Result and decision (13.11.2026)
+
+### hmBERT alone (5-fold cross-validation, `entities/gemini-4-argon.report.json`)
+
+| F1 | All 1,665 pages | Late letters (218 pages) | Gate |
+|---|---:|---:|---|
+| Persons | 0.681 | 0.651 | ✗ |
+| Organisations | 0.789 | 0.762 | ✓ |
+| Places | 0.781 | 0.698 | ✗ (just under) |
+
+- Links: places and organisations above 0.9; persons below (0.67 / 0.84), so no person links are written.
+- The gate was missed for persons and places.
+
+### Combined: hmBERT + qwen3.8-27b propose, gpt-oss-120b decides (`scripts/ner_llm.py`)
+
+The judge sees both taggers' spans with who proposed them, the page, the tag set
+and the register candidates (persons only within ±40 years). For each span it
+decides whether to keep it, its label and role, and its register entry. It is
+measured on the late letters with hmBERT's cross-validated spans, so no test
+letter is seen (`ner_llm/combined_report.json`):
+
+| F1, late letters | hmBERT | qwen3.8 + judge | **hmBERT + qwen3.8 + judge** |
+|---|---:|---:|---:|
+| Persons | 0.651 | 0.677 | **0.714** ✓ |
+| Organisations | 0.762 | 0.752 | **0.775** ✓ |
+| Places | 0.698 | 0.718 | **0.750** ✓ |
+| All | 0.677 | 0.690 | **0.713** |
+
+- **Links chosen by the judge:** organisations 105/113 (0.93), places 161/169 (0.95). Both are written, with `@cert="medium"`.
+- **Person links:** 1 measured, below the minimum of 20, so none are written.
+- **Gate:** passed. The project also decided to use the combined approach regardless of the gate.
+- **On the edition's own text** the same tagger reaches F1 0.82 (persons 0.84). So the reading costs about 13 points (`ner_llm/pilot_report.edition.json`).
+
+### Run
+
+- **Unedited pages:** all 6,079 with text, tagged with 21,865 tags. `entities/gemini-4-argon.jsonl` has `"method": "combined"` per record and `by` per tag. hmBERT's tags alone are kept in `entities/hmbert/`.
+- **TEI:** `scripts/tei_export.py` writes `tei_unedited/`, 1,840 letters.
+  - Every file validates against TEI P5 4.12 (`tei_all`).
+  - Every tag carries `resp="#ner"`, and the `respStmt` names the method.
+  - Words the machine readings disagree on are `<unclear cert="low|medium" resp="#joint">` (see `docs/PIPELINE.md`).
