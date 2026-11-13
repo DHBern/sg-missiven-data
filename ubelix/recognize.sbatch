@@ -44,7 +44,7 @@ esac
 OUT=$S/sgm/readings/$ID/shard-$SHARD-of-$SHARDS.jsonl
 echo "== $ID shard $SHARD/$SHARDS on $(hostname) $(date -Is); images $IMAGES"
 apptainer exec --nv \
-  --bind /storage/research:/storage/research --bind /scratch:/scratch \
+  --bind /storage/research:/storage/research --bind /scratch:/scratch --bind /rs_scratch:/rs_scratch \
   --env HF_HOME=$R/Textrecognition_Training/hf_hub --env HF_HUB_OFFLINE=1 \
   --env VLLM_NO_USAGE_STATS=1 --env DO_NOT_TRACK=1 \
   "$SIF" python3 "$CODE/ubelix/recognize.py" \
