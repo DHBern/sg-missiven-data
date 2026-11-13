@@ -331,6 +331,27 @@
       .addTo(m);
   }
 
+  /* authority links of a register entry, deduplicated, best known first */
+  const LINK_LABEL = [
+    ["hls", "HLS"], ["hls-dhs-dss", "HLS"], ["metagrid", "Metagrid"], ["wikidata", "Wikidata"], ["gnd", "GND"],
+    ["deutsche-biographie", "Deutsche Biographie"], ["ssrq", "SSRQ"], ["histhub", "histHub"], ["geonames", "GeoNames"],
+    ["ortsnamen", "ortsnamen.ch"], ["wikipedia-de", "Wikipedia"], ["wikipedia-en", "Wikipedia (en)"], ["viaf", "VIAF"],
+    ["rag", "RAG"], ["kalliope-verbund", "Kalliope"], ["ddb", "DDB"], ["lcnaf", "LoC"], ["bnf", "BnF"], ["idref", "IdRef"],
+    ["encyclopaedia-britannica-online", "Britannica"],
+  ];
+  function authLinks(e) {
+    const seen = new Set(), out = [];
+    const rank = (t) => { const i = LINK_LABEL.findIndex(([k]) => k === t); return i < 0 ? LINK_LABEL.length : i; };
+    for (const l of (e.links || []).filter((l) => /^https?:/.test(l.url)).sort((a, b) => rank(a.type) - rank(b.type))) {
+      const hit = LINK_LABEL.find(([k]) => k === l.type);
+      const label = hit ? hit[1] : l.type;
+      if (seen.has(label)) continue;
+      seen.add(label); out.push({ label, url: l.url });
+    }
+    return out;
+  }
+  const linkChip = (l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`;
+
   function showRegister(which) {
     setNav(which);
     destroyOsd(); destroyMaps();
@@ -358,21 +379,32 @@
           ? `<select id="rt" aria-label="${T("Type", "Typ")}"><option value="">${T("All types", "Alle Typen")}</option>${Object.keys(FTYPE_EN).filter((k) => all.some(([, e]) => e.ftype === k)).map((k) => `<option value="${k}" ${f.ftype === k ? "selected" : ""}>${ftype(k)}</option>`).join("")}</select>
              <label class="small"><input type="checkbox" id="rg" ${f.nogeo ? "checked" : ""}> ${T("without coordinates", "ohne Koordinaten")} (${noGeo})</label>`
           : `<select id="rt" aria-label="${T("Kind", "Art")}"><option value="">${T("Persons and organisations", "Personen und Organisationen")}</option><option value="person" ${f.kind === "person" ? "selected" : ""}>${T("Persons", "Personen")}</option><option value="org" ${f.kind === "org" ? "selected" : ""}>${T("Organisations", "Organisationen")}</option></select>`}
+        <select id="ra" aria-label="${T("Authority links", "Normdaten-Links")}">
+          <option value="">${T("Any links", "Alle Links")}</option>
+          <option value="has" ${f.auth === "has" ? "selected" : ""}>${T("With links", "Mit Links")} (${all.filter(([, e]) => authLinks(e).length).length})</option>
+          <option value="none" ${f.auth === "none" ? "selected" : ""}>${T("Without links", "Ohne Links")} (${all.filter(([, e]) => !authLinks(e).length).length})</option>
+          ${[...new Set(LINK_LABEL.map(([, l]) => l))].filter((l) => all.some(([, e]) => authLinks(e).some((x) => x.label === l)))
+            .map((l) => `<option value="${esc(l)}" ${f.auth === l ? "selected" : ""}>${T("With", "Mit")} ${esc(l)} (${all.filter(([, e]) => authLinks(e).some((x) => x.label === l)).length})</option>`).join("")}
+        </select>
         <label class="small"><input type="checkbox" id="ru" ${f.auto ? "checked" : ""}> ${T("in letters not yet edited", "in noch nicht edierten Briefen")} (${all.filter(([, e]) => e.occ_auto).length})</label>
         <span id="rcount" class="muted small"></span>
       </div>
       <div class="list reg" id="rlist"></div>`;
-    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg"), u = document.getElementById("ru");
+    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg"), u = document.getElementById("ru"), a = document.getElementById("ra");
     const draw = () => {
       f[which] = q.value;
       if (which === "places") { f.ftype = t.value; f.nogeo = g.checked; } else f.kind = t.value;
-      f.auto = u.checked;
+      f.auto = u.checked; f.auth = a.value;
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
       const rows = all.filter(([, e]) => {
         if (which === "places" && t.value && e.ftype !== t.value) return false;
         if (which === "places" && g.checked && e.geo) return false;
         if (which === "names" && t.value && e.kind !== t.value) return false;
         if (u.checked && !e.occ_auto) return false;
+        if (a.value) {
+          const ls = authLinks(e);
+          if (a.value === "has" ? !ls.length : a.value === "none" ? ls.length : !ls.some((l) => l.label === a.value)) return false;
+        }
         if (!words.length) return true;
         const hay = [e.name, e.desc, e.country, ...(e.occ || []).map((o) => o[1]), ...(e.occ_auto || []).map((o) => o[1])].join(" ").toLowerCase();
         return words.every((w) => hay.includes(w));
@@ -380,17 +412,20 @@
       document.getElementById("rcount").textContent = `${rows.length} ${P(rows.length, "entry", "entries", "Eintrag", "Einträge")}`;
       document.getElementById("rlist").innerHTML = rows.slice(0, 500).map(([id, e]) => {
         const n = lettersOf(e);
-        return `<a class="row" href="#/entry/${encodeURIComponent(id)}">
+        const ext = authLinks(e), MAX = 6;
+        return `<div class="row rrow">
           <span class="num">${n || "–"}<span class="muted small"> ${P(n, "letter", "letters", "Brief", "Briefe")}</span></span>
-          <span><span class="who">${esc(e.name)}${which === "places" && !e.geo ? ` <span class="badge">${T("no coordinates", "ohne Koordinaten")}</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} ${T("not yet edited", "noch nicht ediert")}</span>` : ""}</span>
+          <span><a class="who go" href="#/entry/${encodeURIComponent(id)}">${esc(e.name)}</a>${which === "places" && !e.geo ? ` <span class="badge">${T("no coordinates", "ohne Koordinaten")}</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} ${T("not yet edited", "noch nicht ediert")}</span>` : ""}
           <span class="reg">${esc([which === "places" ? ftype(e.ftype) : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
-        </a>`;
+          <span class="ext">${ext.slice(0, MAX).map(linkChip).join("")}${ext.length > MAX ? `<a href="#/entry/${encodeURIComponent(id)}" class="more">+${ext.length - MAX}</a>` : ""}</span>
+        </div>`;
       }).join("") + (rows.length > 500 ? `<p class="muted small">${T(`Showing 500 of ${rows.length} — narrow the search.`, `500 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
     t.addEventListener("change", draw);
     g && g.addEventListener("change", draw);
     u.addEventListener("change", draw);
+    a.addEventListener("change", draw);
     draw();
   }
 
@@ -416,13 +451,13 @@
     }
     const autoRows = [...agroups.entries()].map(([lid, g]) => ({ l: byId(lid), ...g })).filter((r) => r.l)
       .sort((a, b) => state.index.indexOf(a.l) - state.index.indexOf(b.l));
-    const links = e.links.filter((l) => /^https?:/.test(l.url));
+    const links = authLinks(e);
     app.innerHTML = `
       <section class="entry">
         <p class="muted small"><a href="#/${e.kind === "place" ? "places" : "names"}">← ${e.kind === "place" ? T("Places", "Orte") : T("Names", "Namen")}</a></p>
         <h1>${esc(e.name)}</h1>
         <p class="muted">${esc([e.kind === "place" ? ftype(e.ftype) || kindName("place") : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</p>
-        ${links.length ? `<p class="links">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.type)}</a>`).join("")}</p>` : ""}
+        ${links.length ? `<p class="links">${links.map(linkChip).join("")}</p>` : ""}
         <p class="small muted">Register <code>${esc(id)}</code>${e.kind === "place" && e.geo ? ` · ${e.geo[0].toFixed(4)}, ${e.geo[1].toFixed(4)}` : ""} ·
           <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">${T("in the edition", "in der Edition")} ↗</a></p>
         ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">${T("The register has no coordinates for this place, so it is not on the map.", "Das Register gibt für diesen Ort keine Koordinaten, darum fehlt er auf der Karte.")}</p>`) : ""}
