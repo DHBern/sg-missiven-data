@@ -39,7 +39,18 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from tei_pages import read_edition  # noqa: E402
 
 DEFAULT_READERS = ["gemini-3.8-flash", "kraken-bern-combined-v1", "kraken-cursive_inzigkofen",
-                   "trocr-kurrent-xvi-xvii", "trocr-medieval-escriptmask"]
+                   "trocr-kurrent-xvi-xvii", "trocr-medieval-escriptmask",
+                   "qwen3.5-4b-german-kurrent-xvi-xix-page-v1",
+                   "olmocr2-7b-german-kurrent-xvi-xix-blb-page-px4m-native-v1"]
+# Trained on 90 % of the edited pages: they vote only on pages they never saw
+# (the new pages, and the 166 edited pages held out of their training), and
+# their weight is measured on those held-out pages only.
+FINE_TUNED = {"qwen3.5-4b-german-kurrent-xvi-xix-page-v1",
+              "olmocr2-7b-german-kurrent-xvi-xix-blb-page-px4m-native-v1"}
+HELDOUT = "readings/heldout_pages.txt"
+# a voter whose page text is this much longer or shorter than the backbone's
+# has looped or stopped; it does not vote on that page
+LENGTH_GUARD = (0.5, 1.5)
 TOKEN = re.compile(r"\S+")
 
 
@@ -130,7 +141,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--backbone", default="gemini-4-argon")
     ap.add_argument("--readers", default=",".join(DEFAULT_READERS))
-    ap.add_argument("--min-coverage", type=float, default=0.95,
+    ap.add_argument("--min-coverage", type=float, default=0.0,
                     help="leave out a reader that has read less than this share of the backbone's pages")
     args = ap.parse_args()
 
@@ -150,6 +161,16 @@ def main() -> None:
             continue
         readers[r] = pages
     print(f"backbone {args.backbone}; voting readers: {', '.join(readers) or 'none'}")
+    stem = lambda k: k.rsplit(".", 1)[0]
+    heldout = {l.strip() for l in (ROOT / HELDOUT).read_text().splitlines() if l.strip()} if (ROOT / HELDOUT).exists() else set()
+
+    def usable(r: str, key: str) -> bool:
+        """A fine-tuned reader votes on new pages and held-out edited pages only."""
+        return r not in FINE_TUNED or not edition.get(key) or stem(key) in heldout
+
+    def sane(text: str, backbone: str) -> bool:
+        a, b = len(flat(text)), max(1, len(flat(backbone)))
+        return LENGTH_GUARD[0] <= a / b <= LENGTH_GUARD[1]
 
     # weights from the other half of the letters
     w = {h: {} for h in (0, 1)}
@@ -158,25 +179,35 @@ def main() -> None:
         e = cer((edition[k], back[k]) for k in other)
         w[h]["__backbone__"] = math.log((1 - e) / e)
         for r, pages in readers.items():
-            e = cer((edition[k], pages.get(k, "")) for k in other)
-            w[h][r] = math.log((1 - e) / e) if 0 < e < 1 else 0.0
+            keys = [k for k in other if k in pages and usable(r, k) and sane(pages[k], back[k])]
+            if len(keys) < 30:  # too few pages it never saw to weigh it
+                w[h][r] = 0.0
+                continue
+            e = cer((edition[k], pages[k]) for k in keys)
+            w[h][r] = max(0.0, math.log((1 - e) / e)) if 0 < e < 1 else 0.0
         print(f"  weights for half {h}: " + ", ".join(f"{k}={v:.2f}" for k, v in w[h].items()))
 
     out, n_changes = [], 0
-    pairs_b, pairs_j = [], []
+    pairs_b, pairs_j, held_b, held_j = [], [], [], []
     for key, text in back.items():
         h = half(letter_of.get(key, key))
-        others = {r: pages[key] for r, pages in readers.items() if pages.get(key)}
+        others = {r: pages[key] for r, pages in readers.items()
+                  if pages.get(key) and w[h][r] > 0 and usable(r, key) and sane(pages[key], text)}
         joint, changes = combine(text, others, w[h], w[h]["__backbone__"]) if others else (text, [])
         n_changes += len(changes)
         out.append({"key": key, "text": joint, "backbone": args.backbone,
                     "readers": sorted(others), "changes": changes})
         if edition.get(key):
             pairs_b.append((edition[key], text)); pairs_j.append((edition[key], joint))
+            if stem(key) in heldout:
+                held_b.append((edition[key], text)); held_j.append((edition[key], joint))
     (ROOT / "readings" / "joint.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8")
     print(f"{len(out)} pages, {n_changes} words changed")
-    print(f"CER backbone {cer(pairs_b):.4f}  joint {cer(pairs_j):.4f}  over {len(pairs_b)} pages")
+    print(f"CER backbone {cer(pairs_b):.4f}  joint {cer(pairs_j):.4f}  over {len(pairs_b)} edited pages")
+    if held_b:
+        print(f"CER backbone {cer(held_b):.4f}  joint {cer(held_j):.4f}  over the {len(held_b)} held-out pages "
+              "(where the fine-tuned readers vote)")
 
 
 if __name__ == "__main__":

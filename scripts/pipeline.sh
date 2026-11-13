@@ -22,6 +22,7 @@ DRY=${1:-}
 mkdir -p "$STATE"
 exec 9>"$STATE/lock"
 flock -n 9 || { echo "another cycle is running"; exit 0; }
+rm -f "$STATE/joint.log"
 
 now() { date -Is; }
 status() {  # status <state> <message> [pr]
@@ -43,6 +44,12 @@ git clean -q -fd -- "${DATA_PATHS[@]}" 2>/dev/null || true
 # 1. collect (merges; exits non-zero if a reader would lose pages)
 python3 scripts/collect_series.py > "$STATE/collect.log" 2>&1 || fail "collect: $(tail -1 "$STATE/collect.log")"
 
+# 2. the joint reading over every page (scripts/joint_reading.py, docs/PIPELINE.md);
+#    rebuilt only when a reading changed, since it reads them all
+if [ -n "$(git status --porcelain -- readings/*.jsonl ':!readings/joint.jsonl')" ] || [ ! -e readings/joint.jsonl ]; then
+  "$PY" scripts/joint_reading.py > "$STATE/joint.log" 2>&1 || fail "joint_reading.py failed: $(tail -1 "$STATE/joint.log")"
+fi
+
 changed=$(git status --porcelain -- "${DATA_PATHS[@]}")
 if [ -z "$changed" ]; then
   status idle "nothing new"
@@ -55,6 +62,8 @@ other=$(git status --porcelain | grep -v -E "^.. ($(IFS='|'; echo "${DATA_PATHS[
 "$PY" scripts/build_site.py > "$STATE/build.log" 2>&1 || fail "build_site.py failed: $(tail -1 "$STATE/build.log")"
 
 summary=$(grep -E ' -> .*pages' "$STATE/collect.log" | grep -v '(+0 new, 0 changed)' || true)
+[ -s "$STATE/joint.log" ] && summary="$summary
+joint: $(grep -E '^CER .*held-out' "$STATE/joint.log" || tail -1 "$STATE/joint.log")"
 letters=$(grep -m1 -E '^[0-9]+ letters' "$STATE/build.log" || true)
 
 if [ "$DRY" = "--dry-run" ]; then
