@@ -4,7 +4,7 @@
   const IIIF = "https://media.sources-online.org/cantaloupe/iiif/2/sg-missiven!";
   const app = document.getElementById("app");
   const state = { index: null, readers: null, registers: null, letters: new Map(),
-                  osd: null, ents: true, diff: false, reader: "edition", filter: "", year: "" };
+                  osd: null, ents: true, diff: false, reader: "edition", filter: "", from: null, to: null };
   const store = {
     get(k, d) { try { const v = localStorage.getItem("sgm:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
     set(k, v) { try { localStorage.setItem("sgm:" + k, JSON.stringify(v)); } catch { /* private mode */ } },
@@ -85,55 +85,112 @@
     if (parts[0] === "map") return showMap();
     if (parts[0] === "entry" && parts[1]) return showEntry(parts[1]);
     if (parts[0] === "about") return showAbout();
-    return showList();
+    return showList(new URLSearchParams(qs || ""));
   }
 
+  /* ---------- year slider (letters list and search) ---------- */
+  const Y_BIN = 10;
+  function sliderHtml(id, min, max, from, to) {
+    return `<div class="yrange">
+          <div class="yr-head"><span>${T("Years", "Jahre")}</span><b id="${id}-lab">${from}–${to}</b></div>
+          <div class="yr-track" title="${T("Letters not yet edited are placed by their estimated year.", "Noch nicht edierte Briefe stehen bei ihrem geschätzten Jahr.")}">
+            <div class="yr-hist" id="${id}-hist" aria-hidden="true"></div>
+            <input type="range" id="${id}-from" min="${min}" max="${max}" step="1" value="${from}" aria-label="${T("From year", "Von Jahr")}">
+            <input type="range" id="${id}-to" min="${min}" max="${max}" step="1" value="${to}" aria-label="${T("To year", "Bis Jahr")}">
+          </div>
+        </div>`;
+  }
+  // onInput(from, to) while dragging; onChange() when a handle is let go
+  function bindSlider(id, onInput, onChange) {
+    const a = document.getElementById(`${id}-from`), b = document.getElementById(`${id}-to`);
+    const move = (ev) => {
+      let x = +a.value, y = +b.value;
+      if (x > y) { if (ev.target === a) x = y; else y = x; a.value = x; b.value = y; }
+      // the handle last moved stays on top, so two handles at one end can still be pulled apart
+      a.style.zIndex = ev.target === a ? 3 : 2; b.style.zIndex = ev.target === b ? 3 : 2;
+      document.getElementById(`${id}-lab`).textContent = `${x}–${y}`;
+      onInput(x, y);
+    };
+    a.addEventListener("input", move); b.addEventListener("input", move);
+    if (onChange) { a.addEventListener("change", onChange); b.addEventListener("change", onChange); }
+  }
+  // years: the year of every letter that passes the other filters (null for none)
+  function paintSlider(id, years, min, max, from, to) {
+    const b0 = Math.floor(min / Y_BIN), bins = new Array(Math.floor(max / Y_BIN) - b0 + 1).fill(0);
+    for (const y of years) if (y != null && y >= min && y <= max) bins[Math.floor(y / Y_BIN) - b0]++;
+    const top = Math.max(1, ...bins);
+    document.getElementById(`${id}-hist`).innerHTML = bins.map((n, i) => {
+      const lo = (b0 + i) * Y_BIN;
+      return `<i class="${lo + Y_BIN - 1 >= from && lo <= to ? "in" : ""}" style="height:${n ? Math.max(6, Math.round(100 * n / top)) : 0}%"></i>`;
+    }).join("");
+    document.getElementById(`${id}-lab`).textContent = `${from}–${to}`;
+  }
+  const yArg = (v, d, min, max) => { const n = parseInt(v, 10); return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : d; };
+
   /* ---------- letters list ---------- */
-  function showList() {
+  function showList(params) {
     setNav("letters");
+    state.edited = params && ["0", "1"].includes(params.get("ed")) ? params.get("ed") : "";
     destroyOsd();
-    const years = [...new Set(state.index.map((l) => (l.date || "").slice(0, 2) + "00"))].filter((y) => /^\d{4}$/.test(y)).sort();
+    // Edited letters carry a date, unedited ones only an estimated year.
+    const yNum = (l) => { const y = parseInt((l.date || String(l.year || "")).slice(0, 4), 10); return Number.isFinite(y) ? y : null; };
+    const ys = state.index.map(yNum).filter((y) => y != null);
+    const yMin = Math.min(...ys), yMax = Math.max(...ys);
+    state.from = yArg(params && params.get("from"), yMin, yMin, yMax);
+    state.to = yArg(params && params.get("to"), yMax, yMin, yMax);
+    if (state.from > state.to) [state.from, state.to] = [state.to, state.from];
     const best = state.readers.filter((r) => r.cer != null).sort((a, b) => a.cer - b.cer)[0];
     app.innerHTML = `
       <section class="intro">
         <h1>${T("The letters of St. Gallen, read by machines", "Die St. Galler Missiven, von Maschinen gelesen")}</h1>
         <p>${T(`${state.index.filter((l) => l.edited !== false).length} letters to and from the city of St. Gallen, 1400–1650, from the edition of the
-        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>${unedited() ? `, and ${unedited()} letters of the series the edition has not yet published` : ""}.
+        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchiv St. Gallen</a>${unedited() ? `, and <a href="#/?ed=0">${unedited()} letters of the series the edition has not yet published</a>` : ""}.
         Every page is shown with the edition's transcription, where there is one, and with ${machineReaders()}.
         Switch between them on the left, compare any of them with the edition, and see where they differ.`,
         `${state.index.filter((l) => l.edited !== false).length} Briefe an die und von der Stadt St. Gallen, 1400–1650, aus der Edition des
-        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchivs St. Gallen</a>${unedited() ? `, dazu ${unedited()} Briefe der Serie, die die Edition noch nicht veröffentlicht hat` : ""}.
+        <a href="https://missiven.stadtarchiv.ch/" target="_blank" rel="noopener">Stadtarchivs St. Gallen</a>${unedited() ? `, dazu <a href="#/?ed=0">${unedited()} Briefe der Serie, die die Edition noch nicht veröffentlicht hat</a>` : ""}.
         Jede Seite erscheint mit der Transkription der Edition, wo es eine gibt, und mit ${machineReaders()}.
         Links lässt sich zwischen ihnen wechseln; jede Lesung lässt sich mit der Edition vergleichen.`)}</p>
         ${best ? `<p class="muted small">${T("Closest to the edition over all scored pages:", "Am nächsten an der Edition über alle bewerteten Seiten:")} <b>${esc(loc(best, "label"))}</b>, ${pct(best.cer)} ${T("character error rate", "Zeichenfehlerrate")}. <a href="#/readers">${T("All readers", "Alle Leser")}</a>.</p>` : ""}
       </section>
       <div class="filters">
         <input id="q" type="search" placeholder="${T("Search sender, recipient, regest, number…", "Absender, Empfänger, Regest, Nummer suchen…")}" value="${esc(state.filter)}" aria-label="${T("Search letters", "Briefe durchsuchen")}">
-        <select id="ed" aria-label="${T("Edited or not", "Ediert oder nicht")}">
-          <option value="">${T("All letters", "Alle Briefe")}</option>
-          <option value="1" ${state.edited === "1" ? "selected" : ""}>${T("Edited", "Ediert")}</option>
-          <option value="0" ${state.edited === "0" ? "selected" : ""}>${T("Not yet edited", "Noch nicht ediert")}</option>
-        </select>
-        <select id="yr" aria-label="${T("Century", "Jahrhundert")}">
-          <option value="">${T("All years", "Alle Jahre")}</option>
-          ${years.map((y) => `<option value="${y}" ${state.year === y ? "selected" : ""}>${T(`${+y.slice(0, 2) + 1}th c. (${y}s)`, `${+y.slice(0, 2) + 1}. Jh. (${y}er)`)}</option>`).join("")}
-        </select>
+        <div class="seg" id="ed" role="group" aria-label="${T("Edited or not", "Ediert oder nicht")}">
+          ${[["", T("All", "Alle"), state.index.length],
+             ["1", T("Edited", "Ediert"), state.index.length - unedited()],
+             ["0", T("Not yet edited", "Noch nicht ediert"), unedited()]].map(([v, label, n]) =>
+            `<button type="button" data-v="${v}" aria-pressed="${(state.edited || "") === v}" class="${(state.edited || "") === v ? "on" : ""}">${label} <span class="n">${n}</span></button>`).join("")}
+        </div>
+        ${sliderHtml("ly", yMin, yMax, state.from, state.to)}
         <span id="count" class="muted small"></span>
       </div>
       <div class="list" id="list"></div>`;
     const q = document.getElementById("q");
-    const yr = document.getElementById("yr");
     const ed = document.getElementById("ed");
+    const sync = () => {
+      const p = new URLSearchParams();
+      if (state.edited) p.set("ed", state.edited);
+      if (state.from > yMin) p.set("from", state.from);
+      if (state.to < yMax) p.set("to", state.to);
+      const h = "#/" + (p.toString() ? "?" + p : "");
+      if (location.hash !== h && (location.hash || h !== "#/")) history.replaceState(null, "", location.pathname + location.search + h);
+    };
     const draw = () => {
-      state.filter = q.value; state.year = yr.value; state.edited = ed.value;
+      state.filter = q.value;
+      const narrowed = state.from > yMin || state.to < yMax;
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+      const years = [];
       const rows = state.index.filter((l) => {
-        if (ed.value && String(+(l.edited !== false)) !== ed.value) return false;
-        if (yr.value && (l.date || "").slice(0, 2) !== yr.value.slice(0, 2)) return false;
-        if (!words.length) return true;
-        const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
-        return words.every((w) => hay.includes(w));
+        if (state.edited && String(+(l.edited !== false)) !== state.edited) return false;
+        if (words.length) {
+          const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
+          if (!words.every((w) => hay.includes(w))) return false;
+        }
+        const y = yNum(l);
+        years.push(y);
+        return !narrowed || (y != null && y >= state.from && y <= state.to);
       });
+      paintSlider("ly", years, yMin, yMax, state.from, state.to);
       document.getElementById("count").textContent = `${rows.length} ${P(rows.length, "letter", "letters", "Brief", "Briefe")}`;
       document.getElementById("list").innerHTML = rows.slice(0, 400).map((l) => `
         <a class="row" href="#/letter/${l.id}/1">
@@ -148,8 +205,15 @@
         </a>`).join("") + (rows.length > 400 ? `<p class="muted small">${T(`Showing 400 of ${rows.length} — narrow the search.`, `400 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
-    yr.addEventListener("change", draw);
-    ed.addEventListener("change", draw);
+    bindSlider("ly", (a, b) => { state.from = a; state.to = b; draw(); }, sync);
+    ed.addEventListener("click", (ev) => {
+      const b = ev.target.closest("button[data-v]");
+      if (!b) return;
+      state.edited = b.dataset.v;
+      ed.querySelectorAll("button").forEach((x) => { const on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+      sync();
+      draw();
+    });
     draw();
   }
 
@@ -528,8 +592,12 @@
     destroyOsd();
     const meta = await searchMeta();
     const sel = Object.fromEntries(FACETS.map((f) => [f.k, new Set(params.getAll(f.k))]));
+    const sy = meta.letters.map((m) => m.y).filter(Boolean);
+    const yMin = Math.min(...sy), yMax = Math.max(...sy);
     const ui = { q: params.get("q") || "", tol: params.get("tol") !== "0", sort: params.get("sort") || "date",
-                 from: params.get("from") || "", to: params.get("to") || "", shown: 50, open: new Set(params.getAll("open")) };
+                 from: yArg(params.get("from"), yMin, yMin, yMax), to: yArg(params.get("to"), yMax, yMin, yMax),
+                 shown: 50, open: new Set(params.getAll("open")) };
+    if (ui.from > ui.to) [ui.from, ui.to] = [ui.to, ui.from];
     app.innerHTML = `
       <section class="intro">
         <h1>${T("Search", "Suche")}</h1>
@@ -539,7 +607,7 @@
       <div class="sbar">
         <input id="sq" type="search" value="${esc(ui.q)}" placeholder="${T('Words or "a phrase" in the text…', 'Wörter oder «eine Wendung» im Text…')}" aria-label="${T("Search the text", "Text durchsuchen")}">
         <label class="small"><input type="checkbox" id="stol" ${ui.tol ? "checked" : ""}> ${T("tolerant spelling", "Schreibvarianten zulassen")}</label>
-        <span class="yr">${T("Years", "Jahre")} <input id="sfrom" type="number" min="1300" max="1700" value="${esc(ui.from)}" aria-label="${T("from year", "ab Jahr")}"> – <input id="sto" type="number" min="1300" max="1700" value="${esc(ui.to)}" aria-label="${T("to year", "bis Jahr")}"></span>
+        ${sliderHtml("sy", yMin, yMax, ui.from, ui.to)}
         <select id="ssort" aria-label="${T("Sort", "Sortierung")}">
           <option value="date" ${ui.sort === "date" ? "selected" : ""}>${T("by date", "nach Datum")}</option>
           <option value="hits" ${ui.sort === "hits" ? "selected" : ""}>${T("most hits first", "meiste Treffer zuerst")}</option>
@@ -560,8 +628,8 @@
       if (ui.q) u.set("q", ui.q);
       if (!ui.tol) u.set("tol", "0");
       if (ui.sort !== "date") u.set("sort", ui.sort);
-      if (ui.from) u.set("from", ui.from);
-      if (ui.to) u.set("to", ui.to);
+      if (ui.from > yMin) u.set("from", ui.from);
+      if (ui.to < yMax) u.set("to", ui.to);
       for (const f of FACETS) for (const v of sel[f.k]) u.append(f.k, v);
       const h = "#/search" + (u.toString() ? "?" + u : "");
       if (location.hash !== h) history.replaceState(null, "", location.pathname + location.search + h);
@@ -575,11 +643,12 @@
         if (!search.texts) $("scount").textContent = T("Loading the texts…", "Die Texte werden geladen…");
         texts = await searchTexts();
       }
-      /* text and years first: they hold for every facet count */
-      const hits = new Map();
-      const base = meta.letters.filter((m) => {
-        if (ui.from && (!m.y || m.y < +ui.from)) return false;
-        if (ui.to && (!m.y || m.y > +ui.to)) return false;
+      /* text and years first: they hold for every facet count. The text match is kept
+         while only the years or facets change, so dragging the slider stays quick. */
+      const key = ui.q + "\u0000" + ui.tol;
+      if (!run.cache || run.cache.key !== key) run.cache = { key, hits: new Map(), letters: null };
+      const hits = run.cache.hits;
+      const textOk = run.cache.letters || (run.cache.letters = meta.letters.filter((m) => {
         if (!terms.length) return true;
         const pages = texts[m.id] || [];
         const found = [];
@@ -592,9 +661,12 @@
         if (all.size < terms.length) return false;
         hits.set(m.id, found);
         return true;
-      });
+      }));
+      const narrowed = ui.from > yMin || ui.to < yMax;
+      const base = narrowed ? textOk.filter((m) => m.y && m.y >= ui.from && m.y <= ui.to) : textOk;
       const passes = (m, except) => FACETS.every((f) => f.k === except || !sel[f.k].size || facetValues(m, f.k).some((v) => sel[f.k].has(v)));
       const rows = base.filter((m) => passes(m, null));
+      paintSlider("sy", textOk.filter((m) => passes(m, null)).map((m) => m.y), yMin, yMax, ui.from, ui.to);
       renderFacets(base, passes);
       renderResults(rows, hits, terms);
     };
@@ -672,8 +744,7 @@
     $("sq").addEventListener("input", () => { ui.q = $("sq").value; ui.shown = 50; later(run); });
     $("stol").addEventListener("change", () => { ui.tol = $("stol").checked; run(); });
     $("ssort").addEventListener("change", () => { ui.sort = $("ssort").value; run(); });
-    $("sfrom").addEventListener("input", () => { ui.from = $("sfrom").value; later(run, 400); });
-    $("sto").addEventListener("input", () => { ui.to = $("sto").value; later(run, 400); });
+    bindSlider("sy", (a, b) => { ui.from = a; ui.to = b; ui.shown = 50; later(run, 60); });
     $("sreset").addEventListener("click", () => { location.hash = "#/search"; });
     $("ftoggle").addEventListener("click", () => {
       const open = $("facets").classList.toggle("shown");
