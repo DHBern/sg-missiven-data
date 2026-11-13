@@ -1,0 +1,12 @@
+[Unit]
+Description=SG Missiven: collect the readings and publish them (docs/PIPELINE.md)
+After=network-online.target
+
+[Service]
+Type=oneshot
+# the script lives in the checkout it resets; run a copy so the reset cannot pull it away mid-run
+ExecStartPre=/usr/bin/install -m 755 %h/sg-missiven-data/scripts/pipeline.sh %h/sgm-pipeline/pipeline.sh
+ExecStart=%h/sgm-pipeline/pipeline.sh
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Nice=10
+TimeoutStartSec=1h
