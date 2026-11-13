@@ -179,6 +179,7 @@
   const KIND = { place: "Place", person: "Person", org: "Organisation" };
   const ROLE = { sender: "sender", recipient: "recipient", place: "place of writing" };
   const lettersOf = (e) => new Set((e.occ || []).map((o) => o[0])).size;
+  const autoLettersOf = (e) => new Set((e.occ_auto || []).map((o) => o[0])).size;
   let leafletMaps = [];
   function destroyMaps() { leafletMaps.forEach((m) => m.remove()); leafletMaps = []; }
 
@@ -214,7 +215,7 @@
           ? `The edition's place register: ${all.length} places, ${all.length - noGeo} of them with coordinates (<a href="#/map">map</a>).`
           : `The edition's register of persons and organisations: ${all.filter(([, e]) => e.kind === "person").length} persons, ${all.filter(([, e]) => e.kind === "org").length} organisations.`}
         Each entry lists the edited letters that name it, in the text or as sender, recipient or place of writing.
-        Letters not yet edited are not counted here yet: their names come from the automatic tagging, once it has been checked against the register.</p>
+        Letters not yet edited are listed apart: their names come from the automatic tagging of the machine readings, linked to the register by rule and not checked.</p>
       </section>
       <div class="filters">
         <input id="rq" type="search" placeholder="Search names, description, country…" value="${esc(f[which] || "")}" aria-label="Search the register">
@@ -222,20 +223,23 @@
           ? `<select id="rt" aria-label="Type"><option value="">All types</option>${Object.entries(FTYPE).filter(([k]) => all.some(([, e]) => e.ftype === k)).map(([k, v]) => `<option value="${k}" ${f.ftype === k ? "selected" : ""}>${v}</option>`).join("")}</select>
              <label class="small"><input type="checkbox" id="rg" ${f.nogeo ? "checked" : ""}> without coordinates (${noGeo})</label>`
           : `<select id="rt" aria-label="Kind"><option value="">Persons and organisations</option><option value="person" ${f.kind === "person" ? "selected" : ""}>Persons</option><option value="org" ${f.kind === "org" ? "selected" : ""}>Organisations</option></select>`}
+        <label class="small"><input type="checkbox" id="ru" ${f.auto ? "checked" : ""}> in letters not yet edited (${all.filter(([, e]) => e.occ_auto).length})</label>
         <span id="rcount" class="muted small"></span>
       </div>
       <div class="list reg" id="rlist"></div>`;
-    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg");
+    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg"), u = document.getElementById("ru");
     const draw = () => {
       f[which] = q.value;
       if (which === "places") { f.ftype = t.value; f.nogeo = g.checked; } else f.kind = t.value;
+      f.auto = u.checked;
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
       const rows = all.filter(([, e]) => {
         if (which === "places" && t.value && e.ftype !== t.value) return false;
         if (which === "places" && g.checked && e.geo) return false;
         if (which === "names" && t.value && e.kind !== t.value) return false;
+        if (u.checked && !e.occ_auto) return false;
         if (!words.length) return true;
-        const hay = [e.name, e.desc, e.country, ...(e.occ || []).map((o) => o[1])].join(" ").toLowerCase();
+        const hay = [e.name, e.desc, e.country, ...(e.occ || []).map((o) => o[1]), ...(e.occ_auto || []).map((o) => o[1])].join(" ").toLowerCase();
         return words.every((w) => hay.includes(w));
       });
       document.getElementById("rcount").textContent = `${rows.length} ${rows.length === 1 ? "entry" : "entries"}`;
@@ -243,7 +247,7 @@
         const n = lettersOf(e);
         return `<a class="row" href="#/entry/${encodeURIComponent(id)}">
           <span class="num">${n || "–"}<span class="muted small"> ${n === 1 ? "letter" : "letters"}</span></span>
-          <span><span class="who">${esc(e.name)}${which === "places" && !e.geo ? ` <span class="badge">no coordinates</span>` : ""}</span>
+          <span><span class="who">${esc(e.name)}${which === "places" && !e.geo ? ` <span class="badge">no coordinates</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} not yet edited</span>` : ""}</span>
           <span class="reg">${esc([which === "places" ? FTYPE[e.ftype] : KIND[e.kind], e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
         </a>`;
       }).join("") + (rows.length > 500 ? `<p class="muted small">Showing 500 of ${rows.length} — narrow the search.</p>` : "");
@@ -251,6 +255,7 @@
     q.addEventListener("input", draw);
     t.addEventListener("change", draw);
     g && g.addEventListener("change", draw);
+    u.addEventListener("change", draw);
     draw();
   }
 
@@ -287,7 +292,7 @@
           <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">in the edition ↗</a></p>
         ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">The register has no coordinates for this place, so it is not on the map.</p>`) : ""}
         <h2>${rows.length} edited letter${rows.length === 1 ? "" : "s"}</h2>
-        ${autoRows.length ? `<p class="muted small">Below: ${autoRows.length} letter${autoRows.length === 1 ? "" : "s"} not yet edited, where the automatic tagging found this ${e.kind === "place" ? "place" : "name"}.</p>` : ""}
+
         <div class="list">${rows.map((r) => `
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
@@ -295,15 +300,18 @@
             <span><span class="who">${esc(r.l.sender.join(", ") || "?")} → ${esc(r.l.recipient.join(", ") || "?")}</span>
             <span class="reg">${r.forms.size ? `<i>${[...r.forms].map(esc).join("</i>, <i>")}</i>` : ""}${r.roles.size ? `${r.forms.size ? " · " : ""}${[...r.roles].map((x) => ROLE[x] || x).join(", ")}` : ""}</span></span>
           </a>`).join("")}</div>
-        ${autoRows.length ? `<h2>${autoRows.length} letter${autoRows.length === 1 ? "" : "s"} not yet edited <span class="badge">automatic</span></h2>
-        <p class="muted small">Found by the automatic tagging of the machine reading and linked to this entry by rule; neither is checked.</p>
+        <h2>${autoRows.length ? autoRows.length + " " : ""}Letter${autoRows.length === 1 ? "" : "s"} not yet edited <span class="badge">automatic</span></h2>
+        ${autoRows.length
+          ? `<p class="muted small">Found by the automatic tagging of the machine reading and linked to this entry by rule; neither is checked.</p>`
+          : `<p class="muted small">${unedited() ? `None found so far in the ${unedited()} letters not yet edited.` : "No letters not yet edited are read yet."}
+             Names are found by the automatic tagging of the machine readings and linked to the register only where the link is reliable enough${e.kind === "person" ? " (persons: only if the edition attests them within 40 years of the letter)" : ""}.</p>`}
         <div class="list">${autoRows.map((r) => `
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
             <span class="date">${r.l.year ? esc(r.l.year) + "?" : ""}</span>
             <span><span class="who">${esc(r.l.sender.join(", ") || "Not yet edited")}${r.l.recipient.length ? " → " + esc(r.l.recipient.join(", ")) : ""}</span>
             <span class="reg"><i>${[...r.forms].map(esc).join("</i>, <i>")}</i>${r.roles.size ? " · " + [...r.roles].map((x) => ROLE[x] || x).join(", ") : ""}</span></span>
-          </a>`).join("")}</div>` : ""}
+          </a>`).join("")}</div>
       </section>`;
     if (e.geo && window.L) {
       const m = baseMap("emap", { center: e.geo, zoom: e.ftype === "A" ? 7 : 10 });
