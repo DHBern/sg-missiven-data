@@ -79,22 +79,68 @@ def load_entities() -> dict[str, dict[str, list]]:
 
 
 def registers() -> dict[str, dict]:
+    """The edition's person, organisation and place registers. Places keep their
+    coordinates (``geo`` = [lat, lon], absent where the register has none), their
+    GeoNames feature class and country; everyone keeps the register's own
+    description and authority links."""
+    t = f"{{{NS['t']}}}"
     reg: dict[str, dict] = {}
-    for path, kinds in ((ROOT / "person" / "person.xml", ("person", "org")),
+    for path, kinds in ((ROOT / "person" / "person.xml", ("person", "org", "personGrp")),
                         (ROOT / "place" / "place.xml", ("place",))):
         root = etree.parse(str(path), etree.XMLParser(recover=True)).getroot()
         for kind in kinds:
-            for el in root.iter(f"{{{NS['t']}}}{kind}"):
+            for el in root.iter(t + kind):
                 xid = el.get("{http://www.w3.org/XML/1998/namespace}id")
                 if not xid:
                     continue
                 names = {n.get("type"): norm("".join(n.itertext()))
                          for n in el if local(n) in ("persName", "orgName", "placeName")}
                 links = [{"type": p.get("type"), "url": p.get("target")}
-                         for p in el.iter(f"{{{NS['t']}}}ptr") if p.get("target")]
-                reg[xid] = {"kind": kind, "name": names.get("full") or names.get("main") or xid,
-                            "links": links}
+                         for p in el.iter(t + "ptr") if p.get("target")]
+                entry = {"kind": "org" if kind == "personGrp" else kind,
+                         "name": names.get("full") or names.get("main") or xid,
+                         "sort": names.get("sort") or (names.get("main") or xid).lower(),
+                         "links": links}
+                desc = el.find(f"{t}note[@type='description']")
+                if desc is not None and norm("".join(desc.itertext())):
+                    entry["desc"] = norm("".join(desc.itertext()))
+                if kind == "place":
+                    entry["ftype"] = el.get("type") or ""
+                    geo = el.find(f"{t}location/{t}geo")
+                    if geo is not None and geo.text and len(geo.text.split()) == 2:
+                        lat, lon = (float(x) for x in geo.text.split())
+                        entry["geo"] = [round(lat, 5), round(lon, 5)]
+                    country = el.find(f"{t}location/{t}country[@{{http://www.w3.org/XML/1998/namespace}}lang='de']")
+                    if country is not None and country.text:
+                        entry["country"] = norm(country.text)
+                reg[xid] = entry
     return reg
+
+
+def occurrences(letters: list[dict], reg: dict[str, dict]) -> None:
+    """Add to every register entry the letters that name it: in the text (with the
+    spelling there) or as sender, recipient or place of writing in the header.
+    ``occ`` = [[letter id, form, role], ...]; role is "" for the text, "sender",
+    "recipient" or "place" (place of writing / receipt) for the header."""
+    seen: set[tuple] = set()
+    for letter in letters:
+        if not letter.get("edited"):
+            continue
+        hits = []
+        for role, acts in (("sender", letter["sender"]), ("recipient", letter["recipient"])):
+            for a in acts:
+                hits.append((a["ref"], a["text"], "place" if a["type"] == "place" else role))
+        for page in letter["pages"]:
+            for e in page["entities"]:
+                if e["type"] in ("per", "org", "place"):
+                    hits.append((e["ref"], e["text"], ""))
+        for ref, form, role in hits:
+            for r in (ref or "").split():
+                r = r.lstrip("#")
+                if r not in reg or (r, letter["id"], form, role) in seen:
+                    continue
+                seen.add((r, letter["id"], form, role))
+                reg[r].setdefault("occ", []).append([letter["id"], form, role])
 
 
 FACS = re.compile(r"^StadtASG_Missive_(\d+)_(\d+)", re.I)
@@ -142,6 +188,31 @@ def load_drafts() -> dict[str, dict]:
             out[r["id"]] = {k: d.get(k) for k in ("sender", "recipient", "place", "date_text", "year", "regest")} | {
                 "reader": r.get("reader"), "model": r.get("model")}
     return out
+
+
+def write_missing_geo(reg: dict[str, dict]) -> None:
+    """docs/places_without_coordinates.md: the register's places the map cannot show."""
+    rows = sorted((e for e in reg.values() if e["kind"] == "place" and "geo" not in e),
+                  key=lambda e: (-len({o[0] for o in e.get("occ", [])}), e["sort"]))
+    ids = {id(e): k for k, e in reg.items()}
+    lines = ["# Places without coordinates", "",
+             f"{len(rows)} of {sum(1 for e in reg.values() if e['kind'] == 'place')} places in "
+             "`place/place.xml` have no `<geo>`, so the viewer's map leaves them out. "
+             "Sorted by the number of edited letters that name them. Written by "
+             "`scripts/build_site.py`; do not edit by hand.", "",
+             "Type is the GeoNames feature class (A region, H water, L area, P settlement, "
+             "S building). *Coordinates from* names the authority links that carry "
+             "coordinates of their own, so a geocoder can take them from there.", "",
+             "| Register id | Name | Type | Country | Letters | Description | Coordinates from | Links |",
+             "|---|---|---|---|---:|---|---|---|"]
+    for e in rows:
+        letters_n = len({o[0] for o in e.get("occ", [])})
+        links = " ".join(f"[{lk['type']}]({lk['url']})" for lk in e["links"])
+        src = ", ".join(sorted({lk["type"] for lk in e["links"]} & {"geonames", "wikidata", "ssrq"})) or "—"
+        cells = [f"`{ids[id(e)]}`", e["name"], e.get("ftype", ""), e.get("country", ""),
+                 str(letters_n), e.get("desc", ""), src, links]
+        lines.append("| " + " | ".join(c.replace("|", "/") for c in cells) + " |")
+    (ROOT / "docs" / "places_without_coordinates.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
@@ -217,7 +288,10 @@ def main() -> None:
     index.sort(key=nr)
     (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (OUT / "readers.json").write_text(json.dumps(readers, ensure_ascii=False, indent=1), encoding="utf-8")
-    (OUT / "registers.json").write_text(json.dumps(registers(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    reg = registers()
+    occurrences(letters, reg)
+    (OUT / "registers.json").write_text(json.dumps(reg, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    write_missing_geo(reg)
     pages = sum(len(letter["pages"]) for letter in letters)
     unedited = [letter for letter in letters if not letter["edited"]]
     print(f"{len(letters)} letters, {pages} pages; not yet edited: {len(unedited)} letters, "
