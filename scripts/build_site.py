@@ -185,7 +185,7 @@ def load_drafts() -> dict[str, dict]:
             d = r.get("draft") or {}
             if d.get("error") or not d.get("regest"):
                 continue
-            out[r["id"]] = {k: d.get(k) for k in ("sender", "recipient", "place", "date_text", "year", "regest")} | {
+            out[r["id"]] = {k: d.get(k) for k in ("sender", "recipient", "place", "date_text", "year", "year_how", "date", "regest")} | {
                 "reader": r.get("reader"), "model": r.get("model")}
     return out
 
