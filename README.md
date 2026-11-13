@@ -38,6 +38,8 @@ Noch nicht edierte Briefe der Serie erscheinen mit ihren maschinellen Lesungen, 
 
 Register und Karte: Orte, Personen und Organisationen der Register (`place/`, `person/`) mit allen edierten Briefen, die sie nennen (im Text mit der Schreibung dort, oder als Absender, Empfänger, Ausstellungsort), und eine Karte der Orte mit Koordinaten. Die 57 Orte ohne Koordinaten stehen in [docs/places_without_coordinates.md](docs/places_without_coordinates.md) (vom Build geschrieben). Noch nicht edierte Briefe kommen hinzu, sobald ihre automatische Auszeichnung mit den Registern verknüpft ist.
 
+Der Viewer ist zweisprachig (Deutsch/Englisch, Umschalter oben rechts): Er öffnet in der Sprache des Browsers, `?lang=de` oder `?lang=en` erzwingt eine Sprache, z. B. <https://dhbern.github.io/sg-missiven-data/?lang=de>. Jeder sichtbare Text steht in `site/app.js` als `T("English", "Deutsch")` nebeneinander; die Beschreibungen der Leser haben in `readings/readers.json` die Felder `label_de`, `kind_de`, `about_de`, `caveat_de`.
+
 Eine weitere Lesung (z. B. aus Transkribus, eScriptorium, kraken oder einem anderen Modell) hinzufügen: [docs/ADDING_READINGS.md](docs/ADDING_READINGS.md).
 
 Die Fehlerquote (CER) misst den Abstand zu den Konventionen *dieser* Edition, nicht die
