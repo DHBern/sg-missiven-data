@@ -24,7 +24,7 @@ from lxml import etree
 TEI = "{http://www.tei-c.org/ns/1.0}"
 NS = {"t": TEI[1:-1]}
 
-ENTITY = {"persName": "per", "placeName": "place", "orgName": "org",
+ENTITY = {"persName": "per", "placeName": "place", "orgName": "org", "origPlace": "place",
           "origDate": "date", "date": "date"}
 
 
@@ -167,7 +167,7 @@ class Walker:
             role = el.get("role") or ""
             label = norm("".join(el.itertext()))
             page = self.page
-            ent = {"type": kind, "ref": ref, "role": role, "text": label}
+            ent = {"type": kind, "el": name, "ref": ref, "role": role, "text": label}
             if page is not None:
                 ent["_start"] = page.pos()
                 page.entities.append(ent)

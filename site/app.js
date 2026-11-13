@@ -268,6 +268,14 @@
     }
     const rows = [...groups.entries()].map(([lid, g]) => ({ l: byId(lid), ...g })).filter((r) => r.l)
       .sort((a, b) => state.index.indexOf(a.l) - state.index.indexOf(b.l));
+    const agroups = new Map();
+    for (const [lid, form, role] of e.occ_auto || []) {
+      if (!agroups.has(lid)) agroups.set(lid, { forms: new Set(), roles: new Set() });
+      agroups.get(lid).forms.add(form);
+      if (role) agroups.get(lid).roles.add(role);
+    }
+    const autoRows = [...agroups.entries()].map(([lid, g]) => ({ l: byId(lid), ...g })).filter((r) => r.l)
+      .sort((a, b) => state.index.indexOf(a.l) - state.index.indexOf(b.l));
     const links = e.links.filter((l) => /^https?:/.test(l.url));
     app.innerHTML = `
       <section class="entry">
@@ -279,6 +287,7 @@
           <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">in the edition ↗</a></p>
         ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">The register has no coordinates for this place, so it is not on the map.</p>`) : ""}
         <h2>${rows.length} edited letter${rows.length === 1 ? "" : "s"}</h2>
+        ${autoRows.length ? `<p class="muted small">Below: ${autoRows.length} letter${autoRows.length === 1 ? "" : "s"} not yet edited, where the automatic tagging found this ${e.kind === "place" ? "place" : "name"}.</p>` : ""}
         <div class="list">${rows.map((r) => `
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
@@ -286,6 +295,15 @@
             <span><span class="who">${esc(r.l.sender.join(", ") || "?")} → ${esc(r.l.recipient.join(", ") || "?")}</span>
             <span class="reg">${r.forms.size ? `<i>${[...r.forms].map(esc).join("</i>, <i>")}</i>` : ""}${r.roles.size ? `${r.forms.size ? " · " : ""}${[...r.roles].map((x) => ROLE[x] || x).join(", ")}` : ""}</span></span>
           </a>`).join("")}</div>
+        ${autoRows.length ? `<h2>${autoRows.length} letter${autoRows.length === 1 ? "" : "s"} not yet edited <span class="badge">automatic</span></h2>
+        <p class="muted small">Found by the automatic tagging of the machine reading and linked to this entry by rule; neither is checked.</p>
+        <div class="list">${autoRows.map((r) => `
+          <a class="row" href="#/letter/${r.l.id}/1">
+            <span class="num">${esc(nrOf(r.l))}</span>
+            <span class="date">${r.l.year ? esc(r.l.year) + "?" : ""}</span>
+            <span><span class="who">${esc(r.l.sender.join(", ") || "Not yet edited")}${r.l.recipient.length ? " → " + esc(r.l.recipient.join(", ")) : ""}</span>
+            <span class="reg"><i>${[...r.forms].map(esc).join("</i>, <i>")}</i>${r.roles.size ? " · " + [...r.roles].map((x) => ROLE[x] || x).join(", ") : ""}</span></span>
+          </a>`).join("")}</div>` : ""}
       </section>`;
     if (e.geo && window.L) {
       const m = baseMap("emap", { center: e.geo, zoom: e.ftype === "A" ? 7 : 10 });
@@ -462,8 +480,10 @@
     for (const e of sorted) {
       if (e.start < at) continue;
       out += esc(text.slice(at, e.start));
-      const seg = text.slice(e.start, e.end).split("\n").map(esc).join(`</span>\n<span class="ent ${e.type}" data-ref="${esc(e.ref || "")}" data-auto="1">`);
-      out += `<span class="ent ${e.type}" data-ref="${esc(e.ref || "")}" data-auto="1" data-label="${esc(e.label || "")}">${seg}</span>`;
+      const attrs = `class="ent ${e.type}" data-ref="${esc(e.ref || e.when || "")}" data-auto="1" data-el="${esc(e.el || "")}"` +
+        ` data-role="${esc(e.role || "")}" data-cert="${esc(e.cert || e.when_cert || "")}"`;
+      const seg = text.slice(e.start, e.end).split("\n").map(esc).join(`</span>\n<span ${attrs}>`);
+      out += `<span ${attrs}>${seg}</span>`;
       at = e.end;
     }
     return out + esc(text.slice(at));
@@ -519,7 +539,8 @@
     const reg = state.registers[ref];
     const kind = [...el.classList].find((c) => ["per", "place", "org", "date"].includes(c));
     const kindName = { per: "Person", place: "Place", org: "Organisation", date: "Date" }[kind] || "";
-    let body = `<b>${esc(kindName)}${el.dataset.auto ? " · automatic" : ""}</b>`;
+    const sub = { origPlace: "place of writing", origDate: "date line" }[el.dataset.el] || "";
+    let body = `<b>${esc(kindName)}${sub ? " · " + sub : ""}${el.dataset.auto ? " · automatic" : ""}</b>`;
     if (kind === "date" && ref) body += esc(ref);
     else if (reg) {
       body += `<a href="#/entry/${encodeURIComponent(ref)}">${esc(reg.name)}</a>`;
@@ -529,6 +550,7 @@
     } else if (el.dataset.auto) body += `<span class="muted">not linked to the register</span>`;
     else if (ref) body += esc(ref);
     if (el.dataset.role) body += `<div class="muted">role: ${esc(el.dataset.role)}</div>`;
+    if (el.dataset.auto && el.dataset.cert) body += `<div class="muted">${kind === "date" ? "year inferred from the neighbouring letters" : "uncertain link (close spelling)"}</div>`;
     hideTip();
     tipEl = document.createElement("div");
     tipEl.className = "tip";

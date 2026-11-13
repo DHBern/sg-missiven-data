@@ -125,6 +125,15 @@ def occurrences(letters: list[dict], reg: dict[str, dict]) -> None:
     seen: set[tuple] = set()
     for letter in letters:
         if not letter.get("edited"):
+            # the automatic tagging of letters not yet edited: kept apart (occ_auto)
+            for page in letter["pages"]:
+                for ents in (page.get("auto_entities") or {}).values():
+                    for e in ents:
+                        r = e.get("ref")
+                        role = "place" if e.get("el") == "origPlace" else e.get("role", "")
+                        if r in reg and (r, letter["id"], e["text"], role, "auto") not in seen:
+                            seen.add((r, letter["id"], e["text"], role, "auto"))
+                            reg[r].setdefault("occ_auto", []).append([letter["id"], e["text"], role])
             continue
         hits = []
         for role, acts in (("sender", letter["sender"]), ("recipient", letter["recipient"])):

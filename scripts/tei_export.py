@@ -102,14 +102,21 @@ def page_xml(text: str, spans: list[dict], line_no: int, reg: dict) -> tuple[str
     opens: dict[int, list[str]] = {}
     closes: dict[int, list[str]] = {}
     for s in outer(spans, len(text)):
-        name = ELEMENT.get(s["type"])
-        if not name:
+        # the edition's element and role (scripts/ner.py learns them); older
+        # entity files only have the coarse type
+        name = s.get("el") or ELEMENT.get(s["type"])
+        if name not in ("persName", "orgName", "placeName", "origPlace", "origDate", "date"):
             continue
         attrs = ""
-        if s.get("ref") and s["ref"] in reg:
+        if name in ("origDate", "date"):
+            if s.get("when"):
+                attrs += f" when={quoteattr(s['when'])}" + (f" cert={quoteattr(s['when_cert'])}" if s.get("when_cert") else "")
+        elif s.get("ref") and s["ref"] in reg:
             attrs += f" ref={quoteattr(s['ref'])}"
-            if s.get("link_score") is not None and s["link_score"] < 90:
-                attrs += ' cert="low"'
+            if s.get("cert"):
+                attrs += f" cert={quoteattr(s['cert'])}"  # "medium", as the edition writes doubt
+        if s.get("role"):
+            attrs += f" role={quoteattr(s['role'])}"
         attrs += ' resp="#ner"'
         opens.setdefault(s["start"], []).append(f"<{name}{attrs}>")
         closes.setdefault(s["end"], []).insert(0, f"</{name}>")
