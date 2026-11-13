@@ -24,7 +24,7 @@
   function applyLang() {
     document.documentElement.lang = LANG;
     document.title = T("St. Gallen Missives Readings", "St. Galler Missiven: Lesungen");
-    const nav = { letters: T("Letters", "Briefe"), places: T("Places", "Orte"), names: T("Names", "Namen"),
+    const nav = { letters: T("Letters", "Briefe"), search: T("Search", "Suche"), places: T("Places", "Orte"), names: T("Names", "Namen"),
                   map: T("Map", "Karte"), readers: T("Readers", "Leser"), about: T("About", "Über") };
     document.querySelectorAll("[data-nav]").forEach((a) => { a.textContent = nav[a.dataset.nav]; });
     const brand = document.querySelector(".brand");
@@ -69,12 +69,15 @@
 
   function setNav(which) {
     if (!["places", "names", "map"].includes(which)) destroyMaps();
+    if (which !== "search") clearTimeout(searchTimer);
     document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
   }
 
   function route() {
     hideTip();
-    const parts = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
+    const [path, qs] = location.hash.replace(/^#\/?/, "").split("?");
+    const parts = path.split("/").map(decodeURIComponent);
+    if (parts[0] === "search") return showSearch(new URLSearchParams(qs || ""));
     if (parts[0] === "letter" && parts[1]) return showLetter(parts[1], +(parts[2] || 1), parts[3]);
     if (parts[0] === "readers") return showReaders();
     if (parts[0] === "places") return showRegister("places");
@@ -417,6 +420,284 @@
     /* open on the places named in several letters; the far ones are a zoom away */
     const core = geo.filter(([, e]) => lettersOf(e) >= 3);
     m.fitBounds(L.latLngBounds((core.length > 5 ? core : geo).map(([, e]) => e.geo)), { padding: [20, 20] });
+  }
+
+  /* ---------- search ---------- */
+  /* A dedicated search over every letter of the series: full text (the edition's
+     text, else the best machine reading) and every facet the data holds. The
+     facets come from site/data/search/meta.json; the text is loaded, in
+     parallel shards, only once a text query is typed. The whole search lives in
+     the URL (#/search?q=…&kw=…), so a search can be bookmarked and sent. */
+  const FACETS = [
+    { k: "st", en: "Status", de: "Status" },
+    { k: "dec", en: "Decade", de: "Jahrzehnt" },
+    { k: "snd", en: "Sender", de: "Absender" },
+    { k: "rcp", en: "Recipient", de: "Empfänger" },
+    { k: "op", en: "Place of writing", de: "Ausstellungsort" },
+    { k: "kw", en: "Keyword", de: "Schlagwort" },
+    { k: "per", en: "Person named", de: "Genannte Person" },
+    { k: "org", en: "Organisation named", de: "Genannte Organisation" },
+    { k: "pl", en: "Place named", de: "Genannter Ort" },
+    { k: "dr", en: "Regest", de: "Regest" },
+    { k: "src", en: "Text from", de: "Text aus" },
+  ];
+  const search = { meta: null, refs: null, texts: null, loading: null };
+  let searchTimer = null;
+
+  async function searchMeta() {
+    if (!search.meta) {
+      search.meta = await json("data/search/meta.json");
+      /* letters -> register entries they name, from the registers (edited: the
+         editors' tags; not yet edited: the automatic tagging) */
+      const refs = new Map(search.meta.letters.map((m) => [m.id, { per: new Set(), org: new Set(), pl: new Set() }]));
+      for (const [ref, e] of Object.entries(state.registers)) {
+        const k = e.kind === "place" ? "pl" : e.kind === "person" ? "per" : "org";
+        for (const [lid] of [...(e.occ || []), ...(e.occ_auto || [])]) if (refs.has(lid)) refs.get(lid)[k].add(ref);
+      }
+      search.refs = refs;
+    }
+    return search.meta;
+  }
+
+  function searchTexts() {
+    if (!search.loading) {
+      search.loading = Promise.all(Array.from({ length: search.meta.shards }, (_, i) => json(`data/search/text-${i}.json`)))
+        .then((shards) => { search.texts = Object.assign({}, ...shards); return search.texts; });
+    }
+    return search.loading;
+  }
+
+  /* Normalise for matching, keeping for every output character the position it
+     came from (for highlighting). Tolerant: the old spelling's variants count as
+     one: u/v/w, i/y/j, ſ/s, doubled letters, ů = uo = u, ä = ae = a, and a word
+     broken at the line end. */
+  function normText(str, tol) {
+    let out = "", map = [], last = " ";
+    for (let i = 0; i < str.length; i++) {
+      const c = str[i];
+      if (tol && (c === "-" || c === "¬" || c === "=") && /^[ \t]*\n/.test(str.slice(i + 1, i + 4))) {
+        while (i + 1 < str.length && str[i + 1] !== "\n") i++;
+        i++; // the line break: the word continues on the next line
+        continue;
+      }
+      let d = c.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace("ß", "ss").replace("ſ", "s");
+      if (tol) d = d.replace(/[vw]/g, "u").replace(/[yj]/g, "i");
+      for (let ch of d) {
+        if (!/[a-z0-9]/.test(ch)) ch = " ";
+        if (ch === " " && last === " ") continue;
+        if (tol && ch !== " " && ch === last) continue;
+        if (tol && ((ch === "e" && /[aou]/.test(last)) || (ch === "o" && last === "u"))) continue;
+        out += ch; map.push(i); last = ch;
+      }
+    }
+    return { s: out, map };
+  }
+
+  function parseQuery(q, tol) {
+    const terms = [];
+    q.replace(/"([^"]+)"|(\S+)/g, (_, ph, w) => { const t = normText(ph || w, tol).s.trim(); if (t) terms.push(t); });
+    return terms;
+  }
+
+  function facetValues(m, k) {
+    const r = search.refs.get(m.id);
+    switch (k) {
+      case "st": return [m.ed ? "ed" : "un"];
+      case "dec": return m.y ? [String(Math.floor(m.y / 10) * 10)] : [];
+      case "snd": return m.s.filter(Boolean);
+      case "rcp": return m.r.filter(Boolean);
+      case "op": return m.op;
+      case "kw": return m.kw;
+      case "per": case "org": case "pl": return [...r[k]];
+      case "dr": return [m.dr ? "yes" : "no"];
+      case "src": return m.src;
+    }
+    return [];
+  }
+  function facetLabel(k, v) {
+    if (k === "st") return v === "ed" ? T("Edited", "Ediert") : T("Not yet edited", "Noch nicht ediert");
+    if (k === "dec") return T(`${v}s`, `${v}er`);
+    if (k === "dr") return v === "yes" ? T("Drafted automatically", "automatisch entworfen") : T("None drafted", "kein Entwurf");
+    if (k === "src") return v === "edition" ? T("Edition", "Edition") : T("Machine reading", "Maschinelle Lesung");
+    if (["per", "org", "pl"].includes(k)) return (state.registers[v] || {}).name || v;
+    return v;
+  }
+
+  async function showSearch(params) {
+    setNav("search");
+    destroyOsd();
+    const meta = await searchMeta();
+    const sel = Object.fromEntries(FACETS.map((f) => [f.k, new Set(params.getAll(f.k))]));
+    const ui = { q: params.get("q") || "", tol: params.get("tol") !== "0", sort: params.get("sort") || "date",
+                 from: params.get("from") || "", to: params.get("to") || "", shown: 50, open: new Set(params.getAll("open")) };
+    app.innerHTML = `
+      <section class="intro">
+        <h1>${T("Search", "Suche")}</h1>
+        <p>${T(`All ${meta.letters.length} letters: the text of the edition, and for letters and pages the edition does not have, the machine reading (${esc(readerLabel(meta.reader))}). Narrow the results with the facets; every count shows how many letters remain with it.`,
+              `Alle ${meta.letters.length} Briefe: der Text der Edition, und für Briefe und Seiten, die die Edition nicht hat, die maschinelle Lesung (${esc(readerLabel(meta.reader))}). Die Facetten grenzen ein; jede Zahl sagt, wie viele Briefe damit bleiben.`)}</p>
+      </section>
+      <div class="sbar">
+        <input id="sq" type="search" value="${esc(ui.q)}" placeholder="${T('Words or "a phrase" in the text…', 'Wörter oder «eine Wendung» im Text…')}" aria-label="${T("Search the text", "Text durchsuchen")}">
+        <label class="small"><input type="checkbox" id="stol" ${ui.tol ? "checked" : ""}> ${T("tolerant spelling", "Schreibvarianten zulassen")}</label>
+        <span class="yr">${T("Years", "Jahre")} <input id="sfrom" type="number" min="1300" max="1700" value="${esc(ui.from)}" aria-label="${T("from year", "ab Jahr")}"> – <input id="sto" type="number" min="1300" max="1700" value="${esc(ui.to)}" aria-label="${T("to year", "bis Jahr")}"></span>
+        <select id="ssort" aria-label="${T("Sort", "Sortierung")}">
+          <option value="date" ${ui.sort === "date" ? "selected" : ""}>${T("by date", "nach Datum")}</option>
+          <option value="hits" ${ui.sort === "hits" ? "selected" : ""}>${T("most hits first", "meiste Treffer zuerst")}</option>
+        </select>
+        <button type="button" id="sreset" class="linkish">${T("Reset", "Zurücksetzen")}</button>
+      </div>
+      <div class="search">
+        <div class="facetwrap">
+          <button type="button" id="ftoggle" class="ftoggle" aria-expanded="false" aria-controls="facets">${T("Facets", "Facetten")} <span id="fsel"></span></button>
+          <aside class="facets" id="facets" aria-label="${T("Facets", "Facetten")}"></aside>
+        </div>
+        <section class="results"><p id="scount" class="muted small"></p><div id="sres" class="list"></div></section>
+      </div>`;
+
+    const $ = (id) => document.getElementById(id);
+    const toUrl = () => {
+      const u = new URLSearchParams();
+      if (ui.q) u.set("q", ui.q);
+      if (!ui.tol) u.set("tol", "0");
+      if (ui.sort !== "date") u.set("sort", ui.sort);
+      if (ui.from) u.set("from", ui.from);
+      if (ui.to) u.set("to", ui.to);
+      for (const f of FACETS) for (const v of sel[f.k]) u.append(f.k, v);
+      const h = "#/search" + (u.toString() ? "?" + u : "");
+      if (location.hash !== h) history.replaceState(null, "", location.pathname + location.search + h);
+    };
+
+    const run = async () => {
+      toUrl();
+      const terms = parseQuery(ui.q, ui.tol);
+      let texts = null;
+      if (terms.length) {
+        if (!search.texts) $("scount").textContent = T("Loading the texts…", "Die Texte werden geladen…");
+        texts = await searchTexts();
+      }
+      /* text and years first: they hold for every facet count */
+      const hits = new Map();
+      const base = meta.letters.filter((m) => {
+        if (ui.from && (!m.y || m.y < +ui.from)) return false;
+        if (ui.to && (!m.y || m.y > +ui.to)) return false;
+        if (!terms.length) return true;
+        const pages = texts[m.id] || [];
+        const found = [];
+        let all = new Set();
+        for (const [n, text, src] of pages) {
+          const t = normText(text, ui.tol).s;
+          const here = terms.filter((x) => t.includes(x));
+          if (here.length) { found.push({ n, text, src, here }); here.forEach((x) => all.add(x)); }
+        }
+        if (all.size < terms.length) return false;
+        hits.set(m.id, found);
+        return true;
+      });
+      const passes = (m, except) => FACETS.every((f) => f.k === except || !sel[f.k].size || facetValues(m, f.k).some((v) => sel[f.k].has(v)));
+      const rows = base.filter((m) => passes(m, null));
+      renderFacets(base, passes);
+      renderResults(rows, hits, terms);
+    };
+
+    function renderFacets(base, passes) {
+      const nSel = FACETS.reduce((n, f) => n + sel[f.k].size, 0);
+      $("fsel").textContent = nSel ? `(${nSel} ${T("selected", "gewählt")})` : "";
+      $("facets").innerHTML = FACETS.map((f) => {
+        const counts = new Map();
+        for (const m of base) if (passes(m, f.k)) for (const v of new Set(facetValues(m, f.k))) counts.set(v, (counts.get(v) || 0) + 1);
+        for (const v of sel[f.k]) if (!counts.has(v)) counts.set(v, 0);
+        let vals = [...counts.entries()];
+        if (f.k === "dec") vals.sort((a, b) => a[0].localeCompare(b[0]));
+        else vals.sort((a, b) => b[1] - a[1] || facetLabel(f.k, a[0]).localeCompare(facetLabel(f.k, b[0]), "de"));
+        if (!vals.length) return "";
+        const long = vals.length > 12 && f.k !== "dec";
+        const filt = (ui["ff_" + f.k] || "").toLowerCase();
+        let show = filt ? vals.filter(([v]) => facetLabel(f.k, v).toLowerCase().includes(filt)) : vals;
+        const full = ui.open.has(f.k) || f.k === "dec";
+        const rest = full ? 0 : Math.max(0, show.length - 12);
+        if (!full) show = show.slice(0, 12).concat(show.slice(12).filter(([v]) => sel[f.k].has(v)));
+        /* on a phone the facets start closed, so the results are not pushed off-screen */
+        const isOpen = sel[f.k].size || (!window.matchMedia("(max-width: 800px)").matches && ["st", "dec", "snd", "kw", "pl"].includes(f.k));
+        return `<details class="facet" ${isOpen ? "open" : ""} data-k="${f.k}">
+          <summary>${T(f.en, f.de)}${sel[f.k].size ? ` <span class="badge">${sel[f.k].size}</span>` : ""} <span class="muted small">${vals.length}</span></summary>
+          ${long ? `<input class="ffilter" type="search" data-k="${f.k}" value="${esc(ui["ff_" + f.k] || "")}" placeholder="${T("Filter…", "Filtern…")}" aria-label="${T("Filter", "Filtern")} ${T(f.en, f.de)}">` : ""}
+          <ul>${show.map(([v, n]) => `<li><label class="${n ? "" : "zero"}"><input type="checkbox" data-k="${f.k}" value="${esc(v)}" ${sel[f.k].has(v) ? "checked" : ""}>
+            <span class="fl">${esc(facetLabel(f.k, v))}</span><span class="fc">${n}</span></label></li>`).join("")}</ul>
+          ${rest ? `<button type="button" class="linkish more" data-k="${f.k}">${T(`show all ${vals.length}`, `alle ${vals.length} zeigen`)}</button>` : ""}
+        </details>`;
+      }).join("");
+    }
+
+    function snippet(text, terms, tol) {
+      const { s: t, map } = normText(text, tol);
+      const spans = [];
+      for (const x of terms) { let i = t.indexOf(x); while (i >= 0 && spans.length < 40) { spans.push([map[i], map[i + x.length - 1] + 1]); i = t.indexOf(x, i + x.length); } }
+      spans.sort((a, b) => a[0] - b[0]);
+      if (!spans.length) return "";
+      const a = Math.max(0, spans[0][0] - 70), b = Math.min(text.length, spans[0][1] + 110);
+      let out = "", at = a;
+      for (const [x, y] of spans) { if (x < at || y > b) continue; out += esc(text.slice(at, x)) + `<mark>${esc(text.slice(x, y))}</mark>`; at = y; }
+      out += esc(text.slice(at, b));
+      return (a > 0 ? "…" : "") + out.replace(/\n/g, " / ") + (b < text.length ? "…" : "") + (spans.length > 1 ? ` <span class="muted">(${spans.length}×)</span>` : "");
+    }
+
+    function renderResults(rows, hits, terms) {
+      const byIndex = new Map(state.index.map((l, i) => [l.id, i]));
+      const nHits = (m) => (hits.get(m.id) || []).reduce((s, h) => s + h.here.length, 0);
+      rows = [...rows].sort(ui.sort === "hits" && terms.length ? (a, b) => nHits(b) - nHits(a) || byIndex.get(a.id) - byIndex.get(b.id)
+                                                                 : (a, b) => byIndex.get(a.id) - byIndex.get(b.id));
+      $("scount").innerHTML = `${rows.length} ${P(rows.length, "letter", "letters", "Brief", "Briefe")}` +
+        (terms.length ? T(` with `, ` mit `) + (ui.q.match(/"[^"]+"|\S+/g) || []).map((t) => `<b>${esc(t)}</b>`).join(" + ") : "");
+      $("sres").innerHTML = rows.slice(0, ui.shown).map((m) => {
+        const l = state.index[byIndex.get(m.id)] || {};
+        const hs = hits.get(m.id) || [];
+        const date = m.ed ? fmtDate(l.date) : m.y ? m.y + "?" : "";
+        return `<div class="row srow">
+          <span class="num"><a href="#/letter/${m.id}/1">${esc(nrOf(l))}</a></span>
+          <span class="date">${esc(date)}</span>
+          <span><a class="who" href="#/letter/${m.id}/1">${esc((l.sender || []).join(", ") || "?")} → ${esc((l.recipient || []).join(", ") || "?")}</a>
+          ${!m.ed ? `<span class="badge auto">${T("not yet edited", "noch nicht ediert")}</span>` : ""}
+          ${hs.length ? hs.slice(0, 3).map((h) => `<a class="hit" href="#/letter/${m.id}/${h.n}/${h.src === "edition" ? "edition" : esc(h.src)}">
+              <span class="muted small">${T("p.", "S.")} ${h.n} · ${h.src === "edition" ? T("edition", "Edition") : esc(readerLabel(h.src))}</span> ${snippet(h.text, terms, ui.tol)}</a>`).join("")
+              + (hs.length > 3 ? `<span class="muted small">${T(`and ${hs.length - 3} more pages`, `und ${hs.length - 3} weitere Seiten`)}</span>` : "")
+            : `<span class="reg">${esc(l.regest || "")}</span>`}</span>
+        </div>`;
+      }).join("") + (rows.length > ui.shown ? `<button type="button" class="linkish" id="smore">${T(`Show ${Math.min(50, rows.length - ui.shown)} more of ${rows.length - ui.shown}`, `${Math.min(50, rows.length - ui.shown)} weitere von ${rows.length - ui.shown} zeigen`)}</button>` : "")
+        + (!rows.length ? `<p class="empty">${T("No letter matches. Remove a facet or a word.", "Kein Brief passt. Eine Facette oder ein Wort entfernen.")}</p>` : "");
+      const more = $("smore");
+      more && more.addEventListener("click", () => { ui.shown += 50; renderResults(rows, hits, terms); });
+    }
+
+    const later = (f, ms = 250) => { clearTimeout(searchTimer); searchTimer = setTimeout(f, ms); };
+    $("sq").addEventListener("input", () => { ui.q = $("sq").value; ui.shown = 50; later(run); });
+    $("stol").addEventListener("change", () => { ui.tol = $("stol").checked; run(); });
+    $("ssort").addEventListener("change", () => { ui.sort = $("ssort").value; run(); });
+    $("sfrom").addEventListener("input", () => { ui.from = $("sfrom").value; later(run, 400); });
+    $("sto").addEventListener("input", () => { ui.to = $("sto").value; later(run, 400); });
+    $("sreset").addEventListener("click", () => { location.hash = "#/search"; });
+    $("ftoggle").addEventListener("click", () => {
+      const open = $("facets").classList.toggle("shown");
+      $("ftoggle").setAttribute("aria-expanded", String(open));
+    });
+    $("facets").addEventListener("change", (ev) => {
+      const box = ev.target.closest("input[type=checkbox][data-k]");
+      if (!box) return;
+      const set = sel[box.dataset.k];
+      box.checked ? set.add(box.value) : set.delete(box.value);
+      ui.shown = 50;
+      run();
+    });
+    $("facets").addEventListener("input", (ev) => {
+      const f = ev.target.closest(".ffilter");
+      if (!f) return;
+      ui["ff_" + f.dataset.k] = f.value;
+      later(() => { run().then(() => { const el = app.querySelector(`.ffilter[data-k="${f.dataset.k}"]`); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } }); }, 150);
+    });
+    $("facets").addEventListener("click", (ev) => {
+      const b = ev.target.closest("button.more");
+      if (b) { ui.open.add(b.dataset.k); run(); }
+    });
+    await run();
   }
 
   /* ---------- letter ---------- */
