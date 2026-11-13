@@ -224,6 +224,51 @@ def write_missing_geo(reg: dict[str, dict]) -> None:
     (ROOT / "docs" / "places_without_coordinates.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+SEARCH_SHARD_CHARS = 1_500_000  # text per search shard: loaded in parallel, only by the search view
+
+
+def write_search(letters: list[dict], index: list[dict], reg: dict, best_reader: str) -> None:
+    """site/data/search/: meta.json (one row per letter, the facets) and
+    text-N.json (the page texts, split so the browser loads them in parallel
+    and only when someone searches the text).
+
+    The text of a page is the edition's where the edition has one, else the
+    best machine reading (``best_reader``) — so a search covers the whole
+    series, and every hit says which of the two it comes from."""
+    out = OUT / "search"
+    out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("text-*.json"):
+        old.unlink()
+    by_id = {e["id"]: e for e in index}
+    meta, shards, cur, size = [], [], {}, 0
+    for letter in letters:
+        e = by_id[letter["id"]]
+        year = e["date"][:4] if e.get("date", "")[:4].isdigit() else str(e.get("year") or "")
+        places = [a["text"] for a in letter["sender"] if a["type"] == "place"]
+        if not letter["edited"] and (letter.get("auto_regest") or {}).get("place"):
+            places = [letter["auto_regest"]["place"]]
+        pages, srcs = [], set()
+        for i, page in enumerate(letter["pages"], 1):
+            if page["text"]:
+                pages.append([i, page["text"], "edition"]); srcs.add("edition")
+            elif (page.get("readings") or {}).get(best_reader, {}).get("text"):
+                pages.append([i, page["readings"][best_reader]["text"], best_reader]); srcs.add("machine")
+        meta.append({"id": letter["id"], "y": int(year) if year.isdigit() else None,
+                     "ed": letter["edited"], "s": e["sender"], "r": e["recipient"], "op": places,
+                     "kw": letter.get("keywords", []), "dr": bool(e.get("draft")),
+                     "src": sorted(srcs), "sh": len(shards)})
+        cur[letter["id"]] = pages
+        size += sum(len(t) for _, t, _ in pages)
+        if size >= SEARCH_SHARD_CHARS:
+            shards.append(cur); cur, size = {}, 0
+    if cur:
+        shards.append(cur)
+    for i, shard in enumerate(shards):
+        (out / f"text-{i}.json").write_text(json.dumps(shard, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (out / "meta.json").write_text(json.dumps({"reader": best_reader, "shards": len(shards), "letters": meta},
+                                              ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 def main() -> None:
     letters = read_edition(ROOT / "data")
     for letter in letters:
@@ -301,6 +346,9 @@ def main() -> None:
     occurrences(letters, reg)
     (OUT / "registers.json").write_text(json.dumps(reg, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     write_missing_geo(reg)
+    scored = [r for r in readers if r.get("cer") is not None and r["id"] != "joint"]
+    best = min(scored, key=lambda r: r["cer"])["id"] if scored else "gemini-4-argon"
+    write_search(letters, index, reg, best)
     pages = sum(len(letter["pages"]) for letter in letters)
     unedited = [letter for letter in letters if not letter["edited"]]
     print(f"{len(letters)} letters, {pages} pages; not yet edited: {len(unedited)} letters, "
