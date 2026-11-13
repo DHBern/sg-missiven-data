@@ -21,8 +21,9 @@ them needs no login to UBELIX.
 
 ## One cycle
 
-`scripts/pipeline.sh`, run by a systemd **user** timer on tei (dh has linger),
-every two hours and on demand (`systemctl --user start sgm-pipeline`).
+`scripts/pipeline.sh`, run by a systemd **user** timer on tei (dh has linger) at
+07:30 and 19:30, and on demand (`systemctl --user start sgm-pipeline`). Units in
+`ops/systemd/`; status in `~/sgm-pipeline/status.jsonl`.
 
 1. **Update:** `git pull --ff-only` on `main`.
 2. **Collect:** `scripts/collect_series.py` over the sources in
@@ -52,7 +53,7 @@ every two hours and on demand (`systemctl --user start sgm-pipeline`).
 
 A cycle that finds nothing new commits nothing.
 
-### Decision needed: how data reaches `main`
+### How data reaches `main` (decided 13.11.2026: B)
 
 | | How | For | Against |
 |---|---|---|---|
@@ -60,7 +61,7 @@ A cycle that finds nothing new commits nothing.
 | **B** | tei opens or updates one PR "Readings update (automatic)" and merges it itself when the checks pass | every update visible as a PR; code never comes this way | one more step |
 | C | as B, but a person merges | full control | updates wait for someone |
 
-Recommendation: **B**. Code changes keep coming as reviewed PRs.
+**B** is implemented: branch `data/auto`, PR "Readings update (automatic, tei)", merged by the script when the checks pass. Code changes keep coming as reviewed PRs.
 
 ### Limits on tei
 
@@ -72,8 +73,8 @@ Recommendation: **B**. Code changes keep coming as reviewed PRs.
 - **Memory:** 3.9 GB in all, about 1.9 GB available. The build takes 134 MB.
   hmBERT inference and the alignment for the joint reading need to be measured
   before they run here.
-- **Git growth:** each collection rewrites whole jsonl files. Commit at most once
-  a day, unless a run finished.
+- **Git growth:** each collection rewrites whole jsonl files; hence two cycles a
+  day, not one every two hours.
 
 ## kraken and TrOCR on UBELIX for the new pages
 
@@ -143,7 +144,7 @@ series has 14,385 more (8,088 downloaded, the rest by 14.11.).
 ## Order of work
 
 1. ✅ `collect_series.py`, first collection on tei (13.11.).
-2. Decision A/B/C (publication) and on the UBELIX key.
+2. ✅ Publication: B. Open: the UBELIX key.
 3. `pipeline.sh` with the systemd user timer, steps 1, 2, 6, 7, 8 (collect and
    publish).
 4. Joint reading for the series (step 3), with its measurement.
