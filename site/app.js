@@ -11,6 +11,7 @@
   };
   state.ents = store.get("ents", true);
   state.diff = store.get("diff", false);
+  state.unc = store.get("unc", true);
   state.reader = store.get("reader", "edition");
 
   /* Language: ?lang=de|en, else the viewer's last choice, else the browser's. */
@@ -827,6 +828,7 @@
       const firstRead = state.readers.find((x) => x.id !== "edition" && page.readings[x.id]);
       reader = firstRead ? firstRead.id : "edition";
     }
+    state.view = { page, reader };  // for the uncertainty tooltip
 
     const pos = state.index.findIndex((l) => l.id === id);
     const prev = state.index[pos - 1], next = state.index[pos + 1];
@@ -861,6 +863,7 @@
           <div class="toggles">
             <label><input type="checkbox" id="t-diff" ${state.diff ? "checked" : ""} ${reader === "edition" || !page.text ? "disabled" : ""}><span>${T("Compare with edition", "Mit Edition vergleichen")}</span></label>
             <label><input type="checkbox" id="t-ents" ${state.ents ? "checked" : ""} ${hasEnts(page, reader) ? "" : "disabled"}><span>${T("Entities", "Entitäten")}</span></label>
+            <label title="${T("Words on which the machine readings disagree (joint reading)", "Wörter, bei denen die maschinellen Lesungen auseinandergehen (gemeinsame Lesung)")}"><input type="checkbox" id="t-unc" ${state.unc ? "checked" : ""} ${uncFor(page, reader).length ? "" : "disabled"}><span>${T("Uncertain words", "Unsichere Wörter")}</span></label>
           </div>
           <div id="reading">${readingHtml(page, reader)}</div>
         </section>
@@ -928,10 +931,12 @@
     if (!rd.text) return head + `<p class="empty">${T("Empty reading", "Leere Lesung")}${page.text ? "" : T(" — the edition has no text here either", " – auch die Edition hat hier keinen Text")}.</p>`;
     const trunc = rd.truncated ? `<p class="caveat">${T("This reading hit the model's length limit and stops early.", "Diese Lesung hat die Längengrenze des Modells erreicht und bricht vorzeitig ab.")}</p>` : "";
     let body;
+    const unc = uncFor(page, readerId);
+    const showUnc = state.unc && unc.length && !(state.diff && page.text);
     if (state.diff && page.text) body = diffHtml(page.text, rd.text);
-    else if (showEnts) body = entHtml(rd.text, page.auto_entities[readerId]);
-    else body = esc(rd.text);
-    return head + trunc + (showEnts && !(state.diff && page.text) ? legend() : "") +
+    else if (showEnts) body = entHtml(rd.text, page.auto_entities[readerId], showUnc ? unc : null);
+    else body = showUnc ? uncHtml(rd.text, unc) : esc(rd.text);
+    return head + trunc + (showEnts && !(state.diff && page.text) ? legend() : "") + (showUnc ? uncLegend(unc) : "") +
       `<div class="text ${showEnts ? "ents" : ""}">${numberLines(body)}</div>`;
   }
 
@@ -943,19 +948,50 @@
     return body.split("\n").map((l, i) => `<span class="line"><span class="ln">${i + 1}</span>${l}</span>`).join("");
   }
 
-  function entHtml(text, ents) {
+  function entHtml(text, ents, unc) {
     const sorted = [...ents].sort((a, b) => a.start - b.start);
+    const piece = (a, b) => unc ? uncHtml(text, unc, a, b) : esc(text.slice(a, b));
     let out = "", at = 0;
     for (const e of sorted) {
       if (e.start < at) continue;
-      out += esc(text.slice(at, e.start));
+      out += piece(at, e.start);
       const attrs = `class="ent ${e.type}" data-ref="${esc(e.ref || e.when || "")}" data-auto="1" data-el="${esc(e.el || "")}"` +
         ` data-role="${esc(e.role || "")}" data-cert="${esc(e.cert || e.when_cert || "")}"`;
-      const seg = text.slice(e.start, e.end).split("\n").map(esc).join(`</span>\n<span ${attrs}>`);
+      const seg = piece(e.start, e.end).split("\n").join(`</span>\n<span ${attrs}>`);
       out += `<span ${attrs}>${seg}</span>`;
       at = e.end;
     }
-    return out + esc(text.slice(at));
+    return out + piece(at, text.length);
+  }
+
+  /* words the readers disagree on (joint_reading.py). A page carries
+     [Argon start, end, joint start, end, 1|2, % agreement, [[alternative, codes]]];
+     uncFor() gives [start, end, "low"|"medium", share, alternatives, index] for one reader. */
+  const UNC_READER = { A: "gemini-4-argon", F: "gemini-3.8-flash", Q: "qwen3.5-4b-german-kurrent-xvi-xix-page-v1",
+    O: "olmocr2-7b-german-kurrent-xvi-xix-blb-page-px4m-native-v1", KB: "kraken-bern-combined-v1",
+    KI: "kraken-cursive_inzigkofen", TK: "trocr-kurrent-xvi-xvii", TM: "trocr-medieval-escriptmask" };
+  function uncFor(page, readerId) {
+    if (!page || !page.unc || !page.readings || !page.readings[readerId]) return [];
+    const at = readerId === "gemini-4-argon" ? 0 : readerId === "joint" ? 2 : -1;
+    if (at < 0) return [];
+    return page.unc.map((m, i) => [m[at], m[at + 1], m[4] === 1 ? "low" : "medium", m[5] / 100,
+      m[6].map(([t, codes]) => [t, codes.split("+").map((c) => UNC_READER[c] || c)]), i]);
+  }
+  function uncHtml(text, unc, from = 0, to = text.length) {
+    let out = "", at = from;
+    unc.forEach((m) => {
+      const [s, e, level, , , i] = m;
+      if (s < at || e > to || s >= to) return;
+      out += esc(text.slice(at, s)) + `<span class="unc ${level}" data-unc="${i}">${esc(text.slice(s, e))}</span>`;
+      at = e;
+    });
+    return out + esc(text.slice(at, to));
+  }
+  function uncLegend(unc) {
+    const low = unc.filter((m) => m[2] === "low").length, med = unc.length - low;
+    return `<p class="unc-legend small muted"><span class="unc low">${T("uncertain", "unsicher")}</span> ${low} ·
+      <span class="unc medium">${T("doubtful", "zweifelhaft")}</span> ${med} —
+      ${T("the machine readings disagree here; hover for their alternatives", "hier gehen die maschinellen Lesungen auseinander; Zeiger darauf zeigt ihre Varianten")}</p>`;
   }
 
   /* word diff: tokens of the reading against tokens of the edition (LCS) */
@@ -987,7 +1023,8 @@
       if (b.disabled) return;
       location.hash = `#/letter/${id}/${pageNo}/${b.dataset.reader}`;
     }));
-    const d = app.querySelector("#t-diff"), e = app.querySelector("#t-ents");
+    const d = app.querySelector("#t-diff"), e = app.querySelector("#t-ents"), u = app.querySelector("#t-unc");
+    u && u.addEventListener("change", () => { state.unc = u.checked; store.set("unc", u.checked); route(); });
     d && d.addEventListener("change", () => { state.diff = d.checked; store.set("diff", d.checked); route(); });
     e && e.addEventListener("change", () => { state.ents = e.checked; store.set("ents", e.checked); route(); });
     const det = app.querySelector("details.regest");
@@ -1002,6 +1039,8 @@
   document.addEventListener("click", (ev) => { if (tipEl && !tipEl.contains(ev.target) && !ev.target.closest(".ent,.note,.choice")) hideTip(); });
   document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") hideTip(); });
   function entTip(ev) {
+    const u = ev.target.closest(".unc[data-unc]");
+    if (u && !ev.target.closest(".ent")) return uncTip(u);
     const el = ev.target.closest(".ent");
     if (!el) return;
     const ref = el.dataset.ref || "";
@@ -1020,6 +1059,28 @@
     else if (ref) body += esc(ref);
     if (el.dataset.role) body += `<div class="muted">${T("role", "Rolle")}: ${esc(roleName(el.dataset.role))}</div>`;
     if (el.dataset.auto && el.dataset.cert) body += `<div class="muted">${kind === "date" ? T("year inferred from the neighbouring letters", "Jahr aus den benachbarten Briefen erschlossen") : T("uncertain link (close spelling)", "unsichere Verknüpfung (ähnliche Schreibung)")}</div>`;
+    hideTip();
+    tipEl = document.createElement("div");
+    tipEl.className = "tip";
+    tipEl.innerHTML = body;
+    document.body.appendChild(tipEl);
+    const r = el.getBoundingClientRect();
+    const w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+    tipEl.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left)) + "px";
+    tipEl.style.top = (r.bottom + 6 + h > window.innerHeight ? r.top - h - 6 : r.bottom + 6) + "px";
+  }
+
+  function uncTip(el) {
+    const v = state.view || {};
+    const m = uncFor(v.page, v.reader).find((x) => x[5] === +el.dataset.unc);
+    if (!m) return;
+    const [, , level, share, alts] = m;
+    const who = (ids) => ids.map((r) => readerLabel(r)).join(", ");
+    let body = `<b>${level === "low" ? T("Uncertain reading", "Unsichere Lesung") : T("Doubtful reading", "Zweifelhafte Lesung")}</b>` +
+      `<div class="muted">${T("readers behind this form", "Leser hinter dieser Form")}: ${Math.round(share * 100)} %</div>`;
+    if (alts && alts.length) body += `<div>${T("other readings", "andere Lesungen")}:</div>` +
+      alts.map(([t, by]) => `<div>«${esc(t)}» <span class="muted">${esc(who(by))}</span></div>`).join("");
+    else body += `<div class="muted">${T("no other reader has this word", "kein anderer Leser hat dieses Wort")}</div>`;
     hideTip();
     tipEl = document.createElement("div");
     tipEl.className = "tip";

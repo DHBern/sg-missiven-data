@@ -30,8 +30,16 @@ them needs no login to UBELIX.
    `readings/sources.json`. It merges, never removes; a reader that would lose
    pages stops the cycle. *(Done by hand on 13.11.2026: 8 readers, 10,138
    pages.)*
-3. **Joint reading:** `scripts/joint_reading.py`, extended to the series
-   (below).
+3. **Joint reading:** `scripts/joint_reading.py` over every page, rebuilt when
+   a reading changed. Argon is the backbone; Flash, kraken, TrOCR and the two
+   fine-tuned VLMs vote. The VLMs vote only on pages they never saw: the new
+   pages, and the 166 edited pages held out of their training
+   (`readings/heldout_pages.txt`). Their weight is measured on those pages
+   only. A voter whose page text is under half or over 1.5 times the
+   backbone's does not vote on that page, since it has looped or stopped.
+   - Measured 13.11.2026: 10.98 → 10.94 % CER on the edited pages, and
+     11.45 → 11.16 % on the held-out pages.
+   - Decided 13.11.2026 to build it for all pages despite the small gain.
 4. **Tagging:** pages read since the last cycle are tagged.
    - With the LLM tagger and judge (`scripts/ner_llm.py`, GPUStack) if it is
      chosen over hmBERT. hmBERT would need its model on a machine with memory to
