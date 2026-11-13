@@ -63,11 +63,13 @@ editor's regest.
      written a second time.
    - `--redo` drafts them again, for a new prompt.
    - Four workers keep the load on the shared GPUStack moderate.
-4. **TEI and site:**
-   - `tei_export.py` writes one file per letter to `tei_unedited/`.
-   - `build_site.py` rebuilds the viewer data.
-5. **Pull request** with the readings, regests and TEI. The merge is the
+4. **Site:** `build_site.py` rebuilds the viewer data.
+5. **Pull request** with the readings and regests. The merge is the
    project's call.
+
+No TEI in this run. The TEI for the unedited letters (`scripts/tei_export.py`)
+is produced only after the automatic tagging (`scripts/ner.py`) has run over
+their readings; until then the script refuses (see below).
 
 **After the rerun:**
 - The Missiven team sees the drafts beside the images from 18.11. to 01.12.
@@ -78,6 +80,11 @@ editor's regest.
   - Misread years in the reading.
 
 ## Not yet
+
+- **TEI for the unedited letters** waits for the tagging. `tei_export.py`
+  writes a letter only when the tagger has tagged its pages, and stops
+  without writing anything when no page is tagged. `--allow-untagged`
+  overrides this, for testing only.
 
 - Places and names in the drafts are plain text (`<name>`, not linked).
   Linking them waits for the automatic tagging of the readings. The tagger

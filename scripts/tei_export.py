@@ -19,6 +19,11 @@ typical one) so that the same tools read both:
   ``persName``/``orgName``/``placeName`` with ``@ref`` into the registers when
   the tagger linked them, ``origDate`` for dates.
 
+Only after the automatic tagging: a letter is written only when
+``entities/<reader>.jsonl`` has tagged its pages, and the script stops without
+writing anything when no page of an unedited letter is tagged
+(``--allow-untagged`` overrides this, for testing only).
+
 Nothing here is edited. Everything a machine produced carries ``@resp``
 pointing to a ``respStmt`` that names the machine: the transcription, the
 regest, the sender and recipient taken from it, and every tag. Do not merge
@@ -235,6 +240,8 @@ def main() -> None:
     ap.add_argument("--reader", action="append", default=None,
                     help="reading for the text, in order of preference (default: gemini-4-argon)")
     ap.add_argument("--out", default=str(ROOT / "tei_unedited"))
+    ap.add_argument("--allow-untagged", action="store_true",
+                    help="write letters the tagger has not tagged (testing only; the TEI waits for the NER run)")
     args = ap.parse_args()
     order = args.reader or ["gemini-4-argon"]
     readings = [(r, load_jsonl(ROOT / "readings" / f"{r}.jsonl")) for r in order]
@@ -249,6 +256,16 @@ def main() -> None:
             m = FACS.match(key)
             if m and Path(key).stem.lower() not in known:
                 groups.setdefault(int(m.group(1)), set()).add(key)
+    tagged_keys = {k for pages in ents.values() for k, rec in pages.items() if rec.get("entities") is not None}
+    if not args.allow_untagged:
+        untagged = [nr for nr, keys in groups.items() if not keys & tagged_keys]
+        for nr in untagged:
+            del groups[nr]
+        if not groups:
+            sys.exit(f"no unedited letter has been tagged yet ({len(untagged)} letters read): "
+                     "run scripts/ner.py over their readings first; nothing written")
+        if untagged:
+            print(f"{len(untagged)} letters skipped: not tagged yet", flush=True)
     drafts = load_drafts()
     names = original_names()
     reg = registers()
