@@ -49,6 +49,31 @@ def clean_reading(text: str) -> str:
     return "\n".join(line.rstrip() for line in (text or "").splitlines() if line.strip())
 
 
+def _cleaned_offsets(joined: str):
+    """Offsets in a reading as joint_reading.py sees it (non-empty lines, joined)
+    -> offsets in the same reading after clean_reading (lines right-trimmed)."""
+    import bisect
+    lines = joined.split("\n")
+    starts, clean_starts, a, b = [], [], 0, 0
+    for line in lines:
+        starts.append(a); clean_starts.append(b)
+        a += len(line) + 1; b += len(line.rstrip()) + 1
+
+    def conv(o: int) -> int:
+        i = max(0, bisect.bisect_right(starts, o) - 1)
+        return clean_starts[i] + min(o - starts[i], len(lines[i].rstrip()))
+    return conv
+
+
+def uncertain_marks(joint_rec: dict, joint_raw: str, back_raw: str) -> list:
+    """The joint reading's uncertain words (joint_reading.py), with their offsets
+    moved into the cleaned texts of the joint reading and of its backbone:
+    [backbone start, end, joint start, end, level 1|2, % agreement, alternatives]."""
+    cj = _cleaned_offsets("\n".join(l for l in (joint_raw or "").splitlines() if l.strip()))
+    cb = _cleaned_offsets("\n".join(l for l in (back_raw or "").splitlines() if l.strip()))
+    return [[cb(m[0]), cb(m[1]), cj(m[2]), cj(m[3]), m[4], m[5], m[6]] for m in joint_rec.get("unc", [])]
+
+
 def load_readings() -> dict[str, dict[str, dict]]:
     readings: dict[str, dict[str, dict]] = {}
     for path in sorted((ROOT / "readings").glob("*.jsonl")):
@@ -60,9 +85,23 @@ def load_readings() -> dict[str, dict[str, dict]]:
             rec = json.loads(line)
             pages[rec["key"]] = {"text": clean_reading(rec.get("text", "")),
                                  "truncated": bool(rec.get("truncated"))}
+            if reader == "joint" and rec.get("unc"):
+                pages[rec["key"]]["unc_rec"] = rec  # placed below, once the backbone is read
+            elif reader == "gemini-4-argon":
+                pages[rec["key"]]["raw"] = rec.get("text", "")
             if rec.get("source"):
                 pages[rec["key"]]["source"] = rec["source"]
         readings[reader] = pages
+    # one list per page, with offsets for both the joint reading and its backbone
+    joint, back = readings.get("joint", {}), readings.get("gemini-4-argon", {})
+    unc = {}
+    for key, rec in joint.items():
+        raw = rec.pop("unc_rec", None)
+        if raw and key in back and raw.get("backbone") == "gemini-4-argon":
+            unc[key] = uncertain_marks(raw, raw.get("text", ""), back[key].get("raw", ""))
+    for rec in back.values():
+        rec.pop("raw", None)
+    readings["__unc__"] = unc
     return readings
 
 
@@ -274,6 +313,7 @@ def main() -> None:
     for letter in letters:
         letter["edited"] = True
     readings = load_readings()
+    unc = readings.pop("__unc__", {})
     letters += unedited_letters(letters, readings)
     entities = load_entities()
     drafts = load_drafts()
@@ -286,6 +326,8 @@ def main() -> None:
         for page in letter["pages"]:
             ref = flat(page["text"])
             page["readings"] = {}
+            if unc.get(page["facs"]):
+                page["unc"] = unc[page["facs"]]
             for reader, pages in readings.items():
                 rec = pages.get(page["facs"])
                 if rec is None:
