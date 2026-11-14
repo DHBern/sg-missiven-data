@@ -559,6 +559,7 @@
     { k: "rcp", en: "Recipient", de: "Empfänger" },
     { k: "op", en: "Place of writing", de: "Ausstellungsort" },
     { k: "kw", en: "Keyword", de: "Schlagwort" },
+    { k: "kwa", en: "Keyword (automatic)", de: "Schlagwort (automatisch)" },
     { k: "per", en: "Person named", de: "Genannte Person" },
     { k: "org", en: "Organisation named", de: "Genannte Organisation" },
     { k: "pl", en: "Place named", de: "Genannter Ort" },
@@ -632,6 +633,7 @@
       case "rcp": return m.r.filter(Boolean);
       case "op": return m.op;
       case "kw": return m.kw;
+      case "kwa": return m.kwa || [];
       case "per": case "org": case "pl": return [...r[k]];
       case "dr": return [m.dr ? "yes" : "no"];
       case "src": return m.src;
@@ -836,10 +838,14 @@
      The edition's keywords (TEI <keywords>, only on edited letters), from the
      search data: per letter its year and keywords. */
   const KW_BIN = 20, KW_THIN = 10;
-  async function kwData() {
+  async function kwData(withAuto = false) {
     const meta = await searchMeta();
-    // a copy per letter: empty keywords (the edition has a few) dropped, the search's own data untouched
-    const letters = meta.letters.map((m) => ({ ...m, kw: [...new Set((m.kw || []).map((k) => k.trim()).filter(Boolean))] }))
+    // a copy per letter: empty keywords (the edition has a few) dropped, the search's own data untouched;
+    // with withAuto, letters not yet edited bring their automatic keywords (scripts/keywords.py)
+    // a drafted year outside the series (1400–1660) is a misreading: such a letter counts as undated
+    const yOk = (m) => (m.ed || (m.y >= 1400 && m.y <= 1660) ? m.y : null);
+    const letters = meta.letters.map((m) => ({ ...m, y: yOk(m), auto: !m.ed && withAuto,
+      kw: [...new Set((m.ed ? m.kw || [] : withAuto ? m.kwa || [] : []).map((k) => k.trim()).filter(Boolean))] }))
       .filter((m) => m.kw.length);
     const count = new Map();
     for (const m of letters) for (const k of m.kw) count.set(k, (count.get(k) || 0) + 1);
@@ -861,15 +867,18 @@
     setNav("keywords");
     destroyOsd();
     app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
-    const d = await kwData();
-    const f = state.kwView = state.kwView || { top: 40, sort: "count", mode: "n", q: "" };
+    const f = state.kwView = state.kwView || { top: 40, sort: "count", mode: "n", q: "", auto: false };
+    const d = await kwData(f.auto);
+    const nAuto = (await searchMeta()).letters.filter((m) => !m.ed && m.kwa && m.kwa.length).length;
     const all = [...d.count.entries()];
+    // the introduction speaks of the edition's keywords, whatever the source switch says
+    const edL = d.letters.filter((m) => m.ed), edKw = new Set(edL.flatMap((m) => m.kw));
     app.innerHTML = `
       <section class="intro">
         <h1>${T("Keywords", "Schlagwörter")}</h1>
-        <p>${T(`The edition gives its letters keywords: ${all.length} of them on ${d.letters.length} edited letters, about ${Math.round(d.letters.reduce((a, m) => a + m.kw.length, 0) / d.letters.length)} per letter. Letters not yet edited have none.
+        <p>${T(`The edition gives its letters keywords: ${edKw.size} of them on ${edL.length} edited letters, about ${Math.round(edL.reduce((a, m) => a + m.kw.length, 0) / edL.length)} per letter. Letters not yet edited have only automatic keywords (experimental), ${nAuto} of them; «+ automatic» adds them to the heatmap.
           The heatmap shows in how many letters of each twenty years a keyword stands; a click on a cell opens those letters in the search.`,
-          `Die Edition verschlagwortet ihre Briefe: ${all.length} Schlagwörter auf ${d.letters.length} edierten Briefen, etwa ${Math.round(d.letters.reduce((a, m) => a + m.kw.length, 0) / d.letters.length)} pro Brief. Noch nicht edierte Briefe haben keine.
+          `Die Edition verschlagwortet ihre Briefe: ${edKw.size} Schlagwörter auf ${edL.length} edierten Briefen, etwa ${Math.round(edL.reduce((a, m) => a + m.kw.length, 0) / edL.length)} pro Brief. Noch nicht edierte Briefe haben nur automatische Schlagwörter (experimentell), ${nAuto} von ihnen; «+ automatisch» nimmt sie in die Heatmap auf.
           Die Heatmap zeigt, in wie vielen Briefen von je zwanzig Jahren ein Schlagwort steht; ein Klick auf eine Zelle öffnet diese Briefe in der Suche.`)}</p>
         <p><a href="#/keywords/network">${T("Keyword network →", "Netzwerk der Schlagwörter →")}</a></p>
       </section>
@@ -883,6 +892,10 @@
           <option value="time" ${f.sort === "time" ? "selected" : ""}>${T("by period of most use", "nach Zeit des Schwerpunkts")}</option>
           <option value="alpha" ${f.sort === "alpha" ? "selected" : ""}>${T("alphabetically", "alphabetisch")}</option>
         </select>
+        ${nAuto ? `<div class="seg" id="ksrc" role="group" aria-label="${T("Source", "Quelle")}">
+          ${[[false, T("Edition", "Edition")], [true, T(`+ automatic (${nAuto})`, `+ automatisch (${nAuto})`)]].map(([v, l]) =>
+            `<button type="button" data-v="${v}" aria-pressed="${f.auto === v}" class="${f.auto === v ? "on" : ""}">${l}</button>`).join("")}
+        </div>` : ""}
         <div class="seg" id="kmode" role="group" aria-label="${T("Value", "Wert")}">
           ${[["n", T("Letters", "Briefe")], ["share", T("Share of the period", "Anteil am Zeitraum")]].map(([v, l]) =>
             `<button type="button" data-v="${v}" aria-pressed="${f.mode === v}" class="${f.mode === v ? "on" : ""}">${l}</button>`).join("")}
@@ -935,6 +948,8 @@
             <div class="hn">${n}</div>`).join("")}
         </div>` : `<p class="muted">${T("No keyword matches.", "Kein Schlagwort passt.")}</p>`;
       document.getElementById("hnote").innerHTML = `<span class="hlegend"><span>${f.mode === "n" ? "0" : "0 %"}</span><i></i><span>${fmt(top)}</span></span>
+        ${f.auto ? T(`With the automatic keywords of ${nAuto} letters not yet edited: picked by a language model from the edition's vocabulary, unchecked (experimental; on edited letters it agrees with the editors on about two of three keywords). `,
+          `Mit den automatischen Schlagwörtern von ${nAuto} noch nicht edierten Briefen: von einem Sprachmodell aus dem Vokabular der Edition gewählt, ungeprüft (experimentell; auf edierten Briefen stimmt es bei etwa zwei von drei Schlagwörtern mit der Redaktion überein). `) : ""}
         ${f.mode === "n" ? T("Number of letters in twenty years.", "Anzahl Briefe in zwanzig Jahren.") : T(`Share of the period's letters with keywords: evens out that the edition holds far more letters from some periods than from others. Periods with fewer than ${KW_THIN} letters are hatched and left out of the colours: one letter there would count as a large share.`, `Anteil an den verschlagworteten Briefen des Zeitraums: gleicht aus, dass die Edition aus manchen Zeiten viel mehr Briefe hat als aus anderen. Zeiträume mit weniger als ${KW_THIN} Briefen sind schraffiert und nicht eingefärbt: ein einziger Brief wäre dort schon ein grosser Anteil.`)}
         ${T(`Years by the letter's date; ${d.letters.filter((m) => !m.y).length} undated letters are counted only in "all".`, `Jahre nach dem Datum des Briefs; ${d.letters.filter((m) => !m.y).length} undatierte Briefe zählen nur unter «alle».`)}`;
     };
@@ -964,6 +979,13 @@
     document.getElementById("kq").addEventListener("input", (ev) => { f.q = ev.target.value; draw(); });
     document.getElementById("ktop").addEventListener("change", (ev) => { f.top = +ev.target.value; draw(); });
     document.getElementById("ksort").addEventListener("change", (ev) => { f.sort = ev.target.value; draw(); });
+    const src = document.getElementById("ksrc");
+    src && src.addEventListener("click", (ev) => {
+      const b = ev.target.closest("button[data-v]");
+      if (!b) return;
+      f.auto = b.dataset.v === "true";
+      showKeywords();
+    });
     document.getElementById("kmode").addEventListener("click", (ev) => {
       const b = ev.target.closest("button[data-v]");
       if (!b) return;
@@ -980,7 +1002,7 @@
     app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
     const d = await kwData();
     const mine = d.letters.filter((m) => m.kw.includes(k));
-    if (!mine.length) { app.innerHTML = `<p>${T("No letter has the keyword", "Kein Brief hat das Schlagwort")} «${esc(k)}». <a href="#/keywords">${T("All keywords", "Alle Schlagwörter")}</a></p>`; return; }
+    if (!mine.length && !(await searchMeta()).letters.some((m) => (m.kwa || []).includes(k))) { app.innerHTML = `<p>${T("No letter has the keyword", "Kein Brief hat das Schlagwort")} «${esc(k)}». <a href="#/keywords">${T("All keywords", "Alle Schlagwörter")}</a></p>`; return; }
     const per = d.bins.map(() => 0);
     for (const m of mine) { const b = d.binOf(m.y); if (b >= 0) per[b]++; }
     const top = Math.max(1, ...per);
@@ -993,6 +1015,7 @@
     const keep = (m) => (!withK || m.kw.includes(withK)) && (undated ? !m.y : !from || (m.y && m.y >= from && m.y <= to));
     const shown = mine.filter(keep);
     const rows = shown.map((m) => byId(m.id)).filter(Boolean).sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    const autoRows = (await searchMeta()).letters.filter((m) => !m.ed && (m.kwa || []).includes(k)).map((m) => byId(m.id)).filter(Boolean);
     const filtered = withK || from || undated;
     const what = [withK ? T(`also with «${esc(withK)}»`, `auch mit «${esc(withK)}»`) : "",
                   undated ? T("undated", "undatiert") : from ? `${from}–${to}` : ""].filter(Boolean).join(", ");
@@ -1030,7 +1053,16 @@
           <span class="num">${esc(nrOf(l))}</span>
           <span class="date">${esc(fmtDate(l.date))}</span>
           <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span><span class="reg">${esc(l.regest)}</span></span>
-        </a>`).join("")}</div>`;
+        </a>`).join("")}</div>
+      ${autoRows.length ? `<h2>${T("Letters not yet edited", "Noch nicht edierte Briefe")} <span class="muted small">${autoRows.length} · ${T("keyword given automatically", "Schlagwort automatisch vergeben")}</span></h2>
+      <p class="caveat">${T("A language model picked these keywords from the edition's vocabulary, from the machine reading and the draft regest. Unchecked and experimental: on edited letters it agrees with the editors on about two of three keywords and finds about three in five of theirs.",
+        "Diese Schlagwörter hat ein Sprachmodell aus dem Vokabular der Edition gewählt, nach der maschinellen Lesung und dem Regestentwurf. Ungeprüft und experimentell: Auf edierten Briefen stimmt es bei etwa zwei von drei Schlagwörtern mit der Redaktion überein und findet etwa drei von fünf ihrer Schlagwörter.")}</p>
+      <div class="list">${autoRows.map((l) => `
+        <a class="row" href="#/letter/${l.id}/1">
+          <span class="num">${esc(nrOf(l))}</span>
+          <span class="date">${l.year ? esc(l.year) + "?" : ""}</span>
+          <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")} <span class="muted small">· ${T("draft", "Entwurf")}</span></span><span class="reg">${esc(l.regest || "")}</span></span>
+        </a>`).join("")}</div>` : ""}`;
     if (coTop.length) drawSankey(k, mine, d, coTop.slice(0, 10).map(([x]) => x), { withK, from, undated });
     if (filtered) document.getElementById("kwletters").scrollIntoView({ block: "start" });
   }
@@ -1385,7 +1417,10 @@
           <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}?</span>` : ""}</h1>
           <p class="caveat">${T("Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.",
             "Noch nicht ediert: Das Stadtarchiv hat diesen Brief nicht veröffentlicht. Was folgt, sind nur maschinelle Lesungen, ohne Edition zum Vergleich.")}</p>
-          ${draftBlock(letter.auto_regest, true)}`}
+          ${draftBlock(letter.auto_regest, true)}
+          ${(letter.auto_keywords || []).length ? `<div class="kw auto" title="${T("Picked automatically from the edition's vocabulary; unchecked (experimental)", "Automatisch aus dem Vokabular der Edition gewählt; ungeprüft (experimentell)")}">
+            <span class="kwlab">${T("Keywords (automatic, experimental)", "Schlagwörter (automatisch, experimentell)")}</span>
+            ${letter.auto_keywords.map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}`}
           ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
           ${modeSelect(page, reader)}
           <div class="pages"><span class="lbl">${T("Page", "Seite")}</span>${pages.map((p, i) =>

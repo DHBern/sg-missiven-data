@@ -243,10 +243,23 @@ def main() -> None:
     client = httpx.Client(base_url=os.environ["GPUSTACK_BASE_URL"], timeout=600,
                           headers={"Authorization": f"Bearer {os.environ['GPUSTACK_API_KEY']}"})
     print(f"{args.mode}: {len(jobs)} letters from {args.reader} via {MODEL}", flush=True)
-    with ThreadPoolExecutor(args.workers) as ex:
-        answers = list(ex.map(lambda j: ask(client, shots, j["text"]), jobs))
-
     out_dir.mkdir(exist_ok=True)
+    answers = []
+    # in chunks, each written out at once: a long draft run that stops keeps what it has,
+    # and the next run (which keeps existing drafts) goes on from there
+    CHUNK = 40
+    with ThreadPoolExecutor(args.workers) as ex:
+        for c0 in range(0, len(jobs), CHUNK):
+            answers += list(ex.map(lambda j: ask(client, shots, j["text"]), jobs[c0:c0 + CHUNK]))
+            if args.mode == "draft" and c0 + CHUNK < len(jobs):
+                part = [{"id": j["id"], "pages": j["pages"], "reader": args.reader, "model": MODEL,
+                         "prompt": PROMPT_DIGEST, "draft": a, "machine": True} for j, a in zip(jobs, answers)]
+                settle_years(part, letters)
+                done = {r["id"] for r in part}
+                rows_now = sorted([r for i, r in kept.items() if i not in done] + part, key=lambda r: r["id"])
+                path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows_now), encoding="utf-8")
+                print(f"  {len(answers)}/{len(jobs)} drafted, {sum(1 for x in answers if x.get('error'))} errors", flush=True)
+
     rows, date_hits, date_n, s_sim, r_sim = [], 0, 0, [], []
     for j, a in zip(jobs, answers):
         row = {"id": j["id"], "pages": j["pages"], "reader": args.reader, "model": MODEL,
