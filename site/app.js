@@ -9,9 +9,9 @@
     get(k, d) { try { const v = localStorage.getItem("sgm:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
     set(k, v) { try { localStorage.setItem("sgm:" + k, JSON.stringify(v)); } catch { /* private mode */ } },
   };
-  state.ents = store.get("ents", true);
-  state.diff = store.get("diff", false);
-  state.unc = store.get("unc", true);
+  // one way of showing a reading at a time: entities, the comparison with the edition or the
+  // uncertain words do not combine, so a single choice replaces the three switches
+  state.mode = store.get("mode", "ents");
   state.reader = store.get("reader", "edition");
 
   /* Language: ?lang=de|en, else the viewer's last choice, else the browser's. */
@@ -860,14 +860,10 @@
             "Noch nicht ediert: Das Stadtarchiv hat diesen Brief nicht veröffentlicht. Was folgt, sind nur maschinelle Lesungen, ohne Edition zum Vergleich.")}</p>
           ${draftBlock(letter.auto_regest, true)}`}
           ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
+          ${modeSelect(page, reader)}
           <div class="pages"><span class="lbl">${T("Page", "Seite")}</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
           <div class="readers" role="tablist" aria-label="${T("Readings", "Lesungen")}">${readerButtons(page, reader)}</div>
-          <div class="toggles">
-            <label><input type="checkbox" id="t-diff" ${state.diff ? "checked" : ""} ${reader === "edition" || !page.text ? "disabled" : ""}><span>${T("Compare with edition", "Mit Edition vergleichen")}</span></label>
-            <label><input type="checkbox" id="t-ents" ${state.ents ? "checked" : ""} ${hasEnts(page, reader) ? "" : "disabled"}><span>${T("Entities", "Entitäten")}</span></label>
-            <label title="${T("Words on which the machine readings disagree (joint reading)", "Wörter, bei denen die maschinellen Lesungen auseinandergehen (gemeinsame Lesung)")}"><input type="checkbox" id="t-unc" ${state.unc ? "checked" : ""} ${uncFor(page, reader).length ? "" : "disabled"}><span>${T("Uncertain words", "Unsichere Wörter")}</span></label>
-          </div>
           <div id="reading">${readingHtml(page, reader)}</div>
         </section>
         <section class="pane imgpane">
@@ -929,10 +925,30 @@
     return "";
   }
 
+  /* the ways a reading can be shown, and whether this page and reader offer each */
+  const MODES = [
+    ["plain", () => T("Text only", "Nur Text"), () => true],
+    ["ents", () => T("Entities", "Entitäten"), (page, reader) => hasEnts(page, reader)],
+    ["diff", () => T("Compare with edition", "Mit Edition vergleichen"), (page, reader) => reader !== "edition" && !!page.text && !!page.readings[reader]],
+    ["unc", () => T("Uncertain words", "Unsichere Wörter"), (page, reader) => uncFor(page, reader).length > 0],
+  ];
+  /* the chosen view if this page and reader offer it, else the text alone */
+  function modeFor(page, reader) {
+    const m = MODES.find(([id]) => id === state.mode);
+    return m && m[2](page, reader) ? m[0] : "plain";
+  }
+  function modeSelect(page, reader) {
+    const cur = modeFor(page, reader);
+    return `<div class="viewmode"><label for="t-mode">${T("View", "Ansicht")}</label>
+      <select id="t-mode">${MODES.map(([id, label, ok]) => `<option value="${id}" ${id === cur ? "selected" : ""} ${ok(page, reader) ? "" : "disabled"}>${esc(label())}</option>`).join("")}</select>
+      ${cur !== state.mode ? `<span class="muted small">${T("(not available for this reading)", "(für diese Lesung nicht verfügbar)")}</span>` : ""}</div>`;
+  }
+
   function readingHtml(page, readerId) {
     const r = state.readers.find((x) => x.id === readerId) || state.readers[0];
     const head = `${r.about ? `<p class="about-reader">${esc(loc(r, "about"))}${fnMark(r)}</p>` : ""}${pageCaveat(r, page)}${fnHtml(r)}`;
-    const showEnts = state.ents && hasEnts(page, readerId);
+    const mode = modeFor(page, readerId);
+    const showEnts = mode === "ents";
     if (readerId === "edition") {
       if (!page.html) return head + `<p class="empty">${T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
       return head + (showEnts ? legend() : "") + `<div class="text edition ${showEnts ? "ents" : ""}">${lineify(page.html)}</div>`;
@@ -943,11 +959,11 @@
     const trunc = rd.truncated ? `<p class="caveat">${T("This reading hit the model's length limit and stops early.", "Diese Lesung hat die Längengrenze des Modells erreicht und bricht vorzeitig ab.")}</p>` : "";
     let body;
     const unc = uncFor(page, readerId);
-    const showUnc = state.unc && unc.length && !(state.diff && page.text);
-    if (state.diff && page.text) body = diffHtml(page.text, rd.text);
-    else if (showEnts) body = entHtml(rd.text, page.auto_entities[readerId], showUnc ? unc : null);
+    const showUnc = mode === "unc";
+    if (mode === "diff") body = diffHtml(page.text, rd.text);
+    else if (showEnts) body = entHtml(rd.text, page.auto_entities[readerId], null);
     else body = showUnc ? uncHtml(rd.text, unc) : esc(rd.text);
-    return head + trunc + (showEnts && !(state.diff && page.text) ? legend() : "") + (showUnc ? uncLegend(unc) : "") +
+    return head + trunc + (showEnts ? legend() : "") + (showUnc ? uncLegend(unc) : "") +
       `<div class="text ${showEnts ? "ents" : ""}">${numberLines(body)}</div>`;
   }
 
@@ -1034,10 +1050,8 @@
       if (b.disabled) return;
       location.hash = `#/letter/${id}/${pageNo}/${b.dataset.reader}`;
     }));
-    const d = app.querySelector("#t-diff"), e = app.querySelector("#t-ents"), u = app.querySelector("#t-unc");
-    u && u.addEventListener("change", () => { state.unc = u.checked; store.set("unc", u.checked); route(); });
-    d && d.addEventListener("change", () => { state.diff = d.checked; store.set("diff", d.checked); route(); });
-    e && e.addEventListener("change", () => { state.ents = e.checked; store.set("ents", e.checked); route(); });
+    const m = app.querySelector("#t-mode");
+    m && m.addEventListener("change", () => { state.mode = m.value; store.set("mode", m.value); route(); });
     const det = app.querySelector("details.regest");
     det && det.addEventListener("toggle", () => store.set("regest", det.open));
     app.querySelector("#reading").addEventListener("mouseover", entTip);
