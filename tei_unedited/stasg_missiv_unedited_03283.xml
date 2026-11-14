@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3283</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Hans Heinrich Lochmann meldet Bürgermeister und Rat zu St. Gallen den Empfang ihres Schreibens. Er berichtet über die Inhaftierung eines Mannes und einer Frau, die Flucht eines Hingerichteten und dessen Aussagen über eine große, gefährliche Gesellschaft von Räubern, die im Land umherzieht. Er empfiehlt, die Wachen zu verstärken, da die Bande auch bei Nacht aktiv seien.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Hans Heinrich Lochmann meldet Bürgermeister und Rat zu St. Gallen den Empfang ihres Schreibens. Er berichtet über die Inhaftierung eines Mannes und einer Frau, die Flucht eines Hingerichteten und dessen Aussagen über eine große, gefährliche Gesellschaft von Räubern, die im Land umherzieht. Er empfiehlt, die Wachen zu verstärken, da die Bande auch bei Nacht aktiv seien.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Hans Heinrich Lochmann reports to the Burgomaster and Council of St. Gallen the receipt of their letter. He reports on the imprisonment of a man and a woman, the flight of an executed man and his statements about a large, dangerous gang of robbers that roams the country. He recommends strengthening the guards, as the gang is also active at night.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,64 +37,64 @@
 <pb facs="StadtASG_Missive_3283_13023.jpg" n="1"/>
 <lb n="1"/>Hochgeachte, Wol Edle, Veste, Ehrsammbe, Fuersichtige, fuer=
 <lb n="2"/>nemme unnd Weiße, Insonders großguenstige, hoch=
-<lb n="3"/>geehrte, lieben Herren. Denselbigen seigend
-<lb n="4"/>mine geneigtwillige dienst, sampt fründtlichen gruotzs
-<lb n="5"/>jeder zeit beuor.
-<lb n="6"/>Demnach hab ich derselbigen abermals schriben von
-<lb n="7"/>Irem läuffer eben zuereht empfangen. Daß
-<lb n="8"/>dan die Herren abermahlen ein arckwönischer und
-<lb n="9"/>verdächtiger buob, sampt einer blinden frauwen, ge=
-<lb n="10"/>fencklich inziehen laßen, und wie daß er schon
-<lb n="11"/>außgebrochen, daß er einer der vor wenig zeit
-<lb n="12"/>hie mit rääht abgethan, gekäünt, aber doch mit
-<lb n="13"/>Ime nichts böses verichtet. Auch daß sy wol
-<lb n="14"/>derselbigen abgethanen, wirauß deren angegebenen
-<lb n="15"/>nammen, unnd waß sy bekäünt, wol haben möchtend etc.
-<lb n="16"/>Diß hab ich mit mehreren wol verstanden. So
+<lb n="3"/>geehrte, lieben Herren. <unclear cert="low" resp="#joint">Denselbigen</unclear> <unclear cert="low" resp="#joint">seigend</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">mine</unclear> <unclear cert="low" resp="#joint">geneigtwillige</unclear> dienst, sampt <unclear cert="low" resp="#joint">fründtlichen</unclear> <unclear cert="low" resp="#joint">gruotzs</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">jeder</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">beuor</unclear>.
+<lb n="6"/><unclear cert="low" resp="#joint">Demnach</unclear> <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">derselbigen</unclear> <unclear cert="low" resp="#joint">abermals</unclear> <unclear cert="low" resp="#joint">schriben</unclear> von
+<lb n="7"/><unclear cert="low" resp="#joint">Irem</unclear> <unclear cert="low" resp="#joint">läuffer</unclear> <unclear cert="low" resp="#joint">eben</unclear> <unclear cert="low" resp="#joint">zuereht</unclear> empfangen. <unclear cert="low" resp="#joint">Daß</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">dan</unclear> die Herren abermahlen ein arckwönischer und
+<lb n="9"/>verdächtiger buob, sampt <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">blinden</unclear> <unclear cert="low" resp="#joint">frauwen</unclear>, <unclear cert="low" resp="#joint">ge=</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">fencklich</unclear> <unclear cert="low" resp="#joint">inziehen</unclear> laßen, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">schon</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">außgebrochen</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">wenig</unclear> zeit
+<lb n="12"/>hie mit rääht abgethan, <unclear cert="low" resp="#joint">gekäünt</unclear>, <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">doch</unclear> mit
+<lb n="13"/><unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">nichts</unclear> <unclear cert="low" resp="#joint">böses</unclear> <unclear cert="low" resp="#joint">verichtet</unclear>. <unclear cert="low" resp="#joint">Auch</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">wol</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">derselbigen</unclear> <unclear cert="low" resp="#joint">abgethanen</unclear>, <unclear cert="low" resp="#joint">wirauß</unclear> <unclear cert="low" resp="#joint">deren</unclear> <unclear cert="low" resp="#joint">angegebenen</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">nammen</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">bekäünt</unclear>, <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">möchtend</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="16"/><unclear cert="low" resp="#joint">Diß</unclear> <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">mehreren</unclear> wol verstanden. So
 <lb n="17"/>habend nun die Herren hiebey nach Irem begeren,
-<lb n="18"/>zweier hertziger so vor wenig zeit hingericht, wirauß
-<lb n="19"/>eines halberwachßnen buoben (der auß der gefangen=
+<lb n="18"/>zweier hertziger so vor wenig zeit <unclear cert="low" resp="#joint">hingericht</unclear>, <unclear cert="low" resp="#joint">wirauß</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">eines</unclear> <unclear cert="low" resp="#joint">halberwachßnen</unclear> buoben (der auß der gefangen=
 <lb n="20"/>schaft durch ein kleins lochlj uber alle felßen hin=
-<lb n="21"/>ab komen) bekantnußen, auch der angegebnen
+<lb n="21"/>ab <unclear cert="low" resp="#joint">komen</unclear>) <unclear cert="low" resp="#joint">bekantnußen</unclear>, auch der angegebnen
 <lb n="22"/>gesellen namen, zueempfachen, ist wol ein bößße
 <lb n="23"/>gesellschaft, dan sy darbey auch bekäünt, daß diße
 <lb n="24"/>verzeichneten alle miteinanderen noch vil bößer
 <lb n="25"/>und mehrers gethan alß aber sy, auch daß alle
-<lb n="26"/>die buoben so mit steckhen hin und herziehend, wan sy
+<lb n="26"/>die buoben so mit <unclear cert="low" resp="#joint">steckhen</unclear> <unclear cert="low" resp="#joint">hin</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">herziehend</unclear>, <unclear cert="low" resp="#joint">wan</unclear> <unclear cert="low" resp="#joint">sy</unclear>
 <lb n="27"/>nit mördend, so ställend sy doch waß sy erlangen
-<lb n="28"/>mögend, lige hiemit dieselbige gesellschaft so
+<lb n="28"/>mögend, <unclear cert="low" resp="#joint">lige</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">dieselbige</unclear> <unclear cert="low" resp="#joint">gesellschaft</unclear> so
 <lb n="29"/>groß, daß Inen nit müglich alle anzugeben,
 <lb n="30"/>habend auch mehrentheils reuerenter wie huren
 <lb n="31"/>bey Inen, wie dan auch vor wenig zeit dißes
-<lb n="32"/>lannd so vol, daß niemand mehr sicher wandlen
+<lb n="32"/>lannd so <unclear cert="low" resp="#joint">vol</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">niemand</unclear> <unclear cert="low" resp="#joint">mehr</unclear> <unclear cert="low" resp="#joint">sicher</unclear> wandlen
 <pb facs="StadtASG_Missive_3283_13024.jpg" n="2"/>
-<lb n="33"/>koenen, den sij alles angegriffen. Wan dan nun
+<lb n="33"/><unclear cert="low" resp="#joint">koenen</unclear>, den <unclear cert="low" resp="#joint">sij</unclear> <unclear cert="low" resp="#joint">alles</unclear> <unclear cert="low" resp="#joint">angegriffen</unclear>. <unclear cert="low" resp="#joint">Wan</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">nun</unclear>
 <lb n="34"/>die <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">aydtgnoschaft</orgName> auch mit ernst darauff geseht,
 <lb n="35"/>so were wol ein namhaffte anzahl yberkomen
 <lb n="36"/>worden. Sij habend derbij auch außgelaßen,
-<lb n="37"/>daß sij vielmahlen wan sij zusamen komen einand-
+<lb n="37"/>daß sij vielmahlen wan <unclear cert="low" resp="#joint">sij</unclear> <unclear cert="low" resp="#joint">zusamen</unclear> komen einand-
 <lb n="38"/>ren stein angehenckt und an die baeum aufgezoge,
 <lb n="39"/>auch ein lange weil hangen laßen, allßo daß
-<lb n="40"/>sij die waht wol außstehen moegend, wan man
+<lb n="40"/>sij die waht wol <unclear cert="low" resp="#joint">außstehen</unclear> <unclear cert="low" resp="#joint">moegend</unclear>, <unclear cert="low" resp="#joint">wan</unclear> man
 <lb n="41"/>nit andere mitel fuernimpt wie sies der orthe
 <lb n="42"/>thun mueßen. Diß hab ich nit under-
-<lb n="43"/>laßen soellen noch woellen die Heren deß zubeichte.
-<lb n="44"/>Hiee mit thueend zu dero beharlichen gunsten
-<lb n="45"/>und sij jn schirm deß aller hoechsten wol beuehle.
-<lb n="46"/>Datt. <origPlace ref="stadtasg-places-101" cert="medium" resp="#ner">Zurtzah</origPlace> <origDate when="1634" resp="#ner">jn der 1 woche den 23 X. 9bris. a 1634</origDate>.
-<lb n="47"/>Den Heren voerspanner williger.
+<lb n="43"/>laßen soellen noch woellen die <unclear cert="low" resp="#joint">Heren</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">zubeichte</unclear>.
+<lb n="44"/><unclear cert="low" resp="#joint">Hiee</unclear> mit thueend zu dero beharlichen gunsten
+<lb n="45"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">sij</unclear> <unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">hoechsten</unclear> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">beuehle</unclear>.
+<lb n="46"/><unclear cert="low" resp="#joint">Datt</unclear>. <origPlace ref="stadtasg-places-101" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zurtzah</unclear></origPlace> <origDate when="1634" resp="#ner"><unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">woche</unclear> den <unclear cert="low" resp="#joint">23</unclear> <unclear cert="low" resp="#joint">X</unclear>. <unclear cert="low" resp="#joint">9bris</unclear>. <unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">1634</unclear></origDate>.
+<lb n="47"/><unclear cert="low" resp="#joint">Den</unclear> <unclear cert="low" resp="#joint">Heren</unclear> <unclear cert="low" resp="#joint">voerspanner</unclear> williger.
 <lb n="48"/>dienner.
-<lb n="49"/><persName role="issuer" resp="#ner">Hanß Heinrich Lochman</persName>. Etc.
+<lb n="49"/><persName role="issuer" resp="#ner">Hanß Heinrich Lochman</persName>. <unclear cert="low" resp="#joint">Etc</unclear>.
 <pb facs="StadtASG_Missive_3283_13025.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3283_13026.jpg" n="4"/>
-<lb n="50"/>Denen hochgeachten, woledlen, vesten, ehren-
-<lb n="51"/>vesten, fuersichtigen, fuernemen, und weisen
-<lb n="52"/>Herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Hr. Burgermeister und Raht der statt
-<lb n="53"/>St. Gallen</orgName>, Meinen besonders großguenstigen
-<lb n="54"/>hochehrenden Herren, und werthisten
-<lb n="55"/>freunden, zue-
-<lb n="56"/>handen. hn.
-<lb n="57"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="50"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">hochgeachten</unclear>, <unclear cert="low" resp="#joint">woledlen</unclear>, <unclear cert="low" resp="#joint">vesten</unclear>, <unclear cert="low" resp="#joint">ehren</unclear>-
+<lb n="51"/><unclear cert="low" resp="#joint">vesten</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">fuernemen</unclear>, und weisen
+<lb n="52"/><unclear cert="low" resp="#joint">Herren</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Hr</unclear>. <unclear cert="low" resp="#joint">Burgermeister</unclear> und Raht der statt
+<lb n="53"/>St. Gallen</orgName>, <unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">großguenstigen</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">hochehrenden</unclear> <unclear cert="low" resp="#joint">Herren</unclear>, und <unclear cert="low" resp="#joint">werthisten</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">freunden</unclear>, <unclear cert="low" resp="#joint">zue</unclear>-
+<lb n="56"/><unclear cert="low" resp="#joint">handen</unclear>. <unclear cert="low" resp="#joint">hn</unclear>.
+<lb n="57"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

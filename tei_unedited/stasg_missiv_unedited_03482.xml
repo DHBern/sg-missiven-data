@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3482</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Maximilian, Graf zu Wolfegg, klagt bei Bürgermeister und Rat zu St. Gallen über die Behandlung seines kaiserlichen Schultheissen Jacob Siesser durch St. Galler Bürger. Diese hätten eine Versammlung von etwa 300 Mann abgehalten, den St. Galler Bedienten niedergeschlagen und den Schultheissen beleidigt. Er fordert die Stadt auf, die Rädelsführer zu bestrafen, andernfalls protestiere er öffentlich und werde die Sicherheit der St. Galler Handelsgenossen nicht mehr gewährleisten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Maximilian, Graf zu Wolfegg, klagt bei Bürgermeister und Rat zu St. Gallen über die Behandlung seines kaiserlichen Schultheissen Jacob Siesser durch St. Galler Bürger. Diese hätten eine Versammlung von etwa 300 Mann abgehalten, den St. Galler Bedienten niedergeschlagen und den Schultheissen beleidigt. Er fordert die Stadt auf, die Rädelsführer zu bestrafen, andernfalls protestiere er öffentlich und werde die Sicherheit der St. Galler Handelsgenossen nicht mehr gewährleisten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Maximilian, Graf zu Wolfegg, complains to the Burgomaster and Council of St. Gallen about the treatment of his imperial Schultheiss Jacob Siesser by citizens of St. Gallen. They say that these had held an assembly of about 300 men, beaten down the servants of St. Gallen and insulted the Schultheiss. He demands that the city punish the ringleaders, otherwise he will protest publicly and will no longer guarantee the safety of the merchants of St. Gallen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -95,14 +96,14 @@
 <lb n="58"/>mp.
 <pb facs="StadtASG_Missive_3482_13879.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3482_13880.jpg" n="4"/>
-<lb n="59"/>Denen edlen vesten ehrenvesten
-<lb n="60"/>fromben, fürsichtig, ersamb,
-<lb n="61"/>undt weyßen herren N. N.
-<lb n="62"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister, unndt Rath
-<lb n="63"/>der Statt zue St. Gallen</orgName>, meinen
-<lb n="64"/>innsonnders lieben herren guetn
-<lb n="65"/>freündt. undt nachpaurren
-<lb n="66"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="59"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">edlen</unclear> <unclear cert="low" resp="#joint">vesten</unclear> <unclear cert="low" resp="#joint">ehrenvesten</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">fromben</unclear>, <unclear cert="low" resp="#joint">fürsichtig</unclear>, <unclear cert="low" resp="#joint">ersamb</unclear>,
+<lb n="61"/><unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">weyßen</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">N</unclear>. <unclear cert="low" resp="#joint">N</unclear>.
+<lb n="62"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear>, <unclear cert="low" resp="#joint">unndt</unclear> Rath
+<lb n="63"/>der Statt <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">St</unclear>. Gallen</orgName>, <unclear cert="low" resp="#joint">meinen</unclear>
+<lb n="64"/><unclear cert="low" resp="#joint">innsonnders</unclear> lieben <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">guetn</unclear>
+<lb n="65"/><unclear cert="low" resp="#joint">freündt</unclear>. <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">nachpaurren</unclear>
+<lb n="66"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

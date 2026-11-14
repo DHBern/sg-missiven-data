@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3332</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben des Bürgermeisters und Rates zu Konstanz. Die in St. Gallen dienende Anna Maria Furtenbachin von Leutkirch habe sich auf den dort angelegten Arrest nicht berufen, da sie davon nichts gewusst habe, und das an sie gezahlte Geld übergeben. St. Gallen hat sie angewiesen, sich innerhalb der nächsten Quembfrist mit den Schuldbriefen in Konstanz einzustellen und Antwort zu geben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben des Bürgermeisters und Rates zu Konstanz. Die in St. Gallen dienende Anna Maria Furtenbachin von Leutkirch habe sich auf den dort angelegten Arrest nicht berufen, da sie davon nichts gewusst habe, und das an sie gezahlte Geld übergeben. St. Gallen hat sie angewiesen, sich innerhalb der nächsten Quembfrist mit den Schuldbriefen in Konstanz einzustellen und Antwort zu geben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to a letter from the Burgomaster and Council of Konstanz. Anna Maria Furtenbachin von Leutkirch, who is in service in St. Gallen, says that she did not rely on the arrest made there, as she knew nothing of it, and handed over the money paid to her. St. Gallen has instructed her to present herself in Konstanz within the next quarter-term with the bonds and to give an answer.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,27 +38,27 @@
 <lb n="1"/>Unser freündtlich willig dienst zuvor Edle Ehren,
 <lb n="2"/>veste fürsichtige Eersame und weyse, besonders liebe
 <lb n="3"/>guete freündt und nachbaren.
-<lb n="4"/>Wir habend nit ermanglet, auff E. F. E. W. an uns
+<lb n="4"/>Wir habend nit <unclear cert="low" resp="#joint">ermanglet</unclear>, <unclear cert="low" resp="#joint">auff</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">an</unclear> uns
 <lb n="5"/>abgangen schriben, die darinnen benamte <persName resp="#ner">Anna
 <lb n="6"/>Maria Furtenbachin</persName> von <placeName resp="#ner">Leütkirch</placeName>, so sich bej uns
-<lb n="7"/>diensts weiß ufhaltet, für uns beschickt, und ihre
+<lb n="7"/>diensts weiß ufhaltet, für uns beschickt, und <unclear cert="low" resp="#joint">ihre</unclear>
 <lb n="8"/>den innhalt ermelts E. Fe. E. W. schribens fürhalten
 <lb n="9"/>zelassen, die sich zwar deß angelegten arests halbe,
 <lb n="10"/>als wüßte sie von solchem nichts, entschuldiget, und für-
 <lb n="11"/>bracht was an sie guetwillig zalt hat sye inen
-<lb n="12"/>lassen; deßen aber unangesehen, haben wir E.
-<lb n="13"/>Fe. E. W. begern gemeß ihre uferlegt, wie sie es
+<lb n="12"/>lassen; deßen aber unangesehen, haben wir <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="13"/><unclear cert="low" resp="#joint">Fe</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. begern gemeß ihre uferlegt, wie sie es
 <lb n="14"/>dann auch bej handgegebner treüwe zethuen versprochen,
 <lb n="15"/>in nechster qembsfrist sich mit sambt den daselbst angelegten schuldtbriefen ußzewisen,
 <lb n="16"/>E. Fe. E. W. inzustellen und gebürende red und ant-
 <lb n="17"/>wurt zegeben. Weltes wir ihnen zur nachrichtung
 <lb n="18"/>nit verhalten, und verbleiben hien zu allen angenem müglich
 <lb n="19"/>diensterweisung, so geneigt, als wir sie und uns
-<lb n="20"/>Gottes obhalt in trewen befelhend. Dat. d. <origDate when="1630" resp="#ner">25. tl.
-<lb n="21"/>octobri. A° 1630</origDate>.
+<lb n="20"/>Gottes obhalt in <unclear cert="low" resp="#joint">trewen</unclear> <unclear cert="low" resp="#joint">befelhend</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>. <unclear cert="low" resp="#joint">d</unclear>. <origDate when="1630" resp="#ner"><unclear cert="low" resp="#joint">25</unclear>. <unclear cert="low" resp="#joint">tl</unclear>.
+<lb n="21"/><unclear cert="low" resp="#joint">octobri</unclear>. <unclear cert="low" resp="#joint">A°</unclear> 1630</origDate>.
 <lb n="22"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="23"/>der statt Santgallen</orgName>.
-<lb n="24"/>An <orgName ref="stadtasg-actors-56" cert="medium" role="recipient" resp="#ner">Hr. Burgermeister und rath
+<lb n="24"/>An <orgName ref="stadtasg-actors-56" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Hr</unclear>. Burgermeister und rath
 <lb n="25"/>der statt Costentz</orgName>.
 <pb facs="StadtASG_Missive_3332_13240.jpg" n="2"/>
 </p>

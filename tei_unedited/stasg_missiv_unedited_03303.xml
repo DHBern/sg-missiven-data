@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3303</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen entschuldigen sich gegenüber Bürgermeister und Rat zu Nürnberg, dass sie deren Bitte um ein Darlehen für die vier evangelischen Städte nicht erfüllen können. Sie begründen dies mit den hohen Kosten der Verteidigung, dem Krieg in der Nähe und dem Abbruch des Gewerbes. Sie bitten, dies als entschuldbar zu betrachten, und bieten für die Zukunft ihre Dienste an.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen entschuldigen sich gegenüber Bürgermeister und Rat zu Nürnberg, dass sie deren Bitte um ein Darlehen für die vier evangelischen Städte nicht erfüllen können. Sie begründen dies mit den hohen Kosten der Verteidigung, dem Krieg in der Nähe und dem Abbruch des Gewerbes. Sie bitten, dies als entschuldbar zu betrachten, und bieten für die Zukunft ihre Dienste an.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen apologize to Burgomaster and Council of Nürnberg for not being able to fulfill their request for a loan for the four evangelical cities. They justify this with the high costs of defense, the war in the vicinity, and the interruption of trade. They ask that this be considered excusable and offer their services for the future.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,56 +37,56 @@
 <pb facs="StadtASG_Missive_3303_13101.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst
 <lb n="2"/>vnd was wir eher liebs vnd
-<lb n="3"/>guots vermoegen zuo vor, edel
+<lb n="3"/>guots <unclear cert="low" resp="#joint">vermoegen</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">vor</unclear>, edel
 <lb n="4"/>ehrenvest, vest, fuersichtig vnd
 <lb n="5"/>wyß, besunders liebe herren
-<lb n="6"/>vnd freünde.
-<lb n="7"/>Waßmaßen dieselbe die 4. loblichen
-<lb n="8"/>Evangelischen Stette vnsere getreüe
-<lb n="9"/>liebe <orgName resp="#ner">Eydtgnoßen</orgName>, sampt vns, jn dißen
-<lb n="10"/>beschwerlichen zytten, zuo desto beßerer
-<lb n="11"/>beschuez= vnd erhaltung jhres noth=
+<lb n="6"/><unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">freünde</unclear>.
+<lb n="7"/><unclear cert="low" resp="#joint">Waßmaßen</unclear> <unclear cert="low" resp="#joint">dieselbe</unclear> die 4. <unclear cert="low" resp="#joint">loblichen</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">Evangelischen</unclear> <unclear cert="low" resp="#joint">Stette</unclear> <unclear cert="low" resp="#joint">vnsere</unclear> <unclear cert="low" resp="#joint">getreüe</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">liebe</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>, <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">vns</unclear>, <unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">dißen</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">beschwerlichen</unclear> <unclear cert="low" resp="#joint">zytten</unclear>, <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">desto</unclear> <unclear cert="low" resp="#joint">beßerer</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">beschuez=</unclear> <unclear cert="low" resp="#joint">vnd</unclear> erhaltung jhres noth=
 <lb n="12"/>leydenden Stettwesens, vmb ein
 <lb n="13"/>starckhe summe gelts anlehens=
-<lb n="14"/>weyß freündtlich ersuocht, vnd
-<lb n="15"/>erstvermelte 4. Stett sich hierüber
+<lb n="14"/>weyß freündtlich ersuocht, <unclear cert="low" resp="#joint">vnd</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">erstvermelte</unclear> 4. Stett sich hierüber
 <lb n="16"/>geng E: Ehrst: vnd Ft: wht: schriftlich
 <lb n="17"/>entschuldiget, deßen sindt wir ver=
 <lb n="18"/>schiner tag bey vnseren getreüen
-<lb n="19"/>lieben Eydtgnoßen der Statt <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zuerich</placeName>
-<lb n="20"/>zwüschent Jhr vnd ermelten übrigen
-<lb n="21"/>Stetten vertraullich ver stendiget
-<lb n="22"/>worden. Vnd ob=
-<lb n="23"/>wohlen wir neben denselben mit
-<lb n="24"/>E: Ehrst: vnd ft: wht: angeregtes
-<lb n="25"/>jhres beschwerlichen zuostandts halber
-<lb n="26"/>ein sonders christliches mitleyden tragen
-<lb n="27"/>vnd deßeren wohl fahrt milt wünschen
-<lb n="28"/>daß wir denselben jn angedüttem
-<lb n="29"/>jhrem ersuochen willfahren, vnd
+<lb n="19"/>lieben <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Statt</unclear> <placeName ref="stadtasg-places-32" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zuerich</unclear></placeName>
+<lb n="20"/><unclear cert="low" resp="#joint">zwüschent</unclear> <unclear cert="low" resp="#joint">Jhr</unclear> <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">ermelten</unclear> <unclear cert="low" resp="#joint">übrigen</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">Stetten</unclear> <unclear cert="low" resp="#joint">vertraullich</unclear> <unclear cert="low" resp="#joint">ver</unclear> <unclear cert="low" resp="#joint">stendiget</unclear>
+<lb n="22"/>worden. <unclear cert="low" resp="#joint">Vnd</unclear> <unclear cert="low" resp="#joint">ob=</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">wohlen</unclear> wir neben denselben mit
+<lb n="24"/><unclear cert="low" resp="#joint">E</unclear>: <unclear cert="low" resp="#joint">Ehrst</unclear>: <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">ft</unclear>: <unclear cert="low" resp="#joint">wht</unclear>: <unclear cert="low" resp="#joint">angeregtes</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">jhres</unclear> <unclear cert="low" resp="#joint">beschwerlichen</unclear> <unclear cert="low" resp="#joint">zuostandts</unclear> <unclear cert="low" resp="#joint">halber</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">christliches</unclear> <unclear cert="low" resp="#joint">mitleyden</unclear> <unclear cert="low" resp="#joint">tragen</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">deßeren</unclear> <unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">fahrt</unclear> <unclear cert="low" resp="#joint">milt</unclear> <unclear cert="low" resp="#joint">wünschen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">daß</unclear> wir <unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">angedüttem</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">jhrem</unclear> <unclear cert="low" resp="#joint">ersuochen</unclear> <unclear cert="low" resp="#joint">willfahren</unclear>, <unclear cert="low" resp="#joint">vnd</unclear>
 <pb facs="StadtASG_Missive_3303_13102.jpg" n="2"/>
-<lb n="30"/>der beÿwoning zuo uwer statt und
+<lb n="30"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">beÿwoning</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">uwer</unclear> statt und
 <lb n="31"/>standt, bißhero getrangene gute
-<lb n="32"/>affection im werckh zuerzeigen.
-<lb n="33"/>Nun. So werden
+<lb n="32"/>affection <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">werckh</unclear> <unclear cert="low" resp="#joint">zuerzeigen</unclear>.
+<lb n="33"/><unclear cert="low" resp="#joint">Nun</unclear>. <unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">werden</unclear>
 <lb n="34"/>wir aber ebenmeßig uß obge-
 <lb n="35"/>dachter unser vertruwten lieben
-<lb n="36"/><orgName resp="#ner">Eidtgnoßen</orgName>, ihnsverwandten allge-
-<lb n="37"/>meine ungelegenheiten halben
-<lb n="38"/>insonderheit aber der jetz etlich
-<lb n="39"/>jahr hero gewehrter Ufrießung
-<lb n="40"/>und darduch causierter thürung,
-<lb n="41"/>stechsung und nicht geringen abbruchs
+<lb n="36"/><orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName>, <unclear cert="low" resp="#joint">ihnsverwandten</unclear> <unclear cert="low" resp="#joint">allge</unclear>-
+<lb n="37"/><unclear cert="low" resp="#joint">meine</unclear> <unclear cert="low" resp="#joint">ungelegenheiten</unclear> halben
+<lb n="38"/>insonderheit aber der <unclear cert="low" resp="#joint">jetz</unclear> <unclear cert="low" resp="#joint">etlich</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">jahr</unclear> <unclear cert="low" resp="#joint">hero</unclear> <unclear cert="low" resp="#joint">gewehrter</unclear> <unclear cert="low" resp="#joint">Ufrießung</unclear>
+<lb n="40"/>und <unclear cert="low" resp="#joint">darduch</unclear> <unclear cert="low" resp="#joint">causierter</unclear> <unclear cert="low" resp="#joint">thürung</unclear>,
+<lb n="41"/><unclear cert="low" resp="#joint">stechsung</unclear> und nicht geringen abbruchs
 <lb n="42"/>unsers gwerbs, und hinzig teglichen
 <lb n="43"/>großen ußgaaben, und dan der
-<lb n="44"/>in der nähe umb unser statt ihmer
-<lb n="45"/>herumbligenden starckhe kriegs
-<lb n="46"/>soldatesca, die sich je lenger je
-<lb n="47"/>mehr ben lands sterckhen, beschwerthe
-<lb n="48"/>dergstallten befinden, daß
+<lb n="44"/>in der nähe umb unser statt <unclear cert="low" resp="#joint">ihmer</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">herumbligenden</unclear> <unclear cert="low" resp="#joint">starckhe</unclear> <unclear cert="low" resp="#joint">kriegs</unclear>
+<lb n="46"/>soldatesca, die <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">je</unclear> lenger <unclear cert="low" resp="#joint">je</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">mehr</unclear> <unclear cert="low" resp="#joint">ben</unclear> <unclear cert="low" resp="#joint">lands</unclear> <unclear cert="low" resp="#joint">sterckhen</unclear>, <unclear cert="low" resp="#joint">beschwerthe</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">dergstallten</unclear> <unclear cert="low" resp="#joint">befinden</unclear>, <unclear cert="low" resp="#joint">daß</unclear>
 <lb n="49"/>uns den selben wie gern wir auch
-<lb n="50"/>wolten in ihrem begern dißmahl zu
-<lb n="51"/>willfahren gantz unmuglich ist.
+<lb n="50"/>wolten in <unclear cert="low" resp="#joint">ihrem</unclear> <unclear cert="low" resp="#joint">begern</unclear> <unclear cert="low" resp="#joint">dißmahl</unclear> <unclear cert="low" resp="#joint">zu</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">willfahren</unclear> <unclear cert="low" resp="#joint">gantz</unclear> <unclear cert="low" resp="#joint">unmuglich</unclear> <unclear cert="low" resp="#joint">ist</unclear>.
 <lb n="52"/>Und derohalben der hoffnung gelebt,
 <lb n="53"/>es werden E: Gsstng: und F: Wht:
 <lb n="54"/>nach dero hochweisen verstandt uns
@@ -95,23 +96,23 @@
 <lb n="58"/>entschuldiget halten. Und uns zu-
 <lb n="59"/>trauwen, dar E: Gsstng: und F: Wht:
 <pb facs="StadtASG_Missive_3303_13103.jpg" n="3"/>
-<lb n="60"/>wiewi all und iedweg, da sich die
-<lb n="61"/>occasion praesentiren thete, E.
-<lb n="62"/>liebende dienst und angenehmbs
-<lb n="63"/>gefallen erzaigen und erweißen kuntte,
-<lb n="64"/>deßen wir hierzue so gannz willig
-<lb n="65"/>und anerbietig, alß wir Gott
-<lb n="66"/>den hoechsten bitten, daß er dermalen
-<lb n="67"/>ainist den lang erwuenschten
-<lb n="68"/>edlen friden im <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Reich teutscher
-<lb n="69"/>Nation</orgName> beschehren, und uns sambtlich
-<lb n="70"/>in seinem gnadenreichen schuz und
-<lb n="71"/>schirmb vaetterlich erhalten woelle.
-<lb n="72"/>Geben den <origDate when="1639" resp="#ner">22. th. Julij A° 1639</origDate>.
-<lb n="73"/>An <placeName ref="stadtasg-places-21" cert="medium" resp="#ner">Nuermberg</placeName>.
+<lb n="60"/><unclear cert="low" resp="#joint">wiewi</unclear> <unclear cert="low" resp="#joint">all</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">iedweg</unclear>, <unclear cert="low" resp="#joint">da</unclear> sich die
+<lb n="61"/>occasion <unclear cert="low" resp="#joint">praesentiren</unclear> <unclear cert="low" resp="#joint">thete</unclear>, <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="62"/><unclear cert="low" resp="#joint">liebende</unclear> dienst und angenehmbs
+<lb n="63"/>gefallen erzaigen und <unclear cert="low" resp="#joint">erweißen</unclear> <unclear cert="low" resp="#joint">kuntte</unclear>,
+<lb n="64"/><unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hierzue</unclear> so <unclear cert="low" resp="#joint">gannz</unclear> <unclear cert="low" resp="#joint">willig</unclear>
+<lb n="65"/>und <unclear cert="low" resp="#joint">anerbietig</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">Gott</unclear>
+<lb n="66"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">hoechsten</unclear> <unclear cert="low" resp="#joint">bitten</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">dermalen</unclear>
+<lb n="67"/><unclear cert="low" resp="#joint">ainist</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">lang</unclear> <unclear cert="low" resp="#joint">erwuenschten</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">edlen</unclear> <unclear cert="low" resp="#joint">friden</unclear> <unclear cert="low" resp="#joint">im</unclear> <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Reich</unclear> <unclear cert="low" resp="#joint">teutscher</unclear>
+<lb n="69"/><unclear cert="low" resp="#joint">Nation</unclear></orgName> <unclear cert="low" resp="#joint">beschehren</unclear>, und <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">sambtlich</unclear>
+<lb n="70"/>in seinem <unclear cert="low" resp="#joint">gnadenreichen</unclear> <unclear cert="low" resp="#joint">schuz</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">schirmb</unclear> <unclear cert="low" resp="#joint">vaetterlich</unclear> <unclear cert="low" resp="#joint">erhalten</unclear> <unclear cert="low" resp="#joint">woelle</unclear>.
+<lb n="72"/><unclear cert="low" resp="#joint">Geben</unclear> <unclear cert="low" resp="#joint">den</unclear> <origDate when="1639" resp="#ner"><unclear cert="low" resp="#joint">22</unclear>. <unclear cert="low" resp="#joint">th</unclear>. <unclear cert="low" resp="#joint">Julij</unclear> <unclear cert="low" resp="#joint">A°</unclear> <unclear cert="low" resp="#joint">1639</unclear></origDate>.
+<lb n="73"/><unclear cert="low" resp="#joint">An</unclear> <placeName ref="stadtasg-places-21" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Nuermberg</unclear></placeName>.
 <pb facs="StadtASG_Missive_3303_13104.jpg" n="4"/>
-<lb n="74"/>An <origPlace ref="stadtasg-places-21" cert="medium" resp="#ner">Nuerenberg</origPlace> <origDate when="1638-07-22" resp="#ner">22. julii 1638</origDate>.
-<lb n="75"/>wegen der Evangl. kriegsanlaag.
+<lb n="74"/>An <origPlace ref="stadtasg-places-21" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Nuerenberg</unclear></origPlace> <origDate when="1638-07-22" resp="#ner"><unclear cert="low" resp="#joint">22</unclear>. <unclear cert="low" resp="#joint">julii</unclear> <unclear cert="low" resp="#joint">1638</unclear></origDate>.
+<lb n="75"/><unclear cert="low" resp="#joint">wegen</unclear> der <unclear cert="low" resp="#joint">Evangl</unclear>. <unclear cert="low" resp="#joint">kriegsanlaag</unclear>.
 </p>
         </body>
     </text>

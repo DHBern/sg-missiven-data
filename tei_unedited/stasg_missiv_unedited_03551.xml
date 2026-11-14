@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3551</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Ursula Magdalena Schenk, geborene Herrschlin, erklärt gegenüber Bürgermeister und Rat zu Nürnberg, dass sie ihr dortiges Bürgerrecht für sich und ihre Kinder aufgeben und verzeihen wolle, da sie in St. Gallen bei ihrem Ehemann bleibe. Sie bittet um einen authentischen Schein über die Entlassung und um die Erlaubnis, ihr dortiges Erbgut samt dem Fünfzigsten zu behalten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Ursula Magdalena Schenk, geborene Herrschlin, erklärt gegenüber Bürgermeister und Rat zu Nürnberg, dass sie ihr dortiges Bürgerrecht für sich und ihre Kinder aufgeben und verzeihen wolle, da sie in St. Gallen bei ihrem Ehemann bleibe. Sie bittet um einen authentischen Schein über die Entlassung und um die Erlaubnis, ihr dortiges Erbgut samt dem Fünfzigsten zu behalten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Ursula Magdalena Schenk, née Herrschlin, declares to the Burgomaster and Council of Nürnberg that she wishes to renounce and forgive her citizenship there for herself and her children, as she remains in St. Gallen with her husband. She requests an authentic certificate of the release and permission to retain her inheritance there along with the Fiftieth.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,131 +36,131 @@
 <p>
 <pb facs="StadtASG_Missive_3551_14165.jpg" n="1"/>
 <lb n="1"/>Woledle, Veste, Eerueste, Fuersichtige,
-<lb n="2"/>Eersam und wolweise, herren burgermei-
-<lb n="3"/>ster und rhat loeblicher freyen Reichs-
-<lb n="4"/>statt Nuernberg, gnedig gnedige hoch-
-<lb n="5"/>geerte herren.
-<lb n="6"/>Demnach ich mich vor etlich erscheiner
-<lb n="7"/>jaren, mit meinem geliebten ehewirth,
-<lb n="8"/><persName resp="#ner">Jacob Schlumpffen</persName>, burger und handelsmann,
-<lb n="9"/>der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>, ehelichen verheurathet,
-<lb n="10"/>und nach Cristlicher
-<lb n="11"/>copulation
-<lb n="12"/>mit gedachtem meinem lieben ehewirth
-<lb n="13"/>in sein anerboren vatterlandt, wolbe-
-<lb n="14"/>meltem <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName> gezogen, mir aber
-<lb n="15"/>mein burgerrecht danochten in der statt
-<lb n="16"/>vorbehalten, ueber diß durch mein vormunder und befreundte
-<lb n="17"/>die gebuer
-<lb n="18"/>alß einer gebornen burgerin gebuert,
-<lb n="19"/>begeren ordenlich erstattet hab. Wann
-<lb n="20"/>aber hiemit der zeit mich der allmechtig
+<lb n="2"/>Eersam und <unclear cert="low" resp="#joint">wolweise</unclear>, herren <unclear cert="low" resp="#joint">burgermei</unclear>-
+<lb n="3"/><unclear cert="low" resp="#joint">ster</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">rhat</unclear> <unclear cert="low" resp="#joint">loeblicher</unclear> <unclear cert="low" resp="#joint">freyen</unclear> <unclear cert="low" resp="#joint">Reichs</unclear>-
+<lb n="4"/><unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">Nuernberg</unclear>, <unclear cert="low" resp="#joint">gnedig</unclear> <unclear cert="low" resp="#joint">gnedige</unclear> <unclear cert="low" resp="#joint">hoch</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">geerte</unclear> <unclear cert="low" resp="#joint">herren</unclear>.
+<lb n="6"/><unclear cert="low" resp="#joint">Demnach</unclear> <unclear cert="low" resp="#joint">ich</unclear> mich vor <unclear cert="low" resp="#joint">etlich</unclear> <unclear cert="low" resp="#joint">erscheiner</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">jaren</unclear>, mit <unclear cert="low" resp="#joint">meinem</unclear> <unclear cert="low" resp="#joint">geliebten</unclear> <unclear cert="low" resp="#joint">ehewirth</unclear>,
+<lb n="8"/><persName resp="#ner"><unclear cert="low" resp="#joint">Jacob</unclear> <unclear cert="low" resp="#joint">Schlumpffen</unclear></persName>, <unclear cert="low" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">handelsmann</unclear>,
+<lb n="9"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">statt</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>, <unclear cert="low" resp="#joint">ehelichen</unclear> <unclear cert="low" resp="#joint">verheurathet</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">Cristlicher</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">copulation</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">gedachtem</unclear> <unclear cert="low" resp="#joint">meinem</unclear> lieben ehewirth
+<lb n="13"/>in sein <unclear cert="low" resp="#joint">anerboren</unclear> <unclear cert="low" resp="#joint">vatterlandt</unclear>, <unclear cert="low" resp="#joint">wolbe</unclear>-
+<lb n="14"/><unclear cert="low" resp="#joint">meltem</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName> <unclear cert="low" resp="#joint">gezogen</unclear>, <unclear cert="low" resp="#joint">mir</unclear> aber
+<lb n="15"/>mein burgerrecht danochten in <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">statt</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">vorbehalten</unclear>, <unclear cert="low" resp="#joint">ueber</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">mein</unclear> <unclear cert="low" resp="#joint">vormunder</unclear> und <unclear cert="low" resp="#joint">befreundte</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">gebuer</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">gebornen</unclear> <unclear cert="low" resp="#joint">burgerin</unclear> <unclear cert="low" resp="#joint">gebuert</unclear>,
+<lb n="19"/><unclear cert="low" resp="#joint">begeren</unclear> <unclear cert="low" resp="#joint">ordenlich</unclear> <unclear cert="low" resp="#joint">erstattet</unclear> <unclear cert="low" resp="#joint">hab</unclear>. <unclear cert="low" resp="#joint">Wann</unclear>
+<lb n="20"/>aber <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">zeit</unclear> mich der allmechtig
 <lb n="21"/>guetig Gott mit leibs frucht also
-<lb n="22"/>vatterlichen gesegnet, daß ich noch vier kind
-<lb n="23"/>im leben, und widerumb schweres leibs bin,
-<lb n="24"/>und dahero guet und billich fuer mich befinde,
-<lb n="25"/>mein leben alhie zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> bey meinem
+<lb n="22"/><unclear cert="low" resp="#joint">vatterlichen</unclear> <unclear cert="low" resp="#joint">gesegnet</unclear>, <unclear cert="low" resp="#joint">daß</unclear> ich <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">vier</unclear> <unclear cert="low" resp="#joint">kind</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">leben</unclear>, und widerumb schweres leibs bin,
+<lb n="24"/>und dahero guet und billich fuer mich <unclear cert="low" resp="#joint">befinde</unclear>,
+<lb n="25"/><unclear cert="low" resp="#joint">mein</unclear> <unclear cert="low" resp="#joint">leben</unclear> <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName> <unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">meinem</unclear>
 <lb n="26"/>lieben ehewirth und meinen bey ihme
 <lb n="27"/>erzeugten lieben kindlein zue verzeren,
-<lb n="28"/>und seliglich zue beschliessen, und hingegen
-<lb n="29"/>bey e. Wlt. und Erl. alhie gehabten
-<lb n="30"/>burgerrechten gehorsamlich uffzuegeben,
-<lb n="31"/>und dessen fuer mich und meine kind
-<lb n="32"/>gentzlich zue verzeihen der getrosten hoff-
-<lb n="33"/>nung, es werden dieselben ohne ain solches
-<lb n="34"/>mich zue erlassen, in sonderlicher
+<lb n="28"/>und seliglich zue beschliessen, und <unclear cert="low" resp="#joint">hingegen</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">Wlt</unclear>. und <unclear cert="low" resp="#joint">Erl</unclear>. <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">gehabten</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">burgerrechten</unclear> <unclear cert="low" resp="#joint">gehorsamlich</unclear> <unclear cert="low" resp="#joint">uffzuegeben</unclear>,
+<lb n="31"/>und <unclear cert="low" resp="#joint">dessen</unclear> <unclear cert="low" resp="#joint">fuer</unclear> mich und meine kind
+<lb n="32"/><unclear cert="low" resp="#joint">gentzlich</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">verzeihen</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">getrosten</unclear> <unclear cert="low" resp="#joint">hoff</unclear>-
+<lb n="33"/><unclear cert="low" resp="#joint">nung</unclear>, es werden dieselben <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">solches</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">mich</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">erlassen</unclear>, in sonderlicher
 <lb n="35"/>betrachtung, daß inn gemein nicht zue-
 <lb n="36"/>laessig noch gebreuchlich, daß ein person,
 <pb facs="StadtASG_Missive_3551_14166.jpg" n="2"/>
-<lb n="37"/>mehrere burgerrecht jn underschidlichen
-<lb n="38"/>stetten haben solle. Dannenhero jch
+<lb n="37"/><unclear cert="low" resp="#joint">mehrere</unclear> burgerrecht <unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">underschidlichen</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">stetten</unclear> <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">solle</unclear>. <unclear cert="low" resp="#joint">Dannenhero</unclear> <unclear cert="low" resp="#joint">jch</unclear>
 <lb n="39"/>dann auch nicht ermanglet ange-
 <lb n="40"/>regten meinen endlichen willen
 <lb n="41"/>meinen nechsten befreündten und
 <lb n="42"/>verwandten zu entdecken und sie
 <lb n="43"/>freündlich zu ersuchen, solch mein
-<lb n="44"/>jntent und begeren E. Wt. und Erl.
-<lb n="45"/>Wht. gehorsamlich anzubringen,
+<lb n="44"/>jntent und <unclear cert="low" resp="#joint">begeren</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. und <unclear cert="low" resp="#joint">Erl</unclear>.
+<lb n="45"/><unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">gehorsamlich</unclear> <unclear cert="low" resp="#joint">anzubringen</unclear>,
 <lb n="46"/>und souil zu erhalten, dz jch bey
 <lb n="47"/>denselben mein und meiner kinden
 <lb n="48"/>deß burgerrechtens halber freÿ und
-<lb n="49"/>ledig gesprochen, und mir deßsen
-<lb n="50"/>schein und urkhundt ertheilt werden
-<lb n="51"/>möge. Wann aber solches
-<lb n="52"/>wider verhoffen bißhero nicht er-
-<lb n="53"/>folget, und mir endlich von den
+<lb n="49"/>ledig gesprochen, und mir <unclear cert="low" resp="#joint">deßsen</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">schein</unclear> und <unclear cert="low" resp="#joint">urkhundt</unclear> <unclear cert="low" resp="#joint">ertheilt</unclear> <unclear cert="low" resp="#joint">werden</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">möge</unclear>. <unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">solches</unclear>
+<lb n="52"/>wider <unclear cert="low" resp="#joint">verhoffen</unclear> <unclear cert="low" resp="#joint">bißhero</unclear> <unclear cert="low" resp="#joint">nicht</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="53"/><unclear cert="low" resp="#joint">folget</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">endlich</unclear> von den
 <lb n="54"/>meinigen zue antwurt geben worden,
-<lb n="55"/>dz jch jn der persohn selbsten vor E.
-<lb n="56"/>Wt. und Erl. Wht. erschei-
-<lb n="57"/>nen
-<lb n="58"/>und dz burgerrecht dz jch bißhero
-<lb n="59"/>jn dero statt gehabt für mich und
-<lb n="60"/>meine kind werde uffgeben, und
-<lb n="61"/>deßsen mich renunciren müßsen.
-<lb n="62"/>Nun were es mir zwar unschwer, wann
+<lb n="55"/>dz jch jn der persohn selbsten <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="56"/><unclear cert="low" resp="#joint">Wt</unclear>. und <unclear cert="low" resp="#joint">Erl</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">erschei</unclear>-
+<lb n="57"/><unclear cert="low" resp="#joint">nen</unclear>
+<lb n="58"/>und <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">burgerrecht</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">jch</unclear> <unclear cert="low" resp="#joint">bißhero</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">gehabt</unclear> <unclear cert="low" resp="#joint">für</unclear> mich und
+<lb n="60"/><unclear cert="low" resp="#joint">meine</unclear> <unclear cert="low" resp="#joint">kind</unclear> <unclear cert="low" resp="#joint">werde</unclear> <unclear cert="low" resp="#joint">uffgeben</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">deßsen</unclear> <unclear cert="low" resp="#joint">mich</unclear> <unclear cert="low" resp="#joint">renunciren</unclear> <unclear cert="low" resp="#joint">müßsen</unclear>.
+<lb n="62"/><unclear cert="low" resp="#joint">Nun</unclear> <unclear cert="low" resp="#joint">were</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">zwar</unclear> <unclear cert="low" resp="#joint">unschwer</unclear>, <unclear cert="low" resp="#joint">wann</unclear>
 <lb n="63"/>die reiß nicht so gefehrlich und jch
 <lb n="64"/>wegen großsen und schwangern leibs
 <lb n="65"/>selbsten verrichten könde, weil aber
 <lb n="66"/>es auß erzelten hochbeschwerlichen
-<lb n="67"/>ursachen, wie E. Wt. und Erl. Wht.
-<lb n="68"/>selbst hochvernünfftig kennen ermesßen,
-<lb n="69"/>mir gantz unmöglich fallen will,
-<lb n="70"/>und jch diß doch keines wegs anstehen
-<lb n="71"/>laßsen kan. Dero wegen auß freÿem
-<lb n="72"/>eignem ungezwungnem und ungetrung-
+<lb n="67"/>ursachen, wie <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. und Erl. Wht.
+<lb n="68"/>selbst <unclear cert="low" resp="#joint">hochvernünfftig</unclear> <unclear cert="low" resp="#joint">kennen</unclear> <unclear cert="low" resp="#joint">ermesßen</unclear>,
+<lb n="69"/><unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">gantz</unclear> <unclear cert="low" resp="#joint">unmöglich</unclear> fallen will,
+<lb n="70"/>und <unclear cert="low" resp="#joint">jch</unclear> <unclear cert="low" resp="#joint">diß</unclear> doch keines wegs <unclear cert="low" resp="#joint">anstehen</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">laßsen</unclear> <unclear cert="low" resp="#joint">kan</unclear>. <unclear cert="low" resp="#joint">Dero</unclear> <unclear cert="low" resp="#joint">wegen</unclear> auß <unclear cert="low" resp="#joint">freÿem</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">eignem</unclear> <unclear cert="low" resp="#joint">ungezwungnem</unclear> und ungetrung-
 <lb n="73"/>nem willen und gemüth, mit
 <lb n="74"/>keinen listen gefehrden und betrug
 <lb n="75"/>hindergangen, sondern auß selbst
 <lb n="76"/>eigner bewegnuß, so übergib künde
 <pb facs="StadtASG_Missive_3551_14167.jpg" n="3"/>
 <lb n="77"/>auf und verzeihung für mich und
-<lb n="78"/>meine kind obgedachter in E. Hrl.
+<lb n="78"/>meine kind obgedachter in <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Hrl</unclear>.
 <lb n="79"/>und Ew. Vst. lobl. Statt <placeName ref="stadtasg-places-21" cert="medium" resp="#ner">Nuern-
 <lb n="80"/>berg</placeName> gehabter burgerrechten hiemit
 <lb n="81"/>gebürlich und in bester formb, bey meinen
-<lb n="82"/>weiblichen treüwen und ehren an rechtes
-<lb n="83"/>gesehwornnen aidtstatt nicht weinig
-<lb n="84"/>als wann ich gegenwürtig gestanden
-<lb n="85"/>were, alß undd gestalt, daß wir kein
-<lb n="86"/>einige ansprach mehr daran haben
-<lb n="87"/>suchen noch gewinnen sollen noch wollen
-<lb n="88"/>in kein weiß noch weeg, Zuvorderst
+<lb n="82"/>weiblichen treüwen und ehren an <unclear cert="low" resp="#joint">rechtes</unclear>
+<lb n="83"/><unclear cert="low" resp="#joint">gesehwornnen</unclear> <unclear cert="low" resp="#joint">aidtstatt</unclear> nicht <unclear cert="low" resp="#joint">weinig</unclear>
+<lb n="84"/><unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">wann</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">gegenwürtig</unclear> <unclear cert="low" resp="#joint">gestanden</unclear>
+<lb n="85"/><unclear cert="low" resp="#joint">were</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">undd</unclear> <unclear cert="low" resp="#joint">gestalt</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">kein</unclear>
+<lb n="86"/><unclear cert="low" resp="#joint">einige</unclear> <unclear cert="low" resp="#joint">ansprach</unclear> <unclear cert="low" resp="#joint">mehr</unclear> daran haben
+<lb n="87"/><unclear cert="low" resp="#joint">suchen</unclear> noch gewinnen sollen <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">wollen</unclear>
+<lb n="88"/>in kein <unclear cert="low" resp="#joint">weiß</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">weeg</unclear>, <unclear cert="low" resp="#joint">Zuvorderst</unclear>
 <lb n="89"/>aber Ewr. Hrl. und Ewl. Vst.
 <lb n="90"/>und gantzen loblich burgerschafft zu
 <lb n="91"/><placeName ref="stadtasg-places-21" cert="medium" resp="#ner">Nuermberg</placeName> ich umb alles daß jehnige,
 <lb n="92"/>so mir in solchen werenden burgerrechten
-<lb n="93"/>und zeiten liebs und guets widerfahren
+<lb n="93"/>und <unclear cert="low" resp="#joint">zeiten</unclear> <unclear cert="low" resp="#joint">liebs</unclear> und guets widerfahren
 <lb n="94"/>gebührenden underthänigen hohen danckh
-<lb n="95"/>sagen, und bey neben demütig bitten
-<lb n="96"/>diser aufgabe, entlaß- und erle-
-<lb n="97"/>digunge angedachter burgerrechten wie
-<lb n="98"/>auch meiner ehelich und ehrlichen ab-
-<lb n="99"/>schiedts authenischen schein und urkundt
-<lb n="100"/>under dero Statt Secert insigel groß-
+<lb n="95"/>sagen, und bey <unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">demütig</unclear> <unclear cert="low" resp="#joint">bitten</unclear>
+<lb n="96"/><unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">aufgabe</unclear>, <unclear cert="low" resp="#joint">entlaß</unclear>- und <unclear cert="low" resp="#joint">erle</unclear>-
+<lb n="97"/><unclear cert="low" resp="#joint">digunge</unclear> <unclear cert="low" resp="#joint">angedachter</unclear> <unclear cert="low" resp="#joint">burgerrechten</unclear> wie
+<lb n="98"/>auch <unclear cert="low" resp="#joint">meiner</unclear> <unclear cert="low" resp="#joint">ehelich</unclear> und <unclear cert="low" resp="#joint">ehrlichen</unclear> <unclear cert="low" resp="#joint">ab</unclear>-
+<lb n="99"/><unclear cert="low" resp="#joint">schiedts</unclear> <unclear cert="low" resp="#joint">authenischen</unclear> <unclear cert="low" resp="#joint">schein</unclear> und <unclear cert="low" resp="#joint">urkundt</unclear>
+<lb n="100"/><unclear cert="low" resp="#joint">under</unclear> <unclear cert="low" resp="#joint">dero</unclear> Statt Secert insigel groß-
 <lb n="101"/>gunstig ertheilen, und mir mein noch
-<lb n="102"/>in wehrendem burgerrechten schon al-
-<lb n="103"/>bereit eigenthumblich gefallendes
-<lb n="104"/>erbguet sambt dessen nachgesagten Fünfftigsten hievon verholffen-
-<lb n="105"/>in gnedig gunsten gedeygen zulaßen, hiran erweißen
-<lb n="106"/>E. Hrl. und Ewl. Vst. mir ein sonder
+<lb n="102"/>in <unclear cert="low" resp="#joint">wehrendem</unclear> <unclear cert="low" resp="#joint">burgerrechten</unclear> <unclear cert="low" resp="#joint">schon</unclear> <unclear cert="low" resp="#joint">al</unclear>-
+<lb n="103"/><unclear cert="low" resp="#joint">bereit</unclear> <unclear cert="low" resp="#joint">eigenthumblich</unclear> <unclear cert="low" resp="#joint">gefallendes</unclear>
+<lb n="104"/><unclear cert="low" resp="#joint">erbguet</unclear> <unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">dessen</unclear> <unclear cert="low" resp="#joint">nachgesagten</unclear> <unclear cert="low" resp="#joint">Fünfftigsten</unclear> <unclear cert="low" resp="#joint">hievon</unclear> <unclear cert="low" resp="#joint">verholffen</unclear>-
+<lb n="105"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">gnedig</unclear> <unclear cert="low" resp="#joint">gunsten</unclear> <unclear cert="low" resp="#joint">gedeygen</unclear> <unclear cert="low" resp="#joint">zulaßen</unclear>, <unclear cert="low" resp="#joint">hiran</unclear> <unclear cert="low" resp="#joint">erweißen</unclear>
+<lb n="106"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Hrl</unclear>. und Ewl. Vst. mir ein sonder
 <lb n="107"/>gnad so ich gegen deroselben
 <lb n="108"/>rühmen, und in zu preysen sambt den
-<lb n="109"/>meinigen nicht underlaßen wie
-<lb n="110"/>solches umb dieselbige, und dero ange-
+<lb n="109"/>meinigen nicht <unclear cert="low" resp="#joint">underlaßen</unclear> <unclear cert="low" resp="#joint">wie</unclear>
+<lb n="110"/><unclear cert="low" resp="#joint">solches</unclear> umb <unclear cert="low" resp="#joint">dieselbige</unclear>, und dero ange-
 <lb n="111"/>hörige burgerschafft auf begebende
-<lb n="112"/>glegenheit ingebür demuthig zube-
-<lb n="113"/>schulden, dieselben hiemit Gotesich
-<lb n="114"/>treuwen obhalt, und fridrich glückhse-
+<lb n="112"/>glegenheit <unclear cert="low" resp="#joint">ingebür</unclear> <unclear cert="low" resp="#joint">demuthig</unclear> <unclear cert="low" resp="#joint">zube</unclear>-
+<lb n="113"/>schulden, <unclear cert="low" resp="#joint">dieselben</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">Gotesich</unclear>
+<lb n="114"/><unclear cert="low" resp="#joint">treuwen</unclear> <unclear cert="low" resp="#joint">obhalt</unclear>, und fridrich glückhse-
 <lb n="115"/>lig regierung mich aber zu großen
 <pb facs="StadtASG_Missive_3551_14168.jpg" n="4"/>
-<lb n="116"/>willfahrung gantz demuetig be-
-<lb n="117"/>vehlende.
-<lb n="118"/>Datum den <origDate resp="#ner">24. Aprilis</origDate>
-<lb n="119"/>E. W. und Eht. Veste
-<lb n="120"/>in gebuer demuetig willige
-<lb n="121"/><persName role="issuer" resp="#ner">Ursula Magdalena</persName>
-<lb n="122"/>in <placeName resp="#ner">herroSchlinostz</placeName> geborne
-<lb n="123"/>Schenckhin.
+<lb n="116"/><unclear cert="low" resp="#joint">willfahrung</unclear> <unclear cert="low" resp="#joint">gantz</unclear> <unclear cert="low" resp="#joint">demuetig</unclear> <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="117"/><unclear cert="low" resp="#joint">vehlende</unclear>.
+<lb n="118"/><unclear cert="low" resp="#joint">Datum</unclear> den <origDate resp="#ner"><unclear cert="low" resp="#joint">24</unclear>. <unclear cert="low" resp="#joint">Aprilis</unclear></origDate>
+<lb n="119"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. und <unclear cert="low" resp="#joint">Eht</unclear>. <unclear cert="low" resp="#joint">Veste</unclear>
+<lb n="120"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">gebuer</unclear> <unclear cert="low" resp="#joint">demuetig</unclear> <unclear cert="low" resp="#joint">willige</unclear>
+<lb n="121"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Ursula</unclear> <unclear cert="low" resp="#joint">Magdalena</unclear></persName>
+<lb n="122"/><unclear cert="low" resp="#joint">in</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">herroSchlinostz</unclear></placeName> <unclear cert="low" resp="#joint">geborne</unclear>
+<lb n="123"/><unclear cert="low" resp="#joint">Schenckhin</unclear>.
 </p>
         </body>
     </text>

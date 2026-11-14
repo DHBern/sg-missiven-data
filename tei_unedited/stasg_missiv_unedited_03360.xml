@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3360</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen um eine Kopie des dort festgelegten Apothekertaxs. Sie beabsichtigen, für ihre Apotheker einen angemessenen Preisrahmen zu erstellen, um die Bevölkerung vor Übervorteilung zu schützen, und sehen in der St. Galler Regelung eine nützliche Vorlage.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen um eine Kopie des dort festgelegten Apothekertaxs. Sie beabsichtigen, für ihre Apotheker einen angemessenen Preisrahmen zu erstellen, um die Bevölkerung vor Übervorteilung zu schützen, und sehen in der St. Galler Regelung eine nützliche Vorlage.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen ask Burgomaster and Council of St. Gallen for a copy of the apothecary tariff established there. They intend to create a reasonable price framework for their apothecaries to protect the population from being overcharged, and see the St. Gallen regulation as a useful model.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,31 +35,31 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3360_13359.jpg" n="1"/>
-<lb n="1"/>Unßer freündtlich willig dienßt, sampt waß wir ehren liebß
-<lb n="2"/>und guotß vermoegen, zuovor. From, fürsichtig, ehrsam,
+<lb n="1"/>Unßer freündtlich willig dienßt, sampt waß wir ehren <unclear cert="low" resp="#joint">liebß</unclear>
+<lb n="2"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guotß</unclear> <unclear cert="low" resp="#joint">vermoegen</unclear>, <unclear cert="low" resp="#joint">zuovor</unclear>. <unclear cert="low" resp="#joint">From</unclear>, fürsichtig, ehrsam,
 <lb n="3"/>weiß, insonders guot freündt, und getrüwe liebe <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eydgnoßen</orgName>.
-<lb n="4"/>Wir sindt glaubwürdig verßteudiget worden, daß ihr u. l. E.
-<lb n="5"/>und Religionsgenoßen, Eweren wolangeßtelten Apotecken
-<lb n="6"/>wie vil für dero wahren und außgereichten artzneyen menig-
-<lb n="7"/>lich bezahlen und entrichten soll, ohnlangßt, einen gewüßen
+<lb n="4"/>Wir sindt glaubwürdig verßteudiget worden, daß ihr <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Religionsgenoßen</unclear>, <unclear cert="low" resp="#joint">Eweren</unclear> <unclear cert="low" resp="#joint">wolangeßtelten</unclear> <unclear cert="low" resp="#joint">Apotecken</unclear>
+<lb n="6"/>wie <unclear cert="low" resp="#joint">vil</unclear> für dero wahren <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">außgereichten</unclear> <unclear cert="low" resp="#joint">artzneyen</unclear> <unclear cert="low" resp="#joint">menig</unclear>-
+<lb n="7"/>lich bezahlen und entrichten <unclear cert="low" resp="#joint">soll</unclear>, <unclear cert="low" resp="#joint">ohnlangßt</unclear>, <unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">gewüßen</unclear>
 <lb n="8"/>tax und preiß beßtimbt, und gechoepfft. Wan dann
 <lb n="9"/>wir gleicher geßtalt, bey dißeren verenderten und ver-
 <lb n="10"/>wornen zeitten, einen gebürenden tax, unßern Apoteckern,
 <lb n="11"/>(damit meniglich reich und arm in verkauffung der
 <lb n="12"/>wahren, und artzneyen bescheiden: und leidenlich gehalten,
-<lb n="13"/>und nit ubernommen werde) auffzuosetzen vorhabens. Unß
-<lb n="14"/>aber in eüwer loblich und nutzliches werckh, deß beßtimpten
+<lb n="13"/>und nit ubernommen werde) <unclear cert="low" resp="#joint">auffzuosetzen</unclear> <unclear cert="low" resp="#joint">vorhabens</unclear>. <unclear cert="low" resp="#joint">Unß</unclear>
+<lb n="14"/>aber in <unclear cert="low" resp="#joint">eüwer</unclear> loblich und nutzliches werckh, deß beßtimpten
 <lb n="15"/>Apotecker Taxes, zuo unßerem vorhaben, sehr befürdersam,
-<lb n="16"/>sein kan. Alß gelangt an eüch u. l. E. unßer freündt-
-<lb n="17"/>eydtgnoeßisches und nachbarliches ersuochen, Ir geruwend unß
+<lb n="16"/>sein <unclear cert="low" resp="#joint">kan</unclear>. <unclear cert="low" resp="#joint">Alß</unclear> gelangt an <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">freündt</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">eydtgnoeßisches</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nachbarliches</unclear> <unclear cert="low" resp="#joint">ersuochen</unclear>, <unclear cert="low" resp="#joint">Ir</unclear> <unclear cert="low" resp="#joint">geruwend</unclear> <unclear cert="low" resp="#joint">unß</unclear>
 <lb n="18"/>bey ehißter gelegenheit, obangezognen auffgesetzten Apo-
-<lb n="19"/>teckers Taxes, Copias, ohnbeschwerdt, gegen williger
-<lb n="20"/>erßtattung, daruff ergehenden unkoßten, zuo über-
+<lb n="19"/>teckers Taxes, <unclear cert="low" resp="#joint">Copias</unclear>, <unclear cert="low" resp="#joint">ohnbeschwerdt</unclear>, gegen williger
+<lb n="20"/><unclear cert="low" resp="#joint">erßtattung</unclear>, <unclear cert="low" resp="#joint">daruff</unclear> <unclear cert="low" resp="#joint">ergehenden</unclear> <unclear cert="low" resp="#joint">unkoßten</unclear>, zuo über-
 <lb n="21"/>schicken.
 <lb n="22"/>Diße erweißende und eydgnoeßische wilfahr, umb eüch
 <lb n="23"/>in anderen Occurrentijs, zuo beschulden, sindt wir jeder
-<lb n="24"/>zeit gantz bereitwillig und geflißen, unnß damit
-<lb n="25"/>gottes heilßamen direction in erwartung erwelter Copien
+<lb n="24"/>zeit gantz <unclear cert="low" resp="#joint">bereitwillig</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">geflißen</unclear>, <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">damit</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">gottes</unclear> <unclear cert="low" resp="#joint">heilßamen</unclear> direction in erwartung erwelter Copien
 <lb n="26"/>empfehlende. Datum den <origDate when="1639-08-16" resp="#ner">16. Augustij Anno.
 <lb n="27"/>1639</origDate>.
 <lb n="28"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeißter und Rath
@@ -68,11 +69,11 @@
 <pb facs="StadtASG_Missive_3360_13361.jpg" n="3"/>
 <lb n="31"/>[]
 <pb facs="StadtASG_Missive_3360_13362.jpg" n="4"/>
-<lb n="32"/>Den Frommen, Fürsichten, Eersammen und
-<lb n="33"/>Weÿsen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der
-<lb n="34"/>Statt S. Gallen</orgName>, unsern insonders
-<lb n="35"/>guotten Fründen und getrüwen lieben
-<lb n="36"/>Eÿdtgnossen.
+<lb n="32"/>Den Frommen, <unclear cert="low" resp="#joint">Fürsichten</unclear>, <unclear cert="low" resp="#joint">Eersammen</unclear> und
+<lb n="33"/><unclear cert="low" resp="#joint">Weÿsen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Rhat</unclear> der
+<lb n="34"/>Statt <unclear cert="medium" resp="#joint">S</unclear>. Gallen</orgName>, <unclear cert="medium" resp="#joint">unsern</unclear> insonders
+<lb n="35"/><unclear cert="medium" resp="#joint">guotten</unclear> Fründen und <unclear cert="low" resp="#joint">getrüwen</unclear> lieben
+<lb n="36"/><unclear cert="medium" resp="#joint">Eÿdtgnossen</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3206</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Pfalzgräfin Louisa bedankt sich bei Bürgermeister und Rat zu St. Gallen für die Unterstützung von 400 Gulden für die notleidenden Rektoren, Professoren und Kirchengutdiener des Gymnasiums zu Zweibrücken. Sie verspricht, für das Wohl der Spender zu beten und ihnen öffentlich Dank zu sagen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Pfalzgräfin Louisa bedankt sich bei Bürgermeister und Rat zu St. Gallen für die Unterstützung von 400 Gulden für die notleidenden Rektoren, Professoren und Kirchengutdiener des Gymnasiums zu Zweibrücken. Sie verspricht, für das Wohl der Spender zu beten und ihnen öffentlich Dank zu sagen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Palatine Countess Louisa thanks the Burgomaster and Council of St. Gallen for the support of 400 gulden for the distressed rectors, professors, and church property managers of the Gymnasium in Zweibrücken. She promises to pray for the well-being of the donors and to publicly thank them.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -63,33 +64,33 @@
 <lb n="27"/>ihr brodt zubrechen, die verschmachtete zulaben
 <lb n="28"/>sich gutwillig erzeigen. Bedancken unnß
 <pb facs="StadtASG_Missive_3206_12674.jpg" n="2"/>
-<lb n="29"/>aber zuevorderst gegen die herren gantz freundt=
-<lb n="30"/>lich, daß mit würklicher bezeigung ihres christ=
-<lb n="31"/>lichen mitleidens, daß sie so fürderlich und beger=
-<lb n="32"/>schet so viel hochdürfftigen bruedern und schwestern
-<lb n="33"/>beygesprungen. Und bitten den reichen vergelter
-<lb n="34"/>aller wohlthaten, daß er den herren solche frey
-<lb n="35"/>geebige glaubens und liebesfrüchte dausentfaeltig
-<lb n="36"/>wiederumb ersetzen, und die sammentlich mit aller
-<lb n="37"/>ersprießlichen wohlfarth beharrlich seegnen wol=
-<lb n="38"/>le. Wie wir dann auch die gnedigste ver=
-<lb n="39"/>ordnung thun wollen, daß vor dero prosperitaet
-<lb n="40"/>Gott angerueffen, und vor dero mildigkeit, so
-<lb n="41"/>wohl besonders alß offentlich, ihnen gedankt, auch
-<lb n="42"/>mit distribuirung dieser und anderer collecten
-<lb n="43"/>also verfahren werden soll, wie es die notturfft
-<lb n="44"/>erforderen, und gegen dem lieben Gott zueverant=
-<lb n="45"/>worten sein wirdt. Thun dieselbige damit
-<lb n="46"/>in göttliche protection empfhelen.
-<lb n="47"/>Datum <origPlace resp="#ner">Meisenheim</origPlace>, den <origDate when="1636-10-04" resp="#ner">4. octobris, anno 1636</origDate>.
-<lb n="48"/><persName role="issuer" resp="#ner">Louysa</persName> pfaltzgravin wittib mppria
+<lb n="29"/><unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">zuevorderst</unclear> gegen die herren <unclear cert="medium" resp="#joint">gantz</unclear> <unclear cert="medium" resp="#joint">freundt=</unclear>
+<lb n="30"/>lich, daß mit <unclear cert="medium" resp="#joint">würklicher</unclear> <unclear cert="medium" resp="#joint">bezeigung</unclear> <unclear cert="medium" resp="#joint">ihres</unclear> christ=
+<lb n="31"/>lichen <unclear cert="medium" resp="#joint">mitleidens</unclear>, daß sie <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">fürderlich</unclear> und <unclear cert="medium" resp="#joint">beger=</unclear>
+<lb n="32"/><unclear cert="medium" resp="#joint">schet</unclear> <unclear cert="medium" resp="#joint">so</unclear> <unclear cert="medium" resp="#joint">viel</unclear> <unclear cert="medium" resp="#joint">hochdürfftigen</unclear> <unclear cert="medium" resp="#joint">bruedern</unclear> und schwestern
+<lb n="33"/><unclear cert="low" resp="#joint">beygesprungen</unclear>. <unclear cert="low" resp="#joint">Und</unclear> bitten den <unclear cert="low" resp="#joint">reichen</unclear> <unclear cert="low" resp="#joint">vergelter</unclear>
+<lb n="34"/>aller <unclear cert="medium" resp="#joint">wohlthaten</unclear>, daß er den herren solche frey
+<lb n="35"/><unclear cert="medium" resp="#joint">geebige</unclear> <unclear cert="medium" resp="#joint">glaubens</unclear> und <unclear cert="low" resp="#joint">liebesfrüchte</unclear> <unclear cert="low" resp="#joint">dausentfaeltig</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">wiederumb</unclear> <unclear cert="low" resp="#joint">ersetzen</unclear>, und die sammentlich mit aller
+<lb n="37"/><unclear cert="medium" resp="#joint">ersprießlichen</unclear> <unclear cert="medium" resp="#joint">wohlfarth</unclear> beharrlich <unclear cert="medium" resp="#joint">seegnen</unclear> wol=
+<lb n="38"/>le. Wie <unclear cert="medium" resp="#joint">wir</unclear> dann auch die gnedigste <unclear cert="medium" resp="#joint">ver=</unclear>
+<lb n="39"/>ordnung thun <unclear cert="medium" resp="#joint">wollen</unclear>, daß <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">dero</unclear> <unclear cert="medium" resp="#joint">prosperitaet</unclear>
+<lb n="40"/>Gott <unclear cert="medium" resp="#joint">angerueffen</unclear>, und <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">dero</unclear> <unclear cert="medium" resp="#joint">mildigkeit</unclear>, so
+<lb n="41"/><unclear cert="medium" resp="#joint">wohl</unclear> <unclear cert="medium" resp="#joint">besonders</unclear> <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">offentlich</unclear>, <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">gedankt</unclear>, auch
+<lb n="42"/>mit <unclear cert="low" resp="#joint">distribuirung</unclear> dieser und anderer <unclear cert="medium" resp="#joint">collecten</unclear>
+<lb n="43"/><unclear cert="medium" resp="#joint">also</unclear> <unclear cert="medium" resp="#joint">verfahren</unclear> werden soll, wie <unclear cert="medium" resp="#joint">es</unclear> die notturfft
+<lb n="44"/><unclear cert="medium" resp="#joint">erforderen</unclear>, und gegen dem lieben Gott <unclear cert="medium" resp="#joint">zueverant=</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">worten</unclear> sein <unclear cert="low" resp="#joint">wirdt</unclear>. <unclear cert="low" resp="#joint">Thun</unclear> <unclear cert="low" resp="#joint">dieselbige</unclear> damit
+<lb n="46"/>in göttliche protection <unclear cert="medium" resp="#joint">empfhelen</unclear>.
+<lb n="47"/>Datum <origPlace resp="#ner"><unclear cert="low" resp="#joint">Meisenheim</unclear></origPlace>, <unclear cert="low" resp="#joint">den</unclear> <origDate when="1636-10-04" resp="#ner">4. octobris, anno 1636</origDate>.
+<lb n="48"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Louysa</unclear></persName> <unclear cert="medium" resp="#joint">pfaltzgravin</unclear> wittib <unclear cert="low" resp="#joint">mppria</unclear>
 <pb facs="StadtASG_Missive_3206_12675.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3206_12676.jpg" n="4"/>
-<lb n="49"/>Denen ehrsamen und weisen,
-<lb n="50"/>unsern lieben besondern
+<lb n="49"/>Denen <unclear cert="low" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">und</unclear> weisen,
+<lb n="50"/><unclear cert="medium" resp="#joint">unsern</unclear> lieben <unclear cert="low" resp="#joint">besondern</unclear>
 <lb n="51"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat
 <lb n="52"/>der statt St. Gallen</orgName>.
-<lb n="53"/>St. Gall.
+<lb n="53"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gall</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3264</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die Bürgermeister und Regenten von Marseille bitten den Rat zu St. Gallen, den in St. Gallen lebenden Bankrotteur Ulrich Krom festzunehmen und seine Güter zu beschlagnahmen. Krom habe in Ägypten Schulden von 150'000 Piastern hinterlassen, was den französischen Kaufleuten in Alexandria einen Schaden von über 500'000 Franken zugefügt habe. Die Franzosen seien gezwungen gewesen, 200'000 Franken aufzunehmen, um die türkischen Gläubiger zu befriedigen. Marseille verspricht, St. Gallen in ähnlichen Fällen zu unterstützen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die Bürgermeister und Regenten von Marseille bitten den Rat zu St. Gallen, den in St. Gallen lebenden Bankrotteur Ulrich Krom festzunehmen und seine Güter zu beschlagnahmen. Krom habe in Ägypten Schulden von 150'000 Piastern hinterlassen, was den französischen Kaufleuten in Alexandria einen Schaden von über 500'000 Franken zugefügt habe. Die Franzosen seien gezwungen gewesen, 200'000 Franken aufzunehmen, um die türkischen Gläubiger zu befriedigen. Marseille verspricht, St. Gallen in ähnlichen Fällen zu unterstützen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Regent of Marseille ask the Council of St. Gallen to arrest the bankrupt Ulrich Krom, who lives in St. Gallen, and to confiscate his goods. Krom has left debts of 150'000 piastres in Egypt, which has caused damage of over 500'000 francs to the French merchants in Alexandria. The French have been forced to take up 200'000 francs to satisfy the Turkish creditors. Marseille promises to support St. Gallen in similar cases.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -84,122 +85,122 @@
 <lb n="47"/>vos plus affectionnés seruiteurs, les consuls
 <lb n="48"/>gouuerneurs de la ville de <placeName resp="#ner">Marseille</placeName>
 <lb n="49"/>Marignane consul
-<lb n="50"/>Moustillery consul
+<lb n="50"/><unclear cert="low" resp="#joint">Moustillery</unclear> consul
 <lb n="51"/>Reau consul
 <lb n="52"/>A <origPlace resp="#ner">Marseille</origPlace> <origDate when="1632" resp="#ner">ce xxiii 9bre 1632</origDate>.
 <pb facs="StadtASG_Missive_3264_12949.jpg" n="3"/>
-<lb n="53"/>Hochgeachte Herren.
-<lb n="54"/>Man hat alhie in diser statt <placeName resp="#ner">Marsilien</placeName> immerzue
-<lb n="55"/>geglaubt, und darfuergehalten, es hette sich einer
-<lb n="56"/>genandt <persName resp="#ner">Ulrich Krom</persName>, der ein banqueroutier und
-<lb n="57"/>fallierter od ausgetretner Mann ist, aus forcht
-<lb n="58"/>seines begangnen lasters von der gemeinschafft der
-<lb n="59"/>Menschen abgesönderet, in deme Er, damit er, hun-
-<lb n="60"/>dert und fuenffzig tausendt piastres (daß ist sovil
-<lb n="61"/>Reichstaller) die Er in <placeName resp="#ner">Egypten</placeName> schuldig war, nit be-
+<lb n="53"/><unclear cert="low" resp="#joint">Hochgeachte</unclear> Herren.
+<lb n="54"/><unclear cert="low" resp="#joint">Man</unclear> <unclear cert="low" resp="#joint">hat</unclear> <unclear cert="low" resp="#joint">alhie</unclear> in diser statt <placeName resp="#ner"><unclear cert="low" resp="#joint">Marsilien</unclear></placeName> <unclear cert="low" resp="#joint">immerzue</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">geglaubt</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">darfuergehalten</unclear>, es hette sich einer
+<lb n="56"/>genandt <persName resp="#ner">Ulrich Krom</persName>, der <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">banqueroutier</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="57"/><unclear cert="low" resp="#joint">fallierter</unclear> <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">ausgetretner</unclear> <unclear cert="low" resp="#joint">Mann</unclear> ist, <unclear cert="low" resp="#joint">aus</unclear> <unclear cert="low" resp="#joint">forcht</unclear>
+<lb n="58"/>seines begangnen lasters von der <unclear cert="low" resp="#joint">gemeinschafft</unclear> der
+<lb n="59"/><unclear cert="low" resp="#joint">Menschen</unclear> <unclear cert="low" resp="#joint">abgesönderet</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">deme</unclear> Er, <unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">er</unclear>, <unclear cert="low" resp="#joint">hun</unclear>-
+<lb n="60"/><unclear cert="low" resp="#joint">dert</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">fuenffzig</unclear> <unclear cert="low" resp="#joint">tausendt</unclear> <unclear cert="low" resp="#joint">piastres</unclear> (<unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">sovil</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">Reichstaller</unclear>) <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Er</unclear> <unclear cert="low" resp="#joint">in</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Egypten</unclear></placeName> schuldig war, nit be-
 <lb n="62"/>zahlen mueste, sich vor etlich Jahren heimblich darvon
 <lb n="63"/>gemacht, und aus selbigem Landt gewichen mit
-<lb n="64"/>ansehenlichem haab und guet so er mit sich genom-
-<lb n="65"/>men, und von seithero dises offentliches diebstals
+<lb n="64"/>ansehenlichem haab und guet so er mit sich <unclear cert="low" resp="#joint">genom</unclear>-
+<lb n="65"/><unclear cert="low" resp="#joint">men</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">seithero</unclear> <unclear cert="low" resp="#joint">dises</unclear> <unclear cert="low" resp="#joint">offentliches</unclear> <unclear cert="low" resp="#joint">diebstals</unclear>
 <lb n="66"/>seinen Creditoren kein einige satisfaction nit geben,
-<lb n="67"/>welches dann die einiche ursach ist des grossen
-<lb n="68"/>nachteil und schadens, so unsere buerger von sei-
+<lb n="67"/>welches dann die <unclear cert="low" resp="#joint">einiche</unclear> <unclear cert="low" resp="#joint">ursach</unclear> <unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">grossen</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">nachteil</unclear> und schadens, so unsere buerger von sei-
 <lb n="69"/>netwegen haben muesen zu <placeName resp="#ner">Alexandria</placeName> in <placeName resp="#ner">Egypten</placeName>
 <lb n="70"/>leiden, uber die fuenffmal hundert tausendt
 <lb n="71"/>francken sich belauffende, und diß darum die
 <lb n="72"/>weil die <orgName resp="#ner">Turckhen</orgName> welchen Er Krom schuldig war,
 <lb n="73"/>under dem praetext und fuerwandt das selbiger im
-<lb n="74"/>Landt und dem fahnen der <orgName resp="#ner">frantzosen</orgName> seinen ge-
+<lb n="74"/>Landt und dem <unclear cert="low" resp="#joint">fahnen</unclear> <unclear cert="low" resp="#joint">der</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">frantzosen</unclear></orgName> <unclear cert="low" resp="#joint">seinen</unclear> ge-
 <lb n="75"/>werb und handel fuehrte, die bezahlung Ihrer
-<lb n="76"/>schulden auf obgemelte unsere buerger geschlagen
-<lb n="77"/>und von den schiffen die domahlen daselbsten am uffer
-<lb n="78"/>des meers waren, fuenffzig von Jedem hundert
-<lb n="79"/>aller Ihrer haab und guetter erfordt und genom-
-<lb n="80"/>men haben, und alß sie vorhabens waren, solche
-<lb n="81"/>anlag auf alle andere kauffmanschafft den
+<lb n="76"/>schulden auf <unclear cert="low" resp="#joint">obgemelte</unclear> <unclear cert="low" resp="#joint">unsere</unclear> <unclear cert="low" resp="#joint">buerger</unclear> <unclear cert="low" resp="#joint">geschlagen</unclear>
+<lb n="77"/><unclear cert="low" resp="#joint">und</unclear> von <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">schiffen</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">domahlen</unclear> <unclear cert="low" resp="#joint">daselbsten</unclear> <unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">uffer</unclear>
+<lb n="78"/><unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">meers</unclear> waren, <unclear cert="low" resp="#joint">fuenffzig</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Jedem</unclear> <unclear cert="low" resp="#joint">hundert</unclear>
+<lb n="79"/><unclear cert="low" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">Ihrer</unclear> <unclear cert="low" resp="#joint">haab</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guetter</unclear> <unclear cert="low" resp="#joint">erfordt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">genom</unclear>-
+<lb n="80"/><unclear cert="low" resp="#joint">men</unclear> <unclear cert="low" resp="#joint">haben</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">vorhabens</unclear> <unclear cert="low" resp="#joint">waren</unclear>, <unclear cert="low" resp="#joint">solche</unclear>
+<lb n="81"/><unclear cert="low" resp="#joint">anlag</unclear> auf alle <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">kauffmanschafft</unclear> den
 <lb n="82"/>frantzosen zuegehoerig zu continuieren, biß ds sie sich
 <lb n="83"/>alß selbs gentzlich bezalt machten, da ist di-
 <pb facs="StadtASG_Missive_3264_12950.jpg" n="4"/>
-<lb n="84"/><orgName resp="#ner">Frantzoesische nation</orgName> auß dringender noth getrungen
-<lb n="85"/>worden, solchem grossen schaden und abbruch ihrer handlung,
+<lb n="84"/><orgName resp="#ner"><unclear cert="low" resp="#joint">Frantzoesische</unclear> <unclear cert="low" resp="#joint">nation</unclear></orgName> <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">dringender</unclear> <unclear cert="low" resp="#joint">noth</unclear> <unclear cert="low" resp="#joint">getrungen</unclear>
+<lb n="85"/><unclear cert="low" resp="#joint">worden</unclear>, solchem grossen schaden und abbruch ihrer handlung,
 <lb n="86"/>dadurch sie in dz eusserste verderben gerahten weren,
-<lb n="87"/>vorzukommen, dz sie haben muessen zweymal hundert
-<lb n="88"/>tausent franckhen entlehnen und aufnehmen, mit
+<lb n="87"/>vorzukommen, dz sie haben <unclear cert="low" resp="#joint">muessen</unclear> <unclear cert="low" resp="#joint">zweymal</unclear> <unclear cert="low" resp="#joint">hundert</unclear>
+<lb n="88"/><unclear cert="low" resp="#joint">tausent</unclear> <unclear cert="low" resp="#joint">franckhen</unclear> <unclear cert="low" resp="#joint">entlehnen</unclear> und aufnehmen, mit
 <lb n="89"/>welchem etliche der fuernembsten seiner creditoren
 <lb n="90"/>under den Tuerckhen, so inn mehrerm ansehen und ge-
 <lb n="91"/>walt weren, zum theil gestillet, dz uebrige aber
 <lb n="92"/>an die unkoesten und verehrungen, die man etlichen
 <lb n="93"/>beampteten thuen muessen, angewendt worden,
-<lb n="94"/>damit durch Ir mittel diser nation die auferlegte
-<lb n="95"/>beschwaerd die uebrigen schulden fuer gedachten Fromen
-<lb n="96"/>zubezahlen, widerumb moechte abgenommen, und also
+<lb n="94"/>damit durch Ir mittel <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">nation</unclear> die auferlegte
+<lb n="95"/>beschwaerd die <unclear cert="low" resp="#joint">uebrigen</unclear> <unclear cert="low" resp="#joint">schulden</unclear> <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">gedachten</unclear> <unclear cert="low" resp="#joint">Fromen</unclear>
+<lb n="96"/><unclear cert="low" resp="#joint">zubezahlen</unclear>, <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">moechte</unclear> <unclear cert="low" resp="#joint">abgenommen</unclear>, und also
 <lb n="97"/>obgedachte anlag widerumb aufgehebt werden;
 <lb n="98"/>Ward welchem zu bezahlung der besagten aufgenom-
 <lb n="99"/>nen zweymal hundert tausendt franckhen man
 <lb n="100"/>auf alle gueter und wahren der <orgName resp="#ner">Frantzosen</orgName>, so ihr
 <lb n="101"/>handlung in gedachtes landt continuieren wurden,
 <lb n="102"/>ein auffschlag drey vom hundert geschlagen, welcher
-<lb n="103"/>auch seithero also von ihnen genommen, und einge-
-<lb n="104"/>zogen worden ist. In summa und mit einem wort
-<lb n="105"/>zumelden, man kan nit gnuegsam sagen, und zu-
+<lb n="103"/>auch seithero also von ihnen genommen, und <unclear cert="low" resp="#joint">einge</unclear>-
+<lb n="104"/><unclear cert="low" resp="#joint">zogen</unclear> worden ist. In summa und mit einem wort
+<lb n="105"/><unclear cert="low" resp="#joint">zumelden</unclear>, man kan nit gnuegsam sagen, und zu-
 <lb n="106"/>erkennen geben, in was grossen kosten und schaden
-<lb n="107"/>unser nation durch dise betriegliche banqueroute
+<lb n="107"/>unser nation <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">dise</unclear> <unclear cert="low" resp="#joint">betriegliche</unclear> <unclear cert="low" resp="#joint">banqueroute</unclear>
 <lb n="108"/>und austrettung des gedachten Fromen gerahten
 <lb n="109"/>ist, welcher doch, wie wir berichtet werden, her-
 <lb n="110"/>umb spatzieret, und in ewerem landt sich offentlich
 <lb n="111"/>sehen last, welches aber, als wir darfuer halten, ihr
-<lb n="112"/>Herren nit gestattet hetten, wan ihr diser schandthatt
-<lb n="113"/>weren berichtet gewesen, sonder hetten ihn lassen ein-
-<lb n="114"/>ziehen andern zu einem exempel. Und dieweil nun
-<lb n="115"/>die sach mit grund der warheit also beschaffen,
-<lb n="116"/>wie hie oben erzelt, und wir euch hiemit solches so
+<lb n="112"/>Herren nit gestattet hetten, <unclear cert="low" resp="#joint">wan</unclear> ihr <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">schandthatt</unclear>
+<lb n="113"/><unclear cert="low" resp="#joint">weren</unclear> <unclear cert="low" resp="#joint">berichtet</unclear> <unclear cert="low" resp="#joint">gewesen</unclear>, <unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">hetten</unclear> <unclear cert="low" resp="#joint">ihn</unclear> <unclear cert="low" resp="#joint">lassen</unclear> ein-
+<lb n="114"/>ziehen andern zu einem exempel. Und <unclear cert="low" resp="#joint">dieweil</unclear> <unclear cert="low" resp="#joint">nun</unclear>
+<lb n="115"/>die <unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">mit</unclear> grund der warheit also beschaffen,
+<lb n="116"/><unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">hie</unclear> <unclear cert="low" resp="#joint">oben</unclear> <unclear cert="low" resp="#joint">erzelt</unclear>, und wir euch hiemit <unclear cert="low" resp="#joint">solches</unclear> <unclear cert="low" resp="#joint">so</unclear>
 <pb facs="StadtASG_Missive_3264_12951.jpg" n="5"/>
-<lb n="117"/>sicherlich zuerkennen geben, deßen sich ein theil von
+<lb n="117"/>sicherlich zuerkennen geben, deßen sich <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">theil</unclear> von
 <lb n="118"/>unseren burgeren und anderen Frantzoesischen han-
 <lb n="119"/>delßleüthen beklagt, damit sie deß jennigen, waß
-<lb n="120"/>ihnen zu bezahlung deß <persName resp="#ner">Kromes</persName> schulden mit gewalt ab-
-<lb n="121"/>genoetiget worden, wider habhafft werden moegten,
+<lb n="120"/>ihnen zu <unclear cert="low" resp="#joint">bezahlung</unclear> <unclear cert="low" resp="#joint">deß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Kromes</unclear></persName> <unclear cert="low" resp="#joint">schulden</unclear> mit <unclear cert="low" resp="#joint">gewalt</unclear> <unclear cert="low" resp="#joint">ab</unclear>-
+<lb n="121"/><unclear cert="low" resp="#joint">genoetiget</unclear> worden, wider habhafft werden moegten,
 <lb n="122"/>haben wir dennoch nit wollen underlaßen eüch durh
-<lb n="123"/>diß schreiben zuersuchen und zubitten, ihr wollet zue-
-<lb n="124"/>geben, waß dz civilische interesse od wehrth thuet be-
-<lb n="125"/>treffen, dz die haab und gueter deß gedachten Kromen
-<lb n="126"/>in arest genomen, und die gefangenschafft sei-
-<lb n="127"/>ner persohn, so auf anhalten deß koeniglichen
+<lb n="123"/>diß schreiben zuersuchen und <unclear cert="low" resp="#joint">zubitten</unclear>, <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">wollet</unclear> <unclear cert="low" resp="#joint">zue</unclear>-
+<lb n="124"/>geben, <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">civilische</unclear> <unclear cert="low" resp="#joint">interesse</unclear> <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">wehrth</unclear> <unclear cert="low" resp="#joint">thuet</unclear> <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="125"/><unclear cert="low" resp="#joint">treffen</unclear>, <unclear cert="low" resp="#joint">dz</unclear> die haab und gueter deß gedachten Kromen
+<lb n="126"/>in arest genomen, und die gefangenschafft <unclear cert="low" resp="#joint">sei</unclear>-
+<lb n="127"/><unclear cert="low" resp="#joint">ner</unclear> <unclear cert="low" resp="#joint">persohn</unclear>, so auf anhalten deß koeniglichen
 <lb n="128"/>procuratoris in dem <orgName resp="#ner">rath der schiffahrten</orgName> unser
 <lb n="129"/>statt albereit wid ihne erkendt und außgangen,
-<lb n="130"/>exequiert und voll streckt werde, damit man
-<lb n="131"/>dises banqueroutiers versichert seye, ihme sein pro-
-<lb n="132"/>ces gemacht, und sein begangne schandthaat,
-<lb n="133"/>von eüch selbs, liebe herren gestrafft werde,
+<lb n="130"/>exequiert und <unclear cert="low" resp="#joint">voll</unclear> <unclear cert="low" resp="#joint">streckt</unclear> <unclear cert="low" resp="#joint">werde</unclear>, damit man
+<lb n="131"/>dises banqueroutiers versichert seye, <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">pro</unclear>-
+<lb n="132"/><unclear cert="low" resp="#joint">ces</unclear> <unclear cert="low" resp="#joint">gemacht</unclear>, und sein <unclear cert="low" resp="#joint">begangne</unclear> <unclear cert="low" resp="#joint">schandthaat</unclear>,
+<lb n="133"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">eüch</unclear> selbs, liebe herren gestrafft werde,
 <lb n="134"/>so fern eüch gefellig sein moechte hierüber zuer-
-<lb n="135"/>kennen, auf welchen fahl hin eüch d verlauff al-
-<lb n="136"/>ler sachen, und waß zu beweisung derselbigen
+<lb n="135"/>kennen, auf welchen fahl hin <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">verlauff</unclear> <unclear cert="low" resp="#joint">al</unclear>-
+<lb n="136"/><unclear cert="low" resp="#joint">ler</unclear> sachen, und waß zu beweisung derselbigen
 <lb n="137"/>nohtwendig ist, soll zugeschikt werden, oder der
 <lb n="138"/>obgedachte rath der schiffahrten wurde solches
-<lb n="139"/>gegen ihme fürnemen. Wir halten darfür gün-
-<lb n="140"/>stige liebe herren ihr werden eüch deßen nit beschweren
-<lb n="141"/>alß einer sach die an ihr selbs billich und recht
-<lb n="142"/>ist, darbey ihr eüch auch zuversicheren dz in der-
-<lb n="143"/>gleichen fahl wir eüch gleicher maßen werden be-
+<lb n="139"/>gegen <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">fürnemen</unclear>. Wir <unclear cert="low" resp="#joint">halten</unclear> <unclear cert="low" resp="#joint">darfür</unclear> <unclear cert="low" resp="#joint">gün</unclear>-
+<lb n="140"/><unclear cert="low" resp="#joint">stige</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">beschweren</unclear>
+<lb n="141"/><unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">sach</unclear> die an ihr selbs billich und recht
+<lb n="142"/>ist, darbey ihr <unclear cert="low" resp="#joint">eüch</unclear> auch <unclear cert="low" resp="#joint">zuversicheren</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">der</unclear>-
+<lb n="143"/><unclear cert="low" resp="#joint">gleichen</unclear> <unclear cert="low" resp="#joint">fahl</unclear> wir <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">gleicher</unclear> <unclear cert="low" resp="#joint">maßen</unclear> werden be-
 <lb n="144"/>gegnen, und in fürfallenden occasionen eüch ange-
-<lb n="145"/>neme dienst zueerweisen guetwillig seyn, alß
+<lb n="145"/>neme dienst <unclear cert="low" resp="#joint">zueerweisen</unclear> <unclear cert="low" resp="#joint">guetwillig</unclear> <unclear cert="low" resp="#joint">seyn</unclear>, <unclear cert="low" resp="#joint">alß</unclear>
 <lb n="146"/>die da sind
 <lb n="147"/>Hochgeachte herren
 <lb n="148"/>Eüer wolgeneigte diener
-<lb n="149"/><orgName role="issuer" resp="#ner">die burgermeister regenten
+<lb n="149"/><orgName role="issuer" resp="#ner">die burgermeister <unclear cert="low" resp="#joint">regenten</unclear>
 <lb n="150"/>der Statt Marsilien</orgName>
 <lb n="151"/><persName role="issuer" resp="#ner">Marignanes</persName> burgermeister
 <lb n="152"/><persName role="issuer" resp="#ner">Mantillery</persName> burgermeister
 <lb n="153"/><persName role="issuer" resp="#ner">Veau</persName> burgermeister.
-<lb n="154"/>Zue <origPlace resp="#ner">Marsilien</origPlace> <origDate when="1637" resp="#ner">den 24 9bre 1637</origDate>.
+<lb n="154"/>Zue <origPlace resp="#ner">Marsilien</origPlace> <origDate when="1637" resp="#ner">den <unclear cert="low" resp="#joint">24</unclear> <unclear cert="low" resp="#joint">9bre</unclear> 1637</origDate>.
 <pb facs="StadtASG_Missive_3264_12952.jpg" n="6"/>
 <lb n="155"/>[]
 <pb facs="StadtASG_Missive_3264_12953.jpg" n="7"/>
 <lb n="156"/>[]
 <pb facs="StadtASG_Missive_3264_12954.jpg" n="8"/>
-<lb n="157"/>Aux Magnifiques
-<lb n="158"/>Magnifiques Seigneurs
-<lb n="159"/>les <orgName ref="stadtasg-actors-629" cert="medium" role="recipient" resp="#ner">Consuls et Senateurs de la
+<lb n="157"/><unclear cert="low" resp="#joint">Aux</unclear> <unclear cert="low" resp="#joint">Magnifiques</unclear>
+<lb n="158"/><unclear cert="low" resp="#joint">Magnifiques</unclear> <unclear cert="low" resp="#joint">Seigneurs</unclear>
+<lb n="159"/><unclear cert="low" resp="#joint">les</unclear> <orgName ref="stadtasg-actors-629" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Consuls</unclear> et Senateurs de la
 <lb n="160"/>Republique de St. Gall</orgName>
 <lb n="161"/>A <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gall</placeName> &amp;c.
 </p>

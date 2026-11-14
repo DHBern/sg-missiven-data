@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3610</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Landammann und Rat der Grafschaft Toggenburg, den dortigen Landsmann Bartholomäus Studach, der eine St. Galler Bürgerin unehelich geschwängert haben soll, am nächsten Montag um zwei Uhr im Haus der Sunder zu St. Gallen vorzustellen. Sie fordern, dass er sich zu dem Vorwurf rechtfertigt und das Kind taufen lässt.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Landammann und Rat der Grafschaft Toggenburg, den dortigen Landsmann Bartholomäus Studach, der eine St. Galler Bürgerin unehelich geschwängert haben soll, am nächsten Montag um zwei Uhr im Haus der Sunder zu St. Gallen vorzustellen. Sie fordern, dass er sich zu dem Vorwurf rechtfertigt und das Kind taufen lässt.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen request Landammann and Council of the County of Toggenburg to present the local man Bartholomäus Studach, who is said to have impregnated a citizen of St. Gallen out of wedlock, at the house of the Sunder in St. Gallen on the coming Monday at two o'clock. They demand that he justify himself against the accusation and have the child baptized.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,67 +35,67 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3610_14421.jpg" n="1"/>
-<lb n="1"/>Unser freündtnachbuerlich willig
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündtnachbuerlich</unclear> willig
 <lb n="2"/>dienst, samt was wir ehren liebs
 <lb n="3"/>und guets vermoegendt zuvor, from,
 <lb n="4"/>fürsichtig, ehrsamm und weisen in-
-<lb n="5"/>sonders guete freünde, und wohl
-<lb n="6"/>vertrauwte liebe nachburen.
-<lb n="7"/>Demnach euwer angehoeriger landtman
-<lb n="8"/><persName resp="#ner">Bartlome Studach</persName>, ledig, an <persName resp="#ner">Cathrina Gmünderin</persName>, unser
-<lb n="9"/>burgerin, ein
-<lb n="10"/>kindt inn unehren anbeholffen, deßen sie dißer tag
-<lb n="11"/>gnäßen und niderkomen, und verhofft
+<lb n="5"/>sonders <unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">freünde</unclear>, und <unclear cert="low" resp="#joint">wohl</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">vertrauwte</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">nachburen</unclear>.
+<lb n="7"/><unclear cert="low" resp="#joint">Demnach</unclear> <unclear cert="low" resp="#joint">euwer</unclear> <unclear cert="low" resp="#joint">angehoeriger</unclear> <unclear cert="low" resp="#joint">landtman</unclear>
+<lb n="8"/><persName resp="#ner"><unclear cert="low" resp="#joint">Bartlome</unclear> <unclear cert="low" resp="#joint">Studach</unclear></persName>, <unclear cert="low" resp="#joint">ledig</unclear>, <unclear cert="low" resp="#joint">an</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Cathrina</unclear> <unclear cert="low" resp="#joint">Gmünderin</unclear></persName>, <unclear cert="low" resp="#joint">unser</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">burgerin</unclear>, <unclear cert="low" resp="#joint">ein</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">kindt</unclear> <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">unehren</unclear> <unclear cert="low" resp="#joint">anbeholffen</unclear>, <unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">dißer</unclear> <unclear cert="low" resp="#joint">tag</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">gnäßen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">niderkomen</unclear>, und verhofft
 <lb n="12"/>er alß der vatter sich mit beschwären
 <lb n="13"/>werde, dz unschuldige kindlin, dz sie
-<lb n="14"/>ihme alßbald zuegschickt, ihme alß ihme wohl
-<lb n="15"/>wißendt rechter naturlicher vatter,
-<lb n="16"/>zu tauffen zu laßen, wann er sich
+<lb n="14"/>ihme <unclear cert="low" resp="#joint">alßbald</unclear> <unclear cert="low" resp="#joint">zuegschickt</unclear>, ihme <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">wohl</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">wißendt</unclear> <unclear cert="low" resp="#joint">rechter</unclear> <unclear cert="low" resp="#joint">naturlicher</unclear> vatter,
+<lb n="16"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">tauffen</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">laßen</unclear>, wann er sich
 <lb n="17"/>aber deßen nit gewidret, sonder laug-
 <lb n="18"/>net, alß wann er nit allein geweßen, sonder
-<lb n="19"/>sie sich mit andern mehr, in unehren ver-
+<lb n="19"/>sie sich <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">mehr</unclear>, in unehren ver-
 <lb n="20"/>mischt haben solle. Alß habendt
-<lb n="21"/>wir nicht ermanglet, der warheits
-<lb n="22"/>grundt, durch unsere abgeordnete
-<lb n="23"/>liebe mitrhät bij ihro ze erfahren,
+<lb n="21"/>wir nicht <unclear cert="low" resp="#joint">ermanglet</unclear>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">warheits</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">grundt</unclear>, durch <unclear cert="low" resp="#joint">unsere</unclear> <unclear cert="low" resp="#joint">abgeordnete</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">mitrhät</unclear> <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">ihro</unclear> <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">erfahren</unclear>,
 <lb n="24"/>und weil
 <lb n="25"/>dann sie bij erst ernstlich zuesprechen
-<lb n="26"/>und troeung gottes d'hoechsten ungnad und hellisch
-<lb n="27"/>ewig verdamnuß straff, so sie die warheit nit bekennen
+<lb n="26"/>und <unclear cert="low" resp="#joint">troeung</unclear> <unclear cert="low" resp="#joint">gottes</unclear> <unclear cert="low" resp="#joint">d'hoechsten</unclear> <unclear cert="low" resp="#joint">ungnad</unclear> und <unclear cert="low" resp="#joint">hellisch</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">ewig</unclear> <unclear cert="low" resp="#joint">verdamnuß</unclear> <unclear cert="low" resp="#joint">straff</unclear>, so sie die <unclear cert="low" resp="#joint">warheit</unclear> <unclear cert="low" resp="#joint">nit</unclear> bekennen
 <pb facs="StadtASG_Missive_3610_14422.jpg" n="2"/>
-<lb n="28"/>und der dochter muetter daß kindts.
-<lb n="29"/>anzeigen wuerde, bij leiblichen eide
-<lb n="30"/>erhalte, dz eber er <persName resp="#ner">Bartlome
-<lb n="31"/>Helder</persName> und sunst kein
-<lb n="32"/>anderer der rechte und nattürliche vatter
-<lb n="33"/>seije, sintemahl sie sunst keines
-<lb n="34"/>mannsbilds nie theilhafttig worden
-<lb n="35"/>seije, sich auch anderst nit erfinden werde,
-<lb n="36"/>Alß wellen wir nicht umbgang
-<lb n="37"/>nemmen euwer ersam weisheit, umb dz
-<lb n="38"/><placeName resp="#ner">Roßberg</placeName> iresobern verhafts dienecht,
-<lb n="39"/>derobeg freündtnachbarlichen zu
+<lb n="28"/>und der dochter muetter daß <unclear cert="low" resp="#joint">kindts</unclear>.
+<lb n="29"/><unclear cert="low" resp="#joint">anzeigen</unclear> <unclear cert="low" resp="#joint">wuerde</unclear>, <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">leiblichen</unclear> <unclear cert="low" resp="#joint">eide</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">erhalte</unclear>, dz <unclear cert="low" resp="#joint">eber</unclear> <unclear cert="low" resp="#joint">er</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Bartlome</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">Helder</unclear></persName> und sunst kein
+<lb n="32"/>anderer der rechte und <unclear cert="low" resp="#joint">nattürliche</unclear> <unclear cert="low" resp="#joint">vatter</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">seije</unclear>, <unclear cert="low" resp="#joint">sintemahl</unclear> sie <unclear cert="low" resp="#joint">sunst</unclear> <unclear cert="low" resp="#joint">keines</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">mannsbilds</unclear> <unclear cert="low" resp="#joint">nie</unclear> <unclear cert="low" resp="#joint">theilhafttig</unclear> worden
+<lb n="35"/>seije, sich <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">anderst</unclear> nit <unclear cert="low" resp="#joint">erfinden</unclear> <unclear cert="low" resp="#joint">werde</unclear>,
+<lb n="36"/><unclear cert="low" resp="#joint">Alß</unclear> <unclear cert="low" resp="#joint">wellen</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">nicht</unclear> <unclear cert="low" resp="#joint">umbgang</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">nemmen</unclear> <unclear cert="low" resp="#joint">euwer</unclear> ersam <unclear cert="low" resp="#joint">weisheit</unclear>, <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">dz</unclear>
+<lb n="38"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Roßberg</unclear></placeName> <unclear cert="low" resp="#joint">iresobern</unclear> <unclear cert="low" resp="#joint">verhafts</unclear> <unclear cert="low" resp="#joint">dienecht</unclear>,
+<lb n="39"/><unclear cert="low" resp="#joint">derobeg</unclear> <unclear cert="low" resp="#joint">freündtnachbarlichen</unclear> zu
 <lb n="40"/>ersuchen, den selben mit eüwern
-<lb n="41"/>oberkeitlichen ernßt dahin zehalten
-<lb n="42"/>daß er sich nechst künfftigen Mentag baß umb zwoen
-<lb n="43"/>tages zeit im huß der Sunder siechen
-<lb n="44"/>alhie einstelle. und umb solch
-<lb n="45"/>sein in unnserer statt und Grichten
-<lb n="46"/>verübten unebaars verbrechen
-<lb n="47"/>bhörige red und antwort gebe,
-<lb n="48"/>Innerung solle e mit dem tauff deß
-<lb n="49"/>kindts ingehalten werden.
+<lb n="41"/>oberkeitlichen <unclear cert="low" resp="#joint">ernßt</unclear> <unclear cert="low" resp="#joint">dahin</unclear> <unclear cert="low" resp="#joint">zehalten</unclear>
+<lb n="42"/>daß er sich <unclear cert="low" resp="#joint">nechst</unclear> <unclear cert="low" resp="#joint">künfftigen</unclear> <unclear cert="low" resp="#joint">Mentag</unclear> <unclear cert="low" resp="#joint">baß</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">zwoen</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">tages</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">huß</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Sunder</unclear> <unclear cert="low" resp="#joint">siechen</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">einstelle</unclear>. und umb solch
+<lb n="45"/>sein in unnserer statt und <unclear cert="low" resp="#joint">Grichten</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">verübten</unclear> <unclear cert="low" resp="#joint">unebaars</unclear> <unclear cert="low" resp="#joint">verbrechen</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">bhörige</unclear> <unclear cert="low" resp="#joint">red</unclear> und antwort gebe,
+<lb n="48"/>Innerung solle e mit dem <unclear cert="low" resp="#joint">tauff</unclear> <unclear cert="low" resp="#joint">deß</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">kindts</unclear> <unclear cert="low" resp="#joint">ingehalten</unclear> werden.
 <lb n="50"/>Wie nun dißes an ihme selbs billich,
 <lb n="51"/>und dem bißher gegeneinander
 <lb n="52"/>geübten gebrüuch gemaeß, Alß
 <lb n="53"/>begeren wirs in gleichen und andern
-<lb n="54"/>begebenheiten nachberlich zuerwidern
-<lb n="55"/>damit uns beiderseits Goettlichen
-<lb n="56"/>protection wolbefelchende datli
-<lb n="57"/><date resp="#ner">den XVII. Augustj 1644</date>.
-<lb n="58"/>Sp
-<lb n="59"/>An <orgName role="issuer" resp="#ner">lndtammen und rhat
-<lb n="60"/>der Grasschafft Doggenburg</orgName>.
+<lb n="54"/>begebenheiten <unclear cert="low" resp="#joint">nachberlich</unclear> <unclear cert="low" resp="#joint">zuerwidern</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">beiderseits</unclear> <unclear cert="low" resp="#joint">Goettlichen</unclear>
+<lb n="56"/>protection <unclear cert="low" resp="#joint">wolbefelchende</unclear> <unclear cert="low" resp="#joint">datli</unclear>
+<lb n="57"/><date resp="#ner">den <unclear cert="low" resp="#joint">XVII</unclear>. <unclear cert="low" resp="#joint">Augustj</unclear> 1644</date>.
+<lb n="58"/><unclear cert="low" resp="#joint">Sp</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">An</unclear> <orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">lndtammen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">rhat</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Grasschafft</unclear> <unclear cert="low" resp="#joint">Doggenburg</unclear></orgName>.
 <pb facs="StadtASG_Missive_3610_14423.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3610_14424.jpg" n="4"/>
 </p>

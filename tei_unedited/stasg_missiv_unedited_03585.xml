@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3585</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen übermitteln Bürgermeister und Rat zu St. Gallen den eidgenössischen Vertragsbrief über die Abzüge, der 1670 in Konferenzen vereinbart wurde. Sie bitten, den Brief zu prüfen, mit dem St. Galler Insiegel zu besiegeln und die eigene Ausfertigung an den Landvogt des Appenzeller Landes zur Besiegelung weiterzureichen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen übermitteln Bürgermeister und Rat zu St. Gallen den eidgenössischen Vertragsbrief über die Abzüge, der 1670 in Konferenzen vereinbart wurde. Sie bitten, den Brief zu prüfen, mit dem St. Galler Insiegel zu besiegeln und die eigene Ausfertigung an den Landvogt des Appenzeller Landes zur Besiegelung weiterzureichen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen transmit to Burgomaster and Council of St. Gallen the Confederate treaty letter concerning the deductions, which was agreed upon in conferences in 1670. They ask that the letter be examined, sealed with the seal of St. Gallen, and that their own copy be forwarded to the Landvogt of the Appenzell Land for sealing.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,31 +35,31 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3585_14299.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienst, sambt was wir ehren, liebs
-<lb n="2"/>und guets vermögend, zuvor from, fürsichtig, ehrsam weis,
-<lb n="3"/>insonders guet freünd und getreüw lieb Eüdtgnossen.
-<lb n="4"/>Beÿkomend überschiken Eüch Unseren G. L. E., wir die jenige
-<lb n="5"/>Acht gleichförmige Eÿdtgnoßische Vertragsbrieff, welche
-<lb n="6"/>der Abzügen halber, In <date resp="#ner">Anno 1670</date>. uff gehaltnen under-
-<lb n="7"/>schiedlichen tagleistungen und conferenzen abgeredt, und in
-<lb n="8"/>solche form zubringen verabscheidet worden: Eüch darinen-
-<lb n="9"/>zuersehen, und mit Eürem Wertehren Insigel zugleich zube-
-<lb n="10"/>siglen, volgendts auch Eüeren und unsren G. L. E. den
-<lb n="11"/>usren Roden des Landts <placeName ref="stadtasg-places-8" cert="medium" resp="#ner">Appenzel</placeName> zur besiglung zu über
-<lb n="12"/>schiken haben. Und verbleiben Eüch mit allem freündt Eÿdtgnoßisch-
-<lb n="13"/>en willen beharlichen geneigt, wie beÿ gethan. Wir uns
-<lb n="14"/>zumahlen der obacht Gottes wol anbefehlen. Datum den
-<lb n="15"/><origDate when="1674" resp="#ner">20. t. Martij Anno 1674</origDate>.
-<lb n="16"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
+<lb n="1"/>Unser freündtlich willig dienst, <unclear cert="medium" resp="#joint">sambt</unclear> was wir ehren, liebs
+<lb n="2"/>und <unclear cert="medium" resp="#joint">guets</unclear> <unclear cert="medium" resp="#joint">vermögend</unclear>, <unclear cert="medium" resp="#joint">zuvor</unclear> <unclear cert="medium" resp="#joint">from</unclear>, fürsichtig, ehrsam weis,
+<lb n="3"/><unclear cert="medium" resp="#joint">insonders</unclear> <unclear cert="medium" resp="#joint">guet</unclear> <unclear cert="medium" resp="#joint">freünd</unclear> und <unclear cert="medium" resp="#joint">getreüw</unclear> lieb <unclear cert="low" resp="#joint">Eüdtgnossen</unclear>.
+<lb n="4"/><unclear cert="low" resp="#joint">Beÿkomend</unclear> <unclear cert="low" resp="#joint">überschiken</unclear> <unclear cert="low" resp="#joint">Eüch</unclear> <unclear cert="low" resp="#joint">Unseren</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>., <unclear cert="low" resp="#joint">wir</unclear> die <unclear cert="medium" resp="#joint">jenige</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">Acht</unclear> <unclear cert="medium" resp="#joint">gleichförmige</unclear> <unclear cert="medium" resp="#joint">Eÿdtgnoßische</unclear> <unclear cert="medium" resp="#joint">Vertragsbrieff</unclear>, welche
+<lb n="6"/>der <unclear cert="medium" resp="#joint">Abzügen</unclear> <unclear cert="medium" resp="#joint">halber</unclear>, <unclear cert="medium" resp="#joint">In</unclear> <date resp="#ner">Anno <unclear cert="medium" resp="#joint">1670</unclear></date>. <unclear cert="medium" resp="#joint">uff</unclear> <unclear cert="medium" resp="#joint">gehaltnen</unclear> under-
+<lb n="7"/><unclear cert="medium" resp="#joint">schiedlichen</unclear> <unclear cert="medium" resp="#joint">tagleistungen</unclear> und conferenzen abgeredt, und in
+<lb n="8"/>solche <unclear cert="medium" resp="#joint">form</unclear> <unclear cert="medium" resp="#joint">zubringen</unclear> <unclear cert="medium" resp="#joint">verabscheidet</unclear> worden: <unclear cert="low" resp="#joint">Eüch</unclear> <unclear cert="low" resp="#joint">darinen</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">zuersehen</unclear>, und mit <unclear cert="low" resp="#joint">Eürem</unclear> <unclear cert="low" resp="#joint">Wertehren</unclear> <unclear cert="low" resp="#joint">Insigel</unclear> <unclear cert="low" resp="#joint">zugleich</unclear> <unclear cert="low" resp="#joint">zube</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">siglen</unclear>, <unclear cert="low" resp="#joint">volgendts</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">Eüeren</unclear> und <unclear cert="low" resp="#joint">unsren</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">den</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">usren</unclear> <unclear cert="low" resp="#joint">Roden</unclear> <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">Landts</unclear> <placeName ref="stadtasg-places-8" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Appenzel</unclear></placeName> <unclear cert="low" resp="#joint">zur</unclear> <unclear cert="low" resp="#joint">besiglung</unclear> <unclear cert="low" resp="#joint">zu</unclear> über
+<lb n="12"/><unclear cert="low" resp="#joint">schiken</unclear> haben. Und verbleiben <unclear cert="medium" resp="#joint">Eüch</unclear> mit allem <unclear cert="low" resp="#joint">freündt</unclear> <unclear cert="low" resp="#joint">Eÿdtgnoßisch</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">beharlichen</unclear> <unclear cert="low" resp="#joint">geneigt</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">gethan</unclear>. <unclear cert="low" resp="#joint">Wir</unclear> <unclear cert="low" resp="#joint">uns</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">zumahlen</unclear> der <unclear cert="low" resp="#joint">obacht</unclear> <unclear cert="low" resp="#joint">Gottes</unclear> wol <unclear cert="low" resp="#joint">anbefehlen</unclear>. Datum den
+<lb n="15"/><origDate when="1674" resp="#ner">20. <unclear cert="medium" resp="#joint">t</unclear>. <unclear cert="medium" resp="#joint">Martij</unclear> Anno <unclear cert="medium" resp="#joint">1674</unclear></origDate>.
+<lb n="16"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und Rath
 <lb n="17"/>der Statt Schaffhausen</orgName>.
 <pb facs="StadtASG_Missive_3585_14300.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3585_14301.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3585_14302.jpg" n="4"/>
-<lb n="18"/>Den frommen, fürsichtigen, ehr-
-<lb n="19"/>samen, weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermei-
-<lb n="20"/>ster und Rath der Statt St.
-<lb n="21"/>Gallen</orgName>, unsern insonders gu-
-<lb n="22"/>ten freünden und getrewen
+<lb n="18"/>Den frommen, fürsichtigen, <unclear cert="low" resp="#joint">ehr</unclear>-
+<lb n="19"/><unclear cert="low" resp="#joint">samen</unclear>, weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermei</unclear>-
+<lb n="20"/><unclear cert="low" resp="#joint">ster</unclear> und Rath der Statt St.
+<lb n="21"/>Gallen</orgName>, unsern insonders <unclear cert="low" resp="#joint">gu</unclear>-
+<lb n="22"/><unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">freünden</unclear> und getrewen
 <lb n="23"/>lieben Eÿdtgnoßen.
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3395</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Landammann und Rat des Landes Appenzell Innerrhoden über einen Streit zwischen dem St. Galler Bürger Lorenz Rech und dem Appenzeller Landmann Wolfgang Schweg. Da Rech trotz mehrfacher Zusagen nicht erschienen ist, setzen die St. Galler ihm auf Bitten des Appenzeller Landmanns einen neuen Rechtstermin für den 4. August 1640 um 8 Uhr morgens im Rathaus zu St. Gallen an. Sie bitten die Appenzeller, ihren Landsmann bis dahin unbeschwert anbinden zu lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Landammann und Rat des Landes Appenzell Innerrhoden über einen Streit zwischen dem St. Galler Bürger Lorenz Rech und dem Appenzeller Landmann Wolfgang Schweg. Da Rech trotz mehrfacher Zusagen nicht erschienen ist, setzen die St. Galler ihm auf Bitten des Appenzeller Landmanns einen neuen Rechtstermin für den 4. August 1640 um 8 Uhr morgens im Rathaus zu St. Gallen an. Sie bitten die Appenzeller, ihren Landsmann bis dahin unbeschwert anbinden zu lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen inform Landammann and Council of the Land of Appenzell Innerrhoden about a dispute between the St. Gallen citizen Lorenz Rech and the Appenzell countryman Wolfgang Schweg. Since Rech has not appeared despite multiple promises, the St. Gallen authorities, at the request of the Appenzell countryman, set a new court day for him on 4 August 1640 at 8 o'clock in the morning in the Rathaus in St. Gallen. They ask the Appenzell authorities to let their countryman remain unbound until then.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,21 +36,21 @@
 <p>
 <pb facs="StadtASG_Missive_3395_13513.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst, sampt was wir ehren liebs
-<lb n="2"/>und guets vermoegend zuevor, from fuersichtig, ehrsam
-<lb n="3"/>weiß, insonders guet freünd, und wolvetraüwte
-<lb n="4"/>liebe nachparen.
+<lb n="2"/>und <unclear cert="low" resp="#joint">guets</unclear> <unclear cert="low" resp="#joint">vermoegend</unclear> <unclear cert="low" resp="#joint">zuevor</unclear>, <unclear cert="low" resp="#joint">from</unclear> <unclear cert="low" resp="#joint">fuersichtig</unclear>, <unclear cert="low" resp="#joint">ehrsam</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">weiß</unclear>, <unclear cert="low" resp="#joint">insonders</unclear> <unclear cert="low" resp="#joint">guet</unclear> <unclear cert="low" resp="#joint">freünd</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">wolvetraüwte</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">nachparen</unclear>.
 <lb n="5"/>Demnach sich ettwas mißverß in unserer statt im herbst
 <lb n="6"/>zuegetragen entzwüschett unserem angehoerigen <persName resp="#ner">Lorenz Rech</persName>,
 <lb n="7"/>steiner vor <placeName resp="#ner">Engenhütten</placeName>, und <persName resp="#ner">Wolffgang Schweg</persName>,
-<lb n="8"/>ihr frl. gn. deß herren prelaten von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>
-<lb n="9"/>landtsmanen, und wir
-<lb n="10"/>zue erkündigung ihro strittigkheit und der ursach
+<lb n="8"/>ihr <unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">gn</unclear>. <unclear cert="low" resp="#joint">deß</unclear> herren <unclear cert="low" resp="#joint">prelaten</unclear> <unclear cert="low" resp="#joint">von</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
+<lb n="9"/><unclear cert="low" resp="#joint">landtsmanen</unclear>, und wir
+<lb n="10"/><unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">erkündigung</unclear> <unclear cert="low" resp="#joint">ihro</unclear> <unclear cert="low" resp="#joint">strittigkheit</unclear> <unclear cert="low" resp="#joint">und</unclear> der ursach
 <lb n="11"/>derselben, sie beide alsobald in dz glüebdt nmen laßen,
 <lb n="12"/>in hoffnung, es werde dieselbig bejderseits uff unser
-<lb n="13"/>erfordern sich stellen und ihres frevels red und ant,
-<lb n="14"/>wort geben, deme zwar obvemelter unser statt gessne,
-<lb n="15"/><persName resp="#ner">Rechsteiner</persName> aber, wiewol er seithero mehrmalen sich zuein,
-<lb n="16"/>zestellen angelobt, bißhero ungehorsam erschinen; Alß
+<lb n="13"/>erfordern sich stellen und ihres frevels red und <unclear cert="low" resp="#joint">ant</unclear>,
+<lb n="14"/>wort geben, <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">zwar</unclear> <unclear cert="low" resp="#joint">obvemelter</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">gessne</unclear>,
+<lb n="15"/><persName resp="#ner"><unclear cert="low" resp="#joint">Rechsteiner</unclear></persName> aber, wiewol er seithero mehrmalen sich <unclear cert="low" resp="#joint">zuein</unclear>,
+<lb n="16"/><unclear cert="low" resp="#joint">zestellen</unclear> <unclear cert="low" resp="#joint">angelobt</unclear>, <unclear cert="low" resp="#joint">bißhero</unclear> <unclear cert="low" resp="#joint">ungehorsam</unclear> <unclear cert="low" resp="#joint">erschinen</unclear>; <unclear cert="low" resp="#joint">Alß</unclear>
 <lb n="17"/>habend wir, uff eüwers landtsmans anhalten und pit,
 <lb n="18"/>nicht umbghn woellen, ihme einen andern rechtstag anzue,
 <lb n="19"/>setzen, namblich <date resp="#ner">zinstag dn 4/14 nechstkünfftigen
@@ -63,13 +64,13 @@
 <lb n="27"/>den <origDate when="1640-07-31" resp="#ner">21/31. Julij. Anno 1640</origDate>.
 <lb n="28"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Bürgermeister und raht
 <lb n="29"/>der statt Sant Gallen</orgName>.
-<lb n="30"/>Den fromen fuersichtigen ehrsamen
-<lb n="31"/>und weisen, <orgName ref="stadtasg-actors-565" cert="medium" role="recipient" resp="#ner">landtamman und raht
-<lb n="32"/>deß landts Appenzell</orgName> der innern
+<lb n="30"/>Den <unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">ehrsamen</unclear>
+<lb n="31"/>und <unclear cert="low" resp="#joint">weisen</unclear>, <orgName ref="stadtasg-actors-565" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">landtamman</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">raht</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">deß</unclear> landts Appenzell</orgName> der innern
 <lb n="33"/>roden, unsern insonders gueten freündn
 <lb n="34"/>und wolvertraüwten liebn nachparn.
-<lb n="35"/>noch ein schreiben. von <date resp="#ner">heüt
-<lb n="36"/>über 14. tag</date>.
+<lb n="35"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">schreiben</unclear>. <unclear cert="low" resp="#joint">von</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">heüt</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">über</unclear> <unclear cert="low" resp="#joint">14</unclear>. <unclear cert="low" resp="#joint">tag</unclear></date>.
 <pb facs="StadtASG_Missive_3395_13514.jpg" n="2"/>
 <lb n="37"/>[]
 </p>

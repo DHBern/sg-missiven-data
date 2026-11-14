@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3144</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Abt zu Rorschach, dass der Weber Hans Fremde aus Weiler, der in St. Gallen im Dienst steht, wegen einer Schuldangelegenheit festgehalten wurde. Sie bitten den Abt, sich bei der Sache zu engagieren, da Fremde ein Angehöriger des Klosters sei. Sollte sich das Urteil des Konstanzer Gerichts als gültig erweisen und die geistliche Frau angegriffen werden, werde man Fremde vor Gericht ziehen lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Abt zu Rorschach, dass der Weber Hans Fremde aus Weiler, der in St. Gallen im Dienst steht, wegen einer Schuldangelegenheit festgehalten wurde. Sie bitten den Abt, sich bei der Sache zu engagieren, da Fremde ein Angehöriger des Klosters sei. Sollte sich das Urteil des Konstanzer Gerichts als gültig erweisen und die geistliche Frau angegriffen werden, werde man Fremde vor Gericht ziehen lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen inform the Abbot of Rorschach that the weaver Hans Fremde from Weiler, who is in service in St. Gallen, has been detained due to a debt matter. They ask the Abbot to engage in the matter, as Fremde is a member of the monastery. Should the judgment of the court of Konstanz prove to be valid and the spiritual woman be attacked, they will let Fremde be brought before the court.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,32 +35,32 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3144_12405.jpg" n="1"/>
-<lb n="1"/>Unser fründtnachbarlich willig
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">fründtnachbarlich</unclear> willig
 <lb n="2"/>dienst, sambt was wir ehren
 <lb n="3"/>liebs und guots vermoegendt, zuovor,
 <lb n="4"/>from, fürsichtig, ehrsamb wyß
 <lb n="5"/>besonders guot fründt, und wohl
-<lb n="6"/>vertruwte lieb nachbarn.
-<lb n="7"/>Wahyn daß gestrigs tags uß
-<lb n="8"/>unßerm abgang nachbarlich
+<lb n="6"/>vertruwte lieb <unclear cert="low" resp="#joint">nachbarn</unclear>.
+<lb n="7"/><unclear cert="low" resp="#joint">Wahyn</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">gestrigs</unclear> <unclear cert="low" resp="#joint">tags</unclear> <unclear cert="low" resp="#joint">uß</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">unßerm</unclear> <unclear cert="low" resp="#joint">abgang</unclear> nachbarlich
 <lb n="9"/>ertheilt ehren angezaigten ursach,
 <lb n="10"/>debis <persName resp="#ner">Tuocher</persName> der wäber von
 <lb n="11"/><placeName ref="stadtasg-places-263" cert="medium" resp="#ner">Trugen</placeName>, so sich alhie inn dienst
-<lb n="12"/>uffhaltet, und <persName resp="#ner">Hansen</persName> fremden
+<lb n="12"/>uffhaltet, und <persName resp="#ner"><unclear cert="low" resp="#joint">Hansen</unclear></persName> <unclear cert="low" resp="#joint">fremden</unclear>
 <lb n="13"/>uß weber lider nicht, billichs
 <lb n="14"/>angehalten zuo stelles verwahrt,
 <lb n="15"/>daß werdet ir hiemit zufall
 <lb n="16"/>abhrulich verstanden. Wyl
 <lb n="17"/>wir wir nu diser sach halber
 <lb n="18"/>wither wie geschicht nur ge-
-<lb n="19"/>labt, und vernämt, alß
-<lb n="20"/>ist aber solhe o frembde fir-
-<lb n="21"/>khün, daß fürwiß E. E.
-<lb n="22"/>solhe soll bewußt, und intercessio-
-<lb n="23"/>gmb sahl bedurfft dan sie jedach
-<lb n="24"/>bis dato uff dÿse kein grosße
-<lb n="25"/>theilnung als disßels unbetrafft
-<lb n="26"/>angesecht. Dero selben vernemend, da es seyn
+<lb n="19"/>labt, und <unclear cert="low" resp="#joint">vernämt</unclear>, <unclear cert="low" resp="#joint">alß</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">solhe</unclear> <unclear cert="low" resp="#joint">o</unclear> <unclear cert="low" resp="#joint">frembde</unclear> <unclear cert="low" resp="#joint">fir</unclear>-
+<lb n="21"/><unclear cert="low" resp="#joint">khün</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">fürwiß</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="22"/><unclear cert="low" resp="#joint">solhe</unclear> <unclear cert="low" resp="#joint">soll</unclear> <unclear cert="low" resp="#joint">bewußt</unclear>, und <unclear cert="low" resp="#joint">intercessio</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">gmb</unclear> <unclear cert="low" resp="#joint">sahl</unclear> <unclear cert="low" resp="#joint">bedurfft</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">jedach</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">bis</unclear> <unclear cert="low" resp="#joint">dato</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">dÿse</unclear> <unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">grosße</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">theilnung</unclear> <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">disßels</unclear> <unclear cert="low" resp="#joint">unbetrafft</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">angesecht</unclear>. <unclear cert="low" resp="#joint">Dero</unclear> <unclear cert="low" resp="#joint">selben</unclear> <unclear cert="low" resp="#joint">vernemend</unclear>, <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">seyn</unclear>
 <pb facs="StadtASG_Missive_3144_12406.jpg" n="2"/>
 <lb n="27"/>(:daran doch (:wie gemelt:) nit
 <lb n="28"/>zwyflen:) so da dem des gedachten

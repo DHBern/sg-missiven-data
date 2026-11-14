@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3194</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Bürgermeister und Rat zu St. Gallen, im Namen der Interessierten der Schmideschen Erbschaft einen Termin für eine gütliche Einigung oder eine obere Entscheidung zu bestimmen. Sie bitten, den Herrn Ulin zu veranlassen, seine Mitbürger mit Vollmacht und Instruktion abzuordnen, damit die Sache in der schweren Zeit bald erledigt werden kann.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Bürgermeister und Rat zu St. Gallen, im Namen der Interessierten der Schmideschen Erbschaft einen Termin für eine gütliche Einigung oder eine obere Entscheidung zu bestimmen. Sie bitten, den Herrn Ulin zu veranlassen, seine Mitbürger mit Vollmacht und Instruktion abzuordnen, damit die Sache in der schweren Zeit bald erledigt werden kann.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask Burgomaster and Council of St. Gallen, in the name of the interested parties of the Schmidesche inheritance, to set a date for an amicable settlement or a superior decision. They ask that Herr Ulin be instructed to appoint his fellow citizens with power of attorney and instruction, so that the matter can be settled quickly in these difficult times.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,30 +36,30 @@
 <p>
 <pb facs="StadtASG_Missive_3194_12625.jpg" n="1"/>
 <lb n="1"/>Unser gantzwillig dienst zuvor. Edel, Eerenvesst, Fuernem, Fuersichtig, Eersamb und Weiß, besonders liebe Herren und Fruendt.
-<lb n="2"/>Wß in Namen der Schmidischen Erbschafft Interessierten,
-<lb n="3"/>umb verrer, zue selbft guetlicher accommodation oder
-<lb n="4"/>anderwertigen Oberkeitlichen determination noch-
-<lb n="5"/>mahlen ein einen Termin auffs ehist praefigieren, das
-<lb n="6"/>wisset der beylig beyschluß <placeName resp="#ner">Brünners</placeName> <persName resp="#ner">Elisi Ulin</persName> und
-<lb n="7"/>dazue halber dz sich deme gmaeß geuerlichen bescheigg
-<lb n="8"/>werden. Deßhaben den Herren <persName resp="#ner">Ulin</persName> hiemit zue-
-<lb n="9"/>dem endt anfuegen wollen, dmit sie Ire hierbey Interessi-
-<lb n="10"/>ierte Mitburger, danacher mit gnuogsammer undzwey-
-<lb n="11"/>felicher Vollmacht, und Instruction abzuordnen wissen,
-<lb n="12"/>ufendung der sachen, nach glegenheit ieziger shweren Zeit,
-<lb n="13"/>am fuerderlichsten nachgesezt werden koennen, So
+<lb n="2"/>Wß in Namen der <unclear cert="low" resp="#joint">Schmidischen</unclear> <unclear cert="low" resp="#joint">Erbschafft</unclear> <unclear cert="low" resp="#joint">Interessierten</unclear>,
+<lb n="3"/><unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">verrer</unclear>, <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">selbft</unclear> <unclear cert="low" resp="#joint">guetlicher</unclear> <unclear cert="low" resp="#joint">accommodation</unclear> oder
+<lb n="4"/><unclear cert="low" resp="#joint">anderwertigen</unclear> <unclear cert="low" resp="#joint">Oberkeitlichen</unclear> <unclear cert="low" resp="#joint">determination</unclear> <unclear cert="low" resp="#joint">noch</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">mahlen</unclear> ein einen Termin auffs ehist praefigieren, das
+<lb n="6"/><unclear cert="low" resp="#joint">wisset</unclear> der <unclear cert="low" resp="#joint">beylig</unclear> <unclear cert="low" resp="#joint">beyschluß</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Brünners</unclear></placeName> <persName resp="#ner"><unclear cert="low" resp="#joint">Elisi</unclear> <unclear cert="low" resp="#joint">Ulin</unclear></persName> und
+<lb n="7"/><unclear cert="low" resp="#joint">dazue</unclear> <unclear cert="low" resp="#joint">halber</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">gmaeß</unclear> <unclear cert="low" resp="#joint">geuerlichen</unclear> <unclear cert="low" resp="#joint">bescheigg</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">werden</unclear>. <unclear cert="low" resp="#joint">Deßhaben</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Herren</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Ulin</unclear></persName> <unclear cert="low" resp="#joint">hiemit</unclear> zue-
+<lb n="9"/>dem endt anfuegen wollen, dmit sie Ire hierbey <unclear cert="low" resp="#joint">Interessi</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">ierte</unclear> <unclear cert="low" resp="#joint">Mitburger</unclear>, <unclear cert="low" resp="#joint">danacher</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">gnuogsammer</unclear> <unclear cert="low" resp="#joint">undzwey</unclear>-
+<lb n="11"/><unclear cert="low" resp="#joint">felicher</unclear> <unclear cert="low" resp="#joint">Vollmacht</unclear>, und <unclear cert="low" resp="#joint">Instruction</unclear> <unclear cert="low" resp="#joint">abzuordnen</unclear> <unclear cert="low" resp="#joint">wissen</unclear>,
+<lb n="12"/><unclear cert="low" resp="#joint">ufendung</unclear> der sachen, <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">glegenheit</unclear> <unclear cert="low" resp="#joint">ieziger</unclear> <unclear cert="low" resp="#joint">shweren</unclear> <unclear cert="low" resp="#joint">Zeit</unclear>,
+<lb n="13"/><unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">fuerderlichsten</unclear> <unclear cert="low" resp="#joint">nachgesezt</unclear> werden koennen, So
 <lb n="14"/>wir den vohr lobsam eingewendtes schribens nit ver-
 <lb n="15"/>halten sollen, Und bleiben Inen sonsten zue obiger
 <lb n="16"/>dienst erzaigung willig. Datum den <origDate resp="#ner">25 Augst. 636</origDate>.
-<lb n="17"/><orgName role="issuer" resp="#ner">Burgermeister und Rhat daselbsten</orgName>
+<lb n="17"/><orgName role="issuer" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">Rhat</unclear> <unclear cert="low" resp="#joint">daselbsten</unclear></orgName>
 <pb facs="StadtASG_Missive_3194_12626.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3194_12627.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3194_12628.jpg" n="4"/>
-<lb n="18"/>Denen Edlen, Eerenvessten, fürsichtigen, Eersamb
-<lb n="19"/>und weisen, Herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat,
-<lb n="20"/>der Statt zue St: Gallen</orgName>, unndern sonders
-<lb n="21"/>lieben Herrn.
-<lb n="22"/>Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName>.
+<lb n="18"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Edlen</unclear>, <unclear cert="low" resp="#joint">Eerenvessten</unclear>, fürsichtigen, <unclear cert="low" resp="#joint">Eersamb</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weisen</unclear>, <unclear cert="low" resp="#joint">Herrn</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und <unclear cert="medium" resp="#joint">Rhat</unclear>,
+<lb n="20"/>der Statt <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">St</unclear>: Gallen</orgName>, <unclear cert="low" resp="#joint">unndern</unclear> <unclear cert="low" resp="#joint">sonders</unclear>
+<lb n="21"/>lieben <unclear cert="low" resp="#joint">Herrn</unclear>.
+<lb n="22"/><unclear cert="low" resp="#joint">Statt</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>: <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

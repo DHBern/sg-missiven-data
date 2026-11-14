@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3587</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, in der Erbschaftssache des verstorbenen Jakob Seiler die Schaffhauser Bürger Hans Felix Abegg, Hans Martin Wolf und Hans Hauser samt ihren Mithaften als Erben zuzulassen. Sie verweisen darauf, dass die St. Galler Verburgerten Huldrichin Töchter bereits zugelassen seien, und bitten um eine gütliche Erledigung.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, in der Erbschaftssache des verstorbenen Jakob Seiler die Schaffhauser Bürger Hans Felix Abegg, Hans Martin Wolf und Hans Hauser samt ihren Mithaften als Erben zuzulassen. Sie verweisen darauf, dass die St. Galler Verburgerten Huldrichin Töchter bereits zugelassen seien, und bitten um eine gütliche Erledigung.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen ask Burgomaster and Council of St. Gallen, in the inheritance case of the deceased Jakob Seiler, to admit the Schaffhausen citizens Hans Felix Abegg, Hans Martin Wolf and Hans Hauser together with their co-sureties as heirs. They refer to the fact that the St. Gallen naturalized daughters of Huldrichin have already been admitted, and ask for an amicable settlement.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -61,33 +62,33 @@
 <lb n="24"/>weilen ja vorgedachte Euwer verburgerte die <persName resp="#ner">Huldrichin</persName>
 <lb n="25"/>dochteren, so beij uns auch noch ein leibliche schwoester haben,
 <lb n="26"/>und benebens die angeregte petenten in gleichem grad der
-<lb n="27"/>bluotsfreundtschafft verwandt und begriffen, mit und ne=
+<lb n="27"/>bluotsfreundtschafft verwandt und begriffen, mit <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ne=</unclear>
 <lb n="28"/>ben <persName resp="#ner">Susanna Voegelin</persName> erbs weiß zuogelassen worden, wor=
-<lb n="29"/>durch dann Ihr unser G. L. A. E. Euwern eigenen Statt=
-<lb n="30"/>Erbrechten ein billichmessige erlaeuterung geschoepfft: daß
+<lb n="29"/>durch dann Ihr unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">A</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Euwern</unclear> <unclear cert="low" resp="#joint">eigenen</unclear> Statt=
+<lb n="30"/>Erbrechten ein <unclear cert="low" resp="#joint">billichmessige</unclear> <unclear cert="low" resp="#joint">erlaeuterung</unclear> <unclear cert="low" resp="#joint">geschoepfft</unclear>: <unclear cert="low" resp="#joint">daß</unclear>
 <lb n="31"/>nit weniger disere unsehren mehrbemelt die Unsere glei=
 <lb n="32"/>cher gestalt admittirt werden moechten. Nebee dem aber
 <lb n="33"/>und besonders auch von unserm geliebten MittRäthen den
-<lb n="34"/>uff juengst gehaltenen <orgName resp="#ner">Eijdtgnossischen Badischen Taglaistung</orgName>
-<lb n="35"/>gehabten EhrnGesandten berichtet worden, daß Sie mit
+<lb n="34"/>uff juengst gehaltenen <orgName resp="#ner">Eijdtgnossischen Badischen <unclear cert="low" resp="#joint">Taglaistung</unclear></orgName>
+<lb n="35"/><unclear cert="low" resp="#joint">gehabten</unclear> <unclear cert="low" resp="#joint">EhrnGesandten</unclear> berichtet worden, daß Sie mit
 <lb n="36"/>Euwern auch daselbst angewesßen Ehrn Deputierten di=
 <lb n="37"/>ser sachen ebner massen zueredkomen, und Ihnen eins und
 <lb n="38"/>anders in mehrerm remonstriert, haben Sie sich freündtlich
 <lb n="39"/>und guotwillig anerbotten ein solichs Euch im besten heimb=
-<lb n="40"/>zuebringen. So gelangt demnach an Eüch unser G. L. E.
-<lb n="41"/>unser freündtEijdtgnossisch erbitlich ersuochen, Ihr geruohet
-<lb n="42"/>diß alles in so goenstige beobacht zuezichen, und die sach
+<lb n="40"/>zuebringen. So gelangt demnach an Eüch unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="41"/><unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">freündtEijdtgnossisch</unclear> <unclear cert="low" resp="#joint">erbitlich</unclear> <unclear cert="low" resp="#joint">ersuochen</unclear>, <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">geruohet</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">diß</unclear> alles in so goenstige beobacht zuezichen, und die sach
 <lb n="43"/>dahin wolmeinend zueerwegen, daß obgedachte supplicanten,
 <lb n="44"/>wie auch ubrige unsere Mittinteressierte geliebte Bur=
 <lb n="45"/>gere sambt und sonders zue Ihrem intent ohnschwerr ge=
 <pb facs="StadtASG_Missive_3587_14309.jpg" n="3"/>
-<lb n="46"/>langen, und dardurch würklich verspüren und abnemen
+<lb n="46"/>langen, und <unclear cert="low" resp="#joint">dardurch</unclear> <unclear cert="low" resp="#joint">würklich</unclear> <unclear cert="low" resp="#joint">verspüren</unclear> und abnemen
 <lb n="47"/>mögen, dieser unsrer zu dem wol gemeinten fürschrifft frucht-
-<lb n="48"/>barlichen genossen zuhaben. Das kombt uns von der un-
+<lb n="48"/>barlichen <unclear cert="low" resp="#joint">genossen</unclear> <unclear cert="low" resp="#joint">zuhaben</unclear>. <unclear cert="low" resp="#joint">Das</unclear> <unclear cert="low" resp="#joint">kombt</unclear> uns von der un-
 <lb n="49"/>sren wegen umb üwer unsre B. L. E. uff kutsrhande be-
 <lb n="50"/>gebenheit mit erweisung fründt Eidtgnossischen diensten
-<lb n="51"/>und aller angenemheit ohneingestälig zubeschulden. Got-
-<lb n="52"/>tes gnadenreichen bewarung hieüber wol befohlen. Datum
+<lb n="51"/>und <unclear cert="low" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">angenemheit</unclear> <unclear cert="low" resp="#joint">ohneingestälig</unclear> <unclear cert="low" resp="#joint">zubeschulden</unclear>. <unclear cert="low" resp="#joint">Got</unclear>-
+<lb n="52"/><unclear cert="low" resp="#joint">tes</unclear> <unclear cert="low" resp="#joint">gnadenreichen</unclear> <unclear cert="low" resp="#joint">bewarung</unclear> <unclear cert="low" resp="#joint">hieüber</unclear> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">befohlen</unclear>. Datum
 <lb n="53"/><origDate when="1643" resp="#ner">den 24. d. Martij Anno 1643</origDate>.
 <lb n="54"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="55"/>der statt Schaffhausen</orgName>.

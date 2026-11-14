@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3447</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, sich beim Prälaten von St. Gallen für die evangelischen Untertanen in Hagenwil einzusetzen. Diese fordern einen eigenen Predikanten oder die Beibehaltung der bisherigen Pfrundanteile. Zürich bietet an, bei einer Lösung mitzuwirken, bittet aber zunächst um eine Vermittlung durch St. Gallen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, sich beim Prälaten von St. Gallen für die evangelischen Untertanen in Hagenwil einzusetzen. Diese fordern einen eigenen Predikanten oder die Beibehaltung der bisherigen Pfrundanteile. Zürich bietet an, bei einer Lösung mitzuwirken, bittet aber zunächst um eine Vermittlung durch St. Gallen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to intervene with the Prelate of St. Gallen on behalf of the evangelical subjects in Hagenwil. These demand their own preacher or the retention of the previous portions of the benefice. Zürich offers to contribute to a solution, but first asks for mediation by St. Gallen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -41,35 +42,35 @@
 <lb n="5"/>Wir habent so wol uß üwerm schryben, so unß von <persName resp="#ner">Jacoben
 <lb n="6"/>Haeberlin</persName> überreicht worden, alß von demselben mündtlich
 <lb n="7"/>mit mehrerm verstanden, welicher maaßen die evangelischen
-<lb n="8"/>in der pfarr <placeName resp="#ner">Hagenwylen</placeName>, sonderlich üwere Grichts-ange-
-<lb n="9"/>hoerigen inn <placeName resp="#ner">Muolach</placeName> abermalen suochent, ihren religions-
-<lb n="10"/>beschwerligkeiten entlediget zuo werden, inn deme nam=
+<lb n="8"/>in der pfarr <placeName resp="#ner">Hagenwylen</placeName>, sonderlich <unclear cert="low" resp="#joint">üwere</unclear> <unclear cert="low" resp="#joint">Grichts-ange</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">hoerigen</unclear> <unclear cert="low" resp="#joint">inn</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Muolach</unclear></placeName> <unclear cert="low" resp="#joint">abermalen</unclear> <unclear cert="low" resp="#joint">suochent</unclear>, <unclear cert="low" resp="#joint">ihren</unclear> <unclear cert="low" resp="#joint">religions</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">beschwerligkeiten</unclear> entlediget zuo werden, inn deme nam=
 <lb n="11"/>lich man ihnen widerumb einen eignen predicanten zuo be-
-<lb n="12"/>meltem <placeName resp="#ner">Hagenwylen</placeName> zehaben, sampt gebürender pfruondts-
+<lb n="12"/>meltem <placeName resp="#ner"><unclear cert="low" resp="#joint">Hagenwylen</unclear></placeName> <unclear cert="low" resp="#joint">zehaben</unclear>, sampt gebürender pfruondts-
 <lb n="13"/>abtheilung mit dem priester daselbst, bewilligen welte,
 <lb n="14"/>oder aber das wenige in ihren handen lassen, so sy sonsten
 <lb n="15"/>jaerlichen dem priester an syn pfruond geben muessent, einen
-<lb n="16"/>predicanten uß der nachparschafft zuobestellen, der sy
+<lb n="16"/>predicanten uß der <unclear cert="low" resp="#joint">nachparschafft</unclear> <unclear cert="low" resp="#joint">zuobestellen</unclear>, der sy
 <lb n="17"/>zuo bemeltem <placeName resp="#ner">Hagenwylen</placeName> versehen thüe.
 <lb n="18"/>Nun were unß schon lengst lieb geweßen, wie noch, daß
 <lb n="19"/>dißen guoten lüthen zuo ihrem billichen, und dem Landtß-
 <lb n="20"/>friden gemaessen intent hette moegen gehulffen werden, wie
-<lb n="21"/>wellen auch das unßer nach fehrmers hierzuo gern con-
+<lb n="21"/>wellen auch das <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">fehrmers</unclear> hierzuo gern con-
 <lb n="22"/>tribuieren helffen. Allein wyl die sach vorderist den H.
 <lb n="23"/>Praelaten von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName>, alß der sich in <date resp="#ner">a° 1633.</date> by ghaltner
 <lb n="24"/>ansehlichen Conferenz widersezt, betreffen will, habent
 <lb n="25"/>wir geachtet, derselb der gedachten üwerer Grichts an-
 <lb n="26"/>gehoerigen wegen, am thuonlichst und fuegklichsten eben von
 <lb n="27"/>üch unßeren G. L. E. deßwegen koente angesprochen werden,
-<lb n="28"/>und er üch villichten ehender alß unß selbsten diß fahls
+<lb n="28"/>und er üch villichten <unclear cert="low" resp="#joint">ehender</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">selbsten</unclear> <unclear cert="low" resp="#joint">diß</unclear> fahls
 <pb facs="StadtASG_Missive_3447_13724.jpg" n="2"/>
 <lb n="29"/>in fründtligkeit begegnen werde. Wuellent üch also hie-
 <lb n="30"/>mit fründtlich angesunnen haben einen angelegenlichen an-
-<lb n="31"/>fängklichen versuoch zuothuond, mit dem anerbieten, wo
+<lb n="31"/>fängklichen <unclear cert="low" resp="#joint">versuoch</unclear> <unclear cert="low" resp="#joint">zuothuond</unclear>, mit dem anerbieten, wo
 <lb n="32"/>hierdurch der suochende zweckh nit zuo errichen sÿn, und
 <lb n="33"/>Ihr Unserer cooperation fehrners begehren werdent, es
 <lb n="34"/>daran Unsersÿts auch nit erwinden zuo lassen, mit der
-<lb n="35"/>hilff Gottes, der Ihren segen darzuo vliÿchen, und Unß
+<lb n="35"/><unclear cert="low" resp="#joint">hilff</unclear> <unclear cert="low" resp="#joint">Gottes</unclear>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Ihren</unclear> <unclear cert="low" resp="#joint">segen</unclear> <unclear cert="low" resp="#joint">darzuo</unclear> <unclear cert="low" resp="#joint">vliÿchen</unclear>, und Unß
 <lb n="36"/>samptlichen in sÿnem heiligen guoten schirm für baß wol er-
 <lb n="37"/>halten welle. Datum den <origDate when="1641" resp="#ner">26.ten Junii. A° 1641</origDate>.
 <lb n="38"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath

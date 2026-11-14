@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3185</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Vogt Jost Dietrich Reding zu Rorschach, bei den Bleichern dort nachzufragen, ob die in St. Gallen festgenommene Afra Stadlerin von Trostberg und eine Frau von Wolfhaggen vor etwa zwölf Wochen gestohlene Leinwand verloren hätten. Sie bitten um Mitteilung der Art der Ware.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Vogt Jost Dietrich Reding zu Rorschach, bei den Bleichern dort nachzufragen, ob die in St. Gallen festgenommene Afra Stadlerin von Trostberg und eine Frau von Wolfhaggen vor etwa zwölf Wochen gestohlene Leinwand verloren hätten. Sie bitten um Mitteilung der Art der Ware.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask Vogt Jost Dietrich Reding of Rorschach to inquire with the tanners there whether Afra Stadlerin von Trostberg, who was taken into custody in St. Gallen, and a woman from Wolfhaggen had lost stolen linen about twelve weeks ago. They ask for information on the type of goods.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,45 +35,45 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3185_12595.jpg" n="1"/>
-<lb n="1"/>Ein schriben an vogt zue <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName>, wegen der
-<lb n="2"/>gefangnen frauwen,
-<lb n="3"/>und seiner frauwen
-<lb n="4"/>Des <persName resp="#ner">Franciß Cochiniß</persName> halber, hat man diß-
-<lb n="5"/>deinenn malen nit platz und stich gescheid, sonderen
-<lb n="6"/>man wilt noch ein mal mit ihme fuern Rhath.
-<lb n="7"/>Unser freundt- nachparlich willig dienst zuvor,
-<lb n="8"/>woledler, gestrenger, vester, und weiser,
-<lb n="9"/>besonders lieber herr vogt und nachpar.
-<lb n="10"/>Wir haben diser tagen ein weibß person,
-<lb n="11"/>welche sich nennt <persName resp="#ner">Afra Stadlerin</persName> von
-<lb n="12"/><placeName resp="#ner">Troschwend</placeName>, uß <placeName ref="stadtasg-places-108" cert="medium" resp="#ner">Schwaben</placeName> etlicher argwoeh-
-<lb n="13"/>nigen diebstälen halber, einziehen, und
-<lb n="14"/>biß dato von unseren deputierten examiniren
-<lb n="15"/>lassen, die guetlich und anden bekhendt,
-<lb n="16"/>dz sie mit hilff noch einer
-<lb n="17"/>weibß person von <placeName resp="#ner">Wolffhegg</placeName> ab d blaiche zu
-<lb n="18"/>vor ungefehr 12. <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName> etliche stuckh leinwath, nächttlicherweil
-<lb n="19"/>od 10. wochen entwendt haben. Damit wir
-<lb n="20"/>aber deßwegen den rechten gruendtlichen bericht hiervon
-<lb n="21"/>haben moegen, so langt an den
-<lb n="22"/>herrn unser freundt- nachparliches ersuchen,
-<lb n="23"/>unbeschwert dz er welle bey den blaicheren daselbsten
-<lb n="24"/>zu <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName> nachfrag halten lassen, ob deme
-<lb n="25"/>einer? od mehrer also, wie obbesagt, verstolne leinwath
-<lb n="26"/>verloren, und was fuer gattung gewesen seye?
-<lb n="27"/>unß hieruff gegen ihro ferners wuessen
+<lb n="1"/><unclear cert="low" resp="#joint">Ein</unclear> <unclear cert="low" resp="#joint">schriben</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">vogt</unclear> <unclear cert="low" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName>, wegen der
+<lb n="2"/><unclear cert="medium" resp="#joint">gefangnen</unclear> <unclear cert="medium" resp="#joint">frauwen</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">und</unclear> seiner <unclear cert="medium" resp="#joint">frauwen</unclear>
+<lb n="4"/><unclear cert="medium" resp="#joint">Des</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Franciß</unclear> <unclear cert="medium" resp="#joint">Cochiniß</unclear></persName> <unclear cert="medium" resp="#joint">halber</unclear>, <unclear cert="medium" resp="#joint">hat</unclear> man diß-
+<lb n="5"/><unclear cert="low" resp="#joint">deinenn</unclear> malen nit <unclear cert="medium" resp="#joint">platz</unclear> und <unclear cert="medium" resp="#joint">stich</unclear> <unclear cert="medium" resp="#joint">gescheid</unclear>, <unclear cert="medium" resp="#joint">sonderen</unclear>
+<lb n="6"/>man <unclear cert="medium" resp="#joint">wilt</unclear> noch <unclear cert="medium" resp="#joint">ein</unclear> mal mit ihme <unclear cert="medium" resp="#joint">fuern</unclear> <unclear cert="medium" resp="#joint">Rhath</unclear>.
+<lb n="7"/><unclear cert="medium" resp="#joint">Unser</unclear> <unclear cert="medium" resp="#joint">freundt</unclear>- nachparlich willig dienst zuvor,
+<lb n="8"/><unclear cert="low" resp="#joint">woledler</unclear>, <unclear cert="low" resp="#joint">gestrenger</unclear>, <unclear cert="low" resp="#joint">vester</unclear>, und <unclear cert="medium" resp="#joint">weiser</unclear>,
+<lb n="9"/><unclear cert="medium" resp="#joint">besonders</unclear> <unclear cert="medium" resp="#joint">lieber</unclear> <unclear cert="medium" resp="#joint">herr</unclear> vogt und nachpar.
+<lb n="10"/>Wir haben diser tagen ein <unclear cert="medium" resp="#joint">weibß</unclear> <unclear cert="medium" resp="#joint">person</unclear>,
+<lb n="11"/>welche sich <unclear cert="low" resp="#joint">nennt</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Afra</unclear> <unclear cert="low" resp="#joint">Stadlerin</unclear></persName> <unclear cert="low" resp="#joint">von</unclear>
+<lb n="12"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Troschwend</unclear></placeName>, uß <placeName ref="stadtasg-places-108" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schwaben</unclear></placeName> <unclear cert="low" resp="#joint">etlicher</unclear> <unclear cert="low" resp="#joint">argwoeh</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">nigen</unclear> <unclear cert="low" resp="#joint">diebstälen</unclear> <unclear cert="low" resp="#joint">halber</unclear>, <unclear cert="low" resp="#joint">einziehen</unclear>, und
+<lb n="14"/><unclear cert="medium" resp="#joint">biß</unclear> dato von <unclear cert="medium" resp="#joint">unseren</unclear> deputierten <unclear cert="medium" resp="#joint">examiniren</unclear>
+<lb n="15"/>lassen, die <unclear cert="medium" resp="#joint">guetlich</unclear> und <unclear cert="medium" resp="#joint">anden</unclear> <unclear cert="medium" resp="#joint">bekhendt</unclear>,
+<lb n="16"/>dz <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">hilff</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">einer</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">weibß</unclear> <unclear cert="low" resp="#joint">person</unclear> von <placeName resp="#ner"><unclear cert="low" resp="#joint">Wolffhegg</unclear></placeName> <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">blaiche</unclear> zu
+<lb n="18"/><unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">ungefehr</unclear> <unclear cert="low" resp="#joint">12</unclear>. <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName> <unclear cert="low" resp="#joint">etliche</unclear> <unclear cert="low" resp="#joint">stuckh</unclear> <unclear cert="low" resp="#joint">leinwath</unclear>, <unclear cert="low" resp="#joint">nächttlicherweil</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">10</unclear>. <unclear cert="low" resp="#joint">wochen</unclear> <unclear cert="low" resp="#joint">entwendt</unclear> haben. Damit wir
+<lb n="20"/>aber <unclear cert="low" resp="#joint">deßwegen</unclear> den rechten <unclear cert="medium" resp="#joint">gruendtlichen</unclear> bericht <unclear cert="medium" resp="#joint">hiervon</unclear>
+<lb n="21"/>haben <unclear cert="medium" resp="#joint">moegen</unclear>, <unclear cert="medium" resp="#joint">so</unclear> <unclear cert="medium" resp="#joint">langt</unclear> an den
+<lb n="22"/><unclear cert="low" resp="#joint">herrn</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">freundt</unclear>- <unclear cert="low" resp="#joint">nachparliches</unclear> <unclear cert="low" resp="#joint">ersuchen</unclear>,
+<lb n="23"/><unclear cert="low" resp="#joint">unbeschwert</unclear> <unclear cert="low" resp="#joint">dz</unclear> er <unclear cert="medium" resp="#joint">welle</unclear> bey den <unclear cert="low" resp="#joint">blaicheren</unclear> <unclear cert="low" resp="#joint">daselbsten</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">zu</unclear> <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName> <unclear cert="low" resp="#joint">nachfrag</unclear> halten lassen, ob <unclear cert="low" resp="#joint">deme</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">einer</unclear>? <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">mehrer</unclear> <unclear cert="low" resp="#joint">also</unclear>, wie <unclear cert="low" resp="#joint">obbesagt</unclear>, <unclear cert="low" resp="#joint">verstolne</unclear> <unclear cert="low" resp="#joint">leinwath</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">verloren</unclear>, und <unclear cert="medium" resp="#joint">was</unclear> <unclear cert="medium" resp="#joint">fuer</unclear> <unclear cert="medium" resp="#joint">gattung</unclear> gewesen <unclear cert="medium" resp="#joint">seye</unclear>?
+<lb n="27"/><unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">hieruff</unclear> gegen <unclear cert="medium" resp="#joint">ihro</unclear> <unclear cert="medium" resp="#joint">ferners</unclear> <unclear cert="medium" resp="#joint">wuessen</unclear>
 <pb facs="StadtASG_Missive_3185_12596.jpg" n="2"/>
-<lb n="28"/>zuverhalten, welches wir umb den herren
-<lb n="29"/>in dergleich und andern begebenden occasionen hin=
-<lb n="30"/>widerumb beschulden wollen. Hiemit unß sampt=
-<lb n="31"/>lichen der treüwen fürsorge Gottes wolbefohlen.
-<lb n="32"/>Datum den <origDate when="1636" resp="#ner">28.ten Julij. A°. 1636</origDate>.
-<lb n="33"/>Burgermeister etc.
-<lb n="34"/>Dem woledlen, gestrengen, vesten, und weisen,
-<lb n="35"/>herrn <persName resp="#ner">Josten Dietrich Reding</persName> von Schweitz zuo <placeName resp="#ner">Glat=
-<lb n="36"/>burg</placeName>, frl. <orgName ref="stadtasg-actors-148" cert="medium" resp="#ner">St. Gallischen raht</orgName>, und vogt zuo
-<lb n="37"/><placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName>, unserem besonders lieben herren
-<lb n="38"/>und nachparen.
+<lb n="28"/><unclear cert="low" resp="#joint">zuverhalten</unclear>, welches wir umb den <unclear cert="medium" resp="#joint">herren</unclear>
+<lb n="29"/>in <unclear cert="low" resp="#joint">dergleich</unclear> und andern <unclear cert="medium" resp="#joint">begebenden</unclear> occasionen <unclear cert="medium" resp="#joint">hin=</unclear>
+<lb n="30"/>widerumb beschulden wollen. Hiemit <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">sampt=</unclear>
+<lb n="31"/><unclear cert="medium" resp="#joint">lichen</unclear> <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="medium" resp="#joint">treüwen</unclear> <unclear cert="medium" resp="#joint">fürsorge</unclear> Gottes wolbefohlen.
+<lb n="32"/>Datum den <origDate when="1636" resp="#ner"><unclear cert="low" resp="#joint">28.ten</unclear> <unclear cert="low" resp="#joint">Julij</unclear>. <unclear cert="low" resp="#joint">A°</unclear>. 1636</origDate>.
+<lb n="33"/><unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="34"/>Dem <unclear cert="low" resp="#joint">woledlen</unclear>, gestrengen, vesten, und weisen,
+<lb n="35"/>herrn <persName resp="#ner"><unclear cert="medium" resp="#joint">Josten</unclear> Dietrich <unclear cert="medium" resp="#joint">Reding</unclear></persName> von <unclear cert="low" resp="#joint">Schweitz</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Glat=</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">burg</unclear></placeName>, <unclear cert="low" resp="#joint">frl</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallischen</unclear> <unclear cert="low" resp="#joint">raht</unclear></orgName>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">vogt</unclear> <unclear cert="low" resp="#joint">zuo</unclear>
+<lb n="37"/><placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName>, <unclear cert="low" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">herren</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nachparen</unclear>.
 </p>
         </body>
     </text>

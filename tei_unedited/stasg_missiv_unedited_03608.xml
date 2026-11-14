@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3608</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Rat und Älteste der drei Gemeinden zu Frankenthal bedanken sich bei Bürgermeister und Rat zu St. Gallen für die empfangene freiwillige Steuer von 400 Gulden. Sie versprechen, das Geld für den Unterhalt des Ministeriums, der Kirchen und Schulen sowie für die Armen zu verwenden, und bitten um Entschuldigung für die verspätete Zusendung der Dankesschrift.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Rat und Älteste der drei Gemeinden zu Frankenthal bedanken sich bei Bürgermeister und Rat zu St. Gallen für die empfangene freiwillige Steuer von 400 Gulden. Sie versprechen, das Geld für den Unterhalt des Ministeriums, der Kirchen und Schulen sowie für die Armen zu verwenden, und bitten um Entschuldigung für die verspätete Zusendung der Dankesschrift.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Council and Elders of the three communities of Frankenthal thank the Burgomaster and Council of St. Gallen for the voluntary tax of 400 gulden received. They promise to use the money for the maintenance of the ministry, the churches and schools, as well as for the poor, and ask for forgiveness for the late sending of the letter of thanks.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -67,30 +68,30 @@
 <pb facs="StadtASG_Missive_3608_14414.jpg" n="2"/>
 <lb n="31"/>einigen und allein beduerfftig, Ehrlich und gewiß von uns angewendet
 <lb n="32"/>werden solle.
-<lb n="33"/>So auch wir solche geleiste Miltriche dienst und freundtschafft
+<lb n="33"/>So auch wir solche geleiste <unclear cert="low" resp="#joint">Miltriche</unclear> dienst und freundtschafft
 <lb n="34"/>hinwiderumb werden bedienen koennen, wollen wir nach bestem
 <lb n="35"/>unserm vermoegen unsere billige und schuldige danckbarkeit ins zeit
 <lb n="36"/>willigstes fleißtes erweisen.
-<lb n="37"/>Das aber E. E. Vest. Frommen und Wolweisen Herren, diese hiemit
+<lb n="37"/>Das aber <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Vest</unclear>. Frommen und Wolweisen Herren, diese hiemit
 <lb n="38"/>unsere uebersandte dancksagungsschrifft, nicht zeitlicher zugesandt worden,
 <lb n="39"/>ist ursach, das nach von deroselben gantzen Hochloeblichen Christlichen Ge-
-<lb n="40"/>meind uebermachten 300. und dann absonderlich von einem frommen,
-<lb n="41"/>getrewen ohnbenanten Patrioten 100 fl. wir erforderter schuldig
-<lb n="42"/>danckbarkeit nach, auch in zweyen underscheidlichen daruff gestalten
-<lb n="43"/>danckschrifften, unser danckbar gemueth ohnverzuglich zuerkennen
+<lb n="40"/>meind uebermachten 300. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">absonderlich</unclear> von einem frommen,
+<lb n="41"/>getrewen ohnbenanten Patrioten 100 <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">erforderter</unclear> <unclear cert="low" resp="#joint">schuldig</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">danckbarkeit</unclear> nach, auch in zweyen underscheidlichen daruff <unclear cert="low" resp="#joint">gestalten</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">danckschrifften</unclear>, unser <unclear cert="low" resp="#joint">danckbar</unclear> <unclear cert="low" resp="#joint">gemueth</unclear> <unclear cert="low" resp="#joint">ohnverzuglich</unclear> zuerkennen
 <lb n="44"/>gegeben und zugesandt haben: Wir aber hierueber die dancksagung
 <lb n="45"/>fuer die empfangenen 400 fl. ins gesampt, und zugleich in einer schrifft
-<lb n="46"/>zuthun, erinert worden. Das wir dan auch hiemit in aller schuldigkeit
-<lb n="47"/>vollbringen: Werden E. E. V. Fromme und Wolweise Herren,
-<lb n="48"/>zweiffels ohn diesen verzug in großgunsten uns zu gut halten.
-<lb n="49"/>Hiemit uns allerseits der hoechsten Goetlichen Majestaet gnedigsten
-<lb n="50"/>Schutz und regierung trewlichst befehlend.
-<lb n="51"/>Geschehen in <origPlace ref="stadtasg-places-375" cert="medium" resp="#ner">Franckenthal</origPlace> <origDate when="1644-07-23" resp="#ner">den 23. Julii 1644</origDate>.
+<lb n="46"/><unclear cert="low" resp="#joint">zuthun</unclear>, <unclear cert="low" resp="#joint">erinert</unclear> worden. Das wir <unclear cert="low" resp="#joint">dan</unclear> auch hiemit in aller schuldigkeit
+<lb n="47"/>vollbringen: Werden <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">Fromme</unclear> und Wolweise Herren,
+<lb n="48"/>zweiffels ohn diesen verzug in <unclear cert="low" resp="#joint">großgunsten</unclear> uns <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">gut</unclear> <unclear cert="low" resp="#joint">halten</unclear>.
+<lb n="49"/><unclear cert="low" resp="#joint">Hiemit</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">allerseits</unclear> der hoechsten Goetlichen Majestaet gnedigsten
+<lb n="50"/>Schutz und regierung <unclear cert="low" resp="#joint">trewlichst</unclear> <unclear cert="low" resp="#joint">befehlend</unclear>.
+<lb n="51"/><unclear cert="low" resp="#joint">Geschehen</unclear> <unclear cert="low" resp="#joint">in</unclear> <origPlace ref="stadtasg-places-375" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Franckenthal</unclear></origPlace> <origDate when="1644-07-23" resp="#ner">den 23. Julii 1644</origDate>.
 <lb n="52"/><persName role="issuer" resp="#ner">Peter Datzon</persName> Burgermeister
-<lb n="53"/><persName role="issuer" resp="#ner">Daniel Philippi</persName> raths verw. E. E. Vest. Fromme und Wolweise Herren,
-<lb n="54"/><persName role="issuer" resp="#ner">Mathes Hanß</persName> Mathes Eltesten
-<lb n="55"/><persName role="issuer" resp="#ner">Jacop Catoir</persName> ensient
-<lb n="56"/><persName role="issuer" resp="#ner">Hans Angilloo</persName> ouderlingk Dienstgeflißene <orgName role="issuer" resp="#ner">Rath und Eltesten
+<lb n="53"/><persName role="issuer" resp="#ner">Daniel Philippi</persName> <unclear cert="low" resp="#joint">raths</unclear> <unclear cert="low" resp="#joint">verw</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Vest</unclear>. <unclear cert="low" resp="#joint">Fromme</unclear> und <unclear cert="low" resp="#joint">Wolweise</unclear> <unclear cert="low" resp="#joint">Herren</unclear>,
+<lb n="54"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Mathes</unclear> <unclear cert="low" resp="#joint">Hanß</unclear></persName> <unclear cert="low" resp="#joint">Mathes</unclear> <unclear cert="low" resp="#joint">Eltesten</unclear>
+<lb n="55"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Jacop</unclear> <unclear cert="low" resp="#joint">Catoir</unclear></persName> <unclear cert="low" resp="#joint">ensient</unclear>
+<lb n="56"/><persName role="issuer" resp="#ner">Hans <unclear cert="low" resp="#joint">Angilloo</unclear></persName> <unclear cert="low" resp="#joint">ouderlingk</unclear> <unclear cert="low" resp="#joint">Dienstgeflißene</unclear> <orgName role="issuer" resp="#ner">Rath und Eltesten
 <lb n="57"/>der dreyen Gemeinden</orgName> daselbst.
 <pb facs="StadtASG_Missive_3608_14415.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3608_14416.jpg" n="4"/>
@@ -99,7 +100,7 @@
 <lb n="60"/>sichtigen, ehrsamen und weisen herren
 <lb n="61"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Raht der
 <lb n="62"/>statt St. Gallen</orgName>.
-<lb n="63"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="63"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3312</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Schultheiss und Rat zu Winterthur bestätigen den Erhalt eines Schreibens von St. Gallen und senden ihnen die geltenden Fleischsätzungen sowie die Ordnung für Metzger und Kuttler zu. Sie erklären sich bereit, St. Gallen in ähnlichen Angelegenheiten nachbarschaftlich zu dienen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Schultheiss und Rat zu Winterthur bestätigen den Erhalt eines Schreibens von St. Gallen und senden ihnen die geltenden Fleischsätzungen sowie die Ordnung für Metzger und Kuttler zu. Sie erklären sich bereit, St. Gallen in ähnlichen Angelegenheiten nachbarschaftlich zu dienen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Schultheiss and Council of Winterthur confirm the receipt of a letter from St. Gallen and send them the applicable meat prices as well as the regulations for butchers and poulterers. They declare themselves willing to serve St. Gallen in similar matters as neighbors.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,60 +35,60 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3312_13143.jpg" n="1"/>
-<lb n="1"/>Unser fründt: nachbarlich bereitwillig dienst unnd
-<lb n="2"/>gruß, sambt was wir ehren liebs unnd guts ver=
-<lb n="3"/>moegen ungespartes fleißes zuovohr. Edell hochge=
-<lb n="4"/>lehrt fromb, fürnem, fürsichtig ehrsamb unnd weiß.
-<lb n="5"/>besonders günstig ehrende Herren, guette fründ unnd
-<lb n="6"/>getreüwe liebe Nachbahren.
-<lb n="7"/>Der Herren an uns fründt: nachbarlich gethanes schreib=
-<lb n="8"/>en haben wir zu recht empfangen, deßen inhalt
-<lb n="9"/>unnd begern den gwicht deß flaiß Taxens, unnd der
-<lb n="10"/>beschaffenheit unnser Metzgeren auch deren anhängen
-<lb n="11"/>habend wir mit mehrerem vernomen. Worüber
-<lb n="12"/>wir ihr fründ: nachbarlichs begeren nit versagen, wie
-<lb n="13"/>dann wir inn Mehrerem zu gratificieren den Herren
-<lb n="14"/>zu dienen uns verpflecht schuldig erkennen, sonder
-<lb n="15"/>alles deßen so wir ver unßern inderweill der
-<lb n="16"/>Metzgern unnd kuttler halber gebreüchen, wie uß
-<lb n="17"/>dem inschluß zefinden, fründt: nachbahrlicher über
-<lb n="18"/>senden thündt. Wie wir nun allzeit
-<lb n="19"/>von den Herren allen nachbarlichen gunst: unnd fründt=
-<lb n="20"/>lichen willen verspürt, sind wir gegen selbigen zu
-<lb n="21"/>erwidern zu allen begebenheiten mit müglichem
-<lb n="22"/>fleiß nachbarlichen diensten zuersezen erbietig.
-<lb n="23"/>Goettlicher allmacht unnß darby bevelchende.
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">fründt</unclear>: nachbarlich <unclear cert="low" resp="#joint">bereitwillig</unclear> dienst unnd
+<lb n="2"/><unclear cert="medium" resp="#joint">gruß</unclear>, sambt was wir ehren <unclear cert="medium" resp="#joint">liebs</unclear> unnd <unclear cert="medium" resp="#joint">guts</unclear> ver=
+<lb n="3"/><unclear cert="low" resp="#joint">moegen</unclear> <unclear cert="low" resp="#joint">ungespartes</unclear> <unclear cert="low" resp="#joint">fleißes</unclear> <unclear cert="low" resp="#joint">zuovohr</unclear>. <unclear cert="low" resp="#joint">Edell</unclear> hochge=
+<lb n="4"/><unclear cert="medium" resp="#joint">lehrt</unclear> <unclear cert="medium" resp="#joint">fromb</unclear>, <unclear cert="medium" resp="#joint">fürnem</unclear>, fürsichtig <unclear cert="medium" resp="#joint">ehrsamb</unclear> unnd <unclear cert="medium" resp="#joint">weiß</unclear>.
+<lb n="5"/>besonders <unclear cert="medium" resp="#joint">günstig</unclear> <unclear cert="medium" resp="#joint">ehrende</unclear> Herren, <unclear cert="medium" resp="#joint">guette</unclear> fründ unnd
+<lb n="6"/><unclear cert="medium" resp="#joint">getreüwe</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> <unclear cert="medium" resp="#joint">Nachbahren</unclear>.
+<lb n="7"/><unclear cert="medium" resp="#joint">Der</unclear> Herren an uns <unclear cert="medium" resp="#joint">fründt</unclear>: nachbarlich <unclear cert="medium" resp="#joint">gethanes</unclear> <unclear cert="medium" resp="#joint">schreib=</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">en</unclear> haben wir <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">recht</unclear> <unclear cert="medium" resp="#joint">empfangen</unclear>, deßen inhalt
+<lb n="9"/>unnd <unclear cert="low" resp="#joint">begern</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">gwicht</unclear> deß <unclear cert="medium" resp="#joint">flaiß</unclear> <unclear cert="medium" resp="#joint">Taxens</unclear>, unnd der
+<lb n="10"/><unclear cert="low" resp="#joint">beschaffenheit</unclear> unnser <unclear cert="medium" resp="#joint">Metzgeren</unclear> auch <unclear cert="medium" resp="#joint">deren</unclear> <unclear cert="medium" resp="#joint">anhängen</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">habend</unclear> wir <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">mehrerem</unclear> <unclear cert="low" resp="#joint">vernomen</unclear>. <unclear cert="low" resp="#joint">Worüber</unclear>
+<lb n="12"/>wir <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">fründ</unclear>: <unclear cert="low" resp="#joint">nachbarlichs</unclear> <unclear cert="low" resp="#joint">begeren</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">versagen</unclear>, <unclear cert="low" resp="#joint">wie</unclear>
+<lb n="13"/>dann wir inn <unclear cert="medium" resp="#joint">Mehrerem</unclear> <unclear cert="medium" resp="#joint">zu</unclear> gratificieren <unclear cert="medium" resp="#joint">den</unclear> Herren
+<lb n="14"/><unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">dienen</unclear> <unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="medium" resp="#joint">verpflecht</unclear> schuldig erkennen, sonder
+<lb n="15"/>alles <unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">ver</unclear> <unclear cert="low" resp="#joint">unßern</unclear> <unclear cert="low" resp="#joint">inderweill</unclear> der
+<lb n="16"/><unclear cert="medium" resp="#joint">Metzgern</unclear> unnd <unclear cert="medium" resp="#joint">kuttler</unclear> <unclear cert="medium" resp="#joint">halber</unclear> <unclear cert="medium" resp="#joint">gebreüchen</unclear>, wie uß
+<lb n="17"/>dem <unclear cert="low" resp="#joint">inschluß</unclear> <unclear cert="low" resp="#joint">zefinden</unclear>, fründt: <unclear cert="medium" resp="#joint">nachbahrlicher</unclear> über
+<lb n="18"/><unclear cert="medium" resp="#joint">senden</unclear> <unclear cert="medium" resp="#joint">thündt</unclear>. Wie <unclear cert="medium" resp="#joint">wir</unclear> nun <unclear cert="medium" resp="#joint">allzeit</unclear>
+<lb n="19"/>von den Herren allen nachbarlichen <unclear cert="medium" resp="#joint">gunst</unclear>: <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">fründt=</unclear>
+<lb n="20"/>lichen willen <unclear cert="low" resp="#joint">verspürt</unclear>, <unclear cert="low" resp="#joint">sind</unclear> wir <unclear cert="low" resp="#joint">gegen</unclear> selbigen <unclear cert="medium" resp="#joint">zu</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">erwidern</unclear> <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">allen</unclear> begebenheiten mit <unclear cert="medium" resp="#joint">müglichem</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">fleiß</unclear> nachbarlichen <unclear cert="low" resp="#joint">diensten</unclear> <unclear cert="low" resp="#joint">zuersezen</unclear> <unclear cert="low" resp="#joint">erbietig</unclear>.
+<lb n="23"/><unclear cert="low" resp="#joint">Goettlicher</unclear> <unclear cert="low" resp="#joint">allmacht</unclear> <unclear cert="low" resp="#joint">unnß</unclear> darby <unclear cert="medium" resp="#joint">bevelchende</unclear>.
 <lb n="24"/>Datum: <origDate when="1638-08-04" resp="#ner">4 Augusti. Anno 1638</origDate>.
-<lb n="25"/><orgName ref="stadtasg-actors-718" cert="medium" role="issuer" resp="#ner">Schultheiß unnd Rath
+<lb n="25"/><orgName ref="stadtasg-actors-718" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Schultheiß</unclear> unnd Rath
 <lb n="26"/>der Statt Winterthur</orgName>.
 <pb facs="StadtASG_Missive_3312_13144.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3312_13145.jpg" n="3"/>
-<lb n="27"/>Ordnung der fleisch schatzung
-<lb n="28"/>der statt <placeName resp="#ner">Wintterthuer</placeName>.
-<lb n="29"/>Rindts oder ochßenfleiß. Dz aller
-<lb n="30"/>außbuendigst unnd beste, auß
-<lb n="31"/>dem land daß pfund umb - 3. ß. 6. d.
-<lb n="32"/><placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zuerich</placeName> werung, waß aber
-<lb n="33"/>wenniger von Rindtfleisch, nach der
-<lb n="34"/>schatzern erkantnuß.
-<lb n="35"/>Dem bericht: waaß kopff, lung und
-<lb n="36"/>leberen anlangt, thueend die
-<lb n="37"/>metzger zuo den vier liden verschla-
-<lb n="38"/>unnd außwegen, doch ist unßer pfund
-<lb n="39"/>nur 36. lot.
-<lb n="40"/>Khue unnd kalbellen, waß gilt
-<lb n="41"/>unnd wehrschafft daß pfund umb: 3 ß.
-<lb n="42"/>waß schlächter nach der schatzeren
-<lb n="43"/>verstandtnuß. oder geht auß der
-<lb n="44"/>metzg.
-<lb n="45"/>Schaff-fleiß, ist innen dißmalls
-<lb n="46"/>zuogelaßen dz pfundt umb - -. 3 ß. 6. d.
-<lb n="47"/>doch dörffend sy daß kriell unnd
-<lb n="48"/>kopff dartzuo wegen, unnd zuo einem,
-<lb n="49"/>lißfleiß. zwenfuesliß fuer ein pfund
-<lb n="50"/>ynrechnen, bockhs unnd geißen söllen
-<lb n="51"/>innen verbotten sein zu metzgen by
-<lb n="52"/>straff - - - - - - - . 5. lb. Hlr.
+<lb n="27"/><unclear cert="medium" resp="#joint">Ordnung</unclear> der <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">schatzung</unclear>
+<lb n="28"/>der statt <placeName resp="#ner"><unclear cert="low" resp="#joint">Wintterthuer</unclear></placeName>.
+<lb n="29"/><unclear cert="low" resp="#joint">Rindts</unclear> oder <unclear cert="medium" resp="#joint">ochßenfleiß</unclear>. Dz aller
+<lb n="30"/><unclear cert="medium" resp="#joint">außbuendigst</unclear> unnd <unclear cert="medium" resp="#joint">beste</unclear>, auß
+<lb n="31"/><unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">land</unclear> daß <unclear cert="medium" resp="#joint">pfund</unclear> umb - 3. ß. 6. <unclear cert="medium" resp="#joint">d</unclear>.
+<lb n="32"/><placeName ref="stadtasg-places-32" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Zuerich</unclear></placeName> <unclear cert="medium" resp="#joint">werung</unclear>, waß aber
+<lb n="33"/><unclear cert="medium" resp="#joint">wenniger</unclear> von <unclear cert="medium" resp="#joint">Rindtfleisch</unclear>, nach der
+<lb n="34"/><unclear cert="low" resp="#joint">schatzern</unclear> <unclear cert="low" resp="#joint">erkantnuß</unclear>.
+<lb n="35"/><unclear cert="low" resp="#joint">Dem</unclear> bericht: <unclear cert="medium" resp="#joint">waaß</unclear> <unclear cert="medium" resp="#joint">kopff</unclear>, <unclear cert="medium" resp="#joint">lung</unclear> und
+<lb n="36"/><unclear cert="medium" resp="#joint">leberen</unclear> <unclear cert="medium" resp="#joint">anlangt</unclear>, <unclear cert="medium" resp="#joint">thueend</unclear> die
+<lb n="37"/><unclear cert="medium" resp="#joint">metzger</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> den vier <unclear cert="medium" resp="#joint">liden</unclear> <unclear cert="medium" resp="#joint">verschla</unclear>-
+<lb n="38"/>unnd <unclear cert="medium" resp="#joint">außwegen</unclear>, doch ist <unclear cert="medium" resp="#joint">unßer</unclear> <unclear cert="medium" resp="#joint">pfund</unclear>
+<lb n="39"/>nur 36. <unclear cert="low" resp="#joint">lot</unclear>.
+<lb n="40"/><unclear cert="low" resp="#joint">Khue</unclear> unnd <unclear cert="medium" resp="#joint">kalbellen</unclear>, waß <unclear cert="medium" resp="#joint">gilt</unclear>
+<lb n="41"/>unnd <unclear cert="medium" resp="#joint">wehrschafft</unclear> daß <unclear cert="medium" resp="#joint">pfund</unclear> umb: 3 ß.
+<lb n="42"/>waß <unclear cert="medium" resp="#joint">schlächter</unclear> nach der <unclear cert="medium" resp="#joint">schatzeren</unclear>
+<lb n="43"/><unclear cert="medium" resp="#joint">verstandtnuß</unclear>. oder <unclear cert="medium" resp="#joint">geht</unclear> auß der
+<lb n="44"/><unclear cert="low" resp="#joint">metzg</unclear>.
+<lb n="45"/><unclear cert="low" resp="#joint">Schaff-fleiß</unclear>, ist <unclear cert="low" resp="#joint">innen</unclear> <unclear cert="low" resp="#joint">dißmalls</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">zuogelaßen</unclear> dz <unclear cert="low" resp="#joint">pfundt</unclear> umb - -. 3 ß. 6. <unclear cert="medium" resp="#joint">d</unclear>.
+<lb n="47"/>doch <unclear cert="medium" resp="#joint">dörffend</unclear> sy daß <unclear cert="medium" resp="#joint">kriell</unclear> unnd
+<lb n="48"/><unclear cert="medium" resp="#joint">kopff</unclear> <unclear cert="medium" resp="#joint">dartzuo</unclear> <unclear cert="medium" resp="#joint">wegen</unclear>, unnd <unclear cert="medium" resp="#joint">zuo</unclear> einem,
+<lb n="49"/><unclear cert="low" resp="#joint">lißfleiß</unclear>. <unclear cert="low" resp="#joint">zwenfuesliß</unclear> <unclear cert="low" resp="#joint">fuer</unclear> ein <unclear cert="medium" resp="#joint">pfund</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">ynrechnen</unclear>, <unclear cert="medium" resp="#joint">bockhs</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">geißen</unclear> <unclear cert="medium" resp="#joint">söllen</unclear>
+<lb n="51"/><unclear cert="medium" resp="#joint">innen</unclear> verbotten sein zu <unclear cert="medium" resp="#joint">metzgen</unclear> <unclear cert="medium" resp="#joint">by</unclear>
+<lb n="52"/>straff - - - - - - - . <unclear cert="low" resp="#joint">5</unclear>. <unclear cert="low" resp="#joint">lb</unclear>. <unclear cert="low" resp="#joint">Hlr</unclear>.
 <pb facs="StadtASG_Missive_3312_13146.jpg" n="4"/>
 <lb n="53"/>Betreffend ds kalber fleisch, ist
 <lb n="54"/>den meißteren vergundt unnd zuo-
@@ -143,11 +144,11 @@
 <pb facs="StadtASG_Missive_3312_13148.jpg" n="6"/>
 <pb facs="StadtASG_Missive_3312_13149.jpg" n="7"/>
 <pb facs="StadtASG_Missive_3312_13150.jpg" n="8"/>
-<lb n="103"/>Denen edlen, hochgelehrten, fromen, fürnemmen,
-<lb n="104"/>fuersichtigen, ehrsamen unnd wÿsen, herren,
+<lb n="103"/>Denen <unclear cert="low" resp="#joint">edlen</unclear>, hochgelehrten, <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">fürnemmen</unclear>,
+<lb n="104"/><unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">ehrsamen</unclear> unnd wÿsen, herren,
 <lb n="105"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd Rath der Statt Sanct
-<lb n="106"/>Gallen</orgName>. Unseren besonders guenstigen ehr-
-<lb n="107"/>enden herren, getrüwen freündt: und lieben
+<lb n="106"/>Gallen</orgName>. Unseren besonders <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="low" resp="#joint">ehr</unclear>-
+<lb n="107"/><unclear cert="low" resp="#joint">enden</unclear> <unclear cert="low" resp="#joint">herren</unclear>, getrüwen <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">und</unclear> lieben
 <lb n="108"/>nachbahren.
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3316</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Otto Erbtuchse, Freiherr zu Fridburg, teilt Bürgermeister und Rat zu St. Gallen mit, dass der St. Galler Bürger Lorenz Ruch auf der Rückreise von Konstanz bei Waldsee von Reitern überfallen und um sein Pferd gebracht worden sei. Er versichert, dass er solche Überfälle nicht dulde und alles, was zu seinen Händen gebracht werde, unentgeltlich zurückgebe.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Otto Erbtuchse, Freiherr zu Fridburg, teilt Bürgermeister und Rat zu St. Gallen mit, dass der St. Galler Bürger Lorenz Ruch auf der Rückreise von Konstanz bei Waldsee von Reitern überfallen und um sein Pferd gebracht worden sei. Er versichert, dass er solche Überfälle nicht dulde und alles, was zu seinen Händen gebracht werde, unentgeltlich zurückgebe.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Otto Erbtuchse, Freiherr zu Fridburg, informs the Burgomaster and Council of St. Gallen that the citizen of St. Gallen, Lorenz Ruch, was attacked by riders on his return journey from Konstanz at Waldsee and robbed of his horse. He assures them that he does not tolerate such attacks and that he will return everything brought to his hands free of charge.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,12 +35,12 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3316_13163.jpg" n="1"/>
-<lb n="1"/>Wohledle, Gestrenge, Edle, Veste, Ehrnveste, Fuersichtige, Ersambe
-<lb n="2"/>unnd Weyße, denselben seyen zuewiderenpieten meine guetwillige dienst
-<lb n="3"/>zuevor, sonders liebe Herrn, unnd guete Freundt,
-<lb n="4"/>Waßmaßen kurz verllichner zeitt, der Herrn angehoeriger burger,
-<lb n="5"/>unnd extra <placeName ref="stadtasg-places-21" cert="medium" resp="#ner">Nurmberger</placeName> ordinarj pot, <persName resp="#ner">Lorenz Ruch</persName>, alß
-<lb n="6"/>selbiger sambt ainem reformierten leutenant, so auß <placeName ref="stadtasg-places-446" cert="medium" resp="#ner">Niderlandt</placeName>
+<lb n="1"/><unclear cert="low" resp="#joint">Wohledle</unclear>, <unclear cert="low" resp="#joint">Gestrenge</unclear>, <unclear cert="low" resp="#joint">Edle</unclear>, Veste, Ehrnveste, Fuersichtige, Ersambe
+<lb n="2"/>unnd <unclear cert="low" resp="#joint">Weyße</unclear>, <unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">seyen</unclear> <unclear cert="low" resp="#joint">zuewiderenpieten</unclear> <unclear cert="low" resp="#joint">meine</unclear> <unclear cert="low" resp="#joint">guetwillige</unclear> <unclear cert="low" resp="#joint">dienst</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">zuevor</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">liebe</unclear> Herrn, unnd <unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">Freundt</unclear>,
+<lb n="4"/><unclear cert="low" resp="#joint">Waßmaßen</unclear> <unclear cert="low" resp="#joint">kurz</unclear> <unclear cert="low" resp="#joint">verllichner</unclear> <unclear cert="low" resp="#joint">zeitt</unclear>, der Herrn angehoeriger burger,
+<lb n="5"/>unnd <unclear cert="low" resp="#joint">extra</unclear> <placeName ref="stadtasg-places-21" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Nurmberger</unclear></placeName> <unclear cert="low" resp="#joint">ordinarj</unclear> <unclear cert="low" resp="#joint">pot</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Lorenz</unclear> <unclear cert="low" resp="#joint">Ruch</unclear></persName>, <unclear cert="low" resp="#joint">alß</unclear>
+<lb n="6"/>selbiger <unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">ainem</unclear> <unclear cert="low" resp="#joint">reformierten</unclear> <unclear cert="low" resp="#joint">leutenant</unclear>, so auß <placeName ref="stadtasg-places-446" cert="medium" resp="#ner">Niderlandt</placeName>
 <lb n="7"/>khommen, unnd nacher <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanz</placeName> begerth, uff seiner zurugg raiß
 <lb n="8"/>wider nach St. Gallen, uff offentlichen freyer Kay: <placeName resp="#ner">Reichß-
 <lb n="9"/>straß</placeName>, negst bey <placeName resp="#ner">Waldsee</placeName>, von ohngefehr 20. reittern verhalten,
@@ -54,28 +55,28 @@
 <lb n="18"/>zeit vihl streiffende partheyen, bey mir hin: und wider passieret,
 <lb n="19"/>habe aber dergleichen niemahlen anhalten, vihlweniger die spe-
 <lb n="20"/>cificierte pferdt, und andere sachen abnemmen lassen, allso
-<lb n="21"/>die herren, von ermeltem ihrem burger, unrecht bericht worden, dye
-<lb n="22"/>dahin versicherendt, da dergleichen ich zue meinen handen gebracht,
-<lb n="23"/>alles ohne entgelt widerumb restituiert werden solte,
-<lb n="24"/>Wolte den Herrn diß, neben sambltlicher empfehlung des Allmacht
-<lb n="25"/>Gottes, nachrichtlichen uberschreiben, dattumb uff der voestung <origDate resp="#ner">Hochen-
-<lb n="26"/>twiel</origDate>, den <persName role="issuer" resp="#ner">14. Augustj ao 1638</persName>.
-<lb n="27"/>Der Herren
-<lb n="28"/>freundtwilliger.
-<lb n="29"/><placeName resp="#ner">Ottho Erbtruchßäß</placeName> Freiherr zue <placeName resp="#ner">Fridpurg</placeName>.
-<lb n="30"/>H z <placeName resp="#ner">Waldtburg</placeName> mp.
+<lb n="21"/>die herren, von ermeltem ihrem burger, unrecht bericht <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">dye</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">dahin</unclear> <unclear cert="low" resp="#joint">versicherendt</unclear>, da dergleichen ich zue meinen handen gebracht,
+<lb n="23"/><unclear cert="low" resp="#joint">alles</unclear> <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">entgelt</unclear> <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">restituiert</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">solte</unclear>,
+<lb n="24"/><unclear cert="low" resp="#joint">Wolte</unclear> <unclear cert="low" resp="#joint">den</unclear> Herrn <unclear cert="low" resp="#joint">diß</unclear>, <unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">sambltlicher</unclear> <unclear cert="low" resp="#joint">empfehlung</unclear> <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">Allmacht</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">Gottes</unclear>, <unclear cert="low" resp="#joint">nachrichtlichen</unclear> <unclear cert="low" resp="#joint">uberschreiben</unclear>, <unclear cert="low" resp="#joint">dattumb</unclear> <unclear cert="low" resp="#joint">uff</unclear> der <unclear cert="low" resp="#joint">voestung</unclear> <origDate resp="#ner"><unclear cert="low" resp="#joint">Hochen</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">twiel</unclear></origDate>, <unclear cert="low" resp="#joint">den</unclear> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">14</unclear>. <unclear cert="low" resp="#joint">Augustj</unclear> <unclear cert="low" resp="#joint">ao</unclear> <unclear cert="low" resp="#joint">1638</unclear></persName>.
+<lb n="27"/><unclear cert="low" resp="#joint">Der</unclear> <unclear cert="low" resp="#joint">Herren</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">freundtwilliger</unclear>.
+<lb n="29"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Ottho</unclear> <unclear cert="low" resp="#joint">Erbtruchßäß</unclear></placeName> <unclear cert="low" resp="#joint">Freiherr</unclear> <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Fridpurg</unclear></placeName>.
+<lb n="30"/><unclear cert="low" resp="#joint">H</unclear> <unclear cert="low" resp="#joint">z</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Waldtburg</unclear></placeName> <unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_3316_13164.jpg" n="2"/>
 <lb n="31"/>[]
 <pb facs="StadtASG_Missive_3316_13165.jpg" n="3"/>
 <lb n="32"/>[]
 <pb facs="StadtASG_Missive_3316_13166.jpg" n="4"/>
 <lb n="33"/>Denen wohledlen, gestrenngen, edlen,
-<lb n="34"/>voesten, ehrenvoesten, fuersichtigen, er=
-<lb n="35"/>samben, unnd weysen hrn. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeisteren
+<lb n="34"/><unclear cert="low" resp="#joint">voesten</unclear>, <unclear cert="low" resp="#joint">ehrenvoesten</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">er=</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">samben</unclear>, unnd <unclear cert="low" resp="#joint">weysen</unclear> <unclear cert="low" resp="#joint">hrn</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">burgermeisteren</unclear>
 <lb n="36"/>unnd rathe der statt Sanct Gallen</orgName> etc.
 <lb n="37"/>Meinen sonders lieben herrn unnd
 <lb n="38"/>gueten freunden etc.
-<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>.
+<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

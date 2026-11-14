@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3251</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Der Vitzthumb zu Lindau informiert Bürgermeister und Rat zu St. Gallen über einen kaiserlichen Erlass vom 12. August, der einen außerordentlichen Kriegsaufschlag für die schwäbische Garnison in Lindau bestätigt. Er bittet die St. Galler, ihre Kaufleute und Verwandten anzuweisen, diese Gebühr zu entrichten. Er versichert, dass dieser Aufschlag nicht gegen das ewige Erbverhältnis zwischen Österreich und den Eidgenossen gerichtet sei, und bietet weiterhin Freundschaft und Unterstützung im Handel an.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Der Vitzthumb zu Lindau informiert Bürgermeister und Rat zu St. Gallen über einen kaiserlichen Erlass vom 12. August, der einen außerordentlichen Kriegsaufschlag für die schwäbische Garnison in Lindau bestätigt. Er bittet die St. Galler, ihre Kaufleute und Verwandten anzuweisen, diese Gebühr zu entrichten. Er versichert, dass dieser Aufschlag nicht gegen das ewige Erbverhältnis zwischen Österreich und den Eidgenossen gerichtet sei, und bietet weiterhin Freundschaft und Unterstützung im Handel an.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Vitzthumb of Lindau informs the Burgomaster and Council of St. Gallen of an imperial decree of 12 August, which confirms an extraordinary war surcharge for the Swabian garrison in Lindau. He asks the St. Gallen citizens to instruct their merchants and relatives to pay this fee. He assures them that this surcharge is not directed against the eternal hereditary relationship between Österreich and the Confederates, and further offers friendship and support in trade.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,48 +35,48 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3251_12881.jpg" n="1"/>
-<lb n="1"/>Edel, Vest, Hochgelert, Ehrsamb, Fromm,
-<lb n="2"/>Fürsichtig, Eersam unnd Weiße, Insonders
+<lb n="1"/><unclear cert="low" resp="#joint">Edel</unclear>, <unclear cert="low" resp="#joint">Vest</unclear>, <unclear cert="low" resp="#joint">Hochgelert</unclear>, <unclear cert="low" resp="#joint">Ehrsamb</unclear>, <unclear cert="low" resp="#joint">Fromm</unclear>,
+<lb n="2"/><unclear cert="low" resp="#joint">Fürsichtig</unclear>, <unclear cert="low" resp="#joint">Eersam</unclear> unnd Weiße, Insonders
 <lb n="3"/>günstige Herren unnd Freund.
-<lb n="4"/>Waß wegen deß von der <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Röm. Kaiß. Maytt.</orgName>
-<lb n="5"/>unnserm allergnedigisten Keiser unnd Herren
-<lb n="6"/>unterm dato <placeName ref="stadtasg-places-15" cert="medium" resp="#ner">Wien</placeName> den <date resp="#ner">12ten Augusti</date> zue nothwen-
-<lb n="7"/>diger underhaltung dero allhier ligender schwae-
-<lb n="8"/>bischen garnison widerumb erneüwerten und
+<lb n="4"/>Waß wegen deß von <unclear cert="low" resp="#joint">der</unclear> <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Röm</unclear>. <unclear cert="low" resp="#joint">Kaiß</unclear>. <unclear cert="low" resp="#joint">Maytt</unclear>.</orgName>
+<lb n="5"/><unclear cert="low" resp="#joint">unnserm</unclear> <unclear cert="low" resp="#joint">allergnedigisten</unclear> <unclear cert="low" resp="#joint">Keiser</unclear> unnd Herren
+<lb n="6"/>unterm dato <placeName ref="stadtasg-places-15" cert="medium" resp="#ner">Wien</placeName> den <date resp="#ner">12ten Augusti</date> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">nothwen</unclear>-
+<lb n="7"/><unclear cert="low" resp="#joint">diger</unclear> <unclear cert="low" resp="#joint">underhaltung</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">allhier</unclear> <unclear cert="low" resp="#joint">ligender</unclear> <unclear cert="low" resp="#joint">schwae</unclear>-
+<lb n="8"/><unclear cert="low" resp="#joint">bischen</unclear> garnison <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">erneüwerten</unclear> und
 <lb n="9"/>confirmierten Extraordinari Kriegs uffschlags, undt
 <lb n="10"/>daß solcher vermög habender freyer Erbeinni-
 <lb n="11"/>gung von den <orgName resp="#ner">Eÿdgnosischen</orgName> Guetern nicht ein-
 <lb n="12"/>gezogen werden solle, die herren an unß uff
-<lb n="13"/>ansuechen ihrer verburgerten Kaeuff- und Han-
-<lb n="14"/>delsleüth intercedendo geschriben, daß ist inn
-<lb n="15"/>den rath alhir zue recht eingeliefert worden.
-<lb n="16"/>Solle den herren hieruff freündtnachbaurlich
+<lb n="13"/>ansuechen ihrer verburgerten <unclear cert="low" resp="#joint">Kaeuff</unclear>- <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Han</unclear>-
+<lb n="14"/><unclear cert="low" resp="#joint">delsleüth</unclear> <unclear cert="low" resp="#joint">intercedendo</unclear> geschriben, daß ist <unclear cert="low" resp="#joint">inn</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">rath</unclear> <unclear cert="low" resp="#joint">alhir</unclear> <unclear cert="low" resp="#joint">zue</unclear> recht <unclear cert="low" resp="#joint">eingeliefert</unclear> <unclear cert="low" resp="#joint">worden</unclear>.
+<lb n="16"/><unclear cert="low" resp="#joint">Solle</unclear> den herren <unclear cert="low" resp="#joint">hieruff</unclear> <unclear cert="low" resp="#joint">freündtnachbaurlich</unclear>
 <lb n="17"/>nicht verhalten, daß wir dise Extraordinari uff-
 <lb n="18"/>lag allerhöchstgedachter Röm. Kaiß. Maytt. innhalts hie-
 <lb n="19"/>riber ertheilten Patents, nur uff eine kurtze
-<lb n="20"/>zeit, unnd biß etwo ins künfftig ein allgemeiner
-<lb n="21"/>teütscher Reichsfriden möchte getrofen,
-<lb n="22"/>oder andere disposition mit allheiger garnison
-<lb n="23"/>gemacht werden, dergestalt vor allen Kauff- a-
-<lb n="24"/>mantschafften, handlen und wein ohne under-
-<lb n="25"/>schid zueerheben, Iedoch nicht alß Ertzhertzog zue
-<lb n="26"/><placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Österreich</placeName>, sonder alß Römischer Keiser, unndt
-<lb n="27"/>daher in einer dem <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Heÿl. Römischen Reich</orgName> ohne mitel
-<lb n="28"/>zuegehörigen Statt, und wo man etwa diser orthen an-
-<lb n="29"/>stet durch andere deß Heÿl. Reichs iurisdiction unnd
-<lb n="30"/>gebieth disen geringen uffschlag abzuefahren vermei-
-<lb n="31"/>nen möchte, angesetzt haben, Allß ist auch dero aller-
-<lb n="32"/>gnädigiste meinung niemahlen gewesen, undt noch
-<lb n="33"/>nicht, denen vor angezognen zwischen einem Hoch-
-<lb n="34"/>loblichisten Ertzhauß <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Österreich</placeName> unnd den herren <orgName ref="stadtasg-actors-534" cert="medium" resp="#ner">Eÿd-
-<lb n="35"/>gnossen</orgName> habenden Ewigen Erbverbündtnußen daß ge-
-<lb n="36"/>ringste zuederogieren oder entgegen zehandlen, kan
-<lb n="37"/>oder mag auch diser Extra ordinari Auffschlag inillen
-<lb n="38"/>zue dero abbruch oder nachtheil nimmermehr ver-
-<lb n="39"/>standen unnd ußgedeütet werden, die herren da-
-<lb n="40"/>beÿ freünd nachbaurlich pitende, сиntelden Ihre Ver-
-<lb n="41"/>wandte, unnd Kauffleüth dahin anzueweisen, dise gebühr
-<lb n="42"/>iedesmahlß ohnweigerlich guetwillig zueentrichten und
+<lb n="20"/>zeit, unnd <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">etwo</unclear> <unclear cert="low" resp="#joint">ins</unclear> künfftig ein <unclear cert="low" resp="#joint">allgemeiner</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">teütscher</unclear> <unclear cert="low" resp="#joint">Reichsfriden</unclear> <unclear cert="low" resp="#joint">möchte</unclear> <unclear cert="low" resp="#joint">getrofen</unclear>,
+<lb n="22"/><unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">andere</unclear> disposition mit allheiger garnison
+<lb n="23"/>gemacht werden, <unclear cert="low" resp="#joint">dergestalt</unclear> <unclear cert="low" resp="#joint">vor</unclear> allen <unclear cert="low" resp="#joint">Kauff</unclear>- <unclear cert="low" resp="#joint">a</unclear>-
+<lb n="24"/><unclear cert="low" resp="#joint">mantschafften</unclear>, <unclear cert="low" resp="#joint">handlen</unclear> und <unclear cert="low" resp="#joint">wein</unclear> ohne <unclear cert="low" resp="#joint">under</unclear>-
+<lb n="25"/><unclear cert="low" resp="#joint">schid</unclear> <unclear cert="low" resp="#joint">zueerheben</unclear>, <unclear cert="low" resp="#joint">Iedoch</unclear> <unclear cert="low" resp="#joint">nicht</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">Ertzhertzog</unclear> zue
+<lb n="26"/><placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Österreich</unclear></placeName>, <unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">Römischer</unclear> <unclear cert="low" resp="#joint">Keiser</unclear>, <unclear cert="low" resp="#joint">unndt</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">daher</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">dem</unclear> <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Heÿl</unclear>. <unclear cert="low" resp="#joint">Römischen</unclear> <unclear cert="low" resp="#joint">Reich</unclear></orgName> <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">mitel</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">zuegehörigen</unclear> <unclear cert="low" resp="#joint">Statt</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">wo</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">etwa</unclear> diser <unclear cert="low" resp="#joint">orthen</unclear> <unclear cert="low" resp="#joint">an</unclear>-
+<lb n="29"/><unclear cert="low" resp="#joint">stet</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Heÿl</unclear>. <unclear cert="low" resp="#joint">Reichs</unclear> <unclear cert="low" resp="#joint">iurisdiction</unclear> unnd
+<lb n="30"/><unclear cert="low" resp="#joint">gebieth</unclear> <unclear cert="low" resp="#joint">disen</unclear> <unclear cert="low" resp="#joint">geringen</unclear> <unclear cert="low" resp="#joint">uffschlag</unclear> <unclear cert="low" resp="#joint">abzuefahren</unclear> <unclear cert="low" resp="#joint">vermei</unclear>-
+<lb n="31"/><unclear cert="low" resp="#joint">nen</unclear> <unclear cert="low" resp="#joint">möchte</unclear>, <unclear cert="low" resp="#joint">angesetzt</unclear> <unclear cert="low" resp="#joint">haben</unclear>, <unclear cert="low" resp="#joint">Allß</unclear> <unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">aller</unclear>-
+<lb n="32"/><unclear cert="low" resp="#joint">gnädigiste</unclear> <unclear cert="low" resp="#joint">meinung</unclear> <unclear cert="low" resp="#joint">niemahlen</unclear> <unclear cert="low" resp="#joint">gewesen</unclear>, <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">noch</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">nicht</unclear>, <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">angezognen</unclear> <unclear cert="low" resp="#joint">zwischen</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">Hoch</unclear>-
+<lb n="34"/><unclear cert="low" resp="#joint">loblichisten</unclear> <unclear cert="low" resp="#joint">Ertzhauß</unclear> <placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Österreich</unclear></placeName> <unclear cert="low" resp="#joint">unnd</unclear> den herren <orgName ref="stadtasg-actors-534" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eÿd</unclear>-
+<lb n="35"/><unclear cert="low" resp="#joint">gnossen</unclear></orgName> <unclear cert="low" resp="#joint">habenden</unclear> <unclear cert="low" resp="#joint">Ewigen</unclear> <unclear cert="low" resp="#joint">Erbverbündtnußen</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">ringste</unclear> <unclear cert="low" resp="#joint">zuederogieren</unclear> <unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">entgegen</unclear> <unclear cert="low" resp="#joint">zehandlen</unclear>, <unclear cert="low" resp="#joint">kan</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">mag</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">Extra</unclear> <unclear cert="low" resp="#joint">ordinari</unclear> <unclear cert="low" resp="#joint">Auffschlag</unclear> <unclear cert="low" resp="#joint">inillen</unclear>
+<lb n="38"/>zue <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">abbruch</unclear> <unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">nachtheil</unclear> <unclear cert="low" resp="#joint">nimmermehr</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">standen</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">ußgedeütet</unclear> <unclear cert="low" resp="#joint">werden</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">da</unclear>-
+<lb n="40"/><unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">freünd</unclear> <unclear cert="low" resp="#joint">nachbaurlich</unclear> <unclear cert="low" resp="#joint">pitende</unclear>, <unclear cert="low" resp="#joint">сиntelden</unclear> <unclear cert="low" resp="#joint">Ihre</unclear> <unclear cert="low" resp="#joint">Ver</unclear>-
+<lb n="41"/><unclear cert="low" resp="#joint">wandte</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Kauffleüth</unclear> <unclear cert="low" resp="#joint">dahin</unclear> <unclear cert="low" resp="#joint">anzueweisen</unclear>, <unclear cert="low" resp="#joint">dise</unclear> <unclear cert="low" resp="#joint">gebühr</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">iedesmahlß</unclear> <unclear cert="low" resp="#joint">ohnweigerlich</unclear> <unclear cert="low" resp="#joint">guetwillig</unclear> <unclear cert="low" resp="#joint">zueentrichten</unclear> und
 <pb facs="StadtASG_Missive_3251_12882.jpg" n="2"/>
 <lb n="43"/>sich zugleich zuversichern, worinnen ihnen ich sonsten
 <lb n="44"/>angenaeme freundschafft unnd befurdernus ihrer
@@ -91,13 +92,13 @@
 <pb facs="StadtASG_Missive_3251_12883.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3251_12884.jpg" n="4"/>
 <lb n="54"/>Den edlen, vesten, hochgelehrten,
-<lb n="55"/>ehrenvesten, fuersichtigen,
-<lb n="56"/>ehrsamen, unndt weisen herren
+<lb n="55"/><unclear cert="low" resp="#joint">ehrenvesten</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>,
+<lb n="56"/><unclear cert="low" resp="#joint">ehrsamen</unclear>, <unclear cert="low" resp="#joint">unndt</unclear> weisen herren
 <lb n="57"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaistern unnd Rath
 <lb n="58"/>der statt Sct. Gallen</orgName>, meinen
 <lb n="59"/>insonders guenstigen herren
-<lb n="60"/>unndt freunden.
-<lb n="61"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="60"/><unclear cert="low" resp="#joint">unndt</unclear> <unclear cert="low" resp="#joint">freunden</unclear>.
+<lb n="61"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

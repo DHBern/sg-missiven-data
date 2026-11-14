@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3304</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Radolfzell bitten Bürgermeister und Rat zu St. Gallen, ihre Bürger Conrad Hoffmann und Hans Georg Spengler anzuweisen, dem Radolfzeller Metzger Michael Schorndorfer die ausstehenden 20 Dukat samt Kosten und Schaden zu bezahlen. Die Schuldner hätten die Zahlung trotz früherer Zusagen verzögert, was Schorndorfer in der aktuellen Krise schwer falle.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Radolfzell bitten Bürgermeister und Rat zu St. Gallen, ihre Bürger Conrad Hoffmann und Hans Georg Spengler anzuweisen, dem Radolfzeller Metzger Michael Schorndorfer die ausstehenden 20 Dukat samt Kosten und Schaden zu bezahlen. Die Schuldner hätten die Zahlung trotz früherer Zusagen verzögert, was Schorndorfer in der aktuellen Krise schwer falle.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Radolfzell ask Burgomaster and Council of St. Gallen to instruct their citizens Conrad Hoffmann and Hans Georg Spengler to pay the Radolfzell butcher Michael Schorndorfer the outstanding 20 ducats plus costs and damages. The debtors had delayed the payment despite earlier promises, which weighed heavily on Schorndorfer in the current crisis.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -84,12 +85,12 @@
 <lb n="47"/>rath daselbsten</orgName>.
 <pb facs="StadtASG_Missive_3304_13107.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3304_13108.jpg" n="4"/>
-<lb n="48"/>Denen Wohledlen, Gestrengen, Ehrenvesten, Fuersichtigen, und
-<lb n="49"/>Wohlweißen Herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Herren Burgermeister, und
-<lb n="50"/>Raht, der Loebl. Statt St. Gallen</orgName>. Unßern
-<lb n="51"/>sonders ggl. lieben Herren
-<lb n="52"/>Und Nachbaren.
-<lb n="53"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="48"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Wohledlen</unclear>, <unclear cert="low" resp="#joint">Gestrengen</unclear>, <unclear cert="low" resp="#joint">Ehrenvesten</unclear>, <unclear cert="low" resp="#joint">Fuersichtigen</unclear>, und
+<lb n="49"/><unclear cert="low" resp="#joint">Wohlweißen</unclear> <unclear cert="low" resp="#joint">Herren</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Herren Burgermeister, und
+<lb n="50"/>Raht, der <unclear cert="low" resp="#joint">Loebl</unclear>. Statt St. Gallen</orgName>. Unßern
+<lb n="51"/><unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">ggl</unclear>. lieben Herren
+<lb n="52"/>Und <unclear cert="low" resp="#joint">Nachbaren</unclear>.
+<lb n="53"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

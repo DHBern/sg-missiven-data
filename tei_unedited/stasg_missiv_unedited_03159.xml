@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3159</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen haben für die notleidenden Kirchen- und Schuldienerschaften samt Witwen und Waisen im Herzogtum Zweibrücken 175 Reichstaler gesteuert. Das Dokument listet die Empfänger in den Ämtern Zweibrücken, Meisenheim, Neustadt und Liechtenberg sowie die zuständige Verteilungskommission auf.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen haben für die notleidenden Kirchen- und Schuldienerschaften samt Witwen und Waisen im Herzogtum Zweibrücken 175 Reichstaler gesteuert. Das Dokument listet die Empfänger in den Ämtern Zweibrücken, Meisenheim, Neustadt und Liechtenberg sowie die zuständige Verteilungskommission auf.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Council of St. Gallen have levied 175 Reichstaler for the distressed church and school services, along with widows and orphans, in the Duchy of Zweibrücken. The document lists the recipients in the offices of Zweibrücken, Meisenheim, Neustadt, and Liechtenberg, as well as the responsible distribution commission.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,7 +36,7 @@
 <p>
 <pb facs="StadtASG_Missive_3159_12493.jpg" n="1"/>
 <lb n="1"/>Catalogus
-<lb n="2"/>sacri verbi ministrorum, ludimoderatorum,
+<lb n="2"/><unclear cert="low" resp="#joint">sacri</unclear> verbi ministrorum, ludimoderatorum,
 <lb n="3"/>nec non viduarum et orphanorum a defunctis
 <lb n="4"/>in Ducatu <placeName resp="#ner">Bipontino</placeName>, relictorum.
 <lb n="5"/>In Praefectura <placeName resp="#ner">Bipontina</placeName>.
@@ -52,9 +53,9 @@
 <lb n="16"/><persName resp="#ner">Joh. Heinrici Gelani</persName> <placeName resp="#ner">Condovicensis</placeName>.
 <lb n="17"/><persName resp="#ner">Nicolai Sartorii</persName> <placeName resp="#ner">Ransbacensis</placeName>.
 <lb n="18"/><persName resp="#ner">Philippi Jegenii</persName> <placeName resp="#ner">Bipontini</placeName>.
-<lb n="19"/><persName resp="#ner">Matthiae Uranii</persName> ludim. <placeName resp="#ner">Bipontini</placeName>.
-<lb n="20"/>Orphani.
-<lb n="21"/><persName resp="#ner">Joh. Curtii</persName> P. <placeName resp="#ner">Winterbacensis</placeName>.
+<lb n="19"/><persName resp="#ner">Matthiae Uranii</persName> ludim. <placeName resp="#ner"><unclear cert="low" resp="#joint">Bipontini</unclear></placeName>.
+<lb n="20"/><unclear cert="low" resp="#joint">Orphani</unclear>.
+<lb n="21"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>. Curtii</persName> P. <placeName resp="#ner">Winterbacensis</placeName>.
 <lb n="22"/>Ludimoderatores
 <lb n="23"/><persName resp="#ner">Johan. Kineth</persName> <placeName resp="#ner">Bipontinus</placeName>
 <lb n="24"/><persName resp="#ner">Johan. Wogsius</persName> <placeName resp="#ner">Hornbacensis</placeName>.
@@ -74,9 +75,9 @@
 <lb n="38"/><persName resp="#ner">Ludovici Baijeri</persName>, <placeName resp="#ner">Esenbacensis</placeName>.
 <lb n="39"/><persName resp="#ner">Joh. Bernhardi Ransvillani</persName>.
 <pb facs="StadtASG_Missive_3159_12494.jpg" n="2"/>
-<lb n="40"/>Orphani
-<lb n="41"/><persName resp="#ner">Joh. Hermanni</persName>, Meysenheimensis.
-<lb n="42"/><persName resp="#ner">Caroli Hanfeldii</persName>, ibidem.
+<lb n="40"/><unclear cert="low" resp="#joint">Orphani</unclear>
+<lb n="41"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>. <unclear cert="low" resp="#joint">Hermanni</unclear></persName>, <unclear cert="low" resp="#joint">Meysenheimensis</unclear>.
+<lb n="42"/><persName resp="#ner"><unclear cert="low" resp="#joint">Caroli</unclear> <unclear cert="low" resp="#joint">Hanfeldii</unclear></persName>, ibidem.
 <lb n="43"/><persName resp="#ner">Conradi Haasii</persName>, Dieffenbacensis.
 <lb n="44"/><persName resp="#ner">Simonis Renneri</persName>, ibidem.
 <lb n="45"/><persName resp="#ner">Joh. Kleinii</persName> Rebornensis.
@@ -152,95 +153,95 @@
 <lb n="114"/>Martinus Faber, Hunspacensis 8.
 <lb n="115"/>Justus Wahlius, Tieffenbacensis 10.
 <pb facs="StadtASG_Missive_3159_12496.jpg" n="4"/>
-<lb n="116"/><persName resp="#ner">Joh. Christian Neuhard</persName>, Rebornensis — 10.
-<lb n="117"/><persName resp="#ner">J. Henricus Curtius</persName>, <placeName resp="#ner">Eschenheimensis</placeName> — 8.
-<lb n="118"/><persName resp="#ner">J. Wilhelmus Wernig</persName>, Duchrodanus — 7.
-<lb n="119"/><persName resp="#ner">Samuel Gravius</persName>, Medardensis — 8.
-<lb n="120"/>Wittiben.
-<lb n="121"/><persName resp="#ner">J. Bernhardi</persName>, Ransvillani — — 2 ½.
+<lb n="116"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>. <unclear cert="low" resp="#joint">Christian</unclear> <unclear cert="low" resp="#joint">Neuhard</unclear></persName>, <unclear cert="low" resp="#joint">Rebornensis</unclear> <unclear cert="low" resp="#joint">—</unclear> 10.
+<lb n="117"/><persName resp="#ner">J. Henricus <unclear cert="low" resp="#joint">Curtius</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Eschenheimensis</unclear></placeName> <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">8</unclear>.
+<lb n="118"/><persName resp="#ner"><unclear cert="low" resp="#joint">J</unclear>. <unclear cert="low" resp="#joint">Wilhelmus</unclear> <unclear cert="low" resp="#joint">Wernig</unclear></persName>, <unclear cert="low" resp="#joint">Duchrodanus</unclear> <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">7</unclear>.
+<lb n="119"/><persName resp="#ner">Samuel Gravius</persName>, Medardensis <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">8</unclear>.
+<lb n="120"/><unclear cert="low" resp="#joint">Wittiben</unclear>.
+<lb n="121"/><persName resp="#ner"><unclear cert="low" resp="#joint">J</unclear>. Bernhardi</persName>, <unclear cert="low" resp="#joint">Ransvillani</unclear> <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">—</unclear> 2 <unclear cert="low" resp="#joint">½</unclear>.
 <lb n="122"/>Waisen.
-<lb n="123"/><persName role="issuer" resp="#ner">Joh. Kleinii</persName>, Rebornensis — 1.
-<lb n="124"/>Schulmeister.
-<lb n="125"/><persName resp="#ner">Christophorus Cramerus</persName> 3 ½
-<lb n="126"/><persName resp="#ner">Abraham Brommius</persName> <placeName resp="#ner">Meisenheimenses</placeName> 3
-<lb n="127"/><persName resp="#ner">J. Adam Faber</persName> 2 ½
-<lb n="128"/><persName resp="#ner">Georgius Boesius</persName> — 3.
-<lb n="129"/><persName resp="#ner">Joh. Leonhard Weidner</persName>, <placeName resp="#ner">Odernheimensis</placeName> — 1 ½
-<lb n="130"/><persName role="issuer" resp="#ner">Joh. New</persName>, Moschellanus — 1 ½
-<lb n="131"/>Im ambt <placeName resp="#ner">Neucastell</placeName>.
-<lb n="132"/><persName role="issuer" resp="#ner">Christophorus Metternach</persName>, Inspector — 10 ½
-<lb n="133"/><persName resp="#ner">Georg: Frider. Suebelius</persName>, Tabernaemontanus — 9
-<lb n="134"/><persName resp="#ner">Barthol. Candidus</persName>, Annavillanus — 0.
-<lb n="135"/><persName role="issuer" resp="#ner">Martinus Manderschied</persName>, <placeName resp="#ner">Windensis</placeName> — 10.
-<lb n="136"/><persName role="issuer" resp="#ner">Daniel Wernig</persName>, <placeName resp="#ner">Wilgartswilensis</placeName> — 6.
-<lb n="137"/><persName role="issuer" resp="#ner">Georg Rothaar</persName>, Francovillanus — 6.
-<lb n="138"/><persName resp="#ner">Adam Molanus</persName>, <placeName resp="#ner">Leinsvillanus</placeName> — 9.
-<lb n="139"/><persName resp="#ner">Wenceslaus Gottfridi</persName>, <placeName resp="#ner">Cleburgensis</placeName> — 9.
-<lb n="140"/><persName role="issuer" resp="#ner">Nicolaus Tiwilen</persName>, Episcopovillanus — 4.
-<lb n="141"/><persName resp="#ner">Justus Barthol. Wogs</persName>, Hambacensis — 6.
-<lb n="142"/><persName role="issuer" resp="#ner">Joh. Beer</persName> Tabernaemontanus — 8.
+<lb n="123"/><persName role="issuer" resp="#ner">Joh. <unclear cert="low" resp="#joint">Kleinii</unclear></persName>, <unclear cert="low" resp="#joint">Rebornensis</unclear> <unclear cert="low" resp="#joint">—</unclear> 1.
+<lb n="124"/><unclear cert="low" resp="#joint">Schulmeister</unclear>.
+<lb n="125"/><persName resp="#ner"><unclear cert="low" resp="#joint">Christophorus</unclear> <unclear cert="low" resp="#joint">Cramerus</unclear></persName> <unclear cert="low" resp="#joint">3</unclear> <unclear cert="low" resp="#joint">½</unclear>
+<lb n="126"/><persName resp="#ner"><unclear cert="low" resp="#joint">Abraham</unclear> <unclear cert="low" resp="#joint">Brommius</unclear></persName> <placeName resp="#ner"><unclear cert="low" resp="#joint">Meisenheimenses</unclear></placeName> <unclear cert="low" resp="#joint">3</unclear>
+<lb n="127"/><persName resp="#ner"><unclear cert="low" resp="#joint">J</unclear>. Adam Faber</persName> 2 ½
+<lb n="128"/><persName resp="#ner">Georgius <unclear cert="low" resp="#joint">Boesius</unclear></persName> <unclear cert="low" resp="#joint">—</unclear> 3.
+<lb n="129"/><persName resp="#ner">Joh. Leonhard Weidner</persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Odernheimensis</unclear></placeName> <unclear cert="low" resp="#joint">—</unclear> 1 ½
+<lb n="130"/><persName role="issuer" resp="#ner">Joh. New</persName>, Moschellanus <unclear cert="low" resp="#joint">—</unclear> 1 ½
+<lb n="131"/>Im ambt <placeName resp="#ner"><unclear cert="low" resp="#joint">Neucastell</unclear></placeName>.
+<lb n="132"/><persName role="issuer" resp="#ner">Christophorus Metternach</persName>, Inspector <unclear cert="low" resp="#joint">—</unclear> 10 <unclear cert="low" resp="#joint">½</unclear>
+<lb n="133"/><persName resp="#ner">Georg: Frider. <unclear cert="low" resp="#joint">Suebelius</unclear></persName>, <unclear cert="low" resp="#joint">Tabernaemontanus</unclear> <unclear cert="low" resp="#joint">—</unclear> 9
+<lb n="134"/><persName resp="#ner">Barthol. Candidus</persName>, <unclear cert="low" resp="#joint">Annavillanus</unclear> <unclear cert="low" resp="#joint">—</unclear> 0.
+<lb n="135"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Martinus</unclear> <unclear cert="low" resp="#joint">Manderschied</unclear></persName>, <placeName resp="#ner">Windensis</placeName> <unclear cert="low" resp="#joint">—</unclear> 10.
+<lb n="136"/><persName role="issuer" resp="#ner">Daniel <unclear cert="low" resp="#joint">Wernig</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Wilgartswilensis</unclear></placeName> <unclear cert="low" resp="#joint">—</unclear> 6.
+<lb n="137"/><persName role="issuer" resp="#ner">Georg Rothaar</persName>, Francovillanus <unclear cert="low" resp="#joint">—</unclear> 6.
+<lb n="138"/><persName resp="#ner">Adam Molanus</persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Leinsvillanus</unclear></placeName> <unclear cert="low" resp="#joint">—</unclear> 9.
+<lb n="139"/><persName resp="#ner">Wenceslaus Gottfridi</persName>, <placeName resp="#ner">Cleburgensis</placeName> <unclear cert="low" resp="#joint">—</unclear> 9.
+<lb n="140"/><persName role="issuer" resp="#ner">Nicolaus <unclear cert="low" resp="#joint">Tiwilen</unclear></persName>, <unclear cert="low" resp="#joint">Episcopovillanus</unclear> <unclear cert="low" resp="#joint">—</unclear> 4.
+<lb n="141"/><persName resp="#ner">Justus Barthol. Wogs</persName>, Hambacensis <unclear cert="low" resp="#joint">—</unclear> 6.
+<lb n="142"/><persName role="issuer" resp="#ner">Joh. Beer</persName> <unclear cert="low" resp="#joint">Tabernaemontanus</unclear> <unclear cert="low" resp="#joint">—</unclear> 8.
 <lb n="143"/>Wittiben.
-<lb n="144"/><persName role="issuer" resp="#ner">Conradi Roderi</persName>, Episcopovillani — 2 ½
-<lb n="145"/><persName resp="#ner">Philippi Monii</persName>, Hundsbacensis — 2 ½
-<lb n="146"/>Schulmeister.
-<lb n="147"/><persName role="issuer" resp="#ner">Christoph. Maier</persName>, <placeName resp="#ner">Cleeburgensis</placeName> — 1 ½.
+<lb n="144"/><persName role="issuer" resp="#ner">Conradi Roderi</persName>, Episcopovillani <unclear cert="low" resp="#joint">—</unclear> 2 ½
+<lb n="145"/><persName resp="#ner">Philippi Monii</persName>, <unclear cert="low" resp="#joint">Hundsbacensis</unclear> <unclear cert="low" resp="#joint">—</unclear> 2 <unclear cert="low" resp="#joint">½</unclear>
+<lb n="146"/><unclear cert="low" resp="#joint">Schulmeister</unclear>.
+<lb n="147"/><persName role="issuer" resp="#ner">Christoph. <unclear cert="low" resp="#joint">Maier</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Cleeburgensis</unclear></placeName> <unclear cert="low" resp="#joint">—</unclear> 1 ½.
 <lb n="148"/>Waisen.
-<lb n="149"/><persName role="issuer" resp="#ner">Joh. Hoffmanni</persName>, Tabernaemontani — 1.
+<lb n="149"/><persName role="issuer" resp="#ner">Joh. <unclear cert="low" resp="#joint">Hoffmanni</unclear></persName>, <unclear cert="low" resp="#joint">Tabernaemontani</unclear> <unclear cert="low" resp="#joint">—</unclear> 1.
 <pb facs="StadtASG_Missive_3159_12497.jpg" n="5"/>
 <lb n="150"/>Im ambt <placeName resp="#ner">Liechtenberg</placeName>.
 <lb n="151"/>d. <persName role="issuer" resp="#ner">Barthol. Geringius</persName>, inspector 7.
-<lb n="152"/>d. <persName role="issuer" resp="#ner">Caspar Hermanni</persName>, <placeName resp="#ner">Hintzvillanus</placeName> 9.
+<lb n="152"/>d. <persName role="issuer" resp="#ner">Caspar <unclear cert="low" resp="#joint">Hermanni</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Hintzvillanus</unclear></placeName> 9.
 <lb n="153"/><persName role="issuer" resp="#ner">Joh. Suevus</persName>, <placeName resp="#ner">Ulmetensis</placeName> 7.
-<lb n="154"/>d. <persName resp="#ner">Philippus Culman</persName>, <placeName resp="#ner">Niderkirchensis</placeName> 7.
+<lb n="154"/>d. <persName resp="#ner">Philippus <unclear cert="low" resp="#joint">Culman</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Niderkirchensis</unclear></placeName> 7.
 <lb n="155"/><placeName resp="#ner">Wittliben</placeName>.
 <lb n="156"/><persName role="issuer" resp="#ner">Joh. Fuemilii</persName>, <placeName resp="#ner">Glanensis</placeName> 2.
-<lb n="157"/><persName role="issuer" resp="#ner">Simonis Metzleri</persName>, <placeName resp="#ner">Ombacensis</placeName> 1
+<lb n="157"/><persName role="issuer" resp="#ner">Simonis <unclear cert="low" resp="#joint">Metzleri</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Ombacensis</unclear></placeName> 1
 <lb n="158"/>Schulmeister.
 <lb n="159"/><persName role="issuer" resp="#ner">Adolph Fischer</persName>, <placeName resp="#ner">Lichtenbergensis</placeName> 1 1/2.
-<lb n="160"/><persName resp="#ner">Marcelli Sutorii</persName>, <placeName resp="#ner">Ulmetensis</placeName> wittib 1/2.
+<lb n="160"/><persName resp="#ner">Marcelli Sutorii</persName>, <placeName resp="#ner">Ulmetensis</placeName> <unclear cert="low" resp="#joint">wittib</unclear> <unclear cert="low" resp="#joint">1/2</unclear>.
 <lb n="161"/>Ex ordine politico ad negotium
 <lb n="162"/>collectarum ordinati distributores
 <lb n="163"/><persName role="issuer" resp="#ner">Balthasar Venator</persName> landt,
-<lb n="164"/>schreiber zu <placeName resp="#ner">Meisenheim</placeName>.
-<lb n="165"/><persName role="issuer" resp="#ner">Hugo Frid. Maurer</persName> statt
-<lb n="166"/>schultheiß zu <placeName resp="#ner">Meisenh.</placeName>
+<lb n="164"/>schreiber zu <placeName resp="#ner"><unclear cert="low" resp="#joint">Meisenheim</unclear></placeName>.
+<lb n="165"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hugo</unclear> <unclear cert="low" resp="#joint">Frid</unclear>. Maurer</persName> statt
+<lb n="166"/><unclear cert="low" resp="#joint">schultheiß</unclear> zu <placeName resp="#ner"><unclear cert="low" resp="#joint">Meisenh</unclear>.</placeName>
 <lb n="167"/>Ex ordine ecclesiastico.
-<lb n="168"/><persName role="issuer" resp="#ner">Johann-Nicolaus Piepurgius</persName> ecclae <placeName resp="#ner">Odenba</placeName>,
-<lb n="169"/>censis minister mpp
-<lb n="170"/><persName resp="#ner">Joh. Wilhelmus Rauschius</persName>, ecclesiae
-<lb n="171"/><placeName resp="#ner">Moschellanae</placeName> minister. mpp.
-<lb n="172"/><persName role="issuer" resp="#ner">Wilhelm Deßloch</persName> ecclesiae
-<lb n="173"/><placeName resp="#ner">Odernheimiensis</placeName> ad <placeName resp="#ner">Glanum</placeName> minister.
+<lb n="168"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Johann-Nicolaus</unclear> <unclear cert="low" resp="#joint">Piepurgius</unclear></persName> <unclear cert="low" resp="#joint">ecclae</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Odenba</unclear></placeName>,
+<lb n="169"/><unclear cert="low" resp="#joint">censis</unclear> minister <unclear cert="low" resp="#joint">mpp</unclear>
+<lb n="170"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>. <unclear cert="low" resp="#joint">Wilhelmus</unclear> <unclear cert="low" resp="#joint">Rauschius</unclear></persName>, <unclear cert="low" resp="#joint">ecclesiae</unclear>
+<lb n="171"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Moschellanae</unclear></placeName> minister. <unclear cert="low" resp="#joint">mpp</unclear>.
+<lb n="172"/><persName role="issuer" resp="#ner">Wilhelm <unclear cert="low" resp="#joint">Deßloch</unclear></persName> <unclear cert="low" resp="#joint">ecclesiae</unclear>
+<lb n="173"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Odernheimiensis</unclear></placeName> ad <placeName resp="#ner">Glanum</placeName> minister.
 <lb n="174"/><persName role="issuer" resp="#ner">Joh: Christianus Neuhard</persName>,
-<lb n="175"/>ecclae <placeName resp="#ner">Rebornensis</placeName> minister mpp.
+<lb n="175"/>ecclae <placeName resp="#ner">Rebornensis</placeName> minister <unclear cert="low" resp="#joint">mpp</unclear>.
 <lb n="176"/><persName role="issuer" resp="#ner">Adolph Langhans</persName> ecclae <placeName resp="#ner">Meysenheim</placeName>:
 <lb n="177"/>minister.
 <pb facs="StadtASG_Missive_3159_12498.jpg" n="6"/>
 <pb facs="StadtASG_Missive_3159_12499.jpg" n="7"/>
 <lb n="178"/>In Praefectura <placeName resp="#ner">Liechtenbergensi</placeName>.
-<lb n="179"/><persName resp="#ner">Christophorus Glaserus</persName>, Capellanus.
-<lb n="180"/><persName resp="#ner">Bartholomaeus Gering</persName>, <placeName resp="#ner">Baumholderanus</placeName>.
-<lb n="181"/><persName resp="#ner">Joh: Christian Neuhardt</persName>, <placeName resp="#ner">Ohmbacensis</placeName>.
-<lb n="182"/><persName resp="#ner">Casparus Hermanni</persName>, <placeName resp="#ner">Hinzvillanus</placeName>.
-<lb n="183"/><persName resp="#ner">Joh: Suevus</persName>, <placeName resp="#ner">Bosenbacensis</placeName>.
+<lb n="179"/><persName resp="#ner">Christophorus <unclear cert="medium" resp="#joint">Glaserus</unclear></persName>, Capellanus.
+<lb n="180"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Bartholomaeus</unclear> Gering</persName>, <placeName resp="#ner">Baumholderanus</placeName>.
+<lb n="181"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Joh</unclear>: Christian <unclear cert="medium" resp="#joint">Neuhardt</unclear></persName>, <placeName resp="#ner"><unclear cert="medium" resp="#joint">Ohmbacensis</unclear></placeName>.
+<lb n="182"/><persName resp="#ner">Casparus <unclear cert="medium" resp="#joint">Hermanni</unclear></persName>, <placeName resp="#ner"><unclear cert="medium" resp="#joint">Hinzvillanus</unclear></placeName>.
+<lb n="183"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Joh</unclear>: <unclear cert="medium" resp="#joint">Suevus</unclear></persName>, <placeName resp="#ner"><unclear cert="medium" resp="#joint">Bosenbacensis</unclear></placeName>.
 <lb n="184"/><persName resp="#ner">Philippus Culmannus</persName> <placeName resp="#ner">Niederkirchensis</placeName>.
-<lb n="185"/>Viduae.
-<lb n="186"/><persName resp="#ner">Christiani Crameri</persName>, <placeName resp="#ner">Cusellani</placeName>.
-<lb n="187"/><persName resp="#ner">Joh: Foenilii</persName> <placeName resp="#ner">Glanensis</placeName>.
-<lb n="188"/><persName resp="#ner">Nicolai Huettleri</persName>, <placeName resp="#ner">Wolffersvilani</placeName>.
-<lb n="189"/><persName resp="#ner">Simonis Metzleri</persName>, <placeName resp="#ner">Ohmbacensis</placeName>.
+<lb n="185"/><unclear cert="medium" resp="#joint">Viduae</unclear>.
+<lb n="186"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Christiani</unclear> <unclear cert="medium" resp="#joint">Crameri</unclear></persName>, <placeName resp="#ner"><unclear cert="medium" resp="#joint">Cusellani</unclear></placeName>.
+<lb n="187"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Joh</unclear>: <unclear cert="medium" resp="#joint">Foenilii</unclear></persName> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Glanensis</unclear></placeName>.
+<lb n="188"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Nicolai</unclear> <unclear cert="medium" resp="#joint">Huettleri</unclear></persName>, <placeName resp="#ner"><unclear cert="medium" resp="#joint">Wolffersvilani</unclear></placeName>.
+<lb n="189"/><persName resp="#ner">Simonis <unclear cert="medium" resp="#joint">Metzleri</unclear></persName>, <placeName resp="#ner"><unclear cert="medium" resp="#joint">Ohmbacensis</unclear></placeName>.
 <lb n="190"/>Ludimoderator.
 <lb n="191"/><persName resp="#ner">Adolphus Fischer</persName>, <placeName resp="#ner">Liechtenbergensis</placeName>:
-<lb n="192"/>Nomine omnium in <placeName resp="#ner">Ducatu
-<lb n="193"/>Bipontino</placeName> Verbi Divini Mi-
-<lb n="194"/>nistrorum
+<lb n="192"/>Nomine omnium in <placeName resp="#ner"><unclear cert="medium" resp="#joint">Ducatu</unclear>
+<lb n="193"/><unclear cert="medium" resp="#joint">Bipontino</unclear></placeName> Verbi Divini Mi-
+<lb n="194"/><unclear cert="medium" resp="#joint">nistrorum</unclear>
 <lb n="195"/>Deputati
-<lb n="196"/><persName resp="#ner">Joh: Wilh: Rausch</persName>, <placeName resp="#ner">P. Mimnbacensis</placeName> mp.
-<lb n="197"/><persName resp="#ner">Adam Greiel</persName>, <placeName resp="#ner">P. Bipontinus</placeName> mp.
-<lb n="198"/><persName resp="#ner">Joh: Nicolaus Diepurgius</persName>, <placeName resp="#ner">P. Odenbacensis</placeName> mp.
-<lb n="199"/><persName resp="#ner">Joh: Christianus Neuhardt</persName>, <placeName resp="#ner">P. Ohmbacensis</placeName> mp.
-<lb n="200"/><persName resp="#ner">Wilhelmus Deßloch</persName> <placeName resp="#ner">P. Odernheimensis</placeName>.
-<lb n="201"/><persName resp="#ner">Adolphus Langhans</persName>, <placeName resp="#ner">P. Meysenheimensis</placeName> mpp.
+<lb n="196"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Joh</unclear>: Wilh: Rausch</persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">P</unclear>. <unclear cert="low" resp="#joint">Mimnbacensis</unclear></placeName> <unclear cert="low" resp="#joint">mp</unclear>.
+<lb n="197"/><persName resp="#ner"><unclear cert="low" resp="#joint">Adam</unclear> <unclear cert="low" resp="#joint">Greiel</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">P</unclear>. <unclear cert="low" resp="#joint">Bipontinus</unclear></placeName> <unclear cert="low" resp="#joint">mp</unclear>.
+<lb n="198"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>: <unclear cert="low" resp="#joint">Nicolaus</unclear> <unclear cert="low" resp="#joint">Diepurgius</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">P</unclear>. Odenbacensis</placeName> <unclear cert="low" resp="#joint">mp</unclear>.
+<lb n="199"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>: Christianus <unclear cert="low" resp="#joint">Neuhardt</unclear></persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">P</unclear>. <unclear cert="low" resp="#joint">Ohmbacensis</unclear></placeName> <unclear cert="low" resp="#joint">mp</unclear>.
+<lb n="200"/><persName resp="#ner"><unclear cert="low" resp="#joint">Wilhelmus</unclear> <unclear cert="low" resp="#joint">Deßloch</unclear></persName> <placeName resp="#ner"><unclear cert="low" resp="#joint">P</unclear>. <unclear cert="low" resp="#joint">Odernheimensis</unclear></placeName>.
+<lb n="201"/><persName resp="#ner">Adolphus Langhans</persName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">P</unclear>. <unclear cert="low" resp="#joint">Meysenheimensis</unclear></placeName> <unclear cert="low" resp="#joint">mpp</unclear>.
 <pb facs="StadtASG_Missive_3159_12500.jpg" n="8"/>
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3207</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich beschweren sich bei Bürgermeister und Rat zu St. Gallen, dass St. Galler Getreidehändler mit städtischen Ausfuhrbewilligungen Getreide nicht für den eigenen Bedarf, sondern über das Meer und anderswohin exportieren. Dies treibe die Preise und störe die ordnungsgemäße Versorgung. Zürich bittet, die Händler anzuweisen, das Getreide im Land zu behalten, und sichert zu, bei Bedarf Getreide zu liefern.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich beschweren sich bei Bürgermeister und Rat zu St. Gallen, dass St. Galler Getreidehändler mit städtischen Ausfuhrbewilligungen Getreide nicht für den eigenen Bedarf, sondern über das Meer und anderswohin exportieren. Dies treibe die Preise und störe die ordnungsgemäße Versorgung. Zürich bittet, die Händler anzuweisen, das Getreide im Land zu behalten, und sichert zu, bei Bedarf Getreide zu liefern.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich complain to Burgomaster and Council of St. Gallen that merchants of St. Gallen, with city export permits, export grain not for their own needs, but over the sea and elsewhere. This drives up prices and disrupts the proper supply. Zürich asks that the merchants be instructed to keep the grain in the country, and assures that it will deliver grain if needed.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,57 +35,57 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3207_12677.jpg" n="1"/>
-<lb n="1"/>Unser fründtlich willig dienst, und was
-<lb n="2"/>wir ehren, liebs und guots vermoegend,
-<lb n="3"/>zuovor, from, fürsichtig, ehrsam wyß,
-<lb n="4"/>innsonders guot fründt, und getrüw
+<lb n="1"/><unclear cert="medium" resp="#joint">Unser</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> willig dienst, und was
+<lb n="2"/>wir ehren, liebs und guots <unclear cert="medium" resp="#joint">vermoegend</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">zuovor</unclear>, <unclear cert="medium" resp="#joint">from</unclear>, fürsichtig, <unclear cert="medium" resp="#joint">ehrsam</unclear> wyß,
+<lb n="4"/>innsonders guot fründt, und <unclear cert="medium" resp="#joint">getrüw</unclear>
 <lb n="5"/>lieb <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>.
-<lb n="6"/>Unß kombt mit nit unbillicher befremd-
-<lb n="7"/>ung glaubwürdig zuovernehmen für,
-<lb n="8"/>wasmaßen etlich üwere kornkaeüffer jezt
-<lb n="9"/>eine zyth anhero sich wuchentlich uff die
-<lb n="10"/>marckt gen <placeName ref="stadtasg-places-46" cert="medium" resp="#ner">Winterthur</placeName>, <placeName ref="stadtasg-places-291" cert="medium" resp="#ner">Elgkeüw</placeName> und
-<lb n="11"/>grad auch alhero uff den unsern begaeben,
-<lb n="12"/>da dann denselbigen uff fürgewißne
-<lb n="13"/>mit üwerer Statt Secret jnsigel bekrefft-
-<lb n="14"/>igte schyn, frucht, so vil sy begehrt, und
-<lb n="15"/>man vermeint zuo der üweren nothurfft
-<lb n="16"/>erforderlich syn, ynzuokaüffen verwill-
-<lb n="17"/>iget worden, welliche frucht aber sy
-<lb n="18"/>nit üch (als die, wie uns wol bewüßt,
-<lb n="19"/>von den gnaden Gottes mit so namb-
-<lb n="20"/>hafftem getreidt vorrath versechen,
-<lb n="21"/>das ir den üweren die begehrende hilffs-
-<lb n="22"/>hand zebieten, nit weniger alß by unß
-<lb n="23"/>und anderen orthen beschechen müßen,
-<lb n="24"/>mehr dann gnuogsame mittel habend)
-<lb n="25"/>sondern solche inn nit geringer anzahl,
-<lb n="26"/>über see und anderßwohin, umb ires
-<lb n="27"/>eigennuzes willen gefüert, ald verschickt
-<lb n="28"/>habind; wyl dann die frücht, wie
-<lb n="29"/>ir unser G. L. E. unschwer zuoermeß-
-<lb n="30"/>en habend, hiedurch nit allein verthürt,
-<lb n="31"/>und derselben kauff gesteigeret, sondern
-<lb n="32"/>auch unsere deßhalber gemachte er-
-<lb n="33"/>sprießliche ordnung zerrüttet, unnd
-<lb n="34"/>deßwägen unß und den unseren durch
-<lb n="35"/>derglychen unzimende ding allerhand
+<lb n="6"/><unclear cert="medium" resp="#joint">Unß</unclear> <unclear cert="medium" resp="#joint">kombt</unclear> mit nit <unclear cert="medium" resp="#joint">unbillicher</unclear> <unclear cert="medium" resp="#joint">befremd</unclear>-
+<lb n="7"/><unclear cert="medium" resp="#joint">ung</unclear> <unclear cert="medium" resp="#joint">glaubwürdig</unclear> <unclear cert="medium" resp="#joint">zuovernehmen</unclear> für,
+<lb n="8"/><unclear cert="medium" resp="#joint">wasmaßen</unclear> <unclear cert="medium" resp="#joint">etlich</unclear> <unclear cert="medium" resp="#joint">üwere</unclear> <unclear cert="medium" resp="#joint">kornkaeüffer</unclear> <unclear cert="medium" resp="#joint">jezt</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">eine</unclear> <unclear cert="medium" resp="#joint">zyth</unclear> <unclear cert="medium" resp="#joint">anhero</unclear> sich <unclear cert="medium" resp="#joint">wuchentlich</unclear> uff die
+<lb n="10"/><unclear cert="medium" resp="#joint">marckt</unclear> gen <placeName ref="stadtasg-places-46" cert="medium" resp="#ner">Winterthur</placeName>, <placeName ref="stadtasg-places-291" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Elgkeüw</unclear></placeName> und
+<lb n="11"/><unclear cert="medium" resp="#joint">grad</unclear> <unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">alhero</unclear> uff den unsern <unclear cert="medium" resp="#joint">begaeben</unclear>,
+<lb n="12"/><unclear cert="medium" resp="#joint">da</unclear> dann <unclear cert="medium" resp="#joint">denselbigen</unclear> uff <unclear cert="low" resp="#joint">fürgewißne</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">üwerer</unclear> Statt <unclear cert="low" resp="#joint">Secret</unclear> <unclear cert="low" resp="#joint">jnsigel</unclear> <unclear cert="low" resp="#joint">bekrefft</unclear>-
+<lb n="14"/><unclear cert="low" resp="#joint">igte</unclear> <unclear cert="low" resp="#joint">schyn</unclear>, <unclear cert="low" resp="#joint">frucht</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">vil</unclear> sy begehrt, und
+<lb n="15"/>man <unclear cert="medium" resp="#joint">vermeint</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> der <unclear cert="medium" resp="#joint">üweren</unclear> <unclear cert="medium" resp="#joint">nothurfft</unclear>
+<lb n="16"/>erforderlich <unclear cert="medium" resp="#joint">syn</unclear>, <unclear cert="medium" resp="#joint">ynzuokaüffen</unclear> <unclear cert="medium" resp="#joint">verwill</unclear>-
+<lb n="17"/><unclear cert="medium" resp="#joint">iget</unclear> worden, <unclear cert="low" resp="#joint">welliche</unclear> <unclear cert="low" resp="#joint">frucht</unclear> <unclear cert="low" resp="#joint">aber</unclear> sy
+<lb n="18"/>nit <unclear cert="medium" resp="#joint">üch</unclear> (<unclear cert="medium" resp="#joint">als</unclear> die, wie <unclear cert="medium" resp="#joint">uns</unclear> wol <unclear cert="medium" resp="#joint">bewüßt</unclear>,
+<lb n="19"/>von den gnaden <unclear cert="medium" resp="#joint">Gottes</unclear> mit <unclear cert="medium" resp="#joint">so</unclear> <unclear cert="medium" resp="#joint">namb</unclear>-
+<lb n="20"/><unclear cert="medium" resp="#joint">hafftem</unclear> <unclear cert="medium" resp="#joint">getreidt</unclear> <unclear cert="medium" resp="#joint">vorrath</unclear> <unclear cert="medium" resp="#joint">versechen</unclear>,
+<lb n="21"/><unclear cert="medium" resp="#joint">das</unclear> ir den <unclear cert="medium" resp="#joint">üweren</unclear> <unclear cert="medium" resp="#joint">die</unclear> <unclear cert="medium" resp="#joint">begehrende</unclear> <unclear cert="medium" resp="#joint">hilffs</unclear>-
+<lb n="22"/>hand zebieten, nit <unclear cert="medium" resp="#joint">weniger</unclear> <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">by</unclear> <unclear cert="medium" resp="#joint">unß</unclear>
+<lb n="23"/>und <unclear cert="medium" resp="#joint">anderen</unclear> <unclear cert="medium" resp="#joint">orthen</unclear> beschechen müßen,
+<lb n="24"/><unclear cert="medium" resp="#joint">mehr</unclear> dann <unclear cert="medium" resp="#joint">gnuogsame</unclear> <unclear cert="medium" resp="#joint">mittel</unclear> habend)
+<lb n="25"/><unclear cert="medium" resp="#joint">sondern</unclear> <unclear cert="medium" resp="#joint">solche</unclear> <unclear cert="medium" resp="#joint">inn</unclear> nit <unclear cert="medium" resp="#joint">geringer</unclear> anzahl,
+<lb n="26"/>über <unclear cert="medium" resp="#joint">see</unclear> und <unclear cert="medium" resp="#joint">anderßwohin</unclear>, <unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">ires</unclear>
+<lb n="27"/><unclear cert="medium" resp="#joint">eigennuzes</unclear> <unclear cert="medium" resp="#joint">willen</unclear> <unclear cert="medium" resp="#joint">gefüert</unclear>, <unclear cert="medium" resp="#joint">ald</unclear> <unclear cert="medium" resp="#joint">verschickt</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">habind</unclear>; <unclear cert="medium" resp="#joint">wyl</unclear> dann die frücht, wie
+<lb n="29"/>ir <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">unschwer</unclear> <unclear cert="low" resp="#joint">zuoermeß</unclear>-
+<lb n="30"/><unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">habend</unclear>, <unclear cert="low" resp="#joint">hiedurch</unclear> nit <unclear cert="medium" resp="#joint">allein</unclear> <unclear cert="medium" resp="#joint">verthürt</unclear>,
+<lb n="31"/>und <unclear cert="medium" resp="#joint">derselben</unclear> <unclear cert="medium" resp="#joint">kauff</unclear> <unclear cert="medium" resp="#joint">gesteigeret</unclear>, sondern
+<lb n="32"/>auch <unclear cert="medium" resp="#joint">unsere</unclear> <unclear cert="medium" resp="#joint">deßhalber</unclear> gemachte er-
+<lb n="33"/><unclear cert="medium" resp="#joint">sprießliche</unclear> ordnung <unclear cert="medium" resp="#joint">zerrüttet</unclear>, unnd
+<lb n="34"/><unclear cert="medium" resp="#joint">deßwägen</unclear> <unclear cert="medium" resp="#joint">unß</unclear> und den <unclear cert="medium" resp="#joint">unseren</unclear> <unclear cert="medium" resp="#joint">durch</unclear>
+<lb n="35"/>derglychen <unclear cert="medium" resp="#joint">unzimende</unclear> ding <unclear cert="medium" resp="#joint">allerhand</unclear>
 <pb facs="StadtASG_Missive_3207_12678.jpg" n="2"/>
 <lb n="36"/>beschwerlikeiten erwachsen thůnd, koen-
 <lb n="37"/>en wir keinen umbgang nůmen, üch unser
-<lb n="38"/>G. L. E. eines solchen, wie hiemit be-
-<lb n="39"/>schicht, wolmeinlich zůberichten, und zůglych
-<lb n="40"/>Eidtgnössisch fründtlich zůersůchen, Sij woll-
+<lb n="38"/><unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">eines</unclear> <unclear cert="low" resp="#joint">solchen</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">schicht</unclear>, wolmeinlich zůberichten, und <unclear cert="low" resp="#joint">zůglych</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">Eidtgnössisch</unclear> <unclear cert="low" resp="#joint">fründtlich</unclear> <unclear cert="low" resp="#joint">zůersůchen</unclear>, <unclear cert="low" resp="#joint">Sij</unclear> <unclear cert="low" resp="#joint">woll</unclear>-
 <lb n="41"/>en hierjnnen unuerlengt gebüerendes
 <lb n="42"/>ynsechen thůn, obangeregte ihre kornhend-
 <lb n="43"/>lere fürbaß anheimbsch behalten, und uns,
-<lb n="44"/>zůverhůtung hiruß entstender mehrer
-<lb n="45"/>unglegenheit, und besorgenden grösseren
-<lb n="46"/>schwaels und uffschlags, mit disere vner-
-<lb n="47"/>tragentlichen allgemeinen beschwerdt eidt-
-<lb n="48"/>gnössisch verschonen, welches nun Ir
-<lb n="49"/>unser G. L. E. als wir verhoffend
-<lb n="50"/>in besten vermercken, und keines
+<lb n="44"/><unclear cert="low" resp="#joint">zůverhůtung</unclear> <unclear cert="low" resp="#joint">hiruß</unclear> <unclear cert="low" resp="#joint">entstender</unclear> <unclear cert="low" resp="#joint">mehrer</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">unglegenheit</unclear>, und <unclear cert="low" resp="#joint">besorgenden</unclear> <unclear cert="low" resp="#joint">grösseren</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">schwaels</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">uffschlags</unclear>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">disere</unclear> <unclear cert="low" resp="#joint">vner</unclear>-
+<lb n="47"/><unclear cert="low" resp="#joint">tragentlichen</unclear> <unclear cert="low" resp="#joint">allgemeinen</unclear> <unclear cert="low" resp="#joint">beschwerdt</unclear> <unclear cert="low" resp="#joint">eidt</unclear>-
+<lb n="48"/><unclear cert="low" resp="#joint">gnössisch</unclear> <unclear cert="low" resp="#joint">verschonen</unclear>, <unclear cert="low" resp="#joint">welches</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">Ir</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">verhoffend</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">in</unclear> besten vermercken, und keines
 <lb n="51"/>wägs dahin verstehn werdend, samb
 <lb n="52"/>wir üch oder den üweren den frygen
 <lb n="53"/>feilen kauff ab: oder vorzůhalten bedacht,
@@ -98,9 +99,9 @@
 <lb n="61"/>und der gemeine arme mann hiedurch
 <lb n="62"/>umb so vil weniger gethruck werde,
 <lb n="63"/>Massen dan wir uns erbietend, üch
-<lb n="64"/>unseren G. L. E. jnn all ander weg
-<lb n="65"/>alle beliebende diensts willfehrigkeiten
-<lb n="66"/>zůerzeigen, und daferen die üweren
+<lb n="64"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">jnn</unclear> <unclear cert="low" resp="#joint">all</unclear> <unclear cert="low" resp="#joint">ander</unclear> <unclear cert="low" resp="#joint">weg</unclear>
+<lb n="65"/><unclear cert="low" resp="#joint">alle</unclear> <unclear cert="low" resp="#joint">beliebende</unclear> <unclear cert="low" resp="#joint">diensts</unclear> <unclear cert="low" resp="#joint">willfehrigkeiten</unclear>
+<lb n="66"/><unclear cert="low" resp="#joint">zůerzeigen</unclear>, und <unclear cert="low" resp="#joint">daferen</unclear> die üweren
 <lb n="67"/>zů ihrem nothwendigen gebruch je etwes
 <lb n="68"/>früchten manglen, und solche gehöriger
 <lb n="69"/>orthen, durch ein von oberkeits wägen
@@ -108,24 +109,24 @@
 <lb n="71"/>jnn gewüsser maass und bscheidenheit
 <pb facs="StadtASG_Missive_3207_12679.jpg" n="3"/>
 <lb n="72"/>begährt werden solte, daß wir denselbig-
-<lb n="73"/>en der gebür, und so vil der marckt
+<lb n="73"/>en der gebür, und <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">vil</unclear> der marckt
 <lb n="74"/>und zythen jederwylen erlyden moegen
 <lb n="75"/>und ertragenlich syn wirt, uff fürwyß-
 <lb n="76"/>ung authentischen schyns, gevolgen zelaßen
 <lb n="77"/>uns vorbehalten haben wellend.
 <lb n="78"/>Die wir hiemit sambt uns der gethrüw-
 <lb n="79"/>en obhalt Gottes wol empfelchend. Dat.
-<lb n="80"/><origDate when="1636-10-06" resp="#ner">den 6 ten octobris. a°. 1636.</origDate>
+<lb n="80"/><origDate when="1636-10-06" resp="#ner">den <unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">ten</unclear> octobris. a°. 1636.</origDate>
 <lb n="81"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="82"/>der stadt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3207_12680.jpg" n="4"/>
 <lb n="83"/>Den frommen, fürsichtigen,
 <lb n="84"/>ehrsamen, wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burg-
 <lb n="85"/>ermeister unnd Rath der
-<lb n="86"/>Statt St. Gallen</orgName>, unser-
-<lb n="87"/>en innsonders guoten
-<lb n="88"/>fründen unnd gethrüw-
-<lb n="89"/>en lieben Eydtgnoßßen.
+<lb n="86"/>Statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">unser</unclear>-
+<lb n="87"/><unclear cert="low" resp="#joint">en</unclear> innsonders guoten
+<lb n="88"/>fründen unnd <unclear cert="low" resp="#joint">gethrüw</unclear>-
+<lb n="89"/><unclear cert="low" resp="#joint">en</unclear> lieben Eydtgnoßßen.
 </p>
         </body>
     </text>

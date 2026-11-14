@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3459</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johann Ritter, Stadtammann zu Altstätten, informiert Bürgermeister zu St. Gallen über den Weinlauf, der am 1. November in Altstätten eröffnet werden soll. Er bittet um die Teilnahme von St. Galler Vertretern, um gemeinsam einen Beschluss zu fassen. Ritter verweist auf frühere Formen der Zusammenarbeit und empfiehlt sich der Nachbarschaft.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johann Ritter, Stadtammann zu Altstätten, informiert Bürgermeister zu St. Gallen über den Weinlauf, der am 1. November in Altstätten eröffnet werden soll. Er bittet um die Teilnahme von St. Galler Vertretern, um gemeinsam einen Beschluss zu fassen. Ritter verweist auf frühere Formen der Zusammenarbeit und empfiehlt sich der Nachbarschaft.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johann Ritter, Ammann of Altstätten, informs the Burgomaster of St. Gallen about the wine run, which is to be opened in Altstätten on 1 November. He asks for the participation of representatives of St. Gallen in order to jointly make a decision. Ritter refers to earlier forms of cooperation and recommends himself to the neighborhood.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,32 +37,32 @@
 <pb facs="StadtASG_Missive_3459_13771.jpg" n="1"/>
 <lb n="1"/>Edler. Vester. Ehervester, fürsichtiger wollwiser
 <lb n="2"/>Junckher, Burgermeister, dem sigennd min nach
-<lb n="3"/>parlich willige dinst, unnd gruoß jeder zeit gneigt
-<lb n="4"/>bevoran etc.
-<lb n="5"/>Zuo brichten E. E. w. ich nit underlaßen können,
-<lb n="6"/>wegen bewüßten unsers weinlauffs, o verßeinen
-<lb n="7"/>zinstag, wir deßwegen Jnn <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
-<lb n="8"/>bisamen gwesen, aber vorhabenden weinlauff,
+<lb n="3"/>parlich <unclear cert="low" resp="#joint">willige</unclear> <unclear cert="low" resp="#joint">dinst</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">gruoß</unclear> <unclear cert="low" resp="#joint">jeder</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">gneigt</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">bevoran</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">Zuo</unclear> <unclear cert="low" resp="#joint">brichten</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">w</unclear>. ich nit underlaßen können,
+<lb n="6"/>wegen bewüßten unsers <unclear cert="low" resp="#joint">weinlauffs</unclear>, <unclear cert="low" resp="#joint">o</unclear> <unclear cert="low" resp="#joint">verßeinen</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">zinstag</unclear>, <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">Jnn</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
+<lb n="8"/><unclear cert="low" resp="#joint">bisamen</unclear> <unclear cert="low" resp="#joint">gwesen</unclear>, aber vorhabenden weinlauff,
 <lb n="9"/>dero halben nit gfellen, dieweillen, wir unser
-<lb n="10"/>gmeinden anbringen, den weinbelißern zuover stehn geben,
-<lb n="11"/>diewillen deß aßtzinßwegen, huer zuo jahr an
+<lb n="10"/><unclear cert="low" resp="#joint">gmeinden</unclear> anbringen, den weinbelißern zuover stehn geben,
+<lb n="11"/>diewillen deß <unclear cert="low" resp="#joint">aßtzinßwegen</unclear>, <unclear cert="low" resp="#joint">huer</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">jahr</unclear> an
 <lb n="12"/>unß <placeName ref="stadtasg-places-11" cert="medium" resp="#ner">Altstetter</placeName> zuo thuen kompt, so hwe einen rath
 <lb n="13"/>ein man bi unß verordnet, welcher uf künftigen
 <lb n="14"/><date resp="#ner">fritag, daß jst den Ersten tag novemb Nüwen
-<lb n="15"/>kallenders</date>, solle den weinlauff, <placeName ref="stadtasg-places-11" cert="medium" resp="#ner">Altstetter</placeName>, mitrüti
-<lb n="16"/>dero daselbsten zuoeröffnen, wann dann E. E. w.
+<lb n="15"/>kallenders</date>, solle den <unclear cert="low" resp="#joint">weinlauff</unclear>, <placeName ref="stadtasg-places-11" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Altstetter</unclear></placeName>, <unclear cert="low" resp="#joint">mitrüti</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">daselbsten</unclear> <unclear cert="low" resp="#joint">zuoeröffnen</unclear>, wann dann E. E. w.
 <lb n="17"/>belieben oder gsinnet, von den Jhrigen, auch solchen
 <lb n="18"/>diß obgedachten tags, bi zewohnen, entlichen entschluß
 <lb n="19"/>selbst zuovernemen, wißte unß brüchlich, nach Jhren
 <lb n="20"/>gfallen zuoerscheinen, doch umb eben unß wilkummen
 <lb n="21"/>gwesen, uf andern vor disem her gbrachten formen,
-<lb n="22"/>zuo entschlißen so offt brucht worden, jdoch gstaltten
-<lb n="23"/>weßen müglich gwesen, nebet dem unser nach-
-<lb n="24"/>parliche thruiw gng Jhnen zuo erzeigen, sind wir
-<lb n="25"/>allzeit urbitig gneigt, Jnn guoten sy unß on-
-<lb n="26"/>zwiffels unß zuo khrwen laßen, sambtlich, allersig
-<lb n="27"/>den gnaden Gottes wohl empfellende, datum
-<lb n="28"/><origPlace ref="stadtasg-places-11" cert="medium" resp="#ner">Altstetten</origPlace> <origDate when="1621" resp="#ner">den 21 tag octobris, 1621</origDate>.
+<lb n="22"/>zuo entschlißen so <unclear cert="low" resp="#joint">offt</unclear> <unclear cert="low" resp="#joint">brucht</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">jdoch</unclear> <unclear cert="low" resp="#joint">gstaltten</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">weßen</unclear> <unclear cert="low" resp="#joint">müglich</unclear> <unclear cert="low" resp="#joint">gwesen</unclear>, <unclear cert="low" resp="#joint">nebet</unclear> dem unser nach-
+<lb n="24"/>parliche thruiw gng Jhnen zuo erzeigen, <unclear cert="low" resp="#joint">sind</unclear> <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">allzeit</unclear> <unclear cert="low" resp="#joint">urbitig</unclear> <unclear cert="low" resp="#joint">gneigt</unclear>, <unclear cert="low" resp="#joint">Jnn</unclear> <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">sy</unclear> unß <unclear cert="low" resp="#joint">on</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">zwiffels</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">khrwen</unclear> <unclear cert="low" resp="#joint">laßen</unclear>, <unclear cert="low" resp="#joint">sambtlich</unclear>, <unclear cert="low" resp="#joint">allersig</unclear>
+<lb n="27"/>den gnaden Gottes wohl <unclear cert="low" resp="#joint">empfellende</unclear>, <unclear cert="low" resp="#joint">datum</unclear>
+<lb n="28"/><origPlace ref="stadtasg-places-11" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Altstetten</unclear></origPlace> <origDate when="1621" resp="#ner">den 21 tag octobris, 1621</origDate>.
 <lb n="29"/>E. E. w. dw.
 <lb n="30"/><persName role="issuer" resp="#ner">Joß Ritter</persName> stattamman
 <pb facs="StadtASG_Missive_3459_13772.jpg" n="2"/>
@@ -69,10 +70,10 @@
 <pb facs="StadtASG_Missive_3459_13774.jpg" n="4"/>
 <lb n="31"/>Dem Edlen, vesten, hoch und wolgelehrten
 <lb n="32"/>hauhsen <persName role="recipient" resp="#ner">D. Speueninger</persName>, doctorn der
-<lb n="33"/>Artzneii, Ambts Burgermeister der lob.
-<lb n="34"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Statt St. Gallen</orgName>, meinem hochgeehrten
-<lb n="35"/>guenstig. Eeheren,
-<lb n="36"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St Gallen</placeName>
+<lb n="33"/><unclear cert="low" resp="#joint">Artzneii</unclear>, <unclear cert="low" resp="#joint">Ambts</unclear> <unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">lob</unclear>.
+<lb n="34"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">meinem</unclear> <unclear cert="low" resp="#joint">hochgeehrten</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">guenstig</unclear>. <unclear cert="low" resp="#joint">Eeheren</unclear>,
+<lb n="36"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

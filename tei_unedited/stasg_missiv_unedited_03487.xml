@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3487</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Stadtschreiber und Rat zu Feldkirch bitten Bürgermeister und Rat zu St. Gallen, die Curatores bonorum des Caspar Schlumpf aufzufordern, die vidimierte Abschrift einer Obligation über 1000 Gulden, die 300 Gulden an Berchtold Köhlen von Sonnenstein zuspricht, herauszugeben. Die St. Galler hätten zuvor erklärt, keine Kenntnis von der Königseggischen Verschreibung zu haben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Stadtschreiber und Rat zu Feldkirch bitten Bürgermeister und Rat zu St. Gallen, die Curatores bonorum des Caspar Schlumpf aufzufordern, die vidimierte Abschrift einer Obligation über 1000 Gulden, die 300 Gulden an Berchtold Köhlen von Sonnenstein zuspricht, herauszugeben. Die St. Galler hätten zuvor erklärt, keine Kenntnis von der Königseggischen Verschreibung zu haben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The town clerk and Council of Feldkirch ask the Burgomaster and Council of St. Gallen to request the Curatores bonorum of Caspar Schlumpf to hand over the vidimized copy of an obligation for 1000 gulden, which awards 300 gulden to Berchtold Köhlen von Sonnenstein. The St. Gallen authorities had previously stated that they had no knowledge of the Königseggische deed.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -61,35 +62,35 @@
 <pb facs="StadtASG_Missive_3487_13898.jpg" n="2"/>
 <lb n="25"/>erkundigen, sich offeriert haben, Sintemahlen aber herr <persName resp="#ner">Kuele</persName>
 <lb n="26"/>umb vernere interposition beÿ unnß angesuecht, wir auch
-<lb n="27"/>in seinem billichen petito zue willfahren geneigt, angesehen
-<lb n="28"/>er unnß mit ainem glaubhafften vertragbrieff: de anno:
-<lb n="29"/><date resp="#ner">1593.</date> bescheint, daß ihme die 300. fl. zueständig, in welchem
+<lb n="27"/>in seinem billichen <unclear cert="low" resp="#joint">petito</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">willfahren</unclear> <unclear cert="low" resp="#joint">geneigt</unclear>, <unclear cert="low" resp="#joint">angesehen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">unnß</unclear> mit <unclear cert="low" resp="#joint">ainem</unclear> <unclear cert="low" resp="#joint">glaubhafften</unclear> <unclear cert="low" resp="#joint">vertragbrieff</unclear>: de anno:
+<lb n="29"/><date resp="#ner">1593.</date> bescheint, daß ihme die 300. fl. <unclear cert="low" resp="#joint">zueständig</unclear>, in welchem
 <lb n="30"/>volgende wort inseriert zue finden: Herren <persName resp="#ner">Hansen
 <lb n="31"/>Fuertenbach</persName> burgern unnd deß rhats zue <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>, vierhundert
-<lb n="32"/>guldin unnd <persName resp="#ner">Daniel Schobingern</persName> zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, dreÿhundert
-<lb n="33"/>guldin aigenthumblich zueständig, unnd ann sy :/ alß <persName resp="#ner">Hannß
+<lb n="32"/>guldin unnd <persName resp="#ner">Daniel Schobingern</persName> zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, <unclear cert="low" resp="#joint">dreÿhundert</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">guldin</unclear> <unclear cert="low" resp="#joint">aigenthumblich</unclear> <unclear cert="low" resp="#joint">zueständig</unclear>, unnd <unclear cert="low" resp="#joint">ann</unclear> <unclear cert="low" resp="#joint">sy</unclear> :/ <unclear cert="low" resp="#joint">alß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear>
 <lb n="34"/>Jacob Tellers</persName> burgers zue <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>, unnd deßen ehehausfrawen
-<lb n="35"/><persName resp="#ner">Barbara von Kirchen</persName> zue <placeName resp="#ner">Nüederen</placeName> angesehn, dreÿhundert
-<lb n="36"/>guldin, haubtguet, die durch weÿland unnsern stattamman <persName resp="#ner">Pappus</persName>
-<lb n="37"/>seel. erkhaufft, Inn erbsweÿß alß oft benandts herrn <persName resp="#ner">Kuelen</persName>
-<lb n="38"/>hausfrawen, von ihren eltern, erwachsen unnd komen :/ .
+<lb n="35"/><persName resp="#ner">Barbara von <unclear cert="low" resp="#joint">Kirchen</unclear></persName> <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Nüederen</unclear></placeName> <unclear cert="low" resp="#joint">angesehn</unclear>, <unclear cert="low" resp="#joint">dreÿhundert</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">guldin</unclear>, <unclear cert="low" resp="#joint">haubtguet</unclear>, die <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">weÿland</unclear> <unclear cert="low" resp="#joint">unnsern</unclear> <unclear cert="low" resp="#joint">stattamman</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Pappus</unclear></persName>
+<lb n="37"/><unclear cert="low" resp="#joint">seel</unclear>. <unclear cert="low" resp="#joint">erkhaufft</unclear>, <unclear cert="low" resp="#joint">Inn</unclear> <unclear cert="low" resp="#joint">erbsweÿß</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">oft</unclear> <unclear cert="low" resp="#joint">benandts</unclear> <unclear cert="low" resp="#joint">herrn</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Kuelen</unclear></persName>
+<lb n="38"/><unclear cert="low" resp="#joint">hausfrawen</unclear>, von <unclear cert="low" resp="#joint">ihren</unclear> <unclear cert="low" resp="#joint">eltern</unclear>, <unclear cert="low" resp="#joint">erwachsen</unclear> unnd komen :/ .
 <lb n="39"/>Alß haben beÿ. E. F. V. E. F. W. unnd Gst. wir noch-
-<lb n="40"/>mahlen gütlich anhalten woellen, in hoffnung, sÿe mit ernst,
-<lb n="41"/>so wol den curatoribus bonorum deß <persName resp="#ner">Barthlomehen Schobingern</persName>
+<lb n="40"/>mahlen gütlich anhalten woellen, in <unclear cert="low" resp="#joint">hoffnung</unclear>, <unclear cert="low" resp="#joint">sÿe</unclear> mit <unclear cert="low" resp="#joint">ernst</unclear>,
+<lb n="41"/><unclear cert="low" resp="#joint">so</unclear> wol den curatoribus bonorum deß <persName resp="#ner">Barthlomehen Schobingern</persName>
 <lb n="42"/>verdruß, die communication berürter obligation demandirn
 <lb n="43"/>unnd aufferladen, alßo auch hienacher vidimierter in copia
 <lb n="44"/>ervolgen laßen werd. Den selben in ainen Herrn St. Nachpar-
-<lb n="45"/>liche dienst zueerweÿsen erbiethund. Datum den. <origDate when="1642-03-17" resp="#ner">7. 17. Martÿ
-<lb n="46"/>A°: 1642.</origDate>
+<lb n="45"/>liche dienst zueerweÿsen erbiethund. Datum den. <origDate when="1642-03-17" resp="#ner">7. <unclear cert="low" resp="#joint">17</unclear>. <unclear cert="low" resp="#joint">Martÿ</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">A°</unclear>: <unclear cert="low" resp="#joint">1642</unclear>.</origDate>
 <lb n="47"/><orgName role="issuer" resp="#ner">Stettamman unnd rath
-<lb n="48"/>der statt Veldkhirch</orgName>. Mp.
+<lb n="48"/>der <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">Veldkhirch</unclear></orgName>. <unclear cert="low" resp="#joint">Mp</unclear>.
 <pb facs="StadtASG_Missive_3487_13899.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3487_13900.jpg" n="4"/>
-<lb n="49"/>Denen Edlen, Erenvesten, Wolgelehrten, Fürsichtigen, Ehrsamen,
-<lb n="50"/>unnd Weyßen Herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">N. N. Burgermaisteren unnd Raht zur
-<lb n="51"/>St. Gallen</orgName>, unnßeren ghuonstigen lieben herren, guotten freunden
-<lb n="52"/>unnd Nachpühren.
-<lb n="53"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="49"/><unclear cert="medium" resp="#joint">Denen</unclear> Edlen, <unclear cert="low" resp="#joint">Erenvesten</unclear>, <unclear cert="low" resp="#joint">Wolgelehrten</unclear>, Fürsichtigen, <unclear cert="medium" resp="#joint">Ehrsamen</unclear>,
+<lb n="50"/><unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">Weyßen</unclear> Herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">N</unclear>. <unclear cert="low" resp="#joint">N</unclear>. <unclear cert="low" resp="#joint">Burgermaisteren</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Raht</unclear> <unclear cert="low" resp="#joint">zur</unclear>
+<lb n="51"/>St. Gallen</orgName>, <unclear cert="low" resp="#joint">unnßeren</unclear> <unclear cert="low" resp="#joint">ghuonstigen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">herren</unclear>, <unclear cert="low" resp="#joint">guotten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>
+<lb n="52"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Nachpühren</unclear>.
+<lb n="53"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

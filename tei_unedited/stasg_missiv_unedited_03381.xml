@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3381</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Nördlingen erinnern Bürgermeister und Rat zu St. Gallen an ihr Schreiben vom 20. Januar 1640 betreffend ihren Bürger Gottfried Empen und dessen Schuldner Sebastian Höggern. Da noch keine Antwort erfolgt sei, bitten sie, Höggern die Schuld obrigkeitlich aufzuerlegen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Nördlingen erinnern Bürgermeister und Rat zu St. Gallen an ihr Schreiben vom 20. Januar 1640 betreffend ihren Bürger Gottfried Empen und dessen Schuldner Sebastian Höggern. Da noch keine Antwort erfolgt sei, bitten sie, Höggern die Schuld obrigkeitlich aufzuerlegen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Nördlingen remind Burgomaster and Council of St. Gallen of their letter of 20 January 1640 concerning their citizen Gottfried Empen and his debtor Sebastian Höggern. Since no answer has yet been received, they ask that the debt be imposed on Höggern by authority.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,31 +35,31 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3381_13455.jpg" n="1"/>
-<lb n="1"/>Unnser freündtlich willig diennst zuvor, fürsichtige, ehrsame unnd
-<lb n="2"/>weise, besonnders liebe herrn unnd freünd.
-<lb n="3"/>Wir wöllen gannz in khainen zweifel stellen, dann es werde e. f. w.
-<lb n="4"/>unnser sub dato <date resp="#ner">20. ianuarij dis iahrs</date>, überschikht intercession-
-<lb n="5"/>schreiben, unnsern burgern <persName resp="#ner">Gottfridt Empenn</persName>, unnd seinen debito-
-<lb n="6"/>-rem <persName resp="#ner">Sebastian Höggern</persName> betref. zu recht eingelifert wordten sein.
-<lb n="7"/>Weilen aber bis acto noch khain widerantwordt darauß erfolgt,
-<lb n="8"/>als hat an e. f. w. bej unns ermelter Emp umb dis an-
-<lb n="9"/>-mahnungs schreiben sich unnderthönig angemeldt unnd gebettenn,
-<lb n="10"/>so wir ihme nicht verwaigern, sonndern e. f. w. zugleich dienst-
-<lb n="11"/>freündtlich hiemit ersuchen wöllen, ernandten <persName resp="#ner">Höggern</persName>, die schuldigkhait
-<lb n="12"/>hierinnens obrigkhaitlich zueiniungiern unnd aufzulegen.
-<lb n="13"/>Welches umb e. f. w. wir in dergleichen unnd anndern be-
-<lb n="14"/>-gebenden occasionen hinwiderumb zu beschulden erbötig genaigt
-<lb n="15"/>sein. Datum den <origDate when="1640-03-30" resp="#ner">30. martij anno 1640</origDate>.
-<lb n="16"/><orgName ref="stadtasg-actors-903" cert="medium" role="issuer" resp="#ner">Burgermaister unnd rath
-<lb n="17"/>zue Nördlingen</orgName>.
+<lb n="1"/>Unnser <unclear cert="medium" resp="#joint">freündtlich</unclear> willig diennst zuvor, <unclear cert="low" resp="#joint">fürsichtige</unclear>, <unclear cert="low" resp="#joint">ehrsame</unclear> unnd
+<lb n="2"/><unclear cert="low" resp="#joint">weise</unclear>, <unclear cert="low" resp="#joint">besonnders</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">herrn</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">freünd</unclear>.
+<lb n="3"/>Wir <unclear cert="medium" resp="#joint">wöllen</unclear> <unclear cert="medium" resp="#joint">gannz</unclear> in <unclear cert="medium" resp="#joint">khainen</unclear> <unclear cert="medium" resp="#joint">zweifel</unclear> <unclear cert="medium" resp="#joint">stellen</unclear>, dann es <unclear cert="medium" resp="#joint">werde</unclear> <unclear cert="medium" resp="#joint">e</unclear>. <unclear cert="medium" resp="#joint">f</unclear>. <unclear cert="medium" resp="#joint">w</unclear>.
+<lb n="4"/><unclear cert="medium" resp="#joint">unnser</unclear> sub dato <date resp="#ner">20. <unclear cert="low" resp="#joint">ianuarij</unclear> <unclear cert="low" resp="#joint">dis</unclear> <unclear cert="low" resp="#joint">iahrs</unclear></date>, <unclear cert="low" resp="#joint">überschikht</unclear> <unclear cert="low" resp="#joint">intercession</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">schreiben</unclear>, unnsern <unclear cert="low" resp="#joint">burgern</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Gottfridt</unclear> <unclear cert="low" resp="#joint">Empenn</unclear></persName>, unnd <unclear cert="medium" resp="#joint">seinen</unclear> debito-
+<lb n="6"/>-<unclear cert="low" resp="#joint">rem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Sebastian</unclear> <unclear cert="low" resp="#joint">Höggern</unclear></persName> <unclear cert="low" resp="#joint">betref</unclear>. zu recht <unclear cert="medium" resp="#joint">eingelifert</unclear> <unclear cert="medium" resp="#joint">wordten</unclear> sein.
+<lb n="7"/>Weilen aber bis <unclear cert="medium" resp="#joint">acto</unclear> <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">khain</unclear> <unclear cert="medium" resp="#joint">widerantwordt</unclear> <unclear cert="medium" resp="#joint">darauß</unclear> <unclear cert="medium" resp="#joint">erfolgt</unclear>,
+<lb n="8"/><unclear cert="medium" resp="#joint">als</unclear> hat an <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">w</unclear>. <unclear cert="low" resp="#joint">bej</unclear> unns <unclear cert="low" resp="#joint">ermelter</unclear> <unclear cert="low" resp="#joint">Emp</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">dis</unclear> <unclear cert="low" resp="#joint">an</unclear>-
+<lb n="9"/>-<unclear cert="low" resp="#joint">mahnungs</unclear> <unclear cert="low" resp="#joint">schreiben</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">unnderthönig</unclear> <unclear cert="low" resp="#joint">angemeldt</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">gebettenn</unclear>,
+<lb n="10"/>so wir <unclear cert="medium" resp="#joint">ihme</unclear> nicht <unclear cert="medium" resp="#joint">verwaigern</unclear>, sonndern <unclear cert="medium" resp="#joint">e</unclear>. <unclear cert="medium" resp="#joint">f</unclear>. <unclear cert="medium" resp="#joint">w</unclear>. <unclear cert="medium" resp="#joint">zugleich</unclear> dienst-
+<lb n="11"/><unclear cert="medium" resp="#joint">freündtlich</unclear> hiemit <unclear cert="medium" resp="#joint">ersuchen</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, <unclear cert="medium" resp="#joint">ernandten</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Höggern</unclear></persName>, die <unclear cert="low" resp="#joint">schuldigkhait</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">hierinnens</unclear> <unclear cert="low" resp="#joint">obrigkhaitlich</unclear> <unclear cert="low" resp="#joint">zueiniungiern</unclear> unnd <unclear cert="low" resp="#joint">aufzulegen</unclear>.
+<lb n="13"/>Welches umb <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">w</unclear>. wir in dergleichen unnd anndern be-
+<lb n="14"/>-gebenden occasionen <unclear cert="medium" resp="#joint">hinwiderumb</unclear> zu <unclear cert="medium" resp="#joint">beschulden</unclear> <unclear cert="medium" resp="#joint">erbötig</unclear> genaigt
+<lb n="15"/><unclear cert="medium" resp="#joint">sein</unclear>. Datum den <origDate when="1640-03-30" resp="#ner">30. <unclear cert="medium" resp="#joint">martij</unclear> anno <unclear cert="medium" resp="#joint">1640</unclear></origDate>.
+<lb n="16"/><orgName ref="stadtasg-actors-903" cert="medium" role="issuer" resp="#ner">Burgermaister <unclear cert="medium" resp="#joint">unnd</unclear> rath
+<lb n="17"/>zue <unclear cert="medium" resp="#joint">Nördlingen</unclear></orgName>.
 <pb facs="StadtASG_Missive_3381_13456.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3381_13457.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3381_13458.jpg" n="4"/>
 <lb n="18"/>Denen fuersichtigen, ehrsamen unnd
 <lb n="19"/>weisen herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister unnd rath
 <lb n="20"/>der statt S. Gallen</orgName>, unnßern
-<lb n="21"/>besonnders lieben herrn unnd freunden.
-<lb n="22"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="21"/>besonnders lieben herrn unnd <unclear cert="low" resp="#joint">freunden</unclear>.
+<lb n="22"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

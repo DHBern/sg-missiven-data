@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3539</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich teilen Bürgermeister und Rat zu St. Gallen eine Abschrift eines Schreibens der Hauptleute und Ratssendboten der drei Bünde an die dreizehn Orte und Zugewandten vom Churerischen Bundestag mit. Sie bitten um die Meinung und das Gutachten der St. Galler zu diesem Schreiben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich teilen Bürgermeister und Rat zu St. Gallen eine Abschrift eines Schreibens der Hauptleute und Ratssendboten der drei Bünde an die dreizehn Orte und Zugewandten vom Churerischen Bundestag mit. Sie bitten um die Meinung und das Gutachten der St. Galler zu diesem Schreiben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich communicate to Burgomaster and Council of St. Gallen a copy of a letter from the Captains and Council envoys of the three Bünde to the thirteen cantons and the allied territories from the Chur League Diet. They ask for the opinion and assessment of the St. Gallen regarding this letter.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,31 +35,31 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3539_14117.jpg" n="1"/>
-<lb n="1"/>Unßer früntlich willig dienst, sampt was wir ehren
-<lb n="2"/>liebs und guets vermögend zuvor, fromb, fürsichtig,
-<lb n="3"/>ersam wyß, besonders guet fründ und gethrüw lieb
-<lb n="4"/><orgName resp="#ner">Eidtgnossen</orgName>.
-<lb n="5"/>Demnach unß ein schryben zukomen, von den Hoüpteren
-<lb n="6"/>und Rahtsgsandten gemeiner 3. Pündten uff <placeName ref="stadtasg-places-114" cert="medium" resp="#ner">Churerischen</placeName>
-<lb n="7"/>bytag an sametliche 13. Ohrt und Zugewandte abgahn, hab-
-<lb n="8"/>ent wir nit umbgehn wellen, üch unßern G. L. E.
-<lb n="9"/>deßselben durch byligende abschrifft theilhafft zemachen.
-<lb n="10"/>Erwarten hierüber, zu unßerer fehrnern nachricht, üwer
-<lb n="11"/>unßer G. L. E. meinung und guetachten, und thund
-<lb n="12"/>unß damit sametlichen dem schirm Gottes wolanbefelhen.
-<lb n="13"/>Datt. <origDate when="1643-02-03" resp="#ner">den 3ten February a°. 1643</origDate>.
-<lb n="14"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
+<lb n="1"/><unclear cert="medium" resp="#joint">Unßer</unclear> <unclear cert="medium" resp="#joint">früntlich</unclear> willig dienst, sampt was wir ehren
+<lb n="2"/>liebs und <unclear cert="medium" resp="#joint">guets</unclear> vermögend zuvor, <unclear cert="medium" resp="#joint">fromb</unclear>, fürsichtig,
+<lb n="3"/><unclear cert="medium" resp="#joint">ersam</unclear> wyß, besonders <unclear cert="medium" resp="#joint">guet</unclear> fründ und gethrüw lieb
+<lb n="4"/><orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnossen</unclear></orgName>.
+<lb n="5"/><unclear cert="low" resp="#joint">Demnach</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">schryben</unclear> <unclear cert="low" resp="#joint">zukomen</unclear>, von den <unclear cert="medium" resp="#joint">Hoüpteren</unclear>
+<lb n="6"/>und <unclear cert="medium" resp="#joint">Rahtsgsandten</unclear> <unclear cert="medium" resp="#joint">gemeiner</unclear> 3. <unclear cert="medium" resp="#joint">Pündten</unclear> <unclear cert="medium" resp="#joint">uff</unclear> <placeName ref="stadtasg-places-114" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Churerischen</unclear></placeName>
+<lb n="7"/><unclear cert="medium" resp="#joint">bytag</unclear> an <unclear cert="medium" resp="#joint">sametliche</unclear> 13. <unclear cert="medium" resp="#joint">Ohrt</unclear> und <unclear cert="low" resp="#joint">Zugewandte</unclear> <unclear cert="low" resp="#joint">abgahn</unclear>, hab-
+<lb n="8"/>ent wir nit <unclear cert="medium" resp="#joint">umbgehn</unclear> wellen, üch <unclear cert="low" resp="#joint">unßern</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="9"/><unclear cert="low" resp="#joint">deßselben</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">byligende</unclear> abschrifft <unclear cert="low" resp="#joint">theilhafft</unclear> <unclear cert="low" resp="#joint">zemachen</unclear>.
+<lb n="10"/><unclear cert="low" resp="#joint">Erwarten</unclear> <unclear cert="low" resp="#joint">hierüber</unclear>, <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">unßerer</unclear> <unclear cert="low" resp="#joint">fehrnern</unclear> nachricht, üwer
+<lb n="11"/><unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">meinung</unclear> und <unclear cert="low" resp="#joint">guetachten</unclear>, und <unclear cert="low" resp="#joint">thund</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">unß</unclear> damit <unclear cert="medium" resp="#joint">sametlichen</unclear> <unclear cert="medium" resp="#joint">dem</unclear> schirm Gottes <unclear cert="medium" resp="#joint">wolanbefelhen</unclear>.
+<lb n="13"/><unclear cert="medium" resp="#joint">Datt</unclear>. <origDate when="1643-02-03" resp="#ner">den <unclear cert="medium" resp="#joint">3ten</unclear> <unclear cert="medium" resp="#joint">February</unclear> <unclear cert="medium" resp="#joint">a°</unclear>. 1643</origDate>.
+<lb n="14"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="15"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3539_14118.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3539_14119.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3539_14120.jpg" n="4"/>
-<lb n="16"/>Denen frommen, fürsichtigen,
-<lb n="17"/>ersamen, wüysen
-<lb n="18"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht
+<lb n="16"/><unclear cert="medium" resp="#joint">Denen</unclear> frommen, fürsichtigen,
+<lb n="17"/>ersamen, <unclear cert="medium" resp="#joint">wüysen</unclear>
+<lb n="18"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="19"/>der statt St. Gallen</orgName>,
-<lb n="20"/>unßeren besonders guoten
+<lb n="20"/><unclear cert="low" resp="#joint">unßeren</unclear> besonders <unclear cert="medium" resp="#joint">guoten</unclear>
 <lb n="21"/>fründen und gethrüwen
-<lb n="22"/>lieben Eydtgnossen.
+<lb n="22"/>lieben <unclear cert="medium" resp="#joint">Eydtgnossen</unclear>.
 </p>
         </body>
     </text>

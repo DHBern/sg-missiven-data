@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3297</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Basel bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Georg Beyer, der Buchhändler, anzuweisen, dem Basler Bürger Ludwig König, der Buchhändler, den ausstehenden Betrag von 266 Gulden und 1 Schilling zu bezahlen. König habe bereits viel Geld für die Forderung ausgegeben. Basel bittet um eine schnelle Zahlung, damit König klaglos gestellt werde.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Basel bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Georg Beyer, der Buchhändler, anzuweisen, dem Basler Bürger Ludwig König, der Buchhändler, den ausstehenden Betrag von 266 Gulden und 1 Schilling zu bezahlen. König habe bereits viel Geld für die Forderung ausgegeben. Basel bittet um eine schnelle Zahlung, damit König klaglos gestellt werde.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Basel ask Burgomaster and Council of St. Gallen to instruct their citizen Georg Beyer, the bookseller, to pay the outstanding amount of 266 gulden and 1 schilling to the Basel citizen Ludwig König, the bookseller. König has already spent a lot of money on the claim. Basel asks for a quick payment so that König may be left without complaint.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -62,30 +63,30 @@
 <lb n="26"/>g. l. E. freünd: eüdgnoßisch ersuochen wöllen,
 <lb n="27"/>den ermelten schuldnere von obrigkeitlich
 <pb facs="StadtASG_Missive_3297_13078.jpg" n="2"/>
-<lb n="28"/>tragenden ambts wegen, dahin zuweisen,
-<lb n="29"/>daß der unsrig, vermoeg beschehenen accor-
-<lb n="30"/>direns und versprechens, ohne weiters
-<lb n="31"/>umb und aufzüg, klagloß gemacht, wir
-<lb n="32"/>allerseits ferners beruehwiget werden,
-<lb n="33"/>und er schuldforderer, dieser unser ihme
-<lb n="34"/>zum besten gemeinten intercession, frucht-
-<lb n="35"/>barlich genoßen zuhaben, verspüren moege.
-<lb n="36"/>Wie nun ein solches ahn ihme selbsten der
-<lb n="37"/>billigkeit gemaeß, also seind wir es in
-<lb n="38"/>dergleichen oder andren occurrentijs
-<lb n="39"/>fr. eydgl. zubeschulden erbietig, Goett-
-<lb n="40"/>licher obacht uns hiebey allerseits zum
-<lb n="41"/>treulichsten empfehlendt. <origDate when="1636-06-22" resp="#ner">Den 22. Junij
-<lb n="42"/>1636.</origDate>
+<lb n="28"/>tragenden <unclear cert="medium" resp="#joint">ambts</unclear> wegen, dahin <unclear cert="medium" resp="#joint">zuweisen</unclear>,
+<lb n="29"/><unclear cert="medium" resp="#joint">daß</unclear> der <unclear cert="medium" resp="#joint">unsrig</unclear>, <unclear cert="medium" resp="#joint">vermoeg</unclear> <unclear cert="medium" resp="#joint">beschehenen</unclear> accor-
+<lb n="30"/><unclear cert="medium" resp="#joint">direns</unclear> und <unclear cert="medium" resp="#joint">versprechens</unclear>, <unclear cert="medium" resp="#joint">ohne</unclear> <unclear cert="medium" resp="#joint">weiters</unclear>
+<lb n="31"/>umb und <unclear cert="medium" resp="#joint">aufzüg</unclear>, <unclear cert="medium" resp="#joint">klagloß</unclear> <unclear cert="medium" resp="#joint">gemacht</unclear>, wir
+<lb n="32"/><unclear cert="medium" resp="#joint">allerseits</unclear> <unclear cert="medium" resp="#joint">ferners</unclear> <unclear cert="medium" resp="#joint">beruehwiget</unclear> werden,
+<lb n="33"/>und er <unclear cert="low" resp="#joint">schuldforderer</unclear>, <unclear cert="low" resp="#joint">dieser</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">ihme</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">zum</unclear> <unclear cert="low" resp="#joint">besten</unclear> <unclear cert="low" resp="#joint">gemeinten</unclear> <unclear cert="low" resp="#joint">intercession</unclear>, frucht-
+<lb n="35"/>barlich <unclear cert="low" resp="#joint">genoßen</unclear> <unclear cert="low" resp="#joint">zuhaben</unclear>, <unclear cert="low" resp="#joint">verspüren</unclear> <unclear cert="low" resp="#joint">moege</unclear>.
+<lb n="36"/>Wie <unclear cert="medium" resp="#joint">nun</unclear> <unclear cert="medium" resp="#joint">ein</unclear> solches <unclear cert="medium" resp="#joint">ahn</unclear> <unclear cert="medium" resp="#joint">ihme</unclear> selbsten der
+<lb n="37"/><unclear cert="medium" resp="#joint">billigkeit</unclear> <unclear cert="medium" resp="#joint">gemaeß</unclear>, also <unclear cert="medium" resp="#joint">seind</unclear> wir es in
+<lb n="38"/><unclear cert="medium" resp="#joint">dergleichen</unclear> <unclear cert="medium" resp="#joint">oder</unclear> <unclear cert="medium" resp="#joint">andren</unclear> <unclear cert="medium" resp="#joint">occurrentijs</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">fr</unclear>. <unclear cert="medium" resp="#joint">eydgl</unclear>. <unclear cert="medium" resp="#joint">zubeschulden</unclear> <unclear cert="medium" resp="#joint">erbietig</unclear>, <unclear cert="medium" resp="#joint">Goett</unclear>-
+<lb n="40"/><unclear cert="medium" resp="#joint">licher</unclear> <unclear cert="medium" resp="#joint">obacht</unclear> <unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="medium" resp="#joint">hiebey</unclear> <unclear cert="medium" resp="#joint">allerseits</unclear> zum
+<lb n="41"/><unclear cert="medium" resp="#joint">treulichsten</unclear> <unclear cert="medium" resp="#joint">empfehlendt</unclear>. <origDate when="1636-06-22" resp="#ner"><unclear cert="medium" resp="#joint">Den</unclear> 22. <unclear cert="medium" resp="#joint">Junij</unclear>
+<lb n="42"/><unclear cert="medium" resp="#joint">1636</unclear>.</origDate>
 <lb n="43"/><orgName ref="stadtasg-actors-530" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="44"/>der statt Basel</orgName>.
 <pb facs="StadtASG_Missive_3297_13079.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3297_13080.jpg" n="4"/>
-<lb n="45"/>Denen frommen, fuehrsichtigen
-<lb n="46"/>ehrsammen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht
+<lb n="45"/><unclear cert="medium" resp="#joint">Denen</unclear> frommen, <unclear cert="low" resp="#joint">fuehrsichtigen</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">ehrsammen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="47"/>der Statt St. Gallen</orgName> unsern insonders
-<lb n="48"/>gueten freuendten und getruewen lieben
-<lb n="49"/>eydtgnossen.
+<lb n="48"/><unclear cert="medium" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">freuendten</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">getruewen</unclear> lieben
+<lb n="49"/><unclear cert="medium" resp="#joint">eydtgnossen</unclear>.
 </p>
         </body>
     </text>

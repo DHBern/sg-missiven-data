@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3374</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Hans Heinrich Ritter bester zum Storken bei der Einziehung einer 1625 vor St. Galler Steiger gesprochenen Busse von 96 Franken zu unterstützen. Die Erben des verstorbenen Schuldners Lorenz Begobinger hätten inzwischen Mittel. Zürich bittet, die St. Galler dazu anzuhalten, dem Ritter sein Recht widerfahren zu lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Hans Heinrich Ritter bester zum Storken bei der Einziehung einer 1625 vor St. Galler Steiger gesprochenen Busse von 96 Franken zu unterstützen. Die Erben des verstorbenen Schuldners Lorenz Begobinger hätten inzwischen Mittel. Zürich bittet, die St. Galler dazu anzuhalten, dem Ritter sein Recht widerfahren zu lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to support their citizen Hans Heinrich Ritter bester zum Storken in the collection of a fine of 96 francs pronounced in 1625 before the St. Gallen Steiger. The heirs of the deceased debtor Lorenz Begobinger have in the meantime means. Zürich asks that the St. Gallen parties be compelled to let Ritter have his right.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -41,20 +42,20 @@
 <lb n="5"/>Unß hat unser gethrüwer lieber Burger <persName resp="#ner">Hanß Heinrich
 <lb n="6"/>Ritter Bestzter zum Storkhen</persName> allhie, von mund und ueber
 <lb n="7"/>ein fürgezelts schrifftliches urkhünd, gebürlich eroeffnet,
-<lb n="8"/>waß in lengst verschinenem <date resp="#ner">1625.t Jahre uf den 8.t tag
-<lb n="9"/>deß monats Martij</date> vor <persName resp="#ner">Steiger</persName>, üwern unsern G. L. E.
-<lb n="10"/>dozumahlen Verordneten lieben miträthen und Burgern,
+<lb n="8"/>waß in <unclear cert="low" resp="#joint">lengst</unclear> <unclear cert="low" resp="#joint">verschinenem</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">1625.t</unclear> <unclear cert="low" resp="#joint">Jahre</unclear> uf den 8.t tag
+<lb n="9"/>deß monats Martij</date> vor <persName resp="#ner">Steiger</persName>, üwern <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="10"/><unclear cert="low" resp="#joint">dozumahlen</unclear> <unclear cert="low" resp="#joint">Verordneten</unclear> lieben miträthen und Burgern,
 <lb n="11"/>für ein sprüch ergangen, in einer miß verstendtnuß,
-<lb n="12"/>so sich entzwüschent ihme und den dämaen hl. <persName resp="#ner">Gregorien</persName>
-<lb n="13"/>und <persName resp="#ner">Lorentzen</persName> den Begobingern erhebt, diser spruch nun
-<lb n="14"/>stelt in dem ersten puncten so besagten Hanß Gregorien,
+<lb n="12"/>so sich <unclear cert="low" resp="#joint">entzwüschent</unclear> <unclear cert="low" resp="#joint">ihme</unclear> und den dämaen hl. <persName resp="#ner">Gregorien</persName>
+<lb n="13"/>und <persName resp="#ner"><unclear cert="low" resp="#joint">Lorentzen</unclear></persName> den <unclear cert="low" resp="#joint">Begobingern</unclear> <unclear cert="low" resp="#joint">erhebt</unclear>, <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">spruch</unclear> <unclear cert="low" resp="#joint">nun</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">stelt</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">ersten</unclear> <unclear cert="low" resp="#joint">puncten</unclear> so besagten Hanß Gregorien,
 <lb n="15"/>und in dem dritten so hl. <persName resp="#ner">Esaiam</persName> die Begobingere ge-
 <lb n="16"/>troffen, und auch ihme Ritter selbs, syne rüchtigkeit
 <lb n="17"/>erreicht, waß aber den andren betrifft, krafft welchen der
 <lb n="18"/>hl. <persName resp="#ner">Lorentz Begobinger</persName> ihme Ritter bezalen sollen sechß-
 <lb n="19"/>nüntzig franckhen, stelte es an der execution desselben
-<lb n="20"/>bützhär erwunden, und er es, wyl uf desselben absterb-
-<lb n="21"/>en syn hinderlaßne wittib daß hab und guet alles
+<lb n="20"/>bützhär erwunden, und er es, wyl uf desselben <unclear cert="low" resp="#joint">absterb</unclear>-
+<lb n="21"/><unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">hinderlaßne</unclear> <unclear cert="low" resp="#joint">wittib</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">hab</unclear> und guet alles
 <lb n="22"/>zue ihren handen solle bezogen haben, darby für ein mahl
 <lb n="23"/>wol müessen erwinden lassen. Diewyl man er dann
 <lb n="24"/>an ietzo berichtet, wie daß besagts hl. <persName resp="#ner">Lorentzen</persName> hinder-
@@ -64,22 +65,22 @@
 <lb n="28"/>werdint wollen daß jemandts an ihrem Lieben vatter
 <lb n="29"/>sel. ützt waß verlieren thüge, alß sige er in willen
 <lb n="30"/>solcher syner rechtmessigen anfordrung widerumb
-<lb n="31"/>nach zu setzen, und dhenig pittende, wir ihme darzu
+<lb n="31"/><unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">setzen</unclear>, und dhenig pittende, wir ihme darzu
 <lb n="32"/>oberkheitliche befürderung und hilfs hand pietten wolten,
-<lb n="33"/>wann nun wir obbenants unsers Burgers begehren nit
+<lb n="33"/>wann nun wir obbenants unsers Burgers begehren <unclear cert="low" resp="#joint">nit</unclear>
 <pb facs="StadtASG_Missive_3374_13422.jpg" n="2"/>
-<lb n="34"/>erhoelung syn befinden, So ersuechend uß diesere U. L. E.
-<lb n="35"/>wir hiemit fründt Eydtg. flyßes, Ihr wellind Ihn
-<lb n="36"/>besterckhen, die Uweren des Eberkhats wegen, da-
-<lb n="37"/>hin zehalten, daß sy mchr besagtem dem unseren an
-<lb n="38"/>den diß Ihme vor mengklichen, unnd Ihnnschluend
+<lb n="34"/>erhoelung syn befinden, So <unclear cert="low" resp="#joint">ersuechend</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">diesere</unclear> <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="35"/>wir hiemit fründt Eydtg. flyßes, Ihr wellind <unclear cert="low" resp="#joint">Ihn</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">besterckhen</unclear>, die Uweren des Eberkhats wegen, da-
+<lb n="37"/>hin zehalten, daß sy mchr besagtem dem unseren <unclear cert="low" resp="#joint">an</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">mengklichen</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Ihnnschluend</unclear>
 <lb n="39"/>eines gebührenden Unclagbaren wider schaffind: Gestalt,
 <lb n="40"/>er wie dem nit zwyflend, Ihr hiebÿ der sachen be-
 <lb n="41"/>wandtnuß nach, ohne deß geneigt syn werdind,
 <lb n="42"/>daß sygend wir uf die begebenheit hinwiderumb zu-
 <lb n="43"/>beschulden erbietig, Goettlichen schirm unß sambt-
-<lb n="44"/>lich damit wolbewahrende. Datum den <origDate when="1640" resp="#ner">25. ten Januarij.
-<lb n="45"/>A° 1640</origDate>.
+<lb n="44"/>lich damit wolbewahrende. Datum den <origDate when="1640" resp="#ner">25. <unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">Januarij</unclear>.
+<lb n="45"/><unclear cert="low" resp="#joint">A°</unclear> <unclear cert="low" resp="#joint">1640</unclear></origDate>.
 <lb n="46"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="47"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3374_13423.jpg" n="3"/>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3469</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Stadtammann und Rat zu Feldkirch bitten Bürgermeister und Rat zu St. Gallen, ihrem Baumeister und Rat Bechtold Kuel von Bernstetten zu helfen. Kuel hat Anspruch auf 300 Gulden Zinsen und Kapital von Graf Hugo von Königsegg, der die Hauptobligation bei Caspar Schlaipfer hinterlegt hat. Kuel benötigt ein beglaubtes Vidimus der Obligation, um die Zinsen zu erhalten. Feldkirch bittet St. Gallen, eine beglaubte Abschrift aus der Kanzlei auszufertigen und zu vidimieren.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Stadtammann und Rat zu Feldkirch bitten Bürgermeister und Rat zu St. Gallen, ihrem Baumeister und Rat Bechtold Kuel von Bernstetten zu helfen. Kuel hat Anspruch auf 300 Gulden Zinsen und Kapital von Graf Hugo von Königsegg, der die Hauptobligation bei Caspar Schlaipfer hinterlegt hat. Kuel benötigt ein beglaubtes Vidimus der Obligation, um die Zinsen zu erhalten. Feldkirch bittet St. Gallen, eine beglaubte Abschrift aus der Kanzlei auszufertigen und zu vidimieren.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Ammann and Council of Feldkirch ask Burgomaster and Council of St. Gallen to help their master builder and Council Bechtold Kuel von Bernstetten. Kuel has a claim to 300 gulden in interest and capital from Count Hugo von Königsegg, who has deposited the main obligation with Caspar Schlaipfer. Kuel needs a certified Vidimus of the obligation in order to receive the interest. Feldkirch asks St. Gallen to issue and certify a certified copy from the chancery.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,18 +35,18 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3469_13809.jpg" n="1"/>
-<lb n="1"/>Edel Eren, vest, Fromest, Fürsichtig, Ersame, und weiß,
-<lb n="2"/>Insonnders günstige Liebe herren, guete Freündt: unnd Nach=
+<lb n="1"/><unclear cert="low" resp="#joint">Edel</unclear> <unclear cert="low" resp="#joint">Eren</unclear>, <unclear cert="low" resp="#joint">vest</unclear>, <unclear cert="low" resp="#joint">Fromest</unclear>, <unclear cert="low" resp="#joint">Fürsichtig</unclear>, <unclear cert="low" resp="#joint">Ersame</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weiß</unclear>,
+<lb n="2"/><unclear cert="low" resp="#joint">Insonnders</unclear> <unclear cert="low" resp="#joint">günstige</unclear> <unclear cert="low" resp="#joint">Liebe</unclear> herren, guete Freündt: unnd Nach=
 <lb n="3"/>baurn. denselben seÿen unnsere Freündt: Nachbaurlich willig
 <lb n="4"/>diennst.
 <lb n="5"/>Unß hat der Edel unnd vest, <persName resp="#ner">Bechtold Kuel</persName> von <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Beürn</placeName>=
-<lb n="6"/><placeName resp="#ner">stetten</placeName>, unnser alter Baumeister unnd mitrath nach
-<lb n="7"/>lengß zue erkennen geben, welcher gstaldt, Ihr Gnaeden
-<lb n="8"/>Graff Haüg von <placeName ref="stadtasg-places-278" cert="medium" resp="#ner">Königßegg</placeName>. Im Ahnen stat, herren <persName resp="#ner">Caspar
-<lb n="9"/>Schlaipfer</persName>. E. E. v. F. F. Er. wht. verburgerten. 700. fl
+<lb n="6"/><placeName resp="#ner">stetten</placeName>, unnser alter Baumeister unnd <unclear cert="low" resp="#joint">mitrath</unclear> nach
+<lb n="7"/><unclear cert="low" resp="#joint">lengß</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">erkennen</unclear> geben, welcher <unclear cert="low" resp="#joint">gstaldt</unclear>, <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">Gnaeden</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">Graff</unclear> <unclear cert="low" resp="#joint">Haüg</unclear> <unclear cert="low" resp="#joint">von</unclear> <placeName ref="stadtasg-places-278" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Königßegg</unclear></placeName>. <unclear cert="low" resp="#joint">Im</unclear> <unclear cert="low" resp="#joint">Ahnen</unclear> <unclear cert="low" resp="#joint">stat</unclear>, <unclear cert="low" resp="#joint">herren</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">Schlaipfer</unclear></persName>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Er</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. <unclear cert="low" resp="#joint">verburgerten</unclear>. <unclear cert="low" resp="#joint">700</unclear>. <unclear cert="low" resp="#joint">fl</unclear>
 <lb n="10"/>Capital besagtem herren <persName resp="#ner">Kuelen</persName> aber. 300. fl Capital
 <lb n="11"/>thuet alß beede Posten, 1000. fl auß Zige unnd sorg
-<lb n="12"/>zue zünsen unnd zuezahlen schuldig worden, alles besag
+<lb n="12"/>zue zünsen unnd <unclear cert="low" resp="#joint">zuezahlen</unclear> schuldig worden, alles besag
 <lb n="13"/>unnd Innhalt, einer sonderbarn hürüber uffgerichten
 <lb n="14"/>verschreibung, etc. Wann aber Mergeachten <persName resp="#ner">Kuel</persName>,
 <lb n="15"/>über vülfaltiges Solicitieren biß hero zue keiner zünß=
@@ -53,7 +54,7 @@
 <lb n="17"/>der haübt obligation ein beglaubtes vidimus mit
 <lb n="18"/>sich bringe. Er aber solche haübt obligation gar nit:
 <lb n="19"/>sonnder herr Caspar Schlaipfer (alß welcher den Mehreren
-<lb n="20"/>thail haübt guets zue participieren) beÿ hannden,
+<lb n="20"/>thail haübt guets zue participieren) <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">hannden</unclear>,
 <pb facs="StadtASG_Missive_3469_13810.jpg" n="2"/>
 <lb n="21"/>und wie er Suegele, hinder E. S. Vest. E. F. W. whlt.
 <lb n="22"/>obrigkheütlichem hafft ligen habe, alß hat er Herr <persName resp="#ner">Vael</persName>-
@@ -78,12 +79,12 @@
 <lb n="41"/>der Statt VeldKhirch</orgName>.
 <pb facs="StadtASG_Missive_3469_13811.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3469_13812.jpg" n="4"/>
-<lb n="42"/>Denen edlen, frommen, vesten, fuernemmen, fuersichtigen,
-<lb n="43"/>ehrsamen und weysen, H. H. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und
+<lb n="42"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">edlen</unclear>, frommen, vesten, <unclear cert="low" resp="#joint">fuernemmen</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>,
+<lb n="43"/><unclear cert="low" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weysen</unclear>, <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">H</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="low" resp="#joint">und</unclear>
 <lb n="44"/>Rath der Statt St. Gallen</orgName>. Unseren inßonders
-<lb n="45"/>guenßtigen lieben Herren, guoten freuenden, und
-<lb n="46"/>nachbaurn.
-<lb n="47"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="45"/>guenßtigen lieben Herren, guoten <unclear cert="low" resp="#joint">freuenden</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">nachbaurn</unclear>.
+<lb n="47"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3579</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen antworten auf ein Schreiben vom 12. Januar 1643. Es geht um die Erbfolge eines Leibgedings, das nach dem Tod der Witwe Maria Vorweiler an die nächsten Erben des verstorbenen Jacob Scipels fällt. Schaffhausen erklärt, dass nach ihrem Recht die nächsten Blutsverwandten zur Zeit des Erbfalls berechtigt sind, nicht die nächsten zum Zeitpunkt des Todes der Berechtigten. Sie bitten St. Gallen, ihren Bürgern in dieser Sache wohlwollend zu helfen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen antworten auf ein Schreiben vom 12. Januar 1643. Es geht um die Erbfolge eines Leibgedings, das nach dem Tod der Witwe Maria Vorweiler an die nächsten Erben des verstorbenen Jacob Scipels fällt. Schaffhausen erklärt, dass nach ihrem Recht die nächsten Blutsverwandten zur Zeit des Erbfalls berechtigt sind, nicht die nächsten zum Zeitpunkt des Todes der Berechtigten. Sie bitten St. Gallen, ihren Bürgern in dieser Sache wohlwollend zu helfen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen reply to a letter of 12 January 1643. It concerns the succession to a life annuity, which after the death of the widow Maria Vorweiler falls to the next heirs of the deceased Jacob Scipels. Schaffhausen declares that according to their law, the next blood relatives at the time of the inheritance are entitled, not the next at the time of the death of the entitled person. They ask St. Gallen to help their citizens in this matter with goodwill.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,37 +38,37 @@
 <lb n="1"/>Unser fründtlich willig dienst, sambt was wir ehren, liebs und guets
 <lb n="2"/>vermoegen, zuvor, From, Fürsichtig, Ehrsam, Weiß, besunders guet Fründ
 <lb n="3"/>und getreuw lieb Eydtgnossen.
-<lb n="4"/>Uß euwerm schreiben vom <date resp="#ner">12. t. Januarii</date> nächsthin, haben wir ver-
-<lb n="5"/>nomen, waßmassen ihr unsern Burgern <persName resp="#ner">Hanß Felix Abeggen</persName> Land-
+<lb n="4"/>Uß euwerm schreiben vom <date resp="#ner"><unclear cert="low" resp="#joint">12</unclear>. <unclear cert="low" resp="#joint">t</unclear>. <unclear cert="low" resp="#joint">Januarii</unclear></date> nächsthin, haben wir ver-
+<lb n="5"/>nomen, waßmassen ihr unsern <unclear cert="low" resp="#joint">Burgern</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Felix</unclear> <unclear cert="low" resp="#joint">Abeggen</unclear></persName> Land-
 <lb n="6"/>tragirern und <persName resp="#ner">Heinrichen Voegelin</persName> vischer handtwercks, auch <persName resp="#ner">Hanß Ge-
-<lb n="7"/>oerg Hertogen</persName> und <persName resp="#ner">Jacob Brüderern</persName> Ordinari botten, wegen eines leib-
-<lb n="8"/>gedings, so uff absterben euwer Burgerin <persName resp="#ner">Maria Vorweileren</persName>, wey-
-<lb n="9"/>land <persName resp="#ner">Jacob Scipels</persName> see: hinderlasnen wietib, widerumb hindersich uff
-<lb n="10"/>sein <persName resp="#ner">Scipels</persName> nächste erben gefallen, <date resp="#ner">zinstag den 7. t. diß</date>, in euwer Statt
+<lb n="7"/>oerg Hertogen</persName> und <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Brüderern</unclear></persName> <unclear cert="low" resp="#joint">Ordinari</unclear> <unclear cert="low" resp="#joint">botten</unclear>, wegen eines leib-
+<lb n="8"/>gedings, so uff absterben euwer Burgerin <persName resp="#ner">Maria <unclear cert="low" resp="#joint">Vorweileren</unclear></persName>, <unclear cert="low" resp="#joint">wey</unclear>-
+<lb n="9"/>land <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Scipels</unclear></persName> <unclear cert="low" resp="#joint">see</unclear>: <unclear cert="low" resp="#joint">hinderlasnen</unclear> <unclear cert="low" resp="#joint">wietib</unclear>, widerumb hindersich uff
+<lb n="10"/>sein <persName resp="#ner"><unclear cert="low" resp="#joint">Scipels</unclear></persName> <unclear cert="low" resp="#joint">nächste</unclear> <unclear cert="low" resp="#joint">erben</unclear> <unclear cert="low" resp="#joint">gefallen</unclear>, <date resp="#ner">zinstag den <unclear cert="low" resp="#joint">7</unclear>. <unclear cert="low" resp="#joint">t</unclear>. diß</date>, in euwer Statt
 <lb n="11"/>sich einzufinden, angesetzt und bestimbt, mit fernerem begeren, das
-<lb n="12"/>dieselbige mit schrifftlich besigelten urkunden unsers Statt ErbRech-
-<lb n="13"/>tens, wie in dergleichen fahl leibgedings ghuetter bey uns geerbt
+<lb n="12"/>dieselbige mit schrifftlich besigelten urkunden unsers <unclear cert="low" resp="#joint">Statt</unclear> <unclear cert="low" resp="#joint">ErbRech</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">tens</unclear>, wie in <unclear cert="low" resp="#joint">dergleichen</unclear> <unclear cert="low" resp="#joint">fahl</unclear> <unclear cert="low" resp="#joint">leibgedings</unclear> <unclear cert="low" resp="#joint">ghuetter</unclear> bey uns geerbt
 <lb n="14"/>werdind, verfaßt erschienen thuen. Und nun uff heüto vorbemelte
 <lb n="15"/>unsere Burgere vor uns sich erzaigt, und umb urkundtliche erthai-
 <lb n="16"/>lung unsers StattErbrechtens underthaenigs fleißes gebetten. Haben
 <lb n="17"/>wir daßselbig vor uns genomen, in erwegung gezogen, und souil
 <lb n="18"/>befunden, das bey uns üeblichen Rechtens und herkomens, daß die
 <lb n="19"/>jenige erben, die leybgedings ghuetter erben sollen, für die nächsten
-<lb n="20"/>verbleiben und gehalten werden, welche zu derzeit, alß die persohn von
+<lb n="20"/>verbleiben und gehalten werden, welche zu <unclear cert="low" resp="#joint">derzeit</unclear>, <unclear cert="low" resp="#joint">alß</unclear> die persohn von
 <lb n="21"/>dero nahen das leibgeding komen, mit thod abgangen, die nächsten
 <lb n="22"/>im geblüet gewesen: und nit die jenigen welche die nächste ehrst
 <lb n="23"/>zu der zeit sind, wann die persohn, so das leibgeding genossen, thodes
 <lb n="24"/>verfahren, deßsen seyen, gethonem bricht nach, vormehrbesagte unsere
-<lb n="25"/>Burgere all diß fahls in gleichem gradu der sippschafft verwant.
+<lb n="25"/>Burgere all diß fahls in gleichem gradu der <unclear cert="low" resp="#joint">sippschafft</unclear> <unclear cert="low" resp="#joint">verwant</unclear>.
 <pb facs="StadtASG_Missive_3579_14274.jpg" n="2"/>
-<lb n="26"/>Welches euch unsern B. L. E. wir von der unsern wegen in andt-
+<lb n="26"/>Welches euch unsern <unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wir</unclear> von der unsern wegen in andt-
 <lb n="27"/>wort ohnangefüegt nit lassen, und darbey nochmahln freündteÿdtgnoß-
-<lb n="28"/>sisch aenbietlich ersuchen wollen, ihnen zu dem jenigen, dessen sie al-
-<lb n="29"/>lerseits befüegt sein mögen, gönstig verholffen zusein. Inmassen an
-<lb n="30"/>verfüegung der gebür und billigkeit wir in nichten zweiflen, und
+<lb n="28"/>sisch aenbietlich ersuchen wollen, ihnen zu <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">jenigen</unclear>, <unclear cert="low" resp="#joint">dessen</unclear> sie al-
+<lb n="29"/>lerseits befüegt sein mögen, gönstig verholffen <unclear cert="low" resp="#joint">zusein</unclear>. <unclear cert="low" resp="#joint">Inmassen</unclear> <unclear cert="low" resp="#joint">an</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">verfüegung</unclear> der gebür und billigkeit <unclear cert="low" resp="#joint">wir</unclear> in nichten zweiflen, und
 <lb n="31"/>in zuversicht dessen euch mit allem gueten Eÿdtgnossischem dienst,
-<lb n="32"/>freündtlichen willen wol beÿgethon verbleiben auch zumahln von dem
-<lb n="33"/>allmechtigen allen gedeÿlichen wolstand und glükhselige fridliche zeit
+<lb n="32"/>freündtlichen willen wol <unclear cert="low" resp="#joint">beÿgethon</unclear> <unclear cert="low" resp="#joint">verbleiben</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">zumahln</unclear> von dem
+<lb n="33"/>allmechtigen allen gedeÿlichen wolstand und <unclear cert="low" resp="#joint">glükhselige</unclear> <unclear cert="low" resp="#joint">fridliche</unclear> <unclear cert="low" resp="#joint">zeit</unclear>
 <lb n="34"/>von Eÿdtgnossischem hertzen anwünschen. Datum den <origDate when="1643-02-13" resp="#ner">13. Februarij,
 <lb n="35"/>anno 1643</origDate>.
 <lb n="36"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister und rath

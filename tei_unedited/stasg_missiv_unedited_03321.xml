@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3321</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen über die Beschwerden der St. Galler Bürger Georg Leonhart und Erasmus Zollikofer im Rintal. Sie haben den Landvogt im Rintal sowie die Stadt Luzern über die Vorfälle unterrichtet und bitten St. Gallen, das Schreiben an den Landvogt zu übermitteln. Sie hoffen, dass die St. Galler Bürger ungeschoren bleiben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen über die Beschwerden der St. Galler Bürger Georg Leonhart und Erasmus Zollikofer im Rintal. Sie haben den Landvogt im Rintal sowie die Stadt Luzern über die Vorfälle unterrichtet und bitten St. Gallen, das Schreiben an den Landvogt zu übermitteln. Sie hoffen, dass die St. Galler Bürger ungeschoren bleiben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich inform Burgomaster and Council of St. Gallen about the complaints of the citizens of St. Gallen Georg Leonhart and Erasmus Zollikofer in the Rintal. They have informed the Landvogt in the Rintal as well as the city of Luzern about the incidents and ask St. Gallen to forward the letter to the Landvogt. They hope that the citizens of St. Gallen will remain unharmed.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -65,13 +66,13 @@
 <lb n="28"/>[]
 <pb facs="StadtASG_Missive_3321_13185.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3321_13186.jpg" n="4"/>
-<lb n="29"/>Den fromen fuersichtigen
-<lb n="30"/>ersamen wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="31"/>meister und Rath der
-<lb n="32"/>Statt Sant Gallen</orgName> unse-
-<lb n="33"/>ren insonders guoten
-<lb n="34"/>fruenden und getruewen
-<lb n="35"/>lieben Eydgnoßßen.
+<lb n="29"/>Den <unclear cert="medium" resp="#joint">fromen</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear>
+<lb n="30"/><unclear cert="medium" resp="#joint">ersamen</unclear> wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="31"/>meister und <unclear cert="medium" resp="#joint">Rath</unclear> der
+<lb n="32"/>Statt Sant Gallen</orgName> <unclear cert="low" resp="#joint">unse</unclear>-
+<lb n="33"/><unclear cert="low" resp="#joint">ren</unclear> <unclear cert="low" resp="#joint">insonders</unclear> guoten
+<lb n="34"/><unclear cert="medium" resp="#joint">fruenden</unclear> und <unclear cert="medium" resp="#joint">getruewen</unclear>
+<lb n="35"/>lieben <unclear cert="medium" resp="#joint">Eydgnoßßen</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3502</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat zu Unterwalden informieren Bürgermeister und Rat zu St. Gallen, dass in St. Gallen mehrere Missetäter, darunter drei Unterwaldner, in Haft seien. Sie bitten um Auskunft über Namen und Vergehen sowie um Aufschub der Vollstreckung, um zu prüfen, ob sich jemand der Sache annehmen wolle.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat zu Unterwalden informieren Bürgermeister und Rat zu St. Gallen, dass in St. Gallen mehrere Missetäter, darunter drei Unterwaldner, in Haft seien. Sie bitten um Auskunft über Namen und Vergehen sowie um Aufschub der Vollstreckung, um zu prüfen, ob sich jemand der Sache annehmen wolle.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Landammann and Council of Unterwalden inform Burgomaster and Council of St. Gallen that several offenders, including three from Unterwalden, are in custody in St. Gallen. They ask for information on names and offenses as well as for a postponement of execution, in order to check whether anyone would take up the matter.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,22 +38,22 @@
 <lb n="1"/>Unser freündtlich willig dienst, sambt waß wier ehren liebß und guotz vermögen
 <lb n="2"/>zuo vor fromb fürsichtig ehrsamb wyß insunderß guote freündt, und
 <lb n="3"/>getreüwe liebe Eydtgnossen.
-<lb n="4"/>Demnach unß uff den heütigen tag von besunderbaren ort her, vernehmung
-<lb n="5"/>oder antüttung beschechen, alß solten by üch unseren G L E. etliche malefi=
-<lb n="6"/>canten, und darunder dry von unserem ort in oberkeitlichen banden ver=
+<lb n="4"/>Demnach unß uff den heütigen tag von besunderbaren <unclear cert="low" resp="#joint">ort</unclear> <unclear cert="low" resp="#joint">her</unclear>, <unclear cert="low" resp="#joint">vernehmung</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">antüttung</unclear> <unclear cert="low" resp="#joint">beschechen</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">solten</unclear> <unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">G</unclear> <unclear cert="low" resp="#joint">L</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">etliche</unclear> <unclear cert="low" resp="#joint">malefi=</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">canten</unclear>, und darunder dry von unserem ort in oberkeitlichen banden ver=
 <lb n="7"/>hafft endthalten sin, glichwoll ohne eigentliche specification oder gründtlichen
 <lb n="8"/>bricht, waß namenß oder geschlaechtß die syent, allein einer ein <persName resp="#ner">Hasliman</persName>,
 <lb n="9"/>und die überigen auß den ehrlichen lüten, oder haerkomen her sin sollen,
-<lb n="10"/>habent wier nit umghen mögen, im faal etwaß an der sachen solte sin, üch
-<lb n="11"/>unser G L E. freündt: Eydtgnossischen hiemit anzesuochen und ze pitten unß
+<lb n="10"/>habent wier nit umghen mögen, im faal etwaß an der sachen <unclear cert="low" resp="#joint">solte</unclear> <unclear cert="low" resp="#joint">sin</unclear>, <unclear cert="low" resp="#joint">üch</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear> <unclear cert="low" resp="#joint">L</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">Eydtgnossischen</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">anzesuochen</unclear> und ze pitten unß
 <lb n="12"/>die freündtschafft ze bewyßen und by gegenwertigen härummen gesandten botten
 <lb n="13"/>die bricht zuo komen zlassen, waer und waß namenß die syen, waß fählerß
-<lb n="14"/>sie uff ihnen tragen auch waß gnaden ihrent halben zuo verhoffen sin möchte u
-<lb n="15"/>inzwüschent aber auch wo müglichen mit der execution inzehalten, biß daß
-<lb n="16"/>üch unseren G L E von unß witerer bscheidt zuokomen könte, ob sich ihro
+<lb n="14"/>sie uff ihnen tragen auch <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">gnaden</unclear> <unclear cert="low" resp="#joint">ihrent</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">zuo</unclear> verhoffen <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">möchte</unclear> <unclear cert="low" resp="#joint">u</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">inzwüschent</unclear> <unclear cert="low" resp="#joint">aber</unclear> auch wo müglichen mit der execution inzehalten, biß daß
+<lb n="16"/><unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">G</unclear> <unclear cert="low" resp="#joint">L</unclear> <unclear cert="low" resp="#joint">E</unclear> von unß witerer bscheidt zuokomen könte, ob sich ihro
 <lb n="17"/>vilicht iemandtß waß annehmen wolte oder nit; daß wöllent wier zuo
 <lb n="18"/>besunderbarem Eydtgnossischem gefallenß empfachen und nit ermanglen uff
-<lb n="19"/>begebende occasionen solcheß hinwiderumb zuebeschulden, alß dan wier den
+<lb n="19"/>begebende occasionen <unclear cert="low" resp="#joint">solcheß</unclear> <unclear cert="low" resp="#joint">hinwiderumb</unclear> <unclear cert="low" resp="#joint">zuebeschulden</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">wier</unclear> den
 <lb n="20"/>selbigen zuo bewysung aller ehren lieb und freündtschafft zuo iederzyten
 <lb n="21"/>wollgeneigt verbliben, und thuondt sie damit götlichen obhalt trüwlichen
 <lb n="22"/>befelchen. Datum den <origDate when="1642" resp="#ner">7.ten July a°. 1642</origDate>.
@@ -61,11 +62,11 @@
 <pb facs="StadtASG_Missive_3502_13960.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3502_13961.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3502_13962.jpg" n="4"/>
-<lb n="25"/>Den fromen fuersichtigen ersamen und
-<lb n="26"/>wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der
-<lb n="27"/>Statt St. Gallen</orgName> unsern insonders guoten
-<lb n="28"/>fruenden und getruewen lieben
-<lb n="29"/>Eidtgnoßen.
+<lb n="25"/>Den <unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">ersamen</unclear> und
+<lb n="26"/><unclear cert="medium" resp="#joint">wysen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear> der
+<lb n="27"/>Statt St. Gallen</orgName> <unclear cert="medium" resp="#joint">unsern</unclear> insonders guoten
+<lb n="28"/><unclear cert="low" resp="#joint">fruenden</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">getruewen</unclear> <unclear cert="low" resp="#joint">lieben</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">Eidtgnoßen</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3399</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Landammann und Rat zu Appenzell, dass der Appenzeller Lorenz Rechsteiner einem anberaumten Rechtstag zu St. Gallen nicht gefolgt ist. Der St. Galler Wolfgang Laxen habe sich hingegen gestellt. Es wurde ein neuer Termin für den 18. August 1620 um 9 Uhr im Rathaus angesetzt. Die Appenzeller werden gebeten, Rechsteiner davon zu unterrichten und ihn anzuhalten, sich zu stellen und zum Vorfall Stellung zu nehmen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Landammann und Rat zu Appenzell, dass der Appenzeller Lorenz Rechsteiner einem anberaumten Rechtstag zu St. Gallen nicht gefolgt ist. Der St. Galler Wolfgang Laxen habe sich hingegen gestellt. Es wurde ein neuer Termin für den 18. August 1620 um 9 Uhr im Rathaus angesetzt. Die Appenzeller werden gebeten, Rechsteiner davon zu unterrichten und ihn anzuhalten, sich zu stellen und zum Vorfall Stellung zu nehmen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen inform Landammann and Council of Appenzell that the Appenzeller Lorenz Rechsteiner has not appeared at a scheduled court day in St. Gallen. The St. Gallen Wolfgang Laxen, however, has appeared. A new date has been set for 18 August 1620 at 9 o'clock in the town hall. The Appenzellers are requested to inform Rechsteiner of this and to instruct him to appear and to state his position on the incident.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -71,22 +72,22 @@
 <lb n="35"/>hirauff eüch unser wolvertrawte L. N. nachparen hiemit noch-
 <lb n="36"/>malen freündt-nachparlich, ihr woellend nit,
 <pb facs="StadtASG_Missive_3399_13528.jpg" n="2"/>
-<lb n="37"/>ernannten Nahmen, euweren angehoerigen
-<lb n="38"/>landtman, disern anderwertigen aange=
-<lb n="39"/>stelten rechts tag, nit allein nohmalen ohn=
-<lb n="40"/>wuessendthafft
+<lb n="37"/><unclear cert="low" resp="#joint">ernannten</unclear> <unclear cert="low" resp="#joint">Nahmen</unclear>, <unclear cert="low" resp="#joint">euweren</unclear> <unclear cert="low" resp="#joint">angehoerigen</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">landtman</unclear>, <unclear cert="low" resp="#joint">disern</unclear> <unclear cert="low" resp="#joint">anderwertigen</unclear> <unclear cert="low" resp="#joint">aange=</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">stelten</unclear> <unclear cert="low" resp="#joint">rechts</unclear> tag, nit <unclear cert="low" resp="#joint">allein</unclear> <unclear cert="low" resp="#joint">nohmalen</unclear> <unclear cert="low" resp="#joint">ohn=</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">wuessendthafft</unclear>
 <lb n="41"/>machen,
 <lb n="42"/>auch Ihn
 <lb n="43"/>oberkeitlig dahin halten, dz er sich Mornds ge=
 <lb n="44"/>horsamlich einstellen, und obangeregts In
 <lb n="45"/>unserer Statt begangnen freffels halber ge=
-<lb n="46"/>buerende redt und ant wort gebe. Dz
-<lb n="47"/>sindt wir umb euch unsre wolvertrawte
-<lb n="48"/>liebe nachparen In dergleichen und anderen
+<lb n="46"/>buerende redt und <unclear cert="low" resp="#joint">ant</unclear> <unclear cert="low" resp="#joint">wort</unclear> <unclear cert="low" resp="#joint">gebe</unclear>. <unclear cert="low" resp="#joint">Dz</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">sindt</unclear> wir umb <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">unsre</unclear> <unclear cert="low" resp="#joint">wolvertrawte</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">liebe</unclear> nachparen In <unclear cert="low" resp="#joint">dergleichen</unclear> und anderen
 <lb n="49"/>begebend occasionen hin widerumb zuebe=
 <lb n="50"/>schulden geneigt. Uns hiemit Gottes
-<lb n="51"/>getreuwen protection wolbefehlend.
-<lb n="52"/>Dat. <origDate when="1620" resp="#ner">den 14. t. Augusti. 1620.</origDate>
+<lb n="51"/>getreuwen protection <unclear cert="low" resp="#joint">wolbefehlend</unclear>.
+<lb n="52"/><unclear cert="low" resp="#joint">Dat</unclear>. <origDate when="1620" resp="#ner">den <unclear cert="low" resp="#joint">14</unclear>. <unclear cert="low" resp="#joint">t</unclear>. Augusti. 1620.</origDate>
 <lb n="53"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und raht
 <lb n="54"/>der Statt Sant Gallen</orgName>.
 <lb n="55"/>Den fromen, fuersichtigen,

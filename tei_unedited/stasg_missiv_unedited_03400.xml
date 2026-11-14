@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3400</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Kaiser Ferdinand III. teilt mit, dass er die Beschwerden der Eidgenossen über die Befestigung von Konstanz durch seinen Gesandten Schönau klären ließ. Er schlägt eine Konferenz in Waldshut am 20. September vor, um die alten Freundschafts- und Erbverträge zu wahren und Missverständnisse über österreichische oder spanische Absichten auszuräumen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Kaiser Ferdinand III. teilt mit, dass er die Beschwerden der Eidgenossen über die Befestigung von Konstanz durch seinen Gesandten Schönau klären ließ. Er schlägt eine Konferenz in Waldshut am 20. September vor, um die alten Freundschafts- und Erbverträge zu wahren und Missverständnisse über österreichische oder spanische Absichten auszuräumen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Emperor Ferdinand III. communicates that he had the complaints of the Confederates regarding the fortification of Konstanz by his envoy Schönau clarified. He proposes a conference in Waldshut on 20. September to preserve the old friendship and inheritance treaties and to dispel misunderstandings regarding Austrian or Spanish intentions.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -41,31 +42,31 @@
 <lb n="5"/>Ersame liebe getreue. Wir haben Euere schreiben vom
 <lb n="6"/><date resp="#ner">20st. Martij naechsthin</date> recht empfangen und noch darzumahl
 <lb n="7"/>unserm lieben Gethreuen <persName resp="#ner">Marx Jacoben von Schoenauw</persName>
-<lb n="8"/>bevelch geben, daß Er Euch die ursachen der <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanzischen</placeName> forti=
+<lb n="8"/>bevelch geben, daß Er Euch die <unclear cert="low" resp="#joint">ursachen</unclear> der <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanzischen</placeName> forti=
 <lb n="9"/>fication, dern Ihr Euch beschwerdt befindet, remonstrieren, und
 <lb n="10"/>daß solche allein zu mehrerer versicherung selbigen landts,
 <lb n="11"/>keines wegs aber zu eurer offension gemeint seye, synceriren
 <lb n="12"/>solle, welches Er auch allbereit fuergekert und Ihr ihne darauff
 <lb n="13"/>auff gewiße maaß verbescheidt. In welchem ertheilten und uns
 <lb n="14"/>durch Ihne cōmunicierten bescheid wir undter andrem dises
-<lb n="15"/>ersehen, daß Ihr Euch einer zusamenkunfft und Conferenz
-<lb n="16"/>zu pflegen anerbotten, und solche zu unserer beliebung gestelt
-<lb n="17"/>habendt.
-<lb n="18"/>Wie wir nun iederzeit gegen der gsampten <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoßschafft</orgName>
-<lb n="19"/>das alte vertrauwen, und gueten nachbarlichen verstandt,
-<lb n="20"/>wie zumahl die zwueschendt unserm lobl. hauß, und der
+<lb n="15"/>ersehen, daß Ihr Euch <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">zusamenkunfft</unclear> und <unclear cert="low" resp="#joint">Conferenz</unclear>
+<lb n="16"/>zu <unclear cert="low" resp="#joint">pflegen</unclear> <unclear cert="low" resp="#joint">anerbotten</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">beliebung</unclear> gestelt
+<lb n="17"/><unclear cert="low" resp="#joint">habendt</unclear>.
+<lb n="18"/><unclear cert="low" resp="#joint">Wie</unclear> wir nun iederzeit gegen der gsampten <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoßschafft</orgName>
+<lb n="19"/>das alte vertrauwen, und gueten nachbarlichen <unclear cert="low" resp="#joint">verstandt</unclear>,
+<lb n="20"/><unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">zumahl</unclear> die zwueschendt unserm lobl. hauß, und der
 <lb n="21"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoßschafft</orgName> hievor gemachte erbainigung bestendig zueer=
 <lb n="22"/>halten gedacht gewesen, auch annoch selbige zu conservieren
 <lb n="23"/>und alle etwo im weg ligende obstacula und was denselben
 <lb n="24"/>im geringsten zuwider, verhinderlich oder abbruechig sein mag,
 <lb n="25"/>zu removieren und zuevermitlen ganz wol geneigt sein: Alß
 <lb n="26"/>laßen wir uns auch die durch Euch iezt vorgeschlagne Con=
-<lb n="27"/>ferenz desto mehrers wolgefallen, und hielten hierzu Wald=
+<lb n="27"/>ferenz desto mehrers wolgefallen, und <unclear cert="low" resp="#joint">hielten</unclear> <unclear cert="low" resp="#joint">hierzu</unclear> Wald=
 <lb n="28"/>shueten fuer beiderseiths bequemsten orth, dahin wir auch, da
 <lb n="29"/>Euch derselbig also belieblich were, unsere Cōmissarien uff
 <lb n="30"/>den <date resp="#ner">20st. naechstkomenden monats Septembris</date> abzueschiken
 <lb n="31"/>willens sind, in gnedigstem versehen, daß Ihr ein gleiches thuen,
-<lb n="32"/>und uß euerem mittel ebener maaßen gewiße Persohnen
+<lb n="32"/>und uß <unclear cert="low" resp="#joint">euerem</unclear> <unclear cert="low" resp="#joint">mittel</unclear> <unclear cert="low" resp="#joint">ebener</unclear> <unclear cert="low" resp="#joint">maaßen</unclear> <unclear cert="low" resp="#joint">gewiße</unclear> <unclear cert="low" resp="#joint">Persohnen</unclear>
 <pb facs="StadtASG_Missive_3400_13532.jpg" n="2"/>
 <lb n="33"/>daselbsthin deputiren werdet. Im ubrigen aber, wollet Ihr die
 <lb n="34"/>wegen diser, und der fuergangenen oesterreichischen od spannischen

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3170</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten, dass sie in ihrer Gefangenschaft einen verdächtigen jungen Gesellen namens Jörg Leblerßer von Luchen aus dem Thurgau halten. Dieser sei kürzlich wegen Diebstahls auch in Arbon gefangen gewesen. Sie ersuchen den Statthalter und Rat zu Arbon, ihnen schriftlich mitzuteilen, aus welchen Gründen der Mann dort inhaftiert war und unter welchen Bedingungen er freigelassen wurde, damit sie über das weitere Vorgehen entscheiden können.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten, dass sie in ihrer Gefangenschaft einen verdächtigen jungen Gesellen namens Jörg Leblerßer von Luchen aus dem Thurgau halten. Dieser sei kürzlich wegen Diebstahls auch in Arbon gefangen gewesen. Sie ersuchen den Statthalter und Rat zu Arbon, ihnen schriftlich mitzuteilen, aus welchen Gründen der Mann dort inhaftiert war und unter welchen Bedingungen er freigelassen wurde, damit sie über das weitere Vorgehen entscheiden können.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen report that they are holding in their custody a suspicious young fellow named Jörg Leblerßer von Luchen from the Thurgau. He was recently imprisoned in Arbon as well for theft. They request the Statthalter and Council of Arbon to inform them in writing for what reasons the man was detained there and under what conditions he was released, so that they can decide on further proceedings.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,34 +40,34 @@
 <lb n="3"/>insonders liebe guote Fründ und nachbarn.
 <lb n="4"/>Wir habend in unßer fengenschafft ein ver=
 <lb n="5"/>daechtigen jungen Gsellen, der sich nennt <persName resp="#ner">Joerg
-<lb n="6"/>Leblerßer</persName> von <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Luchen</placeName> auß dem <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgaw</placeName>,
-<lb n="7"/>ein kurtze wolbeßetzte Perßon, bekleidet mit
-<lb n="8"/>einem gellen Wammiß und grawen Hoßen,
-<lb n="9"/>bleich von angesicht, ohne bart, mit einem
-<lb n="10"/>schwartzen langen Haar, an dem rechten aermen
-<lb n="11"/>und handt etwas lamb, von eim empfang.nen
-<lb n="12"/>von einem Stich herruerende, von deme
-<lb n="13"/>ist unß furkomen, alß wenn er unlangsten
+<lb n="6"/>Leblerßer</persName> von <placeName ref="stadtasg-places-69" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Luchen</unclear></placeName> <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">dem</unclear> <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Turgaw</unclear></placeName>,
+<lb n="7"/>ein <unclear cert="low" resp="#joint">kurtze</unclear> <unclear cert="low" resp="#joint">wolbeßetzte</unclear> <unclear cert="low" resp="#joint">Perßon</unclear>, <unclear cert="low" resp="#joint">bekleidet</unclear> mit
+<lb n="8"/>einem <unclear cert="low" resp="#joint">gellen</unclear> <unclear cert="low" resp="#joint">Wammiß</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">grawen</unclear> <unclear cert="low" resp="#joint">Hoßen</unclear>,
+<lb n="9"/><unclear cert="low" resp="#joint">bleich</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">angesicht</unclear>, <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">bart</unclear>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">einem</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">schwartzen</unclear> langen Haar, an dem rechten aermen
+<lb n="11"/>und <unclear cert="low" resp="#joint">handt</unclear> <unclear cert="low" resp="#joint">etwas</unclear> <unclear cert="low" resp="#joint">lamb</unclear>, <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">eim</unclear> <unclear cert="low" resp="#joint">empfang.nen</unclear>
+<lb n="12"/>von einem <unclear cert="low" resp="#joint">Stich</unclear> <unclear cert="low" resp="#joint">herruerende</unclear>, <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">deme</unclear>
+<lb n="13"/>ist <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">furkomen</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">wenn</unclear> er unlangsten
 <lb n="14"/>umb diebstals willen bey euch auch gfangen
-<lb n="15"/>gelegen. Damit dann wir deß.en
-<lb n="16"/>einn grundt wiß.en haben muegen,
+<lb n="15"/>gelegen. Damit dann <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">deß.en</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">einn</unclear> grundt wiß.en haben muegen,
 <lb n="17"/>so ist an euch unßer nachbarlich ersuchen, Ihr
-<lb n="18"/>wollen unß, so deme alß were, daß
-<lb n="19"/>daß ein solche Perßon wie obgemelt, bey euch
+<lb n="18"/>wollen unß, so deme alß were, <unclear cert="low" resp="#joint">daß</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">daß</unclear> ein solche Perßon wie obgemelt, bey euch
 <lb n="20"/>verhefft geweßen, unß die ursachen solcher
 <lb n="21"/>seiner verhefftung, und mit waß conditionen
 <lb n="22"/>er deren wider ledig gelaß.en worden, ohn=
-<lb n="23"/>uberschwert, bey dißem allein darumb abge=
-<lb n="24"/>sandten botten, schriftlich berichten, unß mit
-<lb n="25"/>unßerm gefangnen alßdann ferner darnach
-<lb n="26"/>habe zuverhalten, und wir begerens umb
+<lb n="23"/>uberschwert, bey dißem allein darumb <unclear cert="low" resp="#joint">abge=</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">sandten</unclear> <unclear cert="low" resp="#joint">botten</unclear>, <unclear cert="low" resp="#joint">schriftlich</unclear> <unclear cert="low" resp="#joint">berichten</unclear>, <unclear cert="low" resp="#joint">unß</unclear> mit
+<lb n="25"/><unclear cert="low" resp="#joint">unßerm</unclear> <unclear cert="low" resp="#joint">gefangnen</unclear> <unclear cert="low" resp="#joint">alßdann</unclear> <unclear cert="low" resp="#joint">ferner</unclear> <unclear cert="low" resp="#joint">darnach</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">habe</unclear> zuverhalten, und wir begerens umb
 <lb n="27"/>eüch mit mit nachbarlichen willen beiderseits
 <lb n="28"/>zuerwidern, unß damit goettlicher be=
-<lb n="29"/>warung wol befehlende. Dath d. <origDate when="1636" resp="#ner">13.ten.
+<lb n="29"/><unclear cert="low" resp="#joint">warung</unclear> wol befehlende. Dath d. <origDate when="1636" resp="#ner">13.ten.
 <lb n="30"/>Junij. 1636</origDate>.
-<lb n="31"/>B. R.
-<lb n="32"/>An <orgName role="issuer" resp="#ner">Statthalter u. Rhat
-<lb n="33"/>zu Arbon</orgName>.
+<lb n="31"/><unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">R</unclear>.
+<lb n="32"/><unclear cert="low" resp="#joint">An</unclear> <orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Statthalter</unclear> <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">Rhat</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">Arbon</unclear></orgName>.
 <pb facs="StadtASG_Missive_3170_12542.jpg" n="2"/>
 <lb n="34"/>[]
 </p>

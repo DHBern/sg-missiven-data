@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3607</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Statthalter und Rat zu Arbon bitten Bürgermeister und Rat zu St. Gallen, den auf den in Arbon lebenden Juden Hirtzlin verhängten Arrest aufzuheben. Hirtzlin sei im Streit um eine Uhr und eine Schuld gegenüber St. Gallern inhaftiert worden. Arbon verweist auf bestehende Verträge zwischen den Städten und bittet, die St. Galler Bürger anzuweisen, ihre Forderungen in Arbon geltend zu machen, wo dem Juden Recht geschehe.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Statthalter und Rat zu Arbon bitten Bürgermeister und Rat zu St. Gallen, den auf den in Arbon lebenden Juden Hirtzlin verhängten Arrest aufzuheben. Hirtzlin sei im Streit um eine Uhr und eine Schuld gegenüber St. Gallern inhaftiert worden. Arbon verweist auf bestehende Verträge zwischen den Städten und bittet, die St. Galler Bürger anzuweisen, ihre Forderungen in Arbon geltend zu machen, wo dem Juden Recht geschehe.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Statthalter and Council of Arbon request Burgomaster and Council of St. Gallen to lift the arrest imposed on the Jew Hirtzlin living in Arbon. Hirtzlin had been imprisoned in a dispute over a clock and a debt to citizens of St. Gallen. Arbon refers to existing treaties between the cities and requests that the citizens of St. Gallen be instructed to assert their claims in Arbon, where justice shall be done to the Jew.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,54 +39,54 @@
 <lb n="2"/>ehrende liebe herren und nachbahren. Denselben
 <lb n="3"/>seÿen unsere freündt: nachbarlich: guetwillige dienst,
 <lb n="4"/>und grueß zuevor.
-<lb n="5"/>Unß hat <persName resp="#ner">Hirtzlin</persName> der Jud, so in unserem schutz und schirm
-<lb n="6"/>alhie, in underthänigkeit berichtet, wie daß er, vor der,
-<lb n="7"/>mit zweÿen, der herren nachbahren burgeren, alß
-<lb n="8"/>junckher <persName resp="#ner">N: Schowingeren</persName> mit einem uhrlin, vor zweÿen
-<lb n="9"/>jahren: und hernacher mit einem genandt Nösen umb
+<lb n="5"/>Unß hat <persName resp="#ner">Hirtzlin</persName> der <unclear cert="low" resp="#joint">Jud</unclear>, <unclear cert="low" resp="#joint">so</unclear> in unserem schutz und schirm
+<lb n="6"/>alhie, in <unclear cert="low" resp="#joint">underthänigkeit</unclear> berichtet, wie <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">er</unclear>, <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">der</unclear>,
+<lb n="7"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">zweÿen</unclear>, <unclear cert="low" resp="#joint">der</unclear> herren <unclear cert="low" resp="#joint">nachbahren</unclear> <unclear cert="low" resp="#joint">burgeren</unclear>, <unclear cert="low" resp="#joint">alß</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">junckher</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">N</unclear>: <unclear cert="low" resp="#joint">Schowingeren</unclear></persName> mit einem uhrlin, vor zweÿen
+<lb n="9"/>jahren: und <unclear cert="low" resp="#joint">hernacher</unclear> mit einem genandt Nösen umb
 <lb n="10"/>ein pferdt, alhie zum Lewen gehandlet. Und weegen deß
-<lb n="11"/>uhrlins, mit bemeltem junckher Schowingeren, in streit
-<lb n="12"/>gerathen, daß selbiges uhrlin hinder den herren statt=
-<lb n="13"/>amman seeligen alhie, hinderlegt worden, und alda
-<lb n="14"/>noch hinderlige. Allso daß recht alhie angefangen,
-<lb n="15"/>und außzuemachen gehörig. So seÿe er am verschinen
-<lb n="16"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallischen</placeName> jahrmarckht, von bemelten beeden
-<lb n="17"/>burgeren in arrest genommen worden. Und habe
-<lb n="18"/>er nit wollen in grossem costen ligen verbleiben, anglo=
-<lb n="19"/>ben müessen, auff erforderen, sich zum rechten nacher <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St:
-<lb n="20"/>Gallen</placeName> zuestellen. Ja docher vor dis der herren
-<lb n="21"/>nachbaren burger einer, mit namen <persName resp="#ner">Jacob Holl</persName>
-<lb n="22"/>vor unß sowol schrifft: alß mündtlich ein schuldt auff
-<lb n="23"/><persName resp="#ner">Cladin Weilachen</persName> dem chromer alhie, ihme Juden ueber=
-<lb n="24"/>geben: und nichts destoweniger auff der herren nach=
+<lb n="11"/>uhrlins, mit <unclear cert="low" resp="#joint">bemeltem</unclear> <unclear cert="low" resp="#joint">junckher</unclear> <unclear cert="low" resp="#joint">Schowingeren</unclear>, in streit
+<lb n="12"/>gerathen, daß selbiges uhrlin hinder den herren <unclear cert="low" resp="#joint">statt=</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">amman</unclear> <unclear cert="low" resp="#joint">seeligen</unclear> alhie, <unclear cert="low" resp="#joint">hinderlegt</unclear> <unclear cert="low" resp="#joint">worden</unclear>, und alda
+<lb n="14"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">hinderlige</unclear>. <unclear cert="low" resp="#joint">Allso</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">recht</unclear> alhie angefangen,
+<lb n="15"/>und außzuemachen gehörig. So seÿe er <unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">verschinen</unclear>
+<lb n="16"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallischen</unclear></placeName> <unclear cert="low" resp="#joint">jahrmarckht</unclear>, von <unclear cert="low" resp="#joint">bemelten</unclear> <unclear cert="low" resp="#joint">beeden</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">burgeren</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">arrest</unclear> <unclear cert="low" resp="#joint">genommen</unclear> <unclear cert="low" resp="#joint">worden</unclear>. <unclear cert="low" resp="#joint">Und</unclear> <unclear cert="low" resp="#joint">habe</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">wollen</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">grossem</unclear> <unclear cert="low" resp="#joint">costen</unclear> <unclear cert="low" resp="#joint">ligen</unclear> <unclear cert="low" resp="#joint">verbleiben</unclear>, <unclear cert="low" resp="#joint">anglo=</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">ben</unclear> <unclear cert="low" resp="#joint">müessen</unclear>, auff <unclear cert="low" resp="#joint">erforderen</unclear>, <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">zum</unclear> <unclear cert="low" resp="#joint">rechten</unclear> <unclear cert="low" resp="#joint">nacher</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>:
+<lb n="20"/><unclear cert="low" resp="#joint">Gallen</unclear></placeName> <unclear cert="low" resp="#joint">zuestellen</unclear>. <unclear cert="low" resp="#joint">Ja</unclear> <unclear cert="low" resp="#joint">docher</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">dis</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">herren</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">nachbaren</unclear> <unclear cert="low" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">einer</unclear>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">namen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Jacob</unclear> <unclear cert="low" resp="#joint">Holl</unclear></persName>
+<lb n="22"/><unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">sowol</unclear> <unclear cert="low" resp="#joint">schrifft</unclear>: <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">mündtlich</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">schuldt</unclear> <unclear cert="low" resp="#joint">auff</unclear>
+<lb n="23"/><persName resp="#ner"><unclear cert="low" resp="#joint">Cladin</unclear> <unclear cert="low" resp="#joint">Weilachen</unclear></persName> dem chromer alhie, ihme Juden ueber=
+<lb n="24"/>geben: und nichts <unclear cert="low" resp="#joint">destoweniger</unclear> auff der herren nach=
 <lb n="25"/>baren schreiben und dero abgeordneten, er die schuldt
 <lb n="26"/>fahren lassen: und daß recht zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName> suechen
-<lb n="27"/>und nemmen müessen etc. Dahero unß gehorsamblich
+<lb n="27"/>und nemmen <unclear cert="low" resp="#joint">müessen</unclear> <unclear cert="low" resp="#joint">etc</unclear>. <unclear cert="low" resp="#joint">Dahero</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">gehorsamblich</unclear>
 <lb n="28"/>gebetten, wür wolten ihme, sovil möglich, behülfflich
 <lb n="29"/>sein.
-<lb n="30"/>Wan dan, wür unß noch wol zuerinderen, daß vor an=
-<lb n="31"/>gezogne uhrlin, noch alhie in arrest. Und weegen <persName resp="#ner">Jacob
-<lb n="32"/>Hollen</persName>, der vor unß offentlich schrifft: und mündtlich, ihme
-<lb n="33"/>Juden die schuldt auff Cladin Weilachen, für meniglichs
-<lb n="34"/>einreden, aigenthumblich uebergeben: wür doch, auff sein
+<lb n="30"/>Wan dan, wür unß noch wol <unclear cert="low" resp="#joint">zuerinderen</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">vor</unclear> an=
+<lb n="31"/>gezogne uhrlin, noch alhie in <unclear cert="low" resp="#joint">arrest</unclear>. <unclear cert="low" resp="#joint">Und</unclear> <unclear cert="low" resp="#joint">weegen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Jacob</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">Hollen</unclear></persName>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">vor</unclear> unß offentlich schrifft: und mündtlich, ihme
+<lb n="33"/>Juden die schuldt auff <unclear cert="low" resp="#joint">Cladin</unclear> <unclear cert="low" resp="#joint">Weilachen</unclear>, <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">meniglichs</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">einreden</unclear>, <unclear cert="low" resp="#joint">aigenthumblich</unclear> <unclear cert="low" resp="#joint">uebergeben</unclear>: <unclear cert="low" resp="#joint">wür</unclear> doch, auff <unclear cert="low" resp="#joint">sein</unclear>
 <pb facs="StadtASG_Missive_3607_14410.jpg" n="2"/>
 <lb n="35"/>Judens instendiges bitten und begehren, khain arrest
 <lb n="36"/>würckhlich darauff bewilligen wöllen, sonderen auff dero
-<lb n="37"/>herren Nachbahren abgeordnete, alß H. zunfftmaisteren
+<lb n="37"/>herren Nachbahren abgeordnete, alß <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">zunfftmaisteren</unclear>
 <lb n="38"/><persName resp="#ner">Johannes Lehren</persName> und <persName resp="#ner">Ludwig Khuntzen</persName>, deß Schallen
 <lb n="39"/>haushaltnung gesetzte vögt, mit der herren Nachbahren
-<lb n="40"/>schreiben, (darinnen die, zwüschen beeden stätten, <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
-<lb n="41"/>und <placeName ref="stadtasg-places-5" cert="medium" resp="#ner">Arbon</placeName>, auffgerichte verträg angezogen.) wür den
-<lb n="42"/>ihrigen die schuldt volgen lassen, und den Juden naher
+<lb n="40"/>schreiben, (<unclear cert="low" resp="#joint">darinnen</unclear> die, zwüschen beeden stätten, <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="41"/>und <placeName ref="stadtasg-places-5" cert="medium" resp="#ner">Arbon</placeName>, auffgerichte verträg angezogen.) <unclear cert="low" resp="#joint">wür</unclear> <unclear cert="low" resp="#joint">den</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">ihrigen</unclear> die <unclear cert="low" resp="#joint">schuldt</unclear> volgen lassen, und den Juden naher
 <lb n="43"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> zum rechten gewisen.
 <lb n="44"/>Allß khönden wür nit umbgehen, die herren Nachbahren
 <lb n="45"/>gleichfallß freündt: nachbahr: und wolmainendtlich zue=
-<lb n="46"/>ersuechen und zuebitten, sie wöllen, vermög angezognen
-<lb n="47"/>verträgen, den, an den Juden angelegten arrest, rela=
-<lb n="48"/>xieren, und die ihrigen ebnermessig dahin weisen, daß
+<lb n="46"/>ersuechen und <unclear cert="low" resp="#joint">zuebitten</unclear>, <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, <unclear cert="low" resp="#joint">vermög</unclear> <unclear cert="low" resp="#joint">angezognen</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">verträgen</unclear>, den, an den <unclear cert="low" resp="#joint">Juden</unclear> <unclear cert="low" resp="#joint">angelegten</unclear> <unclear cert="low" resp="#joint">arrest</unclear>, <unclear cert="low" resp="#joint">rela=</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">xieren</unclear>, und die <unclear cert="low" resp="#joint">ihrigen</unclear> <unclear cert="low" resp="#joint">ebnermessig</unclear> dahin weisen, daß
 <lb n="49"/>sie umb ihre anforderungen, ihne Juden, (ob er gleich=
 <lb n="50"/>wol khain burger, iedoch under unserem schutz und schirm
-<lb n="51"/>gesessenen.) alhie suechen und vornemmen sollen. Da
+<lb n="51"/><unclear cert="low" resp="#joint">gesessenen</unclear>.) <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">suechen</unclear> und vornemmen sollen. Da
 <lb n="52"/>ihnen dan guet gebüerendt schleüniges recht widerfahren
 <lb n="53"/>und gehalten werden würdet.
 <lb n="54"/>Wie nun solches für sich selbsten, der billichkhait: und den
@@ -99,11 +100,11 @@
 <lb n="62"/>der statt Arbon</orgName>.
 <pb facs="StadtASG_Missive_3607_14411.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3607_14412.jpg" n="4"/>
-<lb n="63"/>Denen edlen, vesten, hochgelehrten, fürsichtigen unnd
-<lb n="64"/>weisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaisteren unnd Rath der
+<lb n="63"/>Denen edlen, vesten, <unclear cert="low" resp="#joint">hochgelehrten</unclear>, fürsichtigen <unclear cert="low" resp="#joint">unnd</unclear>
+<lb n="64"/><unclear cert="low" resp="#joint">weisen</unclear> <unclear cert="low" resp="#joint">herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaisteren</unclear> <unclear cert="low" resp="#joint">unnd</unclear> Rath der
 <lb n="65"/>Statt Sanct Gallen</orgName>, unnseren insonders
-<lb n="66"/>ehrrenden lieben herren unnd Nachbahren.
-<lb n="67"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>.
+<lb n="66"/><unclear cert="low" resp="#joint">ehrrenden</unclear> lieben <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Nachbahren</unclear>.
+<lb n="67"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3202</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Glarus bitten die eidgenössischen Botschafter in Solothurn, sich bei der Stadt Eger um die Freilassung des Glarner Kaufmanns Christoph Studer jun. einzusetzen. Dieser sei dort wegen einer hohen Kontribution für eine Garnison festgehalten worden. Die Glarner bitten um eine gütliche Beilegung des Streits und um die Wahrung der eidgenössischen Privilegien.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Glarus bitten die eidgenössischen Botschafter in Solothurn, sich bei der Stadt Eger um die Freilassung des Glarner Kaufmanns Christoph Studer jun. einzusetzen. Dieser sei dort wegen einer hohen Kontribution für eine Garnison festgehalten worden. Die Glarner bitten um eine gütliche Beilegung des Streits und um die Wahrung der eidgenössischen Privilegien.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Glarus request the Confederate envoys in Solothurn to intervene with the city of Eger for the release of the Glarus merchant Christoph Studer jun. He says that he was detained there because of a high contribution for a garrison. The Glarus request an amicable settlement of the dispute and the preservation of the Confederate privileges.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -137,14 +138,14 @@
 <lb n="98"/>Den Hochgeachten, Edlen, Gestrengen
 <lb n="99"/>Frommen, Vesten, Ehrnvesten, Für-
 <lb n="100"/>nehmen, Fürsichtigen Ersamen und
-<lb n="101"/>Weisen, <orgName resp="#ner">der dreyzehen Orthen einer
-<lb n="102"/>loblichen Eydtgnoschafft Ehrensandt-
-<lb n="103"/>lichen Rhats Botten, diser Zeit in der
+<lb n="101"/>Weisen, <orgName resp="#ner"><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">dreyzehen</unclear> <unclear cert="low" resp="#joint">Orthen</unclear> <unclear cert="low" resp="#joint">einer</unclear>
+<lb n="102"/>loblichen <unclear cert="low" resp="#joint">Eydtgnoschafft</unclear> <unclear cert="low" resp="#joint">Ehrensandt</unclear>-
+<lb n="103"/><unclear cert="low" resp="#joint">lichen</unclear> <unclear cert="low" resp="#joint">Rhats</unclear> <unclear cert="low" resp="#joint">Botten</unclear>, diser Zeit in der
 <lb n="104"/>Statt Solothurn beyeinanderen
 <lb n="105"/>versampt</orgName>, Unseren Jnsonders
-<lb n="106"/>günstigen Herren, wol vertrauw-
-<lb n="107"/>ten gueten Freünden und getreü-
-<lb n="108"/>wen lieben Eydtgnossen etc.
+<lb n="106"/>günstigen Herren, <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">vertrauw</unclear>-
+<lb n="107"/><unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">Freünden</unclear> und <unclear cert="low" resp="#joint">getreü</unclear>-
+<lb n="108"/><unclear cert="low" resp="#joint">wen</unclear> lieben Eydtgnossen <unclear cert="low" resp="#joint">etc</unclear>.
 </p>
         </body>
     </text>

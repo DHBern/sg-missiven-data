@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3603</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Jakob Langhans in Bern überreicht Bürgermeister und Rat zu St. Gallen eine kurze Zusammenfassung der Geschichte des Schwertstreits vor Neuenegg, die er aus dem Jahrsbuch des Klosters Königsfelden zusammengestellt hat. Er bittet um Annahme der Widmung und um eine Antwort, die er über den Zürcher Professor Johann Rudolf Stucki erhalten möchte.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Jakob Langhans in Bern überreicht Bürgermeister und Rat zu St. Gallen eine kurze Zusammenfassung der Geschichte des Schwertstreits vor Neuenegg, die er aus dem Jahrsbuch des Klosters Königsfelden zusammengestellt hat. Er bittet um Annahme der Widmung und um eine Antwort, die er über den Zürcher Professor Johann Rudolf Stucki erhalten möchte.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Jakob Langhans in Bern presents to the Burgomaster and Council of St. Gallen a short summary of the history of the sword fight before Neuenegg, which he has compiled from the year book of the monastery of Königsfelden. He asks for the acceptance of the dedication and for a reply, which he would like to receive through the Professor of Zürich Johann Rudolf Stucki.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -71,13 +72,13 @@
 <pb facs="StadtASG_Missive_3603_14390.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3603_14391.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3603_14392.jpg" n="4"/>
-<lb n="35"/>Den gestrengen, edlen, ehrenvesten,
-<lb n="36"/>frommen, fuernemmen, fuersichtigen, ehrsamen,
-<lb n="37"/>wolwysen herren, hr. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeisteren und
-<lb n="38"/>Rhat der loblichen statt St. Gallen</orgName>,
-<lb n="39"/>mynen insonders großguenstigen, hoch-
-<lb n="40"/>geehrten herren.
-<lb n="41"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="35"/>Den gestrengen, <unclear cert="low" resp="#joint">edlen</unclear>, <unclear cert="low" resp="#joint">ehrenvesten</unclear>,
+<lb n="36"/>frommen, <unclear cert="low" resp="#joint">fuernemmen</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">ehrsamen</unclear>,
+<lb n="37"/><unclear cert="low" resp="#joint">wolwysen</unclear> herren, <unclear cert="low" resp="#joint">hr</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeisteren</unclear> und
+<lb n="38"/><unclear cert="low" resp="#joint">Rhat</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">loblichen</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">St</unclear>. Gallen</orgName>,
+<lb n="39"/><unclear cert="medium" resp="#joint">mynen</unclear> insonders <unclear cert="low" resp="#joint">großguenstigen</unclear>, <unclear cert="low" resp="#joint">hoch</unclear>-
+<lb n="40"/><unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="low" resp="#joint">herren</unclear>.
+<lb n="41"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

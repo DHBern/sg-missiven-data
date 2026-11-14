@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3180</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Der Pfarrer zu Frauenfeld bedankt sich bei Bürgermeister und Rat zu St. Gallen für die gewährte Kommunikation und die Glückwünsche zu seiner neuen Pfarrstelle. Er sichert ihnen seinerseits gute Nachbarschaft und Korrespondenz zu.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Der Pfarrer zu Frauenfeld bedankt sich bei Bürgermeister und Rat zu St. Gallen für die gewährte Kommunikation und die Glückwünsche zu seiner neuen Pfarrstelle. Er sichert ihnen seinerseits gute Nachbarschaft und Korrespondenz zu.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The parish priest of Frauenfeld thanks the Burgomaster and Council of St. Gallen for the communication granted and the congratulations on his new parish. He assures them in turn of good neighborhood and correspondence.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,30 +35,30 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3180_12571.jpg" n="1"/>
-<lb n="1"/>Hochgeachte, Edle, Gestrenge, Ernveste, Frome, Fürsicht-
-<lb n="2"/>ige unnd Weüße, sonnders Genede, Liebe Herzen, guette freünd
-<lb n="3"/>unnd Nachparren.
-<lb n="4"/>Daß den selbigen belieben wöllen, mir wegen deß beÿ ihnen
-<lb n="5"/>hingerichten boeßen buobens, comunication, zuo zugeben,
-<lb n="6"/>unnd zue mahlen, zuo meiner angettribnen amptßstell,
-<lb n="7"/>alle prosperitet, zewünschen, verstuende ich hierauß
-<lb n="8"/>allen guetten nachparlichen willen, darumben den Herzen
-<lb n="9"/>Nachparn ich, dienst: freindlichen danckh sagen: unnd
-<lb n="10"/>sie darmit versichern thuon, daß mich hingegen gleicher,
-<lb n="11"/>nachbarschafft unnd gueter correspondens befleüßen
-<lb n="12"/>werde. Mit welcher erbietung ich, die Herzen
-<lb n="13"/>Nachparrn, Goetlichem obhalt wolbevelhen thuon.
-<lb n="14"/>Dattum <origPlace ref="stadtasg-places-29" cert="medium" resp="#ner">Frawenfeld</origPlace> <origDate when="1636-07-13" resp="#ner">den 13 ten Julii. Anno 1636.</origDate>
-<lb n="15"/>D. Heren Nachparrn
+<lb n="1"/>Hochgeachte, Edle, Gestrenge, Ernveste, <unclear cert="medium" resp="#joint">Frome</unclear>, Fürsicht-
+<lb n="2"/><unclear cert="medium" resp="#joint">ige</unclear> unnd <unclear cert="low" resp="#joint">Weüße</unclear>, <unclear cert="low" resp="#joint">sonnders</unclear> <unclear cert="low" resp="#joint">Genede</unclear>, <unclear cert="low" resp="#joint">Liebe</unclear> <unclear cert="low" resp="#joint">Herzen</unclear>, <unclear cert="low" resp="#joint">guette</unclear> <unclear cert="low" resp="#joint">freünd</unclear>
+<lb n="3"/>unnd <unclear cert="medium" resp="#joint">Nachparren</unclear>.
+<lb n="4"/>Daß den <unclear cert="medium" resp="#joint">selbigen</unclear> <unclear cert="medium" resp="#joint">belieben</unclear> wöllen, <unclear cert="medium" resp="#joint">mir</unclear> wegen deß <unclear cert="medium" resp="#joint">beÿ</unclear> <unclear cert="medium" resp="#joint">ihnen</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">hingerichten</unclear> <unclear cert="medium" resp="#joint">boeßen</unclear> <unclear cert="medium" resp="#joint">buobens</unclear>, <unclear cert="medium" resp="#joint">comunication</unclear>, <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">zugeben</unclear>,
+<lb n="6"/>unnd <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">mahlen</unclear>, <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">meiner</unclear> <unclear cert="medium" resp="#joint">angettribnen</unclear> <unclear cert="medium" resp="#joint">amptßstell</unclear>,
+<lb n="7"/>alle <unclear cert="low" resp="#joint">prosperitet</unclear>, <unclear cert="low" resp="#joint">zewünschen</unclear>, <unclear cert="low" resp="#joint">verstuende</unclear> ich <unclear cert="medium" resp="#joint">hierauß</unclear>
+<lb n="8"/>allen <unclear cert="medium" resp="#joint">guetten</unclear> <unclear cert="medium" resp="#joint">nachparlichen</unclear> willen, darumben den <unclear cert="medium" resp="#joint">Herzen</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">Nachparn</unclear> ich, <unclear cert="low" resp="#joint">dienst</unclear>: <unclear cert="low" resp="#joint">freindlichen</unclear> <unclear cert="low" resp="#joint">danckh</unclear> sagen: unnd
+<lb n="10"/>sie darmit versichern thuon, daß mich <unclear cert="medium" resp="#joint">hingegen</unclear> gleicher,
+<lb n="11"/><unclear cert="medium" resp="#joint">nachbarschafft</unclear> unnd gueter <unclear cert="medium" resp="#joint">correspondens</unclear> <unclear cert="medium" resp="#joint">befleüßen</unclear>
+<lb n="12"/>werde. Mit welcher erbietung ich, die <unclear cert="medium" resp="#joint">Herzen</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">Nachparrn</unclear>, <unclear cert="medium" resp="#joint">Goetlichem</unclear> <unclear cert="medium" resp="#joint">obhalt</unclear> <unclear cert="medium" resp="#joint">wolbevelhen</unclear> thuon.
+<lb n="14"/><unclear cert="medium" resp="#joint">Dattum</unclear> <origPlace ref="stadtasg-places-29" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Frawenfeld</unclear></origPlace> <origDate when="1636-07-13" resp="#ner">den <unclear cert="low" resp="#joint">13</unclear> <unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">Julii</unclear>. Anno 1636.</origDate>
+<lb n="15"/><unclear cert="low" resp="#joint">D</unclear>. <unclear cert="low" resp="#joint">Heren</unclear> <unclear cert="low" resp="#joint">Nachparrn</unclear>
 <lb n="16"/>dienstwillig.
 <pb facs="StadtASG_Missive_3180_12572.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3180_12573.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3180_12574.jpg" n="4"/>
-<lb n="17"/>Denen hochgeachten, edlen, gestrengen, frommen,
-<lb n="18"/>vhesten, fürsichtigen unnd weysen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="19"/>meister unnd Rath der statt Sct. Gallen</orgName> etc.
-<lb n="20"/>Meinen insonders gnaedig lieben herren, guoten
-<lb n="21"/>fründt- und nachpuren.
+<lb n="17"/><unclear cert="medium" resp="#joint">Denen</unclear> hochgeachten, edlen, gestrengen, frommen,
+<lb n="18"/><unclear cert="low" resp="#joint">vhesten</unclear>, fürsichtigen unnd <unclear cert="medium" resp="#joint">weysen</unclear>, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="19"/>meister unnd Rath der statt <unclear cert="medium" resp="#joint">Sct</unclear>. Gallen</orgName> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="20"/><unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">insonders</unclear> <unclear cert="low" resp="#joint">gnaedig</unclear> lieben herren, <unclear cert="low" resp="#joint">guoten</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">fründt</unclear>- <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nachpuren</unclear>.
 </p>
         </body>
     </text>

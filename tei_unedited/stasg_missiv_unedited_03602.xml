@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3602</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Ulm ersuchen Bürgermeister und Rat zu St. Gallen, ihren Leibeigenen Hans Kochen von Geißlingen, der bei Salomon Zincken in St. Gallen arbeite, aufzusuchen. Sie bitten, ihm aufzulegen, sich unverzüglich nach Ulm zu begeben, um die Sache mit der Tochter des Goldschmieds Matthäus Hochreiter zu klären, und ihn nicht länger in St. Gallen arbeiten zu lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Ulm ersuchen Bürgermeister und Rat zu St. Gallen, ihren Leibeigenen Hans Kochen von Geißlingen, der bei Salomon Zincken in St. Gallen arbeite, aufzusuchen. Sie bitten, ihm aufzulegen, sich unverzüglich nach Ulm zu begeben, um die Sache mit der Tochter des Goldschmieds Matthäus Hochreiter zu klären, und ihn nicht länger in St. Gallen arbeiten zu lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Ulm request Burgomaster and Council of St. Gallen to seek out their serf Hans Kochen von Geißlingen, who works for Salomon Zincken in St. Gallen. They ask that he be ordered to proceed immediately to Ulm to clarify the matter concerning the daughter of the goldsmith Matthäus Hochreiter, and that he not be allowed to work in St. Gallen any longer.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,24 +35,24 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3602_14381.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienpst zuvor, Er-
-<lb n="2"/>same und weise, liebe freündt.
-<lb n="3"/>Waß unser buerger, <persName resp="#ner">Matheus Hohherer</persName>,
-<lb n="4"/>goldtschmid, wegen unsers leibeigenen
-<lb n="5"/>underthanen, <persName resp="#ner">Hansen Koechens</persName> von <placeName resp="#ner">Bei-
-<lb n="6"/>ringen</placeName>, uff der gestaltend, welcher sein
-<lb n="7"/><persName resp="#ner">Hohhererns</persName> dochter verfuellt, und darauff
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündtlich</unclear> <unclear cert="low" resp="#joint">willig</unclear> <unclear cert="low" resp="#joint">dienpst</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">Er</unclear>-
+<lb n="2"/><unclear cert="low" resp="#joint">same</unclear> und <unclear cert="low" resp="#joint">weise</unclear>, <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">freündt</unclear>.
+<lb n="3"/><unclear cert="low" resp="#joint">Waß</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">buerger</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Matheus</unclear> <unclear cert="low" resp="#joint">Hohherer</unclear></persName>,
+<lb n="4"/><unclear cert="low" resp="#joint">goldtschmid</unclear>, <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">leibeigenen</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">underthanen</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Hansen</unclear> <unclear cert="low" resp="#joint">Koechens</unclear></persName> <unclear cert="low" resp="#joint">von</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Bei</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">ringen</unclear></placeName>, <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">gestaltend</unclear>, <unclear cert="low" resp="#joint">welcher</unclear> <unclear cert="low" resp="#joint">sein</unclear>
+<lb n="7"/><persName resp="#ner"><unclear cert="low" resp="#joint">Hohhererns</unclear></persName> <unclear cert="low" resp="#joint">dochter</unclear> <unclear cert="low" resp="#joint">verfuellt</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">darauff</unclear>
 <lb n="8"/>von alhier sich absentiert, an iezo aber
-<lb n="9"/>in E. wht. statt bei dero buergern
-<lb n="10"/><persName resp="#ner">Salomon Zirckhen</persName>, kueffern beim <placeName resp="#ner">Flatz-
-<lb n="11"/>thor</placeName>, in arbeit uffhalten solle, an uns
+<lb n="9"/>in <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. statt bei dero <unclear cert="low" resp="#joint">buergern</unclear>
+<lb n="10"/><persName resp="#ner"><unclear cert="low" resp="#joint">Salomon</unclear> <unclear cert="low" resp="#joint">Zirckhen</unclear></persName>, <unclear cert="low" resp="#joint">kueffern</unclear> <unclear cert="low" resp="#joint">beim</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Flatz</unclear>-
+<lb n="11"/><unclear cert="low" resp="#joint">thor</unclear></placeName>, in arbeit uffhalten solle, an uns
 <lb n="12"/>supplicando gelangen laßen, daß welle
 <lb n="13"/>E. wht. ab der beilag zu vernemmen
 <lb n="14"/>unbeschwert sein.
 <lb n="15"/>Sieweilen dan er <persName resp="#ner">Koech</persName>, berürts unsers
 <lb n="16"/>buergers deß <persName resp="#ner">Hohherern</persName> dochter zue
 <lb n="17"/>fhall gebracht, derren ein kind anbeholffen,
-<lb n="18"/>und ihme keins wegs gebürt hat, wider
+<lb n="18"/>und ihme keins wegs <unclear cert="low" resp="#joint">gebürt</unclear> <unclear cert="low" resp="#joint">hat</unclear>, <unclear cert="low" resp="#joint">wider</unclear>
 <lb n="19"/>sein versprechen, von alhie zu weichen,
 <lb n="20"/>mueter, und kindt die zeit hero sitzen,
 <lb n="21"/>und die sach uneroertert hangen zue-
@@ -60,28 +61,28 @@
 <lb n="24"/>moege.
 <lb n="25"/>Alß ersuechen E. wht. wir hiemit
 <lb n="26"/>freündtlich, sie wellen die unbeschwerdte
-<lb n="27"/>verordnung thuen, berürten unsern
+<lb n="27"/>verordnung <unclear cert="low" resp="#joint">thuen</unclear>, <unclear cert="low" resp="#joint">berürten</unclear> <unclear cert="low" resp="#joint">unsern</unclear>
 <pb facs="StadtASG_Missive_3602_14382.jpg" n="2"/>
 <lb n="28"/>leibaignen underthonen Hannßen
-<lb n="29"/>Kochen, da derselbe, in E. vstl. statt,
+<lb n="29"/>Kochen, da derselbe, in <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">vstl</unclear>. statt,
 <lb n="30"/>noch in arbeit sein wurde, beschickhen,
-<lb n="31"/>und ihme, dz er sich bei verliehrung,
+<lb n="31"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ihme</unclear>, <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">er</unclear> sich bei verliehrung,
 <lb n="32"/>seines zu <placeName ref="stadtasg-places-350" cert="medium" resp="#ner">Geißlingen</placeName> habenden bur-
 <lb n="33"/>gerrechtens alßbald, und ohne einig
 <lb n="34"/>lengeren verzug, oder außred, alhero
 <lb n="35"/>in unsere statt verfuegen, und die
 <lb n="36"/>sach, mit Jhr Gaßnerin, wie sich ge-
-<lb n="37"/>buert, dermale einest außmachen
+<lb n="37"/>buert, dermale einest <unclear cert="low" resp="#joint">außmachen</unclear>
 <lb n="38"/>und erörteren solle, nicht allein
 <lb n="39"/>mit allem ernst ufferlegen, sonder
-<lb n="40"/>denselben auch, in E. vstl. statt
-<lb n="41"/>lenger, od weiters nit arbeiten
-<lb n="42"/>od passiern zulaßen. Laß
-<lb n="43"/>umb dieselbe wir hinwider,
-<lb n="44"/>uff alle begebenheit zuverschulden
-<lb n="45"/>erbietig, denen wir ohne daß, zu
-<lb n="46"/>erweißung aller beliebenden
-<lb n="47"/>diensten Jederzeit willig ver-
+<lb n="40"/>denselben auch, in <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">vstl</unclear>. statt
+<lb n="41"/>lenger, od weiters nit <unclear cert="low" resp="#joint">arbeiten</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">passiern</unclear> <unclear cert="low" resp="#joint">zulaßen</unclear>. Laß
+<lb n="43"/><unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">dieselbe</unclear> wir <unclear cert="low" resp="#joint">hinwider</unclear>,
+<lb n="44"/><unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">alle</unclear> begebenheit <unclear cert="low" resp="#joint">zuverschulden</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">erbietig</unclear>, <unclear cert="low" resp="#joint">denen</unclear> wir ohne daß, zu
+<lb n="46"/>erweißung aller <unclear cert="low" resp="#joint">beliebenden</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">diensten</unclear> <unclear cert="low" resp="#joint">Jederzeit</unclear> willig ver-
 <lb n="48"/>bleiben, date den <origDate when="1644-06-12" resp="#ner">12. Junij a°
 <lb n="49"/>1644</origDate>.
 <lb n="50"/><orgName ref="stadtasg-actors-510" cert="medium" role="issuer" resp="#ner">Burgermeister und Rhat
@@ -93,7 +94,7 @@
 <lb n="54"/>der Statt S. Gallen</orgName>, un=
 <lb n="55"/>seren besonders gueten
 <lb n="56"/>Freünden.
-<lb n="57"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</origPlace>.
+<lb n="57"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">S</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></origPlace>.
 <pb facs="StadtASG_Missive_3602_14385.jpg" n="5"/>
 <lb n="58"/>Woledle Gestrenge, Veste, Eerenveste,
 <lb n="59"/>Fürsichtige Eersame hoch: unnd wolweise,
@@ -129,53 +130,53 @@
 <lb n="89"/>armen kindt, uber alle maß be=
 <lb n="90"/>schwerlich fallen wurde, alß ge=
 <pb facs="StadtASG_Missive_3602_14386.jpg" n="6"/>
-<lb n="91"/>langt Ewer Hrl. Wt. und Gn. mein gantz
-<lb n="92"/>underthanig und hochflehenlich anruefen
-<lb n="93"/>und bitten, sie geruochen mir ein wol-
-<lb n="94"/>ersprießlichi und vilvermoegendes
-<lb n="95"/>intercessionalschreiben an Einen Lobl. Ma-
-<lb n="96"/>gistrat obehrengedachter Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>,
-<lb n="97"/>großg. zuoertheilen, und dieselbe dahin
-<lb n="98"/>beweglichen zuoersuchen, daß derselbe
-<lb n="99"/>bemelten <persName resp="#ner">Hanßon Zoepfen</persName> entweders
-<lb n="100"/>fuerzuofordern, und ihme mit ernst auf-
-<lb n="101"/>zuolegen, sich gl. belieben laßen wolte,
+<lb n="91"/>langt Ewer Hrl. Wt. und Gn. mein <unclear cert="low" resp="#joint">gantz</unclear>
+<lb n="92"/><unclear cert="low" resp="#joint">underthanig</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">hochflehenlich</unclear> <unclear cert="low" resp="#joint">anruefen</unclear>
+<lb n="93"/><unclear cert="low" resp="#joint">und</unclear> bitten, sie geruochen mir ein wol-
+<lb n="94"/>ersprießlichi und <unclear cert="low" resp="#joint">vilvermoegendes</unclear>
+<lb n="95"/><unclear cert="low" resp="#joint">intercessionalschreiben</unclear> an <unclear cert="low" resp="#joint">Einen</unclear> <unclear cert="low" resp="#joint">Lobl</unclear>. <unclear cert="low" resp="#joint">Ma</unclear>-
+<lb n="96"/><unclear cert="low" resp="#joint">gistrat</unclear> <unclear cert="low" resp="#joint">obehrengedachter</unclear> <unclear cert="low" resp="#joint">Statt</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>,
+<lb n="97"/><unclear cert="low" resp="#joint">großg</unclear>. <unclear cert="low" resp="#joint">zuoertheilen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">dieselbe</unclear> dahin
+<lb n="98"/><unclear cert="low" resp="#joint">beweglichen</unclear> <unclear cert="low" resp="#joint">zuoersuchen</unclear>, daß derselbe
+<lb n="99"/><unclear cert="low" resp="#joint">bemelten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanßon</unclear> <unclear cert="low" resp="#joint">Zoepfen</unclear></persName> <unclear cert="low" resp="#joint">entweders</unclear>
+<lb n="100"/><unclear cert="low" resp="#joint">fuerzuofordern</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ihme</unclear> mit ernst auf-
+<lb n="101"/><unclear cert="low" resp="#joint">zuolegen</unclear>, sich gl. belieben laßen wolte,
 <lb n="102"/>sich von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> hinweg, und gleich al-
-<lb n="103"/>her rectà zuoverfuegen, und der sach
-<lb n="104"/>mit mehrbesagter meiner dochter, der-
-<lb n="105"/>malen einsten, was sich gebuehrt, einig endtlich
-<lb n="106"/>außtrag zuogeben, ihne auch alda lenger nit
-<lb n="107"/>haßen, oder arbeiten zuolaßen.
-<lb n="108"/>Diße oberkeitliche gnad, beger umb Ewer
-<lb n="109"/>Hrl. Wt. und Gn. ich nebet meiner dochter
-<lb n="110"/>mit unßeren underthänig diensten, und
-<lb n="111"/>eiferigem gebett, umb dero lang-
-<lb n="112"/>wirige bestendige gesundheit glueckh-
-<lb n="113"/>liche regierung und andre prospe-
-<lb n="114"/>rität gehorsamblich und diemuethig
-<lb n="115"/>zuoverehren, dero mich dabeneben zuo
-<lb n="116"/>beharrlich gunsten, und gn. willfahr
-<lb n="117"/>underthänig befehlende.
-<lb n="118"/>Ewer Hrl. Wt. Gst.
-<lb n="119"/>und Wt.
-<lb n="120"/>Underthänig gehorsamer
-<lb n="121"/>burger.
+<lb n="103"/><unclear cert="low" resp="#joint">her</unclear> <unclear cert="low" resp="#joint">rectà</unclear> <unclear cert="low" resp="#joint">zuoverfuegen</unclear>, und <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">sach</unclear>
+<lb n="104"/>mit <unclear cert="low" resp="#joint">mehrbesagter</unclear> meiner dochter, der-
+<lb n="105"/>malen einsten, was sich <unclear cert="low" resp="#joint">gebuehrt</unclear>, <unclear cert="low" resp="#joint">einig</unclear> <unclear cert="low" resp="#joint">endtlich</unclear>
+<lb n="106"/><unclear cert="low" resp="#joint">außtrag</unclear> <unclear cert="low" resp="#joint">zuogeben</unclear>, <unclear cert="low" resp="#joint">ihne</unclear> auch alda lenger nit
+<lb n="107"/><unclear cert="low" resp="#joint">haßen</unclear>, oder arbeiten <unclear cert="low" resp="#joint">zuolaßen</unclear>.
+<lb n="108"/><unclear cert="low" resp="#joint">Diße</unclear> <unclear cert="low" resp="#joint">oberkeitliche</unclear> <unclear cert="low" resp="#joint">gnad</unclear>, <unclear cert="low" resp="#joint">beger</unclear> umb <unclear cert="low" resp="#joint">Ewer</unclear>
+<lb n="109"/><unclear cert="low" resp="#joint">Hrl</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Gn</unclear>. <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">nebet</unclear> <unclear cert="low" resp="#joint">meiner</unclear> <unclear cert="low" resp="#joint">dochter</unclear>
+<lb n="110"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">unßeren</unclear> <unclear cert="low" resp="#joint">underthänig</unclear> <unclear cert="low" resp="#joint">diensten</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="111"/><unclear cert="low" resp="#joint">eiferigem</unclear> <unclear cert="low" resp="#joint">gebett</unclear>, <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">lang</unclear>-
+<lb n="112"/><unclear cert="low" resp="#joint">wirige</unclear> <unclear cert="low" resp="#joint">bestendige</unclear> <unclear cert="low" resp="#joint">gesundheit</unclear> <unclear cert="low" resp="#joint">glueckh</unclear>-
+<lb n="113"/>liche regierung <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">andre</unclear> <unclear cert="low" resp="#joint">prospe</unclear>-
+<lb n="114"/><unclear cert="low" resp="#joint">rität</unclear> <unclear cert="low" resp="#joint">gehorsamblich</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">diemuethig</unclear>
+<lb n="115"/><unclear cert="low" resp="#joint">zuoverehren</unclear>, <unclear cert="low" resp="#joint">dero</unclear> mich dabeneben zuo
+<lb n="116"/>beharrlich gunsten, und <unclear cert="low" resp="#joint">gn</unclear>. <unclear cert="low" resp="#joint">willfahr</unclear>
+<lb n="117"/><unclear cert="low" resp="#joint">underthänig</unclear> <unclear cert="low" resp="#joint">befehlende</unclear>.
+<lb n="118"/><unclear cert="low" resp="#joint">Ewer</unclear> <unclear cert="low" resp="#joint">Hrl</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">Gst</unclear>.
+<lb n="119"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Wt</unclear>.
+<lb n="120"/><unclear cert="low" resp="#joint">Underthänig</unclear> <unclear cert="low" resp="#joint">gehorsamer</unclear>
+<lb n="121"/><unclear cert="low" resp="#joint">burger</unclear>.
 <lb n="122"/><persName role="issuer" resp="#ner">Mattheus Lochherr</persName>
 <lb n="123"/>goldtschmid.
 <pb facs="StadtASG_Missive_3602_14387.jpg" n="7"/>
 <pb facs="StadtASG_Missive_3602_14388.jpg" n="8"/>
-<lb n="124"/>Fuer
-<lb n="125"/>einen ersamen und
-<lb n="126"/>wolweisen rath
-<lb n="127"/>alhie.
-<lb n="128"/>Underthaeniges suppli-
-<lb n="129"/>ciren.
-<lb n="130"/>Pro Intercessionalib. an E.
-<lb n="131"/>lobl. Magistrat zue <orgName role="recipient" resp="#ner">St.
+<lb n="124"/><unclear cert="medium" resp="#joint">Fuer</unclear>
+<lb n="125"/><unclear cert="medium" resp="#joint">einen</unclear> <unclear cert="medium" resp="#joint">ersamen</unclear> <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="126"/><unclear cert="medium" resp="#joint">wolweisen</unclear> rath
+<lb n="127"/><unclear cert="medium" resp="#joint">alhie</unclear>.
+<lb n="128"/><unclear cert="medium" resp="#joint">Underthaeniges</unclear> <unclear cert="medium" resp="#joint">suppli</unclear>-
+<lb n="129"/><unclear cert="medium" resp="#joint">ciren</unclear>.
+<lb n="130"/>Pro <unclear cert="medium" resp="#joint">Intercessionalib</unclear>. an E.
+<lb n="131"/><unclear cert="medium" resp="#joint">lobl</unclear>. <unclear cert="medium" resp="#joint">Magistrat</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <orgName role="recipient" resp="#ner">St.
 <lb n="132"/>Gallen</orgName>.
-<lb n="133"/><persName role="issuer" resp="#ner">Matthei Hoffherrns</persName>
-<lb n="134"/>burgers und gold-
-<lb n="135"/>schmids alhie.
+<lb n="133"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Matthei</unclear> <unclear cert="low" resp="#joint">Hoffherrns</unclear></persName>
+<lb n="134"/>burgers <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">gold</unclear>-
+<lb n="135"/><unclear cert="medium" resp="#joint">schmids</unclear> <unclear cert="medium" resp="#joint">alhie</unclear>.
 </p>
         </body>
     </text>

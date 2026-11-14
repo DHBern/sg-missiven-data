@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3523</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Friedrich, Pfalzgraf bei Rhein, bittet Bürgermeister und Rat zu St. Gallen um eine freiwillige Steuer für die bedürftigen Kirchen- und Schuldienner sowie für Witwen und Waisen in seinen Ländern. Er begründet dies mit der Verarmung der Untertanen durch Kriege und bittet um Unterstützung, um das Predigtamt zu erhalten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Friedrich, Pfalzgraf bei Rhein, bittet Bürgermeister und Rat zu St. Gallen um eine freiwillige Steuer für die bedürftigen Kirchen- und Schuldienner sowie für Witwen und Waisen in seinen Ländern. Er begründet dies mit der Verarmung der Untertanen durch Kriege und bittet um Unterstützung, um das Predigtamt zu erhalten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Friedrich, Pfalzgraf bei Rhein, asks the Burgomaster and Council of St. Gallen for a voluntary tax for the needy church and school servants as well as for widows and orphans in his lands. He justifies this with the impoverishment of the subjects through wars and asks for support to maintain the preaching office.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -95,11 +96,11 @@
 <pb facs="StadtASG_Missive_3523_14043.jpg" n="3"/>
 <lb n="58"/>[]
 <pb facs="StadtASG_Missive_3523_14044.jpg" n="4"/>
-<lb n="59"/>Den gestrengen, vesten, erenvessten,
-<lb n="60"/>fürsichtigen, unnd weysen, unsern
-<lb n="61"/>besondern lieben, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="62"/>unnd Rhat, der Statt, St. Gallen</orgName>.
-<lb n="63"/>St. Gallen.
+<lb n="59"/>Den <unclear cert="low" resp="#joint">gestrengen</unclear>, <unclear cert="low" resp="#joint">vesten</unclear>, <unclear cert="low" resp="#joint">erenvessten</unclear>,
+<lb n="60"/>fürsichtigen, unnd <unclear cert="medium" resp="#joint">weysen</unclear>, <unclear cert="medium" resp="#joint">unsern</unclear>
+<lb n="61"/><unclear cert="medium" resp="#joint">besondern</unclear> lieben, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear>
+<lb n="62"/>unnd <unclear cert="medium" resp="#joint">Rhat</unclear>, der Statt, <unclear cert="medium" resp="#joint">St</unclear>. Gallen</orgName>.
+<lb n="63"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear>.
 </p>
         </body>
     </text>

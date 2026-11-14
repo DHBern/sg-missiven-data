@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3261</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die im Exil in Straßburg weilenden Räte des Pfalzgrafen von Zweibrücken bitten Bürgermeister und Rat zu St. Gallen um eine mitleidenswerte Geld- und Beisteuer. Sie begründen dies mit den hohen Lebenshaltungskosten und den Lasten der Garnison in Zweibrücken, die sie nicht mehr tragen könnten. Sie bitten um Überweisung des Betrags per Wechsel an den Straßburger Bürger Peter Tripouet.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die im Exil in Straßburg weilenden Räte des Pfalzgrafen von Zweibrücken bitten Bürgermeister und Rat zu St. Gallen um eine mitleidenswerte Geld- und Beisteuer. Sie begründen dies mit den hohen Lebenshaltungskosten und den Lasten der Garnison in Zweibrücken, die sie nicht mehr tragen könnten. Sie bitten um Überweisung des Betrags per Wechsel an den Straßburger Bürger Peter Tripouet.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Councilors of the Count Palatine of Zweibrücken, who are in exile in Straßburg, ask the Burgomaster and Council of St. Gallen for a compassionate monetary contribution. They justify this with the high cost of living and the burdens of the garrison in Zweibrücken, which they can no longer bear. They ask for the amount to be transferred by bill of exchange to the citizen of Straßburg, Peter Tripouet.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -93,13 +94,13 @@
 <lb n="56"/><persName role="issuer" resp="#ner">Balthasar Liechtel</persName> Dr.
 <pb facs="StadtASG_Missive_3261_12929.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3261_12930.jpg" n="4"/>
-<lb n="57"/>Denen Woledlen, gestrengen, Vesten,
-<lb n="58"/>Ehrenvesten, fuersichtig, ehrsamen,
-<lb n="59"/>und wysen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeisteren
-<lb n="60"/>und Raht der Statt St. Gallen</orgName>,
-<lb n="61"/>unsren insonders grossguenstig
-<lb n="62"/>hochgeehrten herren.
-<lb n="63"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gall.</origPlace>
+<lb n="57"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Woledlen</unclear>, <unclear cert="low" resp="#joint">gestrengen</unclear>, <unclear cert="low" resp="#joint">Vesten</unclear>,
+<lb n="58"/><unclear cert="low" resp="#joint">Ehrenvesten</unclear>, <unclear cert="low" resp="#joint">fuersichtig</unclear>, <unclear cert="low" resp="#joint">ehrsamen</unclear>,
+<lb n="59"/>und <unclear cert="medium" resp="#joint">wysen</unclear>, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeisteren</unclear>
+<lb n="60"/>und <unclear cert="medium" resp="#joint">Raht</unclear> der Statt St. Gallen</orgName>,
+<lb n="61"/><unclear cert="medium" resp="#joint">unsren</unclear> insonders <unclear cert="low" resp="#joint">grossguenstig</unclear>
+<lb n="62"/><unclear cert="low" resp="#joint">hochgeehrten</unclear> <unclear cert="low" resp="#joint">herren</unclear>.
+<lb n="63"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gall</unclear>.</origPlace>
 </p>
         </body>
     </text>

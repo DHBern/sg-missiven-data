@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3275</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat zu Appenzell senden Bürgermeister und Rat zu St. Gallen als Dank für erweisene Wohltaten ein Reh, das ihr Wildschütz am vergangenen Samstag erlegt habe. Sie bitten, das Geschenk in freundschaftlicher Nachbarschaft anzunehmen und in der Faschzeit zu verzehren.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat zu Appenzell senden Bürgermeister und Rat zu St. Gallen als Dank für erweisene Wohltaten ein Reh, das ihr Wildschütz am vergangenen Samstag erlegt habe. Sie bitten, das Geschenk in freundschaftlicher Nachbarschaft anzunehmen und in der Faschzeit zu verzehren.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council of Appenzell send the Burgomaster and Council of St. Gallen a deer, which their game warden shot last Saturday, as thanks for favors shown. They ask that the gift be accepted in friendly neighborhood and consumed during the Carnival season.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,7 +38,7 @@
 <lb n="1"/>Unser fründtlig willig dienst, sampt was wir
 <lb n="2"/>Eheren Liebs und guets vermuegendt zuovor, Fromen,
 <lb n="3"/>Fuersichtig, Ehrsamen weyß, Insonders guet Fründt
-<lb n="4"/>und woluertrauwte Liebe Nachbaren,
+<lb n="4"/>und <unclear cert="low" resp="#joint">woluertrauwte</unclear> Liebe Nachbaren,
 <lb n="5"/>Nach dem unser Gwildtschüz verschinen <date resp="#ner">Sambstag</date>.
 <lb n="6"/>ein Rhoe geschossen; Und wir auch ingedenkh. der
 <lb n="7"/>vilfaeltigen guetthaten so nit allein unß. sonder auch
@@ -53,8 +54,8 @@
 <lb n="17"/>willen gespürt, mit solchem wolgeneigtem willen
 <lb n="18"/>und gemuet verfahren, deß wir Gott bitten das
 <lb n="19"/>er unß. sambtlich in solchem fridlichen wolstandt.
-<lb n="20"/>langwirig erhalten woelle. datt. <origDate when="1601-02-14" cert="medium" resp="#ner">den. 14 ten
-<lb n="21"/>Hornung A° 1.638</origDate>.
+<lb n="20"/>langwirig erhalten woelle. datt. <origDate when="1601-02-14" cert="medium" resp="#ner">den. <unclear cert="low" resp="#joint">14</unclear> <unclear cert="low" resp="#joint">ten</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">Hornung</unclear> <unclear cert="low" resp="#joint">A°</unclear> 1.638</origDate>.
 <lb n="22"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtaman und Rath
 <lb n="23"/>zuo Appenzell</orgName>. / .
 <pb facs="StadtASG_Missive_3275_12992.jpg" n="2"/>

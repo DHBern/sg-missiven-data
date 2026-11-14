@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3544</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Überlingen bitten Bürgermeister und Rat zu St. Gallen um ein Darlehen von 3000 Gulden, da sie die Transportkosten nicht aufbringen könnten. Als Sicherheit bieten sie 300 Fuder Wein oder den am See gelegenen Flecken Sipnau an. Sie versprechen, die Schuld in friedlicher Zeit zurückzuzahlen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Überlingen bitten Bürgermeister und Rat zu St. Gallen um ein Darlehen von 3000 Gulden, da sie die Transportkosten nicht aufbringen könnten. Als Sicherheit bieten sie 300 Fuder Wein oder den am See gelegenen Flecken Sipnau an. Sie versprechen, die Schuld in friedlicher Zeit zurückzuzahlen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Überlingen ask Burgomaster and Council of St. Gallen for a loan of 3000 gulden, as they say that they could not afford the transport costs. As security they offer 300 casks of wine or the village of Sipnau situated on the lake. They promise to repay the debt in peaceful times.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,44 +36,44 @@
 <p>
 <pb facs="StadtASG_Missive_3544_14137.jpg" n="1"/>
 <lb n="1"/>Unser frtl. beraitwillige dinst und grueß
-<lb n="2"/>zuvor, Ernuöste fromb, fürsichtige und weÿse
-<lb n="3"/>igl. herren und guete Freünd.
+<lb n="2"/>zuvor, Ernuöste fromb, fürsichtige und <unclear cert="low" resp="#joint">weÿse</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">igl</unclear>. herren und guete Freünd.
 <lb n="4"/>In waß stand wir und unsere burgerschafft nunmehr
-<lb n="5"/>begriffen, ist sonder zweifel E. E. und wht. ohne
-<lb n="6"/>fernere erraehlung bewüst. Nachdem dan zu
-<lb n="7"/>mercklich gelittennem schaden, dise transportation
+<lb n="5"/>begriffen, ist sonder zweifel E. E. und <unclear cert="low" resp="#joint">wht</unclear>. <unclear cert="low" resp="#joint">ohne</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">fernere</unclear> <unclear cert="low" resp="#joint">erraehlung</unclear> <unclear cert="low" resp="#joint">bewüst</unclear>. <unclear cert="low" resp="#joint">Nachdem</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">zu</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">mercklich</unclear> <unclear cert="low" resp="#joint">gelittennem</unclear> <unclear cert="low" resp="#joint">schaden</unclear>, <unclear cert="low" resp="#joint">dise</unclear> transportation
 <lb n="8"/>noch ein mehrers nach sich zihet, und unß aufladet,
 <lb n="9"/>wir aber אלlen in paars abgeholten vormahlen nit ver-
 <lb n="10"/>mögen, gleichwohl der mitteln hierzu so gar noch nit
 <lb n="11"/>destituirt sind.
-<lb n="12"/>Haben wir auß eüsserster benöttigung umbgesehen, vnnd
-<lb n="13"/>zu E. E. wht. unsern ußführشتen recurs geschöpfft;
+<lb n="12"/>Haben wir <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">eüsserster</unclear> <unclear cert="low" resp="#joint">benöttigung</unclear> <unclear cert="low" resp="#joint">umbgesehen</unclear>, <unclear cert="low" resp="#joint">vnnd</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. unsern ußführشتen recurs geschöpfft;
 <lb n="14"/>dieselbige dinstlichen fleisses anlangende, die ge-
-<lb n="15"/>ruhen unß die handt bieten, und mit anleihung
-<lb n="16"/>3000. fl. beÿ Ihrer Statt, oder burgerschafft, gegen
+<lb n="15"/>ruhen unß die handt bieten, und mit <unclear cert="low" resp="#joint">anleihung</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">3000</unclear>. <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">Ihrer</unclear> <unclear cert="low" resp="#joint">Statt</unclear>, oder burgerschafft, gegen
 <lb n="17"/>darlifer: oder feilbietung 300. fuoder weins, oder
-<lb n="18"/>versetzung unsers am See gelegenen Fleckens
-<lb n="19"/>sipnen gl. wilfahren; welche sonder guetthat-
-<lb n="20"/>ten und bezaigende Commiseration wir und unsere
+<lb n="18"/>versetzung unsers <unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">See</unclear> <unclear cert="low" resp="#joint">gelegenen</unclear> <unclear cert="low" resp="#joint">Fleckens</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">sipnen</unclear> <unclear cert="low" resp="#joint">gl</unclear>. <unclear cert="low" resp="#joint">wilfahren</unclear>; <unclear cert="low" resp="#joint">welche</unclear> <unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">guetthat</unclear>-
+<lb n="20"/><unclear cert="low" resp="#joint">ten</unclear> und <unclear cert="low" resp="#joint">bezaigende</unclear> <unclear cert="low" resp="#joint">Commiseration</unclear> wir und unsere
 <lb n="21"/>posterität dan und vornemblich zu hoffend fridlicher
-<lb n="22"/>zeit, vff all anderer begebenheit dinstlich zu-
-<lb n="23"/>beschulden nimer vergessen wollen; dahin der Allmechtig
-<lb n="24"/>E. E. wht. in allem wohlstandt und friden erhalten
-<lb n="25"/>wolle; Verbleiben damit
-<lb n="26"/>E. E. Wht.
-<lb n="27"/>Datum den. <origDate resp="#ner">20. Febr. Ao.
+<lb n="22"/>zeit, vff all anderer begebenheit <unclear cert="low" resp="#joint">dinstlich</unclear> <unclear cert="low" resp="#joint">zu</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">beschulden</unclear> <unclear cert="low" resp="#joint">nimer</unclear> <unclear cert="low" resp="#joint">vergessen</unclear> <unclear cert="low" resp="#joint">wollen</unclear>; <unclear cert="low" resp="#joint">dahin</unclear> der <unclear cert="low" resp="#joint">Allmechtig</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">allem</unclear> <unclear cert="low" resp="#joint">wohlstandt</unclear> und <unclear cert="low" resp="#joint">friden</unclear> <unclear cert="low" resp="#joint">erhalten</unclear>
+<lb n="25"/>wolle; Verbleiben <unclear cert="low" resp="#joint">damit</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="27"/><unclear cert="low" resp="#joint">Datum</unclear> den. <origDate resp="#ner">20. <unclear cert="low" resp="#joint">Febr</unclear>. <unclear cert="low" resp="#joint">Ao</unclear>.
 <lb n="28"/>643</origDate>
-<lb n="29"/>dinstfreündwillige
-<lb n="30"/><orgName ref="stadtasg-actors-68" cert="medium" role="issuer" resp="#ner">Burgermeister vnd Rath
+<lb n="29"/><unclear cert="low" resp="#joint">dinstfreündwillige</unclear>
+<lb n="30"/><orgName ref="stadtasg-actors-68" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">vnd</unclear> Rath
 <lb n="31"/>der Statt Vberlingen</orgName>
 <pb facs="StadtASG_Missive_3544_14138.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3544_14139.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3544_14140.jpg" n="4"/>
 <lb n="32"/>Denen fuernehmen, ehrsamen, fuersichtigen unnd
-<lb n="33"/>weisen herren, N: N: <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd
+<lb n="33"/>weisen <unclear cert="low" resp="#joint">herren</unclear>, <unclear cert="low" resp="#joint">N</unclear>: <unclear cert="low" resp="#joint">N</unclear>: <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd
 <lb n="34"/>Rath der statt St: Gallen</orgName> unsern
-<lb n="35"/>lieb herren unnd gueten freunden.
-<lb n="36"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName>.
+<lb n="35"/>lieb herren <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>.
+<lb n="36"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>: <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

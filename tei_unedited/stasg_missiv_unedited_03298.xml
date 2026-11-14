@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3298</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Hercules von Raitenau teilt Bürgermeister und Rat zu St. Gallen mit, dass ihm die verwitwete Erzherzogin Claudia zu Österreich die erledigte Vogtei Bregenz und Hohenegg verliehen habe. Er bittet die St. Galler, am 6. Juli morgens in Bregenz anwesend zu sein, um ihn bei der Immatrikulation durch den Kommissar Johann Georg von Königsegg zu begleiten und den Akt zu zieren.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Hercules von Raitenau teilt Bürgermeister und Rat zu St. Gallen mit, dass ihm die verwitwete Erzherzogin Claudia zu Österreich die erledigte Vogtei Bregenz und Hohenegg verliehen habe. Er bittet die St. Galler, am 6. Juli morgens in Bregenz anwesend zu sein, um ihn bei der Immatrikulation durch den Kommissar Johann Georg von Königsegg zu begleiten und den Akt zu zieren.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Hercules von Raitenau informs the Burgomaster and Council of St. Gallen that the widowed Archduchess Claudia zu Österreich has granted him the vacant bailiwick of Bregenz and Hohenegg. He asks the citizens of St. Gallen to be present in Bregenz on the morning of 6. July to accompany him during the immatriculation by the Commissioner Johann Georg von Königsegg and to adorn the act.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,53 +35,53 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3298_13081.jpg" n="1"/>
-<lb n="1"/>Edle, veßte, Ehrnveßte, fürsichtige, Ehrsame und weise,
-<lb n="2"/>sonders liebe hrn und Nachbaurn, denselben seÿ mein grues
-<lb n="3"/>und alles liebs Zuvor.
-<lb n="4"/>Demnach Ihr fürstl. dhrtl. die verwittibte Erzhörzogin
-<lb n="5"/><persName resp="#ner">Claüdia</persName> zuo <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Östereich</placeName> mein gnedigste fraüw mir auf tödtliches
-<lb n="6"/>ableiben, deß Wolgebornen weilendt hrn <persName resp="#ner">hanß wernerß</persName>
-<lb n="7"/>Edlen herenß auf <placeName ref="stadtasg-places-104" cert="medium" resp="#ner">Raitnaw</placeName>, freÿhrn Röm. kaÿl. Maÿt.
-<lb n="8"/>Camerer und Reichshofrathß, auch hobeinelter fürstl. dhrtl.
-<lb n="9"/>Camerer, hofrath, vogt beeder hereschafften <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenz</placeName>
-<lb n="10"/>und <placeName resp="#ner">hohenegg</placeName>, und obrißter haübtman der vier hereschafften
-<lb n="11"/>vorm <placeName resp="#ner">Arllerberg</placeName>, Meines vilgeliebten hochgeehrten hrn
-<lb n="12"/>vaters, wolseelig. khürzverrückhter Zeit das vacier=
-<lb n="13"/>ende vogteÿ <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenz</placeName> und <placeName resp="#ner">hohenegg</placeName> gdißt assigniert
-<lb n="14"/>und verlihen haben. alß bin ich entgchloßen mich (geliebts
-<lb n="15"/>gott) auf <date resp="#ner">negßtkhünfftig Zinstag den 6 ten dits Monats
-<lb n="16"/>Julÿ</date>, dürch höchßtgedacht Ihr fürstl dhrtl. darzue woluer=
-<lb n="17"/>ordueten Comißarium, den hochwolgebornen hrn <persName resp="#ner">Johann
-<lb n="18"/>Geörg</persName> Freÿhrn Zu <placeName ref="stadtasg-places-278" cert="medium" resp="#ner">Khönigsegg</placeName>, und <placeName ref="stadtasg-places-179" cert="medium" resp="#ner">Rotenfelß</placeName>, hrn
-<lb n="19"/>Zu <placeName ref="stadtasg-places-275" cert="medium" resp="#ner">aulendorff</placeName> und <placeName resp="#ner">Staufen</placeName>, Ihr fürstl. dhrtl. Rath,
-<lb n="20"/>und Landtuogten in obern und nidern <placeName ref="stadtasg-places-108" cert="medium" resp="#ner">schwaben</placeName> in
-<lb n="21"/>solche vogteÿ alhie Zu <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenz</placeName> Soleniter imittieren
-<lb n="22"/>unnd einsezen Zulaßen.
-<lb n="23"/>Wann dann mir derselben gegenwarth, neben andern
-<lb n="24"/>eingeladnen heren und freünden, beÿ solchem actu, auch
+<lb n="1"/>Edle, <unclear cert="medium" resp="#joint">veßte</unclear>, <unclear cert="medium" resp="#joint">Ehrnveßte</unclear>, fürsichtige, <unclear cert="medium" resp="#joint">Ehrsame</unclear> und weise,
+<lb n="2"/>sonders liebe <unclear cert="medium" resp="#joint">hrn</unclear> und <unclear cert="medium" resp="#joint">Nachbaurn</unclear>, denselben <unclear cert="medium" resp="#joint">seÿ</unclear> mein <unclear cert="medium" resp="#joint">grues</unclear>
+<lb n="3"/>und alles <unclear cert="medium" resp="#joint">liebs</unclear> <unclear cert="medium" resp="#joint">Zuvor</unclear>.
+<lb n="4"/>Demnach <unclear cert="medium" resp="#joint">Ihr</unclear> <unclear cert="medium" resp="#joint">fürstl</unclear>. <unclear cert="medium" resp="#joint">dhrtl</unclear>. die <unclear cert="medium" resp="#joint">verwittibte</unclear> <unclear cert="medium" resp="#joint">Erzhörzogin</unclear>
+<lb n="5"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Claüdia</unclear></persName> zuo <placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Östereich</unclear></placeName> mein gnedigste <unclear cert="medium" resp="#joint">fraüw</unclear> mir <unclear cert="medium" resp="#joint">auf</unclear> <unclear cert="medium" resp="#joint">tödtliches</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">ableiben</unclear>, <unclear cert="medium" resp="#joint">deß</unclear> Wolgebornen <unclear cert="low" resp="#joint">weilendt</unclear> <unclear cert="low" resp="#joint">hrn</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">hanß</unclear> <unclear cert="low" resp="#joint">wernerß</unclear></persName>
+<lb n="7"/><unclear cert="low" resp="#joint">Edlen</unclear> <unclear cert="low" resp="#joint">herenß</unclear> <unclear cert="low" resp="#joint">auf</unclear> <placeName ref="stadtasg-places-104" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Raitnaw</unclear></placeName>, <unclear cert="low" resp="#joint">freÿhrn</unclear> <unclear cert="low" resp="#joint">Röm</unclear>. <unclear cert="low" resp="#joint">kaÿl</unclear>. <unclear cert="low" resp="#joint">Maÿt</unclear>.
+<lb n="8"/><unclear cert="low" resp="#joint">Camerer</unclear> und <unclear cert="low" resp="#joint">Reichshofrathß</unclear>, auch <unclear cert="medium" resp="#joint">hobeinelter</unclear> <unclear cert="medium" resp="#joint">fürstl</unclear>. <unclear cert="medium" resp="#joint">dhrtl</unclear>.
+<lb n="9"/><unclear cert="medium" resp="#joint">Camerer</unclear>, <unclear cert="medium" resp="#joint">hofrath</unclear>, <unclear cert="medium" resp="#joint">vogt</unclear> <unclear cert="medium" resp="#joint">beeder</unclear> <unclear cert="medium" resp="#joint">hereschafften</unclear> <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bregenz</unclear></placeName>
+<lb n="10"/>und <placeName resp="#ner"><unclear cert="medium" resp="#joint">hohenegg</unclear></placeName>, und <unclear cert="low" resp="#joint">obrißter</unclear> <unclear cert="low" resp="#joint">haübtman</unclear> der vier <unclear cert="medium" resp="#joint">hereschafften</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">vorm</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Arllerberg</unclear></placeName>, <unclear cert="medium" resp="#joint">Meines</unclear> <unclear cert="medium" resp="#joint">vilgeliebten</unclear> <unclear cert="medium" resp="#joint">hochgeehrten</unclear> <unclear cert="medium" resp="#joint">hrn</unclear>
+<lb n="12"/><unclear cert="medium" resp="#joint">vaters</unclear>, <unclear cert="medium" resp="#joint">wolseelig</unclear>. <unclear cert="medium" resp="#joint">khürzverrückhter</unclear> Zeit <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">vacier=</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">ende</unclear> <unclear cert="low" resp="#joint">vogteÿ</unclear> <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregenz</unclear></placeName> und <placeName resp="#ner"><unclear cert="low" resp="#joint">hohenegg</unclear></placeName> <unclear cert="low" resp="#joint">gdißt</unclear> <unclear cert="low" resp="#joint">assigniert</unclear>
+<lb n="14"/>und <unclear cert="low" resp="#joint">verlihen</unclear> haben. alß <unclear cert="low" resp="#joint">bin</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">entgchloßen</unclear> <unclear cert="low" resp="#joint">mich</unclear> (<unclear cert="low" resp="#joint">geliebts</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">gott</unclear>) <unclear cert="low" resp="#joint">auf</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">negßtkhünfftig</unclear> <unclear cert="low" resp="#joint">Zinstag</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">dits</unclear> <unclear cert="low" resp="#joint">Monats</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">Julÿ</unclear></date>, <unclear cert="low" resp="#joint">dürch</unclear> <unclear cert="low" resp="#joint">höchßtgedacht</unclear> <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">fürstl</unclear> <unclear cert="low" resp="#joint">dhrtl</unclear>. <unclear cert="low" resp="#joint">darzue</unclear> <unclear cert="low" resp="#joint">woluer=</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">ordueten</unclear> <unclear cert="low" resp="#joint">Comißarium</unclear>, <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">hochwolgebornen</unclear> <unclear cert="low" resp="#joint">hrn</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Johann</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">Geörg</unclear></persName> <unclear cert="low" resp="#joint">Freÿhrn</unclear> <unclear cert="low" resp="#joint">Zu</unclear> <placeName ref="stadtasg-places-278" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Khönigsegg</unclear></placeName>, und <placeName ref="stadtasg-places-179" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rotenfelß</unclear></placeName>, <unclear cert="low" resp="#joint">hrn</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">Zu</unclear> <placeName ref="stadtasg-places-275" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">aulendorff</unclear></placeName> und <placeName resp="#ner"><unclear cert="low" resp="#joint">Staufen</unclear></placeName>, <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">fürstl</unclear>. <unclear cert="low" resp="#joint">dhrtl</unclear>. <unclear cert="low" resp="#joint">Rath</unclear>,
+<lb n="20"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Landtuogten</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">obern</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nidern</unclear> <placeName ref="stadtasg-places-108" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">schwaben</unclear></placeName> <unclear cert="low" resp="#joint">in</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">vogteÿ</unclear> <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">Zu</unclear> <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregenz</unclear></placeName> <unclear cert="low" resp="#joint">Soleniter</unclear> <unclear cert="low" resp="#joint">imittieren</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">einsezen</unclear> <unclear cert="low" resp="#joint">Zulaßen</unclear>.
+<lb n="23"/><unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">derselben</unclear> <unclear cert="low" resp="#joint">gegenwarth</unclear>, <unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">andern</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">eingeladnen</unclear> <unclear cert="low" resp="#joint">heren</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">freünden</unclear>, <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">solchem</unclear> <unclear cert="low" resp="#joint">actu</unclear>, auch
 <pb facs="StadtASG_Missive_3298_13082.jpg" n="2"/>
-<lb n="25"/>sonders lieb unnd angenem sein wurden, alß ist an die-
-<lb n="26"/>selben mein freundt dienstlichs ersuochen, sÿ wellen sich auf ge-
-<lb n="27"/>melten tag morgens frue alhie zu Bregentz ohnbeschwerdt
-<lb n="28"/>einstellen, unnd solchen actum gleichmessig condecorieren
-<lb n="29"/>unnd zieren helfen.
-<lb n="30"/>Daß bin ich umb dieselben zu jeder begebenheit hin-
-<lb n="31"/>widerumb zubeschulden, bereith unnd guetwillig, unß damit
-<lb n="32"/>götlichen bewarung freundtlich emphelhen, <origPlace ref="stadtasg-places-60" cert="medium" resp="#ner">Bregentz</origPlace> <origDate when="1676-07-02" cert="medium" resp="#ner">den 2 julÿ
-<lb n="33"/>a° lxxvj</origDate>.
-<lb n="34"/>Derselben
-<lb n="35"/>guetwilliger
-<lb n="36"/><persName role="issuer" resp="#ner">Herculis voon Raitenaw</persName> etc.
-<lb n="37"/>edler herr uff
-<lb n="38"/><placeName ref="stadtasg-places-68" cert="medium" resp="#ner">Lengenstain</placeName> in <placeName ref="stadtasg-places-304" cert="medium" resp="#ner">Hegow</placeName> etc.
-<lb n="39"/>mp.
+<lb n="25"/><unclear cert="medium" resp="#joint">sonders</unclear> lieb <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">angenem</unclear> sein <unclear cert="medium" resp="#joint">wurden</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">ist</unclear> an die-
+<lb n="26"/>selben mein <unclear cert="medium" resp="#joint">freundt</unclear> <unclear cert="medium" resp="#joint">dienstlichs</unclear> <unclear cert="medium" resp="#joint">ersuochen</unclear>, <unclear cert="medium" resp="#joint">sÿ</unclear> wellen <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">auf</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="27"/><unclear cert="low" resp="#joint">melten</unclear> <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">morgens</unclear> <unclear cert="low" resp="#joint">frue</unclear> <unclear cert="low" resp="#joint">alhie</unclear> zu <unclear cert="low" resp="#joint">Bregentz</unclear> <unclear cert="low" resp="#joint">ohnbeschwerdt</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">einstellen</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> solchen <unclear cert="medium" resp="#joint">actum</unclear> <unclear cert="medium" resp="#joint">gleichmessig</unclear> <unclear cert="medium" resp="#joint">condecorieren</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">zieren</unclear> helfen.
+<lb n="30"/><unclear cert="medium" resp="#joint">Daß</unclear> bin ich <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">dieselben</unclear> zu <unclear cert="medium" resp="#joint">jeder</unclear> begebenheit hin-
+<lb n="31"/>widerumb <unclear cert="low" resp="#joint">zubeschulden</unclear>, <unclear cert="low" resp="#joint">bereith</unclear> <unclear cert="low" resp="#joint">unnd</unclear> guetwillig, unß damit
+<lb n="32"/><unclear cert="medium" resp="#joint">götlichen</unclear> <unclear cert="medium" resp="#joint">bewarung</unclear> <unclear cert="medium" resp="#joint">freundtlich</unclear> <unclear cert="medium" resp="#joint">emphelhen</unclear>, <origPlace ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bregentz</unclear></origPlace> <origDate when="1676-07-02" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">den</unclear> 2 <unclear cert="low" resp="#joint">julÿ</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">lxxvj</unclear></origDate>.
+<lb n="34"/><unclear cert="low" resp="#joint">Derselben</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">guetwilliger</unclear>
+<lb n="36"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Herculis</unclear> <unclear cert="low" resp="#joint">voon</unclear> <unclear cert="low" resp="#joint">Raitenaw</unclear></persName> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="37"/><unclear cert="low" resp="#joint">edler</unclear> <unclear cert="low" resp="#joint">herr</unclear> <unclear cert="low" resp="#joint">uff</unclear>
+<lb n="38"/><placeName ref="stadtasg-places-68" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lengenstain</unclear></placeName> <unclear cert="low" resp="#joint">in</unclear> <placeName ref="stadtasg-places-304" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Hegow</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="39"/><unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_3298_13083.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3298_13084.jpg" n="4"/>
-<lb n="40"/>Denen Edlen, Vesten, Fuernemmen, fuersichtigen, Ersamen
-<lb n="41"/>und Weisen, Hrn. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaistren und Raht der
-<lb n="42"/>Statt St. Gallen</orgName>, Meinen sonders lieben Freünden
-<lb n="43"/>und Nachbaren!
-<lb n="44"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="40"/><unclear cert="medium" resp="#joint">Denen</unclear> Edlen, Vesten, <unclear cert="low" resp="#joint">Fuernemmen</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">Ersamen</unclear>
+<lb n="41"/>und <unclear cert="low" resp="#joint">Weisen</unclear>, <unclear cert="low" resp="#joint">Hrn</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaistren</unclear> und <unclear cert="low" resp="#joint">Raht</unclear> der
+<lb n="42"/>Statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">Freünden</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Nachbaren</unclear>!
+<lb n="44"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

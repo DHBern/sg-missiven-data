@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3562</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat der Ausserrhoden berichten, dass der alte Metzger Michel Tobler von ihrem Landsmann Hans Schüss 45 Gulden schuldig sei. Schüss dränge auf sofortige Zahlung, was Tobler das Bürgerrecht kosten würde. Tobler habe einen Ratenplan von 2 Gulden monatlich vorgeschlagen. Die Ausserrhoden bitten St. Gallen, Schüss zu bewegen, den alten Mann in der Stadt zu belassen und die Raten anzunehmen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat der Ausserrhoden berichten, dass der alte Metzger Michel Tobler von ihrem Landsmann Hans Schüss 45 Gulden schuldig sei. Schüss dränge auf sofortige Zahlung, was Tobler das Bürgerrecht kosten würde. Tobler habe einen Ratenplan von 2 Gulden monatlich vorgeschlagen. Die Ausserrhoden bitten St. Gallen, Schüss zu bewegen, den alten Mann in der Stadt zu belassen und die Raten anzunehmen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council of Ausserrhoden report that the old butcher Michel Tobler owes 45 gulden to their countryman Hans Schüss. Schüss is pressing for immediate payment, which would cost Tobler his citizenship. Tobler has proposed an installment plan of 2 gulden per month. The Ausserrhoden ask St. Gallen to persuade Schüss to let the old man remain in the city and to accept the installments.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -64,26 +65,26 @@
 <lb n="28"/>bringen angehoert. und unß sein beschaffenheit theilß
 <lb n="29"/>bekandt. alß haben wir nit wellen unß auch dißmahlen
 <pb facs="StadtASG_Missive_3562_14214.jpg" n="2"/>
-<lb n="30"/>besser nit beschaffen) nit sellen umbgehn. sonderen mit
-<lb n="31"/>gemeltem Hanß Schueßen reden lassen. das er diseren
-<lb n="32"/>alten man. mehrers by huß. und burger krecht ver-
-<lb n="33"/>bliben lasse und jederzeith. die . 2 gl an nemmen
+<lb n="30"/><unclear cert="low" resp="#joint">besser</unclear> nit <unclear cert="low" resp="#joint">beschaffen</unclear>) <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">sellen</unclear> <unclear cert="low" resp="#joint">umbgehn</unclear>. <unclear cert="low" resp="#joint">sonderen</unclear> mit
+<lb n="31"/>gemeltem Hanß Schueßen reden lassen. das er <unclear cert="low" resp="#joint">diseren</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">alten</unclear> man. mehrers by huß. und <unclear cert="low" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">krecht</unclear> ver-
+<lb n="33"/>bliben lasse und jederzeith. die . <unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">gl</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">nemmen</unclear>
 <lb n="34"/>solte. wann aber er Schueß dißmahlen nit Einheimbsch.
 <lb n="35"/>solle selbiges uff andere zith beschehen. und vermeinnend
-<lb n="36"/>wir. das eß nit übel gfelt wann man deß <persName resp="#ner">Michel
-<lb n="37"/>Toblerß</persName>. getroffenen Accord besche. und bede theil
-<lb n="38"/>dem selbigen nach zukommen ver mögen wurden.
-<lb n="39"/>Diß ist so wir. Ime alten Toblern zu nugzen (jedoch.
-<lb n="40"/>Eweren wißheiten darby. nichts vorgeschriben)
+<lb n="36"/>wir. das eß nit übel gfelt wann <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">deß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Michel</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">Toblerß</unclear></persName>. <unclear cert="low" resp="#joint">getroffenen</unclear> <unclear cert="low" resp="#joint">Accord</unclear> <unclear cert="low" resp="#joint">besche</unclear>. und <unclear cert="low" resp="#joint">bede</unclear> theil
+<lb n="38"/>dem selbigen nach zukommen <unclear cert="low" resp="#joint">ver</unclear> mögen <unclear cert="low" resp="#joint">wurden</unclear>.
+<lb n="39"/><unclear cert="low" resp="#joint">Diß</unclear> <unclear cert="low" resp="#joint">ist</unclear> so <unclear cert="low" resp="#joint">wir</unclear>. <unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">alten</unclear> <unclear cert="low" resp="#joint">Toblern</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">nugzen</unclear> (<unclear cert="low" resp="#joint">jedoch</unclear>.
+<lb n="40"/><unclear cert="low" resp="#joint">Eweren</unclear> <unclear cert="low" resp="#joint">wißheiten</unclear> darby. nichts vorgeschriben)
 <lb n="41"/>berichten sollen. und beuellend uns hiemit sämbt-
-<lb n="42"/>lichen Gottes gnediger obhalt. act Trochens. den
-<lb n="43"/><origDate when="1643-09-06" resp="#ner">6 tn herbstmonats Ao 1643</origDate>
-<lb n="44"/><orgName ref="stadtasg-actors-773" cert="medium" role="issuer" resp="#ner">Landtamen und Rath Jnder
+<lb n="42"/>lichen <unclear cert="low" resp="#joint">Gottes</unclear> <unclear cert="low" resp="#joint">gnediger</unclear> <unclear cert="low" resp="#joint">obhalt</unclear>. <unclear cert="low" resp="#joint">act</unclear> <unclear cert="low" resp="#joint">Trochens</unclear>. <unclear cert="low" resp="#joint">den</unclear>
+<lb n="43"/><origDate when="1643-09-06" resp="#ner"><unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">tn</unclear> <unclear cert="low" resp="#joint">herbstmonats</unclear> <unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">1643</unclear></origDate>
+<lb n="44"/><orgName ref="stadtasg-actors-773" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Landtamen</unclear> und Rath Jnder
 <lb n="45"/>vsseren Rhoden deß Landtß
 <lb n="46"/>Appenzell</orgName>
 <pb facs="StadtASG_Missive_3562_14215.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3562_14216.jpg" n="4"/>
-<lb n="47"/>Denen hochgelehrten, wolerbornen
+<lb n="47"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">hochgelehrten</unclear>, <unclear cert="low" resp="#joint">wolerbornen</unclear>
 <lb n="48"/>gestrengen, ehrnvessten, fuersichtig
 <lb n="49"/>und weyßen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="50"/>und Rath der Statt Sant Gallen</orgName>,

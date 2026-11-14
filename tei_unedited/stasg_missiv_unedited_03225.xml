@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3225</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten die Ratsgesandten der Eidgenossenschaft zu Baden, sich bei der französischen Königinmutter und dem Kardinal Richelieu für die eidgenössischen Kaufleute einzusetzen. Diese seien trotz eines 1636 erlassenen Arrets, das ihre Zollfreiheit bestätigte, von den Zollverwaltern in Valence erneut mit Abgaben belastet worden. Die Gesandten sollen die Beschwerden beim französischen Gesandten de Melian vortragen und die Einhaltung des Arrets durchsetzen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten die Ratsgesandten der Eidgenossenschaft zu Baden, sich bei der französischen Königinmutter und dem Kardinal Richelieu für die eidgenössischen Kaufleute einzusetzen. Diese seien trotz eines 1636 erlassenen Arrets, das ihre Zollfreiheit bestätigte, von den Zollverwaltern in Valence erneut mit Abgaben belastet worden. Die Gesandten sollen die Beschwerden beim französischen Gesandten de Melian vortragen und die Einhaltung des Arrets durchsetzen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask the Council envoys of the Confederation to Baden to intervene with the French Queen Mother and Cardinal Richelieu on behalf of the Confederate merchants. These are said to have been taxed again by the customs officials in Valence, despite an Arret issued in 1636 that confirmed their duty-free status. The envoys are to present the complaints to the French envoy de Melian and enforce the observance of the Arret.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -69,40 +70,40 @@
 <lb n="33"/>Verwalter under dato <date resp="#ner">21. Februarij 1637</date>. ein Neüwen Arret, dem Vorigen gantz zuwider
 <lb n="34"/>nit allein wider ußgebracht; sonder habe auch dar-
 <pb facs="StadtASG_Missive_3225_12750.jpg" n="2"/>
-<lb n="35"/>aufft, die herauß gehendte guetter, die reaprecia-
-<lb n="36"/>tion mit gewalt machen bezahlen; welches auch die
+<lb n="35"/>aufft, die herauß gehendte guetter, die <unclear cert="low" resp="#joint">reaprecia</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">tion</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">gewalt</unclear> machen bezahlen; welches auch die
 <lb n="37"/>zoeler vor der <placeName resp="#ner">Doane de Valence</placeName> in <placeName ref="stadtasg-places-443" cert="medium" resp="#ner">Monleul</placeName>, alda
-<lb n="38"/>sie die wahren niderlegen lassen, auch understenden
-<lb n="39"/>zethun: Mit underthaenigen ersuchen und bitten, weilen
-<lb n="40"/>ihnen E. Eydtg. Vt.
-<lb n="41"/>und U. l. a. E. ihre hochg. intercession guenstig
-<lb n="42"/>verleychen welle, zu dem Ende, darmit bey gegenwirtiger
-<lb n="43"/>occasion, sollche abermahlige der gemeinen Eydt-
+<lb n="38"/>sie die <unclear cert="low" resp="#joint">wahren</unclear> <unclear cert="low" resp="#joint">niderlegen</unclear> lassen, auch understenden
+<lb n="39"/>zethun: Mit underthaenigen ersuchen und <unclear cert="low" resp="#joint">bitten</unclear>, <unclear cert="low" resp="#joint">weilen</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Eydtg</unclear>. <unclear cert="low" resp="#joint">Vt</unclear>.
+<lb n="41"/>und <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">a</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">ihre</unclear> <unclear cert="low" resp="#joint">hochg</unclear>. <unclear cert="low" resp="#joint">intercession</unclear> <unclear cert="low" resp="#joint">guenstig</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">verleychen</unclear> <unclear cert="low" resp="#joint">welle</unclear>, <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Ende</unclear>, <unclear cert="low" resp="#joint">darmit</unclear> bey <unclear cert="low" resp="#joint">gegenwirtiger</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">occasion</unclear>, <unclear cert="low" resp="#joint">sollche</unclear> abermahlige der gemeinen Eydt-
 <lb n="44"/>gnosischen Kauffleüten, begegnedte beschwerdt, dem
-<lb n="45"/>herren <persName resp="#ner">de Melian</persName> koen. May. in <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckhreich</placeName> Ambassa-
-<lb n="46"/>doren, mit eifer zuclagen; auch da es die noth-
+<lb n="45"/>herren <persName resp="#ner">de Melian</persName> koen. May. in <placeName ref="stadtasg-places-131" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Franckhreich</unclear></placeName> <unclear cert="low" resp="#joint">Ambassa</unclear>-
+<lb n="46"/><unclear cert="low" resp="#joint">doren</unclear>, mit eifer zuclagen; auch da es die noth-
 <lb n="47"/>wendigkeit erforderte, nit allein ihr Koen. May.
 <lb n="48"/>selbsten, sonder auch dem h. <persName resp="#ner">Cardinal de Richelieu</persName>
-<lb n="49"/>und andern kuenigclichen Ministris deßwegen zuezue-
-<lb n="50"/>schreiben zugestelt werden
-<lb n="51"/>koendte darmit sie doch dermahlen einist bey den
-<lb n="52"/>Fridtschlus und deßwegen erlangten erhaltnen Arreten
-<lb n="53"/>geschuzt, und vor den zoelleren Doaniers wider unangefochten
+<lb n="49"/>und andern <unclear cert="low" resp="#joint">kuenigclichen</unclear> <unclear cert="low" resp="#joint">Ministris</unclear> <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">zuezue</unclear>-
+<lb n="50"/><unclear cert="low" resp="#joint">schreiben</unclear> <unclear cert="low" resp="#joint">zugestelt</unclear> <unclear cert="low" resp="#joint">werden</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">koendte</unclear> darmit sie <unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">dermahlen</unclear> <unclear cert="low" resp="#joint">einist</unclear> bey den
+<lb n="52"/>Fridtschlus und <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">erlangten</unclear> <unclear cert="low" resp="#joint">erhaltnen</unclear> <unclear cert="low" resp="#joint">Arreten</unclear>
+<lb n="53"/><unclear cert="low" resp="#joint">geschuzt</unclear>, und vor den <unclear cert="low" resp="#joint">zoelleren</unclear> <unclear cert="low" resp="#joint">Doaniers</unclear> <unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">unangefochten</unclear>
 <lb n="54"/>verbleiben moegen: Wellche Ihr getreue mit-
 <lb n="55"/>buergere ode unzweiffelich pitt, wir ihnen nit
 <lb n="56"/>verweigern kuenen. Gelangt demnach
-<lb n="57"/>an E. Eydtg. Vt. und U. l. a. E. unser ganz
-<lb n="58"/>dienst- fründtlich und Eydtgnosisches bitten und er-
-<lb n="59"/>suchen, sie geruchen ihnen dißers gemein weßen
-<lb n="60"/>wie hievorn mit sondern eifer
-<lb n="61"/>beschehen auch anjezo widerumb zum besten
-<lb n="62"/>und getreulichisten angelegen und feerner wol befohlen
-<lb n="63"/>sein zu laßen, auf daß doch dißeren starcken
-<lb n="64"/>beschwerden, und den unerschwingclichen Auflagung
-<lb n="65"/>entlich einist dergstalt abgeschafft werde,
-<lb n="66"/>daß man bey dem was man einmahl erlangt
-<lb n="67"/>bestendig verbleiben moege. Daran erweisen
-<lb n="68"/>E. Eydtg. Vt. und U. l. a. E. ein loblich werckh
+<lb n="57"/>an <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Eydtg</unclear>. <unclear cert="low" resp="#joint">Vt</unclear>. und <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">a</unclear>. <unclear cert="low" resp="#joint">E</unclear>. unser ganz
+<lb n="58"/>dienst- fründtlich und <unclear cert="low" resp="#joint">Eydtgnosisches</unclear> <unclear cert="low" resp="#joint">bitten</unclear> und <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="59"/><unclear cert="low" resp="#joint">suchen</unclear>, <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">geruchen</unclear> <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">dißers</unclear> <unclear cert="low" resp="#joint">gemein</unclear> <unclear cert="low" resp="#joint">weßen</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">hievorn</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">sondern</unclear> <unclear cert="low" resp="#joint">eifer</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">beschehen</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">anjezo</unclear> <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">zum</unclear> <unclear cert="low" resp="#joint">besten</unclear>
+<lb n="62"/>und <unclear cert="low" resp="#joint">getreulichisten</unclear> <unclear cert="low" resp="#joint">angelegen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">feerner</unclear> wol befohlen
+<lb n="63"/>sein zu <unclear cert="low" resp="#joint">laßen</unclear>, <unclear cert="low" resp="#joint">auf</unclear> daß <unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">dißeren</unclear> <unclear cert="low" resp="#joint">starcken</unclear>
+<lb n="64"/><unclear cert="low" resp="#joint">beschwerden</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">unerschwingclichen</unclear> <unclear cert="low" resp="#joint">Auflagung</unclear>
+<lb n="65"/><unclear cert="low" resp="#joint">entlich</unclear> <unclear cert="low" resp="#joint">einist</unclear> <unclear cert="low" resp="#joint">dergstalt</unclear> <unclear cert="low" resp="#joint">abgeschafft</unclear> <unclear cert="low" resp="#joint">werde</unclear>,
+<lb n="66"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">man</unclear> bey dem was man <unclear cert="low" resp="#joint">einmahl</unclear> erlangt
+<lb n="67"/>bestendig verbleiben <unclear cert="low" resp="#joint">moege</unclear>. <unclear cert="low" resp="#joint">Daran</unclear> <unclear cert="low" resp="#joint">erweisen</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Eydtg</unclear>. <unclear cert="low" resp="#joint">Vt</unclear>. und <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">a</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">loblich</unclear> <unclear cert="low" resp="#joint">werckh</unclear>
 <pb facs="StadtASG_Missive_3225_12751.jpg" n="3"/>
 <lb n="69"/>were
 <lb n="70"/>daß nit allei der gemmeine wolstandt

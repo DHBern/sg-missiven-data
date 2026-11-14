@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3609</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat im äußeren Roden des Landes Appenzell bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Jakob Züblin anzuweisen, am 8. August um acht Uhr morgens am Holz bei Obloch zu erscheinen, um einen Grenzstreit mit Appenzeller Landleuten zu klären. Sie bitten, dass Züblin seine Urkunden mitbringe und der St. Galler Bürgermeister Weggen anwesend sei.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat im äußeren Roden des Landes Appenzell bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Jakob Züblin anzuweisen, am 8. August um acht Uhr morgens am Holz bei Obloch zu erscheinen, um einen Grenzstreit mit Appenzeller Landleuten zu klären. Sie bitten, dass Züblin seine Urkunden mitbringe und der St. Galler Bürgermeister Weggen anwesend sei.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Landammann and Council in the outer Roden of the Land of Appenzell request the Burgomaster and Council of St. Gallen to instruct their citizen Jakob Züblin to appear on 8 August at eight o'clock in the morning at the Holz at Obloch to settle a boundary dispute with Appenzell countrymen. They request that Züblin bring his documents and that the St. Gallen Burgomaster Weggen be present.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,15 +37,15 @@
 <pb facs="StadtASG_Missive_3609_14417.jpg" n="1"/>
 <lb n="1"/>Unßer freündtlich willig deinst. sambt
 <lb n="2"/>waß wir ehren leibß und guotß vermoegen.
-<lb n="3"/>zuvor edle vest. from. vorsichtig. ehrßam
-<lb n="4"/>weiß. jnßonders guote freünd. und getreüwe
+<lb n="3"/>zuvor edle <unclear cert="low" resp="#joint">vest</unclear>. <unclear cert="low" resp="#joint">from</unclear>. <unclear cert="low" resp="#joint">vorsichtig</unclear>. <unclear cert="low" resp="#joint">ehrßam</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">weiß</unclear>. <unclear cert="low" resp="#joint">jnßonders</unclear> guote freünd. und getreüwe
 <lb n="5"/>liebe Nachpauren.
 <lb n="6"/>Ndem, nun Ihr Fürstlich gnaden zu <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">St. Gallen</orgName>.
 <lb n="7"/>und wir mit dem selbigen. einen schon all-
 <lb n="8"/>bereit. lang geschwebten Marckhenß streit.
 <lb n="9"/>mit zwüschen. anberegten. beden landtschaften.
 <lb n="10"/>zwüschen <placeName resp="#ner">Schächen</placeName>. und <placeName ref="stadtasg-places-186" cert="medium" resp="#ner">ob loch</placeName>. mit ein anderen
-<lb n="11"/>gehabt, so biß anhero. ohn eroerteret gestanden,
+<lb n="11"/>gehabt, so <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">anhero</unclear>. ohn eroerteret gestanden,
 <lb n="12"/>weilen. jnterzwüschen. euch jn gewüssen, daß
 <lb n="13"/>an <placeName resp="#ner">Jeningem</placeName> ort, deß <placeName resp="#ner">Schächen</placeName> gschäy: euwer
 <lb n="14"/>angehoeriger burger. herr <persName resp="#ner">Jacob Zübli</persName>. und
@@ -53,50 +54,50 @@
 <lb n="17"/>und zwüschen den selbigen. jn den Marckhen.
 <lb n="18"/>auch ein Mißverstendnuß., so aber auch biß
 <lb n="19"/>dahero nit verglichen. alß obigen verßehen.
-<lb n="20"/>und dann auch. daß gedachter hr <persName resp="#ner">Zübli</persName>. by der
-<lb n="21"/>vergleichung deßunßen erscheinen, wann
+<lb n="20"/>und dann auch. daß gedachter hr <persName resp="#ner">Zübli</persName>. by <unclear cert="low" resp="#joint">der</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">vergleichung</unclear> <unclear cert="low" resp="#joint">deßunßen</unclear> <unclear cert="low" resp="#joint">erscheinen</unclear>, wann
 <lb n="22"/>aber wir unß mit bedacht Ihr Frl: gnaden
 <lb n="23"/>dahin verglichen. bedersitß. deputierte. uff
-<lb n="24"/>angeregten. landmarckhenß streit. abzefertigen,
-<lb n="25"/>und den tag. darzu bestimbt. <date resp="#ner">uf herbst. nechst-
-<lb n="26"/>künftigen donstag. wirt sein. der 8te. deß Monats
+<lb n="24"/><unclear cert="low" resp="#joint">angeregten</unclear>. <unclear cert="low" resp="#joint">landmarckhenß</unclear> <unclear cert="low" resp="#joint">streit</unclear>. <unclear cert="low" resp="#joint">abzefertigen</unclear>,
+<lb n="25"/>und den tag. <unclear cert="low" resp="#joint">darzu</unclear> <unclear cert="low" resp="#joint">bestimbt</unclear>. <date resp="#ner"><unclear cert="low" resp="#joint">uf</unclear> <unclear cert="low" resp="#joint">herbst</unclear>. <unclear cert="low" resp="#joint">nechst</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">künftigen</unclear> donstag. wirt sein. der 8te. deß Monats
 <lb n="27"/>augusti</date>. damit aber. nit allein. solicher landt-
 <lb n="28"/>marckhenß. sonderen. auch der holz lochen streit.
 <lb n="29"/>moege guetig. hin gelegt und verglichen werden
-<lb n="30"/>alß
+<lb n="30"/><unclear cert="low" resp="#joint">alß</unclear>
 <pb facs="StadtASG_Missive_3609_14418.jpg" n="2"/>
-<lb n="31"/>Ersuechend wir. Uech unsre gethrüwe L. E: und
-<lb n="32"/>religionsgnossen. früindtnachparlich. erfuergen.
-<lb n="33"/>süie zeu verschaffen. und deme gedachten. Her <persName resp="#ner">Jacob
-<lb n="34"/>Zubler</persName>. anbevelen lassen. daß er. Zubler. sambt
-<lb n="35"/>mit jnteressierten. sich an besagtem jezt
-<lb n="36"/><date resp="#ner">nechst volgenden donstag. morgens.</date> umb acht
-<lb n="37"/>uhren füeher Jhrem holz. ob <placeName resp="#ner">Loch</placeName>. befinden. und
-<lb n="38"/>jnstellen woelen. auch daß süj all Jhr habende
-<lb n="39"/>schrifften. und brieffen. mit sich nemend. und wie
-<lb n="40"/>dann wohl bekandt. daß der Herr: Euweren. anderen.
-<lb n="41"/>Burgermeister. wägten. etwas wüssenschafft. deß
-<lb n="42"/>seligen streit hat, wäre unß sehr lieb. und darin
-<lb n="43"/>zuo mitlen bequem. wan er sich wurde. under-
-<lb n="44"/>winden. auch an vorgedachtem orth zeu erschinen.
-<lb n="45"/>getroster hoffnung, eß werdend bede. mißverständt-
-<lb n="46"/>nußen. wohl hin geleegt werden. ybrigsteihen. nebet
-<lb n="47"/>diser mühewaltung. bevelend wir unß sambleich
-<lb n="48"/>bedersits. dem gl. schirm Gottes. datl. den.
-<lb n="49"/><origDate when="1644-08-06" resp="#ner">6t augstenmonath ao 1644</origDate>.
-<lb n="50"/><orgName role="issuer" resp="#ner">Landtamen und Rath. jn den
-<lb n="51"/>ußeren Roden deß Landts Appenzell</orgName>.
-<lb n="52"/>Mit unserem kleineren secret
-<lb n="53"/>jnsigel verschloßen
+<lb n="31"/><unclear cert="medium" resp="#joint">Ersuechend</unclear> <unclear cert="medium" resp="#joint">wir</unclear>. <unclear cert="medium" resp="#joint">Uech</unclear> <unclear cert="medium" resp="#joint">unsre</unclear> gethrüwe <unclear cert="medium" resp="#joint">L</unclear>. <unclear cert="medium" resp="#joint">E</unclear>: und
+<lb n="32"/><unclear cert="low" resp="#joint">religionsgnossen</unclear>. <unclear cert="low" resp="#joint">früindtnachparlich</unclear>. <unclear cert="low" resp="#joint">erfuergen</unclear>.
+<lb n="33"/><unclear cert="low" resp="#joint">süie</unclear> <unclear cert="low" resp="#joint">zeu</unclear> <unclear cert="low" resp="#joint">verschaffen</unclear>. und <unclear cert="medium" resp="#joint">deme</unclear> gedachten. <unclear cert="medium" resp="#joint">Her</unclear> <persName resp="#ner">Jacob
+<lb n="34"/><unclear cert="medium" resp="#joint">Zubler</unclear></persName>. <unclear cert="medium" resp="#joint">anbevelen</unclear> <unclear cert="medium" resp="#joint">lassen</unclear>. <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">er</unclear>. <unclear cert="medium" resp="#joint">Zubler</unclear>. sambt
+<lb n="35"/>mit <unclear cert="low" resp="#joint">jnteressierten</unclear>. sich <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="medium" resp="#joint">besagtem</unclear> <unclear cert="medium" resp="#joint">jezt</unclear>
+<lb n="36"/><date resp="#ner"><unclear cert="medium" resp="#joint">nechst</unclear> <unclear cert="medium" resp="#joint">volgenden</unclear> <unclear cert="medium" resp="#joint">donstag</unclear>. morgens.</date> umb acht
+<lb n="37"/>uhren <unclear cert="low" resp="#joint">füeher</unclear> <unclear cert="low" resp="#joint">Jhrem</unclear> <unclear cert="low" resp="#joint">holz</unclear>. <unclear cert="low" resp="#joint">ob</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Loch</unclear></placeName>. <unclear cert="low" resp="#joint">befinden</unclear>. und
+<lb n="38"/><unclear cert="low" resp="#joint">jnstellen</unclear> <unclear cert="low" resp="#joint">woelen</unclear>. auch <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">süj</unclear> all <unclear cert="medium" resp="#joint">Jhr</unclear> <unclear cert="medium" resp="#joint">habende</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">schrifften</unclear>. und <unclear cert="medium" resp="#joint">brieffen</unclear>. mit sich <unclear cert="medium" resp="#joint">nemend</unclear>. und wie
+<lb n="40"/>dann wohl <unclear cert="medium" resp="#joint">bekandt</unclear>. daß <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="medium" resp="#joint">Herr</unclear>: <unclear cert="medium" resp="#joint">Euweren</unclear>. <unclear cert="medium" resp="#joint">anderen</unclear>.
+<lb n="41"/>Burgermeister. <unclear cert="low" resp="#joint">wägten</unclear>. <unclear cert="low" resp="#joint">etwas</unclear> <unclear cert="low" resp="#joint">wüssenschafft</unclear>. <unclear cert="low" resp="#joint">deß</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">seligen</unclear> <unclear cert="low" resp="#joint">streit</unclear> hat, <unclear cert="medium" resp="#joint">wäre</unclear> unß sehr lieb. und <unclear cert="medium" resp="#joint">darin</unclear>
+<lb n="43"/><unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">mitlen</unclear> <unclear cert="medium" resp="#joint">bequem</unclear>. <unclear cert="medium" resp="#joint">wan</unclear> er sich <unclear cert="medium" resp="#joint">wurde</unclear>. <unclear cert="medium" resp="#joint">under</unclear>-
+<lb n="44"/><unclear cert="medium" resp="#joint">winden</unclear>. auch <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="medium" resp="#joint">vorgedachtem</unclear> <unclear cert="medium" resp="#joint">orth</unclear> <unclear cert="medium" resp="#joint">zeu</unclear> <unclear cert="medium" resp="#joint">erschinen</unclear>.
+<lb n="45"/><unclear cert="medium" resp="#joint">getroster</unclear> hoffnung, <unclear cert="medium" resp="#joint">eß</unclear> <unclear cert="medium" resp="#joint">werdend</unclear> <unclear cert="medium" resp="#joint">bede</unclear>. <unclear cert="medium" resp="#joint">mißverständt</unclear>-
+<lb n="46"/><unclear cert="medium" resp="#joint">nußen</unclear>. wohl <unclear cert="low" resp="#joint">hin</unclear> <unclear cert="low" resp="#joint">geleegt</unclear> <unclear cert="low" resp="#joint">werden</unclear>. <unclear cert="low" resp="#joint">ybrigsteihen</unclear>. <unclear cert="low" resp="#joint">nebet</unclear>
+<lb n="47"/>diser <unclear cert="low" resp="#joint">mühewaltung</unclear>. <unclear cert="low" resp="#joint">bevelend</unclear> wir unß <unclear cert="low" resp="#joint">sambleich</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">bedersits</unclear>. <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">gl</unclear>. <unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">Gottes</unclear>. <unclear cert="low" resp="#joint">datl</unclear>. den.
+<lb n="49"/><origDate when="1644-08-06" resp="#ner"><unclear cert="medium" resp="#joint">6t</unclear> <unclear cert="medium" resp="#joint">augstenmonath</unclear> <unclear cert="medium" resp="#joint">ao</unclear> 1644</origDate>.
+<lb n="50"/><orgName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Landtamen</unclear> und Rath. <unclear cert="medium" resp="#joint">jn</unclear> <unclear cert="medium" resp="#joint">den</unclear>
+<lb n="51"/><unclear cert="medium" resp="#joint">ußeren</unclear> <unclear cert="medium" resp="#joint">Roden</unclear> deß <unclear cert="medium" resp="#joint">Landts</unclear> Appenzell</orgName>.
+<lb n="52"/>Mit <unclear cert="medium" resp="#joint">unserem</unclear> <unclear cert="medium" resp="#joint">kleineren</unclear> secret
+<lb n="53"/><unclear cert="medium" resp="#joint">jnsigel</unclear> <unclear cert="medium" resp="#joint">verschloßen</unclear>
 <pb facs="StadtASG_Missive_3609_14419.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3609_14420.jpg" n="4"/>
-<lb n="54"/>Den Ehrenvesten Frommen
-<lb n="55"/>Fuersichtigen Ersamen und Weÿsen
+<lb n="54"/>Den <unclear cert="low" resp="#joint">Ehrenvesten</unclear> <unclear cert="low" resp="#joint">Frommen</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">Fuersichtigen</unclear> <unclear cert="low" resp="#joint">Ersamen</unclear> und <unclear cert="low" resp="#joint">Weÿsen</unclear>
 <lb n="56"/>Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Buergermeister, und
 <lb n="57"/>Rath loeblicher Stat sant Gallen</orgName>,
-<lb n="58"/>unseren Insonders gueten Freünden,
-<lb n="59"/>Eydtgnossen lieben Pundts und
-<lb n="60"/>Religionsgnossen.
+<lb n="58"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">Insonders</unclear> gueten <unclear cert="low" resp="#joint">Freünden</unclear>,
+<lb n="59"/><unclear cert="low" resp="#joint">Eydtgnossen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">Pundts</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">Religionsgnossen</unclear>.
 </p>
         </body>
     </text>

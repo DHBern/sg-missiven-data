@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3529</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, ihre Bürger Hans Felix Abegg und Heinrich Vögelin, die nächsten Verwandten der verstorbenen Maria von Weilerin, in deren Erbschaftssachen wohlwollend zu behandeln. Sie empfehlen die Petenten und bitten um freundliche Unterstützung.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, ihre Bürger Hans Felix Abegg und Heinrich Vögelin, die nächsten Verwandten der verstorbenen Maria von Weilerin, in deren Erbschaftssachen wohlwollend zu behandeln. Sie empfehlen die Petenten und bitten um freundliche Unterstützung.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen ask Burgomaster and Council of St. Gallen to treat their citizens Hans Felix Abegg and Heinrich Vögelin, the next of kin of the deceased Maria von Weilerin, favorably in her inheritance matters. They recommend the petitioners and ask for friendly support.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,38 +38,38 @@
 <lb n="1"/>Unser fründtlich willig dienst, sambt was wir ehren, liebs
 <lb n="2"/>und guetts vermögen, zuvor, from, fürsichtig, ehrsam weyß,
 <lb n="3"/>besonders guett fründ und getrüw lieb Eydtgnossen.
-<lb n="4"/>Vor uns sind erschinen unsere getrüwe liebe burgere <persName resp="#ner">Hanß
-<lb n="5"/>Felix Abegg</persName>, kantengiesser und <persName resp="#ner">Heinrich Vögelin</persName>, discher handt-
+<lb n="4"/>Vor uns sind erschinen unsere getrüwe liebe <unclear cert="low" resp="#joint">burgere</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">Felix</unclear> <unclear cert="low" resp="#joint">Abegg</unclear></persName>, <unclear cert="low" resp="#joint">kantengiesser</unclear> und <persName resp="#ner">Heinrich Vögelin</persName>, discher handt-
 <lb n="6"/>wercks, undertheniglich vorbringend, alß dann kurtz verschich-
 <lb n="7"/>ner wochen weylund eüwers unser G. L. E. gewessnen bur-
 <lb n="8"/>gers <persName resp="#ner">Jacob Triols</persName> seligen hinderlaßne wittib, <persName resp="#ner">Maria von-
 <lb n="9"/>weilerin</persName>, mit thod abgangen, seÿen sie alß nechste verwandte
 <lb n="10"/>derselben verlassenschafft, neben andern, fehig. Derowegen und
 <lb n="11"/>damit die desto schleüniger zueerlangung derselben gelangen
-<lb n="12"/>mögen umb dß unser gegenwürtig für-vorschreiben angele-
-<lb n="13"/>gens fleißes gebetten. Ob uns nun wol in nichten zwifflet
-<lb n="14"/>ihr unser G. L. E. ihnen den unsern zue verfuegung der ge-
+<lb n="12"/>mögen umb <unclear cert="low" resp="#joint">dß</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">gegenwürtig</unclear> <unclear cert="low" resp="#joint">für-vorschreiben</unclear> <unclear cert="low" resp="#joint">angele</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">gens</unclear> <unclear cert="low" resp="#joint">fleißes</unclear> gebetten. Ob uns nun wol in nichten zwifflet
+<lb n="14"/>ihr unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">verfuegung</unclear> der ge-
 <lb n="15"/>bür von selbsten geneigt sein werden: jedoch aber haben
 <lb n="16"/>wir ihnen die gebetne wilfahr burgerlicher verwandt-
-<lb n="17"/>nuß halben nit zueverweigeren gewußt. Gelangt dem-
-<lb n="18"/>nach an eüch unser G. L. E unser fründt-eÿdtgnossisches
-<lb n="19"/>vorbitlich ersuechen, mehrbedüte petenten in disem ihrem
+<lb n="17"/>nuß halben nit <unclear cert="low" resp="#joint">zueverweigeren</unclear> <unclear cert="low" resp="#joint">gewußt</unclear>. <unclear cert="low" resp="#joint">Gelangt</unclear> dem-
+<lb n="18"/>nach an eüch unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear> unser <unclear cert="low" resp="#joint">fründt-eÿdtgnossisches</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">vorbitlich</unclear> <unclear cert="low" resp="#joint">ersuechen</unclear>, <unclear cert="low" resp="#joint">mehrbedüte</unclear> petenten in disem ihrem
 <lb n="20"/>anligen zue allem guetten besten massen recomendirt und
 <lb n="21"/>für wol befohlen zuehalten. Derselben und ihren angehö-
-<lb n="22"/>rigen uff jede begebenheit fründt-eÿdtgnossisches gefallen
+<lb n="22"/>rigen uff jede begebenheit <unclear cert="low" resp="#joint">fründt-eÿdtgnossisches</unclear> <unclear cert="low" resp="#joint">gefallen</unclear>
 <pb facs="StadtASG_Missive_3529_14068.jpg" n="2"/>
-<lb n="23"/>und selbs beliebige affection zuerweisen, haben die uns all-
-<lb n="24"/>zeit geneigt und willig. Damit Goettlicher obhalt zu gna-
-<lb n="25"/>den empfolen. Datum den <origDate when="1642" resp="#ner">9. t. Decembris Anno 1642</origDate>.
-<lb n="26"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
+<lb n="23"/>und <unclear cert="medium" resp="#joint">selbs</unclear> <unclear cert="medium" resp="#joint">beliebige</unclear> affection zuerweisen, haben die uns all-
+<lb n="24"/>zeit geneigt und willig. <unclear cert="medium" resp="#joint">Damit</unclear> <unclear cert="medium" resp="#joint">Goettlicher</unclear> <unclear cert="medium" resp="#joint">obhalt</unclear> zu <unclear cert="medium" resp="#joint">gna</unclear>-
+<lb n="25"/>den <unclear cert="medium" resp="#joint">empfolen</unclear>. Datum den <origDate when="1642" resp="#ner"><unclear cert="low" resp="#joint">9</unclear>. <unclear cert="low" resp="#joint">t</unclear>. Decembris Anno <unclear cert="medium" resp="#joint">1642</unclear></origDate>.
+<lb n="26"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und rath
 <lb n="27"/>der statt Schaffhausen</orgName>.
 <pb facs="StadtASG_Missive_3529_14069.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3529_14070.jpg" n="4"/>
-<lb n="28"/>Den fromen, fürsichtigen, ehrsam-
-<lb n="29"/>men, weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und
-<lb n="30"/>Rath der Statt St. Gallen</orgName>, unsern
-<lb n="31"/>besonders guotten fründen und
-<lb n="32"/>getrüwen lieben Eydtgnossen.
+<lb n="28"/>Den <unclear cert="medium" resp="#joint">fromen</unclear>, fürsichtigen, <unclear cert="medium" resp="#joint">ehrsam</unclear>-
+<lb n="29"/><unclear cert="medium" resp="#joint">men</unclear>, weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und
+<lb n="30"/>Rath der Statt St. Gallen</orgName>, <unclear cert="medium" resp="#joint">unsern</unclear>
+<lb n="31"/><unclear cert="medium" resp="#joint">besonders</unclear> guotten fründen und
+<lb n="32"/><unclear cert="medium" resp="#joint">getrüwen</unclear> lieben Eydtgnossen.
 </p>
         </body>
     </text>

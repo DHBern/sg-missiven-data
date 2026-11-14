@@ -42,7 +42,7 @@
     u.searchParams.set("lang", l);
     history.replaceState(null, "", u);
     applyLang();
-    route();
+    loadEn().then(route);
   }
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -59,6 +59,15 @@
   /* "Nr. 177 Beilage 1" from the title; the id's digits would read 17701 */
   const nrOf = (l) => { const m = /Nr\.\s*(.+)$/.exec(l.title || ""); return m ? "Nr. " + m[1] : l.id; };
   const byId = (id) => state.index.find((l) => l.id === id);
+  /* English regests (machine translations) live in index_en.json, loaded only for the English interface */
+  const EN = (l) => (LANG === "en" && state.en && state.en[l.id]) || null;
+  const regOf = (l) => (EN(l) || {}).regest || l.regest || "";
+  const sndOf = (l) => (EN(l) || {}).sender || l.sender || [];
+  const rcpOf = (l) => (EN(l) || {}).recipient || l.recipient || [];
+  async function loadEn() {
+    if (LANG !== "en" || state.en) return;
+    try { state.en = await json("data/index_en.json"); } catch (e) { state.en = {}; }
+  }
   const json = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p + ": " + r.status); return r.json(); });
 
   async function boot() {
@@ -68,6 +77,7 @@
     window.addEventListener("hashchange", route);
     document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
     applyLang();
+    await loadEn();
     route();
   }
 
@@ -207,7 +217,7 @@
       const rows = state.index.filter((l) => {
         if (state.edited && String(+(l.edited !== false)) !== state.edited) return false;
         if (words.length) {
-          const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest].join(" ").toLowerCase();
+          const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest, sndOf(l).join(" "), rcpOf(l).join(" "), regOf(l)].join(" ").toLowerCase();
           if (!words.every((w) => hay.includes(w))) return false;
         }
         const y = yNum(l);
@@ -222,10 +232,10 @@
           <span class="date">${l.edited === false ? (l.year ? esc(l.year) + "?" : "") : esc(fmtDate(l.date))}</span>
           ${l.edited === false
             ? (l.draft
-              ? `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")} <span class="muted small">· ${T("not yet edited · draft", "noch nicht ediert · Entwurf")}</span></span><span class="reg">${esc(l.regest)}</span></span>`
+              ? `<span><span class="who">${esc(sndOf(l).join(", ") || "?")} → ${esc(rcpOf(l).join(", ") || "?")} <span class="muted small">· ${T("not yet edited · draft", "noch nicht ediert · Entwurf")}</span></span><span class="reg">${esc(regOf(l))}</span></span>`
               : `<span><span class="who muted">${T("Not yet edited", "Noch nicht ediert")}</span><span class="reg">${l.pages} ${P(l.pages, "page", "pages", "Seite", "Seiten")}, ${T("machine readings only", "nur maschinelle Lesungen")}</span></span>`)
             : `<span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span>
-          <span class="reg">${esc(l.regest)}</span></span>`}
+          <span class="reg">${esc(regOf(l))}</span></span>`}
         </a>`).join("") + (rows.length > 400 ? `<p class="muted small">${T(`Showing 400 of ${rows.length} — narrow the search.`, `400 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
@@ -551,7 +561,7 @@
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
             <span class="date">${esc(fmtDate(r.l.date))}</span>
-            <span><span class="who">${esc(r.l.sender.join(", ") || "?")} → ${esc(r.l.recipient.join(", ") || "?")}</span>
+            <span><span class="who">${esc(sndOf(r.l).join(", ") || "?")} → ${esc(rcpOf(r.l).join(", ") || "?")}</span>
             <span class="reg">${r.forms.size ? `<i>${[...r.forms].map(esc).join("</i>, <i>")}</i>` : ""}${r.roles.size ? `${r.forms.size ? " · " : ""}${[...r.roles].map(roleName).join(", ")}` : ""}</span></span>
           </a>`).join("")}</div>
         <h2>${autoRows.length ? autoRows.length + " " : ""}${P(autoRows.length, "Letter not yet edited", "Letters not yet edited", "noch nicht edierter Brief", "Noch nicht edierte Briefe")} <span class="badge">${T("automatic", "automatisch")}</span></h2>
@@ -565,7 +575,7 @@
           <a class="row" href="#/letter/${r.l.id}/1">
             <span class="num">${esc(nrOf(r.l))}</span>
             <span class="date">${r.l.year ? esc(r.l.year) + "?" : ""}</span>
-            <span><span class="who">${esc(r.l.sender.join(", ") || T("Not yet edited", "Noch nicht ediert"))}${r.l.recipient.length ? " → " + esc(r.l.recipient.join(", ")) : ""}</span>
+            <span><span class="who">${esc(sndOf(r.l).join(", ") || T("Not yet edited", "Noch nicht ediert"))}${rcpOf(r.l).length ? " → " + esc(rcpOf(r.l).join(", ")) : ""}</span>
             <span class="reg"><i>${[...r.forms].map(esc).join("</i>, <i>")}</i>${r.roles.size ? " · " + [...r.roles].map(roleName).join(", ") : ""}</span></span>
           </a>`).join("")}</div>
       </section>`;
@@ -848,12 +858,12 @@
         return `<div class="row srow">
           <span class="num"><a href="#/letter/${m.id}/1">${esc(nrOf(l))}</a></span>
           <span class="date">${esc(date)}</span>
-          <span><a class="who" href="#/letter/${m.id}/1">${esc((l.sender || []).join(", ") || "?")} → ${esc((l.recipient || []).join(", ") || "?")}</a>
+          <span><a class="who" href="#/letter/${m.id}/1">${esc(sndOf(l).join(", ") || "?")} → ${esc(rcpOf(l).join(", ") || "?")}</a>
           ${!m.ed ? `<span class="badge auto">${T("not yet edited", "noch nicht ediert")}</span>` : ""}
           ${hs.length ? hs.slice(0, 3).map((h) => `<a class="hit" href="#/letter/${m.id}/${h.n}/${h.src === "edition" ? "edition" : esc(h.src)}">
               <span class="muted small">${T("p.", "S.")} ${h.n} · ${h.src === "edition" ? T("edition", "Edition") : esc(readerLabel(h.src))}</span> ${snippet(h.text, terms, ui.tol)}</a>`).join("")
               + (hs.length > 3 ? `<span class="muted small">${T(`and ${hs.length - 3} more pages`, `und ${hs.length - 3} weitere Seiten`)}</span>` : "")
-            : `<span class="reg">${esc(l.regest || "")}</span>`}</span>
+            : `<span class="reg">${esc(regOf(l))}</span>`}</span>
         </div>`;
       }).join("") + (rows.length > ui.shown ? `<button type="button" class="linkish" id="smore">${T(`Show ${Math.min(50, rows.length - ui.shown)} more of ${rows.length - ui.shown}`, `${Math.min(50, rows.length - ui.shown)} weitere von ${rows.length - ui.shown} zeigen`)}</button>` : "")
         + (!rows.length ? `<p class="empty">${T("No letter matches. Remove a facet or a word.", "Kein Brief passt. Eine Facette oder ein Wort entfernen.")}</p>` : "");
@@ -1111,7 +1121,7 @@
         <a class="row" href="#/letter/${l.id}/1">
           <span class="num">${esc(nrOf(l))}</span>
           <span class="date">${esc(fmtDate(l.date))}</span>
-          <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span><span class="reg">${esc(l.regest)}</span></span>
+          <span><span class="who">${esc(sndOf(l).join(", ") || "?")} → ${esc(rcpOf(l).join(", ") || "?")}</span><span class="reg">${esc(regOf(l))}</span></span>
         </a>`).join("")}</div>
       ${autoRows.length ? `<h2>${T("Letters not yet edited", "Noch nicht edierte Briefe")} <span class="muted small">${autoRows.length} · ${T("keyword given automatically", "Schlagwort automatisch vergeben")}</span></h2>
       <p class="caveat">${T("A language model picked these keywords from the edition's vocabulary, from the machine reading and the draft regest. Unchecked and experimental: on edited letters it agrees with the editors on about two of three keywords and finds about three in five of theirs.",
@@ -1120,7 +1130,7 @@
         <a class="row" href="#/letter/${l.id}/1">
           <span class="num">${esc(nrOf(l))}</span>
           <span class="date">${l.year ? esc(l.year) + "?" : ""}</span>
-          <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")} <span class="muted small">· ${T("draft", "Entwurf")}</span></span><span class="reg">${esc(l.regest || "")}</span></span>
+          <span><span class="who">${esc(sndOf(l).join(", ") || "?")} → ${esc(rcpOf(l).join(", ") || "?")} <span class="muted small">· ${T("draft", "Entwurf")}</span></span><span class="reg">${esc(regOf(l))}</span></span>
         </a>`).join("")}</div>` : ""}`;
     if (coTop.length) drawSankey(k, mine, d, coTop.slice(0, 10).map(([x]) => x), { withK, from, undated });
     if (filtered) document.getElementById("kwletters").scrollIntoView({ block: "start" });
@@ -1472,7 +1482,7 @@
           <h1>${esc(fmtDate(letter.date))}</h1>
           <div class="meta"><span class="parties">${esc(s || "?")} → ${esc(r || "?")}</span></div>
           <details class="regest" ${store.get("regest", true) ? "open" : ""}><summary>Regest</summary>
-            <p>${esc(letter.regest)}</p>
+            ${regestText(letter.regest, letter.regest_en, true)}
             ${letter.keywords.some((k) => k.trim()) ? `<div class="kw">${letter.keywords.filter((k) => k.trim()).map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}
           </details>` : `
           <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}${letter.auto_regest.year_how === "corrected" ? "" : "?"}</span>` : ""}</h1>
@@ -1507,16 +1517,29 @@
     wireLetter(letter, id, pageNo, page);
   }
 
+  /* A regest in the interface's language: in English the machine translation, marked as
+     such, with the German original one click away; in German the German text alone. */
+  function regestText(de, en, edition) {
+    if (LANG !== "en" || !en || !en.regest) return `<p>${esc(de)}</p>`;
+    return `<p lang="en">${esc(en.regest)}</p>
+      <p class="small muted mt">${edition
+        ? `Machine translation of the editors' German regest (${esc(en.model || "a language model")}); not by the editors.`
+        : `Machine translation of the German draft (${esc(en.model || "a language model")}).`}</p>
+      <details class="orig"><summary class="small">German original</summary><p lang="de">${esc(de)}</p></details>`;
+  }
+
   /* A regest drafted by a language model from a machine reading: always marked as such. */
   function draftBlock(d, open) {
     if (!d) return "";
-    const who = d.sender || d.recipient ? `<div class="meta"><span class="parties">${esc(d.sender || "?")} → ${esc(d.recipient || "?")}</span></div>` : "";
-    const when = [d.place, d.date_text].filter(Boolean).map(esc).join(", ");
+    const tr = LANG === "en" && d.en ? d.en : {};
+    const [snd, rcp, plc] = [tr.sender || d.sender, tr.recipient || d.recipient, tr.place || d.place];
+    const who = snd || rcp ? `<div class="meta"><span class="parties">${esc(snd || "?")} → ${esc(rcp || "?")}</span></div>` : "";
+    const when = [plc, d.date_text].filter(Boolean).map(esc).join(", ");
     return `<details class="regest draft" ${open ? "open" : ""}><summary>${T(`Automatic regest (draft${open ? "" : ", for comparison"})`, `Automatisches Regest (Entwurf${open ? "" : ", zum Vergleich"})`)}</summary>
       ${who}${when ? `<p class="small muted">${when}${d.year ? (d.year_how === "corrected"
         ? T(` · year set by hand: ${esc(d.year)}${d.year_note ? ` (${esc(d.year_note)})` : ""}`, ` · Jahr von Hand gesetzt: ${esc(d.year)}${d.year_note ? ` (${esc(d.year_note)})` : ""}`)
         : T(` · year read as ${esc(d.year)} (unchecked)`, ` · Jahr gelesen als ${esc(d.year)} (ungeprüft)`)) : ""}</p>` : ""}
-      <p>${esc(d.regest)}</p>
+      ${regestText(d.regest, d.en, false)}
       <p class="small muted">${T(`Drafted by ${esc(d.model || "a language model")} from the ${esc(readerLabel(d.reader))} reading, without correction. Names and dates may be wrong.`,
         `Entworfen von ${esc(d.model || "einem Sprachmodell")} aus der Lesung von ${esc(readerLabel(d.reader))}, ohne Korrektur. Namen und Daten können falsch sein.`)}</p>
     </details>`;

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3276</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johanna, Elisabeth und Maria Juliana Pletscherin bitten Bürgermeister und Rat zu St. Gallen um Hilfe. Sie berichten, dass ihre Eltern verstorben seien und das Vaterland durch den Krieg schwer geschädigt sei, sodass sie keinen Unterhalt mehr hätten. Sie ersuchen die Stadt, ihr Elend zu lindern, und versprechen Dankbarkeit.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johanna, Elisabeth und Maria Juliana Pletscherin bitten Bürgermeister und Rat zu St. Gallen um Hilfe. Sie berichten, dass ihre Eltern verstorben seien und das Vaterland durch den Krieg schwer geschädigt sei, sodass sie keinen Unterhalt mehr hätten. Sie ersuchen die Stadt, ihr Elend zu lindern, und versprechen Dankbarkeit.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johanna, Elisabeth and Maria Juliana Pletscherin ask the Burgomaster and Council of St. Gallen for help. They report that their parents have died and that the fatherland has been severely damaged by the war, so that they no longer have any support. They beg the city to alleviate their misery and promise gratitude.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,56 +35,56 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3276_12995.jpg" n="1"/>
-<lb n="1"/>WohlEdele und Gestränge, Ehrnveste, Vorsichtig und Weÿße
-<lb n="2"/>Insonders hochgeehrte Herrn und Patronen.
-<lb n="3"/>Denselben mögen wir kläglichen nicht bergen, welcher gestalt
-<lb n="4"/>nun innerhalb zweÿer jahreß frist, eß dem allein weÿßen
-<lb n="5"/>rhat und unerforschlichen willen unserß gotteß gefallen
-<lb n="6"/>durch hindurchnehmunge auß dießem zeitlichen leben, der Weÿ=
-<lb n="7"/>landt Wohlgebornen unserer vielgeliebten Herr Vatterß und
-<lb n="8"/>Fraw Mutterß Christmilder gedächtnuß unß in den be=
-<lb n="9"/>trübten und trostlosen waÿßenstandt zuo sezen, der unß
-<lb n="10"/>dan so viel desto beschwerlicher vor kombt, weil daß nun=
-<lb n="11"/>mehr langwürige und unerhörte verderben unserß
-<lb n="12"/>geliebten vatterlandtß auch die landere unsers freundt=
-<lb n="13"/>lichen lieben bruederß (darauß unß unsere underhaltunge
-<lb n="14"/>her kommen solte) der maßen hart getroffen, daß
-<lb n="15"/>auch S. Ld. für Ihre Persohn dieselbe nicht genießen, und
-<lb n="16"/>anderwertlich sich kümmerlich uffhalten muß und also
-<lb n="17"/>wir vielweniger deß wenigsten können theilhafftige
-<lb n="18"/>werden. Wan dan unß zwar wohlwißent, daß auch
-<lb n="19"/>für dießem von den Herren denen Weÿlandt Wohlge=
-<lb n="20"/>bornen unsern vielgeliebten hochgeehrten Eltern seelig
-<lb n="21"/>Christmilder gedächtnuß in Ihrem hochbetrübten exilio
+<lb n="1"/><unclear cert="low" resp="#joint">WohlEdele</unclear> und <unclear cert="medium" resp="#joint">Gestränge</unclear>, <unclear cert="medium" resp="#joint">Ehrnveste</unclear>, <unclear cert="medium" resp="#joint">Vorsichtig</unclear> und <unclear cert="medium" resp="#joint">Weÿße</unclear>
+<lb n="2"/>Insonders hochgeehrte <unclear cert="medium" resp="#joint">Herrn</unclear> und Patronen.
+<lb n="3"/><unclear cert="medium" resp="#joint">Denselben</unclear> mögen wir <unclear cert="low" resp="#joint">kläglichen</unclear> nicht bergen, <unclear cert="low" resp="#joint">welcher</unclear> <unclear cert="low" resp="#joint">gestalt</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">innerhalb</unclear> <unclear cert="low" resp="#joint">zweÿer</unclear> <unclear cert="low" resp="#joint">jahreß</unclear> <unclear cert="low" resp="#joint">frist</unclear>, <unclear cert="low" resp="#joint">eß</unclear> dem allein <unclear cert="medium" resp="#joint">weÿßen</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">rhat</unclear> und <unclear cert="low" resp="#joint">unerforschlichen</unclear> willen <unclear cert="medium" resp="#joint">unserß</unclear> <unclear cert="medium" resp="#joint">gotteß</unclear> <unclear cert="medium" resp="#joint">gefallen</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">durch</unclear> <unclear cert="medium" resp="#joint">hindurchnehmunge</unclear> <unclear cert="medium" resp="#joint">auß</unclear> <unclear cert="medium" resp="#joint">dießem</unclear> <unclear cert="medium" resp="#joint">zeitlichen</unclear> leben, der <unclear cert="medium" resp="#joint">Weÿ=</unclear>
+<lb n="7"/>landt <unclear cert="medium" resp="#joint">Wohlgebornen</unclear> <unclear cert="medium" resp="#joint">unserer</unclear> <unclear cert="medium" resp="#joint">vielgeliebten</unclear> <unclear cert="medium" resp="#joint">Herr</unclear> <unclear cert="medium" resp="#joint">Vatterß</unclear> und
+<lb n="8"/><unclear cert="medium" resp="#joint">Fraw</unclear> <unclear cert="medium" resp="#joint">Mutterß</unclear> <unclear cert="medium" resp="#joint">Christmilder</unclear> <unclear cert="medium" resp="#joint">gedächtnuß</unclear> <unclear cert="medium" resp="#joint">unß</unclear> in den be=
+<lb n="9"/><unclear cert="medium" resp="#joint">trübten</unclear> und trostlosen <unclear cert="low" resp="#joint">waÿßenstandt</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">sezen</unclear>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">dan</unclear> so viel <unclear cert="medium" resp="#joint">desto</unclear> <unclear cert="medium" resp="#joint">beschwerlicher</unclear> <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">kombt</unclear>, <unclear cert="medium" resp="#joint">weil</unclear> <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">nun=</unclear>
+<lb n="11"/>mehr langwürige und <unclear cert="medium" resp="#joint">unerhörte</unclear> verderben <unclear cert="medium" resp="#joint">unserß</unclear>
+<lb n="12"/>geliebten <unclear cert="medium" resp="#joint">vatterlandtß</unclear> <unclear cert="medium" resp="#joint">auch</unclear> die <unclear cert="low" resp="#joint">landere</unclear> <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">freundt=</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">lichen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">bruederß</unclear> (<unclear cert="low" resp="#joint">darauß</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">unsere</unclear> <unclear cert="low" resp="#joint">underhaltunge</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">her</unclear> <unclear cert="low" resp="#joint">kommen</unclear> <unclear cert="low" resp="#joint">solte</unclear>) <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">hart</unclear> <unclear cert="low" resp="#joint">getroffen</unclear>, daß
+<lb n="15"/>auch <unclear cert="medium" resp="#joint">S</unclear>. <unclear cert="medium" resp="#joint">Ld</unclear>. für <unclear cert="medium" resp="#joint">Ihre</unclear> <unclear cert="medium" resp="#joint">Persohn</unclear> <unclear cert="medium" resp="#joint">dieselbe</unclear> nicht <unclear cert="medium" resp="#joint">genießen</unclear>, und
+<lb n="16"/>anderwertlich sich <unclear cert="low" resp="#joint">kümmerlich</unclear> <unclear cert="low" resp="#joint">uffhalten</unclear> <unclear cert="low" resp="#joint">muß</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">also</unclear>
+<lb n="17"/>wir <unclear cert="medium" resp="#joint">vielweniger</unclear> deß wenigsten <unclear cert="low" resp="#joint">können</unclear> <unclear cert="low" resp="#joint">theilhafftige</unclear>
+<lb n="18"/>werden. <unclear cert="medium" resp="#joint">Wan</unclear> dan <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">zwar</unclear> <unclear cert="medium" resp="#joint">wohlwißent</unclear>, daß auch
+<lb n="19"/><unclear cert="medium" resp="#joint">für</unclear> <unclear cert="medium" resp="#joint">dießem</unclear> von den Herren <unclear cert="medium" resp="#joint">denen</unclear> <unclear cert="medium" resp="#joint">Weÿlandt</unclear> <unclear cert="medium" resp="#joint">Wohlge=</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">bornen</unclear> <unclear cert="medium" resp="#joint">unsern</unclear> <unclear cert="medium" resp="#joint">vielgeliebten</unclear> hochgeehrten Eltern <unclear cert="medium" resp="#joint">seelig</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">Christmilder</unclear> <unclear cert="medium" resp="#joint">gedächtnuß</unclear> in <unclear cert="medium" resp="#joint">Ihrem</unclear> <unclear cert="medium" resp="#joint">hochbetrübten</unclear> exilio
 <pb facs="StadtASG_Missive_3276_12996.jpg" n="2"/>
-<lb n="22"/>die hülffreiche handt gebotten worden, und wir uns dannenhero wohl
-<lb n="23"/>billich scheuen solten abermahl importun zue sein, so zwingt uns
-<lb n="24"/>jedoch die hochste notturfft ein uffheberin aller geseyt und
-<lb n="25"/>ordnungen, und unser großes elendt, die herren nachmahlen
-<lb n="26"/>ganz flehentlich und freündlich zue ersuchen, sich uber uns
-<lb n="27"/>arme waißhen zue erbarmen, und nach ihrer beijwohnenden
-<lb n="28"/>discretion unser elendts zue soulagiren mit hülff
-<lb n="29"/>uns zue erscheinen. Ein solches wirdt der getreüe Gott
-<lb n="30"/>vatter der waißhen und reicher vergelter deren wohl-
-<lb n="31"/>thaten, die man ihnen thuet, tausentfaltig belohnen, und
-<lb n="32"/>wir werdens mit höchster danckbarkeit zue allen für-
-<lb n="33"/>fallenden occasionen in gebühr beschulden, in frischer
-<lb n="34"/>gedechtnüß behalten, dieselbe damit göttlicher prote-
-<lb n="35"/>ction zu langwüriger glücklicher regierungen und allem
-<lb n="36"/>behaglichem wohlstandt treülich uns ihren mittleijdenden
-<lb n="37"/>andencken fleißigst bevelchen, bleiben allezeit
-<lb n="38"/><origPlace ref="stadtasg-places-185" cert="medium" resp="#ner">Schhausen</origPlace> <origDate when="1630" resp="#ner">den 14 fb: 1630</origDate>. unser hochgeehrten herren undt
-<lb n="39"/>patronen in gebühr
-<lb n="40"/>wohl affectionirte dienerin
-<lb n="41"/><persName role="issuer" resp="#ner">Johanna Pletzscherin</persName> <persName role="issuer" resp="#ner">Elisabeth Pletscherin</persName>
-<lb n="42"/><persName role="issuer" resp="#ner">Maria Juliana Pletscheren</persName>
+<lb n="22"/>die <unclear cert="medium" resp="#joint">hülffreiche</unclear> handt <unclear cert="medium" resp="#joint">gebotten</unclear> <unclear cert="medium" resp="#joint">worden</unclear>, und wir uns dannenhero wohl
+<lb n="23"/><unclear cert="medium" resp="#joint">billich</unclear> <unclear cert="medium" resp="#joint">scheuen</unclear> <unclear cert="medium" resp="#joint">solten</unclear> abermahl <unclear cert="medium" resp="#joint">importun</unclear> <unclear cert="medium" resp="#joint">zue</unclear> sein, so <unclear cert="low" resp="#joint">zwingt</unclear> <unclear cert="low" resp="#joint">uns</unclear>
+<lb n="24"/>jedoch die <unclear cert="medium" resp="#joint">hochste</unclear> <unclear cert="medium" resp="#joint">notturfft</unclear> ein <unclear cert="medium" resp="#joint">uffheberin</unclear> <unclear cert="medium" resp="#joint">aller</unclear> <unclear cert="medium" resp="#joint">geseyt</unclear> und
+<lb n="25"/>ordnungen, und unser <unclear cert="medium" resp="#joint">großes</unclear> <unclear cert="medium" resp="#joint">elendt</unclear>, die herren <unclear cert="medium" resp="#joint">nachmahlen</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">ganz</unclear> <unclear cert="medium" resp="#joint">flehentlich</unclear> und <unclear cert="medium" resp="#joint">freündlich</unclear> <unclear cert="medium" resp="#joint">zue</unclear> ersuchen, sich uber uns
+<lb n="27"/><unclear cert="medium" resp="#joint">arme</unclear> <unclear cert="medium" resp="#joint">waißhen</unclear> <unclear cert="medium" resp="#joint">zue</unclear> erbarmen, und nach <unclear cert="medium" resp="#joint">ihrer</unclear> <unclear cert="medium" resp="#joint">beijwohnenden</unclear>
+<lb n="28"/>discretion unser <unclear cert="medium" resp="#joint">elendts</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">soulagiren</unclear> mit <unclear cert="medium" resp="#joint">hülff</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">erscheinen</unclear>. Ein <unclear cert="low" resp="#joint">solches</unclear> <unclear cert="low" resp="#joint">wirdt</unclear> der <unclear cert="low" resp="#joint">getreüe</unclear> <unclear cert="low" resp="#joint">Gott</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">vatter</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">waißhen</unclear> und <unclear cert="medium" resp="#joint">reicher</unclear> <unclear cert="medium" resp="#joint">vergelter</unclear> <unclear cert="medium" resp="#joint">deren</unclear> wohl-
+<lb n="31"/><unclear cert="medium" resp="#joint">thaten</unclear>, die man ihnen thuet, <unclear cert="medium" resp="#joint">tausentfaltig</unclear> <unclear cert="medium" resp="#joint">belohnen</unclear>, und
+<lb n="32"/>wir <unclear cert="medium" resp="#joint">werdens</unclear> <unclear cert="medium" resp="#joint">mit</unclear> <unclear cert="medium" resp="#joint">höchster</unclear> <unclear cert="medium" resp="#joint">danckbarkeit</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">allen</unclear> für-
+<lb n="33"/><unclear cert="medium" resp="#joint">fallenden</unclear> occasionen in gebühr beschulden, in <unclear cert="medium" resp="#joint">frischer</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">gedechtnüß</unclear> behalten, <unclear cert="low" resp="#joint">dieselbe</unclear> damit göttlicher prote-
+<lb n="35"/>ction zu <unclear cert="medium" resp="#joint">langwüriger</unclear> <unclear cert="medium" resp="#joint">glücklicher</unclear> regierungen und <unclear cert="medium" resp="#joint">allem</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">behaglichem</unclear> <unclear cert="medium" resp="#joint">wohlstandt</unclear> <unclear cert="medium" resp="#joint">treülich</unclear> <unclear cert="medium" resp="#joint">uns</unclear> ihren <unclear cert="medium" resp="#joint">mittleijdenden</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">andencken</unclear> <unclear cert="medium" resp="#joint">fleißigst</unclear> <unclear cert="medium" resp="#joint">bevelchen</unclear>, bleiben <unclear cert="low" resp="#joint">allezeit</unclear>
+<lb n="38"/><origPlace ref="stadtasg-places-185" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schhausen</unclear></origPlace> <origDate when="1630" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">14</unclear> <unclear cert="low" resp="#joint">fb</unclear>: <unclear cert="low" resp="#joint">1630</unclear></origDate>. unser <unclear cert="medium" resp="#joint">hochgeehrten</unclear> herren <unclear cert="low" resp="#joint">undt</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">patronen</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">gebühr</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">affectionirte</unclear> <unclear cert="low" resp="#joint">dienerin</unclear>
+<lb n="41"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Johanna</unclear> <unclear cert="low" resp="#joint">Pletzscherin</unclear></persName> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Elisabeth</unclear> <unclear cert="low" resp="#joint">Pletscherin</unclear></persName>
+<lb n="42"/><persName role="issuer" resp="#ner">Maria <unclear cert="medium" resp="#joint">Juliana</unclear> <unclear cert="medium" resp="#joint">Pletscheren</unclear></persName>
 <pb facs="StadtASG_Missive_3276_12997.jpg" n="3"/>
-<lb n="43"/>Denen WolEdlen, Vöst und Geštrengen,
-<lb n="44"/>Frommen, Fürsichtig und weisen Herren
-<lb n="45"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Bürgermeistér und dem Rhat dér
-<lb n="46"/>löbliche Statt St. Gallen</orgName>.
-<lb n="47"/>Unsern Insondérs hochehrénden
-<lb n="48"/>Hérren und Patronen. <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="43"/><unclear cert="medium" resp="#joint">Denen</unclear> <unclear cert="medium" resp="#joint">WolEdlen</unclear>, <unclear cert="medium" resp="#joint">Vöst</unclear> und <unclear cert="medium" resp="#joint">Geštrengen</unclear>,
+<lb n="44"/><unclear cert="medium" resp="#joint">Frommen</unclear>, <unclear cert="medium" resp="#joint">Fürsichtig</unclear> und <unclear cert="low" resp="#joint">weisen</unclear> <unclear cert="low" resp="#joint">Herren</unclear>
+<lb n="45"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Bürgermeistér</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Rhat</unclear> <unclear cert="low" resp="#joint">dér</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">löbliche</unclear> Statt St. Gallen</orgName>.
+<lb n="47"/><unclear cert="medium" resp="#joint">Unsern</unclear> <unclear cert="medium" resp="#joint">Insondérs</unclear> <unclear cert="medium" resp="#joint">hochehrénden</unclear>
+<lb n="48"/><unclear cert="medium" resp="#joint">Hérren</unclear> und <unclear cert="medium" resp="#joint">Patronen</unclear>. <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">St</unclear>. <unclear cert="medium" resp="#joint">Gallen</unclear></placeName>.
 <pb facs="StadtASG_Missive_3276_12998.jpg" n="4"/>
 <lb n="49"/>Denen wohledeln und gestrengen,
 <lb n="50"/>ehrenvesten, fuersichtig und weisen herren,
@@ -91,7 +92,7 @@
 <lb n="52"/>loeblichen statt St. Gallen</orgName>.
 <lb n="53"/>Unsern insonders hochgeehrten
 <lb n="54"/>herren und patronen.
-<lb n="55"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="55"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

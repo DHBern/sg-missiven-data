@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3589</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Emanuel Steiger, Landvogt zu Löwen, bittet Bürgermeister und Rat zu St. Gallen, die dortigen Bürger Leonhard und Burkhard Schallen sowie Stefan Hilli zu den beigefügten Fragen zu vernehmen. Hauptmann Jakob Steiger, Agent der Eidgenossen in Mailand, wolle sich gegen die Ehrverletzungen durch Leutnant Christoph Schmid und dessen Familie verteidigen. Die Aussagen sollen dem Landvogt übersandt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Emanuel Steiger, Landvogt zu Löwen, bittet Bürgermeister und Rat zu St. Gallen, die dortigen Bürger Leonhard und Burkhard Schallen sowie Stefan Hilli zu den beigefügten Fragen zu vernehmen. Hauptmann Jakob Steiger, Agent der Eidgenossen in Mailand, wolle sich gegen die Ehrverletzungen durch Leutnant Christoph Schmid und dessen Familie verteidigen. Die Aussagen sollen dem Landvogt übersandt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Emanuel Steiger, Landvogt of Löwen, asks the Burgomaster and Council of St. Gallen to interrogate the citizens there, Leonhard and Burkhard Schallen, as well as Stefan Hilli, regarding the attached questions. Captain Jakob Steiger, agent of the Confederates in Mailand, wishes to defend himself against the insults by Lieutenant Christoph Schmid and his family. The statements are to be sent to the Landvogt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -63,40 +64,40 @@
 <lb n="27"/>landtvogt zu <placeName resp="#ner">Louwis</placeName>.
 <pb facs="StadtASG_Missive_3589_14320.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3589_14321.jpg" n="3"/>
-<lb n="28"/>Clagpuncten über weliche, uff herren haubt:
-<lb n="29"/><persName resp="#ner">Jacobi Steigers</persName> zuestendiges anhalten, die hier-
-<lb n="30"/>underschribnen kriegsgesellen von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>,
-<lb n="31"/>söllendt verfaßet werden, wider leütinandt
-<lb n="32"/><persName resp="#ner">Christoffel Schmiden</persName> gnannt Kalberkehrer,
-<lb n="33"/>sein haußfrauw, unnd sein dochter <persName resp="#ner">Anna</persName>,
-<lb n="34"/>auch <persName resp="#ner">Johann</persName> sein Enigkhlin.
-<lb n="35"/>Das namblichen bej <date resp="#ner">funffzehen tagh</date>. iber, obvermelter leütinandt
-<lb n="36"/><persName resp="#ner">Christoffel Schmid</persName>, unnd sein haußvolckh sich alß leichtfermäßen,
-<lb n="37"/>onangesechen gottes, unnd weltlicher rechten, nach eigner
-<lb n="38"/>geluostens naigung, in offentlichem würtßhauß zur <placeName resp="#ner">Cronuß</placeName>,
-<lb n="39"/>vor eiißer abscheüchen, in beywesen unnd gegenwürtigkeit
-<lb n="40"/>viler ehrlichen Personen, wider gesagtes herren haubtman
-<lb n="41"/><persName resp="#ner">Steigers</persName> Ehr, reputation unnd gueten namen geredt.
+<lb n="28"/><unclear cert="low" resp="#joint">Clagpuncten</unclear> <unclear cert="low" resp="#joint">über</unclear> <unclear cert="low" resp="#joint">weliche</unclear>, <unclear cert="low" resp="#joint">uff</unclear> herren <unclear cert="low" resp="#joint">haubt</unclear>:
+<lb n="29"/><persName resp="#ner"><unclear cert="low" resp="#joint">Jacobi</unclear> <unclear cert="low" resp="#joint">Steigers</unclear></persName> <unclear cert="low" resp="#joint">zuestendiges</unclear> <unclear cert="low" resp="#joint">anhalten</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">hier</unclear>-
+<lb n="30"/><unclear cert="low" resp="#joint">underschribnen</unclear> <unclear cert="low" resp="#joint">kriegsgesellen</unclear> <unclear cert="low" resp="#joint">von</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>,
+<lb n="31"/><unclear cert="low" resp="#joint">söllendt</unclear> <unclear cert="low" resp="#joint">verfaßet</unclear> werden, wider <unclear cert="low" resp="#joint">leütinandt</unclear>
+<lb n="32"/><persName resp="#ner"><unclear cert="low" resp="#joint">Christoffel</unclear> <unclear cert="low" resp="#joint">Schmiden</unclear></persName> <unclear cert="low" resp="#joint">gnannt</unclear> <unclear cert="low" resp="#joint">Kalberkehrer</unclear>,
+<lb n="33"/>sein <unclear cert="low" resp="#joint">haußfrauw</unclear>, unnd sein <unclear cert="low" resp="#joint">dochter</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Anna</unclear></persName>,
+<lb n="34"/><unclear cert="low" resp="#joint">auch</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Johann</unclear></persName> <unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">Enigkhlin</unclear>.
+<lb n="35"/><unclear cert="low" resp="#joint">Das</unclear> <unclear cert="low" resp="#joint">namblichen</unclear> <unclear cert="low" resp="#joint">bej</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">funffzehen</unclear> <unclear cert="low" resp="#joint">tagh</unclear></date>. <unclear cert="low" resp="#joint">iber</unclear>, <unclear cert="low" resp="#joint">obvermelter</unclear> <unclear cert="low" resp="#joint">leütinandt</unclear>
+<lb n="36"/><persName resp="#ner"><unclear cert="low" resp="#joint">Christoffel</unclear> <unclear cert="low" resp="#joint">Schmid</unclear></persName>, unnd <unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">haußvolckh</unclear> sich <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">leichtfermäßen</unclear>,
+<lb n="37"/><unclear cert="low" resp="#joint">onangesechen</unclear> <unclear cert="low" resp="#joint">gottes</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">weltlicher</unclear> <unclear cert="low" resp="#joint">rechten</unclear>, <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">eigner</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">geluostens</unclear> <unclear cert="low" resp="#joint">naigung</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">offentlichem</unclear> <unclear cert="low" resp="#joint">würtßhauß</unclear> <unclear cert="low" resp="#joint">zur</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Cronuß</unclear></placeName>,
+<lb n="39"/><unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">eiißer</unclear> <unclear cert="low" resp="#joint">abscheüchen</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">beywesen</unclear> unnd gegenwürtigkeit
+<lb n="40"/>viler ehrlichen Personen, wider <unclear cert="low" resp="#joint">gesagtes</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">haubtman</unclear>
+<lb n="41"/><persName resp="#ner"><unclear cert="low" resp="#joint">Steigers</unclear></persName> <unclear cert="low" resp="#joint">Ehr</unclear>, reputation unnd gueten namen geredt.
 <lb n="42"/>1. Das vorgedachter herr haubt: <persName resp="#ner">Steiger</persName> ein Valise geöffnet, daruß
-<lb n="43"/>geltt gnomen, so ihme nit zuestendig geweßen, unnd hinder-
+<lb n="43"/>geltt gnomen, so <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">zuestendig</unclear> <unclear cert="low" resp="#joint">geweßen</unclear>, unnd hinder-
 <lb n="44"/>halten habe.
 <lb n="45"/>2. Das obvermelter herr haubt: <persName resp="#ner">Steiger</persName> zue <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meylandt</placeName> geltt
-<lb n="46"/>empfangen, verbanckhetiert unnd vergeüdet, weliches geltt
-<lb n="47"/>ihme ihro besagten leütinandt <persName resp="#ner">Schmid</persName>, unnd andern under
+<lb n="46"/>empfangen, verbanckhetiert unnd <unclear cert="low" resp="#joint">vergeüdet</unclear>, <unclear cert="low" resp="#joint">weliches</unclear> <unclear cert="low" resp="#joint">geltt</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">ihro</unclear> <unclear cert="low" resp="#joint">besagten</unclear> <unclear cert="low" resp="#joint">leütinandt</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Schmid</unclear></persName>, unnd andern under
 <lb n="48"/>seiner compagnia dienenden soldaten zuestendig were,
 <lb n="49"/>laße er weder ihme leütinandt <persName resp="#ner">Schmiden</persName>, noch andern soldaten
-<lb n="50"/>ihre kriegs sold ervolget sige, Inmaßen er haubtman
-<lb n="51"/><persName resp="#ner">Steiger</persName> fur khen ehrlichen Man gehalten, old genambßet
+<lb n="50"/><unclear cert="low" resp="#joint">ihre</unclear> <unclear cert="low" resp="#joint">kriegs</unclear> <unclear cert="low" resp="#joint">sold</unclear> <unclear cert="low" resp="#joint">ervolget</unclear> <unclear cert="low" resp="#joint">sige</unclear>, <unclear cert="low" resp="#joint">Inmaßen</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">haubtman</unclear>
+<lb n="51"/><persName resp="#ner"><unclear cert="low" resp="#joint">Steiger</unclear></persName> <unclear cert="low" resp="#joint">fur</unclear> <unclear cert="low" resp="#joint">khen</unclear> <unclear cert="low" resp="#joint">ehrlichen</unclear> <unclear cert="low" resp="#joint">Man</unclear> gehalten, old genambßet
 <lb n="52"/>werden sölle
-<lb n="53"/><persName resp="#ner">Leonhardt</persName> unnd <persName resp="#ner">Burckhardt Schallen</persName>.
-<lb n="54"/><persName role="issuer" resp="#ner">Yörig Hilli</persName> von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="53"/><persName resp="#ner">Leonhardt</persName> unnd <persName resp="#ner"><unclear cert="low" resp="#joint">Burckhardt</unclear> <unclear cert="low" resp="#joint">Schallen</unclear></persName>.
+<lb n="54"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Yörig</unclear> <unclear cert="low" resp="#joint">Hilli</unclear></persName> <unclear cert="low" resp="#joint">von</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 <pb facs="StadtASG_Missive_3589_14322.jpg" n="4"/>
 <pb facs="StadtASG_Missive_3589_14323.jpg" n="5"/>
 <pb facs="StadtASG_Missive_3589_14324.jpg" n="6"/>
-<lb n="55"/>Denen hochgeachten, woledlen, gestrengen herren,
-<lb n="56"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Raht loblicher
-<lb n="57"/>statt St. Gallen</orgName>. Meinen bsonders hoch-
-<lb n="58"/>geehrten herren.
+<lb n="55"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">hochgeachten</unclear>, <unclear cert="low" resp="#joint">woledlen</unclear>, <unclear cert="low" resp="#joint">gestrengen</unclear> <unclear cert="low" resp="#joint">herren</unclear>,
+<lb n="56"/><unclear cert="low" resp="#joint">herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> unnd <unclear cert="low" resp="#joint">Raht</unclear> <unclear cert="low" resp="#joint">loblicher</unclear>
+<lb n="57"/>statt St. Gallen</orgName>. <unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">bsonders</unclear> <unclear cert="low" resp="#joint">hoch</unclear>-
+<lb n="58"/><unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="low" resp="#joint">herren</unclear>.
 </p>
         </body>
     </text>

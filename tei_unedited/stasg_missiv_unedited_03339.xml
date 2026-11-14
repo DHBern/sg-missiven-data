@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3339</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Pfalzgräfin Louisa bedankt sich bei Bürgermeister und Rat zu St. Gallen für die von der Eidgenossenschaft aufgeworbenen Steuern zur Unterstützung der aus dem Fürstentum Zweibrücken vertriebenen Glaubensgenossen. Sie bestätigt den Erhalt von 500 Gulden, teilt die Verteilung der Mittel an politische und geistliche Diener sowie Hausarme mit und bittet um Gebet für die Wohlfahrt der Spender.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Pfalzgräfin Louisa bedankt sich bei Bürgermeister und Rat zu St. Gallen für die von der Eidgenossenschaft aufgeworbenen Steuern zur Unterstützung der aus dem Fürstentum Zweibrücken vertriebenen Glaubensgenossen. Sie bestätigt den Erhalt von 500 Gulden, teilt die Verteilung der Mittel an politische und geistliche Diener sowie Hausarme mit und bittet um Gebet für die Wohlfahrt der Spender.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Palatine Louisa thanks the Burgomaster and Council of St. Gallen for the taxes raised by the Confederation to support the co-religionists driven out of the Principality of Zweibrücken. She confirms the receipt of 500 gulden, reports on the distribution of the funds to political and ecclesiastical servants as well as house poor, and asks for prayers for the welfare of the donors.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,51 +35,51 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3339_13263.jpg" n="1"/>
-<lb n="1"/><persName role="issuer" resp="#ner">Louijsa</persName> von Gottesgnaden Pfaltzgraevin bei <placeName ref="stadtasg-places-92" cert="medium" resp="#ner">Rhein</placeName>,
-<lb n="2"/>in <placeName ref="stadtasg-places-132" cert="medium" resp="#ner">Bayern</placeName>, zue <placeName resp="#ner">Gülch</placeName>, <placeName resp="#ner">Cleve</placeName> unnd <placeName resp="#ner">Berg</placeName>, Hertzogin,
-<lb n="3"/>Graevin zue <placeName resp="#ner">Velldentz</placeName> <placeName ref="stadtasg-places-172" cert="medium" resp="#ner">Sponheim</placeName> der <placeName resp="#ner">Marckh</placeName> unnd
-<lb n="4"/><placeName ref="stadtasg-places-77" cert="medium" resp="#ner">Ravenspurg</placeName>, Fraw zue <placeName resp="#ner">Ravenstein</placeName>, Wittib,
-<lb n="5"/>Unnsern freündtlichen grueß zuevor, Edl Streng, Vest,
-<lb n="6"/>Ehrnveste, Fürsichtige unnd Weiße besonders liebe
+<lb n="1"/><persName role="issuer" resp="#ner">Louijsa</persName> von <unclear cert="low" resp="#joint">Gottesgnaden</unclear> <unclear cert="low" resp="#joint">Pfaltzgraevin</unclear> bei <placeName ref="stadtasg-places-92" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rhein</unclear></placeName>,
+<lb n="2"/><unclear cert="low" resp="#joint">in</unclear> <placeName ref="stadtasg-places-132" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bayern</unclear></placeName>, <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Gülch</unclear></placeName>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Cleve</unclear></placeName> unnd <placeName resp="#ner"><unclear cert="low" resp="#joint">Berg</unclear></placeName>, <unclear cert="low" resp="#joint">Hertzogin</unclear>,
+<lb n="3"/><unclear cert="low" resp="#joint">Graevin</unclear> <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Velldentz</unclear></placeName> <placeName ref="stadtasg-places-172" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sponheim</unclear></placeName> <unclear cert="low" resp="#joint">der</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Marckh</unclear></placeName> unnd
+<lb n="4"/><placeName ref="stadtasg-places-77" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ravenspurg</unclear></placeName>, <unclear cert="low" resp="#joint">Fraw</unclear> <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Ravenstein</unclear></placeName>, <unclear cert="low" resp="#joint">Wittib</unclear>,
+<lb n="5"/><unclear cert="low" resp="#joint">Unnsern</unclear> <unclear cert="low" resp="#joint">freündtlichen</unclear> <unclear cert="low" resp="#joint">grueß</unclear> <unclear cert="low" resp="#joint">zuevor</unclear>, <unclear cert="low" resp="#joint">Edl</unclear> <unclear cert="low" resp="#joint">Streng</unclear>, <unclear cert="low" resp="#joint">Vest</unclear>,
+<lb n="6"/><unclear cert="low" resp="#joint">Ehrnveste</unclear>, <unclear cert="low" resp="#joint">Fürsichtige</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Weiße</unclear> besonders liebe
 <lb n="7"/>Herren,
 <lb n="8"/>Unß ist der Herren schreiben vom <date resp="#ner">19. Julij</date> jüngsthin,
-<lb n="9"/>von denen zue ihnen, unnd andern unßers Glaubens
-<lb n="10"/>gnoßen der loblichen <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoßschafft</orgName> abgeord-
-<lb n="11"/>neten, wegen sollicitirung anderwertlicher
-<lb n="12"/>stewer, herr die Politische, Auch Kirchen: unnd Schuell
-<lb n="13"/>diener et Consorten des <orgName resp="#ner">Fürstenthumbs</orgName> <placeName resp="#ner">Zweibrücken</placeName>
-<lb n="14"/>zu ihrero widerkunfft, alhie zue recht eingelieffert
-<lb n="15"/>worden, darauß wir nit allein der Herren mit
-<lb n="16"/>unß, und gedachtes <orgName resp="#ner">Fürstenthumbs</orgName> aigehoerigen, Weld-
-<lb n="17"/>lichen unnd Kirchenstandts Persohnen tragendes Christ-
-<lb n="18"/>liches mittleiden gnugsam verstanden, sondern
-<lb n="19"/>haben auch die zue warnehmung unnd bezeügung dero Gott-
-<lb n="20"/>seeligen Condolenz naher <placeName ref="stadtasg-places-112" cert="medium" resp="#ner">Straßburg</placeName> uebermachte
-<lb n="21"/>ahnsehenliche stewer der fünffhundert gulden,
-<lb n="22"/>albereit empfangen, Gleichwie wir
-<lb n="23"/>nun darauß der Herren hochruhm: unnd Christlicher
-<lb n="24"/>eiffer unnd mitleiden gegen die betrangte, als
+<lb n="9"/>von denen zue ihnen, unnd <unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">unßers</unclear> <unclear cert="low" resp="#joint">Glaubens</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">gnoßen</unclear> der loblichen <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoßschafft</orgName> abgeord-
+<lb n="11"/>neten, <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">sollicitirung</unclear> <unclear cert="low" resp="#joint">anderwertlicher</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">stewer</unclear>, <unclear cert="low" resp="#joint">herr</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Politische</unclear>, <unclear cert="low" resp="#joint">Auch</unclear> <unclear cert="low" resp="#joint">Kirchen</unclear>: unnd <unclear cert="low" resp="#joint">Schuell</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">diener</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">Consorten</unclear> <unclear cert="low" resp="#joint">des</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Fürstenthumbs</unclear></orgName> <placeName resp="#ner"><unclear cert="low" resp="#joint">Zweibrücken</unclear></placeName>
+<lb n="14"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">ihrero</unclear> <unclear cert="low" resp="#joint">widerkunfft</unclear>, <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">recht</unclear> <unclear cert="low" resp="#joint">eingelieffert</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">darauß</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">allein</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">mit</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">unß</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gedachtes</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Fürstenthumbs</unclear></orgName> <unclear cert="low" resp="#joint">aigehoerigen</unclear>, <unclear cert="low" resp="#joint">Weld</unclear>-
+<lb n="17"/>lichen unnd <unclear cert="low" resp="#joint">Kirchenstandts</unclear> <unclear cert="low" resp="#joint">Persohnen</unclear> <unclear cert="low" resp="#joint">tragendes</unclear> <unclear cert="low" resp="#joint">Christ</unclear>-
+<lb n="18"/><unclear cert="low" resp="#joint">liches</unclear> <unclear cert="low" resp="#joint">mittleiden</unclear> <unclear cert="low" resp="#joint">gnugsam</unclear> <unclear cert="low" resp="#joint">verstanden</unclear>, <unclear cert="low" resp="#joint">sondern</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">auch</unclear> die <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">warnehmung</unclear> unnd <unclear cert="low" resp="#joint">bezeügung</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">Gott</unclear>-
+<lb n="20"/><unclear cert="low" resp="#joint">seeligen</unclear> <unclear cert="low" resp="#joint">Condolenz</unclear> <unclear cert="low" resp="#joint">naher</unclear> <placeName ref="stadtasg-places-112" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Straßburg</unclear></placeName> <unclear cert="low" resp="#joint">uebermachte</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">ahnsehenliche</unclear> <unclear cert="low" resp="#joint">stewer</unclear> der <unclear cert="low" resp="#joint">fünffhundert</unclear> <unclear cert="low" resp="#joint">gulden</unclear>,
+<lb n="22"/><unclear cert="low" resp="#joint">albereit</unclear> <unclear cert="low" resp="#joint">empfangen</unclear>, <unclear cert="low" resp="#joint">Gleichwie</unclear> wir
+<lb n="23"/><unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">darauß</unclear> der <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">hochruhm</unclear>: unnd <unclear cert="low" resp="#joint">Christlicher</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">eiffer</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">mitleiden</unclear> gegen die betrangte, als
 <lb n="25"/>dero nothleidende Glaubensgenoßen Je lenger
 <lb n="26"/>Je mehr verspühren, Alß thun wir uns auch hiemit
 <lb n="27"/>gegen denselben in nahmen gedachter unnserer aigehoe-
-<lb n="28"/>rigen, solcher großen Beneficenz halber, gantz
-<lb n="29"/>günstig freündtlich unnd zum hoechsten bedancken,
-<lb n="30"/>Unnd verhalten ihnen darbei nicht, daß schon vor lengst
-<lb n="31"/>stewern die verordnung geschehen, dz bei <placeName resp="#ner">Schanz</placeName>
+<lb n="28"/>rigen, solcher großen <unclear cert="low" resp="#joint">Beneficenz</unclear> <unclear cert="low" resp="#joint">halber</unclear>, gantz
+<lb n="29"/>günstig freündtlich unnd <unclear cert="low" resp="#joint">zum</unclear> <unclear cert="low" resp="#joint">hoechsten</unclear> <unclear cert="low" resp="#joint">bedancken</unclear>,
+<lb n="30"/>Unnd verhalten ihnen darbei nicht, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">schon</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">lengst</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">stewern</unclear> die verordnung geschehen, dz bei <placeName resp="#ner">Schanz</placeName>
 <pb facs="StadtASG_Missive_3339_13264.jpg" n="2"/>
-<lb n="32"/>in oeffentlichem kirchengebett, der liebe gott, vor
-<lb n="33"/>derselben unnd der ihrigen, wie auch anderer guth-
-<lb n="34"/>hertziger benefactorn wohlfahrt unnd prosperitet
-<lb n="35"/>ahngerueffen worden, welches auch hinfüro also
-<lb n="36"/>continuirt werden solle, nicht zweifelendt
+<lb n="32"/>in oeffentlichem kirchengebett, der liebe gott, <unclear cert="low" resp="#joint">vor</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">derselben</unclear> unnd <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">ihrigen</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">anderer</unclear> <unclear cert="low" resp="#joint">guth</unclear>-
+<lb n="34"/><unclear cert="low" resp="#joint">hertziger</unclear> <unclear cert="low" resp="#joint">benefactorn</unclear> <unclear cert="low" resp="#joint">wohlfahrt</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">prosperitet</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">ahngerueffen</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">welches</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">hinfüro</unclear> <unclear cert="low" resp="#joint">also</unclear>
+<lb n="36"/>continuirt werden solle, <unclear cert="low" resp="#joint">nicht</unclear> <unclear cert="low" resp="#joint">zweifelendt</unclear>
 <lb n="37"/>ein jeder under den participanten deine goettliche
-<lb n="38"/>allmacht, vor der Herren glueklichen zustandt, auch dar-
+<lb n="38"/>allmacht, vor der <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">glueklichen</unclear> <unclear cert="low" resp="#joint">zustandt</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">dar</unclear>-
 <lb n="39"/>neben privatim zubitten unnd ahnzurueffen, sich ahn-
 <lb n="40"/>gelegen sein lassen werde, welches allgemein
-<lb n="41"/>kirchen: unnd privatgebett, der liebe gott gne-
-<lb n="42"/>diglich erhoeren, unnd die Herren unnd die ihrige, umb ihrer
+<lb n="41"/><unclear cert="low" resp="#joint">kirchen</unclear>: <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">privatgebett</unclear>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">liebe</unclear> gott <unclear cert="low" resp="#joint">gne</unclear>-
+<lb n="42"/><unclear cert="low" resp="#joint">diglich</unclear> <unclear cert="low" resp="#joint">erhoeren</unclear>, unnd die Herren unnd die ihrige, umb ihrer
 <lb n="43"/>hohen gutthat willen, in andere weg segnen wolle,
-<lb n="44"/>wie wir ihnen von grundt unsers hertzens wünschen,
+<lb n="44"/>wie wir ihnen von grundt <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">hertzens</unclear> <unclear cert="low" resp="#joint">wünschen</unclear>,
 <lb n="45"/>Was dan die distribution solcher 500. gulden, so den
 <lb n="46"/>politischen und geistlichen dhiennern, auch haus-
 <lb n="47"/>armen ins gesambt verordnet worden. bhe-
@@ -87,19 +88,19 @@
 <lb n="50"/>weist. Wollen demnach nicht zweiffeln,
 <lb n="51"/>es werde solche abtheilung der Herren expressen
 <lb n="52"/>willen unnd eines jeden nottürfft und würdig
-<lb n="53"/>keit gemaes, sich verhalten, unnd darueber sich
+<lb n="53"/><unclear cert="low" resp="#joint">keit</unclear> <unclear cert="low" resp="#joint">gemaes</unclear>, sich verhalten, unnd darueber sich
 <lb n="54"/>mit fuegen niemandt zubeklagen haben, hetten
-<lb n="55"/>wir es auch besser wissen zu machen, solte uns
+<lb n="55"/>wir <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">besser</unclear> <unclear cert="low" resp="#joint">wissen</unclear> zu machen, solte uns
 <lb n="56"/>daran nichts abgehalten haben, wiewohl bej
 <lb n="57"/>solchem nothleidigen wesen, nit wohl alles
-<lb n="58"/>recht zutreffen und zumachen ist,
+<lb n="58"/>recht <unclear cert="low" resp="#joint">zutreffen</unclear> und <unclear cert="low" resp="#joint">zumachen</unclear> ist,
 <lb n="59"/>Welches wir den Herren freundtlich nit verhalten
-<lb n="60"/>wollen, unnd seind ihnen alle ehr unnd freundlichen
-<lb n="61"/>willen zuerweisen jederzeit geneigt, datum <origPlace resp="#ner">Meisen</origPlace>-
+<lb n="60"/>wollen, unnd seind ihnen alle ehr unnd <unclear cert="low" resp="#joint">freundlichen</unclear>
+<lb n="61"/>willen <unclear cert="low" resp="#joint">zuerweisen</unclear> <unclear cert="low" resp="#joint">jederzeit</unclear> geneigt, datum <origPlace resp="#ner">Meisen</origPlace>-
 <lb n="62"/>heim <origDate when="1638-12-04" resp="#ner">den 4. decembris anno 1638</origDate>.
 <lb n="63"/>Der Herren
-<lb n="64"/>in gebür gutwillige
-<lb n="65"/><persName role="issuer" resp="#ner">Louysa pfaltzgraefin</persName> wittib mppria
+<lb n="64"/>in gebür <unclear cert="low" resp="#joint">gutwillige</unclear>
+<lb n="65"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Louysa</unclear> <unclear cert="low" resp="#joint">pfaltzgraefin</unclear></persName> <unclear cert="low" resp="#joint">wittib</unclear> <unclear cert="low" resp="#joint">mppria</unclear>
 <pb facs="StadtASG_Missive_3339_13265.jpg" n="3"/>
 <lb n="66"/>Abtheilung der stätt <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürich</placeName>, und <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanckt Gallen</placeName>, gesa-
 <lb n="67"/>melter steür, namlich von Zürich 1000 reichsthaler
@@ -128,15 +129,15 @@
 <lb n="90"/>ao. 1638</origDate>.
 <pb facs="StadtASG_Missive_3339_13266.jpg" n="4"/>
 <pb facs="StadtASG_Missive_3339_13267.jpg" n="5"/>
-<lb n="91"/>Den fürsichtigen, ersammen, wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister und
-<lb n="92"/>radt zuo Santgallen</orgName>, unseren insonders guotten
+<lb n="91"/>Den fürsichtigen, <unclear cert="low" resp="#joint">ersammen</unclear>, <unclear cert="low" resp="#joint">wysen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">burgermeister</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="92"/><unclear cert="low" resp="#joint">radt</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">Santgallen</unclear></orgName>, unseren insonders guotten
 <lb n="93"/>fründen und getrüwen lieben eydtgnossen.
 <pb facs="StadtASG_Missive_3339_13268.jpg" n="6"/>
-<lb n="94"/>Den Edlen, erenvesten, fürnemmen, fürsichtig-
-<lb n="95"/>und weisen, unseren insonders lieben herren,
-<lb n="96"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und rath der statt Sanct
+<lb n="94"/>Den <unclear cert="low" resp="#joint">Edlen</unclear>, <unclear cert="low" resp="#joint">erenvesten</unclear>, <unclear cert="low" resp="#joint">fürnemmen</unclear>, <unclear cert="low" resp="#joint">fürsichtig</unclear>-
+<lb n="95"/><unclear cert="low" resp="#joint">und</unclear> weisen, <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">insonders</unclear> <unclear cert="low" resp="#joint">lieben</unclear> herren,
+<lb n="96"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und rath der statt <unclear cert="medium" resp="#joint">Sanct</unclear>
 <lb n="97"/>Gallen</orgName>.
-<lb n="98"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>.
+<lb n="98"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

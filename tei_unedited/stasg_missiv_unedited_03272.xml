@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3272</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben Lindaus vom 12. Januar 1638 betreffend den Lindauer Schirmverwandten Hans Andreas Senft. Der St. Galler Bürger David Müller habe sich beschwert, dass Senft sein Recht auf dem Hof Petto nicht anerkannt habe. St. Gallen habe Müller angewiesen, sich mit Senft innerhalb von 14 Tagen zu einigen, damit beide Städte nicht weiter belästigt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben Lindaus vom 12. Januar 1638 betreffend den Lindauer Schirmverwandten Hans Andreas Senft. Der St. Galler Bürger David Müller habe sich beschwert, dass Senft sein Recht auf dem Hof Petto nicht anerkannt habe. St. Gallen habe Müller angewiesen, sich mit Senft innerhalb von 14 Tagen zu einigen, damit beide Städte nicht weiter belästigt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to a letter from Lindau of 12 January 1638 concerning the Lindau protégé Hans Andreas Senft. The St. Gallen citizen David Müller had complained that Senft had not recognized his right to the Hof Petto. St. Gallen had instructed Müller to reach an agreement with Senft within 14 days, so that both cities would not be further troubled.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,36 +38,36 @@
 <lb n="1"/>Unser freündtlich willig dienst zuvor, Fuersichtig
 <lb n="2"/>Ersam und weise, besonders liebe guete Freünd undt
 <lb n="3"/>Nachbarn.
-<lb n="4"/>Auf derselben, under dato <date resp="#ner">12. diß
-<lb n="5"/>monats januarij</date>, wegen ihres schirmsverwandten, H. <persName resp="#ner">Hanß
-<lb n="6"/>Andreas Senfften</persName> zuo <placeName resp="#ner">Senfftnaw</placeName>, an uns abgangnen
+<lb n="4"/>Auf derselben, under dato <date resp="#ner">12. <unclear cert="low" resp="#joint">diß</unclear>
+<lb n="5"/>monats januarij</date>, wegen <unclear cert="low" resp="#joint">ihres</unclear> <unclear cert="low" resp="#joint">schirmsverwandten</unclear>, <unclear cert="low" resp="#joint">H</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">Andreas</unclear> <unclear cert="low" resp="#joint">Senfften</unclear></persName> <unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Senfftnaw</unclear></placeName>, an uns abgangnen
 <lb n="7"/>schreibens, haben wir nit ermanglet unserm burger
-<lb n="8"/><persName resp="#ner">David Muellern</persName> den jnhalt desselben fuerhalten zuolassen,
-<lb n="9"/>Und wiewolen er darueber eins und anders, so jme
-<lb n="10"/>nit wenig beschwerlich, sonderlich diß fuergewendt,
-<lb n="11"/>daß, nachaußgemachter sach, gedachter H. Senfft, sein
-<lb n="12"/>Sein vßstand Vff demselben hoff peto Assecurationis vß dem-
+<lb n="8"/><persName resp="#ner">David Muellern</persName> den jnhalt desselben <unclear cert="low" resp="#joint">fuerhalten</unclear> <unclear cert="low" resp="#joint">zuolassen</unclear>,
+<lb n="9"/>Und <unclear cert="low" resp="#joint">wiewolen</unclear> er darueber eins und anders, so <unclear cert="low" resp="#joint">jme</unclear>
+<lb n="10"/>nit wenig beschwerlich, <unclear cert="low" resp="#joint">sonderlich</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">fuergewendt</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">daß</unclear>, <unclear cert="low" resp="#joint">nachaußgemachter</unclear> <unclear cert="low" resp="#joint">sach</unclear>, gedachter <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">Senfft</unclear>, <unclear cert="low" resp="#joint">sein</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">Sein</unclear> <unclear cert="low" resp="#joint">vßstand</unclear> <unclear cert="low" resp="#joint">Vff</unclear> <unclear cert="low" resp="#joint">demselben</unclear> <unclear cert="low" resp="#joint">hoff</unclear> <unclear cert="low" resp="#joint">peto</unclear> <unclear cert="low" resp="#joint">Assecurationis</unclear> <unclear cert="low" resp="#joint">vß</unclear> <unclear cert="low" resp="#joint">dem</unclear>-
 <lb n="13"/>selben behalten, und jme <persName resp="#ner">Muellern</persName> weittere am zinß ge-
-<lb n="14"/>stellt, und er dahero billich theils versichert: wie
-<lb n="15"/>er jme dann solches und anders vormals heimbgeschlagen habe,
-<lb n="16"/>so haben wir doch mit jme, von oberkeits wegen, sovil
-<lb n="17"/>verschafft, daß er sich endlich dahin erklert, er wolle
-<lb n="18"/>sich mit jme <persName resp="#ner">H. Senfften</persName> ehest der gestalt diß orths Abfinden,
+<lb n="14"/>stellt, und er dahero billich <unclear cert="low" resp="#joint">theils</unclear> <unclear cert="low" resp="#joint">versichert</unclear>: wie
+<lb n="15"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">jme</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">solches</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">anders</unclear> <unclear cert="low" resp="#joint">vormals</unclear> <unclear cert="low" resp="#joint">heimbgeschlagen</unclear> <unclear cert="low" resp="#joint">habe</unclear>,
+<lb n="16"/>so haben wir doch mit jme, von oberkeits wegen, <unclear cert="low" resp="#joint">sovil</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">verschafft</unclear>, <unclear cert="low" resp="#joint">daß</unclear> er sich endlich dahin erklert, er wolle
+<lb n="18"/>sich mit jme <persName resp="#ner">H. Senfften</persName> ehest der gestalt <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">orths</unclear> <unclear cert="low" resp="#joint">Abfinden</unclear>,
 <lb n="19"/>daß weder E. W. noch wir, deßen sich halber weiters
 <lb n="20"/>nit behelliget werden sollen, welches wir jme also
-<lb n="21"/>jnnerhalb <date resp="#ner">14. tag</date> zuethuen und <date resp="#ner">6. werckh</date> zuesetzen ufer-
-<lb n="22"/>legt. Welches wir Ewr zuo jhrer und jhres
-<lb n="23"/>angehoerigen nachricht, hiemit in antwort nit verhalten.
+<lb n="21"/>jnnerhalb <date resp="#ner">14. tag</date> <unclear cert="low" resp="#joint">zuethuen</unclear> und <date resp="#ner"><unclear cert="low" resp="#joint">6</unclear>. <unclear cert="low" resp="#joint">werckh</unclear></date> <unclear cert="low" resp="#joint">zuesetzen</unclear> <unclear cert="low" resp="#joint">ufer</unclear>-
+<lb n="22"/><unclear cert="low" resp="#joint">legt</unclear>. <unclear cert="low" resp="#joint">Welches</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">Ewr</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">jhrer</unclear> und <unclear cert="low" resp="#joint">jhres</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">angehoerigen</unclear> <unclear cert="low" resp="#joint">nachricht</unclear>, <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">antwort</unclear> nit verhalten.
 <lb n="24"/>Und verbleiben jhnen wie allweg alß auch noch fuero-
-<lb n="25"/>hin mit aller gueten nachbarschafft ferner beigethon.
-<lb n="26"/>Gottes bewahrung uns darmit beedseits wol
+<lb n="25"/>hin mit aller <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">nachbarschafft</unclear> <unclear cert="low" resp="#joint">ferner</unclear> <unclear cert="low" resp="#joint">beigethon</unclear>.
+<lb n="26"/><unclear cert="low" resp="#joint">Gottes</unclear> <unclear cert="low" resp="#joint">bewahrung</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">darmit</unclear> <unclear cert="low" resp="#joint">beedseits</unclear> wol
 <lb n="27"/>befehlende. Datum. <origDate when="1638-01-23" resp="#ner">23. januarij. 1638</origDate>
 <lb n="28"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
-<lb n="29"/>der statt St. Gallen</orgName>.
-<lb n="30"/>Den Fuersichtig Ersam und weisen
+<lb n="29"/>der statt <unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></orgName>.
+<lb n="30"/><unclear cert="low" resp="#joint">Den</unclear> <unclear cert="low" resp="#joint">Fuersichtig</unclear> <unclear cert="low" resp="#joint">Ersam</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weisen</unclear>
 <lb n="31"/><orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath der statt
-<lb n="32"/>Lindaw</orgName>, unsern besonders lieben gueten
-<lb n="33"/>Freünd und nachbarn.
+<lb n="32"/>Lindaw</orgName>, unsern besonders lieben <unclear cert="low" resp="#joint">gueten</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">Freünd</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nachbarn</unclear>.
 <pb facs="StadtASG_Missive_3272_12982.jpg" n="2"/>
 <lb n="34"/>[]
 </p>

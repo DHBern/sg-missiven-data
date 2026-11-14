@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3455</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich teilen mit, dass sie den Vertrag von 1634 zwischen Dorothea Meyerin und ihrem Schwager Jörg Amman nicht aufrechterhalten können. Da Amman verarmt sei und im Spital pflege, sein Gut halbiert habe und das Stadtrecht eine Versicherung des Schwagers nicht vorsehe, sei ein neuer Vergleich nötig geworden. Dieser sei von beauftragten Räten zu beiderseitigem Nutzen geschlossen worden. Die Abschrift wird übersandt.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich teilen mit, dass sie den Vertrag von 1634 zwischen Dorothea Meyerin und ihrem Schwager Jörg Amman nicht aufrechterhalten können. Da Amman verarmt sei und im Spital pflege, sein Gut halbiert habe und das Stadtrecht eine Versicherung des Schwagers nicht vorsehe, sei ein neuer Vergleich nötig geworden. Dieser sei von beauftragten Räten zu beiderseitigem Nutzen geschlossen worden. Die Abschrift wird übersandt.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Council of Zürich report that they cannot uphold the contract of 1634 between Dorothea Meyerin and her brother-in-law Jörg Amman. Since Amman is said to be impoverished and in care at the hospital, to have halved his estate, and the city law does not provide for a guarantee by the brother-in-law, a new settlement has become necessary. This was concluded by appointed council members to the mutual benefit of both parties. The copy is sent.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,8 +40,8 @@
 <lb n="3"/>wyß, Insonnders guet fründt und getrüw lieb <orgName resp="#ner">Eydtgnoßen</orgName>.
 <lb n="4"/>Wir habend durch üwere verburgerte <persName resp="#ner">Caspar Eehren</persName>, und
 <lb n="5"/>syn Ehewürtin <persName resp="#ner">Dorothea Meyerin</persName>, üwer sub dato <date resp="#ner">15. Septemb.</date>
-<lb n="6"/>an uns abgangnes antwort-schryben, sambt der begehrten
-<lb n="7"/>copia zurecht empfanngen. Nun heten wir es harüber zwar gern
+<lb n="6"/>an uns <unclear cert="low" resp="#joint">abgangnes</unclear> <unclear cert="low" resp="#joint">antwort-schryben</unclear>, sambt der begehrten
+<lb n="7"/>copia zurecht empfanngen. Nun heten wir <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">harüber</unclear> <unclear cert="low" resp="#joint">zwar</unclear> <unclear cert="low" resp="#joint">gern</unclear>
 <lb n="8"/>by dem zwüschend Ihro Meyerin, und Ihrem Schwöher <persName resp="#ner">Jörg
 <lb n="9"/>Amman</persName>, in <date resp="#ner">Ao. 1634.</date> uffgerichten und getroffnen vertrag
 <lb n="10"/>gern verblyben laßen, wann aber sidhar fürgefallen,
@@ -55,26 +56,26 @@
 <lb n="19"/>verglych nothwendig erachtet, wellicher dann von etlichen
 <lb n="20"/>unnsern darzue verordneten getrüwen lieben Mit-
 <lb n="21"/>Räthen, zue der parthygen beiderseyths guetem benügen,
-<lb n="22"/>getroffen und uffgesetzt worden, wie Ir unser G. L. E.
-<lb n="23"/>uß bygefügter Abschrift, so wir üch zue üwerer nach-
-<lb n="24"/>richt überschickhen wollen, selbsten zueersehen, üch
-<lb n="25"/>unnsere G. L. E. darby versicherende, wo wir gedachter
+<lb n="22"/>getroffen und uffgesetzt worden, wie Ir <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="23"/><unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">bygefügter</unclear> <unclear cert="low" resp="#joint">Abschrift</unclear>, so wir üch zue üwerer nach-
+<lb n="24"/>richt <unclear cert="low" resp="#joint">überschickhen</unclear> <unclear cert="low" resp="#joint">wollen</unclear>, <unclear cert="low" resp="#joint">selbsten</unclear> <unclear cert="low" resp="#joint">zueersehen</unclear>, üch
+<lb n="25"/><unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. darby versicherende, wo wir gedachter
 <lb n="26"/><persName resp="#ner">Dorothea Meyerin</persName> ein mehrers zuesprechen getruwt,
 <lb n="27"/>das es an unnserem gueten willen nit wurde ermanglet
-<lb n="28"/>haben. Sind damit unß sambtlich dem
-<lb n="29"/>schirm des Allerhöchsten wol befohlen. Dat. d. <origDate when="1641-09-25" resp="#ner">25.
+<lb n="28"/>haben. Sind damit unß sambtlich <unclear cert="low" resp="#joint">dem</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">Allerhöchsten</unclear> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">befohlen</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>. <unclear cert="low" resp="#joint">d</unclear>. <origDate when="1641-09-25" resp="#ner">25.
 <lb n="30"/>Septemb. Ao 1641.</origDate>
 <lb n="31"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="32"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3455_13756.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3455_13757.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3455_13758.jpg" n="4"/>
-<lb n="33"/>Den frommen, fuersichtigen, Ehr=
-<lb n="34"/>sammen und Weysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="33"/>Den frommen, <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, <unclear cert="medium" resp="#joint">Ehr=</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">sammen</unclear> und <unclear cert="medium" resp="#joint">Weysen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="35"/>und Rath der Statt St. Gallen</orgName>,
-<lb n="36"/>unseren innsonders guoten frün=
-<lb n="37"/>den und getrüwen Lieben
-<lb n="38"/><orgName role="recipient" resp="#ner">Eydtgnoßen</orgName>.
+<lb n="36"/><unclear cert="medium" resp="#joint">unseren</unclear> innsonders <unclear cert="medium" resp="#joint">guoten</unclear> frün=
+<lb n="37"/>den und <unclear cert="medium" resp="#joint">getrüwen</unclear> Lieben
+<lb n="38"/><orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnoßen</unclear></orgName>.
 </p>
         </body>
     </text>

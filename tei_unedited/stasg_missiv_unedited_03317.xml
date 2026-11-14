@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3317</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau teilen mit, dass sie von Wangen und Isny darauf hingewiesen wurden, dass das Rindvieh auf den kommenden Märkten voraussichtlich weniger wert sein werde und der Fleischpreis daher gesenkt werden könnte. Sie bitten St. Gallen um Mitteilung, ob und welche Änderungen dort geplant seien, um sich entsprechend zu verhalten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau teilen mit, dass sie von Wangen und Isny darauf hingewiesen wurden, dass das Rindvieh auf den kommenden Märkten voraussichtlich weniger wert sein werde und der Fleischpreis daher gesenkt werden könnte. Sie bitten St. Gallen um Mitteilung, ob und welche Änderungen dort geplant seien, um sich entsprechend zu verhalten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Council of Lindau report that they were informed by Wangen and Isny that cattle at the upcoming markets would presumably be worth less and that the price of meat could therefore be lowered. They ask St. Gallen to communicate whether and what changes are planned there, in order to act accordingly.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,23 +38,23 @@
 <lb n="1"/>Unser freüntlich willig dienst zuvor, fürsichtig, ersam, und
 <lb n="2"/>weiße, besonders liebe guete freünd und nachbarn.
 <lb n="3"/>Demnach wir dißer tagen vonn den erbarn stätten <placeName ref="stadtasg-places-194" cert="medium" resp="#ner">Wangen</placeName> und
-<lb n="4"/>und <placeName resp="#ner">Yßnj</placeName> erjnnert worden, waßmaßen dafür gehalten werde,
-<lb n="5"/>daß heurigen jahrs daß rind vich, auff bevorstehenden
-<lb n="6"/>märckhten (gott sej lob) jnn vil ringern werth, dann bej vorigen
+<lb n="4"/>und <placeName resp="#ner">Yßnj</placeName> erjnnert worden, waßmaßen dafür <unclear cert="low" resp="#joint">gehalten</unclear> <unclear cert="low" resp="#joint">werde</unclear>,
+<lb n="5"/>daß <unclear cert="low" resp="#joint">heurigen</unclear> <unclear cert="low" resp="#joint">jahrs</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">rind</unclear> <unclear cert="low" resp="#joint">vich</unclear>, <unclear cert="low" resp="#joint">auff</unclear> <unclear cert="low" resp="#joint">bevorstehenden</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">märckhten</unclear> (gott sej lob) jnn vil ringern werth, dann bej vorigen
 <lb n="7"/>jahren, zubekommen, und derowegen jnn dem jezigen flaischtax vil-
 <lb n="8"/>leicht eine ringerung fürgenomen, und gemacht werden möchte, daruber
 <lb n="9"/>sie nun auch unser gemueths mainung zůvernemmen begehrt.
 <lb n="10"/>Wann wir aber vorhero auch anderer benachbarten orthen,
-<lb n="11"/>sonderlichen e. wht. guetachten, auch ob oder waß für ver-
+<lb n="11"/>sonderlichen <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. guetachten, auch ob oder waß für ver-
 <lb n="12"/>anderung sie hierjnnen fürzunemmen bedacht sein möchten, gern
-<lb n="13"/>verständigt sein wolten. Alß jst ann e. wht.
+<lb n="13"/>verständigt sein <unclear cert="low" resp="#joint">wolten</unclear>. <unclear cert="low" resp="#joint">Alß</unclear> <unclear cert="low" resp="#joint">jst</unclear> <unclear cert="low" resp="#joint">ann</unclear> <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">wht</unclear>.
 <lb n="14"/>unßer freündnachbarliches ersuchen und bitten, die
 <lb n="15"/>wollen unß jhr vernünfftige gedanckhen hierüber vertrewlich, bej
 <lb n="16"/>ehist müglicher gelegenheit, ohnbeschwerdt, zue unßerer weitterer
-<lb n="17"/>nachrichtung comunicieren. Daß sein wir umb e. wht.
-<lb n="18"/>hinwiderumb freündnachbarlichen zubeschulden erbüetig, alß
-<lb n="19"/>dero wir auch sonsten zue angenemer nachbarschafftbezaigung
-<lb n="20"/>jederzeit wol beigethan verbleiben, und unß beneben
+<lb n="17"/>nachrichtung comunicieren. Daß <unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">wht</unclear>.
+<lb n="18"/><unclear cert="low" resp="#joint">hinwiderumb</unclear> <unclear cert="low" resp="#joint">freündnachbarlichen</unclear> <unclear cert="low" resp="#joint">zubeschulden</unclear> <unclear cert="low" resp="#joint">erbüetig</unclear>, <unclear cert="low" resp="#joint">alß</unclear>
+<lb n="19"/>dero wir auch <unclear cert="low" resp="#joint">sonsten</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">angenemer</unclear> <unclear cert="low" resp="#joint">nachbarschafftbezaigung</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">jederzeit</unclear> <unclear cert="low" resp="#joint">wol</unclear> beigethan verbleiben, und unß beneben
 <lb n="21"/>gesambt deß allmächtigen gnadenreichen obhalt ganz trewlich
 <lb n="22"/>befehlen. Datum .<origDate when="1638-08-28" resp="#ner">28. Augustj a° 1638</origDate>.
 <lb n="23"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
@@ -61,10 +62,10 @@
 <pb facs="StadtASG_Missive_3317_13168.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3317_13169.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3317_13170.jpg" n="4"/>
-<lb n="25"/>Den fürsichtigen ehrsamen und weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
-<lb n="26"/>meister und Raht der Statt St. Gallen</orgName>, unsren be=
-<lb n="27"/>sonders lieben, gueten freünden, und Nachbarn.
-<lb n="28"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="25"/>Den fürsichtigen <unclear cert="medium" resp="#joint">ehrsamen</unclear> und <unclear cert="medium" resp="#joint">weisen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
+<lb n="26"/>meister und <unclear cert="medium" resp="#joint">Raht</unclear> der Statt St. Gallen</orgName>, <unclear cert="medium" resp="#joint">unsren</unclear> be=
+<lb n="27"/>sonders <unclear cert="low" resp="#joint">lieben</unclear>, <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freünden</unclear>, und <unclear cert="low" resp="#joint">Nachbarn</unclear>.
+<lb n="28"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

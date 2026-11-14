@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3606</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat der Stadt St. Gallen bitten Landammann und Rat des Land Appenzell, den am Sonntag aus ihrer Gefangenschaft entflohenen Daniel Zollikoffer und seine Frau, falls diese in ihrem Land angetroffen würden, auf Kosten der St. Galler mit obrigkeitlichem Arrest festzuhalten und sie davon zu benachrichtigen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat der Stadt St. Gallen bitten Landammann und Rat des Land Appenzell, den am Sonntag aus ihrer Gefangenschaft entflohenen Daniel Zollikoffer und seine Frau, falls diese in ihrem Land angetroffen würden, auf Kosten der St. Galler mit obrigkeitlichem Arrest festzuhalten und sie davon zu benachrichtigen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of the city of St. Gallen request Landammann and Council of the Land Appenzell to detain, on the costs of St. Gallen, by official arrest, Daniel Zollikoffer, who fled from their captivity on Sunday, and his wife, if they should be found in their land, and to notify them thereof.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,24 +35,24 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3606_14405.jpg" n="1"/>
-<lb n="1"/>Unser fründt- nachbarlich willig dinst, sampt was Wir
-<lb n="2"/>ehren liebs und guots vermoegend zuovor, Fromm fürsichtig
-<lb n="3"/>Ehrsam und weis, innsonders guot fründt und wohlver-
-<lb n="4"/>thruwt lieb Nachbarn.
-<lb n="5"/>Demnach <persName resp="#ner">Daniel Zollikoffer</persName> so ein zeitlang inn unser
-<lb n="6"/>Gfangenschafft enthalten worden, us derselben <date resp="#ner">Sontags znacht</date>
-<lb n="7"/>entrunnen, deme wie sin weib gesterkt, denen beiden Wir
-<lb n="8"/>durch underschidliche Lauffersbotten nachjagen lassen, Als
-<lb n="9"/>gelangt an Euch, unser wohlvertruwte lieb Nachbarn, unser
-<lb n="10"/>fründ, nachbarlich ersuochen und bitten, Ihr woellend, da Si
-<lb n="11"/>in eüwerm land betretten wurden, dieselben uff unsern
-<lb n="12"/>costen mit oberkeitlichem Arrest anhalten lassen, und uns dessen
-<lb n="13"/>angendts durch eignen botten berichten, damit Wir die
-<lb n="14"/>gebür witers fürnemmen moegend. Daß sind Wir umb
-<lb n="15"/>Euch unser wohlvertruwte lieb Nachbarn, mit allem nachbar-
-<lb n="16"/>lichen willen, zuoerwideren urbietig. Gott mit uns.
-<lb n="17"/>Datum den <origDate when="1621-06-20" resp="#ner">20. Junij Ao 1621</origDate>.
-<lb n="18"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
+<lb n="1"/><unclear cert="medium" resp="#joint">Unser</unclear> <unclear cert="medium" resp="#joint">fründt</unclear>- nachbarlich willig <unclear cert="medium" resp="#joint">dinst</unclear>, sampt was Wir
+<lb n="2"/><unclear cert="medium" resp="#joint">ehren</unclear> liebs und guots <unclear cert="medium" resp="#joint">vermoegend</unclear> zuovor, <unclear cert="medium" resp="#joint">Fromm</unclear> <unclear cert="medium" resp="#joint">fürsichtig</unclear>
+<lb n="3"/><unclear cert="medium" resp="#joint">Ehrsam</unclear> und weis, innsonders <unclear cert="medium" resp="#joint">guot</unclear> <unclear cert="medium" resp="#joint">fründt</unclear> und <unclear cert="medium" resp="#joint">wohlver</unclear>-
+<lb n="4"/><unclear cert="medium" resp="#joint">thruwt</unclear> <unclear cert="medium" resp="#joint">lieb</unclear> <unclear cert="medium" resp="#joint">Nachbarn</unclear>.
+<lb n="5"/><unclear cert="medium" resp="#joint">Demnach</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Daniel</unclear> <unclear cert="medium" resp="#joint">Zollikoffer</unclear></persName> <unclear cert="medium" resp="#joint">so</unclear> <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">zeitlang</unclear> <unclear cert="medium" resp="#joint">inn</unclear> unser
+<lb n="6"/><unclear cert="low" resp="#joint">Gfangenschafft</unclear> <unclear cert="low" resp="#joint">enthalten</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">us</unclear> <unclear cert="low" resp="#joint">derselben</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">Sontags</unclear> <unclear cert="low" resp="#joint">znacht</unclear></date>
+<lb n="7"/><unclear cert="low" resp="#joint">entrunnen</unclear>, <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">sin</unclear> weib <unclear cert="low" resp="#joint">gesterkt</unclear>, <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">beiden</unclear> <unclear cert="low" resp="#joint">Wir</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">underschidliche</unclear> <unclear cert="low" resp="#joint">Lauffersbotten</unclear> <unclear cert="low" resp="#joint">nachjagen</unclear> lassen, <unclear cert="medium" resp="#joint">Als</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">gelangt</unclear> an <unclear cert="low" resp="#joint">Euch</unclear>, unser <unclear cert="low" resp="#joint">wohlvertruwte</unclear> <unclear cert="low" resp="#joint">lieb</unclear> <unclear cert="low" resp="#joint">Nachbarn</unclear>, <unclear cert="low" resp="#joint">unser</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">fründ</unclear>, nachbarlich <unclear cert="medium" resp="#joint">ersuochen</unclear> und bitten, <unclear cert="medium" resp="#joint">Ihr</unclear> <unclear cert="medium" resp="#joint">woellend</unclear>, da <unclear cert="medium" resp="#joint">Si</unclear>
+<lb n="11"/>in <unclear cert="medium" resp="#joint">eüwerm</unclear> <unclear cert="medium" resp="#joint">land</unclear> <unclear cert="medium" resp="#joint">betretten</unclear> <unclear cert="medium" resp="#joint">wurden</unclear>, <unclear cert="medium" resp="#joint">dieselben</unclear> <unclear cert="medium" resp="#joint">uff</unclear> <unclear cert="medium" resp="#joint">unsern</unclear>
+<lb n="12"/>costen mit <unclear cert="medium" resp="#joint">oberkeitlichem</unclear> <unclear cert="medium" resp="#joint">Arrest</unclear> <unclear cert="medium" resp="#joint">anhalten</unclear> lassen, und uns <unclear cert="low" resp="#joint">dessen</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">angendts</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">eignen</unclear> botten <unclear cert="medium" resp="#joint">berichten</unclear>, damit <unclear cert="medium" resp="#joint">Wir</unclear> die
+<lb n="14"/><unclear cert="medium" resp="#joint">gebür</unclear> <unclear cert="medium" resp="#joint">witers</unclear> <unclear cert="medium" resp="#joint">fürnemmen</unclear> moegend. <unclear cert="medium" resp="#joint">Daß</unclear> sind Wir <unclear cert="medium" resp="#joint">umb</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">Euch</unclear> unser <unclear cert="low" resp="#joint">wohlvertruwte</unclear> <unclear cert="low" resp="#joint">lieb</unclear> <unclear cert="low" resp="#joint">Nachbarn</unclear>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">allem</unclear> <unclear cert="low" resp="#joint">nachbar</unclear>-
+<lb n="16"/>lichen willen, <unclear cert="medium" resp="#joint">zuoerwideren</unclear> <unclear cert="medium" resp="#joint">urbietig</unclear>. <unclear cert="medium" resp="#joint">Gott</unclear> mit <unclear cert="medium" resp="#joint">uns</unclear>.
+<lb n="17"/><unclear cert="medium" resp="#joint">Datum</unclear> den <origDate when="1621-06-20" resp="#ner">20. <unclear cert="medium" resp="#joint">Junij</unclear> <unclear cert="medium" resp="#joint">Ao</unclear> <unclear cert="medium" resp="#joint">1621</unclear></origDate>.
+<lb n="18"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="19"/>der Statt Sant Gallen</orgName>.
 <pb facs="StadtASG_Missive_3606_14406.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3606_14407.jpg" n="3"/>

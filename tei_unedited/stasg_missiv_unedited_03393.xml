@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3393</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die Eidgenossen berichten, dass an vielen Orten Vieh von den Weiden gestohlen werde. Sie bitten St. Gallen, an den Grenzen Passkontrollen einzuführen, damit niemand mit Pferden oder Vieh passieren darf, ohne einen Pass zu zeigen. Sie ersuchen, dies durch ein offenes Mandat zu publizieren und den Metzger zu informieren, um Missbrauch zu verhindern.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die Eidgenossen berichten, dass an vielen Orten Vieh von den Weiden gestohlen werde. Sie bitten St. Gallen, an den Grenzen Passkontrollen einzuführen, damit niemand mit Pferden oder Vieh passieren darf, ohne einen Pass zu zeigen. Sie ersuchen, dies durch ein offenes Mandat zu publizieren und den Metzger zu informieren, um Missbrauch zu verhindern.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Confederates report that in many places cattle are being stolen from the pastures. They ask St. Gallen to introduce border controls so that no one may pass with horses or cattle without showing a pass. They request that this be published by an open mandate and the butcher be informed, in order to prevent abuse.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -56,40 +57,40 @@
 <lb n="20"/>hiemit an Eüch unser fr. eidtgnößisch ersuechen, daß
 <lb n="21"/>Ir in Eüweren landten an allen, und jeden Paeßen, und
 <pb facs="StadtASG_Missive_3393_13506.jpg" n="2"/>
-<lb n="22"/>unnd nohtwendig befünden ohrten, beschaden ze thuen,
-<lb n="23"/>zuokhomen sein wollen belieben lassen. Damit
-<lb n="24"/>aber meniglich mit der glichen seckhellen nit zue
-<lb n="25"/>vorthel gerechnett werde, und hienach sich deß
+<lb n="22"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">nohtwendig</unclear> <unclear cert="low" resp="#joint">befünden</unclear> <unclear cert="low" resp="#joint">ohrten</unclear>, <unclear cert="low" resp="#joint">beschaden</unclear> <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">thuen</unclear>,
+<lb n="23"/><unclear cert="low" resp="#joint">zuokhomen</unclear> sein <unclear cert="low" resp="#joint">wollen</unclear> <unclear cert="low" resp="#joint">belieben</unclear> lassen. Damit
+<lb n="24"/>aber meniglich mit <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">glichen</unclear> <unclear cert="low" resp="#joint">seckhellen</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">zue</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">vorthel</unclear> <unclear cert="low" resp="#joint">gerechnett</unclear> <unclear cert="low" resp="#joint">werde</unclear>, und hienach sich deß
 <lb n="26"/>auffhaltens niemend zuebeklagen habe, wirdet
 <lb n="27"/>ihr euch nit lassen entgegen sein, glichwie allent-
 <lb n="28"/>halben anderswo auch beschicht, heüwern guetbedunkhen
-<lb n="29"/>nach, durch ein ofen Mandat solchs zue publicieren,
-<lb n="30"/>unnd ann nohtwendig ohrten den metzgeren selbst
-<lb n="31"/>spezificirlich zueberichten. Hieran erweisen
-<lb n="32"/>ihr unnß ein sonders angen: wolgefallen, welliches
-<lb n="33"/>wir in derglichen, und anderen begebenheitten,
+<lb n="29"/>nach, <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">ofen</unclear> <unclear cert="low" resp="#joint">Mandat</unclear> <unclear cert="low" resp="#joint">solchs</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">publicieren</unclear>,
+<lb n="30"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">ann</unclear> <unclear cert="low" resp="#joint">nohtwendig</unclear> <unclear cert="low" resp="#joint">ohrten</unclear> den <unclear cert="low" resp="#joint">metzgeren</unclear> <unclear cert="low" resp="#joint">selbst</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">spezificirlich</unclear> <unclear cert="low" resp="#joint">zueberichten</unclear>. <unclear cert="low" resp="#joint">Hieran</unclear> <unclear cert="low" resp="#joint">erweisen</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">angen</unclear>: <unclear cert="low" resp="#joint">wolgefallen</unclear>, <unclear cert="low" resp="#joint">welliches</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">derglichen</unclear>, und anderen begebenheitten,
 <lb n="34"/>zuebeschulden begeren. Unns damit sambtlich
 <lb n="35"/>Gottes getreüwen Vorsorg wol befellendte.
-<lb n="36"/>Geben unnd in unser aller nammen mit deß Edlen
+<lb n="36"/>Geben unnd in unser aller <unclear cert="low" resp="#joint">nammen</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">deß</unclear> Edlen
 <lb n="37"/>und Vesten, unsers getreüwen lieben Lanndtvogts
 <lb n="38"/>der Graffschaft <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> in <placeName ref="stadtasg-places-266" cert="medium" resp="#ner">Ergöw</placeName>, <persName role="issuer" resp="#ner">Johan Rigett</persName>,
 <lb n="39"/>Allt Statthalter, unnd des <orgName ref="stadtasg-actors-522" cert="medium" role="issuer" resp="#ner">Rhats zue Schwitz</orgName>,
 <lb n="40"/>Eigen Innsigel verschloßen <origDate when="1640-07-14" resp="#ner">den 4./14. Julii, 1640</origDate>.
 <lb n="41"/>Von Statt und Landen d. 13.
-<lb n="42"/><orgName ref="stadtasg-actors-750" cert="medium" role="issuer" resp="#ner">ohrten unser Eidtgnoßschaft</orgName>
-<lb n="43"/>Räht, unnd Sandtpotten, der
-<lb n="44"/>zit auf dem tag d jahrrechnung
-<lb n="45"/>zue Baden in <placeName ref="stadtasg-places-266" cert="medium" resp="#ner">Ergöw</placeName> Volmechtig
-<lb n="46"/>Versambt.
+<lb n="42"/><orgName ref="stadtasg-actors-750" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">ohrten</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">Eidtgnoßschaft</unclear></orgName>
+<lb n="43"/><unclear cert="low" resp="#joint">Räht</unclear>, unnd Sandtpotten, der
+<lb n="44"/><unclear cert="low" resp="#joint">zit</unclear> <unclear cert="low" resp="#joint">auf</unclear> <unclear cert="low" resp="#joint">dem</unclear> tag <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">jahrrechnung</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">Baden</unclear> in <placeName ref="stadtasg-places-266" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ergöw</unclear></placeName> <unclear cert="low" resp="#joint">Volmechtig</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">Versambt</unclear>.
 <pb facs="StadtASG_Missive_3393_13507.jpg" n="3"/>
 <lb n="47"/>[]
 <pb facs="StadtASG_Missive_3393_13508.jpg" n="4"/>
-<lb n="48"/>Denen edlen, frommen, fuersichtigen,
-<lb n="49"/>unnd weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister, unnd
-<lb n="50"/>rhat, der statt St. Gallen</orgName>, unsern
-<lb n="51"/>insonders gueten freuendten, unnd
-<lb n="52"/>getreuen lieben eidtgnossen.
-<lb n="53"/>Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="48"/><unclear cert="medium" resp="#joint">Denen</unclear> edlen, frommen, <unclear cert="medium" resp="#joint">fuersichtigen</unclear>,
+<lb n="49"/>unnd weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear>, unnd
+<lb n="50"/>rhat, der statt St. Gallen</orgName>, <unclear cert="medium" resp="#joint">unsern</unclear>
+<lb n="51"/><unclear cert="medium" resp="#joint">insonders</unclear> <unclear cert="medium" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">freuendten</unclear>, unnd
+<lb n="52"/><unclear cert="medium" resp="#joint">getreuen</unclear> lieben eidtgnossen.
+<lb n="53"/><unclear cert="low" resp="#joint">Statt</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

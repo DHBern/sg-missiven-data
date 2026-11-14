@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3208</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen um Auskunft über die aktuellen Fleischpreise. Sie beabsichtigen, die Fleischsteuer zu senken, da die Metzger argumentieren, dass das Fleisch in St. Gallen, Schaffhausen und anderen Nachbarorten günstiger zu haben sei. Sie ersuchen um Mitteilung der Preise für das Pfund bestes, mittleres und schlechtestes Rind- und Bratfleisch.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen um Auskunft über die aktuellen Fleischpreise. Sie beabsichtigen, die Fleischsteuer zu senken, da die Metzger argumentieren, dass das Fleisch in St. Gallen, Schaffhausen und anderen Nachbarorten günstiger zu haben sei. Sie ersuchen um Mitteilung der Preise für das Pfund bestes, mittleres und schlechtestes Rind- und Bratfleisch.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Administrator of the Captaincy, Burgomaster and Council of Konstanz request Burgomaster and Council of St. Gallen for information on the current meat prices. They intend to lower the meat tax, as the butchers argue that meat is cheaper to be had in St. Gallen, Schaffhausen and other neighboring places. They ask to be informed of the prices for the pound of best, medium and worst beef and roast meat.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,41 +35,41 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3208_12681.jpg" n="1"/>
-<lb n="1"/>Unnser freuendt: nachparlich unnd guotwillige
-<lb n="2"/>dienst zuvor, Fuersichtige, Ersame unnd
-<lb n="3"/>Weyse, besonders liebe Freuendt unnd guotte
-<lb n="4"/>Nachparn.
+<lb n="1"/>Unnser freuendt: nachparlich unnd <unclear cert="low" resp="#joint">guotwillige</unclear>
+<lb n="2"/><unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">Fuersichtige</unclear>, <unclear cert="low" resp="#joint">Ersame</unclear> <unclear cert="low" resp="#joint">unnd</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">Weyse</unclear>, <unclear cert="low" resp="#joint">besonders</unclear> liebe <unclear cert="low" resp="#joint">Freuendt</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">guotte</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">Nachparn</unclear>.
 <lb n="5"/>Demnach wir vorhabens, den flaisch tax umb etwas
 <lb n="6"/>zuo moderieren unnd abzuosezen, unnsere Mezger
 <lb n="7"/>aber fuer solchs Instendtig bitten, mit dem fuer-
 <lb n="8"/>wandt, das zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schafhausen</placeName> unnd
-<lb n="9"/>anderen benachparten orten, allwo dz vich in
-<lb n="10"/>ringerem preyß alß hie zuerhandlen seye, das
-<lb n="11"/>pfundt flaisch noch dato p 6 kr. verkaufft werde:
-<lb n="12"/>Wan wir dan hierumb berichts beduerfftig, alß
-<lb n="13"/>langt an Euech unnser freuendt: nachparlich
-<lb n="14"/>ersuochen, unnß fuerderlich zuoverstendigen,
-<lb n="15"/>in waß preyß das pfundt, des besten, mitleren
+<lb n="9"/>anderen benachparten orten, allwo dz <unclear cert="low" resp="#joint">vich</unclear> in
+<lb n="10"/><unclear cert="low" resp="#joint">ringerem</unclear> <unclear cert="low" resp="#joint">preyß</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">hie</unclear> <unclear cert="low" resp="#joint">zuerhandlen</unclear> <unclear cert="low" resp="#joint">seye</unclear>, das
+<lb n="11"/><unclear cert="low" resp="#joint">pfundt</unclear> <unclear cert="low" resp="#joint">flaisch</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">dato</unclear> <unclear cert="low" resp="#joint">p</unclear> <unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">kr</unclear>. <unclear cert="low" resp="#joint">verkaufft</unclear> <unclear cert="low" resp="#joint">werde</unclear>:
+<lb n="12"/><unclear cert="low" resp="#joint">Wan</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">hierumb</unclear> <unclear cert="low" resp="#joint">berichts</unclear> <unclear cert="low" resp="#joint">beduerfftig</unclear>, <unclear cert="low" resp="#joint">alß</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">langt</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">Euech</unclear> <unclear cert="low" resp="#joint">unnser</unclear> <unclear cert="low" resp="#joint">freuendt</unclear>: <unclear cert="low" resp="#joint">nachparlich</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">ersuochen</unclear>, <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">fuerderlich</unclear> <unclear cert="low" resp="#joint">zuoverstendigen</unclear>,
+<lb n="15"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">preyß</unclear> <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">pfundt</unclear>, des besten, mitleren
 <lb n="16"/>guetete, unnd schlechtißten, sowol rindt, alß brate-
-<lb n="17"/>flaischs bey euech dz zeit kaeuflich hingegeben werde.
+<lb n="17"/>flaischs bey <unclear cert="low" resp="#joint">euech</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">kaeuflich</unclear> <unclear cert="low" resp="#joint">hingegeben</unclear> werde.
 <lb n="18"/>Solche nachparliche willfahr umb euech in gleichem und
-<lb n="19"/>mit gelegenheit freuendt nachparlich zuerwidern,
-<lb n="20"/>seyen wir freuendt nachparlich anerbietens,
-<lb n="21"/>Goetlicher obacht unnß damit allerseits wolbe-
-<lb n="22"/>velhendt. Datt. <origDate resp="#ner">den 20 8bris Anno 636</origDate>.
-<lb n="23"/>Verwalter der
-<lb n="24"/>haubtmanschafft, auch
+<lb n="19"/>mit gelegenheit freuendt nachparlich <unclear cert="low" resp="#joint">zuerwidern</unclear>,
+<lb n="20"/><unclear cert="low" resp="#joint">seyen</unclear> wir <unclear cert="low" resp="#joint">freuendt</unclear> nachparlich <unclear cert="low" resp="#joint">anerbietens</unclear>,
+<lb n="21"/><unclear cert="low" resp="#joint">Goetlicher</unclear> <unclear cert="low" resp="#joint">obacht</unclear> <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">allerseits</unclear> <unclear cert="low" resp="#joint">wolbe</unclear>-
+<lb n="22"/><unclear cert="low" resp="#joint">velhendt</unclear>. <unclear cert="low" resp="#joint">Datt</unclear>. <origDate resp="#ner">den 20 8bris Anno <unclear cert="low" resp="#joint">636</unclear></origDate>.
+<lb n="23"/><unclear cert="low" resp="#joint">Verwalter</unclear> <unclear cert="low" resp="#joint">der</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">haubtmanschafft</unclear>, <unclear cert="low" resp="#joint">auch</unclear>
 <lb n="25"/>Burgermaister und
 <lb n="26"/>Rath der Statt Cost-
 <lb n="27"/>anz.
 <pb facs="StadtASG_Missive_3208_12682.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3208_12683.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3208_12684.jpg" n="4"/>
-<lb n="28"/>Denen fürsichtigen ehrsamen und weisen
+<lb n="28"/><unclear cert="low" resp="#joint">Denen</unclear> fürsichtigen <unclear cert="low" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">und</unclear> weisen
 <lb n="29"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht der Statt St.
-<lb n="30"/>Gallen</orgName>, unnsern besonders lieben freünden
-<lb n="31"/>und gueten Nachpaurrn
-<lb n="32"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="30"/>Gallen</orgName>, unnsern besonders lieben <unclear cert="low" resp="#joint">freünden</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">Nachpaurrn</unclear>
+<lb n="32"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

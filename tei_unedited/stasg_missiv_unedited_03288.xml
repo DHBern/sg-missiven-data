@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3288</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Michael Schorno, Landvogt in Ober- und Nidertoggenburg, bittet Bürgermeister und Rat zu St. Gallen, den Prozess des Zunftherrn Joachim von Wyler gegen die Erben des Ammannischen Verlassenschafts zu Arbon zu stoppen. Er verweist auf einen früheren Vergleich und das thurgauische Erbrecht, das die Klage ausschliesse. Schorno warnt vor unnötigen Kosten und droht, die Sache bei der Judikatur zu vertreten, falls die St. Galler nicht nachgeben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Michael Schorno, Landvogt in Ober- und Nidertoggenburg, bittet Bürgermeister und Rat zu St. Gallen, den Prozess des Zunftherrn Joachim von Wyler gegen die Erben des Ammannischen Verlassenschafts zu Arbon zu stoppen. Er verweist auf einen früheren Vergleich und das thurgauische Erbrecht, das die Klage ausschliesse. Schorno warnt vor unnötigen Kosten und droht, die Sache bei der Judikatur zu vertreten, falls die St. Galler nicht nachgeben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Michael Schorno, Landvogt in Ober- und Nidertoggenburg, asks the Burgomaster and Council of St. Gallen to stop the process of the guild master Joachim von Wyler against the heirs of the Ammann inheritance in Arbon. He refers to a previous settlement and the Thurgau inheritance law, which excludes the claim. Schorno warns against unnecessary costs and threatens to represent the matter before the Judikatur if the St. Gallen side does not yield.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -102,10 +103,10 @@
 <lb n="65"/><placeName ref="stadtasg-places-103" cert="medium" resp="#ner">ober und nider thüugöw</placeName>
 <pb facs="StadtASG_Missive_3288_13043.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3288_13044.jpg" n="4"/>
-<lb n="66"/>Denen hochachtbarn, edlen, gestrengen, frommen, fürsichtig-
-<lb n="67"/>en, ersammen und weisen herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der
-<lb n="68"/>statt St. Gallen</orgName>, meinen besondern geehrten lieben herren, hochge-
-<lb n="69"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, :] Verify that the final line matches the original text.
+<lb n="66"/>Denen <unclear cert="medium" resp="#joint">hochachtbarn</unclear>, edlen, gestrengen, frommen, <unclear cert="low" resp="#joint">fürsichtig</unclear>-
+<lb n="67"/><unclear cert="low" resp="#joint">en</unclear>, <unclear cert="low" resp="#joint">ersammen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weisen</unclear> herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Rhat</unclear> der
+<lb n="68"/>statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">meinen</unclear> <unclear cert="low" resp="#joint">besondern</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> lieben <unclear cert="low" resp="#joint">herren</unclear>, <unclear cert="low" resp="#joint">hochge</unclear>-
+<lb n="69"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>, :] <unclear cert="low" resp="#joint">Verify</unclear> <unclear cert="low" resp="#joint">that</unclear> <unclear cert="low" resp="#joint">the</unclear> <unclear cert="low" resp="#joint">final</unclear> <unclear cert="low" resp="#joint">line</unclear> <unclear cert="low" resp="#joint">matches</unclear> <unclear cert="low" resp="#joint">the</unclear> <unclear cert="low" resp="#joint">original</unclear> <unclear cert="low" resp="#joint">text</unclear>.
 </p>
         </body>
     </text>

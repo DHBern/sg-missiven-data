@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3152</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Syndics und Rat von Genf bedauern, dass St. Gallen erneut wegen der Zinsen geschrieben habe, da sie bereits Zahlung an Herrn Morel veranlasst hätten. Sie bitten um Entschuldigung, dass sie das Kapital nicht zahlen könnten, da dies ihnen unmöglich sei, und versprechen, die Geduld der St. Galler zu schätzen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Syndics und Rat von Genf bedauern, dass St. Gallen erneut wegen der Zinsen geschrieben habe, da sie bereits Zahlung an Herrn Morel veranlasst hätten. Sie bitten um Entschuldigung, dass sie das Kapital nicht zahlen könnten, da dies ihnen unmöglich sei, und versprechen, die Geduld der St. Galler zu schätzen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Syndics and Council of Genf regret that St. Gallen has written again about the interest, as they had already caused payment to Herr Morel to be made. They ask for forgiveness that they could not pay the capital, as this is impossible for them, and promise to value the patience of the St. Gallen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,24 +35,24 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3152_12437.jpg" n="1"/>
-<lb n="1"/>Magnifiques, Puissans et Treshonorés Seigrs
+<lb n="1"/>Magnifiques, Puissans et <unclear cert="low" resp="#joint">Treshonorés</unclear> <unclear cert="low" resp="#joint">Seigrs</unclear>
 <lb n="2"/>bons voisins, singuliers amis, treschers allies de
 <lb n="3"/>religion.
-<lb n="4"/>Nous sommes tresmarris, q v. S. ayent prins la
+<lb n="4"/>Nous <unclear cert="low" resp="#joint">sommes</unclear> <unclear cert="low" resp="#joint">tresmarris</unclear>, q v. S. ayent prins la
 <lb n="5"/>peine de nous escrire derechef sur le subiect des
 <lb n="6"/>censes que nous leur debuons, d'autant q depuis
-<lb n="7"/>leur precedentes nous y avons desia donné ordre,
+<lb n="7"/>leur precedentes nous <unclear cert="low" resp="#joint">y</unclear> avons desia donné ordre,
 <lb n="8"/>et en avons faict faire le payement au sr <persName resp="#ner">Morel</persName>
 <lb n="9"/>suivant la charge qu'il en avoit de Vosdtes Sries,
 <lb n="10"/>et comme il leur en donne advis: Cependant
-<lb n="11"/>nous les remercions tresafectueusem de leur bonne
+<lb n="11"/>nous les remercions <unclear cert="low" resp="#joint">tresafectueusem</unclear> de leur bonne
 <lb n="12"/>patiençe en nostre endroict: et d'ailleurs les
 <lb n="13"/>prions de nous excuser de ce q nous ne pouvons
 <lb n="14"/>encores leur faire le payement du capital, comme
 <lb n="15"/>à nous du tout impossible. Nous nous promet-
 <lb n="16"/>tons ce support de v. S., comme aussy qu'elles nous
 <lb n="17"/>fairont l'honneur de croire, q nous sommes
-<lb n="18"/>Magnifiques, Puissans, et Treshonorés Seigrs
+<lb n="18"/>Magnifiques, Puissans, et <unclear cert="low" resp="#joint">Treshonorés</unclear> <unclear cert="low" resp="#joint">Seigrs</unclear>
 <lb n="19"/>bons voisins, singuliers amis, treschers alliés
 <lb n="20"/>de religion.
 <lb n="21"/>Vos tres affectionnés pour
@@ -62,7 +63,7 @@
 <pb facs="StadtASG_Missive_3152_12439.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3152_12440.jpg" n="4"/>
 <lb n="25"/>A Magnifiques, Puissans
-<lb n="26"/>&amp; Treshonorés Seigrs
+<lb n="26"/>&amp; <unclear cert="low" resp="#joint">Treshonorés</unclear> <unclear cert="low" resp="#joint">Seigrs</unclear>
 <lb n="27"/>Messieurs les <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Bourgemeister
 <lb n="28"/>&amp; Conseil de la ville &amp;
 <lb n="29"/>Republique de S. Gal</orgName>,

@@ -45,7 +45,7 @@ from lxml import etree
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_site import load_drafts, registers  # noqa: E402
+from build_site import english_of, load_drafts, load_english, registers  # noqa: E402
 
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 FACS = re.compile(r"^StadtASG_Missive_(\d+)_([^.]+)\.", re.I)
@@ -186,6 +186,9 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
     if draft:
         resp.append('<respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp>'
                     f"<name>{escape(draft.get('model') or 'Sprachmodell')}, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt>")
+    if draft and draft.get("en"):
+        resp.append('<respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp>'
+                    f"<name>{escape(draft['en'].get('model') or 'Sprachmodell')}, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt>")
     if n_unclear:
         resp.append('<respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander '
                     '(cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; '
@@ -201,7 +204,9 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
 
     corresp = abstract = ""
     if draft:
-        abstract = f'<abstract><p resp="#regest">{escape(draft["regest"])}</p></abstract>'
+        abstract = f'<abstract xml:lang="de"><p resp="#regest">{escape(draft["regest"])}</p></abstract>'
+        if draft.get("en"):
+            abstract += f'\n            <abstract xml:lang="en" resp="#mt"><p>{escape(draft["en"]["regest"])}</p></abstract>'
         sent = []
         if draft.get("sender"):
             sent.append(f'<name resp="#regest">{escape(draft["sender"])}</name>')
@@ -311,6 +316,11 @@ def main() -> None:
         if untagged:
             print(f"{len(untagged)} letters skipped: not tagged yet", flush=True)
     drafts = load_drafts()
+    english = load_english()
+    for lid, d in drafts.items():
+        en = english_of(f"draft_{d.get('reader')}", lid, {k: d.get(k) for k in ("regest", "sender", "recipient", "place")}, english)
+        if en:
+            d["en"] = en
     names = original_names()
     reg = registers()
     today = dt.date.today().isoformat()

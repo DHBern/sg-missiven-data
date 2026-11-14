@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3203</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten an Richter und Rat zu Kaschau über den Erbstreit um den Nachlass des verstorbenen Hans Albrecht Milch. Sie begründen, dass die Halbgeschwister (Scheuner) ausgeschlossen seien, da die leibliche Schwester Verena Milch und deren Kinder vorhanden seien. Zudem könnten die Nichten nicht erben, da sie zu weit entfernt seien. Die Stadt St. Gallen bittet um weitere Mitteilungen und erklärt sich zu einer gütlichen Einigung bereit.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten an Richter und Rat zu Kaschau über den Erbstreit um den Nachlass des verstorbenen Hans Albrecht Milch. Sie begründen, dass die Halbgeschwister (Scheuner) ausgeschlossen seien, da die leibliche Schwester Verena Milch und deren Kinder vorhanden seien. Zudem könnten die Nichten nicht erben, da sie zu weit entfernt seien. Die Stadt St. Gallen bittet um weitere Mitteilungen und erklärt sich zu einer gütlichen Einigung bereit.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen report to the Judge and Council of Kaschau regarding the inheritance dispute over the estate of the deceased Hans Albrecht Milch. They argue that the half-siblings (Scheuner) are to be excluded, as the full sister Verena Milch and her children are present. Furthermore, the nieces cannot inherit, as they are too far away. The city of St. Gallen asks for further communications and declares itself ready for an amicable settlement.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,45 +35,45 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3203_12657.jpg" n="1"/>
-<lb n="1"/>aber die nur von ainem bande
-<lb n="2"/>dß ist von vatter oder mutter allain
-<lb n="3"/>geschwisterige sind oder der selben
-<lb n="4"/>kind usgeschlossen werden. Wann
-<lb n="5"/>aber kain recht geschwisterige von
-<lb n="6"/>baiden banden oder derselben hinderlaß-
-<lb n="7"/>ne kind vorhanden, sonnder sollend den
-<lb n="8"/>die halbgeschwisterige zuo komen
-<lb n="9"/>vnd zuo erb zuogelaßen werden.
-<lb n="10"/>Diewil dann gedachts vererbeten,
-<lb n="11"/>vstl: <persName resp="#ner">Hannß Albrecht Milchs</persName> seligen
-<lb n="12"/>von seiner rechten schwester von vater vnd muter Fr: <persName resp="#ner">Verena
-<lb n="13"/>Milchin</persName> p:
-<lb n="14"/>vnd also von baiden banden rechte
-<lb n="15"/>eheliche kind vorhanden,
-<lb n="16"/>Also konnen die
-<lb n="17"/>Scheünerischen in der anigken
-<lb n="18"/>hareditet noch erbschafft nicht
+<lb n="1"/>aber die <unclear cert="low" resp="#joint">nur</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">ainem</unclear> <unclear cert="low" resp="#joint">bande</unclear>
+<lb n="2"/><unclear cert="low" resp="#joint">dß</unclear> <unclear cert="low" resp="#joint">ist</unclear> von vatter oder <unclear cert="low" resp="#joint">mutter</unclear> <unclear cert="low" resp="#joint">allain</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">geschwisterige</unclear> <unclear cert="low" resp="#joint">sind</unclear> oder der <unclear cert="low" resp="#joint">selben</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">kind</unclear> <unclear cert="low" resp="#joint">usgeschlossen</unclear> werden. Wann
+<lb n="5"/>aber kain recht <unclear cert="low" resp="#joint">geschwisterige</unclear> von
+<lb n="6"/>baiden banden oder <unclear cert="low" resp="#joint">derselben</unclear> <unclear cert="low" resp="#joint">hinderlaß</unclear>-
+<lb n="7"/><unclear cert="low" resp="#joint">ne</unclear> <unclear cert="low" resp="#joint">kind</unclear> <unclear cert="low" resp="#joint">vorhanden</unclear>, <unclear cert="low" resp="#joint">sonnder</unclear> <unclear cert="low" resp="#joint">sollend</unclear> <unclear cert="low" resp="#joint">den</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">halbgeschwisterige</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">komen</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">erb</unclear> <unclear cert="low" resp="#joint">zuogelaßen</unclear> <unclear cert="low" resp="#joint">werden</unclear>.
+<lb n="10"/><unclear cert="low" resp="#joint">Diewil</unclear> dann <unclear cert="low" resp="#joint">gedachts</unclear> <unclear cert="low" resp="#joint">vererbeten</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">vstl</unclear>: <persName resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear> <unclear cert="low" resp="#joint">Albrecht</unclear> <unclear cert="low" resp="#joint">Milchs</unclear></persName> <unclear cert="low" resp="#joint">seligen</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">rechten</unclear> <unclear cert="low" resp="#joint">schwester</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">vater</unclear> <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">muter</unclear> <unclear cert="low" resp="#joint">Fr</unclear>: <persName resp="#ner"><unclear cert="low" resp="#joint">Verena</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">Milchin</unclear></persName> <unclear cert="low" resp="#joint">p</unclear>:
+<lb n="14"/><unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">baiden</unclear> <unclear cert="low" resp="#joint">banden</unclear> <unclear cert="low" resp="#joint">rechte</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">eheliche</unclear> <unclear cert="low" resp="#joint">kind</unclear> <unclear cert="low" resp="#joint">vorhanden</unclear>,
+<lb n="16"/><unclear cert="low" resp="#joint">Also</unclear> <unclear cert="low" resp="#joint">konnen</unclear> <unclear cert="low" resp="#joint">die</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">Scheünerischen</unclear> <unclear cert="low" resp="#joint">in</unclear> der <unclear cert="low" resp="#joint">anigken</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">hareditet</unclear> noch erbschafft nicht
 <lb n="19"/>anmasten, sonder werden billich
-<lb n="20"/>vßgeschlossen, so lang vnd vil von
-<lb n="21"/>solchem Milchischen geschlaecht es
-<lb n="22"/>in der absteigenden linien
-<lb n="23"/>kind vorhanden sindt. Vnd
-<lb n="24"/>und wann gleich diser kind grosß
-<lb n="25"/>vatter selig, deß verstorbnen anigkhs
-<lb n="26"/>rechter bruoder von vatter vnd mutter
-<lb n="27"/>gewesßen were, so kündte doch die
-<lb n="28"/>erbsmasß nit zuo inen, die weil sie
-<lb n="29"/>deß eim grad zuo weit, vnd an
-<lb n="30"/>ihrs vatter vnd grosßvatters statt
-<lb n="31"/>nach unsern gebreüchen vnd fromen
-<lb n="32"/>nit erben möchten.
-<lb n="33"/>neben ermelten Milchischen
-<lb n="34"/>schwester kinden
-<lb n="35"/>weil dann deme in wahrheits
-<lb n="36"/>grundt also, alß wollen
+<lb n="20"/><unclear cert="low" resp="#joint">vßgeschlossen</unclear>, so lang vnd vil <unclear cert="low" resp="#joint">von</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">solchem</unclear> <unclear cert="low" resp="#joint">Milchischen</unclear> <unclear cert="low" resp="#joint">geschlaecht</unclear> <unclear cert="low" resp="#joint">es</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">absteigenden</unclear> <unclear cert="low" resp="#joint">linien</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">kind</unclear> <unclear cert="low" resp="#joint">vorhanden</unclear> sindt. Vnd
+<lb n="24"/>und <unclear cert="low" resp="#joint">wann</unclear> <unclear cert="low" resp="#joint">gleich</unclear> <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">kind</unclear> <unclear cert="low" resp="#joint">grosß</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">vatter</unclear> <unclear cert="low" resp="#joint">selig</unclear>, <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">verstorbnen</unclear> <unclear cert="low" resp="#joint">anigkhs</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">rechter</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">vatter</unclear> <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">mutter</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">gewesßen</unclear> <unclear cert="low" resp="#joint">were</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">kündte</unclear> <unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">die</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">erbsmasß</unclear> nit <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">inen</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">weil</unclear> <unclear cert="low" resp="#joint">sie</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">eim</unclear> <unclear cert="low" resp="#joint">grad</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">weit</unclear>, <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">an</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">ihrs</unclear> <unclear cert="low" resp="#joint">vatter</unclear> <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">grosßvatters</unclear> <unclear cert="low" resp="#joint">statt</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">gebreüchen</unclear> <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">fromen</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">erben</unclear> <unclear cert="low" resp="#joint">möchten</unclear>.
+<lb n="33"/><unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">ermelten</unclear> <unclear cert="low" resp="#joint">Milchischen</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">schwester</unclear> <unclear cert="low" resp="#joint">kinden</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">weil</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">wahrheits</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">grundt</unclear> also, alß wollen
 <lb n="37"/>wier verhoffen, es werden
-<lb n="38"/>solches
-<lb n="39"/>. 78.
+<lb n="38"/><unclear cert="low" resp="#joint">solches</unclear>
+<lb n="39"/>. <unclear cert="low" resp="#joint">78</unclear>.
 <pb facs="StadtASG_Missive_3203_12658.jpg" n="2"/>
 <lb n="40"/>So weitis betrfunden disen
 <lb n="41"/>usfchreibprief uffgethan.

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3173</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen, ihnen schriftlich mitzuteilen, ob die verstorbene Anna Frenerin ein Testament errichtet habe und ob dieses formgerecht vor der Obrigkeit oder dem Gericht verfasst worden sei. Die Bitte geht von den Geschwistern Balthasar und Magdalena Sraim aus, die als nächste Erben der Verstorbenen um eine Günstigung bitten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen, ihnen schriftlich mitzuteilen, ob die verstorbene Anna Frenerin ein Testament errichtet habe und ob dieses formgerecht vor der Obrigkeit oder dem Gericht verfasst worden sei. Die Bitte geht von den Geschwistern Balthasar und Magdalena Sraim aus, die als nächste Erben der Verstorbenen um eine Günstigung bitten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Konstanz ask Burgomaster and Council of St. Gallen to inform them in writing whether the deceased Anna Frenerin made a will and whether it was drawn up in due form before the authority or the court. The request comes from the siblings Balthasar and Magdalena Sraim, who, as the nearest heirs of the deceased, ask for a favor.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -91,23 +92,23 @@
 <lb n="54"/>geren wir umb sy, in fürfallend weg, guet-
 <lb n="55"/>willig
 <pb facs="StadtASG_Missive_3173_12551.jpg" n="3"/>
-<lb n="56"/>zuverkomen. Datum, unnd mit mein des Ambt
-<lb n="57"/>Burgermaisters, <persName resp="#ner">Daniel Labhart</persName>s, aignem
-<lb n="58"/>Insigel, verwart, unnd beschlossen, <origDate when="1656-06-25" cert="medium" resp="#ner">den 25
-<lb n="59"/>Junij, Anno etc 56</origDate>.
-<lb n="60"/>E. W. F. alls
-<lb n="61"/>Dienst: unnd
-<lb n="62"/>guotwillige,
-<lb n="63"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Burgermaister, und Rath
-<lb n="64"/>der Statt Costenntz</orgName>,
+<lb n="56"/><unclear cert="low" resp="#joint">zuverkomen</unclear>. <unclear cert="low" resp="#joint">Datum</unclear>, unnd mit mein des <unclear cert="low" resp="#joint">Ambt</unclear>
+<lb n="57"/><unclear cert="low" resp="#joint">Burgermaisters</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Daniel</unclear> Labhart</persName>s, <unclear cert="low" resp="#joint">aignem</unclear>
+<lb n="58"/><unclear cert="low" resp="#joint">Insigel</unclear>, <unclear cert="low" resp="#joint">verwart</unclear>, unnd <unclear cert="low" resp="#joint">beschlossen</unclear>, <origDate when="1656-06-25" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> 25
+<lb n="59"/><unclear cert="low" resp="#joint">Junij</unclear>, <unclear cert="low" resp="#joint">Anno</unclear> <unclear cert="low" resp="#joint">etc</unclear> <unclear cert="low" resp="#joint">56</unclear></origDate>.
+<lb n="60"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">alls</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">Dienst</unclear>: unnd
+<lb n="62"/><unclear cert="low" resp="#joint">guotwillige</unclear>,
+<lb n="63"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Rath</unclear>
+<lb n="64"/>der Statt <unclear cert="low" resp="#joint">Costenntz</unclear></orgName>,
 <pb facs="StadtASG_Missive_3173_12552.jpg" n="4"/>
-<lb n="65"/>Den hochedlen, gestrengen, ehrnvesten, from-
-<lb n="66"/>men, vestern, fuersichtigen und wolerfahrnen
-<lb n="67"/>Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeisteren, und Rhatt,
+<lb n="65"/>Den <unclear cert="low" resp="#joint">hochedlen</unclear>, <unclear cert="low" resp="#joint">gestrengen</unclear>, <unclear cert="low" resp="#joint">ehrnvesten</unclear>, <unclear cert="low" resp="#joint">from</unclear>-
+<lb n="66"/><unclear cert="low" resp="#joint">men</unclear>, <unclear cert="low" resp="#joint">vestern</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear> und <unclear cert="low" resp="#joint">wolerfahrnen</unclear>
+<lb n="67"/><unclear cert="low" resp="#joint">Herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeisteren</unclear>, und Rhatt,
 <lb n="68"/>der statt Sanct Gallen</orgName>, unseren insonders
-<lb n="69"/>gunstigen
-<lb n="70"/>Herren.
-<lb n="71"/>Sanct Gallen.
+<lb n="69"/><unclear cert="low" resp="#joint">gunstigen</unclear>
+<lb n="70"/><unclear cert="low" resp="#joint">Herren</unclear>.
+<lb n="71"/><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear>.
 </p>
         </body>
     </text>

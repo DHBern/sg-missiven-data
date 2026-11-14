@@ -9,10 +9,12 @@ Inputs
   readings/readers.json         who each reader is (label, kind, caveat)
   readings/lines.jsonl          line boxes of the line readers (docs/LINES.md)
   entities/<reader>.jsonl       automatic tagging of a reading (optional)
+  regests/en/*.jsonl            English machine translations of the regests (scripts/regest_en.py)
   keywords/draft_<reader>.jsonl automatic keywords for letters not yet edited (experimental)
 
 Outputs (site/data/)
   index.json                    letters with date, sender, recipient, pages
+  index_en.json                 letter id -> English regest (machine translation, scripts/regest_en.py)
   readers.json                  readers with corpus scores against the edition
   registers.json                register id -> name and links
   letters/<id>.json             one letter: header, pages, every reading
@@ -26,6 +28,8 @@ edition that writes "uo" for u with o above makes "ů" an error.
 
 from __future__ import annotations
 
+import hashlib
+import shutil
 import json
 import shutil
 import re
@@ -363,6 +367,34 @@ def load_drafts() -> dict[str, dict]:
     return out
 
 
+def _src_hash(item: dict) -> str:
+    # the same hash as scripts/regest_en.py (which needs httpx, not installed for the build)
+    return hashlib.sha1(json.dumps(item, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
+
+
+def load_english() -> dict[str, dict[str, dict]]:
+    """Machine translations of the regests (scripts/regest_en.py), by kind
+    ("edition", "draft_<reader>") and letter id. A translation made from a German
+    text that has changed since is left out: better none than one of another text."""
+    out: dict[str, dict[str, dict]] = {}
+    for path in sorted((ROOT / "regests" / "en").glob("*.jsonl")) if (ROOT / "regests" / "en").exists() else []:
+        rows = {}
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                if r.get("en") and (r["en"].get("regest") or "").strip():
+                    rows[r["id"]] = r
+        out[path.stem] = rows
+    return out
+
+
+def english_of(kind: str, lid: str, de: dict, en: dict[str, dict[str, dict]]) -> dict | None:
+    r = en.get(kind, {}).get(lid)
+    if r is None or r.get("src") != _src_hash(de):
+        return None
+    return {k: v for k, v in r["en"].items() if v} | {"model": r.get("model")}
+
+
 def load_auto_keywords() -> dict[str, list[str]]:
     """Keywords a language model picked from the edition's vocabulary for the
     letters not yet edited (scripts/keywords.py). Experimental, shown as such."""
@@ -521,6 +553,9 @@ def main() -> None:
         print(f"tags carried to the joint reading: {sum(map(len, carried.values()))} on {len(carried)} pages, "
               f"{moved} in the joint reading's spelling, {dropped} dropped", flush=True)
     drafts = load_drafts()
+    english = load_english()
+    index_en: dict[str, dict] = {}
+    stale_en = 0
     auto_kw = load_auto_keywords()
     lines = load_lines()
     linked = {"pages": 0, "lines": 0, "of": 0}
@@ -574,6 +609,24 @@ def main() -> None:
                     page.setdefault("auto_entities", {})[reader] = pages[page["facs"]]
         if letter["id"] in drafts:
             letter["auto_regest"] = drafts[letter["id"]]
+        if letter["edited"] and letter["regest"].strip():
+            en = english_of("edition", letter["id"], {"regest": letter["regest"].strip()}, english)
+            if en:
+                letter["regest_en"] = en
+                index_en[letter["id"]] = {"regest": en["regest"]}
+            elif letter["id"] in english.get("edition", {}):
+                stale_en += 1
+        d = drafts.get(letter["id"])
+        if d:
+            kind = f"draft_{d.get('reader')}"
+            en = english_of(kind, letter["id"], {k: d.get(k) for k in ("regest", "sender", "recipient", "place")}, english)
+            if en:
+                letter["auto_regest"] = {**d, "en": en}
+                if not letter["edited"]:
+                    index_en[letter["id"]] = {"regest": en["regest"], "sender": [en.get("sender") or ""],
+                                              "recipient": [en.get("recipient") or ""]}
+            elif letter["id"] in english.get(kind, {}):
+                stale_en += 1
         if not letter["edited"] and auto_kw.get(letter["id"]):
             letter["auto_keywords"] = auto_kw[letter["id"]]
         mark_auto_refs(letter, auto_keys)
@@ -616,6 +669,9 @@ def main() -> None:
         return (int(m.group(1)) if m else 1 << 30, not e["edited"], e["id"])
     index.sort(key=nr)
     (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # English regests in a file of their own, loaded only by the English interface
+    (OUT / "index_en.json").write_text(json.dumps(index_en, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"English regests: {len(index_en)} in the index, {stale_en} left out (German changed since)", flush=True)
     (OUT / "readers.json").write_text(json.dumps(readers, ensure_ascii=False, indent=1), encoding="utf-8")
     reg = registers()
     added = add_authority_links(reg)

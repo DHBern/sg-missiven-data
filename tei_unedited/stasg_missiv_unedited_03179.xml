@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3179</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, den Bischof von Konstanz erneut um eine endgültige Entscheidung in der Forderungssache des St. Galler Bürgers Wolfgang Schobinger zu ersuchen. Zudem ersuchen sie die St. Galler, die Gläubiger Schobingers zu einem Aufschub der Forderungen zu bewegen, damit dieser auf eine Zahlung des Bischofs hoffen könne.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, den Bischof von Konstanz erneut um eine endgültige Entscheidung in der Forderungssache des St. Galler Bürgers Wolfgang Schobinger zu ersuchen. Zudem ersuchen sie die St. Galler, die Gläubiger Schobingers zu einem Aufschub der Forderungen zu bewegen, damit dieser auf eine Zahlung des Bischofs hoffen könne.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to request the Bishop of Konstanz once again for a final decision in the claim matter of the St. Gallen citizen Wolfgang Schobinger. Furthermore, they ask the St. Gallen authorities to persuade Schobinger's creditors to grant a postponement of the claims, so that he may hope for a payment from the Bishop.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -42,50 +43,50 @@
 <lb n="6"/>loffnen</date> jahrs, dem H. Bischoffen zuo <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName>,
 <lb n="7"/>von üwers burgers <persName resp="#ner">Wolffgang Schobingers</persName>
 <lb n="8"/>bewüßter forderung wegen, zuogeschriben,
-<lb n="9"/>damit ime doch dermoln einist gebürliche
-<lb n="10"/>satisfaction ervolgen thäte. Haben Ir F. G.
-<lb n="11"/>inn der antwort sich schließlichen referiret
+<lb n="9"/><unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">ime</unclear> <unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">dermoln</unclear> <unclear cert="low" resp="#joint">einist</unclear> <unclear cert="low" resp="#joint">gebürliche</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">satisfaction</unclear> <unclear cert="low" resp="#joint">ervolgen</unclear> <unclear cert="low" resp="#joint">thäte</unclear>. Haben Ir <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">G</unclear>.
+<lb n="11"/><unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">der</unclear> antwort sich schließlichen referiret
 <lb n="12"/>uff dero rath, hoffmeister, und vogten zuo
 <lb n="13"/><placeName resp="#ner">Keißerstuol</placeName>, H. obrist <persName resp="#ner">Sebastian Bilgram Zweyer</persName>,
 <lb n="14"/>so aber nit by der stell ware: wann
-<lb n="15"/>nun wir an jezt berichtet worden, wie daß
-<lb n="16"/>derselbig wider im land, hat es unß, uff
-<lb n="17"/>vil gedachts <persName resp="#ner">Schobingers</persName> abermaligen gantz
+<lb n="15"/>nun wir an jezt berichtet worden, wie <unclear cert="low" resp="#joint">daß</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">derselbig</unclear> <unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">land</unclear>, <unclear cert="low" resp="#joint">hat</unclear> es <unclear cert="low" resp="#joint">unß</unclear>, <unclear cert="low" resp="#joint">uff</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">vil</unclear> <unclear cert="low" resp="#joint">gedachts</unclear> <persName resp="#ner">Schobingers</persName> abermaligen gantz
 <lb n="18"/>angelegnen eiferen anhalten verursacht,
 <lb n="19"/>hochgedachten H. Bischoffen umb ein guetmuetige
 <lb n="20"/>endtliche resolution, vermög angezognen unsers
 <lb n="21"/>ersteren, zuo ersuochen. Verhoffende, es werde
 <lb n="22"/>dise unßere anmanliche erinnerung ohn frucht
-<lb n="23"/>nit abgehn. Uß ußeren G. L. E. aber
+<lb n="23"/>nit abgehn. Uß <unclear cert="low" resp="#joint">ußeren</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">aber</unclear>
 <lb n="24"/>habend wir ein söllchs hiemit ohnangemelt
 <lb n="25"/>nit wöllen laßen, wyl wir verständiget
-<lb n="26"/>worden, daß ernamter üwer burger, von
-<lb n="27"/>etlichen seinen creditoren abermaln uffs üßerst
-<lb n="28"/>getriben werde. Uff das ihr, daß von dem
+<lb n="26"/>worden, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">ernamter</unclear> <unclear cert="low" resp="#joint">üwer</unclear> <unclear cert="low" resp="#joint">burger</unclear>, von
+<lb n="27"/><unclear cert="low" resp="#joint">etlichen</unclear> <unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">creditoren</unclear> <unclear cert="low" resp="#joint">abermaln</unclear> <unclear cert="low" resp="#joint">uffs</unclear> <unclear cert="low" resp="#joint">üßerst</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">getriben</unclear> werde. Uff das ihr, daß von dem
 <lb n="29"/>H. Bischoffen noch etwas zuo erheben, die hoffnung
 <lb n="30"/>nit gar gefallen, den bericht hettend, und
 <lb n="31"/>sölchem nach ime einen stilstand machen
 <lb n="32"/>khönnint. Darumben wir üch dann von
-<lb n="33"/>seinetwegen auch ersuochend und hiemit gedachte
-<lb n="34"/>creditoren zuo einem burgerlichen mitlyden
-<lb n="35"/>anzuomanen. Als ir üch dann hierinnen
+<lb n="33"/>seinetwegen auch ersuochend und <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">gedachte</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">creditoren</unclear> zuo <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">burgerlichen</unclear> <unclear cert="low" resp="#joint">mitlyden</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">anzuomanen</unclear>. <unclear cert="low" resp="#joint">Als</unclear> ir üch dann hierinnen
 <pb facs="StadtASG_Missive_3179_12568.jpg" n="2"/>
-<lb n="36"/>eüch ohne daß unser wolmeinlichß ansinnen,
-<lb n="37"/>von oberkeits wegen, und alß gegen den eüweren,
-<lb n="38"/>zůem besten zeverhalten, wol werdend
-<lb n="39"/>wüssen. Unß damit samptlichen dem schirm
-<lb n="40"/>Gottes wol empfehlende. Dath <origDate when="1636" resp="#ner">den 11.t Julii,
-<lb n="41"/>Ao 1636</origDate>.
-<lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
+<lb n="36"/><unclear cert="low" resp="#joint">eüch</unclear> ohne daß unser <unclear cert="low" resp="#joint">wolmeinlichß</unclear> <unclear cert="low" resp="#joint">ansinnen</unclear>,
+<lb n="37"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">oberkeits</unclear> wegen, und <unclear cert="medium" resp="#joint">alß</unclear> gegen den <unclear cert="low" resp="#joint">eüweren</unclear>,
+<lb n="38"/><unclear cert="low" resp="#joint">zůem</unclear> <unclear cert="low" resp="#joint">besten</unclear> <unclear cert="low" resp="#joint">zeverhalten</unclear>, <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">werdend</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">wüssen</unclear>. <unclear cert="low" resp="#joint">Unß</unclear> damit samptlichen <unclear cert="medium" resp="#joint">dem</unclear> schirm
+<lb n="40"/>Gottes <unclear cert="medium" resp="#joint">wol</unclear> <unclear cert="medium" resp="#joint">empfehlende</unclear>. <unclear cert="medium" resp="#joint">Dath</unclear> <origDate when="1636" resp="#ner">den <unclear cert="medium" resp="#joint">11.t</unclear> <unclear cert="medium" resp="#joint">Julii</unclear>,
+<lb n="41"/><unclear cert="medium" resp="#joint">Ao</unclear> <unclear cert="medium" resp="#joint">1636</unclear></origDate>.
+<lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="43"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3179_12569.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3179_12570.jpg" n="4"/>
-<lb n="44"/>Den frommen fuersichtigen,
-<lb n="45"/>ersamen wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="46"/>meister und rath der
+<lb n="44"/>Den frommen <unclear cert="medium" resp="#joint">fuersichtigen</unclear>,
+<lb n="45"/><unclear cert="medium" resp="#joint">ersamen</unclear> <unclear cert="medium" resp="#joint">wysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="46"/><unclear cert="medium" resp="#joint">meister</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">rath</unclear> der
 <lb n="47"/>statt St. Gallen</orgName>, unsern
-<lb n="48"/>innsonders guoten fruenden,
-<lb n="49"/>und getruewen lieben eydt-
+<lb n="48"/>innsonders guoten <unclear cert="medium" resp="#joint">fruenden</unclear>,
+<lb n="49"/>und <unclear cert="medium" resp="#joint">getruewen</unclear> lieben <unclear cert="medium" resp="#joint">eydt</unclear>-
 <lb n="50"/>gnossen.
 </p>
         </body>

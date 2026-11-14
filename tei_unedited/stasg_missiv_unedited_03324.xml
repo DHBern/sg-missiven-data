@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3324</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich teilen Bürgermeister und Rat zu St. Gallen eine Abschrift eines Schreibens des französischen Königs an die Eidgenossenschaft mit, das ihnen der französische Gesandte Melliand überbracht habe. Sie bitten um St. Gallens gutachtliche Antwort.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich teilen Bürgermeister und Rat zu St. Gallen eine Abschrift eines Schreibens des französischen Königs an die Eidgenossenschaft mit, das ihnen der französische Gesandte Melliand überbracht habe. Sie bitten um St. Gallens gutachtliche Antwort.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich communicate to Burgomaster and Council of St. Gallen a copy of a letter from the French King to the Confederates, which the French envoy Melliand had delivered to them. They ask for St. Gallen's advisory response.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,32 +38,32 @@
 <lb n="1"/>Unnser frünttlich willig dienst, sambt waß wir
 <lb n="2"/>ehren liebs und guots vermögent, zuvor, From
 <lb n="3"/>Fürsichtig, Ehrsam und wyß, insonders guot Fründt
-<lb n="4"/>und getrüwe lieb Eydtgnossen.
-<lb n="5"/>Demnach von dem Herren Frantzösischen Ambassadoren
-<lb n="6"/><persName resp="#ner">Melliand</persName> unß allererst überschikt worden, ein schryben,
-<lb n="7"/>so die königliche Mt. zuo <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckrych</placeName> und <placeName resp="#ner">Navarra</placeName>,
+<lb n="4"/>und getrüwe lieb <unclear cert="low" resp="#joint">Eydtgnossen</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">Demnach</unclear> von dem Herren Frantzösischen Ambassadoren
+<lb n="6"/><persName resp="#ner">Melliand</persName> unß <unclear cert="low" resp="#joint">allererst</unclear> <unclear cert="low" resp="#joint">überschikt</unclear> worden, ein schryben,
+<lb n="7"/>so die <unclear cert="low" resp="#joint">königliche</unclear> <unclear cert="low" resp="#joint">Mt</unclear>. zuo <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckrych</placeName> und <placeName resp="#ner">Navarra</placeName>,
 <lb n="8"/>unser allersyts gnedigster Herr und Pundtsgnoß an
-<lb n="9"/>gemeine Ort Loblicher <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschaft</orgName> abgehn lassen,
-<lb n="10"/>dessen erfrüwlichen inhalt Ihr unser G. L. E. daruß
+<lb n="9"/>gemeine Ort Loblicher <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschaft</unclear></orgName> <unclear cert="low" resp="#joint">abgehn</unclear> <unclear cert="low" resp="#joint">lassen</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">dessen</unclear> <unclear cert="low" resp="#joint">erfrüwlichen</unclear> <unclear cert="low" resp="#joint">inhalt</unclear> Ihr unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">daruß</unclear>
 <lb n="11"/>selbs vernemmen werdent, habent wir nit ermanglen
 <lb n="12"/>wollen, üch hiemit die Copieische participation
 <lb n="13"/>alßbalden zethuon, Erwartend hierüber der be=
 <lb n="14"/>anttworttung halber üwers guotachtens, und be=
 <lb n="15"/>velchent unß damit sambtlichen dem schirm Gottes,
-<lb n="16"/>Datum den <origDate when="1638" resp="#ner">8. ten Septembris. A° 1638</origDate>.
+<lb n="16"/>Datum den <origDate when="1638" resp="#ner"><unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">ten</unclear> Septembris. A° 1638</origDate>.
 <lb n="17"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="18"/>der Statt Zürich</orgName>
 <pb facs="StadtASG_Missive_3324_13196.jpg" n="2"/>
 <lb n="19"/>[]
 <pb facs="StadtASG_Missive_3324_13197.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3324_13198.jpg" n="4"/>
-<lb n="20"/>Den fromen fuersichtigen
-<lb n="21"/>ehrsamen und wysen
+<lb n="20"/>Den <unclear cert="medium" resp="#joint">fromen</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">ehrsamen</unclear> und <unclear cert="medium" resp="#joint">wysen</unclear>
 <lb n="22"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und rath
-<lb n="23"/>der statt S. Gallen</orgName>,
-<lb n="24"/>unseren insonders gueten
-<lb n="25"/>frunden und getruwen
-<lb n="26"/>lieben <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eydgnoßen</orgName>.
+<lb n="23"/>der statt <unclear cert="medium" resp="#joint">S</unclear>. Gallen</orgName>,
+<lb n="24"/><unclear cert="medium" resp="#joint">unseren</unclear> insonders <unclear cert="medium" resp="#joint">gueten</unclear>
+<lb n="25"/><unclear cert="medium" resp="#joint">frunden</unclear> und <unclear cert="medium" resp="#joint">getruwen</unclear>
+<lb n="26"/>lieben <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydgnoßen</unclear></orgName>.
 </p>
         </body>
     </text>

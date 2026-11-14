@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3433</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Friedrich, Pfalzgraf bei Rhein, bedankt sich bei den Eidgenossen für die Glückwünsche zur Rückgabe seiner Lande und die Zuwendung von 2000 Gulden. Er versichert, die freundschaftliche Nachbarschaft zu den evangelischen Eidgenossen aufrechtzuerhalten und seine Nachkommen dazu anzuweisen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Friedrich, Pfalzgraf bei Rhein, bedankt sich bei den Eidgenossen für die Glückwünsche zur Rückgabe seiner Lande und die Zuwendung von 2000 Gulden. Er versichert, die freundschaftliche Nachbarschaft zu den evangelischen Eidgenossen aufrechtzuerhalten und seine Nachkommen dazu anzuweisen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Friedrich, Pfalzgraf bei Rhein, thanks the Confederates for the congratulations on the return of his lands and the gift of 2000 gulden. He assures them that he will maintain the friendly neighborhood with the evangelical Confederates and instruct his descendants to do the same.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,35 +37,35 @@
 <pb facs="StadtASG_Missive_3433_13673.jpg" n="1"/>
 <lb n="1"/>Von Gottes Gnaden <persName role="issuer" resp="#ner">Friderich Pfaltzgraff</persName> by <placeName ref="stadtasg-places-92" cert="medium" resp="#ner">Reihn</placeName>,
 <lb n="2"/>in <placeName ref="stadtasg-places-132" cert="medium" resp="#ner">Beyern</placeName>, zu <placeName resp="#ner">Gültch</placeName>, <placeName resp="#ner">Cleve</placeName> unnd <placeName resp="#ner">Berg</placeName> Hertzog, Graff zu
-<lb n="3"/><placeName resp="#ner">Veldentz</placeName> unnd <placeName ref="stadtasg-places-172" cert="medium" resp="#ner">Spehnheim</placeName>, der <placeName resp="#ner">Marckh</placeName> unnd <placeName ref="stadtasg-places-77" cert="medium" resp="#ner">Ravenspurg</placeName>,
-<lb n="4"/>Herr zu <placeName resp="#ner">Ravenstein</placeName>.
-<lb n="5"/>Unsern fründtlichen dinst unnd gruoß, auch waß wir mehr
-<lb n="6"/>liebs unnd guots vermögend, jederzyth zuvor, Wolgeboren,
+<lb n="3"/><placeName resp="#ner">Veldentz</placeName> unnd <placeName ref="stadtasg-places-172" cert="medium" resp="#ner">Spehnheim</placeName>, der <placeName resp="#ner"><unclear cert="low" resp="#joint">Marckh</unclear></placeName> unnd <placeName ref="stadtasg-places-77" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ravenspurg</unclear></placeName>,
+<lb n="4"/><unclear cert="low" resp="#joint">Herr</unclear> <unclear cert="low" resp="#joint">zu</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Ravenstein</unclear></placeName>.
+<lb n="5"/>Unsern fründtlichen dinst unnd gruoß, auch <unclear cert="low" resp="#joint">waß</unclear> wir mehr
+<lb n="6"/>liebs unnd guots <unclear cert="low" resp="#joint">vermögend</unclear>, <unclear cert="low" resp="#joint">jederzyth</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">Wolgeboren</unclear>,
 <lb n="7"/>Hochgeacht, Gestreng, Vest, Fromb, Fürsichtig unnd Wol-
-<lb n="8"/>wyße, bsonders Geliebte Herren, Fründt unnd Nachbahrn.
-<lb n="9"/>Unß ist Uwer schryben vom <date resp="#ner">20ten Februarij</date>, den <date resp="#ner">5ten Martij</date>
-<lb n="10"/>zu recht yngehändiget worden, daruß wir nit allein der
+<lb n="8"/><unclear cert="low" resp="#joint">wyße</unclear>, <unclear cert="low" resp="#joint">bsonders</unclear> <unclear cert="low" resp="#joint">Geliebte</unclear> Herren, Fründt unnd <unclear cert="low" resp="#joint">Nachbahrn</unclear>.
+<lb n="9"/><unclear cert="low" resp="#joint">Unß</unclear> <unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">Uwer</unclear> <unclear cert="low" resp="#joint">schryben</unclear> vom <date resp="#ner">20ten <unclear cert="low" resp="#joint">Februarij</unclear></date>, <unclear cert="low" resp="#joint">den</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">5ten</unclear> <unclear cert="low" resp="#joint">Martij</unclear></date>
+<lb n="10"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">recht</unclear> <unclear cert="low" resp="#joint">yngehändiget</unclear> worden, daruß wir nit allein der
 <lb n="11"/>Herren trüwhertzige glückhwünschung, zu der restitution
-<lb n="12"/>unserer patrimonial unnd ehrblanden deß <orgName resp="#ner">Fürstenthumbs</orgName>
-<lb n="13"/><placeName resp="#ner">Zweybrückhen</placeName>, gantz gern, sondern auch darnäbent, mit
+<lb n="12"/><unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">patrimonial</unclear> unnd ehrblanden deß <orgName resp="#ner"><unclear cert="low" resp="#joint">Fürstenthumbs</unclear></orgName>
+<lb n="13"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Zweybrückhen</unclear></placeName>, gantz gern, sondern auch darnäbent, mit
 <lb n="14"/>danckhnehmigen freuden vernomen, welcher gestalten Sy
 <lb n="15"/>zu einem zeichen, irer wolmeinenden sonderbar erfröuw-
 <lb n="16"/>lichen gratulation, unnd zu fortsetzung der zwüschent den
-<lb n="17"/>Herren unnd Unserm Huß alt härgebrachten verthruwligkeit,
-<lb n="18"/>unnd guoter nachbarschafft, zugleich zwey thußent pfund
-<lb n="19"/>in guldiner sorten erklert unnd unnß verehren laßen wöllen;
+<lb n="17"/>Herren unnd Unserm Huß alt <unclear cert="low" resp="#joint">härgebrachten</unclear> <unclear cert="low" resp="#joint">verthruwligkeit</unclear>,
+<lb n="18"/>unnd guoter nachbarschafft, <unclear cert="low" resp="#joint">zugleich</unclear> <unclear cert="low" resp="#joint">zwey</unclear> <unclear cert="low" resp="#joint">thußent</unclear> <unclear cert="low" resp="#joint">pfund</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">guldiner</unclear> <unclear cert="low" resp="#joint">sorten</unclear> <unclear cert="low" resp="#joint">erklert</unclear> unnd unnß verehren laßen wöllen;
 <lb n="20"/>thund unnß gägen den Herren, so wol wägen geschächner
 <lb n="21"/>yferiger glückwünschung, alß auch obgemelten statt-
 <lb n="22"/>lichen verehrung, welche unnß by antrettung unßerer
 <lb n="23"/>gantz ruinierten lannden, wol zu statten kombt, unnd zu
-<lb n="24"/>nuwem uffnemmen, derselben gereicht, gantz fründtlich bedanck-
-<lb n="25"/>en, unnd die Hn darnäbent versicheren, daß wir nach dem
-<lb n="26"/>exempel unßerer hochlöblichen Vorfahren zu allen begäben-
-<lb n="27"/>heiten, den Herren fründtliche dinst erwißen, unnd die
+<lb n="24"/>nuwem uffnemmen, derselben gereicht, gantz fründtlich <unclear cert="low" resp="#joint">bedanck</unclear>-
+<lb n="25"/><unclear cert="low" resp="#joint">en</unclear>, unnd die Hn darnäbent versicheren, daß wir <unclear cert="low" resp="#joint">nach</unclear> dem
+<lb n="26"/><unclear cert="low" resp="#joint">exempel</unclear> <unclear cert="low" resp="#joint">unßerer</unclear> <unclear cert="low" resp="#joint">hochlöblichen</unclear> <unclear cert="low" resp="#joint">Vorfahren</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">allen</unclear> <unclear cert="low" resp="#joint">begäben</unclear>-
+<lb n="27"/><unclear cert="low" resp="#joint">heiten</unclear>, <unclear cert="low" resp="#joint">den</unclear> Herren fründtliche dinst erwißen, unnd die
 <lb n="28"/>verthruwliche alt härgebrachte nachbarschafft, gägen der
-<lb n="29"/>hochlöblichen evangelischen <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoßschafft</orgName>, erhalten, auch
+<lb n="29"/>hochlöblichen evangelischen <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßschafft</unclear></orgName>, <unclear cert="low" resp="#joint">erhalten</unclear>, auch
 <lb n="30"/>denselben mit jmerwehrenden danckhbarkheit begegnen, und
-<lb n="31"/>unßere nachkomen, darzu anwißen wöllen; thund unnß
+<lb n="31"/>unßere nachkomen, darzu anwißen wöllen; thund <unclear cert="low" resp="#joint">unnß</unclear>
 <pb facs="StadtASG_Missive_3433_13674.jpg" n="2"/>
 <lb n="32"/>Hmit sji sambtlich, Gott dem Allmaechtigen zu vaetterlichem
 <lb n="33"/>Gnaden schutz thrulich empfolhn. Dat. <origPlace ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhusen</origPlace> den
@@ -80,17 +81,17 @@
 <lb n="43"/>bsonders geliebten Herren unnd Nachbauren.
 <pb facs="StadtASG_Missive_3433_13675.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3433_13676.jpg" n="4"/>
-<lb n="44"/><origDate when="1641-03-08" resp="#ner">8. Mart. 1641</origDate>.
-<lb n="45"/>Copia
-<lb n="46"/>danksagung schribens
-<lb n="47"/>herrn <persName role="issuer" resp="#ner">Friderich Pfalzgravens</persName>
-<lb n="48"/>bey <placeName ref="stadtasg-places-92" cert="medium" resp="#ner">Rhein</placeName>, Herzogen in <placeName ref="stadtasg-places-132" cert="medium" resp="#ner">Bairn</placeName>,
-<lb n="49"/>brueffen
-<lb n="50"/>von
+<lb n="44"/><origDate when="1641-03-08" resp="#ner"><unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">Mart</unclear>. <unclear cert="low" resp="#joint">1641</unclear></origDate>.
+<lb n="45"/><unclear cert="low" resp="#joint">Copia</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">danksagung</unclear> <unclear cert="low" resp="#joint">schribens</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">herrn</unclear> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Friderich</unclear> <unclear cert="low" resp="#joint">Pfalzgravens</unclear></persName>
+<lb n="48"/><unclear cert="low" resp="#joint">bey</unclear> <placeName ref="stadtasg-places-92" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rhein</unclear></placeName>, <unclear cert="low" resp="#joint">Herzogen</unclear> <unclear cert="low" resp="#joint">in</unclear> <placeName ref="stadtasg-places-132" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bairn</unclear></placeName>,
+<lb n="49"/><unclear cert="low" resp="#joint">brueffen</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">von</unclear>
 <lb n="51"/>den stetten <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zuerich</placeName>, <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Bern</placeName> und
-<lb n="52"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>,
-<lb n="53"/>wegen
-<lb n="54"/>bewersteter stuer.
+<lb n="52"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> Gallen</placeName>,
+<lb n="53"/><unclear cert="low" resp="#joint">wegen</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">bewersteter</unclear> <unclear cert="low" resp="#joint">stuer</unclear>.
 </p>
         </body>
     </text>

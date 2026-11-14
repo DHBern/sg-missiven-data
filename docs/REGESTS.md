@@ -151,3 +151,34 @@ their readings; until then the script refuses (see below).
   - The prompt now asks for German whatever the letter's language.
   - `ask()` checks the answer (`german()`). If it is not German, it asks again in the same conversation. For Nr. 1161, only that follow-up gave German.
   - Both letters were drafted again, and their keywords as well.
+
+## English translations (14.11.2026)
+
+`scripts/regest_en.py` translates every regest into English. That is 808 regests of the edition, written by its editors, and 2,933 drafts for the letters not yet edited. For a draft, sender, recipient and place are translated too.
+
+- **Model:** Qwen3.8-27B on the University of Bern's GPUStack, no thinking.
+- **Glossary:** a fixed list of office titles and phrases, e.g. «Bürgermeister und Rat» → «Burgomaster and Council», «Eidgenossen» → «the Confederates», «Vogt» → «bailiff».
+- **Names:** persons and places stay as the German writes them (Zürich, Konstanz, St. Gallen).
+
+**Output:** `regests/en/edition.jsonl` and `regests/en/draft_<reader>.jsonl`. Each row keeps a hash of the German it was made from. A rerun translates only what is new or has changed. The build leaves out a translation whose German has changed since.
+
+### Checks, over all 3,741
+
+| check | edition | drafts |
+|---|---:|---:|
+| every number of the German in the English | 808 / 808 | 2,933 / 2,933 |
+| register names of the German kept | 4,171 / 4,173 | 9,903 / 9,903 |
+| in English | 808 / 808 | 2,933 / 2,933 |
+| asked a second time (a check failed at first) | 101 | 308 |
+
+The names that still "fail" are false alarms: «Sechs», «Geldern», «Mengen», «Name» and a genitive «Gersters» are not names there.
+
+One real omission remained in every attempt. The model left out the two butchers of Nr. 1414 and turned the sentence round. That translation was corrected by hand against the German and is marked `fixed` in its row.
+
+A sample of 40 (20 edition, 20 drafts), translated back into German beside the original, is in `regests/en/review.md`. In it the back-translations carry the German content.
+
+### On the site and in the TEI
+
+- **English interface:** it shows the English regest, marked "Machine translation of the editors' German regest; not by the editors" (or "of the German draft"), with the German original one click away. The German interface is unchanged.
+- **Separate file:** the English texts are in `site/data/index_en.json`, which only the English interface loads, so `index.json` does not grow. The letter list's filter in the English interface also finds English words (the full-text search does not).
+- **TEI:** `tei_unedited/` has a second `<abstract xml:lang="en" resp="#mt">`. The edition's TEI (`data/`) is untouched.

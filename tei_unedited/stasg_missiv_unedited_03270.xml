@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3270</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Feldkirch informieren Bürgermeister und Rat zu St. Gallen, dass sie am 25. November einen Gerichtstag für die Gläubiger des verstorbenen Feldkircher Verburgerten Johann Whipfer ansetzen müssen. Sie ersuchen die St. Galler, ein Edikt zu veröffentlichen, damit sich niemand auf Unwissenheit berufen kann, falls St. Galler Verburgerte Ansprüche an Whipfers Nachlass haben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Feldkirch informieren Bürgermeister und Rat zu St. Gallen, dass sie am 25. November einen Gerichtstag für die Gläubiger des verstorbenen Feldkircher Verburgerten Johann Whipfer ansetzen müssen. Sie ersuchen die St. Galler, ein Edikt zu veröffentlichen, damit sich niemand auf Unwissenheit berufen kann, falls St. Galler Verburgerte Ansprüche an Whipfers Nachlass haben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Feldkirch inform Burgomaster and Council of St. Gallen that they must set a court day for the creditors of the deceased Feldkirch Verburgert Johann Whipfer on 25 November. They request the St. Gallen authorities to publish an edict so that no one can plead ignorance, in case St. Gallen Verburgerts have claims on Whipfer's estate.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -57,12 +58,12 @@
 <pb facs="StadtASG_Missive_3270_12974.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3270_12975.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3270_12976.jpg" n="4"/>
-<lb n="21"/>Denen
-<lb n="22"/>Edlen vesten fuernemen fuersichtig er-
-<lb n="23"/>samen und weisen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat
-<lb n="24"/>der statt St. Gallen</orgName>, unsern insonders lieben herrn
-<lb n="25"/>gueten freunden und nachparn.
-<lb n="26"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="21"/><unclear cert="low" resp="#joint">Denen</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">Edlen</unclear> <unclear cert="low" resp="#joint">vesten</unclear> <unclear cert="low" resp="#joint">fuernemen</unclear> <unclear cert="low" resp="#joint">fuersichtig</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">samen</unclear> <unclear cert="low" resp="#joint">und</unclear> weisen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat
+<lb n="24"/>der statt St. Gallen</orgName>, unsern insonders lieben <unclear cert="low" resp="#joint">herrn</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freunden</unclear> und <unclear cert="low" resp="#joint">nachparn</unclear>.
+<lb n="26"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

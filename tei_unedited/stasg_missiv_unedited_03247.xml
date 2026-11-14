@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3247</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Stadtmann und Rat zu Altstätten informieren Bürgermeister und Rat zu St. Gallen, dass die Rheintalischen Höfe am 14. September mit dem Weingarten beginnen. Gemäß dem jüngsten badischen Abschied sollen die Rheintalischen Höfe am ersten Weintag mit der Stadt St. Gallen über den Weinlauf verhandeln. Die Abgeordneten der Höfe werden am Mittwochabend in St. Gallen eintreffen und am Donnerstag verhandeln. Altstätten bittet um Kenntnisnahme, damit die Rheintalischen Höfe nicht ungerecht behandelt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Stadtmann und Rat zu Altstätten informieren Bürgermeister und Rat zu St. Gallen, dass die Rheintalischen Höfe am 14. September mit dem Weingarten beginnen. Gemäß dem jüngsten badischen Abschied sollen die Rheintalischen Höfe am ersten Weintag mit der Stadt St. Gallen über den Weinlauf verhandeln. Die Abgeordneten der Höfe werden am Mittwochabend in St. Gallen eintreffen und am Donnerstag verhandeln. Altstätten bittet um Kenntnisnahme, damit die Rheintalischen Höfe nicht ungerecht behandelt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Stadtmann and Council of Altstätten inform the Burgomaster and Council of St. Gallen that the Rheintal estates will begin with Weingarten on 14 September. According to the latest Baden recess, the Rheintal estates are to negotiate with the city of St. Gallen regarding the wine run on the first wine day. The deputies of the estates will arrive in St. Gallen on Wednesday evening and negotiate on Thursday. Altstätten asks for acknowledgment so that the Rheintal estates are not treated unjustly.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,47 +36,47 @@
 <p>
 <pb facs="StadtASG_Missive_3247_12865.jpg" n="1"/>
 <lb n="1"/>Edel hochgeachte ehrnueste fürsichtige und
-<lb n="2"/>wolweiße besonders großgünstige herren nachparn
-<lb n="3"/>den selbigen seyen unser fründt, und nachpürlich
-<lb n="4"/>dienst iederzeit bereit zuouor.
+<lb n="2"/>wolweiße besonders großgünstige herren <unclear cert="low" resp="#joint">nachparn</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">den</unclear> selbigen seyen unser fründt, und <unclear cert="low" resp="#joint">nachpürlich</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">iederzeit</unclear> bereit zuouor.
 <lb n="5"/>Weil nun wir abermahlen von den gnaden
 <lb n="6"/>gotes die erwündschte herbstzeit erlebt
-<lb n="7"/>habend sich die <orgName ref="stadtasg-actors-525" cert="medium" resp="#ner">Rheinthalisch höff</orgName> deß wimmß
-<lb n="8"/>wie auch deß weinlauffß halben zueverglich
-<lb n="9"/>Jüngst verschinen tagen zue samen verfriegt
-<lb n="10"/>auch unsers theilß vff künfftigen <date resp="#ner">donstag
-<lb n="11"/>den 14 24 Septemb.</date> anfahen zuo wimen beschloßen
-<lb n="12"/>Wann dan lautth deß jüngst <placeName resp="#ner">Badisch</placeName>
-<lb n="13"/>abschaidts die <orgName ref="stadtasg-actors-525" cert="medium" resp="#ner">Rheinthalisch höff</orgName> mit der stat
-<lb n="14"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct gallen</placeName> am ersten tag der wimi
-<lb n="15"/>sich deß weinlauffs halben verglich sollen
-<lb n="16"/>Alß habend wir Jn namen gmeiner höffen
-<lb n="17"/>E. E. F. W. nachparlichen wüßenschafft zue mach
-<lb n="18"/>nit underlaßen sollen. daß die Abgeordneten
-<lb n="19"/>von den <orgName resp="#ner">Rheinthalisch höffen</orgName> vff mitwuchen zue
-<lb n="20"/>Abend Jn Sanct gallen erschinen, und donstdag
-<lb n="21"/>volgendts daruff (daß Jst den <date resp="#ner">14 24 herbstmonadt</date>)
-<lb n="22"/>nach Alten brüchen deß weinlauffs halben
-<lb n="23"/>mit d stat Sanct gallen tractieren
-<lb n="24"/>werde. darnach sie E. E. F. W. Zueverhalten
+<lb n="7"/>habend sich die <orgName ref="stadtasg-actors-525" cert="medium" resp="#ner">Rheinthalisch höff</orgName> deß <unclear cert="low" resp="#joint">wimmß</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">wie</unclear> auch deß <unclear cert="low" resp="#joint">weinlauffß</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">zueverglich</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">Jüngst</unclear> <unclear cert="low" resp="#joint">verschinen</unclear> <unclear cert="low" resp="#joint">tagen</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">samen</unclear> <unclear cert="low" resp="#joint">verfriegt</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">theilß</unclear> <unclear cert="low" resp="#joint">vff</unclear> <unclear cert="low" resp="#joint">künfftigen</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">donstag</unclear>
+<lb n="11"/>den 14 <unclear cert="low" resp="#joint">24</unclear> <unclear cert="low" resp="#joint">Septemb</unclear>.</date> <unclear cert="low" resp="#joint">anfahen</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">wimen</unclear> <unclear cert="low" resp="#joint">beschloßen</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">lautth</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">jüngst</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Badisch</unclear></placeName>
+<lb n="13"/><unclear cert="low" resp="#joint">abschaidts</unclear> <unclear cert="low" resp="#joint">die</unclear> <orgName ref="stadtasg-actors-525" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rheinthalisch</unclear> <unclear cert="low" resp="#joint">höff</unclear></orgName> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">stat</unclear>
+<lb n="14"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">gallen</unclear></placeName> <unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">ersten</unclear> <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">wimi</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">weinlauffs</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">verglich</unclear> <unclear cert="low" resp="#joint">sollen</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">Alß</unclear> <unclear cert="low" resp="#joint">habend</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">Jn</unclear> <unclear cert="low" resp="#joint">namen</unclear> <unclear cert="low" resp="#joint">gmeiner</unclear> <unclear cert="low" resp="#joint">höffen</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">nachparlichen</unclear> <unclear cert="low" resp="#joint">wüßenschafft</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">mach</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">underlaßen</unclear> <unclear cert="low" resp="#joint">sollen</unclear>. <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Abgeordneten</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">den</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Rheinthalisch</unclear> <unclear cert="low" resp="#joint">höffen</unclear></orgName> <unclear cert="low" resp="#joint">vff</unclear> <unclear cert="low" resp="#joint">mitwuchen</unclear> <unclear cert="low" resp="#joint">zue</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">Abend</unclear> <unclear cert="low" resp="#joint">Jn</unclear> <unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">gallen</unclear> <unclear cert="low" resp="#joint">erschinen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">donstdag</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">volgendts</unclear> <unclear cert="low" resp="#joint">daruff</unclear> (<unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">Jst</unclear> <unclear cert="low" resp="#joint">den</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">14</unclear> <unclear cert="low" resp="#joint">24</unclear> <unclear cert="low" resp="#joint">herbstmonadt</unclear></date>)
+<lb n="22"/>nach Alten brüchen deß <unclear cert="low" resp="#joint">weinlauffs</unclear> <unclear cert="low" resp="#joint">halben</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">stat</unclear> <unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">gallen</unclear> <unclear cert="low" resp="#joint">tractieren</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">werde</unclear>. darnach sie E. E. F. W. Zueverhalten
 <lb n="25"/>wüßen werde. damit nit etwan (wie fern)
 <lb n="26"/>die <orgName ref="stadtasg-actors-525" cert="medium" resp="#ner">Rheinthalischen höff</orgName> ohngschafft d sach
-<lb n="27"/>zue Rugg nach huß gewisen werde. Unß
-<lb n="28"/>darzwischen sametlich gotes gnad
-<lb n="29"/>wolbefelhende. geben <origPlace ref="stadtasg-places-11" cert="medium" resp="#ner">Altsteten</origPlace> <origDate when="1637-09-20" resp="#ner">den 10 20 Septemb.
+<lb n="27"/>zue Rugg nach <unclear cert="low" resp="#joint">huß</unclear> <unclear cert="low" resp="#joint">gewisen</unclear> <unclear cert="low" resp="#joint">werde</unclear>. <unclear cert="low" resp="#joint">Unß</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">darzwischen</unclear> <unclear cert="low" resp="#joint">sametlich</unclear> <unclear cert="low" resp="#joint">gotes</unclear> <unclear cert="low" resp="#joint">gnad</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">wolbefelhende</unclear>. geben <origPlace ref="stadtasg-places-11" cert="medium" resp="#ner">Altsteten</origPlace> <origDate when="1637-09-20" resp="#ner">den <unclear cert="low" resp="#joint">10</unclear> 20 Septemb.
 <lb n="30"/>Anno 1637</origDate>.
-<lb n="31"/>E. E. F. W. Zuo dienen bereite
-<lb n="32"/>nachparn
-<lb n="33"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Stetamen und Rath</orgName>
+<lb n="31"/>E. E. F. W. Zuo dienen <unclear cert="low" resp="#joint">bereite</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">nachparn</unclear>
+<lb n="33"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Stetamen</unclear> und Rath</orgName>
 <lb n="34"/>daselbsten.
 <pb facs="StadtASG_Missive_3247_12866.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3247_12867.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3247_12868.jpg" n="4"/>
-<lb n="35"/>Den edlen hochgeachten ehrenvesten fürsichtigen
-<lb n="36"/>und wolweisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeistern und
-<lb n="37"/>raht der stat Sanct Gallen</orgName> unsern besonders
-<lb n="38"/>großgünst herren nachparn.
-<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanctgallen</placeName>.
+<lb n="35"/>Den edlen hochgeachten <unclear cert="low" resp="#joint">ehrenvesten</unclear> <unclear cert="low" resp="#joint">fürsichtigen</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">wolweisen</unclear> herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">burgermeistern</unclear> <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">raht</unclear> der <unclear cert="medium" resp="#joint">stat</unclear> <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName> unsern <unclear cert="low" resp="#joint">besonders</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">großgünst</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">nachparn</unclear>.
+<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanctgallen</unclear></placeName>.
 </p>
         </body>
     </text>

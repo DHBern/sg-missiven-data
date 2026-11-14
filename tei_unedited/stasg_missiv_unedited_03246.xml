@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3246</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau teilen mit, dass sie gemeinsam mit Ravensburg, Wangen, Isny, Leutkirch und Bregenz einen Fleischtax vereinbart hätten. Die Lindauer Metzger beklagen sich über hohe Viehpreise und verweisen auf den höheren Fleischtax in St. Gallen. Lindau bittet St. Gallen um Auskunft über die aktuellen Preise für Ochsen-, Kuh- und Kalbfleisch sowie um Mitteilung, wie die Stadt künftig verfahren wolle.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau teilen mit, dass sie gemeinsam mit Ravensburg, Wangen, Isny, Leutkirch und Bregenz einen Fleischtax vereinbart hätten. Die Lindauer Metzger beklagen sich über hohe Viehpreise und verweisen auf den höheren Fleischtax in St. Gallen. Lindau bittet St. Gallen um Auskunft über die aktuellen Preise für Ochsen-, Kuh- und Kalbfleisch sowie um Mitteilung, wie die Stadt künftig verfahren wolle.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Council of Lindau report that they have agreed on a meat tax together with Ravensburg, Wangen, Isny, Leutkirch, and Bregenz. The butchers of Lindau complain about high cattle prices and refer to the higher meat tax in St. Gallen. Lindau asks St. Gallen for information on the current prices for ox, cow, and veal, as well as for notification of how the city intends to proceed in the future.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,49 +36,49 @@
 <p>
 <pb facs="StadtASG_Missive_3246_12857.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst zuvor, fürsichtig, ersam
-<lb n="2"/>und weiß, besonders liebe freünd und nachbarn,
-<lb n="3"/>E. Fht. koennen wir nachbarlichen anzufüegen nicht umbgehn,
-<lb n="4"/>wie daß ohnlangsten etlich benachbarte e. stätt, alß
-<lb n="5"/><placeName ref="stadtasg-places-77" cert="medium" resp="#ner">Rauenspurg</placeName>, <placeName ref="stadtasg-places-194" cert="medium" resp="#ner">Wangen</placeName> <placeName ref="stadtasg-places-118" cert="medium" resp="#ner">Yßni</placeName>, <placeName ref="stadtasg-places-244" cert="medium" resp="#ner">Leütkirch</placeName>, <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenz</placeName> und wir,
+<lb n="2"/>und weiß, besonders liebe freünd und <unclear cert="low" resp="#joint">nachbarn</unclear>,
+<lb n="3"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Fht</unclear>. <unclear cert="low" resp="#joint">koennen</unclear> wir nachbarlichen anzufüegen nicht umbgehn,
+<lb n="4"/>wie daß <unclear cert="low" resp="#joint">ohnlangsten</unclear> etlich benachbarte <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">stätt</unclear>, <unclear cert="low" resp="#joint">alß</unclear>
+<lb n="5"/><placeName ref="stadtasg-places-77" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rauenspurg</unclear></placeName>, <placeName ref="stadtasg-places-194" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Wangen</unclear></placeName> <placeName ref="stadtasg-places-118" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Yßni</unclear></placeName>, <placeName ref="stadtasg-places-244" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Leütkirch</unclear></placeName>, <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregenz</unclear></placeName> und wir,
 <lb n="6"/>wegen vergleichung des fleischtax, ein nachbarliche confe-
 <lb n="7"/>renz angestelt, und deßwegen mit einandern vereinbart,
 <lb n="8"/>maßen beikomende copi deß hierüber verfaßten ab-
 <lb n="9"/>schiedß, mit mehrerm außweißt,
 <lb n="10"/>Wiewol wir nun verhofft, es solten die mezger uff
-<lb n="11"/>solchen verglichnen tax, nach gestaltsame ieziger zeiten
+<lb n="11"/>solchen verglichnen tax, nach <unclear cert="low" resp="#joint">gestaltsame</unclear> <unclear cert="low" resp="#joint">ieziger</unclear> zeiten
 <lb n="12"/>und leüfften, gar wol und mit nuzen mezgen koennen,
 <lb n="13"/>und sich darab zubeschwären nicht ursach haben,
 <lb n="14"/>So thun aber unsere mezger sich deßwegen zum hoechsten
-<lb n="15"/>erclagen, mit fürwendung, daß nicht allein uff
-<lb n="16"/>nechst vergewesnen allgeüwischen vichmärkhten, daß
+<lb n="15"/>erclagen, mit fürwendung, daß nicht allein <unclear cert="low" resp="#joint">uff</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">nechst</unclear> <unclear cert="low" resp="#joint">vergewesnen</unclear> <unclear cert="low" resp="#joint">allgeüwischen</unclear> <unclear cert="low" resp="#joint">vichmärkhten</unclear>, daß
 <lb n="17"/>vich noch inn allzu hochem wert gewesen, sondern das
 <lb n="18"/>auch andere mezger, denen das fleisch von ihren obrig-
 <lb n="19"/>keiten hoecher taxiert werde, ihnen solches auß den händen
 <lb n="20"/>gezogen, und sie neben denselben nicht einkauffen oder
 <lb n="21"/>fortkomen koennen, dahero nun ohne ihren merckhlichen
-<lb n="22"/>schaden und verlurst, uff so angedeüten tax zumezgen
-<lb n="23"/>ohnmöglich seie, und sich beneben innsonderheit
+<lb n="22"/>schaden und verlurst, uff so <unclear cert="low" resp="#joint">angedeüten</unclear> <unclear cert="low" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">zumezgen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">ohnmöglich</unclear> <unclear cert="low" resp="#joint">seie</unclear>, und sich <unclear cert="low" resp="#joint">beneben</unclear> <unclear cert="low" resp="#joint">innsonderheit</unclear>
 <lb n="24"/>auch uff die statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, das daselbst das fleisch
 <lb n="25"/>einen hoechern tax habe, berueffen,
 <lb n="26"/>Wann
 <pb facs="StadtASG_Missive_3246_12858.jpg" n="2"/>
-<lb n="27"/>Wann wir dann deßhalber gern eine gruendtliche nach=
-<lb n="28"/>richt haben moechten, So gelangt ann E. Fht. unser
-<lb n="29"/>freuendtnachbarlich ersuechen und bitten, die geruechen unß
-<lb n="30"/>ohnbeschwerdt zuverstendigen, wie hoch sie der zeit nicht
-<lb n="31"/>allein das beste ochßen: und ochßenmeßig, sonderen
-<lb n="32"/>auch das kueh: und kalbfleisch zutaxieren und auß=
-<lb n="33"/>wegen zulaßen pflegen, auch wie sie es fuohrohin
-<lb n="34"/>hierinnen zuhalten bedacht seien, damit wir auch die
-<lb n="35"/>weitere gebuehr deßwegen fuernemmen moegen.
-<lb n="36"/>Hieran beschihet unß ein angenemmes nachbarliches
-<lb n="37"/>gefallen, so wir inn dergleichen und anderen be=
-<lb n="38"/>gebenheiten dienstfreuendt: und nachbarlichen zube=
-<lb n="39"/>schulden urbietig, unß beneben gesambt Gottes
-<lb n="40"/>gnadenreichen schirm wol befehlend, datum
-<lb n="41"/><origDate when="1637-09-08" resp="#ner">den. 8. Septembris Ao. 1637.</origDate>
+<lb n="27"/><unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">deßhalber</unclear> <unclear cert="low" resp="#joint">gern</unclear> <unclear cert="low" resp="#joint">eine</unclear> <unclear cert="low" resp="#joint">gruendtliche</unclear> nach=
+<lb n="28"/>richt <unclear cert="medium" resp="#joint">haben</unclear> <unclear cert="medium" resp="#joint">moechten</unclear>, <unclear cert="medium" resp="#joint">So</unclear> gelangt <unclear cert="low" resp="#joint">ann</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Fht</unclear>. unser
+<lb n="29"/><unclear cert="low" resp="#joint">freuendtnachbarlich</unclear> <unclear cert="low" resp="#joint">ersuechen</unclear> und bitten, die <unclear cert="low" resp="#joint">geruechen</unclear> <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">ohnbeschwerdt</unclear> <unclear cert="low" resp="#joint">zuverstendigen</unclear>, wie <unclear cert="medium" resp="#joint">hoch</unclear> <unclear cert="medium" resp="#joint">sie</unclear> der zeit nicht
+<lb n="31"/>allein das beste <unclear cert="medium" resp="#joint">ochßen</unclear>: und <unclear cert="medium" resp="#joint">ochßenmeßig</unclear>, <unclear cert="medium" resp="#joint">sonderen</unclear>
+<lb n="32"/>auch das <unclear cert="medium" resp="#joint">kueh</unclear>: und <unclear cert="medium" resp="#joint">kalbfleisch</unclear> <unclear cert="medium" resp="#joint">zutaxieren</unclear> und <unclear cert="medium" resp="#joint">auß=</unclear>
+<lb n="33"/>wegen <unclear cert="medium" resp="#joint">zulaßen</unclear> pflegen, auch wie <unclear cert="medium" resp="#joint">sie</unclear> es <unclear cert="medium" resp="#joint">fuohrohin</unclear>
+<lb n="34"/>hierinnen zuhalten bedacht <unclear cert="medium" resp="#joint">seien</unclear>, damit wir auch die
+<lb n="35"/>weitere <unclear cert="low" resp="#joint">gebuehr</unclear> <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">fuernemmen</unclear> <unclear cert="low" resp="#joint">moegen</unclear>.
+<lb n="36"/><unclear cert="low" resp="#joint">Hieran</unclear> <unclear cert="low" resp="#joint">beschihet</unclear> <unclear cert="low" resp="#joint">unß</unclear> ein <unclear cert="low" resp="#joint">angenemmes</unclear> <unclear cert="low" resp="#joint">nachbarliches</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">gefallen</unclear>, so wir <unclear cert="medium" resp="#joint">inn</unclear> dergleichen und anderen be=
+<lb n="38"/>gebenheiten <unclear cert="medium" resp="#joint">dienstfreuendt</unclear>: und <unclear cert="low" resp="#joint">nachbarlichen</unclear> <unclear cert="low" resp="#joint">zube=</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">schulden</unclear> <unclear cert="low" resp="#joint">urbietig</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">beneben</unclear> <unclear cert="low" resp="#joint">gesambt</unclear> <unclear cert="low" resp="#joint">Gottes</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">gnadenreichen</unclear> <unclear cert="low" resp="#joint">schirm</unclear> wol <unclear cert="medium" resp="#joint">befehlend</unclear>, datum
+<lb n="41"/><origDate when="1637-09-08" resp="#ner">den. 8. Septembris <unclear cert="medium" resp="#joint">Ao</unclear>. <unclear cert="medium" resp="#joint">1637</unclear>.</origDate>
 <lb n="42"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermeister und rhat
-<lb n="43"/>der statt Lindaw</orgName>,
+<lb n="43"/>der statt <unclear cert="medium" resp="#joint">Lindaw</unclear></orgName>,
 <pb facs="StadtASG_Missive_3246_12859.jpg" n="3"/>
 <lb n="44"/>Zuewissen. Alß dann hernachbenante
 <lb n="45"/>Erb. Stett, <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>, <placeName ref="stadtasg-places-77" cert="medium" resp="#ner">Ravenspurg</placeName>, <placeName resp="#ner">Wang-
@@ -110,48 +111,48 @@
 <lb n="72"/>weniger verkhaufft, und nach erkhandtnuß er-
 <lb n="73"/>achtet werden.
 <pb facs="StadtASG_Missive_3246_12860.jpg" n="4"/>
-<lb n="74"/>Ain kalbs khopff soll jedes mahl dem fleisch gleich
-<lb n="75"/>doch per 2 1/2 pfundt, die 4 fueß per 1 1/2 pfundt,
-<lb n="76"/>Daß kalbs glüng per 2 pfundt gewerdet sein und
-<lb n="77"/>verkhaufft werden, daß miltz sambt dem netz-
-<lb n="78"/>lin soll mehr nit dan 1 1/2 krl. gelten.
-<lb n="79"/>Daß schafffleisch soll umb 5 1/2 krl. gmetzget sein,
+<lb n="74"/><unclear cert="low" resp="#joint">Ain</unclear> <unclear cert="low" resp="#joint">kalbs</unclear> <unclear cert="low" resp="#joint">khopff</unclear> <unclear cert="low" resp="#joint">soll</unclear> <unclear cert="low" resp="#joint">jedes</unclear> <unclear cert="low" resp="#joint">mahl</unclear> dem fleisch gleich
+<lb n="75"/><unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">per</unclear> <unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">1/2</unclear> <unclear cert="low" resp="#joint">pfundt</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">4</unclear> <unclear cert="low" resp="#joint">fueß</unclear> <unclear cert="low" resp="#joint">per</unclear> <unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">1/2</unclear> <unclear cert="low" resp="#joint">pfundt</unclear>,
+<lb n="76"/>Daß <unclear cert="low" resp="#joint">kalbs</unclear> <unclear cert="low" resp="#joint">glüng</unclear> <unclear cert="low" resp="#joint">per</unclear> <unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">pfundt</unclear> <unclear cert="low" resp="#joint">gewerdet</unclear> sein und
+<lb n="77"/>verkhaufft werden, daß <unclear cert="low" resp="#joint">miltz</unclear> <unclear cert="low" resp="#joint">sambt</unclear> dem <unclear cert="low" resp="#joint">netz</unclear>-
+<lb n="78"/><unclear cert="low" resp="#joint">lin</unclear> <unclear cert="low" resp="#joint">soll</unclear> <unclear cert="low" resp="#joint">mehr</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">1</unclear> 1/2 <unclear cert="low" resp="#joint">krl</unclear>. <unclear cert="low" resp="#joint">gelten</unclear>.
+<lb n="79"/><unclear cert="low" resp="#joint">Daß</unclear> <unclear cert="low" resp="#joint">schafffleisch</unclear> <unclear cert="low" resp="#joint">soll</unclear> umb 5 1/2 krl. gmetzget sein,
 <lb n="80"/>dabey sonderlich zue merckh, dz auß dem hinder stuckh
 <lb n="81"/>die nieren nicht geschniten sonder mit sambt
-<lb n="82"/>dem fleisch gewogen werde, darmit aber die metz-
+<lb n="82"/>dem <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">gewogen</unclear> <unclear cert="low" resp="#joint">werde</unclear>, <unclear cert="low" resp="#joint">darmit</unclear> aber die metz-
 <lb n="83"/>ger ein ergetzligkheit darbey haben, soll ihnen uff
 <lb n="84"/>jedeß hinder stuckh, uber dz gewicht 2 krl. passiert
 <lb n="85"/>und geben werden.
-<lb n="86"/>Der schaff kopff soll gelten 3 krl. dz schaffglüng
-<lb n="87"/>gleichfahls jedoch die leber darvon geschniten,
-<lb n="88"/>und dz pfundt per 6 1/2 krl. verkhaufft, doch von
-<lb n="89"/>netz die nothwendigkheit darzu gewogen werd,
+<lb n="86"/>Der schaff <unclear cert="low" resp="#joint">kopff</unclear> <unclear cert="low" resp="#joint">soll</unclear> <unclear cert="low" resp="#joint">gelten</unclear> <unclear cert="low" resp="#joint">3</unclear> <unclear cert="low" resp="#joint">krl</unclear>. <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">schaffglüng</unclear>
+<lb n="87"/><unclear cert="low" resp="#joint">gleichfahls</unclear> <unclear cert="low" resp="#joint">jedoch</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">leber</unclear> <unclear cert="low" resp="#joint">darvon</unclear> <unclear cert="low" resp="#joint">geschniten</unclear>,
+<lb n="88"/>und dz <unclear cert="low" resp="#joint">pfundt</unclear> <unclear cert="low" resp="#joint">per</unclear> 6 1/2 krl. verkhaufft, doch von
+<lb n="89"/><unclear cert="low" resp="#joint">netz</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">nothwendigkheit</unclear> darzu gewogen werd,
 <lb n="90"/>die schaffbauch sambt dem bluet 3 krl. gelten,
 <lb n="91"/>Bockhs: und gaiß fleisch, soll umb 3 1/2 krl. auß:
-<lb n="92"/>gemetzget werden.
-<lb n="93"/>Daß schwein fleisch, weyß speckh und schmer bei-
-<lb n="94"/>samen, mag höcher nit dan umb 7 1/2 krl. gesche-
-<lb n="95"/>tzt, umb weniger aber, nach beschaffenheit wol
-<lb n="96"/>wol gewerdet werden, welcheß in allen obstehen-
-<lb n="97"/>den fleisch alß zueverstehn.
+<lb n="92"/><unclear cert="low" resp="#joint">gemetzget</unclear> <unclear cert="low" resp="#joint">werden</unclear>.
+<lb n="93"/>Daß <unclear cert="low" resp="#joint">schwein</unclear> <unclear cert="low" resp="#joint">fleisch</unclear>, <unclear cert="low" resp="#joint">weyß</unclear> <unclear cert="low" resp="#joint">speckh</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">schmer</unclear> <unclear cert="low" resp="#joint">bei</unclear>-
+<lb n="94"/><unclear cert="low" resp="#joint">samen</unclear>, <unclear cert="low" resp="#joint">mag</unclear> <unclear cert="low" resp="#joint">höcher</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">dan</unclear> umb 7 1/2 krl. gesche-
+<lb n="95"/>tzt, umb weniger aber, nach <unclear cert="low" resp="#joint">beschaffenheit</unclear> wol
+<lb n="96"/><unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">gewerdet</unclear> werden, <unclear cert="low" resp="#joint">welcheß</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">allen</unclear> <unclear cert="low" resp="#joint">obstehen</unclear>-
+<lb n="97"/>den <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">zueverstehn</unclear>.
 <lb n="98"/>Daß pfundt dickh speckhs per 10 krl. daß pfundt
-<lb n="99"/>leber, bluet: und brattwürst, solle höcher nit
-<lb n="100"/>dan per 5 krl. verkhaufft werden.
+<lb n="99"/>leber, bluet: und <unclear cert="low" resp="#joint">brattwürst</unclear>, <unclear cert="low" resp="#joint">solle</unclear> <unclear cert="low" resp="#joint">höcher</unclear> <unclear cert="low" resp="#joint">nit</unclear>
+<lb n="100"/><unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">per</unclear> 5 krl. verkhaufft werden.
 <pb facs="StadtASG_Missive_3246_12861.jpg" n="5"/>
-<lb n="101"/>Von welchem fleisch tax aber, d oberkheit jedes
-<lb n="102"/>orts, durchauß von jedem pfundt, es seye
-<lb n="103"/>was für fleisch es wolle, 2 d. heimgehen, und von
+<lb n="101"/><unclear cert="low" resp="#joint">Von</unclear> <unclear cert="low" resp="#joint">welchem</unclear> fleisch <unclear cert="low" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">aber</unclear>, <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">oberkheit</unclear> <unclear cert="low" resp="#joint">jedes</unclear>
+<lb n="102"/><unclear cert="low" resp="#joint">orts</unclear>, <unclear cert="low" resp="#joint">durchauß</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">jedem</unclear> <unclear cert="low" resp="#joint">pfundt</unclear>, <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">seye</unclear>
+<lb n="103"/><unclear cert="low" resp="#joint">was</unclear> <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">wolle</unclear>, <unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">d</unclear>. <unclear cert="low" resp="#joint">heimgehen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">von</unclear>
 <lb n="104"/>den metzgeren erstattet werden solle, doch haben d
 <lb n="105"/><orgName resp="#ner">Statt Bregentz</orgName> abgesandte ein solches noch
 <lb n="106"/>zu witterem bedacht bezogen.
 <lb n="107"/>Dessen, aber ob diser nachbarlich vergleichung
 <lb n="108"/>steiuff und vest zuhalten, seindt deßwegen 9 receß
 <lb n="109"/>abschidts in originali verfertiget, und jedere ob-
-<lb n="110"/>ernandter 8. Stätten abgeordenten, einer und
-<lb n="111"/>d <orgName ref="stadtasg-actors-511" cert="medium" resp="#ner">Statt Lindaw</orgName> gröesseren cantzley secret,
-<lb n="112"/>zugestelt worden, beschehen zu <origPlace ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</origPlace> <origDate when="1637" resp="#ner">d 7 7bris
+<lb n="110"/><unclear cert="low" resp="#joint">ernandter</unclear> <unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">Stätten</unclear> <unclear cert="low" resp="#joint">abgeordenten</unclear>, <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="111"/><unclear cert="low" resp="#joint">d</unclear> <orgName ref="stadtasg-actors-511" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Statt</unclear> <unclear cert="low" resp="#joint">Lindaw</unclear></orgName> <unclear cert="low" resp="#joint">gröesseren</unclear> <unclear cert="low" resp="#joint">cantzley</unclear> secret,
+<lb n="112"/><unclear cert="low" resp="#joint">zugestelt</unclear> worden, beschehen zu <origPlace ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</origPlace> <origDate when="1637" resp="#ner">d 7 7bris
 <lb n="113"/>28 augusti
-<lb n="114"/>christlicher zahl deß 1637 jahrs</origDate>.
+<lb n="114"/><unclear cert="low" resp="#joint">christlicher</unclear> zahl deß 1637 jahrs</origDate>.
 <lb n="115"/>L. S.
 <pb facs="StadtASG_Missive_3246_12862.jpg" n="6"/>
 <lb n="116"/>[]
@@ -159,9 +160,9 @@
 <pb facs="StadtASG_Missive_3246_12864.jpg" n="8"/>
 <lb n="117"/>Den fuersiechtigen, ersamen und weisen
 <lb n="118"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat der statt St. Gallen</orgName>,
-<lb n="119"/>unsern besonders lieben freunden und gueten
-<lb n="120"/>nachbarn.
-<lb n="121"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="119"/>unsern besonders lieben freunden und <unclear cert="low" resp="#joint">gueten</unclear>
+<lb n="120"/><unclear cert="low" resp="#joint">nachbarn</unclear>.
+<lb n="121"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

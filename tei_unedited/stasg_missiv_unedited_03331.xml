@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3331</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Stein am Rhein bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Caspar Rull, Sattler, zu helfen, seinen Erbanteil an dem Nachlass seiner verstorbenen Tante Katharina Rutschhuserin zu erhalten. Rull sei als nächster Verwandter im zweiten Grad Erbe. Die Stadt Stein empfiehlt ihn und bittet um oberkeitliche Unterstützung.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Stein am Rhein bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Caspar Rull, Sattler, zu helfen, seinen Erbanteil an dem Nachlass seiner verstorbenen Tante Katharina Rutschhuserin zu erhalten. Rull sei als nächster Verwandter im zweiten Grad Erbe. Die Stadt Stein empfiehlt ihn und bittet um oberkeitliche Unterstützung.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Stein am Rhein ask Burgomaster and Council of St. Gallen to help their citizen Caspar Rull, saddler, to obtain his share of the inheritance of his deceased aunt Katharina Rutschhuserin. Rull is the heir as the next relative in the second degree. The city of Stein recommends him and asks for superior support.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,17 +37,17 @@
 <pb facs="StadtASG_Missive_3331_13235.jpg" n="1"/>
 <lb n="1"/>Woledler vester, fromm, ehrenveste, fuersichtige
 <lb n="2"/>und wyße, insonders guenstige liebe herren,
-<lb n="3"/>guote fruendt und nachpurn. Denselben seyge
-<lb n="4"/>unßer fruendt- nachpurlich ganz guotwillig diennst
+<lb n="3"/>guote fruendt und <unclear cert="low" resp="#joint">nachpurn</unclear>. <unclear cert="low" resp="#joint">Denselben</unclear> <unclear cert="low" resp="#joint">seyge</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">fruendt</unclear>- <unclear cert="low" resp="#joint">nachpurlich</unclear> <unclear cert="low" resp="#joint">ganz</unclear> guotwillig diennst
 <lb n="5"/>mit erpiettung aller ehren zuovor,
 <lb n="6"/>Vor unß ist uff huet dato erschinen, unßer getruwer
 <lb n="7"/>lieber burger, <persName resp="#ner">Caspar Rull</persName> der sattler, und hat
 <lb n="8"/>unß inn underthenigkeit fuerbringen und anzeugen laßen,
-<lb n="9"/>wie daß er inn glaubhaffte erfahrung gepracht, dz
-<lb n="10"/>kurzvergonen vor zweyen jahren seyner lieben muotter
-<lb n="11"/><persName resp="#ner">Barbara Rutschhuserin</persName> selligen, hinderlaßne lybliche
-<lb n="12"/>schwester, mit namen <persName resp="#ner">Cathrina Rutschhußerin</persName>, E. E. F. Wht.
-<lb n="13"/>geweßte verburgerte und verpfruendete, in dem
+<lb n="9"/>wie daß er inn <unclear cert="low" resp="#joint">glaubhaffte</unclear> <unclear cert="low" resp="#joint">erfahrung</unclear> <unclear cert="low" resp="#joint">gepracht</unclear>, <unclear cert="low" resp="#joint">dz</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">kurzvergonen</unclear> vor zweyen jahren seyner lieben <unclear cert="low" resp="#joint">muotter</unclear>
+<lb n="11"/><persName resp="#ner"><unclear cert="low" resp="#joint">Barbara</unclear> <unclear cert="low" resp="#joint">Rutschhuserin</unclear></persName> <unclear cert="low" resp="#joint">selligen</unclear>, <unclear cert="low" resp="#joint">hinderlaßne</unclear> <unclear cert="low" resp="#joint">lybliche</unclear>
+<lb n="12"/>schwester, mit namen <persName resp="#ner"><unclear cert="low" resp="#joint">Cathrina</unclear> <unclear cert="low" resp="#joint">Rutschhußerin</unclear></persName>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="13"/><unclear cert="low" resp="#joint">geweßte</unclear> <unclear cert="low" resp="#joint">verburgerte</unclear> und <unclear cert="low" resp="#joint">verpfruendete</unclear>, in dem
 <lb n="14"/>spital todts verblichen, wellicher und unß allen zuo
 <lb n="15"/>seiner zeyt Gott der allmechtig die ewige rhuow
 <lb n="16"/>verlyhe, dieweilß, wie ihme bekant, ußerthalb
@@ -56,11 +57,11 @@
 <lb n="20"/>willund unßers getruwen lieben mitraths <persName resp="#ner">Hanßen
 <lb n="21"/>Schmidts</persName>, beeden selligen, geweßnen ehelichen haußfrawen
 <lb n="22"/>erblich an sy erfallen, nach todt hinderlaßen,
-<lb n="23"/>und weills er Rulle achte und vermeine, ihrert-
+<lb n="23"/>und weills er Rulle achte und <unclear cert="low" resp="#joint">vermeine</unclear>, <unclear cert="low" resp="#joint">ihrert</unclear>-
 <lb n="24"/>halb (nebent zwar einem ihrem hinderlaßnen
-<lb n="25"/>bruoder <persName resp="#ner">Daniel Rutschhuser</persName> genant, auch E. E. F. Wht.
-<lb n="26"/>burger und pfruender in derselben spital ) inn
-<lb n="27"/>zweytten grad, der nechste nathuerliche erb sige,
+<lb n="25"/>bruoder <persName resp="#ner">Daniel Rutschhuser</persName> genant, auch <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="26"/>burger und pfruender in derselben <unclear cert="low" resp="#joint">spital</unclear> ) <unclear cert="low" resp="#joint">inn</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">zweytten</unclear> <unclear cert="low" resp="#joint">grad</unclear>, der nechste nathuerliche erb sige,
 <lb n="28"/>so seyge er vermitelst goettlicher gnaden, hiemit
 <lb n="29"/>willenß und bedacht, sich pellichen erbs, der gepuer
 <lb n="30"/>nach,
@@ -94,7 +95,7 @@
 <lb n="57"/>seyen, keinen zwyffel tragen, also seyen
 <lb n="58"/>umb E. E. F. Wht wir auch ein solliches, den
 <pb facs="StadtASG_Missive_3331_13237.jpg" n="3"/>
-<lb n="59"/>des unseren wegen, zuo derglichen und anderen
+<lb n="59"/>des unseren wegen, zuo <unclear cert="low" resp="#joint">derglichen</unclear> und anderen
 <lb n="60"/>begebenheiten dients. fründt. nachparlich zuo
 <lb n="61"/>beschulden und fuerderung, bereit und gantz guoth-
 <lb n="62"/>willigen anerbiettens, unß damit allersts
@@ -103,11 +104,11 @@
 <lb n="65"/><orgName role="issuer" resp="#ner">Burgermeister und Rath dr
 <lb n="66"/>statt Stein am Rhen</orgName> etc.
 <pb facs="StadtASG_Missive_3331_13238.jpg" n="4"/>
-<lb n="67"/>Denen edlen, vesten, frommen, fuernemmen,
-<lb n="68"/>fuersichtigen und weyßen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister
-<lb n="69"/>und rhatt der statt Sanct Gallen</orgName>, unßeren
-<lb n="70"/>inßonders guenstigen lieben herren, guetten freunden
-<lb n="71"/>und nachparen.
+<lb n="67"/><unclear cert="medium" resp="#joint">Denen</unclear> <unclear cert="medium" resp="#joint">edlen</unclear>, vesten, <unclear cert="low" resp="#joint">frommen</unclear>, <unclear cert="low" resp="#joint">fuernemmen</unclear>,
+<lb n="68"/><unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weyßen</unclear> herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">burgermeister</unclear>
+<lb n="69"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">rhatt</unclear> der statt <unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></orgName>, <unclear cert="low" resp="#joint">unßeren</unclear>
+<lb n="70"/><unclear cert="low" resp="#joint">inßonders</unclear> <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">herren</unclear>, <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nachparen</unclear>.
 <lb n="72"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
 </p>
         </body>

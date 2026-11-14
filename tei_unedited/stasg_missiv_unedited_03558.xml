@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3558</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Rat und Älteste der drei reformierten Gemeinden zu Frankenthal bedanken sich bei Bürgermeister und Rat zu St. Gallen für die freiwillige Steuer von 300 Gulden. Sie versichern, das Geld für den Unterhalt des Ministeriums, der Kirchen und Schulen sowie für die Armen zu verwenden, und bieten ihre Dienste an.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Rat und Älteste der drei reformierten Gemeinden zu Frankenthal bedanken sich bei Bürgermeister und Rat zu St. Gallen für die freiwillige Steuer von 300 Gulden. Sie versichern, das Geld für den Unterhalt des Ministeriums, der Kirchen und Schulen sowie für die Armen zu verwenden, und bieten ihre Dienste an.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Council and Elders of the three reformed congregations of Frankenthal thank the Burgomaster and Council of St. Gallen for the voluntary tax of 300 gulden. They assure that the money will be used for the maintenance of the ministry, the churches and schools, as well as for the poor, and offer their services.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,8 +35,8 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3558_14193.jpg" n="1"/>
-<lb n="1"/>Edle, Gestrenge, Ehrveste, Fromme, Fuername, Fuersichtige, Ehrsame,
-<lb n="2"/>und weise Herren. E. E. Gstht. und E. wht. seyen unsere
+<lb n="1"/><unclear cert="low" resp="#joint">Edle</unclear>, <unclear cert="low" resp="#joint">Gestrenge</unclear>, <unclear cert="low" resp="#joint">Ehrveste</unclear>, <unclear cert="low" resp="#joint">Fromme</unclear>, <unclear cert="low" resp="#joint">Fuername</unclear>, <unclear cert="low" resp="#joint">Fuersichtige</unclear>, <unclear cert="low" resp="#joint">Ehrsame</unclear>,
+<lb n="2"/>und weise Herren. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gstht</unclear>. und E. wht. seyen unsere
 <lb n="3"/>willige dienste bereit zuvor Gnstge. Herren.
 <lb n="4"/>Daß E. E. Gstht. Fromme und wolweise Herren unsere nottring=
 <lb n="5"/>liche bitte in solcher Christlicher wolruemlicher Affection mitleiden=
@@ -43,9 +44,9 @@
 <lb n="7"/>bewegung vernomen, und auß derselben loeblichen samptlichen
 <lb n="8"/>gemeinde christlichen freywilligen steur drey hundert guldi,
 <lb n="9"/>baar in gueter wehrung zu sichern unsern haenden empfangen,
-<lb n="10"/>vor welche hochruemliche miltreiche christliche freygaebigkeit und
+<lb n="10"/>vor welche <unclear cert="low" resp="#joint">hochruemliche</unclear> <unclear cert="low" resp="#joint">miltreiche</unclear> <unclear cert="low" resp="#joint">christliche</unclear> <unclear cert="low" resp="#joint">freygaebigkeit</unclear> und
 <lb n="11"/>geleiste dienstliche freundtschafft wir die samptliche drey Francken=
-<lb n="12"/>taelische Reformirte (oder Evangelische Gemeinden unß hoechstes
+<lb n="12"/>taelische Reformirte (oder Evangelische <unclear cert="low" resp="#joint">Gemeinden</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">hoechstes</unclear>
 <lb n="13"/>und hertzlich bedancken: Neben Inbruenstiger anrueffung zu Gott
 <lb n="14"/>dem Allmaechtigen, alß aller nach seinem heiligen willen erzeigter
 <lb n="15"/>wolthaten gnaedigsten reichen vergelter, daß seine hoechste Majestat
@@ -56,15 +57,15 @@
 <lb n="20"/>suecht nach seinem heiligen willen gnaediglich verschonen, wie auch
 <lb n="21"/>einem Jedwedern Jnsonderheit reichlich vergelten wolle: der troest=
 <lb n="22"/>lichen zuversicht und gewisen hoffnung, seine hohe Goettliche Ma=
-<lb n="23"/>jestat, vermoeg deß Ewigen sohns Gottes, unsers Herren, unnd
+<lb n="23"/>jestat, vermoeg deß Ewigen <unclear cert="low" resp="#joint">sohns</unclear> <unclear cert="low" resp="#joint">Gottes</unclear>, <unclear cert="low" resp="#joint">unsers</unclear> Herren, unnd
 <lb n="24"/>Heylands ohnfehlbaren vertroestung, das ein trunck wassers
 <lb n="25"/>damit nur einem auß den geringsten seiner Glaeubigen in der
 <lb n="26"/>Noth gedienet worden ohnbelohnet nicht verbleiben solle, werde
-<lb n="27"/>vil mehr eine solche wolruemliche miltreiche, christliche guetthaetigkeit,
-<lb n="28"/>welche Jnsonderheit zu befoerderung der Ehre Gottes, und viler
-<lb n="29"/>außerwehlten seligkeit, durch underhaltung deß lieben Ministerij,
+<lb n="27"/>vil mehr eine solche <unclear cert="low" resp="#joint">wolruemliche</unclear> <unclear cert="low" resp="#joint">miltreiche</unclear>, christliche guetthaetigkeit,
+<lb n="28"/>welche Jnsonderheit zu befoerderung der <unclear cert="low" resp="#joint">Ehre</unclear> <unclear cert="low" resp="#joint">Gottes</unclear>, und viler
+<lb n="29"/>außerwehlten seligkeit, durch <unclear cert="low" resp="#joint">underhaltung</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">Ministerij</unclear>,
 <lb n="30"/>kirchen und schuelen betreffend; und dann auch zur erquickung so
-<lb n="31"/>vler armen nothleidenden christen, gerichtet ist, in gnaden bedenck=
+<lb n="31"/>vler armen nothleidenden christen, gerichtet ist, in <unclear cert="low" resp="#joint">gnaden</unclear> <unclear cert="low" resp="#joint">bedenck=</unclear>
 <pb facs="StadtASG_Missive_3558_14194.jpg" n="2"/>
 <lb n="32"/>dahin es auch einig und allein uffrichtig, ehrlich und getrewlich, von uns
 <lb n="33"/>angewendet werden solle.
@@ -78,21 +79,21 @@
 <lb n="41"/>E. E. vhest, fromme und wolweise
 <lb n="42"/>Herren
 <lb n="43"/>dienst geflissenn <orgName role="issuer" resp="#ner">Raht und
-<lb n="44"/>Eltesten der dreyen gemeinden</orgName>
-<lb n="45"/><persName role="issuer" resp="#ner">Mathieu Boisson</persName> Ancien <persName role="issuer" resp="#ner">Daniel Philippj</persName>. deß Rahts
-<lb n="46"/><persName role="issuer" resp="#ner">Pieter Datgen</persName> ouderling <persName role="issuer" resp="#ner">Francois Gelldorff</persName> deß Rahts.
-<lb n="47"/><persName role="issuer" resp="#ner">Hanß Foerg</persName> Kistell Elster <persName role="issuer" resp="#ner">Philipß Reitter</persName> deß Radts
+<lb n="44"/>Eltesten der <unclear cert="low" resp="#joint">dreyen</unclear> <unclear cert="low" resp="#joint">gemeinden</unclear></orgName>
+<lb n="45"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Mathieu</unclear> <unclear cert="low" resp="#joint">Boisson</unclear></persName> <unclear cert="low" resp="#joint">Ancien</unclear> <persName role="issuer" resp="#ner">Daniel <unclear cert="low" resp="#joint">Philippj</unclear></persName>. <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Rahts</unclear>
+<lb n="46"/><persName role="issuer" resp="#ner">Pieter <unclear cert="low" resp="#joint">Datgen</unclear></persName> <unclear cert="low" resp="#joint">ouderling</unclear> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Francois</unclear> <unclear cert="low" resp="#joint">Gelldorff</unclear></persName> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Rahts</unclear>.
+<lb n="47"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Foerg</unclear></persName> <unclear cert="low" resp="#joint">Kistell</unclear> <unclear cert="low" resp="#joint">Elster</unclear> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Philipß</unclear> <unclear cert="low" resp="#joint">Reitter</unclear></persName> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Radts</unclear>
 <pb facs="StadtASG_Missive_3558_14195.jpg" n="3"/>
-<lb n="48"/>Den vesten ersamen und wisen
-<lb n="49"/>fromen fuerneomen fursichtigen
-<lb n="50"/>hern und raute hern
-<lb n="51"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister und rate der
-<lb n="52"/>stat Santgall
-<lb n="53"/>Sant Gall</orgName>
+<lb n="48"/>Den <unclear cert="low" resp="#joint">vesten</unclear> ersamen und wisen
+<lb n="49"/><unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="low" resp="#joint">fuerneomen</unclear> <unclear cert="low" resp="#joint">fursichtigen</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">hern</unclear> und <unclear cert="low" resp="#joint">raute</unclear> <unclear cert="low" resp="#joint">hern</unclear>
+<lb n="51"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">burgermeister</unclear> und <unclear cert="low" resp="#joint">rate</unclear> <unclear cert="low" resp="#joint">der</unclear>
+<lb n="52"/><unclear cert="low" resp="#joint">stat</unclear> <unclear cert="low" resp="#joint">Santgall</unclear>
+<lb n="53"/><unclear cert="low" resp="#joint">Sant</unclear> <unclear cert="low" resp="#joint">Gall</unclear></orgName>
 <pb facs="StadtASG_Missive_3558_14196.jpg" n="4"/>
-<lb n="54"/>Denen edlen wollg. erenvesten,
-<lb n="55"/>fromen, fürnemen, fürsichtigen,
-<lb n="56"/>ersamen und weisen heren
+<lb n="54"/>Denen edlen <unclear cert="low" resp="#joint">wollg</unclear>. <unclear cert="low" resp="#joint">erenvesten</unclear>,
+<lb n="55"/><unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">fürnemen</unclear>, fürsichtigen,
+<lb n="56"/><unclear cert="low" resp="#joint">ersamen</unclear> und weisen heren
 <lb n="57"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeisteren und Rhatt der
 <lb n="58"/>statt St. Gall</orgName>
 </p>

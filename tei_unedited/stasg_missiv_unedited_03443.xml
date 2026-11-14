@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3443</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten den Landvogt im Ober- und Nidertoggenburg, den Prälaten zu Vispingen bei seinem rechtmässigen Kauf zu schützen und den unruhigen Gruebler von seinem Vorhaben abzuweisen. Sie verweisen auf eine Supplikation der Vormünder der Tochter des verstorbenen St. Galler Bürgers Jakob Locher und bitten um Unterstützung, damit der Prälat und die Vormünder nicht weiter belästigt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten den Landvogt im Ober- und Nidertoggenburg, den Prälaten zu Vispingen bei seinem rechtmässigen Kauf zu schützen und den unruhigen Gruebler von seinem Vorhaben abzuweisen. Sie verweisen auf eine Supplikation der Vormünder der Tochter des verstorbenen St. Galler Bürgers Jakob Locher und bitten um Unterstützung, damit der Prälat und die Vormünder nicht weiter belästigt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask the Landvogt in Ober- and Nidertoggenburg to protect the Prelate of Vispingen in his lawful purchase and to dissuade the unruly Gruebler from his plan. They refer to a supplication by the guardians of the daughter of the deceased citizen of St. Gallen Jakob Locher and ask for support so that the Prelate and the guardians are not further harassed.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -41,9 +42,9 @@
 <lb n="5"/>besonders lieber herr landtvogt,
 <lb n="6"/>guter freundt, und nachpar.
 <lb n="7"/>Waß an unß, unser getrewer
-<lb n="8"/>lieber reichsvogt, h. <persName resp="#ner">Hanß Hilt-
-<lb n="9"/>prandt</persName>, und h. <persName resp="#ner">Melchior Locher</persName>
-<lb n="10"/>prediger, alß raths verordnete
+<lb n="8"/>lieber <unclear cert="low" resp="#joint">reichsvogt</unclear>, <unclear cert="low" resp="#joint">h</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Hilt</unclear>-
+<lb n="9"/>prandt</persName>, und h. <persName resp="#ner">Melchior <unclear cert="low" resp="#joint">Locher</unclear></persName>
+<lb n="10"/><unclear cert="low" resp="#joint">prediger</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">raths</unclear> <unclear cert="low" resp="#joint">verordnete</unclear>
 <lb n="11"/>vögt und vormündt, weiland,
 <lb n="12"/>unsers burgers h. <persName resp="#ner">Jacob Lochers</persName>
 <lb n="13"/>s. hinderlaßner dochter jungfr.
@@ -51,24 +52,24 @@
 <lb n="15"/>gelangen laßen, daß hat der
 <lb n="16"/>herr uß dem ynschluß, yrer
 <lb n="17"/>unß überreichter supplication
-<lb n="18"/>mit mehrerem zuvernemen.
-<lb n="19"/>Gylangt daruf an den herren
-<lb n="20"/>unser freundt nachparliches
-<lb n="21"/>ersuochen, er welle uß den
-<lb n="22"/>jn der supplication ange-
-<lb n="23"/>regten ursachen, den herren praelat
-<lb n="24"/>zuo <placeName resp="#ner">Vischingen</placeName>, bey seim ufrecht,
-<lb n="25"/>redlicher weiß beschehenen kauff
-<lb n="26"/>oberkeitlich schüzen und schirmen,
+<lb n="18"/>mit <unclear cert="low" resp="#joint">mehrerem</unclear> <unclear cert="low" resp="#joint">zuvernemen</unclear>.
+<lb n="19"/><unclear cert="low" resp="#joint">Gylangt</unclear> <unclear cert="low" resp="#joint">daruf</unclear> an den herren
+<lb n="20"/>unser <unclear cert="low" resp="#joint">freundt</unclear> <unclear cert="low" resp="#joint">nachparliches</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">ersuochen</unclear>, er <unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">den</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">jn</unclear> der <unclear cert="low" resp="#joint">supplication</unclear> <unclear cert="low" resp="#joint">ange</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">regten</unclear> <unclear cert="low" resp="#joint">ursachen</unclear>, <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">praelat</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Vischingen</unclear></placeName>, <unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">seim</unclear> <unclear cert="low" resp="#joint">ufrecht</unclear>,
+<lb n="25"/><unclear cert="low" resp="#joint">redlicher</unclear> <unclear cert="low" resp="#joint">weiß</unclear> <unclear cert="low" resp="#joint">beschehenen</unclear> <unclear cert="low" resp="#joint">kauff</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">oberkeitlich</unclear> <unclear cert="low" resp="#joint">schüzen</unclear> und schirmen,
 <lb n="27"/>und den Gruebler, alß einen un-
-<lb n="28"/>rüwigen mann von seinem unfort-
-<lb n="29"/>und vorhaben abweisen, damit nit allein
-<lb n="30"/>wolbemelter h. praelat, sonder
+<lb n="28"/>rüwigen mann <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">unfort</unclear>-
+<lb n="29"/>und vorhaben <unclear cert="low" resp="#joint">abweisen</unclear>, <unclear cert="low" resp="#joint">damit</unclear> nit allein
+<lb n="30"/><unclear cert="low" resp="#joint">wolbemelter</unclear> <unclear cert="low" resp="#joint">h</unclear>. <unclear cert="low" resp="#joint">praelat</unclear>, sonder
 <lb n="31"/>auch die unserigen, alß unschuldige
 <lb n="32"/>vögt, jns künfftig von jhme
 <lb n="33"/>Gruebler, dises kauffs halb,
-<lb n="34"/>ferner ohnmolestiert
-<lb n="35"/>verpleiben mögen. Solches
+<lb n="34"/>ferner <unclear cert="low" resp="#joint">ohnmolestiert</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">verpleiben</unclear> mögen. Solches
 <lb n="36"/>sind wir umb den herren zuo
 <pb facs="StadtASG_Missive_3443_13712.jpg" n="2"/>
 <lb n="37"/>allen fuerfallenden occasionen

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3552</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Bürgermeister und Rat zu Nürnberg, die St. Gallerin Anna Magdalena Schlumpfin und ihre Kinder aus dem Nürnberger Bürgerrecht zu entlassen und ihnen einen entsprechenden Schein auszustellen. Die Ehefrau des St. Galler Bürgers Jacob Schlumpf wolle das Bürgerrecht aus freien Stücken aufgeben, da sie in Nürnberg nicht mehr bleiben könne. St. Gallen bittet zudem, ihr Hab und Gut in Nürnberg ungeschädigt zu überlassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Bürgermeister und Rat zu Nürnberg, die St. Gallerin Anna Magdalena Schlumpfin und ihre Kinder aus dem Nürnberger Bürgerrecht zu entlassen und ihnen einen entsprechenden Schein auszustellen. Die Ehefrau des St. Galler Bürgers Jacob Schlumpf wolle das Bürgerrecht aus freien Stücken aufgeben, da sie in Nürnberg nicht mehr bleiben könne. St. Gallen bittet zudem, ihr Hab und Gut in Nürnberg ungeschädigt zu überlassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen request Burgomaster and Council of Nürnberg to release the St. Gallen woman Anna Magdalena Schlumpfin and her children from the citizenship of Nürnberg and to issue them a corresponding certificate. The wife of the St. Gallen citizen Jacob Schlumpf wishes to renounce the citizenship of her own free will, as she can no longer remain in Nürnberg. St. Gallen also asks that her property in Nürnberg be left to her undamaged.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,55 +38,55 @@
 <lb n="1"/>Unser freündtlich willig dienst, und
 <lb n="2"/>was wir Ehren liebs und guots ver-
 <lb n="3"/>mögend zuovor. Edle Veste, Ehrnveste,
-<lb n="4"/>fürsichtige, Ersame und weise, Inson-
-<lb n="5"/>ders liebe herren und guote freündt.
-<lb n="6"/>Vor uns ist in <placeName resp="#ner">Rhathe</placeName> erschinen, un-
-<lb n="7"/>sers dißmahls abwesenden getrüwen
-<lb n="8"/>lieben burgers und handelßmanns
-<lb n="9"/><persName resp="#ner">Jacob Schluempfen</persName> eheliche haußfrauw,
+<lb n="4"/>fürsichtige, Ersame und weise, <unclear cert="low" resp="#joint">Inson</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">ders</unclear> <unclear cert="low" resp="#joint">liebe</unclear> herren und <unclear cert="low" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">freündt</unclear>.
+<lb n="6"/><unclear cert="low" resp="#joint">Vor</unclear> <unclear cert="low" resp="#joint">uns</unclear> ist in <placeName resp="#ner"><unclear cert="low" resp="#joint">Rhathe</unclear></placeName> erschinen, <unclear cert="low" resp="#joint">un</unclear>-
+<lb n="7"/><unclear cert="low" resp="#joint">sers</unclear> <unclear cert="low" resp="#joint">dißmahls</unclear> <unclear cert="low" resp="#joint">abwesenden</unclear> getrüwen
+<lb n="8"/>lieben burgers und <unclear cert="low" resp="#joint">handelßmanns</unclear>
+<lb n="9"/><persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Schluempfen</unclear></persName> <unclear cert="low" resp="#joint">eheliche</unclear> <unclear cert="low" resp="#joint">haußfrauw</unclear>,
 <lb n="10"/>die Edle, Ehren- und tugentreiche frauw
 <lb n="11"/><persName resp="#ner">Anna Magdalena Schwäbin</persName>, und hat
 <lb n="12"/>uns demütig zuerkennen gegeben,
-<lb n="13"/>wir werden uns zweiffels frey wohl
-<lb n="14"/>zuerjnnern haben, waßmassen
-<lb n="15"/>sie verschinen <date resp="#ner">1631</date> + <persName resp="#ner">schlumpffij</persName> geborne Jars sich mit
-<lb n="16"/>gedachtem Jhrem lieben Ehewürth ehelich
-<lb n="17"/>verheurhatet, hinauss alhero gezogen,
+<lb n="13"/>wir werden uns zweiffels frey <unclear cert="low" resp="#joint">wohl</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">zuerjnnern</unclear> haben, <unclear cert="low" resp="#joint">waßmassen</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">verschinen</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">1631</unclear></date> <unclear cert="low" resp="#joint">+</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">schlumpffij</unclear></persName> <unclear cert="low" resp="#joint">geborne</unclear> <unclear cert="low" resp="#joint">Jars</unclear> sich mit
+<lb n="16"/>gedachtem Jhrem lieben <unclear cert="low" resp="#joint">Ehewürth</unclear> <unclear cert="low" resp="#joint">ehelich</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">verheurhatet</unclear>, <unclear cert="low" resp="#joint">hinauss</unclear> <unclear cert="low" resp="#joint">alhero</unclear> <unclear cert="low" resp="#joint">gezogen</unclear>,
 <lb n="18"/>und durch Gottes gnedigen seegen
 <lb n="19"/>etliche kinder bÿ jhme gezeüget, ders
 <lb n="20"/>viere noch beÿleben, und widerumb
 <lb n="21"/>grosses und schwangers leibs seÿe.
 <lb n="22"/>Wann sie dann Jme das burgerrecht
-<lb n="23"/>in dero loblichen Statt <placeName ref="stadtasg-places-21" cert="medium" resp="#ner">Nürenberg</placeName> vo-
-<lb n="24"/>behalten + durch der befreündten, auch biß dato darinnen ver-
-<lb n="25"/>pliben, und aber nunmehr hocherheb-
-<lb n="26"/>licher ursachen willen beÿ Jhro Brueder
-<lb n="27"/>nicht khan befinden, lenger in angereg-
-<lb n="28"/>tem burgerrechten zuverharren, sonder
-<lb n="29"/>daß-
+<lb n="23"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">loblichen</unclear> <unclear cert="low" resp="#joint">Statt</unclear> <placeName ref="stadtasg-places-21" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Nürenberg</unclear></placeName> <unclear cert="low" resp="#joint">vo</unclear>-
+<lb n="24"/><unclear cert="low" resp="#joint">behalten</unclear> <unclear cert="low" resp="#joint">+</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">befreündten</unclear>, auch biß dato darinnen ver-
+<lb n="25"/>pliben, und aber <unclear cert="low" resp="#joint">nunmehr</unclear> <unclear cert="low" resp="#joint">hocherheb</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">licher</unclear> <unclear cert="low" resp="#joint">ursachen</unclear> <unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">Jhro</unclear> <unclear cert="low" resp="#joint">Brueder</unclear>
+<lb n="27"/>nicht khan befinden, lenger in <unclear cert="low" resp="#joint">angereg</unclear>-
+<lb n="28"/><unclear cert="low" resp="#joint">tem</unclear> <unclear cert="low" resp="#joint">burgerrechten</unclear> <unclear cert="low" resp="#joint">zuverharren</unclear>, sonder
+<lb n="29"/><unclear cert="low" resp="#joint">daß</unclear>-
 <lb n="30"/>selbige für sie und Jhre kinder formb-
-<lb n="31"/>lich uffzugeben, und fürterhin in
+<lb n="31"/>lich uffzugeben, und <unclear cert="low" resp="#joint">fürterhin</unclear> in
 <lb n="32"/>unserm burgerrechten alhie Jhr
-<lb n="33"/>leben zuverschleissen. Deßhalben
-<lb n="34"/>sie nicht ermanglet + schon vor etlich zeit Jhr Intent
+<lb n="33"/>leben <unclear cert="low" resp="#joint">zuverschleissen</unclear>. <unclear cert="low" resp="#joint">Deßhalben</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">sie</unclear> nicht <unclear cert="low" resp="#joint">ermanglet</unclear> <unclear cert="low" resp="#joint">+</unclear> <unclear cert="low" resp="#joint">schon</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">etlich</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">Jhr</unclear> <unclear cert="low" resp="#joint">Intent</unclear>
 <lb n="35"/>und vorhaben Jhren nechsten verwanten
 <pb facs="StadtASG_Missive_3552_14170.jpg" n="2"/>
 <lb n="36"/>zuuoentdecken, und die zue bitten, bey E.
-<lb n="37"/>Wht. und Fr. Wht., in ihrem namen
-<lb n="38"/>gedacht ihr gehabtes burger recht uff
+<lb n="37"/>Wht. und <unclear cert="low" resp="#joint">Fr</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>., in ihrem namen
+<lb n="38"/>gedacht <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">gehabtes</unclear> <unclear cert="low" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">recht</unclear> uff
 <lb n="39"/>und abzuokuenden, aber von ihnen kein
 <lb n="40"/>andern bescheidt nicht erlangt, dann wenn
 <lb n="41"/>sie solches willens seye, werde sie sich
-<lb n="42"/>selbs stellen muessen, welches ihr aber
+<lb n="42"/>selbs stellen muessen, welches <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">aber</unclear>
 <lb n="43"/>bey disen sorgclichen kriegslaeufften
 <lb n="44"/>und schwangerem leib unmueglich, der-
 <lb n="45"/>halben sie solches durch ein schriben ver-
-<lb n="46"/>richtet, mit demuetigem pitten
-<lb n="47"/>dasselbige dißmals mit disem un-
+<lb n="46"/>richtet, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">demuetigem</unclear> <unclear cert="low" resp="#joint">pitten</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">dasselbige</unclear> <unclear cert="low" resp="#joint">dißmals</unclear> mit disem un-
 <lb n="48"/>serm intercession schriben zuobgleiten,
 <lb n="49"/>daß sie und ihre kinder nicht allein bey
-<lb n="50"/>E. Wht. und Fr. Wht. mehr angeregts
-<lb n="51"/>ihres burgerrechtens entlassen und
+<lb n="50"/>E. Wht. und <unclear cert="low" resp="#joint">Fr</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">mehr</unclear> <unclear cert="low" resp="#joint">angeregts</unclear>
+<lb n="51"/>ihres <unclear cert="low" resp="#joint">burgerrechtens</unclear> entlassen und
 <lb n="52"/>entlediget, sondern auch dessen gnuog-
 <lb n="53"/>sam schein und urkhundt ihrer ent-
 <lb n="54"/>ledigung erlangen moege.
@@ -96,10 +97,10 @@
 <lb n="59"/>wiblichen treuwen und ehren betheurt,
 <lb n="60"/>zue solcher uffgebung ihres bey derselben
 <lb n="61"/>gehabten burgerrechten kheinßwegs
-<lb n="62"/>getrungen noch gezwungen, wie wenig
+<lb n="62"/>getrungen noch <unclear cert="low" resp="#joint">gezwungen</unclear>, <unclear cert="low" resp="#joint">wie</unclear> wenig
 <lb n="63"/>mit listen gferden und betrug dessen
 <lb n="64"/>beredt und hindergangen worden, be-
-<lb n="65"/>sondern was sie da thueye, solches alles
+<lb n="65"/>sondern was <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">thueye</unclear>, <unclear cert="low" resp="#joint">solches</unclear> alles
 <lb n="66"/>allein auß selbs eignem freyem willen
 <lb n="67"/>und bewegnuß beschehe, nit allein an-
 <lb n="68"/>gehoert und verstanden, sondern ein
@@ -107,15 +108,15 @@
 <lb n="70"/>heiten zuewider, das unsere burgere,
 <pb facs="StadtASG_Missive_3552_14171.jpg" n="3"/>
 <lb n="71"/>andere ohrten mit burgerrechten aich
-<lb n="72"/>verwandt und verpflichtet sein solle.
-<lb n="73"/>Deßhalben wir iro umb sovil desto
-<lb n="74"/>ehr in ihrem billichmeßigen begeren
-<lb n="75"/>willfahren sollen und wollen.
-<lb n="76"/>Glangt derohalben unßer an E. Vht.
-<lb n="77"/>und hr. Wht. unser frl. ersuechen,
-<lb n="78"/>umb erzelter wichtigen ursachen
+<lb n="72"/>verwandt und verpflichtet sein <unclear cert="low" resp="#joint">solle</unclear>.
+<lb n="73"/><unclear cert="low" resp="#joint">Deßhalben</unclear> wir iro umb <unclear cert="low" resp="#joint">sovil</unclear> <unclear cert="low" resp="#joint">desto</unclear>
+<lb n="74"/><unclear cert="low" resp="#joint">ehr</unclear> in ihrem <unclear cert="low" resp="#joint">billichmeßigen</unclear> begeren
+<lb n="75"/>willfahren sollen und <unclear cert="low" resp="#joint">wollen</unclear>.
+<lb n="76"/><unclear cert="low" resp="#joint">Glangt</unclear> <unclear cert="low" resp="#joint">derohalben</unclear> <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Vht</unclear>.
+<lb n="77"/>und hr. Wht. unser <unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">ersuechen</unclear>,
+<lb n="78"/>umb <unclear cert="low" resp="#joint">erzelter</unclear> <unclear cert="low" resp="#joint">wichtigen</unclear> <unclear cert="low" resp="#joint">ursachen</unclear>
 <lb n="79"/>willen, die fr. <persName resp="#ner">Anna Magdalena
-<lb n="80"/>Schlumpfin</persName> und der kinder gebettner und
+<lb n="80"/><unclear cert="low" resp="#joint">Schlumpfin</unclear></persName> und der kinder gebettner und
 <lb n="81"/>uffgetragner maßen, ihro und ihren kin=
 <lb n="82"/>den, welche von unserm burger, und
 <lb n="83"/>in unserm burgerrechten erzeuegt, in
@@ -123,22 +124,22 @@
 <lb n="85"/>rechten zuentlaßen, und dero entledin=
 <lb n="86"/>gung gnuegsam oberkeitlichen schein und
 <lb n="87"/>urkhund zuertheilen, dieweil es sonsten
-<lb n="88"/>auch kuendtlichen rechtens das kein
-<lb n="89"/>freye Statt der anderen die ihrigen uffhalten
-<lb n="90"/>noch ein ort iro mehrer burgerrecht
+<lb n="88"/>auch <unclear cert="low" resp="#joint">kuendtlichen</unclear> <unclear cert="low" resp="#joint">rechtens</unclear> <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">kein</unclear>
+<lb n="89"/><unclear cert="low" resp="#joint">freye</unclear> <unclear cert="low" resp="#joint">Statt</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">anderen</unclear> die <unclear cert="low" resp="#joint">ihrigen</unclear> <unclear cert="low" resp="#joint">uffhalten</unclear>
+<lb n="90"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">ort</unclear> <unclear cert="low" resp="#joint">iro</unclear> mehrer burgerrecht
 <lb n="91"/>haben solle. Insonderheit aber
-<lb n="92"/>auch ihr zuhanden ufnezogene
-<lb n="93"/>eigenthumbliche haab und gueth ohne
-<lb n="94"/>einichen nachstür großguenstig ge=
-<lb n="95"/>volgen laßen, und sy hierinnen alß ge=
+<lb n="92"/>auch <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">zuhanden</unclear> <unclear cert="low" resp="#joint">ufnezogene</unclear>
+<lb n="93"/><unclear cert="low" resp="#joint">eigenthumbliche</unclear> <unclear cert="low" resp="#joint">haab</unclear> und gueth ohne
+<lb n="94"/><unclear cert="low" resp="#joint">einichen</unclear> <unclear cert="low" resp="#joint">nachstür</unclear> <unclear cert="low" resp="#joint">großguenstig</unclear> <unclear cert="low" resp="#joint">ge=</unclear>
+<lb n="95"/><unclear cert="low" resp="#joint">volgen</unclear> <unclear cert="low" resp="#joint">laßen</unclear>, und sy hierinnen alß ge=
 <lb n="96"/>gen den unsern erweisen, wie wir
-<lb n="97"/>das guet und ungezweiffelt vertrawen
-<lb n="98"/>zue dero selben haben. Wie nun sol=
+<lb n="97"/>das guet und <unclear cert="low" resp="#joint">ungezweiffelt</unclear> <unclear cert="low" resp="#joint">vertrawen</unclear>
+<lb n="98"/><unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">selben</unclear> haben. Wie nun sol=
 <lb n="99"/>ches an ihme selbs billich, also sindt
-<lb n="100"/>umb E. Vht. und hr. Wht. und
+<lb n="100"/>umb <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Vht</unclear>. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">hr</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. und
 <lb n="101"/>den ihrigen wir in dergleichen und
 <lb n="102"/>andern begebenden occasionen hin=
-<lb n="103"/>widerumb zubeschulden so willig alß
+<lb n="103"/>widerumb <unclear cert="low" resp="#joint">zubeschulden</unclear> so willig alß
 <lb n="104"/>anerbietig, unß damit samptlich
 <pb facs="StadtASG_Missive_3552_14172.jpg" n="4"/>
 <lb n="105"/>der treüwen fürsorg Gottes wolbe-
@@ -147,8 +148,8 @@
 <lb n="108"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermaister und
 <lb n="109"/>Rath der Statt Sant
 <lb n="110"/>Gallen</orgName>.
-<lb n="111"/>Herrn <orgName role="recipient" resp="#ner">Burgermaister und
-<lb n="112"/>Rath der Statt Nuernberg</orgName> etc.
+<lb n="111"/><unclear cert="low" resp="#joint">Herrn</unclear> <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="112"/><unclear cert="low" resp="#joint">Rath</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Statt</unclear> <unclear cert="low" resp="#joint">Nuernberg</unclear></orgName> <unclear cert="low" resp="#joint">etc</unclear>.
 </p>
         </body>
     </text>

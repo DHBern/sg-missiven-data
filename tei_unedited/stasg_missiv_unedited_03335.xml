@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3335</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen, ein Edikt über den angesetzten Rechtstag für die Gläubiger des verstorbenen Konstanzer Bürgers Georg Weigels öffentlich anzuschlagen und zu publizieren, damit niemand durch Unwissenheit benachteiligt werde.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen, ein Edikt über den angesetzten Rechtstag für die Gläubiger des verstorbenen Konstanzer Bürgers Georg Weigels öffentlich anzuschlagen und zu publizieren, damit niemand durch Unwissenheit benachteiligt werde.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Administrator of the Captaincy, Burgomaster and Council of Konstanz ask the Burgomaster and Council of St. Gallen to publicly post and publish an edict concerning the appointed court day for the creditors of the deceased citizen of Konstanz, Georg Weigels, so that no one is disadvantaged through ignorance.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,38 +35,38 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3335_13249.jpg" n="1"/>
-<lb n="1"/>Unnser freündt: nachparlich und guetwillige
-<lb n="2"/>dienst zuvor, Fürsichtige Ehrsame weise.
-<lb n="3"/>besonders liebe freündt und guete nachparen.
-<lb n="4"/>Welcher maßen wir unsers geweßten burgers Georg
-<lb n="5"/>Weigels seel. gemainen gläubigeren ainen allgemainen
-<lb n="6"/>rechts tag ernendt und angesetzt, daß haben E. Wt.
-<lb n="7"/>auß bijverwartem edict zuvernemen,
-<lb n="8"/>Wann dan derselben burgere villeicht auch
-<lb n="9"/>interessirt sein und zu ermeltes <persName resp="#ner">Georg Weigels</persName>
-<lb n="10"/>seel. forderung und ansprach haben möchten,
-<lb n="11"/>so pitten wir freündt nachparlich E. Wt. wöllen
-<lb n="12"/>solch edict, ihrem herbrachten gebrauch nach, bij Ihnen
-<lb n="13"/>an gebührenden orthen offentlich anschlagen und publiciren
-<lb n="14"/>laßen, damit an seinen rechten niemandt ver-
-<lb n="15"/>khürzt werd, noch der unwißenheit sich zube-
-<lb n="16"/>clagen ursach hab, Daß seind wir umb E. Wt.
-<lb n="17"/>freündt nachparlich zuverdienen erbietig.
-<lb n="18"/>Actum den <origDate when="1608" resp="#ner">xij. xbris 1608</origDate>.
-<lb n="19"/>Verwalter der
-<lb n="20"/>haubtmanschafft
-<lb n="21"/>auch burgermaister
+<lb n="1"/>Unnser <unclear cert="medium" resp="#joint">freündt</unclear>: <unclear cert="medium" resp="#joint">nachparlich</unclear> und <unclear cert="medium" resp="#joint">guetwillige</unclear>
+<lb n="2"/>dienst zuvor, Fürsichtige <unclear cert="medium" resp="#joint">Ehrsame</unclear> weise.
+<lb n="3"/>besonders liebe freündt und <unclear cert="medium" resp="#joint">guete</unclear> nachparen.
+<lb n="4"/><unclear cert="medium" resp="#joint">Welcher</unclear> <unclear cert="medium" resp="#joint">maßen</unclear> wir <unclear cert="medium" resp="#joint">unsers</unclear> <unclear cert="medium" resp="#joint">geweßten</unclear> <unclear cert="medium" resp="#joint">burgers</unclear> <unclear cert="medium" resp="#joint">Georg</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">Weigels</unclear> <unclear cert="medium" resp="#joint">seel</unclear>. <unclear cert="medium" resp="#joint">gemainen</unclear> <unclear cert="medium" resp="#joint">gläubigeren</unclear> <unclear cert="medium" resp="#joint">ainen</unclear> <unclear cert="medium" resp="#joint">allgemainen</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">rechts</unclear> tag <unclear cert="medium" resp="#joint">ernendt</unclear> und angesetzt, daß haben <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wt</unclear>.
+<lb n="7"/><unclear cert="medium" resp="#joint">auß</unclear> <unclear cert="medium" resp="#joint">bijverwartem</unclear> <unclear cert="medium" resp="#joint">edict</unclear> <unclear cert="medium" resp="#joint">zuvernemen</unclear>,
+<lb n="8"/><unclear cert="medium" resp="#joint">Wann</unclear> <unclear cert="medium" resp="#joint">dan</unclear> derselben <unclear cert="medium" resp="#joint">burgere</unclear> <unclear cert="medium" resp="#joint">villeicht</unclear> auch
+<lb n="9"/><unclear cert="medium" resp="#joint">interessirt</unclear> sein und zu <unclear cert="medium" resp="#joint">ermeltes</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Georg</unclear> <unclear cert="medium" resp="#joint">Weigels</unclear></persName>
+<lb n="10"/><unclear cert="medium" resp="#joint">seel</unclear>. <unclear cert="medium" resp="#joint">forderung</unclear> und <unclear cert="medium" resp="#joint">ansprach</unclear> <unclear cert="medium" resp="#joint">haben</unclear> <unclear cert="medium" resp="#joint">möchten</unclear>,
+<lb n="11"/>so <unclear cert="medium" resp="#joint">pitten</unclear> wir <unclear cert="low" resp="#joint">freündt</unclear> <unclear cert="low" resp="#joint">nachparlich</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">wöllen</unclear>
+<lb n="12"/>solch <unclear cert="medium" resp="#joint">edict</unclear>, <unclear cert="medium" resp="#joint">ihrem</unclear> <unclear cert="medium" resp="#joint">herbrachten</unclear> <unclear cert="medium" resp="#joint">gebrauch</unclear> <unclear cert="medium" resp="#joint">nach</unclear>, <unclear cert="medium" resp="#joint">bij</unclear> Ihnen
+<lb n="13"/>an <unclear cert="medium" resp="#joint">gebührenden</unclear> <unclear cert="medium" resp="#joint">orthen</unclear> offentlich <unclear cert="medium" resp="#joint">anschlagen</unclear> und publiciren
+<lb n="14"/><unclear cert="medium" resp="#joint">laßen</unclear>, damit an <unclear cert="medium" resp="#joint">seinen</unclear> <unclear cert="medium" resp="#joint">rechten</unclear> <unclear cert="medium" resp="#joint">niemandt</unclear> <unclear cert="medium" resp="#joint">ver</unclear>-
+<lb n="15"/><unclear cert="medium" resp="#joint">khürzt</unclear> werd, noch der <unclear cert="low" resp="#joint">unwißenheit</unclear> sich <unclear cert="medium" resp="#joint">zube</unclear>-
+<lb n="16"/><unclear cert="medium" resp="#joint">clagen</unclear> <unclear cert="medium" resp="#joint">ursach</unclear> <unclear cert="medium" resp="#joint">hab</unclear>, Daß <unclear cert="low" resp="#joint">seind</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>.
+<lb n="17"/><unclear cert="low" resp="#joint">freündt</unclear> <unclear cert="low" resp="#joint">nachparlich</unclear> zuverdienen <unclear cert="medium" resp="#joint">erbietig</unclear>.
+<lb n="18"/><unclear cert="medium" resp="#joint">Actum</unclear> den <origDate when="1608" resp="#ner"><unclear cert="medium" resp="#joint">xij</unclear>. <unclear cert="medium" resp="#joint">xbris</unclear> <unclear cert="medium" resp="#joint">1608</unclear></origDate>.
+<lb n="19"/><unclear cert="medium" resp="#joint">Verwalter</unclear> der
+<lb n="20"/><unclear cert="medium" resp="#joint">haubtmanschafft</unclear>
+<lb n="21"/>auch <unclear cert="medium" resp="#joint">burgermaister</unclear>
 <lb n="22"/>und rath der statt
-<lb n="23"/> Costantz
+<lb n="23"/> <unclear cert="medium" resp="#joint">Costantz</unclear>
 <pb facs="StadtASG_Missive_3335_13250.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3335_13251.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3335_13252.jpg" n="4"/>
-<lb n="24"/>Denen fromen, fuehrsichtig, ehrsamen und weißen
-<lb n="25"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der statt St.
-<lb n="26"/>Gallen</orgName>, unseren insonders
-<lb n="27"/>lieben und gueten freunden, getruewen
-<lb n="28"/>lieben eydgnoßen und gueten nachpauren.
-<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="24"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">fuehrsichtig</unclear>, <unclear cert="low" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weißen</unclear>
+<lb n="25"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Rhat</unclear> der statt St.
+<lb n="26"/>Gallen</orgName>, <unclear cert="medium" resp="#joint">unseren</unclear> insonders
+<lb n="27"/>lieben <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>, <unclear cert="low" resp="#joint">getruewen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">eydgnoßen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">nachpauren</unclear>.
+<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3559</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Biberach bitten Bürgermeister und Rat zu St. Gallen, die in der Stadt lebende Anna Huthlerin zu zwingen, eine Schuld von 12 Gulden an die Witwe des verstorbenen Biberacher Bürgers Hans Stuelmeister zu begleichen oder sich zu stellen. Bei Weigerung soll sie aus der Stadt ausgewiesen werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Biberach bitten Bürgermeister und Rat zu St. Gallen, die in der Stadt lebende Anna Huthlerin zu zwingen, eine Schuld von 12 Gulden an die Witwe des verstorbenen Biberacher Bürgers Hans Stuelmeister zu begleichen oder sich zu stellen. Bei Weigerung soll sie aus der Stadt ausgewiesen werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Biberach ask Burgomaster and Council of St. Gallen to compel Anna Huthlerin, living in the city, to settle a debt of 12 gulden to the widow of the deceased citizen of Biberach Hans Stuelmeister or to present herself. In case of refusal, she is to be expelled from the city.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -62,32 +63,32 @@
 <lb n="25"/>[]
 <pb facs="StadtASG_Missive_3559_14199.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3559_14200.jpg" n="4"/>
-<lb n="26"/>Denen Ehrsamen und Weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Raht
-<lb n="27"/>der Statt St. Gallen</orgName> etc. Unsern sonderen
-<lb n="28"/>lieben und guoten Freünden etc.
-<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="26"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Ehrsamen</unclear> und <unclear cert="medium" resp="#joint">Weisen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeistern</unclear> und <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="27"/>der Statt St. Gallen</orgName> <unclear cert="low" resp="#joint">etc</unclear>. Unsern <unclear cert="low" resp="#joint">sonderen</unclear>
+<lb n="28"/>lieben <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">Freünden</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 <pb facs="StadtASG_Missive_3559_14201.jpg" n="5"/>
-<lb n="30"/>Edell vest hoch ehrendt fürsichtig ersam unndt
-<lb n="31"/>weiß gepiettende günstige Herren.
-<lb n="32"/>Vor nun mehr ca. 14. wochen habe ich wegen <persName resp="#ner">Anna
-<lb n="33"/>Häßlerin</persName> zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> wohnend, aine supplication
-<lb n="34"/>der gestalten ubergeben, wj ob gleich ain ersamer
-<lb n="35"/>rhatt nah S. Gallen geschriben, und durch <persName resp="#ner">Iunckr
-<lb n="36"/>Hünßingern</persName> herrn Ambts burgermaistern übergeben,
-<lb n="37"/>so habe ich doch von ihr seithero weder bottschafft
-<lb n="38"/>noh meine 120 fl. erlangen mögen, weniger uff
-<lb n="39"/>mein wider erlegen, bschaidt erlanngtt, bitt
-<lb n="40"/>derohalben E. E. Wht. wöllen die Vogecallen by ver-
-<lb n="41"/>liehrung zunfft und burgrecht, sambt ihrer
-<lb n="42"/>tochter alhero citieren, und nitt mehr uß der
-<lb n="43"/>Statt laßen, biß ich bzalt, hab schon bij ainem
-<lb n="44"/>guldin uncosten im Igr. legtt, bitte umb
-<lb n="45"/>vätterliche hilff.
-<lb n="46"/>E. E. Wht. Arme und
-<lb n="47"/>bresthaffte mit-
-<lb n="48"/>burgerin.
-<lb n="49"/><persName role="issuer" resp="#ner">Hannß Baumeist</persName>-
-<lb n="50"/>ers wittib.
+<lb n="30"/><unclear cert="low" resp="#joint">Edell</unclear> <unclear cert="low" resp="#joint">vest</unclear> <unclear cert="low" resp="#joint">hoch</unclear> <unclear cert="low" resp="#joint">ehrendt</unclear> <unclear cert="low" resp="#joint">fürsichtig</unclear> <unclear cert="low" resp="#joint">ersam</unclear> <unclear cert="low" resp="#joint">unndt</unclear>
+<lb n="31"/>weiß <unclear cert="low" resp="#joint">gepiettende</unclear> <unclear cert="low" resp="#joint">günstige</unclear> Herren.
+<lb n="32"/><unclear cert="medium" resp="#joint">Vor</unclear> <unclear cert="medium" resp="#joint">nun</unclear> mehr <unclear cert="low" resp="#joint">ca</unclear>. <unclear cert="low" resp="#joint">14</unclear>. wochen <unclear cert="medium" resp="#joint">habe</unclear> <unclear cert="medium" resp="#joint">ich</unclear> wegen <persName resp="#ner"><unclear cert="medium" resp="#joint">Anna</unclear>
+<lb n="33"/><unclear cert="medium" resp="#joint">Häßlerin</unclear></persName> <unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">S</unclear>. Gallen</placeName> <unclear cert="medium" resp="#joint">wohnend</unclear>, <unclear cert="medium" resp="#joint">aine</unclear> <unclear cert="medium" resp="#joint">supplication</unclear>
+<lb n="34"/>der <unclear cert="medium" resp="#joint">gestalten</unclear> <unclear cert="medium" resp="#joint">ubergeben</unclear>, <unclear cert="medium" resp="#joint">wj</unclear> ob <unclear cert="medium" resp="#joint">gleich</unclear> <unclear cert="medium" resp="#joint">ain</unclear> <unclear cert="medium" resp="#joint">ersamer</unclear>
+<lb n="35"/><unclear cert="medium" resp="#joint">rhatt</unclear> <unclear cert="medium" resp="#joint">nah</unclear> <unclear cert="medium" resp="#joint">S</unclear>. Gallen geschriben, <unclear cert="medium" resp="#joint">und</unclear> durch <persName resp="#ner"><unclear cert="medium" resp="#joint">Iunckr</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">Hünßingern</unclear></persName> herrn <unclear cert="low" resp="#joint">Ambts</unclear> <unclear cert="low" resp="#joint">burgermaistern</unclear> übergeben,
+<lb n="37"/>so habe ich <unclear cert="medium" resp="#joint">doch</unclear> von ihr <unclear cert="medium" resp="#joint">seithero</unclear> <unclear cert="medium" resp="#joint">weder</unclear> bottschafft
+<lb n="38"/><unclear cert="medium" resp="#joint">noh</unclear> <unclear cert="medium" resp="#joint">meine</unclear> <unclear cert="medium" resp="#joint">120</unclear> fl. erlangen mögen, <unclear cert="medium" resp="#joint">weniger</unclear> <unclear cert="medium" resp="#joint">uff</unclear>
+<lb n="39"/>mein wider <unclear cert="low" resp="#joint">erlegen</unclear>, <unclear cert="low" resp="#joint">bschaidt</unclear> <unclear cert="low" resp="#joint">erlanngtt</unclear>, <unclear cert="low" resp="#joint">bitt</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">derohalben</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">wöllen</unclear> die <unclear cert="medium" resp="#joint">Vogecallen</unclear> <unclear cert="medium" resp="#joint">by</unclear> ver-
+<lb n="41"/><unclear cert="medium" resp="#joint">liehrung</unclear> <unclear cert="medium" resp="#joint">zunfft</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">burgrecht</unclear>, sambt <unclear cert="low" resp="#joint">ihrer</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">tochter</unclear> <unclear cert="low" resp="#joint">alhero</unclear> citieren, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">nitt</unclear> <unclear cert="medium" resp="#joint">mehr</unclear> <unclear cert="medium" resp="#joint">uß</unclear> der
+<lb n="43"/>Statt laßen, biß ich <unclear cert="medium" resp="#joint">bzalt</unclear>, hab schon <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">ainem</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">guldin</unclear> <unclear cert="low" resp="#joint">uncosten</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">Igr</unclear>. <unclear cert="low" resp="#joint">legtt</unclear>, <unclear cert="low" resp="#joint">bitte</unclear> umb
+<lb n="45"/><unclear cert="medium" resp="#joint">vätterliche</unclear> hilff.
+<lb n="46"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wht</unclear>. <unclear cert="medium" resp="#joint">Arme</unclear> <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="47"/><unclear cert="medium" resp="#joint">bresthaffte</unclear> mit-
+<lb n="48"/><unclear cert="low" resp="#joint">burgerin</unclear>.
+<lb n="49"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear> <unclear cert="low" resp="#joint">Baumeist</unclear></persName>-
+<lb n="50"/><unclear cert="low" resp="#joint">ers</unclear> <unclear cert="low" resp="#joint">wittib</unclear>.
 <pb facs="StadtASG_Missive_3559_14202.jpg" n="6"/>
 <lb n="51"/>Underthänigß Anmahnen.
 <lb n="52"/>An
@@ -99,46 +100,46 @@
 <lb n="58"/>prodts den <origDate when="1643-07-24" resp="#ner">24. Julij
 <lb n="59"/>a°. 1643</origDate>.
 <pb facs="StadtASG_Missive_3559_14203.jpg" n="7"/>
-<lb n="60"/>Edell vest auch Ehrnvest fuersichtig ehrsam unnd
-<lb n="61"/>weiß gepiettendt groß guenstige Herren.
-<lb n="62"/>Obwohln ich bei zwaijen monatten: wegen <persName resp="#ner">Anna Löhlerin</persName>
-<lb n="63"/>der zeitt zue <placeName resp="#ner">Summerschwilen</placeName> sich aufhaltendt, an
-<lb n="64"/>e. e. wht. demuettig suppliciert, wariber mier
-<lb n="65"/>willfährig intercession an Herrn <orgName ref="stadtasg-actors-148" cert="medium" resp="#ner">Burgermaister
-<lb n="66"/>unnd Rhatt zue Sanct Gallen</orgName> ertheilt, unnd durch
-<lb n="67"/><persName resp="#ner">Simon Huersinger</persName> aigener person, Herrn Ampts-
-<lb n="68"/>burgermaistern aldortten übergeben worden, des-
-<lb n="69"/>noster wehr ich meiner außstendigen zinß,
-<lb n="70"/>in manngell, unnd stundt noch darzue in sörglich-
-<lb n="71"/>ung des von ihr eingethriben, in demme sie
-<lb n="72"/>weder umb gebott, arrest, gehorsames gelüebt,
-<lb n="73"/>andorderung, weniger eines ehrsamen Rhatts
-<lb n="74"/>heimen schriben, nichts gibtt, unnd ganntz wider-
-<lb n="75"/>sätzlichen, ja straffbar erzeiget, unnd im
-<lb n="76"/>wenigsten pariert.
-<lb n="77"/>Hierumben gelangt noch mallen an e. e. v. e. wht.
-<lb n="78"/>mein unnderthänig anrueffen unnd bitten, die-
-<lb n="79"/>selben wöllen mir als einer armen, brest-
-<lb n="80"/>hafften wittibfrawen, mit meinen waißlen, sovill
-<lb n="81"/>hilff erzeigen, damitt ich gleich ehist was mittell
-<lb n="82"/>unnd weeg diß geschehen möchte? zue meiner be-
-<lb n="83"/>zallung unnd erheischender unkösten, theilhafftig
-<lb n="84"/>gemacht, gleich wie nun diß der billichait
-<lb n="85"/>gemeß, also stett es mir mitt meinem
-<lb n="86"/>stündtlichen gebett, demuettig zuebeschulden.
-<lb n="87"/>E. e. v. e. unnd wht.
-<lb n="88"/>arme mit-
-<lb n="89"/>burgerin.
-<lb n="90"/><persName role="issuer" resp="#ner">Hannß Baumeisters</persName> sl.
-<lb n="91"/>wittib im laseret hauß.
+<lb n="60"/><unclear cert="low" resp="#joint">Edell</unclear> <unclear cert="low" resp="#joint">vest</unclear> <unclear cert="low" resp="#joint">auch</unclear> Ehrnvest <unclear cert="medium" resp="#joint">fuersichtig</unclear> <unclear cert="medium" resp="#joint">ehrsam</unclear> unnd
+<lb n="61"/><unclear cert="medium" resp="#joint">weiß</unclear> <unclear cert="medium" resp="#joint">gepiettendt</unclear> groß <unclear cert="medium" resp="#joint">guenstige</unclear> Herren.
+<lb n="62"/><unclear cert="low" resp="#joint">Obwohln</unclear> ich <unclear cert="medium" resp="#joint">bei</unclear> <unclear cert="medium" resp="#joint">zwaijen</unclear> <unclear cert="medium" resp="#joint">monatten</unclear>: wegen <persName resp="#ner"><unclear cert="low" resp="#joint">Anna</unclear> <unclear cert="low" resp="#joint">Löhlerin</unclear></persName>
+<lb n="63"/>der <unclear cert="low" resp="#joint">zeitt</unclear> <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Summerschwilen</unclear></placeName> sich <unclear cert="medium" resp="#joint">aufhaltendt</unclear>, <unclear cert="medium" resp="#joint">an</unclear>
+<lb n="64"/><unclear cert="medium" resp="#joint">e</unclear>. <unclear cert="medium" resp="#joint">e</unclear>. <unclear cert="medium" resp="#joint">wht</unclear>. <unclear cert="medium" resp="#joint">demuettig</unclear> <unclear cert="medium" resp="#joint">suppliciert</unclear>, <unclear cert="medium" resp="#joint">wariber</unclear> <unclear cert="medium" resp="#joint">mier</unclear>
+<lb n="65"/><unclear cert="medium" resp="#joint">willfährig</unclear> <unclear cert="medium" resp="#joint">intercession</unclear> <unclear cert="medium" resp="#joint">an</unclear> Herrn <orgName ref="stadtasg-actors-148" cert="medium" resp="#ner">Burgermaister
+<lb n="66"/>unnd <unclear cert="medium" resp="#joint">Rhatt</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName> ertheilt, unnd <unclear cert="medium" resp="#joint">durch</unclear>
+<lb n="67"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Simon</unclear> <unclear cert="medium" resp="#joint">Huersinger</unclear></persName> <unclear cert="medium" resp="#joint">aigener</unclear> person, Herrn <unclear cert="medium" resp="#joint">Ampts</unclear>-
+<lb n="68"/><unclear cert="medium" resp="#joint">burgermaistern</unclear> <unclear cert="medium" resp="#joint">aldortten</unclear> übergeben <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">des</unclear>-
+<lb n="69"/><unclear cert="low" resp="#joint">noster</unclear> <unclear cert="low" resp="#joint">wehr</unclear> ich <unclear cert="medium" resp="#joint">meiner</unclear> <unclear cert="medium" resp="#joint">außstendigen</unclear> <unclear cert="medium" resp="#joint">zinß</unclear>,
+<lb n="70"/>in <unclear cert="low" resp="#joint">manngell</unclear>, unnd <unclear cert="medium" resp="#joint">stundt</unclear> noch <unclear cert="low" resp="#joint">darzue</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">sörglich</unclear>-
+<lb n="71"/><unclear cert="low" resp="#joint">ung</unclear> <unclear cert="low" resp="#joint">des</unclear> von ihr <unclear cert="medium" resp="#joint">eingethriben</unclear>, in <unclear cert="medium" resp="#joint">demme</unclear> <unclear cert="medium" resp="#joint">sie</unclear>
+<lb n="72"/><unclear cert="medium" resp="#joint">weder</unclear> umb gebott, <unclear cert="low" resp="#joint">arrest</unclear>, <unclear cert="low" resp="#joint">gehorsames</unclear> <unclear cert="low" resp="#joint">gelüebt</unclear>,
+<lb n="73"/><unclear cert="low" resp="#joint">andorderung</unclear>, weniger <unclear cert="low" resp="#joint">eines</unclear> <unclear cert="low" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">Rhatts</unclear>
+<lb n="74"/><unclear cert="low" resp="#joint">heimen</unclear> schriben, <unclear cert="medium" resp="#joint">nichts</unclear> <unclear cert="medium" resp="#joint">gibtt</unclear>, unnd <unclear cert="medium" resp="#joint">ganntz</unclear> wider-
+<lb n="75"/><unclear cert="medium" resp="#joint">sätzlichen</unclear>, <unclear cert="medium" resp="#joint">ja</unclear> straffbar <unclear cert="low" resp="#joint">erzeiget</unclear>, unnd <unclear cert="medium" resp="#joint">im</unclear>
+<lb n="76"/><unclear cert="medium" resp="#joint">wenigsten</unclear> <unclear cert="medium" resp="#joint">pariert</unclear>.
+<lb n="77"/>Hierumben <unclear cert="medium" resp="#joint">gelangt</unclear> noch <unclear cert="low" resp="#joint">mallen</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">wht</unclear>.
+<lb n="78"/>mein <unclear cert="low" resp="#joint">unnderthänig</unclear> <unclear cert="low" resp="#joint">anrueffen</unclear> unnd bitten, die-
+<lb n="79"/>selben <unclear cert="medium" resp="#joint">wöllen</unclear> mir <unclear cert="medium" resp="#joint">als</unclear> einer <unclear cert="medium" resp="#joint">armen</unclear>, <unclear cert="medium" resp="#joint">brest</unclear>-
+<lb n="80"/><unclear cert="medium" resp="#joint">hafften</unclear> <unclear cert="medium" resp="#joint">wittibfrawen</unclear>, <unclear cert="medium" resp="#joint">mit</unclear> meinen <unclear cert="low" resp="#joint">waißlen</unclear>, <unclear cert="low" resp="#joint">sovill</unclear>
+<lb n="81"/>hilff erzeigen, <unclear cert="medium" resp="#joint">damitt</unclear> ich gleich <unclear cert="low" resp="#joint">ehist</unclear> <unclear cert="low" resp="#joint">was</unclear> <unclear cert="low" resp="#joint">mittell</unclear>
+<lb n="82"/>unnd <unclear cert="medium" resp="#joint">weeg</unclear> <unclear cert="medium" resp="#joint">diß</unclear> geschehen <unclear cert="medium" resp="#joint">möchte</unclear>? <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">meiner</unclear> be-
+<lb n="83"/><unclear cert="medium" resp="#joint">zallung</unclear> unnd erheischender <unclear cert="medium" resp="#joint">unkösten</unclear>, <unclear cert="medium" resp="#joint">theilhafftig</unclear>
+<lb n="84"/><unclear cert="medium" resp="#joint">gemacht</unclear>, gleich wie <unclear cert="medium" resp="#joint">nun</unclear> <unclear cert="medium" resp="#joint">diß</unclear> der <unclear cert="medium" resp="#joint">billichait</unclear>
+<lb n="85"/><unclear cert="medium" resp="#joint">gemeß</unclear>, also <unclear cert="medium" resp="#joint">stett</unclear> es <unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">mitt</unclear> <unclear cert="low" resp="#joint">meinem</unclear>
+<lb n="86"/><unclear cert="low" resp="#joint">stündtlichen</unclear> <unclear cert="low" resp="#joint">gebett</unclear>, <unclear cert="low" resp="#joint">demuettig</unclear> <unclear cert="low" resp="#joint">zuebeschulden</unclear>.
+<lb n="87"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">e</unclear>. unnd <unclear cert="low" resp="#joint">wht</unclear>.
+<lb n="88"/><unclear cert="low" resp="#joint">arme</unclear> <unclear cert="low" resp="#joint">mit</unclear>-
+<lb n="89"/><unclear cert="low" resp="#joint">burgerin</unclear>.
+<lb n="90"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear> <unclear cert="low" resp="#joint">Baumeisters</unclear></persName> <unclear cert="low" resp="#joint">sl</unclear>.
+<lb n="91"/><unclear cert="low" resp="#joint">wittib</unclear> im <unclear cert="medium" resp="#joint">laseret</unclear> <unclear cert="medium" resp="#joint">hauß</unclear>.
 <pb facs="StadtASG_Missive_3559_14204.jpg" n="8"/>
-<lb n="92"/>Underthönig anmahnen,
-<lb n="93"/>an
-<lb n="94"/>Herren <orgName role="recipient" resp="#ner">Burgermaister unnd
-<lb n="95"/>Rhatt der Statt Biberach</orgName>.
-<lb n="96"/><persName resp="#ner">Jacob Baümaisters</persName> Witib
-<lb n="97"/>genantt Kütlers thraüen,
-<lb n="98"/>Prod. <origDate when="1643-05-15" resp="#ner">15. Maij. 1643</origDate>.
+<lb n="92"/><unclear cert="low" resp="#joint">Underthönig</unclear> <unclear cert="low" resp="#joint">anmahnen</unclear>,
+<lb n="93"/><unclear cert="low" resp="#joint">an</unclear>
+<lb n="94"/><unclear cert="low" resp="#joint">Herren</unclear> <orgName role="recipient" resp="#ner">Burgermaister unnd
+<lb n="95"/>Rhatt der Statt <unclear cert="medium" resp="#joint">Biberach</unclear></orgName>.
+<lb n="96"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Jacob</unclear> <unclear cert="medium" resp="#joint">Baümaisters</unclear></persName> <unclear cert="medium" resp="#joint">Witib</unclear>
+<lb n="97"/><unclear cert="medium" resp="#joint">genantt</unclear> <unclear cert="medium" resp="#joint">Kütlers</unclear> <unclear cert="medium" resp="#joint">thraüen</unclear>,
+<lb n="98"/>Prod. <origDate when="1643-05-15" resp="#ner"><unclear cert="medium" resp="#joint">15</unclear>. <unclear cert="medium" resp="#joint">Maij</unclear>. <unclear cert="medium" resp="#joint">1643</unclear></origDate>.
 </p>
         </body>
     </text>

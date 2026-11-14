@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3265</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf zwei Schreiben der Augsburger Behörden bezüglich ihres Bürgers Mathes Henden, der in St. Gallen im Dienst steht. Sie teilen mit, dass eine Sache bereits erledigt sei und kein weiterer Prozess nötig ist. Zur Erbschaftssache habe Henden seine Meinung und seinen Gegenbericht schriftlich übergeben, der beigelegt ist. Sie bitten, Henden von weiteren Belästigungen zu verschonen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf zwei Schreiben der Augsburger Behörden bezüglich ihres Bürgers Mathes Henden, der in St. Gallen im Dienst steht. Sie teilen mit, dass eine Sache bereits erledigt sei und kein weiterer Prozess nötig ist. Zur Erbschaftssache habe Henden seine Meinung und seinen Gegenbericht schriftlich übergeben, der beigelegt ist. Sie bitten, Henden von weiteren Belästigungen zu verschonen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to two letters from the Augsburg authorities regarding their citizen Mathes Henden, who is in service in St. Gallen. They state that a matter has already been settled and no further process is necessary. Regarding the inheritance matter, Henden has submitted his opinion and his counter-report in writing, which is enclosed. They ask that Henden be spared from further harassment.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,26 +40,26 @@
 <lb n="3"/>Ehrenveßt Fürsichtig und weiße, Inßonders günßtig gnae-
 <lb n="4"/>dig lieb herren und freündt.
 <lb n="5"/>Wir habend deroselben, wegen ihres angehörig Burgers
-<lb n="6"/><persName resp="#ner">Matheß Henden</persName>, der Zeit bej unß in diensßts sich uffhaltend,
+<lb n="6"/><persName resp="#ner">Matheß Henden</persName>, der Zeit bej unß in <unclear cert="low" resp="#joint">diensßts</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">uffhaltend</unclear>,
 <lb n="7"/>an unß abgangen zwej underschidliche schreiben samt bejlag
-<lb n="8"/>zu recht erhalten, die wir ihme anderß als beladung insinuiern, und
-<lb n="9"/>darbej vernemmen laßen, E. Ve. Gnd und Gst. darüber
-<lb n="10"/>gebuirlich zu beantworten, sonderlich bej ubergab anlaß 
-<lb n="11"/>deß letßten schreibens ihne vor unß selbß bescheid geben heisen,
-<lb n="12"/>welcher unß dar uffhin berichtet daße er die eine
-<lb n="13"/>sach allbereit befreidigert und abgeleinet, daß es weitern
+<lb n="8"/>zu recht erhalten, die wir ihme <unclear cert="low" resp="#joint">anderß</unclear> <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">beladung</unclear> <unclear cert="low" resp="#joint">insinuiern</unclear>, und
+<lb n="9"/>darbej vernemmen laßen, E. Ve. Gnd und <unclear cert="low" resp="#joint">Gst</unclear>. <unclear cert="low" resp="#joint">darüber</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">gebuirlich</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">beantworten</unclear>, sonderlich bej ubergab anlaß 
+<lb n="11"/>deß <unclear cert="low" resp="#joint">letßten</unclear> <unclear cert="low" resp="#joint">schreibens</unclear> <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">selbß</unclear> <unclear cert="low" resp="#joint">bescheid</unclear> <unclear cert="low" resp="#joint">geben</unclear> <unclear cert="low" resp="#joint">heisen</unclear>,
+<lb n="12"/><unclear cert="low" resp="#joint">welcher</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">dar</unclear> <unclear cert="low" resp="#joint">uffhin</unclear> <unclear cert="low" resp="#joint">berichtet</unclear> <unclear cert="low" resp="#joint">daße</unclear> <unclear cert="low" resp="#joint">er</unclear> die <unclear cert="low" resp="#joint">eine</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">allbereit</unclear> <unclear cert="low" resp="#joint">befreidigert</unclear> und abgeleinet, daß es weitern
 <lb n="14"/>processes nit werde bedörffen, So vil aber die Erb-
-<lb n="15"/>schafft sach betreffe hat er unß sein meinung und
-<lb n="16"/>gegenberycht in schrifft übergeben wie E. Ve. Gnd und
+<lb n="15"/>schafft sach betreffe hat er unß <unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">meinung</unclear> und
+<lb n="16"/><unclear cert="low" resp="#joint">gegenberycht</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">schrifft</unclear> <unclear cert="low" resp="#joint">übergeben</unclear> wie <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ve</unclear>. <unclear cert="low" resp="#joint">Gnd</unclear> und
 <lb n="17"/>Gst uß der bejlag zu sehen, darmit E. Ve.
 <lb n="18"/>Gnd und Gst. daß wir seinthalb ferner behelligendt über-
-<lb n="19"/>hebt und entladen verbleiben möchten. Wolten
-<lb n="20"/>deroselben wir zur nachrichtlichen antwortt
-<lb n="21"/>nit verhalten, undt verbleibend
-<lb n="22"/>ihnen zu beweisung aller beliebigen dienßten wol
-<lb n="23"/>gencigt beigethan und geneigt, datt <origDate when="1637-12-10" resp="#ner">den .5. 10.
-<lb n="24"/>Decembri. 1637.</origDate>
-<lb n="25"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
+<lb n="19"/>hebt und <unclear cert="low" resp="#joint">entladen</unclear> <unclear cert="low" resp="#joint">verbleiben</unclear> <unclear cert="low" resp="#joint">möchten</unclear>. <unclear cert="low" resp="#joint">Wolten</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">deroselben</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">zur</unclear> <unclear cert="low" resp="#joint">nachrichtlichen</unclear> <unclear cert="low" resp="#joint">antwortt</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">verhalten</unclear>, <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">verbleibend</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">beweisung</unclear> <unclear cert="low" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">beliebigen</unclear> <unclear cert="low" resp="#joint">dienßten</unclear> <unclear cert="low" resp="#joint">wol</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">gencigt</unclear> <unclear cert="low" resp="#joint">beigethan</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">geneigt</unclear>, <unclear cert="low" resp="#joint">datt</unclear> <origDate when="1637-12-10" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> .<unclear cert="low" resp="#joint">5</unclear>. <unclear cert="low" resp="#joint">10</unclear>.
+<lb n="24"/><unclear cert="low" resp="#joint">Decembri</unclear>. <unclear cert="low" resp="#joint">1637</unclear>.</origDate>
+<lb n="25"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Raht</unclear>
 <lb n="26"/>der Statt St. Gallen.</orgName>
 <lb n="27"/>Den Edlen, hochwolgebornen, Veßten, Ehrenvesten
 <lb n="28"/>Fürsichtigen und weißen <orgName role="recipient" resp="#ner">Pflegern, Burger-
@@ -66,8 +67,8 @@
 <lb n="30"/>unßern sonders günßtig gnedig, lieben herren
 <lb n="31"/>und Freünden.
 <pb facs="StadtASG_Missive_3265_12956.jpg" n="2"/>
-<lb n="32"/>An <origPlace ref="stadtasg-places-135" cert="medium" resp="#ner">Augspurg</origPlace> <origDate when="1637" resp="#ner">5. xbr. 1637</origDate>. <persName role="issuer" resp="#ner">Matheus Hauß</persName>
-<lb n="33"/>betrl.
+<lb n="32"/>An <origPlace ref="stadtasg-places-135" cert="medium" resp="#ner">Augspurg</origPlace> <origDate when="1637" resp="#ner">5. <unclear cert="low" resp="#joint">xbr</unclear>. <unclear cert="low" resp="#joint">1637</unclear></origDate>. <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Matheus</unclear> <unclear cert="low" resp="#joint">Hauß</unclear></persName>
+<lb n="33"/><unclear cert="low" resp="#joint">betrl</unclear>.
 </p>
         </body>
     </text>

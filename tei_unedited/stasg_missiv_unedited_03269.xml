@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3269</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat zu Appenzell senden Bürgermeister und Rat zu St. Gallen die zuvor geliehenen Flaschenzüge und Seile zurück, mit denen die neuen Glocken in den Turm gehoben wurden. Sie bedanken sich für die freundliche Nachbarschaftshilfe und bieten ihrerseits in allen Fällen Unterstützung an.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat zu Appenzell senden Bürgermeister und Rat zu St. Gallen die zuvor geliehenen Flaschenzüge und Seile zurück, mit denen die neuen Glocken in den Turm gehoben wurden. Sie bedanken sich für die freundliche Nachbarschaftshilfe und bieten ihrerseits in allen Fällen Unterstützung an.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council of Appenzell return to the Burgomaster and Council of St. Gallen the previously borrowed pulley blocks and ropes with which the new bells were hoisted into the Turm. They thank them for the friendly neighborly assistance and offer their own support in all cases.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,7 +35,7 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3269_12969.jpg" n="1"/>
-<lb n="1"/>Unser freündt: nachbarlich willig dienst, und waß
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">nachbarlich</unclear> willig dienst, und waß
 <lb n="2"/>wir liebs und guots vermuegendt, zuvor. From fuersichtig
 <lb n="3"/>ersam wueyß, insonders guot frundt, und gethruew
 <lb n="4"/>lieb nachparen.
@@ -45,8 +46,8 @@
 <lb n="9"/>wir euch hiemit bi zeigeren diß, widerumb
 <lb n="10"/>übersenden thuondt, und vmb söllige bewißne dienst
 <lb n="11"/>und guotthat, ganz freündt: nachbarlichen, und zum
-<lb n="12"/>höchsten bedanckhen thuon, mit disem hingegen erbiette
-<lb n="13"/>wann wir üch, in allen begebenheiten was dienst:
+<lb n="12"/>höchsten bedanckhen thuon, mit disem <unclear cert="low" resp="#joint">hingegen</unclear> <unclear cert="low" resp="#joint">erbiette</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">wann</unclear> wir <unclear cert="low" resp="#joint">üch</unclear>, in allen begebenheiten was dienst:
 <lb n="14"/>nachbarliches erweißen khondte, wir vniß so schuld:
 <lb n="15"/>alß willig erkhanen, auch den höchsten Gott bittende,
 <lb n="16"/>das er vns samendtlichen ein guot gsundt, fridsames,
@@ -61,8 +62,8 @@
 <lb n="22"/>Den frommen, fürsichtigen, ersammen, undt
 <lb n="23"/>weyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister. und Rath der
 <lb n="24"/>loblichen Statt. St: Gallen</orgName>, unßeren in-
-<lb n="25"/>sonders guotten fründen. und woluerthruowten,
-<lb n="26"/>lieben Nachbauren.
+<lb n="25"/>sonders guotten fründen. und <unclear cert="low" resp="#joint">woluerthruowten</unclear>,
+<lb n="26"/><unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">Nachbauren</unclear>.
 </p>
         </body>
     </text>

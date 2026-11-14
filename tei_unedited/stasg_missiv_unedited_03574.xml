@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3574</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Hoffmann und Rat zu Bernau im Rintal bitten Bürgermeister und Rat zu St. Gallen, auf die dortige Bürgerin Barbara Indermüller einzuwirken. Diese habe ihren Ehemann, den Handwerker Bartholomäus Indermüller, verlassen und sich in St. Gallen niedergelassen. Sie sei dort sehr unruhig und gefährlich geworden. Die Bernauer bitten, sie zur Vernunft zu bringen oder in ihre Heimat zurückzuweisen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Hoffmann und Rat zu Bernau im Rintal bitten Bürgermeister und Rat zu St. Gallen, auf die dortige Bürgerin Barbara Indermüller einzuwirken. Diese habe ihren Ehemann, den Handwerker Bartholomäus Indermüller, verlassen und sich in St. Gallen niedergelassen. Sie sei dort sehr unruhig und gefährlich geworden. Die Bernauer bitten, sie zur Vernunft zu bringen oder in ihre Heimat zurückzuweisen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Hoffmann and Council of Bernau im Rintal ask the Burgomaster and Council of St. Gallen to exert influence on the citizen Barbara Indermüller there. She has left her husband, the craftsman Bartholomäus Indermüller, and settled in St. Gallen. She has become very unruly and dangerous there. The Bernau authorities ask that she be brought to reason or sent back to her home.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -80,12 +81,12 @@
 <lb n="43"/>Rintall
 <pb facs="StadtASG_Missive_3574_14255.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3574_14256.jpg" n="4"/>
-<lb n="44"/>Dem Woledlen Hochgelehrten Fuersichti
-<lb n="45"/>und Wisen Guenstig geehrten Herrn
-<lb n="46"/><persName role="recipient" resp="#ner">Sebastian Schobingern</persName> der artzny Doctorn,
-<lb n="47"/>In Zyt амbts <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgern Meistern der
-<lb n="48"/>loblichen Statt Sant</orgName> Gallen Meinem Insonders
-<lb n="49"/>Hochgeehrtem H. Schwagern.
+<lb n="44"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">Woledlen</unclear> Hochgelehrten Fuersichti
+<lb n="45"/>und <unclear cert="low" resp="#joint">Wisen</unclear> <unclear cert="low" resp="#joint">Guenstig</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="low" resp="#joint">Herrn</unclear>
+<lb n="46"/><persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Sebastian</unclear> <unclear cert="low" resp="#joint">Schobingern</unclear></persName> der <unclear cert="low" resp="#joint">artzny</unclear> <unclear cert="low" resp="#joint">Doctorn</unclear>,
+<lb n="47"/><unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">Zyt</unclear> <unclear cert="low" resp="#joint">амbts</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgern</unclear> <unclear cert="low" resp="#joint">Meistern</unclear> <unclear cert="low" resp="#joint">der</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">loblichen</unclear> Statt <unclear cert="low" resp="#joint">Sant</unclear></orgName> <unclear cert="low" resp="#joint">Gallen</unclear> <unclear cert="low" resp="#joint">Meinem</unclear> <unclear cert="low" resp="#joint">Insonders</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">Hochgeehrtem</unclear> <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">Schwagern</unclear>.
 <lb n="50"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
 </p>
         </body>

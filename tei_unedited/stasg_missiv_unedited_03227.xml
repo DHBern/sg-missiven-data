@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3227</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau ersuchen Bürgermeister und Rat zu St. Gallen, ihren Bürger David Müller anzuhalten, die offene Schuldigkeit an ihren Verwandten Hans Andre Finckh zu Newstein zu leisten. Sie verweisen auf eine frühere Intercession und bitten um Beendigung des Rechtsstreits, um weiteren Anlauf zu vermeiden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau ersuchen Bürgermeister und Rat zu St. Gallen, ihren Bürger David Müller anzuhalten, die offene Schuldigkeit an ihren Verwandten Hans Andre Finckh zu Newstein zu leisten. Sie verweisen auf eine frühere Intercession und bitten um Beendigung des Rechtsstreits, um weiteren Anlauf zu vermeiden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Lindau request Burgomaster and Council of St. Gallen to restrain their citizen David Müller to pay the outstanding debt to their relative Hans Andre Finckh of Newstein. They refer to a previous intercession and ask for the conclusion of the legal dispute to avoid further trouble.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,184 +36,184 @@
 <p>
 <pb facs="StadtASG_Missive_3227_12757.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst zuvor, Fürsichtig,
-<lb n="2"/>Ersam, und weise, besunders liebe guete freünd und
-<lb n="3"/>nachbarn,
-<lb n="4"/>E. Ft. haben wir schon vor zwayen Monaten unsers
-<lb n="5"/>hie mitverwandtens junckher <persName resp="#ner">Hanß Andre Finckhens</persName>
-<lb n="6"/>zue <placeName ref="stadtasg-places-26" cert="medium" resp="#ner">Newstain</placeName>, schrifftlich anlangen, sambt ainer wolge=
-<lb n="7"/>mainten intercession, wider ihren burger <persName resp="#ner">David Müllern</persName>
-<lb n="8"/>betreffend, freündnachbarlich zuekomen lassen:
-<lb n="9"/>Dieweilen wir aber biß dato, noch kain antwort
-<lb n="10"/>oder anderwertige nachrichtung empfangen,
-<lb n="11"/>Hinwider aber Er J. Finckh die sach bei unß treibt,
-<lb n="12"/>und wir, für unß selbs auch, derselben endtschafft
-<lb n="13"/>gern sehen möchten: Alß ersuechen E. Ft. wir
-<lb n="14"/>hiemit nochmal ganz ernstlichen flaißes, sie wöllen
-<lb n="15"/>ermelten ihren burger <persName resp="#ner">David Müllern</persName> dahin anhalten,
-<lb n="16"/>daß Er die offenbahre schuldigkait laisten, und dardurch
-<lb n="17"/>sowol E. Ft. alß unß, fernern anlauffs, entübrign
+<lb n="2"/>Ersam, und weise, <unclear cert="medium" resp="#joint">besunders</unclear> liebe guete <unclear cert="medium" resp="#joint">freünd</unclear> und
+<lb n="3"/><unclear cert="medium" resp="#joint">nachbarn</unclear>,
+<lb n="4"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Ft</unclear>. haben wir <unclear cert="low" resp="#joint">schon</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">zwayen</unclear> <unclear cert="low" resp="#joint">Monaten</unclear> <unclear cert="low" resp="#joint">unsers</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">hie</unclear> <unclear cert="low" resp="#joint">mitverwandtens</unclear> <unclear cert="low" resp="#joint">junckher</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Andre</unclear> <unclear cert="low" resp="#joint">Finckhens</unclear></persName>
+<lb n="6"/><unclear cert="low" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-26" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Newstain</unclear></placeName>, schrifftlich <unclear cert="low" resp="#joint">anlangen</unclear>, <unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">ainer</unclear> <unclear cert="low" resp="#joint">wolge=</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">mainten</unclear> <unclear cert="low" resp="#joint">intercession</unclear>, <unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">ihren</unclear> burger <persName resp="#ner"><unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Müllern</unclear></persName>
+<lb n="8"/>betreffend, <unclear cert="low" resp="#joint">freündnachbarlich</unclear> <unclear cert="low" resp="#joint">zuekomen</unclear> lassen:
+<lb n="9"/><unclear cert="medium" resp="#joint">Dieweilen</unclear> wir <unclear cert="medium" resp="#joint">aber</unclear> biß dato, <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">kain</unclear> <unclear cert="medium" resp="#joint">antwort</unclear>
+<lb n="10"/>oder <unclear cert="low" resp="#joint">anderwertige</unclear> <unclear cert="low" resp="#joint">nachrichtung</unclear> empfangen,
+<lb n="11"/><unclear cert="medium" resp="#joint">Hinwider</unclear> aber Er <unclear cert="medium" resp="#joint">J</unclear>. <unclear cert="medium" resp="#joint">Finckh</unclear> <unclear cert="medium" resp="#joint">die</unclear> <unclear cert="medium" resp="#joint">sach</unclear> <unclear cert="medium" resp="#joint">bei</unclear> <unclear cert="medium" resp="#joint">unß</unclear> treibt,
+<lb n="12"/>und <unclear cert="medium" resp="#joint">wir</unclear>, für <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">selbs</unclear> auch, <unclear cert="medium" resp="#joint">derselben</unclear> <unclear cert="medium" resp="#joint">endtschafft</unclear>
+<lb n="13"/>gern sehen möchten: <unclear cert="low" resp="#joint">Alß</unclear> <unclear cert="low" resp="#joint">ersuechen</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">nochmal</unclear> ganz <unclear cert="medium" resp="#joint">ernstlichen</unclear> <unclear cert="medium" resp="#joint">flaißes</unclear>, sie <unclear cert="medium" resp="#joint">wöllen</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">ermelten</unclear> ihren burger <persName resp="#ner"><unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Müllern</unclear></persName> dahin anhalten,
+<lb n="16"/>daß Er die <unclear cert="medium" resp="#joint">offenbahre</unclear> <unclear cert="medium" resp="#joint">schuldigkait</unclear> <unclear cert="medium" resp="#joint">laisten</unclear>, und <unclear cert="low" resp="#joint">dardurch</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">sowol</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">unß</unclear>, <unclear cert="low" resp="#joint">fernern</unclear> <unclear cert="low" resp="#joint">anlauffs</unclear>, <unclear cert="low" resp="#joint">entübrign</unclear>
 <lb n="18"/>thue,
-<lb n="19"/>Welches, neben der selbs billigkait wir anderwerts
-<lb n="20"/>zuebeschulden ganz willig, auch sonst E. Ft. zue aller
-<lb n="21"/>nachbarlicher diensterzaigung, wol beigethon ver=
-<lb n="22"/>bleiben, Datum den. <origDate when="1637-04-21" resp="#ner">21. Aprilis Ao 1637</origDate>.
-<lb n="23"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister und Rhat
-<lb n="24"/>der Stat Lindaw</orgName>,
+<lb n="19"/>Welches, neben der <unclear cert="medium" resp="#joint">selbs</unclear> <unclear cert="medium" resp="#joint">billigkait</unclear> wir <unclear cert="low" resp="#joint">anderwerts</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">zuebeschulden</unclear> ganz willig, auch sonst <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">aller</unclear>
+<lb n="21"/>nachbarlicher <unclear cert="medium" resp="#joint">diensterzaigung</unclear>, wol <unclear cert="medium" resp="#joint">beigethon</unclear> ver=
+<lb n="22"/>bleiben, Datum den. <origDate when="1637-04-21" resp="#ner">21. <unclear cert="medium" resp="#joint">Aprilis</unclear> <unclear cert="medium" resp="#joint">Ao</unclear> <unclear cert="medium" resp="#joint">1637</unclear></origDate>.
+<lb n="23"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaister</unclear> und Rhat
+<lb n="24"/>der <unclear cert="medium" resp="#joint">Stat</unclear> Lindaw</orgName>,
 <pb facs="StadtASG_Missive_3227_12758.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3227_12759.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3227_12760.jpg" n="4"/>
 <lb n="25"/>Den fürsichtigen, ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="26"/>maister und Rhat der Stat St. Gallen</orgName>, unsern be-
-<lb n="27"/>sonders lieben freünden und gueten Nachbaurn.
-<lb n="28"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="26"/>maister und <unclear cert="low" resp="#joint">Rhat</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Stat</unclear> <unclear cert="low" resp="#joint">St</unclear>. Gallen</orgName>, <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="27"/><unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">freünden</unclear> und <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">Nachbaurn</unclear>.
+<lb n="28"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 <pb facs="StadtASG_Missive_3227_12761.jpg" n="5"/>
-<lb n="29"/>Edel, Ehnvest, Fuersichtig, Ersam und Weiß,
-<lb n="30"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat</orgName>, guenstige liebe herren,
-<lb n="31"/>Dieselbige haben sich ohnvergeßlich zuentsinnen, oder
-<lb n="32"/>auf abfaelliges entweichen, auß dem Schatß protocoll
-<lb n="33"/>und den actis, widerumb zuerinneren, daß A° 1630.
-<lb n="34"/>über den abwesenden <persName resp="#ner">Hieron. Mellin</persName>, burgern alhie,
-<lb n="35"/>ein schuldgericht gehalten. Daß under andern
-<lb n="36"/>glaeubigern auch von mir ein schuld- und pfandbrief
-<lb n="37"/>auß <persName resp="#ner">Jacob Aeschpringers</persName> hauß (so der schuldner
-<lb n="38"/><persName resp="#ner">Mellin</persName> hernach eingehabt) de dato. 1611. lautend,
-<lb n="39"/>gerichtlich fuergebracht, wie gleichfals von herren
-<lb n="40"/><persName resp="#ner">David Muellern</persName> burgern zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen,</placeName> ein eben-
-<lb n="41"/>maessiger schuld: und pfandbrief (über besagts
-<lb n="42"/>Aeschpringers hauß sagend, aber allererst A° 1615.
-<lb n="43"/>datiert) eingelegt. Darueber ich nun bei er-
-<lb n="44"/>oeffneter End- und außtheilungs Urtheil, in die
-<lb n="45"/>andere, <persName resp="#ner">Mattheiß Mueller</persName> burger alhie, inn die dritte,
-<lb n="46"/>und gedachter <persName resp="#ner">Davidt Mueller</persName> inn die vierte stell
-<lb n="47"/>(alles der aelte nach) gesezt worden. Alß
-<lb n="48"/>aber hernach bei der angestelten Execution solher
-<lb n="49"/>Urtheil, deß berechtigten <persName resp="#ner">Hieron. Mellins</persName> vermoegen,
-<lb n="50"/>auf vergantung, niemand kauffen woellen, und
-<lb n="51"/>derowegen die juengere glaeubiger, eintweder
-<lb n="52"/>solch haab und guet ahnnemen, und die vorgehende
-<lb n="53"/>aeltere Creditorn darvon außloeßen, oder sich, inn
-<lb n="54"/>verweigerung deßßen, ihrer forderung begeben
-<lb n="55"/>sollen: Haben die dem David Muellern nach-
-<lb n="56"/>gehende glaeubiger (. benandtlich <persName resp="#ner">Bonaventura Mellins</persName>
+<lb n="29"/><unclear cert="low" resp="#joint">Edel</unclear>, <unclear cert="low" resp="#joint">Ehnvest</unclear>, <unclear cert="low" resp="#joint">Fuersichtig</unclear>, <unclear cert="low" resp="#joint">Ersam</unclear> und <unclear cert="medium" resp="#joint">Weiß</unclear>,
+<lb n="30"/><unclear cert="medium" resp="#joint">herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat</orgName>, <unclear cert="medium" resp="#joint">guenstige</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> herren,
+<lb n="31"/>Dieselbige haben sich <unclear cert="medium" resp="#joint">ohnvergeßlich</unclear> <unclear cert="medium" resp="#joint">zuentsinnen</unclear>, oder
+<lb n="32"/>auf <unclear cert="medium" resp="#joint">abfaelliges</unclear> <unclear cert="medium" resp="#joint">entweichen</unclear>, <unclear cert="medium" resp="#joint">auß</unclear> dem <unclear cert="low" resp="#joint">Schatß</unclear> <unclear cert="low" resp="#joint">protocoll</unclear>
+<lb n="33"/>und den actis, widerumb <unclear cert="low" resp="#joint">zuerinneren</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">A°</unclear> <unclear cert="low" resp="#joint">1630</unclear>.
+<lb n="34"/>über den <unclear cert="low" resp="#joint">abwesenden</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hieron</unclear>. <unclear cert="low" resp="#joint">Mellin</unclear></persName>, <unclear cert="low" resp="#joint">burgern</unclear> <unclear cert="low" resp="#joint">alhie</unclear>,
+<lb n="35"/>ein <unclear cert="medium" resp="#joint">schuldgericht</unclear> gehalten. <unclear cert="medium" resp="#joint">Daß</unclear> under andern
+<lb n="36"/><unclear cert="medium" resp="#joint">glaeubigern</unclear> auch von mir ein <unclear cert="medium" resp="#joint">schuld</unclear>- und pfandbrief
+<lb n="37"/><unclear cert="low" resp="#joint">auß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Jacob</unclear> <unclear cert="low" resp="#joint">Aeschpringers</unclear></persName> <unclear cert="low" resp="#joint">hauß</unclear> (<unclear cert="low" resp="#joint">so</unclear> der <unclear cert="medium" resp="#joint">schuldner</unclear>
+<lb n="38"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Mellin</unclear></persName> hernach <unclear cert="medium" resp="#joint">eingehabt</unclear>) de dato. 1611. <unclear cert="medium" resp="#joint">lautend</unclear>,
+<lb n="39"/><unclear cert="medium" resp="#joint">gerichtlich</unclear> <unclear cert="medium" resp="#joint">fuergebracht</unclear>, wie <unclear cert="medium" resp="#joint">gleichfals</unclear> von herren
+<lb n="40"/><persName resp="#ner"><unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Muellern</unclear></persName> <unclear cert="medium" resp="#joint">burgern</unclear> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen,</placeName> ein eben-
+<lb n="41"/><unclear cert="medium" resp="#joint">maessiger</unclear> <unclear cert="medium" resp="#joint">schuld</unclear>: und pfandbrief (über <unclear cert="medium" resp="#joint">besagts</unclear>
+<lb n="42"/><unclear cert="medium" resp="#joint">Aeschpringers</unclear> <unclear cert="medium" resp="#joint">hauß</unclear> <unclear cert="medium" resp="#joint">sagend</unclear>, aber <unclear cert="medium" resp="#joint">allererst</unclear> <unclear cert="medium" resp="#joint">A°</unclear> <unclear cert="medium" resp="#joint">1615</unclear>.
+<lb n="43"/><unclear cert="medium" resp="#joint">datiert</unclear>) eingelegt. <unclear cert="low" resp="#joint">Darueber</unclear> ich <unclear cert="medium" resp="#joint">nun</unclear> bei <unclear cert="medium" resp="#joint">er</unclear>-
+<lb n="44"/><unclear cert="medium" resp="#joint">oeffneter</unclear> End- und <unclear cert="medium" resp="#joint">außtheilungs</unclear> <unclear cert="medium" resp="#joint">Urtheil</unclear>, <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">die</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">andere</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Mattheiß</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName> burger alhie, <unclear cert="medium" resp="#joint">inn</unclear> die dritte,
+<lb n="46"/>und <unclear cert="medium" resp="#joint">gedachter</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Davidt</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName> <unclear cert="medium" resp="#joint">inn</unclear> die <unclear cert="medium" resp="#joint">vierte</unclear> <unclear cert="medium" resp="#joint">stell</unclear>
+<lb n="47"/>(<unclear cert="medium" resp="#joint">alles</unclear> der <unclear cert="medium" resp="#joint">aelte</unclear> nach) <unclear cert="medium" resp="#joint">gesezt</unclear> <unclear cert="medium" resp="#joint">worden</unclear>. <unclear cert="medium" resp="#joint">Alß</unclear>
+<lb n="48"/><unclear cert="medium" resp="#joint">aber</unclear> hernach bei der angestelten Execution <unclear cert="medium" resp="#joint">solher</unclear>
+<lb n="49"/>Urtheil, <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">berechtigten</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Hieron</unclear>. <unclear cert="medium" resp="#joint">Mellins</unclear></persName> <unclear cert="medium" resp="#joint">vermoegen</unclear>,
+<lb n="50"/>auf <unclear cert="medium" resp="#joint">vergantung</unclear>, niemand <unclear cert="medium" resp="#joint">kauffen</unclear> <unclear cert="medium" resp="#joint">woellen</unclear>, und
+<lb n="51"/><unclear cert="medium" resp="#joint">derowegen</unclear> die <unclear cert="medium" resp="#joint">juengere</unclear> <unclear cert="medium" resp="#joint">glaeubiger</unclear>, <unclear cert="medium" resp="#joint">eintweder</unclear>
+<lb n="52"/><unclear cert="medium" resp="#joint">solch</unclear> <unclear cert="medium" resp="#joint">haab</unclear> und guet <unclear cert="medium" resp="#joint">ahnnemen</unclear>, und die <unclear cert="medium" resp="#joint">vorgehende</unclear>
+<lb n="53"/><unclear cert="medium" resp="#joint">aeltere</unclear> <unclear cert="medium" resp="#joint">Creditorn</unclear> <unclear cert="medium" resp="#joint">darvon</unclear> <unclear cert="medium" resp="#joint">außloeßen</unclear>, oder sich, <unclear cert="medium" resp="#joint">inn</unclear>
+<lb n="54"/><unclear cert="medium" resp="#joint">verweigerung</unclear> <unclear cert="medium" resp="#joint">deßßen</unclear>, <unclear cert="medium" resp="#joint">ihrer</unclear> forderung begeben
+<lb n="55"/>sollen: Haben die dem <unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Muellern</unclear> nach-
+<lb n="56"/>gehende <unclear cert="low" resp="#joint">glaeubiger</unclear> (. <unclear cert="low" resp="#joint">benandtlich</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Bonaventura</unclear> <unclear cert="low" resp="#joint">Mellins</unclear></persName>
 <pb facs="StadtASG_Missive_3227_12762.jpg" n="6"/>
-<lb n="57"/>relicti, <persName resp="#ner">Loth Buechler</persName> und <persName resp="#ner">Ulrich Mezler</persName>, alle nun=
-<lb n="58"/>mehr seelig) sich ihrer ansprach genzlich entschlagen,
-<lb n="59"/>und ist also die ordnung deß ehenamens haab
-<lb n="60"/>und guetts, oder verzeichung deß zuespruchs an
-<lb n="61"/>mehrbemelten <persName resp="#ner">David Muellern</persName> komen. Uff
-<lb n="62"/>welches hin, und gehabten genuegsamen, bedacht,
-<lb n="63"/>sein <persName resp="#ner">David Muellers</persName> anwald, <persName resp="#ner">Mattheus Reiser</persName>
-<lb n="64"/>burger alhie, inn seines principalen namen,
-<lb n="65"/>daß ganz berechtigt vermoegen (mit namen
-<lb n="66"/>daß <persName resp="#ner">Lehenmayeris</persName> hauß, sampt sein <persName resp="#ner">Thomman
-<lb n="67"/>Mollins</persName> haußrhat, kessel und werckhzeug) an=
-<lb n="68"/>genomen, und die vorgehende creditorn (deren
-<lb n="69"/>capitalia und betagte zinß, demal. 454 f. be=
-<lb n="70"/>loffen) zubezahlen versprochen. Wie dann
-<lb n="71"/>deme zufolg, Er <persName resp="#ner">David Mueller</persName> noch im <date resp="#ner">Novembris
-<lb n="72"/>besagtes. 1631. jahrs</date>, inn abschlag solcher summ
-<lb n="73"/>140 f. 5 kr, inn die canzlei alhie erlegt, darvon
-<lb n="74"/>man gemeiner statt alhie (fuer steuren, kelch=
-<lb n="75"/>hueterlohn, auch gerichts= und executions kosten)
-<lb n="76"/>76 f 53 kr. dem grossen allmosen, (alß ersten
-<lb n="77"/>creditor inn der urtheil) fuer zinß. 8 f. 34 kr. und
-<lb n="78"/>mir fuer zinß. 40 f. so dann <persName resp="#ner">Matthiß Muellern</persName>
-<lb n="79"/>15 f. zinß bezalt. Und inn ansehung diser
-<lb n="80"/>ersten, richtigen zinßzahlung auch, weil ich solch
-<lb n="81"/>capital (da mir es schon, <persName resp="#ner">David Mueller</persName> uff
-<lb n="82"/>abkuendung, bezalt hette) ohne das wider
-<lb n="83"/>anderwerts wider anlegen muessen, hab ich
+<lb n="57"/><unclear cert="medium" resp="#joint">relicti</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Loth</unclear> <unclear cert="medium" resp="#joint">Buechler</unclear></persName> und <persName resp="#ner"><unclear cert="medium" resp="#joint">Ulrich</unclear> <unclear cert="medium" resp="#joint">Mezler</unclear></persName>, alle <unclear cert="medium" resp="#joint">nun=</unclear>
+<lb n="58"/><unclear cert="medium" resp="#joint">mehr</unclear> <unclear cert="medium" resp="#joint">seelig</unclear>) <unclear cert="medium" resp="#joint">sich</unclear> <unclear cert="medium" resp="#joint">ihrer</unclear> <unclear cert="medium" resp="#joint">ansprach</unclear> <unclear cert="medium" resp="#joint">genzlich</unclear> <unclear cert="medium" resp="#joint">entschlagen</unclear>,
+<lb n="59"/>und ist also die ordnung deß <unclear cert="low" resp="#joint">ehenamens</unclear> <unclear cert="low" resp="#joint">haab</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guetts</unclear>, <unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">verzeichung</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">zuespruchs</unclear> an
+<lb n="61"/><unclear cert="low" resp="#joint">mehrbemelten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">David</unclear> <unclear cert="low" resp="#joint">Muellern</unclear></persName> <unclear cert="low" resp="#joint">komen</unclear>. <unclear cert="low" resp="#joint">Uff</unclear>
+<lb n="62"/>welches hin, und <unclear cert="medium" resp="#joint">gehabten</unclear> <unclear cert="medium" resp="#joint">genuegsamen</unclear>, bedacht,
+<lb n="63"/>sein <persName resp="#ner"><unclear cert="low" resp="#joint">David</unclear> <unclear cert="low" resp="#joint">Muellers</unclear></persName> <unclear cert="low" resp="#joint">anwald</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Mattheus</unclear> <unclear cert="low" resp="#joint">Reiser</unclear></persName>
+<lb n="64"/><unclear cert="low" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">alhie</unclear>, <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">seines</unclear> principalen <unclear cert="low" resp="#joint">namen</unclear>,
+<lb n="65"/>daß <unclear cert="low" resp="#joint">ganz</unclear> <unclear cert="low" resp="#joint">berechtigt</unclear> <unclear cert="low" resp="#joint">vermoegen</unclear> (<unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">namen</unclear>
+<lb n="66"/><unclear cert="low" resp="#joint">daß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Lehenmayeris</unclear></persName> <unclear cert="low" resp="#joint">hauß</unclear>, sampt sein <persName resp="#ner"><unclear cert="medium" resp="#joint">Thomman</unclear>
+<lb n="67"/><unclear cert="medium" resp="#joint">Mollins</unclear></persName> <unclear cert="medium" resp="#joint">haußrhat</unclear>, kessel und <unclear cert="medium" resp="#joint">werckhzeug</unclear>) an=
+<lb n="68"/><unclear cert="medium" resp="#joint">genomen</unclear>, und die vorgehende <unclear cert="medium" resp="#joint">creditorn</unclear> (deren
+<lb n="69"/>capitalia und <unclear cert="medium" resp="#joint">betagte</unclear> <unclear cert="medium" resp="#joint">zinß</unclear>, <unclear cert="medium" resp="#joint">demal</unclear>. 454 <unclear cert="medium" resp="#joint">f</unclear>. <unclear cert="medium" resp="#joint">be=</unclear>
+<lb n="70"/><unclear cert="medium" resp="#joint">loffen</unclear>) <unclear cert="medium" resp="#joint">zubezahlen</unclear> versprochen. <unclear cert="low" resp="#joint">Wie</unclear> <unclear cert="low" resp="#joint">dann</unclear>
+<lb n="71"/>deme <unclear cert="low" resp="#joint">zufolg</unclear>, Er <persName resp="#ner"><unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName> noch im <date resp="#ner"><unclear cert="medium" resp="#joint">Novembris</unclear>
+<lb n="72"/><unclear cert="medium" resp="#joint">besagtes</unclear>. <unclear cert="medium" resp="#joint">1631</unclear>. <unclear cert="medium" resp="#joint">jahrs</unclear></date>, <unclear cert="medium" resp="#joint">inn</unclear> abschlag <unclear cert="medium" resp="#joint">solcher</unclear> <unclear cert="medium" resp="#joint">summ</unclear>
+<lb n="73"/>140 <unclear cert="medium" resp="#joint">f</unclear>. <unclear cert="medium" resp="#joint">5</unclear> kr, <unclear cert="medium" resp="#joint">inn</unclear> die <unclear cert="medium" resp="#joint">canzlei</unclear> alhie erlegt, <unclear cert="medium" resp="#joint">darvon</unclear>
+<lb n="74"/><unclear cert="medium" resp="#joint">man</unclear> <unclear cert="medium" resp="#joint">gemeiner</unclear> statt <unclear cert="medium" resp="#joint">alhie</unclear> (<unclear cert="medium" resp="#joint">fuer</unclear> <unclear cert="medium" resp="#joint">steuren</unclear>, <unclear cert="medium" resp="#joint">kelch=</unclear>
+<lb n="75"/><unclear cert="medium" resp="#joint">hueterlohn</unclear>, auch <unclear cert="medium" resp="#joint">gerichts=</unclear> und executions <unclear cert="medium" resp="#joint">kosten</unclear>)
+<lb n="76"/><unclear cert="medium" resp="#joint">76</unclear> <unclear cert="medium" resp="#joint">f</unclear> <unclear cert="medium" resp="#joint">53</unclear> kr. dem grossen allmosen, (<unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">ersten</unclear>
+<lb n="77"/><unclear cert="medium" resp="#joint">creditor</unclear> <unclear cert="medium" resp="#joint">inn</unclear> der urtheil) <unclear cert="medium" resp="#joint">fuer</unclear> <unclear cert="medium" resp="#joint">zinß</unclear>. 8 <unclear cert="medium" resp="#joint">f</unclear>. 34 kr. und
+<lb n="78"/><unclear cert="medium" resp="#joint">mir</unclear> <unclear cert="medium" resp="#joint">fuer</unclear> <unclear cert="medium" resp="#joint">zinß</unclear>. 40 <unclear cert="medium" resp="#joint">f</unclear>. so dann <persName resp="#ner"><unclear cert="medium" resp="#joint">Matthiß</unclear> <unclear cert="medium" resp="#joint">Muellern</unclear></persName>
+<lb n="79"/>15 <unclear cert="medium" resp="#joint">f</unclear>. <unclear cert="medium" resp="#joint">zinß</unclear> <unclear cert="medium" resp="#joint">bezalt</unclear>. Und <unclear cert="medium" resp="#joint">inn</unclear> <unclear cert="medium" resp="#joint">ansehung</unclear> <unclear cert="medium" resp="#joint">diser</unclear>
+<lb n="80"/>ersten, richtigen <unclear cert="medium" resp="#joint">zinßzahlung</unclear> auch, weil ich solch
+<lb n="81"/>capital (da mir es <unclear cert="medium" resp="#joint">schon</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName> <unclear cert="medium" resp="#joint">uff</unclear>
+<lb n="82"/><unclear cert="medium" resp="#joint">abkuendung</unclear>, <unclear cert="medium" resp="#joint">bezalt</unclear> hette) ohne das wider
+<lb n="83"/><unclear cert="medium" resp="#joint">anderwerts</unclear> wider anlegen <unclear cert="medium" resp="#joint">muessen</unclear>, hab ich
 <pb facs="StadtASG_Missive_3227_12763.jpg" n="7"/>
-<lb n="84"/>solche. 200 fl. noch ferner bei ihme ligen, und die
-<lb n="85"/>verzinßung fortlauffen laßßen. Eß ist aber
-<lb n="86"/>er herr <persName resp="#ner">David Mueller</persName> letstlich der verpensionierung
-<lb n="87"/>mueed worden, und hat mich umb zwen, verfallne
-<lb n="88"/>zinß (darzue nunmehr der drite kompt) nach mehr=
-<lb n="89"/>feltiger ahnmahnung, auf neün, haußzinß (welche
-<lb n="90"/>von <persName resp="#ner">Jacob Vestenmeyers</persName> hauß gefallen, und von
-<lb n="91"/>obbesagtem, <persName resp="#ner">Mathes Keißern</persName>, eingezogen werden
-<lb n="92"/>sollen) weisen, auch benebens dafuer halten,
-<lb n="93"/>woellen, daß ich sein Persohn gar nicht, sondern
-<lb n="94"/>allein des <persName resp="#ner">Vestenmeyers</persName> hauß zesuech habe.
-<lb n="95"/>Darmit ich mich aber nicht setigen oder ab=
-<lb n="96"/>fertigen laßßen koennen. Dann weil er bei
-<lb n="97"/>der Execution deß hauß, den haußrath und
-<lb n="98"/>werckhzeüg, uff gewin oder verlust angenommen,
-<lb n="99"/>und dargegen die losung der ihme vorgehenden
-<lb n="100"/>posten, versprochen: so hat er hiemit sein
-<lb n="101"/>Persohn, den gemeinen, Rechten und der Stat <placeName resp="#ner">Lindow</placeName>
-<lb n="102"/>brauch nach, krefftigclich verbunden, er habe gleich
-<lb n="103"/>vortheil od nachtheil bei solchem schatz erlangt.
-<lb n="104"/>Sonsten wann er sich der ußlosung (wie
-<lb n="105"/>die ihme nachgehende glaübiger gethan) entschlagen,
-<lb n="106"/>und sie <persName resp="#ner">Mathee Muellern</persName> ueberlaßßen hete, were
-<lb n="107"/>ich schon lengst umb hauptguet und zinß bezalt,
-<lb n="108"/>daß er also keinen fueg hat, mich allein auf
-<lb n="109"/>daß hauß nunmehr zeweisen: Bevorab
-<lb n="110"/>weil mehrbesagter Keiser berichtet, daß er
+<lb n="84"/>solche. 200 <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">noch</unclear> ferner <unclear cert="medium" resp="#joint">bei</unclear> ihme <unclear cert="medium" resp="#joint">ligen</unclear>, und die
+<lb n="85"/><unclear cert="medium" resp="#joint">verzinßung</unclear> fortlauffen <unclear cert="medium" resp="#joint">laßßen</unclear>. <unclear cert="medium" resp="#joint">Eß</unclear> ist aber
+<lb n="86"/>er herr <persName resp="#ner"><unclear cert="medium" resp="#joint">David</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName> <unclear cert="medium" resp="#joint">letstlich</unclear> der verpensionierung
+<lb n="87"/><unclear cert="medium" resp="#joint">mueed</unclear> <unclear cert="medium" resp="#joint">worden</unclear>, und hat mich umb <unclear cert="low" resp="#joint">zwen</unclear>, <unclear cert="low" resp="#joint">verfallne</unclear>
+<lb n="88"/><unclear cert="low" resp="#joint">zinß</unclear> (<unclear cert="low" resp="#joint">darzue</unclear> nunmehr der <unclear cert="medium" resp="#joint">drite</unclear> <unclear cert="medium" resp="#joint">kompt</unclear>) nach <unclear cert="medium" resp="#joint">mehr=</unclear>
+<lb n="89"/><unclear cert="medium" resp="#joint">feltiger</unclear> <unclear cert="medium" resp="#joint">ahnmahnung</unclear>, auf <unclear cert="low" resp="#joint">neün</unclear>, <unclear cert="low" resp="#joint">haußzinß</unclear> (<unclear cert="low" resp="#joint">welche</unclear>
+<lb n="90"/>von <persName resp="#ner">Jacob <unclear cert="medium" resp="#joint">Vestenmeyers</unclear></persName> <unclear cert="medium" resp="#joint">hauß</unclear> gefallen, und <unclear cert="medium" resp="#joint">von</unclear>
+<lb n="91"/><unclear cert="medium" resp="#joint">obbesagtem</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Mathes</unclear> <unclear cert="medium" resp="#joint">Keißern</unclear></persName>, eingezogen <unclear cert="medium" resp="#joint">werden</unclear>
+<lb n="92"/><unclear cert="medium" resp="#joint">sollen</unclear>) weisen, auch <unclear cert="medium" resp="#joint">benebens</unclear> <unclear cert="medium" resp="#joint">dafuer</unclear> halten,
+<lb n="93"/><unclear cert="medium" resp="#joint">woellen</unclear>, daß <unclear cert="medium" resp="#joint">ich</unclear> sein <unclear cert="low" resp="#joint">Persohn</unclear> <unclear cert="low" resp="#joint">gar</unclear> nicht, <unclear cert="medium" resp="#joint">sondern</unclear>
+<lb n="94"/>allein <unclear cert="low" resp="#joint">des</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Vestenmeyers</unclear></persName> <unclear cert="low" resp="#joint">hauß</unclear> <unclear cert="low" resp="#joint">zesuech</unclear> habe.
+<lb n="95"/><unclear cert="medium" resp="#joint">Darmit</unclear> ich mich aber nicht <unclear cert="medium" resp="#joint">setigen</unclear> oder ab=
+<lb n="96"/><unclear cert="medium" resp="#joint">fertigen</unclear> <unclear cert="medium" resp="#joint">laßßen</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>. Dann weil er <unclear cert="medium" resp="#joint">bei</unclear>
+<lb n="97"/>der Execution deß <unclear cert="medium" resp="#joint">hauß</unclear>, den <unclear cert="medium" resp="#joint">haußrath</unclear> und
+<lb n="98"/><unclear cert="medium" resp="#joint">werckhzeüg</unclear>, <unclear cert="medium" resp="#joint">uff</unclear> gewin oder verlust <unclear cert="medium" resp="#joint">angenommen</unclear>,
+<lb n="99"/>und <unclear cert="low" resp="#joint">dargegen</unclear> die <unclear cert="medium" resp="#joint">losung</unclear> der <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">vorgehenden</unclear>
+<lb n="100"/><unclear cert="medium" resp="#joint">posten</unclear>, <unclear cert="medium" resp="#joint">versprochen</unclear>: so hat er <unclear cert="medium" resp="#joint">hiemit</unclear> sein
+<lb n="101"/><unclear cert="medium" resp="#joint">Persohn</unclear>, den gemeinen, <unclear cert="medium" resp="#joint">Rechten</unclear> und <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Stat</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Lindow</unclear></placeName>
+<lb n="102"/><unclear cert="low" resp="#joint">brauch</unclear> nach, <unclear cert="medium" resp="#joint">krefftigclich</unclear> <unclear cert="medium" resp="#joint">verbunden</unclear>, er habe gleich
+<lb n="103"/><unclear cert="medium" resp="#joint">vortheil</unclear> <unclear cert="medium" resp="#joint">od</unclear> nachtheil <unclear cert="medium" resp="#joint">bei</unclear> solchem <unclear cert="medium" resp="#joint">schatz</unclear> erlangt.
+<lb n="104"/><unclear cert="medium" resp="#joint">Sonsten</unclear> wann er sich der <unclear cert="medium" resp="#joint">ußlosung</unclear> (wie
+<lb n="105"/>die <unclear cert="medium" resp="#joint">ihme</unclear> nachgehende <unclear cert="medium" resp="#joint">glaübiger</unclear> <unclear cert="medium" resp="#joint">gethan</unclear>) <unclear cert="medium" resp="#joint">entschlagen</unclear>,
+<lb n="106"/>und <unclear cert="medium" resp="#joint">sie</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Mathee</unclear> <unclear cert="medium" resp="#joint">Muellern</unclear></persName> <unclear cert="medium" resp="#joint">ueberlaßßen</unclear> <unclear cert="medium" resp="#joint">hete</unclear>, were
+<lb n="107"/>ich <unclear cert="medium" resp="#joint">schon</unclear> <unclear cert="medium" resp="#joint">lengst</unclear> umb <unclear cert="medium" resp="#joint">hauptguet</unclear> und <unclear cert="medium" resp="#joint">zinß</unclear> <unclear cert="medium" resp="#joint">bezalt</unclear>,
+<lb n="108"/>daß er also keinen <unclear cert="medium" resp="#joint">fueg</unclear> hat, mich allein auf
+<lb n="109"/><unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">hauß</unclear> nunmehr <unclear cert="low" resp="#joint">zeweisen</unclear>: <unclear cert="low" resp="#joint">Bevorab</unclear>
+<lb n="110"/><unclear cert="low" resp="#joint">weil</unclear> <unclear cert="low" resp="#joint">mehrbesagter</unclear> <unclear cert="low" resp="#joint">Keiser</unclear> <unclear cert="low" resp="#joint">berichtet</unclear>, daß er
 <pb facs="StadtASG_Missive_3227_12764.jpg" n="8"/>
-<lb n="111"/>vom gemeltem hauß (welches er allein dar-
-<lb n="112"/>umb haußleüth eüngeraumbt, damit es von
-<lb n="113"/>den soldaten nicht gar, wie andern lahren
-<lb n="114"/>haüsern gschehen, verdetriben werde) nichtzit
-<lb n="115"/>von haußzinß zuhoffen oder aufzuheben habe,
-<lb n="116"/>Solchem nach hab ich ihme <persName resp="#ner">Dauid Müllern</persName> solches
-<lb n="117"/>alles durch schreiben sub dato. <date resp="#ner">29. Octobris a° 1636</date>.
-<lb n="118"/>zuogemueth gefuehrt, und nicht allein, die zwen
-<lb n="119"/>langst verfallne zinß nochmalen ernstlich begert,
-<lb n="120"/>sonder ihme auch das capital, solches sampt
-<lb n="121"/>demselbßdann pro rata weiters erlaüffenden
-<lb n="122"/>zinß, Jner halber Jahrsfrist zubezahlen, auf-
-<lb n="123"/>gekündt: So hat aber sein <persName resp="#ner">Müllers</persName> hauß-
-<lb n="124"/>fraw (weil er damal nit wol auf war) durch
-<lb n="125"/>ihren sohn oder tochterman vilgemeltem <persName resp="#ner">Raifer</persName>
-<lb n="126"/>schreiben laßsen, Jr man, od haußwürth sei
-<lb n="127"/>nicht mächtig gewesen, ohn ihren willen daß
-<lb n="128"/><persName resp="#ner">Bestenmajers</persName> hauß alhir auf der ganth zukauffen,
-<lb n="129"/>oder anzunemmen. Welches mich nit
-<lb n="130"/>wenig befrembdt, dweil er herr <persName resp="#ner">Müller</persName> kein
-<lb n="131"/>bevogter man, sonder ein hern dienner und
-<lb n="132"/>freijer burger, deme hoffentlich sein weib
-<lb n="133"/>nicht zum vogt gesezt, weniger befuegt ist,
-<lb n="134"/>ihres manns sechs järige und vor Oberkeit
-<lb n="135"/>abgehandelte contract iezo allererst, mit
-<lb n="136"/>dergleichen außfluchten umbzustoßen,
+<lb n="111"/><unclear cert="medium" resp="#joint">vom</unclear> <unclear cert="medium" resp="#joint">gemeltem</unclear> <unclear cert="medium" resp="#joint">hauß</unclear> (welches er allein <unclear cert="medium" resp="#joint">dar</unclear>-
+<lb n="112"/><unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">haußleüth</unclear> <unclear cert="medium" resp="#joint">eüngeraumbt</unclear>, damit es <unclear cert="medium" resp="#joint">von</unclear>
+<lb n="113"/>den soldaten <unclear cert="medium" resp="#joint">nicht</unclear> gar, wie andern <unclear cert="medium" resp="#joint">lahren</unclear>
+<lb n="114"/><unclear cert="medium" resp="#joint">haüsern</unclear> <unclear cert="medium" resp="#joint">gschehen</unclear>, <unclear cert="medium" resp="#joint">verdetriben</unclear> werde) <unclear cert="low" resp="#joint">nichtzit</unclear>
+<lb n="115"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">haußzinß</unclear> <unclear cert="low" resp="#joint">zuhoffen</unclear> oder aufzuheben habe,
+<lb n="116"/><unclear cert="medium" resp="#joint">Solchem</unclear> nach hab ich ihme <persName resp="#ner"><unclear cert="medium" resp="#joint">Dauid</unclear> <unclear cert="medium" resp="#joint">Müllern</unclear></persName> solches
+<lb n="117"/>alles durch schreiben sub dato. <date resp="#ner">29. Octobris <unclear cert="medium" resp="#joint">a°</unclear> <unclear cert="medium" resp="#joint">1636</unclear></date>.
+<lb n="118"/><unclear cert="medium" resp="#joint">zuogemueth</unclear> <unclear cert="medium" resp="#joint">gefuehrt</unclear>, und nicht allein, die zwen
+<lb n="119"/><unclear cert="medium" resp="#joint">langst</unclear> <unclear cert="medium" resp="#joint">verfallne</unclear> <unclear cert="medium" resp="#joint">zinß</unclear> <unclear cert="medium" resp="#joint">nochmalen</unclear> ernstlich <unclear cert="medium" resp="#joint">begert</unclear>,
+<lb n="120"/>sonder ihme auch <unclear cert="medium" resp="#joint">das</unclear> <unclear cert="medium" resp="#joint">capital</unclear>, solches sampt
+<lb n="121"/><unclear cert="low" resp="#joint">demselbßdann</unclear> pro rata <unclear cert="low" resp="#joint">weiters</unclear> <unclear cert="low" resp="#joint">erlaüffenden</unclear>
+<lb n="122"/><unclear cert="low" resp="#joint">zinß</unclear>, <unclear cert="low" resp="#joint">Jner</unclear> <unclear cert="low" resp="#joint">halber</unclear> <unclear cert="low" resp="#joint">Jahrsfrist</unclear> <unclear cert="low" resp="#joint">zubezahlen</unclear>, auf-
+<lb n="123"/><unclear cert="medium" resp="#joint">gekündt</unclear>: So hat aber sein <persName resp="#ner"><unclear cert="medium" resp="#joint">Müllers</unclear></persName> <unclear cert="medium" resp="#joint">hauß</unclear>-
+<lb n="124"/><unclear cert="medium" resp="#joint">fraw</unclear> (<unclear cert="medium" resp="#joint">weil</unclear> er <unclear cert="medium" resp="#joint">damal</unclear> nit wol auf <unclear cert="medium" resp="#joint">war</unclear>) durch
+<lb n="125"/>ihren <unclear cert="medium" resp="#joint">sohn</unclear> oder <unclear cert="medium" resp="#joint">tochterman</unclear> <unclear cert="medium" resp="#joint">vilgemeltem</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Raifer</unclear></persName>
+<lb n="126"/>schreiben <unclear cert="low" resp="#joint">laßsen</unclear>, <unclear cert="low" resp="#joint">Jr</unclear> <unclear cert="low" resp="#joint">man</unclear>, <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">haußwürth</unclear> <unclear cert="low" resp="#joint">sei</unclear>
+<lb n="127"/>nicht mächtig gewesen, ohn <unclear cert="medium" resp="#joint">ihren</unclear> willen <unclear cert="medium" resp="#joint">daß</unclear>
+<lb n="128"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Bestenmajers</unclear></persName> <unclear cert="medium" resp="#joint">hauß</unclear> <unclear cert="medium" resp="#joint">alhir</unclear> <unclear cert="medium" resp="#joint">auf</unclear> der <unclear cert="medium" resp="#joint">ganth</unclear> <unclear cert="medium" resp="#joint">zukauffen</unclear>,
+<lb n="129"/>oder <unclear cert="medium" resp="#joint">anzunemmen</unclear>. Welches mich nit
+<lb n="130"/>wenig befrembdt, <unclear cert="medium" resp="#joint">dweil</unclear> er herr <persName resp="#ner">Müller</persName> <unclear cert="medium" resp="#joint">kein</unclear>
+<lb n="131"/><unclear cert="medium" resp="#joint">bevogter</unclear> man, sonder ein <unclear cert="medium" resp="#joint">hern</unclear> <unclear cert="medium" resp="#joint">dienner</unclear> und
+<lb n="132"/><unclear cert="medium" resp="#joint">freijer</unclear> burger, <unclear cert="medium" resp="#joint">deme</unclear> <unclear cert="medium" resp="#joint">hoffentlich</unclear> sein <unclear cert="medium" resp="#joint">weib</unclear>
+<lb n="133"/>nicht zum vogt <unclear cert="medium" resp="#joint">gesezt</unclear>, weniger <unclear cert="medium" resp="#joint">befuegt</unclear> ist,
+<lb n="134"/><unclear cert="medium" resp="#joint">ihres</unclear> <unclear cert="medium" resp="#joint">manns</unclear> <unclear cert="medium" resp="#joint">sechs</unclear> <unclear cert="medium" resp="#joint">järige</unclear> und <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">Oberkeit</unclear>
+<lb n="135"/><unclear cert="low" resp="#joint">abgehandelte</unclear> <unclear cert="low" resp="#joint">contract</unclear> <unclear cert="low" resp="#joint">iezo</unclear> <unclear cert="low" resp="#joint">allererst</unclear>, mit
+<lb n="136"/><unclear cert="low" resp="#joint">dergleichen</unclear> <unclear cert="low" resp="#joint">außfluchten</unclear> <unclear cert="low" resp="#joint">umbzustoßen</unclear>,
 <pb facs="StadtASG_Missive_3227_12765.jpg" n="9"/>
-<lb n="137"/>Wann dann obstehnder verlauff allzumahl
-<lb n="138"/>bei E. Wht. und den deputirten verhandelt worden
-<lb n="139"/>und sie derowegen schuldig sein, mich bei ihrem
+<lb n="137"/><unclear cert="medium" resp="#joint">Wann</unclear> dann <unclear cert="medium" resp="#joint">obstehnder</unclear> <unclear cert="medium" resp="#joint">verlauff</unclear> <unclear cert="medium" resp="#joint">allzumahl</unclear>
+<lb n="138"/><unclear cert="medium" resp="#joint">bei</unclear> <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wht</unclear>. und den <unclear cert="low" resp="#joint">deputirten</unclear> verhandelt worden
+<lb n="139"/>und <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">derowegen</unclear> <unclear cert="medium" resp="#joint">schuldig</unclear> <unclear cert="medium" resp="#joint">sein</unclear>, <unclear cert="medium" resp="#joint">mich</unclear> <unclear cert="medium" resp="#joint">bei</unclear> ihrem
 <lb n="140"/>urtheil und der execution von oberkeit wegen,
-<lb n="141"/>wuerckhlich handzuhaben. Alß gelangt
-<lb n="142"/>ann dieselbe E. Wht. mein ganz dienst und
-<lb n="143"/>frueendtliche bitt, sie woellen diß mein nottwendig
-<lb n="144"/>anlangen einem Edlen Wolweißen Rhat loblicher
-<lb n="145"/>Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> ohnverlengt uebersenden, und
-<lb n="146"/>sie darbei nachbarlich ersuechen, daß sie folg
-<lb n="147"/>alhier ergangner urtheil und execution, offer=
-<lb n="148"/>nanten <persName resp="#ner">David Miller</persName>, zu fueeinstelliger bezahlung
-<lb n="149"/>der nunmehr verfallnen 3. zinßen, und dann,
-<lb n="150"/>ueber ein viertel jar zu ebenmeßiger abstattung
-<lb n="151"/>deß hauptguets der. 200 fl. durch oberkeitliche mittel
-<lb n="152"/>vermoegen und anhalten thuen,
-<lb n="153"/>Solches neben der selbst billigkeit umb beede Staet
-<lb n="154"/>mueglichster dingen, widerumb dienst: und
-<lb n="155"/>danckhbarlich zubeschulden, will ich jederzeit so
-<lb n="156"/>ohnvergessen so ohngestart erfunden werden,
-<lb n="157"/>mich damit bevehlende,
-<lb n="158"/>E. Wht.
-<lb n="159"/>Dienstwilliger
-<lb n="160"/><persName role="issuer" resp="#ner">Hanß Andreas Hueber</persName> mp.
+<lb n="141"/><unclear cert="medium" resp="#joint">wuerckhlich</unclear> <unclear cert="medium" resp="#joint">handzuhaben</unclear>. <unclear cert="medium" resp="#joint">Alß</unclear> gelangt
+<lb n="142"/><unclear cert="medium" resp="#joint">ann</unclear> dieselbe <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wht</unclear>. mein ganz dienst und
+<lb n="143"/><unclear cert="medium" resp="#joint">frueendtliche</unclear> bitt, <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">woellen</unclear> diß mein <unclear cert="medium" resp="#joint">nottwendig</unclear>
+<lb n="144"/>anlangen <unclear cert="medium" resp="#joint">einem</unclear> Edlen <unclear cert="medium" resp="#joint">Wolweißen</unclear> <unclear cert="medium" resp="#joint">Rhat</unclear> <unclear cert="medium" resp="#joint">loblicher</unclear>
+<lb n="145"/>Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">St</unclear>. <unclear cert="medium" resp="#joint">Gallen</unclear></placeName> <unclear cert="medium" resp="#joint">ohnverlengt</unclear> <unclear cert="medium" resp="#joint">uebersenden</unclear>, und
+<lb n="146"/><unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">darbei</unclear> <unclear cert="medium" resp="#joint">nachbarlich</unclear> <unclear cert="medium" resp="#joint">ersuechen</unclear>, daß sie <unclear cert="medium" resp="#joint">folg</unclear>
+<lb n="147"/>alhier ergangner urtheil und execution, <unclear cert="low" resp="#joint">offer=</unclear>
+<lb n="148"/><unclear cert="low" resp="#joint">nanten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">David</unclear> <unclear cert="low" resp="#joint">Miller</unclear></persName>, zu <unclear cert="medium" resp="#joint">fueeinstelliger</unclear> bezahlung
+<lb n="149"/>der nunmehr <unclear cert="medium" resp="#joint">verfallnen</unclear> 3. <unclear cert="medium" resp="#joint">zinßen</unclear>, und dann,
+<lb n="150"/><unclear cert="medium" resp="#joint">ueber</unclear> ein viertel jar zu <unclear cert="medium" resp="#joint">ebenmeßiger</unclear> abstattung
+<lb n="151"/>deß <unclear cert="medium" resp="#joint">hauptguets</unclear> der. <unclear cert="low" resp="#joint">200</unclear> <unclear cert="low" resp="#joint">fl</unclear>. durch oberkeitliche mittel
+<lb n="152"/><unclear cert="medium" resp="#joint">vermoegen</unclear> und <unclear cert="medium" resp="#joint">anhalten</unclear> <unclear cert="medium" resp="#joint">thuen</unclear>,
+<lb n="153"/>Solches neben der <unclear cert="medium" resp="#joint">selbst</unclear> billigkeit <unclear cert="medium" resp="#joint">umb</unclear> beede <unclear cert="medium" resp="#joint">Staet</unclear>
+<lb n="154"/><unclear cert="medium" resp="#joint">mueglichster</unclear> dingen, <unclear cert="medium" resp="#joint">widerumb</unclear> dienst: und
+<lb n="155"/><unclear cert="medium" resp="#joint">danckhbarlich</unclear> <unclear cert="medium" resp="#joint">zubeschulden</unclear>, will ich jederzeit so
+<lb n="156"/><unclear cert="low" resp="#joint">ohnvergessen</unclear> so <unclear cert="medium" resp="#joint">ohngestart</unclear> erfunden werden,
+<lb n="157"/><unclear cert="medium" resp="#joint">mich</unclear> damit <unclear cert="low" resp="#joint">bevehlende</unclear>,
+<lb n="158"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="159"/><unclear cert="low" resp="#joint">Dienstwilliger</unclear>
+<lb n="160"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Andreas</unclear> <unclear cert="low" resp="#joint">Hueber</unclear></persName> <unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_3227_12766.jpg" n="10"/>
 <pb facs="StadtASG_Missive_3227_12767.jpg" n="11"/>
 <pb facs="StadtASG_Missive_3227_12768.jpg" n="12"/>
 <lb n="161"/>An
 <lb n="162"/>Einen Ers: Wolweisen <orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">Rhat
 <lb n="163"/>der Statt Lindaw</orgName>,
-<lb n="164"/>Dienst, und berichtliches anlangen
-<lb n="165"/>Vonn
-<lb n="166"/><persName role="issuer" resp="#ner">Hanß Andreas Finckh</persName> zue
-<lb n="167"/><placeName resp="#ner">Senfftnaw</placeName>,
-<lb n="168"/><persName role="issuer" resp="#ner">David Müllern</persName> zue
+<lb n="164"/>Dienst, und <unclear cert="low" resp="#joint">berichtliches</unclear> <unclear cert="low" resp="#joint">anlangen</unclear>
+<lb n="165"/><unclear cert="low" resp="#joint">Vonn</unclear>
+<lb n="166"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Andreas</unclear> <unclear cert="low" resp="#joint">Finckh</unclear></persName> <unclear cert="low" resp="#joint">zue</unclear>
+<lb n="167"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Senfftnaw</unclear></placeName>,
+<lb n="168"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">David</unclear> <unclear cert="low" resp="#joint">Müllern</unclear></persName> <unclear cert="low" resp="#joint">zue</unclear>
 <lb n="169"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName> betref:
 </p>
         </body>

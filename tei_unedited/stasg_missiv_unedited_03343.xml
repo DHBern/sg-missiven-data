@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3343</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, die Erben des Hauptmanns Ludwig Ziegler in einer Erbschaftssache zu unterstützen. Die verstorbene Elisabetha Schlumpf habe sich kurz vor ihrem Tod in das St. Galler Spital verpfändet. Die Zieglerischen Enkelinnen beanspruchen jedoch einen Teil des Nachlasses, da die Großmutter sie unzureichend bedacht habe. Schaffhausen ordnet den Hauptmann Hans Jörg von Mandach als Gesandten ab, um eine gütliche Einigung zu erzielen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, die Erben des Hauptmanns Ludwig Ziegler in einer Erbschaftssache zu unterstützen. Die verstorbene Elisabetha Schlumpf habe sich kurz vor ihrem Tod in das St. Galler Spital verpfändet. Die Zieglerischen Enkelinnen beanspruchen jedoch einen Teil des Nachlasses, da die Großmutter sie unzureichend bedacht habe. Schaffhausen ordnet den Hauptmann Hans Jörg von Mandach als Gesandten ab, um eine gütliche Einigung zu erzielen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen ask Burgomaster and Council of St. Gallen to support the heirs of Captain Ludwig Ziegler in an inheritance matter. The deceased Elisabetha Schlumpf had pledged herself to the St. Gallen hospital shortly before her death. However, the Ziegler granddaughters claim a part of the estate, as the grandmother had provided for them insufficiently. Schaffhausen appoints Captain Hans Jörg von Mandach as envoy to achieve an amicable settlement.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,17 +40,17 @@
 <lb n="3"/>sichtig, Ehrsamb und Weyß, innsonders guet Freünd
 <lb n="4"/>und getreüw lieb Eydtgnoßen.
 <lb n="5"/>Uns hat ein adeliche freündtschafft unsers geliebten
-<lb n="6"/>burgers, deß edlen und vostvesten, hauptman
-<lb n="7"/><persName resp="#ner">Ludwig Zieglers</persName>, so sich vor etwas jahren in koenigl
-<lb n="8"/>frantzoesische kriegsdienst begeben, gehorsamblich
+<lb n="6"/>burgers, deß edlen und <unclear cert="low" resp="#joint">vostvesten</unclear>, <unclear cert="low" resp="#joint">hauptman</unclear>
+<lb n="7"/><persName resp="#ner">Ludwig Zieglers</persName>, so sich <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">etwas</unclear> <unclear cert="low" resp="#joint">jahren</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">koenigl</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">frantzoesische</unclear> <unclear cert="low" resp="#joint">kriegsdienst</unclear> begeben, gehorsamblich
 <lb n="9"/>fürbringen und erinnern laßen, waßgstaltn wey-
 <lb n="10"/>lund eüwer burgerin, frauw <persName resp="#ner">Elisabetha Schlumpffin</persName>,
 <lb n="11"/>besagt deß unsern geliebte schwiger selig, etwan
 <lb n="12"/>ohngefahr bey einem par monaten vor ihrem toedt-
-<lb n="13"/>lichen hinscheiden, sich mit darstreckung all ihres
+<lb n="13"/>lichen hinscheiden, sich mit <unclear cert="low" resp="#joint">darstreckung</unclear> <unclear cert="low" resp="#joint">all</unclear> ihres
 <lb n="14"/>zeitlichen haab und guets, in eüwern spittahl ver-
-<lb n="15"/>pfruendet und verleibdinget, seye zwar sein
-<lb n="16"/>hauptmann <persName resp="#ner">Ludwig Zieglers</persName> (: als abwesenden :)
+<lb n="15"/>pfruendet und verleibdinget, seye <unclear cert="low" resp="#joint">zwar</unclear> <unclear cert="low" resp="#joint">sein</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">hauptmann</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Ludwig</unclear> <unclear cert="low" resp="#joint">Zieglers</unclear></persName> (: als abwesenden :)
 <lb n="17"/>kindern quasi vormündern hiebevor wüßent gemacht
 <lb n="18"/>worden, das noch etwas kleidungen vorhanden,
 <lb n="19"/>so ihnen, mittelst abstattung etwelcher hierauff
@@ -61,35 +62,35 @@
 <lb n="25"/>die harr verzogen, seye solches jedoch keiner andern
 <lb n="26"/>ursach oder verhinderung beschehen, alß das mehr-
 <lb n="27"/>bemelter hauptmann <persName resp="#ner">Ziegler</persName> nit bey land, sonder
-<lb n="28"/>obverstandner maßen im kriegswesen so weyt ab-
+<lb n="28"/><unclear cert="low" resp="#joint">obverstandner</unclear> maßen im kriegswesen so weyt ab-
 <lb n="29"/>seits, deßen bericht man aber vorderist hierüber
 <lb n="30"/>erwarten wollen. Darumben dann auch gegen
 <pb facs="StadtASG_Missive_3343_13290.jpg" n="2"/>
-<lb n="31"/>euich unsern G. L. E. die unsere sich vorderist dienst-
-<lb n="32"/>lichen woellen entschuldiget haben. Immaßen
+<lb n="31"/><unclear cert="low" resp="#joint">euich</unclear> unsern G. L. E. die unsere sich <unclear cert="low" resp="#joint">vorderist</unclear> dienst-
+<lb n="32"/>lichen woellen entschuldiget haben. <unclear cert="low" resp="#joint">Immaßen</unclear>
 <lb n="33"/>aber ehunbesagte Zieglerische in gepuer darfuer hal-
-<lb n="34"/>ten thuon, das weylund gedachte Schluempffin ihre
-<lb n="35"/>Zieglerische zwey encklin nit gnuogsamb bedacht und
+<lb n="34"/>ten thuon, das <unclear cert="low" resp="#joint">weylund</unclear> gedachte <unclear cert="low" resp="#joint">Schluempffin</unclear> <unclear cert="low" resp="#joint">ihre</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">Zieglerische</unclear> <unclear cert="low" resp="#joint">zwey</unclear> <unclear cert="low" resp="#joint">encklin</unclear> nit gnuogsamb bedacht und
 <lb n="36"/>betrachtet, auch ohne ihres doechtermanns vorwueßen
 <lb n="37"/>nit so gar all ihr haab und guot in ihrem hochen erlebten
 <lb n="38"/>60. jaehrigen alter umb ein leibding von sich geben
 <lb n="39"/>haben solte. Alß wolen sie hiemit lengern umb-
-<lb n="40"/>gang nit nemen, vorweyßern dieß, auch unsern son-
-<lb n="41"/>ders getreüwen lieben buerger, junckher hauptmann
-<lb n="42"/><persName resp="#ner">Hanns Joergen von Mandach</persName>, wegen endtlichen auß-
-<lb n="43"/>trags dießer sachen, zuo euich unsern G. L. E. abzuo-
-<lb n="44"/>ordnen, umb verhoffenlich zuoerlangen, das in an-
-<lb n="45"/>sehung der natuerlichen billigkeit, vorberuehrten enck-
-<lb n="46"/>linen, nit allein die obangezogene geringschaetzige
+<lb n="40"/>gang nit nemen, <unclear cert="low" resp="#joint">vorweyßern</unclear> dieß, <unclear cert="low" resp="#joint">auch</unclear> unsern <unclear cert="low" resp="#joint">son</unclear>-
+<lb n="41"/><unclear cert="low" resp="#joint">ders</unclear> <unclear cert="low" resp="#joint">getreüwen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">buerger</unclear>, <unclear cert="low" resp="#joint">junckher</unclear> <unclear cert="low" resp="#joint">hauptmann</unclear>
+<lb n="42"/><persName resp="#ner"><unclear cert="low" resp="#joint">Hanns</unclear> <unclear cert="low" resp="#joint">Joergen</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Mandach</unclear></persName>, <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">endtlichen</unclear> <unclear cert="low" resp="#joint">auß</unclear>-
+<lb n="43"/><unclear cert="low" resp="#joint">trags</unclear> <unclear cert="low" resp="#joint">dießer</unclear> <unclear cert="low" resp="#joint">sachen</unclear>, <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">euich</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">abzuo</unclear>-
+<lb n="44"/><unclear cert="low" resp="#joint">ordnen</unclear>, umb verhoffenlich zuoerlangen, das in <unclear cert="low" resp="#joint">an</unclear>-
+<lb n="45"/><unclear cert="low" resp="#joint">sehung</unclear> der <unclear cert="low" resp="#joint">natuerlichen</unclear> <unclear cert="low" resp="#joint">billigkeit</unclear>, <unclear cert="low" resp="#joint">vorberuehrten</unclear> <unclear cert="low" resp="#joint">enck</unclear>-
+<lb n="46"/><unclear cert="low" resp="#joint">linen</unclear>, nit allein die obangezogene geringschaetzige
 <lb n="47"/>kleider, sonder auch wol ein mehrers von ihrem groß-
 <lb n="48"/>muetterlichen erbguot gevolgen und zuogestelt werden
-<lb n="49"/>solle. Wann dann gleichwol sie, die unsere, diese
+<lb n="49"/>solle. Wann dann gleichwol sie, die <unclear cert="low" resp="#joint">unsere</unclear>, diese
 <lb n="50"/>guotte vertraueliche dienstliche confidentz in eüch unser
-<lb n="51"/>G. L. E. gestelt, das wie ihr etwan in andren der-
+<lb n="51"/>G. L. E. gestelt, das wie ihr <unclear cert="low" resp="#joint">etwan</unclear> in andren der-
 <lb n="52"/>gleichen faehlen eüwer bekannte ruehmliche discretion
 <lb n="53"/>scheinen laßen, also werden ihr auch dieß fahls von
 <lb n="54"/>selbsten geneigt sein, die sachen dahin anzuosehen und
-<lb n="55"/>zuoerwegen, das man zuoerkennen habe, die hinder-
+<lb n="55"/><unclear cert="low" resp="#joint">zuoerwegen</unclear>, das man zuoerkennen habe, die hinder-
 <lb n="56"/>laßene rechte natuerliche kinder und encklin nit
 <lb n="57"/>so sehr auß dem hertzen als auß den augen gesetzt
 <lb n="58"/>werden sollen. Daneben aber unserer interces-
@@ -97,25 +98,25 @@
 <lb n="60"/>langt, zuogenießen verhoffet. So haben wir durch
 <lb n="61"/>dießes eüch unsere G. L. E. freündtlich ersuochen woellen,
 <pb facs="StadtASG_Missive_3343_13291.jpg" n="3"/>
-<lb n="62"/>g... ...lin, welchen ohne das von ihrer
-<lb n="63"/>m... ...n erbportion kein sonderliches hin-
-<lb n="64"/>dere... den werden, in günstiger recomendation
-<lb n="65"/>zuhalten, und mit so geneigtem willen zubedenken,
+<lb n="62"/><unclear cert="low" resp="#joint">g</unclear>... ...<unclear cert="low" resp="#joint">lin</unclear>, welchen ohne das von ihrer
+<lb n="63"/><unclear cert="low" resp="#joint">m</unclear>... ...<unclear cert="low" resp="#joint">n</unclear> <unclear cert="low" resp="#joint">erbportion</unclear> kein <unclear cert="low" resp="#joint">sonderliches</unclear> <unclear cert="low" resp="#joint">hin</unclear>-
+<lb n="64"/><unclear cert="low" resp="#joint">dere</unclear>... <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">werden</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">günstiger</unclear> <unclear cert="low" resp="#joint">recomendation</unclear>
+<lb n="65"/><unclear cert="low" resp="#joint">zuhalten</unclear>, und mit so geneigtem willen <unclear cert="low" resp="#joint">zubedenken</unclear>,
 <lb n="66"/>damit dieße umbkosten nicht vergebens ange-
-<lb n="67"/>wendt, sonder sij sich aler bezeigenden affection
-<lb n="68"/>zuruemen, auch dießer unser zum besten gemein-
-<lb n="69"/>ten intercession ersprießlich genoßen zuhaben
-<lb n="70"/>empfinden mögen. Solichs wie es, unser er-
-<lb n="71"/>meßens, der natürlichen billigkeit gemäß, also
+<lb n="67"/>wendt, sonder <unclear cert="low" resp="#joint">sij</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">aler</unclear> <unclear cert="low" resp="#joint">bezeigenden</unclear> affection
+<lb n="68"/><unclear cert="low" resp="#joint">zuruemen</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">dießer</unclear> unser zum besten gemein-
+<lb n="69"/>ten intercession <unclear cert="low" resp="#joint">ersprießlich</unclear> <unclear cert="low" resp="#joint">genoßen</unclear> <unclear cert="low" resp="#joint">zuhaben</unclear>
+<lb n="70"/>empfinden mögen. Solichs <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">es</unclear>, <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="71"/><unclear cert="low" resp="#joint">meßens</unclear>, der natürlichen billigkeit gemäß, also
 <lb n="72"/>wirdt es zumahlen hiedurch angenehmes gefallen,
 <lb n="73"/>den muetterloßen kindlinen aher ein besondere gut-
 <lb n="74"/>thätigkeit erwießen. So wir auf all andere
 <lb n="75"/>begebenheit umb Eüch unser G: L: E: und Eüwer
 <lb n="76"/>angehörige, mit freündt: Eidtgnößischer wol be-
-<lb n="77"/>wogenheit zubeschulden und zuverdienen nit
+<lb n="77"/>wogenheit <unclear cert="low" resp="#joint">zubeschulden</unclear> und <unclear cert="low" resp="#joint">zuverdienen</unclear> nit
 <lb n="78"/>underlaßen wollen. Sie uns hieüber
-<lb n="79"/>samptlichen dem getreüen Gott wol empfehln
-<lb n="80"/>thünd. Datum <origDate when="1639" resp="#ner">den .8. te Februarii,
+<lb n="79"/>samptlichen dem getreüen Gott <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">empfehln</unclear>
+<lb n="80"/><unclear cert="low" resp="#joint">thünd</unclear>. Datum <origDate when="1639" resp="#ner">den .<unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">te</unclear> <unclear cert="low" resp="#joint">Februarii</unclear>,
 <lb n="81"/>Anno .1639.</origDate>
 <lb n="82"/><orgName role="issuer" resp="#ner">Burgermeister und rhat
 <lb n="83"/>der Statt Schaffhausen</orgName>.

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3397</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Landammann und Rat zu Uri, ihrem Boten Hans Ulrich die Rechtshand zu bieten, damit dieser die Schuld von 490 Florin samt Zinsen und Kosten gegenüber dem Hauptmann Johann Strieffler eintreiben könne. Strieffler habe die Summe für überlassene Harnische nicht bezahlt.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Landammann und Rat zu Uri, ihrem Boten Hans Ulrich die Rechtshand zu bieten, damit dieser die Schuld von 490 Florin samt Zinsen und Kosten gegenüber dem Hauptmann Johann Strieffler eintreiben könne. Strieffler habe die Summe für überlassene Harnische nicht bezahlt.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen request Landammann and Council of Uri to offer the right hand to their messenger Hans Ulrich, so that he may collect the debt of 490 florins including interest and costs from Captain Johann Strieffler. Strieffler had not paid the sum for the armor provided.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -69,21 +70,21 @@
 <lb n="33"/>standt sampt billichem Interesse, und erkhantlicher weiß
 <lb n="34"/>auffgeloffnem Costen und schaden, dermahlen einiß
 <pb facs="StadtASG_Missive_3397_13520.jpg" n="2"/>
-<lb n="35"/>contenteirt und befridiget, und er unser bott, ehist
-<lb n="36"/>wid zuo unß abgefertiget werden moege. Das sind
-<lb n="37"/>wier umb eüch, U. G. L. Eüdtgnoßen, in dergleichen,
-<lb n="38"/>und anderen begebenden occasionen freündt- eüdt-
-<lb n="39"/>gnoßisch zuobeschulden so willig, als wier Gott
-<lb n="40"/>bitten, daß er unß samptlich in seinem gnaeden-
-<lb n="41"/>schirm wol befohlen halte. Datum <origDate when="1640-07-30" resp="#ner">den 30ten Julij,
+<lb n="35"/><unclear cert="medium" resp="#joint">contenteirt</unclear> und <unclear cert="medium" resp="#joint">befridiget</unclear>, und er unser bott, <unclear cert="low" resp="#joint">ehist</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">wid</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">abgefertiget</unclear> werden <unclear cert="low" resp="#joint">moege</unclear>. <unclear cert="low" resp="#joint">Das</unclear> <unclear cert="low" resp="#joint">sind</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">wier</unclear> umb <unclear cert="low" resp="#joint">eüch</unclear>, <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">Eüdtgnoßen</unclear>, in dergleichen,
+<lb n="38"/>und anderen <unclear cert="low" resp="#joint">begebenden</unclear> <unclear cert="low" resp="#joint">occasionen</unclear> <unclear cert="low" resp="#joint">freündt</unclear>- <unclear cert="low" resp="#joint">eüdt</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">gnoßisch</unclear> <unclear cert="low" resp="#joint">zuobeschulden</unclear> so willig, als <unclear cert="medium" resp="#joint">wier</unclear> Gott
+<lb n="40"/>bitten, daß er <unclear cert="medium" resp="#joint">unß</unclear> samptlich in seinem <unclear cert="medium" resp="#joint">gnaeden</unclear>-
+<lb n="41"/>schirm wol <unclear cert="medium" resp="#joint">befohlen</unclear> <unclear cert="medium" resp="#joint">halte</unclear>. Datum <origDate when="1640-07-30" resp="#ner">den 30ten <unclear cert="medium" resp="#joint">Julij</unclear>,
 <lb n="42"/>anno 1640</origDate>.
-<lb n="43"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister v. raht
-<lb n="44"/>d statt Sant Gallen</orgName>.
-<lb n="45"/>Den fromen, fürsichtigen, ehrsamen
-<lb n="46"/>und weisen, <orgName ref="stadtasg-actors-849" cert="medium" role="recipient" resp="#ner">landt amman und raht
-<lb n="47"/>zuo Uri</orgName>, unsern insonders guoten
-<lb n="48"/>freünden, und getreüwen lieben
-<lb n="49"/>eüdtgnoßen.
+<lb n="43"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">v</unclear>. <unclear cert="medium" resp="#joint">raht</unclear>
+<lb n="44"/><unclear cert="medium" resp="#joint">d</unclear> statt Sant Gallen</orgName>.
+<lb n="45"/>Den <unclear cert="medium" resp="#joint">fromen</unclear>, fürsichtigen, <unclear cert="medium" resp="#joint">ehrsamen</unclear>
+<lb n="46"/>und weisen, <orgName ref="stadtasg-actors-849" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">landt</unclear> <unclear cert="low" resp="#joint">amman</unclear> und <unclear cert="low" resp="#joint">raht</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">Uri</unclear></orgName>, unsern insonders guoten
+<lb n="48"/><unclear cert="medium" resp="#joint">freünden</unclear>, und <unclear cert="medium" resp="#joint">getreüwen</unclear> lieben
+<lb n="49"/><unclear cert="medium" resp="#joint">eüdtgnoßen</unclear>.
 <pb facs="StadtASG_Missive_3397_13521.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3397_13522.jpg" n="4"/>
 <lb n="50"/>[]

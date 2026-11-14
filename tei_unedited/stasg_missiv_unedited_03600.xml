@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3600</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Joh Kemniz ersucht Bürgermeister und Rat zu St. Gallen im Namen seines Untertans George Froelich, Bürger in Pleß, um rasche Abwicklung einer Erbschaft in St. Gallen. Diese sei von Christoph Gmündern an den verstorbenen Vater des Froelich cediert worden. Kemniz bittet um schnelle Erledigung, damit Froelich seine Reise nach St. Gallen bald beenden könne, da die Zeit in Schlesien und in seiner Herrschaft bedrängt sei.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Joh Kemniz ersucht Bürgermeister und Rat zu St. Gallen im Namen seines Untertans George Froelich, Bürger in Pleß, um rasche Abwicklung einer Erbschaft in St. Gallen. Diese sei von Christoph Gmündern an den verstorbenen Vater des Froelich cediert worden. Kemniz bittet um schnelle Erledigung, damit Froelich seine Reise nach St. Gallen bald beenden könne, da die Zeit in Schlesien und in seiner Herrschaft bedrängt sei.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Joh Kemniz requests the Burgomaster and Council of St. Gallen, on behalf of his subject George Froelich, citizen in Pleß, for the rapid settlement of an inheritance in St. Gallen. This inheritance had been ceded by Christoph Gmündern to the deceased father of Froelich. Kemniz asks for prompt completion so that Froelich may soon end his journey to St. Gallen, as time is pressing in Silesia and in his lordship.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,18 +36,18 @@
 <p>
 <pb facs="StadtASG_Missive_3600_14373.jpg" n="1"/>
 <lb n="1"/>Edle Ehrnueste Hochachtbarre unndt Wolbenambte,
-<lb n="2"/>Insonders geliebte Herren, denenselben seindt meine willi-
-<lb n="3"/>ge dienst, sambt wuentschung aller ersprueßlichen wolfahrt
+<lb n="2"/>Insonders geliebte Herren, <unclear cert="low" resp="#joint">denenselben</unclear> <unclear cert="low" resp="#joint">seindt</unclear> <unclear cert="low" resp="#joint">meine</unclear> <unclear cert="low" resp="#joint">willi</unclear>-
+<lb n="3"/><unclear cert="low" resp="#joint">ge</unclear> <unclear cert="low" resp="#joint">dienst</unclear>, sambt wuentschung aller ersprueßlichen wolfahrt
 <lb n="4"/>zuvor.
-<lb n="5"/>Umb waßerlei intervention mich mein unterthan <persName resp="#ner">George
+<lb n="5"/>Umb waßerlei intervention <unclear cert="low" resp="#joint">mich</unclear> <unclear cert="low" resp="#joint">mein</unclear> unterthan <persName resp="#ner">George
 <lb n="6"/>Froelich</persName> burger in <placeName resp="#ner">Pleß</placeName>, wegen der seinem seel. vatere <persName resp="#ner">Hannßen
 <lb n="7"/>Froelich</persName>, von <persName resp="#ner">Christoph Gmündern</persName> cedirt: und nunmehr auff
 <lb n="8"/>ihne gefallenen erbschafft zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, in unterthenigem
-<lb n="9"/>gehrsamb angelanget, daß werden meine geliebte Herren
-<lb n="10"/>auß beiverwahrtem einschluß ihnen mit mehrerm refe-
-<lb n="11"/>riren laßen kuennen. Nun trage ich gantz keinen
+<lb n="9"/>gehrsamb angelanget, daß <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">meine</unclear> <unclear cert="low" resp="#joint">geliebte</unclear> Herren
+<lb n="10"/>auß beiverwahrtem einschluß ihnen mit mehrerm <unclear cert="low" resp="#joint">refe</unclear>-
+<lb n="11"/><unclear cert="low" resp="#joint">riren</unclear> laßen kuennen. Nun trage ich gantz keinen
 <lb n="12"/>zweiffel, meine geliebte Herren wuerden auch ohne meine
-<lb n="13"/>intervention gedachtem <persName resp="#ner">Froelich</persName>, daß jehnige wozue er
+<lb n="13"/>intervention gedachtem <persName resp="#ner">Froelich</persName>, daß <unclear cert="low" resp="#joint">jehnige</unclear> <unclear cert="low" resp="#joint">wozue</unclear> er
 <lb n="14"/>berechtiget, haben wiederfahren laßen. Alldieweil
 <lb n="15"/>aber er sein sonderes vertrauen hierauf gesezet, alß
 <lb n="16"/>habe ich ihme dieselbte nicht verweigern: sondern meine
@@ -58,22 +59,22 @@
 <lb n="21"/>sowohl deß weit entlegenen ohrtes halber, deß werck
 <lb n="22"/>goenstermaßen dahin zubefoerderen, darmit Er mehrge-
 <lb n="23"/>dachter froelich solcher mit recht an Ihn gefallenen erbschafft
-<lb n="24"/>schleinigstes habhafft werden undt seinen weg desto ehen-
-<lb n="25"/>der widerumb zurueck nehmen koente. Solches umb
+<lb n="24"/>schleinigstes habhafft werden undt seinen weg <unclear cert="low" resp="#joint">desto</unclear> <unclear cert="low" resp="#joint">ehen</unclear>-
+<lb n="25"/><unclear cert="low" resp="#joint">der</unclear> widerumb zurueck nehmen koente. Solches umb
 <lb n="26"/>meine geliebte Herren in dergleichen begebenheit zue-
 <lb n="27"/>verschulden, wil Ich iederzeit unvergessen halten. Die-
-<lb n="28"/>selbe hiemit goettlichem gnadenschuz empfehlende.
-<lb n="29"/>Datum flaß <origDate when="1644-06-06" resp="#ner">den 6 Juny Anno 1644</origDate>.
-<lb n="30"/>Der Herren
-<lb n="31"/>Dienstwilliger
-<lb n="32"/><persName role="issuer" resp="#ner">Joh Kemniz</persName>
+<lb n="28"/>selbe hiemit <unclear cert="low" resp="#joint">goettlichem</unclear> <unclear cert="low" resp="#joint">gnadenschuz</unclear> <unclear cert="low" resp="#joint">empfehlende</unclear>.
+<lb n="29"/>Datum <unclear cert="low" resp="#joint">flaß</unclear> <origDate when="1644-06-06" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">Juny</unclear> <unclear cert="low" resp="#joint">Anno</unclear> 1644</origDate>.
+<lb n="30"/><unclear cert="low" resp="#joint">Der</unclear> <unclear cert="low" resp="#joint">Herren</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">Dienstwilliger</unclear>
+<lb n="32"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear> <unclear cert="low" resp="#joint">Kemniz</unclear></persName>
 <pb facs="StadtASG_Missive_3600_14375.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3600_14376.jpg" n="4"/>
-<lb n="33"/>Denen Edlen Eerenuesten hochgelehrten unnd
-<lb n="34"/>wolbenambten herren N. N. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaisteren
-<lb n="35"/>und rath der statt Sanct Gallen</orgName>, in der lob.
-<lb n="36"/>Eydgenoßschafft gelegen, Meinen geliebten
-<lb n="37"/>herrren.
+<lb n="33"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Edlen</unclear> <unclear cert="low" resp="#joint">Eerenuesten</unclear> <unclear cert="low" resp="#joint">hochgelehrten</unclear> <unclear cert="low" resp="#joint">unnd</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">wolbenambten</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">N</unclear>. <unclear cert="low" resp="#joint">N</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaisteren</unclear>
+<lb n="35"/>und rath der statt Sanct Gallen</orgName>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">lob</unclear>.
+<lb n="36"/><unclear cert="low" resp="#joint">Eydgenoßschafft</unclear> <unclear cert="low" resp="#joint">gelegen</unclear>, <unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">geliebten</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">herrren</unclear>.
 </p>
         </body>
     </text>
