@@ -40,6 +40,8 @@ Zeilen und Bild sind verknüpft, wo kraken und TrOCR Zeilen gefunden haben (die 
 
 Noch nicht edierte Briefe der Serie erscheinen mit ihren maschinellen Lesungen, ohne Bild; die Bilder können befristet freigegeben werden ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)).
 
+Schlagwörter: die Schlagwörter der Edition als Register (`#/keywords`) mit einer Heatmap nach zwanzig Jahren (Anzahl Briefe oder Anteil am Zeitraum) und einer Seite pro Schlagwort (Verlauf, häufige Kombinationen, Briefe). Die Schlagwörter im Brief und die Jahresbalken über den Listen sind anklickbar.
+
 Register und Karte: Orte, Personen und Organisationen der Register (`place/`, `person/`) mit allen edierten Briefen, die sie nennen (im Text mit der Schreibung dort, oder als Absender, Empfänger, Ausstellungsort), und eine Karte der Orte mit Koordinaten. Die 57 Orte ohne Koordinaten stehen in [docs/places_without_coordinates.md](docs/places_without_coordinates.md) (vom Build geschrieben). Noch nicht edierte Briefe kommen hinzu, sobald ihre automatische Auszeichnung mit den Registern verknüpft ist.
 
 Suche (`#/search`): Volltext über alle Briefe – Text der Edition, sonst die beste maschinelle Lesung – mit Facetten Status, Jahrzehnt und Jahresbereich, Absender, Empfänger, Ausstellungsort, Schlagwort, genannte Personen/Organisationen/Orte (Register; bei noch nicht edierten Briefen aus der automatischen Auszeichnung), Regest, Textquelle. Wörter oder `"eine Wendung"`; «Schreibvarianten zulassen» setzt u/v/w, i/y/j, ſ/s, Doppelbuchstaben, ů/uo/u, ä/ae/a und Worttrennung am Zeilenende gleich. Die ganze Suche steht in der URL. Der Index (`site/data/search/`) wird beim Build geschrieben; der Text liegt in Teilen, die erst bei einer Textsuche parallel geladen werden.
