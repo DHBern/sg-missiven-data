@@ -358,24 +358,39 @@
 
   /* authority links of a register entry, deduplicated, best known first */
   const LINK_LABEL = [
-    ["hls", "HLS"], ["hls-dhs-dss", "HLS"], ["metagrid", "Metagrid"], ["wikidata", "Wikidata"], ["gnd", "GND"],
+    ["hls", "HLS"], ["hls-dhs-dss", "HLS"], ["wikidata", "Wikidata"], ["gnd", "GND"],
     ["deutsche-biographie", "Deutsche Biographie"], ["ssrq", "SSRQ"], ["histhub", "histHub"], ["geonames", "GeoNames"],
     ["ortsnamen", "ortsnamen.ch"], ["wikipedia-de", "Wikipedia"], ["wikipedia-en", "Wikipedia (en)"], ["viaf", "VIAF"],
     ["rag", "RAG"], ["kalliope-verbund", "Kalliope"], ["ddb", "DDB"], ["lcnaf", "LoC"], ["bnf", "BnF"], ["idref", "IdRef"],
     ["encyclopaedia-britannica-online", "Britannica"],
   ];
+  const GRADE = { "sicher": T("certain", "sicher"), "wahrscheinlich": T("likely", "wahrscheinlich"), "möglich": T("possible", "möglich") };
   function authLinks(e) {
     const seen = new Set(), out = [];
+    if (e.auto) {
+      const c = (e.cands || [])[0];
+      for (const l of c ? c.links : []) {
+        const hit = LINK_LABEL.find(([k]) => k === l.type);
+        const label = hit ? hit[1] : l.type;
+        if (!seen.has(label)) { seen.add(label); out.push({ label, url: l.url, grade: c.grade }); }
+      }
+      return out;
+    }
     const rank = (t) => { const i = LINK_LABEL.findIndex(([k]) => k === t); return i < 0 ? LINK_LABEL.length : i; };
-    for (const l of (e.links || []).filter((l) => /^https?:/.test(l.url)).sort((a, b) => rank(a.type) - rank(b.type))) {
+    // Metagrid's links point at its JSON API, not at a page; its resources are listed in their own right
+    for (const l of (e.links || []).filter((l) => /^https?:/.test(l.url) && !/api\.metagrid\.ch/.test(l.url)).sort((a, b) => rank(a.type) - rank(b.type))) {
       const hit = LINK_LABEL.find(([k]) => k === l.type);
       const label = hit ? hit[1] : l.type;
       if (seen.has(label)) continue;
-      seen.add(label); out.push({ label, url: l.url });
+      seen.add(label); out.push({ label, url: l.url, added: l.added });
     }
     return out;
   }
-  const linkChip = (l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`;
+  const linkChip = (l) => l.grade
+    ? `<a class="graded g-${esc(l.grade)}" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(T(`Proposed automatically by name and dates: ${GRADE[l.grade]}`, `Automatisch nach Name und Daten vorgeschlagen: ${GRADE[l.grade]}`))}">${esc(l.label)} <span class="gr">${esc(GRADE[l.grade])}</span></a>`
+    : l.added
+    ? `<a class="added" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(T(`Added by DH Bern, not by the edition (via ${l.added})`, `Von DH Bern ergänzt, nicht von der Edition (über ${l.added})`))}">${esc(l.label)}<sup>+</sup></a>`
+    : `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`;
 
   function showRegister(which) {
     setNav(which);
@@ -384,19 +399,24 @@
     const all = Object.entries(state.registers).filter(([, e]) => kinds.includes(e.kind))
       .sort((a, b) => (a[1].sort || a[1].name).localeCompare(b[1].sort || b[1].name, "de"));
     const f = state.regFilter = state.regFilter || {};
+    const nAuto = all.filter(([, e]) => e.auto).length;
     const noGeo = all.filter(([, e]) => !e.geo).length;
     app.innerHTML = `
       <section class="intro">
         <h1>${which === "places" ? T("Places", "Orte") : T("Names", "Namen")}</h1>
         <p>${which === "places"
-          ? T(`The edition's place register: ${all.length} places, ${all.length - noGeo} of them with coordinates (<a href="#/map">map</a>).`,
-              `Das Ortsregister der Edition: ${all.length} Orte, ${all.length - noGeo} davon mit Koordinaten (<a href="#/map">Karte</a>).`)
-          : T(`The edition's register of persons and organisations: ${all.filter(([, e]) => e.kind === "person").length} persons, ${all.filter(([, e]) => e.kind === "org").length} organisations.`,
-              `Das Personen- und Organisationsregister der Edition: ${all.filter(([, e]) => e.kind === "person").length} Personen, ${all.filter(([, e]) => e.kind === "org").length} Organisationen.`)}
+          ? T(`The edition's place register: ${all.length - nAuto} places, ${all.length - noGeo} of them with coordinates (<a href="#/map">map</a>).`,
+              `Das Ortsregister der Edition: ${all.length - nAuto} Orte, ${all.length - noGeo} davon mit Koordinaten (<a href="#/map">Karte</a>).`)
+          : T(`The edition's register of persons and organisations: ${all.filter(([, e]) => !e.auto && e.kind === "person").length} persons, ${all.filter(([, e]) => !e.auto && e.kind === "org").length} organisations.`,
+              `Das Personen- und Organisationsregister der Edition: ${all.filter(([, e]) => !e.auto && e.kind === "person").length} Personen, ${all.filter(([, e]) => !e.auto && e.kind === "org").length} Organisationen.`)}
+        ${nAuto ? T(`In addition, <b>${nAuto} entries generated automatically</b> for names found only in letters not yet edited, marked <span class="badge gen">generated</span>: each with links to HLS, Wikidata or Metagrid proposed by name and dates and graded certain, likely or possible (<a href="#/about-auto-register">how</a>).`,
+              `Dazu <b>${nAuto} automatisch generierte Einträge</b> für Namen, die nur in noch nicht edierten Briefen vorkommen, markiert mit <span class="badge gen">automatisch generiert</span>: jeder mit Links zu HLS, Wikidata oder Metagrid, nach Name und Daten vorgeschlagen und als sicher, wahrscheinlich oder möglich eingestuft.`) : ""}
         ${T(`Each entry lists the edited letters that name it, in the text or as sender, recipient or place of writing.
-        Letters not yet edited are listed apart: their names come from the automatic tagging of the machine readings, linked to the register by rule and not checked.`,
+        Letters not yet edited are listed apart: their names come from the automatic tagging of the machine readings, linked to the register by rule and not checked.
+        Links marked <sup>+</sup> were added by DH Bern, joined on an identifier the edition already gives (Metagrid, Human Lineage, Wikidata); they are not part of the edition.`,
         `Jeder Eintrag nennt die edierten Briefe, die ihn erwähnen, im Text oder als Absender, Empfänger oder Ausstellungsort.
-        Noch nicht edierte Briefe stehen getrennt: ihre Namen stammen aus der automatischen Auszeichnung der maschinellen Lesungen, sind nach Regeln mit dem Register verknüpft und nicht geprüft.`)}</p>
+        Noch nicht edierte Briefe stehen getrennt: ihre Namen stammen aus der automatischen Auszeichnung der maschinellen Lesungen, sind nach Regeln mit dem Register verknüpft und nicht geprüft.
+        Mit <sup>+</sup> markierte Links hat DH Bern ergänzt, verknüpft über eine Kennung, die die Edition schon angibt (Metagrid, Human Lineage, Wikidata); sie gehören nicht zur Edition.`)}</p>
       </section>
       <div class="filters">
         <input id="rq" type="search" placeholder="${T("Search names, description, country…", "Namen, Beschreibung, Land suchen…")}" value="${esc(f[which] || "")}" aria-label="${T("Search the register", "Register durchsuchen")}">
@@ -411,27 +431,35 @@
           ${[...new Set(LINK_LABEL.map(([, l]) => l))].filter((l) => all.some(([, e]) => authLinks(e).some((x) => x.label === l)))
             .map((l) => `<option value="${esc(l)}" ${f.auth === l ? "selected" : ""}>${T("With", "Mit")} ${esc(l)} (${all.filter(([, e]) => authLinks(e).some((x) => x.label === l)).length})</option>`).join("")}
         </select>
+        ${nAuto ? `<select id="ro" aria-label="${T("Origin", "Herkunft")}">
+          <option value="">${T("Edition and generated", "Edition und generiert")} (${all.length})</option>
+          <option value="ed" ${f.origin === "ed" ? "selected" : ""}>${T("The edition's register", "Register der Edition")} (${all.length - nAuto})</option>
+          <option value="gen" ${f.origin === "gen" ? "selected" : ""}>${T("Generated automatically", "Automatisch generiert")} (${nAuto})</option>
+          ${["sicher", "wahrscheinlich", "möglich"].map((g) => `<option value="${g}" ${f.origin === g ? "selected" : ""}>${T("Generated", "Generiert")}, ${T("best link", "bester Link")} ${GRADE[g]} (${all.filter(([, e]) => e.auto && (e.cands || [])[0] && e.cands[0].grade === g).length})</option>`).join("")}
+        </select>` : ""}
         <label class="small"><input type="checkbox" id="ru" ${f.auto ? "checked" : ""}> ${T("in letters not yet edited", "in noch nicht edierten Briefen")} (${all.filter(([, e]) => e.occ_auto).length})</label>
         <span id="rcount" class="muted small"></span>
       </div>
       <div class="list reg" id="rlist"></div>`;
-    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg"), u = document.getElementById("ru"), a = document.getElementById("ra");
+    const q = document.getElementById("rq"), t = document.getElementById("rt"), g = document.getElementById("rg"), u = document.getElementById("ru"), a = document.getElementById("ra"), o = document.getElementById("ro");
     const draw = () => {
       f[which] = q.value;
       if (which === "places") { f.ftype = t.value; f.nogeo = g.checked; } else f.kind = t.value;
-      f.auto = u.checked; f.auth = a.value;
+      f.auto = u.checked; f.auth = a.value; f.origin = o ? o.value : "";
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
       const rows = all.filter(([, e]) => {
         if (which === "places" && t.value && e.ftype !== t.value) return false;
         if (which === "places" && g.checked && e.geo) return false;
         if (which === "names" && t.value && e.kind !== t.value) return false;
         if (u.checked && !e.occ_auto) return false;
+        if (f.origin === "ed" && e.auto) return false;
+        if (f.origin && f.origin !== "ed" && (!e.auto || (f.origin !== "gen" && (!(e.cands || [])[0] || e.cands[0].grade !== f.origin)))) return false;
         if (a.value) {
           const ls = authLinks(e);
           if (a.value === "has" ? !ls.length : a.value === "none" ? ls.length : !ls.some((l) => l.label === a.value)) return false;
         }
         if (!words.length) return true;
-        const hay = [e.name, e.desc, e.country, ...(e.occ || []).map((o) => o[1]), ...(e.occ_auto || []).map((o) => o[1])].join(" ").toLowerCase();
+        const hay = [e.name, e.desc, e.country, ...(e.forms || []), ...(e.occ || []).map((o) => o[1]), ...(e.occ_auto || []).map((o) => o[1])].join(" ").toLowerCase();
         return words.every((w) => hay.includes(w));
       });
       document.getElementById("rcount").textContent = `${rows.length} ${P(rows.length, "entry", "entries", "Eintrag", "Einträge")}`;
@@ -440,8 +468,9 @@
         const ext = authLinks(e), MAX = 6;
         return `<div class="row rrow">
           <span class="num">${n || "–"}<span class="muted small"> ${P(n, "letter", "letters", "Brief", "Briefe")}</span></span>
-          <span><a class="who go" href="#/entry/${encodeURIComponent(id)}">${esc(e.name)}</a>${which === "places" && !e.geo ? ` <span class="badge">${T("no coordinates", "ohne Koordinaten")}</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} ${T("not yet edited", "noch nicht ediert")}</span>` : ""}
-          <span class="reg">${esc([which === "places" ? ftype(e.ftype) : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
+          <span><a class="who go" href="#/entry/${encodeURIComponent(id)}">${esc(e.name)}</a>${e.auto ? ` <span class="badge gen">${T("generated", "automatisch generiert")}</span>` : which === "places" && !e.geo ? ` <span class="badge">${T("no coordinates", "ohne Koordinaten")}</span>` : ""}${autoLettersOf(e) ? ` <span class="badge auto">+${autoLettersOf(e)} ${T("not yet edited", "noch nicht ediert")}</span>` : ""}
+          <span class="reg">${e.auto ? esc([kindName(e.kind), (e.cands || [])[0] ? `${e.cands[0].label}${e.cands[0].desc ? " (" + e.cands[0].desc + ")" : ""}?` : T("no candidate found", "kein Kandidat gefunden")].join(" · "))
+            : esc([which === "places" ? ftype(e.ftype) : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</span></span>
           <span class="ext">${ext.slice(0, MAX).map(linkChip).join("")}${ext.length > MAX ? `<a href="#/entry/${encodeURIComponent(id)}" class="more">+${ext.length - MAX}</a>` : ""}</span>
         </div>`;
       }).join("") + (rows.length > 500 ? `<p class="muted small">${T(`Showing 500 of ${rows.length} — narrow the search.`, `500 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
@@ -451,7 +480,36 @@
     g && g.addEventListener("change", draw);
     u.addEventListener("change", draw);
     a.addEventListener("change", draw);
+    o && o.addEventListener("change", draw);
     draw();
+  }
+
+  /* the head of an entry generated automatically: what it is, and its graded candidates */
+  function autoEntryHead(e) {
+    const m = ((state.registers._auto || {}).measured || {})[e.kind === "person" ? "per" : e.kind];
+    const prec = (g) => m && m[g] && m[g].precision != null
+      ? T(` (measured: ${Math.round(m[g].precision * 100)} % right)`, ` (gemessen: ${Math.round(m[g].precision * 100)} % richtig)`) : "";
+    const cands = e.cands || [];
+    return `<p class="note-box">${T(`This entry is not in the edition's register. It was generated automatically for a name that the automatic tagging found only in letters not yet edited${e.forms && e.forms.length > 1 ? ` (spelled ${e.forms.map((f) => "<i>" + esc(f) + "</i>").join(", ")})` : ""}. The candidates below were looked up by name${e.kind === "person" ? " and checked against the letters' years" : ""}; none is checked by a person.`,
+        `Dieser Eintrag steht nicht im Register der Edition. Er wurde automatisch generiert für einen Namen, den die automatische Auszeichnung nur in noch nicht edierten Briefen gefunden hat${e.forms && e.forms.length > 1 ? ` (Schreibungen ${e.forms.map((f) => "<i>" + esc(f) + "</i>").join(", ")})` : ""}. Die Kandidaten unten sind nach dem Namen gesucht${e.kind === "person" ? " und an den Jahren der Briefe geprüft" : ""}; keiner ist von einem Menschen geprüft.`)}</p>
+      <h2>${T("Candidates", "Kandidaten")}</h2>
+      ${cands.length ? `<div class="list cands">${cands.map((c) => `
+        <div class="row cand">
+          <span class="grade g-${esc(c.grade)}" title="${esc(T("How sure the rule is", "Wie sicher die Regel ist") + prec(c.grade))}">${esc(GRADE[c.grade] || c.grade)}</span>
+          <span><b>${esc(c.label)}</b>${c.desc || c.km != null ? ` <span class="muted">${esc([c.desc, c.km != null ? T(`${c.km} km from St. Gallen`, `${c.km} km von St. Gallen`) : ""].filter(Boolean).join(" · "))}</span>` : ""}</span>
+          <span class="ext">${c.links.map((l) => { const hit = LINK_LABEL.find(([k]) => k === l.type); return `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(hit ? hit[1] : l.type)}</a>`; }).join("")}</span>
+        </div>`).join("")}</div>
+        <p class="muted small">${e.kind === "person"
+          ? T("Grades: <b>certain</b> forename and surname match, the dates fit and nothing else comes close; <b>likely</b> the spelling matches, the dates fit, clearly the best; <b>possible</b> a close spelling whose dates fit.",
+              "Stufen: <b>sicher</b> Vor- und Nachname stimmen, die Daten passen und nichts anderes kommt nahe; <b>wahrscheinlich</b> die Schreibung stimmt, die Daten passen, klar der beste; <b>möglich</b> eine ähnliche Schreibung, deren Daten passen.")
+          : e.kind === "place"
+          ? T("Grades: <b>likely</b> the spelling is a name of a place with an HLS article; <b>possible</b> a place of that name without HLS article, or a close spelling. A place is never graded certain: old spellings name too many places.",
+              "Stufen: <b>wahrscheinlich</b> die Schreibung ist ein Name eines Orts mit HLS-Artikel; <b>möglich</b> ein Ort dieses Namens ohne HLS-Artikel oder eine ähnliche Schreibung. Ein Ort ist nie «sicher»: alte Schreibungen treffen zu viele Orte.")
+          : T("Grades: an organisation is at most <b>possible</b>: a Wikidata item of exactly that name.",
+              "Stufen: eine Organisation ist höchstens <b>möglich</b>: ein Wikidata-Eintrag genau dieses Namens.")}
+          ${m ? T(`Measured on entries of the edition's register whose identifiers are known: ${["sicher", "wahrscheinlich", "möglich"].filter((g) => m[g] && m[g].precision != null).map((g) => GRADE[g] + prec(g)).join(", ")}.`,
+                  `Gemessen an Einträgen des Editionsregisters mit bekannter Kennung: ${["sicher", "wahrscheinlich", "möglich"].filter((g) => m[g] && m[g].precision != null).map((g) => GRADE[g] + prec(g)).join(", ")}.`) : ""}</p>`
+        : `<p class="muted">${T("No candidate found in HLS, Wikidata or Human Lineage.", "Kein Kandidat in HLS, Wikidata oder Human Lineage gefunden.")}</p>`}`;
   }
 
   function showEntry(id) {
@@ -480,13 +538,14 @@
     app.innerHTML = `
       <section class="entry">
         <p class="muted small"><a href="#/${e.kind === "place" ? "places" : "names"}">← ${e.kind === "place" ? T("Places", "Orte") : T("Names", "Namen")}</a></p>
-        <h1>${esc(e.name)}</h1>
+        <h1>${esc(e.name)}${e.auto ? ` <span class="badge gen">${T("generated automatically", "automatisch generiert")}</span>` : ""}</h1>
+        ${e.auto ? autoEntryHead(e) : `
         <p class="muted">${esc([e.kind === "place" ? ftype(e.ftype) || kindName("place") : kindName(e.kind), e.country, e.desc].filter(Boolean).join(" · "))}</p>
-        ${links.length ? `<p class="links">${links.map(linkChip).join("")}</p>` : ""}
-        <p class="small muted">Register <code>${esc(id)}</code>${e.kind === "place" && e.geo ? ` · ${e.geo[0].toFixed(4)}, ${e.geo[1].toFixed(4)}` : ""} ·
-          <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">${T("in the edition", "in der Edition")} ↗</a></p>
-        ${e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">${T("The register has no coordinates for this place, so it is not on the map.", "Das Register gibt für diesen Ort keine Koordinaten, darum fehlt er auf der Karte.")}</p>`) : ""}
-        <h2>${rows.length} ${P(rows.length, "edited letter", "edited letters", "edierter Brief", "edierte Briefe")}</h2>
+        ${links.length ? `<p class="links">${links.map(linkChip).join("")}</p>` : ""}`}
+        ${e.auto ? "" : `<p class="small muted">Register <code>${esc(id)}</code>${e.kind === "place" && e.geo ? ` · ${e.geo[0].toFixed(4)}, ${e.geo[1].toFixed(4)}` : ""} ·
+          <a href="https://missiven.stadtarchiv.ch/${e.kind === "place" ? "orte" : "namen"}/${encodeURIComponent(id)}" target="_blank" rel="noopener">${T("in the edition", "in der Edition")} ↗</a></p>`}
+        ${e.auto ? "" : e.kind === "place" ? (e.geo ? `<div id="emap" class="emap"></div>` : `<p class="note-box">${T("The register has no coordinates for this place, so it is not on the map.", "Das Register gibt für diesen Ort keine Koordinaten, darum fehlt er auf der Karte.")}</p>`) : ""}
+        ${e.auto ? "" : `<h2>${rows.length} ${P(rows.length, "edited letter", "edited letters", "edierter Brief", "edierte Briefe")}</h2>`}
 
         <div class="list">${rows.map((r) => `
           <a class="row" href="#/letter/${r.l.id}/1">
@@ -1732,8 +1791,9 @@
     if (kind === "date" && ref) body += esc(ref);
     else if (reg) {
       body += `<a href="#/entry/${encodeURIComponent(ref)}">${esc(reg.name)}</a>`;
+      if (reg.auto) body += ` <span class="badge gen">${T("generated", "automatisch generiert")}</span>`;
       if (reg.occ) body += ` <span class="muted">· ${lettersOf(reg)} ${P(lettersOf(reg), "letter", "letters", "Brief", "Briefe")}</span>`;
-      const links = reg.links.filter((l) => /^https?:/.test(l.url)).slice(0, 4);
+      const links = (reg.auto ? authLinks(reg).map((l) => ({ type: `${l.label} (${GRADE[l.grade]})`, url: l.url })) : reg.links).filter((l) => /^https?:/.test(l.url)).slice(0, 4);
       if (links.length) body += `<div>${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.type)}</a>`).join("")}</div>`;
     } else if (el.dataset.auto) body += `<span class="muted">${T("not linked to the register", "nicht mit dem Register verknüpft")}</span>`;
     else if (ref) body += esc(ref);

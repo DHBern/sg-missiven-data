@@ -227,6 +227,8 @@ details.regest.draft { border-left: 3px solid var(--date); padding-left: 10px; }
 .rrow .ext a { font-size: .75rem; padding: 0 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); text-decoration: none; white-space: nowrap; }
 .rrow .ext a:hover { background: var(--chip-on); color: var(--chip-on-ink); }
 .rrow .ext a.more { background: transparent; color: var(--muted); }
+.rrow .ext a.added, .entry .links a.added { border: 1px dashed var(--muted); }
+.ext a.added sup, .links a.added sup { font-size: .7em; margin-left: 1px; color: var(--muted); }
 @media (max-width: 900px) {
   .list.reg .row { grid-template-columns: 6.5rem minmax(0, 1fr); }
   .rrow .ext { grid-column: 2; justify-content: flex-start; }
@@ -360,3 +362,16 @@ mark { background: var(--date-bg); color: inherit; padding: 0 1px; border-radius
 .kw.auto { align-items: center; margin: 4px 0 10px; }
 .kw.auto a { background: none; box-shadow: inset 0 0 0 1px var(--line); border: 1px dashed var(--muted); }
 .kw.auto .kwlab { background: none; padding: 0; color: var(--muted); font-size: .8rem; }
+
+/* register entries generated automatically (issue #12) */
+.badge.gen { background: transparent; border: 1px dashed var(--muted); color: var(--muted); font-weight: normal; }
+.ext a.graded { border-style: dashed; }
+.ext a.graded .gr { font-size: .68rem; color: var(--muted); margin-left: 2px; }
+.list.cands .row.cand { display: grid; grid-template-columns: 8rem minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.cand .ext { display: flex; flex-wrap: wrap; gap: 4px; }
+.cand .ext a { font-size: .75rem; padding: 0 8px; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+.grade { font-size: .75rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); text-align: center; }
+.grade.g-sicher, .ext a.g-sicher .gr { color: var(--ink); font-weight: 600; }
+.grade.g-wahrscheinlich { color: var(--ink); }
+.grade.g-möglich { color: var(--muted); border-style: dashed; }
+@media (max-width: 700px) { .list.cands .row.cand { grid-template-columns: 1fr; } }

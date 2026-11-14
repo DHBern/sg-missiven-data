@@ -161,6 +161,82 @@ def registers() -> dict[str, dict]:
     return reg
 
 
+def add_authority_links(reg: dict[str, dict]) -> int:
+    """Links DH Bern found for the registers (scripts/authority_links.py, issue #12).
+    They join on identifiers the edition already gives and are kept apart from the
+    edition's own: each carries ``added`` with its sources."""
+    path = ROOT / "registers" / "authority_links.json"
+    if not path.exists():
+        return 0
+    n = 0
+    for rid, links in json.loads(path.read_text(encoding="utf-8")).get("links", {}).items():
+        entry = reg.get(rid)
+        if entry is None:
+            continue
+        have = {l["url"].rstrip("/") for l in entry["links"]}
+        for l in links:
+            if l["url"].rstrip("/") in have:
+                continue
+            entry["links"].append({"type": l["type"], "url": l["url"], "added": "+".join(l["source"])})
+            n += 1
+    return n
+
+
+def fold(s: str) -> str:
+    """A name's folded spelling, as scripts/ner.py ``key`` makes it."""
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s.lower())
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.replace("ß", "ss").replace("v", "u").replace("y", "i").replace("w", "u")
+    s = re.sub(r"(.)\1+", r"\1", s)
+    return " ".join(re.findall(r"[a-z0-9]+", s))
+
+
+def auto_register() -> tuple[dict, dict[tuple[str, str], str]]:
+    """registers/auto_register.json and its entries by (type, folded spelling)."""
+    path = ROOT / "registers" / "auto_register.json"
+    if not path.exists():
+        return {}, {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    kind_type = {"person": "per", "org": "org", "place": "place"}
+    return data, {(kind_type[e["kind"]], e["key"]): eid for eid, e in data["entries"].items()}
+
+
+def mark_auto_refs(letter: dict, by_key: dict[tuple[str, str], str]) -> None:
+    """Point the unlinked tags of a letter not yet edited to the automatic
+    register entry of their spelling (``ref``, marked ``auto_reg``)."""
+    if letter.get("edited") or not by_key:
+        return
+    for page in letter["pages"]:
+        for ents in (page.get("auto_entities") or {}).values():
+            for x in ents:
+                if x.get("ref") or x.get("type") not in ("per", "org", "place"):
+                    continue
+                eid = by_key.get((x["type"], fold(x["text"])))
+                if eid:
+                    x["ref"], x["auto_reg"] = eid, 1
+
+
+def add_auto_register(reg: dict[str, dict], data: dict) -> int:
+    """Register entries generated automatically for names found only in the
+    letters not yet edited (scripts/auto_register.py, issue #12). Each carries
+    ``auto`` and its graded candidates (``cands``: label, description, grade,
+    links); the tags of those letters that have the entry's spelling point to it,
+    marked ``auto_reg``. Not part of the edition."""
+    if not data:
+        return 0
+    for eid, e in data["entries"].items():
+        cands = []
+        for c in e.get("candidates", []):
+            life = f"{c.get('birth') or '?'}–{c.get('death') or '?'}" if (c.get("birth") or c.get("death")) else ""
+            cands.append({"label": c.get("label", ""), "desc": " · ".join(x for x in (life, c.get("desc", "")) if x),
+                          "km": c.get("km"), "grade": c["grade"], "links": [{"type": l["type"], "url": l["url"]} for l in c.get("links", [])]})
+        reg[eid] = {"kind": e["kind"], "name": e["name"], "sort": e["key"], "auto": True, "links": [],
+                    "forms": e.get("forms", []), "cands": cands}
+    reg["_auto"] = {"kind": "meta", "measured": data.get("measured"), "date": data.get("date")}
+    return len(data["entries"])
+
+
 def occurrences(letters: list[dict], reg: dict[str, dict]) -> None:
     """Add to every register entry the letters that name it: in the text (with the
     spelling there) or as sender, recipient or place of writing in the header.
@@ -257,7 +333,9 @@ def load_auto_keywords() -> dict[str, list[str]]:
 
 
 def write_missing_geo(reg: dict[str, dict]) -> None:
-    """docs/places_without_coordinates.md: the register's places the map cannot show."""
+    """docs/places_without_coordinates.md: the register's places the map cannot show
+    (the edition's register only, not the entries generated automatically)."""
+    reg = {k: e for k, e in reg.items() if isinstance(e, dict) and e.get("kind") and not e.get("auto")}
     rows = sorted((e for e in reg.values() if e["kind"] == "place" and "geo" not in e),
                   key=lambda e: (-len({o[0] for o in e.get("occ", [])}), e["sort"]))
     ids = {id(e): k for k, e in reg.items()}
@@ -399,6 +477,7 @@ def main() -> None:
     # held-out ones (readings/heldout_pages.txt): the viewer warns on those only
     heldout_file = ROOT / "readings" / "heldout_pages.txt"
     heldout = {l.strip() for l in heldout_file.read_text().splitlines() if l.strip()} if heldout_file.exists() else set()
+    auto_data, auto_keys = auto_register()
     for letter in letters:
         for page in letter["pages"]:
             ref = flat(page["text"])
@@ -441,6 +520,7 @@ def main() -> None:
             letter["auto_regest"] = drafts[letter["id"]]
         if not letter["edited"] and auto_kw.get(letter["id"]):
             letter["auto_keywords"] = auto_kw[letter["id"]]
+        mark_auto_refs(letter, auto_keys)
         (OUT / "letters" / f"{letter['id']}.json").write_text(
             json.dumps(letter, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         index.append({
@@ -474,6 +554,13 @@ def main() -> None:
     (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (OUT / "readers.json").write_text(json.dumps(readers, ensure_ascii=False, indent=1), encoding="utf-8")
     reg = registers()
+    added = add_authority_links(reg)
+    if added:
+        print(f"registers: {added} authority links added by DH Bern (registers/authority_links.json)")
+    auto = add_auto_register(reg, auto_data)
+    if auto:
+        print(f"registers: {auto} entries generated automatically for names found only in letters not yet edited "
+              "(registers/auto_register.json)")
     occurrences(letters, reg)
     (OUT / "registers.json").write_text(json.dumps(reg, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     write_missing_geo(reg)
