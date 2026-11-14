@@ -87,8 +87,9 @@
     if (parts[0] === "places") return showRegister("places");
     if (parts[0] === "names") return showRegister("names");
     if (parts[0] === "map") return showMap();
+    if (parts[0] === "keywords" && parts[1] === "network") return showKeywordNetwork(new URLSearchParams(qs || ""));
     if (parts[0] === "keywords") return showKeywords();
-    if (parts[0] === "keyword" && parts[1]) return showKeyword(parts[1]);
+    if (parts[0] === "keyword" && parts[1]) return showKeyword(parts[1], new URLSearchParams(qs || ""));
     if (parts[0] === "entry" && parts[1]) return showEntry(parts[1]);
     if (parts[0] === "about") return showAbout();
     return showList(new URLSearchParams(qs || ""));
@@ -870,6 +871,7 @@
           The heatmap shows in how many letters of each twenty years a keyword stands; a click on a cell opens those letters in the search.`,
           `Die Edition verschlagwortet ihre Briefe: ${all.length} Schlagwörter auf ${d.letters.length} edierten Briefen, etwa ${Math.round(d.letters.reduce((a, m) => a + m.kw.length, 0) / d.letters.length)} pro Brief. Noch nicht edierte Briefe haben keine.
           Die Heatmap zeigt, in wie vielen Briefen von je zwanzig Jahren ein Schlagwort steht; ein Klick auf eine Zelle öffnet diese Briefe in der Suche.`)}</p>
+        <p><a href="#/keywords/network">${T("Keyword network →", "Netzwerk der Schlagwörter →")}</a></p>
       </section>
       <div class="filters">
         <input id="kq" type="search" placeholder="${T("Find a keyword…", "Schlagwort finden…")}" value="${esc(f.q)}" aria-label="${T("Find a keyword", "Schlagwort finden")}">
@@ -972,7 +974,7 @@
     draw();
   }
 
-  async function showKeyword(k) {
+  async function showKeyword(k, params) {
     setNav("keywords");
     destroyOsd();
     app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
@@ -985,14 +987,28 @@
     const co = new Map();
     for (const m of mine) for (const x of m.kw) if (x !== k) co.set(x, (co.get(x) || 0) + 1);
     const coTop = [...co.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "de")).slice(0, 24);
-    const rows = mine.map((m) => byId(m.id)).filter(Boolean).sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    // the letters list follows the Sankey: ?with=<keyword>&from=&to= narrow it
+    const withK = params.get("with") || "";
+    const from = +params.get("from") || 0, to = +params.get("to") || 0, undated = params.get("undated") === "1";
+    const keep = (m) => (!withK || m.kw.includes(withK)) && (undated ? !m.y : !from || (m.y && m.y >= from && m.y <= to));
+    const shown = mine.filter(keep);
+    const rows = shown.map((m) => byId(m.id)).filter(Boolean).sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    const filtered = withK || from || undated;
+    const what = [withK ? T(`also with «${esc(withK)}»`, `auch mit «${esc(withK)}»`) : "",
+                  undated ? T("undated", "undatiert") : from ? `${from}–${to}` : ""].filter(Boolean).join(", ");
     app.innerHTML = `
       <section class="intro">
-        <div class="muted small"><a href="#/keywords">${T("Keywords", "Schlagwörter")}</a></div>
+        <div class="muted small"><a href="#/keywords">${T("Keywords", "Schlagwörter")}</a> · <a href="#/keywords/network?focus=${encodeURIComponent(k)}">${T("in the network", "im Netzwerk")}</a></div>
         <h1>${esc(k)}</h1>
         <p>${T(`${mine.length} edited ${P(mine.length, "letter", "letters", "", "")} with this keyword.`, `${mine.length} edierte ${P(mine.length, "", "", "Brief", "Briefe")} mit diesem Schlagwort.`)}
           <a href="${kwSearch(k)}">${T("Open in the search", "In der Suche öffnen")}</a></p>
       </section>
+      ${coTop.length ? `<section class="pane sankeypane">
+        <h2>${T("Companions over time", "Begleiter über die Zeit")}</h2>
+        <div id="sankey"></div>
+        <p class="muted small">${T(`From «${esc(k)}» to the keywords most often given with it, and on to the twenty years of those letters. A band's width is the number of letters that carry both keywords; a letter with several of these companions counts once with each, so the bands add up to more than ${mine.length} letters. A click on a band or a box filters the letters below.`,
+          `Von «${esc(k)}» zu den Schlagwörtern, die am häufigsten mit ihm vergeben sind, und weiter zu den zwanzig Jahren dieser Briefe. Die Breite eines Bands ist die Zahl der Briefe mit beiden Schlagwörtern; ein Brief mit mehreren dieser Begleiter zählt bei jedem, die Bänder ergeben deshalb mehr als ${mine.length} Briefe. Ein Klick auf ein Band oder ein Feld filtert die Briefe unten.`)}</p>
+      </section>` : ""}
       <div class="kwcols">
         <section class="pane">
           <h2>${T("Over time", "Über die Zeit")}</h2>
@@ -1008,13 +1024,317 @@
           <p class="muted small">${T("The number: letters that carry both keywords.", "Die Zahl: Briefe, die beide Schlagwörter tragen.")}</p>
         </section>
       </div>
-      <h2>${T("Letters", "Briefe")}</h2>
+      <h2 id="kwletters">${T("Letters", "Briefe")}${filtered ? ` <span class="muted small">${what}: ${rows.length} · <a href="${kwHref(k)}">${T("show all", "alle zeigen")}</a></span>` : ""}</h2>
       <div class="list">${rows.map((l) => `
         <a class="row" href="#/letter/${l.id}/1">
           <span class="num">${esc(nrOf(l))}</span>
           <span class="date">${esc(fmtDate(l.date))}</span>
           <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span><span class="reg">${esc(l.regest)}</span></span>
         </a>`).join("")}</div>`;
+    if (coTop.length) drawSankey(k, mine, d, coTop.slice(0, 10).map(([x]) => x), { withK, from, undated });
+    if (filtered) document.getElementById("kwletters").scrollIntoView({ block: "start" });
+  }
+
+  function tipAt(rect, html) {
+    hideTip();
+    tipEl = document.createElement("div");
+    tipEl.className = "tip";
+    tipEl.innerHTML = html;
+    document.body.appendChild(tipEl);
+    tipEl.style.left = Math.max(8, Math.min(window.innerWidth - tipEl.offsetWidth - 8, rect.left)) + "px";
+    tipEl.style.top = (rect.bottom + 6 + tipEl.offsetHeight > window.innerHeight ? rect.top - tipEl.offsetHeight - 6 : rect.bottom + 6) + "px";
+  }
+
+  /* Sankey in three columns: the keyword → its most frequent companions →
+     the twenty years of the letters that carry both. Plain SVG, no library:
+     columns of boxes, bands as filled cubic curves. Identity is by label, not
+     by colour: bands are one neutral tone, the one under the pointer (and its
+     path through the companion) turns red. */
+  function drawSankey(k, mine, d, comps, cur) {
+    const el = document.getElementById("sankey");
+    const W = 760, GAP = 6, PADY = 4;
+    const periods = [...d.bins.map((lo) => ({ id: "p" + lo, lo, label: `${lo}–${lo + KW_BIN - 1}` }))];
+    const und = { id: "pu", lo: 0, label: T("undated", "undatiert") };
+    const flow1 = comps.map((c) => ({ c, n: mine.filter((m) => m.kw.includes(c)).length }));
+    const flow2 = [];
+    for (const c of comps) {
+      for (const m of mine) {
+        if (!m.kw.includes(c)) continue;
+        const b = d.binOf(m.y);
+        const p = b >= 0 ? periods[b] : und;
+        const f = flow2.find((x) => x.c === c && x.p === p);
+        if (f) f.n++; else flow2.push({ c, p, n: 1 });
+      }
+    }
+    const usedP = [...periods, und].filter((p) => flow2.some((f) => f.p === p));
+    const total = flow1.reduce((a, f) => a + f.n, 0);
+    const maxNodes = Math.max(comps.length, usedP.length);
+    const H = Math.max(280, maxNodes * 26);
+    const scale = (H - 2 * PADY - GAP * (maxNodes - 1)) / total;
+    const X = [150, 400, 640], NW = 12;
+    // nodes: y positions per column, centred
+    const col = (items, size) => {
+      const h = items.reduce((a, it) => a + size(it) * scale, 0) + GAP * (items.length - 1);
+      let y = (H - h) / 2;
+      return items.map((it) => { const r = { it, y, h: size(it) * scale }; y += r.h + GAP; return r; });
+    };
+    const nK = col([k], () => total)[0];
+    const cIn = new Map(flow1.map((f) => [f.c, f.n]));
+    const nC = col(comps, (c) => cIn.get(c));
+    const pIn = new Map(usedP.map((p) => [p, flow2.filter((f) => f.p === p).reduce((a, f) => a + f.n, 0)]));
+    const nP = col(usedP, (p) => pIn.get(p));
+    const band = (x0, y0, x1, y1, h) => {
+      const mx = (x0 + x1) / 2;
+      return `M${x0},${y0}C${mx},${y0} ${mx},${y1} ${x1},${y1}L${x1},${y1 + h}C${mx},${y1 + h} ${mx},${y0 + h} ${x0},${y0 + h}Z`;
+    };
+    const href = (q) => `${kwHref(k)}?${q}`;
+    let svg = "";
+    // K → companions
+    let yK = nK.y;
+    nC.forEach((nc) => {
+      const h = nc.h;
+      svg += `<a href="${href("with=" + encodeURIComponent(nc.it))}"><path class="sk-band" data-c="${esc(nc.it)}" data-tip="${esc(k)} + ${esc(nc.it)}: ${cIn.get(nc.it)} ${P(cIn.get(nc.it), "letter", "letters", "Brief", "Briefe")}"
+        d="${band(X[0] + NW, yK, X[1], nc.y, h)}"/></a>`;
+      yK += h;
+    });
+    // companions → periods (bands leave a companion top to bottom in period order, and enter a period in companion order)
+    const outY = new Map(nC.map((nc) => [nc.it, nc.y]));
+    const inY = new Map(nP.map((np) => [np.it, np.y]));
+    for (const nc of nC) {
+      for (const np of nP) {
+        const f = flow2.find((x) => x.c === nc.it && x.p === np.it);
+        if (!f) continue;
+        const h = f.n * scale;
+        const q = `with=${encodeURIComponent(nc.it)}&${np.it === und ? "undated=1" : `from=${np.it.lo}&to=${np.it.lo + KW_BIN - 1}`}`;
+        svg += `<a href="${href(q)}"><path class="sk-band" data-c="${esc(nc.it)}" data-p="${np.it.id}" data-tip="${esc(k)} + ${esc(nc.it)}, ${np.it.label}: ${f.n} ${P(f.n, "letter", "letters", "Brief", "Briefe")}"
+          d="${band(X[1] + NW, outY.get(nc.it), X[2], inY.get(np.it), h)}"/></a>`;
+        outY.set(nc.it, outY.get(nc.it) + h);
+        inY.set(np.it, inY.get(np.it) + h);
+      }
+    }
+    const node = (x, n, label, hrefN, cls, data, anchor) => `<a href="${hrefN}"><rect class="sk-node ${cls}" ${data} x="${x}" y="${n.y}" width="${NW}" height="${Math.max(1, n.h)}" rx="2"/>
+      <text class="sk-lab" x="${anchor === "end" ? x - 6 : x + NW + 6}" y="${n.y + n.h / 2}" text-anchor="${anchor}" dominant-baseline="middle">${label}</text></a>`;
+    svg += node(X[0], nK, esc(k), kwHref(k), "key", "", "end");
+    nC.forEach((nc) => { svg += node(X[1], nc, `${esc(nc.it)} <tspan class="sk-n">${cIn.get(nc.it)}</tspan>`, href("with=" + encodeURIComponent(nc.it)), cur.withK === nc.it ? "on" : "", `data-c="${esc(nc.it)}"`, "start"); });
+    nP.forEach((np) => {
+      const q = np.it === und ? "undated=1" : `from=${np.it.lo}&to=${np.it.lo + KW_BIN - 1}`;
+      svg += node(X[2], np, `${np.it.label} <tspan class="sk-n">${pIn.get(np.it)}</tspan>`, href(q), (np.it === und ? cur.undated : cur.from === np.it.lo) ? "on" : "", `data-p="${np.it.id}"`, "start");
+    });
+    el.innerHTML = `<div class="sankeywrap"><svg class="sankey" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T(`Sankey: ${esc(k)} to its companions and their periods`, `Sankey: ${esc(k)} zu seinen Begleitern und deren Zeiträumen`)}">${svg}</svg></div>`;
+    const svgEl = el.querySelector("svg");
+    const lit = (c, p) => svgEl.querySelectorAll(".sk-band").forEach((b) => {
+      const on = (!c || b.dataset.c === c) && (!p || b.dataset.p === p || (!b.dataset.p && !c));
+      b.classList.toggle("hl", on && (c || p));
+      b.classList.toggle("dim", !on && !!(c || p));
+    });
+    svgEl.addEventListener("mouseover", (ev) => {
+      const b = ev.target.closest(".sk-band"), n = ev.target.closest("a") && ev.target.closest("a").querySelector(".sk-node");
+      if (b) { lit(b.dataset.c, b.dataset.p); tipAt(b.getBoundingClientRect(), esc(b.dataset.tip)); return; }
+      if (n && (n.dataset.c || n.dataset.p)) {
+        lit(n.dataset.c, n.dataset.p);
+        if (n.dataset.p) svgEl.querySelectorAll(".sk-band").forEach((x) => { const on = x.dataset.p === n.dataset.p || (!x.dataset.p && svgEl.querySelector(`.sk-band[data-p="${n.dataset.p}"][data-c="${CSS.escape(x.dataset.c)}"]`)); x.classList.toggle("hl", !!on); x.classList.toggle("dim", !on); });
+      }
+    });
+    svgEl.addEventListener("mouseleave", () => { lit(null, null); hideTip(); });
+  }
+
+  /* ---------- keyword network ----------
+     Keywords as nodes, letters they share as edges. The weight is the cosine
+     of the two keywords' letter sets (shared / √(a·b)), so that the most
+     frequent keywords do not tie to everything; each keyword keeps its five
+     strongest ties (shared in at least three letters). Groups come from
+     modularity (louvain below). The layout is d3-force, computed once and
+     then drawn; it starts from d3's fixed spiral, so it is the same on every visit. */
+  let d3Loading = null;
+  function loadD3() {
+    if (window.d3) return Promise.resolve();
+    d3Loading = d3Loading || new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js";
+      s.onload = res; s.onerror = () => rej(new Error("d3"));
+      document.head.appendChild(s);
+    });
+    return d3Loading;
+  }
+
+  function kwGraph(d, min) {
+    const count = new Map([...d.count].filter(([, n]) => n >= min));
+    const names = [...count.keys()].sort((a, b) => count.get(b) - count.get(a) || a.localeCompare(b, "de"));
+    const idx = new Map(names.map((n, i) => [n, i]));
+    const pair = new Map();
+    for (const m of d.letters) {
+      const ks = m.kw.filter((x) => idx.has(x)).map((x) => idx.get(x)).sort((a, b) => a - b);
+      for (let i = 0; i < ks.length; i++) for (let j = i + 1; j < ks.length; j++) {
+        const key = ks[i] * 10000 + ks[j];
+        pair.set(key, (pair.get(key) || 0) + 1);
+      }
+    }
+    const cand = [];
+    for (const [key, c] of pair) {
+      if (c < 3) continue;
+      const a = Math.floor(key / 10000), b = key % 10000;
+      cand.push({ a, b, c, w: c / Math.sqrt(count.get(names[a]) * count.get(names[b])) });
+    }
+    const best = names.map(() => []);
+    for (const e of cand) { best[e.a].push(e); best[e.b].push(e); }
+    const keep = new Set();
+    best.forEach((es) => es.sort((x, y) => y.w - x.w).slice(0, 5).forEach((e) => keep.add(e)));
+    const edges = [...keep];
+    const adj = names.map(() => []);
+    for (const e of edges) { adj[e.a].push([e.b, e.w]); adj[e.b].push([e.a, e.w]); }
+    const lab = louvain(names.length, edges.map((e) => [e.a, e.b, e.w]), 1.0);
+    const nodes = names.map((n, i) => ({ id: i, name: n, n: count.get(n), g: lab[i], deg: adj[i].length }));
+    const groups = new Map();
+    for (const nd of nodes) if (nd.deg) { if (!groups.has(nd.g)) groups.set(nd.g, []); groups.get(nd.g).push(nd); }
+    const glist = [...groups.values()].filter((g) => g.length >= 3).sort((a, b) => b.reduce((s, x) => s + x.n, 0) - a.reduce((s, x) => s + x.n, 0));
+    return { nodes: nodes.filter((nd) => nd.deg), isolated: nodes.filter((nd) => !nd.deg), edges, groups: glist, adj, names };
+  }
+
+  /* Groups by modularity (Louvain): move each node to the neighbouring group
+     that gains most, until nothing moves; then treat each group as one node and
+     repeat. Nodes are visited in a fixed order, so the groups are the same on
+     every visit. Returns a group number per node. */
+  function louvain(n, wedges, gamma) {
+    let member = Array.from({ length: n }, (_, i) => i);   // original node -> current super node
+    let size = n, E = wedges;
+    for (let level = 0; level < 6; level++) {
+      const adj = Array.from({ length: size }, () => new Map());
+      const k = new Array(size).fill(0);
+      let m2 = 0;
+      for (const [a, b, w] of E) {
+        if (a === b) { k[a] += 2 * w; m2 += 2 * w; adj[a].set(a, (adj[a].get(a) || 0) + 2 * w); continue; }
+        adj[a].set(b, (adj[a].get(b) || 0) + w); adj[b].set(a, (adj[b].get(a) || 0) + w);
+        k[a] += w; k[b] += w; m2 += 2 * w;
+      }
+      if (!m2) break;
+      const com = Array.from({ length: size }, (_, i) => i), tot = k.slice();
+      let moved = true, any = false;
+      for (let pass = 0; moved && pass < 50; pass++) {
+        moved = false;
+        for (let i = 0; i < size; i++) {
+          const ci = com[i];
+          const kin = new Map();
+          for (const [j, w] of adj[i]) if (j !== i) kin.set(com[j], (kin.get(com[j]) || 0) + w);
+          tot[ci] -= k[i];
+          let best = ci, gain = (kin.get(ci) || 0) - gamma * tot[ci] * k[i] / m2;
+          for (const [c, w] of kin) {
+            const g = w - gamma * tot[c] * k[i] / m2;
+            if (g > gain + 1e-12 || (Math.abs(g - gain) <= 1e-12 && c < best)) { best = c; gain = g; }
+          }
+          tot[best] += k[i];
+          if (best !== ci) { com[i] = best; moved = true; any = true; }
+        }
+      }
+      if (!any) break;
+      const ids = new Map();
+      com.forEach((c) => { if (!ids.has(c)) ids.set(c, ids.size); });
+      member = member.map((s0) => ids.get(com[s0]));
+      const agg = new Map();
+      for (const [a, b, w] of E) {
+        const x = ids.get(com[a]), y = ids.get(com[b]);
+        const key = Math.min(x, y) * 100000 + Math.max(x, y);
+        agg.set(key, (agg.get(key) || 0) + w);
+      }
+      E = [...agg].map(([key, w]) => [Math.floor(key / 100000), key % 100000, w]);
+      size = ids.size;
+    }
+    return member;
+  }
+
+  async function showKeywordNetwork(params) {
+    setNav("keywords");
+    destroyOsd();
+    app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
+    const d = await kwData();
+    try { await loadD3(); } catch { app.innerHTML = `<p>${T("The network needs the d3 library, which could not be loaded.", "Das Netzwerk braucht die Bibliothek d3, die nicht geladen werden konnte.")}</p>`; return; }
+    const f = state.netView = state.netView || { min: 15 };
+    const focus = params.get("focus") || "";
+    if (focus && (d.count.get(focus) || 0) < f.min) f.min = Math.max(3, d.count.get(focus) || 3);
+    const g = kwGraph(d, f.min);
+    app.innerHTML = `
+      <section class="intro">
+        <div class="muted small"><a href="#/keywords">${T("Keywords", "Schlagwörter")}</a></div>
+        <h1>${T("Keyword network", "Netzwerk der Schlagwörter")}</h1>
+        <p>${T(`Keywords given to the same letters stand close together. A line joins two keywords that share at least three letters; each keeps its five strongest ties, measured against how frequent both are (so that «Bote» does not tie to everything). Circle size: number of letters. The groups on the right are found from the ties alone; point at one to see it.`,
+          `Schlagwörter, die denselben Briefen gegeben sind, stehen nah beieinander. Eine Linie verbindet zwei Schlagwörter, die mindestens drei Briefe teilen; jedes behält seine fünf stärksten Verbindungen, gemessen an der Häufigkeit beider (damit «Bote» nicht mit allem verbunden ist). Kreisgrösse: Anzahl Briefe. Die Gruppen rechts sind allein aus den Verbindungen gefunden; Zeiger darauf zeigt sie.`)}</p>
+      </section>
+      <div class="filters">
+        <select id="nmin" aria-label="${T("Keywords shown", "Gezeigte Schlagwörter")}">
+          ${[5, 8, 15, 25].map((n) => `<option value="${n}" ${f.min === n ? "selected" : ""}>${T(`keywords in ${n}+ letters`, `Schlagwörter in ${n}+ Briefen`)}</option>`).join("")}
+          ${[5, 8, 15, 25].includes(f.min) ? "" : `<option value="${f.min}" selected>${T(`keywords in ${f.min}+ letters`, `Schlagwörter in ${f.min}+ Briefen`)}</option>`}
+        </select>
+        <input id="nq" type="search" placeholder="${T("Find a keyword…", "Schlagwort finden…")}" value="${esc(focus)}" aria-label="${T("Find a keyword", "Schlagwort finden")}" list="nlist">
+        <datalist id="nlist">${g.nodes.map((n) => `<option value="${esc(n.name)}">`).join("")}</datalist>
+        <span class="muted small">${g.nodes.length} ${T("keywords", "Schlagwörter")}, ${g.edges.length} ${T("ties", "Verbindungen")}${g.isolated.length ? T(`; ${g.isolated.length} without a tie left out`, `; ${g.isolated.length} ohne Verbindung weggelassen`) : ""}</span>
+      </div>
+      <div class="netcols">
+        <section class="pane netpane"><div id="net"></div><p class="muted small">${T("Drag to move, scroll or pinch to zoom; a click on a keyword opens it.", "Ziehen verschiebt, Scrollen oder Zwei-Finger-Geste zoomt; ein Klick auf ein Schlagwort öffnet es.")}</p></section>
+        <aside class="pane netgroups"><h2>${T("Groups", "Gruppen")}</h2><ol id="ngroups">${g.groups.map((gr, i) => `
+          <li data-g="${gr[0].g}"><b>${gr.slice(0, 3).map((x) => esc(x.name)).join(" · ")}</b> <span class="muted small">${gr.length} ${T("keywords", "Schlagwörter")}</span>
+          <div class="small muted">${gr.slice(3, 12).map((x) => `<a href="${kwHref(x.name)}">${esc(x.name)}</a>`).join(", ")}${gr.length > 12 ? " …" : ""}</div></li>`).join("")}</ol></aside>
+      </div>`;
+    document.getElementById("nmin").addEventListener("change", (ev) => { f.min = +ev.target.value; showKeywordNetwork(new URLSearchParams()); });
+    const W = 900, H = 640;
+    const nodes = g.nodes.map((n) => ({ ...n, r: 3 + 1.15 * Math.sqrt(n.n) }));
+    const byIdx = new Map(nodes.map((n) => [n.id, n]));
+    const links = g.edges.map((e) => ({ source: e.a, target: e.b, w: e.w, c: e.c }));
+    const sim = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id((n) => n.id).distance((l) => 30 + 80 * (1 - l.w)).strength((l) => 0.15 + 0.6 * l.w))
+      .force("charge", d3.forceManyBody().strength(-120))
+      .force("collide", d3.forceCollide((n) => n.r + 2))
+      .force("x", d3.forceX(0).strength(0.04)).force("y", d3.forceY(0).strength(0.06))
+      .stop();
+    for (let i = 0; i < 400; i++) sim.tick();
+    const xs = d3.extent(nodes, (n) => n.x), ys = d3.extent(nodes, (n) => n.y);
+    const pad = 60;
+    const vb = [xs[0] - pad, ys[0] - pad, xs[1] - xs[0] + 2 * pad, ys[1] - ys[0] + 2 * pad];
+    const labelled = new Set(nodes.slice().sort((a, b) => b.n - a.n).slice(0, 30).map((n) => n.id));
+    const svg = d3.select("#net").append("svg").attr("class", "net").attr("viewBox", vb.join(" ")).attr("role", "img")
+      .attr("aria-label", T("Network of keywords", "Netzwerk der Schlagwörter"));
+    const root = svg.append("g");
+    // labels stay 12 px on screen whatever the viewBox scale and the zoom
+    let zk = 1;
+    const fit = () => {
+      const px = svg.node().getBoundingClientRect().width / vb[2] || 1;
+      root.selectAll("text").attr("font-size", 12 / (px * zk)).attr("stroke-width", 3 / (px * zk));
+      root.selectAll("text").attr("y", (n) => n.y - n.r - 3 / (px * zk));
+    };
+    svg.call(d3.zoom().scaleExtent([0.5, 8]).on("zoom", (ev) => { root.attr("transform", ev.transform); zk = ev.transform.k; fit(); }));
+    const lk = root.append("g").attr("class", "n-links").selectAll("line").data(links).join("line")
+      .attr("x1", (l) => l.source.x).attr("y1", (l) => l.source.y).attr("x2", (l) => l.target.x).attr("y2", (l) => l.target.y)
+      .attr("stroke-width", (l) => 0.6 + 2.4 * l.w);
+    const nd = root.append("g").attr("class", "n-nodes").selectAll("a").data(nodes).join("a").attr("href", (n) => kwHref(n.name));
+    nd.append("circle").attr("cx", (n) => n.x).attr("cy", (n) => n.y).attr("r", (n) => n.r);
+    nd.append("text").attr("x", (n) => n.x).attr("y", (n) => n.y - n.r - 3).attr("text-anchor", "middle")
+      .attr("class", (n) => (labelled.has(n.id) ? "n-lab" : "n-lab n-hidden")).text((n) => n.name);
+    fit();
+    if (state.netFit) window.removeEventListener("resize", state.netFit);
+    state.netFit = () => { if (document.body.contains(svg.node())) fit(); };
+    window.addEventListener("resize", state.netFit);
+    const nbr = new Map(nodes.map((n) => [n.id, new Set([n.id, ...g.adj[n.id].map(([j]) => j)])]));
+    const show = (ids, hot) => {
+      nd.classed("dim", (n) => ids && !ids.has(n.id)).classed("hot", (n) => hot && hot.has(n.id))
+        .select("text").classed("n-hidden", (n) => !(labelled.has(n.id) || (ids && ids.has(n.id))));
+      lk.classed("dim", (l) => ids && !(ids.has(l.source.id) && ids.has(l.target.id))).classed("hot", (l) => ids && ids.has(l.source.id) && ids.has(l.target.id));
+    };
+    nd.on("mouseenter", (ev, n) => {
+      show(nbr.get(n.id), new Set([n.id]));
+      const ties = g.adj[n.id].slice().sort((a, b) => b[1] - a[1]).slice(0, 5).map(([j]) => esc(byIdx.get(j)?.name || g.names[j]));
+      tipAt(ev.currentTarget.getBoundingClientRect(), `<b>${esc(n.name)}</b>${n.n} ${P(n.n, "letter", "letters", "Brief", "Briefe")}<div class="muted">${T("closest", "am nächsten")}: ${ties.join(", ")}</div>`);
+    }).on("mouseleave", () => { show(null, null); hideTip(); });
+    const groupIds = (gid) => new Set(nodes.filter((n) => n.g === gid).map((n) => n.id));
+    document.getElementById("ngroups").addEventListener("mouseover", (ev) => {
+      const li = ev.target.closest("li[data-g]");
+      if (li) { const ids = groupIds(+li.dataset.g); show(ids, ids); }
+    });
+    document.getElementById("ngroups").addEventListener("mouseleave", () => show(null, null));
+    const q = document.getElementById("nq");
+    const find = () => {
+      const n = nodes.find((x) => x.name.toLowerCase() === q.value.trim().toLowerCase());
+      if (n) show(nbr.get(n.id), new Set([n.id])); else show(null, null);
+    };
+    q.addEventListener("input", find);
+    if (focus) find();
   }
 
   /* ---------- letter ---------- */
