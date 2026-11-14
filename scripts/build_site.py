@@ -7,6 +7,7 @@ Inputs
   person/ place/                the registers
   readings/<reader>.jsonl       one line per page: {"key": <facs>, "text": ...}
   readings/readers.json         who each reader is (label, kind, caveat)
+  readings/lines.jsonl          line boxes of the line readers (docs/LINES.md)
   entities/<reader>.jsonl       automatic tagging of a reading (optional)
 
 Outputs (site/data/)
@@ -35,6 +36,7 @@ from rapidfuzz.distance import Levenshtein
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from tei_pages import NS, local, norm, read_edition  # noqa: E402
+import line_links  # noqa: E402
 
 OUT = ROOT / "site" / "data"
 
@@ -84,7 +86,9 @@ def load_readings() -> dict[str, dict[str, dict]]:
                 continue
             rec = json.loads(line)
             pages[rec["key"]] = {"text": clean_reading(rec.get("text", "")),
-                                 "truncated": bool(rec.get("truncated"))}
+                                 "truncated": bool(rec.get("truncated")),
+                                 # a line reader's lines, empty ones included: line i is box i
+                                 "lines_raw": rec.get("text", "")}
             if reader == "joint" and rec.get("unc"):
                 pages[rec["key"]]["unc_rec"] = rec  # placed below, once the backbone is read
             elif reader == "gemini-4-argon":
@@ -308,6 +312,58 @@ def write_search(letters: list[dict], index: list[dict], reg: dict, best_reader:
                                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
+def load_lines() -> dict[str, dict]:
+    path = ROOT / "readings" / "lines.jsonl"
+    if not path.exists():
+        return {}
+    out = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            rec = json.loads(line)
+            out[rec["key"]] = rec
+    return out
+
+
+def link_lines(page: dict, geo: dict, readings: dict[str, dict[str, dict]]) -> None:
+    """Rows on the image for this page, and for every text which rows each line is on.
+
+    ``page["rows"]`` holds per row its boxes, in ten-thousandths of the image
+    width (the unit OpenSeadragon places overlays in); ``ln`` beside a text
+    gives, per line, the rows it is linked to, an empty list where no link was
+    good enough."""
+    facs = page["facs"]
+    readers = [m for m in geo["readers"] if facs in readings.get(m, {})]
+    if not readers:
+        return
+    nb = len(geo["boxes"])
+    texts = [["" for _ in readers] for _ in range(nb)]
+    line_box = {}
+    for mi, m in enumerate(readers):
+        idx = geo["readers"][m]
+        raw = readings[m][facs]["lines_raw"].split("\n")
+        box = [(idx[i] if idx else i) if i < nb else -1 for i in range(len(raw))]
+        for i, k in enumerate(box):
+            if 0 <= k < nb:
+                texts[k][mi] = raw[i]
+        # the viewer shows the reading without its empty lines (clean_reading)
+        line_box[m] = [k for line, k in zip(raw, box) if line.strip()]
+    w, h = geo["size"]
+    ar = h / w
+    rows = line_links.rows(geo["boxes"], geo.get("baselines") or [], texts, ar)
+    if not rows:
+        return
+    row_of = {k: j for j, r in enumerate(rows) for k in r["k"]}
+    page["rows"] = [[[round(v * 1e4) for v in rect] for rect in r["rects"]] for r in rows]
+    row_texts = [r["texts"] for r in rows]
+    if page.get("text"):
+        page["ln"] = line_links.align(page["text"].split("\n"), row_texts)
+    for reader, entry in page["readings"].items():
+        if reader in line_box:
+            entry["ln"] = [[row_of[k]] if k in row_of else [] for k in line_box[reader]]
+        elif entry.get("text"):
+            entry["ln"] = line_links.align(entry["text"].split("\n"), row_texts)
+
+
 def main() -> None:
     letters = read_edition(ROOT / "data")
     for letter in letters:
@@ -317,6 +373,8 @@ def main() -> None:
     letters += unedited_letters(letters, readings)
     entities = load_entities()
     drafts = load_drafts()
+    lines = load_lines()
+    linked = {"pages": 0, "lines": 0, "of": 0}
     readers = json.loads((ROOT / "readings" / "readers.json").read_text(encoding="utf-8"))
     (OUT / "letters").mkdir(parents=True, exist_ok=True)
 
@@ -353,6 +411,14 @@ def main() -> None:
                     t["pages"] += 1
                     t["per_page"].append(edits / len(ref))
                 page["readings"][reader] = entry
+            if page["facs"] in lines:
+                link_lines(page, lines[page["facs"]], readings)
+                if page.get("rows"):
+                    linked["pages"] += 1
+                    for ln in [page.get("ln")] + [e.get("ln") for e in page["readings"].values()]:
+                        if ln:
+                            linked["lines"] += sum(1 for x in ln if x)
+                            linked["of"] += len(ln)
             for reader, pages in entities.items():
                 if page["facs"] in pages:
                     page.setdefault("auto_entities", {})[reader] = pages[page["facs"]]
@@ -401,6 +467,8 @@ def main() -> None:
     unedited = [letter for letter in letters if not letter["edited"]]
     print(f"{len(letters)} letters, {pages} pages; not yet edited: {len(unedited)} letters, "
           f"{sum(len(letter['pages']) for letter in unedited)} pages")
+    if linked["pages"]:
+        print(f"line links: {linked['pages']} pages with rows; {linked['lines']} of {linked['of']} text lines linked")
     for r in readers:
         if r.get("cer") is not None:
             print(f"  {r['id']:<48} read {r['pages_read']:>5}  scored {r['pages_scored']:>5}"

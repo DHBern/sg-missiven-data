@@ -15,10 +15,12 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 |---|---|
 | `readings/<leser>.jsonl` | eine Zeile pro Seite: `key` (= `pb/@facs`), `text` |
 | `readings/readers.json` | wer jeder Leser ist, mit Vorbehalten |
+| `readings/lines.jsonl` | Zeilenboxen der Zeilenleser (kraken, TrOCR) pro Seite, für die Verknüpfung von Text und Bild |
 | `entities/<leser>.jsonl` | automatische Auszeichnung einer Lesung (Personen, Organisationen, Orte, Daten) mit Verknüpfung zu den Registern |
 | `prompts/` | die Anweisung an die Vision-Language-Modelle |
 | `scripts/tei_pages.py` | TEI → Seiten (Text, Zeilen, Entitäten mit Offsets) |
 | `scripts/build_site.py` | baut `site/data/` aus TEI und Lesungen; misst jede Lesung gegen die Edition (CER) |
+| `scripts/line_links.py` | verknüpft die Zeilen jeder Transkription mit den Zeilen auf dem Bild ([docs/LINES.md](docs/LINES.md)) |
 | `scripts/import_readings.py` | Lesungen anderer Engines übernehmen (Text, PAGE XML, ALTO, JSONL) |
 | `scripts/dropbox_fetch.py` | lädt Bilder der ganzen Missiven-Serie aus der Dropbox-Freigabe (Tageslimit, Arbeitskopien 1500 px) |
 | `scripts/image_window.py` | öffnet/schliesst ein befristetes Fenster für Bilder noch nicht edierter Briefe ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)) |
@@ -33,6 +35,8 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 uv run --with lxml --with rapidfuzz python scripts/build_site.py
 python3 -m http.server -d site
 ```
+
+Zeilen und Bild sind verknüpft, wo kraken und TrOCR Zeilen gefunden haben (die 2.047 edierten Seiten): der Zeiger auf einer Zeile zeigt sie auf dem Bild, der Zeiger auf dem Bild die Zeile im Text ([docs/LINES.md](docs/LINES.md)).
 
 Noch nicht edierte Briefe der Serie erscheinen mit ihren maschinellen Lesungen, ohne Bild; die Bilder können befristet freigegeben werden ([docs/IMAGE_WINDOW.md](docs/IMAGE_WINDOW.md)).
 

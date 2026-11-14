@@ -951,7 +951,7 @@
     const showEnts = mode === "ents";
     if (readerId === "edition") {
       if (!page.html) return head + `<p class="empty">${T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
-      return head + (showEnts ? legend() : "") + `<div class="text edition ${showEnts ? "ents" : ""}">${lineify(page.html)}</div>`;
+      return head + (showEnts ? legend() : "") + lineNote(page.ln, page) + `<div class="text edition ${showEnts ? "ents" : ""}">${lineify(page.html)}</div>`;
     }
     const rd = page.readings[readerId];
     if (!rd) return head + `<p class="empty">${T("Not read on this page.", "Auf dieser Seite nicht gelesen.")}</p>`;
@@ -963,16 +963,105 @@
     if (mode === "diff") body = diffHtml(page.text, rd.text);
     else if (showEnts) body = entHtml(rd.text, page.auto_entities[readerId], null);
     else body = showUnc ? uncHtml(rd.text, unc) : esc(rd.text);
-    return head + trunc + (showEnts ? legend() : "") + (showUnc ? uncLegend(unc) : "") +
+    return head + trunc + (showEnts ? legend() : "") + (showUnc ? uncLegend(unc) : "") + lineNote(rd.ln, page) +
       `<div class="text ${showEnts ? "ents" : ""}">${numberLines(body)}</div>`;
   }
 
   /* the edition's html carries <br> + line numbers; wrap each line in a block */
   function lineify(html) {
-    return html.split("<br>").map((l) => `<span class="line">${l}</span>`).join("");
+    return html.split("<br>").map((l, i) => `<span class="line" data-i="${i}">${l}</span>`).join("");
   }
   function numberLines(body) {
-    return body.split("\n").map((l, i) => `<span class="line"><span class="ln">${i + 1}</span>${l}</span>`).join("");
+    return body.split("\n").map((l, i) => `<span class="line" data-i="${i}"><span class="ln">${i + 1}</span>${l}</span>`).join("");
+  }
+
+  /* ---------- lines on the image ----------
+     build_site.py puts the line readers' boxes together into rows (page.rows:
+     per row its boxes, in ten-thousandths of the image width) and gives every text, per line, the
+     rows it is linked to (ln; empty where no link was good enough). Pointing at
+     a line shows its row on the image; pointing at the image shows the line. */
+  function lineNote(ln, page) {
+    if (!ln || !page.rows) return "";
+    const lines = ln.length, linked = ln.filter((x) => x.length).length;
+    return `<p class="line-note small muted">${T(`${linked} of ${lines} lines linked to the image: point at a line, or at the image.`,
+      `${linked} von ${lines} Zeilen mit dem Bild verknüpft: Zeiger auf eine Zeile oder auf das Bild.`)}</p>`;
+  }
+  function currentLn() {
+    const v = state.view || {};
+    if (!v.page || !v.page.rows) return null;
+    if (v.reader === "edition") return v.page.ln || null;
+    const rd = v.page.readings[v.reader];
+    return (rd && rd.ln) || null;
+  }
+  let hlEls = [];
+  function clearRows() {
+    hlEls.forEach((el) => state.osd && state.osd.removeOverlay(el));
+    hlEls = [];
+    app.querySelectorAll("#reading .line.hl").forEach((el) => el.classList.remove("hl"));
+  }
+  function showRows(rows) {
+    const v = state.view || {};
+    if (!state.osd || !v.page || !v.page.rows || !window.OpenSeadragon) return;
+    for (const j of rows) {
+      for (const b of v.page.rows[j] || []) {
+        const el = document.createElement("div");
+        el.className = "row-hl";
+        state.osd.addOverlay({ element: el, location: new OpenSeadragon.Rect(b[0] / 1e4, b[1] / 1e4, (b[2] - b[0]) / 1e4, (b[3] - b[1]) / 1e4) });
+        hlEls.push(el);
+      }
+    }
+  }
+  function onLineHover(ev) {
+    const line = ev.target.closest(".line[data-i]");
+    const ln = currentLn();
+    clearRows();
+    if (!line || !ln) return;
+    const rows = ln[+line.dataset.i] || [];
+    if (!rows.length) return;
+    line.classList.add("hl");
+    showRows(rows);
+  }
+  function rowAt(pt) {
+    const v = state.view || {};
+    if (!v.page || !v.page.rows) return -1;
+    const x = pt.x * 1e4, y = pt.y * 1e4;
+    let hit = -1, area = Infinity;
+    v.page.rows.forEach((rects, j) => rects.forEach((b) => {
+      if (x >= b[0] && x <= b[2] && y >= b[1] && y <= b[3]) {
+        const a = (b[2] - b[0]) * (b[3] - b[1]);
+        if (a < area) { hit = j; area = a; }
+      }
+    }));
+    return hit;
+  }
+  function linesOfRow(j) {
+    const ln = currentLn();
+    if (!ln || j < 0) return [];
+    return [...app.querySelectorAll("#reading .line[data-i]")].filter((el) => (ln[+el.dataset.i] || []).includes(j));
+  }
+  function trackImage() {
+    if (!state.osd || !window.OpenSeadragon) return;
+    let last = -2;
+    const tracker = new OpenSeadragon.MouseTracker({
+      element: state.osd.canvas,
+      moveHandler: (e) => {
+        const j = rowAt(state.osd.viewport.pointFromPixel(e.position));
+        if (j === last) return;
+        last = j;
+        clearRows();
+        const els = linesOfRow(j);
+        if (!els.length) return;
+        els.forEach((el) => el.classList.add("hl"));
+        showRows([j]);
+      },
+      leaveHandler: () => { last = -2; clearRows(); },
+    });
+    state.osd.addHandler("canvas-click", (e) => {
+      if (!e.quick) return;
+      const els = linesOfRow(rowAt(state.osd.viewport.pointFromPixel(e.position)));
+      if (els.length) els[0].scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+    state.osd.addHandler("destroy", () => tracker.destroy());
   }
 
   function entHtml(text, ents, unc) {
@@ -1055,6 +1144,8 @@
     const det = app.querySelector("details.regest");
     det && det.addEventListener("toggle", () => store.set("regest", det.open));
     app.querySelector("#reading").addEventListener("mouseover", entTip);
+    app.querySelector("#reading").addEventListener("mouseover", onLineHover);
+    app.querySelector("#reading").addEventListener("mouseleave", clearRows);
     app.querySelector("#reading").addEventListener("click", entTip);
   }
 
@@ -1118,7 +1209,7 @@
   }
 
   /* ---------- image ---------- */
-  function destroyOsd() { if (state.osd) { state.osd.destroy(); state.osd = null; } delete app.dataset.facs; }
+  function destroyOsd() { hlEls = []; if (state.osd) { state.osd.destroy(); state.osd = null; } delete app.dataset.facs; }
   /* The server's info.json lists `sizes` and an @id without the /cantaloupe
      prefix; with `sizes` OpenSeadragon 4.1 stops at the 94 px thumbnail.
      Order: the edition's IIIF server (all published pages and some others);
@@ -1139,6 +1230,7 @@
       gestureSettingsMouse: { clickToZoom: false },
       crossOriginPolicy: cors,
     });
+    trackImage();
   }
 
   function setImgLink(url, label) {
