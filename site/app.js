@@ -1446,7 +1446,9 @@
     const edited = letter.edited !== false;
     if (reader !== "edition" && !page.readings[reader]) reader = "edition";
     if (!edited && reader === "edition") {
-      const firstRead = state.readers.find((x) => x.id !== "edition" && page.readings[x.id]);
+      // a letter not yet edited opens on a reading; with the entity view on, on the one that has the tags
+      const read = state.readers.filter((x) => x.id !== "edition" && page.readings[x.id]);
+      const firstRead = (state.mode === "ents" && read.find((x) => hasEnts(page, x.id))) || read[0];
       reader = firstRead ? firstRead.id : "edition";
     }
     state.view = { page, reader };  // for the uncertainty tooltip
@@ -1481,7 +1483,7 @@
             <span class="kwlab">${T("Keywords (automatic, experimental)", "Schlagwörter (automatisch, experimentell)")}</span>
             ${letter.auto_keywords.map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}`}
           ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
-          ${modeSelect(page, reader)}
+          ${modeSelect(page, reader, id, pageNo)}
           <div class="pages"><span class="lbl">${T("Page", "Seite")}</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
           <div class="readers" role="tablist" aria-label="${T("Readings", "Lesungen")}">${readerButtons(page, reader)}</div>
@@ -1560,11 +1562,14 @@
     const m = MODES.find(([id]) => id === state.mode);
     return m && m[2](page, reader) ? m[0] : "plain";
   }
-  function modeSelect(page, reader) {
+  function modeSelect(page, reader, id, pageNo) {
     const cur = modeFor(page, reader);
+    // entities wanted, but this reading has none: say which reading has them
+    const other = state.mode === "ents" && cur !== "ents" && state.readers.find((x) => x.id !== reader && hasEnts(page, x.id));
     return `<div class="viewmode"><label for="t-mode">${T("View", "Ansicht")}</label>
       <select id="t-mode">${MODES.map(([id, label, ok]) => `<option value="${id}" ${id === cur ? "selected" : ""} ${ok(page, reader) ? "" : "disabled"}>${esc(label())}</option>`).join("")}</select>
-      ${cur !== state.mode ? `<span class="muted small">${T("(not available for this reading)", "(für diese Lesung nicht verfügbar)")}</span>` : ""}</div>`;
+      ${cur !== state.mode ? `<span class="muted small">${T("(not available for this reading)", "(für diese Lesung nicht verfügbar)")}${other && id
+        ? ` · <a href="#/letter/${id}/${pageNo}/${esc(other.id)}">${T(`entities in the ${esc(loc(other, "label"))} reading`, `Entitäten in der Lesung ${esc(loc(other, "label"))}`)}</a>` : ""}</span>` : ""}</div>`;
   }
 
   function readingHtml(page, readerId) {
