@@ -117,37 +117,49 @@ series has 14,385 more (8,088 downloaded, the rest by 14.11.).
   Decision needed: a key of its own for tei → UBELIX, or submission stays a
   manual step from the desktop. Collection works either way.
 
-## The joint reading over the series
+## The joint reading over the series, and whether to tag it again
 
-`scripts/joint_reading.py` combines the readings word by word:
-- **Backbone:** Argon, the best single reader (CER 11.1 %).
-- **Votes:** the other readers, weighted by `log((1-e)/e)` of their CER, measured
-  on the other half of the letters.
-- **Excluded:** the fine-tuned VLM.
+### Measured (13.11.2026, 1,666 edited pages; tagging on the 218 late-letter pages)
 
-**Extended for the series:**
+| | CER | |
+|---|---:|---|
+| Argon alone | 10.97 % | the backbone |
+| Joint reading (`joint_reading.py`: Flash, kraken × 2, TrOCR × 2 voting) | 11.04 % | slightly **worse**; 725 words changed in all |
+| Oracle: the best reader *per page* (Argon, Flash, kraken, TrOCR) | 10.90 % | the most any page-level choice could reach |
+| Same oracle, with the fine-tuned Qwen3.5 | 10.39 % | optimistic: it was trained on these pages |
 
-1. **Readers:** Flash, kraken × 2, TrOCR × 2, plus the two fine-tuned VLMs
-   (Qwen3.5-4B and olmOCR).
-   - Both fine-tuned VLMs were trained on this edition
-     (`dh-unibe/image-text_sg-missiven`).
-   - So their weight is measured **only on the edited pages held out of their
-     training** (the dataset's test split, about 10 %).
-   - A reader with fewer than 100 such pages gets no vote.
-   - On the edited pages themselves they are left out of the joint reading, as
-     now: there it would inherit what they memorised.
-2. **New pages:** the weights come from all edited pages, since no new page has
-   an edition text to leak.
-3. **Missing readers:** until kraken and TrOCR have read the new pages, a page
-   is combined from the readers it has. `source` records which readers voted on
-   each page.
-4. **Measured before it replaces anything:**
-   - The joint reading becomes the text that tagging and regests read only if
-     it beats Argon on the held-out half of the edited pages by at least
-     0.5 points of CER.
-   - Otherwise it is shown as one reader among others, as today.
-5. **Runs as step 3 of each cycle.** It is recomputed only for pages with a new
-   reading.
+- **The independent readers don't complement Argon.**
+  - Even knowing the answer, picking the best reader per page gains 0.07 points.
+  - Word-level voting gains nothing.
+  - Two line readers get negative weights (Inzigkofen, TrOCR medieval).
+
+| Tagging (qwen3.8 + judge), F1 on the late letters | on Argon | on the edition text |
+|---|---:|---:|
+| Persons | 0.677 | 0.842 |
+| Organisations | 0.752 | 0.811 |
+| Places | 0.718 | 0.853 |
+| All | 0.690 | **0.822** |
+| Links found (recall) | 0.62 | 0.58 |
+
+- **The reading limits the tagging.** A perfect reading would add 13 points of F1, 16 for persons.
+- **The reading does not limit the linking:** recall is the same on the edition text. Links are limited by the register: the persons of 1573–1650 are mostly not in it.
+
+### What follows
+
+1. **No re-tagging on the joint reading as it is.** It is no better than Argon, so tagging it again would only change tags at random.
+2. **Tag again only when a reading is measurably better, by at least one point of CER on edited pages the reader never saw.** Three ways could get there:
+   - **The fine-tuned VLMs (Qwen3.5-4B, olmOCR).**
+     - First reconstruct which edited pages they did *not* train on. Training drew a seeded page split (seed 42, about 90 % train) over all its datasets; the run records in training-atr-models hold or rebuild the lists.
+     - Then measure them and the joint reading with them on those pages only.
+     - On the new pages they are fair readers, since they never saw those.
+   - **Corrections by the Missiven team** (window 18.11.–01.12.): every corrected page is a better reading of that page and is tagged again at once.
+   - **kraken and TrOCR on the new pages (UBELIX)** are unlikely to lift the joint reading; they did not on the edited pages. Run them for comparison and as readers in the viewer, not for the joint reading.
+3. **When a reader qualifies,** the pipeline re-tags only the pages whose text changed. The tags are then exported to TEI and checked against TEI P5, as now.
+4. **Linking improves on the register side, not the reading side:**
+   - authority links for the registers (issue #12);
+   - unlinked names as candidates for new register entries (`entities/unlinked_*.tsv`, 10,509 groups);
+   - person links, which stay unwritten until at least 20 measured links reach precision ≥ 0.9.
+5. **Not pursued:** a "merged reading" written by a language model from several readings. It would read better and be harder to check: a model that normalises spelling erases what the edition keeps. Only with its own measurement on held-out pages, and never as the edition's text.
 
 ## Order of work
 
@@ -155,7 +167,7 @@ series has 14,385 more (8,088 downloaded, the rest by 14.11.).
 2. ✅ Publication: B. Open: the UBELIX key.
 3. `pipeline.sh` with the systemd user timer, steps 1, 2, 6, 7, 8 (collect and
    publish).
-4. Joint reading for the series (step 3), with its measurement.
+4. ✅ Joint reading measured (13.11.): no gain over Argon; the VLMs' held-out pages come first.
 5. Tagging step, after hmBERT vs LLM is decided (`ner_llm.py` pilot,
    13.11.).
 6. `ubelix/lines.sbatch`, with the smoke test first, then the full run (not
