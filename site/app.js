@@ -46,6 +46,9 @@
   }
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // a reader's footnote (readers.json "footnote"): a marker after its description, the note below, URLs linked
+  const fnMark = (r) => (r.footnote ? `<sup class="fn-mark">1</sup>` : "");
+  const fnHtml = (r) => (r.footnote ? `<div class="footnote"><sup>1</sup> ${esc(loc(r, "footnote")).replace(/https?:\/\/[^\s)]+/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`)}</div>` : "");
   const pct = (x) => (x == null ? "–" : (x * 100).toFixed(1).replace(".", LANG === "de" ? "," : ".") + " %");
   const fmtDate = (d) => {
     if (!d) return T("undated", "undatiert");
@@ -256,7 +259,7 @@
           <td class="n">${pct(r.cer)}<div class="bar"><i style="width:${r.cer == null ? 0 : (100 * r.cer / max).toFixed(1)}%"></i></div></td>
           <td class="n">${pct(r.median_page_cer)}</td>
           <td class="n">${r.pages_read ?? 0} / ${r.pages_scored ?? 0}</td>
-          <td class="small">${esc(loc(r, "about"))}${r.caveat ? `<div class="caveat">${esc(loc(r, "caveat"))}</div>` : ""}${r.note ? `<div class="muted">${esc(loc(r, "note"))}</div>` : ""}</td></tr>`).join("")}
+          <td class="small">${esc(loc(r, "about"))}${fnMark(r)}${r.caveat ? `<div class="caveat">${esc(loc(r, "caveat"))}</div>` : ""}${r.note ? `<div class="muted">${esc(loc(r, "note"))}</div>` : ""}${fnHtml(r)}</td></tr>`).join("")}
         </tbody></table></div>`;
   }
 
@@ -920,7 +923,7 @@
 
   function readingHtml(page, readerId) {
     const r = state.readers.find((x) => x.id === readerId) || state.readers[0];
-    const head = `${r.about ? `<p class="about-reader">${esc(loc(r, "about"))}</p>` : ""}${r.caveat ? `<p class="caveat">${esc(loc(r, "caveat"))}</p>` : ""}`;
+    const head = `${r.about ? `<p class="about-reader">${esc(loc(r, "about"))}${fnMark(r)}</p>` : ""}${r.caveat ? `<p class="caveat">${esc(loc(r, "caveat"))}</p>` : ""}${fnHtml(r)}`;
     const showEnts = state.ents && hasEnts(page, readerId);
     if (readerId === "edition") {
       if (!page.html) return head + `<p class="empty">${T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
