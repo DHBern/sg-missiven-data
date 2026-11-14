@@ -16,6 +16,7 @@ Outputs (site/data/)
   readers.json                  readers with corpus scores against the edition
   registers.json                register id -> name and links
   letters/<id>.json             one letter: header, pages, every reading
+  tei/<id>.xml                  the letter's TEI (data/ for the edition, tei_unedited/ for the rest), for download
 
 The score is a character error rate against the edition text of the same page:
 Σ edits / Σ edition characters, whitespace collapsed to single spaces. It is a
@@ -26,6 +27,7 @@ edition that writes "uo" for u with o above makes "ů" an error.
 from __future__ import annotations
 
 import json
+import shutil
 import re
 import statistics
 import sys
@@ -521,6 +523,14 @@ def main() -> None:
         if not letter["edited"] and auto_kw.get(letter["id"]):
             letter["auto_keywords"] = auto_kw[letter["id"]]
         mark_auto_refs(letter, auto_keys)
+        # the letter's TEI, copied so the viewer can offer it for download from its own origin
+        for folder in ("data", "tei_unedited"):
+            src = ROOT / folder / f"{letter['id']}.xml"
+            if src.exists():
+                (OUT / "tei").mkdir(exist_ok=True)
+                shutil.copyfile(src, OUT / "tei" / src.name)
+                letter["tei"] = f"{folder}/{src.name}"
+                break
         (OUT / "letters" / f"{letter['id']}.json").write_text(
             json.dumps(letter, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         index.append({
