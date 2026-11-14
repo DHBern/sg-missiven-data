@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3525</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Verwalter der Landmannschaften, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen um Auskunft über die Höhe der Fleischpreise für Rind- und Kalbfleisch in St. Gallen. Sie verweisen auf eine Anfrage der Stadt Schaffhausen bezüglich der Fleischsteuer und bitten um einen baldigen Bericht.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Verwalter der Landmannschaften, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen um Auskunft über die Höhe der Fleischpreise für Rind- und Kalbfleisch in St. Gallen. Sie verweisen auf eine Anfrage der Stadt Schaffhausen bezüglich der Fleischsteuer und bitten um einen baldigen Bericht.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Administrators of the Landmannschaften, Burgomaster and Council of Konstanz ask the Burgomaster and Council of St. Gallen for information on the level of meat prices for beef and veal in St. Gallen. They refer to an inquiry from the city of Schaffhausen regarding the meat tax and ask for a prompt report.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,36 +35,36 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3525_14049.jpg" n="1"/>
-<lb n="1"/>Unsere freündt, nachparliche und guetwillige
-<lb n="2"/>dienst zůvor, fürsichtige ersame und
-<lb n="3"/>weiße besonders liebe freündt und vertrawte
-<lb n="4"/>nachparn,
-<lb n="5"/>Auß der copeÿlichen bÿlag haben ihr zůersehen
-<lb n="6"/>waß <orgName ref="stadtasg-actors-28" cert="medium" resp="#ner">burgermeister und rhat der statt Schaffhaußen</orgName>
-<lb n="7"/>unß deß fleisch taxes halber nachparlich zůgeschriben.
-<lb n="8"/>Wofern nun irhierauß, wie deß taxes halber
-<lb n="9"/>enderung fürzůnemen gedacht, gern wüßten
-<lb n="10"/>möchten, wie hoch der zeit jnner dz rind unnd kalb
-<lb n="11"/>fleisch beÿ euch geschetzt und zůuerkaufen geben
-<lb n="12"/>werde, so ist an euch unßer freündt
-<lb n="13"/>nachparliches ersůchen ihr gerůchen unß hierüber
-<lb n="14"/>ewern bericht ohnschwer so bald es jmmer möglich
-<lb n="15"/>zůzeschikhen. Daß seind wir umb
-<lb n="16"/>eüch in gleichem und andern occurrentien
-<lb n="17"/>nachparlich zůerwidern erbietig, unß damit
-<lb n="18"/>göttlicher protection wolmeinend. Datum den <origDate when="1622" resp="#ner">3 ienner.
-<lb n="19"/>ao 1622</origDate>
-<lb n="20"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Verwalter der landtman-
-<lb n="21"/>schaften auch burgermeister
-<lb n="22"/>und rhat der statt
-<lb n="23"/>Costantz</orgName>. 1.
+<lb n="1"/><unclear cert="low" resp="#joint">Unsere</unclear> <unclear cert="low" resp="#joint">freündt</unclear>, <unclear cert="low" resp="#joint">nachparliche</unclear> und <unclear cert="medium" resp="#joint">guetwillige</unclear>
+<lb n="2"/><unclear cert="medium" resp="#joint">dienst</unclear> <unclear cert="medium" resp="#joint">zůvor</unclear>, <unclear cert="medium" resp="#joint">fürsichtige</unclear> <unclear cert="medium" resp="#joint">ersame</unclear> und
+<lb n="3"/><unclear cert="medium" resp="#joint">weiße</unclear> <unclear cert="medium" resp="#joint">besonders</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> <unclear cert="medium" resp="#joint">freündt</unclear> und <unclear cert="low" resp="#joint">vertrawte</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">nachparn</unclear>,
+<lb n="5"/><unclear cert="low" resp="#joint">Auß</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">copeÿlichen</unclear> <unclear cert="low" resp="#joint">bÿlag</unclear> haben ihr <unclear cert="medium" resp="#joint">zůersehen</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">waß</unclear> <orgName ref="stadtasg-actors-28" cert="medium" resp="#ner">burgermeister und <unclear cert="medium" resp="#joint">rhat</unclear> der statt <unclear cert="medium" resp="#joint">Schaffhaußen</unclear></orgName>
+<lb n="7"/>unß deß <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">taxes</unclear> <unclear cert="low" resp="#joint">halber</unclear> <unclear cert="low" resp="#joint">nachparlich</unclear> <unclear cert="low" resp="#joint">zůgeschriben</unclear>.
+<lb n="8"/><unclear cert="low" resp="#joint">Wofern</unclear> nun <unclear cert="medium" resp="#joint">irhierauß</unclear>, wie <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">taxes</unclear> <unclear cert="medium" resp="#joint">halber</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">enderung</unclear> <unclear cert="medium" resp="#joint">fürzůnemen</unclear> gedacht, gern <unclear cert="medium" resp="#joint">wüßten</unclear>
+<lb n="10"/>möchten, wie hoch der zeit <unclear cert="low" resp="#joint">jnner</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">rind</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">kalb</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">beÿ</unclear> euch <unclear cert="medium" resp="#joint">geschetzt</unclear> und <unclear cert="medium" resp="#joint">zůuerkaufen</unclear> <unclear cert="medium" resp="#joint">geben</unclear>
+<lb n="12"/>werde, <unclear cert="medium" resp="#joint">so</unclear> ist an euch <unclear cert="medium" resp="#joint">unßer</unclear> <unclear cert="medium" resp="#joint">freündt</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">nachparliches</unclear> <unclear cert="medium" resp="#joint">ersůchen</unclear> ihr <unclear cert="low" resp="#joint">gerůchen</unclear> unß <unclear cert="medium" resp="#joint">hierüber</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">ewern</unclear> <unclear cert="medium" resp="#joint">bericht</unclear> <unclear cert="medium" resp="#joint">ohnschwer</unclear> <unclear cert="medium" resp="#joint">so</unclear> <unclear cert="medium" resp="#joint">bald</unclear> <unclear cert="medium" resp="#joint">es</unclear> <unclear cert="medium" resp="#joint">jmmer</unclear> <unclear cert="medium" resp="#joint">möglich</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">zůzeschikhen</unclear>. <unclear cert="medium" resp="#joint">Daß</unclear> <unclear cert="medium" resp="#joint">seind</unclear> wir umb
+<lb n="16"/><unclear cert="medium" resp="#joint">eüch</unclear> in <unclear cert="medium" resp="#joint">gleichem</unclear> und andern <unclear cert="medium" resp="#joint">occurrentien</unclear>
+<lb n="17"/><unclear cert="medium" resp="#joint">nachparlich</unclear> <unclear cert="medium" resp="#joint">zůerwidern</unclear> erbietig, unß damit
+<lb n="18"/>göttlicher protection <unclear cert="medium" resp="#joint">wolmeinend</unclear>. Datum den <origDate when="1622" resp="#ner"><unclear cert="low" resp="#joint">3</unclear> <unclear cert="low" resp="#joint">ienner</unclear>.
+<lb n="19"/><unclear cert="low" resp="#joint">ao</unclear> <unclear cert="low" resp="#joint">1622</unclear></origDate>
+<lb n="20"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Verwalter</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">landtman</unclear>-
+<lb n="21"/><unclear cert="low" resp="#joint">schaften</unclear> <unclear cert="low" resp="#joint">auch</unclear> burgermeister
+<lb n="22"/>und <unclear cert="medium" resp="#joint">rhat</unclear> der statt
+<lb n="23"/><unclear cert="low" resp="#joint">Costantz</unclear></orgName>. <unclear cert="low" resp="#joint">1</unclear>.
 <pb facs="StadtASG_Missive_3525_14050.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3525_14051.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3525_14052.jpg" n="4"/>
-<lb n="24"/>Denen fuersichtig ehrsamen undt weyßen, herren
-<lb n="25"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister undt Rath der statt St. Gallen</orgName>,
-<lb n="26"/>unsseren besonders lieben freunden undt ver-
-<lb n="27"/>trawten eydgnossen.
+<lb n="24"/><unclear cert="medium" resp="#joint">Denen</unclear> <unclear cert="medium" resp="#joint">fuersichtig</unclear> <unclear cert="medium" resp="#joint">ehrsamen</unclear> <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="medium" resp="#joint">weyßen</unclear>, <unclear cert="medium" resp="#joint">herren</unclear>
+<lb n="25"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaister</unclear> <unclear cert="medium" resp="#joint">undt</unclear> Rath der statt St. Gallen</orgName>,
+<lb n="26"/><unclear cert="medium" resp="#joint">unsseren</unclear> besonders lieben <unclear cert="low" resp="#joint">freunden</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="27"/><unclear cert="low" resp="#joint">trawten</unclear> <unclear cert="low" resp="#joint">eydgnossen</unclear>.
 </p>
         </body>
     </text>

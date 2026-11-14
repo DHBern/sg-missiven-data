@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3349</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben vom 26. März, in dem um Hilfe bei der Einziehung einer Schuld des Sohnes von Hans Bartholomäus Schowinger gebeten wurde. Sie berichten, dass der Vater in Wien sei und sich weigere, die Schulden seines ungehorsamen Sohnes zu begleichen, da er nach Stadtrecht nicht dafür hafte. Sie bitten Chur, den Gläubiger Florian Geiss nicht weiter zu drängen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben vom 26. März, in dem um Hilfe bei der Einziehung einer Schuld des Sohnes von Hans Bartholomäus Schowinger gebeten wurde. Sie berichten, dass der Vater in Wien sei und sich weigere, die Schulden seines ungehorsamen Sohnes zu begleichen, da er nach Stadtrecht nicht dafür hafte. Sie bitten Chur, den Gläubiger Florian Geiss nicht weiter zu drängen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to a letter of 26 March, in which help was requested in the collection of a debt of the son of Hans Bartholomäus Schowinger. They report that the father is in Wien and refuses to settle the debts of his disobedient son, as he is not liable for them according to city law. They ask Chur not to press the creditor Florian Geiss any further.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,75 +35,75 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3349_13313.jpg" n="1"/>
-<lb n="1"/>Unser freuendtlich willige dienst etc.
-<lb n="2"/>Auß Ewer unser g. l. a. und pundtsgnoßen schriben
-<lb n="3"/>vom <date resp="#ner">26. Martii</date>, haben wir mit laid vernummen, wie dz
-<lb n="4"/>Ewer angehoeriger burgers pfleeger <persName resp="#ner">Florian Geiß</persName>, von <persName resp="#ner">To=
-<lb n="5"/>bias Schowinger</persName>, unsers auch lieben getruwen burgers
-<lb n="6"/><persName resp="#ner">Hans Barthlome Schowingers</persName> ungehorsamen sohn, mit
-<lb n="7"/>entlehnung einer sa. gelts, angesetzt worden, worauff
-<lb n="8"/>ewer begehren, dz wir gedachten burger Hans Barthlome
-<lb n="9"/>Schowinger alß den vatter dohin wollen vermoegen,
-<lb n="10"/>dz er ihme Hr. <persName resp="#ner">Geißen</persName> umb seinen außstand einen
-<lb n="11"/>unclagbaren willen mache etc. Worüber wir Euch zu=
-<lb n="12"/>berichten nit sollen underlaßen, dz obgesagter Hr.
-<lb n="13"/><persName resp="#ner">Hans Barthlome Schowinger</persName> diser zeit nit allhie, sunder
-<lb n="14"/>schon etlich monat lang seiner handels geschefften halber
-<lb n="15"/>zu <placeName ref="stadtasg-places-15" cert="medium" resp="#ner">Wien</placeName> in <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Oesterreich</placeName> sich befindet, sunsten wir ihme
-<lb n="16"/>dz schriben fürgewisen, und darüber sein antwort
-<lb n="17"/>und meinung vernummen haben wolten, koennen aber
-<lb n="18"/>wol gedencken, wann er gleich selbs hie gegenwertig
-<lb n="19"/>wehre, er wurde sich diß orts eben auch entschuldigen,
-<lb n="20"/>wie vor disem von ihme gegen andern ehrlichen leüthen
-<lb n="21"/>mehr geschehen, die ihne gleicher gestalt auch durch
-<lb n="22"/>unser mittel ersuchen laßen, dz er die schulden
-<lb n="23"/>so gedachter sein sohn an underschidlichen orten ge=
-<lb n="24"/>macht, für ihne bezahlen wolte, da er dann bey
-<lb n="25"/>uns mit hoechster betruebnuß seines hertzens fürge=
-<lb n="26"/>wendt, ihme seye hertzlich laid, dz einer und der
-<lb n="27"/>ander die ihme fürgesetzt und geborget haben, sich nit
-<lb n="28"/>beßer bedacht, seinem stand, thun und laßen, nit
-<lb n="29"/>beßer nachgeforschet, sunder ihme alß einem unbe=
-<lb n="30"/>sinten jungen gesellen und ungehorsamen sohn, dz ihrige
-<lb n="31"/>so unfürsichtigclich angehenckt und vertrawt haben,
-<lb n="32"/>da sie doch durch beßere nachforschung leichtlich heten
-<lb n="33"/>konnen erfahren wie seine sachen beschaffen, und
-<lb n="34"/>dz es an ihme dem vatter, nit ermanglet, ihne
-<lb n="35"/>mit allem ernst dahin zuziehen und zuhalten, dz
-<lb n="36"/>er niemand solcher gestalt kundte ansetzen, maaßen
-<lb n="37"/>er ihne wegen seiner beharrlichen ungehorsamkeit,
-<lb n="38"/>und damit er mit der zeit widerumb auff den rech=
-<lb n="39"/>ten weg gebracht werden moechte, in dz dritte jar
-<lb n="40"/>lang in dem zuchthauß zu <placeName resp="#ner">Vtrecht</placeName> verwahren halben
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freuendtlich</unclear> willige dienst <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="2"/><unclear cert="low" resp="#joint">Auß</unclear> <unclear cert="low" resp="#joint">Ewer</unclear> unser <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">a</unclear>. und <unclear cert="medium" resp="#joint">pundtsgnoßen</unclear> <unclear cert="medium" resp="#joint">schriben</unclear>
+<lb n="3"/><unclear cert="medium" resp="#joint">vom</unclear> <date resp="#ner">26. <unclear cert="medium" resp="#joint">Martii</unclear></date>, haben wir mit <unclear cert="medium" resp="#joint">laid</unclear> <unclear cert="medium" resp="#joint">vernummen</unclear>, wie <unclear cert="medium" resp="#joint">dz</unclear>
+<lb n="4"/><unclear cert="medium" resp="#joint">Ewer</unclear> <unclear cert="medium" resp="#joint">angehoeriger</unclear> <unclear cert="medium" resp="#joint">burgers</unclear> <unclear cert="medium" resp="#joint">pfleeger</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Florian</unclear> <unclear cert="medium" resp="#joint">Geiß</unclear></persName>, von <persName resp="#ner"><unclear cert="medium" resp="#joint">To=</unclear>
+<lb n="5"/>bias <unclear cert="low" resp="#joint">Schowinger</unclear></persName>, <unclear cert="low" resp="#joint">unsers</unclear> auch lieben <unclear cert="medium" resp="#joint">getruwen</unclear> <unclear cert="medium" resp="#joint">burgers</unclear>
+<lb n="6"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Hans</unclear> Barthlome <unclear cert="medium" resp="#joint">Schowingers</unclear></persName> <unclear cert="medium" resp="#joint">ungehorsamen</unclear> <unclear cert="medium" resp="#joint">sohn</unclear>, <unclear cert="medium" resp="#joint">mit</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">entlehnung</unclear> einer <unclear cert="medium" resp="#joint">sa</unclear>. <unclear cert="medium" resp="#joint">gelts</unclear>, <unclear cert="medium" resp="#joint">angesetzt</unclear> worden, <unclear cert="medium" resp="#joint">worauff</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">ewer</unclear> <unclear cert="medium" resp="#joint">begehren</unclear>, <unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">wir</unclear> gedachten burger Hans Barthlome
+<lb n="9"/><unclear cert="medium" resp="#joint">Schowinger</unclear> <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">den</unclear> vatter <unclear cert="medium" resp="#joint">dohin</unclear> wollen <unclear cert="medium" resp="#joint">vermoegen</unclear>,
+<lb n="10"/><unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">er</unclear> ihme <unclear cert="medium" resp="#joint">Hr</unclear>. <persName resp="#ner"><unclear cert="medium" resp="#joint">Geißen</unclear></persName> <unclear cert="medium" resp="#joint">umb</unclear> seinen außstand einen
+<lb n="11"/><unclear cert="medium" resp="#joint">unclagbaren</unclear> willen mache etc. Worüber wir Euch zu=
+<lb n="12"/>berichten nit <unclear cert="medium" resp="#joint">sollen</unclear> <unclear cert="medium" resp="#joint">underlaßen</unclear>, <unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">obgesagter</unclear> <unclear cert="medium" resp="#joint">Hr</unclear>.
+<lb n="13"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Hans</unclear> Barthlome <unclear cert="medium" resp="#joint">Schowinger</unclear></persName> diser zeit <unclear cert="medium" resp="#joint">nit</unclear> allhie, sunder
+<lb n="14"/>schon etlich monat lang seiner <unclear cert="medium" resp="#joint">handels</unclear> <unclear cert="medium" resp="#joint">geschefften</unclear> <unclear cert="medium" resp="#joint">halber</unclear>
+<lb n="15"/>zu <placeName ref="stadtasg-places-15" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Wien</unclear></placeName> in <placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Oesterreich</unclear></placeName> sich befindet, <unclear cert="medium" resp="#joint">sunsten</unclear> wir <unclear cert="medium" resp="#joint">ihme</unclear>
+<lb n="16"/><unclear cert="medium" resp="#joint">dz</unclear> schriben <unclear cert="medium" resp="#joint">fürgewisen</unclear>, und darüber <unclear cert="medium" resp="#joint">sein</unclear> <unclear cert="medium" resp="#joint">antwort</unclear>
+<lb n="17"/>und <unclear cert="medium" resp="#joint">meinung</unclear> <unclear cert="medium" resp="#joint">vernummen</unclear> haben wolten, <unclear cert="medium" resp="#joint">koennen</unclear> aber
+<lb n="18"/>wol <unclear cert="medium" resp="#joint">gedencken</unclear>, wann er gleich selbs <unclear cert="medium" resp="#joint">hie</unclear> <unclear cert="medium" resp="#joint">gegenwertig</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">wehre</unclear>, er wurde sich <unclear cert="medium" resp="#joint">diß</unclear> orts eben <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">entschuldigen</unclear>,
+<lb n="20"/>wie vor disem von <unclear cert="medium" resp="#joint">ihme</unclear> gegen andern <unclear cert="medium" resp="#joint">ehrlichen</unclear> <unclear cert="medium" resp="#joint">leüthen</unclear>
+<lb n="21"/>mehr <unclear cert="medium" resp="#joint">geschehen</unclear>, die <unclear cert="medium" resp="#joint">ihne</unclear> <unclear cert="medium" resp="#joint">gleicher</unclear> gestalt auch <unclear cert="medium" resp="#joint">durch</unclear>
+<lb n="22"/>unser mittel ersuchen laßen, <unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">er</unclear> die <unclear cert="medium" resp="#joint">schulden</unclear>
+<lb n="23"/>so gedachter sein <unclear cert="medium" resp="#joint">sohn</unclear> an <unclear cert="medium" resp="#joint">underschidlichen</unclear> <unclear cert="medium" resp="#joint">orten</unclear> ge=
+<lb n="24"/>macht, für <unclear cert="medium" resp="#joint">ihne</unclear> <unclear cert="medium" resp="#joint">bezahlen</unclear> wolte, da er dann bey
+<lb n="25"/>uns mit <unclear cert="medium" resp="#joint">hoechster</unclear> <unclear cert="medium" resp="#joint">betruebnuß</unclear> <unclear cert="medium" resp="#joint">seines</unclear> <unclear cert="medium" resp="#joint">hertzens</unclear> <unclear cert="medium" resp="#joint">fürge=</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">wendt</unclear>, <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">seye</unclear> <unclear cert="medium" resp="#joint">hertzlich</unclear> laid, <unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">einer</unclear> und der
+<lb n="27"/><unclear cert="medium" resp="#joint">ander</unclear> die <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">fürgesetzt</unclear> und <unclear cert="medium" resp="#joint">geborget</unclear> haben, sich nit
+<lb n="28"/>beßer bedacht, <unclear cert="medium" resp="#joint">seinem</unclear> <unclear cert="medium" resp="#joint">stand</unclear>, <unclear cert="medium" resp="#joint">thun</unclear> und laßen, nit
+<lb n="29"/>beßer <unclear cert="medium" resp="#joint">nachgeforschet</unclear>, sunder ihme <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">unbe=</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">sinten</unclear> <unclear cert="low" resp="#joint">jungen</unclear> <unclear cert="low" resp="#joint">gesellen</unclear> und <unclear cert="low" resp="#joint">ungehorsamen</unclear> <unclear cert="low" resp="#joint">sohn</unclear>, <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">ihrige</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">unfürsichtigclich</unclear> <unclear cert="low" resp="#joint">angehenckt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">vertrawt</unclear> <unclear cert="low" resp="#joint">haben</unclear>,
+<lb n="32"/>da <unclear cert="medium" resp="#joint">sie</unclear> doch durch beßere nachforschung <unclear cert="medium" resp="#joint">leichtlich</unclear> <unclear cert="medium" resp="#joint">heten</unclear>
+<lb n="33"/><unclear cert="medium" resp="#joint">konnen</unclear> erfahren wie seine sachen <unclear cert="medium" resp="#joint">beschaffen</unclear>, und
+<lb n="34"/><unclear cert="medium" resp="#joint">dz</unclear> es an <unclear cert="medium" resp="#joint">ihme</unclear> dem vatter, nit <unclear cert="medium" resp="#joint">ermanglet</unclear>, <unclear cert="medium" resp="#joint">ihne</unclear>
+<lb n="35"/>mit allem ernst dahin <unclear cert="low" resp="#joint">zuziehen</unclear> und zuhalten, <unclear cert="low" resp="#joint">dz</unclear>
+<lb n="36"/>er <unclear cert="low" resp="#joint">niemand</unclear> <unclear cert="low" resp="#joint">solcher</unclear> <unclear cert="low" resp="#joint">gestalt</unclear> <unclear cert="low" resp="#joint">kundte</unclear> <unclear cert="low" resp="#joint">ansetzen</unclear>, <unclear cert="low" resp="#joint">maaßen</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">ihne</unclear> wegen seiner beharrlichen <unclear cert="medium" resp="#joint">ungehorsamkeit</unclear>,
+<lb n="38"/>und damit er mit der zeit widerumb auff den <unclear cert="low" resp="#joint">rech=</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">ten</unclear> weg gebracht werden <unclear cert="medium" resp="#joint">moechte</unclear>, in <unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">dritte</unclear> <unclear cert="medium" resp="#joint">jar</unclear>
+<lb n="40"/>lang in dem <unclear cert="medium" resp="#joint">zuchthauß</unclear> zu <placeName resp="#ner"><unclear cert="medium" resp="#joint">Vtrecht</unclear></placeName> <unclear cert="medium" resp="#joint">verwahren</unclear> halben
 <lb n="41"/>laßen
 <pb facs="StadtASG_Missive_3349_13314.jpg" n="2"/>
-<lb n="42"/>laßen, auß welchem er aber noch zu fruehe wider sin deß
-<lb n="43"/>vatters willen außkomen sye. Solche schulden aber fuer
-<lb n="44"/>ine zubzahlen wolle ime eben schwer fallen und unmueglich
-<lb n="45"/>sin, dieweil deren nit wenig syen, und ine Gott der
-<lb n="46"/>allmaechtige sunst auch mit vilen kinden begabet, deren
-<lb n="47"/>er billich auch rechnung tragen mueße, so sye auch nach un-
-<lb n="48"/>serm stattrechten ein vatter nit schuldig fuer sinen sohn
-<lb n="49"/>zubzahlen, so er ohne sin vorwißen und willen schulden
-<lb n="50"/>macht, es gschehe gleich daheimen od an der froembde,
-<lb n="51"/>mit angehencktem demuetigen pit, wir wolten ine
-<lb n="52"/>alß guetig daby laßen verbleiben, und nit weiter
-<lb n="53"/>treiben. Nach deme wir nun solche sin fuergebrachte be-
-<lb n="54"/>schwerd vernomen, und wir unß auch unsers hierumb
-<lb n="55"/>habenden stattrechtens erinnert, haben wir es auch
-<lb n="56"/>zemahlen laßen daby bewenden, und ime weiters
-<lb n="57"/>nichts ufferlegen koennen.
-<lb n="58"/>Welches euch unsern getrewen l. Eidt: und Pundts-
-<lb n="59"/>gnoßen wir hiemit gueter eidt: und pundtsgnoeßischer meinung
-<lb n="60"/>in antwurt nit haben wollen verhalten, ver-
-<lb n="61"/>bleiben euch zu aller eidt: und pundtsgnoeßischer dienst-
-<lb n="62"/>erweisung, trew und liebe wir allwegen vordrist wol
-<lb n="63"/>gwogen, unß hiemit samptlich goettlicher protection
-<lb n="64"/>wol befehlende datum den <origDate when="1639-04-05" resp="#ner">5. aprilis. 1639.</origDate>
+<lb n="42"/>laßen, auß welchem er aber noch zu <unclear cert="medium" resp="#joint">fruehe</unclear> wider <unclear cert="medium" resp="#joint">sin</unclear> deß
+<lb n="43"/>vatters willen <unclear cert="medium" resp="#joint">außkomen</unclear> <unclear cert="medium" resp="#joint">sye</unclear>. Solche schulden aber <unclear cert="medium" resp="#joint">fuer</unclear>
+<lb n="44"/><unclear cert="medium" resp="#joint">ine</unclear> <unclear cert="medium" resp="#joint">zubzahlen</unclear> wolle <unclear cert="medium" resp="#joint">ime</unclear> eben schwer fallen und <unclear cert="medium" resp="#joint">unmueglich</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">sin</unclear>, <unclear cert="medium" resp="#joint">dieweil</unclear> <unclear cert="medium" resp="#joint">deren</unclear> nit wenig <unclear cert="medium" resp="#joint">syen</unclear>, und ine Gott der
+<lb n="46"/><unclear cert="medium" resp="#joint">allmaechtige</unclear> sunst auch mit <unclear cert="medium" resp="#joint">vilen</unclear> <unclear cert="medium" resp="#joint">kinden</unclear> begabet, <unclear cert="medium" resp="#joint">deren</unclear>
+<lb n="47"/>er billich auch rechnung tragen <unclear cert="low" resp="#joint">mueße</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">sye</unclear> auch <unclear cert="medium" resp="#joint">nach</unclear> <unclear cert="medium" resp="#joint">un</unclear>-
+<lb n="48"/><unclear cert="medium" resp="#joint">serm</unclear> <unclear cert="medium" resp="#joint">stattrechten</unclear> ein vatter nit schuldig <unclear cert="medium" resp="#joint">fuer</unclear> <unclear cert="medium" resp="#joint">sinen</unclear> <unclear cert="medium" resp="#joint">sohn</unclear>
+<lb n="49"/><unclear cert="medium" resp="#joint">zubzahlen</unclear>, so er ohne sin <unclear cert="medium" resp="#joint">vorwißen</unclear> und willen <unclear cert="medium" resp="#joint">schulden</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">macht</unclear>, es <unclear cert="medium" resp="#joint">gschehe</unclear> gleich <unclear cert="medium" resp="#joint">daheimen</unclear> <unclear cert="medium" resp="#joint">od</unclear> an der <unclear cert="medium" resp="#joint">froembde</unclear>,
+<lb n="51"/>mit <unclear cert="medium" resp="#joint">angehencktem</unclear> <unclear cert="medium" resp="#joint">demuetigen</unclear> <unclear cert="medium" resp="#joint">pit</unclear>, <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">wolten</unclear> ine
+<lb n="52"/><unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">guetig</unclear> <unclear cert="medium" resp="#joint">daby</unclear> laßen verbleiben, und nit weiter
+<lb n="53"/><unclear cert="medium" resp="#joint">treiben</unclear>. <unclear cert="medium" resp="#joint">Nach</unclear> <unclear cert="medium" resp="#joint">deme</unclear> wir nun solche <unclear cert="medium" resp="#joint">sin</unclear> <unclear cert="medium" resp="#joint">fuergebrachte</unclear> be-
+<lb n="54"/>schwerd <unclear cert="medium" resp="#joint">vernomen</unclear>, und wir <unclear cert="medium" resp="#joint">unß</unclear> auch <unclear cert="medium" resp="#joint">unsers</unclear> hierumb
+<lb n="55"/>habenden <unclear cert="medium" resp="#joint">stattrechtens</unclear> <unclear cert="medium" resp="#joint">erinnert</unclear>, haben <unclear cert="medium" resp="#joint">wir</unclear> es auch
+<lb n="56"/><unclear cert="low" resp="#joint">zemahlen</unclear> <unclear cert="low" resp="#joint">laßen</unclear> <unclear cert="low" resp="#joint">daby</unclear> <unclear cert="low" resp="#joint">bewenden</unclear>, und ime <unclear cert="medium" resp="#joint">weiters</unclear>
+<lb n="57"/>nichts <unclear cert="medium" resp="#joint">ufferlegen</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>.
+<lb n="58"/>Welches <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">getrewen</unclear> <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">Eidt</unclear>: und <unclear cert="low" resp="#joint">Pundts</unclear>-
+<lb n="59"/><unclear cert="low" resp="#joint">gnoßen</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">gueter</unclear> <unclear cert="low" resp="#joint">eidt</unclear>: <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">pundtsgnoeßischer</unclear> <unclear cert="low" resp="#joint">meinung</unclear>
+<lb n="60"/>in <unclear cert="low" resp="#joint">antwurt</unclear> nit haben wollen verhalten, ver-
+<lb n="61"/>bleiben <unclear cert="medium" resp="#joint">euch</unclear> zu aller <unclear cert="medium" resp="#joint">eidt</unclear>: und <unclear cert="medium" resp="#joint">pundtsgnoeßischer</unclear> dienst-
+<lb n="62"/>erweisung, <unclear cert="medium" resp="#joint">trew</unclear> und <unclear cert="medium" resp="#joint">liebe</unclear> wir <unclear cert="medium" resp="#joint">allwegen</unclear> <unclear cert="medium" resp="#joint">vordrist</unclear> wol
+<lb n="63"/><unclear cert="medium" resp="#joint">gwogen</unclear>, <unclear cert="medium" resp="#joint">unß</unclear> hiemit samptlich <unclear cert="medium" resp="#joint">goettlicher</unclear> protection
+<lb n="64"/>wol <unclear cert="medium" resp="#joint">befehlende</unclear> datum den <origDate when="1639-04-05" resp="#ner"><unclear cert="medium" resp="#joint">5</unclear>. aprilis. 1639.</origDate>
 <lb n="65"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Rhat
 <lb n="66"/>der statt St. Gallen</orgName>
-<lb n="67"/>An <orgName ref="stadtasg-actors-518" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat
-<lb n="68"/>der statt Chur</orgName>.
+<lb n="67"/><unclear cert="low" resp="#joint">An</unclear> <orgName ref="stadtasg-actors-518" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Rhat</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">Chur</unclear></orgName>.
 <pb facs="StadtASG_Missive_3349_13315.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3349_13316.jpg" n="4"/>
 </p>

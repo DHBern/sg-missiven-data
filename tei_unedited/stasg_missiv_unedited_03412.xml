@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3412</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Jörg Dietrich Reding teilt Bürgermeister und Rat zu St. Gallen mit, dass sein Untertan Balthasar Bomgarter sich weigere, sich in St. Gallen wegen eines Ochsenkaufs mit Othmar Rietmann zu stellen. Bomgarter behaupte, die Ochsen seien ihm gewaltsam zum Preis von 67 Florin aufgetrieben worden, obwohl er nur 60 geboten habe, und er sei beschimpft worden. Er wolle dies vor seiner Obrigkeit beweisen und verweigere die Zuständigkeit St. Gallens, falls er dies nicht könne.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Jörg Dietrich Reding teilt Bürgermeister und Rat zu St. Gallen mit, dass sein Untertan Balthasar Bomgarter sich weigere, sich in St. Gallen wegen eines Ochsenkaufs mit Othmar Rietmann zu stellen. Bomgarter behaupte, die Ochsen seien ihm gewaltsam zum Preis von 67 Florin aufgetrieben worden, obwohl er nur 60 geboten habe, und er sei beschimpft worden. Er wolle dies vor seiner Obrigkeit beweisen und verweigere die Zuständigkeit St. Gallens, falls er dies nicht könne.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Jörg Dietrich Reding informs the Burgomaster and Council of St. Gallen that his subject Balthasar Bomgarter refuses to appear in St. Gallen regarding a cattle purchase with Othmar Rietmann. Bomgarter claims that the oxen were forced upon him at a price of 67 florins, although he had only offered 60, and that he had been insulted. He wishes to prove this before his authority and refuses the jurisdiction of St. Gallen if he cannot do so.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,47 +35,47 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3412_13589.jpg" n="1"/>
-<lb n="1"/>Ehrnveste, frome, hochgelehrte, fuersichtige, und weise, besonders
-<lb n="2"/>guenstige liebe herren, denselben seijen mein freundt: Nach-
-<lb n="3"/>parlich willig dienst zuvor.
-<lb n="4"/>Derselbigen freundt: und Nachparliche hab ich verstanden, be-
+<lb n="1"/><unclear cert="low" resp="#joint">Ehrnveste</unclear>, <unclear cert="low" resp="#joint">frome</unclear>, <unclear cert="low" resp="#joint">hochgelehrte</unclear>, <unclear cert="low" resp="#joint">fuersichtige</unclear>, und weise, besonders
+<lb n="2"/>guenstige liebe herren, denselben seijen mein <unclear cert="low" resp="#joint">freundt</unclear>: <unclear cert="low" resp="#joint">Nach</unclear>-
+<lb n="3"/><unclear cert="low" resp="#joint">parlich</unclear> willig dienst zuvor.
+<lb n="4"/>Derselbigen freundt: und <unclear cert="low" resp="#joint">Nachparliche</unclear> <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">verstanden</unclear>, be-
 <lb n="5"/>treffend meinen ampts anbefohlnen <persName resp="#ner">Balthasar Bomgarter</persName>,
-<lb n="6"/>der in der herren Statt, und gebiet, uff freijem marckht, solte
-<lb n="7"/><persName resp="#ner">Othmar Riettman</persName> Metzgeren, ein par ochsen pr. 67 fl. ab-
-<lb n="8"/>erkhaufft haben, so danne der khauff richtig, od streittig, khan
-<lb n="9"/>ich wol erachten, das vermoeg spruech und vertraegen, die
+<lb n="6"/>der in der herren Statt, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gebiet</unclear>, <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">freijem</unclear> <unclear cert="low" resp="#joint">marckht</unclear>, <unclear cert="low" resp="#joint">solte</unclear>
+<lb n="7"/><persName resp="#ner"><unclear cert="low" resp="#joint">Othmar</unclear> <unclear cert="low" resp="#joint">Riettman</unclear></persName> <unclear cert="low" resp="#joint">Metzgeren</unclear>, ein <unclear cert="low" resp="#joint">par</unclear> <unclear cert="low" resp="#joint">ochsen</unclear> <unclear cert="low" resp="#joint">pr</unclear>. <unclear cert="low" resp="#joint">67</unclear> <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">ab</unclear>-
+<lb n="8"/><unclear cert="low" resp="#joint">erkhaufft</unclear> haben, so danne der khauff richtig, od streittig, khan
+<lb n="9"/>ich wol <unclear cert="low" resp="#joint">erachten</unclear>, <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">vermoeg</unclear> <unclear cert="low" resp="#joint">spruech</unclear> und vertraegen, die
 <lb n="10"/>ihro frst. Gn. mein gnaediger fuerst und herr, mit meiner
 <lb n="11"/>großguenstigen herren Statt etc. zusamen habend, mein pflicht
-<lb n="12"/>und schuldigkheit vermoechtend, gnennten <persName resp="#ner">Bomgarter</persName> dahin
+<lb n="12"/>und <unclear cert="low" resp="#joint">schuldigkheit</unclear> <unclear cert="low" resp="#joint">vermoechtend</unclear>, <unclear cert="low" resp="#joint">gnennten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Bomgarter</unclear></persName> dahin
 <lb n="13"/>zuvermoegen, sich gehorsamlich bei ihnen zustellen; Weilen
-<lb n="14"/>er aber sich dessen erclagt, er werde hierinnen gefehrlich
-<lb n="15"/>ersuecht, weilen man ihme gemelte Ochsen mit gwalt hab
-<lb n="16"/>woellen uffthriben, umb obgemelten preiß, ehr aber nie mehr
-<lb n="17"/>gebotten als. 60 fl. und schimpffs weiß gefraget ob er Mezger
-<lb n="18"/>selbige nit umb. 67 fl. liesse, biß der marckt herr innen stoße,
-<lb n="19"/>und zuuoer albereith zum andern mahl fuer dhandt khniß, und
-<lb n="20"/>uffstellung straffes seijent verkhaufft worden, welches ehr
-<lb n="21"/>alles zuebeweisen begere; Vermeine er nit, das
+<lb n="14"/>er aber <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">dessen</unclear> <unclear cert="low" resp="#joint">erclagt</unclear>, er werde <unclear cert="low" resp="#joint">hierinnen</unclear> <unclear cert="low" resp="#joint">gefehrlich</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">ersuecht</unclear>, <unclear cert="low" resp="#joint">weilen</unclear> man <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">gemelte</unclear> <unclear cert="low" resp="#joint">Ochsen</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">gwalt</unclear> hab
+<lb n="16"/><unclear cert="low" resp="#joint">woellen</unclear> <unclear cert="low" resp="#joint">uffthriben</unclear>, <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">obgemelten</unclear> <unclear cert="low" resp="#joint">preiß</unclear>, <unclear cert="low" resp="#joint">ehr</unclear> <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">nie</unclear> <unclear cert="low" resp="#joint">mehr</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">gebotten</unclear> <unclear cert="low" resp="#joint">als</unclear>. <unclear cert="low" resp="#joint">60</unclear> <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">schimpffs</unclear> <unclear cert="low" resp="#joint">weiß</unclear> <unclear cert="low" resp="#joint">gefraget</unclear> ob er <unclear cert="low" resp="#joint">Mezger</unclear>
+<lb n="18"/>selbige nit umb. <unclear cert="low" resp="#joint">67</unclear> <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">liesse</unclear>, <unclear cert="low" resp="#joint">biß</unclear> der marckt herr innen stoße,
+<lb n="19"/>und <unclear cert="low" resp="#joint">zuuoer</unclear> <unclear cert="low" resp="#joint">albereith</unclear> <unclear cert="low" resp="#joint">zum</unclear> andern <unclear cert="low" resp="#joint">mahl</unclear> <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">dhandt</unclear> <unclear cert="low" resp="#joint">khniß</unclear>, und
+<lb n="20"/><unclear cert="low" resp="#joint">uffstellung</unclear> <unclear cert="low" resp="#joint">straffes</unclear> <unclear cert="low" resp="#joint">seijent</unclear> <unclear cert="low" resp="#joint">verkhaufft</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">welches</unclear> <unclear cert="low" resp="#joint">ehr</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">alles</unclear> <unclear cert="low" resp="#joint">zuebeweisen</unclear> begere; Vermeine er nit, das
 <lb n="22"/>man ihme unbefuegter weiß nach der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName>
-<lb n="23"/>in das Recht ziehen solle, wofern er aber sein fuergeben vor
-<lb n="24"/>seiner obrigkheit nit bewiße, solle als dan billich vermoeg
-<lb n="25"/>zue samen habenden Spruech und vertraegen, der haubt-
-<lb n="26"/>handel gefertiget sein, Sonsten mueßte ieder dergleichen
+<lb n="23"/>in das Recht ziehen solle, <unclear cert="low" resp="#joint">wofern</unclear> er aber sein fuergeben vor
+<lb n="24"/>seiner obrigkheit nit bewiße, solle <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">billich</unclear> <unclear cert="low" resp="#joint">vermoeg</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">samen</unclear> <unclear cert="low" resp="#joint">habenden</unclear> <unclear cert="low" resp="#joint">Spruech</unclear> und vertraegen, der haubt-
+<lb n="26"/>handel gefertiget sein, <unclear cert="low" resp="#joint">Sonsten</unclear> <unclear cert="low" resp="#joint">mueßte</unclear> <unclear cert="low" resp="#joint">ieder</unclear> <unclear cert="low" resp="#joint">dergleichen</unclear>
 <pb facs="StadtASG_Missive_3412_13590.jpg" n="2"/>
 <lb n="27"/>gefahren gegen andern ohne ursach mehr benehmen, Diß ist
-<lb n="28"/>gemeltes Bomgarters andtworten, Welches
-<lb n="29"/>ich zuo beandtwortung der Herren schreiben nit verhalten
-<lb n="30"/>sollen, uns Gott befehlende, <origPlace ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</origPlace> <origDate when="1640-10-21" resp="#ner">den. 21ten Octobr.
-<lb n="31"/>Anno. 1640.</origDate>
-<lb n="32"/><persName role="issuer" resp="#ner">Joerg Dietrich Reding</persName> Raths
-<lb n="33"/>v. Gsellschl. etc.
+<lb n="28"/><unclear cert="low" resp="#joint">gemeltes</unclear> <unclear cert="low" resp="#joint">Bomgarters</unclear> <unclear cert="low" resp="#joint">andtworten</unclear>, <unclear cert="low" resp="#joint">Welches</unclear>
+<lb n="29"/>ich <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">beandtwortung</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">schreiben</unclear> <unclear cert="low" resp="#joint">nit</unclear> verhalten
+<lb n="30"/><unclear cert="low" resp="#joint">sollen</unclear>, <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">befehlende</unclear>, <origPlace ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></origPlace> <origDate when="1640-10-21" resp="#ner"><unclear cert="low" resp="#joint">den</unclear>. <unclear cert="low" resp="#joint">21ten</unclear> <unclear cert="low" resp="#joint">Octobr</unclear>.
+<lb n="31"/><unclear cert="low" resp="#joint">Anno</unclear>. <unclear cert="low" resp="#joint">1640</unclear>.</origDate>
+<lb n="32"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Joerg</unclear> Dietrich <unclear cert="low" resp="#joint">Reding</unclear></persName> <unclear cert="low" resp="#joint">Raths</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">Gsellschl</unclear>. <unclear cert="low" resp="#joint">etc</unclear>.
 <pb facs="StadtASG_Missive_3412_13591.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3412_13592.jpg" n="4"/>
-<lb n="34"/>Denen ehrnvesten, wohlvorgeachten, fuersichtigen, und
+<lb n="34"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">ehrnvesten</unclear>, <unclear cert="low" resp="#joint">wohlvorgeachten</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, und
 <lb n="35"/>weisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeistern, und rath der statt
-<lb n="36"/>St. Gallen</orgName>, meinen insonders guenstigen herren
-<lb n="37"/>nachbauren etc.
-<lb n="38"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> etc.
+<lb n="36"/>St. Gallen</orgName>, meinen insonders <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="low" resp="#joint">herren</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">nachbauren</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="38"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>.
 </p>
         </body>
     </text>

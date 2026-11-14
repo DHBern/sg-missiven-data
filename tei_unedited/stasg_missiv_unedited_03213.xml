@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3213</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, den Erben des verstorbenen Zürcher Bürgers Hans-Jakob Werdtmüller bei der Einziehung einer Wechselsumme von 1000 Kronen gegen die Erben des St. Galler Caspar Schlumpf und Daniel Zolicofer behilflich zu sein. Die Erben Werdtmüller hätten das Geld in St. Gallen hinterlegt, die Gegenleistung in Lyon aber nicht erhalten können. Zürich ersucht um oberkeitliche Hilfe, damit die Erben ihr Geld samt Zinsen und Kosten erhalten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, den Erben des verstorbenen Zürcher Bürgers Hans-Jakob Werdtmüller bei der Einziehung einer Wechselsumme von 1000 Kronen gegen die Erben des St. Galler Caspar Schlumpf und Daniel Zolicofer behilflich zu sein. Die Erben Werdtmüller hätten das Geld in St. Gallen hinterlegt, die Gegenleistung in Lyon aber nicht erhalten können. Zürich ersucht um oberkeitliche Hilfe, damit die Erben ihr Geld samt Zinsen und Kosten erhalten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to assist the heirs of the deceased citizen of Zürich, Hans-Jakob Werdtmüller, in the collection of a bill of exchange sum of 1000 Kronen against the heirs of the St. Gallen Caspar Schlumpf and Daniel Zolicofer. The Werdtmüller heirs had deposited the money in St. Gallen but had not been able to receive the consideration in Lyon. Zürich requests superior help so that the heirs receive their money together with interest and costs.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,11 +38,11 @@
 <lb n="1"/>Unser fründtlich, willig dienst, sampt was wir ehren liebs
 <lb n="2"/>und guots vermoegend zuovor. From, fürsichtig, ehrsam,
 <lb n="3"/>wyß, insonders guot fründt und getrüw lieb eydtgnossen.
-<lb n="4"/>Von wyland unsers getrüwen lieben burgers <persName resp="#ner">Hanß-
-<lb n="5"/>Jacoben Werdtmüllers</persName> sel. hinderlaßnen erben, ist an
-<lb n="6"/>unß gebürlich gelanget, was maassen derselbig by
-<lb n="7"/>synen lebzytten mit wyland deß uwern hr. <persName resp="#ner">Caspar
-<lb n="8"/>Schlumpfen</persName> deß eltern sel. erben, wie auch <persName resp="#ner">Daniel
+<lb n="4"/>Von wyland unsers getrüwen lieben <unclear cert="low" resp="#joint">burgers</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">Jacoben</unclear> <unclear cert="low" resp="#joint">Werdtmüllers</unclear></persName> <unclear cert="low" resp="#joint">sel</unclear>. <unclear cert="low" resp="#joint">hinderlaßnen</unclear> <unclear cert="low" resp="#joint">erben</unclear>, ist an
+<lb n="6"/>unß gebürlich <unclear cert="low" resp="#joint">gelanget</unclear>, <unclear cert="low" resp="#joint">was</unclear> maassen <unclear cert="low" resp="#joint">derselbig</unclear> <unclear cert="low" resp="#joint">by</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">synen</unclear> <unclear cert="low" resp="#joint">lebzytten</unclear> mit <unclear cert="low" resp="#joint">wyland</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">uwern</unclear> <unclear cert="low" resp="#joint">hr</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">Schlumpfen</unclear></persName> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">eltern</unclear> <unclear cert="low" resp="#joint">sel</unclear>. <unclear cert="low" resp="#joint">erben</unclear>, wie auch <persName resp="#ner">Daniel
 <lb n="9"/>Zolicofern</persName> dem eltern und mit verwandten hiebevor
 <lb n="10"/>einen wexel beschliessen lassen umb einthusent kro-
 <lb n="11"/>nen, dergestalten, daß er ihnen solche sum welle in
@@ -50,31 +51,31 @@
 <lb n="14"/>wider guot thuon, lut von demselben uff <persName resp="#ner">Melcher Zieg-
 <lb n="15"/>ler</persName> daselbst empfangnen wexelbrieffs. Nun habind
 <lb n="16"/>sy glychwol die widerlag anfangs nit empfahen
-<lb n="17"/>khönnen, von deß ouch uwern H.C.Z. bewüßten ynge-
-<lb n="18"/>rißnen mißverstandts wegen, nach deme aber jetzo
+<lb n="17"/>khönnen, von <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">ouch</unclear> <unclear cert="low" resp="#joint">uwern</unclear> <unclear cert="low" resp="#joint">H.C.Z</unclear>. <unclear cert="low" resp="#joint">bewüßten</unclear> <unclear cert="low" resp="#joint">ynge</unclear>-
+<lb n="18"/><unclear cert="low" resp="#joint">rißnen</unclear> <unclear cert="low" resp="#joint">mißverstandts</unclear> wegen, nach deme aber jetzo
 <lb n="19"/>uff die erörterte sach herr <persName resp="#ner">Marx Zolicofer</persName> zum
 <lb n="20"/><placeName resp="#ner">Schäffli</placeName> solch gelt wider ynzenemen vermeint, hette
 <lb n="21"/>man sich der bezallung geweiggeret, daruber
-<lb n="22"/><persName resp="#ner">Zolicoffer</persName> wider solchen wexel brieff protestiert und
-<lb n="23"/>selbigen wider zuoruckh geschickht. Wann nun by
+<lb n="22"/><persName resp="#ner">Zolicoffer</persName> wider <unclear cert="low" resp="#joint">solchen</unclear> <unclear cert="low" resp="#joint">wexel</unclear> <unclear cert="low" resp="#joint">brieff</unclear> protestiert und
+<lb n="23"/>selbigen wider <unclear cert="low" resp="#joint">zuoruckh</unclear> <unclear cert="low" resp="#joint">geschickht</unclear>. Wann nun by
 <lb n="24"/>solcher bewandtnuß sy sich wyter nachen <placeName ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</placeName> nit
 <lb n="25"/>khönind wyßen lassen, sonder billich die jhenigen denen
-<lb n="26"/>das gelt vertruwet worden, darumb suochen söllen,
+<lb n="26"/>das gelt vertruwet worden, <unclear cert="low" resp="#joint">darumb</unclear> <unclear cert="low" resp="#joint">suochen</unclear> <unclear cert="low" resp="#joint">söllen</unclear>,
 <pb facs="StadtASG_Missive_3213_12702.jpg" n="2"/>
-<lb n="27"/>als habind sy uff solch end hin wÿsern diß abgeordnet,
+<lb n="27"/><unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">habind</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">solch</unclear> <unclear cert="low" resp="#joint">end</unclear> <unclear cert="low" resp="#joint">hin</unclear> <unclear cert="low" resp="#joint">wÿsern</unclear> diß abgeordnet,
 <lb n="28"/>mit underthänigem begehren, wir demselben solch unse-
 <lb n="29"/>rer fürschrifft ohnbeschwert ertheilen woltend.
-<lb n="30"/>Wann dann wir besagten den unseren diß ihr, ußerm
+<lb n="30"/><unclear cert="low" resp="#joint">Wann</unclear> dann <unclear cert="low" resp="#joint">wir</unclear> besagten den unseren diß ihr, ußerm
 <lb n="31"/>befindens, gantz zimbliches begeren nit versagen wollen,
-<lb n="32"/>So ersuochend üch unser G. L. E. wir hiemit fründt-
-<lb n="33"/>Eidtgnössisch, Ihr wöllind demselben gegen den üweren
-<lb n="34"/>alle oberkeitliche fürderliche hilffshand pieten, damit
+<lb n="32"/>So ersuochend üch <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">fründt</unclear>-
+<lb n="33"/><unclear cert="low" resp="#joint">Eidtgnössisch</unclear>, Ihr wöllind demselben gegen den üweren
+<lb n="34"/>alle oberkeitliche fürderliche <unclear cert="low" resp="#joint">hilffshand</unclear> <unclear cert="low" resp="#joint">pieten</unclear>, damit
 <lb n="35"/>sy zuo deme was ihnen bÿ ihrem ußgelegten gelt
 <lb n="36"/>interesse, kosten und schaden von rechtens wegen ge-
-<lb n="37"/>bürt ohnverzogenlich gelangen mögind, wie wir nit
+<lb n="37"/><unclear cert="low" resp="#joint">bürt</unclear> <unclear cert="low" resp="#joint">ohnverzogenlich</unclear> gelangen mögind, wie wir nit
 <lb n="38"/>zwÿfflend, Ihr hierzuo ohne das geneigt sÿn werdind.
 <lb n="39"/>Das erbietend wir uff allfällige begebenheit in fründt-
-<lb n="40"/>schafft zebeschulden: Göttlicher protection unß
+<lb n="40"/>schafft <unclear cert="low" resp="#joint">zebeschulden</unclear>: <unclear cert="low" resp="#joint">Göttlicher</unclear> protection unß
 <lb n="41"/>damit sambtlich wol empfelhende. Datum den
 <lb n="42"/><origDate when="1636-12-15" resp="#ner">15. Decembris Ao. 1636</origDate>.
 <lb n="43"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath

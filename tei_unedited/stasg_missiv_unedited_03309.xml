@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3309</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf ein Schreiben St. Gallens zum Fleischpreis. Sie geben an, dass ihre Metzger Schaffleisch zu sechs Kreuzern verkauft hätten, da sie den St. Galler Preis übernommen hätten. Lindau beabsichtigt, den Preis vorerst beizubehalten, und bittet St. Gallen um Mitteilung, wie dort der Preis gehandhabt und welche Anordnungen getroffen wurden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf ein Schreiben St. Gallens zum Fleischpreis. Sie geben an, dass ihre Metzger Schaffleisch zu sechs Kreuzern verkauft hätten, da sie den St. Galler Preis übernommen hätten. Lindau beabsichtigt, den Preis vorerst beizubehalten, und bittet St. Gallen um Mitteilung, wie dort der Preis gehandhabt und welche Anordnungen getroffen wurden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Lindau reply to a letter from St. Gallen regarding the price of meat. They state that their butchers had sold mutton at six kreuzer, as they had adopted the St. Gallen price. Lindau intends to maintain the price for the time being and asks St. Gallen to inform them how the price is handled there and what orders were issued.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,8 +38,8 @@
 <lb n="1"/>Unser freündtlich willig dienst zuvor, Fürsichtig,
 <lb n="2"/>Ersam und Weise, besonders liebe und guete
 <lb n="3"/>freünd,
-<lb n="4"/>Uebr unser jüngstes, des flaischtax halben, ann
-<lb n="5"/>E. Wt. gethones schreiben, können wir denselben
+<lb n="4"/>Uebr unser jüngstes, <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">flaischtax</unclear> <unclear cert="low" resp="#joint">halben</unclear>, <unclear cert="low" resp="#joint">ann</unclear>
+<lb n="5"/>E. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">gethones</unclear> <unclear cert="low" resp="#joint">schreiben</unclear>, können wir denselben
 <lb n="6"/>ferner ohnverhalten lassen, daß vonn unsern
 <lb n="7"/>mezgern fürgegeben wirdt, was zue <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sct.
 <lb n="8"/>Gallen</placeName> und <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanz</placeName>, daß schaffleisch umb. 6. kr.
@@ -48,22 +49,22 @@
 <lb n="12"/>unsere flaischschawer solches außtr aicht zuelassen,
 <lb n="13"/>selbiges auch pr. 6. kr. hingegeben, Wann
 <lb n="14"/>wir nun unser seits vonn deme E. Wt. über-
-<lb n="15"/>schribnen tax nicht abzueweichen, sondern noch
+<lb n="15"/><unclear cert="low" resp="#joint">schribnen</unclear> <unclear cert="low" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">nicht</unclear> <unclear cert="low" resp="#joint">abzueweichen</unclear>, <unclear cert="low" resp="#joint">sondern</unclear> <unclear cert="low" resp="#joint">noch</unclear>
 <lb n="16"/>zue zeit (eß geben dann die bevorstehende
 <lb n="17"/>Allgöwische und andere vichmaerkht ein anders ann
 <lb n="18"/>die hand) darob zuehalten gedenkhen, und
 <lb n="19"/>aber gern nachrichtung haben wollten, wie es
 <lb n="20"/>hierinnen bej E. Wt. gehalten werde, auch was
-<lb n="21"/>sie sonsten für anstalt und ordnung inn ihrem
-<lb n="22"/>flaischtax gemacht, so gelangt ann dieselbe unser
+<lb n="21"/>sie sonsten für anstalt und ordnung inn <unclear cert="low" resp="#joint">ihrem</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">flaischtax</unclear> <unclear cert="low" resp="#joint">gemacht</unclear>, so gelangt ann dieselbe unser
 <lb n="23"/>freündtnachbarlich gesinnen, Sie wollen unß
 <lb n="24"/>dessen ohnbeschwaert, bej ehister gelegenheit,
 <lb n="25"/>berichten, unß inn einem und dem andern
-<lb n="26"/>darnach haben zuerichten, daß sein wir umb
+<lb n="26"/>darnach haben <unclear cert="low" resp="#joint">zuerichten</unclear>, daß sein wir umb
 <lb n="27"/>E. Wt. hinwiderumb freündtnachbarlichen
 <lb n="28"/>zuebeschulden
 <pb facs="StadtASG_Missive_3309_13132.jpg" n="2"/>
-<lb n="29"/>zuebeschulden erbuettig, und thuen unß beneben
+<lb n="29"/><unclear cert="low" resp="#joint">zuebeschulden</unclear> <unclear cert="low" resp="#joint">erbuettig</unclear>, und thuen unß beneben
 <lb n="30"/>gesambt deß Allmaechtigen gnadenreicher
 <lb n="31"/>schirmbshaltung wol befehlen, datum <origDate when="1638" resp="#ner">den. 1.ten
 <lb n="32"/>Augustj a.° 1638.</origDate>
@@ -75,7 +76,7 @@
 <lb n="36"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der statt St.
 <lb n="37"/>Gallen</orgName>, unsern besonders lieben
 <lb n="38"/>und gueten freünden,
-<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>,
+<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>,
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3258</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johann Joachim Haller, Vormund der Erben des verstorbenen Erzherzogs Leopold, bittet Bürgermeister und Rat zu St. Gallen, dem jungen Mann Zaigeren, einem Untertanen, das ihm zugesprochene Erbe in St. Gallen auszuhändigen. Er bietet als Sicherheit Georg Langen, Schultheiss des unteren Teils der Grafschaft Eglofs, an, der die Rückgabe des Erbes garantiert. Haller bittet um eine schriftliche Bestätigung der Sicherheit.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johann Joachim Haller, Vormund der Erben des verstorbenen Erzherzogs Leopold, bittet Bürgermeister und Rat zu St. Gallen, dem jungen Mann Zaigeren, einem Untertanen, das ihm zugesprochene Erbe in St. Gallen auszuhändigen. Er bietet als Sicherheit Georg Langen, Schultheiss des unteren Teils der Grafschaft Eglofs, an, der die Rückgabe des Erbes garantiert. Haller bittet um eine schriftliche Bestätigung der Sicherheit.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johann Joachim Haller, guardian of the heirs of the deceased Archduke Leopold, asks the Burgomaster and Council of St. Gallen to hand over to the young man Zaigeren, a subject, the inheritance in St. Gallen that was awarded to him. He offers Georg Langen, Schultheiss of the lower part of the County of Eglofs, as security, who guarantees the return of the inheritance. Haller asks for a written confirmation of the security.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -65,25 +66,25 @@
 <lb n="29"/>Pappier werden bringen laßen, daß gestalt Sie beghren
 <lb n="30"/>versicheret zue sein, selbiges ußzuefertigen, und zue dero handen
 <pb facs="StadtASG_Missive_3258_12912.jpg" n="2"/>
-<lb n="31"/>wiederfahren zelassen. Dero halben an ehe tieff meine
-<lb n="32"/>noch mahlen, mein dienst liche ersuechen, und bitt, die H.
-<lb n="33"/>wellen zue wolfahart deß erzagnen khindtß, ein werkh
-<lb n="34"/>der barmherzigkeit erweisen, und ihme eingewißes
-<lb n="35"/>hoff reichlichß, von deinem praetendierenden erbe verfolgen
-<lb n="36"/>laßen, die khuee an ihne selbsten billich, so bin ichs
-<lb n="37"/>in selbst selber, in dergleichen und anderen ocasion, umb
-<lb n="38"/>die H. und ihrere loeb: burgerschafft zue erwidern urbitig,
-<lb n="39"/>thue dieselben damit in schuz deß hoechsten bevellen.
-<lb n="40"/><origPlace resp="#ner">Eglöffß</origPlace> den <origDate when="1644-10-05" resp="#ner">5 October a° 1644</origDate>
-<lb n="41"/>F: Dh: <persName role="issuer" resp="#ner">Ertzherzog Leopoldi</persName> zu Oesterreich etc.
-<lb n="42"/>nachgelaßner erben vormundtschafft, vogdt
-<lb n="43"/>und zoller der graffschafft <placeName resp="#ner">Egloffs</placeName> etc.
-<lb n="44"/><persName role="issuer" resp="#ner">Johan Joachim Haller</persName> mp.
+<lb n="31"/><unclear cert="low" resp="#joint">wiederfahren</unclear> <unclear cert="low" resp="#joint">zelassen</unclear>. <unclear cert="low" resp="#joint">Dero</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">ehe</unclear> <unclear cert="low" resp="#joint">tieff</unclear> <unclear cert="low" resp="#joint">meine</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">mahlen</unclear>, <unclear cert="low" resp="#joint">mein</unclear> <unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">liche</unclear> <unclear cert="low" resp="#joint">ersuechen</unclear>, und <unclear cert="low" resp="#joint">bitt</unclear>, die <unclear cert="low" resp="#joint">H</unclear>.
+<lb n="33"/><unclear cert="low" resp="#joint">wellen</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">wolfahart</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">erzagnen</unclear> <unclear cert="low" resp="#joint">khindtß</unclear>, <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">werkh</unclear>
+<lb n="34"/>der <unclear cert="low" resp="#joint">barmherzigkeit</unclear> <unclear cert="low" resp="#joint">erweisen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">eingewißes</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">hoff</unclear> <unclear cert="low" resp="#joint">reichlichß</unclear>, <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">deinem</unclear> <unclear cert="low" resp="#joint">praetendierenden</unclear> <unclear cert="low" resp="#joint">erbe</unclear> <unclear cert="low" resp="#joint">verfolgen</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">laßen</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">khuee</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">selbsten</unclear> <unclear cert="low" resp="#joint">billich</unclear>, so <unclear cert="low" resp="#joint">bin</unclear> <unclear cert="low" resp="#joint">ichs</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">selbst</unclear> <unclear cert="low" resp="#joint">selber</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">dergleichen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">ocasion</unclear>, umb
+<lb n="38"/>die <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ihrere</unclear> <unclear cert="low" resp="#joint">loeb</unclear>: <unclear cert="low" resp="#joint">burgerschafft</unclear> zue <unclear cert="medium" resp="#joint">erwidern</unclear> <unclear cert="medium" resp="#joint">urbitig</unclear>,
+<lb n="39"/><unclear cert="medium" resp="#joint">thue</unclear> <unclear cert="medium" resp="#joint">dieselben</unclear> damit in <unclear cert="low" resp="#joint">schuz</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">hoechsten</unclear> <unclear cert="low" resp="#joint">bevellen</unclear>.
+<lb n="40"/><origPlace resp="#ner"><unclear cert="low" resp="#joint">Eglöffß</unclear></origPlace> den <origDate when="1644-10-05" resp="#ner">5 <unclear cert="low" resp="#joint">October</unclear> <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">1644</unclear></origDate>
+<lb n="41"/><unclear cert="low" resp="#joint">F</unclear>: <unclear cert="low" resp="#joint">Dh</unclear>: <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Ertzherzog</unclear> <unclear cert="low" resp="#joint">Leopoldi</unclear></persName> zu <unclear cert="low" resp="#joint">Oesterreich</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="42"/><unclear cert="low" resp="#joint">nachgelaßner</unclear> <unclear cert="low" resp="#joint">erben</unclear> <unclear cert="low" resp="#joint">vormundtschafft</unclear>, <unclear cert="low" resp="#joint">vogdt</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">zoller</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">graffschafft</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Egloffs</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="44"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Johan</unclear> <unclear cert="low" resp="#joint">Joachim</unclear> <unclear cert="low" resp="#joint">Haller</unclear></persName> <unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_3258_12913.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3258_12914.jpg" n="4"/>
-<lb n="45"/>Denen edel vest frommen wißen fursichtigen, wolgeachten herren
-<lb n="46"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaisteren unnd rhat der statt S. Gallen</orgName>
-<lb n="47"/>meinen grossg. herren und freunden
+<lb n="45"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">edel</unclear> <unclear cert="low" resp="#joint">vest</unclear> frommen <unclear cert="low" resp="#joint">wißen</unclear> <unclear cert="low" resp="#joint">fursichtigen</unclear>, <unclear cert="low" resp="#joint">wolgeachten</unclear> <unclear cert="low" resp="#joint">herren</unclear>
+<lb n="46"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaisteren</unclear> unnd <unclear cert="low" resp="#joint">rhat</unclear> der statt <unclear cert="low" resp="#joint">S</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></orgName>
+<lb n="47"/><unclear cert="low" resp="#joint">meinen</unclear> <unclear cert="low" resp="#joint">grossg</unclear>. <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">freunden</unclear>
 <lb n="48"/>St. Gallen.
 </p>
         </body>

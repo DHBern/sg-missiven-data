@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3149</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Wangen bitten Stadthalter und Rat zu St. Gallen, ein Edikt über den angesetzten allgemeinen Rechtstag für die Erben des verstorbenen Bürgerpaars Jacob Scheuzelin und Barbara öffentlich anzuschlagen. Dies geschehe, damit niemand in seinen Rechten verkürzt werde und sich nicht auf Unwissenheit berufen könne.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Wangen bitten Stadthalter und Rat zu St. Gallen, ein Edikt über den angesetzten allgemeinen Rechtstag für die Erben des verstorbenen Bürgerpaars Jacob Scheuzelin und Barbara öffentlich anzuschlagen. Dies geschehe, damit niemand in seinen Rechten verkürzt werde und sich nicht auf Unwissenheit berufen könne.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Wangen request Statthalter and Council of St. Gallen to publicly post an edict concerning the appointed general court day for the heirs of the deceased citizen couple Jacob Scheuzelin and Barbara. This is to be done so that no one is curtailed in their rights and cannot plead ignorance.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,33 +36,33 @@
 <p>
 <pb facs="StadtASG_Missive_3149_12427.jpg" n="1"/>
 <lb n="1"/>Unßer freundt: nachbarlich willig dienst zuvor,
-<lb n="2"/>fuersichtig, ehrsambe unnd weiße, inßonnders liebe guette
-<lb n="3"/>freundt unnd nachparn.
-<lb n="4"/>Welchermaßen umb unßers burgers <persName resp="#ner">Jacob Scheuezelins</persName>
-<lb n="5"/>craemers, unnd <persName resp="#ner">Barbarae</persName> seiner ehewuertin, beeder
+<lb n="2"/><unclear cert="low" resp="#joint">fuersichtig</unclear>, <unclear cert="low" resp="#joint">ehrsambe</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">weiße</unclear>, <unclear cert="low" resp="#joint">inßonnders</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">guette</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">freundt</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">nachparn</unclear>.
+<lb n="4"/>Welchermaßen <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">unßers</unclear> <unclear cert="low" resp="#joint">burgers</unclear> <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Scheuezelins</unclear></persName>
+<lb n="5"/><unclear cert="low" resp="#joint">craemers</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Barbarae</unclear></persName> seiner ehewuertin, beeder
 <lb n="6"/>seligen alhie, gemeinen gelauebigern, einen allgemainen
 <lb n="7"/>rechsttag ernent unnd angesetzt, das haben E. Fuet.
-<lb n="8"/>Wht. auß beijkommendtem Edict zuvernemmen.
-<lb n="9"/>Wann dann dero selben burger villeicht auch Interessiert
-<lb n="10"/>sein unnd zue ermelten ehegemechten seligen, forderung
-<lb n="11"/>unnd anspruch haben mechten, So bitten E. F. Wht.
-<lb n="12"/>wuir freundtlich, sij wollen solch Edict, ihren habenden
+<lb n="8"/>Wht. auß beijkommendtem Edict <unclear cert="low" resp="#joint">zuvernemmen</unclear>.
+<lb n="9"/>Wann dann dero selben burger <unclear cert="low" resp="#joint">villeicht</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">Interessiert</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">sein</unclear> unnd <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">ermelten</unclear> <unclear cert="low" resp="#joint">ehegemechten</unclear> <unclear cert="low" resp="#joint">seligen</unclear>, <unclear cert="low" resp="#joint">forderung</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">anspruch</unclear> <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">mechten</unclear>, <unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">bitten</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="12"/><unclear cert="low" resp="#joint">wuir</unclear> <unclear cert="low" resp="#joint">freundtlich</unclear>, <unclear cert="low" resp="#joint">sij</unclear> <unclear cert="low" resp="#joint">wollen</unclear> <unclear cert="low" resp="#joint">solch</unclear> Edict, ihren habenden
 <lb n="13"/>gebreuch nach, beij Ihnen, an gebuerenden ohrten, oeffen=
 <lb n="14"/>lich anschlagen unnd publiciern laßen, Damit an
-<lb n="15"/>seinen rechten niemandt verkuerzt werd, noch der un=
-<lb n="16"/>wißenheit sich zuebeklagen uhrsach hab, Dase seij umb
-<lb n="17"/>E. F. Wht. wuir freundt: nachbarlich zuver=
-<lb n="18"/>dienen erbuettig, Datum den <origDate when="1636-03-26" resp="#ner">26ten Martij A° 1636</origDate>.
+<lb n="15"/>seinen rechten <unclear cert="low" resp="#joint">niemandt</unclear> <unclear cert="low" resp="#joint">verkuerzt</unclear> <unclear cert="low" resp="#joint">werd</unclear>, <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">un=</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">wißenheit</unclear> sich <unclear cert="low" resp="#joint">zuebeklagen</unclear> <unclear cert="low" resp="#joint">uhrsach</unclear> <unclear cert="low" resp="#joint">hab</unclear>, <unclear cert="low" resp="#joint">Dase</unclear> <unclear cert="low" resp="#joint">seij</unclear> umb
+<lb n="17"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">wuir</unclear> <unclear cert="low" resp="#joint">freundt</unclear>: <unclear cert="low" resp="#joint">nachbarlich</unclear> <unclear cert="low" resp="#joint">zuver=</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">dienen</unclear> <unclear cert="low" resp="#joint">erbuettig</unclear>, <unclear cert="low" resp="#joint">Datum</unclear> den <origDate when="1636-03-26" resp="#ner">26ten Martij A° 1636</origDate>.
 <lb n="19"/><orgName role="issuer" resp="#ner">Burgermeister unnd rhat
 <lb n="20"/>der statt Wangen</orgName>.
 <pb facs="StadtASG_Missive_3149_12428.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3149_12429.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3149_12430.jpg" n="4"/>
-<lb n="21"/>Dem fuersichtigen, ersamen unnd weysen <orgName ref="stadtasg-actors-629" cert="medium" role="recipient" resp="#ner">Statt-
-<lb n="22"/>halter unnd Rhat der statt Sant Gallen</orgName>,
-<lb n="23"/>unsern besonders lieben guetten freünden
-<lb n="24"/>unnd nachbaurn.
-<lb n="25"/>St. Gallen.
+<lb n="21"/><unclear cert="medium" resp="#joint">Dem</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, ersamen unnd <unclear cert="low" resp="#joint">weysen</unclear> <orgName ref="stadtasg-actors-629" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Statt</unclear>-
+<lb n="22"/><unclear cert="low" resp="#joint">halter</unclear> unnd <unclear cert="medium" resp="#joint">Rhat</unclear> der statt <unclear cert="medium" resp="#joint">Sant</unclear> Gallen</orgName>,
+<lb n="23"/>unsern <unclear cert="medium" resp="#joint">besonders</unclear> lieben <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freünden</unclear>
+<lb n="24"/>unnd <unclear cert="low" resp="#joint">nachbaurn</unclear>.
+<lb n="25"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3257</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Hektor Zollikofer teilt mit, dass die Universität Basel in der Tannerischen Rechtssache eine ärztliche Nachlässigkeit an ihm bemängelt habe, da er keinen Balbierer gerufen habe. Er weist den Vorwurf zurück, da der Knabe keine sichtbaren Verletzungen hatte und er sein Bestes getan habe. Er bittet den Empfänger, bei den Fürstlichen Hofräten dafür zu sorgen, dass die behandelnden Ärzte vernommen werden, und droht, sich sonst selbst bei der Basler Fakultät zu verantworten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Hektor Zollikofer teilt mit, dass die Universität Basel in der Tannerischen Rechtssache eine ärztliche Nachlässigkeit an ihm bemängelt habe, da er keinen Balbierer gerufen habe. Er weist den Vorwurf zurück, da der Knabe keine sichtbaren Verletzungen hatte und er sein Bestes getan habe. Er bittet den Empfänger, bei den Fürstlichen Hofräten dafür zu sorgen, dass die behandelnden Ärzte vernommen werden, und droht, sich sonst selbst bei der Basler Fakultät zu verantworten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Hektor Zollikofer informs that the University of Basel has complained of medical negligence on his part in the Tanner legal case, as he had not called a barber-surgeon. He rejects the accusation, as the boy had no visible injuries and he had done his best. He asks the recipient to ensure that the treating doctors are heard by the Imperial Councillors, and threatens otherwise to defend himself before the Basel Faculty.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,122 +37,122 @@
 <pb facs="StadtASG_Missive_3257_12907.jpg" n="1"/>
 <lb n="1"/>Edler vester, insonders günstiger junker unnd herr, neben
 <lb n="2"/>anpiettung meiner ehrendiensten hab ich beij diser
-<lb n="3"/>sich presentierten occasion nit umbgen könen, zuobe-
-<lb n="4"/>richten, waß maaßen mir gestriges tags durch den
-<lb n="5"/><persName resp="#ner">Jacob Sunen</persName> burger alhie ist ein copeij zu komen
-<lb n="6"/>eines schreibens von der loplichen Universitet zu <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>
+<lb n="3"/>sich presentierten occasion <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">umbgen</unclear> <unclear cert="low" resp="#joint">könen</unclear>, <unclear cert="low" resp="#joint">zuobe</unclear>-
+<lb n="4"/><unclear cert="low" resp="#joint">richten</unclear>, <unclear cert="low" resp="#joint">waß</unclear> maaßen mir gestriges tags durch den
+<lb n="5"/><persName resp="#ner">Jacob Sunen</persName> burger alhie ist ein copeij zu <unclear cert="low" resp="#joint">komen</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">eines</unclear> <unclear cert="low" resp="#joint">schreibens</unclear> <unclear cert="low" resp="#joint">von</unclear> der loplichen Universitet zu <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>
 <lb n="7"/>an ihr Fürstlich Gnaden herren hofräth über den
 <lb n="8"/>ihnen communicierten casum, in der E. V. bewußten
 <lb n="9"/>Tannerischen rachsach, und an sie erforderte con-
-<lb n="10"/>sultation, in antwurt ohnangedachter herren fürst-
+<lb n="10"/><unclear cert="low" resp="#joint">sultation</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">antwurt</unclear> <unclear cert="low" resp="#joint">ohnangedachter</unclear> herren fürst-
 <lb n="11"/>lichen rhäten wider ertheilt: darauß ich mit
-<lb n="12"/>großem bedauren müßen verstehen, wie an daß
+<lb n="12"/>großem <unclear cert="low" resp="#joint">bedauren</unclear> <unclear cert="low" resp="#joint">müßen</unclear> <unclear cert="low" resp="#joint">verstehen</unclear>, wie an daß
 <lb n="13"/>Collegium Medicum zu Basel ist geschriben worden,
 <lb n="14"/>als hette ich in der mir vertrauwten cura deß
 <lb n="15"/>verstorbenen knäbliß einen hochschädlichen unfleiß
 <lb n="16"/>gebraucht, und wie eigentlich die formalia
 <lb n="17"/>lauten, auß eine damnosam medici negligentiam,
-<lb n="18"/>dieweil anfangß kein balbirer seije erfor-
-<lb n="19"/>deret worden, und wil also schier lauten, als
+<lb n="18"/><unclear cert="low" resp="#joint">dieweil</unclear> <unclear cert="low" resp="#joint">anfangß</unclear> <unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">balbirer</unclear> <unclear cert="low" resp="#joint">seije</unclear> <unclear cert="low" resp="#joint">erfor</unclear>-
+<lb n="19"/><unclear cert="low" resp="#joint">deret</unclear> <unclear cert="low" resp="#joint">worden</unclear>, und <unclear cert="low" resp="#joint">wil</unclear> <unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">schier</unclear> lauten, als
 <lb n="20"/>habe ich wegen meineß unfleißes mehr schuld
-<lb n="21"/>an solchem tod, als der jenige selbs, der ihne
-<lb n="22"/>als thäter-anfenger wirt nit vermeinen, daß
+<lb n="21"/>an solchem tod, als der jenige selbs, der <unclear cert="low" resp="#joint">ihne</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">thäter-anfenger</unclear> wirt nit vermeinen, daß
 <lb n="23"/>die critici dies (wie eß daselbst geben wirt)
 <lb n="24"/>fürüber: wolte man aber in solchen übel auß-
-<lb n="25"/>schlagenden unfälen alsdan sich auß einem
-<lb n="26"/>doctor erholen, und die schuld auf ihn werfen,
+<lb n="25"/><unclear cert="low" resp="#joint">schlagenden</unclear> <unclear cert="low" resp="#joint">unfälen</unclear> <unclear cert="low" resp="#joint">alsdan</unclear> sich <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">einem</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">doctor</unclear> <unclear cert="low" resp="#joint">erholen</unclear>, und die schuld auf ihn werfen,
 <lb n="27"/>der sein besten fleiß und eußerst vermögen,
-<lb n="28"/>(wie ich auch gethan hab) gebraucht und ange-
-<lb n="29"/>wendet, so hete eim zuwünschen, das er sich solcher
+<lb n="28"/>(wie ich auch <unclear cert="low" resp="#joint">gethan</unclear> <unclear cert="low" resp="#joint">hab</unclear>) gebraucht und ange-
+<lb n="29"/>wendet, so <unclear cert="low" resp="#joint">hete</unclear> <unclear cert="low" resp="#joint">eim</unclear> <unclear cert="low" resp="#joint">zuwünschen</unclear>, das er sich solcher
 <lb n="30"/>sachen nichtß angenommen, als da einer für seine
-<lb n="31"/>treüwe dienst anderß nichtß davon brechte,
-<lb n="32"/>dan schimpf und hohn: were mir auch künftig
+<lb n="31"/>treüwe dienst anderß nichtß davon <unclear cert="low" resp="#joint">brechte</unclear>,
+<lb n="32"/><unclear cert="low" resp="#joint">dan</unclear> schimpf und hohn: were mir auch künftig
 <pb facs="StadtASG_Missive_3257_12908.jpg" n="2"/>
-<lb n="33"/>ein sichere und gantz gewiße warnung, wog ich mehr
-<lb n="34"/>solte zu einem derglichen casu erforderet werden,
-<lb n="35"/>(deren es beij unß mehr teglich gibt) mich deßen
-<lb n="36"/>gentzlich zueenteüßeren. Mein großg. herr D.
-<lb n="37"/>welle beij sich selbs betrachten, was war anfangs
-<lb n="38"/>eines scherers vonnöten? Da ich zu dem knaben
-<lb n="39"/>erforderet worden, kont ich nit ein wort auß
-<lb n="40"/>ihm bringen, das er mir gesagt hette, wohin er
-<lb n="41"/>geschlagen worden were, und war damahls nien-
-<lb n="42"/>gend am leib nichts zusehen, das zerbrochen noch
-<lb n="43"/>zerquetst, sonder diße mahzeihen in d linggen
-<lb n="44"/>seiten müßen erst lang nahe und zwifels ohn
-<lb n="45"/>erst nach seinem tod herfür kommen sein,
-<lb n="46"/>was dorffte ich dann eines balbierers, was hette
-<lb n="47"/>er beij der sach genützt, oder was hette er zuver-
-<lb n="48"/>richten gehabt? Laß mir derowegen nit gern
-<lb n="49"/>zuegemeßen werden ein verwarloßung, da
-<lb n="50"/>ich nit schuld hab: was ich aber für artzneijmittel
-<lb n="51"/>wider die schleg und streich gebraucht, wer-
-<lb n="52"/>den meine recepten reden, wan sie verstendi-
-<lb n="53"/>gen doctoribus fürgewißen werden, das ich das
-<lb n="54"/>meinige gethan hab, wie einem getreüwen ehr-
-<lb n="55"/>lichen medico dem leib und leben vertrauwt
-<lb n="56"/>wirt zuestehet: Demnach wirte in dem Ysen-
-<lb n="57"/>nißchen schreiben gemeldet, das ungleicher
-<lb n="58"/>bricht seije an sie gschehen, in historia casus,
-<lb n="59"/>da nimpt mich wunder, worin die differentz
-<lb n="60"/>seij, nun das was wir bede medici draüßen
-<lb n="61"/>zu <placeName ref="stadtasg-places-331" cert="medium" resp="#ner">St. Fiden</placeName> auf der fürstlichen herren rhäten
-<lb n="62"/>erforderen außgesagt haben, das wirt sich also
-<lb n="63"/>erfinden: und dann ferner, so meldet das
-<lb n="64"/>Yßenißche schreiben, das von hier auß an sie
+<lb n="33"/><unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">sichere</unclear> und gantz <unclear cert="medium" resp="#joint">gewiße</unclear> <unclear cert="medium" resp="#joint">warnung</unclear>, <unclear cert="medium" resp="#joint">wog</unclear> ich <unclear cert="medium" resp="#joint">mehr</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">solte</unclear> zu einem <unclear cert="medium" resp="#joint">derglichen</unclear> <unclear cert="medium" resp="#joint">casu</unclear> <unclear cert="medium" resp="#joint">erforderet</unclear> werden,
+<lb n="35"/>(<unclear cert="medium" resp="#joint">deren</unclear> es <unclear cert="low" resp="#joint">beij</unclear> unß <unclear cert="low" resp="#joint">mehr</unclear> <unclear cert="low" resp="#joint">teglich</unclear> gibt) mich <unclear cert="medium" resp="#joint">deßen</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">gentzlich</unclear> <unclear cert="medium" resp="#joint">zueenteüßeren</unclear>. Mein <unclear cert="medium" resp="#joint">großg</unclear>. herr <unclear cert="low" resp="#joint">D</unclear>.
+<lb n="37"/><unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">beij</unclear> <unclear cert="low" resp="#joint">sich</unclear> selbs betrachten, was <unclear cert="medium" resp="#joint">war</unclear> anfangs
+<lb n="38"/><unclear cert="medium" resp="#joint">eines</unclear> <unclear cert="medium" resp="#joint">scherers</unclear> <unclear cert="medium" resp="#joint">vonnöten</unclear>? Da ich zu dem <unclear cert="medium" resp="#joint">knaben</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">erforderet</unclear> worden, <unclear cert="medium" resp="#joint">kont</unclear> ich <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">ein</unclear> wort <unclear cert="medium" resp="#joint">auß</unclear>
+<lb n="40"/><unclear cert="medium" resp="#joint">ihm</unclear> bringen, <unclear cert="medium" resp="#joint">das</unclear> er mir gesagt <unclear cert="medium" resp="#joint">hette</unclear>, <unclear cert="medium" resp="#joint">wohin</unclear> er
+<lb n="41"/><unclear cert="medium" resp="#joint">geschlagen</unclear> worden were, und <unclear cert="medium" resp="#joint">war</unclear> <unclear cert="medium" resp="#joint">damahls</unclear> <unclear cert="medium" resp="#joint">nien</unclear>-
+<lb n="42"/><unclear cert="medium" resp="#joint">gend</unclear> <unclear cert="medium" resp="#joint">am</unclear> leib nichts <unclear cert="medium" resp="#joint">zusehen</unclear>, das <unclear cert="low" resp="#joint">zerbrochen</unclear> <unclear cert="low" resp="#joint">noch</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">zerquetst</unclear>, sonder <unclear cert="low" resp="#joint">diße</unclear> <unclear cert="low" resp="#joint">mahzeihen</unclear> in <unclear cert="medium" resp="#joint">d</unclear> <unclear cert="medium" resp="#joint">linggen</unclear>
+<lb n="44"/>seiten <unclear cert="medium" resp="#joint">müßen</unclear> erst <unclear cert="low" resp="#joint">lang</unclear> <unclear cert="low" resp="#joint">nahe</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">zwifels</unclear> <unclear cert="low" resp="#joint">ohn</unclear>
+<lb n="45"/>erst nach <unclear cert="medium" resp="#joint">seinem</unclear> <unclear cert="medium" resp="#joint">tod</unclear> <unclear cert="medium" resp="#joint">herfür</unclear> <unclear cert="medium" resp="#joint">kommen</unclear> <unclear cert="medium" resp="#joint">sein</unclear>,
+<lb n="46"/>was <unclear cert="low" resp="#joint">dorffte</unclear> ich dann <unclear cert="medium" resp="#joint">eines</unclear> <unclear cert="medium" resp="#joint">balbierers</unclear>, was <unclear cert="medium" resp="#joint">hette</unclear>
+<lb n="47"/>er <unclear cert="medium" resp="#joint">beij</unclear> der sach <unclear cert="medium" resp="#joint">genützt</unclear>, oder was <unclear cert="medium" resp="#joint">hette</unclear> er zuver-
+<lb n="48"/><unclear cert="medium" resp="#joint">richten</unclear> gehabt? Laß mir <unclear cert="low" resp="#joint">derowegen</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">gern</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">zuegemeßen</unclear> werden <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">verwarloßung</unclear>, da
+<lb n="50"/>ich nit schuld hab: was ich aber für <unclear cert="low" resp="#joint">artzneijmittel</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">schleg</unclear> und <unclear cert="medium" resp="#joint">streich</unclear> <unclear cert="medium" resp="#joint">gebraucht</unclear>, wer-
+<lb n="52"/>den <unclear cert="medium" resp="#joint">meine</unclear> <unclear cert="medium" resp="#joint">recepten</unclear> <unclear cert="medium" resp="#joint">reden</unclear>, <unclear cert="medium" resp="#joint">wan</unclear> sie <unclear cert="medium" resp="#joint">verstendi</unclear>-
+<lb n="53"/>gen doctoribus <unclear cert="medium" resp="#joint">fürgewißen</unclear> <unclear cert="medium" resp="#joint">werden</unclear>, <unclear cert="medium" resp="#joint">das</unclear> ich <unclear cert="low" resp="#joint">das</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">meinige</unclear> <unclear cert="low" resp="#joint">gethan</unclear> <unclear cert="low" resp="#joint">hab</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">getreüwen</unclear> ehr-
+<lb n="55"/><unclear cert="medium" resp="#joint">lichen</unclear> medico dem leib und leben <unclear cert="low" resp="#joint">vertrauwt</unclear>
+<lb n="56"/><unclear cert="low" resp="#joint">wirt</unclear> <unclear cert="low" resp="#joint">zuestehet</unclear>: <unclear cert="low" resp="#joint">Demnach</unclear> <unclear cert="low" resp="#joint">wirte</unclear> in <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">Ysen</unclear>-
+<lb n="57"/><unclear cert="medium" resp="#joint">nißchen</unclear> schreiben <unclear cert="medium" resp="#joint">gemeldet</unclear>, das ungleicher
+<lb n="58"/><unclear cert="medium" resp="#joint">bricht</unclear> <unclear cert="medium" resp="#joint">seije</unclear> an <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">gschehen</unclear>, in historia <unclear cert="medium" resp="#joint">casus</unclear>,
+<lb n="59"/>da <unclear cert="medium" resp="#joint">nimpt</unclear> mich <unclear cert="medium" resp="#joint">wunder</unclear>, <unclear cert="medium" resp="#joint">worin</unclear> die differentz
+<lb n="60"/><unclear cert="medium" resp="#joint">seij</unclear>, nun das was <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">bede</unclear> <unclear cert="low" resp="#joint">medici</unclear> <unclear cert="low" resp="#joint">draüßen</unclear>
+<lb n="61"/>zu <placeName ref="stadtasg-places-331" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Fiden</unclear></placeName> auf der fürstlichen <unclear cert="medium" resp="#joint">herren</unclear> <unclear cert="medium" resp="#joint">rhäten</unclear>
+<lb n="62"/><unclear cert="medium" resp="#joint">erforderen</unclear> <unclear cert="medium" resp="#joint">außgesagt</unclear> haben, das wirt sich also
+<lb n="63"/><unclear cert="low" resp="#joint">erfinden</unclear>: <unclear cert="low" resp="#joint">und</unclear> dann <unclear cert="medium" resp="#joint">ferner</unclear>, so <unclear cert="low" resp="#joint">meldet</unclear> <unclear cert="low" resp="#joint">das</unclear>
+<lb n="64"/><unclear cert="low" resp="#joint">Yßenißche</unclear> schreiben, das <unclear cert="medium" resp="#joint">von</unclear> hier <unclear cert="medium" resp="#joint">auß</unclear> an sie
 <pb facs="StadtASG_Missive_3257_12909.jpg" n="3"/>
-<lb n="65"/>geschriben worden, das der verstorben die dies criticos
-<lb n="66"/>ueberlebt habe, was uewer fuer Consulenten von
-<lb n="67"/>ueweren Medicis den fuerstl. Hofraeten von dissen
-<lb n="68"/>diebus criticis gefragt haben, das koennen weder
-<lb n="69"/>sie, noch wir noch kein anderer erfahrner Medi-
-<lb n="70"/>cus dergstalten außdeuten, den thäter darmit
-<lb n="71"/>zeuoentheben und zeuoentschuldigen. Wir Medici
-<lb n="72"/>koennen kein dies criticos erkennen in solche
-<lb n="73"/>gwaltthätigen fällen, dann es hat nit ein
-<lb n="74"/>glägenheit mit schaedigunge, wie etwan mit
-<lb n="75"/>einer selbst angestoßnen scharfen hitzige kranck-
-<lb n="76"/>heit, da man etwan auf die criticos dies
-<lb n="77"/>achtung gibt, und vermeinet, das wann der
-<lb n="78"/>kranckh selben termin hat überstanden (so da
-<lb n="79"/>weret biß in den <date resp="#ner">21. tag</date>, wie die Medici wißt)
-<lb n="80"/>das alßdann der Patient ohne gefahr lebens ist,
-<lb n="81"/>hie aber hat es nit dise rechnung, sondern der Pa-
-<lb n="82"/>tient kan noch wol am <date resp="#ner">dreißigisten tag</date> an sei-
-<lb n="83"/>nen empfangenen wunden und schäden sterben,
-<lb n="84"/>wann die arzet auch ihren besten fleiß dar-
-<lb n="85"/>beij gethan haben. Derhalben dann ich den
-<lb n="86"/>Junckher ganß freündtlich wil gebetten haben, wie
-<lb n="87"/>ich ihme dann gar wol getruwen, er woelle
-<lb n="88"/>daran sein, wann man iezt den Blaarerischen
-<lb n="89"/>herren Consulenten auf ihre fraagpunckh wirt
-<lb n="90"/>antworten, das wir Medici, die dem kranckhen
-<lb n="91"/>abgewartet zevor gnuegsam verhoert werden,
-<lb n="92"/>und das mir nit weiter solche sachen zuege-
-<lb n="93"/>meßen werden, die meinem stand und ampt
-<lb n="94"/>zewider laufen, und mir nachtheilig und ver-
-<lb n="95"/>wißlich weren gegen ehren leuten, die mich
-<lb n="96"/>kennen, dann ich weiß Gott kein schuld hab,
+<lb n="65"/>geschriben worden, das der verstorben die <unclear cert="medium" resp="#joint">dies</unclear> <unclear cert="medium" resp="#joint">criticos</unclear>
+<lb n="66"/><unclear cert="medium" resp="#joint">ueberlebt</unclear> habe, was <unclear cert="medium" resp="#joint">uewer</unclear> <unclear cert="medium" resp="#joint">fuer</unclear> Consulenten von
+<lb n="67"/><unclear cert="low" resp="#joint">ueweren</unclear> <unclear cert="low" resp="#joint">Medicis</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">fuerstl</unclear>. <unclear cert="low" resp="#joint">Hofraeten</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">dissen</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">diebus</unclear> <unclear cert="low" resp="#joint">criticis</unclear> <unclear cert="low" resp="#joint">gefragt</unclear> haben, das <unclear cert="medium" resp="#joint">koennen</unclear> <unclear cert="medium" resp="#joint">weder</unclear>
+<lb n="69"/><unclear cert="medium" resp="#joint">sie</unclear>, <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">kein</unclear> <unclear cert="medium" resp="#joint">anderer</unclear> <unclear cert="medium" resp="#joint">erfahrner</unclear> Medi-
+<lb n="70"/><unclear cert="medium" resp="#joint">cus</unclear> <unclear cert="medium" resp="#joint">dergstalten</unclear> <unclear cert="medium" resp="#joint">außdeuten</unclear>, den <unclear cert="low" resp="#joint">thäter</unclear> <unclear cert="low" resp="#joint">darmit</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">zeuoentheben</unclear> und <unclear cert="low" resp="#joint">zeuoentschuldigen</unclear>. <unclear cert="low" resp="#joint">Wir</unclear> <unclear cert="low" resp="#joint">Medici</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">koennen</unclear> <unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">dies</unclear> <unclear cert="low" resp="#joint">criticos</unclear> <unclear cert="low" resp="#joint">erkennen</unclear> in <unclear cert="low" resp="#joint">solche</unclear>
+<lb n="73"/><unclear cert="low" resp="#joint">gwaltthätigen</unclear> <unclear cert="low" resp="#joint">fällen</unclear>, <unclear cert="low" resp="#joint">dann</unclear> es hat <unclear cert="medium" resp="#joint">nit</unclear> ein
+<lb n="74"/><unclear cert="medium" resp="#joint">glägenheit</unclear> mit <unclear cert="medium" resp="#joint">schaedigunge</unclear>, <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">etwan</unclear> mit
+<lb n="75"/><unclear cert="medium" resp="#joint">einer</unclear> selbst <unclear cert="medium" resp="#joint">angestoßnen</unclear> <unclear cert="medium" resp="#joint">scharfen</unclear> <unclear cert="medium" resp="#joint">hitzige</unclear> <unclear cert="medium" resp="#joint">kranck</unclear>-
+<lb n="76"/><unclear cert="medium" resp="#joint">heit</unclear>, da <unclear cert="medium" resp="#joint">man</unclear> <unclear cert="medium" resp="#joint">etwan</unclear> <unclear cert="medium" resp="#joint">auf</unclear> die <unclear cert="low" resp="#joint">criticos</unclear> <unclear cert="low" resp="#joint">dies</unclear>
+<lb n="77"/><unclear cert="low" resp="#joint">achtung</unclear> gibt, und <unclear cert="medium" resp="#joint">vermeinet</unclear>, das <unclear cert="medium" resp="#joint">wann</unclear> der
+<lb n="78"/><unclear cert="medium" resp="#joint">kranckh</unclear> <unclear cert="medium" resp="#joint">selben</unclear> termin <unclear cert="medium" resp="#joint">hat</unclear> <unclear cert="medium" resp="#joint">überstanden</unclear> (so da
+<lb n="79"/><unclear cert="medium" resp="#joint">weret</unclear> <unclear cert="medium" resp="#joint">biß</unclear> in <unclear cert="medium" resp="#joint">den</unclear> <date resp="#ner">21. tag</date>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Medici</unclear> <unclear cert="low" resp="#joint">wißt</unclear>)
+<lb n="80"/>das <unclear cert="low" resp="#joint">alßdann</unclear> der <unclear cert="medium" resp="#joint">Patient</unclear> ohne <unclear cert="medium" resp="#joint">gefahr</unclear> <unclear cert="medium" resp="#joint">lebens</unclear> ist,
+<lb n="81"/><unclear cert="medium" resp="#joint">hie</unclear> <unclear cert="medium" resp="#joint">aber</unclear> <unclear cert="medium" resp="#joint">hat</unclear> es <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">dise</unclear> <unclear cert="medium" resp="#joint">rechnung</unclear>, <unclear cert="medium" resp="#joint">sondern</unclear> der Pa-
+<lb n="82"/>tient <unclear cert="low" resp="#joint">kan</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">am</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">dreißigisten</unclear> <unclear cert="low" resp="#joint">tag</unclear></date> an sei-
+<lb n="83"/>nen <unclear cert="medium" resp="#joint">empfangenen</unclear> <unclear cert="medium" resp="#joint">wunden</unclear> und <unclear cert="medium" resp="#joint">schäden</unclear> sterben,
+<lb n="84"/><unclear cert="medium" resp="#joint">wann</unclear> die <unclear cert="medium" resp="#joint">arzet</unclear> <unclear cert="medium" resp="#joint">auch</unclear> ihren <unclear cert="medium" resp="#joint">besten</unclear> fleiß <unclear cert="medium" resp="#joint">dar</unclear>-
+<lb n="85"/><unclear cert="medium" resp="#joint">beij</unclear> <unclear cert="medium" resp="#joint">gethan</unclear> haben. <unclear cert="medium" resp="#joint">Derhalben</unclear> dann ich den
+<lb n="86"/><unclear cert="low" resp="#joint">Junckher</unclear> <unclear cert="low" resp="#joint">ganß</unclear> <unclear cert="low" resp="#joint">freündtlich</unclear> <unclear cert="low" resp="#joint">wil</unclear> <unclear cert="low" resp="#joint">gebetten</unclear> <unclear cert="low" resp="#joint">haben</unclear>, <unclear cert="low" resp="#joint">wie</unclear>
+<lb n="87"/>ich <unclear cert="low" resp="#joint">ihme</unclear> dann gar <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">getruwen</unclear>, er <unclear cert="medium" resp="#joint">woelle</unclear>
+<lb n="88"/>daran sein, <unclear cert="low" resp="#joint">wann</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">iezt</unclear> den <unclear cert="medium" resp="#joint">Blaarerischen</unclear>
+<lb n="89"/>herren Consulenten <unclear cert="medium" resp="#joint">auf</unclear> <unclear cert="medium" resp="#joint">ihre</unclear> <unclear cert="medium" resp="#joint">fraagpunckh</unclear> <unclear cert="medium" resp="#joint">wirt</unclear>
+<lb n="90"/><unclear cert="medium" resp="#joint">antworten</unclear>, das <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">Medici</unclear>, die <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">kranckhen</unclear>
+<lb n="91"/><unclear cert="low" resp="#joint">abgewartet</unclear> <unclear cert="low" resp="#joint">zevor</unclear> <unclear cert="low" resp="#joint">gnuegsam</unclear> <unclear cert="low" resp="#joint">verhoert</unclear> <unclear cert="low" resp="#joint">werden</unclear>,
+<lb n="92"/>und das mir nit <unclear cert="low" resp="#joint">weiter</unclear> <unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">sachen</unclear> <unclear cert="low" resp="#joint">zuege</unclear>-
+<lb n="93"/><unclear cert="low" resp="#joint">meßen</unclear> <unclear cert="low" resp="#joint">werden</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">meinem</unclear> <unclear cert="low" resp="#joint">stand</unclear> und <unclear cert="low" resp="#joint">ampt</unclear>
+<lb n="94"/><unclear cert="low" resp="#joint">zewider</unclear> <unclear cert="low" resp="#joint">laufen</unclear>, und mir nachtheilig und <unclear cert="medium" resp="#joint">ver</unclear>-
+<lb n="95"/><unclear cert="medium" resp="#joint">wißlich</unclear> <unclear cert="medium" resp="#joint">weren</unclear> gegen <unclear cert="medium" resp="#joint">ehren</unclear> <unclear cert="medium" resp="#joint">leuten</unclear>, die <unclear cert="medium" resp="#joint">mich</unclear>
+<lb n="96"/><unclear cert="medium" resp="#joint">kennen</unclear>, dann <unclear cert="medium" resp="#joint">ich</unclear> <unclear cert="medium" resp="#joint">weiß</unclear> Gott <unclear cert="medium" resp="#joint">kein</unclear> schuld <unclear cert="medium" resp="#joint">hab</unclear>,
 <pb facs="StadtASG_Missive_3257_12910.jpg" n="4"/>
-<lb n="97"/>und es den mag auf sich selbs verantworten laßen,
-<lb n="98"/>der der aafanger des leidigen unfahls ist:
-<lb n="99"/>Woh aber wider verhofen diß weitter wuochße
-<lb n="100"/>(wie vor dißem) geschehen, wurd ich verursacht
-<lb n="101"/>selbs hand an die fäderen zue legen, wie man
-<lb n="102"/>spricht, und mich gegen der Facultet zue <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>
-<lb n="103"/>in beßer form wüßen zue verantworten.
-<lb n="104"/>Diß hab ich nun bij dißer occasion dem Hrn. in
-<lb n="105"/>gueter meinung wöllen unverhalten haben, den
-<lb n="106"/>selwelchen, wie vast gemelt, pitende, er wölle
-<lb n="107"/>mein ehrlichen namen in billichen sachen
-<lb n="108"/>helfen vertfädigen, und solch mein schreiben im
-<lb n="109"/>beßten vermercken, darmit schlißlichen den
-<lb n="110"/>selwelchen und was ihme lieb ist, sampt uns
-<lb n="111"/>goettlicher gnaden befehle. Dattum <origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</origPlace> den <origDate when="1637-10-13" resp="#ner">3/13
-<lb n="112"/>Octobris 1637</origDate>.
-<lb n="113"/>Des Hrn.
-<lb n="114"/>d. w.
-<lb n="115"/><persName role="issuer" resp="#ner">Hector Zollikofer</persName>.
+<lb n="97"/><unclear cert="medium" resp="#joint">und</unclear> es den <unclear cert="medium" resp="#joint">mag</unclear> <unclear cert="medium" resp="#joint">auf</unclear> sich selbs <unclear cert="low" resp="#joint">verantworten</unclear> <unclear cert="low" resp="#joint">laßen</unclear>,
+<lb n="98"/>der <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">aafanger</unclear> <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">leidigen</unclear> <unclear cert="low" resp="#joint">unfahls</unclear> ist:
+<lb n="99"/><unclear cert="medium" resp="#joint">Woh</unclear> aber <unclear cert="medium" resp="#joint">wider</unclear> <unclear cert="medium" resp="#joint">verhofen</unclear> <unclear cert="medium" resp="#joint">diß</unclear> <unclear cert="medium" resp="#joint">weitter</unclear> <unclear cert="medium" resp="#joint">wuochße</unclear>
+<lb n="100"/>(<unclear cert="medium" resp="#joint">wie</unclear> vor <unclear cert="low" resp="#joint">dißem</unclear>) geschehen, <unclear cert="medium" resp="#joint">wurd</unclear> ich <unclear cert="medium" resp="#joint">verursacht</unclear>
+<lb n="101"/>selbs hand an die <unclear cert="medium" resp="#joint">fäderen</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">legen</unclear>, <unclear cert="medium" resp="#joint">wie</unclear> man
+<lb n="102"/><unclear cert="medium" resp="#joint">spricht</unclear>, und mich <unclear cert="medium" resp="#joint">gegen</unclear> der <unclear cert="medium" resp="#joint">Facultet</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-133" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Basel</unclear></placeName>
+<lb n="103"/><unclear cert="medium" resp="#joint">in</unclear> beßer form <unclear cert="low" resp="#joint">wüßen</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">verantworten</unclear>.
+<lb n="104"/>Diß hab ich nun <unclear cert="medium" resp="#joint">bij</unclear> <unclear cert="medium" resp="#joint">dißer</unclear> occasion dem <unclear cert="low" resp="#joint">Hrn</unclear>. <unclear cert="low" resp="#joint">in</unclear>
+<lb n="105"/>gueter meinung <unclear cert="low" resp="#joint">wöllen</unclear> <unclear cert="low" resp="#joint">unverhalten</unclear> <unclear cert="low" resp="#joint">haben</unclear>, den
+<lb n="106"/><unclear cert="low" resp="#joint">selwelchen</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">vast</unclear> <unclear cert="low" resp="#joint">gemelt</unclear>, <unclear cert="low" resp="#joint">pitende</unclear>, er <unclear cert="medium" resp="#joint">wölle</unclear>
+<lb n="107"/>mein <unclear cert="medium" resp="#joint">ehrlichen</unclear> <unclear cert="medium" resp="#joint">namen</unclear> in <unclear cert="low" resp="#joint">billichen</unclear> <unclear cert="low" resp="#joint">sachen</unclear>
+<lb n="108"/>helfen <unclear cert="low" resp="#joint">vertfädigen</unclear>, und <unclear cert="low" resp="#joint">solch</unclear> mein <unclear cert="low" resp="#joint">schreiben</unclear> <unclear cert="low" resp="#joint">im</unclear>
+<lb n="109"/><unclear cert="low" resp="#joint">beßten</unclear> <unclear cert="low" resp="#joint">vermercken</unclear>, <unclear cert="low" resp="#joint">darmit</unclear> <unclear cert="low" resp="#joint">schlißlichen</unclear> den
+<lb n="110"/><unclear cert="low" resp="#joint">selwelchen</unclear> und was <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">lieb</unclear> ist, sampt <unclear cert="low" resp="#joint">uns</unclear>
+<lb n="111"/><unclear cert="low" resp="#joint">goettlicher</unclear> <unclear cert="low" resp="#joint">gnaden</unclear> <unclear cert="low" resp="#joint">befehle</unclear>. <unclear cert="low" resp="#joint">Dattum</unclear> <origPlace ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></origPlace> den <origDate when="1637-10-13" resp="#ner"><unclear cert="medium" resp="#joint">3/13</unclear>
+<lb n="112"/>Octobris <unclear cert="low" resp="#joint">1637</unclear></origDate>.
+<lb n="113"/><unclear cert="low" resp="#joint">Des</unclear> <unclear cert="low" resp="#joint">Hrn</unclear>.
+<lb n="114"/>d. <unclear cert="medium" resp="#joint">w</unclear>.
+<lb n="115"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Hector</unclear> <unclear cert="medium" resp="#joint">Zollikofer</unclear></persName>.
 </p>
         </body>
     </text>

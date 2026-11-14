@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3310</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Elisabeth Gräfin zu Hanau und Maria Juliana Freiin zu Hanau bedanken sich bei Bürgermeister und Rat zu St. Gallen für die gewährte Steuerhilfe. Sie bitten um Gottes Segen für die Stadt und ihre Regierenden, empfehlen sich der beharrlichen Güte der St. Galler und versprechen, die Gunst durch Fürbitten zu vergelten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Elisabeth Gräfin zu Hanau und Maria Juliana Freiin zu Hanau bedanken sich bei Bürgermeister und Rat zu St. Gallen für die gewährte Steuerhilfe. Sie bitten um Gottes Segen für die Stadt und ihre Regierenden, empfehlen sich der beharrlichen Güte der St. Galler und versprechen, die Gunst durch Fürbitten zu vergelten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Elisabeth Gräfin zu Hanau and Maria Juliana Freiin zu Hanau thank the Burgomaster and Council of St. Gallen for the tax assistance granted. They ask for God's blessing for the city and its rulers, recommend themselves to the steadfast kindness of the St. Gallen, and promise to repay the favor through intercessions.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,22 +35,22 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3310_13135.jpg" n="1"/>
-<lb n="1"/>Woledle, Gestrenge, Ehnueste, Fuersichtige und Weiße,
+<lb n="1"/><unclear cert="low" resp="#joint">Woledle</unclear>, <unclear cert="low" resp="#joint">Gestrenge</unclear>, <unclear cert="low" resp="#joint">Ehnueste</unclear>, <unclear cert="low" resp="#joint">Fuersichtige</unclear> und Weiße,
 <lb n="2"/>jnsonders hochgeehrte Herrn.
-<lb n="3"/>Demnach uff unser lehenthliches bitten und freundliches
-<lb n="4"/>ersuchen, den den Herrn in hertzen geneigtes willen
-<lb n="5"/>ehgeruehmter maßen und wehrter gestalt zue unser
-<lb n="6"/>elend und soulagiren, mit einer ansehenlicher steur,
+<lb n="3"/>Demnach uff unser <unclear cert="low" resp="#joint">lehenthliches</unclear> <unclear cert="low" resp="#joint">bitten</unclear> und freundliches
+<lb n="4"/>ersuchen, den den Herrn in <unclear cert="low" resp="#joint">hertzen</unclear> <unclear cert="low" resp="#joint">geneigtes</unclear> <unclear cert="low" resp="#joint">willen</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">ehgeruehmter</unclear> <unclear cert="low" resp="#joint">maßen</unclear> und <unclear cert="low" resp="#joint">wehrter</unclear> <unclear cert="low" resp="#joint">gestalt</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">unser</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">elend</unclear> und <unclear cert="low" resp="#joint">soulagiren</unclear>, mit einer ansehenlicher steur,
 <lb n="7"/>euher discretion, unß zue favorisiren sich gefallen
 <lb n="8"/>laßen, alß thun wir unß zum allerhoechsten und freund-
 <lb n="9"/>lichsten bedancken, den allerhoechsten ohn hertzen in-
 <lb n="10"/>staendig anrueffendt, solche große guetthat mit sei-
-<lb n="11"/>nem reichen segen dausendtfaltig wieder zueersetzen, sie
-<lb n="12"/>bey langwiriger gluecklicher regierung und aller prospe-
-<lb n="13"/>ritet gh zueerhalten, sie mit seinen vatterlichen schutz
-<lb n="14"/>und schirm alzeit gegen allen wueten ihrer feinden
-<lb n="15"/>kreaftiglichen zueschuetzen, uns zwar ist dieße
-<lb n="16"/>obgedachte wohlthat genugsamb zuehuehmen und zue
+<lb n="11"/>nem <unclear cert="low" resp="#joint">reichen</unclear> <unclear cert="low" resp="#joint">segen</unclear> <unclear cert="low" resp="#joint">dausendtfaltig</unclear> <unclear cert="low" resp="#joint">wieder</unclear> <unclear cert="low" resp="#joint">zueersetzen</unclear>, <unclear cert="low" resp="#joint">sie</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">langwiriger</unclear> <unclear cert="low" resp="#joint">gluecklicher</unclear> regierung und aller prospe-
+<lb n="13"/>ritet gh zueerhalten, sie mit <unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">vatterlichen</unclear> <unclear cert="low" resp="#joint">schutz</unclear>
+<lb n="14"/>und schirm alzeit gegen <unclear cert="low" resp="#joint">allen</unclear> <unclear cert="low" resp="#joint">wueten</unclear> <unclear cert="low" resp="#joint">ihrer</unclear> <unclear cert="low" resp="#joint">feinden</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">kreaftiglichen</unclear> <unclear cert="low" resp="#joint">zueschuetzen</unclear>, <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">zwar</unclear> ist dieße
+<lb n="16"/>obgedachte <unclear cert="low" resp="#joint">wohlthat</unclear> <unclear cert="low" resp="#joint">genugsamb</unclear> <unclear cert="low" resp="#joint">zuehuehmen</unclear> und <unclear cert="low" resp="#joint">zue</unclear>
 <lb n="17"/>beschulden ohnmueglich, aber der trewe Gott, der sich
 <lb n="18"/>uns alß armer trostloßen waeyßen, selbst zum
 <lb n="19"/>vatter hatt ernant, ja auch sein vatter hertz ge-
@@ -57,27 +58,27 @@
 <lb n="21"/>ner gnaedigen zuesag, daß Er ein reicher vergelter
 <lb n="22"/>seyn wolle, derer guetthaten so seinen armen kin-
 <lb n="23"/>dern geschehen, unser danckwuerdigen vorbitt er-
-<lb n="24"/>setzen und obigen wündschen erfuellen, welchen
-<lb n="25"/>schutzreichen handt, wir die Herrn zue aller glueck-
+<lb n="24"/>setzen und <unclear cert="low" resp="#joint">obigen</unclear> <unclear cert="low" resp="#joint">wündschen</unclear> <unclear cert="low" resp="#joint">erfuellen</unclear>, <unclear cert="low" resp="#joint">welchen</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">schutzreichen</unclear> <unclear cert="low" resp="#joint">handt</unclear>, <unclear cert="low" resp="#joint">wir</unclear> die Herrn zue aller glueck-
 <lb n="26"/>seliger wohlfahrt, und unß Ihrer beharrlichen
 <lb n="27"/>guetwilligkeit treulich empfehlen. Geben
-<lb n="28"/><origPlace ref="stadtasg-places-16" cert="medium" resp="#ner">Franckfurt am Mayen</origPlace> <origDate when="1638" resp="#ner">den 2! Augusti 1638</origDate>. s.
+<lb n="28"/><origPlace ref="stadtasg-places-16" cert="medium" resp="#ner">Franckfurt am Mayen</origPlace> <origDate when="1638" resp="#ner">den 2! Augusti 1638</origDate>. <unclear cert="low" resp="#joint">s</unclear>.
 <lb n="29"/>Unser hochgeehrten Herrn in
-<lb n="30"/>gebuhr dienst affectio-
-<lb n="31"/>nirte dinerinen,
-<lb n="32"/><persName role="issuer" resp="#ner">Jeanne de Hanau</persName> <persName role="issuer" resp="#ner">Elisabethe graeffin</persName> und <persName role="issuer" resp="#ner">Maria Juliana</persName>
-<lb n="33"/>frewlin zu Hanau graeffin und freulin
-<lb n="34"/>zu <placeName ref="stadtasg-places-297" cert="medium" resp="#ner">Hanau</placeName>.
+<lb n="30"/><unclear cert="low" resp="#joint">gebuhr</unclear> <unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">affectio</unclear>-
+<lb n="31"/><unclear cert="low" resp="#joint">nirte</unclear> <unclear cert="low" resp="#joint">dinerinen</unclear>,
+<lb n="32"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Jeanne</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">Hanau</unclear></persName> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Elisabethe</unclear> <unclear cert="low" resp="#joint">graeffin</unclear></persName> und <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Maria</unclear> <unclear cert="low" resp="#joint">Juliana</unclear></persName>
+<lb n="33"/><unclear cert="low" resp="#joint">frewlin</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">Hanau</unclear> <unclear cert="low" resp="#joint">graeffin</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">freulin</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">zu</unclear> <placeName ref="stadtasg-places-297" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Hanau</unclear></placeName>.
 <pb facs="StadtASG_Missive_3310_13136.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3310_13137.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3310_13138.jpg" n="4"/>
-<lb n="35"/>Den Woledlen, gestrengen, ehren-
-<lb n="36"/>vesten, fürsichtigen und weisen
-<lb n="37"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Rhat der
-<lb n="38"/>loblichen Statt St. Gallen</orgName>, un-
-<lb n="39"/>sern hochgeehrten herren und pa-
-<lb n="40"/>tronen.
-<lb n="41"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="35"/>Den <unclear cert="medium" resp="#joint">Woledlen</unclear>, gestrengen, <unclear cert="medium" resp="#joint">ehren</unclear>-
+<lb n="36"/><unclear cert="medium" resp="#joint">vesten</unclear>, fürsichtigen und weisen
+<lb n="37"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeistern</unclear> und Rhat der
+<lb n="38"/><unclear cert="low" resp="#joint">loblichen</unclear> <unclear cert="low" resp="#joint">Statt</unclear> St. Gallen</orgName>, <unclear cert="low" resp="#joint">un</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">sern</unclear> <unclear cert="low" resp="#joint">hochgeehrten</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">pa</unclear>-
+<lb n="40"/><unclear cert="low" resp="#joint">tronen</unclear>.
+<lb n="41"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

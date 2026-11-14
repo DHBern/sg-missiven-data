@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3240</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Wilhelm Otto Graf zu Isenburg und Büdingen bittet Bürgermeister und Rat zu St. Gallen erneut um ein Darlehen gegen Obligation. Er begründet dies mit seiner finanziellen Notlage und der drohenden Winterzeit, da er für sich und seine Familie keine Mittel mehr habe. Er verweist auf ein früheres Schreiben vom 18. Februar und hofft auf eine baldige Antwort.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Wilhelm Otto Graf zu Isenburg und Büdingen bittet Bürgermeister und Rat zu St. Gallen erneut um ein Darlehen gegen Obligation. Er begründet dies mit seiner finanziellen Notlage und der drohenden Winterzeit, da er für sich und seine Familie keine Mittel mehr habe. Er verweist auf ein früheres Schreiben vom 18. Februar und hofft auf eine baldige Antwort.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Wilhelm Otto Graf zu Isenburg und Büdingen asks the Burgomaster and Council of St. Gallen again for a loan against obligation. He justifies this with his financial distress and the approaching winter season, as he has no more means for himself and his family. He refers to an earlier letter of 18 February and hopes for a prompt answer.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,37 +37,37 @@
 <pb facs="StadtASG_Missive_3240_12829.jpg" n="1"/>
 <lb n="1"/>Edle, Ehrnveste, Fromme, Fürsichtige, und Weise,
 <lb n="2"/>Insonders geliebte herrn und freunde,
-<lb n="3"/>Ab meinem sub dato dn <date resp="#ner">18. d Februarij</date> jüngsthin an die-
+<lb n="3"/>Ab meinem sub dato <unclear cert="low" resp="#joint">dn</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">18</unclear>. <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">Februarij</unclear></date> jüngsthin an die-
 <lb n="4"/>selbe freündlich abgelassenem schreiben, haben sie ver-
 <lb n="5"/>hoffentlichen der lengde nach mit mehrm verstanden,
-<lb n="6"/>und gibt es Ingelegte Copia nachmalen. In waß trüb-
-<lb n="7"/>seeligem Zustand ich und mein gantzes hauß nun in
-<lb n="8"/>daß zweite jahr gelebt und geschwebt, und daß zu
-<lb n="9"/>einiger Restitution und widrkhomen noch so gar schlechte
-<lb n="10"/>apparentz. mit angehengter freündfleißiger bitte,
-<lb n="11"/>die herrn alß Religions und glaubens genoßen aüßer
-<lb n="12"/>denen ich sonsten keine zuflucht wuste, solchen meinen
-<lb n="13"/>undt der meinigen leidmütigen Zustand Christ: und
-<lb n="14"/>frl. Consideriren und daruf mit vorschüßung eines
-<lb n="15"/>stuckgelts gegen eine obligation mir un die arme
-<lb n="16"/>greiffen undt zu hülf khommen wolten;
-<lb n="17"/>Ob ich nun wohl biß dato daruf die verhoffte Resolu-
-<lb n="18"/>tion undt willfahrung nit Erlangt, so zweifele ich
-<lb n="19"/>doch daran zumall nit, sondern muß vielmehr da-
+<lb n="6"/>und gibt es Ingelegte Copia <unclear cert="low" resp="#joint">nachmalen</unclear>. <unclear cert="low" resp="#joint">In</unclear> waß trüb-
+<lb n="7"/>seeligem Zustand ich und <unclear cert="low" resp="#joint">mein</unclear> <unclear cert="low" resp="#joint">gantzes</unclear> <unclear cert="low" resp="#joint">hauß</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">in</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">zweite</unclear> <unclear cert="low" resp="#joint">jahr</unclear> <unclear cert="low" resp="#joint">gelebt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">geschwebt</unclear>, und daß zu
+<lb n="9"/>einiger Restitution und <unclear cert="low" resp="#joint">widrkhomen</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">gar</unclear> <unclear cert="low" resp="#joint">schlechte</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">apparentz</unclear>. mit <unclear cert="low" resp="#joint">angehengter</unclear> <unclear cert="low" resp="#joint">freündfleißiger</unclear> <unclear cert="low" resp="#joint">bitte</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">herrn</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">Religions</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">glaubens</unclear> <unclear cert="low" resp="#joint">genoßen</unclear> <unclear cert="low" resp="#joint">aüßer</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">sonsten</unclear> <unclear cert="low" resp="#joint">keine</unclear> <unclear cert="low" resp="#joint">zuflucht</unclear> <unclear cert="low" resp="#joint">wuste</unclear>, <unclear cert="low" resp="#joint">solchen</unclear> <unclear cert="low" resp="#joint">meinen</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">meinigen</unclear> <unclear cert="low" resp="#joint">leidmütigen</unclear> <unclear cert="low" resp="#joint">Zustand</unclear> <unclear cert="low" resp="#joint">Christ</unclear>: <unclear cert="low" resp="#joint">und</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">Consideriren</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">daruf</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">vorschüßung</unclear> <unclear cert="low" resp="#joint">eines</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">stuckgelts</unclear> gegen eine obligation mir <unclear cert="low" resp="#joint">un</unclear> die <unclear cert="low" resp="#joint">arme</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">greiffen</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">hülf</unclear> <unclear cert="low" resp="#joint">khommen</unclear> <unclear cert="low" resp="#joint">wolten</unclear>;
+<lb n="17"/><unclear cert="low" resp="#joint">Ob</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">dato</unclear> <unclear cert="low" resp="#joint">daruf</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">verhoffte</unclear> <unclear cert="low" resp="#joint">Resolu</unclear>-
+<lb n="18"/><unclear cert="low" resp="#joint">tion</unclear> <unclear cert="low" resp="#joint">undt</unclear> willfahrung nit Erlangt, so zweifele ich
+<lb n="19"/>doch daran zumall nit, sondern muß <unclear cert="low" resp="#joint">vielmehr</unclear> <unclear cert="low" resp="#joint">da</unclear>-
 <lb n="20"/>für halten, dz die herrn wegen anderer vielen
 <lb n="21"/>undt wichtigen beÿ gegenwertigen schwirigen zeiten,
 <lb n="22"/>stündlich einbrechenden Stattgeschefften, solch
 <lb n="23"/>mein suchen nit resolviren könen, od daß sie
-<lb n="24"/>vielleücht deßwegen mit gebührend fleißes Erinnert
-<lb n="25"/>wordn seÿen,
+<lb n="24"/><unclear cert="low" resp="#joint">vielleücht</unclear> <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">gebührend</unclear> <unclear cert="low" resp="#joint">fleißes</unclear> <unclear cert="low" resp="#joint">Erinnert</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">wordn</unclear> <unclear cert="low" resp="#joint">seÿen</unclear>,
 <pb facs="StadtASG_Missive_3240_12830.jpg" n="2"/>
-<lb n="26"/>Wan aber underdeßten mein uffhaltungs mittell
-<lb n="27"/>je laenger je mehr zerrinnen, und diemaß uff
+<lb n="26"/><unclear cert="low" resp="#joint">Wan</unclear> aber <unclear cert="low" resp="#joint">underdeßten</unclear> mein uffhaltungs mittell
+<lb n="27"/>je laenger je mehr zerrinnen, und <unclear cert="low" resp="#joint">diemaß</unclear> <unclear cert="low" resp="#joint">uff</unclear>
 <lb n="28"/>die neige kommen allermaßen ich mit Gott bezeuge
 <lb n="29"/>daß ich nit weiß woher ich und mein wenige familia
-<lb n="30"/>instehende winterliche zeit uber die ußeriste ali=
-<lb n="31"/>menta ergreiffen koene od moege, hierumb so ge=
-<lb n="32"/>langt nochmals hiemit mein freundtfleißiges
+<lb n="30"/>instehende winterliche zeit uber die <unclear cert="low" resp="#joint">ußeriste</unclear> <unclear cert="low" resp="#joint">ali=</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">menta</unclear> <unclear cert="low" resp="#joint">ergreiffen</unclear> <unclear cert="low" resp="#joint">koene</unclear> <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">moege</unclear>, hierumb so ge=
+<lb n="32"/>langt nochmals hiemit mein <unclear cert="low" resp="#joint">freundtfleißiges</unclear>
 <lb n="33"/>bitten an die heren, sie wollen mir mit d gebettenen
 <lb n="34"/>veehrung zue gratificiren und foerderlich zue
 <lb n="35"/>erscheinen sich freundtlich belieben laßen, wie sie
@@ -74,25 +75,25 @@
 <lb n="37"/>nach d rhůmlich exempeln dero geehrten vor=
 <lb n="38"/>fahren beÿ allen und jed verfolgungen d kirch
 <lb n="39"/>Gottes beschehen, erweisen, also obligiren sie zu
-<lb n="40"/>gleich mich und mein hauß zue allerchůldigen
-<lb n="41"/>danckbarkeit und gegenbezeigungen, die heren
+<lb n="40"/>gleich mich und mein <unclear cert="low" resp="#joint">hauß</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">allerchůldigen</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">danckbarkeit</unclear> und gegenbezeigungen, die heren
 <lb n="42"/>damit d goettlichen regierung zue allem wole=
-<lb n="43"/>rgehen trewlichen befehlendt. Datum <origPlace ref="stadtasg-places-16" cert="medium" resp="#ner">Franck=
-<lb n="44"/>furth</origPlace> <origDate when="1637-08-07" resp="#ner">d 7. Augusti. A°o. 1637.</origDate>
+<lb n="43"/>rgehen trewlichen befehlendt. Datum <origPlace ref="stadtasg-places-16" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Franck=</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">furth</unclear></origPlace> <origDate when="1637-08-07" resp="#ner"><unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">7</unclear>. Augusti. A°o. 1637.</origDate>
 <lb n="45"/>Der heren
 <lb n="46"/>allzeit freundt. und
-<lb n="47"/>dinstwilliger
-<lb n="48"/><persName role="issuer" resp="#ner">Wilhelm Otto Graue</persName>
-<lb n="49"/>zue <placeName resp="#ner">Ysenbůrck</placeName> und <placeName resp="#ner">Bůdingen</placeName>
+<lb n="47"/><unclear cert="low" resp="#joint">dinstwilliger</unclear>
+<lb n="48"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Wilhelm</unclear> <unclear cert="low" resp="#joint">Otto</unclear> <unclear cert="low" resp="#joint">Graue</unclear></persName>
+<lb n="49"/><unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Ysenbůrck</unclear></placeName> und <placeName resp="#ner"><unclear cert="low" resp="#joint">Bůdingen</unclear></placeName>
 <pb facs="StadtASG_Missive_3240_12831.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3240_12832.jpg" n="4"/>
 <lb n="50"/>Denen edlen, ehrenvesten, from-
 <lb n="51"/>men, fuersichtigen, und weisen
 <lb n="52"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern unnd
 <lb n="53"/>Rath der statt St. Gallen</orgName>,
-<lb n="54"/>meinen insonders geliebten
-<lb n="55"/>herren und freündten.
-<lb n="56"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="54"/>meinen insonders <unclear cert="low" resp="#joint">geliebten</unclear>
+<lb n="55"/>herren und <unclear cert="low" resp="#joint">freündten</unclear>.
+<lb n="56"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

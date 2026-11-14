@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3573</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Abt Romanus von Kempten bittet Bürgermeister und Rat zu St. Gallen, die Witwe des verstorbenen Wachtmeisters Peter Wiss das ihr anvertraute Geld, das bei dem Wegmann Georg Wegmann liegt, herauszugeben. Er verweist auf die Aussage des Kemptener Bürgers Christoph Heuler und darauf, dass das Geld der Witwe zustehe. Er bittet, die Witwe nicht für die Schulden des Wegmanns haftbar zu machen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Abt Romanus von Kempten bittet Bürgermeister und Rat zu St. Gallen, die Witwe des verstorbenen Wachtmeisters Peter Wiss das ihr anvertraute Geld, das bei dem Wegmann Georg Wegmann liegt, herauszugeben. Er verweist auf die Aussage des Kemptener Bürgers Christoph Heuler und darauf, dass das Geld der Witwe zustehe. Er bittet, die Witwe nicht für die Schulden des Wegmanns haftbar zu machen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Abbot Romanus of Kempten asks the Burgomaster and Council of St. Gallen to pay out to the widow of the deceased Wachtmeister Peter Wiss the money entrusted to her, which is with the Wegmann Georg Wegmann. He refers to the statement of the citizen of Kempten Christoph Heuler and to the fact that the money is due to the widow. He asks that the widow not be held liable for the debts of the Wegmann.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -71,10 +72,10 @@
 <lb n="35"/><origPlace resp="#ner">liebenhan</origPlace> den 9.ten xbriß Ao. 43
 <lb n="36"/><persName role="issuer" resp="#ner">Romanus Abbt</persName>
 <pb facs="StadtASG_Missive_3573_14252.jpg" n="2"/>
-<lb n="37"/>Dem fuersichtigen wolweisen unsern
-<lb n="38"/>günstigen herren und obern <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger-
-<lb n="39"/>maister und rath der statt.
-<lb n="40"/>Sanct Gallen</orgName>.
+<lb n="37"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">wolweisen</unclear> <unclear cert="low" resp="#joint">unsern</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">günstigen</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">obern</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">burger</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">maister</unclear> und rath der statt.
+<lb n="40"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>.
 </p>
         </body>
     </text>

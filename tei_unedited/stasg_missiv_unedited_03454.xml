@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3454</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Nürnberg bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Georg Verstanden aufzufordern, die von ihrem Bürger Bernhard Stöbel erbrachte Treueherzigkeit zu begleichen. Stöbel habe sich über Verstanden beklagt, der ihm in Nürnberger Diensten verborgene Buchhändlerware nicht bezahlt habe. Nürnberg bittet um schnelle Befriedigung Stöbels, damit dieser seinen ehemaligen Herrn Wolfgang Endter vergüten könne.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Nürnberg bitten Bürgermeister und Rat zu St. Gallen, ihren Bürger Georg Verstanden aufzufordern, die von ihrem Bürger Bernhard Stöbel erbrachte Treueherzigkeit zu begleichen. Stöbel habe sich über Verstanden beklagt, der ihm in Nürnberger Diensten verborgene Buchhändlerware nicht bezahlt habe. Nürnberg bittet um schnelle Befriedigung Stöbels, damit dieser seinen ehemaligen Herrn Wolfgang Endter vergüten könne.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Nürnberg request Burgomaster and Council of St. Gallen to urge their citizen Georg Verstanden to settle the loyalty (Treueherzigkeit) provided by their citizen Bernhard Stöbel. Stöbel has complained about Verstanden, who, in the service of Nürnberg, did not pay him for hidden bookseller's goods. Nürnberg requests the swift satisfaction of Stöbel, so that he may be able to compensate his former master Wolfgang Endter.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,8 +36,8 @@
 <p>
 <pb facs="StadtASG_Missive_3454_13751.jpg" n="1"/>
 <lb n="1"/>Unser freundtlich willige dienst, seyen Euer Fuersich-
-<lb n="2"/>tigkeit mitt fleiß zuvor bereit, Fuersichtige, Eesrame
-<lb n="3"/>und weiße, besonders liebe und guete Freundt.
+<lb n="2"/>tigkeit mitt fleiß <unclear cert="low" resp="#joint">zuvor</unclear> <unclear cert="low" resp="#joint">bereit</unclear>, <unclear cert="low" resp="#joint">Fuersichtige</unclear>, <unclear cert="low" resp="#joint">Eesrame</unclear>
+<lb n="3"/>und <unclear cert="low" resp="#joint">weiße</unclear>, <unclear cert="low" resp="#joint">besonders</unclear> liebe und guete Freundt.
 <lb n="4"/>E. F. beliebe auß dem Beyschluß unbeschwehrt zuvernehmen,
 <lb n="5"/>welcher gestalt unser Burger <persName resp="#ner">Bernhardt Stöbel</persName>, sich
 <lb n="6"/>wider E. F. Burgern, <persName resp="#ner">Georgen Verstanden</persName>, wegen ihme
@@ -44,17 +45,17 @@
 <lb n="8"/>zu deren bezahlung er bißhero nit gelangen können,
 <lb n="9"/>beclagt, und derowegen unsere Intercessionales, deren
 <lb n="10"/>er fruchtbarlichen zugnießen verhoffet, ihme zuer-
-<lb n="11"/>theilen gebetten. Wann wir dann diese
-<lb n="12"/>schuldt sach an sich selbsten clar, und richtig ermeßen,
+<lb n="11"/>theilen gebetten. Wann wir dann <unclear cert="low" resp="#joint">diese</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">schuldt</unclear> <unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">an</unclear> sich <unclear cert="low" resp="#joint">selbsten</unclear> <unclear cert="low" resp="#joint">clar</unclear>, und richtig ermeßen,
 <lb n="13"/>und dahero dem petenten zu willfahren, unß schuldig
 <lb n="14"/>erkannt, Alß gelanget hiemit an E. F.
 <lb n="15"/>unser dienstfrl. ersuchen und bitten, die wollen
 <lb n="16"/>ernanten dero Burger erfordern, ihme die von
-<lb n="17"/>dem <persName resp="#ner">Stöbell</persName> erwießene treuhertzigkeit zugemueth
-<lb n="18"/>fuehren laßen, und dann alles ernsts ufferlegen,
-<lb n="19"/>daß er nunmehro, ohne längern uffzug, unsern
+<lb n="17"/>dem <persName resp="#ner"><unclear cert="low" resp="#joint">Stöbell</unclear></persName> <unclear cert="low" resp="#joint">erwießene</unclear> <unclear cert="low" resp="#joint">treuhertzigkeit</unclear> <unclear cert="low" resp="#joint">zugemueth</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">fuehren</unclear> laßen, und dann alles <unclear cert="low" resp="#joint">ernsts</unclear> <unclear cert="low" resp="#joint">ufferlegen</unclear>,
+<lb n="19"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">nunmehro</unclear>, ohne längern uffzug, unsern
 <lb n="20"/>Burger den <persName resp="#ner">Stöbell</persName> befriedigen solle, zumahln
-<lb n="21"/>derselbe seinem geweßenen Herren, <persName resp="#ner">Wolffgang</persName>
+<lb n="21"/>derselbe <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">geweßenen</unclear> <unclear cert="low" resp="#joint">Herren</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Wolffgang</unclear></persName>
 <pb facs="StadtASG_Missive_3454_13752.jpg" n="2"/>
 <lb n="22"/>Endter umb diese verbriefte schuldt contentiren
 <lb n="23"/>und vergnügen wurden.

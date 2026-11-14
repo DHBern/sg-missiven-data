@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3219</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau bitten Bürgermeister und Rat zu St. Gallen, mit ihrem Bürger David Müller zu verhandeln, damit er den Lindauer Bürger Johann Andre Hundt von Dettmeir klaglos stellt. Dies betrifft ein Urteil und eine Exekution im Prozess des ausgewichenen Lindauers Thomas Wellin. Lindau bietet Hilfe an und ersucht um nachbarliche Entgegenkommen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau bitten Bürgermeister und Rat zu St. Gallen, mit ihrem Bürger David Müller zu verhandeln, damit er den Lindauer Bürger Johann Andre Hundt von Dettmeir klaglos stellt. Dies betrifft ein Urteil und eine Exekution im Prozess des ausgewichenen Lindauers Thomas Wellin. Lindau bietet Hilfe an und ersucht um nachbarliche Entgegenkommen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Lindau ask Burgomaster and Council of St. Gallen to negotiate with their citizen David Müller so that he releases the Lindau citizen Johann Andre Hundt von Dettmeir from the lawsuit. This concerns a judgment and an execution in the process of the departed Lindauer Thomas Wellin. Lindau offers help and requests neighborly consideration.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,16 +36,16 @@
 <p>
 <pb facs="StadtASG_Missive_3219_12729.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst zuvor, fürsichtig,
-<lb n="2"/>ersam, und weise, besonders liebe freünd und nachbaurn,
-<lb n="3"/>Waß an unß unser sünßverwandter Junckher
+<lb n="2"/>ersam, und weise, besonders liebe freünd und <unclear cert="low" resp="#joint">nachbaurn</unclear>,
+<lb n="3"/><unclear cert="low" resp="#joint">Waß</unclear> <unclear cert="low" resp="#joint">an</unclear> unß <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">sünßverwandter</unclear> <unclear cert="low" resp="#joint">Junckher</unclear>
 <lb n="4"/><persName resp="#ner">Johann Andre Hundtß</persName> zuo <placeName resp="#ner">Dettmeir</placeName> schrifftlich gelangen
-<lb n="5"/>lassen: daß geliebe E. Wht. ab dem beischluß mit meh-
-<lb n="6"/>rem zuo vernemen,
-<lb n="7"/>Wann sich dann im unserm protocoll und unsren
+<lb n="5"/>lassen: daß <unclear cert="low" resp="#joint">geliebe</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">beischluß</unclear> mit <unclear cert="low" resp="#joint">meh</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">rem</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">vernemen</unclear>,
+<lb n="7"/><unclear cert="low" resp="#joint">Wann</unclear> sich dann im unserm protocoll und unsren
 <lb n="8"/>rhatß deputirten erfündt, daß die sach, (soviel die
-<lb n="9"/>von unß im <persName resp="#ner">Thomae Wellinß</persName> unsers außgewichenen
-<lb n="10"/>burgers edicts proceß ergangne urtheil und darüber
-<lb n="11"/>verfuegte execution betrifft) allerdingß hergegangen,
+<lb n="9"/><unclear cert="low" resp="#joint">von</unclear> unß im <persName resp="#ner">Thomae Wellinß</persName> unsers außgewichenen
+<lb n="10"/>burgers edicts proceß ergangne urtheil und <unclear cert="low" resp="#joint">darüber</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">verfuegte</unclear> execution betrifft) allerdingß hergegangen,
 <lb n="12"/>wie hie erwelter <persName resp="#ner">Hundtß</persName> erzehlt, und wir dahero
 <lb n="13"/>nicht underlaßen koennen, ihm hierunder die hilfflich
 <lb n="14"/>hand zuobieten: Ein oberkeit aber der andren,
@@ -54,12 +55,12 @@
 <lb n="18"/>schuldig: Alß ersuochen E. Wht. wir hie-
 <lb n="19"/>mit freündtlichen fleißtes, sie woellen mit ihrem
 <lb n="20"/>burger <persName resp="#ner">David Müllern</persName> die verfuegung thuon, damit
-<lb n="21"/>er Jr. Hundtß von ihme clagloß gestellt werd, und
-<lb n="22"/>deßhalben sowol E. Wht. alß wir, fürohin ohne-
-<lb n="23"/>helligt verbleiben moegen,
-<lb n="24"/>Da wir im dergleich und andrem, hinwiderumb
-<lb n="25"/>freünd nachbarlich zuobeschulden erbietig, unß dar-
-<lb n="26"/>mit goettlicher obachtung befehlend, datum den
+<lb n="21"/>er <unclear cert="low" resp="#joint">Jr</unclear>. <unclear cert="low" resp="#joint">Hundtß</unclear> von <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">clagloß</unclear> <unclear cert="low" resp="#joint">gestellt</unclear> <unclear cert="low" resp="#joint">werd</unclear>, und
+<lb n="22"/>deßhalben <unclear cert="low" resp="#joint">sowol</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">wir</unclear>, <unclear cert="low" resp="#joint">fürohin</unclear> <unclear cert="low" resp="#joint">ohne</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">helligt</unclear> verbleiben moegen,
+<lb n="24"/>Da wir im dergleich und <unclear cert="low" resp="#joint">andrem</unclear>, <unclear cert="low" resp="#joint">hinwiderumb</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">freünd</unclear> <unclear cert="low" resp="#joint">nachbarlich</unclear> <unclear cert="low" resp="#joint">zuobeschulden</unclear> <unclear cert="low" resp="#joint">erbietig</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">dar</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">goettlicher</unclear> <unclear cert="low" resp="#joint">obachtung</unclear> <unclear cert="low" resp="#joint">befehlend</unclear>, datum den
 <lb n="27"/><origDate when="1637-02-16" resp="#ner">16. februarij ao. 1637</origDate>.
 <lb n="28"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermeister und rhat
 <lb n="29"/>der statt Lindaw</orgName>.
@@ -69,9 +70,9 @@
 <pb facs="StadtASG_Missive_3219_12732.jpg" n="4"/>
 <lb n="31"/>Den fuersichtigen, ersamen und weisen,
 <lb n="32"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat der Statt St. Gallen</orgName>
-<lb n="33"/>unsern besonders lieben freunden und nach-
-<lb n="34"/>baurn.
-<lb n="35"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="33"/>unsern besonders lieben freunden und <unclear cert="low" resp="#joint">nach</unclear>-
+<lb n="34"/><unclear cert="low" resp="#joint">baurn</unclear>.
+<lb n="35"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

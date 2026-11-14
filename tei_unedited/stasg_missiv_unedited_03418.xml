@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3418</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Schultheiss und Rat zu Weiler bitten Jacob Manßlin, Zunfmeister und Rat zu St. Gallen, schriftlich zu berichten, wie die St. Galler Metzger ihr Fleisch und Unschlitt verkaufen und zu welchen Preisen. Sie möchten wissen, ob der alte Tax gilt, um Missverständnisse zu vermeiden, da die Weiler Metzger dem St. Galler Preis folgen wollen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Schultheiss und Rat zu Weiler bitten Jacob Manßlin, Zunfmeister und Rat zu St. Gallen, schriftlich zu berichten, wie die St. Galler Metzger ihr Fleisch und Unschlitt verkaufen und zu welchen Preisen. Sie möchten wissen, ob der alte Tax gilt, um Missverständnisse zu vermeiden, da die Weiler Metzger dem St. Galler Preis folgen wollen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Schultheiss and Council of Weiler ask Jacob Manßlin, Guild Master and Council member of St. Gallen, to report in writing how the butchers of St. Gallen sell their meat and lard and at what prices. They wish to know whether the old tariff still applies, in order to avoid misunderstandings, as the butchers of Weiler wish to follow the price of St. Gallen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,23 +40,23 @@
 <lb n="3"/>Demnach so hat uff unser fründtliches ersuochen und begeren
 <lb n="4"/>ewr guenstiger lieber Mitburger Herr <persName resp="#ner">Jacob weettmer</persName>, unß
 <lb n="5"/>uß ewer cantzlei ein Uhrkhundt geben, wie und waß maßen
-<lb n="6"/>ewere metzger ihn der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">sanct gallen</placeName> ihr fleisch hingeben und ver,
+<lb n="6"/>ewere metzger ihn der <unclear cert="low" resp="#joint">Statt</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">sanct</unclear> <unclear cert="low" resp="#joint">gallen</unclear></placeName> <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">hingeben</unclear> und ver,
 <lb n="7"/>khauffen sollend, deß glichen auch daß unschlig. Wil aber
 <lb n="8"/>bi etlichen der unserigen ein mißverstand. Daß etliche
-<lb n="9"/>einß sagend die anderen ein anders. Und also nit über einß stimen
-<lb n="10"/>So gelangt der wegen Abermalß unser fründtliches ersuochen
-<lb n="11"/>und begeren. Der Herr welle unbeschwerdt, unß bei zeigeren
-<lb n="12"/>dißend, unß schriftlichen berichten, wie und welcher maßen die
-<lb n="13"/>ewrigen ihr fleiß verkhauffend ihn welchen priß daß doch
+<lb n="9"/>einß sagend die anderen ein anders. Und also <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">über</unclear> <unclear cert="low" resp="#joint">einß</unclear> <unclear cert="low" resp="#joint">stimen</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">So</unclear> gelangt der wegen Abermalß unser fründtliches ersuochen
+<lb n="11"/>und begeren. Der Herr <unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">unbeschwerdt</unclear>, unß <unclear cert="low" resp="#joint">bei</unclear> <unclear cert="low" resp="#joint">zeigeren</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">dißend</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">schriftlichen</unclear> berichten, wie und welcher maßen die
+<lb n="13"/>ewrigen ihr fleiß <unclear cert="low" resp="#joint">verkhauffend</unclear> <unclear cert="low" resp="#joint">ihn</unclear> <unclear cert="low" resp="#joint">welchen</unclear> <unclear cert="low" resp="#joint">priß</unclear> <unclear cert="low" resp="#joint">daß</unclear> doch
 <lb n="14"/>wir unß ersehen künden, Ob eß bei ewrem aelten tax bstande
 <lb n="15"/>oder nit. Und besonder wie die metzger ihr unschlig verkhauffen
 <lb n="16"/>und wie dan ewere lüth die ihn laeden feil habend, wie sei daß
-<lb n="17"/>pfundt unschlig, und daß pfund liechter verkhauffen und hingebend.
-<lb n="18"/>Damit wir eß ihn grund denn unserigen wahren bricht für
+<lb n="17"/>pfundt unschlig, und daß pfund liechter verkhauffen und <unclear cert="low" resp="#joint">hingebend</unclear>.
+<lb n="18"/><unclear cert="low" resp="#joint">Damit</unclear> wir eß ihn grund denn unserigen wahren bricht für
 <lb n="19"/>halten khonden. Dan sei sich erbotten die metzger und ladenlüth
-<lb n="20"/>daß sei dem <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">sanct galißen</placeName> priß nach komen wollend, und aber
+<lb n="20"/>daß sei dem <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">sanct</unclear> <unclear cert="low" resp="#joint">galißen</unclear></placeName> <unclear cert="low" resp="#joint">priß</unclear> <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">komen</unclear> <unclear cert="low" resp="#joint">wollend</unclear>, und aber
 <lb n="21"/>ein mißverstand harunder gewachsen, wollend also vom Herren
-<lb n="22"/>guottß bscheid gewertig sein, unß sambtlichen goettlich Protekion
+<lb n="22"/><unclear cert="low" resp="#joint">guottß</unclear> <unclear cert="low" resp="#joint">bscheid</unclear> <unclear cert="low" resp="#joint">gewertig</unclear> sein, unß sambtlichen goettlich Protekion
 <lb n="23"/>wohl befelchende den <origDate when="1640-11-07" resp="#ner">7 Novembes Anno. 1640</origDate>.
 <lb n="24"/><orgName ref="stadtasg-actors-517" cert="medium" role="issuer" resp="#ner">Schultheiß und Rath,
 <lb n="25"/>der statt weyl</orgName>.
@@ -63,10 +64,10 @@
 <pb facs="StadtASG_Missive_3418_13615.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3418_13616.jpg" n="4"/>
 <lb n="26"/>Deme frommen, ehrnuesten, fürnemmen,
-<lb n="27"/>unnd wolweysen, herren <persName role="recipient" resp="#ner">Jacob Manßlin</persName>,
-<lb n="28"/>zunfftmeister, und <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">deß rhats, der statt
-<lb n="29"/>Sanct Gallen</orgName>. Unserm lieben und guotten
-<lb n="30"/>herren.
+<lb n="27"/>unnd <unclear cert="low" resp="#joint">wolweysen</unclear>, herren <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Jacob</unclear> <unclear cert="low" resp="#joint">Manßlin</unclear></persName>,
+<lb n="28"/><unclear cert="low" resp="#joint">zunfftmeister</unclear>, und <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">rhats</unclear>, der statt
+<lb n="29"/>Sanct Gallen</orgName>. <unclear cert="low" resp="#joint">Unserm</unclear> <unclear cert="low" resp="#joint">lieben</unclear> und <unclear cert="low" resp="#joint">guotten</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">herren</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3302</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Das Parlament zu Dole entschuldigt sich bei den Eidgenossen für die verspätete Übermittlung der üblichen Dankbarkeit, da der Krieg mit Frankreich und die Besetzung der Pässe dies verhindert hätten. Man bittet um erneute Freundschaftsbekundungen, um militärische Hilfe zur Unterdrückung der Franzosen sowie um freien Pass für Truppen aus Mailand. Der Gesandte D'Acoste werde dies näher erläutern.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Das Parlament zu Dole entschuldigt sich bei den Eidgenossen für die verspätete Übermittlung der üblichen Dankbarkeit, da der Krieg mit Frankreich und die Besetzung der Pässe dies verhindert hätten. Man bittet um erneute Freundschaftsbekundungen, um militärische Hilfe zur Unterdrückung der Franzosen sowie um freien Pass für Truppen aus Mailand. Der Gesandte D'Acoste werde dies näher erläutern.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Parliament at Dole apologises to the Confederates for the delayed transmission of the usual gratitude, as the war with Frankreich and the occupation of the passes had prevented this. It asks for renewed expressions of friendship, for military help to suppress the Franzosen, and for free passage for troops from Mailand. The envoy D'Acoste will explain this in more detail.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,63 +35,63 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3302_13097.jpg" n="1"/>
-<lb n="1"/>HochgeAchte Mächtige WolgeEhrte Herren,
-<lb n="2"/>Wyl der ungerechte krieg. wellichen die <orgName resp="#ner">Frantzosen</orgName>
+<lb n="1"/>HochgeAchte <unclear cert="low" resp="#joint">Mächtige</unclear> <unclear cert="low" resp="#joint">WolgeEhrte</unclear> Herren,
+<lb n="2"/>Wyl der ungerechte krieg. wellichen die <orgName resp="#ner"><unclear cert="low" resp="#joint">Frantzosen</unclear></orgName>
 <lb n="3"/>inn disen landen erhepten, mit solchen grusam-
 <lb n="4"/>keiten und gwaltthaten begleitet wirt, wie
-<lb n="5"/>üch hüt wol bekhandt, So hat man nit E: rechter
-<lb n="6"/>zyt die gebürende verordnung thuen khünnen
-<lb n="7"/>üch daß gelt, der gewohnlichen fründlichen danck-
+<lb n="5"/>üch hüt wol bekhandt, So hat man nit <unclear cert="low" resp="#joint">E</unclear>: <unclear cert="low" resp="#joint">rechter</unclear>
+<lb n="6"/>zyt die gebürende <unclear cert="low" resp="#joint">verordnung</unclear> <unclear cert="low" resp="#joint">thuen</unclear> <unclear cert="low" resp="#joint">khünnen</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">gelt</unclear>, der gewohnlichen fründlichen danck-
 <lb n="8"/>barkeit zu übersenden, Sintemahlen der
 <lb n="9"/>Her <persName resp="#ner">Marggraff</persName> von S. Martin und wir
-<lb n="10"/>nothwendigklich unsre gedancken und sorgen
-<lb n="11"/>anwenden müessen, den bösen vorhaben
-<lb n="12"/>der feinden zubegegnen, Nebent dem auch
+<lb n="10"/><unclear cert="low" resp="#joint">nothwendigklich</unclear> <unclear cert="low" resp="#joint">unsre</unclear> <unclear cert="low" resp="#joint">gedancken</unclear> und <unclear cert="low" resp="#joint">sorgen</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">anwenden</unclear> <unclear cert="low" resp="#joint">müessen</unclear>, <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">bösen</unclear> <unclear cert="low" resp="#joint">vorhaben</unclear>
+<lb n="12"/>der <unclear cert="low" resp="#joint">feinden</unclear> <unclear cert="low" resp="#joint">zubegegnen</unclear>, <unclear cert="low" resp="#joint">Nebent</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">auch</unclear>
 <lb n="13"/>die Päß durch die Truppen von der einen
 <lb n="14"/>und andren Parthey jmmassen verschlossen
-<lb n="15"/>und besetzt waren, daß es unmüglich gwesen
-<lb n="16"/>vhin zukhommen. Wann wir aber hier-
-<lb n="17"/>neben nit underlassen wellen üch zübezügen
-<lb n="18"/>die würcklichkeit unserer freündschafft,
-<lb n="19"/>unsrer danckbarkeit und gueten nachbar-
+<lb n="15"/>und besetzt <unclear cert="low" resp="#joint">waren</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">unmüglich</unclear> <unclear cert="low" resp="#joint">gwesen</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">vhin</unclear> <unclear cert="low" resp="#joint">zukhommen</unclear>. Wann wir aber hier-
+<lb n="17"/>neben nit underlassen wellen üch <unclear cert="low" resp="#joint">zübezügen</unclear>
+<lb n="18"/>die <unclear cert="low" resp="#joint">würcklichkeit</unclear> <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">freündschafft</unclear>,
+<lb n="19"/><unclear cert="low" resp="#joint">unsrer</unclear> <unclear cert="low" resp="#joint">danckbarkeit</unclear> und gueten nachbar-
 <lb n="20"/>schafft, darzu die alte lobl: Erbeinigung unß
 <lb n="21"/>verpflichtet. und die wir biß anhero so treüw-
 <lb n="22"/>lich obseruiert und gehalten. Allß habend
-<lb n="23"/>wir Jnn bevelch geben, dem <persName resp="#ner">Hrn d'Acoste</persName>
-<lb n="24"/>Surintendenten der Saltzpfannen zu <placeName ref="stadtasg-places-442" cert="medium" resp="#ner">Salis</placeName>,
+<lb n="23"/>wir Jnn bevelch geben, dem <persName resp="#ner"><unclear cert="low" resp="#joint">Hrn</unclear> <unclear cert="low" resp="#joint">d'Acoste</unclear></persName>
+<lb n="24"/><unclear cert="low" resp="#joint">Surintendenten</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Saltzpfannen</unclear> zu <placeName ref="stadtasg-places-442" cert="medium" resp="#ner">Salis</placeName>,
 <lb n="25"/>daß er üch obgemelte danckbarkeit zubringen
 <lb n="26"/>thüge, auch erneüwern unsrer affection gegen
-<lb n="27"/>den Ständen üwr Eydg: und dieselben jnn-
-<lb n="28"/>ständigist pitte, ein gleiches gegen disrem Stand
-<lb n="29"/>zethünd. durch ein gedeüliche leistung üwerer
+<lb n="27"/>den Ständen üwr Eydg: und <unclear cert="low" resp="#joint">dieselben</unclear> <unclear cert="low" resp="#joint">jnn</unclear>-
+<lb n="28"/><unclear cert="low" resp="#joint">ständigist</unclear> <unclear cert="low" resp="#joint">pitte</unclear>, <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">gleiches</unclear> gegen disrem Stand
+<lb n="29"/><unclear cert="low" resp="#joint">zethünd</unclear>. durch ein gedeüliche leistung üwerer
 <pb facs="StadtASG_Missive_3302_13098.jpg" n="2"/>
-<lb n="30"/>hilff und zuoschuesß mit kriegs volckh, zue der
-<lb n="31"/>undertruckung, so derselbig lydet. Wie auch mit
-<lb n="32"/>gestattung deß freÿen passes by uech dem
-<lb n="33"/>jehnigen, so von <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meiland</placeName> und anderstwo her,
-<lb n="34"/>zue unßer gerechten beschirmung, khomen
-<lb n="35"/>wird. Da wir verhoffend, Ihr werdint
-<lb n="36"/>mit desto bessrem willen, das uewwrig dabÿ
-<lb n="37"/>thuen. Wÿl Ihr wol und schynbarlich befürchten
-<lb n="38"/>söllend, die alterationen und änderungen,
-<lb n="39"/>so inn uewwren stehnden, bÿ continuation
-<lb n="40"/>diser lands verwüestungen, sich begeben
-<lb n="41"/>möchten. Wie dann ermelter herr
-<lb n="42"/><persName resp="#ner">D' Acoste</persName> uech ein solches mit mehrerem anzeigen
-<lb n="43"/>wird. Uech pittend. Ihr wöllind demselben
-<lb n="44"/>allen volkhomen glauben zuestellen. Und
-<lb n="45"/>den höchsten Schöpfer, das er Uewr Herrl.
-<lb n="46"/>wol erhalte.
-<lb n="47"/>Hochgeachte, Mechtige und geehrte Herren, inn
-<lb n="48"/>langwierigister und viljehriger glückh-
-<lb n="49"/>seligkeit. Zue <origPlace ref="stadtasg-places-36" cert="medium" resp="#ner">Doll</origPlace>, <origDate when="1638-06-21" resp="#ner">dn 21. Junÿ,
-<lb n="50"/>Ao 1638</origDate>.
-<lb n="51"/>Die <orgName role="issuer" resp="#ner">Vicepraesident, Räte,
-<lb n="52"/>und befelchsverwandte deß
-<lb n="53"/>Parlaments</orgName> zue Doll,
-<lb n="54"/>Uewre dienstwillinge
+<lb n="30"/>hilff und <unclear cert="medium" resp="#joint">zuoschuesß</unclear> mit kriegs <unclear cert="medium" resp="#joint">volckh</unclear>, <unclear cert="medium" resp="#joint">zue</unclear> der
+<lb n="31"/><unclear cert="medium" resp="#joint">undertruckung</unclear>, so <unclear cert="medium" resp="#joint">derselbig</unclear> <unclear cert="medium" resp="#joint">lydet</unclear>. <unclear cert="medium" resp="#joint">Wie</unclear> <unclear cert="medium" resp="#joint">auch</unclear> mit
+<lb n="32"/><unclear cert="medium" resp="#joint">gestattung</unclear> <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">freÿen</unclear> <unclear cert="medium" resp="#joint">passes</unclear> <unclear cert="medium" resp="#joint">by</unclear> <unclear cert="medium" resp="#joint">uech</unclear> <unclear cert="medium" resp="#joint">dem</unclear>
+<lb n="33"/><unclear cert="medium" resp="#joint">jehnigen</unclear>, so von <placeName ref="stadtasg-places-311" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Meiland</unclear></placeName> und <unclear cert="low" resp="#joint">anderstwo</unclear> her,
+<lb n="34"/><unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">unßer</unclear> gerechten <unclear cert="medium" resp="#joint">beschirmung</unclear>, <unclear cert="medium" resp="#joint">khomen</unclear>
+<lb n="35"/>wird. Da wir <unclear cert="medium" resp="#joint">verhoffend</unclear>, Ihr <unclear cert="medium" resp="#joint">werdint</unclear>
+<lb n="36"/>mit <unclear cert="medium" resp="#joint">desto</unclear> <unclear cert="medium" resp="#joint">bessrem</unclear> willen, das <unclear cert="medium" resp="#joint">uewwrig</unclear> <unclear cert="medium" resp="#joint">dabÿ</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">thuen</unclear>. <unclear cert="medium" resp="#joint">Wÿl</unclear> Ihr wol und <unclear cert="low" resp="#joint">schynbarlich</unclear> <unclear cert="low" resp="#joint">befürchten</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">söllend</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">alterationen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">änderungen</unclear>,
+<lb n="39"/>so inn <unclear cert="medium" resp="#joint">uewwren</unclear> <unclear cert="medium" resp="#joint">stehnden</unclear>, <unclear cert="medium" resp="#joint">bÿ</unclear> continuation
+<lb n="40"/><unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">lands</unclear> <unclear cert="low" resp="#joint">verwüestungen</unclear>, sich begeben
+<lb n="41"/>möchten. Wie dann <unclear cert="medium" resp="#joint">ermelter</unclear> herr
+<lb n="42"/><persName resp="#ner"><unclear cert="low" resp="#joint">D</unclear>' <unclear cert="low" resp="#joint">Acoste</unclear></persName> <unclear cert="low" resp="#joint">uech</unclear> ein solches mit <unclear cert="medium" resp="#joint">mehrerem</unclear> anzeigen
+<lb n="43"/>wird. <unclear cert="medium" resp="#joint">Uech</unclear> <unclear cert="medium" resp="#joint">pittend</unclear>. Ihr <unclear cert="medium" resp="#joint">wöllind</unclear> demselben
+<lb n="44"/>allen <unclear cert="low" resp="#joint">volkhomen</unclear> <unclear cert="low" resp="#joint">glauben</unclear> <unclear cert="low" resp="#joint">zuestellen</unclear>. Und
+<lb n="45"/>den höchsten <unclear cert="medium" resp="#joint">Schöpfer</unclear>, das er <unclear cert="medium" resp="#joint">Uewr</unclear> <unclear cert="medium" resp="#joint">Herrl</unclear>.
+<lb n="46"/><unclear cert="medium" resp="#joint">wol</unclear> <unclear cert="medium" resp="#joint">erhalte</unclear>.
+<lb n="47"/>Hochgeachte, Mechtige und <unclear cert="medium" resp="#joint">geehrte</unclear> Herren, <unclear cert="medium" resp="#joint">inn</unclear>
+<lb n="48"/><unclear cert="medium" resp="#joint">langwierigister</unclear> und <unclear cert="medium" resp="#joint">viljehriger</unclear> <unclear cert="medium" resp="#joint">glückh</unclear>-
+<lb n="49"/>seligkeit. <unclear cert="low" resp="#joint">Zue</unclear> <origPlace ref="stadtasg-places-36" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Doll</unclear></origPlace>, <origDate when="1638-06-21" resp="#ner"><unclear cert="low" resp="#joint">dn</unclear> <unclear cert="low" resp="#joint">21</unclear>. <unclear cert="low" resp="#joint">Junÿ</unclear>,
+<lb n="50"/><unclear cert="low" resp="#joint">Ao</unclear> 1638</origDate>.
+<lb n="51"/>Die <orgName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Vicepraesident</unclear>, <unclear cert="medium" resp="#joint">Räte</unclear>,
+<lb n="52"/>und <unclear cert="low" resp="#joint">befelchsverwandte</unclear> <unclear cert="low" resp="#joint">deß</unclear>
+<lb n="53"/><unclear cert="low" resp="#joint">Parlaments</unclear></orgName> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">Doll</unclear>,
+<lb n="54"/><unclear cert="low" resp="#joint">Uewre</unclear> <unclear cert="low" resp="#joint">dienstwillinge</unclear>
 <lb n="55"/><persName role="issuer" resp="#ner">Richard</persName>
-<lb n="56"/>An die lobliche <orgName ref="stadtasg-actors-1255" cert="medium" role="recipient" resp="#ner">XIII. Ort der Eidtgnoschafft</orgName>.
+<lb n="56"/>An die <unclear cert="medium" resp="#joint">lobliche</unclear> <orgName ref="stadtasg-actors-1255" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">XIII</unclear>. <unclear cert="medium" resp="#joint">Ort</unclear> der <unclear cert="medium" resp="#joint">Eidtgnoschafft</unclear></orgName>.
 <pb facs="StadtASG_Missive_3302_13099.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3302_13100.jpg" n="4"/>
 </p>

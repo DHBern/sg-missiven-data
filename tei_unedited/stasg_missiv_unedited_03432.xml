@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3432</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Statthalter und Rat zu Appenzell danken für den Brief wegen des heillosen Kindlin und bitten um oberkeitliche Hilfe für ihren Hafner Konrad Küwiler. Dieser soll 700 Florin Erbsgut seiner Ehefrau von deren Vater erhalten haben, wird aber daran gehindert. Appenzell ersucht St. Gallen, dem Hafner zu helfen, damit er sein Gut mit geringen Kosten und schnell erhalten kann.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Statthalter und Rat zu Appenzell danken für den Brief wegen des heillosen Kindlin und bitten um oberkeitliche Hilfe für ihren Hafner Konrad Küwiler. Dieser soll 700 Florin Erbsgut seiner Ehefrau von deren Vater erhalten haben, wird aber daran gehindert. Appenzell ersucht St. Gallen, dem Hafner zu helfen, damit er sein Gut mit geringen Kosten und schnell erhalten kann.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Statthalter and Council of Appenzell thank for the letter concerning the hopeless child and ask for superior help for their tiler Konrad Küwiler. He is supposed to have received 700 florins of inheritance from his wife from her father, but is prevented from doing so. Appenzell requests St. Gallen to help the tiler so that he can obtain his property with little cost and quickly.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -42,12 +43,12 @@
 <lb n="6"/>deß heillosen Khindlins: thuendt wir üch bevorderst
 <lb n="7"/>zum höchsten bedanckhen Unnd beinebens hat unß
 <lb n="8"/>M: <persName resp="#ner">Conradt. Khuwiller</persName>, unnser hafner. nachmallen
-<lb n="9"/>zuvernemen geben, was gestalten ihme, für: unnd
-<lb n="10"/>angeben werde. das seiner ehefrauwen. uf die
-<lb n="11"/>700. fl. von ihrem vater herkhomende, erbs:
-<lb n="12"/>weiß an sy gefallen und zuegehörig sy, Deß=
-<lb n="13"/>wegen er verursacht. dem selbigen nachzesetzen
-<lb n="14"/>unnd zefragen, Wan aber er hierzue
+<lb n="9"/>zuvernemen geben, was gestalten ihme, für: <unclear cert="low" resp="#joint">unnd</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">angeben</unclear> werde. das seiner ehefrauwen. uf die
+<lb n="11"/><unclear cert="low" resp="#joint">700</unclear>. <unclear cert="low" resp="#joint">fl</unclear>. von ihrem <unclear cert="low" resp="#joint">vater</unclear> <unclear cert="low" resp="#joint">herkhomende</unclear>, <unclear cert="low" resp="#joint">erbs</unclear>:
+<lb n="12"/><unclear cert="low" resp="#joint">weiß</unclear> <unclear cert="low" resp="#joint">an</unclear> sy gefallen und <unclear cert="low" resp="#joint">zuegehörig</unclear> <unclear cert="low" resp="#joint">sy</unclear>, <unclear cert="low" resp="#joint">Deß=</unclear>
+<lb n="13"/>wegen er verursacht. dem selbigen <unclear cert="low" resp="#joint">nachzesetzen</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">zefragen</unclear>, <unclear cert="low" resp="#joint">Wan</unclear> aber er hierzue
 <lb n="15"/>üwer oberkeitliche hilf und befünderung manglen
 <lb n="16"/>möchte, hat er unß umb fürgschrift an üch de=
 <lb n="17"/>muetig gebetten, welches wir ihme nit verweigern
@@ -64,8 +65,8 @@
 <lb n="27"/>wir gegen Üch. und den Üwerigen. zuo sonderm
 <lb n="28"/>danckh. erkhenen, unnd Gttot piten wöllen, das
 <lb n="29"/>er Üch lang werend in sinem heiligen schirm
-<lb n="30"/>wolbewahren wölle. Datt. <origDate when="1641-03-04" resp="#ner">den. 4. tag Mertzen
-<lb n="31"/>ao 1641</origDate>
+<lb n="30"/>wolbewahren wölle. Datt. <origDate when="1641-03-04" resp="#ner">den. <unclear cert="low" resp="#joint">4</unclear>. <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">Mertzen</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">ao</unclear> 1641</origDate>
 <lb n="32"/><orgName role="issuer" resp="#ner">Stathalter und Rath
 <lb n="33"/>zuo Appentzell</orgName>.
 <pb facs="StadtASG_Missive_3432_13671.jpg" n="3"/>
@@ -74,8 +75,8 @@
 <lb n="35"/>weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath zuo
 <lb n="36"/>St. Gallen</orgName>, unseren jnsonders gueten
 <lb n="37"/>fründen, und getrüwenlieben lieben nach-
-<lb n="38"/>puren.
-<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="38"/><unclear cert="low" resp="#joint">puren</unclear>.
+<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

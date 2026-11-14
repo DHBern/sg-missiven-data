@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3430</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf ein Schreiben vom 11. Februar, in dem St. Gallen nach der dortigen Brotordnung gefragt hatte. Sie übersenden eine Abschrift der Lindauer Brotordnung und erklären sich bereit, in ähnlichen und weiteren Angelegenheiten nachbarschaftliches Gefallen zu erweisen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf ein Schreiben vom 11. Februar, in dem St. Gallen nach der dortigen Brotordnung gefragt hatte. Sie übersenden eine Abschrift der Lindauer Brotordnung und erklären sich bereit, in ähnlichen und weiteren Angelegenheiten nachbarschaftliches Gefallen zu erweisen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Lindau reply to a letter of 11 February, in which St. Gallen had inquired about the local bread ordinance. They send a copy of the Lindau bread ordinance and declare themselves willing to render neighborly favors in similar and further matters.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,18 +37,18 @@
 <pb facs="StadtASG_Missive_3430_13663.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst zuvor, fürsichtig,
 <lb n="2"/>ersam und weise, besonders liebe und guete freünd,
-<lb n="3"/>Auß E. Flt. schreiben vom. <date resp="#ner">11.t diß</date> haben wir vernomen,
-<lb n="4"/>waßmassen sie ihr brodordnung zuerneweren vorhabens,
+<lb n="3"/><unclear cert="low" resp="#joint">Auß</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Flt</unclear>. schreiben vom. <date resp="#ner">11.t diß</date> haben wir <unclear cert="low" resp="#joint">vernomen</unclear>,
+<lb n="4"/><unclear cert="low" resp="#joint">waßmassen</unclear> sie ihr <unclear cert="low" resp="#joint">brodordnung</unclear> <unclear cert="low" resp="#joint">zuerneweren</unclear> <unclear cert="low" resp="#joint">vorhabens</unclear>,
 <lb n="5"/>und dahero gern nachricht haben moechten, wie es sich mit
 <lb n="6"/>dergleichen sachen bei unß verhalten thuee, daruf
 <lb n="7"/>wir nun vonn unserer brodordnung ein abschrift
-<lb n="8"/>fertigen lassen, und solche E. Flt. hiemit freündt=
+<lb n="8"/>fertigen lassen, und solche <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Flt</unclear>. <unclear cert="low" resp="#joint">hiemit</unclear> freündt=
 <lb n="9"/>nachbarlich ueberschickhen, dann deroselben inn
 <lb n="10"/>gleichem und mehrerm angenemes nachbarliches ge=
 <lb n="11"/>fallen zuerweisen, seien wir jederzeit bereitwilligen
 <lb n="12"/>erbietens, und thuen unß beneben allerseits
-<lb n="13"/>dem gnadenreichen schirm deß Allmaechtigen wol
-<lb n="14"/>befehlen, dat. den. <origDate when="1641-02-19" resp="#ner">19. Februarij a.o 1641</origDate>.
+<lb n="13"/>dem <unclear cert="low" resp="#joint">gnadenreichen</unclear> <unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Allmaechtigen</unclear> wol
+<lb n="14"/><unclear cert="low" resp="#joint">befehlen</unclear>, <unclear cert="low" resp="#joint">dat</unclear>. <unclear cert="low" resp="#joint">den</unclear>. <origDate when="1641-02-19" resp="#ner">19. Februarij a.o 1641</origDate>.
 <lb n="15"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermeister und Rhat
 <lb n="16"/>der statt Lindaw</orgName>,
 <pb facs="StadtASG_Missive_3430_13664.jpg" n="2"/>
@@ -56,7 +57,7 @@
 <lb n="17"/>Den fürsichtigen, ersamen und weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="18"/>meister und Rhat der statt St. Gallen</orgName>, unsern
 <lb n="19"/>besonders lieben gueten freünden und nachbaren.
-<lb n="20"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="20"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

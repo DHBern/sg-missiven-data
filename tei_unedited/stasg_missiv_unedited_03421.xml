@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3421</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Hans Heinrich Uster, Gastgeber zum Storchen, bei der Durchsetzung seiner Forderungen gegen die Kinder des verstorbenen Lorenz Schobinger behilflich zu sein. Da die Kinder nach dem Tod der Grossmutter väterlicherseits ein beträchtliches Erbe erhalten hätten, bitte Uster um erneute Unterstützung, um seine Ansprüche geltend zu machen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Hans Heinrich Uster, Gastgeber zum Storchen, bei der Durchsetzung seiner Forderungen gegen die Kinder des verstorbenen Lorenz Schobinger behilflich zu sein. Da die Kinder nach dem Tod der Grossmutter väterlicherseits ein beträchtliches Erbe erhalten hätten, bitte Uster um erneute Unterstützung, um seine Ansprüche geltend zu machen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to assist their citizen Hans Heinrich Uster, innkeeper at the Storch, in enforcing his claims against the children of the deceased Lorenz Schobinger. Since the children would have received a considerable inheritance after the death of the paternal grandmother, Uster asks for renewed support to assert his claims.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,27 +38,27 @@
 <lb n="1"/>Unser fründtlich willig dienst, sambt waß wir ehren,
 <lb n="2"/>liebs und guots vermoegend zuovor, from, fürsichtig
 <lb n="3"/>ersam, wÿß, insonders guot fründ, und getrüw lieb
-<lb n="4"/>eidsgnoßen.
-<lb n="5"/>Uch unseren g. l. e. wirt zwÿfels ohn nochwol In
-<lb n="6"/>wüßen sÿn, waß wir den selben underem dato <date resp="#ner">25.t ja-
-<lb n="7"/>nuarÿ diß nunmehr zuo endtlouffenden 1640.t jahrs</date> fründt-
-<lb n="8"/>eidsgnoeßisch zuogeschriben, anbetreffent die ansprach,
+<lb n="4"/><unclear cert="low" resp="#joint">eidsgnoßen</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">Uch</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">wirt</unclear> <unclear cert="low" resp="#joint">zwÿfels</unclear> <unclear cert="low" resp="#joint">ohn</unclear> <unclear cert="low" resp="#joint">nochwol</unclear> <unclear cert="low" resp="#joint">In</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">wüßen</unclear> <unclear cert="low" resp="#joint">sÿn</unclear>, <unclear cert="low" resp="#joint">waß</unclear> wir <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">selben</unclear> <unclear cert="low" resp="#joint">underem</unclear> dato <date resp="#ner">25.t ja-
+<lb n="7"/>nuarÿ diß nunmehr zuo <unclear cert="low" resp="#joint">endtlouffenden</unclear> <unclear cert="low" resp="#joint">1640.t</unclear> <unclear cert="low" resp="#joint">jahrs</unclear></date> <unclear cert="low" resp="#joint">fründt</unclear>-
+<lb n="8"/><unclear cert="low" resp="#joint">eidsgnoeßisch</unclear> <unclear cert="low" resp="#joint">zuogeschriben</unclear>, <unclear cert="low" resp="#joint">anbetreffent</unclear> die ansprach,
 <lb n="9"/>so unser getrüwer lieber burger, <persName resp="#ner">Hanß Heinrich</persName>
 <lb n="10"/>Uster gastgaeb zum Storchen allhie, an die üwrigen,
-<lb n="11"/>hrn. <persName resp="#ner">Lorentz Schobingers</persName> sel. kinder hat, Wan dann
-<lb n="12"/>üwer unser g. l. e. antwurt underem dato <date resp="#ner">30.t er-
-<lb n="13"/>nents monats</date> dahin gegangen, daß Ihr zwaren ge-
+<lb n="11"/>hrn. <persName resp="#ner">Lorentz Schobingers</persName> sel. kinder hat, <unclear cert="low" resp="#joint">Wan</unclear> dann
+<lb n="12"/>üwer unser <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">antwurt</unclear> <unclear cert="low" resp="#joint">underem</unclear> dato <date resp="#ner"><unclear cert="low" resp="#joint">30.t</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">nents</unclear> <unclear cert="low" resp="#joint">monats</unclear></date> dahin gegangen, daß Ihr zwaren ge-
 <lb n="14"/>neigt, Ihme unserem burger die hilffs hand zebietten,
 <lb n="15"/>Ihr werdind aber von gedachter kinderen vogt, berichtet
 <lb n="16"/>daß selbige von Ihrem vatter sel. khein hab und guot,
-<lb n="17"/>nit ererbt, und Ihnen auch weder durch andere fähl
-<lb n="18"/>noch sust nütst zuogefallen were. Wan aber ermelt-
-<lb n="19"/>er unser burger an jetz vernomen, wie daß siderhar
-<lb n="20"/>gedachter kinder großmuoter vatter halb todts ver-
+<lb n="17"/>nit ererbt, und Ihnen auch weder durch andere <unclear cert="low" resp="#joint">fähl</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">sust</unclear> <unclear cert="low" resp="#joint">nütst</unclear> <unclear cert="low" resp="#joint">zuogefallen</unclear> were. Wan aber ermelt-
+<lb n="19"/>er unser burger an jetz vernomen, wie daß <unclear cert="low" resp="#joint">siderhar</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">gedachter</unclear> kinder großmuoter vatter halb todts ver-
 <lb n="21"/>scheiden, von wellicher sÿ ein namhafftes ererbt
 <lb n="22"/>hettend, alß ist er In willen khomen sÿner recht-
-<lb n="23"/>meßigen ansprach ferrers nachzuosetzen, underthänig
-<lb n="24"/>pittende, wir Ihme darzuo oberkheitliche befürderung
+<lb n="23"/>meßigen ansprach <unclear cert="low" resp="#joint">ferrers</unclear> <unclear cert="low" resp="#joint">nachzuosetzen</unclear>, <unclear cert="low" resp="#joint">underthänig</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">pittende</unclear>, <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> <unclear cert="low" resp="#joint">darzuo</unclear> <unclear cert="low" resp="#joint">oberkheitliche</unclear> befürderung
 <pb facs="StadtASG_Missive_3421_13630.jpg" n="2"/>
 <lb n="25"/>und hilffshand nochmalen erzeigen woltend. So
 <lb n="26"/>nun mehrbesagts unsers burgers begehren, wir nit unzim-

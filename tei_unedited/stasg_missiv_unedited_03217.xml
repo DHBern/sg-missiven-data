@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3217</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat zu Appenzell ersuchen Bürgermeister und Rat zu St. Gallen, ihrem Landsmann Hermann Jeggeren die oberkeitliche Hilfe zu gewähren. Jeggeren habe einen Rechtsstreit mit dem St. Galler Bürger Jakob Ziegler. Appenzell bittet, Jeggeren um seinen rechtmässigen Ausstand samt erlittenen Kosten und Schaden zu befriedigen, damit er ohne weiteren Aufwand zu seinem Recht komme.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat zu Appenzell ersuchen Bürgermeister und Rat zu St. Gallen, ihrem Landsmann Hermann Jeggeren die oberkeitliche Hilfe zu gewähren. Jeggeren habe einen Rechtsstreit mit dem St. Galler Bürger Jakob Ziegler. Appenzell bittet, Jeggeren um seinen rechtmässigen Ausstand samt erlittenen Kosten und Schaden zu befriedigen, damit er ohne weiteren Aufwand zu seinem Recht komme.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council of Appenzell request the Burgomaster and Council of St. Gallen to grant sovereign aid to their countryman Hermann Jeggeren. Jeggeren has a legal dispute with the citizen of St. Gallen Jakob Ziegler. Appenzell asks that Jeggeren be satisfied with his rightful claim, including the costs and damages suffered, so that he may obtain his right without further expense.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,48 +35,48 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3217_12721.jpg" n="1"/>
-<lb n="1"/>Unser fründt: nachbaerlich willig dienst, sambt
-<lb n="2"/>was wir ehren liebs und guots vermuegendt zuovor,
-<lb n="3"/>from, fürsichtig, ehrsam, weyß, besonders guott
-<lb n="4"/>fründt, und wol vertrauwte liebe Nachbaren.
-<lb n="5"/>Was unseren lieben Landtman, <persName resp="#ner">Herman Jeggeren</persName>,
-<lb n="6"/>verursachet habe, bei uns umb gegenwürtiges für-
-<lb n="7"/>bitt schriben, an eüch unser wolvertrauwt lieb Nach-
-<lb n="8"/>baren, gehorsamlich anzuhalten, gibt der Inschluß
-<lb n="9"/>mit mehrem zuvernemen, Wan nun wir
-<lb n="10"/>einem ieden darzuo er befüegt nach müglichkeit
-<lb n="11"/>zuverhelffen so geneigt, als schuldig sindt:
-<lb n="12"/>Also ist hiemit, an eüch, unser wolvertrauwte
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">fründt</unclear>: <unclear cert="medium" resp="#joint">nachbaerlich</unclear> willig dienst, <unclear cert="medium" resp="#joint">sambt</unclear>
+<lb n="2"/>was wir ehren liebs und guots <unclear cert="medium" resp="#joint">vermuegendt</unclear> zuovor,
+<lb n="3"/><unclear cert="medium" resp="#joint">from</unclear>, fürsichtig, <unclear cert="medium" resp="#joint">ehrsam</unclear>, <unclear cert="medium" resp="#joint">weyß</unclear>, besonders guott
+<lb n="4"/>fründt, und <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">vertrauwte</unclear> liebe Nachbaren.
+<lb n="5"/><unclear cert="medium" resp="#joint">Was</unclear> <unclear cert="medium" resp="#joint">unseren</unclear> lieben Landtman, <persName resp="#ner"><unclear cert="medium" resp="#joint">Herman</unclear> <unclear cert="medium" resp="#joint">Jeggeren</unclear></persName>,
+<lb n="6"/><unclear cert="medium" resp="#joint">verursachet</unclear> habe, bei uns umb gegenwürtiges für-
+<lb n="7"/>bitt <unclear cert="medium" resp="#joint">schriben</unclear>, an <unclear cert="medium" resp="#joint">eüch</unclear> unser <unclear cert="medium" resp="#joint">wolvertrauwt</unclear> <unclear cert="medium" resp="#joint">lieb</unclear> Nach-
+<lb n="8"/>baren, gehorsamlich <unclear cert="medium" resp="#joint">anzuhalten</unclear>, gibt der <unclear cert="medium" resp="#joint">Inschluß</unclear>
+<lb n="9"/>mit <unclear cert="medium" resp="#joint">mehrem</unclear> <unclear cert="medium" resp="#joint">zuvernemen</unclear>, <unclear cert="medium" resp="#joint">Wan</unclear> nun wir
+<lb n="10"/><unclear cert="medium" resp="#joint">einem</unclear> <unclear cert="medium" resp="#joint">ieden</unclear> <unclear cert="medium" resp="#joint">darzuo</unclear> <unclear cert="medium" resp="#joint">er</unclear> <unclear cert="medium" resp="#joint">befüegt</unclear> nach <unclear cert="medium" resp="#joint">müglichkeit</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">zuverhelffen</unclear> so <unclear cert="medium" resp="#joint">geneigt</unclear>, als schuldig <unclear cert="medium" resp="#joint">sindt</unclear>:
+<lb n="12"/>Also ist hiemit, an <unclear cert="medium" resp="#joint">eüch</unclear>, unser wolvertrauwte
 <lb n="13"/>liebe Nachbaren, unser fründt: nachbarliches er-
-<lb n="14"/>suochen und pitten, Ihr woellendt gemeltem unserem
-<lb n="15"/>Landtman, als der deß sinigen biß dahin mit
-<lb n="16"/>schaden ermanglen müessen, die Oberkeitliche hilffs-
-<lb n="17"/>handt inmassen darreichen, damit er von dem
-<lb n="18"/>Euweren Burger, <persName resp="#ner">Jacob Ziegler</persName>, umb sin rechtmaess-
-<lb n="19"/>igen usstandt, sambt deßwegen erlitnen Costen,
-<lb n="20"/>und schaden, fürderlichist, und ohne witern beschwaer-
-<lb n="21"/>lichen uff: und umbzug, (gestalten wir eüch
-<lb n="22"/>ohne diß zuo befürderung der lieben Justitij ge-
-<lb n="23"/>neigt sin wüssen,) der gebür und müglichkeit nach
-<lb n="24"/>contentirt und befridiget, also dieser unser
+<lb n="14"/><unclear cert="medium" resp="#joint">suochen</unclear> und <unclear cert="medium" resp="#joint">pitten</unclear>, Ihr <unclear cert="medium" resp="#joint">woellendt</unclear> <unclear cert="medium" resp="#joint">gemeltem</unclear> unserem
+<lb n="15"/>Landtman, als der <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">sinigen</unclear> biß dahin mit
+<lb n="16"/>schaden <unclear cert="medium" resp="#joint">ermanglen</unclear> <unclear cert="medium" resp="#joint">müessen</unclear>, die <unclear cert="medium" resp="#joint">Oberkeitliche</unclear> <unclear cert="medium" resp="#joint">hilffs</unclear>-
+<lb n="17"/><unclear cert="medium" resp="#joint">handt</unclear> <unclear cert="medium" resp="#joint">inmassen</unclear> darreichen, damit <unclear cert="medium" resp="#joint">er</unclear> <unclear cert="medium" resp="#joint">von</unclear> <unclear cert="medium" resp="#joint">dem</unclear>
+<lb n="18"/><unclear cert="medium" resp="#joint">Euweren</unclear> Burger, <persName resp="#ner">Jacob Ziegler</persName>, umb sin <unclear cert="medium" resp="#joint">rechtmaess</unclear>-
+<lb n="19"/>igen <unclear cert="medium" resp="#joint">usstandt</unclear>, <unclear cert="medium" resp="#joint">sambt</unclear> deßwegen <unclear cert="medium" resp="#joint">erlitnen</unclear> <unclear cert="medium" resp="#joint">Costen</unclear>,
+<lb n="20"/>und schaden, <unclear cert="medium" resp="#joint">fürderlichist</unclear>, und ohne <unclear cert="medium" resp="#joint">witern</unclear> <unclear cert="medium" resp="#joint">beschwaer</unclear>-
+<lb n="21"/>lichen <unclear cert="medium" resp="#joint">uff</unclear>: und <unclear cert="medium" resp="#joint">umbzug</unclear>, (<unclear cert="medium" resp="#joint">gestalten</unclear> wir <unclear cert="medium" resp="#joint">eüch</unclear>
+<lb n="22"/>ohne <unclear cert="medium" resp="#joint">diß</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> befürderung <unclear cert="medium" resp="#joint">der</unclear> lieben <unclear cert="medium" resp="#joint">Justitij</unclear> ge-
+<lb n="23"/>neigt sin <unclear cert="medium" resp="#joint">wüssen</unclear>,) der gebür und <unclear cert="medium" resp="#joint">müglichkeit</unclear> nach
+<lb n="24"/>contentirt und <unclear cert="medium" resp="#joint">befridiget</unclear>, also <unclear cert="medium" resp="#joint">dieser</unclear> <unclear cert="medium" resp="#joint">unser</unclear>
 <pb facs="StadtASG_Missive_3217_12722.jpg" n="2"/>
-<lb n="25"/>ihme zum beßt gemeinten fuerbiet. wuerklichen
-<lb n="26"/>gnuß verspueren moege. Das begeren
-<lb n="27"/>wir umb Eüch unser wolvertruwet lieb Nach=
-<lb n="28"/>barn, in der glichen. und allen anderen begebenden
-<lb n="29"/>glegenheiten, mit so gantz Nachbarlichen willen
-<lb n="30"/>zuverschulden, damit sammentlicher Gottes gned=
-<lb n="31"/>igem Obhalt. trüwlichen befelchende. Datum den
-<lb n="32"/><origDate when="1637" resp="#ner">23.ten Januarii. Ao 1637</origDate>
-<lb n="33"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtaman und Rath.</orgName>
-<lb n="34"/>zue <placeName ref="stadtasg-places-8" cert="medium" resp="#ner">Appenzell</placeName>.
+<lb n="25"/>ihme zum <unclear cert="medium" resp="#joint">beßt</unclear> <unclear cert="medium" resp="#joint">gemeinten</unclear> <unclear cert="medium" resp="#joint">fuerbiet</unclear>. <unclear cert="medium" resp="#joint">wuerklichen</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">gnuß</unclear> <unclear cert="medium" resp="#joint">verspueren</unclear> <unclear cert="medium" resp="#joint">moege</unclear>. Das begeren
+<lb n="27"/>wir umb <unclear cert="medium" resp="#joint">Eüch</unclear> <unclear cert="medium" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">wolvertruwet</unclear> lieb Nach=
+<lb n="28"/><unclear cert="medium" resp="#joint">barn</unclear>, in <unclear cert="medium" resp="#joint">der</unclear> glichen. und allen <unclear cert="medium" resp="#joint">anderen</unclear> <unclear cert="medium" resp="#joint">begebenden</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">glegenheiten</unclear>, mit so gantz Nachbarlichen <unclear cert="medium" resp="#joint">willen</unclear>
+<lb n="30"/><unclear cert="medium" resp="#joint">zuverschulden</unclear>, damit <unclear cert="medium" resp="#joint">sammentlicher</unclear> <unclear cert="medium" resp="#joint">Gottes</unclear> <unclear cert="medium" resp="#joint">gned=</unclear>
+<lb n="31"/><unclear cert="medium" resp="#joint">igem</unclear> <unclear cert="medium" resp="#joint">Obhalt</unclear>. trüwlichen befelchende. Datum den
+<lb n="32"/><origDate when="1637" resp="#ner">23.ten <unclear cert="medium" resp="#joint">Januarii</unclear>. <unclear cert="medium" resp="#joint">Ao</unclear> <unclear cert="medium" resp="#joint">1637</unclear></origDate>
+<lb n="33"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Landtaman</unclear> und Rath.</orgName>
+<lb n="34"/><unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-8" cert="medium" resp="#ner">Appenzell</placeName>.
 <pb facs="StadtASG_Missive_3217_12723.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3217_12724.jpg" n="4"/>
-<lb n="35"/>Den fromen fürsichtigen, ehrsamen und
-<lb n="36"/>weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rath der
-<lb n="37"/>Statt St. Gallen</orgName>, Unsern besonders
-<lb n="38"/>gueten freünden, und getrüw vertrüwten
-<lb n="39"/>lieben Naachbauren.
+<lb n="35"/>Den <unclear cert="medium" resp="#joint">fromen</unclear> fürsichtigen, <unclear cert="medium" resp="#joint">ehrsamen</unclear> und
+<lb n="36"/><unclear cert="medium" resp="#joint">weysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rath der
+<lb n="37"/>Statt St. Gallen</orgName>, Unsern <unclear cert="medium" resp="#joint">besonders</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">freünden</unclear>, und <unclear cert="low" resp="#joint">getrüw</unclear> <unclear cert="low" resp="#joint">vertrüwten</unclear>
+<lb n="39"/>lieben <unclear cert="low" resp="#joint">Naachbauren</unclear>.
 </p>
         </body>
     </text>

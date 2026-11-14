@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3425</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Meister und Rat der Stadt Straßburg informieren Bürgermeister und Rat der Stadt St. Gallen über die Teilung des Nachlasses des verstorbenen Straßburger Bürgers und Rats Jacob Kunen. Sie bitten, den St. Galler Bürger Hans Thomas Raitenberger, der sich als Erbe bezeichne, über den für den 12. März angesetzten Termin zu benachrichtigen. Raitenberger solle sich schriftlich über seine Verwandtschaft legitimieren oder persönlich bzw. durch einen Bevollmächtigten erscheinen, andernfalls werde ohne ihn geteilt.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Meister und Rat der Stadt Straßburg informieren Bürgermeister und Rat der Stadt St. Gallen über die Teilung des Nachlasses des verstorbenen Straßburger Bürgers und Rats Jacob Kunen. Sie bitten, den St. Galler Bürger Hans Thomas Raitenberger, der sich als Erbe bezeichne, über den für den 12. März angesetzten Termin zu benachrichtigen. Raitenberger solle sich schriftlich über seine Verwandtschaft legitimieren oder persönlich bzw. durch einen Bevollmächtigten erscheinen, andernfalls werde ohne ihn geteilt.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Masters and Council of the city of Straßburg inform the Burgomaster and Council of the city of St. Gallen about the division of the estate of the deceased citizen and council member of Straßburg, Jacob Kunen. They ask that the citizen of St. Gallen, Hans Thomas Raitenberger, who claims to be an heir, be notified of the date set for 12 March. Raitenberger is to legitimize his kinship in writing or appear in person or through a proxy, otherwise the division will take place without him.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -44,22 +45,22 @@
 <lb n="8"/><persName resp="#ner">Jacob Kunen</persName> sel. ohne eheliche leibs erben,
 <lb n="9"/>nach dem willen Gottes todes verblichen,
 <lb n="10"/>und seine erworben haab und guetter,
-<lb n="11"/>fehrers aber auffgerichte etliche testamenta,
-<lb n="12"/>welche dann zum guetten theil E. Ehrs.
-<lb n="13"/>wirt, vererbt und hinderlaßen, haben
-<lb n="14"/>wir uff anhalten deßelben und seiner
-<lb n="15"/>allhießigen freündtschafft gemein guet
-<lb n="16"/>erben einen tag zur theilung namblich
-<lb n="17"/><date resp="#ner">mentag den zwölfften monats tag martij
-<lb n="18"/>alten calenders nechst künfftig</date> zuemorge-
-<lb n="19"/>zeijt umb sibende stund alhie zueerscheinen,
-<lb n="20"/>ernennt und angesetzt.
-<lb n="21"/>Wann es dann fürkhombt, das von
-<lb n="22"/>E. Ehrs. W. ehrn: weil: burger <persName resp="#ner">Hanß
-<lb n="23"/>Thoman Raitenberger</persName> (so fehr er
-<lb n="24"/>noch bij leben) an soliche verlaßenschafft
-<lb n="25"/>ach ein erb zue sin vermeinen möchte.
-<lb n="26"/>Also gelangt an dieselb unser frl: er-
+<lb n="11"/>fehrers aber <unclear cert="low" resp="#joint">auffgerichte</unclear> <unclear cert="low" resp="#joint">etliche</unclear> <unclear cert="low" resp="#joint">testamenta</unclear>,
+<lb n="12"/>welche <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">zum</unclear> <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">theil</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ehrs</unclear>.
+<lb n="13"/><unclear cert="low" resp="#joint">wirt</unclear>, <unclear cert="low" resp="#joint">vererbt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">hinderlaßen</unclear>, haben
+<lb n="14"/>wir uff <unclear cert="low" resp="#joint">anhalten</unclear> <unclear cert="low" resp="#joint">deßelben</unclear> und <unclear cert="low" resp="#joint">seiner</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">allhießigen</unclear> <unclear cert="low" resp="#joint">freündtschafft</unclear> <unclear cert="low" resp="#joint">gemein</unclear> <unclear cert="low" resp="#joint">guet</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">erben</unclear> <unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">zur</unclear> <unclear cert="low" resp="#joint">theilung</unclear> <unclear cert="low" resp="#joint">namblich</unclear>
+<lb n="17"/><date resp="#ner"><unclear cert="low" resp="#joint">mentag</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">zwölfften</unclear> <unclear cert="low" resp="#joint">monats</unclear> <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">martij</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">alten</unclear> <unclear cert="low" resp="#joint">calenders</unclear> <unclear cert="low" resp="#joint">nechst</unclear> <unclear cert="low" resp="#joint">künfftig</unclear></date> <unclear cert="low" resp="#joint">zuemorge</unclear>-
+<lb n="19"/><unclear cert="low" resp="#joint">zeijt</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">sibende</unclear> <unclear cert="low" resp="#joint">stund</unclear> <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">zueerscheinen</unclear>,
+<lb n="20"/><unclear cert="low" resp="#joint">ernennt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">angesetzt</unclear>.
+<lb n="21"/><unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">fürkhombt</unclear>, <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">von</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ehrs</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">ehrn</unclear>: <unclear cert="low" resp="#joint">weil</unclear>: <unclear cert="low" resp="#joint">burger</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">Thoman</unclear> <unclear cert="low" resp="#joint">Raitenberger</unclear></persName> (<unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">fehr</unclear> <unclear cert="low" resp="#joint">er</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">leben</unclear>) <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">soliche</unclear> <unclear cert="low" resp="#joint">verlaßenschafft</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">ach</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">erb</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">vermeinen</unclear> <unclear cert="low" resp="#joint">möchte</unclear>.
+<lb n="26"/>Also gelangt <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">dieselb</unclear> unser frl: er-
 <lb n="27"/>suchen, die woelle diße theilung, und
 <pb facs="StadtASG_Missive_3425_13646.jpg" n="2"/>
 <lb n="28"/>ob

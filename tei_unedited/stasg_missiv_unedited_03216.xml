@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3216</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Andreas Oertli im Streit um den Nachlass seiner verstorbenen Ehefrau Susanna Wundin gegen Hans Jakob Kreuzen, Bernhard Miltner zu Weningen und Sebastian Bischof den Beischluss zu erteilen. Sie fordern die Beklagten auf, am 27. Februar zu erscheinen, andernfalls werde über die Forderungen der Kläger entschieden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Andreas Oertli im Streit um den Nachlass seiner verstorbenen Ehefrau Susanna Wundin gegen Hans Jakob Kreuzen, Bernhard Miltner zu Weningen und Sebastian Bischof den Beischluss zu erteilen. Sie fordern die Beklagten auf, am 27. Februar zu erscheinen, andernfalls werde über die Forderungen der Kläger entschieden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen request Burgomaster and Council of St. Gallen to grant support to their citizen Andreas Oertli in the dispute over the inheritance of his deceased wife Susanna Wundin against Hans Jakob Kreuzen, Bernhard Miltner zu Weningen and Sebastian Bischof. They demand that the defendants appear on 27 February, otherwise a decision will be made on the claims of the plaintiff.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -88,14 +89,14 @@
 <pb facs="StadtASG_Missive_3216_12719.jpg" n="3"/>
 <lb n="51"/>[]
 <pb facs="StadtASG_Missive_3216_12720.jpg" n="4"/>
-<lb n="52"/>Denen edlen fromen, ernvesten,
-<lb n="53"/>fürsichtigen ersamen und
+<lb n="52"/><unclear cert="medium" resp="#joint">Denen</unclear> edlen <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">ernvesten</unclear>,
+<lb n="53"/>fürsichtigen ersamen <unclear cert="medium" resp="#joint">und</unclear>
 <lb n="54"/>weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister
-<lb n="55"/>und Rhat der Statt St. Gallen</orgName>,
-<lb n="56"/>unsern besonders lieben
-<lb n="57"/>Herren und Nachbaren.
-<lb n="58"/>franco
-<lb n="59"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</origPlace>.
+<lb n="55"/><unclear cert="medium" resp="#joint">und</unclear> Rhat <unclear cert="medium" resp="#joint">der</unclear> Statt St. Gallen</orgName>,
+<lb n="56"/>unsern <unclear cert="medium" resp="#joint">besonders</unclear> lieben
+<lb n="57"/>Herren <unclear cert="medium" resp="#joint">und</unclear> Nachbaren.
+<lb n="58"/><unclear cert="low" resp="#joint">franco</unclear>
+<lb n="59"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></origPlace>.
 </p>
         </body>
     </text>

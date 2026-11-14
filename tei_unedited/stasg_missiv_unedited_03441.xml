@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3441</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat zu Appenzell ersuchen Bürgermeister und Rat zu St. Gallen, ihrem Landsmann Conrad Ougsteren behilflich zu sein. Dieser habe von dem St. Galler Blochmeister Galle Schaitlin seinen verdienten Lohn zu fordern. Ougsteren wolle den Dienst aus triftigen Gründen aufgeben und dem Appenzeller Befehl nachkommen. Man bitte, ihn ohne weiteren Auf- und Umzug zu befriedigen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat zu Appenzell ersuchen Bürgermeister und Rat zu St. Gallen, ihrem Landsmann Conrad Ougsteren behilflich zu sein. Dieser habe von dem St. Galler Blochmeister Galle Schaitlin seinen verdienten Lohn zu fordern. Ougsteren wolle den Dienst aus triftigen Gründen aufgeben und dem Appenzeller Befehl nachkommen. Man bitte, ihn ohne weiteren Auf- und Umzug zu befriedigen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council of Appenzell request the Burgomaster and Council of St. Gallen to assist their countryman Conrad Ougsteren. He has to claim his earned wages from the St. Gallen Blochmeister Galle Schaitlin. Ougsteren wishes to give up the service for valid reasons and to comply with the Appenzell command. They ask that he be satisfied without further trouble and delay.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -43,9 +44,9 @@
 <lb n="7"/>schriben, an euch unser gethreuw lieb Nachparen de-
 <lb n="8"/>muetig und gehorsamlich anzuhalten: gibt der ein-
 <lb n="9"/>schluß mit mehrrem zuevernemen. Won nun
-<lb n="10"/>wir einem ieden, derzue er befuegt nach mueglich-
+<lb n="10"/>wir einem <unclear cert="low" resp="#joint">ieden</unclear>, <unclear cert="low" resp="#joint">derzue</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">befuegt</unclear> nach mueglich-
 <lb n="11"/>keit zueverholffen, so geneigt, alß schuldig sindt:
-<lb n="12"/>Also ist hiemit an euch unser freundt. nachparliches
+<lb n="12"/>Also ist hiemit <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">euch</unclear> unser freundt. nachparliches
 <lb n="13"/>ersuechen, Ihr wellendt gemeltem unserem landt-
 <lb n="14"/>man, die oberkeitliche hilffshandt in massen dar-
 <lb n="15"/>bieten, damit er von dem euwerigen bloeuchi-
@@ -57,16 +58,16 @@
 <lb n="21"/>befuerderung der lieben gerechtigkeit geneigt sein
 <lb n="22"/>wuessen,) der gebuer und schuldigkeit nach content-
 <lb n="23"/>iert und befridiget, und also, diser unser ihme
-<lb n="24"/>zueem besten gemeinten fuerbitt wuerklichen gniß.
+<lb n="24"/>zueem besten <unclear cert="low" resp="#joint">gemeinten</unclear> <unclear cert="low" resp="#joint">fuerbitt</unclear> <unclear cert="low" resp="#joint">wuerklichen</unclear> <unclear cert="low" resp="#joint">gniß</unclear>.
 <pb facs="StadtASG_Missive_3441_13704.jpg" n="2"/>
 <lb n="25"/>verfüerren möge, also sindt wir es umb üch
 <lb n="26"/>und die üweren, in der glichen und anderen be-
 <lb n="27"/>gebenden glegenheiten zuo widergelten gantz.
 <lb n="28"/>geneigt und willens, unß demit sambtlichen
 <lb n="29"/>Gottes gnedigem obhalt. wolbefelchende. Datum
-<lb n="30"/><origDate when="1641" resp="#ner">den. 23. ten. Meÿen anno 1641</origDate>
+<lb n="30"/><origDate when="1641" resp="#ner">den. <unclear cert="low" resp="#joint">23</unclear>. <unclear cert="low" resp="#joint">ten</unclear>. <unclear cert="low" resp="#joint">Meÿen</unclear> anno 1641</origDate>
 <lb n="31"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtaman und Rath
-<lb n="32"/>zuo Appentzell</orgName>. /
+<lb n="32"/>zuo <unclear cert="low" resp="#joint">Appentzell</unclear></orgName>. /
 <pb facs="StadtASG_Missive_3441_13705.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3441_13706.jpg" n="4"/>
 <lb n="33"/>Den frommen, fürsichtigen, ehrsamen und

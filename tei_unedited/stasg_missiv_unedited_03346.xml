@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3346</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Wangen informieren Bürgermeister und Rat zu St. Gallen, dass sie für ihre Bürgerin Susanna Müllerin, Witwe des Hans Jacob Baaden, einen allgemeinen Rechtstag angesetzt haben. Sie bitten die St. Galler Behörden, das Edikt öffentlich anschlagen und publizieren zu lassen, damit allfällige Gläubiger ihre Forderungen geltend machen können und niemand durch Unwissenheit benachteiligt wird.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Wangen informieren Bürgermeister und Rat zu St. Gallen, dass sie für ihre Bürgerin Susanna Müllerin, Witwe des Hans Jacob Baaden, einen allgemeinen Rechtstag angesetzt haben. Sie bitten die St. Galler Behörden, das Edikt öffentlich anschlagen und publizieren zu lassen, damit allfällige Gläubiger ihre Forderungen geltend machen können und niemand durch Unwissenheit benachteiligt wird.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Wangen inform Burgomaster and Council of St. Gallen that they have appointed a general court day for their citizen Susanna Müllerin, widow of Hans Jacob Baaden. They ask the St. Gallen authorities to have the edict publicly posted and published, so that any creditors may assert their claims and no one is disadvantaged by ignorance.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -41,17 +42,17 @@
 <lb n="5"/><persName resp="#ner">Hanß Jacob Baaden</persName> wittib vndter seeligen gemeinen
 <lb n="6"/>glaubigern, einen algemeinen rechts tag ernent und
 <lb n="7"/>ahn gesezt, daß haben E. Wt. E. F. E. Wht. auß
-<lb n="8"/>beÿ verwarten edict zuvernemen.
+<lb n="8"/><unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">verwarten</unclear> <unclear cert="low" resp="#joint">edict</unclear> <unclear cert="low" resp="#joint">zuvernemen</unclear>.
 <lb n="9"/>Wann dan derselben burgere villeicht auch interessirt
-<lb n="10"/>sein und zuermelter Muellerin waß forderung und
-<lb n="11"/>ahnsprach haben möchten, so bitten wir freundt-
+<lb n="10"/>sein und <unclear cert="low" resp="#joint">zuermelter</unclear> <unclear cert="low" resp="#joint">Muellerin</unclear> <unclear cert="low" resp="#joint">waß</unclear> forderung und
+<lb n="11"/><unclear cert="low" resp="#joint">ahnsprach</unclear> haben möchten, <unclear cert="low" resp="#joint">so</unclear> bitten wir freundt-
 <lb n="12"/>lich E. Wt. E. F. E. Wht. wöllen solch edict Ihrem
-<lb n="13"/>habenden gebrauch nach, beÿ Ihnen ahn gebuerenden
-<lb n="14"/>orthen, offentlich ahnschlagen und publicieren
+<lb n="13"/>habenden gebrauch nach, beÿ Ihnen ahn <unclear cert="low" resp="#joint">gebuerenden</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">orthen</unclear>, <unclear cert="low" resp="#joint">offentlich</unclear> <unclear cert="low" resp="#joint">ahnschlagen</unclear> und publicieren
 <lb n="15"/>lassen, damit ahn seinen rechten niemand verkuerzt
-<lb n="16"/>werd, noch ohnwissenheit sich zuebeklagen ursach
-<lb n="17"/>hab, daß sein umb E. Wt. E. F. E. Wht. wir
-<lb n="18"/>freundtnachparlich zueverdienen erbiettig, dat.
+<lb n="16"/>werd, noch <unclear cert="low" resp="#joint">ohnwissenheit</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">zuebeklagen</unclear> <unclear cert="low" resp="#joint">ursach</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">hab</unclear>, <unclear cert="low" resp="#joint">daß</unclear> sein umb <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">freundtnachparlich</unclear> <unclear cert="low" resp="#joint">zueverdienen</unclear> erbiettig, dat.
 <lb n="19"/>den <origDate when="1639-03-14" resp="#ner">14 Martij a.o 1639</origDate>.
 <lb n="20"/><orgName role="issuer" resp="#ner">Burgermeister und rath
 <lb n="21"/>der statt Wangen</orgName>.

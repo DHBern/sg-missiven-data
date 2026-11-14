@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3196</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Ybbs informieren Bürgermeister und Rat zu St. Gallen über die Ansetzung eines allgemeinen Rechtstags für die Gläubiger des verstorbenen Ybbsers Georg Gschwander. Sie bitten die St. Galler Behörden, das Edikt öffentlich anzuschlagen und zu publizieren, damit allfällige Forderungen der St. Galler Bürger berücksichtigt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Ybbs informieren Bürgermeister und Rat zu St. Gallen über die Ansetzung eines allgemeinen Rechtstags für die Gläubiger des verstorbenen Ybbsers Georg Gschwander. Sie bitten die St. Galler Behörden, das Edikt öffentlich anzuschlagen und zu publizieren, damit allfällige Forderungen der St. Galler Bürger berücksichtigt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Ybbs inform Burgomaster and Council of St. Gallen about the appointment of a general court day for the creditors of the deceased Ybbs citizen Georg Gschwander. They ask the St. Gallen authorities to publicly post and publish the edict, so that any claims of the citizens of St. Gallen may be taken into account.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,24 +38,24 @@
 <lb n="1"/>Unser freündtliche willige dienst zuvor, Edle
 <lb n="2"/>Ehrnveste, Fuersichtig unnd weyse, besonders liebe
 <lb n="3"/>und guette freünd.
-<lb n="4"/>Waß gestalten wir, unsers weyland gewesten
+<lb n="4"/>Waß gestalten wir, <unclear cert="low" resp="#joint">unsers</unclear> weyland gewesten
 <lb n="5"/>burgers <persName resp="#ner">Georg Gschwanders</persName> see. gemainen
 <lb n="6"/>glaeubigern, ainen allgemainen rechttag ernennt
-<lb n="7"/>und angesetzt, daß haben Ewer E. E. F. wht. auß
+<lb n="7"/>und angesetzt, daß haben Ewer <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. auß
 <lb n="8"/>innligendem edict zuevernemmen.
 <lb n="9"/>Wann dann deroselben burgere vileicht auch inter=
 <lb n="10"/>essirt sein, und zue ermeltes <persName resp="#ner">Gschwanders</persName> see. ver=
 <lb n="11"/>lassenschafft, forderung und ansprach haben moech=
-<lb n="12"/>ten, so bitten wir freündtlich Ewer E. E. F. wht.,
+<lb n="12"/>ten, so bitten wir freündtlich Ewer <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">wht</unclear>.,
 <lb n="13"/>wollen solch edict, ihrem habenden gebrauch nach,
-<lb n="14"/>bey ihnen offentlich anschlagen und publicirn lassen,
+<lb n="14"/>bey <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">offentlich</unclear> <unclear cert="low" resp="#joint">anschlagen</unclear> und publicirn lassen,
 <lb n="15"/>damit an seinen rechten niemandt verkuertzt werd,
-<lb n="16"/>noch der unwissenheit sich zuebeklagen ursach habe.
-<lb n="17"/>Daß sein wir umb Ewer E. E. F. wht. inn der=
+<lb n="16"/>noch der unwissenheit sich <unclear cert="low" resp="#joint">zuebeklagen</unclear> <unclear cert="low" resp="#joint">ursach</unclear> habe.
+<lb n="17"/>Daß sein wir umb Ewer <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">wht</unclear>. inn der=
 <lb n="18"/>gleichen und mehrerm zueverschulden erbietig.
 <lb n="19"/>Datum den <origDate when="1636-08-26" resp="#ner">26ten Augusti. a° 1636</origDate>.
 <lb n="20"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermaister und rhatt
-<lb n="21"/>der statt Yßni</orgName>. s.
+<lb n="21"/>der statt <unclear cert="low" resp="#joint">Yßni</unclear></orgName>. <unclear cert="low" resp="#joint">s</unclear>.
 <pb facs="StadtASG_Missive_3196_12632.jpg" n="2"/>
 <lb n="22"/>[]
 <pb facs="StadtASG_Missive_3196_12633.jpg" n="3"/>
@@ -62,8 +63,8 @@
 <lb n="23"/>Den Edlen Eernvesten fuersichtigen und
 <lb n="24"/>weysen Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat
 <lb n="25"/>der Statt St. Gallen</orgName>, unseren besonders
-<lb n="26"/>lieben Herren und guetten freunden.
-<lb n="27"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="26"/>lieben Herren und <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>.
+<lb n="27"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

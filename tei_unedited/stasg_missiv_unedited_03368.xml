@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3368</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Stadtammann und Rat zu Altstätten informieren Bürgermeister und Rat zu St. Gallen, dass die Rheintalischen Höfe am 30. Oktober in St. Gallen eintreffen und am folgenden Tag über den Weinausschuss verhandeln wollen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Stadtammann und Rat zu Altstätten informieren Bürgermeister und Rat zu St. Gallen, dass die Rheintalischen Höfe am 30. Oktober in St. Gallen eintreffen und am folgenden Tag über den Weinausschuss verhandeln wollen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Ammann and Council of Altstätten inform Burgomaster and Council of St. Gallen that the Rheintal estates will arrive in St. Gallen on 30 October and on the following day wish to negotiate over the wine committee.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -60,13 +61,13 @@
 <pb facs="StadtASG_Missive_3368_13392.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3368_13393.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3368_13394.jpg" n="4"/>
-<lb n="24"/>Denen Edlen, Eerenvessten, Frommen, Fuernem-
-<lb n="25"/>men, Fuersichtigen unnd Weysen,
-<lb n="26"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Raht,
-<lb n="27"/>der loeblichen Statt St. Gallen</orgName>,
-<lb n="28"/>unsseren gnst. herren, Lieben
-<lb n="29"/>nachparn.
-<lb n="30"/>St. Gallen.
+<lb n="24"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Edlen</unclear>, <unclear cert="low" resp="#joint">Eerenvessten</unclear>, <unclear cert="low" resp="#joint">Frommen</unclear>, <unclear cert="low" resp="#joint">Fuernem</unclear>-
+<lb n="25"/><unclear cert="low" resp="#joint">men</unclear>, <unclear cert="low" resp="#joint">Fuersichtigen</unclear> unnd <unclear cert="low" resp="#joint">Weysen</unclear>,
+<lb n="26"/><unclear cert="low" resp="#joint">herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">Raht</unclear>,
+<lb n="27"/>der <unclear cert="low" resp="#joint">loeblichen</unclear> Statt St. Gallen</orgName>,
+<lb n="28"/><unclear cert="low" resp="#joint">unsseren</unclear> <unclear cert="low" resp="#joint">gnst</unclear>. <unclear cert="low" resp="#joint">herren</unclear>, Lieben
+<lb n="29"/><unclear cert="low" resp="#joint">nachparn</unclear>.
+<lb n="30"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear>.
 </p>
         </body>
     </text>

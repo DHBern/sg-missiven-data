@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3315</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Konstanz antworten auf die Forderung St. Gallens nach Zinsen für ein 1632 geliehenes Kapital von 3000 Florin. Sie weisen darauf hin, dass die Zinsen für 1633 und 1634 bereits bezahlt seien, und bitten um Aufschub der Kapitalrückzahlung um ein Jahr wegen hoher Ausgaben. In einem Postskriptum teilen sie die aktuelle Fleischtaxe mit.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Konstanz antworten auf die Forderung St. Gallens nach Zinsen für ein 1632 geliehenes Kapital von 3000 Florin. Sie weisen darauf hin, dass die Zinsen für 1633 und 1634 bereits bezahlt seien, und bitten um Aufschub der Kapitalrückzahlung um ein Jahr wegen hoher Ausgaben. In einem Postskriptum teilen sie die aktuelle Fleischtaxe mit.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Konstanz reply to the demand of St. Gallen for interest on a capital of 3000 florins lent in 1632. They point out that the interest for 1633 and 1634 has already been paid, and ask for a postponement of the repayment of the capital by one year due to high expenses. In a postscript, they communicate the current meat price.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,66 +40,66 @@
 <lb n="3"/>und Verthruete Nachparen.
 <lb n="4"/>Wier haben auß Euerem sub dato den <date resp="#ner">19 nechstabgewichenen
 <lb n="5"/>Monats July</date> an unß abgeloßnen schreiben ersehen, waß
-<lb n="6"/>maßen Ihr die bezahlung der von 3000 fl. Capital
+<lb n="6"/>maßen Ihr die bezahlung der von <unclear cert="low" resp="#joint">3000</unclear> <unclear cert="low" resp="#joint">fl</unclear>. <unclear cert="low" resp="#joint">Capital</unclear>
 <lb n="7"/>so ihr unnß in Anno <date resp="#ner">1632</date> vertrauenlichser Nachpar=
-<lb n="8"/>schafft wegen, zue unserer Statt <placeName resp="#ner">Notturfft</placeName> auf Sechß Jhar=
-<lb n="9"/>lang fuergelih, verfallnen Sechß Jahr zinnßen begehren,
-<lb n="10"/>so dann auch, weilen die obligation verschinen <persName resp="#ner">Joannis</persName>
-<lb n="11"/>außgeloßen, gern wueßen wolten, weßen wir deß
-<lb n="12"/>Capitals halber gesinnet, ob wir daßelbig auch ab=
-<lb n="13"/>loeßen, od aber umb verzinsung lenger inhanden be=
-<lb n="14"/>halten wollen.
+<lb n="8"/>schafft wegen, zue unserer Statt <placeName resp="#ner">Notturfft</placeName> auf <unclear cert="low" resp="#joint">Sechß</unclear> <unclear cert="low" resp="#joint">Jhar=</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">lang</unclear> <unclear cert="low" resp="#joint">fuergelih</unclear>, <unclear cert="low" resp="#joint">verfallnen</unclear> <unclear cert="low" resp="#joint">Sechß</unclear> <unclear cert="low" resp="#joint">Jahr</unclear> <unclear cert="low" resp="#joint">zinnßen</unclear> begehren,
+<lb n="10"/>so dann auch, weilen die obligation <unclear cert="low" resp="#joint">verschinen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Joannis</unclear></persName>
+<lb n="11"/><unclear cert="low" resp="#joint">außgeloßen</unclear>, gern wueßen wolten, weßen wir deß
+<lb n="12"/>Capitals halber gesinnet, ob wir <unclear cert="low" resp="#joint">daßelbig</unclear> auch ab=
+<lb n="13"/>loeßen, od aber umb <unclear cert="low" resp="#joint">verzinsung</unclear> <unclear cert="low" resp="#joint">lenger</unclear> <unclear cert="low" resp="#joint">inhanden</unclear> <unclear cert="low" resp="#joint">be=</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">halten</unclear> wollen.
 <lb n="15"/>Hierueber moeg wir Euch freundt: nachparlich anzue=
 <lb n="16"/>fuegen nit underlaßen, daß wir Euch zween von
 <lb n="17"/>bemeltem Capital verfallne zinß fuer <date resp="#ner">1633</date> und
 <lb n="18"/><date resp="#ner">34</date> allberait (wie ihr bey euerer buochhaltung oder
 <lb n="19"/>bey dem Seckhelmaister Ambt finden werden) bezalt
-<lb n="20"/>haben, also das allein Vier Jahr zinß noch zuebezahlen
-<lb n="21"/>wären, deren richtigmachung wir unß auch moeglichist
-<lb n="22"/>befleißen wollen: Daß Capital betreffend, weilen
-<lb n="23"/>wier der zeit noch mit allerhandt starckhen außgaben
+<lb n="20"/>haben, also das allein Vier Jahr zinß noch <unclear cert="low" resp="#joint">zuebezahlen</unclear>
+<lb n="21"/>wären, deren richtigmachung wir unß auch <unclear cert="low" resp="#joint">moeglichist</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">befleißen</unclear> wollen: Daß Capital <unclear cert="low" resp="#joint">betreffend</unclear>, <unclear cert="low" resp="#joint">weilen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">wier</unclear> der zeit noch mit allerhandt starckhen außgaben
 <lb n="24"/>occupirt sind, benebens aber von Euch unß die Wahl
 <lb n="25"/>aufgethan wuerdet, selbiges abzueleg, od lenger umb
 <lb n="26"/>verzinßung zubehalten: Alß wärn wir gedacht,
-<lb n="27"/>daßelbig noch ain Jhar etliche, biß verhofften=lich
+<lb n="27"/><unclear cert="low" resp="#joint">daßelbig</unclear> noch ain Jhar etliche, biß verhofften=lich
 <pb facs="StadtASG_Missive_3315_13160.jpg" n="2"/>
-<lb n="28"/>die zeiten sich beßeren, und unß die dzit noch imer-
-<lb n="29"/>zue obhabende schwaere außgaben umb etwas abge-
-<lb n="30"/>hebt werden mueßten, zuverzeihen, unß benebens d
-<lb n="31"/>gethonen offerten, das wir mehrvermelt capital ab-
-<lb n="32"/>loeßen, od aber lenger in d verzinßung stehn laßen
-<lb n="33"/>moegen, freündt: nachbarlich bedanckhend.
-<lb n="34"/>So wir eüch zue weitterer nachrichtung anfueg
-<lb n="35"/>sollen, Ihenen neüwen angeneme wolgefellige dienst-
-<lb n="36"/>willigkeiten zueerweißen, seind wir vorderst begier-
-<lb n="37"/>ig. Gottes getrewer vhuetig unß damit allerseitts
-<lb n="38"/>wolbevehlend. Geben den <origDate when="1638-08-13" resp="#ner">13 Augusti Ao 1638.</origDate>,
-<lb n="39"/>PS.
-<lb n="40"/>Den begerten bericht wie d zeiten daß fleisch alhir
-<lb n="41"/>taxiert seige, belangend, haben se auß der beijlag
-<lb n="42"/>zuersehen, was wir das verschinen <date resp="#ner">637iste jahr</date>
-<lb n="43"/>der mezger halber geornet, beij deme es noch biß
-<lb n="44"/>hero sein verbleiben gehabt, ußerhalb das ohngefehr
-<lb n="45"/>vor 4 wochen, als das bratfleisch übel zebekhomen
-<lb n="46"/>geweßen, und die bratmezger umb ein uffschlag
-<lb n="47"/>ganz instendig angehalten, wir das pfundt khalb-
-<lb n="48"/>fleisch umb 1 d und das pfundt schaffleisch umb
-<lb n="49"/>2 d erheücht haben: also das der zeit ijedes pfundt
-<lb n="50"/>sowol khalb alß schaffleisch des besten p 10 pfenn
-<lb n="51"/>pfening verkhaufft würdet jedoch seijen wir ent-
-<lb n="52"/>schloßen, etwas beßers hinaußwerts des taxs
-<lb n="53"/>halber ein moderation fürzenemen
-<lb n="54"/>Datum ut in literis
-<lb n="55"/>Verwalter d haubtmanschafft
-<lb n="56"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Burgermeister und rath d
+<lb n="28"/>die <unclear cert="medium" resp="#joint">zeiten</unclear> sich <unclear cert="medium" resp="#joint">beßeren</unclear>, und unß die <unclear cert="low" resp="#joint">dzit</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">imer</unclear>-
+<lb n="29"/>zue <unclear cert="low" resp="#joint">obhabende</unclear> <unclear cert="low" resp="#joint">schwaere</unclear> <unclear cert="low" resp="#joint">außgaben</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">etwas</unclear> <unclear cert="low" resp="#joint">abge</unclear>-
+<lb n="30"/><unclear cert="low" resp="#joint">hebt</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">mueßten</unclear>, <unclear cert="low" resp="#joint">zuverzeihen</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">benebens</unclear> <unclear cert="low" resp="#joint">d</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">gethonen</unclear> <unclear cert="low" resp="#joint">offerten</unclear>, <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">mehrvermelt</unclear> <unclear cert="low" resp="#joint">capital</unclear> <unclear cert="low" resp="#joint">ab</unclear>-
+<lb n="32"/><unclear cert="low" resp="#joint">loeßen</unclear>, <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">lenger</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">verzinßung</unclear> <unclear cert="low" resp="#joint">stehn</unclear> <unclear cert="low" resp="#joint">laßen</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">moegen</unclear>, <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">nachbarlich</unclear> <unclear cert="low" resp="#joint">bedanckhend</unclear>.
+<lb n="34"/><unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">weitterer</unclear> <unclear cert="low" resp="#joint">nachrichtung</unclear> <unclear cert="low" resp="#joint">anfueg</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">sollen</unclear>, <unclear cert="low" resp="#joint">Ihenen</unclear> <unclear cert="low" resp="#joint">neüwen</unclear> <unclear cert="low" resp="#joint">angeneme</unclear> <unclear cert="low" resp="#joint">wolgefellige</unclear> <unclear cert="low" resp="#joint">dienst</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">willigkeiten</unclear> <unclear cert="low" resp="#joint">zueerweißen</unclear>, <unclear cert="low" resp="#joint">seind</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">vorderst</unclear> <unclear cert="low" resp="#joint">begier</unclear>-
+<lb n="37"/><unclear cert="low" resp="#joint">ig</unclear>. Gottes <unclear cert="medium" resp="#joint">getrewer</unclear> <unclear cert="medium" resp="#joint">vhuetig</unclear> unß damit <unclear cert="medium" resp="#joint">allerseitts</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">wolbevehlend</unclear>. Geben den <origDate when="1638-08-13" resp="#ner">13 Augusti <unclear cert="medium" resp="#joint">Ao</unclear> 1638.</origDate>,
+<lb n="39"/><unclear cert="low" resp="#joint">PS</unclear>.
+<lb n="40"/><unclear cert="low" resp="#joint">Den</unclear> begerten bericht <unclear cert="medium" resp="#joint">wie</unclear> d <unclear cert="medium" resp="#joint">zeiten</unclear> daß <unclear cert="medium" resp="#joint">fleisch</unclear> <unclear cert="medium" resp="#joint">alhir</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">taxiert</unclear> <unclear cert="medium" resp="#joint">seige</unclear>, belangend, haben <unclear cert="medium" resp="#joint">se</unclear> <unclear cert="medium" resp="#joint">auß</unclear> der <unclear cert="medium" resp="#joint">beijlag</unclear>
+<lb n="42"/><unclear cert="medium" resp="#joint">zuersehen</unclear>, was <unclear cert="medium" resp="#joint">wir</unclear> das <unclear cert="low" resp="#joint">verschinen</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">637iste</unclear> <unclear cert="low" resp="#joint">jahr</unclear></date>
+<lb n="43"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">mezger</unclear> halber <unclear cert="medium" resp="#joint">geornet</unclear>, <unclear cert="medium" resp="#joint">beij</unclear> <unclear cert="medium" resp="#joint">deme</unclear> es noch <unclear cert="medium" resp="#joint">biß</unclear>
+<lb n="44"/>hero <unclear cert="medium" resp="#joint">sein</unclear> <unclear cert="medium" resp="#joint">verbleiben</unclear> gehabt, <unclear cert="medium" resp="#joint">ußerhalb</unclear> das <unclear cert="medium" resp="#joint">ohngefehr</unclear>
+<lb n="45"/>vor <unclear cert="medium" resp="#joint">4</unclear> wochen, als das <unclear cert="low" resp="#joint">bratfleisch</unclear> <unclear cert="low" resp="#joint">übel</unclear> <unclear cert="low" resp="#joint">zebekhomen</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">geweßen</unclear>, und die <unclear cert="low" resp="#joint">bratmezger</unclear> umb <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">uffschlag</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">ganz</unclear> <unclear cert="low" resp="#joint">instendig</unclear> <unclear cert="low" resp="#joint">angehalten</unclear>, <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">pfundt</unclear> <unclear cert="low" resp="#joint">khalb</unclear>-
+<lb n="48"/><unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">d</unclear> und das <unclear cert="medium" resp="#joint">pfundt</unclear> <unclear cert="medium" resp="#joint">schaffleisch</unclear> umb
+<lb n="49"/><unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">erheücht</unclear> haben: <unclear cert="medium" resp="#joint">also</unclear> das <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">ijedes</unclear> <unclear cert="low" resp="#joint">pfundt</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">sowol</unclear> <unclear cert="low" resp="#joint">khalb</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">schaffleisch</unclear> des besten <unclear cert="medium" resp="#joint">p</unclear> <unclear cert="medium" resp="#joint">10</unclear> <unclear cert="medium" resp="#joint">pfenn</unclear>
+<lb n="51"/><unclear cert="medium" resp="#joint">pfening</unclear> <unclear cert="medium" resp="#joint">verkhaufft</unclear> <unclear cert="medium" resp="#joint">würdet</unclear> jedoch <unclear cert="medium" resp="#joint">seijen</unclear> wir ent-
+<lb n="52"/>schloßen, etwas beßers <unclear cert="medium" resp="#joint">hinaußwerts</unclear> des <unclear cert="medium" resp="#joint">taxs</unclear>
+<lb n="53"/>halber ein <unclear cert="low" resp="#joint">moderation</unclear> <unclear cert="low" resp="#joint">fürzenemen</unclear>
+<lb n="54"/>Datum <unclear cert="medium" resp="#joint">ut</unclear> <unclear cert="medium" resp="#joint">in</unclear> literis
+<lb n="55"/><unclear cert="low" resp="#joint">Verwalter</unclear> <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">haubtmanschafft</unclear>
+<lb n="56"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Burgermeister und rath <unclear cert="low" resp="#joint">d</unclear>
 <lb n="57"/>Statt Costanz</orgName>.
 <pb facs="StadtASG_Missive_3315_13161.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3315_13162.jpg" n="4"/>
-<lb n="58"/>Denen fuersichtigen, ehrsamen und weysen,
-<lb n="59"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Rath der Statt St:
-<lb n="60"/>Gallen</orgName>, unseren insonders lieben freuenden
-<lb n="61"/>und vertraewten gueten Nachpuren.
-<lb n="62"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName>.
+<lb n="58"/><unclear cert="medium" resp="#joint">Denen</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, <unclear cert="medium" resp="#joint">ehrsamen</unclear> und <unclear cert="low" resp="#joint">weysen</unclear>,
+<lb n="59"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeistern</unclear> und Rath der Statt St:
+<lb n="60"/>Gallen</orgName>, unseren <unclear cert="medium" resp="#joint">insonders</unclear> lieben <unclear cert="medium" resp="#joint">freuenden</unclear>
+<lb n="61"/>und <unclear cert="low" resp="#joint">vertraewten</unclear> gueten <unclear cert="low" resp="#joint">Nachpuren</unclear>.
+<lb n="62"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>: <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

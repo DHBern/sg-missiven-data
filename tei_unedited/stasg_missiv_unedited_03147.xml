@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3147</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen teilen der Stadt Lindau mit, dass sie die Forderungen ihrer dortigen Verburgerten Gläubiger an die Witwe des verstorbenen Balthasar Hoßlein geprüft haben. Sie bitten Lindau nachbarschaftlich, ihre eigenen Bürger anzuhalten, der vorgeschlagenen Zahlungsweise zuzustimmen und keine weiteren Beschwerden zu erheben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen teilen der Stadt Lindau mit, dass sie die Forderungen ihrer dortigen Verburgerten Gläubiger an die Witwe des verstorbenen Balthasar Hoßlein geprüft haben. Sie bitten Lindau nachbarschaftlich, ihre eigenen Bürger anzuhalten, der vorgeschlagenen Zahlungsweise zuzustimmen und keine weiteren Beschwerden zu erheben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen inform the city of Lindau that they have examined the claims of their naturalized creditors there against the widow of the deceased Balthasar Hoßlein. They ask Lindau, in a neighborly manner, to instruct their own citizens to agree to the proposed method of payment and to raise no further complaints.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,23 +38,23 @@
 <lb n="1"/>Unser freüntlich willig dienst, zuovor, Fuersichtig
 <lb n="2"/>Ersam und weise, besonders liebe guote Freündt
 <lb n="3"/>und Nachbarn.
-<lb n="4"/>Wir habend nit ermanglet, daß Jhenige, waß
-<lb n="5"/>E. E. W. wegen ihro Verburgerten weiland <persName resp="#ner">Baltha-
-<lb n="6"/>sar Hoßleins</persName> deß Jüngern sel: hinderlaßnen wittiben,
-<lb n="7"/>und der verordneten Voegten, an uns langen laßen, ihro alhiesi-
+<lb n="4"/>Wir habend <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">ermanglet</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">Jhenige</unclear>, <unclear cert="low" resp="#joint">waß</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">ihro</unclear> <unclear cert="low" resp="#joint">Verburgerten</unclear> <unclear cert="low" resp="#joint">weiland</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Baltha</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">sar</unclear> <unclear cert="low" resp="#joint">Hoßleins</unclear></persName> deß Jüngern sel: hinderlaßnen wittiben,
+<lb n="7"/>und <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">verordneten</unclear> <unclear cert="low" resp="#joint">Voegten</unclear>, an uns langen laßen, ihro alhiesi-
 <lb n="8"/>gen Unßern Verburgerten Creditoren, zuübergeben, weßen
-<lb n="9"/>sie sich hiniüber erclert, gibt der beÿschluß zueoikennen.
-<lb n="10"/>Und dieweil wir darauß woll vernemen, daß sie
-<lb n="11"/>die Vnserigen, zuo ihr der hoßlischen Wittiben fürgeschlag-
-<lb n="12"/>nen zahlungs mitlen guoter maßen und solcher gestalt
-<lb n="13"/>genehmet, daß si sich vil ferner nit zubeklagen
-<lb n="14"/>oder zubeschweren haben solle, E. E. W. darauf
-<lb n="15"/>nachbarlich ersuchend, die ihrigen dahin zuhalten,
-<lb n="16"/>daß sie dem Allem volg und statt thuo, welchs wir
-<lb n="17"/>nebend dem eß an sich selbst billich, wir
-<lb n="18"/>wirts in gleich und andern begebenheiten zuerwidern
-<lb n="19"/>geneigt, Goettlicher obhalt unß damit samptlich wol
-<lb n="20"/>befelhende. Datum den. <origDate when="1636-03-24" resp="#ner">24. Martij. 1636</origDate>.
+<lb n="9"/>sie sich <unclear cert="low" resp="#joint">hiniüber</unclear> <unclear cert="low" resp="#joint">erclert</unclear>, <unclear cert="low" resp="#joint">gibt</unclear> der <unclear cert="low" resp="#joint">beÿschluß</unclear> <unclear cert="low" resp="#joint">zueoikennen</unclear>.
+<lb n="10"/>Und <unclear cert="low" resp="#joint">dieweil</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">darauß</unclear> <unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">vernemen</unclear>, daß sie
+<lb n="11"/><unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Vnserigen</unclear>, <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">hoßlischen</unclear> <unclear cert="low" resp="#joint">Wittiben</unclear> <unclear cert="low" resp="#joint">fürgeschlag</unclear>-
+<lb n="12"/><unclear cert="low" resp="#joint">nen</unclear> <unclear cert="low" resp="#joint">zahlungs</unclear> <unclear cert="low" resp="#joint">mitlen</unclear> <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">solcher</unclear> <unclear cert="low" resp="#joint">gestalt</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">genehmet</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">si</unclear> sich vil ferner nit zubeklagen
+<lb n="14"/>oder zubeschweren haben <unclear cert="low" resp="#joint">solle</unclear>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">darauf</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">nachbarlich</unclear> <unclear cert="low" resp="#joint">ersuchend</unclear>, die ihrigen dahin zuhalten,
+<lb n="16"/>daß sie dem Allem <unclear cert="low" resp="#joint">volg</unclear> und <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">thuo</unclear>, <unclear cert="low" resp="#joint">welchs</unclear> <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">nebend</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">eß</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">selbst</unclear> <unclear cert="low" resp="#joint">billich</unclear>, <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">wirts</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">gleich</unclear> und <unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">begebenheiten</unclear> <unclear cert="low" resp="#joint">zuerwidern</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">geneigt</unclear>, <unclear cert="low" resp="#joint">Goettlicher</unclear> <unclear cert="low" resp="#joint">obhalt</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">samptlich</unclear> wol
+<lb n="20"/>befelhende. Datum den. <origDate when="1636-03-24" resp="#ner"><unclear cert="low" resp="#joint">24</unclear>. <unclear cert="low" resp="#joint">Martij</unclear>. 1636</origDate>.
 <lb n="21"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Rhat
 <lb n="22"/>der Statt Sant Gallen</orgName>.
 <lb n="23"/>An die Statt <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>.

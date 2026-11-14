@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3485</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen berichten, dass ihr Bürger Hans Jakob Seggler in einer Rechtsstreitigkeit mit dem St. Galler Laurentz Zilli vor ihnen eine Protestation eingelegt habe. Sie ersuchen St. Gallen, ihnen urkundlich zu bestätigen, wie diese Protestation vor ihrem Rat ergangen ist, damit Seggler sich rechtlich bedienen könne.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen berichten, dass ihr Bürger Hans Jakob Seggler in einer Rechtsstreitigkeit mit dem St. Galler Laurentz Zilli vor ihnen eine Protestation eingelegt habe. Sie ersuchen St. Gallen, ihnen urkundlich zu bestätigen, wie diese Protestation vor ihrem Rat ergangen ist, damit Seggler sich rechtlich bedienen könne.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen report that their citizen Hans Jakob Seggler has filed a protestation before them in a legal dispute with Laurentz Zilli of St. Gallen. They request St. Gallen to confirm in writing how this protestation was issued before their Council, so that Seggler may make use of it legally.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,18 +39,18 @@
 <lb n="2"/>ehren, liebs und guots vermoegen, zuvor, Fromm, Fürsich-
 <lb n="3"/>tig, Ehrsamm Weÿß, besonders guot Fründ, und getrüw
 <lb n="4"/>lieb Eÿdtgnoßen.
-<lb n="5"/>Demnach zwüschen ewerem unser E. L. E. Burger hr.
-<lb n="6"/><persName resp="#ner">Laureentz Zilli</persName> kouff- und handelsman, und unserem Bur-
+<lb n="5"/>Demnach zwüschen <unclear cert="low" resp="#joint">ewerem</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Burger</unclear> <unclear cert="low" resp="#joint">hr</unclear>.
+<lb n="6"/><persName resp="#ner"><unclear cert="low" resp="#joint">Laureentz</unclear> <unclear cert="low" resp="#joint">Zilli</unclear></persName> kouff- und handelsman, und unserem Bur-
 <lb n="7"/>ger <persName resp="#ner">Hanß Jacob Seggelern</persName>, sich hütigen tags vor uns ein
 <lb n="8"/>rechtfertigung erhalten, und darinnen so feer geschrit-
 <lb n="9"/>ten, daß dem beklagten seinem begeren nach kundtschafft
 <lb n="10"/>zufüehren und urkundliche attestation einzuholen vergont
 <lb n="11"/>worden, und nun bemelt der unser insonderheit und mit
-<lb n="12"/>namen beÿzubringen sich anerbotten, namblichen als im
-<lb n="13"/><date resp="#ner">februario verschinnen 1641.st jahrs</date>, er wegen 27 läge-
-<lb n="14"/>len salpeter, so er gedacht dem eweren, den zendtner
-<lb n="15"/>a 26 1/2 R. in sein deß verkouffers kosten und gefahr
-<lb n="16"/>naher <placeName resp="#ner">Cleven</placeName> zuliferen, und sobald die wahr alda selbst an-
+<lb n="12"/>namen <unclear cert="low" resp="#joint">beÿzubringen</unclear> sich anerbotten, namblichen als im
+<lb n="13"/><date resp="#ner">februario verschinnen 1641.st jahrs</date>, er wegen 27 <unclear cert="low" resp="#joint">läge</unclear>-
+<lb n="14"/><unclear cert="low" resp="#joint">len</unclear> <unclear cert="low" resp="#joint">salpeter</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">er</unclear> gedacht dem eweren, den <unclear cert="low" resp="#joint">zendtner</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">26</unclear> <unclear cert="low" resp="#joint">1/2</unclear> <unclear cert="low" resp="#joint">R</unclear>. in sein deß verkouffers kosten und gefahr
+<lb n="16"/>naher <placeName resp="#ner">Cleven</placeName> zuliferen, und sobald die <unclear cert="low" resp="#joint">wahr</unclear> <unclear cert="low" resp="#joint">alda</unclear> <unclear cert="low" resp="#joint">selbst</unclear> an-
 <lb n="17"/>kome, ihme daß par gelt darumb zubezahlen, zukouffen
 <lb n="18"/>geben. Welche bezahlung auch er theils von ihm hr. Zillj
 <lb n="19"/>selbsten, theils von hr. Zieglern unserm getrewen lie-
@@ -59,51 +60,51 @@
 <lb n="23"/>der unser verspreche ihme dann, daß die wahr in Meÿ-
 <lb n="24"/>land gerecht und guot erfunden werd. Da hab er Segge-
 <pb facs="StadtASG_Missive_3485_13890.jpg" n="2"/>
-<lb n="25"/>ler darueber mit dryen schreiben darwider prote-
-<lb n="26"/>stirt, namblich weilen er die wahr weitters nit schuldig
-<lb n="27"/>dann nach <placeName resp="#ner">Roinog</placeName> zueliferen, da soll er die wahr besich-
+<lb n="25"/>ler darueber mit dryen schreiben <unclear cert="low" resp="#joint">darwider</unclear> <unclear cert="low" resp="#joint">prote</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">stirt</unclear>, <unclear cert="low" resp="#joint">namblich</unclear> <unclear cert="low" resp="#joint">weilen</unclear> er die wahr weitters nit schuldig
+<lb n="27"/>dann nach <placeName resp="#ner"><unclear cert="low" resp="#joint">Roinog</unclear></placeName> <unclear cert="low" resp="#joint">zueliferen</unclear>, da soll er die wahr besich-
 <lb n="28"/>tigen lassen, wann die nit kouffmans guett und den 4.
 <lb n="29"/>musteren, so er ihme darvon uebersendt gleich, so wol-
-<lb n="30"/>le er die wider annemen und dem Lewen daß gelt darumb
+<lb n="30"/><unclear cert="low" resp="#joint">le</unclear> er die wider annemen und dem Lewen daß gelt darumb
 <lb n="31"/>widerbegehren. Daruff habe er der Leew den <persName resp="#ner">Jr. Zieglern</persName>
 <lb n="32"/>geschriben hab daß gelt apostada genomen, und von ihme
 <lb n="33"/>dem unsern wider haben wollen. Welches ihne, neben an-
 <lb n="34"/>derm, so <persName resp="#ner">Zilli</persName> ihme schuldig, nach <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> getriben, da-
 <lb n="35"/>selbsten sich zueerclagen, und ihne mit recht dahin zue-
-<lb n="36"/>treiben, damit die von einandern kommen moegen. Hiemit
+<lb n="36"/>treiben, damit die von einandern <unclear cert="low" resp="#joint">kommen</unclear> <unclear cert="low" resp="#joint">moegen</unclear>. <unclear cert="low" resp="#joint">Hiemit</unclear>
 <lb n="37"/>durch seinen erloubten fürsprechen inbringen lassen, daß
 <lb n="38"/>er Jr. Zilli ihme daß gelt bey den Jr. Zieglern nit guet-
 <lb n="39"/>heissen wolle er verspreche ihme dann, wie obsteth, den
-<lb n="40"/>salpeter in <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meyland</placeName> gerecht und guett zueliferen, dar-
-<lb n="41"/>wider er aber mund von euch unsern G. L. E. in ge-
+<lb n="40"/>salpeter in <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meyland</placeName> gerecht und <unclear cert="low" resp="#joint">guett</unclear> <unclear cert="low" resp="#joint">zueliferen</unclear>, dar-
+<lb n="41"/>wider er aber mund von euch unsern <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">in</unclear> ge-
 <lb n="42"/>sessnem rath protestirt, weilen er die wahr nit wei-
-<lb n="43"/>ter dann nach <placeName ref="stadtasg-places-88" cert="medium" resp="#ner">Roineg</placeName> zueliferen schuldig, alß soll er da-
-<lb n="44"/>selbsten die wahr durch unpartheyische leüt die sich dar-
+<lb n="43"/>ter dann nach <placeName ref="stadtasg-places-88" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Roineg</unclear></placeName> <unclear cert="low" resp="#joint">zueliferen</unclear> schuldig, alß soll er da-
+<lb n="44"/>selbsten die wahr durch <unclear cert="low" resp="#joint">unpartheyische</unclear> <unclear cert="low" resp="#joint">leüt</unclear> die sich dar-
 <lb n="45"/>uff verstanden, beschauwen lassen, im fahl sie nit sei-
 <lb n="46"/>nem versprechen nach gerecht und guett befunden, so wölle
 <lb n="47"/>er die wider annemen. Darueber Jr. Zillie eingefüehrt
 <lb n="48"/>er habe zue Roineg kein gelegenheit, wolle die wahr her
-<lb n="49"/>zuebesichtigen füehren lassen, darwider er abermahl von
+<lb n="49"/>zuebesichtigen füehren lassen, darwider er <unclear cert="low" resp="#joint">abermahl</unclear> von
 <pb facs="StadtASG_Missive_3485_13891.jpg" n="3"/>
-<lb n="50"/>protestirt, wan der ferr ihme die wahr für Stei-
+<lb n="50"/>protestirt, wan der <unclear cert="low" resp="#joint">ferr</unclear> <unclear cert="low" resp="#joint">ihme</unclear> die wahr für Stei-
 <lb n="51"/>nach hinauß fuehren lasse, so wolle er ihme kein wei-
 <lb n="52"/>ter red noch antwurt darumb geben. Uber daß al-
 <lb n="53"/>les aber seige er vortgefahren, die wahr weg fueh-
 <lb n="54"/>ren und in <placeName ref="stadtasg-places-114" cert="medium" resp="#ner">Chur</placeName> oeffnen lassen: Nach dolgem wie er
-<lb n="55"/>selbige beschaffen befunden, biß uff den <date resp="#ner">4. t. deß nechst-
+<lb n="55"/>selbige beschaffen befunden, biß uff den <date resp="#ner"><unclear cert="low" resp="#joint">4</unclear>. <unclear cert="low" resp="#joint">t</unclear>. deß nechst-
 <lb n="56"/>verstrichnen Februarij diß lauffenden jahrs</date> verschwi-
 <lb n="57"/>gen, und hiezwißten weiters mit vortgefahren biß
 <lb n="58"/>nacher <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Maeyland</placeName>, jedoch innet der zeit ihme dem
-<lb n="59"/>unsern nichts darvon zugeschriben noch gesagt. Vermei-
-<lb n="60"/>ge er sich nichts mehr zubeladen noch anzunemen etc.
-<lb n="61"/>Belangt disem allem nach an euch unser G. L.
-<lb n="62"/>E. von deß unsern pitt und erkundigung der lieben
+<lb n="59"/>unsern nichts darvon zugeschriben noch <unclear cert="low" resp="#joint">gesagt</unclear>. <unclear cert="low" resp="#joint">Vermei</unclear>-
+<lb n="60"/><unclear cert="low" resp="#joint">ge</unclear> <unclear cert="low" resp="#joint">er</unclear> sich nichts mehr zubeladen noch anzunemen etc.
+<lb n="61"/>Belangt disem allem nach an euch unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>.
+<lb n="62"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">deß</unclear> unsern pitt und erkundigung der lieben
 <lb n="63"/>warheit wegen unser freuendteydtgnossisch ersuchen,
 <lb n="64"/>ihr wollet zu behueff der heilsamen justitien unß ohn-
 <lb n="65"/>beschwert berichten lassen, wie und welcher gestalten
 <lb n="66"/>angezogne protestation vor euch ergangen, und dem
 <lb n="67"/>unsern dessen urkündtlichen schein umb die gebür erthei-
-<lb n="68"/>len, sich zu seinem rechten haben zubedienen. Das seigen
+<lb n="68"/>len, sich zu seinem rechten haben <unclear cert="low" resp="#joint">zubedienen</unclear>. <unclear cert="low" resp="#joint">Das</unclear> <unclear cert="low" resp="#joint">seigen</unclear>
 <lb n="69"/>wir anderwerts umb euch unser G. L. E. mit
 <lb n="70"/>freuendteydtgnossischen willen und allem guetten zu-
 <lb n="71"/>erwideren erbietig. Gott mit unß allerseits.

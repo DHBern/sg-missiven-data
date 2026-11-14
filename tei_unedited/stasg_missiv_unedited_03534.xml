@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3534</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich antworten auf das Ersuchen von Bern und Schaffhausen, die neuen Zölle in Morsee und St. Gallen abzuschaffen, da diese die Kaufleute belaste. Sie versprechen, die nötigen Schritte einzuleiten und die Antworten weiterzuleiten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich antworten auf das Ersuchen von Bern und Schaffhausen, die neuen Zölle in Morsee und St. Gallen abzuschaffen, da diese die Kaufleute belaste. Sie versprechen, die nötigen Schritte einzuleiten und die Antworten weiterzuleiten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich answer the request from Bern and Schaffhausen to abolish the new tolls in Morsee and St. Gallen, as these burden the merchants. They promise to take the necessary steps and to forward the answers.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,43 +35,43 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3534_14089.jpg" n="1"/>
-<lb n="1"/>Unser fründtlich willig dienst, sambt was wir
-<lb n="2"/>ehren, liebs und guots vermoegend, nebent wuensch-
-<lb n="3"/>ung eines fridsamen und freüdenrychen ge-
-<lb n="4"/>sunden Nüwen Jahrs, zuvor, Fromb, Fürsichtig,
-<lb n="5"/>Eersam, Wyß, Insonders guot fründ und getrüw
-<lb n="6"/>lieb Eidtgenoßen.
-<lb n="7"/>Uber üwer unsern G. L. E. fründtliches er-
-<lb n="8"/>suochschryben, üwerer und unser G. L. E. beid-
-<lb n="9"/>er Stetten, <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Bern</placeName> und <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhusen</placeName>, umb abschaffung
-<lb n="10"/>der, jener zuo Morsee, dißer aber Inn Ihrer
-<lb n="11"/>Statt, zuo üwerer Mitburgeren der sambtlich-
-<lb n="12"/>en Kaufflüthen nit geringen beschwerd unlangst
-<lb n="13"/>ufgerichten nüwen zöllen, durch schryben, Eidt-
-<lb n="14"/>gnoëßisch anzukehren, wöllen wir, zuverhuetung
-<lb n="15"/>schädlicher consequenz und besorgenden mehreren
-<lb n="16"/>nachtheils, nit ermanglen, üwerem begehren nach,
-<lb n="17"/>die nothurfft an jedes orth Insersogen ehisten-
-<lb n="18"/>lich gelangen zelaßen, und werdend üch die er-
-<lb n="19"/>volgenden antworten khünfftig zur nachricht-
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">fründtlich</unclear> willig dienst, sambt was wir
+<lb n="2"/><unclear cert="medium" resp="#joint">ehren</unclear>, liebs und guots <unclear cert="medium" resp="#joint">vermoegend</unclear>, <unclear cert="medium" resp="#joint">nebent</unclear> <unclear cert="medium" resp="#joint">wuensch</unclear>-
+<lb n="3"/><unclear cert="medium" resp="#joint">ung</unclear> <unclear cert="medium" resp="#joint">eines</unclear> <unclear cert="medium" resp="#joint">fridsamen</unclear> und <unclear cert="low" resp="#joint">freüdenrychen</unclear> ge-
+<lb n="4"/><unclear cert="medium" resp="#joint">sunden</unclear> <unclear cert="medium" resp="#joint">Nüwen</unclear> <unclear cert="medium" resp="#joint">Jahrs</unclear>, <unclear cert="medium" resp="#joint">zuvor</unclear>, <unclear cert="medium" resp="#joint">Fromb</unclear>, Fürsichtig,
+<lb n="5"/><unclear cert="medium" resp="#joint">Eersam</unclear>, <unclear cert="medium" resp="#joint">Wyß</unclear>, Insonders guot <unclear cert="medium" resp="#joint">fründ</unclear> und getrüw
+<lb n="6"/>lieb <unclear cert="low" resp="#joint">Eidtgenoßen</unclear>.
+<lb n="7"/><unclear cert="low" resp="#joint">Uber</unclear> üwer <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">fründtliches</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="8"/><unclear cert="low" resp="#joint">suochschryben</unclear>, <unclear cert="low" resp="#joint">üwerer</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">beid</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">Stetten</unclear>, <placeName ref="stadtasg-places-13" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bern</unclear></placeName> und <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhusen</placeName>, umb <unclear cert="medium" resp="#joint">abschaffung</unclear>
+<lb n="10"/>der, <unclear cert="medium" resp="#joint">jener</unclear> zuo <unclear cert="medium" resp="#joint">Morsee</unclear>, <unclear cert="medium" resp="#joint">dißer</unclear> aber Inn <unclear cert="medium" resp="#joint">Ihrer</unclear>
+<lb n="11"/>Statt, zuo <unclear cert="medium" resp="#joint">üwerer</unclear> <unclear cert="medium" resp="#joint">Mitburgeren</unclear> der <unclear cert="medium" resp="#joint">sambtlich</unclear>-
+<lb n="12"/><unclear cert="medium" resp="#joint">en</unclear> <unclear cert="medium" resp="#joint">Kaufflüthen</unclear> nit geringen <unclear cert="low" resp="#joint">beschwerd</unclear> <unclear cert="low" resp="#joint">unlangst</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">ufgerichten</unclear> <unclear cert="low" resp="#joint">nüwen</unclear> <unclear cert="low" resp="#joint">zöllen</unclear>, <unclear cert="low" resp="#joint">durch</unclear> schryben, <unclear cert="medium" resp="#joint">Eidt</unclear>-
+<lb n="14"/><unclear cert="medium" resp="#joint">gnoëßisch</unclear> <unclear cert="medium" resp="#joint">anzukehren</unclear>, <unclear cert="medium" resp="#joint">wöllen</unclear> wir, <unclear cert="medium" resp="#joint">zuverhuetung</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">schädlicher</unclear> <unclear cert="medium" resp="#joint">consequenz</unclear> und <unclear cert="medium" resp="#joint">besorgenden</unclear> <unclear cert="medium" resp="#joint">mehreren</unclear>
+<lb n="16"/><unclear cert="medium" resp="#joint">nachtheils</unclear>, nit <unclear cert="medium" resp="#joint">ermanglen</unclear>, <unclear cert="medium" resp="#joint">üwerem</unclear> <unclear cert="medium" resp="#joint">begehren</unclear> nach,
+<lb n="17"/>die <unclear cert="medium" resp="#joint">nothurfft</unclear> <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="medium" resp="#joint">jedes</unclear> <unclear cert="medium" resp="#joint">orth</unclear> <unclear cert="medium" resp="#joint">Insersogen</unclear> <unclear cert="medium" resp="#joint">ehisten</unclear>-
+<lb n="18"/>lich gelangen zelaßen, und <unclear cert="medium" resp="#joint">werdend</unclear> üch die er-
+<lb n="19"/><unclear cert="medium" resp="#joint">volgenden</unclear> <unclear cert="medium" resp="#joint">antworten</unclear> <unclear cert="medium" resp="#joint">khünfftig</unclear> <unclear cert="medium" resp="#joint">zur</unclear> <unclear cert="medium" resp="#joint">nachricht</unclear>-
 <lb n="20"/>ung ouch participiert werden, So wir üch Inn-
-<lb n="21"/>zwüschend hiedurch antwortlich anfüegen und
-<lb n="22"/>dabey Gottes heilwertigem schirm sambtlich
-<lb n="23"/>wolvefelchen wöllen. Date den <origDate when="1642" resp="#ner">23. t
-<lb n="24"/>Decembris. Ao 1642</origDate>.
+<lb n="21"/><unclear cert="medium" resp="#joint">zwüschend</unclear> <unclear cert="medium" resp="#joint">hiedurch</unclear> <unclear cert="medium" resp="#joint">antwortlich</unclear> <unclear cert="medium" resp="#joint">anfüegen</unclear> und
+<lb n="22"/><unclear cert="medium" resp="#joint">dabey</unclear> <unclear cert="medium" resp="#joint">Gottes</unclear> <unclear cert="medium" resp="#joint">heilwertigem</unclear> <unclear cert="medium" resp="#joint">schirm</unclear> <unclear cert="medium" resp="#joint">sambtlich</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">wolvefelchen</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>. <unclear cert="medium" resp="#joint">Date</unclear> den <origDate when="1642" resp="#ner"><unclear cert="low" resp="#joint">23</unclear>. <unclear cert="low" resp="#joint">t</unclear>
+<lb n="24"/>Decembris. <unclear cert="medium" resp="#joint">Ao</unclear> <unclear cert="medium" resp="#joint">1642</unclear></origDate>.
 <lb n="25"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="26"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3534_14090.jpg" n="2"/>
 <lb n="27"/>[]
 <pb facs="StadtASG_Missive_3534_14091.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3534_14092.jpg" n="4"/>
-<lb n="28"/>Den Frommen, Fuersichtig-
-<lb n="29"/>en, Eersamen, Wysen
-<lb n="30"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht
-<lb n="31"/>der Statt Sanct Gallen</orgName>,
+<lb n="28"/>Den Frommen, <unclear cert="medium" resp="#joint">Fuersichtig</unclear>-
+<lb n="29"/><unclear cert="medium" resp="#joint">en</unclear>, <unclear cert="medium" resp="#joint">Eersamen</unclear>, <unclear cert="medium" resp="#joint">Wysen</unclear>
+<lb n="30"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="31"/>der Statt <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>,
 <lb n="32"/>unsern insonders guoten
-<lb n="33"/>fruenden und getruewen
-<lb n="34"/>lieben Eydtgnossen.
+<lb n="33"/><unclear cert="medium" resp="#joint">fruenden</unclear> und <unclear cert="medium" resp="#joint">getruewen</unclear>
+<lb n="34"/>lieben <unclear cert="medium" resp="#joint">Eydtgnossen</unclear>.
 </p>
         </body>
     </text>

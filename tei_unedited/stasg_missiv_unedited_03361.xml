@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3361</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Der Statthalter und die Richter des Stadtgerichts zu Lindau bitten Bürgermeister und Rat zu St. Gallen, ein beigeschlossenes Edikt öffentlich anzuschlagen und zu publizieren. Es geht um einen allgemeinen Schuldgerichtstag gegen den Tuchscheerer Daniel Staenglin und dessen Ehefrau. Da St. Galler Bürger Gläubiger sein könnten, sollen diese durch die Publikation in Kenntnis gesetzt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Der Statthalter und die Richter des Stadtgerichts zu Lindau bitten Bürgermeister und Rat zu St. Gallen, ein beigeschlossenes Edikt öffentlich anzuschlagen und zu publizieren. Es geht um einen allgemeinen Schuldgerichtstag gegen den Tuchscheerer Daniel Staenglin und dessen Ehefrau. Da St. Galler Bürger Gläubiger sein könnten, sollen diese durch die Publikation in Kenntnis gesetzt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Statthalter and the judges of the city court of Lindau ask the Burgomaster and Council of St. Gallen to publicly post and publish an enclosed edict. It concerns a general debt court day against the cloth shearer Daniel Staenglin and his wife. Since citizens of St. Gallen could be creditors, these are to be informed through the publication.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -72,13 +73,13 @@
 <pb facs="StadtASG_Missive_3361_13364.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3361_13365.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3361_13366.jpg" n="4"/>
-<lb n="36"/>Den edlen, fromen, ehrnvesten,
-<lb n="37"/>fürsüchtigen, ersamen unnd
-<lb n="38"/>weysen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister
-<lb n="39"/>und rhat der statt St. Gallen</orgName>.
-<lb n="40"/>unsern insonders günstigen
-<lb n="41"/>und geliebten herren.
-<lb n="42"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="36"/>Den edlen, <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">ehrnvesten</unclear>,
+<lb n="37"/><unclear cert="low" resp="#joint">fürsüchtigen</unclear>, ersamen unnd
+<lb n="38"/><unclear cert="medium" resp="#joint">weysen</unclear>, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister
+<lb n="39"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">rhat</unclear> der statt St. Gallen</orgName>.
+<lb n="40"/>unsern insonders <unclear cert="low" resp="#joint">günstigen</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">geliebten</unclear> herren.
+<lb n="42"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

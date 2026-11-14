@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3358</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Joseph Hochrütiner bittet Amtsbürgermeister Amadeo Eckholt in Lindau, sein Ausbleiben beim Gericht nicht zu rügen, da ihm der Obrist das Kommen nach Lindau verboten habe. Er bedankt sich für die Bestätigung des Arrests über seinen Sohn und bittet, seine Beschwerde einer Obrigkeit vorzutragen. Er verlangt, dass ihm sein Sohn wieder übergeben und sein Urteil bestätigt werde. Er weist den Vorwurf zurück, er wolle zu den Wiedertäufern ziehen, und bittet, den Arrest über den Sohn nicht aufzuheben, sondern das Kind aus der Stadt zu lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Joseph Hochrütiner bittet Amtsbürgermeister Amadeo Eckholt in Lindau, sein Ausbleiben beim Gericht nicht zu rügen, da ihm der Obrist das Kommen nach Lindau verboten habe. Er bedankt sich für die Bestätigung des Arrests über seinen Sohn und bittet, seine Beschwerde einer Obrigkeit vorzutragen. Er verlangt, dass ihm sein Sohn wieder übergeben und sein Urteil bestätigt werde. Er weist den Vorwurf zurück, er wolle zu den Wiedertäufern ziehen, und bittet, den Arrest über den Sohn nicht aufzuheben, sondern das Kind aus der Stadt zu lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Joseph Hochrütiner asks Amtsbürgermeister Amadeo Eckholt in Lindau not to censure his absence from the court, as the Obrist has forbidden him to come to Lindau. He thanks him for the confirmation of the arrest against his son and asks that his complaint be presented to an authority. He demands that his son be handed back to him and that his judgment be confirmed. He rejects the accusation that he wants to go to the Wiedertäufer and asks that the arrest against the son not be lifted, but that the child be allowed to leave the city.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,44 +36,44 @@
 <p>
 <pb facs="StadtASG_Missive_3358_13351.jpg" n="1"/>
 <lb n="1"/>Ehrnvester, fuernemer, weyßer hoch unnd wolgeachter herr
-<lb n="2"/>Ambtbuergermeister E. E. Wht. sein mein bereit willige
+<lb n="2"/><unclear cert="low" resp="#joint">Ambtbuergermeister</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">mein</unclear> <unclear cert="low" resp="#joint">bereit</unclear> willige
 <lb n="3"/>dienst unnd freuendtlich grueoß zuevor, vff gestriges abent ist mir
-<lb n="4"/>von einem Ehrs. Rath der Statt <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> zuerscheinen verkhuendt
+<lb n="4"/>von <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">Ehrs</unclear>. <unclear cert="low" resp="#joint">Rath</unclear> der Statt <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> zuerscheinen verkhuendt
 <lb n="5"/>worden, da ich dann willig unnd gern wollte erschienen sein, khan
 <lb n="6"/>aber E. E. Wht. unbericht nit lassen, daß der herr Obriste mir
 <lb n="7"/>befehlen lassen, inn die Statt <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> nit mehr zuekhommen, khann
 <lb n="8"/>ich derhalben dißmahls ohne feerere unnd nottrüfftige verordnung
 <lb n="9"/>nit erscheinen, allerfreuendtlichst E. E. Wht. bittende, mir solch auß-
-<lb n="10"/>bleiben in arguem nit zuevermerkhen.
+<lb n="10"/><unclear cert="low" resp="#joint">bleiben</unclear> in arguem nit zuevermerkhen.
 <lb n="11"/>Unnd sintemahlen ohn allen zweifel es meines knaben halben zuethuen,
 <lb n="12"/>so thue ich mich zuevorderst gegen E. E. Wht. vffs allerhöchst bedankhen,
-<lb n="13"/>daß sie meiner gebettnenmaßen eingedenkh geweßen unnd Ihnne den
-<lb n="14"/>angelegten arrest uff meinen knaben noch mahlen Buechßisch confirmieren,
-<lb n="15"/>unnd dieweil ich inn Persohn nit erscheinen khan, und dißer sachen
+<lb n="13"/>daß sie meiner <unclear cert="low" resp="#joint">gebettnenmaßen</unclear> <unclear cert="low" resp="#joint">eingedenkh</unclear> <unclear cert="low" resp="#joint">geweßen</unclear> unnd <unclear cert="low" resp="#joint">Ihnne</unclear> <unclear cert="low" resp="#joint">den</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">angelegten</unclear> <unclear cert="low" resp="#joint">arrest</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">meinen</unclear> <unclear cert="low" resp="#joint">knaben</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">mahlen</unclear> <unclear cert="low" resp="#joint">Buechßisch</unclear> <unclear cert="low" resp="#joint">confirmieren</unclear>,
+<lb n="15"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">dieweil</unclear> ich inn Persohn nit erscheinen khan, und dißer sachen
 <lb n="16"/>halben mit E. E. Wht. schon mündtlich gered, unnd mein beschwerd
-<lb n="17"/>unnd anligen zum theil angezeigt, hab ich khein beßer mittel fünden
-<lb n="18"/>können, alß E. E. Wht. hiemit schrifftlich zueersuchen, unnd dienst-
-<lb n="19"/>freuendtlich zuebitten, mein beschwerd und anligen einer Obrigkeit
-<lb n="20"/>füerzuetragen unnd diß mein gringfüeg schreiben nit zueverachten.
-<lb n="21"/>Unnd sag Erstlich, dieweil ich meiner gegenpart, vor einer unpar-
-<lb n="22"/>teyschen unnd ordenlichen Obrigkeit, deß knabens halben schon red
-<lb n="23"/>unnd antwortt geben (Inmaßen E. E. Wht. uß dem abcopierten
-<lb n="24"/>receß zueersehen) daß sie khein ursach haben andere Obrigkheiten
-<lb n="25"/>ferner darmit zue molestieren, viel weniger mich zue tribulieren,
-<lb n="26"/>bin ihnen auch khein Redt und Antwortt witer zuegeben schuldig, noch geständig,
-<lb n="27"/>dann so fern ich durch die angetrohete gewalthätigkeit, dar-
+<lb n="17"/>unnd anligen zum theil angezeigt, hab ich <unclear cert="low" resp="#joint">khein</unclear> <unclear cert="low" resp="#joint">beßer</unclear> <unclear cert="low" resp="#joint">mittel</unclear> <unclear cert="low" resp="#joint">fünden</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">können</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. hiemit schrifftlich <unclear cert="low" resp="#joint">zueersuchen</unclear>, unnd dienst-
+<lb n="19"/>freuendtlich zuebitten, mein beschwerd <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">anligen</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">Obrigkeit</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">füerzuetragen</unclear> unnd <unclear cert="low" resp="#joint">diß</unclear> mein gringfüeg schreiben nit <unclear cert="low" resp="#joint">zueverachten</unclear>.
+<lb n="21"/>Unnd <unclear cert="low" resp="#joint">sag</unclear> <unclear cert="low" resp="#joint">Erstlich</unclear>, <unclear cert="low" resp="#joint">dieweil</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">meiner</unclear> <unclear cert="low" resp="#joint">gegenpart</unclear>, <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">unpar</unclear>-
+<lb n="22"/><unclear cert="low" resp="#joint">teyschen</unclear> unnd <unclear cert="low" resp="#joint">ordenlichen</unclear> <unclear cert="low" resp="#joint">Obrigkeit</unclear>, <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">knabens</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">schon</unclear> <unclear cert="low" resp="#joint">red</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">antwortt</unclear> <unclear cert="low" resp="#joint">geben</unclear> (<unclear cert="low" resp="#joint">Inmaßen</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. uß dem abcopierten
+<lb n="24"/>receß zueersehen) daß sie <unclear cert="low" resp="#joint">khein</unclear> <unclear cert="low" resp="#joint">ursach</unclear> <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">Obrigkheiten</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">ferner</unclear> <unclear cert="low" resp="#joint">darmit</unclear> zue <unclear cert="low" resp="#joint">molestieren</unclear>, <unclear cert="low" resp="#joint">viel</unclear> <unclear cert="low" resp="#joint">weniger</unclear> mich zue tribulieren,
+<lb n="26"/>bin ihnen auch <unclear cert="low" resp="#joint">khein</unclear> <unclear cert="low" resp="#joint">Redt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Antwortt</unclear> <unclear cert="low" resp="#joint">witer</unclear> zuegeben <unclear cert="low" resp="#joint">schuldig</unclear>, <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">geständig</unclear>,
+<lb n="27"/><unclear cert="low" resp="#joint">dann</unclear> so fern ich durch die angetrohete gewalthätigkeit, dar-
 <lb n="28"/>zu bin gezwungen geweßen, begehr auch die sachen weiter nit
 <lb n="29"/>anhängig zuemachen sonder bitt ein E. E. Obrigkeit, mich bej dem
 <pb facs="StadtASG_Missive_3358_13352.jpg" n="2"/>
 <lb n="30"/>ordenlicher weiß erhaltenen urteil zueschuezen und zuschirmen, mir
-<lb n="31"/>meinen knaben widerumb zuezustellen, unnd mich meinen weg ziehen
-<lb n="32"/>zuelassen.
+<lb n="31"/>meinen knaben widerumb <unclear cert="low" resp="#joint">zuezustellen</unclear>, unnd mich <unclear cert="low" resp="#joint">meinen</unclear> <unclear cert="low" resp="#joint">weg</unclear> <unclear cert="low" resp="#joint">ziehen</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">zuelassen</unclear>.
 <lb n="33"/>Unnd ob ich wol angedeuter massen die sachen nit begehr anhängig zue-
-<lb n="34"/>machen khan ich doch E. E. Wht. unangedeutt nit lassen, daß ich unnd
+<lb n="34"/>machen khan ich doch <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">unangedeutt</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">lassen</unclear>, daß ich unnd
 <lb n="35"/>meine haußfrauw sampt dem knaben, nit nur in höchste traurig-
 <lb n="36"/>kheit durch solche beraubung, oder entziehung gesezt werden,
-<lb n="37"/>sonder auch daß wir allerseits ann unser wolfahrt unnd nahrung
-<lb n="38"/>höchlich verkuerzt unnd verhindert werden, ja unß den eltern, dardurch
+<lb n="37"/>sonder auch daß wir allerseits ann unser wolfahrt unnd <unclear cert="low" resp="#joint">nahrung</unclear>
+<lb n="38"/>höchlich verkuerzt unnd verhindert werden, <unclear cert="low" resp="#joint">ja</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">eltern</unclear>, <unclear cert="low" resp="#joint">dardurch</unclear>
 <lb n="39"/>daß brodt vor dem maul hinweg geschniten wurde, so koente
 <lb n="40"/>sich auch leichtlich begeben, wie ich dann höchlich besorg, daß ehe
 <lb n="41"/>die muetter, alle kinder dahinden ließ, daß sie ehe mich verliesse,
@@ -80,19 +81,19 @@
 <lb n="43"/>scheidung entspringen moechte, dessen allen ich die muetter unnd
 <lb n="44"/>daß khind niemandts anderst schuld koenten geben, alß einer ehrsamen
 <lb n="45"/>obrigkheit der statt <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindauw</placeName>. Unnd waß erstens die
-<lb n="46"/>ursach anlanget, daß ich begehr den knaben mit züenemmen,
-<lb n="47"/>so seindt es dise, daß ich beger ihne sampt der muetter unnd
-<lb n="48"/>übrigen kinden nach dem gesez der natur unnd meiner ehelichen
-<lb n="49"/>pflicht ohn jedermenigclichs beschwerde selbst züerziehen unnd züer-
+<lb n="46"/><unclear cert="low" resp="#joint">ursach</unclear> <unclear cert="low" resp="#joint">anlanget</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">begehr</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">knaben</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">züenemmen</unclear>,
+<lb n="47"/><unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">seindt</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">dise</unclear>, daß ich beger <unclear cert="low" resp="#joint">ihne</unclear> sampt der muetter unnd
+<lb n="48"/>übrigen kinden nach dem gesez <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">natur</unclear> unnd <unclear cert="low" resp="#joint">meiner</unclear> <unclear cert="low" resp="#joint">ehelichen</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">pflicht</unclear> <unclear cert="low" resp="#joint">ohn</unclear> <unclear cert="low" resp="#joint">jedermenigclichs</unclear> <unclear cert="low" resp="#joint">beschwerde</unclear> <unclear cert="low" resp="#joint">selbst</unclear> <unclear cert="low" resp="#joint">züerziehen</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">züer</unclear>-
 <lb n="50"/>halten, die kinder inn aller gottesforcht, zucht unnd erbarkheit
 <lb n="51"/>züerziehen, unnd solche sprachen handtwerkher unnd künst zue lehren
 <lb n="52"/>(darzue ich dann güete mittel habe) die nit nur dem knaben
 <lb n="53"/>sonder auch unß den eltern nottürfftig unnd dienstlich sein, weiß
-<lb n="54"/>also wahrlich nicht waß E. E. Wht. solte verursachen, unß also
+<lb n="54"/>also wahrlich nicht waß <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">solte</unclear> <unclear cert="low" resp="#joint">verursachen</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">also</unclear>
 <lb n="55"/>an unser allerseits wolfahrt und höchsten notturfft züverhinderen,
-<lb n="56"/>unnd mir mein fleisch unnd bluet vonn der seiten züreißen unnd
+<lb n="56"/>unnd <unclear cert="low" resp="#joint">mir</unclear> mein fleisch unnd bluet vonn der seiten <unclear cert="low" resp="#joint">züreißen</unclear> unnd
 <lb n="57"/>ein vonn einer ordenlichen obrigkheit uff Ihr Khayl. Mtt. ansehen
-<lb n="58"/>unnd respect, wolgegründt urtheil züestürzen.
+<lb n="58"/>unnd <unclear cert="low" resp="#joint">respect</unclear>, <unclear cert="low" resp="#joint">wolgegründt</unclear> <unclear cert="low" resp="#joint">urtheil</unclear> <unclear cert="low" resp="#joint">züestürzen</unclear>.
 <lb n="59"/>Daß mein gegenpart füerwenden, ich wolle züe den widertäuffern ziehen,
 <lb n="60"/>weiß ich nit auß waß grund sie solches thuen, sintemal ich wol
 <pb facs="StadtASG_Missive_3358_13353.jpg" n="3"/>
@@ -100,39 +101,39 @@
 <lb n="62"/>darinnen ankomen, ehmahlen, ich gewueßt daß einiger wider-
 <lb n="63"/>tauffer sich darinnen befinde. So waiß ich auch daß khain
 <lb n="64"/>burger auch der geringste inn der Statt <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> sein kind fuer wol
-<lb n="65"/>undenwisen wurde halten, obschon ein her <persName resp="#ner">St. Galler</persName>, ihme
+<lb n="65"/>undenwisen wurde halten, <unclear cert="low" resp="#joint">obschon</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">her</unclear> <persName resp="#ner">St. Galler</persName>, ihme
 <lb n="66"/>den aller subtilsten calvinisten darauß ziehen thette.
 <lb n="67"/>Unnd ob ich wider alles verhoffen, so mir mein khind nit zuonemen
 <lb n="68"/>wolten ferren, so bitt ich doch E. E. Wht. den arrest uber daß-
-<lb n="69"/>selbig nit zuo relaxieren, unnd daß kind auß der statt zuolassen,
+<lb n="69"/>selbig nit zuo relaxieren, unnd daß kind <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">zuolassen</unclear>,
 <lb n="70"/>dann ich bedacht, weil es ja under den frembden sein mueßte,
 <lb n="71"/>eß inn <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> oder dero gerichten, uß gewißen ursachen zuuver-
 <lb n="72"/>dingen, Bitt auch E. E. Wht. wolle verschaffen, daß mir der
 <lb n="73"/>urtheil, umb mein bezahlung ein receß zuogestelt werde.
 <lb n="74"/>Ich gelebe der hoffnung eß werde ein Ehr. Rath selbst beßer be-
 <lb n="75"/>trachten, waß kumer und ungelegenheit, auß abwesenheit der
-<lb n="76"/>kinder vonn den eltern pflegen zuoentspringen, da dann diß
+<lb n="76"/>kinder vonn den eltern <unclear cert="low" resp="#joint">pflegen</unclear> <unclear cert="low" resp="#joint">zuoentspringen</unclear>, da dann diß
 <lb n="77"/>nit die geringste daß die kinder, alle liebe unnd respect gegen
-<lb n="78"/>den eltern verliehren, wann sie ihnen alß jungen auß den augen
-<lb n="79"/>koman, wie man dann inn gemeinen teütschen sprichwort sagt, ab augen
+<lb n="78"/>den eltern verliehren, wann sie ihnen alß jungen auß den <unclear cert="low" resp="#joint">augen</unclear>
+<lb n="79"/><unclear cert="low" resp="#joint">koman</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">dann</unclear> inn gemeinen teütschen sprichwort sagt, ab augen
 <lb n="80"/>ab hertz, damit ein mehrerß nit dann ich thuo mich E. E. Wht.
-<lb n="81"/>zuo beharrlichen gunsten, unnd unß samptlich inn gottes schutz wol-
+<lb n="81"/>zuo beharrlichen gunsten, unnd <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">samptlich</unclear> <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">gottes</unclear> <unclear cert="low" resp="#joint">schutz</unclear> wol-
 <lb n="82"/>bevelchen, Datum <origPlace resp="#ner">Koeßlin</origPlace> <origDate when="1639-07-12" resp="#ner">den 12 Julij 1639</origDate>
-<lb n="83"/>E. E. Wht.
-<lb n="84"/>dienstgeflißner
-<lb n="85"/><persName role="issuer" resp="#ner">Joseph Hochrütiner</persName> v.
-<lb n="86"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Ga.</placeName>
-<lb n="87"/>Dem ehrnvesten, fürnemen, hoch und wol-
+<lb n="83"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="84"/><unclear cert="low" resp="#joint">dienstgeflißner</unclear>
+<lb n="85"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Joseph</unclear> <unclear cert="low" resp="#joint">Hochrütiner</unclear></persName> <unclear cert="low" resp="#joint">v</unclear>.
+<lb n="86"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Ga</unclear>.</placeName>
+<lb n="87"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">ehrnvesten</unclear>, <unclear cert="low" resp="#joint">fürnemen</unclear>, <unclear cert="low" resp="#joint">hoch</unclear> und wol-
 <lb n="88"/>weisen herren <persName role="recipient" resp="#ner">Amadeo Eckholt</persName>, der statt
-<lb n="89"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> amptsburgermeistern zuhanden
-<lb n="90"/>in
-<lb n="91"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>.
+<lb n="89"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> <unclear cert="low" resp="#joint">amptsburgermeistern</unclear> <unclear cert="low" resp="#joint">zuhanden</unclear>
+<lb n="90"/><unclear cert="low" resp="#joint">in</unclear>
+<lb n="91"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lindaw</unclear></placeName>.
 <pb facs="StadtASG_Missive_3358_13354.jpg" n="4"/>
 <lb n="92"/>Copia Schreibens.
 <lb n="93"/>Ann
-<lb n="94"/>Herren Burgermeister <persName role="recipient" resp="#ner">Amandus Eckholten</persName>.
-<lb n="95"/>Vonn
-<lb n="96"/><persName role="issuer" resp="#ner">Joseph Hochreütiner</persName>,
+<lb n="94"/>Herren Burgermeister <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Amandus</unclear> <unclear cert="low" resp="#joint">Eckholten</unclear></persName>.
+<lb n="95"/><unclear cert="low" resp="#joint">Vonn</unclear>
+<lb n="96"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Joseph</unclear> <unclear cert="low" resp="#joint">Hochreütiner</unclear></persName>,
 </p>
         </body>
     </text>

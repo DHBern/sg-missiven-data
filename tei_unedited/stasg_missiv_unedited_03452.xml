@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3452</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihre Bürgerin Dorothea Meyerin anzuweisen, dem Zürcher Bürger Felix Amann eine Urkunde über den Kauf eines halben Hauses in Zürich vorzulegen. Amann habe das Haus von seinem Bruder Jörg Amann gekauft und für frei gehalten, es sei aber angeblich noch mit 400 Pfund belastet. Zürich bittet um Zusendung des Originals oder einer vidimierte Kopie.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihre Bürgerin Dorothea Meyerin anzuweisen, dem Zürcher Bürger Felix Amann eine Urkunde über den Kauf eines halben Hauses in Zürich vorzulegen. Amann habe das Haus von seinem Bruder Jörg Amann gekauft und für frei gehalten, es sei aber angeblich noch mit 400 Pfund belastet. Zürich bittet um Zusendung des Originals oder einer vidimierte Kopie.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to instruct their citizen Dorothea Meyerin to present to the citizen of Zürich Felix Amann a deed regarding the purchase of a half-house in Zürich. Amann had bought the house from his brother Jörg Amann and had considered it free, but it is allegedly still encumbered with 400 pounds. Zürich asks for the sending of the original or a vidimmed copy.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -39,33 +40,33 @@
 <lb n="3"/>ehrsam, wyß innsonders guot fründt, und getrüw
 <lb n="4"/>lieb <orgName resp="#ner">Eydtgnossen</orgName>.
 <lb n="5"/>Es hat unß unser besonders getrüwer lieber burger
-<lb n="6"/>Hr. <persName resp="#ner">Felix Aman</persName> predicant zuo <placeName ref="stadtasg-places-239" cert="medium" resp="#ner">Toeß</placeName> gebürchlichs flyßes
-<lb n="7"/>zuo vernemmen geben, waß maßen er vor etwel-
-<lb n="8"/>jahren von synem lieben bruoder <persName resp="#ner">Jörg Amann</persName>, ein
-<lb n="9"/>halbes huß allhie inn unser statt gelegen, für frey,
-<lb n="10"/>ledig und eigen, biltz an 75 lb. so daruf gestanden,
-<lb n="11"/>aberkaufft, nun hete er gehofft, es wurde solch syn er-
-<lb n="12"/>kaufft huß wyters, dann wie gehoert, nit verschrib-
+<lb n="6"/>Hr. <persName resp="#ner">Felix Aman</persName> predicant zuo <placeName ref="stadtasg-places-239" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Toeß</unclear></placeName> <unclear cert="low" resp="#joint">gebürchlichs</unclear> <unclear cert="low" resp="#joint">flyßes</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">vernemmen</unclear> geben, waß maßen er vor etwel-
+<lb n="8"/>jahren von synem <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> <persName resp="#ner">Jörg Amann</persName>, ein
+<lb n="9"/>halbes huß allhie inn unser statt gelegen, <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">frey</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">ledig</unclear> und eigen, biltz an 75 <unclear cert="low" resp="#joint">lb</unclear>. <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">daruf</unclear> gestanden,
+<lb n="11"/>aberkaufft, nun hete er gehofft, es <unclear cert="low" resp="#joint">wurde</unclear> <unclear cert="low" resp="#joint">solch</unclear> <unclear cert="low" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="12"/><unclear cert="low" resp="#joint">kaufft</unclear> <unclear cert="low" resp="#joint">huß</unclear> <unclear cert="low" resp="#joint">wyters</unclear>, dann wie gehoert, nit verschrib-
 <lb n="13"/>en syn, so werde er aber anjetzo berichtet, samb
-<lb n="14"/>es noch umb 400 lb. verwhilen und pfandthafft ge-
-<lb n="15"/>machet were, und das benanntlichen der brief
-<lb n="16"/>hinder üweres burgers <persName resp="#ner">Lother Erenen</persName> deß schnyd-
-<lb n="17"/>ers ehrfrauw <persName resp="#ner">Dorothea Meyerin</persName> handen ligen
-<lb n="18"/>solte, underthänig bittende wir woltend deßwegen
-<lb n="19"/>uch unseren G. L. E. zuoschryben, damit er die war-
-<lb n="20"/>heit zuo syner nothwendigen nachrichtung in er-
-<lb n="21"/>fahrung bringen moechte; wann nun wir be-
+<lb n="14"/>es noch umb 400 <unclear cert="low" resp="#joint">lb</unclear>. <unclear cert="low" resp="#joint">verwhilen</unclear> und pfandthafft ge-
+<lb n="15"/>machet were, und <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">benanntlichen</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">brief</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">hinder</unclear> <unclear cert="low" resp="#joint">üweres</unclear> <unclear cert="low" resp="#joint">burgers</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Lother</unclear> <unclear cert="low" resp="#joint">Erenen</unclear></persName> deß schnyd-
+<lb n="17"/>ers ehrfrauw <persName resp="#ner">Dorothea Meyerin</persName> <unclear cert="low" resp="#joint">handen</unclear> <unclear cert="low" resp="#joint">ligen</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">solte</unclear>, <unclear cert="low" resp="#joint">underthänig</unclear> bittende wir woltend deßwegen
+<lb n="19"/>uch unseren <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">zuoschryben</unclear>, damit er die war-
+<lb n="20"/>heit zuo syner nothwendigen nachrichtung <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="21"/><unclear cert="low" resp="#joint">fahrung</unclear> bringen moechte; wann nun wir be-
 <lb n="22"/>sagtem herren Felix Amen solch syn nit unzim-
 <lb n="23"/>endes begehren nit versagen, sonder willfährig
 <lb n="24"/>erschnen wollen: Alß gelangt hiemit an uch
-<lb n="25"/>unser fründt-Eydtgnoßisches ersuochen, Ihr woll-
-<lb n="26"/>int ohnschwer besagte Dorothea Meyerin dahin
+<lb n="25"/>unser <unclear cert="low" resp="#joint">fründt-Eydtgnoßisches</unclear> <unclear cert="low" resp="#joint">ersuochen</unclear>, Ihr woll-
+<lb n="26"/>int <unclear cert="low" resp="#joint">ohnschwer</unclear> besagte Dorothea Meyerin dahin
 <lb n="27"/>halten, daß sy angedüte verschrybung, wan sy
 <lb n="28"/>anderst eine hat unß eintweders in originali,
 <lb n="29"/>oder aber ein vidimierte copy von derselben zuo-
 <lb n="30"/>senden, oder aber selbsten sich allhero verfüegen
-<lb n="31"/>thueyge. Ein solches sygert wir umb uch unser G.
-<lb n="32"/>L. E. von deß unseren wegen uff derglychen und
+<lb n="31"/>thueyge. Ein solches sygert wir umb uch unser <unclear cert="low" resp="#joint">G</unclear>.
+<lb n="32"/><unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">derglychen</unclear> und
 <lb n="33"/>andere occurrentzen zuo beschulden gantz geneigt,
 <lb n="34"/>goettlichem gnadenschirm unß damit samptlich
 <lb n="35"/>wolbevehlende. Date den <origDate when="1641-08-27" resp="#ner">27. Augusti. 1641</origDate>.

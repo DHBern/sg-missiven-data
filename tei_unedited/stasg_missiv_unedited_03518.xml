@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3518</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Henricus Oraus, Pfarrer zu Hanau und Inspektor, bittet Bürgermeister und Rat zu St. Gallen, den für die armen Hanauer bestimmten Segen (Spende) ausschliesslich den dortigen bedürftigen Pfarrern, Kirchen- und Schulbediensteten zukommen zu lassen. Er verweist darauf, dass diese allein um Hilfe gebeten hätten und warnt davor, auch andere ausländische Kirchen, die nichts verlangt hätten, daran zu beteiligen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Henricus Oraus, Pfarrer zu Hanau und Inspektor, bittet Bürgermeister und Rat zu St. Gallen, den für die armen Hanauer bestimmten Segen (Spende) ausschliesslich den dortigen bedürftigen Pfarrern, Kirchen- und Schulbediensteten zukommen zu lassen. Er verweist darauf, dass diese allein um Hilfe gebeten hätten und warnt davor, auch andere ausländische Kirchen, die nichts verlangt hätten, daran zu beteiligen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Henricus Oraus, pastor of Hanau and Inspector, asks the Burgomaster and Council of St. Gallen to let the blessing (donation) intended for the poor of Hanau go exclusively to the needy pastors, church and school officials there. He refers to the fact that these alone had asked for help and warns against involving other foreign churches, which had not requested anything, in it.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -77,12 +78,12 @@
 <lb n="40"/>[]
 <pb facs="StadtASG_Missive_3518_14027.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3518_14028.jpg" n="4"/>
-<lb n="41"/>Denen wohledlen, gestrengen, ehren-
-<lb n="42"/>vesten, fürsichtig- und hochwohlweisen
-<lb n="43"/>herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Rath
-<lb n="44"/>der loblich Statt Sangallen</orgName>,
-<lb n="45"/>unsern großgünstigen und hochge-
-<lb n="46"/>ehrten herrn, fautoren.
+<lb n="41"/>Denen <unclear cert="medium" resp="#joint">wohledlen</unclear>, <unclear cert="medium" resp="#joint">gestrengen</unclear>, <unclear cert="medium" resp="#joint">ehren</unclear>-
+<lb n="42"/><unclear cert="medium" resp="#joint">vesten</unclear>, <unclear cert="medium" resp="#joint">fürsichtig</unclear>- <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">hochwohlweisen</unclear>
+<lb n="43"/>herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeistern</unclear> und Rath
+<lb n="44"/>der <unclear cert="medium" resp="#joint">loblich</unclear> Statt <unclear cert="low" resp="#joint">Sangallen</unclear></orgName>,
+<lb n="45"/>unsern <unclear cert="low" resp="#joint">großgünstigen</unclear> und <unclear cert="low" resp="#joint">hochge</unclear>-
+<lb n="46"/><unclear cert="low" resp="#joint">ehrten</unclear> <unclear cert="low" resp="#joint">herrn</unclear>, <unclear cert="low" resp="#joint">fautoren</unclear>.
 </p>
         </body>
     </text>

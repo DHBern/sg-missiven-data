@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3140</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben vom 11. März 1636 (stilner Termin) der Mündelheimer. Sie übergeben die von ihren Bürgern, die in der Äbelschen Erbschaft interessiert sind, eingereichten Bilanzen und bitten Mündelheim, in der Sache weiter zu verfahren. Sie empfehlen die St. Galler Kaufleute erneut und hoffen, dass Mündelheim ihnen bei der Äbelschen Erbschaft zu ihrem Ausstand verhelfen wird, um den Handel und die Korrespondenz aufrechtzuerhalten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben vom 11. März 1636 (stilner Termin) der Mündelheimer. Sie übergeben die von ihren Bürgern, die in der Äbelschen Erbschaft interessiert sind, eingereichten Bilanzen und bitten Mündelheim, in der Sache weiter zu verfahren. Sie empfehlen die St. Galler Kaufleute erneut und hoffen, dass Mündelheim ihnen bei der Äbelschen Erbschaft zu ihrem Ausstand verhelfen wird, um den Handel und die Korrespondenz aufrechtzuerhalten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to a letter of 11 March 1636 (old style) from Mündelheim. They hand over the balances submitted by their citizens, who are interested in the Äbel inheritance, and ask Mündelheim to proceed further in the matter. They recommend the merchants of St. Gallen again and hope that Mündelheim will help them with their claim in the Äbel inheritance, in order to maintain trade and correspondence.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,37 +38,37 @@
 <lb n="1"/>Unser freündtlich willig dienst, und was
 <lb n="2"/>zuvor, Edle Ehrenvest, Fürsichtig Eersam und Weise,
 <lb n="3"/>besonders liebe Herren und gute Freünde.
-<lb n="4"/>was dieselben under dato . <date resp="#ner">11 . Martij stil: nov:</date> weg
-<lb n="5"/>unsern verburgerten bey der Anwäylischen Erb-
-<lb n="6"/>schafft interessirten kauffleüthen, uns über unser vorig
-<lb n="7"/>zu gunst ihren, abgangen intercession
-<lb n="8"/>schreiben, in widerantwort zugeschriben, namlichen,
-<lb n="9"/>weil herrn vor allen dingen, umb weittere nothwendig
+<lb n="4"/>was dieselben under dato . <date resp="#ner">11 . <unclear cert="low" resp="#joint">Martij</unclear> <unclear cert="low" resp="#joint">stil</unclear>: <unclear cert="low" resp="#joint">nov</unclear>:</date> <unclear cert="low" resp="#joint">weg</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">verburgerten</unclear> <unclear cert="low" resp="#joint">bey</unclear> der <unclear cert="low" resp="#joint">Anwäylischen</unclear> <unclear cert="low" resp="#joint">Erb</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">schafft</unclear> <unclear cert="low" resp="#joint">interessirten</unclear> <unclear cert="low" resp="#joint">kauffleüthen</unclear>, uns über <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">vorig</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">gunst</unclear> <unclear cert="low" resp="#joint">ihren</unclear>, abgangen intercession
+<lb n="8"/><unclear cert="low" resp="#joint">schreiben</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">widerantwort</unclear> <unclear cert="low" resp="#joint">zugeschriben</unclear>, <unclear cert="low" resp="#joint">namlichen</unclear>,
+<lb n="9"/><unclear cert="low" resp="#joint">weil</unclear> herrn vor allen dingen, umb <unclear cert="low" resp="#joint">weittere</unclear> <unclear cert="low" resp="#joint">nothwendig</unclear>
 <lb n="10"/>information willen, die nothurfft erfordern, das
 <lb n="11"/>von den Unsrigen, über ihre habende praetensionen
-<lb n="12"/>begreiffliche special conten uffgesetzt, und E. E. W.
-<lb n="13"/>seiners Innhalts communicirt werden; haben wir
-<lb n="14"/>nit erscheinen khönnen, und darauff nit
-<lb n="15"/>ermanglet die Unsrige deßen weittere zuavisirn,
-<lb n="16"/>welche dann darüber weil beigefügte Bilanzen
-<lb n="17"/>uns übergeben, mit gehorsamem Pitten E. E. W.
-<lb n="18"/>solche nit allein in der sach ferner haben zu procedie-
-<lb n="19"/>ren, zu übersenden; sonder auch sie gegen deroselben
-<lb n="20"/>nochmahlen bester maaßen zu recomendiren; haben
-<lb n="21"/>wir solches zuthun hiemit nit underlaßen wollen;
-<lb n="22"/>einichen Zweiffel tragende, E. E. W. werden den
+<lb n="12"/>begreiffliche special conten uffgesetzt, und <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>.
+<lb n="13"/><unclear cert="low" resp="#joint">seiners</unclear> <unclear cert="low" resp="#joint">Innhalts</unclear> <unclear cert="low" resp="#joint">communicirt</unclear> werden; haben <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="14"/>nit <unclear cert="low" resp="#joint">erscheinen</unclear> <unclear cert="low" resp="#joint">khönnen</unclear>, und <unclear cert="low" resp="#joint">darauff</unclear> <unclear cert="low" resp="#joint">nit</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">ermanglet</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Unsrige</unclear> <unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">weittere</unclear> <unclear cert="low" resp="#joint">zuavisirn</unclear>,
+<lb n="16"/><unclear cert="low" resp="#joint">welche</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">darüber</unclear> <unclear cert="low" resp="#joint">weil</unclear> <unclear cert="low" resp="#joint">beigefügte</unclear> <unclear cert="low" resp="#joint">Bilanzen</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">uns</unclear> übergeben, mit <unclear cert="low" resp="#joint">gehorsamem</unclear> <unclear cert="low" resp="#joint">Pitten</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>.
+<lb n="18"/><unclear cert="low" resp="#joint">solche</unclear> nit allein in <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">ferner</unclear> haben <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">procedie</unclear>-
+<lb n="19"/><unclear cert="low" resp="#joint">ren</unclear>, <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">übersenden</unclear>; <unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">gegen</unclear> <unclear cert="low" resp="#joint">deroselben</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">nochmahlen</unclear> <unclear cert="low" resp="#joint">bester</unclear> <unclear cert="low" resp="#joint">maaßen</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">recomendiren</unclear>; <unclear cert="low" resp="#joint">haben</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">solches</unclear> <unclear cert="low" resp="#joint">zuthun</unclear> hiemit nit <unclear cert="low" resp="#joint">underlaßen</unclear> <unclear cert="low" resp="#joint">wollen</unclear>;
+<lb n="22"/><unclear cert="low" resp="#joint">einichen</unclear> <unclear cert="low" resp="#joint">Zweiffel</unclear> <unclear cert="low" resp="#joint">tragende</unclear>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. werden den
 <lb n="23"/>Unsrigen, damit die comercien und gute correspon-
 <lb n="24"/>denz ferner erhalten und continuirt werden möge,
-<lb n="25"/>ohne das gewillet und geneigt sein, zu ihrem bey ange-
+<lb n="25"/>ohne das gewillet und geneigt sein, <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">ihrem</unclear> bey ange-
 <lb n="26"/>zogener Anweylischen Erbschafft, vor meniglich zu ihrem
-<lb n="27"/>Ußstand zueverhelffen; wie nun solches der
+<lb n="27"/>Ußstand zueverhelffen; wie <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">solches</unclear> der
 <lb n="28"/>billigkheit an sich selbsten gemaeß, begeren es umb
 <lb n="29"/>sie in all fürfallend occasionen wir hinwiderumb
 <lb n="30"/>zubeschulden, Sie und uns dabej dem schirm gött-
-<lb n="31"/>licher gnaden wol befehlende. Datum den . <origDate when="1636-03-10" resp="#ner">10 . Martij
-<lb n="32"/>Ao 1636</origDate>.
-<lb n="33"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
-<lb n="34"/>der Statt Sanctgallen</orgName>.
+<lb n="31"/>licher gnaden wol <unclear cert="low" resp="#joint">befehlende</unclear>. <unclear cert="low" resp="#joint">Datum</unclear> <unclear cert="low" resp="#joint">den</unclear> . <origDate when="1636-03-10" resp="#ner">10 . <unclear cert="low" resp="#joint">Martij</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">1636</unclear></origDate>.
+<lb n="33"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und Raht
+<lb n="34"/>der Statt <unclear cert="low" resp="#joint">Sanctgallen</unclear></orgName>.
 <lb n="35"/>Den Edlen, Ehrenvesten, Fürsichtig, Eersam und Weisen
 <lb n="36"/><orgName role="recipient" resp="#ner">Pflegern, Burgermeister und Raht zuer der Statt
 <lb n="37"/>Mündelheimb</orgName>, unsern besonders lieben Herren und gute

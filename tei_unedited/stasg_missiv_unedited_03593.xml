@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3593</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben der Appenzeller. Sie bitten Landammann und Rat zu Appenzell, ihren Landsknechten Othmar Tobler und Bernhard Daubenmann, die wegen eines Streits einen neuen Rechtstermin am 14. oder 24. Mai haben, zu diesem Termin unbeschwert zu machen und ihn zu besuchen. Sie bieten im Gegenzug ähnliche Dienste an.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben der Appenzeller. Sie bitten Landammann und Rat zu Appenzell, ihren Landsknechten Othmar Tobler und Bernhard Daubenmann, die wegen eines Streits einen neuen Rechtstermin am 14. oder 24. Mai haben, zu diesem Termin unbeschwert zu machen und ihn zu besuchen. Sie bieten im Gegenzug ähnliche Dienste an.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to a letter from the Appenzellers. They ask Landammann and Council of Appenzell to make their Landsknechte Othmar Tobler and Bernhard Daubenmann, who have a new court day on 14 or 24 May because of a dispute, unencumbered for this term and to attend it. In return, they offer similar services.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,24 +35,24 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3593_14337.jpg" n="1"/>
-<lb n="1"/>inconcept.
+<lb n="1"/><unclear cert="low" resp="#joint">inconcept</unclear>.
 <lb n="2"/>Unser freündt-, nachbarlich, willig dienst, und was wir ehrn,
 <lb n="3"/>liebs, und guets vermögend zuvor, fromm, fürsichtig, ehrsam,
-<lb n="4"/>weiß, innsonders guet freündt, und wol vertraüwt liebe
+<lb n="4"/>weiß, innsonders guet freündt, und <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">vertraüwt</unclear> liebe
 <lb n="5"/>nachbarn.
 <lb n="6"/>Auff eüwr, unser wolvertrauwten lieben nachbarn an uns ab-
-<lb n="7"/>gangen schriben, habend wir eüwerm angehörign landtsknecht <persName resp="#ner">Othmar Toblern</persName>,
-<lb n="8"/>und <persName resp="#ner">Bernhardt Daubenmann</persName>, wegn bewußtn fräffels einen andern
-<lb n="9"/>rechtstag, was heüt uber acht tag, so da sin wirt der <date resp="#ner">14./24.t diß
-<lb n="10"/>monats Mayen</date> ansezn wollen, freündtlich bittendt, ihr, unser wol-
+<lb n="7"/><unclear cert="low" resp="#joint">gangen</unclear> <unclear cert="low" resp="#joint">schriben</unclear>, habend wir eüwerm angehörign landtsknecht <persName resp="#ner">Othmar Toblern</persName>,
+<lb n="8"/>und <persName resp="#ner"><unclear cert="low" resp="#joint">Bernhardt</unclear> <unclear cert="low" resp="#joint">Daubenmann</unclear></persName>, <unclear cert="low" resp="#joint">wegn</unclear> <unclear cert="low" resp="#joint">bewußtn</unclear> <unclear cert="low" resp="#joint">fräffels</unclear> <unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">andern</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">rechtstag</unclear>, was heüt uber acht tag, so <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">wirt</unclear> der <date resp="#ner"><unclear cert="low" resp="#joint">14./24.t</unclear> <unclear cert="low" resp="#joint">diß</unclear>
+<lb n="10"/>monats Mayen</date> <unclear cert="low" resp="#joint">ansezn</unclear> <unclear cert="low" resp="#joint">wollen</unclear>, <unclear cert="low" resp="#joint">freündtlich</unclear> <unclear cert="low" resp="#joint">bittendt</unclear>, ihr, unser wol-
 <lb n="11"/>vertraüwt lieb nachbarn, ihme angesezten termin ohnbeschwert
-<lb n="12"/>wüßnhafft machn, und selbgn zubesuechn anhaltn wöllend, das sind
-<lb n="13"/>wir in derglichen und andern hinwiderumb zubeschuldn urbiethig,
-<lb n="14"/>Gottes getraüwer uffsicht uns zumahl wohl befehlend.
+<lb n="12"/><unclear cert="low" resp="#joint">wüßnhafft</unclear> <unclear cert="low" resp="#joint">machn</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">selbgn</unclear> <unclear cert="low" resp="#joint">zubesuechn</unclear> <unclear cert="low" resp="#joint">anhaltn</unclear> <unclear cert="low" resp="#joint">wöllend</unclear>, das sind
+<lb n="13"/>wir in derglichen und andern <unclear cert="low" resp="#joint">hinwiderumb</unclear> <unclear cert="low" resp="#joint">zubeschuldn</unclear> <unclear cert="low" resp="#joint">urbiethig</unclear>,
+<lb n="14"/>Gottes <unclear cert="low" resp="#joint">getraüwer</unclear> <unclear cert="low" resp="#joint">uffsicht</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">zumahl</unclear> <unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">befehlend</unclear>.
 <lb n="15"/>Datum dn <origDate when="1644" resp="#ner">7.tn Maji. Ao 1644</origDate>.
-<lb n="16"/><orgName role="issuer" resp="#ner">Burgermeister und raht etc</orgName>.
-<lb n="17"/>An <orgName ref="stadtasg-actors-506" cert="medium" role="recipient" resp="#ner">landtammn, und raht
-<lb n="18"/>zu Appenzell</orgName>. etc.
+<lb n="16"/><orgName role="issuer" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">raht</unclear> <unclear cert="low" resp="#joint">etc</unclear></orgName>.
+<lb n="17"/><unclear cert="low" resp="#joint">An</unclear> <orgName ref="stadtasg-actors-506" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">landtammn</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">raht</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">Appenzell</unclear></orgName>. <unclear cert="low" resp="#joint">etc</unclear>.
 <pb facs="StadtASG_Missive_3593_14338.jpg" n="2"/>
 </p>
         </body>

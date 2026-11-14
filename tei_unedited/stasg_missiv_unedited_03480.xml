@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3480</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat in den Aussenroden des Landes Appenzell informieren Bürgermeister und Rat zu St. Gallen über den aus St. Gallen geflohenen Soldaten Hans Jakob Rothenburger und den jungen Passthart. Sie berichten, dass beide am Dienstagabend nach Trogen gekommen und dann in unbekannte Richtung abgereist seien. Sie bitten St. Gallen, den Namen des Landammanns zu nennen, der an der Tat beteiligt gewesen sein soll, damit sie ihn bestrafen können.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat in den Aussenroden des Landes Appenzell informieren Bürgermeister und Rat zu St. Gallen über den aus St. Gallen geflohenen Soldaten Hans Jakob Rothenburger und den jungen Passthart. Sie berichten, dass beide am Dienstagabend nach Trogen gekommen und dann in unbekannte Richtung abgereist seien. Sie bitten St. Gallen, den Namen des Landammanns zu nennen, der an der Tat beteiligt gewesen sein soll, damit sie ihn bestrafen können.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council in the Outer Rodes of the Land of Appenzell inform the Burgomaster and Council of St. Gallen about the soldier Hans Jakob Rothenburger, who fled from St. Gallen, and the young Passthart. They report that both arrived in Trogen on Tuesday evening and then departed in an unknown direction. They ask St. Gallen to name the Landammann who is said to have been involved in the deed, so that they can punish him.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -43,50 +44,50 @@
 <lb n="7"/>Unß hat. unsser getreuwer lieber. landt-
 <lb n="8"/>aman. und Panerrherr. Herr <persName resp="#ner">Johans Thaurr</persName>,
 <lb n="9"/>mit Mehrerem brichtet. was wegen Euwerer
-<lb n="10"/>Eheren abgesandten. Herren <persName resp="#ner">Davidt Cuontzen</persName>,
-<lb n="11"/>waß er ihne verborrgen fuergebracht. und dann
-<lb n="12"/>daßselbige schriben, sambt Ingelegter Copeii
-<lb n="13"/>ß Ihme der Herr <persName resp="#ner">Cuontz</persName>, uberliffrret. auch
+<lb n="10"/>Eheren abgesandten. <unclear cert="low" resp="#joint">Herren</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Davidt</unclear> <unclear cert="low" resp="#joint">Cuontzen</unclear></persName>,
+<lb n="11"/><unclear cert="low" resp="#joint">waß</unclear> er <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">verborrgen</unclear> <unclear cert="low" resp="#joint">fuergebracht</unclear>. und dann
+<lb n="12"/>daßselbige schriben, sambt <unclear cert="low" resp="#joint">Ingelegter</unclear> <unclear cert="low" resp="#joint">Copeii</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">ß</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> der Herr <persName resp="#ner">Cuontz</persName>, uberliffrret. auch
 <lb n="14"/>eroffnet. Betreffende einß theilß. den zu
 <lb n="15"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner">liudow.</placeName> uszgetrettnen soldaten. Namens
-<lb n="16"/><persName resp="#ner">Hanß Jacob Rothenburger</persName>. anders theils aber
-<lb n="17"/>die Ihenigen. ß verschinen Zinstagrs. Ine
-<lb n="18"/><persName resp="#ner">Rothenburger</persName>. habend helffen. uß iuwerer
+<lb n="16"/><persName resp="#ner">Hanß Jacob <unclear cert="low" resp="#joint">Rothenburger</unclear></persName>. <unclear cert="low" resp="#joint">anders</unclear> <unclear cert="low" resp="#joint">theils</unclear> aber
+<lb n="17"/>die <unclear cert="low" resp="#joint">Ihenigen</unclear>. <unclear cert="low" resp="#joint">ß</unclear> <unclear cert="low" resp="#joint">verschinen</unclear> <unclear cert="low" resp="#joint">Zinstagrs</unclear>. <unclear cert="low" resp="#joint">Ine</unclear>
+<lb n="18"/><persName resp="#ner"><unclear cert="low" resp="#joint">Rothenburger</unclear></persName>. <unclear cert="low" resp="#joint">habend</unclear> <unclear cert="low" resp="#joint">helffen</unclear>. <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">iuwerer</unclear>
 <lb n="19"/>statt. und der Euwrigen dieneren gewalt
 <lb n="20"/>zebringen. Und Alß wir nun unssers
 <lb n="21"/>Herren landtamans. Muendtlichen bericht
 <lb n="22"/>anghört. und dann daß schriben. in Ihme
 <lb n="23"/>selbsten. auch ab lessen lassen. Alß habend
-<lb n="24"/>wir nit wellen fuer uber gehn, sonderen
-<lb n="25"/>alßbalden. Poten ußzeschickhen. wie Mehr-
+<lb n="24"/>wir nit wellen <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">uber</unclear> <unclear cert="low" resp="#joint">gehn</unclear>, <unclear cert="low" resp="#joint">sonderen</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">alßbalden</unclear>. <unclear cert="low" resp="#joint">Poten</unclear> <unclear cert="low" resp="#joint">ußzeschickhen</unclear>. wie Mehr-
 <lb n="26"/>gedachter <persName resp="#ner">Rothenburger</persName>. und dann der
-<lb n="27"/><persName resp="#ner">Junge Passthart</persName> zubetretten wärrend.
+<lb n="27"/><persName resp="#ner">Junge <unclear cert="low" resp="#joint">Passthart</unclear></persName> <unclear cert="low" resp="#joint">zubetretten</unclear> <unclear cert="low" resp="#joint">wärrend</unclear>.
 <lb n="28"/>Nun aber habend unß. die unssrige
 <lb n="29"/>ußgeschickhten Poten. widerumb. In langen
 <lb n="30"/>lassen. daß verschinen Zinstag. oder wie
-<lb n="31"/>man pflecht zuosagen Zinstabent. ß Bald
+<lb n="31"/>man <unclear cert="low" resp="#joint">pflecht</unclear> <unclear cert="low" resp="#joint">zuosagen</unclear> <unclear cert="low" resp="#joint">Zinstabent</unclear>. <unclear cert="low" resp="#joint">ß</unclear> Bald
 <lb n="32"/>der <persName resp="#ner">Basthart</persName>. Nach <placeName ref="stadtasg-places-219" cert="medium" resp="#ner">Tuffen</placeName> kommen. habend
 <lb n="33"/>er und der <persName resp="#ner">Rothenburger</persName>. alßbalden. sich
-<lb n="34"/>uß
+<lb n="34"/><unclear cert="low" resp="#joint">uß</unclear>
 <pb facs="StadtASG_Missive_3480_13870.jpg" n="2"/>
-<lb n="35"/>dem wein beim hauß begeben. und moege nie-
-<lb n="36"/>mandts wüssen. uff weliche seithen sÿ bede
-<lb n="37"/>mit ein anderen zogen seÿend. Im sahl aber
-<lb n="38"/>sÿ nach dato koentend betreten, wollend wir
-<lb n="39"/>euch zuo euwerem. und unserem nach richt
-<lb n="40"/>wohl wüssen zuefhalten. Belangende dann
+<lb n="35"/>dem <unclear cert="low" resp="#joint">wein</unclear> <unclear cert="low" resp="#joint">beim</unclear> <unclear cert="low" resp="#joint">hauß</unclear> <unclear cert="low" resp="#joint">begeben</unclear>. und <unclear cert="low" resp="#joint">moege</unclear> <unclear cert="low" resp="#joint">nie</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">mandts</unclear> wüssen. uff weliche seithen sÿ bede
+<lb n="37"/>mit ein anderen zogen <unclear cert="low" resp="#joint">seÿend</unclear>. <unclear cert="low" resp="#joint">Im</unclear> <unclear cert="low" resp="#joint">sahl</unclear> <unclear cert="low" resp="#joint">aber</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">sÿ</unclear> <unclear cert="low" resp="#joint">nach</unclear> dato koentend betreten, wollend wir
+<lb n="39"/>euch zuo euwerem. und <unclear cert="low" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">richt</unclear>
+<lb n="40"/>wohl wüssen <unclear cert="low" resp="#joint">zuefhalten</unclear>. <unclear cert="low" resp="#joint">Belangende</unclear> dann
 <lb n="41"/>unseren Landman. so auch etwas mit der
-<lb n="42"/>dadt. oder von Mundt. ver üebt hete. so wollend
+<lb n="42"/>dadt. oder von <unclear cert="low" resp="#joint">Mundt</unclear>. <unclear cert="low" resp="#joint">ver</unclear> <unclear cert="low" resp="#joint">üebt</unclear> <unclear cert="low" resp="#joint">hete</unclear>. so wollend
 <lb n="43"/>Ir. deß selbigen. rechten namen nach sezen,
-<lb n="44"/>und dann auch solliches kuntschafftennemmen.
+<lb n="44"/>und dann <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">solliches</unclear> <unclear cert="low" resp="#joint">kuntschafftennemmen</unclear>.
 <lb n="45"/>und auch sei ver brechen. jn schrifft verfaßt
 <lb n="46"/>ueberschicken. da wir gesinet. den selbigen
 <lb n="47"/>mit allem Ernst. und nach der gebuer. ab
-<lb n="48"/>zestraffen, Hiezwüschen Gott pitende. daß.
+<lb n="48"/>zestraffen, <unclear cert="low" resp="#joint">Hiezwüschen</unclear> <unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">pitende</unclear>. <unclear cert="low" resp="#joint">daß</unclear>.
 <lb n="49"/>er alß zum bessten wende, und unß aller-
-<lb n="50"/>seits. jn fridlichem woll stand. und seinem
-<lb n="51"/>gnedigen schirm väterlichen erhalten wolle,
-<lb n="52"/>date <origPlace ref="stadtasg-places-263" cert="medium" resp="#ner">Trogen</origPlace> <origDate when="1642-02-03" resp="#ner">den 3 februarij Ao 1642</origDate>
+<lb n="50"/>seits. jn fridlichem <unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">stand</unclear>. und seinem
+<lb n="51"/>gnedigen schirm väterlichen erhalten <unclear cert="low" resp="#joint">wolle</unclear>,
+<lb n="52"/><unclear cert="low" resp="#joint">date</unclear> <origPlace ref="stadtasg-places-263" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Trogen</unclear></origPlace> <origDate when="1642-02-03" resp="#ner">den 3 februarij Ao 1642</origDate>
 <lb n="53"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtamman und rath.</orgName> Jn
 <lb n="54"/>den usseren roden deß landts
 <lb n="55"/><placeName ref="stadtasg-places-8" cert="medium" resp="#ner">Appenzell</placeName>
@@ -96,9 +97,9 @@
 <lb n="57"/>Gestrengen. Fromen. Fuersichtigen
 <lb n="58"/>und weisen, Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="59"/>und Rath der Statt Sanct Gallen</orgName>,
-<lb n="60"/>unseren insonders gueten Freünden
-<lb n="61"/>und wohl vertrauwten lieben
-<lb n="62"/>Nachparen
+<lb n="60"/>unseren insonders <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">Freünden</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">vertrauwten</unclear> <unclear cert="low" resp="#joint">lieben</unclear>
+<lb n="62"/><unclear cert="low" resp="#joint">Nachparen</unclear>
 </p>
         </body>
     </text>

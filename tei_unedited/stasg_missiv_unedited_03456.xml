@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3456</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Georg Neithardt, der Jüngere, teilt mit, dass er wegen einer ausstehenden Schuld von 38,5 Gulden vor dem Rat gestanden habe. Er verspricht, die Summe in drei Raten zu Weihnachten 1641, Pfingsten 1642 und Gallistag 1642 zu bezahlen. Alternativ bietet er an, die Schuld samt Zinsen an Joachim Eggen in Lindau zu überweisen, falls Ströbel dies akzeptiert.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Georg Neithardt, der Jüngere, teilt mit, dass er wegen einer ausstehenden Schuld von 38,5 Gulden vor dem Rat gestanden habe. Er verspricht, die Summe in drei Raten zu Weihnachten 1641, Pfingsten 1642 und Gallistag 1642 zu bezahlen. Alternativ bietet er an, die Schuld samt Zinsen an Joachim Eggen in Lindau zu überweisen, falls Ströbel dies akzeptiert.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Georg Neithardt, der Jüngere, informs that he had stood before the Council because of an outstanding debt of 38.5 gulden. He promises to pay the sum in three installments at Christmas 1641, Whitsun 1642 and Gallistag 1642. Alternatively, he offers to transfer the debt with interest to Joachim Eggen in Lindau, if Ströbel accepts this.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -65,43 +66,43 @@
 <lb n="29"/>ich meinen Gnedigen Herren, verspro=
 <lb n="30"/>chen habe:) Eüch, obige 38 1/2 f. im
 <pb facs="StadtASG_Missive_3456_13760.jpg" n="2"/>
-<lb n="31"/>folgenden dreyen terminen, zue danck
+<lb n="31"/>folgenden dreyen terminen, <unclear cert="medium" resp="#joint">zue</unclear> danck
 <lb n="32"/>erlegen und bezahlen will.
-<lb n="33"/>Alß <date resp="#ner">kuenfftige weihnachten</date> . . . fl. 12. - .
-<lb n="34"/><date resp="#ner">kuenfftige pfingsten a°: 1642</date>. . . fl 12. - .
-<lb n="35"/><date resp="#ner">kuenfftige Galli, a°: 1642</date>. . . fl 14 1/2.
-<lb n="36"/>thut . . fl 38 1/2.
-<lb n="37"/>Weilen es dießer zeit mir anderst nicht
-<lb n="38"/>mueglichen, alß will ich hoffen, Er
-<lb n="39"/>deßen wol zufrieden sein werde:
-<lb n="40"/>hiemit unß beederseits Goett=
-<lb n="41"/>licher protection wol befehlende,
-<lb n="42"/>P. S.
-<lb n="43"/>Oder aber, da Ihme die schulldt,
-<lb n="44"/>(wofuer ich von Ihme undt der
-<lb n="45"/>frawen, eine guete handschrifft
-<lb n="46"/>habe:) bey <persName resp="#ner">Joachim Eggen</persName> von fl 40.
-<lb n="47"/>sambt dem zinnß, zue <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindau</placeName>, moech=
-<lb n="48"/>te anzunehmen gefaellig sein,
-<lb n="49"/>wie ich deßwegen mit herren <persName resp="#ner">Schla=
-<lb n="50"/>pritzi</persName> vor dießem auch geredt habe,
-<lb n="51"/>so will ich Ihme die handschrifften
-<lb n="52"/>zuekommen laßen, wo dißes nicht,
-<lb n="53"/>Iedoch in obigen dreyen terminen,
+<lb n="33"/>Alß <date resp="#ner"><unclear cert="medium" resp="#joint">kuenfftige</unclear> weihnachten</date> . . . <unclear cert="low" resp="#joint">fl</unclear>. 12. - .
+<lb n="34"/><date resp="#ner"><unclear cert="low" resp="#joint">kuenfftige</unclear> pfingsten <unclear cert="low" resp="#joint">a°</unclear>: 1642</date>. . . <unclear cert="low" resp="#joint">fl</unclear> <unclear cert="low" resp="#joint">12</unclear>. - .
+<lb n="35"/><date resp="#ner"><unclear cert="low" resp="#joint">kuenfftige</unclear> <unclear cert="low" resp="#joint">Galli</unclear>, <unclear cert="low" resp="#joint">a°</unclear>: <unclear cert="low" resp="#joint">1642</unclear></date>. . . <unclear cert="low" resp="#joint">fl</unclear> 14 1/2.
+<lb n="36"/><unclear cert="low" resp="#joint">thut</unclear> . . <unclear cert="low" resp="#joint">fl</unclear> 38 1/2.
+<lb n="37"/><unclear cert="medium" resp="#joint">Weilen</unclear> <unclear cert="medium" resp="#joint">es</unclear> <unclear cert="medium" resp="#joint">dießer</unclear> zeit mir <unclear cert="medium" resp="#joint">anderst</unclear> <unclear cert="medium" resp="#joint">nicht</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">mueglichen</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> will ich <unclear cert="medium" resp="#joint">hoffen</unclear>, Er
+<lb n="39"/><unclear cert="medium" resp="#joint">deßen</unclear> wol <unclear cert="medium" resp="#joint">zufrieden</unclear> sein <unclear cert="low" resp="#joint">werde</unclear>:
+<lb n="40"/><unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">beederseits</unclear> <unclear cert="low" resp="#joint">Goett=</unclear>
+<lb n="41"/>licher protection <unclear cert="medium" resp="#joint">wol</unclear> <unclear cert="medium" resp="#joint">befehlende</unclear>,
+<lb n="42"/><unclear cert="medium" resp="#joint">P</unclear>. S.
+<lb n="43"/><unclear cert="medium" resp="#joint">Oder</unclear> aber, da Ihme die <unclear cert="low" resp="#joint">schulldt</unclear>,
+<lb n="44"/>(<unclear cert="low" resp="#joint">wofuer</unclear> ich <unclear cert="medium" resp="#joint">von</unclear> Ihme <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="medium" resp="#joint">der</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">frawen</unclear>, eine guete <unclear cert="medium" resp="#joint">handschrifft</unclear>
+<lb n="46"/><unclear cert="medium" resp="#joint">habe</unclear>:) bey <persName resp="#ner">Joachim <unclear cert="medium" resp="#joint">Eggen</unclear></persName> von <unclear cert="medium" resp="#joint">fl</unclear> 40.
+<lb n="47"/><unclear cert="medium" resp="#joint">sambt</unclear> dem <unclear cert="medium" resp="#joint">zinnß</unclear>, <unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Lindau</unclear></placeName>, <unclear cert="medium" resp="#joint">moech=</unclear>
+<lb n="48"/><unclear cert="medium" resp="#joint">te</unclear> <unclear cert="medium" resp="#joint">anzunehmen</unclear> <unclear cert="medium" resp="#joint">gefaellig</unclear> sein,
+<lb n="49"/>wie ich deßwegen mit <unclear cert="medium" resp="#joint">herren</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Schla=</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">pritzi</unclear></persName> <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">dießem</unclear> auch geredt habe,
+<lb n="51"/>so will ich Ihme die <unclear cert="low" resp="#joint">handschrifften</unclear>
+<lb n="52"/><unclear cert="low" resp="#joint">zuekommen</unclear> <unclear cert="low" resp="#joint">laßen</unclear>, wo <unclear cert="medium" resp="#joint">dißes</unclear> nicht,
+<lb n="53"/><unclear cert="medium" resp="#joint">Iedoch</unclear> in obigen dreyen terminen,
 <lb n="54"/>Ihr gewiße zahlung haben werdet.
-<lb n="55"/>Ddtstwh
-<lb n="56"/><persName role="issuer" resp="#ner">Gjoerg Neythardt</persName>,
-<lb n="57"/>der Jung, burger daselbst.
+<lb n="55"/><unclear cert="low" resp="#joint">Ddtstwh</unclear>
+<lb n="56"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Gjoerg</unclear> <unclear cert="low" resp="#joint">Neythardt</unclear></persName>,
+<lb n="57"/>der <unclear cert="medium" resp="#joint">Jung</unclear>, burger <unclear cert="low" resp="#joint">daselbst</unclear>.
 <pb facs="StadtASG_Missive_3456_13761.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3456_13762.jpg" n="4"/>
-<lb n="58"/>Copia schreibens
+<lb n="58"/>Copia <unclear cert="medium" resp="#joint">schreibens</unclear>
 <lb n="59"/>von
-<lb n="60"/><persName role="issuer" resp="#ner">Joerg Bastard</persName> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen.</placeName>
+<lb n="60"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Joerg</unclear> <unclear cert="medium" resp="#joint">Bastard</unclear></persName> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen.</placeName>
 <lb n="61"/>an
-<lb n="62"/><persName role="recipient" resp="#ner">Hannß Bernhard Stroebeln</persName>
-<lb n="63"/>wirth zun 3. Cronen
-<lb n="64"/>alhier.
-<lb n="65"/>A.
+<lb n="62"/><persName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Hannß</unclear> <unclear cert="medium" resp="#joint">Bernhard</unclear> <unclear cert="medium" resp="#joint">Stroebeln</unclear></persName>
+<lb n="63"/><unclear cert="medium" resp="#joint">wirth</unclear> <unclear cert="medium" resp="#joint">zun</unclear> 3. Cronen
+<lb n="64"/><unclear cert="low" resp="#joint">alhier</unclear>.
+<lb n="65"/><unclear cert="low" resp="#joint">A</unclear>.
 </p>
         </body>
     </text>

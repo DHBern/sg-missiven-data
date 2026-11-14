@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3501</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johann Rudolf Reding, Landvogt, teilt Bürgermeister und Rat zu St. Gallen mit, dass der Knabe Jögli Walen aus Klingnau, der am 31. Mai 1640 mit Christoph Dürlemann aus dem Luzerner Gebiet in die Gefangenschaft gekommen war, nach zwei Tagen freigelassen wurde. Er wurde von den beiden älteren Mitläufern zum Einsteigen gezwungen und von ihnen verführt. Im Protokoll findet sich nichts Weiteres.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johann Rudolf Reding, Landvogt, teilt Bürgermeister und Rat zu St. Gallen mit, dass der Knabe Jögli Walen aus Klingnau, der am 31. Mai 1640 mit Christoph Dürlemann aus dem Luzerner Gebiet in die Gefangenschaft gekommen war, nach zwei Tagen freigelassen wurde. Er wurde von den beiden älteren Mitläufern zum Einsteigen gezwungen und von ihnen verführt. Im Protokoll findet sich nichts Weiteres.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johann Rudolf Reding, Landvogt, informs the Burgomaster and Council of St. Gallen that the boy Jögli Walen from Klingnau, who had come into captivity on 31 May 1640 with Christoph Dürlemann from the Lucerne region, was released after two days. He says that he was forced to board by the two older companions and was led astray by them. Nothing further is found in the protocol.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,7 +35,7 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3501_13955.jpg" n="1"/>
-<lb n="1"/>Woledle, Veste, Fromme, Fuersichtig und Weise,
+<lb n="1"/><unclear cert="low" resp="#joint">Woledle</unclear>, <unclear cert="low" resp="#joint">Veste</unclear>, <unclear cert="low" resp="#joint">Fromme</unclear>, <unclear cert="low" resp="#joint">Fuersichtig</unclear> und Weise,
 <lb n="2"/>sonderss geehrte herren, guete freuendt unnd
 <lb n="3"/>Nachpuren. Deroselben ahn mich ab-
 <lb n="4"/>gangenes schreiben, hab ich zu recht erhalten und
@@ -44,19 +45,19 @@
 <lb n="8"/>kleiner knab, der sich <persName resp="#ner">Jogli Walen</persName> von <placeName resp="#ner">Cling-
 <lb n="9"/>nauw</placeName> genambset, nebent einem andern,
 <lb n="10"/><persName resp="#ner">Christophel Durlman</persName> auß dem <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucerner</placeName>
-<lb n="11"/>Gebieth, so im <placeName resp="#ner">Thurthal</placeName> meiner Ambtzver-
-<lb n="12"/>waltung selb dritten, der entrunnen, ein-
+<lb n="11"/>Gebieth, so im <placeName resp="#ner"><unclear cert="low" resp="#joint">Thurthal</unclear></placeName> <unclear cert="low" resp="#joint">meiner</unclear> <unclear cert="low" resp="#joint">Ambtzver</unclear>-
+<lb n="12"/><unclear cert="low" resp="#joint">waltung</unclear> <unclear cert="low" resp="#joint">selb</unclear> dritten, der entrunnen, ein-
 <lb n="13"/>gestigen unnd etliche sachen entwendt, in
 <lb n="14"/>hiesige gefangenschafft khommen, Weil
 <lb n="15"/>aber die andere zwen, alß die groeßere,
 <lb n="16"/>ihne Walen diß orts zum instrument ge-
 <lb n="17"/>braucht und ihne gleichsamb bezwungen, daß
-<lb n="18"/>er zue erst einsteigen mueßen und also ver-
-<lb n="19"/>muethlich von ihnen verfuehret
+<lb n="18"/>er zue erst einsteigen mueßen und also <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="19"/><unclear cert="low" resp="#joint">muethlich</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">verfuehret</unclear>
 <lb n="20"/>worden, Alß hat man ihne nach zweyen tagen
-<lb n="21"/>der verhafftung ledig und widerumb lauffen
+<lb n="21"/>der verhafftung ledig und widerumb <unclear cert="low" resp="#joint">lauffen</unclear>
 <pb facs="StadtASG_Missive_3501_13956.jpg" n="2"/>
-<lb n="22"/>loffen, anders im Protocol nicht zufinden, diß
+<lb n="22"/>loffen, anders im Protocol nicht <unclear cert="low" resp="#joint">zufinden</unclear>, <unclear cert="low" resp="#joint">diß</unclear>
 <lb n="23"/>hab ich die herren berichten unnd unß daneben
 <lb n="24"/>sambtlich in schuz deß Allerhoechsten befehlen
 <lb n="25"/>wollen, unnd verbleibe damit
@@ -69,13 +70,13 @@
 <pb facs="StadtASG_Missive_3501_13957.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3501_13958.jpg" n="4"/>
 <lb n="32"/>Den
-<lb n="33"/>Edlen, Eeren-
-<lb n="34"/>vesten, Frommen, Fuersich-
-<lb n="35"/>tigen unnd Weisen herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="36"/>unnd Raht der Statt S.t Gallen</orgName>, mei-
-<lb n="37"/>nen sonders geehrten herren, guetten
-<lb n="38"/>Freünden unnd Nachbaren.
-<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S.t Gallen</placeName>.
+<lb n="33"/><unclear cert="low" resp="#joint">Edlen</unclear>, <unclear cert="low" resp="#joint">Eeren</unclear>-
+<lb n="34"/><unclear cert="low" resp="#joint">vesten</unclear>, <unclear cert="low" resp="#joint">Frommen</unclear>, <unclear cert="low" resp="#joint">Fuersich</unclear>-
+<lb n="35"/><unclear cert="low" resp="#joint">tigen</unclear> <unclear cert="low" resp="#joint">unnd</unclear> Weisen herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="36"/><unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">Raht</unclear> der Statt S.t Gallen</orgName>, <unclear cert="low" resp="#joint">mei</unclear>-
+<lb n="37"/><unclear cert="low" resp="#joint">nen</unclear> <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="low" resp="#joint">herren</unclear>, <unclear cert="low" resp="#joint">guetten</unclear>
+<lb n="38"/>Freünden <unclear cert="low" resp="#joint">unnd</unclear> Nachbaren.
+<lb n="39"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">S.t</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

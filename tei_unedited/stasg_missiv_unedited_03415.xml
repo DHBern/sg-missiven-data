@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3415</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihre Bürgerin Justina Schlitzin, die Witwe des verstorbenen St. Galler Bürgers Eberhard Huber, zu veranlassen, ihr und ihren Geschwistern den ihnen zustehenden Erbanteil aus der Hinterlassenschaft des Vaters auszuzahlen. Im Falle einer Verweigerung sollen die Gründe genannt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihre Bürgerin Justina Schlitzin, die Witwe des verstorbenen St. Galler Bürgers Eberhard Huber, zu veranlassen, ihr und ihren Geschwistern den ihnen zustehenden Erbanteil aus der Hinterlassenschaft des Vaters auszuzahlen. Im Falle einer Verweigerung sollen die Gründe genannt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to cause their citizen Justina Schlitzin, the widow of the deceased citizen of St. Gallen Eberhard Huber, to pay out to them and their siblings the inheritance share due to them from the father's estate. In the event of a refusal, the reasons are to be named.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -40,28 +41,28 @@
 <lb n="4"/>und getrüw lieb <orgName resp="#ner">Eidtgnoßen</orgName>.
 <lb n="5"/>Unß hat unser getrüwer lieber Burger <persName resp="#ner">Hanß Heinrich
 <lb n="6"/>Körner</persName> der Sadtler mit mehrerm gebürlich zuoer-
-<lb n="7"/>kennen gegeben, was gestalten syner geliebten Ehewürtin <persName resp="#ner">Justina Schlitzin</persName> nebent ihren den übrigen
-<lb n="8"/>ehelyblichen geschwüstergiten üwern lieben ange-
+<lb n="7"/>kennen gegeben, was gestalten syner geliebten <unclear cert="low" resp="#joint">Ehewürtin</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Justina</unclear> <unclear cert="low" resp="#joint">Schlitzin</unclear></persName> <unclear cert="low" resp="#joint">nebent</unclear> <unclear cert="low" resp="#joint">ihren</unclear> den <unclear cert="low" resp="#joint">übrigen</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">ehelyblichen</unclear> <unclear cert="low" resp="#joint">geschwüstergiten</unclear> üwern lieben ange-
 <lb n="9"/>hörigen von wyland ihrem lieben vatteren, <persName resp="#ner">Eber-
 <lb n="10"/>harten Huber</persName> sel. üwerem gewesnen Burger, über
-<lb n="11"/>ein besonderbare vermechnuß, welliche bereidts
-<lb n="12"/>ihr richtigkeit erlanget, noch ein gewüßer erb-
-<lb n="13"/>theil were zuogestanden, darvon aber erwelter
-<lb n="14"/>syner ehewürtin, übrige ihre gedachte geschwüstergite,
+<lb n="11"/>ein <unclear cert="low" resp="#joint">besonderbare</unclear> <unclear cert="low" resp="#joint">vermechnuß</unclear>, <unclear cert="low" resp="#joint">welliche</unclear> <unclear cert="low" resp="#joint">bereidts</unclear>
+<lb n="12"/>ihr <unclear cert="low" resp="#joint">richtigkeit</unclear> <unclear cert="low" resp="#joint">erlanget</unclear>, <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">gewüßer</unclear> <unclear cert="low" resp="#joint">erb</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">theil</unclear> <unclear cert="low" resp="#joint">were</unclear> <unclear cert="low" resp="#joint">zuogestanden</unclear>, <unclear cert="low" resp="#joint">darvon</unclear> <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">erwelter</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">syner</unclear> <unclear cert="low" resp="#joint">ehewürtin</unclear>, <unclear cert="low" resp="#joint">übrige</unclear> <unclear cert="low" resp="#joint">ihre</unclear> gedachte geschwüstergite,
 <lb n="15"/>was deroselben von rechtes und billigkeit wegen
 <lb n="16"/>gehörte, nit wöllind erfolgen laßen, ohngeachtet sy
 <lb n="17"/>von ihme deßwegen zuo mehrmalen in fründtlig-
-<lb n="18"/>keit begrüezt und ersuocht worden, angelegenliches
-<lb n="19"/>flyßes bittende, wir wöltend ihme an üch durch
+<lb n="18"/>keit begrüezt und ersuocht worden, <unclear cert="low" resp="#joint">angelegenliches</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">flyßes</unclear> <unclear cert="low" resp="#joint">bittende</unclear>, <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">wöltend</unclear> <unclear cert="low" resp="#joint">ihme</unclear> an üch durch
 <lb n="20"/>unser fürschrift dahin günstigklich befördersam
 <lb n="21"/>syn, daß mehr berüerter syner ehewürtin von
 <lb n="22"/>deroselben übrigen geschwüstergiten, uß angeregtem
 <lb n="23"/>erb ihr gebürender antheil güetlich werden unnd
-<lb n="24"/>erfolgen möge. Wann nun wir obgesagts
-<lb n="25"/>des unseren begehren nit unzimlich befinden,
+<lb n="24"/>erfolgen möge. Wann nun wir <unclear cert="low" resp="#joint">obgesagts</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">unseren</unclear> begehren nit unzimlich befinden,
 <lb n="26"/>habend wir es ihme ouch, tragender pflicht halber,
 <lb n="27"/>nit versagen können. Derohalben so ersuochend
-<lb n="28"/>üch unser G. L. E. wir hiemit fründtlichs flyßes,
+<lb n="28"/>üch unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">fründtlichs</unclear> <unclear cert="low" resp="#joint">flyßes</unclear>,
 <lb n="29"/>Ir wöllind durch üwer oberkeitliches ansehen
 <lb n="30"/>besagte die üweren dahin halten, daß sy ihrer
 <lb n="31"/>allhie wesenden schwöster, von mehrangeregtem

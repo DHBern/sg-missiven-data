@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3271</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten die Städte Augsburg, Ulm und Konstanz um Zusendung ihrer Apothekerordnungen und Taxen, da sie ihre eigene Ordnung wegen zu hoher Preise moderieren wollen. Sie ersuchen zudem um Auskunft, ob die Apotheker und Gesellen in den genannten Städten auf die Ordnung beeidigt werden.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten die Städte Augsburg, Ulm und Konstanz um Zusendung ihrer Apothekerordnungen und Taxen, da sie ihre eigene Ordnung wegen zu hoher Preise moderieren wollen. Sie ersuchen zudem um Auskunft, ob die Apotheker und Gesellen in den genannten Städten auf die Ordnung beeidigt werden.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen request the cities of Augsburg, Ulm and Konstanz to send their apothecary regulations and price lists, as they wish to moderate their own regulation due to prices being too high. They also ask for information on whether the apothecaries and journeymen in the aforementioned cities are sworn to the regulation.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,11 +35,11 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3271_12977.jpg" n="1"/>
-<lb n="1"/>Missiv. wegen moderirter, apoteck-
-<lb n="2"/>und tax ordnung.
-<lb n="3"/>Unßer freundtlich willig dienst, und waß wir
-<lb n="4"/>ehren leibs und guets vermoegen zuvor, edel, hoch-
-<lb n="5"/>wolgeboren, vest, ehrenvest, fürsichtig und weiße, in-
+<lb n="1"/><unclear cert="low" resp="#joint">Missiv</unclear>. <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">moderirter</unclear>, <unclear cert="low" resp="#joint">apoteck</unclear>-
+<lb n="2"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">ordnung</unclear>.
+<lb n="3"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">freundtlich</unclear> willig dienst, und waß wir
+<lb n="4"/>ehren leibs und <unclear cert="low" resp="#joint">guets</unclear> <unclear cert="low" resp="#joint">vermoegen</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">edel</unclear>, <unclear cert="low" resp="#joint">hoch</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">wolgeboren</unclear>, <unclear cert="low" resp="#joint">vest</unclear>, <unclear cert="low" resp="#joint">ehrenvest</unclear>, fürsichtig und weiße, in-
 <lb n="6"/>sonders günßtig, gnedig lieb herren und freundt.
 <lb n="7"/>Nach dem ein geraume zeit hero, bej den apoteckhen
 <lb n="8"/>alhie in unßer Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanctgallen</placeName> merkliche mißbreuch,
@@ -46,128 +47,128 @@
 <lb n="10"/>gahr zu hohem taxieren der arzneien beschwerdt und
 <lb n="11"/>übernoemen, dahero wir verurßacht worden, die vor
 <lb n="12"/>dißem vor unß angesehene apotegger ordnung und
-<lb n="13"/>tax widerumb zuerneüweren, und nach beschaffenheit
+<lb n="13"/>tax widerumb <unclear cert="low" resp="#joint">zuerneüweren</unclear>, und nach beschaffenheit
 <lb n="14"/>jezigen zeiten und leüffen zu moderieren: und aber
-<lb n="15"/>e. w. vst. und ghr. lobliche Statt <placeName ref="stadtasg-places-135" cert="medium" resp="#ner">Augstpurg</placeName> daßwe-
-<lb n="16"/>gen hochberüembt, daß sie vor andern Stätten der
-<lb n="17"/>apotegken halber, guete statuta und ordnungen habe,
+<lb n="15"/>e. w. vst. und ghr. lobliche Statt <placeName ref="stadtasg-places-135" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Augstpurg</unclear></placeName> <unclear cert="low" resp="#joint">daßwe</unclear>-
+<lb n="16"/>gen hochberüembt, daß sie vor andern Stätten <unclear cert="low" resp="#joint">der</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">apotegken</unclear> <unclear cert="low" resp="#joint">halber</unclear>, <unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">statuta</unclear> und ordnungen habe,
 <lb n="18"/>ob welchen auch bej straff ihrer steiff gehalten werde,
 <lb n="19"/>maſſen der vor den ihrigen schon lengst in offentlichen
 <lb n="20"/>trukh außgangne ordenliche tax solches auch gnugsam
 <lb n="21"/>zuerkennen gibt, ob welchem aber die unßerigen sich
-<lb n="22"/>iezundt beschweren, dieweil die materialia vast
+<lb n="22"/><unclear cert="low" resp="#joint">iezundt</unclear> <unclear cert="low" resp="#joint">beschweren</unclear>, <unclear cert="low" resp="#joint">dieweil</unclear> die materialia vast
 <lb n="23"/>alle iez in hoherm preiß, alß nit vor dißem, und die
 <lb n="24"/>darüber gehende uncosten auch ie lenger ie groesser sejie.
-<lb n="25"/>Gelangt demnach an dieselben hiemit unßer dienst-
-<lb n="26"/>freundtliche pitt, die wöllen ihro belieben laßen,
-<lb n="27"/>dießelbige ihre habende apotegger ordnung sambt dem
+<lb n="25"/>Gelangt demnach an dieselben <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">dienst</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">freundtliche</unclear> pitt, die wöllen ihro belieben laßen,
+<lb n="27"/>dießelbige ihre habende <unclear cert="low" resp="#joint">apotegger</unclear> <unclear cert="low" resp="#joint">ordnung</unclear> sambt dem
 <lb n="28"/>tax der arzneijen, wie solcher zu dißer zeit bej ihro
-<lb n="29"/>ungefehrlich gesezt und gehalten wirdt, unß auf unßern
-<lb n="30"/>costen vertraüwlich zukomen zulaßen, insonderheit
+<lb n="29"/>ungefehrlich gesezt und gehalten wirdt, unß auf <unclear cert="low" resp="#joint">unßern</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">costen</unclear> <unclear cert="low" resp="#joint">vertraüwlich</unclear> <unclear cert="low" resp="#joint">zukomen</unclear> <unclear cert="low" resp="#joint">zulaßen</unclear>, insonderheit
 <lb n="31"/>über die ienigen stukh so in hiembej komendem auhßug
 <lb n="32"/>stehn, zu welchen stukhen iedem der preiß gleich
 <lb n="33"/>hinzugesezt und alßo neben der obbegehrten ordnung
 <lb n="34"/>unß wider überchickt werden kan. Waß wir
 <pb facs="StadtASG_Missive_3271_12978.jpg" n="2"/>
-<lb n="35"/>aber auch nit weniger lieb von inen den bricht
-<lb n="36"/>zuehaben, ob die apotegger in irer statt, und ire gsellen
-<lb n="37"/>nit auch uf die inen fuergrschribne ordnung beeidiget
-<lb n="38"/>werde. Dises alles umb e. v. e. f. w. und gstr.
-<lb n="39"/>in allen begebenden occasionen wolgfaellig zuebshulden
-<lb n="40"/>verbleiben wir jederzit so geneigt und guetwillig, als
-<lb n="41"/>bitten wir hiemit Gott er uns beiderseits so ferner mit
-<lb n="42"/>seiner gnaden handt ob uns halten woelle. Datl
-<lb n="43"/>den. <origDate when="1638" resp="#ner">10. tl. Januarij. Ao. 1638</origDate>:
-<lb n="44"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rhat
-<lb n="45"/>der statt Sanct Gallen</orgName>
-<lb n="46"/>Den edlen, hochwolgebornen, vesten, ehrnvesten
-<lb n="47"/>fuersichtigen und weisen pflergern, burger=
-<lb n="48"/>meistern und rhat der statt <placeName ref="stadtasg-places-135" cert="medium" resp="#ner">Augspurg</placeName> un=
-<lb n="49"/>sern sonders guenstigen, gnedige lieben herren
-<lb n="50"/>und freuendten.
-<lb n="51"/>Unser freuendtlich willig dienst, und was wir
-<lb n="52"/>ehren liebs und guets vermoergend, zuevor, edle veste
-<lb n="53"/>ehrnveste fuersichtige ehrsame und weise, in=
-<lb n="54"/>sonders vertrauwte liebe herren und freuendt.
-<lb n="55"/>Als dann ein geraume zeit hero bey den apoteggern
-<lb n="56"/>alhie in unser statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>, merckhliche mißbreuech,
-<lb n="57"/>fuernemlich in dem eingerissen, daß sie die leueth mit
-<lb n="58"/>gar zue hohem taxieren der artzneyen beschwerdt und
-<lb n="59"/>uebernommen, deßen wir verursacht worden, die
-<lb n="60"/>vor disem von uns angesehene apotegger ordnung
-<lb n="61"/>und tax widerumb zueerneuewern und nach be=
+<lb n="35"/><unclear cert="low" resp="#joint">aber</unclear> auch <unclear cert="medium" resp="#joint">nit</unclear> weniger lieb von <unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">bricht</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">zuehaben</unclear>, ob die <unclear cert="medium" resp="#joint">apotegger</unclear> in <unclear cert="medium" resp="#joint">irer</unclear> statt, und <unclear cert="medium" resp="#joint">ire</unclear> <unclear cert="medium" resp="#joint">gsellen</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">nit</unclear> auch <unclear cert="low" resp="#joint">uf</unclear> die <unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">fuergrschribne</unclear> <unclear cert="low" resp="#joint">ordnung</unclear> <unclear cert="low" resp="#joint">beeidiget</unclear>
+<lb n="38"/>werde. <unclear cert="medium" resp="#joint">Dises</unclear> alles umb <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">w</unclear>. und <unclear cert="medium" resp="#joint">gstr</unclear>.
+<lb n="39"/><unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">allen</unclear> begebenden <unclear cert="low" resp="#joint">occasionen</unclear> <unclear cert="low" resp="#joint">wolgfaellig</unclear> <unclear cert="low" resp="#joint">zuebshulden</unclear>
+<lb n="40"/>verbleiben <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">jederzit</unclear> so <unclear cert="medium" resp="#joint">geneigt</unclear> und <unclear cert="medium" resp="#joint">guetwillig</unclear>, als
+<lb n="41"/><unclear cert="low" resp="#joint">bitten</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">er</unclear> uns <unclear cert="low" resp="#joint">beiderseits</unclear> so <unclear cert="medium" resp="#joint">ferner</unclear> mit
+<lb n="42"/>seiner gnaden <unclear cert="medium" resp="#joint">handt</unclear> ob uns <unclear cert="medium" resp="#joint">halten</unclear> <unclear cert="medium" resp="#joint">woelle</unclear>. <unclear cert="medium" resp="#joint">Datl</unclear>
+<lb n="43"/><unclear cert="medium" resp="#joint">den</unclear>. <origDate when="1638" resp="#ner">10. <unclear cert="medium" resp="#joint">tl</unclear>. <unclear cert="medium" resp="#joint">Januarij</unclear>. <unclear cert="medium" resp="#joint">Ao</unclear>. 1638</origDate>:
+<lb n="44"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">rhat</unclear>
+<lb n="45"/>der statt <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>
+<lb n="46"/><unclear cert="medium" resp="#joint">Den</unclear> edlen, <unclear cert="medium" resp="#joint">hochwolgebornen</unclear>, vesten, <unclear cert="medium" resp="#joint">ehrnvesten</unclear>
+<lb n="47"/><unclear cert="medium" resp="#joint">fuersichtigen</unclear> und weisen <unclear cert="medium" resp="#joint">pflergern</unclear>, burger=
+<lb n="48"/><unclear cert="medium" resp="#joint">meistern</unclear> und <unclear cert="medium" resp="#joint">rhat</unclear> der statt <placeName ref="stadtasg-places-135" cert="medium" resp="#ner">Augspurg</placeName> un=
+<lb n="49"/>sern <unclear cert="medium" resp="#joint">sonders</unclear> <unclear cert="medium" resp="#joint">guenstigen</unclear>, <unclear cert="medium" resp="#joint">gnedige</unclear> lieben herren
+<lb n="50"/>und <unclear cert="medium" resp="#joint">freuendten</unclear>.
+<lb n="51"/>Unser <unclear cert="medium" resp="#joint">freuendtlich</unclear> willig dienst, und was wir
+<lb n="52"/>ehren liebs und <unclear cert="medium" resp="#joint">guets</unclear> <unclear cert="medium" resp="#joint">vermoergend</unclear>, <unclear cert="medium" resp="#joint">zuevor</unclear>, <unclear cert="medium" resp="#joint">edle</unclear> <unclear cert="medium" resp="#joint">veste</unclear>
+<lb n="53"/><unclear cert="medium" resp="#joint">ehrnveste</unclear> <unclear cert="medium" resp="#joint">fuersichtige</unclear> <unclear cert="medium" resp="#joint">ehrsame</unclear> und <unclear cert="medium" resp="#joint">weise</unclear>, in=
+<lb n="54"/>sonders <unclear cert="medium" resp="#joint">vertrauwte</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> herren und <unclear cert="medium" resp="#joint">freuendt</unclear>.
+<lb n="55"/><unclear cert="medium" resp="#joint">Als</unclear> <unclear cert="medium" resp="#joint">dann</unclear> <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">geraume</unclear> zeit <unclear cert="medium" resp="#joint">hero</unclear> bey den <unclear cert="medium" resp="#joint">apoteggern</unclear>
+<lb n="56"/><unclear cert="medium" resp="#joint">alhie</unclear> in unser statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</placeName>, <unclear cert="medium" resp="#joint">merckhliche</unclear> <unclear cert="medium" resp="#joint">mißbreuech</unclear>,
+<lb n="57"/><unclear cert="medium" resp="#joint">fuernemlich</unclear> in dem <unclear cert="medium" resp="#joint">eingerissen</unclear>, daß sie die <unclear cert="medium" resp="#joint">leueth</unclear> mit
+<lb n="58"/><unclear cert="medium" resp="#joint">gar</unclear> <unclear cert="medium" resp="#joint">zue</unclear> hohem <unclear cert="medium" resp="#joint">taxieren</unclear> der <unclear cert="low" resp="#joint">artzneyen</unclear> beschwerdt und
+<lb n="59"/><unclear cert="medium" resp="#joint">uebernommen</unclear>, <unclear cert="medium" resp="#joint">deßen</unclear> wir <unclear cert="medium" resp="#joint">verursacht</unclear> <unclear cert="medium" resp="#joint">worden</unclear>, die
+<lb n="60"/><unclear cert="medium" resp="#joint">vor</unclear> disem von uns <unclear cert="medium" resp="#joint">angesehene</unclear> <unclear cert="medium" resp="#joint">apotegger</unclear> ordnung
+<lb n="61"/>und <unclear cert="medium" resp="#joint">tax</unclear> widerumb <unclear cert="medium" resp="#joint">zueerneuewern</unclear> und nach be=
 <pb facs="StadtASG_Missive_3271_12979.jpg" n="3"/>
-<lb n="62"/>schaffenheit jeziger zeit und laeuffen zu moderieren;
-<lb n="63"/>Wil aber E. Ve. F. W. löbliche statt <placeName ref="stadtasg-places-28" cert="medium" resp="#ner">Ulm</placeName> deß-
-<lb n="64"/>wegen berhuembt, daß sie vor andern stetten der
-<lb n="65"/>apoteckheren halber guote statuta und ordnungen haben,
-<lb n="66"/>ob wölchen auch beij ihnen steiff gehalten werde.
-<lb n="67"/>Gelangt demnach an dieselbe hiemit unser dienst-
-<lb n="68"/>fründtliche bitt, sie wöllen ihnen belieben lassen, die-
-<lb n="69"/>selbige ihre habende apoteckher ordnung sambt dem tax
-<lb n="70"/>der arzneijen, wie solcher zu diser zeit beij ihnen
-<lb n="71"/>ohngefahrlich gesezt und gehalten wirddt, unß uf unseren
-<lb n="72"/>costen vertraulich zuekommen zulassen, insonderheit
-<lb n="73"/>über die jennigen stuckh, so in hiebeij verwahrtem
-<lb n="74"/>getruckhten
-<lb n="75"/>buochlin zustehn, zu wölchen stuckhen dann der preiß gleich
-<lb n="76"/>hinzugesezt, und also neben dem abgeschribnen ordenlichen
-<lb n="77"/>thax wider überschickht werden khan. Unß were eben-
-<lb n="78"/>messig nit weniger lieb von ihnen dessen bericht zuhaben,
-<lb n="79"/>ob die apoteckher in ihrer statt und ihre gesellen nit
-<lb n="80"/>auch uf die ihnen fürgeschribne ordnung bewilliget
-<lb n="81"/>beeidiget werden. Diß alles umb E. Ve. F.
-<lb n="82"/>W. in allen begebenden occasionen ohnfehlbarlich zu-
-<lb n="83"/>verschulden, verbleiben wir jeder zeit geneigt und guot-
-<lb n="84"/>willig. Unß damit göttlicher obhalt wol befehlende.
-<lb n="85"/>Dat. den. <origDate when="1638" resp="#ner">10. H. januarij a° 1638</origDate>.
-<lb n="86"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rhat
-<lb n="87"/>der statt Sanct Gallen</orgName>.
-<lb n="88"/>Den Edlen Vesten, Ehrnvesten Fürsichtigen Ersamen
-<lb n="89"/>und Weisen, <orgName ref="stadtasg-actors-510" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der statt
-<lb n="90"/>Ulm</orgName>, unseren insonders vertrawten lieben herren
-<lb n="91"/>und fründten
+<lb n="62"/><unclear cert="low" resp="#joint">schaffenheit</unclear> <unclear cert="low" resp="#joint">jeziger</unclear> zeit und <unclear cert="medium" resp="#joint">laeuffen</unclear> zu moderieren;
+<lb n="63"/><unclear cert="medium" resp="#joint">Wil</unclear> aber <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ve</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">löbliche</unclear> statt <placeName ref="stadtasg-places-28" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Ulm</unclear></placeName> deß-
+<lb n="64"/>wegen <unclear cert="medium" resp="#joint">berhuembt</unclear>, daß <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">andern</unclear> stetten der
+<lb n="65"/><unclear cert="medium" resp="#joint">apoteckheren</unclear> <unclear cert="medium" resp="#joint">halber</unclear> <unclear cert="medium" resp="#joint">guote</unclear> <unclear cert="medium" resp="#joint">statuta</unclear> und ordnungen haben,
+<lb n="66"/>ob <unclear cert="medium" resp="#joint">wölchen</unclear> auch <unclear cert="medium" resp="#joint">beij</unclear> <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">steiff</unclear> gehalten <unclear cert="medium" resp="#joint">werde</unclear>.
+<lb n="67"/><unclear cert="medium" resp="#joint">Gelangt</unclear> <unclear cert="medium" resp="#joint">demnach</unclear> <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="medium" resp="#joint">dieselbe</unclear> <unclear cert="medium" resp="#joint">hiemit</unclear> <unclear cert="medium" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">dienst</unclear>-
+<lb n="68"/><unclear cert="medium" resp="#joint">fründtliche</unclear> <unclear cert="medium" resp="#joint">bitt</unclear>, <unclear cert="medium" resp="#joint">sie</unclear> wöllen <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">belieben</unclear> lassen, die-
+<lb n="69"/><unclear cert="medium" resp="#joint">selbige</unclear> <unclear cert="medium" resp="#joint">ihre</unclear> habende <unclear cert="medium" resp="#joint">apoteckher</unclear> ordnung <unclear cert="medium" resp="#joint">sambt</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">tax</unclear>
+<lb n="70"/>der <unclear cert="medium" resp="#joint">arzneijen</unclear>, wie <unclear cert="medium" resp="#joint">solcher</unclear> zu diser <unclear cert="medium" resp="#joint">zeit</unclear> <unclear cert="medium" resp="#joint">beij</unclear> <unclear cert="medium" resp="#joint">ihnen</unclear>
+<lb n="71"/><unclear cert="medium" resp="#joint">ohngefahrlich</unclear> <unclear cert="medium" resp="#joint">gesezt</unclear> und gehalten <unclear cert="medium" resp="#joint">wirddt</unclear>, <unclear cert="medium" resp="#joint">unß</unclear> uf <unclear cert="low" resp="#joint">unseren</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">costen</unclear> <unclear cert="low" resp="#joint">vertraulich</unclear> <unclear cert="low" resp="#joint">zuekommen</unclear> <unclear cert="low" resp="#joint">zulassen</unclear>, <unclear cert="low" resp="#joint">insonderheit</unclear>
+<lb n="73"/>über die <unclear cert="medium" resp="#joint">jennigen</unclear> <unclear cert="medium" resp="#joint">stuckh</unclear>, so in <unclear cert="medium" resp="#joint">hiebeij</unclear> <unclear cert="medium" resp="#joint">verwahrtem</unclear>
+<lb n="74"/><unclear cert="medium" resp="#joint">getruckhten</unclear>
+<lb n="75"/><unclear cert="medium" resp="#joint">buochlin</unclear> <unclear cert="medium" resp="#joint">zustehn</unclear>, zu <unclear cert="medium" resp="#joint">wölchen</unclear> <unclear cert="medium" resp="#joint">stuckhen</unclear> dann der <unclear cert="low" resp="#joint">preiß</unclear> <unclear cert="low" resp="#joint">gleich</unclear>
+<lb n="76"/><unclear cert="low" resp="#joint">hinzugesezt</unclear>, und also <unclear cert="medium" resp="#joint">neben</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">abgeschribnen</unclear> <unclear cert="medium" resp="#joint">ordenlichen</unclear>
+<lb n="77"/><unclear cert="medium" resp="#joint">thax</unclear> wider <unclear cert="medium" resp="#joint">überschickht</unclear> werden <unclear cert="medium" resp="#joint">khan</unclear>. <unclear cert="medium" resp="#joint">Unß</unclear> were <unclear cert="medium" resp="#joint">eben</unclear>-
+<lb n="78"/><unclear cert="medium" resp="#joint">messig</unclear> <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">weniger</unclear> <unclear cert="medium" resp="#joint">lieb</unclear> <unclear cert="medium" resp="#joint">von</unclear> <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">dessen</unclear> <unclear cert="medium" resp="#joint">bericht</unclear> <unclear cert="medium" resp="#joint">zuhaben</unclear>,
+<lb n="79"/>ob die <unclear cert="medium" resp="#joint">apoteckher</unclear> in <unclear cert="medium" resp="#joint">ihrer</unclear> statt und <unclear cert="medium" resp="#joint">ihre</unclear> <unclear cert="medium" resp="#joint">gesellen</unclear> <unclear cert="medium" resp="#joint">nit</unclear>
+<lb n="80"/><unclear cert="medium" resp="#joint">auch</unclear> uf die <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">fürgeschribne</unclear> ordnung <unclear cert="medium" resp="#joint">bewilliget</unclear>
+<lb n="81"/><unclear cert="medium" resp="#joint">beeidiget</unclear> werden. Diß alles umb <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ve</unclear>. <unclear cert="low" resp="#joint">F</unclear>.
+<lb n="82"/><unclear cert="low" resp="#joint">W</unclear>. in <unclear cert="medium" resp="#joint">allen</unclear> begebenden <unclear cert="medium" resp="#joint">occasionen</unclear> <unclear cert="medium" resp="#joint">ohnfehlbarlich</unclear> zu-
+<lb n="83"/><unclear cert="medium" resp="#joint">verschulden</unclear>, verbleiben wir <unclear cert="low" resp="#joint">jeder</unclear> zeit <unclear cert="medium" resp="#joint">geneigt</unclear> und guot-
+<lb n="84"/>willig. <unclear cert="medium" resp="#joint">Unß</unclear> <unclear cert="medium" resp="#joint">damit</unclear> <unclear cert="medium" resp="#joint">göttlicher</unclear> <unclear cert="medium" resp="#joint">obhalt</unclear> wol <unclear cert="medium" resp="#joint">befehlende</unclear>.
+<lb n="85"/><unclear cert="medium" resp="#joint">Dat</unclear>. den. <origDate when="1638" resp="#ner">10. <unclear cert="medium" resp="#joint">H</unclear>. <unclear cert="medium" resp="#joint">januarij</unclear> <unclear cert="medium" resp="#joint">a°</unclear> 1638</origDate>.
+<lb n="86"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">rhat</unclear>
+<lb n="87"/>der statt <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>.
+<lb n="88"/>Den Edlen Vesten, <unclear cert="low" resp="#joint">Ehrnvesten</unclear> <unclear cert="low" resp="#joint">Fürsichtigen</unclear> Ersamen
+<lb n="89"/>und Weisen, <orgName ref="stadtasg-actors-510" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Rhat</unclear> der statt
+<lb n="90"/><unclear cert="medium" resp="#joint">Ulm</unclear></orgName>, <unclear cert="medium" resp="#joint">unseren</unclear> insonders <unclear cert="medium" resp="#joint">vertrawten</unclear> lieben herren
+<lb n="91"/>und <unclear cert="medium" resp="#joint">fründten</unclear>
 <pb facs="StadtASG_Missive_3271_12980.jpg" n="4"/>
-<lb n="92"/>Unser freündt- nachbarlich willig dienst, und waß
-<lb n="93"/>wir ehren liebs und guts vermögend zuvor, Edle, Vest
-<lb n="94"/>Ehrenvest, Fürsichtig, Ehrsam und weis, Insonders gute
-<lb n="95"/>Freündt und getreüwe liebe Nachbarn.
-<lb n="96"/>Demnach ein geraume zeit hero, beÿ den Apotheckheren
-<lb n="97"/>alhie in unser Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanctgallen</placeName>, merkhliche mißbreüch
-<lb n="98"/>fürnemblich in dem eingerissen, daß sÿ die leüth mit
-<lb n="99"/>gar zu hohem taxieren der artzneÿen beschwerdt und
-<lb n="100"/>übernommen, daher wir verursacht worden, die vor-
-<lb n="101"/>disem von unß angesehenen Apotheckherordnung und
-<lb n="102"/>tax widerumb zerenovieren und nach beschaffen-
-<lb n="103"/>heit jetziger zeiten und leüffen zu moderieren; Und
-<lb n="104"/>aber E. V. F. E. W. lobliche Statt <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName> wol
-<lb n="105"/>angesechner guter statuten und satzungen ordnungen
-<lb n="106"/>halber, ob welchen auch beÿ ihnen steiff gehalten werde.
-<lb n="107"/>So gelangt demnach an dieselben unser freündt- nach-
-<lb n="108"/>barliche bitt, sie wellen ihnen belieben lassen, dieselbige
-<lb n="109"/>ihre habende Apoteckher ordnung sambt dem tax der
-<lb n="110"/>artzneÿen, wie solcher diser zeit beÿ ihnen ungefehrlich
-<lb n="111"/>gesatzt und gehalten wirdt, uns auf unseren costen
-<lb n="112"/>unbeschwerlich zukommen zelassen, insonderheit über die
-<lb n="113"/>jenige stukh, so in hiebeÿ verwahrtem außzug zusehen, zu
-<lb n="114"/>welchen stukhen dann der preiß gleich hinzugesetzt, und
-<lb n="115"/>also neben der obbesagten ordnung unß wider über-
-<lb n="116"/>schikht werden khan. Unß were aber auch nit weniger
-<lb n="117"/>lieb von ihnen den bericht zehaben, ob die Apotheckher
-<lb n="118"/>in ihrer Statt, und ihre gesellen nit auch uff die ihnen
-<lb n="119"/>fürgeschribne ordnung beeidiget werden. Diß alles
-<lb n="120"/>umb E. V. F. W. in allen begebenden occasionen
-<lb n="121"/>dankhbarlich zubeschulden, verbleiben wir jederzeit
-<lb n="122"/>geneigt und gutwillig, Unß damit goettlicher obhalt
-<lb n="123"/>wol befehlende. Geben den <origDate when="1638" resp="#ner">10. t. Januarii Ao. 1638</origDate>.
-<lb n="124"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
-<lb n="125"/>der Statt Sanctgallen</orgName>.
-<lb n="126"/>Den Edlen Vesten, Ehrenvesten, Fürsichtigen
-<lb n="127"/>Ehrsamen und weisen, Verwaltern der
-<lb n="128"/>Haubtmanschafft, auch <orgName ref="stadtasg-actors-56" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="129"/>und Raht der Statt Costantz</orgName>, Unseren
-<lb n="130"/>insonders guten Freünden, und getreüwen
-<lb n="131"/>lieben Nachbarn.
+<lb n="92"/><unclear cert="medium" resp="#joint">Unser</unclear> <unclear cert="medium" resp="#joint">freündt</unclear>- <unclear cert="medium" resp="#joint">nachbarlich</unclear> willig <unclear cert="medium" resp="#joint">dienst</unclear>, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">waß</unclear>
+<lb n="93"/>wir ehren liebs <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">guts</unclear> vermögend <unclear cert="medium" resp="#joint">zuvor</unclear>, <unclear cert="medium" resp="#joint">Edle</unclear>, Vest
+<lb n="94"/><unclear cert="medium" resp="#joint">Ehrenvest</unclear>, Fürsichtig, <unclear cert="medium" resp="#joint">Ehrsam</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">weis</unclear>, Insonders <unclear cert="medium" resp="#joint">gute</unclear>
+<lb n="95"/>Freündt <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">getreüwe</unclear> liebe <unclear cert="low" resp="#joint">Nachbarn</unclear>.
+<lb n="96"/><unclear cert="low" resp="#joint">Demnach</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">geraume</unclear> zeit <unclear cert="medium" resp="#joint">hero</unclear>, <unclear cert="medium" resp="#joint">beÿ</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">Apotheckheren</unclear>
+<lb n="97"/><unclear cert="medium" resp="#joint">alhie</unclear> in unser Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanctgallen</unclear></placeName>, <unclear cert="low" resp="#joint">merkhliche</unclear> <unclear cert="low" resp="#joint">mißbreüch</unclear>
+<lb n="98"/><unclear cert="low" resp="#joint">fürnemblich</unclear> in dem <unclear cert="medium" resp="#joint">eingerissen</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">sÿ</unclear> die <unclear cert="low" resp="#joint">leüth</unclear> <unclear cert="low" resp="#joint">mit</unclear>
+<lb n="99"/><unclear cert="low" resp="#joint">gar</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">hohem</unclear> <unclear cert="low" resp="#joint">taxieren</unclear> der <unclear cert="medium" resp="#joint">artzneÿen</unclear> <unclear cert="medium" resp="#joint">beschwerdt</unclear> und
+<lb n="100"/><unclear cert="medium" resp="#joint">übernommen</unclear>, <unclear cert="medium" resp="#joint">daher</unclear> wir <unclear cert="medium" resp="#joint">verursacht</unclear> <unclear cert="medium" resp="#joint">worden</unclear>, die <unclear cert="low" resp="#joint">vor</unclear>-
+<lb n="101"/><unclear cert="low" resp="#joint">disem</unclear> von <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">angesehenen</unclear> <unclear cert="low" resp="#joint">Apotheckherordnung</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="102"/><unclear cert="low" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">zerenovieren</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nach</unclear> beschaffen-
+<lb n="103"/><unclear cert="medium" resp="#joint">heit</unclear> <unclear cert="medium" resp="#joint">jetziger</unclear> <unclear cert="medium" resp="#joint">zeiten</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">leüffen</unclear> <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">moderieren</unclear>; <unclear cert="medium" resp="#joint">Und</unclear>
+<lb n="104"/>aber <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">V</unclear>. <unclear cert="medium" resp="#joint">F</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. <unclear cert="medium" resp="#joint">lobliche</unclear> Statt <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costantz</unclear></placeName> <unclear cert="low" resp="#joint">wol</unclear>
+<lb n="105"/><unclear cert="low" resp="#joint">angesechner</unclear> <unclear cert="low" resp="#joint">guter</unclear> <unclear cert="low" resp="#joint">statuten</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">satzungen</unclear> <unclear cert="low" resp="#joint">ordnungen</unclear>
+<lb n="106"/><unclear cert="low" resp="#joint">halber</unclear>, ob <unclear cert="medium" resp="#joint">welchen</unclear> auch <unclear cert="medium" resp="#joint">beÿ</unclear> <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">steiff</unclear> gehalten werde.
+<lb n="107"/><unclear cert="medium" resp="#joint">So</unclear> <unclear cert="medium" resp="#joint">gelangt</unclear> <unclear cert="medium" resp="#joint">demnach</unclear> an dieselben unser <unclear cert="medium" resp="#joint">freündt</unclear>- nach-
+<lb n="108"/>barliche <unclear cert="medium" resp="#joint">bitt</unclear>, sie wellen <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">belieben</unclear> <unclear cert="medium" resp="#joint">lassen</unclear>, <unclear cert="medium" resp="#joint">dieselbige</unclear>
+<lb n="109"/>ihre habende <unclear cert="medium" resp="#joint">Apoteckher</unclear> ordnung <unclear cert="medium" resp="#joint">sambt</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">tax</unclear> der
+<lb n="110"/><unclear cert="medium" resp="#joint">artzneÿen</unclear>, wie solcher diser zeit <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">ungefehrlich</unclear>
+<lb n="111"/><unclear cert="low" resp="#joint">gesatzt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gehalten</unclear> <unclear cert="low" resp="#joint">wirdt</unclear>, <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">auf</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">costen</unclear>
+<lb n="112"/><unclear cert="low" resp="#joint">unbeschwerlich</unclear> <unclear cert="low" resp="#joint">zukommen</unclear> <unclear cert="low" resp="#joint">zelassen</unclear>, <unclear cert="low" resp="#joint">insonderheit</unclear> über die
+<lb n="113"/>jenige <unclear cert="low" resp="#joint">stukh</unclear>, <unclear cert="low" resp="#joint">so</unclear> in <unclear cert="medium" resp="#joint">hiebeÿ</unclear> <unclear cert="medium" resp="#joint">verwahrtem</unclear> <unclear cert="medium" resp="#joint">außzug</unclear> <unclear cert="medium" resp="#joint">zusehen</unclear>, <unclear cert="medium" resp="#joint">zu</unclear>
+<lb n="114"/><unclear cert="medium" resp="#joint">welchen</unclear> <unclear cert="medium" resp="#joint">stukhen</unclear> dann der <unclear cert="medium" resp="#joint">preiß</unclear> gleich <unclear cert="low" resp="#joint">hinzugesetzt</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="115"/><unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">obbesagten</unclear> ordnung <unclear cert="medium" resp="#joint">unß</unclear> wider über-
+<lb n="116"/><unclear cert="medium" resp="#joint">schikht</unclear> werden <unclear cert="medium" resp="#joint">khan</unclear>. <unclear cert="medium" resp="#joint">Unß</unclear> were aber auch nit weniger
+<lb n="117"/><unclear cert="medium" resp="#joint">lieb</unclear> von <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">bericht</unclear> <unclear cert="medium" resp="#joint">zehaben</unclear>, ob <unclear cert="medium" resp="#joint">die</unclear> <unclear cert="medium" resp="#joint">Apotheckher</unclear>
+<lb n="118"/>in <unclear cert="medium" resp="#joint">ihrer</unclear> Statt, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">ihre</unclear> <unclear cert="medium" resp="#joint">gesellen</unclear> nit auch <unclear cert="medium" resp="#joint">uff</unclear> die <unclear cert="medium" resp="#joint">ihnen</unclear>
+<lb n="119"/><unclear cert="medium" resp="#joint">fürgeschribne</unclear> ordnung <unclear cert="medium" resp="#joint">beeidiget</unclear> werden. <unclear cert="medium" resp="#joint">Diß</unclear> alles
+<lb n="120"/>umb <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. in <unclear cert="low" resp="#joint">allen</unclear> <unclear cert="low" resp="#joint">begebenden</unclear> <unclear cert="low" resp="#joint">occasionen</unclear>
+<lb n="121"/><unclear cert="low" resp="#joint">dankhbarlich</unclear> <unclear cert="low" resp="#joint">zubeschulden</unclear>, verbleiben wir <unclear cert="low" resp="#joint">jederzeit</unclear>
+<lb n="122"/><unclear cert="low" resp="#joint">geneigt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gutwillig</unclear>, <unclear cert="low" resp="#joint">Unß</unclear> <unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">goettlicher</unclear> <unclear cert="low" resp="#joint">obhalt</unclear>
+<lb n="123"/><unclear cert="low" resp="#joint">wol</unclear> befehlende. <unclear cert="medium" resp="#joint">Geben</unclear> den <origDate when="1638" resp="#ner"><unclear cert="low" resp="#joint">10</unclear>. <unclear cert="low" resp="#joint">t</unclear>. <unclear cert="low" resp="#joint">Januarii</unclear> <unclear cert="low" resp="#joint">Ao</unclear>. <unclear cert="low" resp="#joint">1638</unclear></origDate>.
+<lb n="124"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="125"/>der Statt <unclear cert="low" resp="#joint">Sanctgallen</unclear></orgName>.
+<lb n="126"/>Den Edlen Vesten, <unclear cert="medium" resp="#joint">Ehrenvesten</unclear>, Fürsichtigen
+<lb n="127"/><unclear cert="medium" resp="#joint">Ehrsamen</unclear> <unclear cert="medium" resp="#joint">und</unclear> weisen, <unclear cert="medium" resp="#joint">Verwaltern</unclear> <unclear cert="medium" resp="#joint">der</unclear>
+<lb n="128"/><unclear cert="medium" resp="#joint">Haubtmanschafft</unclear>, <unclear cert="medium" resp="#joint">auch</unclear> <orgName ref="stadtasg-actors-56" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="129"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Raht</unclear> der Statt <unclear cert="medium" resp="#joint">Costantz</unclear></orgName>, <unclear cert="medium" resp="#joint">Unseren</unclear>
+<lb n="130"/>insonders <unclear cert="medium" resp="#joint">guten</unclear> <unclear cert="medium" resp="#joint">Freünden</unclear>, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">getreüwen</unclear>
+<lb n="131"/>lieben <unclear cert="medium" resp="#joint">Nachbarn</unclear>.
 </p>
         </body>
     </text>

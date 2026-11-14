@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3253</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Meliand aus Solothurn antwortet auf einen Brief der St. Galler, in dem es um deren Pension geht. Er sichert ihnen zu, dass er sich in allen Angelegenheiten, die ihr Interesse betreffen, wohlwollend verhalten und ihnen bald Gelegenheit geben werde, seinen Wunsch zu erkennen, zu ihrer Zufriedenheit beizutragen. Er bittet den Herrn Solicoffre, ihren Mitbürger, der ihm von ihrer Seite berichtet habe, dies ihnen ausführlicher mitzuteilen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Meliand aus Solothurn antwortet auf einen Brief der St. Galler, in dem es um deren Pension geht. Er sichert ihnen zu, dass er sich in allen Angelegenheiten, die ihr Interesse betreffen, wohlwollend verhalten und ihnen bald Gelegenheit geben werde, seinen Wunsch zu erkennen, zu ihrer Zufriedenheit beizutragen. Er bittet den Herrn Solicoffre, ihren Mitbürger, der ihm von ihrer Seite berichtet habe, dies ihnen ausführlicher mitzuteilen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Meliand from Solothurn replies to a letter from the citizens of St. Gallen, concerning their pension. He assures them that he will act benevolently in all matters concerning their interest and will soon give them the opportunity to recognize his wish to contribute to their satisfaction. He asks Herr Solicoffre, their fellow citizen, who had reported to him on their behalf, to communicate this to them in more detail.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -43,23 +44,23 @@
 <lb n="7"/>avec favorable consideration, et que dans quelque
 <lb n="8"/>temps je vous feray paroistre le desir que jay
 <lb n="9"/>de contribuer a vostre contentemment ainsi quil
-<lb n="10"/>vous poura dire plus amplement ce quattendant
-<lb n="11"/>je prie Dieu
+<lb n="10"/>vous poura dire plus amplement ce <unclear cert="low" resp="#joint">quattendant</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">je</unclear> <unclear cert="low" resp="#joint">prie</unclear> Dieu
 <lb n="12"/>Magnifiques Seigneurs quil vous conserve en
 <lb n="13"/>sa ste garde
-<lb n="14"/>De <origPlace resp="#ner">Soleure</origPlace> ce <origDate resp="#ner">22 sepbre</origDate> Vostre tres affectionné a vous servir
-<lb n="15"/><origDate when="1634" resp="#ner">1634</origDate> <persName role="issuer" resp="#ner">Meliand</persName>
+<lb n="14"/>De <origPlace resp="#ner">Soleure</origPlace> ce <origDate resp="#ner">22 sepbre</origDate> <unclear cert="low" resp="#joint">Vostre</unclear> <unclear cert="low" resp="#joint">tres</unclear> <unclear cert="low" resp="#joint">affectionné</unclear> <unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">vous</unclear> <unclear cert="low" resp="#joint">servir</unclear>
+<lb n="15"/><origDate when="1634" resp="#ner"><unclear cert="low" resp="#joint">1634</unclear></origDate> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Meliand</unclear></persName>
 <pb facs="StadtASG_Missive_3253_12892.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3253_12893.jpg" n="3"/>
-<lb n="16"/>Aux Magnifiques Seigneurs
-<lb n="17"/>Messieurs les <orgName role="recipient" resp="#ner">Bourguemaistres et
-<lb n="18"/>Conseil de la Ville de St.
-<lb n="19"/>Gal</orgName>,
-<lb n="20"/>à <placeName resp="#ner">St. Gal</placeName>.
+<lb n="16"/><unclear cert="low" resp="#joint">Aux</unclear> <unclear cert="low" resp="#joint">Magnifiques</unclear> <unclear cert="low" resp="#joint">Seigneurs</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">Messieurs</unclear> <unclear cert="low" resp="#joint">les</unclear> <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Bourguemaistres</unclear> <unclear cert="low" resp="#joint">et</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">Conseil</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">la</unclear> <unclear cert="low" resp="#joint">Ville</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">St</unclear>.
+<lb n="19"/><unclear cert="low" resp="#joint">Gal</unclear></orgName>,
+<lb n="20"/><unclear cert="low" resp="#joint">à</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gal</unclear></placeName>.
 <pb facs="StadtASG_Missive_3253_12894.jpg" n="4"/>
-<lb n="21"/>Aux Magnifiques Seigneurs
+<lb n="21"/><unclear cert="low" resp="#joint">Aux</unclear> <unclear cert="low" resp="#joint">Magnifiques</unclear> Seigneurs
 <lb n="22"/>Messieurs les <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Bourgmaistre et
-<lb n="23"/>Con.l de la Ville de S.t Gal</orgName>
+<lb n="23"/><unclear cert="low" resp="#joint">Con.l</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">la</unclear> <unclear cert="low" resp="#joint">Ville</unclear> de S.t Gal</orgName>
 <lb n="24"/>A <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S.t Gal</placeName>
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3500</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johann Rudolf Reding, Landvogt zu Liechtenstein, teilt Bürgermeister und Rat zu St. Gallen mit, dass er auf deren Anfrage hin durch seine Amtleute nach dem verhafteten Jaglin Walmen forschen habe lassen. Da seit der Verhaftung viel Zeit vergangen sei und das Land voller Landstreicher gewesen sei, habe er keine weiteren Nachrichten erhalten. Er verweist auf den Inhalt seines früheren Schreibens.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johann Rudolf Reding, Landvogt zu Liechtenstein, teilt Bürgermeister und Rat zu St. Gallen mit, dass er auf deren Anfrage hin durch seine Amtleute nach dem verhafteten Jaglin Walmen forschen habe lassen. Da seit der Verhaftung viel Zeit vergangen sei und das Land voller Landstreicher gewesen sei, habe er keine weiteren Nachrichten erhalten. Er verweist auf den Inhalt seines früheren Schreibens.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johann Rudolf Reding, Landvogt of Liechtenstein, informs the Burgomaster and Council of St. Gallen that, in response to their inquiry, he had his officials search for the arrested Jaglin Walmen. Since much time had passed since the arrest and the land had been full of vagabonds, he had received no further news. He refers to the content of his earlier letter.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -44,29 +45,29 @@
 <lb n="8"/>raume zeit hero verfloßen und vor disem das
 <lb n="9"/>landt voll dergleichen landtstreicher gewesen, auch
 <lb n="10"/>deßwegen einicher weiterer bericht von keinem
-<lb n="11"/>meiner Ambts angehoerigen, deme er <persName resp="#ner">Walm</persName> we-
-<lb n="12"/>der in zeit wehrender seiner verhafftung, noch bej
+<lb n="11"/>meiner Ambts angehoerigen, deme er <persName resp="#ner"><unclear cert="low" resp="#joint">Walm</unclear></persName> <unclear cert="low" resp="#joint">we</unclear>-
+<lb n="12"/><unclear cert="low" resp="#joint">der</unclear> in zeit wehrender seiner verhafftung, noch bej
 <lb n="13"/>ledig laßung etwan bekandt sein moechte, nicht
 <lb n="14"/>einkomen, Alß kan die herrn ich diß orthß an-
 <lb n="15"/>ders nichts berichten, dan was in vorgehendem
 <lb n="16"/>meinem schreiben angeregtes Protocol inhalt
 <lb n="17"/>unnd vermag, Unnd verbleibe hiemit, nechß
 <lb n="18"/>goettlicher empfehlung,
-<lb n="19"/>der herrn
-<lb n="20"/><origPlace ref="stadtasg-places-33" cert="medium" resp="#ner">Liechtensteig</origPlace> <origDate when="1642-11-13" resp="#ner">den 13.
-<lb n="21"/>Wintermonat 1642</origDate>.
-<lb n="22"/>dienstwillig Nachpar.
-<lb n="23"/><persName role="issuer" resp="#ner">Johans Rudolff</persName>
-<lb n="24"/>Reding landtvogt.
+<lb n="19"/>der <unclear cert="low" resp="#joint">herrn</unclear>
+<lb n="20"/><origPlace ref="stadtasg-places-33" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Liechtensteig</unclear></origPlace> <origDate when="1642-11-13" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">13</unclear>.
+<lb n="21"/><unclear cert="low" resp="#joint">Wintermonat</unclear> <unclear cert="low" resp="#joint">1642</unclear></origDate>.
+<lb n="22"/><unclear cert="low" resp="#joint">dienstwillig</unclear> <unclear cert="low" resp="#joint">Nachpar</unclear>.
+<lb n="23"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Johans</unclear> <unclear cert="low" resp="#joint">Rudolff</unclear></persName>
+<lb n="24"/><unclear cert="low" resp="#joint">Reding</unclear> <unclear cert="low" resp="#joint">landtvogt</unclear>.
 <pb facs="StadtASG_Missive_3500_13952.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3500_13953.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3500_13954.jpg" n="4"/>
-<lb n="25"/>Denen woledlen, vesten, frommen, fuersichtig
+<lb n="25"/>Denen woledlen, vesten, frommen, <unclear cert="low" resp="#joint">fuersichtig</unclear>
 <lb n="26"/>und weisen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="27"/>und Rath der Statt St: Gallen</orgName>, meinen
-<lb n="28"/>sonders geehrten herren, guoten freuendt,
-<lb n="29"/>und Gevattern.
-<lb n="30"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName>.
+<lb n="27"/>und Rath der Statt St: Gallen</orgName>, <unclear cert="low" resp="#joint">meinen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="low" resp="#joint">herren</unclear>, <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">freuendt</unclear>,
+<lb n="29"/>und <unclear cert="low" resp="#joint">Gevattern</unclear>.
+<lb n="30"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>: <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

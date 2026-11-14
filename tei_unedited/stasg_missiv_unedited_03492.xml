@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3492</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die Pfarrer von Hannover und Umgebung bitten Bürgermeister und Rat zu St. Gallen um eine Kollekte zur Unterstützung der durch den Krieg gebeutelten Stadt Hannover. Sie verweisen auf ein bereits an das Konsistorium gesendetes Schreiben, in dem die Notlage geschildert wurde, und versprechen, dass die Hilfe nur einmalig nötig sei. Sie empfehlen die Stadt St. Gallen der göttlichen Obhut.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die Pfarrer von Hannover und Umgebung bitten Bürgermeister und Rat zu St. Gallen um eine Kollekte zur Unterstützung der durch den Krieg gebeutelten Stadt Hannover. Sie verweisen auf ein bereits an das Konsistorium gesendetes Schreiben, in dem die Notlage geschildert wurde, und versprechen, dass die Hilfe nur einmalig nötig sei. Sie empfehlen die Stadt St. Gallen der göttlichen Obhut.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The parish priests of Hannover and the surrounding area ask the Burgomaster and Council of St. Gallen for a collection to support the city of Hannover, which has been afflicted by the war. They refer to a letter already sent to the Consistory, in which the dire situation was described, and promise that the aid will only be needed once. They commend the city of St. Gallen to divine care.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,44 +35,44 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3492_13917.jpg" n="1"/>
-<lb n="1"/>Χαίρειν.
-<lb n="2"/>Illustres, ac Nobilissimi viri, authoritate gravi, et pia
-<lb n="3"/>prudentia spectatissimi Domini, Mecaenates honoratissimi,
-<lb n="4"/>Quod psaltes pie dicit, Beatam esse gentem sive Rem=
-<lb n="5"/>publicam, cujus Jehova Deus est, et eo ipso beatitudinis gradus ita
-<lb n="6"/>discernit, ut nihilominus cognitionem veri Dei ejusque cultum syn=
-<lb n="7"/>cerum omnibus reliquis bonis et privilegiis hujus seculi anteferat,
+<lb n="1"/><unclear cert="medium" resp="#joint">Χαίρειν</unclear>.
+<lb n="2"/><unclear cert="medium" resp="#joint">Illustres</unclear>, ac Nobilissimi viri, <unclear cert="medium" resp="#joint">authoritate</unclear> gravi, et pia
+<lb n="3"/>prudentia spectatissimi Domini, <unclear cert="low" resp="#joint">Mecaenates</unclear> <unclear cert="low" resp="#joint">honoratissimi</unclear>,
+<lb n="4"/>Quod <unclear cert="medium" resp="#joint">psaltes</unclear> pie dicit, Beatam esse <unclear cert="medium" resp="#joint">gentem</unclear> sive <unclear cert="low" resp="#joint">Rem=</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">publicam</unclear>, <unclear cert="low" resp="#joint">cujus</unclear> <unclear cert="low" resp="#joint">Jehova</unclear> Deus est, et eo ipso beatitudinis gradus ita
+<lb n="6"/><unclear cert="medium" resp="#joint">discernit</unclear>, ut nihilominus <unclear cert="medium" resp="#joint">cognitionem</unclear> veri Dei <unclear cert="medium" resp="#joint">ejusque</unclear> cultum <unclear cert="medium" resp="#joint">syn=</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">cerum</unclear> omnibus reliquis bonis et <unclear cert="low" resp="#joint">privilegiis</unclear> <unclear cert="low" resp="#joint">hujus</unclear> <unclear cert="low" resp="#joint">seculi</unclear> <unclear cert="low" resp="#joint">anteferat</unclear>,
 <lb n="8"/>id ipsum veluti procul dubio firmiter creditis, ita certe in hac
-<lb n="9"/>mundi immundi senecta possidetis. Nam vobis praeter alias
-<lb n="10"/><orgName resp="#ner">Helvetiorum Respublicas</orgName> ita concredidit Deus Ter Opt. Max.
-<lb n="11"/>eloquiorum suorum Corticem, ut simul pultem attingatis, cum
-<lb n="12"/>orthodoxia et pietas Christiana absque fumoso Levitici alicujus
-<lb n="13"/>Pontificatus typho in plateis vestris personat.
-<lb n="14"/>Vos equidem respectu nostri Beatos diceremus eo, quod tota
-<lb n="15"/>ferme <placeName resp="#ner">Germania</placeName> incendio Martis misere conflagrante, Vos
-<lb n="16"/>tuti interea sub alis Omnipotentis sedetis, ejusque bonitate
-<lb n="17"/>multiplici fruimini. Quaetenim belli inexplebilis sit vorago
-<lb n="18"/>et inexplicabilis noxa, id ipsum nos reipsa edocti, eo melius
-<lb n="19"/>profari possumus, qui durius Bellonae flabra hucusque perpessi
-<lb n="20"/>sumus. At aliarum gentium respectu, beati vel inprimis ab omnibus
-<lb n="21"/>qui non omnino caecutiunt, dicendi estis, quod Jesu Christi simplex
-<lb n="22"/>veritas in doctrina et vera simplicitas in cultu ipso divinitus
-<lb n="23"/>vobis concessa in Ecclesiis vestris concessa dominetur. Hoc pri=
-<lb n="24"/>vilegio quoque per Dei gratiam utitur fruitur nostra Respublica,
-<lb n="25"/><orgName resp="#ner">Comitatus nempe Hanovicus</orgName>, sub quo degimus. Hac beatitudinis catena
-<lb n="26"/>vobis per Servatorem uniti, membra sumus Ecclesiae vestrae, ut vos
-<lb n="27"/>nostrae, prout utrique gaudemus consortio illo mystico Ecclesiae
-<lb n="28"/>Christi Catholicae. Sic Deo nempe placuit diversis vinculis
-<lb n="29"/>colligare homines, ut qui multi essent individuis et ingeniis varii
-<lb n="30"/>nihilominus in unitate quadantenus conservarentur. Natura ho=
-<lb n="31"/>mines, gratia Christianos conjungit. Ex illa civitas, ex hac Eccle=
-<lb n="32"/>sia consurgit. Ibi societas, hic charitas dominatur. Illa solum, haec
-<lb n="33"/>polum respicit. Civitatem spiritus, quem Apostolus vocat Mundi, sed
-<lb n="34"/>Ecclesiam Spiritus, qui dicitur gratiae et υἱοθεσίας, aedificat.
+<lb n="9"/>mundi <unclear cert="medium" resp="#joint">immundi</unclear> <unclear cert="medium" resp="#joint">senecta</unclear> <unclear cert="medium" resp="#joint">possidetis</unclear>. Nam vobis <unclear cert="medium" resp="#joint">praeter</unclear> alias
+<lb n="10"/><orgName resp="#ner">Helvetiorum Respublicas</orgName> ita <unclear cert="medium" resp="#joint">concredidit</unclear> Deus Ter <unclear cert="medium" resp="#joint">Opt</unclear>. <unclear cert="medium" resp="#joint">Max</unclear>.
+<lb n="11"/><unclear cert="medium" resp="#joint">eloquiorum</unclear> suorum <unclear cert="medium" resp="#joint">Corticem</unclear>, ut simul <unclear cert="medium" resp="#joint">pultem</unclear> attingatis, <unclear cert="low" resp="#joint">cum</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">orthodoxia</unclear> et <unclear cert="medium" resp="#joint">pietas</unclear> <unclear cert="medium" resp="#joint">Christiana</unclear> <unclear cert="medium" resp="#joint">absque</unclear> fumoso Levitici <unclear cert="medium" resp="#joint">alicujus</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">Pontificatus</unclear> <unclear cert="medium" resp="#joint">typho</unclear> in <unclear cert="medium" resp="#joint">plateis</unclear> <unclear cert="medium" resp="#joint">vestris</unclear> <unclear cert="medium" resp="#joint">personat</unclear>.
+<lb n="14"/><unclear cert="medium" resp="#joint">Vos</unclear> equidem respectu <unclear cert="medium" resp="#joint">nostri</unclear> <unclear cert="medium" resp="#joint">Beatos</unclear> <unclear cert="medium" resp="#joint">diceremus</unclear> eo, quod tota
+<lb n="15"/>ferme <placeName resp="#ner"><unclear cert="medium" resp="#joint">Germania</unclear></placeName> <unclear cert="medium" resp="#joint">incendio</unclear> <unclear cert="medium" resp="#joint">Martis</unclear> misere <unclear cert="medium" resp="#joint">conflagrante</unclear>, Vos
+<lb n="16"/>tuti interea sub <unclear cert="medium" resp="#joint">alis</unclear> Omnipotentis <unclear cert="medium" resp="#joint">sedetis</unclear>, <unclear cert="medium" resp="#joint">ejusque</unclear> bonitate
+<lb n="17"/><unclear cert="medium" resp="#joint">multiplici</unclear> <unclear cert="medium" resp="#joint">fruimini</unclear>. <unclear cert="medium" resp="#joint">Quaetenim</unclear> <unclear cert="medium" resp="#joint">belli</unclear> <unclear cert="medium" resp="#joint">inexplebilis</unclear> sit <unclear cert="medium" resp="#joint">vorago</unclear>
+<lb n="18"/>et <unclear cert="low" resp="#joint">inexplicabilis</unclear> <unclear cert="low" resp="#joint">noxa</unclear>, id ipsum nos <unclear cert="medium" resp="#joint">reipsa</unclear> <unclear cert="medium" resp="#joint">edocti</unclear>, eo melius
+<lb n="19"/><unclear cert="medium" resp="#joint">profari</unclear> possumus, <unclear cert="medium" resp="#joint">qui</unclear> <unclear cert="medium" resp="#joint">durius</unclear> <unclear cert="medium" resp="#joint">Bellonae</unclear> flabra <unclear cert="medium" resp="#joint">hucusque</unclear> <unclear cert="medium" resp="#joint">perpessi</unclear>
+<lb n="20"/>sumus. At <unclear cert="medium" resp="#joint">aliarum</unclear> gentium respectu, <unclear cert="medium" resp="#joint">beati</unclear> vel <unclear cert="medium" resp="#joint">inprimis</unclear> ab omnibus
+<lb n="21"/>qui non omnino <unclear cert="medium" resp="#joint">caecutiunt</unclear>, <unclear cert="medium" resp="#joint">dicendi</unclear> <unclear cert="medium" resp="#joint">estis</unclear>, quod <unclear cert="medium" resp="#joint">Jesu</unclear> Christi simplex
+<lb n="22"/>veritas in doctrina et vera <unclear cert="low" resp="#joint">simplicitas</unclear> <unclear cert="low" resp="#joint">in</unclear> cultu ipso <unclear cert="medium" resp="#joint">divinitus</unclear>
+<lb n="23"/>vobis <unclear cert="medium" resp="#joint">concessa</unclear> in <unclear cert="medium" resp="#joint">Ecclesiis</unclear> vestris concessa <unclear cert="medium" resp="#joint">dominetur</unclear>. Hoc <unclear cert="low" resp="#joint">pri=</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">vilegio</unclear> quoque per Dei gratiam utitur <unclear cert="medium" resp="#joint">fruitur</unclear> <unclear cert="medium" resp="#joint">nostra</unclear> Respublica,
+<lb n="25"/><orgName resp="#ner"><unclear cert="medium" resp="#joint">Comitatus</unclear> nempe <unclear cert="medium" resp="#joint">Hanovicus</unclear></orgName>, sub quo <unclear cert="medium" resp="#joint">degimus</unclear>. <unclear cert="medium" resp="#joint">Hac</unclear> beatitudinis <unclear cert="medium" resp="#joint">catena</unclear>
+<lb n="26"/>vobis per <unclear cert="medium" resp="#joint">Servatorem</unclear> <unclear cert="medium" resp="#joint">uniti</unclear>, membra sumus <unclear cert="medium" resp="#joint">Ecclesiae</unclear> vestrae, ut vos
+<lb n="27"/><unclear cert="medium" resp="#joint">nostrae</unclear>, <unclear cert="medium" resp="#joint">prout</unclear> <unclear cert="medium" resp="#joint">utrique</unclear> <unclear cert="medium" resp="#joint">gaudemus</unclear> consortio <unclear cert="medium" resp="#joint">illo</unclear> mystico Ecclesiae
+<lb n="28"/>Christi <unclear cert="medium" resp="#joint">Catholicae</unclear>. <unclear cert="medium" resp="#joint">Sic</unclear> Deo nempe placuit <unclear cert="medium" resp="#joint">diversis</unclear> vinculis
+<lb n="29"/>colligare homines, ut qui multi essent <unclear cert="medium" resp="#joint">individuis</unclear> et <unclear cert="medium" resp="#joint">ingeniis</unclear> <unclear cert="medium" resp="#joint">varii</unclear>
+<lb n="30"/><unclear cert="medium" resp="#joint">nihilominus</unclear> in unitate quadantenus conservarentur. Natura <unclear cert="medium" resp="#joint">ho=</unclear>
+<lb n="31"/>mines, gratia Christianos <unclear cert="medium" resp="#joint">conjungit</unclear>. Ex illa <unclear cert="medium" resp="#joint">civitas</unclear>, ex hac <unclear cert="low" resp="#joint">Eccle=</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">sia</unclear> consurgit. <unclear cert="medium" resp="#joint">Ibi</unclear> <unclear cert="medium" resp="#joint">societas</unclear>, <unclear cert="medium" resp="#joint">hic</unclear> <unclear cert="medium" resp="#joint">charitas</unclear> <unclear cert="medium" resp="#joint">dominatur</unclear>. Illa <unclear cert="medium" resp="#joint">solum</unclear>, <unclear cert="medium" resp="#joint">haec</unclear>
+<lb n="33"/>polum <unclear cert="medium" resp="#joint">respicit</unclear>. <unclear cert="medium" resp="#joint">Civitatem</unclear> <unclear cert="medium" resp="#joint">spiritus</unclear>, quem <unclear cert="medium" resp="#joint">Apostolus</unclear> vocat Mundi, <unclear cert="medium" resp="#joint">sed</unclear>
+<lb n="34"/>Ecclesiam Spiritus, qui dicitur <unclear cert="medium" resp="#joint">gratiae</unclear> et <unclear cert="medium" resp="#joint">υἱοθεσίας</unclear>, <unclear cert="medium" resp="#joint">aedificat</unclear>.
 <pb facs="StadtASG_Missive_3492_13918.jpg" n="2"/>
 <lb n="35"/>Hinc fit, ut unanimi licet non pari passu ad συμπάθειαν
-<lb n="36"/>invitent omnes nos et natura et gratia. Naturae suasu homo
-<lb n="37"/>homini, civis civi benefacit, Cyclopes merito audiunt et Centauri
+<lb n="36"/>invitent omnes nos et natura <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">gratia</unclear>. <unclear cert="low" resp="#joint">Naturae</unclear> <unclear cert="low" resp="#joint">suasu</unclear> <unclear cert="low" resp="#joint">homo</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">homini</unclear>, civis civi benefacit, Cyclopes merito audiunt et Centauri
 <lb n="38"/>qui Saturnino ingenio praediti, naturae vim faciunt, ejusq
 <lb n="39"/>claustra perfricta fronte perrumpunt, dum remota bene=
 <lb n="40"/>ficentia crudeles esse incipiunt. Gratiae vero ductu.
@@ -83,8 +84,8 @@
 <lb n="46"/>fidem assurgit, in coelis obambulat et ibi a patre suo cuivis
 <lb n="47"/>benefacere discit. Inprimis vero magno charitatis piae
 <lb n="48"/>et piae charitatis affectu rapitur in amplexum confratrum
-<lb n="49"/>suorum, quos novit esse in contubernio dilectae Regis Regum
-<lb n="50"/>sponsae. Sanctos, fideles, pios per totum
+<lb n="49"/>suorum, quos novit esse in contubernio <unclear cert="low" resp="#joint">dilectae</unclear> <unclear cert="low" resp="#joint">Regis</unclear> <unclear cert="low" resp="#joint">Regum</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">sponsae</unclear>. Sanctos, fideles, pios per totum
 <lb n="51"/>orbem dispersos intime conglutinat Spiritus Jehovae,
 <lb n="52"/>ut suam semper faciant et afflictionem et gloriam, quae
 <lb n="53"/>uni vel alteri in Ecclesia contingit; illam condolentia, hanc
@@ -95,21 +96,21 @@
 <lb n="58"/>collectae sive eleemosynae, quibus inopiae egenorum fratrum
 <lb n="59"/>succurrunt. Abunde id testantur ex multis aliis exempla
 <lb n="60"/>Ecclesiarum Peloponnesiacarum, quae hortatu Apostolorum af=
-<lb n="61"/>flictis fratribus in <placeName resp="#ner">Judaea</placeName> hac ratione succurrebant.
-<lb n="62"/>Quas ob res, Viri Praestantissimi, benedicta et gloriosa
+<lb n="61"/>flictis fratribus in <placeName resp="#ner">Judaea</placeName> hac ratione <unclear cert="low" resp="#joint">succurrebant</unclear>.
+<lb n="62"/><unclear cert="low" resp="#joint">Quas</unclear> <unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">res</unclear>, Viri Praestantissimi, benedicta et gloriosa
 <lb n="63"/>Vestra liberalitas, quam exercitis hoc funesto admodum tem=
 <lb n="64"/>pore erga Germanos non solum vicinos, ratione reipublicae
 <lb n="65"/>et συμπολιτείας, sed etiam fratres ratione Ecclesiae et
-<lb n="66"/>orthodoxae confessionis. Ponderatis procul dubio inter alia
+<lb n="66"/><unclear cert="low" resp="#joint">orthodoxae</unclear> <unclear cert="low" resp="#joint">confessionis</unclear>. <unclear cert="low" resp="#joint">Ponderatis</unclear> <unclear cert="low" resp="#joint">procul</unclear> <unclear cert="low" resp="#joint">dubio</unclear> inter alia
 <lb n="67"/>pietatis argumenta, eleemosynas esse magnum solatium,
-<lb n="68"/>coram Deo, gratum odorem Deo, et sacrificium N. Testa=
+<lb n="68"/>coram Deo, gratum odorem <unclear cert="low" resp="#joint">Deo</unclear>, <unclear cert="low" resp="#joint">et</unclear> sacrificium N. Testa=
 <lb n="69"/>menti, spongiam delentem quodammodo peccata, imo et
-<lb n="70"/>respectu Dei rerumpublicarum fundatoris et conservatoris
+<lb n="70"/>respectu Dei <unclear cert="low" resp="#joint">rerumpublicarum</unclear> fundatoris et conservatoris
 <pb facs="StadtASG_Missive_3492_13919.jpg" n="3"/>
-<lb n="71"/>fulcrum civitatis nobilissimum contra ruinam, et ornamentum
-<lb n="72"/>ejusdem illustrissimum contra maculas, quibus etiam perfectissima
+<lb n="71"/>fulcrum civitatis nobilissimum contra ruinam, <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">ornamentum</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">ejusdem</unclear> <unclear cert="low" resp="#joint">illustrissimum</unclear> contra maculas, quibus etiam perfectissima
 <lb n="73"/>quaeq est coinquinata respublica. Hisce enim elogiis condecoratur
-<lb n="74"/>ipsa a spiritu sancto pia manu data eleemosyna.
+<lb n="74"/>ipsa a spiritu <unclear cert="low" resp="#joint">sancto</unclear> <unclear cert="low" resp="#joint">pia</unclear> <unclear cert="low" resp="#joint">manu</unclear> data eleemosyna.
 <lb n="75"/>Hanc liberalitatem vestram, ut solicitemus, cogit nos durum il=
 <lb n="76"/>lud telum, necessitas. Quae et quanta illa sit, literis ad <orgName role="recipient" resp="#ner">Vene-
 <lb n="77"/>rabile Consistorium vestrum</orgName> datis exposuimus. Rogitamus
@@ -126,33 +127,33 @@
 <lb n="88"/>et Amplitud. Vestras supplices implorant
 <lb n="89"/>humiliter venerantur et
 <lb n="90"/>constanter amplectuntur
-<lb n="91"/><persName role="issuer" resp="#ner">Henricus Oraeus</persName> Eccl.alt. <placeName resp="#ner">Hanov.</placeName> Insp.mpp
-<lb n="92"/>ra
-<lb n="93"/><persName role="issuer" resp="#ner">Cunradus Henningg</persName> Eccl: Hanovi pastor mppría.
-<lb n="94"/><persName role="issuer" resp="#ner">Wendelinus Seipelius</persName> Eccl. <placeName resp="#ner">Roßebacens.</placeName> emeritus et
-<lb n="95"/>caecus mea <persName resp="#ner">Henrici Oraei</persName> manu.
-<lb n="96"/><persName role="issuer" resp="#ner">Gilhelmus Christophorus Heimius</persName> pastor
+<lb n="91"/><persName role="issuer" resp="#ner">Henricus <unclear cert="low" resp="#joint">Oraeus</unclear></persName> <unclear cert="low" resp="#joint">Eccl.alt</unclear>. <placeName resp="#ner"><unclear cert="low" resp="#joint">Hanov</unclear>.</placeName> <unclear cert="low" resp="#joint">Insp.mpp</unclear>
+<lb n="92"/><unclear cert="low" resp="#joint">ra</unclear>
+<lb n="93"/><persName role="issuer" resp="#ner">Cunradus Henningg</persName> Eccl: Hanovi pastor <unclear cert="low" resp="#joint">mppría</unclear>.
+<lb n="94"/><persName role="issuer" resp="#ner">Wendelinus Seipelius</persName> <unclear cert="low" resp="#joint">Eccl</unclear>. <placeName resp="#ner"><unclear cert="low" resp="#joint">Roßebacens</unclear>.</placeName> emeritus et
+<lb n="95"/>caecus mea <persName resp="#ner"><unclear cert="low" resp="#joint">Henrici</unclear> <unclear cert="low" resp="#joint">Oraei</unclear></persName> <unclear cert="low" resp="#joint">manu</unclear>.
+<lb n="96"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Gilhelmus</unclear> <unclear cert="low" resp="#joint">Christophorus</unclear> <unclear cert="low" resp="#joint">Heimius</unclear></persName> pastor
 <lb n="97"/>ecclesiae <placeName resp="#ner">Windeccensis</placeName>.
 <lb n="98"/><persName role="issuer" resp="#ner">Carolus Snabelius</persName> pastor <placeName resp="#ner">Kesselstad:</placeName>
 <lb n="99"/>et <placeName resp="#ner">Doernigheimensis</placeName>
-<lb n="100"/><persName role="issuer" resp="#ner">Johannes Hermannus</persName>, pastor <placeName resp="#ner">Eichensis</placeName>,
-<lb n="101"/>heimens, et <placeName resp="#ner">Oststad:</placeName>
-<lb n="102"/><persName role="issuer" resp="#ner">Georgius Benderus</persName> pastor <placeName resp="#ner">Rumpen:</placeName>
-<lb n="103"/>et <placeName resp="#ner">Fechenheimensis</placeName>
+<lb n="100"/><persName role="issuer" resp="#ner">Johannes Hermannus</persName>, pastor <placeName resp="#ner"><unclear cert="low" resp="#joint">Eichensis</unclear></placeName>,
+<lb n="101"/><unclear cert="low" resp="#joint">heimens</unclear>, et <placeName resp="#ner"><unclear cert="low" resp="#joint">Oststad</unclear>:</placeName>
+<lb n="102"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Georgius</unclear> <unclear cert="low" resp="#joint">Benderus</unclear></persName> <unclear cert="low" resp="#joint">pastor</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Rumpen</unclear>:</placeName>
+<lb n="103"/><unclear cert="low" resp="#joint">et</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Fechenheimensis</unclear></placeName>
 <lb n="104"/><persName role="issuer" resp="#ner">Johannes Antonius Riccius</persName> p. in <placeName resp="#ner">Bruchkobell</placeName>
-<lb n="105"/>et <placeName resp="#ner">Hinderissigken</placeName>.
+<lb n="105"/>et <placeName resp="#ner"><unclear cert="low" resp="#joint">Hinderissigken</unclear></placeName>.
 <lb n="106"/><persName role="issuer" resp="#ner">Johann Hartmann Palthenius</persName> pastor <placeName resp="#ner">Rodenbach</placeName>.
 <lb n="107"/>Subscripsimus nostro, et omnium reliquor confratrum nostror
 <lb n="108"/>absentium modo nomine
-<lb n="109"/><origPlace ref="stadtasg-places-297" cert="medium" resp="#ner">Hanoviae</origPlace> <origDate when="1642" resp="#ner">12. d. April. A°. AE. C. 1642.</origDate>
+<lb n="109"/><origPlace ref="stadtasg-places-297" cert="medium" resp="#ner">Hanoviae</origPlace> <origDate when="1642" resp="#ner">12. d. <unclear cert="low" resp="#joint">April</unclear>. <unclear cert="low" resp="#joint">A°</unclear>. <unclear cert="low" resp="#joint">AE</unclear>. <unclear cert="low" resp="#joint">C</unclear>. 1642.</origDate>
 <pb facs="StadtASG_Missive_3492_13920.jpg" n="4"/>
-<lb n="110"/>Magnificis et Nobilissimis Viris,
-<lb n="111"/>natalium splendore, rerum usu, virtutumque
-<lb n="112"/>genere Spectatissimis DD. Coss. et
-<lb n="113"/>Universo Senatorio Ordini Celeberrimae
-<lb n="114"/><orgName role="recipient" resp="#ner">Reipubl. Sangallensis</orgName>: Dominis et Maece-
-<lb n="115"/>natibus nostris perpetua observantia colendis
-<lb n="116"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">San-Gallen</placeName>
+<lb n="110"/><unclear cert="medium" resp="#joint">Magnificis</unclear> et <unclear cert="medium" resp="#joint">Nobilissimis</unclear> <unclear cert="medium" resp="#joint">Viris</unclear>,
+<lb n="111"/><unclear cert="medium" resp="#joint">natalium</unclear> <unclear cert="medium" resp="#joint">splendore</unclear>, <unclear cert="medium" resp="#joint">rerum</unclear> <unclear cert="medium" resp="#joint">usu</unclear>, <unclear cert="medium" resp="#joint">virtutumque</unclear>
+<lb n="112"/><unclear cert="medium" resp="#joint">genere</unclear> <unclear cert="medium" resp="#joint">Spectatissimis</unclear> <unclear cert="medium" resp="#joint">DD</unclear>. Coss. et
+<lb n="113"/>Universo <unclear cert="medium" resp="#joint">Senatorio</unclear> Ordini <unclear cert="medium" resp="#joint">Celeberrimae</unclear>
+<lb n="114"/><orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Reipubl</unclear>. <unclear cert="medium" resp="#joint">Sangallensis</unclear></orgName>: <unclear cert="medium" resp="#joint">Dominis</unclear> et <unclear cert="medium" resp="#joint">Maece</unclear>-
+<lb n="115"/>natibus <unclear cert="medium" resp="#joint">nostris</unclear> <unclear cert="medium" resp="#joint">perpetua</unclear> observantia <unclear cert="low" resp="#joint">colendis</unclear>
+<lb n="116"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">San-Gallen</unclear></placeName>
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3294</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Franz Römer in Frankfurt, 60 Reichstaler per Wechsel an die drei Töchter des verstorbenen Grafen Albrecht von Hanau, Johanna, Elisabetha und Maria Juliana, auszuzahlen. Der Betrag ist als christliche Beisteuer für die Exulanten bestimmt. Die Zahlung soll gegen Vorlage eines Empfangsscheins erfolgen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Franz Römer in Frankfurt, 60 Reichstaler per Wechsel an die drei Töchter des verstorbenen Grafen Albrecht von Hanau, Johanna, Elisabetha und Maria Juliana, auszuzahlen. Der Betrag ist als christliche Beisteuer für die Exulanten bestimmt. Die Zahlung soll gegen Vorlage eines Empfangsscheins erfolgen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask Franz Römer in Frankfurt to pay out 60 Reichstaler by bill of exchange to the three daughters of the deceased Count Albrecht von Hanau, Johanna, Elisabetha and Maria Juliana. The amount is intended as a Christian contribution for the exiles. The payment is to be made upon presentation of a receipt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -37,17 +38,17 @@
 <lb n="1"/>Insonders guenstige herren haelter. Es habendt
 <lb n="2"/>mein gl. herren, ein ersamer <orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Raht der Statt
 <lb n="3"/>Sant Gallen</orgName>, deß hochwolgebornen herrn <persName resp="#ner">Albrech-
-<lb n="4"/>ten</persName>, Graeuens zu <placeName ref="stadtasg-places-297" cert="medium" resp="#ner">Hanaw</placeName> saeligen hinderlaßnen,
-<lb n="5"/>exulierenden dreyen tochtern und fraewlinen, mit
+<lb n="4"/>ten</persName>, <unclear cert="low" resp="#joint">Graeuens</unclear> zu <placeName ref="stadtasg-places-297" cert="medium" resp="#ner">Hanaw</placeName> saeligen hinderlaßnen,
+<lb n="5"/>exulierenden dreyen tochtern und <unclear cert="low" resp="#joint">fraewlinen</unclear>, mit
 <lb n="6"/>namen, <persName resp="#ner">Johanna</persName>, <persName resp="#ner">Elisabetha</persName>, und <persName resp="#ner">Maria Juliana</persName>,
 <lb n="7"/>Graeuinen zu Hanaw, jeder zwainzig reichß-
-<lb n="8"/>thaler, zu einer christlichen beysteur verordnet,
+<lb n="8"/>thaler, zu einer christlichen <unclear cert="low" resp="#joint">beysteur</unclear> verordnet,
 <lb n="9"/>welche sechzig reichßthaler die herren, an den
-<lb n="10"/>herrn <persName resp="#ner">Franz Roemern</persName> zu <placeName ref="stadtasg-places-16" cert="medium" resp="#ner">Franckhfort</placeName>, durch wexel
+<lb n="10"/><unclear cert="low" resp="#joint">herrn</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Franz</unclear> <unclear cert="low" resp="#joint">Roemern</unclear></persName> zu <placeName ref="stadtasg-places-16" cert="medium" resp="#ner">Franckhfort</placeName>, durch wexel
 <lb n="11"/>uberzumachen gepeten sein woellen, soelche uff ein
-<lb n="12"/>schein deß empfangß, den wol ehrngedachten
-<lb n="13"/>fraewlinen, daselbsten zu Franckhfort einzuhen-
-<lb n="14"/>digen. Datum den <origDate when="1630" resp="#ner">19. t July. A°. 1630</origDate>.,
+<lb n="12"/>schein deß empfangß, den wol <unclear cert="low" resp="#joint">ehrngedachten</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">fraewlinen</unclear>, <unclear cert="low" resp="#joint">daselbsten</unclear> zu <unclear cert="low" resp="#joint">Franckhfort</unclear> <unclear cert="low" resp="#joint">einzuhen</unclear>-
+<lb n="14"/>digen. Datum den <origDate when="1630" resp="#ner"><unclear cert="low" resp="#joint">19</unclear>. <unclear cert="low" resp="#joint">t</unclear> <unclear cert="low" resp="#joint">July</unclear>. <unclear cert="low" resp="#joint">A°</unclear>. 1630</origDate>.,
 <lb n="15"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Canzlej der Statt
 <lb n="16"/>Sant Gallen</orgName>.
 <pb facs="StadtASG_Missive_3294_13066.jpg" n="2"/>

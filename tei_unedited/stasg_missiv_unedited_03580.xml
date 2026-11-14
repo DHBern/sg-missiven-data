@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3580</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Hans Jakob Oswald bei der Einbringung einer Forderung zu helfen. Oswald habe aus dem Nachlass seines Schwagers Jacob Zschender von Waldenstein Schulden geerbt, die er in St. Gallen angemeldet habe. Da die Schuldner nicht zahlten, ersuchen die Schaffhauser die St. Galler, Oswald von obrigkeitlicher Seite zu unterstützen, damit er ohne großen Kostenauwand bezahlt werde.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Hans Jakob Oswald bei der Einbringung einer Forderung zu helfen. Oswald habe aus dem Nachlass seines Schwagers Jacob Zschender von Waldenstein Schulden geerbt, die er in St. Gallen angemeldet habe. Da die Schuldner nicht zahlten, ersuchen die Schaffhauser die St. Galler, Oswald von obrigkeitlicher Seite zu unterstützen, damit er ohne großen Kostenauwand bezahlt werde.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen request Burgomaster and Council of St. Gallen to help their citizen Hans Jakob Oswald in the collection of a claim. Oswald says that he has inherited debts from the estate of his brother-in-law Jacob Zschender von Waldenstein, which he has registered in St. Gallen. Since the debtors did not pay, the Schaffhausen authorities request the St. Gallen authorities to support Oswald from the official side, so that he may be paid without great expense.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -68,24 +69,24 @@
 <lb n="32"/>vermeidung großen uncostens, dermahlen eins
 <lb n="33"/><origPlace ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhausen</origPlace> <origDate when="1644" resp="#ner">1644 Januarij</origDate>.
 <pb facs="StadtASG_Missive_3580_14278.jpg" n="2"/>
-<lb n="34"/>umb sein habende ansprachen, zu guettem benuegen bezalt
-<lb n="35"/>werden, und dieser unser intercession fruchtbarlich
-<lb n="36"/>genießen und sich beruehmen moege. Welches, wie
-<lb n="37"/>es unß angenem sein wirdt, also sind umb Euch unser
-<lb n="38"/>getrüw lieb <orgName resp="#ner">Eydtgnoßen</orgName>, wir sollche erzeigende wil-
-<lb n="39"/>fahr, auff alle begebenheiten, fründt: Eydtgnößisch
-<lb n="40"/>zubeschulden, gantz geneigt und begirig. Unßsa-
-<lb n="41"/>mthlich Goettlicher gnad empfehlende. Datum
-<lb n="42"/><origDate when="1644-02-09" resp="#ner">den 9 ten Februarij Anno 1644</origDate>.
+<lb n="34"/>umb sein habende ansprachen, zu <unclear cert="medium" resp="#joint">guettem</unclear> <unclear cert="medium" resp="#joint">benuegen</unclear> <unclear cert="medium" resp="#joint">bezalt</unclear>
+<lb n="35"/><unclear cert="medium" resp="#joint">werden</unclear>, und dieser <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">intercession</unclear> fruchtbarlich
+<lb n="36"/><unclear cert="medium" resp="#joint">genießen</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">sich</unclear> <unclear cert="medium" resp="#joint">beruehmen</unclear> <unclear cert="medium" resp="#joint">moege</unclear>. <unclear cert="medium" resp="#joint">Welches</unclear>, <unclear cert="medium" resp="#joint">wie</unclear>
+<lb n="37"/>es <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">angenem</unclear> sein <unclear cert="medium" resp="#joint">wirdt</unclear>, also sind <unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">Euch</unclear> unser
+<lb n="38"/><unclear cert="medium" resp="#joint">getrüw</unclear> lieb <orgName resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnoßen</unclear></orgName>, wir <unclear cert="medium" resp="#joint">sollche</unclear> <unclear cert="medium" resp="#joint">erzeigende</unclear> wil-
+<lb n="39"/><unclear cert="medium" resp="#joint">fahr</unclear>, <unclear cert="medium" resp="#joint">auff</unclear> <unclear cert="medium" resp="#joint">alle</unclear> <unclear cert="medium" resp="#joint">begebenheiten</unclear>, <unclear cert="medium" resp="#joint">fründt</unclear>: Eydtgnößisch
+<lb n="40"/>zubeschulden, <unclear cert="medium" resp="#joint">gantz</unclear> <unclear cert="medium" resp="#joint">geneigt</unclear> <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">begirig</unclear>. <unclear cert="medium" resp="#joint">Unßsa</unclear>-
+<lb n="41"/><unclear cert="medium" resp="#joint">mthlich</unclear> <unclear cert="medium" resp="#joint">Goettlicher</unclear> <unclear cert="medium" resp="#joint">gnad</unclear> <unclear cert="medium" resp="#joint">empfehlende</unclear>. Datum
+<lb n="42"/><origDate when="1644-02-09" resp="#ner">den <unclear cert="low" resp="#joint">9</unclear> <unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">Februarij</unclear> Anno 1644</origDate>.
 <lb n="43"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
-<lb n="44"/>der Statt Schaffhusen</orgName>.
+<lb n="44"/>der Statt <unclear cert="medium" resp="#joint">Schaffhusen</unclear></orgName>.
 <pb facs="StadtASG_Missive_3580_14279.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3580_14280.jpg" n="4"/>
 <lb n="45"/>Den frommen, fürsichtigen,
-<lb n="46"/>ehrsamen unnd wyßen,
+<lb n="46"/><unclear cert="medium" resp="#joint">ehrsamen</unclear> unnd <unclear cert="medium" resp="#joint">wyßen</unclear>,
 <lb n="47"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath
 <lb n="48"/>der statt Sanct Gallen</orgName>,
-<lb n="49"/>unnsern insonders guoten
+<lb n="49"/><unclear cert="medium" resp="#joint">unnsern</unclear> insonders guoten
 <lb n="50"/>fründen unnd getrüwen lieben
 <lb n="51"/>Eydtgnossen etc.
 </p>

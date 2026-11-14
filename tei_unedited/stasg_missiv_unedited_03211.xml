@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3211</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Meliand bittet Bürgermeister und Rat zu St. Gallen, Herrn Delaube beim Kauf von Pulver in der Stadt zu unterstützen, um es für den Dienst des Königs von Frankreich nach Lyon zu senden. Er verspricht, sich bei der französischen Krone für St. Gallen einzusetzen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Meliand bittet Bürgermeister und Rat zu St. Gallen, Herrn Delaube beim Kauf von Pulver in der Stadt zu unterstützen, um es für den Dienst des Königs von Frankreich nach Lyon zu senden. Er verspricht, sich bei der französischen Krone für St. Gallen einzusetzen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Meliand asks the Burgomaster and Council of St. Gallen to support Herr Delaube in the purchase of powder in the city, in order to send it to Lyon for the service of the King of Frankreich. He promises to advocate for St. Gallen with the French Crown.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,23 +36,23 @@
 <p>
 <pb facs="StadtASG_Missive_3211_12693.jpg" n="1"/>
 <lb n="1"/>Magnifiques Seigneurs
-<lb n="2"/>Enuoyant le Sr. <persName resp="#ner">Delaube</persName> chercher des poudres
-<lb n="3"/>en vostre ville afin de les enuoyer a <placeName ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</placeName> pour
+<lb n="2"/><unclear cert="medium" resp="#joint">Enuoyant</unclear> le Sr. <persName resp="#ner">Delaube</persName> chercher des poudres
+<lb n="3"/>en vostre ville afin de les <unclear cert="medium" resp="#joint">enuoyer</unclear> a <placeName ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</placeName> pour
 <lb n="4"/>le service du Roy treschrestien mon Maistre
 <lb n="5"/>vostre plus ancien et meilleur amy allié et confederé,
 <lb n="6"/>je nay voulu manquer de vous prier par la presente
-<lb n="7"/>de lassister de vostre authorité et faueur pour luy
+<lb n="7"/>de lassister de vostre <unclear cert="medium" resp="#joint">authorité</unclear> et <unclear cert="medium" resp="#joint">faueur</unclear> pour luy
 <lb n="8"/>en faire vendre a prix raisonnable soit de ceux
-<lb n="9"/>qui ont la charge de vos magazins ou autres
-<lb n="10"/>qui en peuuent auoir, vous asseurant de recognoistre
-<lb n="11"/>ce bon office en ce que vous desireres de sa Maté.
-<lb n="12"/>et de ses estats, a quoy ie memployeray daffection
+<lb n="9"/>qui ont <unclear cert="low" resp="#joint">la</unclear> <unclear cert="low" resp="#joint">charge</unclear> de vos <unclear cert="medium" resp="#joint">magazins</unclear> ou autres
+<lb n="10"/>qui en <unclear cert="medium" resp="#joint">peuuent</unclear> <unclear cert="medium" resp="#joint">auoir</unclear>, vous <unclear cert="medium" resp="#joint">asseurant</unclear> de <unclear cert="medium" resp="#joint">recognoistre</unclear>
+<lb n="11"/>ce bon office en ce que vous <unclear cert="medium" resp="#joint">desireres</unclear> de sa <unclear cert="medium" resp="#joint">Maté</unclear>.
+<lb n="12"/>et de ses estats, <unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">quoy</unclear> <unclear cert="low" resp="#joint">ie</unclear> <unclear cert="low" resp="#joint">memployeray</unclear> daffection
 <lb n="13"/>en toutes occasions ce quattendant je prie Dieu
-<lb n="14"/>Magnifiques Seigneurs quil vous conserue et maintienne
-<lb n="15"/>en sa Ste. garde
-<lb n="16"/>Vostre tres affectionné a vous seruir
-<lb n="17"/><persName role="issuer" resp="#ner">Meliand</persName>
-<lb n="18"/>A <origPlace resp="#ner">Soleure</origPlace> <origDate when="1636" resp="#ner">ce 19 Nobre. 1636</origDate>
+<lb n="14"/>Magnifiques Seigneurs quil vous <unclear cert="medium" resp="#joint">conserue</unclear> et maintienne
+<lb n="15"/>en sa <unclear cert="medium" resp="#joint">Ste</unclear>. garde
+<lb n="16"/><unclear cert="medium" resp="#joint">Vostre</unclear> tres <unclear cert="medium" resp="#joint">affectionné</unclear> a vous <unclear cert="medium" resp="#joint">seruir</unclear>
+<lb n="17"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Meliand</unclear></persName>
+<lb n="18"/>A <origPlace resp="#ner">Soleure</origPlace> <origDate when="1636" resp="#ner">ce <unclear cert="medium" resp="#joint">19</unclear> <unclear cert="medium" resp="#joint">Nobre</unclear>. 1636</origDate>
 <pb facs="StadtASG_Missive_3211_12694.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3211_12695.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3211_12696.jpg" n="4"/>

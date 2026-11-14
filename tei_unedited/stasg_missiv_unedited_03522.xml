@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3522</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Solothurn bitten Bürgermeister und Rat zu St. Gallen, den Müller Hans Ruch, der in St. Gallen beim Wirt zum Hecht wohnt, ernstlich aufzufordern, sich in Solothurn bei seinem Pfleger zu melden, um seine Schulden zu regeln. Sie bitten zudem, den Wirt Joachim Rüetschler zu veranlassen, mit der Einziehung der Schuld geduldig zu sein.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Solothurn bitten Bürgermeister und Rat zu St. Gallen, den Müller Hans Ruch, der in St. Gallen beim Wirt zum Hecht wohnt, ernstlich aufzufordern, sich in Solothurn bei seinem Pfleger zu melden, um seine Schulden zu regeln. Sie bitten zudem, den Wirt Joachim Rüetschler zu veranlassen, mit der Einziehung der Schuld geduldig zu sein.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Solothurn ask Burgomaster and Council of St. Gallen to earnestly urge the miller Hans Ruch, who lives in St. Gallen at the inn of the Hecht, to report to his guardian in Solothurn in order to settle his debts. They also ask to have the innkeeper Joachim Rüetschler made to be patient with the collection of the debt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -60,27 +61,27 @@
 <lb n="24"/>alhero begeben, bey besagtem verordneten
 <lb n="25"/>Pfleger alß gehorsamblich anmelden, und
 <pb facs="StadtASG_Missive_3522_14038.jpg" n="2"/>
-<lb n="26"/>allem gebürenden bescheid vernemmen.
-<lb n="27"/>solte, demnach aber auch obvermelten
+<lb n="26"/><unclear cert="low" resp="#joint">allem</unclear> <unclear cert="low" resp="#joint">gebürenden</unclear> <unclear cert="low" resp="#joint">bescheid</unclear> <unclear cert="low" resp="#joint">vernemmen</unclear>.
+<lb n="27"/><unclear cert="low" resp="#joint">solte</unclear>, <unclear cert="low" resp="#joint">demnach</unclear> aber auch obvermelten
 <lb n="28"/>bevelchgnen <persName resp="#ner">Joachim Chnechtler</persName>, ernstlich
-<lb n="29"/>zue sacht dahin disponieren und vermuegen,
-<lb n="30"/>das er der süehreneren bezahlung siner schuld,
-<lb n="31"/>biß zue bestreng dem rehten, noch umb
+<lb n="29"/>zue sacht dahin <unclear cert="low" resp="#joint">disponieren</unclear> und <unclear cert="low" resp="#joint">vermuegen</unclear>,
+<lb n="30"/><unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">süehreneren</unclear> <unclear cert="low" resp="#joint">bezahlung</unclear> <unclear cert="low" resp="#joint">siner</unclear> <unclear cert="low" resp="#joint">schuld</unclear>,
+<lb n="31"/><unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">bestreng</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">rehten</unclear>, <unclear cert="low" resp="#joint">noch</unclear> umb
 <lb n="32"/>etwas gedulden wolte:
-<lb n="33"/>Solche erzeigende thrüw wir umb Ewer
-<lb n="34"/>wt. underwerts zueverschulden, und
-<lb n="35"/>ihnen angenemme dienst und fründts-
-<lb n="36"/>gfelligkt zueerwisen erpietig und willig.
-<lb n="37"/>Datum den. <origDate when="1602-10-27" resp="#ner">27. octobs. a° 1602.</origDate>
+<lb n="33"/>Solche erzeigende thrüw wir umb <unclear cert="low" resp="#joint">Ewer</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">wt</unclear>. <unclear cert="low" resp="#joint">underwerts</unclear> <unclear cert="low" resp="#joint">zueverschulden</unclear>, und
+<lb n="35"/>ihnen angenemme dienst <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">fründts</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">gfelligkt</unclear> <unclear cert="low" resp="#joint">zueerwisen</unclear> <unclear cert="low" resp="#joint">erpietig</unclear> und willig.
+<lb n="37"/>Datum den. <origDate when="1602-10-27" resp="#ner">27. <unclear cert="low" resp="#joint">octobs</unclear>. <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">1602</unclear>.</origDate>
 <lb n="38"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath der
 <lb n="39"/>statt Soln</orgName>.
 <pb facs="StadtASG_Missive_3522_14039.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3522_14040.jpg" n="4"/>
-<lb n="40"/>Den ersamen unnd weisen,
-<lb n="41"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd rhat
-<lb n="42"/>der statt St. Gallen</orgName>, un=
-<lb n="43"/>sern besondern gueten freuenden.
-<lb n="44"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="40"/>Den <unclear cert="medium" resp="#joint">ersamen</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> weisen,
+<lb n="41"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">rhat</unclear>
+<lb n="42"/>der statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">un=</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">sern</unclear> <unclear cert="low" resp="#joint">besondern</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freuenden</unclear>.
+<lb n="44"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3563</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, die evangelische Gemeinde von Frauenfeld und zugehöriger Orte in der Landgrafschaft Thurgau, die eine eigene Kirche bauen will, mit einer milden Beisteuer zu bedenken. Zürich habe bereits 1000 Gulden aus städtischen Mitteln gegeben und bitte um Unterstützung, da die Gemeinde auf Hilfe angewiesen sei.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, die evangelische Gemeinde von Frauenfeld und zugehöriger Orte in der Landgrafschaft Thurgau, die eine eigene Kirche bauen will, mit einer milden Beisteuer zu bedenken. Zürich habe bereits 1000 Gulden aus städtischen Mitteln gegeben und bitte um Unterstützung, da die Gemeinde auf Hilfe angewiesen sei.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich ask Burgomaster and Council of St. Gallen to support the evangelical congregation of Frauenfeld and the associated places in the Landgrafschaft Thurgau, which intends to build its own church, with a mild contribution. Zürich has already given 1000 gulden from municipal funds and asks for support, as the congregation is in need of help.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -42,15 +43,15 @@
 <lb n="6"/>in der Landtgraffschafft <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgoeuw</placeName> ohn vor der zyth
 <lb n="7"/>fürgenommen ein eigne kirchen zübuwen, in welicher sy
 <lb n="8"/>ihre mit unß bekhennende, wahre, allein selligmachende religion
-<lb n="9"/>frey und unbekrenkt üben, und ihrer seelen heil dest mehr
-<lb n="10"/>befürderen khönint, daß ist üch unseren g. l. E. alß
+<lb n="9"/>frey und <unclear cert="low" resp="#joint">unbekrenkt</unclear> <unclear cert="low" resp="#joint">üben</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ihrer</unclear> <unclear cert="low" resp="#joint">seelen</unclear> <unclear cert="low" resp="#joint">heil</unclear> <unclear cert="low" resp="#joint">dest</unclear> <unclear cert="low" resp="#joint">mehr</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">befürderen</unclear> <unclear cert="low" resp="#joint">khönint</unclear>, daß ist üch unseren g. l. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">alß</unclear>
 <lb n="11"/>ein durch die ihren begegnete hinderstelligkeit landt-
-<lb n="12"/>kündig gemachte sach, ohnzwyffenlich allbereit gnuogsamclich
-<lb n="13"/>bekhandt. Nachdem es nun dermalen end dahin
+<lb n="12"/>kündig <unclear cert="low" resp="#joint">gemachte</unclear> <unclear cert="low" resp="#joint">sach</unclear>, <unclear cert="low" resp="#joint">ohnzwyffenlich</unclear> <unclear cert="low" resp="#joint">allbereit</unclear> <unclear cert="low" resp="#joint">gnuogsamclich</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">bekhandt</unclear>. <unclear cert="low" resp="#joint">Nachdem</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">dermalen</unclear> <unclear cert="low" resp="#joint">end</unclear> dahin
 <lb n="14"/>khomen, daß sy ermelte gemeind mit ihrem ehren-
-<lb n="15"/>buw nunmehr ungehindert werdent khönnen fürfahren:
-<lb n="16"/>und dan dieselben nit allein unserer sonderbaren bystühr
-<lb n="17"/>und hilff, sonderen auch noch fehrnerer recommendation gantz
+<lb n="15"/>buw nunmehr ungehindert <unclear cert="low" resp="#joint">werdent</unclear> <unclear cert="low" resp="#joint">khönnen</unclear> <unclear cert="low" resp="#joint">fürfahren</unclear>:
+<lb n="16"/>und dan dieselben nit allein unserer sonderbaren <unclear cert="low" resp="#joint">bystühr</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">hilff</unclear>, <unclear cert="low" resp="#joint">sonderen</unclear> auch noch fehrnerer recommendation gantz
 <lb n="18"/>angelegenlich begaert, sind wir nit zehnen, nach beschaffen-
 <lb n="19"/>heit der unß disere zyth sonst obliggenden schweren ußgaben
 <lb n="20"/>dergestalt begegnet, daß wir ihnen über den, diß ge-
@@ -58,23 +59,23 @@
 <lb n="22"/>eintusendt guot guldin von gemeiner unserer Statt
 <lb n="23"/>wegen verehrt, disere aber auch nit abschlachen wöllen.
 <lb n="24"/>Und langt hieruf an üch unser g. l. E. unser gantz
-<lb n="25"/>fründt-Eydgnössisches ersuochen, ihr wellint ohnbeschwerth
+<lb n="25"/><unclear cert="low" resp="#joint">fründt-Eydgnössisches</unclear> <unclear cert="low" resp="#joint">ersuochen</unclear>, <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">wellint</unclear> <unclear cert="low" resp="#joint">ohnbeschwerth</unclear>
 <lb n="26"/>syn, ermelte evangelische gemeind mit einer milten
-<lb n="27"/>bystühr in gunsten zubedencken, und nit weniger by üwe-
+<lb n="27"/>bystühr in gunsten zubedencken, und nit weniger <unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">üwe</unclear>-
 <lb n="28"/>ren lieben angehörigen derglychen bewilligung zethuon,
 <lb n="29"/>wie wir dan hieran auch ohn diß unser schryben,
 <lb n="30"/>üwerer, gegen anderen und ußerthalb der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydgnoßschafft</orgName>
 <lb n="31"/>gesäßnenen, in derglychen und anderen fählen bekhandten
 <lb n="32"/>gottliebenden frygebigkeit nach gantz nit zwyflen soll-
-<lb n="33"/>ent, Waß üch unseren g. l. E. auch diß orts an-
+<lb n="33"/>ent, Waß üch unseren g. l. <unclear cert="low" resp="#joint">E</unclear>. auch diß orts an-
 <lb n="34"/>zuowenden gefallen, ohnzwyffenlich wol angelegt syn, und die
 <lb n="35"/>interessierten, auch diser unser intercession
 <lb n="36"/>werdent genießen, unß selbs wolbefröwden wirt. Der
 <pb facs="StadtASG_Missive_3563_14218.jpg" n="2"/>
-<lb n="37"/>etc. Gott wölle zuo disem werck sijnen saegen verlihen
-<lb n="38"/>und unß sambleich, bij der werden frijheit lijbs und der
-<lb n="39"/>seelen in sijnem heijligen gnadenschirm noch fürbaß wol
-<lb n="40"/>erhalten. Datt <origDate when="1643" resp="#ner">den letsten Septembris. a° 1643.</origDate>
+<lb n="37"/><unclear cert="low" resp="#joint">etc</unclear>. <unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">wölle</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">disem</unclear> <unclear cert="low" resp="#joint">werck</unclear> <unclear cert="low" resp="#joint">sijnen</unclear> <unclear cert="low" resp="#joint">saegen</unclear> <unclear cert="low" resp="#joint">verlihen</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">sambleich</unclear>, <unclear cert="low" resp="#joint">bij</unclear> der <unclear cert="medium" resp="#joint">werden</unclear> <unclear cert="medium" resp="#joint">frijheit</unclear> <unclear cert="medium" resp="#joint">lijbs</unclear> und der
+<lb n="39"/><unclear cert="medium" resp="#joint">seelen</unclear> in <unclear cert="medium" resp="#joint">sijnem</unclear> <unclear cert="medium" resp="#joint">heijligen</unclear> <unclear cert="medium" resp="#joint">gnadenschirm</unclear> <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">fürbaß</unclear> wol
+<lb n="40"/>erhalten. <unclear cert="medium" resp="#joint">Datt</unclear> <origDate when="1643" resp="#ner">den letsten Septembris. <unclear cert="medium" resp="#joint">a°</unclear> 1643.</origDate>
 <lb n="41"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="42"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3563_14219.jpg" n="3"/>

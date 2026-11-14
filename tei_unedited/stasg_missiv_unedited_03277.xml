@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3277</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Pflegere, Bürgermeister und Rat zu Augsburg antworten auf ein Schreiben vom 10. Januar 1600, in dem St. Gallen um den Wert der Arzneimittel in der Apothekerordnung und um die Eide der Apotheker und ihrer Gesellen gebeten hatte. Augsburg übersendet die gedruckte Apothekerordnung, den Tax der einfachen und zusammengesetzten Arzneimittel mit dem hinzugefügten Wert sowie eine Kopie der Eide.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Pflegere, Bürgermeister und Rat zu Augsburg antworten auf ein Schreiben vom 10. Januar 1600, in dem St. Gallen um den Wert der Arzneimittel in der Apothekerordnung und um die Eide der Apotheker und ihrer Gesellen gebeten hatte. Augsburg übersendet die gedruckte Apothekerordnung, den Tax der einfachen und zusammengesetzten Arzneimittel mit dem hinzugefügten Wert sowie eine Kopie der Eide.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Pflegere, Burgomaster and Council of Augsburg reply to a letter of 10 January 1600, in which St. Gallen had asked for the value of the medicinal drugs in the apothecary ordinance and for the oaths of the apothecaries and their journeymen. Augsburg sends the printed apothecary ordinance, the tariff of the simple and compound medicinal drugs with the added value, and a copy of the oaths.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,24 +36,24 @@
 <p>
 <pb facs="StadtASG_Missive_3277_12999.jpg" n="1"/>
 <lb n="1"/>Den ersamen unnd weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaistern, unnd Rhate, der statt St: Gallen</orgName>, unnsern
-<lb n="2"/>lieben unnd guetten freünden, entbieten wir <orgName role="recipient" resp="#ner">Pflegere, Burgermaistere, unnd Rhat der statt
-<lb n="3"/>Augspurg</orgName>, unnser freündtlich willig dienst zuvor, ersame, unnd weise, liebe unnd guete freündt,
+<lb n="2"/>lieben unnd <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freünden</unclear>, <unclear cert="low" resp="#joint">entbieten</unclear> <unclear cert="low" resp="#joint">wir</unclear> <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Pflegere</unclear>, <unclear cert="low" resp="#joint">Burgermaistere</unclear>, unnd Rhat der statt
+<lb n="3"/><unclear cert="low" resp="#joint">Augspurg</unclear></orgName>, <unclear cert="low" resp="#joint">unnser</unclear> <unclear cert="low" resp="#joint">freündtlich</unclear> <unclear cert="low" resp="#joint">willig</unclear> <unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">ersame</unclear>, unnd weise, liebe unnd guete freündt,
 <lb n="4"/>was E: Wht: an unns sub dato <date resp="#ner">den. 10. Januarij nechsthin</date> wegen unnserer apotegger ordnung
-<lb n="5"/>deß taxt der arzneÿen, der ienigen stukh so sie unns inn einer copeÿ zuegeschikht, unnd den
-<lb n="6"/>wehrt hinzuezusezen begert haben, dann auch der apotegger und irer gesellen aÿdts halber
+<lb n="5"/>deß taxt der <unclear cert="low" resp="#joint">arzneÿen</unclear>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">ienigen</unclear> <unclear cert="low" resp="#joint">stukh</unclear> so sie unns inn einer copeÿ zuegeschikht, unnd <unclear cert="low" resp="#joint">den</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">wehrt</unclear> <unclear cert="low" resp="#joint">hinzuezusezen</unclear> <unclear cert="low" resp="#joint">begert</unclear> haben, dann auch der apotegger und irer gesellen aÿdts halber
 <lb n="7"/>geschriben, haben wir wol vernomen, unnd unnser collegium medicum darüber angehört. Wann
-<lb n="8"/>wir dann E. Wht: nit allein inn disem sunder inn mehrerm zuegratificieren begeren, alß über=
+<lb n="8"/>wir dann E. Wht: nit allein inn disem sunder inn mehrerm <unclear cert="low" resp="#joint">zuegratificieren</unclear> begeren, alß über=
 <lb n="9"/>senden wir inen hiemit unnser getrukhte appotegger ordnung, den tax, medicamentorum
 <lb n="10"/>tam simplicium quam compositorum, die überschikhte copeÿ mit hinzuesezung deß werths
 <lb n="11"/>unnd endtlich copiam deß aÿdts der apotegger unnd irer gesellen, darauß selen die
-<lb n="12"/>verhoffentlich iren contento haben, unnd unns gelegenheit an die handt geben, inen weitere
-<lb n="13"/>angeneme dienst zueerweisen, darzue wir ohne daß willig unnd erbietig seien. Datum
+<lb n="12"/>verhoffentlich iren contento haben, unnd unns gelegenheit an die handt geben, <unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">weitere</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">angeneme</unclear> <unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">zueerweisen</unclear>, <unclear cert="low" resp="#joint">darzue</unclear> wir ohne daß willig unnd erbietig seien. Datum
 <lb n="14"/><origDate when="1600-02-20" resp="#ner">den. 20. Februar. a° 1600</origDate>.
 <pb facs="StadtASG_Missive_3277_13000.jpg" n="2"/>
 <lb n="15"/>Den Ersamen und Weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaistern und
 <lb n="16"/>Rathe der Statt St. Gallen</orgName>, unsern lieben und
-<lb n="17"/>gueten freunden.
-<lb n="18"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="17"/><unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>.
+<lb n="18"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

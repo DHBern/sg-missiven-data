@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3571</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Wilhelm Otto, Graf zu Ysenburg und Büdingen, quittiert Matthias Heuden, Solmischer Hofverwalter zu Frankfurt, für den Empfang von 200 Gulden in Frankfurter Währung. Das Geld wurde für die Schweizerische Collecte zur Reparatur der Ysenburgischen Kirchen erlegt. Der Graf erklärt Heuden damit für frei, ledig und los.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Wilhelm Otto, Graf zu Ysenburg und Büdingen, quittiert Matthias Heuden, Solmischer Hofverwalter zu Frankfurt, für den Empfang von 200 Gulden in Frankfurter Währung. Das Geld wurde für die Schweizerische Collecte zur Reparatur der Ysenburgischen Kirchen erlegt. Der Graf erklärt Heuden damit für frei, ledig und los.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Wilhelm Otto, Count zu Ysenburg und Büdingen, acknowledges receipt of 200 gulden in Frankfurt currency from Matthias Heuden, Solmischer Hofverwalter zu Frankfurt. The money was paid for the Swiss collection for the repair of the Ysenburg churches. The Count declares Heuden free, clear, and discharged thereby.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,25 +35,25 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3571_14245.jpg" n="1"/>
-<lb n="1"/>Wir <persName role="issuer" resp="#ner">Wilhelm Otto</persName>, Grave zu <placeName resp="#ner">Ysenburg</placeName> undt <placeName resp="#ner">Buedingen</placeName> etc.
-<lb n="2"/>thun kundt undt bekennen hiemit oeffentlich, daß wir
-<lb n="3"/>von dem Ehrnhafften unserm lieben besondern <persName resp="#ner">Matthias-
-<lb n="4"/>Heuden</persName> Solmischen hofverwaltern alhier zu <placeName resp="#ner">Franckfurth</placeName>,
-<lb n="5"/>am heuett dato, zu endt benant, wegen der Schweitzerischen
-<lb n="6"/>Collecten gelter, zu reparation der <placeName resp="#ner">Ysenburgischen</placeName> kirchen,
-<lb n="7"/>bahr uber undt in einer Summa erlegt undt bezahltt emp-
-<lb n="8"/>fangen die Summam von Zweyhundert guelden, <placeName resp="#ner">franckf-
-<lb n="9"/>thurter</placeName> wehrung, den guelden zu 30 albs. oder 60 x gerechnett,
-<lb n="10"/>Thun derowegen gemelten <persName resp="#ner">Matthiam Heuden</persName> undt wen
-<lb n="11"/>deß wegen ferner quittirens bedarff undt von noehtten
-<lb n="12"/>hatt, hiemit in bester formen, uber gedachte 200 guelden,
-<lb n="13"/>quittiren, Ihn deren queit, frey, ledig undt loß, daß also
-<lb n="14"/>solche wohl bezahltt sagen, Deßen in urkundt haben
-<lb n="15"/>wir dieße quittung mit eygener handt unterschrieben,
-<lb n="16"/>undt unser Ring pittschafft zu endt dießes wißenlich auff-
-<lb n="17"/>getrucktt, So geschehen zu <origPlace resp="#ner">Franckfurth</origPlace>, <origDate when="1643-11-17" resp="#ner">den 17 t Novem-
-<lb n="18"/>bris, anno 1643</origDate>.
-<lb n="19"/><persName role="issuer" resp="#ner">Wilhelm Otto GzYsenburg</persName> mpp.
+<lb n="1"/>Wir <persName role="issuer" resp="#ner">Wilhelm Otto</persName>, <unclear cert="medium" resp="#joint">Grave</unclear> zu <placeName resp="#ner"><unclear cert="low" resp="#joint">Ysenburg</unclear></placeName> <unclear cert="low" resp="#joint">undt</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Buedingen</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="2"/><unclear cert="low" resp="#joint">thun</unclear> <unclear cert="low" resp="#joint">kundt</unclear> <unclear cert="low" resp="#joint">undt</unclear> bekennen hiemit <unclear cert="medium" resp="#joint">oeffentlich</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> wir
+<lb n="3"/>von dem <unclear cert="medium" resp="#joint">Ehrnhafften</unclear> <unclear cert="medium" resp="#joint">unserm</unclear> lieben <unclear cert="low" resp="#joint">besondern</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Matthias</unclear>-
+<lb n="4"/><unclear cert="low" resp="#joint">Heuden</unclear></persName> <unclear cert="low" resp="#joint">Solmischen</unclear> <unclear cert="low" resp="#joint">hofverwaltern</unclear> <unclear cert="low" resp="#joint">alhier</unclear> <unclear cert="low" resp="#joint">zu</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Franckfurth</unclear></placeName>,
+<lb n="5"/><unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">heuett</unclear> <unclear cert="low" resp="#joint">dato</unclear>, <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">endt</unclear> <unclear cert="low" resp="#joint">benant</unclear>, wegen der <unclear cert="medium" resp="#joint">Schweitzerischen</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">Collecten</unclear> gelter, <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">reparation</unclear> der <placeName resp="#ner"><unclear cert="medium" resp="#joint">Ysenburgischen</unclear></placeName> <unclear cert="medium" resp="#joint">kirchen</unclear>,
+<lb n="7"/><unclear cert="medium" resp="#joint">bahr</unclear> uber <unclear cert="medium" resp="#joint">undt</unclear> in <unclear cert="low" resp="#joint">einer</unclear> Summa <unclear cert="low" resp="#joint">erlegt</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">bezahltt</unclear> <unclear cert="low" resp="#joint">emp</unclear>-
+<lb n="8"/><unclear cert="low" resp="#joint">fangen</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Summam</unclear> von <unclear cert="low" resp="#joint">Zweyhundert</unclear> <unclear cert="low" resp="#joint">guelden</unclear>, <placeName resp="#ner"><unclear cert="low" resp="#joint">franckf</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">thurter</unclear></placeName> <unclear cert="low" resp="#joint">wehrung</unclear>, <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">guelden</unclear> <unclear cert="low" resp="#joint">zu</unclear> 30 <unclear cert="medium" resp="#joint">albs</unclear>. oder 60 x <unclear cert="low" resp="#joint">gerechnett</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">Thun</unclear> <unclear cert="low" resp="#joint">derowegen</unclear> <unclear cert="low" resp="#joint">gemelten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Matthiam</unclear> <unclear cert="low" resp="#joint">Heuden</unclear></persName> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">wen</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">ferner</unclear> <unclear cert="low" resp="#joint">quittirens</unclear> <unclear cert="low" resp="#joint">bedarff</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">noehtten</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">hatt</unclear>, <unclear cert="low" resp="#joint">hiemit</unclear> in bester formen, <unclear cert="medium" resp="#joint">uber</unclear> <unclear cert="medium" resp="#joint">gedachte</unclear> 200 <unclear cert="medium" resp="#joint">guelden</unclear>,
+<lb n="13"/><unclear cert="medium" resp="#joint">quittiren</unclear>, <unclear cert="medium" resp="#joint">Ihn</unclear> deren <unclear cert="medium" resp="#joint">queit</unclear>, <unclear cert="medium" resp="#joint">frey</unclear>, <unclear cert="medium" resp="#joint">ledig</unclear> <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="medium" resp="#joint">loß</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">also</unclear>
+<lb n="14"/>solche <unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">bezahltt</unclear> <unclear cert="low" resp="#joint">sagen</unclear>, <unclear cert="low" resp="#joint">Deßen</unclear> in <unclear cert="low" resp="#joint">urkundt</unclear> haben
+<lb n="15"/><unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">dieße</unclear> quittung mit <unclear cert="low" resp="#joint">eygener</unclear> <unclear cert="low" resp="#joint">handt</unclear> <unclear cert="low" resp="#joint">unterschrieben</unclear>,
+<lb n="16"/><unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">Ring</unclear> <unclear cert="low" resp="#joint">pittschafft</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">endt</unclear> <unclear cert="low" resp="#joint">dießes</unclear> <unclear cert="low" resp="#joint">wißenlich</unclear> <unclear cert="low" resp="#joint">auff</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">getrucktt</unclear>, <unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">geschehen</unclear> <unclear cert="low" resp="#joint">zu</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Franckfurth</unclear></origPlace>, <origDate when="1643-11-17" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">17</unclear> <unclear cert="low" resp="#joint">t</unclear> <unclear cert="low" resp="#joint">Novem</unclear>-
+<lb n="18"/><unclear cert="low" resp="#joint">bris</unclear>, <unclear cert="low" resp="#joint">anno</unclear> 1643</origDate>.
+<lb n="19"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Wilhelm</unclear> <unclear cert="low" resp="#joint">Otto</unclear> <unclear cert="low" resp="#joint">GzYsenburg</unclear></persName> <unclear cert="low" resp="#joint">mpp</unclear>.
 <pb facs="StadtASG_Missive_3571_14246.jpg" n="2"/>
 <lb n="20"/>[]
 </p>

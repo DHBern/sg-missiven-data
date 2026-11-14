@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3435</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Jacob Hanibal Graf zu Hohenems, Vogt der Herrschaft Feldkirch, bedankt sich bei Bürgermeister und Rat zu St. Gallen für die Mitteilung über verdächtige Personen. Er teilt mit, dass er seinen österreichischen Mitbeamten in Feldkirch sowie den Räten und Oberämtern der Herrschaft Hohenems befohlen habe, auf die genannten bösen Gesellen Acht zu geben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Jacob Hanibal Graf zu Hohenems, Vogt der Herrschaft Feldkirch, bedankt sich bei Bürgermeister und Rat zu St. Gallen für die Mitteilung über verdächtige Personen. Er teilt mit, dass er seinen österreichischen Mitbeamten in Feldkirch sowie den Räten und Oberämtern der Herrschaft Hohenems befohlen habe, auf die genannten bösen Gesellen Acht zu geben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Jacob Hanibal Graf zu Hohenems, bailiff of the lordship of Feldkirch, thanks the Burgomaster and Council of St. Gallen for the information regarding suspicious persons. He informs them that he has ordered his Austrian colleagues in Feldkirch as well as the Councils and Oberämtern of the lordship of Hohenems to keep an eye on the said bad fellows.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,36 +37,36 @@
 <pb facs="StadtASG_Missive_3435_13681.jpg" n="1"/>
 <lb n="1"/><persName role="issuer" resp="#ner">Jacob Hanibal Graue</persName> zue <placeName ref="stadtasg-places-213" cert="medium" resp="#ner">HohenEmbs</placeName>,
 <lb n="2"/><placeName resp="#ner">Gallara</placeName> und <placeName ref="stadtasg-places-31" cert="medium" resp="#ner">Vadutz</placeName>, Vogt der
-<lb n="3"/>herrschafft <placeName ref="stadtasg-places-89" cert="medium" resp="#ner">Veldtkhirch</placeName> etc.
-<lb n="4"/>Unnser frl. gruoß und geneigter nachbahrlicher
+<lb n="3"/><unclear cert="low" resp="#joint">herrschafft</unclear> <placeName ref="stadtasg-places-89" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Veldtkhirch</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>.
+<lb n="4"/><unclear cert="low" resp="#joint">Unnser</unclear> <unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">gruoß</unclear> und geneigter nachbahrlicher
 <lb n="5"/>willen zuvor, Edle, Veste, Eerenvest, Fromb, Für-
 <lb n="6"/>sichtige, Eersame und wolweyse, besonders liebe
 <lb n="7"/>freünd und nachbahrn,
-<lb n="8"/>Wir haben eüer schreiben vom. <date resp="#ner">10. ditz Mt.</date> sambt Einschluß,
-<lb n="9"/>etwelche verdechtige Persohnen betrf. zue recht em-
-<lb n="10"/>pfangen, dero Comunication wir unß gegen eüch
+<lb n="8"/>Wir haben eüer schreiben vom. <date resp="#ner">10. ditz Mt.</date> sambt <unclear cert="low" resp="#joint">Einschluß</unclear>,
+<lb n="9"/><unclear cert="low" resp="#joint">etwelche</unclear> <unclear cert="low" resp="#joint">verdechtige</unclear> <unclear cert="low" resp="#joint">Persohnen</unclear> <unclear cert="low" resp="#joint">betrf</unclear>. <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">recht</unclear> <unclear cert="low" resp="#joint">em</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">pfangen</unclear>, <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">Comunication</unclear> <unclear cert="low" resp="#joint">wir</unclear> unß gegen eüch
 <lb n="11"/>wolmeinlich nachbahrlich bedanckhen thuen, benebens
-<lb n="12"/>wir dann nit underlaßen, sowohlen unnsern hinden-
-<lb n="13"/>laßnen <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Österreichischen</placeName> mitbeambten der herrschafft
-<lb n="14"/><placeName ref="stadtasg-places-89" cert="medium" resp="#ner">Veldkhirch</placeName>, alls auch unnserer Erbherrschafft <placeName ref="stadtasg-places-213" cert="medium" resp="#ner">Hohen-
-<lb n="15"/>Embs</placeName> Räthen und ober ambtleüthen, auf dergleichen
-<lb n="16"/>nominierte böse gesellen, vleißige Achtung zehaben,
-<lb n="17"/>frl. befelch zukhomen zulaßen, So wir eüch, denen
+<lb n="12"/>wir dann nit underlaßen, sowohlen unnsern <unclear cert="low" resp="#joint">hinden</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">laßnen</unclear> <placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Österreichischen</unclear></placeName> <unclear cert="low" resp="#joint">mitbeambten</unclear> der <unclear cert="low" resp="#joint">herrschafft</unclear>
+<lb n="14"/><placeName ref="stadtasg-places-89" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Veldkhirch</unclear></placeName>, <unclear cert="low" resp="#joint">alls</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">unnserer</unclear> <unclear cert="low" resp="#joint">Erbherrschafft</unclear> <placeName ref="stadtasg-places-213" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Hohen</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">Embs</unclear></placeName> <unclear cert="low" resp="#joint">Räthen</unclear> und ober ambtleüthen, auf dergleichen
+<lb n="16"/>nominierte böse gesellen, <unclear cert="low" resp="#joint">vleißige</unclear> <unclear cert="low" resp="#joint">Achtung</unclear> <unclear cert="low" resp="#joint">zehaben</unclear>,
+<lb n="17"/><unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">befelch</unclear> <unclear cert="low" resp="#joint">zukhomen</unclear> <unclear cert="low" resp="#joint">zulaßen</unclear>, So wir eüch, denen
 <lb n="18"/>wir Jederzeit angenemen nachbahrlichen willen zuer-
 <lb n="19"/>weyßen Berait wol geneigt, in Antwort eüers
-<lb n="20"/>schreibens, nit verhalten wollen, Geben <origPlace ref="stadtasg-places-14" cert="medium" resp="#ner">Ynßprugg</origPlace>
+<lb n="20"/>schreibens, nit verhalten wollen, Geben <origPlace ref="stadtasg-places-14" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ynßprugg</unclear></origPlace>
 <lb n="21"/>den. <origDate when="1641-03-20" resp="#ner">20. Martii Ao. 1641</origDate>.
-<lb n="22"/><persName role="issuer" resp="#ner">Jacob Hanibal</persName> mp.
+<lb n="22"/><persName role="issuer" resp="#ner">Jacob Hanibal</persName> <unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_3435_13682.jpg" n="2"/>
 <lb n="23"/>[]
 <pb facs="StadtASG_Missive_3435_13683.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3435_13684.jpg" n="4"/>
 <lb n="24"/>Denen edlen, vesten, frommen, fuersichtig,
-<lb n="25"/>ersamen, und wolweyßen, unnsern in-
-<lb n="26"/>sonnders lieben freundten und guote
-<lb n="27"/>nachbahrn, N.N. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister,
+<lb n="25"/>ersamen, und <unclear cert="low" resp="#joint">wolweyßen</unclear>, <unclear cert="low" resp="#joint">unnsern</unclear> <unclear cert="low" resp="#joint">in</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">sonnders</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">freundten</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guote</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">nachbahrn</unclear>, <unclear cert="low" resp="#joint">N.N</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear>,
 <lb n="28"/>und Rath der Statt St. Gallen</orgName>,
-<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

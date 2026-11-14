@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3506</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Ybbs bitten Bürgermeister und Rat zu St. Gallen, ihrer Mitbürgerin Agnes Kellerin, Witwe des verstorbenen Jakob Keller, im Streit um dessen Nachlass ihren rechtmäßigen Anteil zuzusprechen. Sie verweisen auf einen beigelegten Auszug aus ihren Statuten und bitten um eine rasche und kostengünstige Entscheidung.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Ybbs bitten Bürgermeister und Rat zu St. Gallen, ihrer Mitbürgerin Agnes Kellerin, Witwe des verstorbenen Jakob Keller, im Streit um dessen Nachlass ihren rechtmäßigen Anteil zuzusprechen. Sie verweisen auf einen beigelegten Auszug aus ihren Statuten und bitten um eine rasche und kostengünstige Entscheidung.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Ybbs ask Burgomaster and Council of St. Gallen to award their fellow citizen Agnes Kellerin, widow of the deceased Jakob Keller, her rightful share in the dispute over his inheritance. They refer to an attached excerpt from their statutes and ask for a rapid and inexpensive decision.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -64,22 +65,22 @@
 <lb n="28"/>diser unser für Sye wolmeinendt eingewendten
 <lb n="29"/>intercession, fruchtbarlich genießen laßen,
 <pb facs="StadtASG_Missive_3506_13976.jpg" n="2"/>
-<lb n="30"/>daß sein wür umb Ewer V. E. F. E. Wd
-<lb n="31"/>und Gst. zue begebenden fählen, hinwiderumb ge=
+<lb n="30"/>daß sein wür umb Ewer <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wd</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Gst</unclear>. zue begebenden fählen, hinwiderumb ge=
 <lb n="32"/>buerendt zuebeschulden, allezeit erbietig und
 <lb n="33"/>willig. Damit Goettlicher protection aller=
 <lb n="34"/>seidts getrewlich empfelendt. Datum den
-<lb n="35"/><origDate when="1642-07-06" resp="#ner">6 ten Julij anno 1642</origDate>.
+<lb n="35"/><origDate when="1642-07-06" resp="#ner"><unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">Julij</unclear> anno 1642</origDate>.
 <lb n="36"/><orgName role="issuer" resp="#ner">Burgermeister und Rhatt
 <lb n="37"/>der statt Yßny</orgName>.
 <pb facs="StadtASG_Missive_3506_13977.jpg" n="3"/>
 <lb n="38"/>[]
 <pb facs="StadtASG_Missive_3506_13978.jpg" n="4"/>
-<lb n="39"/>Den edlen vesten erenvesten fromb fuerhsich-
-<lb n="40"/>tig und weysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister und rhatt lob:
-<lb n="41"/>Statt St. Gallen</orgName>, unsern besonders lieben herren
-<lb n="42"/>und guetten freunden.
-<lb n="43"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</origPlace>.
+<lb n="39"/>Den edlen vesten <unclear cert="low" resp="#joint">erenvesten</unclear> <unclear cert="low" resp="#joint">fromb</unclear> <unclear cert="low" resp="#joint">fuerhsich</unclear>-
+<lb n="40"/><unclear cert="low" resp="#joint">tig</unclear> und weysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister und <unclear cert="medium" resp="#joint">rhatt</unclear> <unclear cert="medium" resp="#joint">lob</unclear>:
+<lb n="41"/>Statt St. Gallen</orgName>, unsern <unclear cert="medium" resp="#joint">besonders</unclear> lieben herren
+<lb n="42"/>und <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>.
+<lb n="43"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></origPlace>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3592</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johann Ludwig Graf zu Ysenburg und Büdingen bittet Bürgermeister und Rat zu St. Gallen, ihm mit einer freiwilligen Kollekte und Bausteuer bei der Wiederherstellung der reformierten Kirche in Offenbach zu helfen. Er verweist auf den schlechten Zustand der Kirche nach dem Krieg und die Notlage seiner Grafschaft.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johann Ludwig Graf zu Ysenburg und Büdingen bittet Bürgermeister und Rat zu St. Gallen, ihm mit einer freiwilligen Kollekte und Bausteuer bei der Wiederherstellung der reformierten Kirche in Offenbach zu helfen. Er verweist auf den schlechten Zustand der Kirche nach dem Krieg und die Notlage seiner Grafschaft.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johann Ludwig Graf zu Ysenburg und Büdingen asks the Burgomaster and Council of St. Gallen to help him with a voluntary collection and building tax for the restoration of the Reformed church in Offenbach. He refers to the poor condition of the church after the war and the dire straits of his county.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,78 +35,78 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3592_14333.jpg" n="1"/>
-<lb n="1"/>Wohledle, Gestrenge und Veste, auch Ehrnveste, Fromme,
-<lb n="2"/>Fürsichtige und Weiße, insonders geehrte, unnd geliebte
-<lb n="3"/>Herren uund Freündt.
-<lb n="4"/>Den Herren hab ich verliettenen <date resp="#ner">1643. jahrs den 17./7. Novembr.</date>
-<lb n="5"/>zuverstehen gegeben, den leider allzuviel bekandten noth-
+<lb n="1"/>Wohledle, Gestrenge und Veste, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">Ehrnveste</unclear>, <unclear cert="low" resp="#joint">Fromme</unclear>,
+<lb n="2"/>Fürsichtige und Weiße, insonders <unclear cert="low" resp="#joint">geehrte</unclear>, unnd <unclear cert="low" resp="#joint">geliebte</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">uund</unclear> Freündt.
+<lb n="4"/>Den Herren hab ich verliettenen <date resp="#ner">1643. jahrs den <unclear cert="low" resp="#joint">17./7</unclear>. <unclear cert="low" resp="#joint">Novembr</unclear>.</date>
+<lb n="5"/><unclear cert="low" resp="#joint">zuverstehen</unclear> <unclear cert="low" resp="#joint">gegeben</unclear>, den leider allzuviel bekandten noth-
 <lb n="6"/>leidenden zustand, deß gantzen Graeflichen Haußes <placeName resp="#ner">Isen-
-<lb n="7"/>burg</placeName>, unnd daß es durch Gottes gnad, und gueter Freünde
-<lb n="8"/>bemüehung und interposition, endlichen dahin gebracht
-<lb n="9"/>worden, daß der Herr <persName resp="#ner">Landgraff zu Heßendarmstatt</persName>,
-<lb n="10"/>uff vorhergehende langwirige handlung, auch gegen nach-
-<lb n="11"/>laß eineß solchengroßen stück landts, dz <placeName resp="#ner">Mier</placeName> unnd den
+<lb n="7"/>burg</placeName>, unnd daß es durch Gottes <unclear cert="low" resp="#joint">gnad</unclear>, und <unclear cert="low" resp="#joint">gueter</unclear> <unclear cert="low" resp="#joint">Freünde</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">bemüehung</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">interposition</unclear>, <unclear cert="low" resp="#joint">endlichen</unclear> <unclear cert="low" resp="#joint">dahin</unclear> gebracht
+<lb n="9"/>worden, daß der Herr <persName resp="#ner">Landgraff zu <unclear cert="low" resp="#joint">Heßendarmstatt</unclear></persName>,
+<lb n="10"/>uff <unclear cert="low" resp="#joint">vorhergehende</unclear> <unclear cert="low" resp="#joint">langwirige</unclear> <unclear cert="low" resp="#joint">handlung</unclear>, <unclear cert="low" resp="#joint">auch</unclear> gegen nach-
+<lb n="11"/>laß <unclear cert="low" resp="#joint">eineß</unclear> <unclear cert="low" resp="#joint">solchengroßen</unclear> <unclear cert="low" resp="#joint">stück</unclear> <unclear cert="low" resp="#joint">landts</unclear>, <unclear cert="low" resp="#joint">dz</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Mier</unclear></placeName> <unclear cert="low" resp="#joint">unnd</unclear> den
 <lb n="12"/>meinigen, fast der bloße tittel als mit ubrig blieben, zwar
-<lb n="13"/>den ubrigen theil der Graffschafft wiedrumb abgetretten,
-<lb n="14"/>uund eingeraumbt, aber doch zum theil schwere conditiones
-<lb n="15"/>angehenkt, zum theil noch nicht plenarie restituiret, alßo
-<lb n="16"/>dz ich solcher restitution sehr wenig gebeßert, undt wochentlich
-<lb n="17"/>am meisten zubeklagen, unnd zubetauren, dz alle kirchen
+<lb n="13"/>den ubrigen theil der <unclear cert="low" resp="#joint">Graffschafft</unclear> <unclear cert="low" resp="#joint">wiedrumb</unclear> <unclear cert="low" resp="#joint">abgetretten</unclear>,
+<lb n="14"/><unclear cert="low" resp="#joint">uund</unclear> <unclear cert="low" resp="#joint">eingeraumbt</unclear>, aber doch zum theil schwere conditiones
+<lb n="15"/>angehenkt, zum <unclear cert="low" resp="#joint">theil</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">nicht</unclear> <unclear cert="low" resp="#joint">plenarie</unclear> <unclear cert="low" resp="#joint">restituiret</unclear>, <unclear cert="low" resp="#joint">alßo</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">solcher</unclear> restitution <unclear cert="low" resp="#joint">sehr</unclear> <unclear cert="low" resp="#joint">wenig</unclear> <unclear cert="low" resp="#joint">gebeßert</unclear>, <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">wochentlich</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">meisten</unclear> <unclear cert="low" resp="#joint">zubeklagen</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">zubetauren</unclear>, <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">alle</unclear> kirchen
 <lb n="18"/>uund schuelen dardurch in abgang gerathen, unnd alhie
 <lb n="19"/>sonderlich die geringe kirch, in meinem residentz orth
 <lb n="20"/><placeName resp="#ner">Offenbach</placeName>, da vor diesem leidigen kriegßweßen die ange-
 <lb n="21"/>feindete Reformirte gemeindt zue <placeName ref="stadtasg-places-16" cert="medium" resp="#ner">Franckfurt</placeName> und denen
 <lb n="22"/>daherumbliegenden ortten, ihr exercitium religionis
-<lb n="23"/>so wohl in frantzösischer alß Teütscher sprach iederzeit
-<lb n="24"/>gesucht unnd gehabt, auch nach zueweifels ohne, außer dießem
-<lb n="25"/>ubelstandt haben wurde, keinem kirchenbaew mehr aehnlich
-<lb n="26"/>noch gleich sehen thut, mit angehenkter dienstfrg. bitt,
-<lb n="27"/>mir zu reparir: unnd wiedererbaewung gemelter kirchen
+<lb n="23"/>so wohl in <unclear cert="low" resp="#joint">frantzösischer</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">Teütscher</unclear> <unclear cert="low" resp="#joint">sprach</unclear> <unclear cert="low" resp="#joint">iederzeit</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">gesucht</unclear> unnd gehabt, auch <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">zueweifels</unclear> <unclear cert="low" resp="#joint">ohne</unclear>, <unclear cert="low" resp="#joint">außer</unclear> <unclear cert="low" resp="#joint">dießem</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">ubelstandt</unclear> <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">wurde</unclear>, <unclear cert="low" resp="#joint">keinem</unclear> <unclear cert="low" resp="#joint">kirchenbaew</unclear> mehr aehnlich
+<lb n="26"/>noch <unclear cert="low" resp="#joint">gleich</unclear> <unclear cert="low" resp="#joint">sehen</unclear> <unclear cert="low" resp="#joint">thut</unclear>, mit <unclear cert="low" resp="#joint">angehenkter</unclear> <unclear cert="low" resp="#joint">dienstfrg</unclear>. <unclear cert="low" resp="#joint">bitt</unclear>,
+<lb n="27"/><unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">reparir</unclear>: unnd <unclear cert="low" resp="#joint">wiedererbaewung</unclear> gemelter kirchen
 <lb n="28"/>zu Offenbach, mit einer freywilligen collect zustatten zu-
-<lb n="29"/>kommen, unnd dero in unßerem geliebten vatterlandt
-<lb n="30"/><orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Teütscher nation</orgName> hochberühmte liberalitaet, auch gegen
+<lb n="29"/>kommen, unnd dero in <unclear cert="low" resp="#joint">unßerem</unclear> <unclear cert="low" resp="#joint">geliebten</unclear> <unclear cert="low" resp="#joint">vatterlandt</unclear>
+<lb n="30"/><orgName ref="stadtasg-actors-559" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Teütscher</unclear> nation</orgName> hochberühmte liberalitaet, auch gegen
 <lb n="31"/>mich in dießem fall sehen zulaßen: Nachdemme mir dann
 <lb n="32"/>biß dato von den Herren die verhoffte antwort nit er-
-<lb n="33"/>folget, unnd aber ich in dero geneigtwillige hochruhmliche
-<lb n="34"/>affection gegen die glaubensgenoßen, ein sonderbahres
-<lb n="35"/>vestes vertraewen setze, auch keines wegs zweifele, es
+<lb n="33"/>folget, unnd aber ich in <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">geneigtwillige</unclear> <unclear cert="low" resp="#joint">hochruhmliche</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">affection</unclear> gegen die glaubensgenoßen, ein <unclear cert="low" resp="#joint">sonderbahres</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">vestes</unclear> <unclear cert="low" resp="#joint">vertraewen</unclear> <unclear cert="low" resp="#joint">setze</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">keines</unclear> <unclear cert="low" resp="#joint">wegs</unclear> <unclear cert="low" resp="#joint">zweifele</unclear>, es
 <pb facs="StadtASG_Missive_3592_14334.jpg" n="2"/>
-<lb n="36"/>werden sich deßalbs die ehr gottes unnd fortpflanzung
+<lb n="36"/>werden sich deßalbs die ehr gottes <unclear cert="low" resp="#joint">unnd</unclear> fortpflanzung
 <lb n="37"/>der christlichen kirchen hoechlichen ahngelegen sein laßen.
 <lb n="38"/>Alß habe nochmalß, auß christlichem eüfer fuer der ehr
-<lb n="39"/>gottes, unnd trieb ahngeregten vertraüens, nicht
-<lb n="40"/>unterlaßen moegen, die Herren fr: zuobehelligen, freündt-
-<lb n="41"/>fleißig bittendt, die geruhen solch mein abermals ge-
-<lb n="42"/>sinnet, unnd molestirung, nicht in unbesten zuo vermerckhen,
-<lb n="43"/>sondern vielmehr mit einer freÿwilligen collect unnd
-<lb n="44"/>baüsteüer, unns alß ohnbeschwert zuo mehrgedachtem,
-<lb n="45"/>hochnohtwendigem kirchenbaü unter die arm zuogreiffen.
-<lb n="46"/>Hierdurch wirdt die ehr gottes befoerdert, andere auch
-<lb n="47"/>zuo gleichmeßiger christlicher lieb beweget unnd auf-
+<lb n="39"/>gottes, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">trieb</unclear> <unclear cert="low" resp="#joint">ahngeregten</unclear> <unclear cert="low" resp="#joint">vertraüens</unclear>, <unclear cert="low" resp="#joint">nicht</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">unterlaßen</unclear> <unclear cert="low" resp="#joint">moegen</unclear>, die <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">fr</unclear>: <unclear cert="low" resp="#joint">zuobehelligen</unclear>, <unclear cert="low" resp="#joint">freündt</unclear>-
+<lb n="41"/><unclear cert="low" resp="#joint">fleißig</unclear> <unclear cert="low" resp="#joint">bittendt</unclear>, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">geruhen</unclear> <unclear cert="low" resp="#joint">solch</unclear> mein <unclear cert="low" resp="#joint">abermals</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="42"/><unclear cert="low" resp="#joint">sinnet</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">molestirung</unclear>, nicht in <unclear cert="low" resp="#joint">unbesten</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">vermerckhen</unclear>,
+<lb n="43"/><unclear cert="low" resp="#joint">sondern</unclear> <unclear cert="low" resp="#joint">vielmehr</unclear> mit <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">freÿwilligen</unclear> <unclear cert="low" resp="#joint">collect</unclear> unnd
+<lb n="44"/><unclear cert="low" resp="#joint">baüsteüer</unclear>, <unclear cert="low" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">ohnbeschwert</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">mehrgedachtem</unclear>,
+<lb n="45"/><unclear cert="low" resp="#joint">hochnohtwendigem</unclear> <unclear cert="low" resp="#joint">kirchenbaü</unclear> <unclear cert="low" resp="#joint">unter</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">arm</unclear> <unclear cert="low" resp="#joint">zuogreiffen</unclear>.
+<lb n="46"/><unclear cert="low" resp="#joint">Hierdurch</unclear> <unclear cert="low" resp="#joint">wirdt</unclear> die ehr gottes <unclear cert="low" resp="#joint">befoerdert</unclear>, <unclear cert="low" resp="#joint">andere</unclear> auch
+<lb n="47"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">gleichmeßiger</unclear> christlicher lieb beweget unnd auf-
 <lb n="48"/>gemuntert, gereicht zuo derselben unsterblichem nach-
 <lb n="49"/>ruhm, unnd nehest deme gott der allmechtig, es
-<lb n="50"/>anderwertlichen reichlichen vergelten wirdt, so bin
-<lb n="51"/>ich es auch uff alle zuotragende gelegenheit zuo beschulden
-<lb n="52"/>unnd zuoersezen ganz begierig unnd gefließen. Die
+<lb n="50"/>anderwertlichen reichlichen vergelten wirdt, so <unclear cert="low" resp="#joint">bin</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">es</unclear> auch uff <unclear cert="low" resp="#joint">alle</unclear> <unclear cert="low" resp="#joint">zuotragende</unclear> <unclear cert="low" resp="#joint">gelegenheit</unclear> <unclear cert="low" resp="#joint">zuo</unclear> beschulden
+<lb n="52"/>unnd <unclear cert="low" resp="#joint">zuoersezen</unclear> <unclear cert="low" resp="#joint">ganz</unclear> <unclear cert="low" resp="#joint">begierig</unclear> unnd gefließen. Die
 <lb n="53"/>Herren damit der allgewaltigen beschirmung des
 <lb n="54"/>allerhoehsten zuo aller wollfart treülich empfehlendt.
-<lb n="55"/>Datum <origPlace resp="#ner">Offenburg</origPlace> <origDate when="1674-05-09" resp="#ner">den 9ten Maij. 1674</origDate>.
+<lb n="55"/>Datum <origPlace resp="#ner"><unclear cert="low" resp="#joint">Offenburg</unclear></origPlace> <origDate when="1674-05-09" resp="#ner">den <unclear cert="low" resp="#joint">9ten</unclear> <unclear cert="low" resp="#joint">Maij</unclear>. 1674</origDate>.
 <lb n="56"/>Der Herren
 <lb n="57"/>dienst: unndt bereitwilliger
-<lb n="58"/><persName role="issuer" resp="#ner">Johann Ludwig graff zu
-<lb n="59"/>Ysenburg undt Budingen</persName>
+<lb n="58"/><persName role="issuer" resp="#ner">Johann Ludwig <unclear cert="low" resp="#joint">graff</unclear> <unclear cert="low" resp="#joint">zu</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">Ysenburg</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">Budingen</unclear></persName>
 <pb facs="StadtASG_Missive_3592_14335.jpg" n="3"/>
 <lb n="60"/>[]
 <pb facs="StadtASG_Missive_3592_14336.jpg" n="4"/>
-<lb n="61"/>Denen woledel, gestreng und
+<lb n="61"/>Denen <unclear cert="low" resp="#joint">woledel</unclear>, gestreng und
 <lb n="62"/>vesten, auch ernvesten, from-
 <lb n="63"/>men, fuersichtigen und weisen
 <lb n="64"/>Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und
 <lb n="65"/>Rath der loblichen statt St.
 <lb n="66"/>Gallen</orgName>, meinen insonders
 <lb n="67"/>geehrt und geliebten Herren
-<lb n="68"/>und freuenden.
-<lb n="69"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="68"/>und <unclear cert="low" resp="#joint">freuenden</unclear>.
+<lb n="69"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

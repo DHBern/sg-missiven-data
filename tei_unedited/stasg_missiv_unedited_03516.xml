@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3516</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Ulm antworten auf ein Schreiben vom 15. des Monats, in dem die St. Galler Bürger Albrecht Stiller und Elias Ritter als Kuratoren des in St. Gallen weilenden Hans Georg Stiller ein Gegenargument vorgebracht haben. Ulm erklärt, dass sie dem St. Galler Bürger Joachim Kunkler, falls die Sache anders gelagert wäre, gemäß dessen Intercession geholfen hätten. Sie bekunden ihre Bereitschaft zu freundschaftlichem Umgang.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Ulm antworten auf ein Schreiben vom 15. des Monats, in dem die St. Galler Bürger Albrecht Stiller und Elias Ritter als Kuratoren des in St. Gallen weilenden Hans Georg Stiller ein Gegenargument vorgebracht haben. Ulm erklärt, dass sie dem St. Galler Bürger Joachim Kunkler, falls die Sache anders gelagert wäre, gemäß dessen Intercession geholfen hätten. Sie bekunden ihre Bereitschaft zu freundschaftlichem Umgang.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Ulm reply to a letter of the 15th of the month, in which the citizens of St. Gallen Albrecht Stiller and Elias Ritter, as curators of Hans Georg Stiller, who is staying in St. Gallen, have presented a counter-argument. Ulm declares that, had the matter been otherwise situated, they would have helped the citizen of St. Gallen Joachim Kunkler in accordance with his intercession. They express their willingness for friendly dealings.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,22 +36,22 @@
 <p>
 <pb facs="StadtASG_Missive_3516_14017.jpg" n="1"/>
 <lb n="1"/>Unßer fründtlich willig dienst voran. Er-
-<lb n="2"/>same und weyse, liebe fründt,
-<lb n="3"/>Waß uff Eüer Wt. vom. <date resp="#ner">15. t. diß abgabez</date>
-<lb n="4"/>furschreiben und inßchluß unßere mitburger
+<lb n="2"/>same und <unclear cert="low" resp="#joint">weyse</unclear>, <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">fründt</unclear>,
+<lb n="3"/><unclear cert="low" resp="#joint">Waß</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">Eüer</unclear> <unclear cert="low" resp="#joint">Wt</unclear>. vom. <date resp="#ner">15. <unclear cert="low" resp="#joint">t</unclear>. <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">abgabez</unclear></date>
+<lb n="4"/><unclear cert="low" resp="#joint">furschreiben</unclear> und <unclear cert="low" resp="#joint">inßchluß</unclear> <unclear cert="low" resp="#joint">unßere</unclear> <unclear cert="low" resp="#joint">mitburger</unclear>
 <lb n="5"/>und rathsfreündt <persName resp="#ner">Albreht Stiller</persName> unnd
 <lb n="6"/><persName resp="#ner">Elias Ritter</persName>, ihres in E. Wt. Statt sich
-<lb n="7"/>auffhaltendz vetters <persName resp="#ner">Hans Georg Stillers</persName>
-<lb n="8"/>verordnete Curatores, an iezo für ain ge-
+<lb n="7"/><unclear cert="low" resp="#joint">auffhaltendz</unclear> <unclear cert="low" resp="#joint">vetters</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hans</unclear> <unclear cert="low" resp="#joint">Georg</unclear> <unclear cert="low" resp="#joint">Stillers</unclear></persName>
+<lb n="8"/><unclear cert="low" resp="#joint">verordnete</unclear> <unclear cert="low" resp="#joint">Curatores</unclear>, <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">iezo</unclear> für ain ge-
 <lb n="9"/>genbricht eingewendt, daß beliebe E.
 <lb n="10"/>Wt. auß mitgehender abschrifft zu er-
 <lb n="11"/>sehen, weil da wir die sachen anderst be-
 <lb n="12"/>wandt befundz hetten, versichrz E. Wt.
-<lb n="13"/>wir, daß wir dero burgerz <persName resp="#ner">Joachim
-<lb n="14"/>Kunkler</persName>, ihrer intercession gemäß,
-<lb n="15"/>verhilfflich zu seie niht unterlaßn habz
-<lb n="16"/>solten, wollseind E. Wt. wir zu ied
-<lb n="17"/>begebenheit angenehme dienst und freündt-
+<lb n="13"/>wir, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">burgerz</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Joachim</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">Kunkler</unclear></persName>, ihrer <unclear cert="low" resp="#joint">intercession</unclear> <unclear cert="low" resp="#joint">gemäß</unclear>,
+<lb n="15"/><unclear cert="low" resp="#joint">verhilfflich</unclear> zu <unclear cert="low" resp="#joint">seie</unclear> <unclear cert="low" resp="#joint">niht</unclear> <unclear cert="low" resp="#joint">unterlaßn</unclear> <unclear cert="low" resp="#joint">habz</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">solten</unclear>, <unclear cert="low" resp="#joint">wollseind</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">ied</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">begebenheit</unclear> <unclear cert="low" resp="#joint">angenehme</unclear> dienst und freündt-
 <lb n="18"/>schafft zu erweißen sonderß woll ge-
 <lb n="19"/>neigt. Datum dz. <origDate when="1643" resp="#ner">29. Xbris ao 1643</origDate>
 <lb n="20"/><orgName ref="stadtasg-actors-510" cert="medium" role="issuer" resp="#ner">Burgermaister und rath
@@ -64,7 +65,7 @@
 <lb n="25"/>der statt S. Gallen</orgName>,
 <lb n="26"/>unsern besondern gueten
 <lb n="27"/>freunden.
-<lb n="28"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</origPlace>.
+<lb n="28"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">S</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></origPlace>.
 </p>
         </body>
     </text>

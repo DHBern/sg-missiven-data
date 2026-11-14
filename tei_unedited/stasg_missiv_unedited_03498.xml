@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3498</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die Kanzlei der Stadt St. Gallen bestätigt den Empfang eines verschlossenen Schreibens von den Herren Statthaltern und Rat des Ortes Unterwalden, das am 17. Juni 1642 dem Amtsbürgermeister übergeben wurde. Das Schreiben wird an den zuständigen Ort in Treuen eingegeben und insofern in Obacht genommen, als die Justiz es erlaubt. Der Bote wird mit diesem Empfangsschein aus der Herberge entlassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die Kanzlei der Stadt St. Gallen bestätigt den Empfang eines verschlossenen Schreibens von den Herren Statthaltern und Rat des Ortes Unterwalden, das am 17. Juni 1642 dem Amtsbürgermeister übergeben wurde. Das Schreiben wird an den zuständigen Ort in Treuen eingegeben und insofern in Obacht genommen, als die Justiz es erlaubt. Der Bote wird mit diesem Empfangsschein aus der Herberge entlassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The chancery of the city of St. Gallen confirms the receipt of a sealed letter from the Lords Statthalter and Council of the canton of Unterwalden, which was handed over to the Amtsbürgermeister on 17 June 1642. The letter is submitted to the competent canton in Treuen and is therefore kept in custody insofar as the law permits. The messenger is dismissed from the inn with this receipt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,18 +37,18 @@
 <pb facs="StadtASG_Missive_3498_13945.jpg" n="1"/>
 <lb n="1"/>Von <orgName role="issuer" resp="#ner">herren Statthalter und Rhatt, loblichen
 <lb n="2"/>Ortts Underwalden Nid dem Kernwaldt</orgName>:
-<lb n="3"/>hat weiser diß, dero deßhalb abgsandter
-<lb n="4"/>laeüffersbott, ein verschloßßen schreiben,
+<lb n="3"/>hat weiser diß, dero deßhalb <unclear cert="low" resp="#joint">abgsandter</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">laeüffersbott</unclear>, ein verschloßßen schreiben,
 <lb n="5"/>an Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhatt der
 <lb n="6"/>Statt Sanct Gallen</orgName>, laütende, uf dato
-<lb n="7"/>dem herren amptsburgermeister daselb-
+<lb n="7"/>dem <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">amptsburgermeister</unclear> <unclear cert="low" resp="#joint">daselb</unclear>-
 <lb n="8"/>sten wohl yngelieffert. Wann
-<lb n="9"/>dann solches an gebüerendem ort, in treüwen
-<lb n="10"/>ynzegeben, und deßsen in besten gedacht,
-<lb n="11"/>und sovil yhmmer die Justitien +wirt erleiden moegen. wirt
-<lb n="12"/>erleiden moegen, in obacht genomen werden
+<lb n="9"/>dann solches <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">gebüerendem</unclear> <unclear cert="low" resp="#joint">ort</unclear>, in <unclear cert="low" resp="#joint">treüwen</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">ynzegeben</unclear>, und <unclear cert="low" resp="#joint">deßsen</unclear> in <unclear cert="low" resp="#joint">besten</unclear> <unclear cert="low" resp="#joint">gedacht</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">sovil</unclear> <unclear cert="low" resp="#joint">yhmmer</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Justitien</unclear> <unclear cert="low" resp="#joint">+wirt</unclear> <unclear cert="low" resp="#joint">erleiden</unclear> <unclear cert="low" resp="#joint">moegen</unclear>. <unclear cert="low" resp="#joint">wirt</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">erleiden</unclear> <unclear cert="low" resp="#joint">moegen</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">obacht</unclear> genomen werden
 <lb n="13"/>solle. Alß ißt Er pott mit di-
-<lb n="14"/>sem Recepiße, neben außloosüng uß
+<lb n="14"/>sem Recepiße, neben <unclear cert="low" resp="#joint">außloosüng</unclear> <unclear cert="low" resp="#joint">uß</unclear>
 <lb n="15"/>der herberg widerümb heimgelaßen worden.
 <lb n="16"/>Actum Sanct Gallen den <origDate when="1642-06-07" resp="#ner">17/7. Junij Anno
 <lb n="17"/>1642</origDate>.

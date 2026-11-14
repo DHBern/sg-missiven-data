@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3528</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Ulm informieren Bürgermeister und Rat zu St. Gallen, dass der Ulmer Bürger Hans Georg Müller, der sich nach St. Gallen abgesetzt habe, von seiner Frau, der Ehefrau des St. Galler Bürgers Jost Runkler, festgehalten werde. Die Schwäger hätten eine schriftliche Erklärung abgegeben. Ulm bittet St. Gallen, die Frau anzuweisen, Müller freizulassen und ihn nach Ulm ziehen zu lassen, damit er seine Schuld begleichen könne.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Ulm informieren Bürgermeister und Rat zu St. Gallen, dass der Ulmer Bürger Hans Georg Müller, der sich nach St. Gallen abgesetzt habe, von seiner Frau, der Ehefrau des St. Galler Bürgers Jost Runkler, festgehalten werde. Die Schwäger hätten eine schriftliche Erklärung abgegeben. Ulm bittet St. Gallen, die Frau anzuweisen, Müller freizulassen und ihn nach Ulm ziehen zu lassen, damit er seine Schuld begleichen könne.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Ulm inform Burgomaster and Council of St. Gallen that the citizen of Ulm Hans Georg Müller, who had fled to St. Gallen, is being held by his wife, the wife of the citizen of St. Gallen Jost Runkler. The brothers-in-law have submitted a written declaration. Ulm asks St. Gallen to instruct the woman to release Müller and let him go to Ulm, so that he may settle his debt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -66,27 +67,27 @@
 <lb n="30"/>obangezogener schwager antzaig, zu seiner
 <lb n="31"/>erclärung gleichwol laßen fuerhalten,
 <pb facs="StadtASG_Missive_3528_14064.jpg" n="2"/>
-<lb n="32"/>denselben aber anders, dahin oberigkait-
-<lb n="33"/>lich disponieren, damit er ihne <persName resp="#ner">Hannß
-<lb n="34"/>Joerg Muellern</persName> deßelben arres dimittiern,
-<lb n="35"/>und zu mieglicher abetattung seiner schuld: und anderen
-<lb n="36"/>sachen hiehero ziehen laßen solle:
-<lb n="37"/>Wie nun Ewer FtW. hiedurch fernerer
-<lb n="38"/>unbehelliget bleiben koenen, allß thuen
-<lb n="39"/>wir solche erzaigung umb dieselbe ander-
-<lb n="40"/>werths zuverschulden erbietig, goettlicher
-<lb n="41"/>obacht unß darmit allerseits befechlendt,
-<lb n="42"/>Datum den. <origDate when="1624" resp="#ner">7: xbris ao 1624</origDate> .
-<lb n="43"/><orgName ref="stadtasg-actors-510" cert="medium" role="issuer" resp="#ner">Burgermaister und rath
+<lb n="32"/><unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">anders</unclear>, dahin <unclear cert="low" resp="#joint">oberigkait</unclear>-
+<lb n="33"/><unclear cert="low" resp="#joint">lich</unclear> <unclear cert="low" resp="#joint">disponieren</unclear>, damit er <unclear cert="low" resp="#joint">ihne</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">Joerg</unclear> <unclear cert="low" resp="#joint">Muellern</unclear></persName> <unclear cert="low" resp="#joint">deßelben</unclear> <unclear cert="low" resp="#joint">arres</unclear> <unclear cert="low" resp="#joint">dimittiern</unclear>,
+<lb n="35"/>und zu <unclear cert="low" resp="#joint">mieglicher</unclear> <unclear cert="low" resp="#joint">abetattung</unclear> <unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">schuld</unclear>: <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">anderen</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">sachen</unclear> <unclear cert="low" resp="#joint">hiehero</unclear> <unclear cert="low" resp="#joint">ziehen</unclear> <unclear cert="low" resp="#joint">laßen</unclear> <unclear cert="low" resp="#joint">solle</unclear>:
+<lb n="37"/><unclear cert="low" resp="#joint">Wie</unclear> nun Ewer <unclear cert="low" resp="#joint">FtW</unclear>. <unclear cert="low" resp="#joint">hiedurch</unclear> <unclear cert="low" resp="#joint">fernerer</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">unbehelliget</unclear> <unclear cert="low" resp="#joint">bleiben</unclear> <unclear cert="low" resp="#joint">koenen</unclear>, <unclear cert="low" resp="#joint">allß</unclear> <unclear cert="low" resp="#joint">thuen</unclear>
+<lb n="39"/>wir solche erzaigung umb <unclear cert="low" resp="#joint">dieselbe</unclear> <unclear cert="low" resp="#joint">ander</unclear>-
+<lb n="40"/><unclear cert="low" resp="#joint">werths</unclear> <unclear cert="low" resp="#joint">zuverschulden</unclear> <unclear cert="low" resp="#joint">erbietig</unclear>, <unclear cert="low" resp="#joint">goettlicher</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">obacht</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">darmit</unclear> allerseits befechlendt,
+<lb n="42"/>Datum den. <origDate when="1624" resp="#ner">7: xbris <unclear cert="low" resp="#joint">ao</unclear> <unclear cert="low" resp="#joint">1624</unclear></origDate> .
+<lb n="43"/><orgName ref="stadtasg-actors-510" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> und rath
 <lb n="44"/>der statt Ulm</orgName>. / .
 <pb facs="StadtASG_Missive_3528_14065.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3528_14066.jpg" n="4"/>
 <lb n="45"/>Den ersamen und weisen
 <lb n="46"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath
 <lb n="47"/>der statt St. Gallen</orgName>,
-<lb n="48"/>unseren besonders guoten
-<lb n="49"/>freünden.
-<lb n="50"/>St. Gallen.
+<lb n="48"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">guoten</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">freünden</unclear>.
+<lb n="50"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear>.
 </p>
         </body>
     </text>

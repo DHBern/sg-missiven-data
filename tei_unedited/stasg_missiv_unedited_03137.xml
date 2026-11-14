@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3137</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Ravensburg informieren Bürgermeister und Rat zu St. Gallen über den Tod des Bürgermeisters Burkhard Hüßler. Da dieser keine direkten Erben hinterlassen habe, sondern nur Nichten und Neffen, bitten sie um Benachrichtigung allfälliger Verwandter. Innerhalb von zehn Wochen sollen sich die Erben legitimieren, damit die Erbschaft verteilt werden kann.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Ravensburg informieren Bürgermeister und Rat zu St. Gallen über den Tod des Bürgermeisters Burkhard Hüßler. Da dieser keine direkten Erben hinterlassen habe, sondern nur Nichten und Neffen, bitten sie um Benachrichtigung allfälliger Verwandter. Innerhalb von zehn Wochen sollen sich die Erben legitimieren, damit die Erbschaft verteilt werden kann.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Ravensburg inform Burgomaster and Council of St. Gallen about the death of Burgomaster Burkhard Hüßler. Since he left no direct heirs, but only nieces and nephews, they ask for the notification of any relatives. The heirs are to legitimize themselves within ten weeks so that the inheritance can be distributed.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,24 +39,24 @@
 <lb n="2"/>Edle, Gestrenge, Veste, Fromme, Fürsichtig und
 <lb n="3"/>weise, sonders liebe Herrn und Fründt.
 <lb n="4"/>Auß bijgefüegter delineation, ist mit mehrerm zu-
-<lb n="5"/>vernemen, was gestalt herr <persName resp="#ner">burkhardt Heüßler</persName>
-<lb n="6"/>sel. unlengsten mit todt abgangen, und weder in
-<lb n="7"/>ab- noch aufsteigender linj, einige noth Erben
+<lb n="5"/>vernemen, was gestalt herr <persName resp="#ner"><unclear cert="low" resp="#joint">burkhardt</unclear> <unclear cert="low" resp="#joint">Heüßler</unclear></persName>
+<lb n="6"/><unclear cert="low" resp="#joint">sel</unclear>. <unclear cert="low" resp="#joint">unlengsten</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">todt</unclear> <unclear cert="low" resp="#joint">abgangen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">weder</unclear> <unclear cert="low" resp="#joint">in</unclear>
+<lb n="7"/>ab- <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">aufsteigender</unclear> <unclear cert="low" resp="#joint">linj</unclear>, <unclear cert="low" resp="#joint">einige</unclear> <unclear cert="low" resp="#joint">noth</unclear> Erben
 <lb n="8"/>hinder ihme, zu seiner zeitlichen verlaßenschafft,
 <lb n="9"/>sonder so vil wir bericht, vermög delineation,
 <lb n="10"/>allein aenikle, brueder und schwöster kinder vor-
 <lb n="11"/>handen, haben wir, damit niemandt vervortheilt,
 <lb n="12"/>oder übereilet werde, nit underlaßen wöllen,
-<lb n="13"/>E. V. W. sowol als andern, da etwan befründte
-<lb n="14"/>sein möchten, solches zu intimieren, auch zeit und tag
-<lb n="15"/>benanntlich <date resp="#ner">.10. wochen von dato</date> anzurechnen, zu
-<lb n="16"/>erheb- und Richtigmachung angeregter verlaßen-
-<lb n="17"/>schafft, zubenamsen, uff welche zeit dann (. man
-<lb n="18"/>erscheine dann gleich alsdann für sich selbsten oder
-<lb n="19"/>durch bevollmechtigte Anwäldt, oder nit .) den er-
+<lb n="13"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">sowol</unclear> als andern, da etwan befründte
+<lb n="14"/>sein möchten, solches zu <unclear cert="low" resp="#joint">intimieren</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">zeit</unclear> und <unclear cert="low" resp="#joint">tag</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">benanntlich</unclear> <date resp="#ner">.<unclear cert="low" resp="#joint">10</unclear>. <unclear cert="low" resp="#joint">wochen</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">dato</unclear></date> <unclear cert="low" resp="#joint">anzurechnen</unclear>, <unclear cert="low" resp="#joint">zu</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">erheb</unclear>- <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Richtigmachung</unclear> <unclear cert="low" resp="#joint">angeregter</unclear> <unclear cert="low" resp="#joint">verlaßen</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">schafft</unclear>, <unclear cert="low" resp="#joint">zubenamsen</unclear>, uff welche zeit <unclear cert="low" resp="#joint">dann</unclear> (. <unclear cert="low" resp="#joint">man</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">erscheine</unclear> <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">gleich</unclear> <unclear cert="low" resp="#joint">alsdann</unclear> <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">sich</unclear> selbsten oder
+<lb n="19"/>durch bevollmechtigte Anwäldt, oder nit .) <unclear cert="low" resp="#joint">den</unclear> er-
 <lb n="20"/>scheinenden sich legitimierenden Erben /: weilen beij
-<lb n="21"/>lengerem Verzug periculum sein möchte :/ die gebür
-<lb n="22"/>volgen und widerfahren solle, welchs E. V. undt
+<lb n="21"/>lengerem Verzug periculum sein möchte :/ <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">gebür</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">volgen</unclear> und widerfahren solle, welchs E. V. undt
 <lb n="23"/>F. W. nechst Göttlicher befehlung, wir nit ver-
 <lb n="24"/>halten. Datum den <origDate when="1636-03-05" resp="#ner">.5. Martij Ao. 1636</origDate>.
 <lb n="25"/><orgName ref="stadtasg-actors-58" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht

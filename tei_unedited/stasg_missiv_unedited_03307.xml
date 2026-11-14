@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3307</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf die Anfrage von St. Gallen bezüglich des Fleischpreises. Sie senden ihre aktuellen Fleischpreise, die denen der Nachbarstädte entsprechen, mit Ausnahme eines Aufschlags für Kalbfleisch wegen Mangel. Die Metzger müssen zudem zwei Pfennig Aufschlag pro Pfund Fleisch zahlen. Lindau erwartet keine Änderungen und bittet St. Gallen um Mitteilung der dortigen Preise.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf die Anfrage von St. Gallen bezüglich des Fleischpreises. Sie senden ihre aktuellen Fleischpreise, die denen der Nachbarstädte entsprechen, mit Ausnahme eines Aufschlags für Kalbfleisch wegen Mangel. Die Metzger müssen zudem zwei Pfennig Aufschlag pro Pfund Fleisch zahlen. Lindau erwartet keine Änderungen und bittet St. Gallen um Mitteilung der dortigen Preise.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Lindau answer the inquiry from St. Gallen regarding the price of meat. They send their current meat prices, which correspond to those of the neighboring cities, with the exception of a surcharge for veal due to shortage. The butchers must also pay a surcharge of two pfennig per pound of meat. Lindau expects no changes and asks St. Gallen to communicate the prices there.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,21 +39,21 @@
 <lb n="2"/>Ersam und Weise, besonders liebe und guote Freünd,
 <lb n="3"/>Auff E. Flt. ersuochen und begerten bericht des fleisch=
 <lb n="4"/>tax halben, uebersenden wir deroselben hiebej, wie
-<lb n="5"/>der zeit bej unß ein und ander fleisch taxiert, welcher
-<lb n="6"/>tax allerdings dem jenigen gleich, dessen sich ferndigs
-<lb n="7"/>jahrs etliche benachbarte Stätt mit einandern ver=
-<lb n="8"/>glichen, ausser daß dem kalbfleisch, weilen daran
+<lb n="5"/>der zeit <unclear cert="low" resp="#joint">bej</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">ein</unclear> und ander fleisch taxiert, welcher
+<lb n="6"/>tax allerdings dem jenigen gleich, <unclear cert="low" resp="#joint">dessen</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">ferndigs</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">jahrs</unclear> <unclear cert="low" resp="#joint">etliche</unclear> benachbarte Stätt mit einandern ver=
+<lb n="8"/>glichen, ausser daß dem <unclear cert="low" resp="#joint">kalbfleisch</unclear>, <unclear cert="low" resp="#joint">weilen</unclear> <unclear cert="low" resp="#joint">daran</unclear>
 <lb n="9"/>mangel erscheinen woellen, etwas wenigs addiert
-<lb n="10"/>worden, die mezger aber muoessen von jedem
+<lb n="10"/>worden, die mezger aber muoessen von <unclear cert="low" resp="#joint">jedem</unclear>
 <lb n="11"/>pfund fleisch. 2. pfenning uffschlag bezahlen, koennen
-<lb n="12"/>sonsten nicht erachten, daß noch zuor zeit bej unß
+<lb n="12"/>sonsten nicht erachten, daß noch <unclear cert="low" resp="#joint">zuor</unclear> zeit bej unß
 <lb n="13"/>etwas enderung hierinnen fürgenommen werden
 <lb n="14"/>moechte,
 <lb n="15"/>Welches wir E. Flt. antwortlichen vermelden woellen,
-<lb n="16"/>freündnachbarlich bittendt, unß deßjhenigen
+<lb n="16"/>freündnachbarlich bittendt, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">deßjhenigen</unclear>
 <lb n="17"/>so E. Flt. inn ihrem fleischtax ordnen und fürnemen
-<lb n="18"/>moechten, zuo unserer nachricht ebnmässig zuo ver=
-<lb n="19"/>ständigen, Dahn und verbleiben beneben dero=
+<lb n="18"/>moechten, zuo unserer nachricht <unclear cert="low" resp="#joint">ebnmässig</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ver=</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">ständigen</unclear>, <unclear cert="low" resp="#joint">Dahn</unclear> und verbleiben beneben dero=
 <lb n="20"/>selben zuo angenemer freündt: und nachbarschaffts
 <lb n="21"/>erzeigung jederzeit wol beigethen. Datum
 <lb n="22"/>den. <origDate when="1638-07-28" resp="#ner">28. Julij a°. 1638</origDate>.
@@ -61,54 +62,54 @@
 <pb facs="StadtASG_Missive_3307_13120.jpg" n="2"/>
 <lb n="25"/>[]
 <pb facs="StadtASG_Missive_3307_13121.jpg" n="3"/>
-<lb n="26"/>Flaisch tax,
-<lb n="27"/>Unger ochsen flaisch, das pfund per ... 6 kr:
-<lb n="28"/>Andere ochsen= oder ochsenmaeßig kue=
-<lb n="29"/>flaisch per ... 5 1/2 kr:
-<lb n="30"/>Das schlechtere per ... 4 1/2 kr: 4 kr:
-<lb n="31"/>.2. Pfund kuttlen per .1. pfund flaisch
-<lb n="32"/>danen sie komen,
-<lb n="33"/>Das beste kalbflaisch, wann ein kalb
-<lb n="34"/>ueber .30. lb. wigt, umb .5. 5 1/2. und auhs
-<lb n="35"/>hoechste umb .6. kr:, was aber nur .30. lb.
-<lb n="36"/>und darunder wigt, hoeher nicht als per .4 1/2.
-<lb n="37"/>.4. kr: auh wol weniger, nach dem es
-<lb n="38"/>ist,
-<lb n="39"/>Ein kalbskopf dem flaisch gleich, doh per .1 1/2. lb.
-<lb n="40"/>.4. Fueeß per .1/2. lb.
-<lb n="41"/>Das kalbsgling per .2. pfund,
-<lb n="42"/>Das mülz sampt dem nezlin per .1 1/2. kr:
-<lb n="43"/>Das schaffflaisch per .5 1/2. kr:,
-<lb n="44"/>Doh sollen auß den hindern stuckhen
-<lb n="45"/>die nieren nicht geschnitten, aber
-<lb n="46"/>auf jedes hinderstuckh .2. kr: passiert
+<lb n="26"/><unclear cert="low" resp="#joint">Flaisch</unclear> <unclear cert="low" resp="#joint">tax</unclear>,
+<lb n="27"/><unclear cert="low" resp="#joint">Unger</unclear> <unclear cert="low" resp="#joint">ochsen</unclear> <unclear cert="low" resp="#joint">flaisch</unclear>, das pfund <unclear cert="low" resp="#joint">per</unclear> ... 6 kr:
+<lb n="28"/><unclear cert="medium" resp="#joint">Andere</unclear> <unclear cert="medium" resp="#joint">ochsen=</unclear> oder <unclear cert="low" resp="#joint">ochsenmaeßig</unclear> <unclear cert="low" resp="#joint">kue=</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">flaisch</unclear> <unclear cert="low" resp="#joint">per</unclear> ... 5 1/2 kr:
+<lb n="30"/>Das <unclear cert="low" resp="#joint">schlechtere</unclear> <unclear cert="low" resp="#joint">per</unclear> ... 4 1/2 kr: 4 kr:
+<lb n="31"/>.2. Pfund <unclear cert="medium" resp="#joint">kuttlen</unclear> <unclear cert="medium" resp="#joint">per</unclear> .1. pfund <unclear cert="medium" resp="#joint">flaisch</unclear>
+<lb n="32"/><unclear cert="medium" resp="#joint">danen</unclear> sie <unclear cert="medium" resp="#joint">komen</unclear>,
+<lb n="33"/>Das beste <unclear cert="medium" resp="#joint">kalbflaisch</unclear>, <unclear cert="medium" resp="#joint">wann</unclear> ein kalb
+<lb n="34"/><unclear cert="medium" resp="#joint">ueber</unclear> .30. <unclear cert="medium" resp="#joint">lb</unclear>. <unclear cert="medium" resp="#joint">wigt</unclear>, umb .<unclear cert="low" resp="#joint">5</unclear>. 5 1/2. und <unclear cert="medium" resp="#joint">auhs</unclear>
+<lb n="35"/><unclear cert="medium" resp="#joint">hoechste</unclear> umb .6. kr:, was aber nur .30. <unclear cert="medium" resp="#joint">lb</unclear>.
+<lb n="36"/>und <unclear cert="low" resp="#joint">darunder</unclear> <unclear cert="low" resp="#joint">wigt</unclear>, <unclear cert="low" resp="#joint">hoeher</unclear> nicht als <unclear cert="low" resp="#joint">per</unclear> .<unclear cert="low" resp="#joint">4</unclear> 1/2.
+<lb n="37"/>.4. kr: <unclear cert="medium" resp="#joint">auh</unclear> <unclear cert="medium" resp="#joint">wol</unclear> weniger, nach dem <unclear cert="medium" resp="#joint">es</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">ist</unclear>,
+<lb n="39"/>Ein <unclear cert="low" resp="#joint">kalbskopf</unclear> dem <unclear cert="low" resp="#joint">flaisch</unclear> <unclear cert="low" resp="#joint">gleich</unclear>, <unclear cert="low" resp="#joint">doh</unclear> <unclear cert="low" resp="#joint">per</unclear> .<unclear cert="low" resp="#joint">1</unclear> 1/2. <unclear cert="medium" resp="#joint">lb</unclear>.
+<lb n="40"/>.4. <unclear cert="medium" resp="#joint">Fueeß</unclear> <unclear cert="medium" resp="#joint">per</unclear> .1/2. <unclear cert="medium" resp="#joint">lb</unclear>.
+<lb n="41"/>Das <unclear cert="medium" resp="#joint">kalbsgling</unclear> <unclear cert="medium" resp="#joint">per</unclear> .2. pfund,
+<lb n="42"/>Das <unclear cert="medium" resp="#joint">mülz</unclear> sampt dem <unclear cert="low" resp="#joint">nezlin</unclear> <unclear cert="low" resp="#joint">per</unclear> .<unclear cert="low" resp="#joint">1</unclear> 1/2. kr:
+<lb n="43"/>Das <unclear cert="medium" resp="#joint">schaffflaisch</unclear> <unclear cert="medium" resp="#joint">per</unclear> .5 1/2. kr:,
+<lb n="44"/><unclear cert="medium" resp="#joint">Doh</unclear> sollen auß den hindern <unclear cert="medium" resp="#joint">stuckhen</unclear>
+<lb n="45"/>die <unclear cert="medium" resp="#joint">nieren</unclear> nicht <unclear cert="medium" resp="#joint">geschnitten</unclear>, aber
+<lb n="46"/><unclear cert="medium" resp="#joint">auf</unclear> jedes <unclear cert="medium" resp="#joint">hinderstuckh</unclear> .2. kr: <unclear cert="medium" resp="#joint">passiert</unclear>
 <lb n="47"/>werden,
-<lb n="48"/>Der schaffkopf soll gelten ... 3 kr:,
-<lb n="49"/>Das schaffglueber gleichfahls ... 3 kr:,
-<lb n="50"/>Das pfund eber ... 6 1/2 kr:
-<lb n="51"/>Vonn dem nez aber soll die nott=
-<lb n="52"/>wendigkhait darzue gewogen
+<lb n="48"/>Der <unclear cert="medium" resp="#joint">schaffkopf</unclear> soll gelten ... 3 kr:,
+<lb n="49"/>Das <unclear cert="low" resp="#joint">schaffglueber</unclear> <unclear cert="low" resp="#joint">gleichfahls</unclear> ... 3 kr:,
+<lb n="50"/>Das pfund <unclear cert="low" resp="#joint">eber</unclear> ... <unclear cert="low" resp="#joint">6</unclear> 1/2 kr:
+<lb n="51"/><unclear cert="medium" resp="#joint">Vonn</unclear> dem <unclear cert="medium" resp="#joint">nez</unclear> aber soll die nott=
+<lb n="52"/><unclear cert="medium" resp="#joint">wendigkhait</unclear> darzue <unclear cert="medium" resp="#joint">gewogen</unclear>
 <lb n="53"/>werden,
 <lb n="54"/>Ein
 <pb facs="StadtASG_Missive_3307_13122.jpg" n="4"/>
-<lb n="55"/>Ein schafbauch sampt dem bluot . . 3 kr. — .
-<lb n="56"/>Bockh. und gaizflaisch . . . . . . 3 ½ kr. — .
-<lb n="57"/>Schweinin flaisch, wann flaisch und
-<lb n="58"/>speckh beisamen p. . . . . — — — . 7 ½ kr. — .
+<lb n="55"/>Ein <unclear cert="medium" resp="#joint">schafbauch</unclear> <unclear cert="medium" resp="#joint">sampt</unclear> dem <unclear cert="low" resp="#joint">bluot</unclear> . . 3 <unclear cert="low" resp="#joint">kr</unclear>. <unclear cert="low" resp="#joint">—</unclear> .
+<lb n="56"/><unclear cert="low" resp="#joint">Bockh</unclear>. und <unclear cert="low" resp="#joint">gaizflaisch</unclear> . . . . . . 3 <unclear cert="low" resp="#joint">½</unclear> <unclear cert="low" resp="#joint">kr</unclear>. <unclear cert="low" resp="#joint">—</unclear> .
+<lb n="57"/><unclear cert="low" resp="#joint">Schweinin</unclear> <unclear cert="low" resp="#joint">flaisch</unclear>, <unclear cert="low" resp="#joint">wann</unclear> <unclear cert="low" resp="#joint">flaisch</unclear> und
+<lb n="58"/><unclear cert="low" resp="#joint">speckh</unclear> <unclear cert="low" resp="#joint">beisamen</unclear> <unclear cert="low" resp="#joint">p</unclear>. . . . . <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">—</unclear> . 7 <unclear cert="low" resp="#joint">½</unclear> <unclear cert="low" resp="#joint">kr</unclear>. <unclear cert="low" resp="#joint">—</unclear> .
 <lb n="59"/>auch weniger, nach beschaffenheit,
-<lb n="60"/>Dicke speckh daß pfund p. 10. kr.
-<lb n="61"/>Leber, bluot. und bratwuerst daß
-<lb n="62"/>pfund p. . . . . . . . . — — — 5 kr. — .
+<lb n="60"/><unclear cert="medium" resp="#joint">Dicke</unclear> <unclear cert="medium" resp="#joint">speckh</unclear> <unclear cert="medium" resp="#joint">daß</unclear> pfund <unclear cert="medium" resp="#joint">p</unclear>. 10. <unclear cert="medium" resp="#joint">kr</unclear>.
+<lb n="61"/><unclear cert="medium" resp="#joint">Leber</unclear>, <unclear cert="medium" resp="#joint">bluot</unclear>. und <unclear cert="medium" resp="#joint">bratwuerst</unclear> <unclear cert="medium" resp="#joint">daß</unclear>
+<lb n="62"/>pfund <unclear cert="low" resp="#joint">p</unclear>. . . . . . . . . <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">—</unclear> <unclear cert="low" resp="#joint">—</unclear> 5 <unclear cert="low" resp="#joint">kr</unclear>. <unclear cert="low" resp="#joint">—</unclear> .
 <pb facs="StadtASG_Missive_3307_13123.jpg" n="5"/>
 <pb facs="StadtASG_Missive_3307_13124.jpg" n="6"/>
-<lb n="63"/><orgName role="issuer" resp="#ner">Flaisch tax</orgName>,
+<lb n="63"/><orgName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Flaisch</unclear> <unclear cert="medium" resp="#joint">tax</unclear></orgName>,
 <pb facs="StadtASG_Missive_3307_13125.jpg" n="7"/>
 <pb facs="StadtASG_Missive_3307_13126.jpg" n="8"/>
-<lb n="64"/>Den fürsichtigen, ersamen und weysen,
-<lb n="65"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der statt St.
-<lb n="66"/>Gallen</orgName>, unsern insonders lieben
-<lb n="67"/>und gueten freünden,
-<lb n="68"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="64"/>Den fürsichtigen, ersamen und <unclear cert="medium" resp="#joint">weysen</unclear>,
+<lb n="65"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Rhat</unclear> der statt St.
+<lb n="66"/>Gallen</orgName>, unsern <unclear cert="medium" resp="#joint">insonders</unclear> lieben
+<lb n="67"/>und <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freünden</unclear>,
+<lb n="68"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

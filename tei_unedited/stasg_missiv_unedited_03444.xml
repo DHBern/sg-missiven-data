@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3444</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben von Conrad Reichert, das die Erbschaft des verstorbenen Zunftherrn Jacob Rainer betrifft. Sie teilen mit, dass sie Reichert nicht als Erben anerkennen können, da eine in der Stadt lebende Linie näher verwandt sei und sich bereits angemeldet habe. Sie bedauern die Situation und wünschen Reichert, der sich in Amsterdam aufhält, Gottes Gnade.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben von Conrad Reichert, das die Erbschaft des verstorbenen Zunftherrn Jacob Rainer betrifft. Sie teilen mit, dass sie Reichert nicht als Erben anerkennen können, da eine in der Stadt lebende Linie näher verwandt sei und sich bereits angemeldet habe. Sie bedauern die Situation und wünschen Reichert, der sich in Amsterdam aufhält, Gottes Gnade.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen reply to a letter from Conrad Reichert, which concerns the inheritance of the deceased Zunftherr Jacob Rainer. They communicate that they cannot recognize Reichert as an heir, as a line living in the city is more closely related and has already registered itself. They regret the situation and wish Reichert, who is staying in Amsterdam, God's grace.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,53 +35,53 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3444_13713.jpg" n="1"/>
-<lb n="1"/>Unsern freündt, willig dienst zuuor,
-<lb n="2"/>Ehrsamer, weiser, lieber und
-<lb n="3"/>guoter freündt.
-<lb n="4"/>Eüwer an unß sub dato, <date resp="#ner">10/20. jüngst</date>-
-<lb n="5"/>verwichnen monats maÿ, abgang
-<lb n="6"/>schreiben, unsers geliebten mitrhats
-<lb n="7"/>und zunfftmeisters <persName resp="#ner">Jacob Rainers</persName>
-<lb n="8"/>sae. hinderlaßens erb betreffende,
+<lb n="1"/><unclear cert="low" resp="#joint">Unsern</unclear> <unclear cert="low" resp="#joint">freündt</unclear>, <unclear cert="low" resp="#joint">willig</unclear> dienst <unclear cert="medium" resp="#joint">zuuor</unclear>,
+<lb n="2"/><unclear cert="medium" resp="#joint">Ehrsamer</unclear>, <unclear cert="medium" resp="#joint">weiser</unclear>, lieber und
+<lb n="3"/><unclear cert="medium" resp="#joint">guoter</unclear> <unclear cert="medium" resp="#joint">freündt</unclear>.
+<lb n="4"/><unclear cert="medium" resp="#joint">Eüwer</unclear> an <unclear cert="medium" resp="#joint">unß</unclear> sub dato, <date resp="#ner"><unclear cert="medium" resp="#joint">10/20</unclear>. <unclear cert="medium" resp="#joint">jüngst</unclear></date>-
+<lb n="5"/><unclear cert="medium" resp="#joint">verwichnen</unclear> monats <unclear cert="low" resp="#joint">maÿ</unclear>, <unclear cert="low" resp="#joint">abgang</unclear>
+<lb n="6"/>schreiben, unsers <unclear cert="medium" resp="#joint">geliebten</unclear> <unclear cert="medium" resp="#joint">mitrhats</unclear>
+<lb n="7"/>und <unclear cert="medium" resp="#joint">zunfftmeisters</unclear> <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Rainers</unclear></persName>
+<lb n="8"/><unclear cert="low" resp="#joint">sae</unclear>. <unclear cert="low" resp="#joint">hinderlaßens</unclear> <unclear cert="low" resp="#joint">erb</unclear> <unclear cert="low" resp="#joint">betreffende</unclear>,
 <lb n="9"/>habend wir wol empfangen, und
-<lb n="10"/>den innhalt deßelbigen ablesend
-<lb n="11"/>wol verstand: Obwolen
-<lb n="12"/>wir nun wuenschen moechten, daß
-<lb n="13"/>ihr, an statt eüwerer lieben ehe-
-<lb n="14"/>haußfrauwen, zuo vor angeregter
-<lb n="15"/>Rainerischen erbschafft wegen der verfolgung, und etlich
-<lb n="16"/>jar ußgestandnen truebselig-
-<lb n="17"/>keit, so unß von herzen leid ist, hetten koennen
-<lb n="18"/>gelangen, jedoch aber, weilen
-<lb n="19"/>ein linien in unserer statt naeher, die sich vor disem
-<lb n="20"/>wegen dises erbfahls beÿ unß angemeldet,
-<lb n="21"/>alß besagte Eüwer haußfrauw
-<lb n="22"/>ist, abgewisen worden, so koennen
-<lb n="23"/>wir Eüch alß gar zuo weit
-<lb n="24"/>in dem gebluet
-<lb n="25"/>interessiert; deßwegen, vermoeg unserer
-<lb n="26"/>statt erbrecht, zuo mehrgedachter
-<lb n="27"/>Rainerischen erbschafft, (. wie
-<lb n="28"/>gern wirs auch ihnen, wie gemelt,
-<lb n="29"/>gonnen moechten.) nit admittiert werden,
-<lb n="30"/>welches wir eüch zuo eüwerm be-
-<lb n="31"/>gerten bericht nit verhalten woellen.
-<lb n="32"/>Gott den Allmechtigen pittende,
-<lb n="33"/>Er woelle eüch, in Eüwerm exilio
-<lb n="34"/>ander werts gnedigclich ergezen,
-<lb n="35"/>in deßen gnedigen schuz undt
-<lb n="36"/>schirm wir unß samptlich wol
-<lb n="37"/>befehlend. Datum den <origDate when="1641" resp="#ner">11.t
-<lb n="38"/>juniÿ. Ao 1641</origDate>.
+<lb n="10"/>den innhalt <unclear cert="low" resp="#joint">deßelbigen</unclear> <unclear cert="low" resp="#joint">ablesend</unclear>
+<lb n="11"/>wol <unclear cert="low" resp="#joint">verstand</unclear>: <unclear cert="low" resp="#joint">Obwolen</unclear>
+<lb n="12"/>wir nun <unclear cert="medium" resp="#joint">wuenschen</unclear> <unclear cert="medium" resp="#joint">moechten</unclear>, daß
+<lb n="13"/>ihr, an statt <unclear cert="low" resp="#joint">eüwerer</unclear> lieben <unclear cert="medium" resp="#joint">ehe</unclear>-
+<lb n="14"/><unclear cert="medium" resp="#joint">haußfrauwen</unclear>, <unclear cert="medium" resp="#joint">zuo</unclear> vor <unclear cert="low" resp="#joint">angeregter</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">Rainerischen</unclear> <unclear cert="low" resp="#joint">erbschafft</unclear> <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">verfolgung</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">etlich</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">jar</unclear> <unclear cert="low" resp="#joint">ußgestandnen</unclear> <unclear cert="low" resp="#joint">truebselig</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">keit</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">herzen</unclear> <unclear cert="low" resp="#joint">leid</unclear> <unclear cert="low" resp="#joint">ist</unclear>, <unclear cert="low" resp="#joint">hetten</unclear> <unclear cert="low" resp="#joint">koennen</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">gelangen</unclear>, jedoch aber, <unclear cert="medium" resp="#joint">weilen</unclear>
+<lb n="19"/>ein <unclear cert="low" resp="#joint">linien</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">naeher</unclear>, die sich vor <unclear cert="medium" resp="#joint">disem</unclear>
+<lb n="20"/>wegen <unclear cert="medium" resp="#joint">dises</unclear> <unclear cert="medium" resp="#joint">erbfahls</unclear> <unclear cert="medium" resp="#joint">beÿ</unclear> <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">angemeldet</unclear>,
+<lb n="21"/><unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">besagte</unclear> <unclear cert="medium" resp="#joint">Eüwer</unclear> <unclear cert="medium" resp="#joint">haußfrauw</unclear>
+<lb n="22"/>ist, <unclear cert="medium" resp="#joint">abgewisen</unclear> worden, so <unclear cert="medium" resp="#joint">koennen</unclear>
+<lb n="23"/>wir <unclear cert="low" resp="#joint">Eüch</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">gar</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">weit</unclear>
+<lb n="24"/>in <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">gebluet</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">interessiert</unclear>; <unclear cert="low" resp="#joint">deßwegen</unclear>, <unclear cert="low" resp="#joint">vermoeg</unclear> <unclear cert="low" resp="#joint">unserer</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">erbrecht</unclear>, <unclear cert="low" resp="#joint">zuo</unclear> mehrgedachter
+<lb n="27"/><unclear cert="low" resp="#joint">Rainerischen</unclear> <unclear cert="low" resp="#joint">erbschafft</unclear>, (. wie
+<lb n="28"/><unclear cert="low" resp="#joint">gern</unclear> <unclear cert="low" resp="#joint">wirs</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">ihnen</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">gemelt</unclear>,
+<lb n="29"/><unclear cert="low" resp="#joint">gonnen</unclear> <unclear cert="low" resp="#joint">moechten</unclear>.) nit admittiert <unclear cert="medium" resp="#joint">werden</unclear>,
+<lb n="30"/>welches wir <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">eüwerm</unclear> be-
+<lb n="31"/><unclear cert="medium" resp="#joint">gerten</unclear> bericht nit verhalten <unclear cert="medium" resp="#joint">woellen</unclear>.
+<lb n="32"/><unclear cert="medium" resp="#joint">Gott</unclear> den <unclear cert="medium" resp="#joint">Allmechtigen</unclear> <unclear cert="medium" resp="#joint">pittende</unclear>,
+<lb n="33"/>Er <unclear cert="medium" resp="#joint">woelle</unclear> <unclear cert="medium" resp="#joint">eüch</unclear>, in <unclear cert="low" resp="#joint">Eüwerm</unclear> <unclear cert="low" resp="#joint">exilio</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">ander</unclear> <unclear cert="low" resp="#joint">werts</unclear> <unclear cert="low" resp="#joint">gnedigclich</unclear> <unclear cert="low" resp="#joint">ergezen</unclear>,
+<lb n="35"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">deßen</unclear> gnedigen <unclear cert="medium" resp="#joint">schuz</unclear> undt
+<lb n="36"/><unclear cert="medium" resp="#joint">schirm</unclear> <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">samptlich</unclear> wol
+<lb n="37"/>befehlend. Datum den <origDate when="1641" resp="#ner"><unclear cert="medium" resp="#joint">11.t</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">juniÿ</unclear>. <unclear cert="medium" resp="#joint">Ao</unclear> 1641</origDate>.
 <lb n="39"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und
-<lb n="40"/>rhat der statt
-<lb n="41"/>St. Gallen</orgName>.
-<lb n="42"/>Dem Ehrsamen weisen, <persName role="issuer" resp="#ner">Conrad
-<lb n="43"/>Reichert</persName>, burgern und deß rhats
-<lb n="44"/>zuo <placeName ref="stadtasg-places-424" cert="medium" resp="#ner">Ogerßheim</placeName> in der <placeName ref="stadtasg-places-143" cert="medium" resp="#ner">undern Pfalz</placeName>,
-<lb n="45"/>anizo zuo <placeName resp="#ner">Amsterdamb</placeName> in der
-<lb n="46"/><placeName resp="#ner">bontequ</placeName> sich ufhaltendt, unserm
-<lb n="47"/>lieb und guoten freündt.
+<lb n="40"/><unclear cert="low" resp="#joint">rhat</unclear> der <unclear cert="low" resp="#joint">statt</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></orgName>.
+<lb n="42"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">Ehrsamen</unclear> <unclear cert="low" resp="#joint">weisen</unclear>, <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Conrad</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">Reichert</unclear></persName>, <unclear cert="low" resp="#joint">burgern</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">rhats</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-424" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ogerßheim</unclear></placeName> in der <placeName ref="stadtasg-places-143" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">undern</unclear> <unclear cert="low" resp="#joint">Pfalz</unclear></placeName>,
+<lb n="45"/><unclear cert="low" resp="#joint">anizo</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Amsterdamb</unclear></placeName> in der
+<lb n="46"/><placeName resp="#ner"><unclear cert="medium" resp="#joint">bontequ</unclear></placeName> sich <unclear cert="medium" resp="#joint">ufhaltendt</unclear>, <unclear cert="medium" resp="#joint">unserm</unclear>
+<lb n="47"/><unclear cert="medium" resp="#joint">lieb</unclear> und guoten freündt.
 <pb facs="StadtASG_Missive_3444_13714.jpg" n="2"/>
 <lb n="48"/>An <origPlace resp="#ner">Ogersheim</origPlace> <origDate when="1641-06-08" resp="#ner">8. Junii 1641</origDate>. betre.
 <lb n="49"/>Zunfftmr. <persName role="issuer" resp="#ner">Jacob Reiniers</persName> sel. Erbschafft

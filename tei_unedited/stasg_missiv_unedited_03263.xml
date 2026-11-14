@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3263</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Johann Reinhardt Erpff, ehemaliger Rektor der kurpfälzischen Schulen zu Sulz, bittet Bürgermeister und Rat zu St. Gallen um eine Anstellung am dortigen Gymnasium. Er begründet dies mit seiner Witwenstandschaft und dem Tod mehrerer Kinder. Er bietet sich als Privat- oder außerordentlicher Lehrer an und verspricht, das Gymnasium mit demselben Fleiß zu leiten wie zuvor die kurpfälzischen Schulen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Johann Reinhardt Erpff, ehemaliger Rektor der kurpfälzischen Schulen zu Sulz, bittet Bürgermeister und Rat zu St. Gallen um eine Anstellung am dortigen Gymnasium. Er begründet dies mit seiner Witwenstandschaft und dem Tod mehrerer Kinder. Er bietet sich als Privat- oder außerordentlicher Lehrer an und verspricht, das Gymnasium mit demselben Fleiß zu leiten wie zuvor die kurpfälzischen Schulen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Johann Reinhardt Erpff, former rector of the Palatine schools at Sulz, asks the Burgomaster and Council of St. Gallen for a position at the local Gymnasium. He justifies this with his status as a widower and the death of several children. He offers himself as a private or extraordinary teacher and promises to run the Gymnasium with the same diligence as he previously ran the Palatine schools.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -73,28 +74,28 @@
 <lb n="37"/>weilen noch zur zeit beim Gymnasio keine stelle ledig, mich ar=
 <lb n="38"/>men vertribenen, außgeplunderten, und umb schulen wohlver-
 <pb facs="StadtASG_Missive_3263_12934.jpg" n="2"/>
-<lb n="39"/>dienten diener vor andern unbekandten zu einem privato und ex-
+<lb n="39"/><unclear cert="low" resp="#joint">dienten</unclear> <unclear cert="low" resp="#joint">diener</unclear> vor andern unbekandten zu einem privato und ex-
 <lb n="40"/>traordinario praeceptore, oder warzu meinen Gnaedig Herren beliebt,
 <lb n="41"/>gnaedig auf und anzunemmen. Will, vermittelst Goettlicher
-<lb n="42"/>Gnaden, die tag meines lebens demselben beruff bei dero lob-
-<lb n="43"/>lichem gymnasio, wie obgedacht, mit solchen trewen, ernst und
+<lb n="42"/>Gnaden, die tag <unclear cert="low" resp="#joint">meines</unclear> <unclear cert="low" resp="#joint">lebens</unclear> <unclear cert="low" resp="#joint">demselben</unclear> <unclear cert="low" resp="#joint">beruff</unclear> <unclear cert="low" resp="#joint">bei</unclear> <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">lob</unclear>-
+<lb n="43"/><unclear cert="low" resp="#joint">lichem</unclear> <unclear cert="low" resp="#joint">gymnasio</unclear>, wie obgedacht, mit solchen trewen, ernst und
 <lb n="44"/>fleiß abwarten, daß meine Gnaedige Herren, und sonst menni-
-<lb n="45"/>glich darab ein gnaediges und großguenstiges wohlgefallen ha-
+<lb n="45"/>glich darab ein gnaediges und <unclear cert="low" resp="#joint">großguenstiges</unclear> <unclear cert="low" resp="#joint">wohlgefallen</unclear> ha-
 <lb n="46"/>ben und trag sollen. E. Strg. F. E. Wht. zu Gnaden, und der
-<lb n="47"/>willfahr mich hiemit befehlendt, auch umb die aller fuerder=
+<lb n="47"/><unclear cert="low" resp="#joint">willfahr</unclear> <unclear cert="low" resp="#joint">mich</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">befehlendt</unclear>, auch <unclear cert="low" resp="#joint">umb</unclear> die aller fuerder=
 <lb n="48"/>lichste resolution underthaenig und hochflehenlich bittendt.
 <lb n="49"/><origPlace ref="stadtasg-places-112" cert="medium" resp="#ner">Straßburg</origPlace> <origDate when="1637-10-26" resp="#ner">den 26. octobris 1637</origDate>.
 <lb n="50"/>E. Strg. F. E. Wht.
 <lb n="51"/>underthaeniger und gehorsahmer
 <lb n="52"/>Churf. Pfaltz gewesener rector
-<lb n="53"/>zu <placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Sultz</placeName> M. <persName role="issuer" resp="#ner">Johann Reinhardt Erpff</persName>
-<lb n="54"/>mpria.
+<lb n="53"/>zu <placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Sultz</placeName> M. <persName role="issuer" resp="#ner">Johann Reinhardt <unclear cert="low" resp="#joint">Erpff</unclear></persName>
+<lb n="54"/><unclear cert="low" resp="#joint">mpria</unclear>.
 <pb facs="StadtASG_Missive_3263_12935.jpg" n="3"/>
 <lb n="55"/>Salutem et perennem felicitatem à fonte salutis, Clarissime et Amplissime Do=
 <lb n="56"/>mine, Patrone omni obseruantia colende
 <lb n="57"/>Haec cum scriberem, eram adhuc nescius, num superiores meae <date resp="#ner">20. Octobris</date> datae
-<lb n="58"/>ad te perferrentur: siquidem nihil adhuc responsi, ne quidem à filio meo <persName resp="#ner">Va-
-<lb n="59"/>lentino</persName> trium mensium spatio tuli: ex quo facile suspicor, literas meas crebras
+<lb n="58"/>ad te perferrentur: siquidem nihil adhuc responsi, ne quidem à filio meo <persName resp="#ner"><unclear cert="low" resp="#joint">Va</unclear>-
+<lb n="59"/><unclear cert="low" resp="#joint">lentino</unclear></persName> trium mensium spatio tuli: ex quo facile suspicor, literas meas crebras
 <lb n="60"/>aut interceptas, aut nequitia Cursorum intoleranda suppressas. Deesse tamen
 <lb n="61"/>mihi nolui, quin de una eademque re alteras ad te quoque darem: ardeo
 <lb n="62"/>enim, Eminentissime Domine Patrone, cupiditate incredibili, neque, ut ego ar-
@@ -102,11 +103,11 @@
 <lb n="64"/>quod in <orgName resp="#ner">Gymnasio Vestro</orgName>, quam celerrime propter hyemem appeten-
 <lb n="65"/>tem, per quam <placeName resp="#ner">Argentinae</placeName> ut uiuam, mihi imperare non possum,
 <lb n="66"/>promouear. Ego polliceor sanctè et spondeo me inclytae <orgName resp="#ner">Reip. vestrae</orgName>,
-<lb n="67"/>omne meum studium, officium, operam et laborem tanta fide, diligen-
-<lb n="68"/>tia, et dexteritate cunctis uitae meae diebus praestiturum, ut ex eo
-<lb n="69"/>maximum fructum summamque sit captura uoluptatem: demandandum
-<lb n="70"/>uero Gymnasij munus atque officium non minori σὺν θεῷ studio et dexte-
-<lb n="71"/>ritate administrabo, quam <orgName resp="#ner">Scholis Archipalatinis</orgName> multos annos, summa cum
+<lb n="67"/>omne meum studium, officium, operam et laborem tanta fide, <unclear cert="low" resp="#joint">diligen</unclear>-
+<lb n="68"/><unclear cert="low" resp="#joint">tia</unclear>, et dexteritate cunctis uitae meae diebus praestiturum, ut ex eo
+<lb n="69"/>maximum fructum <unclear cert="low" resp="#joint">summamque</unclear> <unclear cert="low" resp="#joint">sit</unclear> <unclear cert="low" resp="#joint">captura</unclear> <unclear cert="low" resp="#joint">uoluptatem</unclear>: demandandum
+<lb n="70"/>uero Gymnasij munus atque officium non minori σὺν θεῷ studio et <unclear cert="low" resp="#joint">dexte</unclear>-
+<lb n="71"/><unclear cert="low" resp="#joint">ritate</unclear> administrabo, quam <orgName resp="#ner">Scholis Archipalatinis</orgName> multos annos, summa cum
 <lb n="72"/>laude, nihil arroganter dicam, praefui. Hac in re si me pro tua eximia, et
 <lb n="73"/>maxima authoritate adiuueris eo studio, quo potes, non modo apud me
 <lb n="74"/>beneficium tuum praeclarissimè posueris: sed mihi etiam gratissimum feceris.
@@ -117,29 +118,29 @@
 <lb n="79"/>Elect. Pal. Rector Saletianus M. <persName role="issuer" resp="#ner">Joannes
 <lb n="80"/>Reinerus</persName> Erpft. mppria.
 <pb facs="StadtASG_Missive_3263_12936.jpg" n="4"/>
-<lb n="81"/>Clarissimo et Amplissimo
-<lb n="82"/>Domino <persName role="recipient" resp="#ner">Sebastiano Scho-
-<lb n="83"/>bingero</persName> Medicinae Doctori
-<lb n="84"/>et Inclytae Reip. Sangal-
-<lb n="85"/>lensis Proconsuli, Domi-
-<lb n="86"/>no et Patrono meo omni
-<lb n="87"/>observantia colendo.
+<lb n="81"/><unclear cert="low" resp="#joint">Clarissimo</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">Amplissimo</unclear>
+<lb n="82"/><unclear cert="low" resp="#joint">Domino</unclear> <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Sebastiano</unclear> <unclear cert="low" resp="#joint">Scho</unclear>-
+<lb n="83"/><unclear cert="low" resp="#joint">bingero</unclear></persName> <unclear cert="low" resp="#joint">Medicinae</unclear> <unclear cert="low" resp="#joint">Doctori</unclear>
+<lb n="84"/><unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">Inclytae</unclear> <unclear cert="low" resp="#joint">Reip</unclear>. <unclear cert="low" resp="#joint">Sangal</unclear>-
+<lb n="85"/><unclear cert="low" resp="#joint">lensis</unclear> <unclear cert="low" resp="#joint">Proconsuli</unclear>, <unclear cert="low" resp="#joint">Domi</unclear>-
+<lb n="86"/><unclear cert="low" resp="#joint">no</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">Patrono</unclear> <unclear cert="low" resp="#joint">meo</unclear> <unclear cert="low" resp="#joint">omni</unclear>
+<lb n="87"/><unclear cert="low" resp="#joint">observantia</unclear> <unclear cert="low" resp="#joint">colendo</unclear>.
 <lb n="88"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
 <pb facs="StadtASG_Missive_3263_12937.jpg" n="5"/>
 <pb facs="StadtASG_Missive_3263_12938.jpg" n="6"/>
-<lb n="89"/>Denen Wohledlen, Gestreng
-<lb n="90"/>Ehrenvesten, hochgelehrten,
-<lb n="91"/>wohlvornehmen, fürsichtig
-<lb n="92"/>Ehrsamen, und wohlweisen
-<lb n="93"/>Herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern, und
-<lb n="94"/>Rath der Statt S: Gallen</orgName>,
-<lb n="95"/>Meinen insonders wohlgün-
-<lb n="96"/>stig hochehrenden Herren.
-<lb n="97"/>citi
-<lb n="98"/>citi
-<lb n="99"/><persName role="issuer" resp="#ner">Franco per
-<lb n="100"/>Basell</persName>
-<lb n="101"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S:t Gallen</placeName>
+<lb n="89"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">Wohledlen</unclear>, <unclear cert="low" resp="#joint">Gestreng</unclear>
+<lb n="90"/><unclear cert="low" resp="#joint">Ehrenvesten</unclear>, <unclear cert="low" resp="#joint">hochgelehrten</unclear>,
+<lb n="91"/><unclear cert="low" resp="#joint">wohlvornehmen</unclear>, <unclear cert="low" resp="#joint">fürsichtig</unclear>
+<lb n="92"/><unclear cert="low" resp="#joint">Ehrsamen</unclear>, und <unclear cert="low" resp="#joint">wohlweisen</unclear>
+<lb n="93"/><unclear cert="low" resp="#joint">Herrn</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeistern</unclear>, und
+<lb n="94"/>Rath der Statt <unclear cert="medium" resp="#joint">S</unclear>: Gallen</orgName>,
+<lb n="95"/><unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">insonders</unclear> <unclear cert="low" resp="#joint">wohlgün</unclear>-
+<lb n="96"/><unclear cert="low" resp="#joint">stig</unclear> <unclear cert="low" resp="#joint">hochehrenden</unclear> <unclear cert="low" resp="#joint">Herren</unclear>.
+<lb n="97"/><unclear cert="low" resp="#joint">citi</unclear>
+<lb n="98"/><unclear cert="low" resp="#joint">citi</unclear>
+<lb n="99"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Franco</unclear> <unclear cert="low" resp="#joint">per</unclear>
+<lb n="100"/><unclear cert="low" resp="#joint">Basell</unclear></persName>
+<lb n="101"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">S:t</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3392</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bestätigen den Empfang eines Schreibens der St. Galler, das eine Zitation des Prälaten von St. Gallen zum Reichstag in Regensburg betrifft. Da unklar ist, ob die Zitation an die Eidgenossen oder an den Reichsfürsten gerichtet ist, bitten sie um nähere Auskunft über die Form der früheren Antworten und die Absichten des Prälaten. Sie versprechen, die Sache auf dem Badischen Tag zu beraten und St. Gallen nach Erhalt des Berichts zu antworten.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich bestätigen den Empfang eines Schreibens der St. Galler, das eine Zitation des Prälaten von St. Gallen zum Reichstag in Regensburg betrifft. Da unklar ist, ob die Zitation an die Eidgenossen oder an den Reichsfürsten gerichtet ist, bitten sie um nähere Auskunft über die Form der früheren Antworten und die Absichten des Prälaten. Sie versprechen, die Sache auf dem Badischen Tag zu beraten und St. Gallen nach Erhalt des Berichts zu antworten.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich confirm the receipt of a letter from the St. Gallen, concerning a citation of the Prelate of St. Gallen to the Imperial Diet in Regensburg. As it is unclear whether the citation is directed to the Confederates or to the Imperial Prince, they request further information regarding the form of previous replies and the intentions of the Prelate. They promise to discuss the matter at the Baden Diet and to answer St. Gallen upon receipt of the report.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,24 +37,24 @@
 <pb facs="StadtASG_Missive_3392_13501.jpg" n="1"/>
 <lb n="1"/>Unsßer fründtlich willig dienst, sambt
 <lb n="2"/>was wir ehren, liebs und guots vermögent,
-<lb n="3"/>zuovor, from, fürsichtig, ehrsam, wyß, in=
-<lb n="4"/>sonnders guot fründt und getrüwe, lieb
-<lb n="5"/>eydtgnoßßen.
-<lb n="6"/>Ü=
-<lb n="7"/>wer unßerer G. L. eydt= und religions=
-<lb n="8"/>gnoßen unß zuogesendtes schryben, sambt dem
-<lb n="9"/>copyglichen ynschluß deßßen, was die rö.
-<lb n="10"/>key. mt. wegen besuochung deß naher Regen=
+<lb n="3"/>zuovor, from, fürsichtig, <unclear cert="low" resp="#joint">ehrsam</unclear>, <unclear cert="low" resp="#joint">wyß</unclear>, <unclear cert="low" resp="#joint">in=</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">sonnders</unclear> <unclear cert="low" resp="#joint">guot</unclear> <unclear cert="low" resp="#joint">fründt</unclear> und <unclear cert="low" resp="#joint">getrüwe</unclear>, <unclear cert="low" resp="#joint">lieb</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">eydtgnoßßen</unclear>.
+<lb n="6"/><unclear cert="low" resp="#joint">Ü=</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">wer</unclear> <unclear cert="low" resp="#joint">unßerer</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">eydt=</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">religions=</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">gnoßen</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">zuogesendtes</unclear> <unclear cert="low" resp="#joint">schryben</unclear>, sambt dem
+<lb n="9"/>copyglichen ynschluß deßßen, was die <unclear cert="low" resp="#joint">rö</unclear>.
+<lb n="10"/><unclear cert="low" resp="#joint">key</unclear>. <unclear cert="low" resp="#joint">mt</unclear>. wegen besuochung deß naher Regen=
 <lb n="11"/>spurg ußgeschribnen collegial= oder rychß=
 <lb n="12"/>tags, an üch gesunnen, haben
 <lb n="13"/>wir, by widerbringern üwerm deßwegen
 <lb n="14"/>abgefertigten botten, zuo recht empfanngen,
 <lb n="15"/>und ußßer dem erstren üwer rathsbegehren,
 <lb n="16"/>in mehrerm wol verstannden. Wylen
-<lb n="17"/>dann unß deßwegen nützit zuokomen, und
-<lb n="18"/>wir nit wüßßen mögent, ob ein sölches
+<lb n="17"/>dann unß <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">nützit</unclear> <unclear cert="low" resp="#joint">zuokomen</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">wir</unclear> nit wüßßen mögent, ob ein sölches
 <lb n="19"/>expresse uff üch unßer G. L. E. oder vil mehr
-<lb n="20"/>uff ir fr. g. den herren praelaten von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct
+<lb n="20"/>uff ir <unclear cert="low" resp="#joint">fr</unclear>. <unclear cert="low" resp="#joint">g</unclear>. den herren praelaten von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct
 <lb n="21"/>Gallen</placeName>, alß einen rychsfürsten, gemeint,
 <lb n="22"/>und also inn der cantzlyg der alten regist=
 <lb n="23"/>ratur noch daher verfahren worden syn
@@ -65,12 +66,12 @@
 <lb n="29"/>item da an üch unßere G. L. E. hie=
 <lb n="30"/>bevor derglychen gelangt, uff was form
 <lb n="31"/>ir daßselbige veranthwortet, und mit
-<lb n="32"/>was befrygungen ir darwider versehe
-<lb n="33"/>sygen etc. Haben wir üch unßere
-<lb n="34"/>G. L. E. üwerem begehren nach, mit endt=
+<lb n="32"/>was befrygungen ir darwider <unclear cert="low" resp="#joint">versehe</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">sygen</unclear> <unclear cert="low" resp="#joint">etc</unclear>. Haben <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unßere</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">üwerem</unclear> <unclear cert="low" resp="#joint">begehren</unclear> <unclear cert="low" resp="#joint">nach</unclear>, mit endt=
 <lb n="35"/>lichem bescheid anjetzo nit begegnen können,
 <lb n="36"/>sonndern die sach für einmahls ynzuestellen,
-<lb n="37"/>solchen bericht von üch vordrist zuo erwarten,
+<lb n="37"/>solchen bericht von üch vordrist zuo <unclear cert="low" resp="#joint">erwarten</unclear>,
 <pb facs="StadtASG_Missive_3392_13502.jpg" n="2"/>
 <lb n="38"/>und demnach ob an übrige Orth deßwegen
 <lb n="39"/>auch etwas gelangt syge, wider deßden zuo
@@ -81,15 +82,15 @@
 <lb n="44"/>befindtnuß der sachen mit erforderlichem
 <lb n="45"/>bscheid, was harunder das beste sye
 <lb n="46"/>möchte, begegnet werden könne, worzuo
-<lb n="47"/>dann wir unserestheils sonders geneigt,
+<lb n="47"/>dann wir <unclear cert="low" resp="#joint">unserestheils</unclear> sonders geneigt,
 <lb n="48"/>und unsere dahin verordneten herren
 <lb n="49"/>Ehrengsandten, uff solch ende, mit allem
 <lb n="50"/>nothwendigem bevelch instruiert abgefertiget
 <lb n="51"/>habent, denen dann Ir oban=
 <lb n="52"/>geregten fhrnern bericht, nachrichtlich zuo=
 <lb n="53"/>komen zlaßen wol werdent wüßen. Gott
-<lb n="54"/>mit uns allersyths. Dat. th. <origDate when="1640-06-27" resp="#ner">27 ten
-<lb n="55"/>Junij, Anno 1640</origDate>
+<lb n="54"/>mit uns <unclear cert="low" resp="#joint">allersyths</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>. <unclear cert="low" resp="#joint">th</unclear>. <origDate when="1640-06-27" resp="#ner"><unclear cert="low" resp="#joint">27</unclear> <unclear cert="low" resp="#joint">ten</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">Junij</unclear>, Anno 1640</origDate>
 <lb n="56"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="57"/>der Stadt Zürich</orgName>.
 <pb facs="StadtASG_Missive_3392_13503.jpg" n="3"/>

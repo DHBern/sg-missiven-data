@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3388</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Annweiler bedanken sich bei St. Gallen für die Unterstützung durch eine Spende von 100 Reichsthalern, die auf Bitten der Annweilerischen Gesandten von der Pfalzgräfin Louisa gewährt wurde. Das Geld sei für die ausgeplünderten Bürger, Kirchen und Schulen verteilt worden. Sie bitten um Gottes Segen für St. Gallen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Annweiler bedanken sich bei St. Gallen für die Unterstützung durch eine Spende von 100 Reichsthalern, die auf Bitten der Annweilerischen Gesandten von der Pfalzgräfin Louisa gewährt wurde. Das Geld sei für die ausgeplünderten Bürger, Kirchen und Schulen verteilt worden. Sie bitten um Gottes Segen für St. Gallen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Council of Annweiler thank St. Gallen for the support through a donation of 100 Reichsthaler, which was granted by Countess Louisa of the Palatinate at the request of the Annweiler envoys. The money has been distributed among the plundered citizens, churches, and schools. They ask for God's blessing for St. Gallen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,19 +35,19 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3388_13485.jpg" n="1"/>
-<lb n="1"/>Hoh: wohledle, gestrenge, edle, ernueste,
-<lb n="2"/>wohlwürdige wohlgelehrte großachtbare undt wohl
-<lb n="3"/>weise, gnedige auch großgünstige hochgeehrte
-<lb n="4"/>herren Burgmeister undt Raht vierundtzwän-
-<lb n="5"/>zer undt ganze gemeindte.
-<lb n="6"/>Uns haben zue ihrer widerkunfft unser schuelmeister
-<lb n="7"/>undt pfarrer zue <placeName resp="#ner">Naunheimbeck</placeName> <persName resp="#ner">Justus Bartholomeus
-<lb n="8"/>Hoppino</persName>, undt aelter stattschreiber <persName resp="#ner">Johannes Weÿmar</persName>
-<lb n="9"/>welche im <date resp="#ner">januario dises jahrs</date> wir mit der
-<lb n="10"/>durchleuchtigsten pfalzgraevin <persName resp="#ner">Louisa</persName> unserer gne-
-<lb n="11"/>digsten fürstin undt frauen hohlobseeligsten
-<lb n="12"/>andennckens attestation, undt unserm bitt
-<lb n="13"/>schreiben zu E: G: E: W: undt gst: umb eine
+<lb n="1"/><unclear cert="low" resp="#joint">Hoh</unclear>: <unclear cert="low" resp="#joint">wohledle</unclear>, <unclear cert="low" resp="#joint">gestrenge</unclear>, <unclear cert="low" resp="#joint">edle</unclear>, <unclear cert="low" resp="#joint">ernueste</unclear>,
+<lb n="2"/><unclear cert="low" resp="#joint">wohlwürdige</unclear> <unclear cert="low" resp="#joint">wohlgelehrte</unclear> <unclear cert="low" resp="#joint">großachtbare</unclear> <unclear cert="low" resp="#joint">undt</unclear> wohl
+<lb n="3"/><unclear cert="low" resp="#joint">weise</unclear>, <unclear cert="low" resp="#joint">gnedige</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">großgünstige</unclear> <unclear cert="low" resp="#joint">hochgeehrte</unclear>
+<lb n="4"/>herren <unclear cert="low" resp="#joint">Burgmeister</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">Raht</unclear> <unclear cert="low" resp="#joint">vierundtzwän</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">zer</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">ganze</unclear> <unclear cert="low" resp="#joint">gemeindte</unclear>.
+<lb n="6"/><unclear cert="low" resp="#joint">Uns</unclear> haben zue ihrer widerkunfft unser schuelmeister
+<lb n="7"/>undt pfarrer <unclear cert="low" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Naunheimbeck</unclear></placeName> <persName resp="#ner"><unclear cert="low" resp="#joint">Justus</unclear> <unclear cert="low" resp="#joint">Bartholomeus</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">Hoppino</unclear></persName>, <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">aelter</unclear> <unclear cert="low" resp="#joint">stattschreiber</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Johannes</unclear> <unclear cert="low" resp="#joint">Weÿmar</unclear></persName>
+<lb n="9"/><unclear cert="low" resp="#joint">welche</unclear> <unclear cert="low" resp="#joint">im</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">januario</unclear> <unclear cert="low" resp="#joint">dises</unclear> <unclear cert="low" resp="#joint">jahrs</unclear></date> <unclear cert="low" resp="#joint">wir</unclear> mit der
+<lb n="10"/><unclear cert="low" resp="#joint">durchleuchtigsten</unclear> <unclear cert="low" resp="#joint">pfalzgraevin</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Louisa</unclear></persName> <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">gne</unclear>-
+<lb n="11"/><unclear cert="low" resp="#joint">digsten</unclear> <unclear cert="low" resp="#joint">fürstin</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">frauen</unclear> <unclear cert="low" resp="#joint">hohlobseeligsten</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">andennckens</unclear> <unclear cert="low" resp="#joint">attestation</unclear>, <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">bitt</unclear>
+<lb n="13"/>schreiben zu <unclear cert="low" resp="#joint">E</unclear>: <unclear cert="low" resp="#joint">G</unclear>: <unclear cert="low" resp="#joint">E</unclear>: <unclear cert="low" resp="#joint">W</unclear>: <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">gst</unclear>: umb eine
 <lb n="14"/>christmilte steuer beÿ derselben vor hiesige auß-
 <lb n="15"/>geplünderte burg, wittwen, waÿsen, kirchen
 <lb n="16"/>schuel undt andere der statt ehaeffte, zuweg zue-
@@ -55,46 +56,46 @@
 <lb n="19"/>christliches mittleÿden, sondern auch daneben ge-
 <lb n="20"/>rüehmet, waß vor große gnadt undt gunst ihen
 <lb n="21"/>in ihrer statt widerfahren, ales sie glüchmit
-<lb n="22"/>gebracht, undt wohgelifert die gesteuerte Ein
-<lb n="23"/>hundert reichsthaller welche sie durch herrn
-<lb n="24"/><persName resp="#ner">Melchior</persName> im hof in der statt <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName> herschießen
-<lb n="25"/>laßen. Gleich wie wir nun
+<lb n="22"/>gebracht, undt wohgelifert die <unclear cert="low" resp="#joint">gesteuerte</unclear> <unclear cert="low" resp="#joint">Ein</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">hundert</unclear> <unclear cert="low" resp="#joint">reichsthaller</unclear> <unclear cert="low" resp="#joint">welche</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">herrn</unclear>
+<lb n="24"/><persName resp="#ner"><unclear cert="low" resp="#joint">Melchior</unclear></persName> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">hof</unclear> in der <unclear cert="low" resp="#joint">statt</unclear> <placeName ref="stadtasg-places-133" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Basel</unclear></placeName> <unclear cert="low" resp="#joint">herschießen</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">laßen</unclear>. <unclear cert="low" resp="#joint">Gleich</unclear> wie <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">nun</unclear>
 <lb n="26"/>durch unsern stattvogt hrn <persName resp="#ner">Davidt Karcher</persName>
 <pb facs="StadtASG_Missive_3388_13486.jpg" n="2"/>
-<lb n="27"/>1. der daß collecten buechlein anfanget mit seines
-<lb n="28"/>nahmens ueberschrifft undt bittschafft bekraefft-
-<lb n="29"/>iget, aines andern so seeligst erworben ist, den
-<lb n="30"/>noht: duerftig: undt wuerdigkait nach außthailln
+<lb n="27"/>1. der <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">collecten</unclear> <unclear cert="low" resp="#joint">buechlein</unclear> <unclear cert="low" resp="#joint">anfanget</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">seines</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">nahmens</unclear> <unclear cert="low" resp="#joint">ueberschrifft</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">bittschafft</unclear> <unclear cert="low" resp="#joint">bekraefft</unclear>-
+<lb n="29"/><unclear cert="low" resp="#joint">iget</unclear>, <unclear cert="low" resp="#joint">aines</unclear> <unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">seeligst</unclear> <unclear cert="low" resp="#joint">erworben</unclear> <unclear cert="low" resp="#joint">ist</unclear>, <unclear cert="low" resp="#joint">den</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">noht</unclear>: <unclear cert="low" resp="#joint">duerftig</unclear>: <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">wuerdigkait</unclear> nach außthailln
 <lb n="31"/>undt dstribuiren lassen, auß damiet unsre
 <lb n="32"/>verarmbte ausgepluenderte buerger, buergerin,
 <lb n="33"/>kinder wittwen, waeisen, kirchen, schuel,
 <lb n="34"/>stett diener undt die ihrige mercklich
 <lb n="35"/>erquicket worden. Also thuen gegen
-<lb n="36"/>E. E. F. W. undt Gst: undt gegen aier gantzen
-<lb n="37"/>wohlloeblichen buergschafft der weitberuembten
+<lb n="36"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">Gst</unclear>: <unclear cert="low" resp="#joint">undt</unclear> gegen <unclear cert="low" resp="#joint">aier</unclear> <unclear cert="low" resp="#joint">gantzen</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">wohlloeblichen</unclear> <unclear cert="low" resp="#joint">buergschafft</unclear> der weitberuembten
 <lb n="38"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Statt S. Gallen</orgName> wir unß vor unsern mit-
-<lb n="39"/>buerg: undthaenig dhainstfleißig bedancken,
-<lb n="40"/>undt bitten den lieben Gott, daß er ihne
-<lb n="41"/>alles viel dausentfeldig vergelten, sie an
+<lb n="39"/><unclear cert="low" resp="#joint">buerg</unclear>: <unclear cert="low" resp="#joint">undthaenig</unclear> <unclear cert="low" resp="#joint">dhainstfleißig</unclear> <unclear cert="low" resp="#joint">bedancken</unclear>,
+<lb n="40"/><unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">bitten</unclear> den lieben Gott, daß er ihne
+<lb n="41"/>alles <unclear cert="low" resp="#joint">viel</unclear> <unclear cert="low" resp="#joint">dausentfeldig</unclear> <unclear cert="low" resp="#joint">vergelten</unclear>, sie an
 <lb n="42"/>leib undt seel segnen undt vor dergleich-
 <lb n="43"/>en ueberfall, undt allem unglueck behueten
-<lb n="44"/>wolle Amen. Datum Ann-
-<lb n="45"/>weiller <origDate when="1640" resp="#ner">den 24t. Maÿ Ao 1640</origDate>.
-<lb n="46"/>E: E. F. W. undt Gst:
-<lb n="47"/>undthaenige dhainstge-
-<lb n="48"/>vlißne willigste
-<lb n="49"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">buergmaister undt raht</orgName>,
-<lb n="50"/>sambt kirchen undt schuel-
-<lb n="51"/>dhainer daselbsten.
+<lb n="44"/>wolle Amen. Datum <unclear cert="low" resp="#joint">Ann</unclear>-
+<lb n="45"/><unclear cert="low" resp="#joint">weiller</unclear> <origDate when="1640" resp="#ner">den <unclear cert="low" resp="#joint">24t</unclear>. <unclear cert="low" resp="#joint">Maÿ</unclear> <unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">1640</unclear></origDate>.
+<lb n="46"/><unclear cert="low" resp="#joint">E</unclear>: <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">Gst</unclear>:
+<lb n="47"/><unclear cert="low" resp="#joint">undthaenige</unclear> <unclear cert="low" resp="#joint">dhainstge</unclear>-
+<lb n="48"/><unclear cert="low" resp="#joint">vlißne</unclear> <unclear cert="low" resp="#joint">willigste</unclear>
+<lb n="49"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">buergmaister</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">raht</unclear></orgName>,
+<lb n="50"/><unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">kirchen</unclear> <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">schuel</unclear>-
+<lb n="51"/><unclear cert="low" resp="#joint">dhainer</unclear> <unclear cert="low" resp="#joint">daselbsten</unclear>.
 <pb facs="StadtASG_Missive_3388_13487.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3388_13488.jpg" n="4"/>
-<lb n="52"/>Denen wol edlen, gestrengen, fürsich-
-<lb n="53"/>tigen, ehrsammen, wolgeehrten großgue-
-<lb n="54"/>nstigen, Herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister, Raht, Kuerchen-
-<lb n="55"/>dienen und gantzen Gemaeind zuo St.
-<lb n="56"/>Gallen</orgName>. Unseren großguenstigen, undt
-<lb n="57"/>hochegehrten Herren.
-<lb n="58"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="52"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">wol</unclear> edlen, gestrengen, <unclear cert="low" resp="#joint">fürsich</unclear>-
+<lb n="53"/><unclear cert="low" resp="#joint">tigen</unclear>, <unclear cert="low" resp="#joint">ehrsammen</unclear>, <unclear cert="low" resp="#joint">wolgeehrten</unclear> <unclear cert="low" resp="#joint">großgue</unclear>-
+<lb n="54"/><unclear cert="low" resp="#joint">nstigen</unclear>, <unclear cert="low" resp="#joint">Herrn</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister, <unclear cert="low" resp="#joint">Raht</unclear>, <unclear cert="low" resp="#joint">Kuerchen</unclear>-
+<lb n="55"/><unclear cert="low" resp="#joint">dienen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gantzen</unclear> <unclear cert="low" resp="#joint">Gemaeind</unclear> <unclear cert="low" resp="#joint">zuo</unclear> St.
+<lb n="56"/>Gallen</orgName>. <unclear cert="low" resp="#joint">Unseren</unclear> <unclear cert="low" resp="#joint">großguenstigen</unclear>, <unclear cert="low" resp="#joint">undt</unclear>
+<lb n="57"/><unclear cert="low" resp="#joint">hochegehrten</unclear> <unclear cert="low" resp="#joint">Herren</unclear>.
+<lb n="58"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

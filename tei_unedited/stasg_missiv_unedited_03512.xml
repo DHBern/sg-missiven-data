@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3512</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau danken für die geduldige Wartezeit bezüglich ausstehender Zinsgelder an den Seckelmeister. Sie bitten um weitere Geduld, da der Krieg und Garnisionsdienst ihre Mittel erschöpft hätten. Sie versprechen, bei ersten Mitteln die Schuld zu begleichen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Lindau danken für die geduldige Wartezeit bezüglich ausstehender Zinsgelder an den Seckelmeister. Sie bitten um weitere Geduld, da der Krieg und Garnisionsdienst ihre Mittel erschöpft hätten. Sie versprechen, bei ersten Mitteln die Schuld zu begleichen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Burgomaster and Council of Lindau thank for the patient waiting time regarding outstanding interest payments to the Seckelmeister. They ask for further patience, as the war and garrison service would have exhausted their means. They promise to settle the debt at the first means.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,25 +37,25 @@
 <pb facs="StadtASG_Missive_3512_13999.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst zuvor, Fürsichtig, Ersam und
 <lb n="2"/>Weise, besonders liebe guete Freünd und Nachbarn,
-<lb n="3"/>Unß ist vonn unserm lieben Burgermeister <persName resp="#ner">Amadeo Eckolten</persName>
-<lb n="4"/>gebührend referiert worden, waß E. Fst. Seckelmeister,
+<lb n="3"/>Unß ist vonn unserm lieben <unclear cert="low" resp="#joint">Burgermeister</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Amadeo</unclear> <unclear cert="low" resp="#joint">Eckolten</unclear></persName>
+<lb n="4"/><unclear cert="low" resp="#joint">gebührend</unclear> <unclear cert="low" resp="#joint">referiert</unclear> worden, <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Fst</unclear>. <unclear cert="low" resp="#joint">Seckelmeister</unclear>,
 <lb n="5"/>herr <persName resp="#ner">Schindler</persName>, wegen abstattung deroselben bej gemein
 <lb n="6"/>alhiesiger Statt außstehender zinßgelts für abermahlige
 <lb n="7"/>anmahnung gethon. Und wie wir unß nun der
 <lb n="8"/>bißherigen gedultigen zuewartung hochen freündtlichen
 <lb n="9"/>fleißes bedanckhen; Alß were unß hinwiderumb
 <lb n="10"/>nichts liebers noch angenämers, dann das die kriegs-
-<lb n="11"/>preßurn nunmehr uffgehoert, und wir etwas mittel
-<lb n="12"/>hetten, E. Fst. mit mehrer gelderlegung, inn abschlag
-<lb n="13"/>der uffgeschwollnen zinsen, alß bißher beschehen, zue-
+<lb n="11"/>preßurn nunmehr uffgehoert, und <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">etwas</unclear> mittel
+<lb n="12"/><unclear cert="low" resp="#joint">hetten</unclear>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Fst</unclear>. mit mehrer gelderlegung, inn abschlag
+<lb n="13"/>der uffgeschwollnen zinsen, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">bißher</unclear> beschehen, zue-
 <lb n="14"/>begegnen. Dieweiln aber durch die so beharrlich
 <lb n="15"/>wehrende kriegs: und guarnigionsdienst, unß alle
 <lb n="16"/>mittel entzogen und wir ie lenger ie mehr außge-
 <lb n="17"/>märgelt werden; beinebenß andere mehrere
 <lb n="18"/>stätt dann wir, ihren außwendigen creditorn der
 <lb n="19"/>zeit nicht ann die hand gehen koennen; Alß ist und
-<lb n="20"/>gelangt ann E. Fst. unser abermalig dienstfreündt-
-<lb n="21"/>und nachbarliches ersuchen und bitten, die wollen
+<lb n="20"/><unclear cert="low" resp="#joint">gelangt</unclear> <unclear cert="low" resp="#joint">ann</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Fst</unclear>. <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">abermalig</unclear> <unclear cert="low" resp="#joint">dienstfreündt</unclear>-
+<lb n="21"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nachbarliches</unclear> ersuchen und bitten, die wollen
 <lb n="22"/>sich mit unß noch länger, biß uff verhoffende er-
 <lb n="23"/>leichterung unsers ohnerträglichen lasts, ohnbeschwärt
 <lb n="24"/>gedulden; hingegen wir uff enstehende erste mittel
@@ -72,9 +73,9 @@
 <pb facs="StadtASG_Missive_3512_14001.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3512_14002.jpg" n="4"/>
 <lb n="35"/>Den fürsichtigen, ersamen und weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="36"/>meistern und Rhat der statt St. Gallen</orgName>, unsern
-<lb n="37"/>besonders lieben gueten freünden und nachbarn,
-<lb n="38"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="36"/><unclear cert="medium" resp="#joint">meistern</unclear> und Rhat der statt St. Gallen</orgName>, <unclear cert="medium" resp="#joint">unsern</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">besonders</unclear> lieben <unclear cert="medium" resp="#joint">gueten</unclear> freünden und <unclear cert="low" resp="#joint">nachbarn</unclear>,
+<lb n="38"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

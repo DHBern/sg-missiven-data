@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3564</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, das Edikt über den für den ausgetretenen Schaffhauser Bürger Martin Ziller angesetzten allgemeinen Rechtstag öffentlich aufzuschlagen und zu publizieren. Dies geschehe, damit auch die St. Galler Gläubiger ihre Forderungen anmelden können und niemand durch Unwissenheit benachteiligt werde.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, das Edikt über den für den ausgetretenen Schaffhauser Bürger Martin Ziller angesetzten allgemeinen Rechtstag öffentlich aufzuschlagen und zu publizieren. Dies geschehe, damit auch die St. Galler Gläubiger ihre Forderungen anmelden können und niemand durch Unwissenheit benachteiligt werde.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Schaffhausen request Burgomaster and Council of St. Gallen to publicly post and publish the edict concerning the general court day appointed for the departed citizen of Schaffhausen, Martin Ziller. This is done so that the creditors of St. Gallen as well may register their claims and no one be disadvantaged by ignorance.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,30 +35,30 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3564_14221.jpg" n="1"/>
-<lb n="1"/>Unser freuendtlich willig dienst, und waß wir ehren,
-<lb n="2"/>liebs und guets vermuegendt zuvor, Fromme, Fuersichtige,
-<lb n="3"/>Ersame und weise Innsonders guete Freuendt, unnd
-<lb n="4"/>getreuewe liebe <orgName role="recipient" resp="#ner">Eidtgnoßen</orgName>.
-<lb n="5"/>Wir habend unsers außgetrettnen Burgers, Martin-
-<lb n="6"/>Billers gemeinen Creditoren und schuldt glaeubigeren,
-<lb n="7"/>einen allgemeinen Rechtstag ernennt, und ange-
-<lb n="8"/>sezt, wie Ihr, unser getreuew lieb <orgName role="recipient" resp="#ner">Eidtgnoßen</orgName> auß
-<lb n="9"/>bey verwahrtem Edict zu vernemmen habend.
-<lb n="10"/>Und diewil dann etliche Euewrer Burgeren deßhalben
-<lb n="11"/>auch interessiert, und zu obbenannts <persName resp="#ner">Martin Billers</persName>
-<lb n="12"/>haab und gueth forderung und an sprach haben moechtend.
-<lb n="13"/>So ist an dieselben unser freuendt-Eidtgnoeßisch er-
-<lb n="14"/>suchen, die woellend den Innhschluß, an Ihrer Statt gewoehn-
-<lb n="15"/>lichen orthen, offentlich aufschlagen und publicieren
-<lb n="16"/>laßen, damit an seinen Rechten niemandts verkuerzt
-<lb n="17"/>werde, noch der unwißenheit sich zu beklagen ursach
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freuendtlich</unclear> willig <unclear cert="medium" resp="#joint">dienst</unclear>, und <unclear cert="medium" resp="#joint">waß</unclear> wir ehren,
+<lb n="2"/>liebs und <unclear cert="medium" resp="#joint">guets</unclear> <unclear cert="medium" resp="#joint">vermuegendt</unclear> <unclear cert="medium" resp="#joint">zuvor</unclear>, <unclear cert="medium" resp="#joint">Fromme</unclear>, <unclear cert="medium" resp="#joint">Fuersichtige</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">Ersame</unclear> und <unclear cert="medium" resp="#joint">weise</unclear> <unclear cert="medium" resp="#joint">Innsonders</unclear> <unclear cert="medium" resp="#joint">guete</unclear> <unclear cert="medium" resp="#joint">Freuendt</unclear>, unnd
+<lb n="4"/><unclear cert="medium" resp="#joint">getreuewe</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> <orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eidtgnoßen</unclear></orgName>.
+<lb n="5"/>Wir habend <unclear cert="medium" resp="#joint">unsers</unclear> <unclear cert="medium" resp="#joint">außgetrettnen</unclear> <unclear cert="medium" resp="#joint">Burgers</unclear>, Martin-
+<lb n="6"/><unclear cert="medium" resp="#joint">Billers</unclear> gemeinen <unclear cert="medium" resp="#joint">Creditoren</unclear> und <unclear cert="medium" resp="#joint">schuldt</unclear> <unclear cert="medium" resp="#joint">glaeubigeren</unclear>,
+<lb n="7"/>einen <unclear cert="low" resp="#joint">allgemeinen</unclear> <unclear cert="low" resp="#joint">Rechtstag</unclear> <unclear cert="low" resp="#joint">ernennt</unclear>, und ange-
+<lb n="8"/><unclear cert="medium" resp="#joint">sezt</unclear>, <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">Ihr</unclear>, <unclear cert="medium" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">getreuew</unclear> lieb <orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eidtgnoßen</unclear></orgName> auß
+<lb n="9"/><unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">verwahrtem</unclear> <unclear cert="low" resp="#joint">Edict</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">vernemmen</unclear> habend.
+<lb n="10"/>Und diewil dann <unclear cert="medium" resp="#joint">etliche</unclear> <unclear cert="medium" resp="#joint">Euewrer</unclear> <unclear cert="medium" resp="#joint">Burgeren</unclear> deßhalben
+<lb n="11"/>auch <unclear cert="medium" resp="#joint">interessiert</unclear>, und <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">obbenannts</unclear> <persName resp="#ner">Martin <unclear cert="medium" resp="#joint">Billers</unclear></persName>
+<lb n="12"/><unclear cert="medium" resp="#joint">haab</unclear> und <unclear cert="medium" resp="#joint">gueth</unclear> forderung und <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">sprach</unclear> haben <unclear cert="medium" resp="#joint">moechtend</unclear>.
+<lb n="13"/>So ist an dieselben unser <unclear cert="low" resp="#joint">freuendt-Eidtgnoeßisch</unclear> er-
+<lb n="14"/>suchen, <unclear cert="medium" resp="#joint">die</unclear> <unclear cert="medium" resp="#joint">woellend</unclear> den <unclear cert="medium" resp="#joint">Innhschluß</unclear>, <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="medium" resp="#joint">Ihrer</unclear> <unclear cert="medium" resp="#joint">Statt</unclear> <unclear cert="medium" resp="#joint">gewoehn</unclear>-
+<lb n="15"/>lichen <unclear cert="medium" resp="#joint">orthen</unclear>, <unclear cert="medium" resp="#joint">offentlich</unclear> <unclear cert="medium" resp="#joint">aufschlagen</unclear> und publicieren
+<lb n="16"/>laßen, damit an seinen Rechten <unclear cert="medium" resp="#joint">niemandts</unclear> <unclear cert="medium" resp="#joint">verkuerzt</unclear>
+<lb n="17"/>werde, noch <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="medium" resp="#joint">unwißenheit</unclear> sich <unclear cert="medium" resp="#joint">zu</unclear> beklagen <unclear cert="medium" resp="#joint">ursach</unclear>
 <lb n="18"/>habe.
-<lb n="19"/>Daß begerend umb Euech, unser getreuew lieb <orgName role="recipient" resp="#ner">Eidt-
-<lb n="20"/>gnoßen</orgName>, wir jederzeit guetwillig- und freuendtlich zu-
-<lb n="21"/>erwideren, Goettlicher obhalt unß sambtlich wol
-<lb n="22"/>befehlende. Datum <origDate when="1643-09-25" resp="#ner">den 25ten Septembris Anno 1643</origDate>.
-<lb n="23"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
-<lb n="24"/>der Statt Schaffhausen</orgName>.
+<lb n="19"/><unclear cert="medium" resp="#joint">Daß</unclear> <unclear cert="medium" resp="#joint">begerend</unclear> umb <unclear cert="medium" resp="#joint">Euech</unclear>, <unclear cert="medium" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">getreuew</unclear> lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eidt</unclear>-
+<lb n="20"/><unclear cert="low" resp="#joint">gnoßen</unclear></orgName>, <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">jederzeit</unclear> <unclear cert="low" resp="#joint">guetwillig</unclear>- und <unclear cert="medium" resp="#joint">freuendtlich</unclear> <unclear cert="medium" resp="#joint">zu</unclear>-
+<lb n="21"/><unclear cert="medium" resp="#joint">erwideren</unclear>, <unclear cert="medium" resp="#joint">Goettlicher</unclear> <unclear cert="medium" resp="#joint">obhalt</unclear> unß <unclear cert="medium" resp="#joint">sambtlich</unclear> <unclear cert="medium" resp="#joint">wol</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">befehlende</unclear>. Datum <origDate when="1643-09-25" resp="#ner">den <unclear cert="medium" resp="#joint">25ten</unclear> Septembris Anno <unclear cert="medium" resp="#joint">1643</unclear></origDate>.
+<lb n="23"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="24"/>der Statt <unclear cert="medium" resp="#joint">Schaffhausen</unclear></orgName>.
 <pb facs="StadtASG_Missive_3564_14222.jpg" n="2"/>
 <lb n="25"/>An <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffh.</placeName> weg <persName resp="#ner">Martin Zillen</persName>
 <lb n="26"/>aßgeseh Edictalh. 1643.

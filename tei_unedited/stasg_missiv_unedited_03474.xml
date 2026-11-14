@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3474</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Maximilian Wilhelm, Erbtruchseß von Wolfegg, bittet Bürgermeister und Rat zu St. Gallen, seinem Leutnant Georg Stöppel Glauben zu schenken und ihm bei der Rückführung von desertierten Soldaten aus der Compagnie des Obristleutnants Gerhard Blankenhans zu helfen. Diese sollen in St. Gallen aufgehalten werden. Er verspricht, ihnen ein Verzeihnis zukommen zu lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Maximilian Wilhelm, Erbtruchseß von Wolfegg, bittet Bürgermeister und Rat zu St. Gallen, seinem Leutnant Georg Stöppel Glauben zu schenken und ihm bei der Rückführung von desertierten Soldaten aus der Compagnie des Obristleutnants Gerhard Blankenhans zu helfen. Diese sollen in St. Gallen aufgehalten werden. Er verspricht, ihnen ein Verzeihnis zukommen zu lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Maximilian Wilhelm, Erbtruchseß von Wolfegg, asks the Burgomaster and Council of St. Gallen to give credit to his lieutenant Georg Stöppel and to help him in the return of deserting soldiers from the company of the Obristleutnant Gerhard Blankenhans. These are to be detained in St. Gallen. He promises to send them a pardon.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -69,11 +70,11 @@
 <pb facs="StadtASG_Missive_3474_13832.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3474_13833.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3474_13834.jpg" n="4"/>
-<lb n="33"/>Den ehrenvesten, frommen, fuernemmen, fuersichtigen, ehrsamen
-<lb n="34"/>und wysen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister und rhat der statt
-<lb n="35"/>Sanct Gallen</orgName>, unseren insonders
-<lb n="36"/>lieben herren, guoten fründen und getrüwen lieben eidtgnossen.
-<lb n="37"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="33"/>Den <unclear cert="low" resp="#joint">ehrenvesten</unclear>, frommen, <unclear cert="low" resp="#joint">fuernemmen</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">ehrsamen</unclear>
+<lb n="34"/>und <unclear cert="medium" resp="#joint">wysen</unclear> herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister und <unclear cert="medium" resp="#joint">rhat</unclear> der statt
+<lb n="35"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>, unseren <unclear cert="medium" resp="#joint">insonders</unclear>
+<lb n="36"/>lieben herren, <unclear cert="low" resp="#joint">guoten</unclear> fründen <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">getrüwen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">eidtgnossen</unclear>.
+<lb n="37"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3410</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten die Eidgenossen, den in Mailand festgenommenen Cornet Carlo Cosio nicht aus dem Arrest zu entlassen, bis er den Bürgen Joachim Eckholt für einen Wechsel über 1000 Reichsgulden samt Zinsen und Kosten schadlos gehalten habe. Cosio sei mit dem Geld geflohen, nachdem sein Bruder den Wechsel nicht beglichen hatte.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten die Eidgenossen, den in Mailand festgenommenen Cornet Carlo Cosio nicht aus dem Arrest zu entlassen, bis er den Bürgen Joachim Eckholt für einen Wechsel über 1000 Reichsgulden samt Zinsen und Kosten schadlos gehalten habe. Cosio sei mit dem Geld geflohen, nachdem sein Bruder den Wechsel nicht beglichen hatte.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask the Confederates not to release the Cornet Carlo Cosio, who has been arrested in Mailand, from custody until he has made the surety Joachim Eckholt whole for a bill of exchange for 1000 Reichsgulden including interest and costs. Cosio fled with the money after his brother had not settled the bill of exchange.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,8 +37,8 @@
 <pb facs="StadtASG_Missive_3410_13581.jpg" n="1"/>
 <lb n="1"/>Unser freüntlich willig dienst,
 <lb n="2"/>sampt was wir ehren liebs
-<lb n="3"/>und guts vermögend zuvor,
-<lb n="4"/>from, fürsichtig, ersam,
+<lb n="3"/>und <unclear cert="low" resp="#joint">guts</unclear> <unclear cert="low" resp="#joint">vermögend</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>,
+<lb n="4"/><unclear cert="low" resp="#joint">from</unclear>, fürsichtig, ersam,
 <lb n="5"/>und wiß, innsonders gute
 <lb n="6"/>freünd und getreüwe liebe
 <lb n="7"/>eidtgnossen.
@@ -45,112 +46,112 @@
 <lb n="9"/>gehöriger lieber mitburger, <persName resp="#ner">Hanß
 <lb n="10"/>Jacob ßhel</persName>, und hat unß ge-
 <lb n="11"/>horsamlich fürgebracht, was
-<lb n="12"/>massen er im verschinen Majo,
+<lb n="12"/>massen er im <unclear cert="low" resp="#joint">verschinen</unclear> Majo,
 <lb n="13"/>diß jars, mit <persName resp="#ner">Joachim Eckholt</persName>
 <lb n="14"/>burgern von <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>, an statt
 <lb n="15"/>und in namen eines cornets,
 <lb n="16"/>mit namens <persName resp="#ner">Carlo Cosio</persName> von
-<lb n="17"/><placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Mailandt</placeName>, einen wexel tractirt
-<lb n="18"/>und beschlossen, umb 1000. Rh. gl. welchen ernanter
-<lb n="19"/><persName resp="#ner">Cosio</persName> uff seümen brueder
+<lb n="17"/><placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Mailandt</placeName>, <unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">wexel</unclear> <unclear cert="low" resp="#joint">tractirt</unclear>
+<lb n="18"/>und <unclear cert="low" resp="#joint">beschlossen</unclear>, <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">1000</unclear>. <unclear cert="low" resp="#joint">Rh</unclear>. <unclear cert="low" resp="#joint">gl</unclear>. <unclear cert="low" resp="#joint">welchen</unclear> <unclear cert="low" resp="#joint">ernanter</unclear>
+<lb n="19"/><persName resp="#ner">Cosio</persName> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">seümen</unclear> <unclear cert="low" resp="#joint">brueder</unclear>
 <lb n="20"/><persName resp="#ner">Joh. Baptista Cosio</persName> in gedachtem
-<lb n="21"/>Mailandt verweisen, und ihne
-<lb n="22"/>in den ihme zugestelten wexelbriefen
-<lb n="23"/>verweisen, ihme selbchen daselbst
-<lb n="24"/>zubezahlen, für welchen
-<lb n="25"/>obgemelten wexel obennanter
-<lb n="26"/><persName resp="#ner">Eckholt</persName>, gegen ihme <persName resp="#ner">Hanß Jacob
+<lb n="21"/>Mailandt <unclear cert="low" resp="#joint">verweisen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ihne</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">den</unclear> ihme <unclear cert="low" resp="#joint">zugestelten</unclear> <unclear cert="low" resp="#joint">wexelbriefen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">verweisen</unclear>, ihme <unclear cert="low" resp="#joint">selbchen</unclear> <unclear cert="low" resp="#joint">daselbst</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">zubezahlen</unclear>, <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">welchen</unclear>
+<lb n="25"/>obgemelten <unclear cert="low" resp="#joint">wexel</unclear> <unclear cert="low" resp="#joint">obennanter</unclear>
+<lb n="26"/><persName resp="#ner"><unclear cert="low" resp="#joint">Eckholt</unclear></persName>, gegen ihme <persName resp="#ner">Hanß Jacob
 <lb n="27"/>ßhelen</persName> als dem verleyher,
 <lb n="28"/>laut von sich gegebner bürg-
-<lb n="29"/>schafft obligation, bürg und
-<lb n="30"/>zaler worden, welch obererter wexel
-<lb n="31"/>aber sich biß dato, sambt
-<lb n="32"/>interesse laut einer
-<lb n="33"/>ordentlichen specification
-<lb n="34"/>in die R 1639. kr 47.
-<lb n="35"/>belauffen thut. Wann
+<lb n="29"/>schafft <unclear cert="low" resp="#joint">obligation</unclear>, bürg und
+<lb n="30"/>zaler worden, <unclear cert="low" resp="#joint">welch</unclear> <unclear cert="low" resp="#joint">obererter</unclear> <unclear cert="low" resp="#joint">wexel</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">dato</unclear>, <unclear cert="low" resp="#joint">sambt</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">interesse</unclear> <unclear cert="low" resp="#joint">laut</unclear> <unclear cert="low" resp="#joint">einer</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">ordentlichen</unclear> <unclear cert="low" resp="#joint">specification</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">R</unclear> <unclear cert="low" resp="#joint">1639</unclear>. <unclear cert="low" resp="#joint">kr</unclear> <unclear cert="low" resp="#joint">47</unclear>.
+<lb n="35"/><unclear cert="low" resp="#joint">belauffen</unclear> <unclear cert="low" resp="#joint">thut</unclear>. <unclear cert="low" resp="#joint">Wann</unclear>
 <lb n="36"/>dann diser getroffne wexel
 <lb n="37"/>nit allein biß dato noch nit
-<lb n="38"/>richtig, in deme ernantes Cosio
-<lb n="39"/>brueder Joh. Baptista
-<lb n="40"/>Cosio sölchen biß dato nit gut machen und bezah-
-<lb n="41"/>len wellen, sonder in disem ist
-<lb n="42"/>auch ernanter cornet
+<lb n="38"/>richtig, in <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">ernantes</unclear> Cosio
+<lb n="39"/><unclear cert="low" resp="#joint">brueder</unclear> <unclear cert="low" resp="#joint">Joh</unclear>. <unclear cert="low" resp="#joint">Baptista</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">Cosio</unclear> <unclear cert="low" resp="#joint">sölchen</unclear> <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">dato</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">gut</unclear> <unclear cert="low" resp="#joint">machen</unclear> und <unclear cert="low" resp="#joint">bezah</unclear>-
+<lb n="41"/><unclear cert="low" resp="#joint">len</unclear> <unclear cert="low" resp="#joint">wellen</unclear>, <unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">disem</unclear> <unclear cert="low" resp="#joint">ist</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">ernanter</unclear> cornet
 <pb facs="StadtASG_Missive_3410_13582.jpg" n="2"/>
-<lb n="43"/>Nach deme nun <persName resp="#ner">Joh. Baptista
-<lb n="44"/>Cossio</persName>, obangeregten wechßel,
-<lb n="45"/>deß Unßerigen Leüth zue
-<lb n="46"/><placeName resp="#ner">Meiland</placeName>
-<lb n="47"/>und ihne keinen stand dem Cornet
+<lb n="43"/>Nach deme nun <persName resp="#ner"><unclear cert="low" resp="#joint">Joh</unclear>. Baptista
+<lb n="44"/>Cossio</persName>, obangeregten <unclear cert="low" resp="#joint">wechßel</unclear>,
+<lb n="45"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Unßerigen</unclear> <unclear cert="low" resp="#joint">Leüth</unclear> <unclear cert="low" resp="#joint">zue</unclear>
+<lb n="46"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Meiland</unclear></placeName>
+<lb n="47"/>und <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">keinen</unclear> <unclear cert="low" resp="#joint">stand</unclear> dem Cornet
 <lb n="48"/>Cossio, nit erstatten und bezalen
 <lb n="49"/>wöllen, hat er Cornet hie-
 <lb n="50"/>rauff sich, und also flüchtigen fuß gesezt,
-<lb n="51"/>und sambt dem geltt außge-
-<lb n="52"/>rißen. Dahero obbesagter
-<lb n="53"/>Schewlt alß buerg nohttrun-
-<lb n="54"/>genlich verurßacht worden,
-<lb n="55"/>demselben nachzusezen,
-<lb n="56"/>und ihne wo er
-<lb n="57"/>zebetretten, in arrest und ver-
+<lb n="51"/>und <unclear cert="low" resp="#joint">sambt</unclear> dem geltt <unclear cert="low" resp="#joint">außge</unclear>-
+<lb n="52"/>rißen. <unclear cert="low" resp="#joint">Dahero</unclear> <unclear cert="low" resp="#joint">obbesagter</unclear>
+<lb n="53"/><unclear cert="low" resp="#joint">Schewlt</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">buerg</unclear> <unclear cert="low" resp="#joint">nohttrun</unclear>-
+<lb n="54"/><unclear cert="low" resp="#joint">genlich</unclear> <unclear cert="low" resp="#joint">verurßacht</unclear> worden,
+<lb n="55"/>demselben <unclear cert="low" resp="#joint">nachzusezen</unclear>,
+<lb n="56"/>und <unclear cert="low" resp="#joint">ihne</unclear> wo er
+<lb n="57"/><unclear cert="low" resp="#joint">zebetretten</unclear>, in arrest und ver-
 <lb n="58"/>hafftung zenemmen. Wann
-<lb n="59"/>unß dann der unßerige obver-
-<lb n="60"/>namter <persName resp="#ner">Hanß Jacob Schobinger</persName> un-
-<lb n="61"/>ser burger glaubwürdig be-
-<lb n="62"/>richtet, daß in unßer g. L.
-<lb n="63"/>E. mit gedachtem Schewlt uff
-<lb n="64"/>sein instendiges pitten, und kost
-<lb n="65"/>ein arrest uff offtgedachten
-<lb n="66"/>außgerißnen <persName resp="#ner">Cornet Cossio</persName>,
-<lb n="67"/>verwilliget,
-<lb n="68"/>dergestalt dz er bei Euch
-<lb n="69"/>arrestirt,
-<lb n="70"/>zu handen
-<lb n="71"/>und deß Schewelz
-<lb n="72"/>und unß dahero dienst-
-<lb n="73"/>erbi Underhenig gepeten, wir
-<lb n="74"/>wolten an eüch Unßre g L. E.
+<lb n="59"/>unß dann der <unclear cert="low" resp="#joint">unßerige</unclear> <unclear cert="low" resp="#joint">obver</unclear>-
+<lb n="60"/><unclear cert="low" resp="#joint">namter</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> Jacob <unclear cert="low" resp="#joint">Schobinger</unclear></persName> <unclear cert="low" resp="#joint">un</unclear>-
+<lb n="61"/><unclear cert="low" resp="#joint">ser</unclear> burger <unclear cert="low" resp="#joint">glaubwürdig</unclear> <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="62"/><unclear cert="low" resp="#joint">richtet</unclear>, <unclear cert="low" resp="#joint">daß</unclear> in <unclear cert="low" resp="#joint">unßer</unclear> g. <unclear cert="low" resp="#joint">L</unclear>.
+<lb n="63"/>E. <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">gedachtem</unclear> <unclear cert="low" resp="#joint">Schewlt</unclear> <unclear cert="low" resp="#joint">uff</unclear>
+<lb n="64"/><unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">instendiges</unclear> <unclear cert="low" resp="#joint">pitten</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">kost</unclear>
+<lb n="65"/><unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">arrest</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">offtgedachten</unclear>
+<lb n="66"/><unclear cert="low" resp="#joint">außgerißnen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Cornet</unclear> <unclear cert="low" resp="#joint">Cossio</unclear></persName>,
+<lb n="67"/><unclear cert="low" resp="#joint">verwilliget</unclear>,
+<lb n="68"/><unclear cert="low" resp="#joint">dergestalt</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">bei</unclear> <unclear cert="low" resp="#joint">Euch</unclear>
+<lb n="69"/><unclear cert="low" resp="#joint">arrestirt</unclear>,
+<lb n="70"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">handen</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Schewelz</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">dahero</unclear> <unclear cert="low" resp="#joint">dienst</unclear>-
+<lb n="73"/><unclear cert="low" resp="#joint">erbi</unclear> <unclear cert="low" resp="#joint">Underhenig</unclear> <unclear cert="low" resp="#joint">gepeten</unclear>, <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="74"/><unclear cert="low" resp="#joint">wolten</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">Unßre</unclear> <unclear cert="low" resp="#joint">g</unclear> <unclear cert="low" resp="#joint">L</unclear>. E.
 <pb facs="StadtASG_Missive_3410_13583.jpg" n="3"/>
-<lb n="75"/>von sein deß <persName resp="#ner">Oppelts</persName> wegen,
+<lb n="75"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">sein</unclear> deß <persName resp="#ner">Oppelts</persName> wegen,
 <lb n="76"/>intercediert, daß Ir den
 <lb n="77"/>verhafften <persName resp="#ner">Carlo Cosio</persName> uß
-<lb n="78"/>dem arrest nit laßen,
-<lb n="79"/>so lang biß Er Ihne umb als bürgen
-<lb n="80"/>umb obgedachte Sa sambt
+<lb n="78"/>dem <unclear cert="low" resp="#joint">arrest</unclear> nit <unclear cert="low" resp="#joint">laßen</unclear>,
+<lb n="79"/><unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">lang</unclear> <unclear cert="low" resp="#joint">biß</unclear> Er Ihne umb als bürgen
+<lb n="80"/>umb <unclear cert="low" resp="#joint">obgedachte</unclear> <unclear cert="low" resp="#joint">Sa</unclear> <unclear cert="low" resp="#joint">sambt</unclear>
 <lb n="81"/>allem ufferloffnem Zynß
 <lb n="82"/>und kosten schad gebürende satis-
-<lb n="83"/>faction und bezahlung geleistet
-<lb n="84"/>hat. Welchem billicheß
+<lb n="83"/>faction und <unclear cert="low" resp="#joint">bezahlung</unclear> <unclear cert="low" resp="#joint">geleistet</unclear>
+<lb n="84"/><unclear cert="low" resp="#joint">hat</unclear>. <unclear cert="low" resp="#joint">Welchem</unclear> <unclear cert="low" resp="#joint">billicheß</unclear>
 <lb n="85"/>begeren wir nit allein
-<lb n="86"/>dem ustrengen burgerlichen ver-
-<lb n="87"/>wandtnuß halber, sondern auch
-<lb n="88"/>offternantem <persName resp="#ner">Oppelt</persName>, von
-<lb n="89"/>der sach wichtigkeit
-<lb n="90"/>halber nit verweigeren sol-
-<lb n="91"/>noch wollen. Langt
-<lb n="92"/>deßwegen an euch unser G.
-<lb n="93"/>L. E. unser dienstfründt-
-<lb n="94"/>eidtgnößisches ersuchen und pitt,
-<lb n="95"/>Ihr wollen vil und offtver-
-<lb n="96"/>meltem <persName resp="#ner">Joachim Oppelten</persName>
-<lb n="97"/>alß bürgen In diser sach,
-<lb n="98"/>witter die oberkheitliche
-<lb n="99"/>hilffshandt dergestalt bieten,
+<lb n="86"/>dem ustrengen burgerlichen <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="87"/><unclear cert="low" resp="#joint">wandtnuß</unclear> halber, sondern <unclear cert="low" resp="#joint">auch</unclear>
+<lb n="88"/><unclear cert="low" resp="#joint">offternantem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Oppelt</unclear></persName>, <unclear cert="low" resp="#joint">von</unclear>
+<lb n="89"/>der sach <unclear cert="low" resp="#joint">wichtigkeit</unclear>
+<lb n="90"/><unclear cert="low" resp="#joint">halber</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">verweigeren</unclear> <unclear cert="low" resp="#joint">sol</unclear>-
+<lb n="91"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">wollen</unclear>. <unclear cert="low" resp="#joint">Langt</unclear>
+<lb n="92"/><unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">G</unclear>.
+<lb n="93"/><unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">dienstfründt</unclear>-
+<lb n="94"/><unclear cert="low" resp="#joint">eidtgnößisches</unclear> <unclear cert="low" resp="#joint">ersuchen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">pitt</unclear>,
+<lb n="95"/><unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">wollen</unclear> <unclear cert="low" resp="#joint">vil</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">offtver</unclear>-
+<lb n="96"/><unclear cert="low" resp="#joint">meltem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Joachim</unclear> <unclear cert="low" resp="#joint">Oppelten</unclear></persName>
+<lb n="97"/><unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">bürgen</unclear> <unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">sach</unclear>,
+<lb n="98"/><unclear cert="low" resp="#joint">witter</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">oberkheitliche</unclear>
+<lb n="99"/><unclear cert="low" resp="#joint">hilffshandt</unclear> <unclear cert="low" resp="#joint">dergestalt</unclear> <unclear cert="low" resp="#joint">bieten</unclear>,
 <lb n="100"/>damit er von dem ußge-
-<lb n="101"/>wichnen Cornet Cosio,
-<lb n="102"/>umb die für Ihne verbürgete
-<lb n="103"/>Sa gelltß, sampt deßwegen
-<lb n="104"/>ufferloffnem Interesse,
-<lb n="105"/>kosten und schad, voll komen-
-<lb n="106"/>lich contentiert und bezahlt
-<lb n="107"/>werden möchte, oder aber Ihne
+<lb n="101"/><unclear cert="low" resp="#joint">wichnen</unclear> <unclear cert="low" resp="#joint">Cornet</unclear> <unclear cert="low" resp="#joint">Cosio</unclear>,
+<lb n="102"/>umb die für <unclear cert="low" resp="#joint">Ihne</unclear> <unclear cert="low" resp="#joint">verbürgete</unclear>
+<lb n="103"/><unclear cert="low" resp="#joint">Sa</unclear> <unclear cert="low" resp="#joint">gelltß</unclear>, sampt <unclear cert="low" resp="#joint">deßwegen</unclear>
+<lb n="104"/><unclear cert="low" resp="#joint">ufferloffnem</unclear> <unclear cert="low" resp="#joint">Interesse</unclear>,
+<lb n="105"/><unclear cert="low" resp="#joint">kosten</unclear> und <unclear cert="low" resp="#joint">schad</unclear>, <unclear cert="low" resp="#joint">voll</unclear> <unclear cert="low" resp="#joint">komen</unclear>-
+<lb n="106"/><unclear cert="low" resp="#joint">lich</unclear> <unclear cert="low" resp="#joint">contentiert</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">bezahlt</unclear>
+<lb n="107"/><unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">möchte</unclear>, oder aber Ihne
 <lb n="108"/>deß arrests nit entlaßten,
 <lb n="109"/>so lang und vil, biß die völlig
 <lb n="110"/>satisfaction, von Ihme be-
 <lb n="111"/>schehen, und Er <persName resp="#ner">Oppelt</persName> also
-<lb n="112"/>seines verbürgten ußstandts
-<lb n="113"/>sambt kosten und schad voll-
-<lb n="114"/>komenlich widerumb entschädiget
-<lb n="115"/>worden. Wir
+<lb n="112"/><unclear cert="low" resp="#joint">seines</unclear> <unclear cert="low" resp="#joint">verbürgten</unclear> <unclear cert="low" resp="#joint">ußstandts</unclear>
+<lb n="113"/><unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">kosten</unclear> und <unclear cert="low" resp="#joint">schad</unclear> <unclear cert="low" resp="#joint">voll</unclear>-
+<lb n="114"/><unclear cert="low" resp="#joint">komenlich</unclear> <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">entschädiget</unclear>
+<lb n="115"/><unclear cert="low" resp="#joint">worden</unclear>. <unclear cert="low" resp="#joint">Wir</unclear>
 <pb facs="StadtASG_Missive_3410_13584.jpg" n="4"/>
 </p>
         </body>

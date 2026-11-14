@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3584</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich empfehlen dem Rat zu St. Gallen den aus Neustadt in der Pfalz stammenden Samuel Leucherius, der sich drei Jahre in Zürich aufgehalten habe. Leucherius wolle in seine Heimat zurückkehren und bitte um christliche Unterstützung. Die Zürcher bitten die St. Galler, den evangelischen Exul in guter Empfehlung zu halten und ihm milde Hilfe zu gewähren.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich empfehlen dem Rat zu St. Gallen den aus Neustadt in der Pfalz stammenden Samuel Leucherius, der sich drei Jahre in Zürich aufgehalten habe. Leucherius wolle in seine Heimat zurückkehren und bitte um christliche Unterstützung. Die Zürcher bitten die St. Galler, den evangelischen Exul in guter Empfehlung zu halten und ihm milde Hilfe zu gewähren.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich recommend to the Council of St. Gallen Samuel Leucherius, who comes from Neustadt in der Pfalz and who has stayed in Zürich for three years. Leucherius wishes to return to his homeland and asks for Christian support. The Zürichers ask the St. Galleners to hold the evangelical exile in good recommendation and to grant him mild assistance.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -44,21 +45,21 @@
 <lb n="8"/>er sich nun mehr in die drü jahr allhie ufgehalten, und von unß
 <lb n="9"/>mit nothwendiger nahrung versehen worden, sich entschloßen
 <lb n="10"/>mit syner hußhalthung widerumb in syn heimath und vatterlandt
-<lb n="11"/>zebegäben, und unß gebätten ihne an üch unser g. l. E.
-<lb n="12"/>welliche er zuovor auch umb ein christenliche bystühr anzuekehr-
-<lb n="13"/>en gesinnet, mit unserem fürschryben zebegleiten; habend
-<lb n="14"/>wir demselben als einem evangelischen exulirenden eeren-
-<lb n="15"/>wellicher sich in wehrender zyth als er allhie geweßen wol
-<lb n="16"/>und ehrlich verhalten, und alles mitlydens wol werth ist,
+<lb n="11"/>zebegäben, und unß gebätten ihne an <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="12"/><unclear cert="low" resp="#joint">welliche</unclear> <unclear cert="low" resp="#joint">er</unclear> zuovor auch umb ein <unclear cert="low" resp="#joint">christenliche</unclear> <unclear cert="low" resp="#joint">bystühr</unclear> <unclear cert="low" resp="#joint">anzuekehr</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">en</unclear> gesinnet, mit <unclear cert="low" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">fürschryben</unclear> <unclear cert="low" resp="#joint">zebegleiten</unclear>; habend
+<lb n="14"/>wir <unclear cert="low" resp="#joint">demselben</unclear> <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">evangelischen</unclear> <unclear cert="low" resp="#joint">exulirenden</unclear> <unclear cert="low" resp="#joint">eeren</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">wellicher</unclear> sich in wehrender zyth als er allhie geweßen wol
+<lb n="16"/>und ehrlich verhalten, und <unclear cert="low" resp="#joint">alles</unclear> <unclear cert="low" resp="#joint">mitlydens</unclear> wol werth ist,
 <lb n="17"/>solliches begehren nit verweygeren können, und ersuochend
-<lb n="18"/>und erbättend hieruf üch unser g. l. E. fründt- Eydt-
-<lb n="19"/>gnoßisch ermelten herren <persName resp="#ner">Leucherium</persName> für sich selbs auch
-<lb n="20"/>von unsertwägen in guoter recomendation zehalten, und gegen
+<lb n="18"/>und <unclear cert="low" resp="#joint">erbättend</unclear> <unclear cert="low" resp="#joint">hieruf</unclear> <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">fründt</unclear>- <unclear cert="low" resp="#joint">Eydt</unclear>-
+<lb n="19"/><unclear cert="low" resp="#joint">gnoßisch</unclear> <unclear cert="low" resp="#joint">ermelten</unclear> herren <persName resp="#ner">Leucherium</persName> für sich selbs auch
+<lb n="20"/>von <unclear cert="low" resp="#joint">unsertwägen</unclear> in guoter recomendation zehalten, und gegen
 <lb n="21"/>ihme üwer milte hand tröstlich und mitlydenlich ufzethuond:
 <lb n="22"/>welches er für ein besonderbare gnad rüemen, auch unß von
-<lb n="23"/>synetwägen erfröuwlich syn wirt; üch unseren g. l. E.
-<lb n="24"/>hinwiderige gefallen und angenemkheit zuerzeigen, sind wir
-<lb n="25"/>so willig und geneigt, alß wir Gott pittend, unß samptlich
+<lb n="23"/>synetwägen erfröuwlich syn wirt; <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="24"/><unclear cert="low" resp="#joint">hinwiderige</unclear> <unclear cert="low" resp="#joint">gefallen</unclear> und angenemkheit zuerzeigen, sind wir
+<lb n="25"/>so willig und geneigt, alß wir Gott <unclear cert="low" resp="#joint">pittend</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">samptlich</unclear>
 <lb n="26"/>in synem heiligen gnaden schirm vätterlich zeerhalten.
 <lb n="27"/>Dat. <origDate when="1649" resp="#ner">den 14.t Martii A°. 1649.</origDate>
 <lb n="28"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rhat
@@ -66,13 +67,13 @@
 <pb facs="StadtASG_Missive_3584_14296.jpg" n="2"/>
 <pb facs="StadtASG_Missive_3584_14297.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3584_14298.jpg" n="4"/>
-<lb n="30"/>Den frommen, fürsichtig=
-<lb n="31"/>en, ersamen, wysen,
-<lb n="32"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und
-<lb n="33"/>Rhat der Statt St. Gall=
-<lb n="34"/>en</orgName>: unnseren besonders
-<lb n="35"/>gueten fründen und getrüw=
-<lb n="36"/>en lieben Eydtgnossen.
+<lb n="30"/>Den frommen, <unclear cert="low" resp="#joint">fürsichtig=</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">en</unclear>, ersamen, <unclear cert="low" resp="#joint">wysen</unclear>,
+<lb n="32"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="33"/><unclear cert="medium" resp="#joint">Rhat</unclear> der Statt St. <unclear cert="low" resp="#joint">Gall=</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">en</unclear></orgName>: <unclear cert="low" resp="#joint">unnseren</unclear> <unclear cert="low" resp="#joint">besonders</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">gueten</unclear> fründen und <unclear cert="low" resp="#joint">getrüw=</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">en</unclear> lieben <unclear cert="medium" resp="#joint">Eydtgnossen</unclear>.
 </p>
         </body>
     </text>

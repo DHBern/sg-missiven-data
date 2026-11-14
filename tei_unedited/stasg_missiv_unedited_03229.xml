@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3229</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die Pfarrer Martinus Februarius, Petrus Crugot und Jacob Heusch bedanken sich im Namen der Gemeinde von Frankenthal bei Bürgermeister und Rat zu St. Gallen für die Überweisung von 200 Gulden (125 Reichsthaler) durch den Basler Rektor Daniel Tossan. Das Geld diene der Hilfe für die durch Krieg, Teuerung und Hunger gebeutelte Bürgerschaft. Sie wünschen St. Gallen Frieden und Gesundheit.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die Pfarrer Martinus Februarius, Petrus Crugot und Jacob Heusch bedanken sich im Namen der Gemeinde von Frankenthal bei Bürgermeister und Rat zu St. Gallen für die Überweisung von 200 Gulden (125 Reichsthaler) durch den Basler Rektor Daniel Tossan. Das Geld diene der Hilfe für die durch Krieg, Teuerung und Hunger gebeutelte Bürgerschaft. Sie wünschen St. Gallen Frieden und Gesundheit.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The parish priests Martinus Februarius, Petrus Crugot and Jacob Heusch thank the Burgomaster and Council of St. Gallen on behalf of the community of Frankenthal for the transfer of 200 gulden (125 Reichsthaler) by the Basel rector Daniel Tossan. The money serves to help the citizenry, which is afflicted by war, inflation and hunger. They wish St. Gallen peace and health.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -34,7 +35,7 @@
         <body>
 <p>
 <pb facs="StadtASG_Missive_3229_12777.jpg" n="1"/>
-<lb n="1"/>WohlEdle, Gestrenge, Veste, Ehren=
+<lb n="1"/><unclear cert="low" resp="#joint">WohlEdle</unclear>, <unclear cert="low" resp="#joint">Gestrenge</unclear>, Veste, Ehren=
 <lb n="2"/>veste, Fuersichtige, undt Wohlweise Herren
 <lb n="3"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister, undt Rhatt der löblichen Statt
 <lb n="4"/>S. Gallen</orgName>, denselben seyen unsere freundtbe=
@@ -43,7 +44,7 @@
 <lb n="7"/>Freundt undt brueder.
 <lb n="8"/>Daß die Herren, auf unser freundtbittlich ansue=
 <lb n="9"/>chen, der eustersten noth, und großen betrang=
-<lb n="10"/>nuß unser armen, außgeschöpften, und gantz
+<lb n="10"/>nuß unser armen, <unclear cert="low" resp="#joint">außgeschöpften</unclear>, und gantz
 <lb n="11"/>verderbten burgerschaft der Statt <placeName ref="stadtasg-places-375" cert="medium" resp="#ner">Francken=
 <lb n="12"/>thal</placeName>, sich so trewlich angenomen, undt auß christ=
 <lb n="13"/>lichem mittleiden vor dieselbe zwey hundert
@@ -52,44 +53,44 @@
 <lb n="16"/>der <orgName resp="#ner">löblichen hohen schuel</orgName> zu <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName> naher <placeName ref="stadtasg-places-16" cert="medium" resp="#ner">Franckfurt</placeName>
 <lb n="17"/>ubermachen laßen, so wir im anfang des itzt verschi=
 <lb n="18"/>nen <date resp="#ner">Martij</date> zu recht empfangen, darmit auch bey
-<lb n="19"/>der in unsern landen unerhorten, noch täglich zue=
-<lb n="20"/>nemenden theürung, hochbeschwerlichen krieges
-<lb n="21"/>last, undt gantzlicher landts verhergung, sehr viel
+<lb n="19"/>der in unsern landen unerhorten, noch täglich <unclear cert="low" resp="#joint">zue=</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">nemenden</unclear> <unclear cert="low" resp="#joint">theürung</unclear>, <unclear cert="low" resp="#joint">hochbeschwerlichen</unclear> <unclear cert="low" resp="#joint">krieges</unclear>
+<lb n="21"/>last, undt gantzlicher <unclear cert="low" resp="#joint">landts</unclear> <unclear cert="low" resp="#joint">verhergung</unclear>, <unclear cert="low" resp="#joint">sehr</unclear> <unclear cert="low" resp="#joint">viel</unclear>
 <lb n="22"/>arme, hungerige, krancke, und in eusterstem elendt
 <lb n="23"/>begriffene bürger können erfreüet und erquicket,
 <pb facs="StadtASG_Missive_3229_12778.jpg" n="2"/>
-<lb n="24"/>ia dem todt gleichsam auß dem rachen gerissen werden,
-<lb n="25"/>thuen wir endtsbemelte im nahmen unserer anver-
-<lb n="26"/>trawten gemeindten, uns aufs hochfleißigste bedancken,
-<lb n="27"/>und von hertzen wuenschen, das wir unsere danckbar-
-<lb n="28"/>keitt dem willen nach ins kunftig in der thatt moechten
-<lb n="29"/>erweisen, welchen mangel aber der liebe Gott auf
-<lb n="30"/>unser undt aller participanten fleißiges gebett reichlich
-<lb n="31"/>ersetzen, sie mit allen ihren angehoerigen und under-
-<lb n="32"/>thanen, vor dergleichen krieges last, hungersnoth, undt
-<lb n="33"/>andern landplagen vaeterlich bewahren, bey gueten wol-
-<lb n="34"/>standt, bestendigem frieden, und beharlicher gesundtheitt
-<lb n="35"/>lang fristen, und diese christmilte handreichung hie
-<lb n="36"/>zeitlich, und dort ewig wieder vergelten, deßen obacht
-<lb n="37"/>wir E. W. undt gunsten, mit uns saemptlichen zum
-<lb n="38"/>getrewlichsten thuen empfehlen. Datum <origPlace ref="stadtasg-places-375" cert="medium" resp="#ner">Franckenthal</origPlace>
-<lb n="39"/><origDate when="1637-05-01" resp="#ner">den 1 Maii. Im jahr 1637.</origDate>
-<lb n="40"/>E. W. H. W.
-<lb n="41"/>dienstgeflißene
-<lb n="42"/><persName role="issuer" resp="#ner">Martinus Februarius</persName> teutscher pfarrer.
-<lb n="43"/><persName role="issuer" resp="#ner">Petrus Crugot Francodalensis</persName>, Mnr Eccl. Belgicae
-<lb n="44"/><persName role="issuer" resp="#ner">Jacob Heusch</persName>. Diener am wort
-<lb n="45"/>Gottes der Frantzosische gemeinde.
+<lb n="24"/><unclear cert="medium" resp="#joint">ia</unclear> dem <unclear cert="medium" resp="#joint">todt</unclear> <unclear cert="medium" resp="#joint">gleichsam</unclear> <unclear cert="medium" resp="#joint">auß</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">rachen</unclear> <unclear cert="medium" resp="#joint">gerissen</unclear> werden,
+<lb n="25"/><unclear cert="medium" resp="#joint">thuen</unclear> wir <unclear cert="medium" resp="#joint">endtsbemelte</unclear> im nahmen unserer anver-
+<lb n="26"/><unclear cert="medium" resp="#joint">trawten</unclear> <unclear cert="medium" resp="#joint">gemeindten</unclear>, uns <unclear cert="low" resp="#joint">aufs</unclear> <unclear cert="low" resp="#joint">hochfleißigste</unclear> <unclear cert="low" resp="#joint">bedancken</unclear>,
+<lb n="27"/>und von <unclear cert="medium" resp="#joint">hertzen</unclear> <unclear cert="medium" resp="#joint">wuenschen</unclear>, <unclear cert="medium" resp="#joint">das</unclear> wir <unclear cert="medium" resp="#joint">unsere</unclear> <unclear cert="medium" resp="#joint">danckbar</unclear>-
+<lb n="28"/><unclear cert="medium" resp="#joint">keitt</unclear> dem willen nach <unclear cert="medium" resp="#joint">ins</unclear> <unclear cert="medium" resp="#joint">kunftig</unclear> in der <unclear cert="medium" resp="#joint">thatt</unclear> <unclear cert="medium" resp="#joint">moechten</unclear>
+<lb n="29"/>erweisen, <unclear cert="medium" resp="#joint">welchen</unclear> mangel aber der liebe Gott auf
+<lb n="30"/>unser <unclear cert="medium" resp="#joint">undt</unclear> aller participanten <unclear cert="medium" resp="#joint">fleißiges</unclear> <unclear cert="medium" resp="#joint">gebett</unclear> reichlich
+<lb n="31"/>ersetzen, sie mit allen ihren <unclear cert="medium" resp="#joint">angehoerigen</unclear> und under-
+<lb n="32"/>thanen, <unclear cert="medium" resp="#joint">vor</unclear> dergleichen <unclear cert="low" resp="#joint">krieges</unclear> <unclear cert="low" resp="#joint">last</unclear>, <unclear cert="low" resp="#joint">hungersnoth</unclear>, <unclear cert="low" resp="#joint">undt</unclear>
+<lb n="33"/>andern <unclear cert="medium" resp="#joint">landplagen</unclear> <unclear cert="medium" resp="#joint">vaeterlich</unclear> <unclear cert="medium" resp="#joint">bewahren</unclear>, bey <unclear cert="medium" resp="#joint">gueten</unclear> wol-
+<lb n="34"/>standt, <unclear cert="medium" resp="#joint">bestendigem</unclear> <unclear cert="medium" resp="#joint">frieden</unclear>, und <unclear cert="medium" resp="#joint">beharlicher</unclear> <unclear cert="medium" resp="#joint">gesundtheitt</unclear>
+<lb n="35"/>lang <unclear cert="medium" resp="#joint">fristen</unclear>, und diese <unclear cert="low" resp="#joint">christmilte</unclear> handreichung <unclear cert="medium" resp="#joint">hie</unclear>
+<lb n="36"/>zeitlich, und dort ewig <unclear cert="medium" resp="#joint">wieder</unclear> vergelten, <unclear cert="medium" resp="#joint">deßen</unclear> <unclear cert="medium" resp="#joint">obacht</unclear>
+<lb n="37"/>wir <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. <unclear cert="medium" resp="#joint">undt</unclear> gunsten, mit uns <unclear cert="medium" resp="#joint">saemptlichen</unclear> zum
+<lb n="38"/>getrewlichsten <unclear cert="medium" resp="#joint">thuen</unclear> empfehlen. Datum <origPlace ref="stadtasg-places-375" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Franckenthal</unclear></origPlace>
+<lb n="39"/><origDate when="1637-05-01" resp="#ner"><unclear cert="medium" resp="#joint">den</unclear> 1 <unclear cert="medium" resp="#joint">Maii</unclear>. Im jahr 1637.</origDate>
+<lb n="40"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">W</unclear>.
+<lb n="41"/><unclear cert="low" resp="#joint">dienstgeflißene</unclear>
+<lb n="42"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Martinus</unclear> <unclear cert="low" resp="#joint">Februarius</unclear></persName> <unclear cert="low" resp="#joint">teutscher</unclear> <unclear cert="low" resp="#joint">pfarrer</unclear>.
+<lb n="43"/><persName role="issuer" resp="#ner">Petrus <unclear cert="medium" resp="#joint">Crugot</unclear> <unclear cert="medium" resp="#joint">Francodalensis</unclear></persName>, <unclear cert="medium" resp="#joint">Mnr</unclear> <unclear cert="medium" resp="#joint">Eccl</unclear>. <unclear cert="medium" resp="#joint">Belgicae</unclear>
+<lb n="44"/><persName role="issuer" resp="#ner">Jacob Heusch</persName>. <unclear cert="medium" resp="#joint">Diener</unclear> am <unclear cert="medium" resp="#joint">wort</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">Gottes</unclear> der <unclear cert="low" resp="#joint">Frantzosische</unclear> <unclear cert="low" resp="#joint">gemeinde</unclear>.
 <pb facs="StadtASG_Missive_3229_12779.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3229_12780.jpg" n="4"/>
-<lb n="46"/>Den wohledlen, gestrengen, ve-
-<lb n="47"/>sten, ehrenvesten, fuersichtigen,
-<lb n="48"/>undt weisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermei-
-<lb n="49"/>ster undt ehrsamen Rhat der
+<lb n="46"/>Den <unclear cert="low" resp="#joint">wohledlen</unclear>, gestrengen, <unclear cert="low" resp="#joint">ve</unclear>-
+<lb n="47"/><unclear cert="low" resp="#joint">sten</unclear>, <unclear cert="low" resp="#joint">ehrenvesten</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>,
+<lb n="48"/><unclear cert="low" resp="#joint">undt</unclear> weisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermei-
+<lb n="49"/>ster <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="medium" resp="#joint">ehrsamen</unclear> <unclear cert="medium" resp="#joint">Rhat</unclear> der
 <lb n="50"/>statt St. Gallen</orgName>, unsern
-<lb n="51"/>insonders guenstig, hochge-
+<lb n="51"/>insonders <unclear cert="medium" resp="#joint">guenstig</unclear>, hochge-
 <lb n="52"/>ehrten herren.
-<lb n="53"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="53"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

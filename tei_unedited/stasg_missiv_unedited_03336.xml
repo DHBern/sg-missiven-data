@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3336</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bestätigen den Erhalt eines Schreibens von Konstanz, das den Fleischpreis und die Preise für Metzgern, Unschlitt und Lichter betrifft. Sie teilen mit, dass sie ihren Metzgern die Preise für Rind- und Bratfleisch, Unschlitt und Lichter festgelegt haben, und legen diese im Anhang dar. Sie bitten um gegenseitige Nachbarschaftshilfe.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bestätigen den Erhalt eines Schreibens von Konstanz, das den Fleischpreis und die Preise für Metzgern, Unschlitt und Lichter betrifft. Sie teilen mit, dass sie ihren Metzgern die Preise für Rind- und Bratfleisch, Unschlitt und Lichter festgelegt haben, und legen diese im Anhang dar. Sie bitten um gegenseitige Nachbarschaftshilfe.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen confirm the receipt of a letter from Konstanz, which concerns the price of meat and the prices for butchers, lard, and candles. They communicate that they have set the prices for beef and roast meat, lard, and candles for their butchers, and present these in the attachment. They ask for mutual neighborly assistance.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,36 +39,36 @@
 <lb n="2"/>Edel, Vest, Fürsichtig, Ehrsam, und Wÿß, in-
 <lb n="3"/>sonders liebe guote Früendt und Nachparen.
 <lb n="4"/>Derselben an uns abgebenes schriben, unseren
-<lb n="5"/>fleischtax, und wie unseren metzgeren wie
-<lb n="6"/>es diser zeit mit demselbigen beÿ uns gehalten,
+<lb n="5"/>fleischtax, und wie <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">metzgeren</unclear> wie
+<lb n="6"/>es diser zeit mit <unclear cert="low" resp="#joint">demselbigen</unclear> <unclear cert="low" resp="#joint">beÿ</unclear> uns gehalten,
 <lb n="7"/>und in was preiß den metzgeren dz unschlitt,
 <lb n="8"/>und die liechter zuo verkauffen, beÿ uns gestat-
 <lb n="9"/>tet werde betreffend, habend wir zuo recht
 <lb n="10"/>erhalten, und den innhalt deßelben ab-
 <lb n="11"/>lesend wol verstanden. In
 <lb n="12"/>welchem wärdt und preiß nun wir unseren
-<lb n="13"/>metzgeren, nit allein dz rind, und bratfleisch,
-<lb n="14"/>dz unschlitt, liecht- sonderen auch die liechter, nnd taxiert, und
-<lb n="15"/>lißen zuoverkauffen zuogelassen, haben E. Vst. und
-<lb n="16"/>Fst. E. Wst. uß dem innschluß mit mehreren
-<lb n="17"/>zuovernemmen. Wolten wir den-
+<lb n="13"/>metzgeren, nit allein <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">rind</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">bratfleisch</unclear>,
+<lb n="14"/><unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">unschlitt</unclear>, <unclear cert="low" resp="#joint">liecht</unclear>- <unclear cert="low" resp="#joint">sonderen</unclear> auch die <unclear cert="low" resp="#joint">liechter</unclear>, <unclear cert="low" resp="#joint">nnd</unclear> <unclear cert="low" resp="#joint">taxiert</unclear>, und
+<lb n="15"/><unclear cert="low" resp="#joint">lißen</unclear> <unclear cert="low" resp="#joint">zuoverkauffen</unclear> <unclear cert="low" resp="#joint">zuogelassen</unclear>, haben E. Vst. und
+<lb n="16"/><unclear cert="low" resp="#joint">Fst</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wst</unclear>. <unclear cert="low" resp="#joint">uß</unclear> dem <unclear cert="low" resp="#joint">innschluß</unclear> mit <unclear cert="low" resp="#joint">mehreren</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">zuovernemmen</unclear>. <unclear cert="low" resp="#joint">Wolten</unclear> wir den-
 <lb n="18"/>selben, als denen wir alle
-<lb n="19"/>nachparliche dienstbewisungen zuoerzeigen
-<lb n="20"/>geneigt und urpietig sind, zuo irem begeren
+<lb n="19"/><unclear cert="low" resp="#joint">nachparliche</unclear> <unclear cert="low" resp="#joint">dienstbewisungen</unclear> <unclear cert="low" resp="#joint">zuoerzeigen</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">geneigt</unclear> und urpietig sind, zuo irem begeren
 <lb n="21"/>wider antwort nit verhalten. Uns hiemit
-<lb n="22"/>beiderseits Gottes getrüwer uffsicht trüwlich
-<lb n="23"/>befehlend. Dat. <origDate when="1638" resp="#ner">den 27. 10bris. A° 1638</origDate>.
-<lb n="24"/>B.
-<lb n="25"/>Dem Verwalther der Hauptman-
-<lb n="26"/>schafft, auch Burgermeister und Raht
-<lb n="27"/>der Statt Costantz. c.
-<lb n="28"/>Item dz lb liechter solen sie hinweg geben umb
+<lb n="22"/><unclear cert="low" resp="#joint">beiderseits</unclear> <unclear cert="low" resp="#joint">Gottes</unclear> <unclear cert="low" resp="#joint">getrüwer</unclear> <unclear cert="low" resp="#joint">uffsicht</unclear> <unclear cert="low" resp="#joint">trüwlich</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">befehlend</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>. <origDate when="1638" resp="#ner">den 27. 10bris. A° 1638</origDate>.
+<lb n="24"/><unclear cert="low" resp="#joint">B</unclear>.
+<lb n="25"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">Verwalther</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Hauptman</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">schafft</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">Burgermeister</unclear> und <unclear cert="low" resp="#joint">Raht</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Statt</unclear> <unclear cert="low" resp="#joint">Costantz</unclear>. <unclear cert="low" resp="#joint">c</unclear>.
+<lb n="28"/>Item dz lb liechter solen sie <unclear cert="low" resp="#joint">hinweg</unclear> geben umb
 <lb n="29"/>16. od 15. kr.
-<lb n="30"/>Und dann dz unschlit dz lb umb 14. kr.
+<lb n="30"/>Und dann dz <unclear cert="low" resp="#joint">unschlit</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">lb</unclear> umb 14. kr.
 <pb facs="StadtASG_Missive_3336_13254.jpg" n="2"/>
 <lb n="31"/>An <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName>
-<lb n="32"/><origDate when="1630" resp="#ner">27. 9b. 1630.</origDate> wgl. strittge schiff
-<lb n="33"/>taxs.
+<lb n="32"/><origDate when="1630" resp="#ner">27. <unclear cert="low" resp="#joint">9b</unclear>. <unclear cert="low" resp="#joint">1630</unclear>.</origDate> <unclear cert="low" resp="#joint">wgl</unclear>. <unclear cert="low" resp="#joint">strittge</unclear> <unclear cert="low" resp="#joint">schiff</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">taxs</unclear>.
 </p>
         </body>
     </text>

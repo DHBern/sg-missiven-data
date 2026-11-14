@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3370</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Statthalter und Rat zu St. Gallen ersuchen Landammann und Rat zu Appenzell, ihren Hintersassen Conrad Neuwiler aufzutragen, am 7. November 1639 um 8 Uhr morgens im St. Galler Rathaus zu erscheinen. Hintergrund ist eine Klage des Hafners Hans Kestenpaur gegen Neuwiler und den St. Galler Bürger Christoph Koller wegen ehrverletzender Worte. Die St. Galler bitten um die Anwesenheit von Neuwiler und dessen Hausfrau zur Klärung der Sache.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Statthalter und Rat zu St. Gallen ersuchen Landammann und Rat zu Appenzell, ihren Hintersassen Conrad Neuwiler aufzutragen, am 7. November 1639 um 8 Uhr morgens im St. Galler Rathaus zu erscheinen. Hintergrund ist eine Klage des Hafners Hans Kestenpaur gegen Neuwiler und den St. Galler Bürger Christoph Koller wegen ehrverletzender Worte. Die St. Galler bitten um die Anwesenheit von Neuwiler und dessen Hausfrau zur Klärung der Sache.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Statthalter and Council of St. Gallen request Landammann and Council of Appenzell to order their resident Conrad Neuwiler to appear at the St. Gallen Town Hall on 7 November 1639 at 8 o'clock in the morning. The background is a complaint by the tiler Hans Kestenpaur against Neuwiler and the St. Gallen citizen Christoph Koller for defamatory words. The St. Gallen authorities ask for the presence of Neuwiler and his wife to clarify the matter.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -69,23 +70,23 @@
 <lb n="33"/>wollend, mehrermeltem Nüweilern und dessen
 <lb n="34"/>hußfrauwen, oberkeitlich ufferlegen, uff
 <pb facs="StadtASG_Missive_3370_13398.jpg" n="2"/>
-<lb n="35"/>vorbestimpten termin morgens umb 8. uhren
+<lb n="35"/><unclear cert="low" resp="#joint">vorbestimpten</unclear> termin morgens umb 8. uhren
 <lb n="36"/>uff unserm <placeName resp="#ner">rathauß</placeName> unußbleiblich zuerscheinen,
 <lb n="37"/>und dißes handels halber gebürlich rhed und ant-
 <lb n="38"/>wort zugeben, maßen wir ernanten unsern
 <lb n="39"/>burgern <persName resp="#ner">Christoph Kelle</persName> hierzu auch verkünd werden.
 <lb n="40"/>Daß begeren wir umb euch unser getrüw lieb
 <lb n="41"/>nachparen, in derglichen und anderen begeben-
-<lb n="42"/>heiten hinwiderumb zubeschulden. Gottes ge-
+<lb n="42"/><unclear cert="low" resp="#joint">heiten</unclear> <unclear cert="low" resp="#joint">hinwiderumb</unclear> <unclear cert="low" resp="#joint">zubeschulden</unclear>. Gottes ge-
 <lb n="43"/>trüwer protection unß zumal wol befelchlend.
-<lb n="44"/>Datum den <origDate when="1639-11-24" resp="#ner">24 Novembris. Ao 1639</origDate>.
-<lb n="45"/><orgName role="issuer" resp="#ner">Statthalter
+<lb n="44"/>Datum den <origDate when="1639-11-24" resp="#ner">24 Novembris. <unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">1639</unclear></origDate>.
+<lb n="45"/><orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Statthalter</unclear>
 <lb n="46"/>und rhat
 <lb n="47"/>der statt Sant Gallen</orgName>.
 <lb n="48"/>Den fromen, fürsichtigen ersamen
 <lb n="49"/>und wisen, <orgName ref="stadtasg-actors-506" cert="medium" role="recipient" resp="#ner">landaman und rath
 <lb n="50"/>zu Appenzell</orgName>, unsern insonders
-<lb n="51"/>Wol vertruwten lieben nachparn.
+<lb n="51"/><unclear cert="low" resp="#joint">Wol</unclear> <unclear cert="low" resp="#joint">vertruwten</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">nachparn</unclear>.
 <pb facs="StadtASG_Missive_3370_13399.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3370_13400.jpg" n="4"/>
 <lb n="52"/>An <origPlace ref="stadtasg-places-8" cert="medium" resp="#ner">Appenzell</origPlace> <origDate when="1639" resp="#ner">1639. 2. 9b.</origDate>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3510</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen, dass auf der jüngsten badischen Tagung beschlossen wurde, die Münzvaluation von 1638 beizubehalten und keine Preiserhöhung der Gold- und Silbersorten vorzunehmen. Sie ersuchen die St. Galler, von einer geplanten Aufwertung abzusehen, um Nachteile in der Eidgenossenschaft zu vermeiden, und bitten um Mitteilung der Gründe für ihr Vorhaben.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen, dass auf der jüngsten badischen Tagung beschlossen wurde, die Münzvaluation von 1638 beizubehalten und keine Preiserhöhung der Gold- und Silbersorten vorzunehmen. Sie ersuchen die St. Galler, von einer geplanten Aufwertung abzusehen, um Nachteile in der Eidgenossenschaft zu vermeiden, und bitten um Mitteilung der Gründe für ihr Vorhaben.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Zürich inform Burgomaster and Council of St. Gallen that at the recent Baden Diet it was decided to maintain the coin valuation of 1638 and not to make any price increase for the gold and silver denominations. They request the St. Gallen to refrain from a planned revaluation in order to avoid disadvantages in the Confederation, and ask for notification of the reasons for their intention.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,32 +39,32 @@
 <lb n="2"/>und guets vermoegen zuvor, From, Fürsichtig, Ersam,
 <lb n="3"/>Wyß besonders guet Fründ, und getrüw Lieb <orgName resp="#ner">Eidtgnossen</orgName>.
 <lb n="4"/>Nachdem wir glaubwürdigen bericht empfangen, ob solten
-<lb n="5"/>ihr unser G. L. E. bedacht syn, die species von gold
-<lb n="6"/>und silbersorten in einen hoecheren pryß zesetzen, be-
+<lb n="5"/>ihr unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">bedacht</unclear> <unclear cert="low" resp="#joint">syn</unclear>, die species von gold
+<lb n="6"/>und silbersorten in <unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">hoecheren</unclear> <unclear cert="low" resp="#joint">pryß</unclear> <unclear cert="low" resp="#joint">zesetzen</unclear>, be-
 <lb n="7"/>nantlichen die Ducaten zu drüy und ein halben
-<lb n="8"/>guldin, und die Rychsthaler zu Sychß und zwentzig guet-
-<lb n="9"/>batzen, Habent wir nothwendig geachtet üch
-<lb n="10"/>unser G. L. E. wolmeinlichen zeverstendigen, was ge-
+<lb n="8"/>guldin, und die Rychsthaler zu Sychß und <unclear cert="low" resp="#joint">zwentzig</unclear> <unclear cert="low" resp="#joint">guet</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">batzen</unclear>, <unclear cert="low" resp="#joint">Habent</unclear> wir nothwendig geachtet üch
+<lb n="10"/>unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wolmeinlichen</unclear> <unclear cert="low" resp="#joint">zeverstendigen</unclear>, <unclear cert="low" resp="#joint">was</unclear> ge-
 <lb n="11"/>stalten uff jüngstgehaltner Badischer Tagleistung, deß
 <lb n="12"/>Müntzwesens halber auch anzug beschehen, nach ryflicher
 <lb n="13"/>erwegung aber beschaffenheit der sachen, hat man weder die
-<lb n="14"/>absetzung, noch vilweniger die steigerung der geltsorten
+<lb n="14"/>absetzung, <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">vilweniger</unclear> die steigerung der geltsorten
 <lb n="15"/>rathsam befunden, sondern es einfeltig by der offentlich in
-<lb n="16"/><date resp="#ner">a° 1638</date> in truck ußgangner Müntzvaluation gentz-
+<lb n="16"/><date resp="#ner"><unclear cert="low" resp="#joint">a°</unclear> 1638</date> in truck ußgangner Müntzvaluation gentz-
 <lb n="17"/>lich verbleiben laßßen, üch unser G. L. E. demnach fründt-
 <lb n="18"/>Eidtgnößisch ersuechende, dafehrn ihr uff die obangedüte stei-
 <lb n="19"/>gerung gesinnet syn moechtend, von obgedachter gemeiner ver-
 <lb n="20"/>abscheidungen wegen, nit weniger auch zu vermydung
 <lb n="21"/>mehrerley bescherenden nachtheil und unglegenheit in
-<lb n="22"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Lobl. Eidtgnoschafft</orgName>, diser zyt fründt-Eidtgnößisch dar-
-<lb n="23"/>von abzelaßßen, und üch auch fohrners gemeiner Eidtgnößi-
-<lb n="24"/>schen Müntz-valuation, darby ihr sonsten allwägen den
-<lb n="25"/>vorzug gehabt, zebeholffen, Was aber üch unser G. L. E.
-<lb n="26"/>dißer zyt zu sollichem vorhaben moechte veranlaßßet haben
+<lb n="22"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Lobl. Eidtgnoschafft</orgName>, diser zyt <unclear cert="low" resp="#joint">fründt-Eidtgnößisch</unclear> <unclear cert="low" resp="#joint">dar</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">abzelaßßen</unclear>, und üch auch <unclear cert="low" resp="#joint">fohrners</unclear> <unclear cert="low" resp="#joint">gemeiner</unclear> <unclear cert="low" resp="#joint">Eidtgnößi</unclear>-
+<lb n="24"/><unclear cert="low" resp="#joint">schen</unclear> <unclear cert="low" resp="#joint">Müntz-valuation</unclear>, darby ihr sonsten allwägen den
+<lb n="25"/>vorzug gehabt, zebeholffen, Was aber üch unser <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="26"/><unclear cert="low" resp="#joint">dißer</unclear> zyt zu sollichem vorhaben moechte veranlaßßet haben
 <pb facs="StadtASG_Missive_3510_13992.jpg" n="2"/>
 <lb n="27"/>wollent wir üch umb nachrichtliches advis gebetten haben,
-<lb n="28"/>In erwartung nun, freünt-Eidtgnößischer widerandt-
-<lb n="29"/>wort, seigent üch unseren G. L. E. wir zu erweijs-
+<lb n="28"/><unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">erwartung</unclear> <unclear cert="low" resp="#joint">nun</unclear>, <unclear cert="low" resp="#joint">freünt-Eidtgnößischer</unclear> <unclear cert="low" resp="#joint">widerandt</unclear>-
+<lb n="29"/>wort, seigent üch <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">E</unclear>. wir zu erweijs-
 <lb n="30"/>ung angenemher diensten und freüntschafft erbietig
 <lb n="31"/>und geneigt. Samit Gott dem allmechtigen unß
 <lb n="32"/>sambtlich wolbevelchende. datt. <origDate when="1642-08-06" resp="#ner">den 6ten Augusti

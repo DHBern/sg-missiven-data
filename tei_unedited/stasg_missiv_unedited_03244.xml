@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3244</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Landvogt Hans Bernhard Schmidt in Baden um eine Abschrift des Geständnisses und der Beschreibung der Gesellen des in Baden hingerichteten Diebes. Sie haben den aus dem Unterwaldner Gebiet stammenden Hans Liegener gefangen, der unter anderem sechs Finger und Zehen an jeder Hand und jedem Fuss hat. Sie wollen prüfen, ob er mit dem Hingerichteten oder dessen Komplizen in Verbindung steht.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Landvogt Hans Bernhard Schmidt in Baden um eine Abschrift des Geständnisses und der Beschreibung der Gesellen des in Baden hingerichteten Diebes. Sie haben den aus dem Unterwaldner Gebiet stammenden Hans Liegener gefangen, der unter anderem sechs Finger und Zehen an jeder Hand und jedem Fuss hat. Sie wollen prüfen, ob er mit dem Hingerichteten oder dessen Komplizen in Verbindung steht.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask Landvogt Hans Bernhard Schmidt in Baden for a copy of the confession and the description of the companions of the thief executed in Baden. They have captured Hans Liegener, who comes from the Unterwalden area, who among other things has six fingers and toes on each hand and each foot. They want to examine whether he is in connection with the executed man or his accomplices.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,61 +37,61 @@
 <pb facs="StadtASG_Missive_3244_12845.jpg" n="1"/>
 <lb n="1"/>Unser freüntlich willig dienst, und was wir ehrn
 <lb n="2"/>liebs und guots vermoegend zuovor. Woledler, Ehr-
-<lb n="3"/>strenger, Vester, Fuersichtiger und Weiser, Jnsonders
-<lb n="4"/>guenstiger Herr Landtvogt, guoter Freündt und Eydtgenoß.
+<lb n="3"/>strenger, Vester, Fuersichtiger und <unclear cert="low" resp="#joint">Weiser</unclear>, <unclear cert="low" resp="#joint">Jnsonders</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">guenstiger</unclear> <unclear cert="low" resp="#joint">Herr</unclear> <unclear cert="low" resp="#joint">Landtvogt</unclear>, <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">Freündt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Eydtgenoß</unclear>.
 <lb n="5"/>Es ist diser tagen uß einem bösen verdacht und arg-
 <lb n="6"/>wohn, in unser fangen hafft eingezogen worden, ein
 <lb n="7"/>junger gsell, so sich nent <persName resp="#ner">Hanß Liegener</persName> von
-<lb n="8"/><placeName resp="#ner">Wolffenschieß</placeName> <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Underwaldner</placeName> gebiets, welcher mitel-
-<lb n="9"/>messiger statur, bleich von angesicht, wenig
+<lb n="8"/><placeName resp="#ner">Wolffenschieß</placeName> <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Underwaldner</placeName> gebiets, welcher <unclear cert="low" resp="#joint">mitel</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">messiger</unclear> <unclear cert="low" resp="#joint">statur</unclear>, <unclear cert="low" resp="#joint">bleich</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">angesicht</unclear>, <unclear cert="low" resp="#joint">wenig</unclear>
 <lb n="10"/>mit we-
-<lb n="11"/>nig bart, aber langem haar mit dikhen schwartzen
-<lb n="12"/>har, mit weissen <placeName resp="#ner">Gwilchener</placeName> zimlich zerißnen
-<lb n="13"/>leinen kleideren, den die natur ihne also zeichnet
+<lb n="11"/>nig bart, aber <unclear cert="low" resp="#joint">langem</unclear> <unclear cert="low" resp="#joint">haar</unclear> mit <unclear cert="low" resp="#joint">dikhen</unclear> <unclear cert="low" resp="#joint">schwartzen</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">har</unclear>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">weissen</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Gwilchener</unclear></placeName> <unclear cert="low" resp="#joint">zimlich</unclear> <unclear cert="low" resp="#joint">zerißnen</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">leinen</unclear> <unclear cert="low" resp="#joint">kleideren</unclear>, <unclear cert="low" resp="#joint">den</unclear> die natur ihne also zeichnet
 <lb n="14"/>daß er an jeder handt und fuoß sechs finger und zehen
 <lb n="15"/>hat, welcher uff die gegen ihme beschehne guetliche
-<lb n="16"/>und peinliche examination, ein mehrers nit bekennen
-<lb n="17"/>das jme
-<lb n="18"/>wellen, alß daß auß dem beylig, zuovernermen,
-<lb n="19"/>darbey auch die beschreibung seiner angegebenen g-
+<lb n="16"/>und peinliche examination, ein mehrers nit <unclear cert="low" resp="#joint">bekennen</unclear>
+<lb n="17"/>das <unclear cert="low" resp="#joint">jme</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">wellen</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">beylig</unclear>, <unclear cert="low" resp="#joint">zuovernermen</unclear>,
+<lb n="19"/><unclear cert="low" resp="#joint">darbey</unclear> <unclear cert="low" resp="#joint">auch</unclear> die <unclear cert="low" resp="#joint">beschreibung</unclear> <unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">angegebenen</unclear> <unclear cert="low" resp="#joint">g</unclear>-
 <lb n="20"/>sellschafft, zuevernemen, bekennen wellen, ohnge-
-<lb n="21"/>acht er fur ein bösen gesellen, nach gemeinem
-<lb n="22"/>geschrey, fuer ein bösen
-<lb n="23"/>menschen gehalten wirt, Nun sindt wir
-<lb n="24"/>dren hern
-<lb n="25"/>berichtet worden, daß unlangen tagen V gschaff der-
+<lb n="21"/>acht er <unclear cert="low" resp="#joint">fur</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">bösen</unclear> <unclear cert="low" resp="#joint">gesellen</unclear>, nach <unclear cert="low" resp="#joint">gemeinem</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">geschrey</unclear>, <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">bösen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">menschen</unclear> gehalten <unclear cert="low" resp="#joint">wirt</unclear>, <unclear cert="low" resp="#joint">Nun</unclear> <unclear cert="low" resp="#joint">sindt</unclear> <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">dren</unclear> <unclear cert="low" resp="#joint">hern</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">berichtet</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">unlangen</unclear> tagen <unclear cert="low" resp="#joint">V</unclear> <unclear cert="low" resp="#joint">gschaff</unclear> der-
 <lb n="26"/>gleichen bösen buoben einen, umb seiner mißhandlung
-<lb n="27"/>willen justificiren lassen, welcher nit ein geringe
+<lb n="27"/>willen <unclear cert="low" resp="#joint">justificiren</unclear> lassen, welcher nit ein geringe
 <lb n="28"/>anzahl von seiner gsellschafft angegeben, deren
-<lb n="29"/>auß vßgehaltnem <placeName ref="stadtasg-places-101" cert="medium" resp="#ner">Zurzach</placeName> muerkht ein gueter
+<lb n="29"/><unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">vßgehaltnem</unclear> <placeName ref="stadtasg-places-101" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zurzach</unclear></placeName> <unclear cert="low" resp="#joint">muerkht</unclear> <unclear cert="low" resp="#joint">ein</unclear> gueter
 <lb n="30"/>theil ergriffen, und naher <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baaden</placeName> gefuehrt worden
-<lb n="31"/>sein sollen. Damit wir dann etwas
-<lb n="32"/>mehrern grundts der sachen haben,
-<lb n="33"/>und wissen mögen, sonderlich ob vileicht diser gefangne von dem justificirten, oder denen
-<lb n="34"/>die noch in banden auch angegeben und
+<lb n="31"/>sein sollen. Damit wir <unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">etwas</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">mehrern</unclear> <unclear cert="low" resp="#joint">grundts</unclear> der sachen <unclear cert="low" resp="#joint">haben</unclear>,
+<lb n="33"/>und wissen mögen, sonderlich ob <unclear cert="low" resp="#joint">vileicht</unclear> <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">gefangne</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">justificirten</unclear>, <unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">denen</unclear>
+<lb n="34"/>die noch in <unclear cert="low" resp="#joint">banden</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">angegeben</unclear> und
 <pb facs="StadtASG_Missive_3244_12846.jpg" n="2"/>
 <lb n="35"/>benambset worden seÿe, und was er feerneres
 <lb n="36"/>mit ihme veruebet, habe helffen verueben, oder zue
-<lb n="37"/>Als langet an E. Gst. Vt. unser
+<lb n="37"/>Als <unclear cert="low" resp="#joint">langet</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gst</unclear>. <unclear cert="low" resp="#joint">Vt</unclear>. unser
 <lb n="38"/>freündt- und fleißgrueßlich ersuechen und bitten, uns
-<lb n="39"/>deß ermelten abgethaenen maleficanten gethane ver-
-<lb n="40"/>gicht, und bekandtnuß seiner ubelthaten, so vil
-<lb n="41"/>unsers gefangenen (. da er sein gshell gewesen, und
-<lb n="42"/>uettzit
-<lb n="43"/>ichtwas mit ihme veruebet haben möchte .) be-
-<lb n="44"/>rueren möchte, fuernemblich aber die beschreibung
-<lb n="45"/>und benambsung seiner besten gselschafft, beÿ
+<lb n="39"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">ermelten</unclear> <unclear cert="low" resp="#joint">abgethaenen</unclear> <unclear cert="low" resp="#joint">maleficanten</unclear> <unclear cert="low" resp="#joint">gethane</unclear> ver-
+<lb n="40"/>gicht, und bekandtnuß seiner ubelthaten, so <unclear cert="low" resp="#joint">vil</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">gefangenen</unclear> (. <unclear cert="low" resp="#joint">da</unclear> er sein gshell gewesen, und
+<lb n="42"/><unclear cert="low" resp="#joint">uettzit</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">ichtwas</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">veruebet</unclear> <unclear cert="low" resp="#joint">haben</unclear> möchte .) <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="44"/><unclear cert="low" resp="#joint">rueren</unclear> <unclear cert="low" resp="#joint">möchte</unclear>, <unclear cert="low" resp="#joint">fuernemblich</unclear> aber die beschreibung
+<lb n="45"/>und <unclear cert="low" resp="#joint">benambsung</unclear> <unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">besten</unclear> <unclear cert="low" resp="#joint">gselschafft</unclear>, <unclear cert="low" resp="#joint">beÿ</unclear>
 <lb n="46"/>disem unserem allein deßhalb abgesandten botten
-<lb n="47"/>guenstug unbeschwert copeÿlich zukommen und wider-
-<lb n="48"/>fahren zelassen, allein zu deme ende, damit
-<lb n="49"/>wir gegen d unserem gfangen, feerners der ge-
-<lb n="50"/>buer nach uf einen oder
+<lb n="47"/><unclear cert="low" resp="#joint">guenstug</unclear> <unclear cert="low" resp="#joint">unbeschwert</unclear> <unclear cert="low" resp="#joint">copeÿlich</unclear> <unclear cert="low" resp="#joint">zukommen</unclear> und wider-
+<lb n="48"/><unclear cert="low" resp="#joint">fahren</unclear> <unclear cert="low" resp="#joint">zelassen</unclear>, allein zu deme ende, damit
+<lb n="49"/>wir gegen <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">gfangen</unclear>, <unclear cert="low" resp="#joint">feerners</unclear> der ge-
+<lb n="50"/>buer nach <unclear cert="low" resp="#joint">uf</unclear> <unclear cert="low" resp="#joint">einen</unclear> oder
 <lb n="51"/>den anderen weg feerners procedieren, und der ge-
 <lb n="52"/>liebten justitien ein gnuegen gschehen möge, Welches
-<lb n="53"/>umb E. Gst. Vt. in gleichen und anderen kuenfftig occa-
+<lb n="53"/>umb <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gst</unclear>. <unclear cert="low" resp="#joint">Vt</unclear>. <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">gleichen</unclear> und anderen kuenfftig occa-
 <lb n="54"/>sionen, zebeschulden, sindt wir geneigt willigs
-<lb n="55"/>anerbietens, Zue mahlen uns Goettleicher pro-
-<lb n="56"/>tection wolbefehlende. Dat. den .<origDate when="1637-09-17" resp="#ner">7./17. septembris
+<lb n="55"/><unclear cert="low" resp="#joint">anerbietens</unclear>, <unclear cert="low" resp="#joint">Zue</unclear> <unclear cert="low" resp="#joint">mahlen</unclear> uns <unclear cert="low" resp="#joint">Goettleicher</unclear> <unclear cert="low" resp="#joint">pro</unclear>-
+<lb n="56"/><unclear cert="low" resp="#joint">tection</unclear> <unclear cert="low" resp="#joint">wolbefehlende</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>. den .<origDate when="1637-09-17" resp="#ner">7./17. septembris
 <lb n="57"/>Ao. 1637</origDate>.
 <lb n="58"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="59"/>der statt Sant Gallen</orgName>.
@@ -101,20 +102,20 @@
 <pb facs="StadtASG_Missive_3244_12847.jpg" n="3"/>
 <lb n="64"/><persName role="issuer" resp="#ner">Hanns Heitzman von Wolffen</persName>,
 <lb n="65"/>schies <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Underwaldner gebietz</placeName>
-<lb n="66"/>hat guetlich und peinlich vol-
-<lb n="67"/>gende diebstaell bekannt.
+<lb n="66"/>hat guetlich und <unclear cert="low" resp="#joint">peinlich</unclear> <unclear cert="low" resp="#joint">vol</unclear>-
+<lb n="67"/><unclear cert="low" resp="#joint">gende</unclear> <unclear cert="low" resp="#joint">diebstaell</unclear> <unclear cert="low" resp="#joint">bekannt</unclear>.
 <lb n="68"/>Item vor ainem halben Jare seyen er und vier seine
-<lb n="69"/>gesellen, ainem Pauren bij <placeName resp="#ner">Engelberg</placeName> in Underwald-
-<lb n="70"/>ner landt, in den keller gebrochen, und darauß ain
+<lb n="69"/>gesellen, ainem Pauren bij <placeName resp="#ner">Engelberg</placeName> in <unclear cert="low" resp="#joint">Underwald</unclear>-
+<lb n="70"/><unclear cert="low" resp="#joint">ner</unclear> <unclear cert="low" resp="#joint">landt</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">keller</unclear> gebrochen, und darauß ain
 <lb n="71"/>balleli schmaltz genomen, die sy mit ain andern gessen.
 <lb n="72"/>Item mit ermelten seinen gesellen, in der March
 <lb n="73"/>oberhalb <placeName ref="stadtasg-places-225" cert="medium" resp="#ner">Rappersweil</placeName>, widerumb ainem Pauren
-<lb n="74"/>auß dem keller dreü brodt verstolen, und gessen.
+<lb n="74"/>auß dem <unclear cert="low" resp="#joint">keller</unclear> <unclear cert="low" resp="#joint">dreü</unclear> <unclear cert="low" resp="#joint">brodt</unclear> <unclear cert="low" resp="#joint">verstolen</unclear>, und gessen.
 <lb n="75"/>Item daselbst wider ainem Pauren in keller brochen
 <lb n="76"/>und vngefar zwo maß Nidel genomen und gessen.
-<lb n="77"/>Item mit ainem andern seinem gesellen haiß <persName resp="#ner">Na-
-<lb n="78"/>semß Peter</persName>, ainem Pauren daselbst vier brodt
-<lb n="79"/>verstolen, undts gessen.
+<lb n="77"/>Item mit ainem andern <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">gesellen</unclear> <unclear cert="low" resp="#joint">haiß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Na</unclear>-
+<lb n="78"/><unclear cert="low" resp="#joint">semß</unclear> <unclear cert="low" resp="#joint">Peter</unclear></persName>, <unclear cert="low" resp="#joint">ainem</unclear> <unclear cert="low" resp="#joint">Pauren</unclear> <unclear cert="low" resp="#joint">daselbst</unclear> <unclear cert="low" resp="#joint">vier</unclear> <unclear cert="low" resp="#joint">brodt</unclear>
+<lb n="79"/><unclear cert="low" resp="#joint">verstolen</unclear>, <unclear cert="low" resp="#joint">undts</unclear> <unclear cert="low" resp="#joint">gessen</unclear>.
 <lb n="80"/>Item vorem Heiwet mit ainem andern seinem gesellen
 <lb n="81"/>haisse <persName resp="#ner">Hanns Weibel</persName> vß dem <placeName resp="#ner">schwartzwald</placeName> ainem
 <lb n="82"/>Pauren im <placeName resp="#ner">Eschentl</placeName> vß dem keller schier ain maß
@@ -122,60 +123,60 @@
 <lb n="84"/>Item habe er im <placeName resp="#ner">Turtal</placeName> ainem Pauren vier
 <lb n="85"/>ellen leinwath genomen, und sich darauß bekleidet.
 <lb n="86"/>Item seyen er und zwen seiner gesellen bij <placeName ref="stadtasg-places-455" cert="medium" resp="#ner">Roten-
-<lb n="87"/>schweil</placeName> in ain Hüßli brochen, und darauß dreij
-<lb n="88"/>stnikel garn verstolen, und solche im <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürieh</placeName> bieth
+<lb n="87"/>schweil</placeName> in ain Hüßli brochen, und <unclear cert="low" resp="#joint">darauß</unclear> <unclear cert="low" resp="#joint">dreij</unclear>
+<lb n="88"/><unclear cert="low" resp="#joint">stnikel</unclear> <unclear cert="low" resp="#joint">garn</unclear> <unclear cert="low" resp="#joint">verstolen</unclear>, und solche im <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürieh</placeName> bieth
 <lb n="89"/>verkaufft, darauß ihme 16 batzen worden.
-<lb n="90"/>Item mit zwayen seinen gesellen, ainem Pauren
-<lb n="91"/>im Zürieh Pieth, zwo seiten schweinin fleisch verstolen
+<lb n="90"/>Item mit zwayen seinen <unclear cert="low" resp="#joint">gesellen</unclear>, <unclear cert="low" resp="#joint">ainem</unclear> <unclear cert="low" resp="#joint">Pauren</unclear>
+<lb n="91"/><unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">Zürieh</unclear> <unclear cert="low" resp="#joint">Pieth</unclear>, <unclear cert="low" resp="#joint">zwo</unclear> <unclear cert="low" resp="#joint">seiten</unclear> <unclear cert="low" resp="#joint">schweinin</unclear> <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">verstolen</unclear>
 <pb facs="StadtASG_Missive_3244_12848.jpg" n="4"/>
-<lb n="92"/>dieselbige verkhaufft, darvon ihme ein halben
-<lb n="93"/>guldin worden.
-<lb n="94"/>Item mit disem seinem gselln im Turthail uß
-<lb n="95"/>einem freien huß, etwas hanff thuoch verstohln,
-<lb n="96"/>wüßte aber nit wie vil es gewesen, welches sie
-<lb n="97"/>verkhaufft darvon ihme 12. batzen worden.
-<lb n="98"/>Item widerumb im Turthail, seije sie in ein huß
-<lb n="99"/>gebrochen, und etwas von eijernen banden verstohln,
-<lb n="100"/>so sie auch verkhaufft, darvon ihme 6. batzn wordn.
-<lb n="101"/>Item weinig zeit vor seiner fengenschafft, habe
-<lb n="102"/>obgemelter sein gsell
-<lb n="103"/><persName resp="#ner">Hanuß Peter</persName> im stettlin <placeName resp="#ner">Abbenzeller Landts</placeName>, in
-<lb n="104"/>die kirchen daselbst gangn, umb zeußehen, ob er
-<lb n="105"/>etwas uß dem offerstockh bekhomen khönne, in
-<lb n="106"/>deme weile er demselben seinem gsellen verhüetet,
-<lb n="107"/>ob, und was er darauß bekhomen, habe er ihme
-<lb n="108"/>nachgendts nit wollen sagen.
-<lb n="109"/>Verzeichnus seiner ange=
-<lb n="110"/>gebnen gsellschafft.
-<lb n="111"/>Einer heiße <persName resp="#ner">Hanuß</persName> seije uß dem <placeName resp="#ner">Ergeüwlandt</placeName>,
-<lb n="112"/>ein lange persohn, habe ein hüpsch angesicht, aber
-<lb n="113"/>khein barth, kurtz haar, mit weiß zwilchinn
-<lb n="114"/>freien hosen.
-<lb n="115"/>Der ander heiße <persName resp="#ner">Caspar</persName>, man sage ihme nur ezel=
-<lb n="116"/>schaw Caspar, seije von ezelschaw uß dem <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lutzerner</placeName>
-<lb n="117"/>gebieth, ein zimlich lange persohn, mit eim dünn=
-<lb n="118"/>en nasen, und schwartzn bartt, habe blawe hosen an.
+<lb n="92"/><unclear cert="medium" resp="#joint">dieselbige</unclear> <unclear cert="medium" resp="#joint">verkhaufft</unclear>, <unclear cert="medium" resp="#joint">darvon</unclear> ihme ein <unclear cert="medium" resp="#joint">halben</unclear>
+<lb n="93"/><unclear cert="medium" resp="#joint">guldin</unclear> <unclear cert="medium" resp="#joint">worden</unclear>.
+<lb n="94"/>Item <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">disem</unclear> <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">gselln</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">Turthail</unclear> uß
+<lb n="95"/>einem <unclear cert="medium" resp="#joint">freien</unclear> <unclear cert="medium" resp="#joint">huß</unclear>, <unclear cert="medium" resp="#joint">etwas</unclear> <unclear cert="medium" resp="#joint">hanff</unclear> <unclear cert="medium" resp="#joint">thuoch</unclear> <unclear cert="medium" resp="#joint">verstohln</unclear>,
+<lb n="96"/><unclear cert="medium" resp="#joint">wüßte</unclear> aber <unclear cert="medium" resp="#joint">nit</unclear> wie vil es gewesen, welches sie
+<lb n="97"/><unclear cert="medium" resp="#joint">verkhaufft</unclear> <unclear cert="medium" resp="#joint">darvon</unclear> ihme <unclear cert="low" resp="#joint">12</unclear>. <unclear cert="low" resp="#joint">batzen</unclear> <unclear cert="low" resp="#joint">worden</unclear>.
+<lb n="98"/>Item widerumb <unclear cert="medium" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">Turthail</unclear>, <unclear cert="medium" resp="#joint">seije</unclear> sie in ein <unclear cert="medium" resp="#joint">huß</unclear>
+<lb n="99"/><unclear cert="medium" resp="#joint">gebrochen</unclear>, und <unclear cert="medium" resp="#joint">etwas</unclear> <unclear cert="medium" resp="#joint">von</unclear> <unclear cert="medium" resp="#joint">eijernen</unclear> <unclear cert="medium" resp="#joint">banden</unclear> <unclear cert="medium" resp="#joint">verstohln</unclear>,
+<lb n="100"/>so sie <unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">verkhaufft</unclear>, <unclear cert="medium" resp="#joint">darvon</unclear> ihme 6. <unclear cert="medium" resp="#joint">batzn</unclear> <unclear cert="medium" resp="#joint">wordn</unclear>.
+<lb n="101"/>Item <unclear cert="medium" resp="#joint">weinig</unclear> zeit <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">fengenschafft</unclear>, <unclear cert="low" resp="#joint">habe</unclear>
+<lb n="102"/>obgemelter sein <unclear cert="low" resp="#joint">gsell</unclear>
+<lb n="103"/><persName resp="#ner"><unclear cert="low" resp="#joint">Hanuß</unclear> <unclear cert="low" resp="#joint">Peter</unclear></persName> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">stettlin</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Abbenzeller</unclear> <unclear cert="low" resp="#joint">Landts</unclear></placeName>, in
+<lb n="104"/>die kirchen <unclear cert="medium" resp="#joint">daselbst</unclear> <unclear cert="medium" resp="#joint">gangn</unclear>, umb <unclear cert="low" resp="#joint">zeußehen</unclear>, ob er
+<lb n="105"/><unclear cert="medium" resp="#joint">etwas</unclear> uß dem <unclear cert="low" resp="#joint">offerstockh</unclear> <unclear cert="low" resp="#joint">bekhomen</unclear> <unclear cert="low" resp="#joint">khönne</unclear>, in
+<lb n="106"/><unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">weile</unclear> er <unclear cert="medium" resp="#joint">demselben</unclear> <unclear cert="medium" resp="#joint">seinem</unclear> <unclear cert="medium" resp="#joint">gsellen</unclear> <unclear cert="medium" resp="#joint">verhüetet</unclear>,
+<lb n="107"/>ob, und <unclear cert="medium" resp="#joint">was</unclear> er <unclear cert="medium" resp="#joint">darauß</unclear> <unclear cert="medium" resp="#joint">bekhomen</unclear>, habe er ihme
+<lb n="108"/><unclear cert="low" resp="#joint">nachgendts</unclear> nit <unclear cert="medium" resp="#joint">wollen</unclear> sagen.
+<lb n="109"/><unclear cert="medium" resp="#joint">Verzeichnus</unclear> seiner ange=
+<lb n="110"/><unclear cert="medium" resp="#joint">gebnen</unclear> <unclear cert="medium" resp="#joint">gsellschafft</unclear>.
+<lb n="111"/><unclear cert="medium" resp="#joint">Einer</unclear> <unclear cert="medium" resp="#joint">heiße</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Hanuß</unclear></persName> <unclear cert="medium" resp="#joint">seije</unclear> uß dem <placeName resp="#ner"><unclear cert="medium" resp="#joint">Ergeüwlandt</unclear></placeName>,
+<lb n="112"/>ein <unclear cert="medium" resp="#joint">lange</unclear> <unclear cert="medium" resp="#joint">persohn</unclear>, habe ein <unclear cert="medium" resp="#joint">hüpsch</unclear> <unclear cert="medium" resp="#joint">angesicht</unclear>, aber
+<lb n="113"/><unclear cert="medium" resp="#joint">khein</unclear> <unclear cert="medium" resp="#joint">barth</unclear>, <unclear cert="medium" resp="#joint">kurtz</unclear> <unclear cert="medium" resp="#joint">haar</unclear>, mit <unclear cert="medium" resp="#joint">weiß</unclear> <unclear cert="medium" resp="#joint">zwilchinn</unclear>
+<lb n="114"/><unclear cert="medium" resp="#joint">freien</unclear> hosen.
+<lb n="115"/>Der <unclear cert="medium" resp="#joint">ander</unclear> <unclear cert="medium" resp="#joint">heiße</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Caspar</unclear></persName>, <unclear cert="medium" resp="#joint">man</unclear> <unclear cert="medium" resp="#joint">sage</unclear> ihme <unclear cert="low" resp="#joint">nur</unclear> <unclear cert="low" resp="#joint">ezel=</unclear>
+<lb n="116"/><unclear cert="low" resp="#joint">schaw</unclear> <unclear cert="low" resp="#joint">Caspar</unclear>, <unclear cert="low" resp="#joint">seije</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">ezelschaw</unclear> uß dem <placeName ref="stadtasg-places-69" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Lutzerner</unclear></placeName>
+<lb n="117"/><unclear cert="medium" resp="#joint">gebieth</unclear>, ein zimlich <unclear cert="medium" resp="#joint">lange</unclear> <unclear cert="medium" resp="#joint">persohn</unclear>, mit <unclear cert="medium" resp="#joint">eim</unclear> <unclear cert="medium" resp="#joint">dünn=</unclear>
+<lb n="118"/>en <unclear cert="medium" resp="#joint">nasen</unclear>, und <unclear cert="medium" resp="#joint">schwartzn</unclear> <unclear cert="medium" resp="#joint">bartt</unclear>, habe <unclear cert="medium" resp="#joint">blawe</unclear> hosen <unclear cert="medium" resp="#joint">an</unclear>.
 <pb facs="StadtASG_Missive_3244_12849.jpg" n="5"/>
-<lb n="119"/>Der dritte heisse <persName resp="#ner">Jochob</persName>, sÿe uß dem Endtli=
-<lb n="120"/>buch, sÿ ein langer karli, ohne bardt,
-<lb n="121"/>trage wiß zwilchi hosen an.
-<lb n="122"/>Der vierdt heisse <persName resp="#ner">Johannes</persName>, man sage ihme
-<lb n="123"/>nur der lang, wüsse aber nit woher er sÿe
-<lb n="124"/>habe ein halber bart, und blauw zwilchi hosen.
-<lb n="125"/>Der fünfft heisse <persName resp="#ner">Hannß Peter</persName>, sÿe ein zimlich
-<lb n="126"/>lange Persohn ohne bart, sÿ uß dem <placeName ref="stadtasg-places-108" cert="medium" resp="#ner">Schwaben</placeName>=
+<lb n="119"/>Der <unclear cert="low" resp="#joint">dritte</unclear> <unclear cert="low" resp="#joint">heisse</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Jochob</unclear></persName>, <unclear cert="low" resp="#joint">sÿe</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Endtli=</unclear>
+<lb n="120"/><unclear cert="low" resp="#joint">buch</unclear>, <unclear cert="low" resp="#joint">sÿ</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">langer</unclear> <unclear cert="low" resp="#joint">karli</unclear>, <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">bardt</unclear>,
+<lb n="121"/><unclear cert="low" resp="#joint">trage</unclear> <unclear cert="low" resp="#joint">wiß</unclear> <unclear cert="low" resp="#joint">zwilchi</unclear> <unclear cert="low" resp="#joint">hosen</unclear> <unclear cert="low" resp="#joint">an</unclear>.
+<lb n="122"/><unclear cert="low" resp="#joint">Der</unclear> <unclear cert="low" resp="#joint">vierdt</unclear> <unclear cert="low" resp="#joint">heisse</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Johannes</unclear></persName>, <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">sage</unclear> <unclear cert="low" resp="#joint">ihme</unclear>
+<lb n="123"/><unclear cert="low" resp="#joint">nur</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">lang</unclear>, <unclear cert="low" resp="#joint">wüsse</unclear> aber nit <unclear cert="medium" resp="#joint">woher</unclear> er <unclear cert="low" resp="#joint">sÿe</unclear>
+<lb n="124"/><unclear cert="low" resp="#joint">habe</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">halber</unclear> <unclear cert="low" resp="#joint">bart</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">blauw</unclear> <unclear cert="low" resp="#joint">zwilchi</unclear> <unclear cert="low" resp="#joint">hosen</unclear>.
+<lb n="125"/><unclear cert="low" resp="#joint">Der</unclear> <unclear cert="low" resp="#joint">fünfft</unclear> <unclear cert="low" resp="#joint">heisse</unclear> <persName resp="#ner">Hannß Peter</persName>, <unclear cert="medium" resp="#joint">sÿe</unclear> <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">zimlich</unclear>
+<lb n="126"/>lange <unclear cert="medium" resp="#joint">Persohn</unclear> ohne <unclear cert="medium" resp="#joint">bart</unclear>, <unclear cert="medium" resp="#joint">sÿ</unclear> <unclear cert="medium" resp="#joint">uß</unclear> dem <placeName ref="stadtasg-places-108" cert="medium" resp="#ner">Schwaben</placeName>=
 <lb n="127"/>landt.
-<lb n="128"/>Der sechste <persName resp="#ner">Hannß Weibel</persName>, sÿe auß dem
-<lb n="129"/><placeName resp="#ner">Schwartzwald</placeName>, kurtze Persohn ohn bart.
-<lb n="130"/>Der sibende heisse <persName resp="#ner">Michel</persName>, sÿ ouch nit gar
-<lb n="131"/>gflickt lang, ohne bardt, hab das grindt, trag ein gelb
-<lb n="132"/>wammes, sÿe ein Schwizer.
+<lb n="128"/><unclear cert="medium" resp="#joint">Der</unclear> <unclear cert="medium" resp="#joint">sechste</unclear> <persName resp="#ner">Hannß <unclear cert="medium" resp="#joint">Weibel</unclear></persName>, <unclear cert="medium" resp="#joint">sÿe</unclear> <unclear cert="medium" resp="#joint">auß</unclear> dem
+<lb n="129"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Schwartzwald</unclear></placeName>, <unclear cert="low" resp="#joint">kurtze</unclear> <unclear cert="low" resp="#joint">Persohn</unclear> <unclear cert="low" resp="#joint">ohn</unclear> <unclear cert="low" resp="#joint">bart</unclear>.
+<lb n="130"/><unclear cert="low" resp="#joint">Der</unclear> <unclear cert="low" resp="#joint">sibende</unclear> <unclear cert="low" resp="#joint">heisse</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Michel</unclear></persName>, <unclear cert="low" resp="#joint">sÿ</unclear> ouch <unclear cert="medium" resp="#joint">nit</unclear> gar
+<lb n="131"/><unclear cert="low" resp="#joint">gflickt</unclear> lang, ohne <unclear cert="low" resp="#joint">bardt</unclear>, <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">grindt</unclear>, <unclear cert="low" resp="#joint">trag</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">gelb</unclear>
+<lb n="132"/><unclear cert="low" resp="#joint">wammes</unclear>, <unclear cert="low" resp="#joint">sÿe</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">Schwizer</unclear>.
 <pb facs="StadtASG_Missive_3244_12850.jpg" n="6"/>
 <pb facs="StadtASG_Missive_3244_12851.jpg" n="7"/>
 <pb facs="StadtASG_Missive_3244_12852.jpg" n="8"/>
-<lb n="133"/>An h. lvogt zuo <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Breg.</placeName>, <persName role="recipient" resp="#ner">Kornehansn Schmid</persName>
-<lb n="134"/>ad <origDate when="1647" resp="#ner">5ten maj 1647</origDate>. weg eines gfangnen.
-<lb n="135"/>7. 7bris
+<lb n="133"/><unclear cert="low" resp="#joint">An</unclear> <unclear cert="low" resp="#joint">h</unclear>. <unclear cert="low" resp="#joint">lvogt</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Breg</unclear>.</placeName>, <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Kornehansn</unclear> <unclear cert="low" resp="#joint">Schmid</unclear></persName>
+<lb n="134"/><unclear cert="low" resp="#joint">ad</unclear> <origDate when="1647" resp="#ner"><unclear cert="low" resp="#joint">5ten</unclear> <unclear cert="low" resp="#joint">maj</unclear> <unclear cert="low" resp="#joint">1647</unclear></origDate>. <unclear cert="low" resp="#joint">weg</unclear> <unclear cert="low" resp="#joint">eines</unclear> <unclear cert="low" resp="#joint">gfangnen</unclear>.
+<lb n="135"/><unclear cert="low" resp="#joint">7</unclear>. <unclear cert="low" resp="#joint">7bris</unclear>
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3550</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Die verordneten Distributoren des christlichen Collectenwerks im Namen der Kirchen und Schuldienner des Fürstentums Zweibrücken danken Bürgermeister und Rat zu St. Gallen für die erneute großzügige Beihilfe von 175 Reichsthalern für die notleidenden Kirchen im Fürstentum. Sie empfehlen die Spender in ihr Gebet und wünschen ihnen Gottes Segen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Die verordneten Distributoren des christlichen Collectenwerks im Namen der Kirchen und Schuldienner des Fürstentums Zweibrücken danken Bürgermeister und Rat zu St. Gallen für die erneute großzügige Beihilfe von 175 Reichsthalern für die notleidenden Kirchen im Fürstentum. Sie empfehlen die Spender in ihr Gebet und wünschen ihnen Gottes Segen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The appointed Distributors of the Christian Collection in the name of the churches and schoolteachers of the Principality of Zweibrücken thank the Burgomaster and Council of St. Gallen for the renewed generous aid of 175 Reichsthalers for the suffering churches in the Principality. They commend the donors to their prayer and wish them God's blessing.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -84,15 +85,15 @@
 <pb facs="StadtASG_Missive_3550_14163.jpg" n="3"/>
 <lb n="47"/>[]
 <pb facs="StadtASG_Missive_3550_14164.jpg" n="4"/>
-<lb n="48"/>Den woledlen gestrengen,
-<lb n="49"/>ernvesten, hochgeachten, hoch-
-<lb n="50"/>weisen, fürsichtign, herren
+<lb n="48"/>Den <unclear cert="low" resp="#joint">woledlen</unclear> gestrengen,
+<lb n="49"/><unclear cert="low" resp="#joint">ernvesten</unclear>, <unclear cert="low" resp="#joint">hochgeachten</unclear>, <unclear cert="low" resp="#joint">hoch</unclear>-
+<lb n="50"/>weisen, <unclear cert="low" resp="#joint">fürsichtign</unclear>, herren
 <lb n="51"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Rath der
 <lb n="52"/>statt Sanct Gallen</orgName>, unsern
-<lb n="53"/>insonders großgünstigen, hoch-
-<lb n="54"/>geehrten herren, unnd ver-
-<lb n="55"/>möglichen patronen.
-<lb n="56"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="53"/>insonders <unclear cert="low" resp="#joint">großgünstigen</unclear>, <unclear cert="low" resp="#joint">hoch</unclear>-
+<lb n="54"/><unclear cert="low" resp="#joint">geehrten</unclear> herren, unnd <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="55"/><unclear cert="low" resp="#joint">möglichen</unclear> <unclear cert="low" resp="#joint">patronen</unclear>.
+<lb n="56"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

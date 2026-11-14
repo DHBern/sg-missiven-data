@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3596</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Landvogt Johann Müller, den St. Galler Bürger Johannes Merz, Schuhmacher, zu schützen. Merz sei zwischen Rorschach und der Kluse von einem Mann aus Zuckenriet überfallen und bedroht worden. Die Stadt empfiehlt Merz und seinen Begleiter, den Ratssäckelmeister Sylvester Hiller, dem Landvogt und bittet, den Angreifer anzuweisen, Merz künftig in Ruhe zu lassen.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Landvogt Johann Müller, den St. Galler Bürger Johannes Merz, Schuhmacher, zu schützen. Merz sei zwischen Rorschach und der Kluse von einem Mann aus Zuckenriet überfallen und bedroht worden. Die Stadt empfiehlt Merz und seinen Begleiter, den Ratssäckelmeister Sylvester Hiller, dem Landvogt und bittet, den Angreifer anzuweisen, Merz künftig in Ruhe zu lassen.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of St. Gallen ask Landvogt Johann Müller to protect the St. Gallen citizen Johannes Merz, shoemaker. Merz was attacked and threatened by a man from Zuckenriet between Rorschach and the Kluse. The city recommends Merz and his companion, the Council treasurer Sylvester Hiller, to the Landvogt and asks that the attacker be instructed to leave Merz in peace in the future.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -36,36 +37,36 @@
 <pb facs="StadtASG_Missive_3596_14347.jpg" n="1"/>
 <lb n="1"/>Unser freündt, Nachparlich willig dienst und waß wir
 <lb n="2"/>ehren liebs und guots vermögend zuvor, Edler vester fromer
-<lb n="3"/>fürsichtiger und wiser her Landtvogt, insonders guoter freündt und
+<lb n="3"/>fürsichtiger und wiser her Landtvogt, <unclear cert="low" resp="#joint">insonders</unclear> <unclear cert="low" resp="#joint">guoter</unclear> freündt und
 <lb n="4"/>Nachpar.
 <lb n="5"/>Vor unß ist in gesamletem unserm Raht erschinen, unser
-<lb n="6"/>angehörige liebe mitburger <persName resp="#ner">Johannes Merz Schuemacher</persName>,
+<lb n="6"/><unclear cert="low" resp="#joint">angehörige</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">mitburger</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Johannes</unclear> <unclear cert="low" resp="#joint">Merz</unclear> <unclear cert="low" resp="#joint">Schuemacher</unclear></persName>,
 <lb n="7"/>und hat unß klagswiß fürgebracht; waß gestalten er
-<lb n="8"/>nit allein in verwichnem <date resp="#ner">Monat Februario</date>, sondern auch fer-
-<lb n="9"/>nigs Jahrs einmahl, von Jkr N: <placeName resp="#ner">Gieln</placeName> zuo <placeName resp="#ner">Zuckenrieth</placeName> im
-<lb n="10"/><placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgoew</placeName> wohnhafft, alß er seinen obligenden gschäfften nach,
-<lb n="11"/>und widerumb zuhuß raisen wöllen, zwischen <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName> und
-<lb n="12"/>der <placeName resp="#ner">Kluse</placeName>, zwischen <placeName ref="stadtasg-places-116" cert="medium" resp="#ner">Sant Margrethen</placeName> und <placeName ref="stadtasg-places-88" cert="medium" resp="#ner">Rheinegk</placeName> im
-<lb n="13"/><placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Rheintal</placeName>, uff freyer Landtstraß ohne eintzigen Ihme gegebnen
-<lb n="14"/>Anlaß, so ungestüm und mit ungebür mit worten und
+<lb n="8"/><unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">allein</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">verwichnem</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">Monat</unclear> Februario</date>, <unclear cert="low" resp="#joint">sondern</unclear> auch <unclear cert="low" resp="#joint">fer</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">nigs</unclear> <unclear cert="low" resp="#joint">Jahrs</unclear> <unclear cert="low" resp="#joint">einmahl</unclear>, <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Jkr</unclear> <unclear cert="low" resp="#joint">N</unclear>: <placeName resp="#ner"><unclear cert="low" resp="#joint">Gieln</unclear></placeName> zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Zuckenrieth</unclear></placeName> im
+<lb n="10"/><placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Turgoew</unclear></placeName> <unclear cert="low" resp="#joint">wohnhafft</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">obligenden</unclear> <unclear cert="low" resp="#joint">gschäfften</unclear> <unclear cert="low" resp="#joint">nach</unclear>,
+<lb n="11"/>und <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">zuhuß</unclear> <unclear cert="low" resp="#joint">raisen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, <unclear cert="low" resp="#joint">zwischen</unclear> <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">der</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Kluse</unclear></placeName>, <unclear cert="low" resp="#joint">zwischen</unclear> <placeName ref="stadtasg-places-116" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> Margrethen</placeName> und <placeName ref="stadtasg-places-88" cert="medium" resp="#ner">Rheinegk</placeName> im
+<lb n="13"/><placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Rheintal</placeName>, uff <unclear cert="low" resp="#joint">freyer</unclear> <unclear cert="low" resp="#joint">Landtstraß</unclear> ohne eintzigen Ihme gegebnen
+<lb n="14"/>Anlaß, so <unclear cert="low" resp="#joint">ungestüm</unclear> und mit <unclear cert="low" resp="#joint">ungebür</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">worten</unclear> und
 <lb n="15"/>zucken der Pistolen, und der Waidmässer überfallen worden, daß
-<lb n="16"/>er seines Lebens besorgen muessen, Zuedem Er Ihme also ge-
-<lb n="17"/>tröwt habe, wo er Ihne Jneret viertzehen tagen nit ein par
-<lb n="18"/>Stiffel überliffern werde so wölle er wa er Ihne betretten, muesse Ihme ein
-<lb n="19"/>kugel durch den Leib gejagt werden. Mit undertheniger
-<lb n="20"/>pitt, weilen er, sampt seinem geliebten lieben vetteren
-<lb n="21"/>unserm getrüwen lieben MitRaht <persName resp="#ner">Spilen</persName> und seckelmeistern,
-<lb n="22"/><persName resp="#ner">Sylvester Hiller</persName> zue rettung Ires glimpfs und gueten Namens, und daß er
-<lb n="23"/>ins kunfftig vor disem Mann sichern fueß haben und unan-
-<lb n="24"/>getastet sein möchte zue E: Nchw: Wht: und Ihr deroselben freündt-
-<lb n="25"/>lich umb schutz und schirm zubitten, zuverreisen bedacht seige,
-<lb n="26"/>Wir wölten Sie mit gegenwärtigem Favorschreiben beglaiten und zue seerem
-<lb n="27"/>günstig und bester recommendiren, welch billichmässige
-<lb n="28"/>pitt wir Ihm, sowol unsers Ampts, alß auch der sachen
-<lb n="29"/>beschaffenheit halber keines wegs zuverweigeren gewußt.
-<lb n="30"/>Langen derowegen an den herren Nachbarn unser freündt nachparlich
-<lb n="31"/>ersuechen und pitten, Er wölle Ihne den Petenten sampt seinem
-<lb n="32"/>Ehrenbystand, in Irem pittlichen anlangen nicht allein willig
+<lb n="16"/>er <unclear cert="low" resp="#joint">seines</unclear> <unclear cert="low" resp="#joint">Lebens</unclear> <unclear cert="low" resp="#joint">besorgen</unclear> <unclear cert="low" resp="#joint">muessen</unclear>, <unclear cert="low" resp="#joint">Zuedem</unclear> <unclear cert="low" resp="#joint">Er</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> <unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">tröwt</unclear> <unclear cert="low" resp="#joint">habe</unclear>, wo er Ihne Jneret viertzehen tagen nit ein <unclear cert="low" resp="#joint">par</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">Stiffel</unclear> <unclear cert="low" resp="#joint">überliffern</unclear> <unclear cert="low" resp="#joint">werde</unclear> <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">wölle</unclear> er <unclear cert="low" resp="#joint">wa</unclear> er <unclear cert="low" resp="#joint">Ihne</unclear> <unclear cert="low" resp="#joint">betretten</unclear>, <unclear cert="low" resp="#joint">muesse</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> <unclear cert="low" resp="#joint">ein</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">kugel</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Leib</unclear> <unclear cert="low" resp="#joint">gejagt</unclear> werden. Mit undertheniger
+<lb n="20"/>pitt, weilen er, sampt <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">geliebten</unclear> lieben <unclear cert="low" resp="#joint">vetteren</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">getrüwen</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">MitRaht</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Spilen</unclear></persName> und seckelmeistern,
+<lb n="22"/><persName resp="#ner">Sylvester Hiller</persName> zue rettung Ires glimpfs und <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">Namens</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">daß</unclear> er
+<lb n="23"/><unclear cert="low" resp="#joint">ins</unclear> <unclear cert="low" resp="#joint">kunfftig</unclear> <unclear cert="low" resp="#joint">vor</unclear> disem Mann sichern fueß haben und unan-
+<lb n="24"/>getastet sein <unclear cert="low" resp="#joint">möchte</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">E</unclear>: <unclear cert="low" resp="#joint">Nchw</unclear>: <unclear cert="low" resp="#joint">Wht</unclear>: und <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">deroselben</unclear> <unclear cert="low" resp="#joint">freündt</unclear>-
+<lb n="25"/><unclear cert="low" resp="#joint">lich</unclear> umb schutz und schirm zubitten, zuverreisen bedacht seige,
+<lb n="26"/>Wir wölten Sie mit gegenwärtigem <unclear cert="low" resp="#joint">Favorschreiben</unclear> <unclear cert="low" resp="#joint">beglaiten</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">seerem</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">günstig</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">bester</unclear> recommendiren, <unclear cert="low" resp="#joint">welch</unclear> <unclear cert="low" resp="#joint">billichmässige</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">pitt</unclear> <unclear cert="low" resp="#joint">wir</unclear> Ihm, <unclear cert="low" resp="#joint">sowol</unclear> <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">Ampts</unclear>, <unclear cert="low" resp="#joint">alß</unclear> auch der sachen
+<lb n="29"/>beschaffenheit halber keines wegs <unclear cert="low" resp="#joint">zuverweigeren</unclear> <unclear cert="low" resp="#joint">gewußt</unclear>.
+<lb n="30"/><unclear cert="low" resp="#joint">Langen</unclear> <unclear cert="low" resp="#joint">derowegen</unclear> an <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">Nachbarn</unclear> unser freündt nachparlich
+<lb n="31"/>ersuechen und pitten, Er <unclear cert="low" resp="#joint">wölle</unclear> <unclear cert="low" resp="#joint">Ihne</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Petenten</unclear> <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">seinem</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">Ehrenbystand</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">Irem</unclear> <unclear cert="low" resp="#joint">pittlichen</unclear> anlangen nicht allein willig
 <lb n="33"/>und gern anhören: sondern auch demselben zuo Ime tragenden nach-
 <lb n="34"/>parlichen wolvertrawen nach, Ihnen dergestalt begegnen, daß
 <pb facs="StadtASG_Missive_3596_14348.jpg" n="2"/>

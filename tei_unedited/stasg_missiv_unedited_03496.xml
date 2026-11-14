@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3496</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Bürgermeister und Rat zu Basel antworten auf ein Gesuch von St. Gallen, den Schuldner Saurwasser festzunehmen. Sie weisen darauf hin, dass dieser sich oft unauffällig in der Stadt aufhält und verschwindet, wenn er gesucht wird. Sie empfehlen, einen Privatmann auf ihn ansetzen zu lassen oder sich an Solothurn zu wenden, falls er sich in Dornach aufhält.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Basel antworten auf ein Gesuch von St. Gallen, den Schuldner Saurwasser festzunehmen. Sie weisen darauf hin, dass dieser sich oft unauffällig in der Stadt aufhält und verschwindet, wenn er gesucht wird. Sie empfehlen, einen Privatmann auf ihn ansetzen zu lassen oder sich an Solothurn zu wenden, falls er sich in Dornach aufhält.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Basel reply to a request from St. Gallen to arrest the debtor Saurwasser. They point out that he often stays inconspicuously in the city and disappears when he is sought. They recommend having a private man set on him or turning to Solothurn if he is staying in Dornach.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -35,49 +36,49 @@
 <p>
 <pb facs="StadtASG_Missive_3496_13937.jpg" n="1"/>
 <lb n="1"/>Unnser freündtlich willig dienst, sambt was wir liebs
-<lb n="2"/>und guets vermögen zuevor, Ersam, Eehrsamb wiß,
+<lb n="2"/><unclear cert="low" resp="#joint">und</unclear> guets vermögen zuevor, Ersam, Eehrsamb wiß,
 <lb n="3"/>innsonders guet freündt und getrüw lieb Eüdtgnossen.
 <lb n="4"/>Wir haben Eüwer füerbit-schriben, zue gunsten <persName resp="#ner">Lorenz Kunkh-
 <lb n="5"/>lern</persName>, wierths zum weissen <placeName resp="#ner">Rößlin</placeName>, und <persName resp="#ner">Lorenz Eignern</persName>, Eüwer
-<lb n="6"/>angehörigen burgern, zue recht empfangen, und innhalts da-
-<lb n="7"/>hin verstanden, daß wir auf <placeName resp="#ner">Dominicum Saür-
-<lb n="8"/>wasser</placeName> lütht: von <placeName ref="stadtasg-places-82" cert="medium" resp="#ner">Nüwenburg</placeName>, an welchen sie beed
-<lb n="9"/>umb eingewendter ursachen willen rechtmeßig zue pra-
-<lb n="10"/>tendiren, guete aufsicht haben, und da er alhier zue be-
+<lb n="6"/>angehörigen burgern, zue recht empfangen, und <unclear cert="low" resp="#joint">innhalts</unclear> <unclear cert="low" resp="#joint">da</unclear>-
+<lb n="7"/><unclear cert="low" resp="#joint">hin</unclear> verstanden, daß wir auf <placeName resp="#ner">Dominicum Saür-
+<lb n="8"/>wasser</placeName> lütht: von <placeName ref="stadtasg-places-82" cert="medium" resp="#ner">Nüwenburg</placeName>, an welchen sie <unclear cert="low" resp="#joint">beed</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">eingewendter</unclear> <unclear cert="low" resp="#joint">ursachen</unclear> <unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">rechtmeßig</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">pra</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">tendiren</unclear>, <unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">aufsicht</unclear> haben, und da er alhier zue be-
 <lb n="11"/>treten, in verwahrung nemen, und solches ihnen zur nachricht
-<lb n="12"/>notificiren lassen wolten.
-<lb n="13"/>Nun weren wir zwar so wohl in disem als andern begeben-
-<lb n="14"/>heiten, Eüch freündt: Eüdtgnoßisch zue willfahren nit unge-
-<lb n="15"/>neigt, nach dem aber unß glaübwürdiger bericht einge-
+<lb n="12"/>notificiren lassen <unclear cert="low" resp="#joint">wolten</unclear>.
+<lb n="13"/><unclear cert="low" resp="#joint">Nun</unclear> <unclear cert="low" resp="#joint">weren</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">zwar</unclear> so wohl in disem als andern begeben-
+<lb n="14"/><unclear cert="low" resp="#joint">heiten</unclear>, <unclear cert="low" resp="#joint">Eüch</unclear> <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">Eüdtgnoßisch</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">willfahren</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">unge</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">neigt</unclear>, nach dem aber unß glaübwürdiger bericht einge-
 <lb n="16"/>langt, wie besagter <placeName resp="#ner">Saüerwasser</placeName> zwar vor disem sich
-<lb n="17"/>vilmahl alhie sehen lassen, aber fast ebenmeßig umb
-<lb n="18"/>gleicher ursachen willen, und daß er einen und den andern
-<lb n="19"/>häßeich angesezt, sich anfangen zue aüßern, und unsichtbar
-<lb n="20"/>zue machen, dahero wohl zue besorgen, wann er gleich in die
+<lb n="17"/>vilmahl alhie sehen lassen, aber <unclear cert="low" resp="#joint">fast</unclear> <unclear cert="low" resp="#joint">ebenmeßig</unclear> <unclear cert="low" resp="#joint">umb</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">gleicher</unclear> <unclear cert="low" resp="#joint">ursachen</unclear> <unclear cert="low" resp="#joint">willen</unclear>, und daß er einen und <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">andern</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">häßeich</unclear> <unclear cert="low" resp="#joint">angesezt</unclear>, <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">anfangen</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">aüßern</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">unsichtbar</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">zue</unclear> machen, dahero wohl zue besorgen, wann er gleich in die
 <lb n="21"/>statt komen solte, es doch heimblich und gantz un-
 <lb n="22"/>vermerkt beschehen mießte; so wurde unsers ringfüegen
-<lb n="23"/>erachtens vielleichter das beste sin, wann die Imploran-
-<lb n="24"/>ten jemanden andern â parte bestelt hetten, so uff
-<lb n="25"/>ihne Saüerwasser achtung geben thete, nütetweniger
+<lb n="23"/>erachtens vielleichter das beste sin, wann <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Imploran</unclear>-
+<lb n="24"/><unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">jemanden</unclear> <unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">â</unclear> <unclear cert="low" resp="#joint">parte</unclear> <unclear cert="low" resp="#joint">bestelt</unclear> <unclear cert="low" resp="#joint">hetten</unclear>, so uff
+<lb n="25"/>ihne Saüerwasser achtung geben <unclear cert="low" resp="#joint">thete</unclear>, <unclear cert="low" resp="#joint">nütetweniger</unclear>
 <pb facs="StadtASG_Missive_3496_13938.jpg" n="2"/>
-<lb n="26"/>auch der obrigkeit solches nicht wohl zuezumuetten,
-<lb n="27"/>oder da sich derselbig annoch zue <placeName resp="#ner">Dornach</placeName>, massen in
-<lb n="28"/>eürem schreiben meldung gethan wirdet, uffhaltet,
-<lb n="29"/>daß hierunder eüren und unsern g. l. e. der statt
-<lb n="30"/><placeName ref="stadtasg-places-49" cert="medium" resp="#ner">Solothurn</placeName>, alß in dero jurisdiction besagt Dornach
-<lb n="31"/>gelegen, zuegeschriben wurde, nicht zweiflende, sie
-<lb n="32"/>eüch hierinen guettwillig an die hand gehn, und mithin
-<lb n="33"/>dem eürigen zue dem seinigen geholffen werden moehte.
-<lb n="34"/>Woltend eüch unsern g. l. e. widerantwortlich zue der
-<lb n="35"/>ihrigen nachrichtlichen verhaltung anzufuegen nicht
-<lb n="36"/>umbgehn. Gottes gnaedigem schutz unß damit allerseits
-<lb n="37"/>getreülich befehlende. <origDate when="1642-05-14" resp="#ner">Den 14. May. 1642</origDate>
-<lb n="38"/><orgName ref="stadtasg-actors-530" cert="medium" role="issuer" resp="#ner">Burgermeister und raht der
-<lb n="39"/>statt Basel</orgName> ./.
+<lb n="26"/><unclear cert="medium" resp="#joint">auch</unclear> der obrigkeit solches nicht wohl <unclear cert="low" resp="#joint">zuezumuetten</unclear>,
+<lb n="27"/>oder da sich derselbig <unclear cert="medium" resp="#joint">annoch</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Dornach</unclear></placeName>, massen <unclear cert="low" resp="#joint">in</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">eürem</unclear> <unclear cert="low" resp="#joint">schreiben</unclear> meldung <unclear cert="low" resp="#joint">gethan</unclear> <unclear cert="low" resp="#joint">wirdet</unclear>, <unclear cert="low" resp="#joint">uffhaltet</unclear>,
+<lb n="29"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">hierunder</unclear> <unclear cert="low" resp="#joint">eüren</unclear> und <unclear cert="medium" resp="#joint">unsern</unclear> <unclear cert="medium" resp="#joint">g</unclear>. <unclear cert="medium" resp="#joint">l</unclear>. <unclear cert="medium" resp="#joint">e</unclear>. der statt
+<lb n="30"/><placeName ref="stadtasg-places-49" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Solothurn</unclear></placeName>, <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">dero</unclear> jurisdiction besagt <unclear cert="medium" resp="#joint">Dornach</unclear>
+<lb n="31"/>gelegen, <unclear cert="medium" resp="#joint">zuegeschriben</unclear> <unclear cert="medium" resp="#joint">wurde</unclear>, nicht <unclear cert="medium" resp="#joint">zweiflende</unclear>, <unclear cert="medium" resp="#joint">sie</unclear>
+<lb n="32"/><unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="medium" resp="#joint">hierinen</unclear> <unclear cert="medium" resp="#joint">guettwillig</unclear> an <unclear cert="medium" resp="#joint">die</unclear> hand <unclear cert="medium" resp="#joint">gehn</unclear>, und mithin
+<lb n="33"/><unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">eürigen</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">seinigen</unclear> <unclear cert="low" resp="#joint">geholffen</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">moehte</unclear>.
+<lb n="34"/><unclear cert="low" resp="#joint">Woltend</unclear> <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">widerantwortlich</unclear> <unclear cert="low" resp="#joint">zue</unclear> der
+<lb n="35"/><unclear cert="low" resp="#joint">ihrigen</unclear> <unclear cert="low" resp="#joint">nachrichtlichen</unclear> <unclear cert="low" resp="#joint">verhaltung</unclear> <unclear cert="low" resp="#joint">anzufuegen</unclear> nicht
+<lb n="36"/><unclear cert="medium" resp="#joint">umbgehn</unclear>. <unclear cert="medium" resp="#joint">Gottes</unclear> <unclear cert="medium" resp="#joint">gnaedigem</unclear> <unclear cert="medium" resp="#joint">schutz</unclear> unß damit <unclear cert="medium" resp="#joint">allerseits</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">getreülich</unclear> <unclear cert="medium" resp="#joint">befehlende</unclear>. <origDate when="1642-05-14" resp="#ner">Den 14. May. 1642</origDate>
+<lb n="38"/><orgName ref="stadtasg-actors-530" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">raht</unclear> der
+<lb n="39"/>statt <unclear cert="low" resp="#joint">Basel</unclear></orgName> ./.
 <pb facs="StadtASG_Missive_3496_13939.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3496_13940.jpg" n="4"/>
-<lb n="40"/>Denen frommen, ersamen unnd wisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="41"/>meister unnd Rath der statt Sct. Gallen</orgName>,
+<lb n="40"/>Denen frommen, ersamen unnd <unclear cert="low" resp="#joint">wisen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burger</unclear>-
+<lb n="41"/><unclear cert="low" resp="#joint">meister</unclear> unnd Rath der statt Sct. Gallen</orgName>,
 <lb n="42"/>unnsern insonders guoten fründen unnd
 <lb n="43"/>getrüwen lieben Eydtgnossen.
 </p>

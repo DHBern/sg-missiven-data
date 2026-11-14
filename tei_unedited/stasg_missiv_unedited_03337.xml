@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3337</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat der Stadt Konstanz erkundigen sich bei Bürgermeister und Rat der Stadt St. Gallen, ob diese den auf der Tagsatzung zu Baden gefassten Beschluss über die Schidmünzen angenommen und die Münzen abgesetzt haben. Sie verweisen auf den Vergleich von 1592, wonach keine Obrigkeit ohne die anderen Änderungen der Münzen vornehmen solle, und bitten um eine baldige Antwort.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat der Stadt Konstanz erkundigen sich bei Bürgermeister und Rat der Stadt St. Gallen, ob diese den auf der Tagsatzung zu Baden gefassten Beschluss über die Schidmünzen angenommen und die Münzen abgesetzt haben. Sie verweisen auf den Vergleich von 1592, wonach keine Obrigkeit ohne die anderen Änderungen der Münzen vornehmen solle, und bitten um eine baldige Antwort.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Administrator of the Captaincy, Burgomaster and Council of the city of Konstanz inquire of the Burgomaster and Council of the city of St. Gallen whether they have accepted the resolution passed at the Diet in Baden regarding the Schid coins and have withdrawn the coins. They refer to the agreement of 1592, according to which no authority should make changes to the coins without the others, and ask for a prompt answer.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -38,62 +39,62 @@
 <lb n="2"/>zuvor, fürsichtige, ehrsame und weyse, besonders
 <lb n="3"/>liebe freündt und vertrawte nachparn.
 <lb n="4"/>Wir sind berichtet, ob solten die auf jüngstgehaltner
-<lb n="5"/>tagsaetzung zue <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> von den 13 ohrten loblicher
-<lb n="6"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> versamblet geweste herren ehrenge-
+<lb n="5"/>tagsaetzung zue <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> von den <unclear cert="low" resp="#joint">13</unclear> <unclear cert="low" resp="#joint">ohrten</unclear> <unclear cert="low" resp="#joint">loblicher</unclear>
+<lb n="6"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschafft</unclear></orgName> <unclear cert="low" resp="#joint">versamblet</unclear> <unclear cert="low" resp="#joint">geweste</unclear> herren ehrenge-
 <lb n="7"/>sandten, auf ratification ihrer allerseits gnaedig
 <lb n="8"/>herren und obern, alß ihren principaln, einen schluß,
 <lb n="9"/>wie es ins kuenfftig der schid müntzen, alß drey-
 <lb n="10"/>baetznern, zehen: und dreykreützern halber in ihren
-<lb n="11"/>landen solle gehalten werden, gemacht, und angeregte
-<lb n="12"/>sorten umb etwas valuiert und abgewürdiget haben,
-<lb n="13"/>und ob wir zwar verstaendiget worden, alß waere in
+<lb n="11"/>landen solle gehalten werden, gemacht, und <unclear cert="low" resp="#joint">angeregte</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">sorten</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">etwas</unclear> <unclear cert="low" resp="#joint">valuiert</unclear> und <unclear cert="low" resp="#joint">abgewürdiget</unclear> haben,
+<lb n="13"/>und ob wir zwar <unclear cert="low" resp="#joint">verstaendiget</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">waere</unclear> in
 <lb n="14"/>dem <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürricher</placeName>, auch <placeName resp="#ner">Schaffhauser</placeName> und <placeName ref="stadtasg-places-68" cert="medium" resp="#ner">Stainner</placeName> ge-
-<lb n="15"/>biet angeregter Badischer abscheidt albereith ange-
+<lb n="15"/><unclear cert="low" resp="#joint">biet</unclear> <unclear cert="low" resp="#joint">angeregter</unclear> <unclear cert="low" resp="#joint">Badischer</unclear> <unclear cert="low" resp="#joint">abscheidt</unclear> <unclear cert="low" resp="#joint">albereith</unclear> ange-
 <lb n="16"/>nomen, und die zehenkreützerer und dreybaetzner
-<lb n="17"/>würckhlich abgesetzt, so mag wir doch noch nit ver-
-<lb n="18"/>nemen, ob ihr, wie auch die loblich landtgraffschafft
+<lb n="17"/>würckhlich abgesetzt, so mag wir <unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="18"/><unclear cert="low" resp="#joint">nemen</unclear>, <unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">ihr</unclear>, <unclear cert="low" resp="#joint">wie</unclear> auch die loblich landtgraffschafft
 <lb n="19"/><placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Thurgöw</placeName>, alß unsere negst angesessne nachparn
 <lb n="20"/>den Badischen schluß gleicher gestalt acceptirt, oder vill-
 <lb n="21"/>leichten schon albereith einen absetz der müntzen für-
 <lb n="22"/>genomen haben möchten.
-<lb n="23"/>Wan wir uns dan mit eüch und andern benachparten
+<lb n="23"/><unclear cert="low" resp="#joint">Wan</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">dan</unclear> mit <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">und</unclear> andern benachparten
 <lb n="24"/>obrigkaiten, vermög zwischen denselben, in <date resp="#ner">anno
 <lb n="25"/>1592 den 27 novembris</date> aufgerichten vergleichs,
 <lb n="26"/>inhallt das kein obrigkait ohne die andern vor-
 <lb n="27"/>wüssen enderung der müntzen fürnemen solle,
 <pb facs="StadtASG_Missive_3337_13256.jpg" n="2"/>
-<lb n="28"/>diß oethß gern conformiren wolten. Deß-
-<lb n="29"/>langt an euch unser dienst: freündt und nachparlich
-<lb n="30"/>ersuochen, ihr wollen unß bej zaigern allain darumben
-<lb n="31"/>abgeferttigten laeuffersbotten ohnebeschwerdt berichten
-<lb n="32"/>ob ihr den angeregten Badischen Abschid deß muentzweßens
+<lb n="28"/><unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">oethß</unclear> <unclear cert="low" resp="#joint">gern</unclear> <unclear cert="low" resp="#joint">conformiren</unclear> <unclear cert="low" resp="#joint">wolten</unclear>. <unclear cert="low" resp="#joint">Deß</unclear>-
+<lb n="29"/><unclear cert="low" resp="#joint">langt</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">dienst</unclear>: <unclear cert="low" resp="#joint">freündt</unclear> und nachparlich
+<lb n="30"/>ersuochen, ihr wollen unß bej zaigern allain <unclear cert="low" resp="#joint">darumben</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">abgeferttigten</unclear> <unclear cert="low" resp="#joint">laeuffersbotten</unclear> <unclear cert="low" resp="#joint">ohnebeschwerdt</unclear> <unclear cert="low" resp="#joint">berichten</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">ob</unclear> ihr den angeregten Badischen Abschid deß muentzweßens
 <lb n="33"/>halber acceptirt, und selbigem gemaeß die schidtmuentzen
 <lb n="34"/>abgesezt, oder aber andere enderungen darmit fuerge=
-<lb n="35"/>nomen haben, oder selbige, wie und welcherghalten noch
+<lb n="35"/>nomen haben, oder selbige, wie und <unclear cert="low" resp="#joint">welcherghalten</unclear> noch
 <lb n="36"/>inß kuenfftig fuerzenemen gemaint seyen, wornach
-<lb n="37"/>wir unß hievunden zueverhalten, und der muentz
-<lb n="38"/>sorten halber auch ain gewueßes zedeterminiren
-<lb n="39"/>wueßten.
-<lb n="40"/>Solche unß erzaigende nachparliche willfahrt, umb euch
+<lb n="37"/>wir unß hievunden zueverhalten, und der <unclear cert="low" resp="#joint">muentz</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">sorten</unclear> <unclear cert="low" resp="#joint">halber</unclear> auch ain <unclear cert="low" resp="#joint">gewueßes</unclear> <unclear cert="low" resp="#joint">zedeterminiren</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">wueßten</unclear>.
+<lb n="40"/><unclear cert="low" resp="#joint">Solche</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">erzaigende</unclear> <unclear cert="low" resp="#joint">nachparliche</unclear> <unclear cert="low" resp="#joint">willfahrt</unclear>, <unclear cert="low" resp="#joint">umb</unclear> euch
 <lb n="41"/>in solchen und andern occasionen freündt: nachparlich
 <lb n="42"/>zueerwidern, auch sonsten jede beliebende dienst=
 <lb n="43"/>willigkeiten stethßhaendlichen zueerweyßen, sind
-<lb n="44"/>wir gantz genaigt und willig. Gottes getreüwer
-<lb n="45"/>wahrung unß damit allerseitß wolbewelhend.
-<lb n="46"/>P. S. Datum den <origDate when="1638-11-29" resp="#ner">29. Novembris Anno 1638</origDate>.
+<lb n="44"/>wir gantz genaigt und willig. <unclear cert="low" resp="#joint">Gottes</unclear> <unclear cert="low" resp="#joint">getreüwer</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">wahrung</unclear> unß damit <unclear cert="low" resp="#joint">allerseitß</unclear> <unclear cert="low" resp="#joint">wolbewelhend</unclear>.
+<lb n="46"/><unclear cert="low" resp="#joint">P</unclear>. <unclear cert="low" resp="#joint">S</unclear>. Datum den <origDate when="1638-11-29" resp="#ner">29. Novembris Anno 1638</origDate>.
 <lb n="47"/>Wir bitten nachparlich den botten also zuebefuerdern, uf daß er, wo nit biß
 <lb n="48"/>morn abendt, jedoch ufs <date resp="#ner">kuenfftig mitwoch</date>, bej gueter feüer rathßzeit mit
-<lb n="49"/>dero andtwortt alhie wider einkomen moege.
-<lb n="50"/><orgName role="issuer" resp="#ner">Verwalter dhauptmanschafft
-<lb n="51"/>auch burgermaister und rath
+<lb n="49"/><unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">andtwortt</unclear> <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">einkomen</unclear> <unclear cert="low" resp="#joint">moege</unclear>.
+<lb n="50"/><orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Verwalter</unclear> <unclear cert="low" resp="#joint">dhauptmanschafft</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">burgermaister</unclear> und rath
 <lb n="52"/>der stadt Costantz</orgName>. / .
 <pb facs="StadtASG_Missive_3337_13257.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3337_13258.jpg" n="4"/>
-<lb n="53"/>Denen fürsichtigen ehrsamen unnd weysen
-<lb n="54"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rath der stadt St.
-<lb n="55"/>Gallen</orgName>, unsern besonders lieben fründen,
-<lb n="56"/>und vertrauten Nachbarn.
-<lb n="57"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="53"/><unclear cert="low" resp="#joint">Denen</unclear> fürsichtigen <unclear cert="low" resp="#joint">ehrsamen</unclear> unnd <unclear cert="medium" resp="#joint">weysen</unclear>
+<lb n="54"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> unnd Rath der <unclear cert="medium" resp="#joint">stadt</unclear> St.
+<lb n="55"/>Gallen</orgName>, unsern <unclear cert="low" resp="#joint">besonders</unclear> lieben <unclear cert="low" resp="#joint">fründen</unclear>,
+<lb n="56"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">vertrauten</unclear> <unclear cert="low" resp="#joint">Nachbarn</unclear>.
+<lb n="57"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3497</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,7 +20,8 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            <abstract><p resp="#regest">Landammann und Rat zu Appenzell bitten Bürgermeister und Rat zu St. Gallen, auf Bitten des Kapuziners Laurentius von Unterwalden, die dort verhafteten Balthasar, Hartmann, Michael Steiner und Jakob Moler zu begnadigen. Die jungen Männer seien wegen Misshandlung inhaftiert und drohten, ohne Fürsprache, den Tod zu finden. Appenzell ersucht um Gnade und Freilassung.</p></abstract>
+            <abstract xml:lang="de"><p resp="#regest">Landammann und Rat zu Appenzell bitten Bürgermeister und Rat zu St. Gallen, auf Bitten des Kapuziners Laurentius von Unterwalden, die dort verhafteten Balthasar, Hartmann, Michael Steiner und Jakob Moler zu begnadigen. Die jungen Männer seien wegen Misshandlung inhaftiert und drohten, ohne Fürsprache, den Tod zu finden. Appenzell ersucht um Gnade und Freilassung.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>The Landammann and Council of Appenzell ask the Burgomaster and Council of St. Gallen, at the request of the Capuchin Laurentius von Unterwalden, to pardon Balthasar, Hartmann, Michael Steiner and Jakob Moler, who are detained there. The young men are imprisoned for mistreatment and, without intercession, threaten to meet their death. Appenzell requests mercy and release.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
@@ -40,7 +41,7 @@
 <lb n="4"/>und wolvertrauwte liebe nachparen.
 <lb n="5"/>Alß. dan wir von dem wollEhrwürdigen geistlichen,
 <lb n="6"/>und hochgelerthen herren pater <persName resp="#ner">Laurentio Capuciner</persName>. von
-<lb n="7"/>v. D. E. Lko. deß loblichen orths <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Underwalden</placeName>, schmertz-
+<lb n="7"/><unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">D</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Lko</unclear>. <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">loblichen</unclear> <unclear cert="low" resp="#joint">orths</unclear> <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Underwalden</placeName>, schmertz-
 <lb n="8"/>lichen berichtet worden, welchgestalten, dri junge knaben
 <lb n="9"/>sines landts, bej üch unßeren wolvertrauwten lieben
 <lb n="10"/>nachparen, wegen iherer mißhandlung. in verhaschtung
@@ -52,15 +53,15 @@
 <lb n="16"/>wolvertrauwt lieb nachparen, ersuecht und gebedten,
 <lb n="17"/>welches wir ihme nit verweigeren und abschlachen
 <lb n="18"/>sollen, in betrachtung, das gedachte persohnen eines
-<lb n="19"/>ehrlichen alten geschlächts. stames. und auß einem orth.
-<lb n="20"/>loblicher <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoßschaft</orgName> harkomen. Deßentwegen
+<lb n="19"/>ehrlichen alten geschlächts. stames. und <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">orth</unclear>.
+<lb n="20"/><unclear cert="low" resp="#joint">loblicher</unclear> <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßschaft</unclear></orgName> <unclear cert="low" resp="#joint">harkomen</unclear>. <unclear cert="low" resp="#joint">Deßentwegen</unclear>
 <lb n="21"/>gelangt an üch unßer. wolvertrauwt lieb nachparen,
 <lb n="22"/>unßer früendtliches ersuechen und. pitden, gedachten.
 <lb n="23"/>verhaften dräÿen persohnen, mit namen <persName resp="#ner">Balthasar.</persName>
 <lb n="24"/><persName resp="#ner">Hartman.</persName> <persName resp="#ner">Michael Steiner</persName>. und <persName resp="#ner">Jacob Moler</persName>. alle dri
 <lb n="25"/>von <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Underwalden</placeName>, selbiger landtschaft gebürtig,
 <lb n="26"/>gnad. und barmhertzigkeit erzeigen, das leben schencken,
-<lb n="27"/>und widrumb uf freÿen fueß stellen, in bedenckung.
+<lb n="27"/>und widrumb uf <unclear cert="low" resp="#joint">freÿen</unclear> <unclear cert="low" resp="#joint">fueß</unclear> <unclear cert="low" resp="#joint">stellen</unclear>, in bedenckung.
 <lb n="28"/>ihrer jugendt. und verfüehrung der bößen gsellschafft.
 <pb facs="StadtASG_Missive_3497_13942.jpg" n="2"/>
 <lb n="29"/>so sÿ dan in solches elendt gebracht hat. der hoffnung
@@ -80,8 +81,8 @@
 <lb n="41"/>weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath der
 <lb n="42"/>Statt St. Gallen</orgName>, unseren insonders
 <lb n="43"/>guoten freünden und wolvetrauwten lieben
-<lb n="44"/>Nachpuhren.
-<lb n="45"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
+<lb n="44"/><unclear cert="low" resp="#joint">Nachpuhren</unclear>.
+<lb n="45"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>
