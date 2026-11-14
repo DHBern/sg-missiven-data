@@ -322,3 +322,36 @@ mark { background: var(--date-bg); color: inherit; padding: 0 1px; border-radius
 .kwbars .n { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
 .kwbars a:hover .bar i { background: var(--ink); }
 .heat .hc.thin, .heat .htot.thin { background: repeating-linear-gradient(135deg, transparent 0 4px, var(--line) 4px 5px); }
+
+/* keyword Sankey (keyword page) */
+.sankeypane { margin-bottom: 16px; }
+.sankeywrap { overflow-x: auto; }
+.sankey { width: 100%; min-width: 620px; height: auto; display: block; font: 12px var(--ui-font); }
+.sankey .sk-band { fill: var(--muted); fill-opacity: .22; transition: fill-opacity .1s; }
+.sankey .sk-band.hl { fill: var(--brand); fill-opacity: .55; }
+.sankey .sk-band.dim { fill-opacity: .08; }
+.sankey .sk-node { fill: var(--muted); }
+.sankey .sk-node.key { fill: var(--ink); }
+.sankey .sk-node.on { fill: var(--brand); }
+.sankey a:hover .sk-node { fill: var(--brand); }
+.sankey .sk-lab { fill: var(--ink); }
+.sankey .sk-n { fill: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* keyword network */
+.netcols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 900px) { .netcols { grid-template-columns: 1fr; } }
+.netpane { padding: 8px; }
+.net { width: 100%; height: min(72vh, 680px); display: block; cursor: grab; touch-action: none; }
+.net .n-links line { stroke: var(--muted); stroke-opacity: .35; }
+.net .n-links line.hot { stroke: var(--brand); stroke-opacity: .8; }
+.net .n-links line.dim { stroke-opacity: .06; }
+.net circle { fill: var(--panel); stroke: var(--ink); stroke-width: 1.4; }
+.net a.hot circle { fill: var(--brand); stroke: var(--brand); }
+.net a:hover circle { fill: var(--brand); stroke: var(--brand); }
+.net a.dim { opacity: .2; }
+.net .n-lab { font-family: var(--ui-font); fill: var(--ink); paint-order: stroke; stroke: var(--panel); stroke-linejoin: round; pointer-events: none; }
+.net .n-hidden { display: none; }
+.netgroups ol { margin: 0; padding-left: 1.3em; }
+.netgroups li { margin: 0 0 10px; cursor: default; }
+.netgroups li:hover b { color: var(--brand); }
+#kwletters { scroll-margin-top: 72px; }
