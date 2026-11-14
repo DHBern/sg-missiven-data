@@ -156,7 +156,7 @@ series has 14,385 more (8,088 downloaded, the rest by 14.11.).
    - **kraken and TrOCR on the new pages (UBELIX)** are unlikely to lift the joint reading; they did not on the edited pages. Run them for comparison and as readers in the viewer, not for the joint reading.
 3. **When a reader qualifies,** the pipeline re-tags only the pages whose text changed. The tags are then exported to TEI and checked against TEI P5, as now.
 4. **Linking improves on the register side, not the reading side:**
-   - authority links for the registers (issue #12);
+   - authority links for the registers, and generated register entries with graded links for names only in the letters not yet edited (issue #12, docs/REGISTER.md);
    - unlinked names as candidates for new register entries (`entities/unlinked_*.tsv`, 10,509 groups);
    - person links, which stay unwritten until at least 20 measured links reach precision ≥ 0.9.
 5. **Not pursued:** a "merged reading" written by a language model from several readings. It would read better and be harder to check: a model that normalises spelling erases what the edition keeps. Only with its own measurement on held-out pages, and never as the edition's text.
