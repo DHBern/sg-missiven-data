@@ -65,6 +65,24 @@ The policy follows from this:
     letters are earlier. So for the unedited letters, this list matters more
     than the links.
 
+## Tags on the joint reading (14.11.2026)
+
+The tagging runs on the Gemini 4 Argon reading. The joint reading
+(`scripts/joint_reading.py`) is that reading with some words replaced where the
+other readers outvote it, so the site build carries the tags over by a character
+alignment of the two texts (`project_entities` in `scripts/build_site.py`). No
+second tagging run is needed. Each tag's ends are moved to whole words, and a tag
+keeps the register entry of the spelling it was made on. Register occurrences
+are counted once, from Argon.
+
+| | tags | share |
+|---|---:|---:|
+| same text in the joint reading | 41,258 | 92.4 % |
+| the joint reading's spelling (e.g. Bassel → Basel) | 3,309 | 7.4 % |
+| dropped (text lost, < 60 % alike) | 59 | 0.1 % |
+
+A letter not yet edited opens on the joint reading with its tags.
+
 ## Dates
 
 - **`origDate/@when`:**

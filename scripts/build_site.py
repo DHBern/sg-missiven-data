@@ -34,6 +34,7 @@ import sys
 from pathlib import Path
 
 from lxml import etree
+from rapidfuzz import fuzz
 from rapidfuzz.distance import Levenshtein
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -122,6 +123,44 @@ def load_entities() -> dict[str, dict[str, list]]:
                 pages[rec["key"]] = rec["entities"]
         out[path.stem] = pages
     return out
+
+
+_WORD = re.compile(r"\w", re.U)
+
+
+def project_entities(src: str, dst: str, tags: list[dict]) -> tuple[list[dict], int]:
+    """Carry tags made on one reading over to another reading of the same page,
+    by a character alignment of the two texts. The joint reading is the Gemini 4
+    Argon reading with some words replaced (scripts/joint_reading.py), so a tag
+    lands on the same place, where needed in the joint reading's spelling. The
+    ends are moved to whole words; a tag whose text the joint reading lost
+    (nothing left, or under 60 % alike) is dropped. Returns (tags, dropped)."""
+    if src == dst:
+        return [dict(t) for t in tags], 0
+    m = [0] * (len(src) + 1)
+    for op, i1, i2, j1, j2 in Levenshtein.opcodes(src, dst):
+        for t in range(i1, i2 + 1):
+            m[t] = j1 + (t - i1 if op == "equal" else min(t - i1, j2 - j1))
+    out, dropped = [], 0
+    for t in tags:
+        if not (0 <= t["start"] < t["end"] <= len(src)):
+            dropped += 1
+            continue
+        a, b = m[t["start"]], m[t["end"]]
+        while a > 0 and _WORD.match(dst[a - 1]) and a < len(dst) and _WORD.match(dst[a]):
+            a -= 1  # back to the start of the word
+        while 0 < b < len(dst) and _WORD.match(dst[b - 1]) and _WORD.match(dst[b]):
+            b += 1  # on to the end of the word
+        while a < b and dst[a].isspace():
+            a += 1
+        while b > a and dst[b - 1].isspace():
+            b -= 1
+        new = dst[a:b]
+        if not new or fuzz.ratio(new, t["text"]) < 60:
+            dropped += 1
+            continue
+        out.append({**t, "start": a, "end": b, "text": new} | ({"from_text": t["text"]} if new != t["text"] else {}))
+    return out, dropped
 
 
 def registers() -> dict[str, dict]:
@@ -214,7 +253,8 @@ def mark_auto_refs(letter: dict, by_key: dict[tuple[str, str], str]) -> None:
             for x in ents:
                 if x.get("ref") or x.get("type") not in ("per", "org", "place"):
                     continue
-                eid = by_key.get((x["type"], fold(x["text"])))
+                # a tag carried to the joint reading keeps the entry of the spelling it was made on
+                eid = by_key.get((x["type"], fold(x.get("from_text") or x["text"])))
                 if eid:
                     x["ref"], x["auto_reg"] = eid, 1
 
@@ -249,7 +289,9 @@ def occurrences(letters: list[dict], reg: dict[str, dict]) -> None:
         if not letter.get("edited"):
             # the automatic tagging of letters not yet edited: kept apart (occ_auto)
             for page in letter["pages"]:
-                for ents in (page.get("auto_entities") or {}).values():
+                for reader, ents in (page.get("auto_entities") or {}).items():
+                    if reader == "joint":
+                        continue  # the same tags as Gemini 4 Argon's, carried over: not counted twice
                     for e in ents:
                         r = e.get("ref")
                         role = "place" if e.get("el") == "origPlace" else e.get("role", "")
@@ -466,6 +508,18 @@ def main() -> None:
     unc = readings.pop("__unc__", {})
     letters += unedited_letters(letters, readings)
     entities = load_entities()
+    # the tags were made on the Gemini 4 Argon reading; the joint reading, built on it, gets them too
+    if "gemini-4-argon" in entities and "joint" in readings:
+        argon, joint_pages = readings.get("gemini-4-argon", {}), readings["joint"]
+        carried, dropped, moved = {}, 0, 0
+        for facs, tags in entities["gemini-4-argon"].items():
+            if facs in argon and facs in joint_pages and tags:
+                carried[facs], d = project_entities(argon[facs]["text"], joint_pages[facs]["text"], tags)
+                dropped += d
+                moved += sum(1 for t in carried[facs] if "from_text" in t)
+        entities["joint"] = carried
+        print(f"tags carried to the joint reading: {sum(map(len, carried.values()))} on {len(carried)} pages, "
+              f"{moved} in the joint reading's spelling, {dropped} dropped", flush=True)
     drafts = load_drafts()
     auto_kw = load_auto_keywords()
     lines = load_lines()
