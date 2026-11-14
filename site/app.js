@@ -1465,7 +1465,7 @@
             <a href="#/">${T("All letters", "Alle Briefe")}</a>
             ${next ? `<a href="#/letter/${next.id}/1">${esc(nrOf(next))} →</a>` : "<span></span>"}
           </div>
-          <div class="muted small">${esc(letter.title)} · ${esc(letter.idno)}</div>
+          <div class="muted small">${esc(letter.title)} · ${esc(letter.idno)}${letter.tei ? ` · TEI: <a href="data/tei/${esc(letter.id)}.xml" download="${esc(letter.id)}.xml">${T("download", "herunterladen")}</a>, <a href="https://github.com/DHBern/sg-missiven-data/blob/main/${esc(letter.tei)}" target="_blank" rel="noopener">GitHub</a>` : ""}</div>
           ${edited ? `
           <h1>${esc(fmtDate(letter.date))}</h1>
           <div class="meta"><span class="parties">${esc(s || "?")} → ${esc(r || "?")}</span></div>
