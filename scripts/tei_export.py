@@ -215,7 +215,7 @@ def letter_xml(nr: int, keys: list[str], readings: list[tuple[str, dict]], ents:
             year if re.fullmatch(r"\d{4}", year) else "")
         if when and len(when) == 10 and when[:4] != year and re.fullmatch(r"\d{4}", year):
             when = year  # the model's full date disagrees with the year read by rule: keep the year only
-        cert = {"written": "", "century": "medium"}.get(draft.get("year_how") or "", "low")
+        cert = {"written": "", "century": "medium", "corrected": "medium"}.get(draft.get("year_how") or "", "low")
         if when or draft.get("date_text"):
             att = (f' when="{when}"' if when else "") + (f' cert="{cert}"' if when and cert else "")
             sent.append(f'<date{att} resp="#regest">{escape(draft.get("date_text") or when)}</date>')

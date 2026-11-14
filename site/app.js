@@ -1414,7 +1414,7 @@
             <p>${esc(letter.regest)}</p>
             ${letter.keywords.some((k) => k.trim()) ? `<div class="kw">${letter.keywords.filter((k) => k.trim()).map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}
           </details>` : `
-          <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}?</span>` : ""}</h1>
+          <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}${letter.auto_regest.year_how === "corrected" ? "" : "?"}</span>` : ""}</h1>
           <p class="caveat">${T("Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.",
             "Noch nicht ediert: Das Stadtarchiv hat diesen Brief nicht veröffentlicht. Was folgt, sind nur maschinelle Lesungen, ohne Edition zum Vergleich.")}</p>
           ${draftBlock(letter.auto_regest, true)}
@@ -1452,7 +1452,9 @@
     const who = d.sender || d.recipient ? `<div class="meta"><span class="parties">${esc(d.sender || "?")} → ${esc(d.recipient || "?")}</span></div>` : "";
     const when = [d.place, d.date_text].filter(Boolean).map(esc).join(", ");
     return `<details class="regest draft" ${open ? "open" : ""}><summary>${T(`Automatic regest (draft${open ? "" : ", for comparison"})`, `Automatisches Regest (Entwurf${open ? "" : ", zum Vergleich"})`)}</summary>
-      ${who}${when ? `<p class="small muted">${when}${d.year ? T(` · year read as ${esc(d.year)} (unchecked)`, ` · Jahr gelesen als ${esc(d.year)} (ungeprüft)`) : ""}</p>` : ""}
+      ${who}${when ? `<p class="small muted">${when}${d.year ? (d.year_how === "corrected"
+        ? T(` · year set by hand: ${esc(d.year)}${d.year_note ? ` (${esc(d.year_note)})` : ""}`, ` · Jahr von Hand gesetzt: ${esc(d.year)}${d.year_note ? ` (${esc(d.year_note)})` : ""}`)
+        : T(` · year read as ${esc(d.year)} (unchecked)`, ` · Jahr gelesen als ${esc(d.year)} (ungeprüft)`)) : ""}</p>` : ""}
       <p>${esc(d.regest)}</p>
       <p class="small muted">${T(`Drafted by ${esc(d.model || "a language model")} from the ${esc(readerLabel(d.reader))} reading, without correction. Names and dates may be wrong.`,
         `Entworfen von ${esc(d.model || "einem Sprachmodell")} aus der Lesung von ${esc(readerLabel(d.reader))}, ohne Korrektur. Namen und Daten können falsch sein.`)}</p>
