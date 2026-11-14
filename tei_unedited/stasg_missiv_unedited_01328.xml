@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1328</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Syndics und Rat von Genf erklären Bürgermeister und Rat zu St. Gallen, dass sie wegen der anhaltenden Belästigungen durch den Herzog von Savoyen und der damit verbundenen hohen Kosten die geforderten Zinsen nicht vollständig zahlen können. Sie haben Christoph Studer 400 Dukaten für die ersten zwei Jahre übergeben und bitten um Geduld für die Restzahlung, sofern der Herr eine dauerhafte Peace schenke.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Syndics und Rat von Genf</name><placeName resp="#regest">Genf</placeName><date when="1596-05-02" resp="#regest">a Geneve ce 2e may 1596</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,34 +35,34 @@
 <p>
 <pb facs="StadtASG_Missive_1328_4573.jpg" n="1"/>
 <lb n="1"/>Magnifiques puissans et <unclear cert="low" resp="#joint">treshonorez</unclear> <unclear cert="low" resp="#joint">seigneurs</unclear> <unclear cert="low" resp="#joint">bons</unclear> <unclear cert="low" resp="#joint">voysins</unclear>
-<lb n="2"/><unclear cert="low" resp="#joint">treschers</unclear> et <unclear cert="low" resp="#joint">singuliers</unclear> <unclear cert="low" resp="#joint">amys</unclear> nous nous recommandons de bien
-<lb n="3"/>bon coeur a voz bonnes graces
-<lb n="4"/>Magnifiques seigneurs, L'amitie qui a esté continueé despuis
-<lb n="5"/>plusieurs anneés entre voz seigneuries et nous <unclear cert="low" resp="#joint">entretenue</unclear> par
-<lb n="6"/>l'exercice d'une mesme religion, nous a tousiours donne beaucoup
-<lb n="7"/>d'asseurance de voz bienvueillances envers nous, confessans
+<lb n="2"/><unclear cert="low" resp="#joint">treschers</unclear> et <unclear cert="low" resp="#joint">singuliers</unclear> <unclear cert="low" resp="#joint">amys</unclear> nous <unclear cert="low" resp="#joint">nous</unclear> recommandons de bien
+<lb n="3"/>bon <unclear cert="low" resp="#joint">coeur</unclear> a voz bonnes <unclear cert="low" resp="#joint">graces</unclear>
+<lb n="4"/>Magnifiques seigneurs, <unclear cert="low" resp="#joint">L'amitie</unclear> qui a esté <unclear cert="low" resp="#joint">continueé</unclear> despuis
+<lb n="5"/>plusieurs <unclear cert="low" resp="#joint">anneés</unclear> entre <unclear cert="low" resp="#joint">voz</unclear> <unclear cert="low" resp="#joint">seigneuries</unclear> et nous <unclear cert="medium" resp="#joint">entretenue</unclear> par
+<lb n="6"/><unclear cert="low" resp="#joint">l'exercice</unclear> d'une mesme religion, nous a <unclear cert="low" resp="#joint">tousiours</unclear> donne beaucoup
+<lb n="7"/><unclear cert="low" resp="#joint">d'asseurance</unclear> de voz bienvueillances envers nous, <unclear cert="low" resp="#joint">confessans</unclear>
 <lb n="8"/>que l'ayans en <unclear cert="low" resp="#joint">diverse</unclear> <unclear cert="low" resp="#joint">façons</unclear> <unclear cert="low" resp="#joint">experimenteé</unclear> <unclear cert="low" resp="#joint">noz</unclear> debvoir estoit
-<lb n="9"/>de nous en aquiter a voz contentemens, et <unclear cert="low" resp="#joint">suyvans</unclear> <unclear cert="low" resp="#joint">les</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">lettres</unclear> qu'il vous a pleu nous faire tenir par le sr
-<lb n="11"/><persName resp="#ner">Cristophle Studer</persName> vostre honnorable bourgeois: mais <unclear cert="low" resp="#joint">les</unclear>
-<lb n="12"/><unclear cert="low" resp="#joint">continuelles</unclear> <unclear cert="low" resp="#joint">molestes</unclear> du duc de <unclear cert="low" resp="#joint">Savoye</unclear> <unclear cert="low" resp="#joint">lesquelles</unclear> <unclear cert="low" resp="#joint">duren</unclear>
-<lb n="13"/><unclear cert="low" resp="#joint">encor</unclear> <unclear cert="low" resp="#joint">nonobstant</unclear> <unclear cert="low" resp="#joint">quelque</unclear> <unclear cert="low" resp="#joint">trefve</unclear> qui s'en vont expiree
-<lb n="14"/>a la fin de ce mois et qui ont esté jusques <unclear cert="low" resp="#joint">icy</unclear> <unclear cert="low" resp="#joint">accompagneés</unclear>
-<lb n="15"/><unclear cert="low" resp="#joint">d'infinies</unclear> <unclear cert="low" resp="#joint">despenses</unclear> <unclear cert="low" resp="#joint">necessaires</unclear> <unclear cert="low" resp="#joint">nous</unclear> <unclear cert="low" resp="#joint">ont</unclear> <unclear cert="low" resp="#joint">osté</unclear> tout moyen
-<lb n="16"/>de satisfaire a la juste demande <unclear cert="low" resp="#joint">contenue</unclear> <unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">vosdictes</unclear>
-<lb n="17"/>lettres, ce que voz seigneuries prendront s'il leur plaist
+<lb n="9"/>de nous en <unclear cert="low" resp="#joint">aquiter</unclear> a <unclear cert="low" resp="#joint">voz</unclear> <unclear cert="low" resp="#joint">contentemens</unclear>, et <unclear cert="medium" resp="#joint">suyvans</unclear> <unclear cert="medium" resp="#joint">les</unclear>
+<lb n="10"/><unclear cert="medium" resp="#joint">lettres</unclear> qu'il vous a pleu nous faire tenir par le sr
+<lb n="11"/><persName resp="#ner"><unclear cert="low" resp="#joint">Cristophle</unclear> <unclear cert="low" resp="#joint">Studer</unclear></persName> <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">honnorable</unclear> bourgeois: mais les
+<lb n="12"/>continuelles <unclear cert="medium" resp="#joint">molestes</unclear> du <unclear cert="low" resp="#joint">duc</unclear> de <unclear cert="medium" resp="#joint">Savoye</unclear> <unclear cert="medium" resp="#joint">lesquelles</unclear> <unclear cert="medium" resp="#joint">duren</unclear>
+<lb n="13"/>encor nonobstant <unclear cert="low" resp="#joint">quelque</unclear> <unclear cert="low" resp="#joint">trefve</unclear> qui s'en vont <unclear cert="low" resp="#joint">expiree</unclear>
+<lb n="14"/>a la fin de ce mois et qui ont esté jusques <unclear cert="medium" resp="#joint">icy</unclear> <unclear cert="medium" resp="#joint">accompagneés</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">d'infinies</unclear> <unclear cert="medium" resp="#joint">despenses</unclear> <unclear cert="medium" resp="#joint">necessaires</unclear> <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">ont</unclear> osté tout moyen
+<lb n="16"/>de satisfaire a la juste demande <unclear cert="low" resp="#joint">contenue</unclear> en <unclear cert="medium" resp="#joint">vosdictes</unclear>
+<lb n="17"/>lettres, ce que <unclear cert="low" resp="#joint">voz</unclear> seigneuries prendront s'il leur plaist
 <lb n="18"/>en bonne part et recevront dudt sr <unclear cert="low" resp="#joint">Studer</unclear> <unclear cert="low" resp="#joint">quatre</unclear> <unclear cert="low" resp="#joint">cens</unclear>
 <lb n="19"/><unclear cert="low" resp="#joint">escus</unclear> <unclear cert="low" resp="#joint">sol</unclear> que nous luy avons faict delivrer pr les deux
-<lb n="20"/>premieres anneés de terme escheu soubz l'asseurance qu'elles
-<lb n="21"/>prendront que nous n'obmettons aucune commodité de leur
-<lb n="22"/><unclear cert="low" resp="#joint">parfaire</unclear> le <unclear cert="low" resp="#joint">reste</unclear> <unclear cert="low" resp="#joint">desdt</unclear> <unclear cert="low" resp="#joint">censes</unclear> sur tout s'il plaist au
-<lb n="23"/>seigneur donner quelque <unclear cert="low" resp="#joint">relasche</unclear> a nos maux et calamitez
-<lb n="24"/>par une bonne et perdurable paix <unclear cert="low" resp="#joint">comme</unclear> <unclear cert="low" resp="#joint">nous</unclear> <unclear cert="low" resp="#joint">l'en</unclear> <unclear cert="low" resp="#joint">supplions</unclear>
-<lb n="25"/>de tout nre coeur et qu'il vous ayt
-<lb n="26"/>Magnifiques seigneurs en sa saincte et digne garde, <unclear cert="low" resp="#joint">a</unclear>
-<lb n="27"/><origPlace resp="#ner"><unclear cert="low" resp="#joint">Geneve</unclear></origPlace> ce <origDate when="1596" resp="#ner">2e may 1596</origDate>.
-<lb n="28"/><orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Les</unclear> <unclear cert="low" resp="#joint">syndiques</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">conseil</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">Geneve</unclear></orgName>
-<lb n="29"/><unclear cert="low" resp="#joint">voz</unclear> bien volontaires et
+<lb n="20"/><unclear cert="low" resp="#joint">premieres</unclear> <unclear cert="low" resp="#joint">anneés</unclear> de terme escheu soubz l'asseurance qu'elles
+<lb n="21"/>prendront que nous <unclear cert="low" resp="#joint">n'obmettons</unclear> aucune commodité de leur
+<lb n="22"/><unclear cert="medium" resp="#joint">parfaire</unclear> le reste <unclear cert="medium" resp="#joint">desdt</unclear> <unclear cert="medium" resp="#joint">censes</unclear> sur tout s'il plaist au
+<lb n="23"/>seigneur donner quelque <unclear cert="medium" resp="#joint">relasche</unclear> a nos maux et calamitez
+<lb n="24"/>par une bonne et <unclear cert="low" resp="#joint">perdurable</unclear> paix comme <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">l'en</unclear> supplions
+<lb n="25"/>de tout <unclear cert="low" resp="#joint">nre</unclear> coeur <unclear cert="low" resp="#joint">et</unclear> qu'il vous ayt
+<lb n="26"/>Magnifiques seigneurs en sa <unclear cert="low" resp="#joint">saincte</unclear> et digne garde, a
+<lb n="27"/><origPlace resp="#ner"><unclear cert="medium" resp="#joint">Geneve</unclear></origPlace> ce <origDate when="1596" resp="#ner">2e may 1596</origDate>.
+<lb n="28"/><orgName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Les</unclear> <unclear cert="medium" resp="#joint">syndiques</unclear> et conseil de <unclear cert="medium" resp="#joint">Geneve</unclear></orgName>
+<lb n="29"/><unclear cert="medium" resp="#joint">voz</unclear> bien <unclear cert="low" resp="#joint">volontaires</unclear> et
 <lb n="30"/>affectionnez voysins et amys
 <pb facs="StadtASG_Missive_1328_4574.jpg" n="2"/>
 <lb n="31"/>[]

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1853</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat der Stadt Kempten bitten Bürgermeister und Rat der Stadt St. Gallen, nach Abzahlung der Gläubiger aus dem Nachlass des verstorbenen Gerichtsschreibers und Vogts zu Bürglen, den Kemptener Verwandten den ihnen zustehenden Anteil auszuschütten. Insbesondere soll der Kemptener Rat Jacob Kleinhans die ihm ohne Entgelt vorgestreckten 14 Gulden und 15 Kreuzer erstattet werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat der Stadt Kempten</name><date when="1615-06-30" resp="#regest">Datum den 30.t Junij. Anno 1615.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat der Stadt St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,43 +35,43 @@
 <p>
 <pb facs="StadtASG_Missive_1853_6881.jpg" n="1"/>
 <lb n="1"/>Unser freundt: nachbaurlich willig dienst
-<lb n="2"/>zuvor, Edle, Frome, Ehrnveste, Fürsichtige, Er=
-<lb n="3"/>same unnd Weise sonders liebe unnd guote Freund.
+<lb n="2"/>zuvor, Edle, Frome, <unclear cert="medium" resp="#joint">Ehrnveste</unclear>, Fürsichtige, Er=
+<lb n="3"/>same unnd Weise <unclear cert="medium" resp="#joint">sonders</unclear> liebe unnd <unclear cert="low" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">Freund</unclear>.
 <lb n="4"/>Wir haben derselben schreiben, <unclear cert="low" resp="#joint">Jres</unclear> <unclear cert="low" resp="#joint">gewestten</unclear>
-<lb n="5"/><unclear cert="low" resp="#joint">Grichtschreibers</unclear>, und Vogts uff dero Herrschafft
+<lb n="5"/><unclear cert="low" resp="#joint">Grichtschreibers</unclear>, und <unclear cert="medium" resp="#joint">Vogts</unclear> uff dero Herrschafft
 <lb n="6"/><placeName ref="stadtasg-places-59" cert="medium" resp="#ner">Bürglen</placeName>, verlassenschafft betreffende, sein
-<lb n="7"/>unnd seiner Ehewürtin beeder seeligen hiesigen
-<lb n="8"/>schwägern, bruedern unnd schwestern verlesen
-<lb n="9"/>lassen, die erkleren sich dahin, weil die
-<lb n="10"/>sachen laider also beschaffen, so wöllen sie
-<lb n="11"/>E. E. F. E. W. ganz underdienstlich unnd
-<lb n="12"/>hoches fleiß gebeten haben, die wöllen die
+<lb n="7"/>unnd seiner <unclear cert="low" resp="#joint">Ehewürtin</unclear> beeder <unclear cert="medium" resp="#joint">seeligen</unclear> <unclear cert="medium" resp="#joint">hiesigen</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">schwägern</unclear>, <unclear cert="medium" resp="#joint">bruedern</unclear> unnd <unclear cert="medium" resp="#joint">schwestern</unclear> <unclear cert="medium" resp="#joint">verlesen</unclear>
+<lb n="9"/>lassen, die <unclear cert="medium" resp="#joint">erkleren</unclear> sich <unclear cert="medium" resp="#joint">dahin</unclear>, weil die
+<lb n="10"/>sachen <unclear cert="medium" resp="#joint">laider</unclear> also beschaffen, so <unclear cert="medium" resp="#joint">wöllen</unclear> sie
+<lb n="11"/>E. E. F. E. W. ganz <unclear cert="medium" resp="#joint">underdienstlich</unclear> unnd
+<lb n="12"/><unclear cert="low" resp="#joint">hoches</unclear> fleiß gebeten haben, die <unclear cert="medium" resp="#joint">wöllen</unclear> die
 <lb n="13"/>günstige verordnung thuon, wann nach ab=
-<lb n="14"/>zalung der ansprechenden Creditorn et=
-<lb n="15"/>was von berürter verlassenschafft uberblei=
-<lb n="16"/>ben solte, daß Jnen den unserigen von den
-<lb n="17"/>verordneten vögten, die gebür darvon
-<lb n="18"/>uberschafft, fürnemlich aber unser mitraths=
-<lb n="19"/>freund <persName resp="#ner">Jacob Kleinhans</persName>, umb seine treu=
-<lb n="20"/>lich ohn allen genieß, den abgeleibten
-<lb n="21"/>ehegemechten, alß seinem schwager unnd
-<lb n="22"/><unclear cert="low" resp="#joint">geschweÿen</unclear> <unclear cert="low" resp="#joint">seeligen</unclear>, <unclear cert="low" resp="#joint">fürgestreckte</unclear> fl <unclear cert="low" resp="#joint">14</unclear>. <unclear cert="low" resp="#joint">kr</unclear> 15.
+<lb n="14"/><unclear cert="medium" resp="#joint">zalung</unclear> der ansprechenden <unclear cert="medium" resp="#joint">Creditorn</unclear> <unclear cert="medium" resp="#joint">et=</unclear>
+<lb n="15"/>was von <unclear cert="medium" resp="#joint">berürter</unclear> verlassenschafft <unclear cert="low" resp="#joint">uberblei=</unclear>
+<lb n="16"/>ben solte, daß Jnen den <unclear cert="low" resp="#joint">unserigen</unclear> von den
+<lb n="17"/>verordneten <unclear cert="low" resp="#joint">vögten</unclear>, die gebür darvon
+<lb n="18"/><unclear cert="low" resp="#joint">uberschafft</unclear>, fürnemlich aber unser mitraths=
+<lb n="19"/><unclear cert="medium" resp="#joint">freund</unclear> <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Kleinhans</unclear></persName>, umb seine treu=
+<lb n="20"/>lich ohn allen <unclear cert="low" resp="#joint">genieß</unclear>, den <unclear cert="medium" resp="#joint">abgeleibten</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">ehegemechten</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> seinem schwager unnd
+<lb n="22"/><unclear cert="low" resp="#joint">geschweÿen</unclear> seeligen, fürgestreckte fl 14. kr 15.
 <lb n="23"/>befridiget werde, darumben wir dann
-<lb n="24"/>selbsten freundt: nachbaurlich biten, und
-<lb n="25"/>solches in gleichen fellen, auch sonsten auff
-<lb n="26"/>alle begebende gelegenheit, freündtlich zue=
-<lb n="27"/>beschulden unß anerbieten thuen. Datum
-<lb n="28"/>den <origDate when="1615" resp="#ner">30.t Junij. Anno 1615</origDate>.
+<lb n="24"/>selbsten freundt: nachbaurlich <unclear cert="medium" resp="#joint">biten</unclear>, und
+<lb n="25"/>solches in gleichen <unclear cert="medium" resp="#joint">fellen</unclear>, auch sonsten auff
+<lb n="26"/>alle begebende gelegenheit, freündtlich <unclear cert="low" resp="#joint">zue=</unclear>
+<lb n="27"/>beschulden <unclear cert="low" resp="#joint">unß</unclear> anerbieten thuen. Datum
+<lb n="28"/>den <origDate when="1615" resp="#ner"><unclear cert="medium" resp="#joint">30.t</unclear> <unclear cert="medium" resp="#joint">Junij</unclear>. Anno 1615</origDate>.
 <lb n="29"/><orgName ref="stadtasg-actors-533" cert="medium" role="issuer" resp="#ner">Burgermaister und
-<lb n="30"/>Rath der Stat Kempten</orgName>.
+<lb n="30"/><unclear cert="low" resp="#joint">Rath</unclear> der Stat Kempten</orgName>.
 <pb facs="StadtASG_Missive_1853_6882.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1853_6883.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1853_6884.jpg" n="4"/>
-<lb n="31"/>Den edlen fromen ehrnvesten für-
-<lb n="32"/>sichtigen ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="33"/>maistern unnd Rathe der stat Sanct
-<lb n="34"/>Gallen</orgName>. unsern insonders lieben <unclear cert="low" resp="#joint">und</unclear>
-<lb n="35"/><unclear cert="low" resp="#joint">guotten</unclear> <unclear cert="low" resp="#joint">freünden</unclear>.
+<lb n="31"/>Den edlen fromen <unclear cert="medium" resp="#joint">ehrnvesten</unclear> <unclear cert="medium" resp="#joint">für</unclear>-
+<lb n="32"/><unclear cert="medium" resp="#joint">sichtigen</unclear> ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="33"/><unclear cert="low" resp="#joint">maistern</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">Rathe</unclear> der stat <unclear cert="medium" resp="#joint">Sanct</unclear>
+<lb n="34"/>Gallen</orgName>. unsern <unclear cert="medium" resp="#joint">insonders</unclear> lieben und
+<lb n="35"/><unclear cert="low" resp="#joint">guotten</unclear> freünden.
 </p>
         </body>
     </text>

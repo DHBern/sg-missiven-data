@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1171</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Marguerite Compagnon, Philippe Compagnon, Antoine Bayet, Louise Compagnon und George Compagnon bitten die Konsuln zu St. Gallen, Jean Fit vorzuladen, damit er die ihnen geschuldeten Beträge aus dem Nachlass ihres Schwiegervaters Konrad Gueminder bezahle. Sie verweisen auf zwei frühere Bitten und bitten um schnelle Zahlung, da die St. Galler in Lyon keine Waren bezahlten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Marguerite Compagnon, Philippe Compagnon, Antoine Bayet, Louise Compagnon und George Compagnon</name><placeName resp="#regest">Lyon</placeName><date when="1583-12-24" resp="#regest">A Lyon ce vingtquatriesme decembre 1583</date></correspAction><correspAction type="received"><name resp="#regest">Konsuln zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -39,26 +39,26 @@
 <lb n="3"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Gal</placeName> en <placeName resp="#ner">Suysse</placeName>
 <lb n="4"/>Vous supplient bien humblement <persName resp="#ner">Marguerite Compagnon</persName>, femme de
 <lb n="5"/><persName resp="#ner">Jame Larchat</persName>, <persName resp="#ner">Philippes Compagnon</persName> femme de <persName resp="#ner">Durand</persName>
-<lb n="6"/><persName resp="#ner">Anthoine Bayet</persName> <persName resp="#ner">Loyse Compagnon</persName> femme de Durand
-<lb n="7"/>Soucque et <persName resp="#ner">George Compagnon</persName>, femme de <persName resp="#ner">Reynaud</persName>
-<lb n="8"/>Chasat comme cy devant par deux aultres
-<lb n="9"/>supplicacions elles et leursdictz mariz, vous auroient
+<lb n="6"/><persName resp="#ner"><unclear cert="low" resp="#joint">Anthoine</unclear> <unclear cert="low" resp="#joint">Bayet</unclear></persName> <persName resp="#ner"><unclear cert="low" resp="#joint">Loyse</unclear> Compagnon</persName> femme de Durand
+<lb n="7"/><unclear cert="low" resp="#joint">Soucque</unclear> et <persName resp="#ner"><unclear cert="low" resp="#joint">George</unclear> Compagnon</persName>, femme de <persName resp="#ner">Reynaud</persName>
+<lb n="8"/>Chasat comme <unclear cert="low" resp="#joint">cy</unclear> devant par <unclear cert="low" resp="#joint">deux</unclear> aultres
+<lb n="9"/><unclear cert="low" resp="#joint">supplicacions</unclear> elles et <unclear cert="low" resp="#joint">leursdictz</unclear> mariz, <unclear cert="low" resp="#joint">vous</unclear> <unclear cert="low" resp="#joint">auroient</unclear>
 <lb n="10"/>supplie de leur faire faire raison, et payement
 <lb n="11"/>par <persName resp="#ner">Jehan Fit</persName> de <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">ville</unclear> <unclear cert="low" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">sommes</unclear> de <unclear cert="low" resp="#joint">deniers</unclear>
-<lb n="12"/>que feu <persName resp="#ner">Conrat Gueminder</persName>, son beau pere leur.
-<lb n="13"/>debvoit et <unclear cert="low" resp="#joint">neantmoings</unclear> nen ont receu aulcune chose
-<lb n="14"/><unclear cert="low" resp="#joint">A</unclear> <unclear cert="low" resp="#joint">ceste</unclear> <unclear cert="low" resp="#joint">cause</unclear> <unclear cert="low" resp="#joint">lesd</unclear> <unclear cert="low" resp="#joint">seurs</unclear> <unclear cert="low" resp="#joint">Compagnon</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">leursd</unclear> <unclear cert="low" resp="#joint">mariz</unclear>
-<lb n="15"/><unclear cert="low" resp="#joint">vous</unclear> <unclear cert="low" resp="#joint">supplient</unclear> <unclear cert="low" resp="#joint">encores</unclear> dhabondant faire appeller
-<lb n="16"/>led Jehan Fit pardevant vous pour declairer quelle
-<lb n="17"/>somme est <unclear cert="low" resp="#joint">deue</unclear> <unclear cert="low" resp="#joint">ausdites</unclear> <unclear cert="low" resp="#joint">supliantes</unclear> <unclear cert="low" resp="#joint">et</unclear> ordonner quil
-<lb n="18"/>la leur paye soubdain leur envoye pardeca soffrans
-<lb n="19"/>vous faire et a <unclear cert="low" resp="#joint">ceulx</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">nation</unclear>, <unclear cert="low" resp="#joint">ung</unclear> humble
-<lb n="20"/>service en cas <unclear cert="low" resp="#joint">semble</unclear> <unclear cert="low" resp="#joint">sans</unclear> <unclear cert="low" resp="#joint">en</unclear> prendre aulcune
+<lb n="12"/>que feu <persName resp="#ner">Conrat <unclear cert="low" resp="#joint">Gueminder</unclear></persName>, son beau pere leur.
+<lb n="13"/>debvoit et <unclear cert="medium" resp="#joint">neantmoings</unclear> nen ont receu aulcune chose
+<lb n="14"/><unclear cert="low" resp="#joint">A</unclear> <unclear cert="low" resp="#joint">ceste</unclear> cause <unclear cert="low" resp="#joint">lesd</unclear> <unclear cert="low" resp="#joint">seurs</unclear> Compagnon et <unclear cert="medium" resp="#joint">leursd</unclear> <unclear cert="medium" resp="#joint">mariz</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">vous</unclear> supplient <unclear cert="low" resp="#joint">encores</unclear> dhabondant faire appeller
+<lb n="16"/>led Jehan Fit pardevant vous pour <unclear cert="low" resp="#joint">declairer</unclear> quelle
+<lb n="17"/><unclear cert="low" resp="#joint">somme</unclear> est <unclear cert="low" resp="#joint">deue</unclear> <unclear cert="low" resp="#joint">ausdites</unclear> <unclear cert="low" resp="#joint">supliantes</unclear> et ordonner quil
+<lb n="18"/>la leur <unclear cert="low" resp="#joint">paye</unclear> <unclear cert="low" resp="#joint">soubdain</unclear> leur <unclear cert="low" resp="#joint">envoye</unclear> <unclear cert="low" resp="#joint">pardeca</unclear> <unclear cert="low" resp="#joint">soffrans</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">vous</unclear> faire et a <unclear cert="low" resp="#joint">ceulx</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">nation</unclear>, <unclear cert="low" resp="#joint">ung</unclear> humble
+<lb n="20"/>service en cas semble <unclear cert="medium" resp="#joint">sans</unclear> en prendre aulcune
 <lb n="21"/>chose dautant que <unclear cert="low" resp="#joint">pardeca</unclear> <unclear cert="low" resp="#joint">ceulx</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">ville</unclear>
-<lb n="22"/>ne payen aulcune chose des denrees quilz sortent comme
-<lb n="23"/>le scavent plusieurs de messieurs de vostre
-<lb n="24"/>conseil. A <origPlace ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</origPlace> ce <origDate when="1583" resp="#ner">vingtquatriesme decembre 1583</origDate>
-<lb n="25"/>Vostre humble <unclear cert="low" resp="#joint">serviteur</unclear> <unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">commandement</unclear>
+<lb n="22"/>ne <unclear cert="low" resp="#joint">payen</unclear> aulcune chose des <unclear cert="low" resp="#joint">denrees</unclear> quilz <unclear cert="low" resp="#joint">sortent</unclear> comme
+<lb n="23"/>le <unclear cert="low" resp="#joint">scavent</unclear> plusieurs <unclear cert="low" resp="#joint">de</unclear> messieurs <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">vostre</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">conseil</unclear>. A <origPlace ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</origPlace> <unclear cert="low" resp="#joint">ce</unclear> <origDate when="1583" resp="#ner">vingtquatriesme decembre <unclear cert="low" resp="#joint">1583</unclear></origDate>
+<lb n="25"/><unclear cert="low" resp="#joint">Vostre</unclear> humble serviteur a <unclear cert="low" resp="#joint">commandement</unclear>
 <lb n="26"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Jame</unclear> <unclear cert="low" resp="#joint">Larchat</unclear></persName> <unclear cert="low" resp="#joint">mary</unclear>
 <lb n="27"/>de <persName resp="#ner"><unclear cert="low" resp="#joint">Marguerite</unclear> <unclear cert="low" resp="#joint">Compagnon</unclear></persName>
 <pb facs="StadtASG_Missive_1171_3838.jpg" n="2"/>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2480</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,53 +20,53 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Itel Reding bestätigt den Erhalt eines Schreibens samt Verhaftungsbefehl. Er teilt mit, dass er die Befragung von Thomas Klöckner und seiner Frau wegen der heiligen Zeit und anderer Geschäfte verschieben müsse. Er bittet die St. Galler, mit dem Gefangenen weiter zu verfahren, und verspricht, die Befragung zu einem späteren Zeitpunkt nachzuholen und das Ergebnis zu melden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Itel Reding, Rat zu Schwyz, Landvogt im oberen und unteren Thurgau</name><placeName resp="#regest">Frauenfeld</placeName><date when="1624-04-06" resp="#regest">den 6. Aprilis anno 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2480_9561.jpg" n="1"/>
-<lb n="1"/>Woledle, Veste, Ehrnveste, Hochgelehrte, Weiße,
-<lb n="2"/>besonders günstige liebe Herren Nachbaren, denselbigen
-<lb n="3"/>sigendt mein willige dienst zuvor:
-<lb n="4"/>Der herren Nachbaren schriben sambt der bij gschloßnen
-<lb n="5"/>vhegicht hab ich empfangen, und daruß deßen
-<lb n="6"/>inhalt nebet ihrem begeren, angehoert und verstanden,
-<lb n="7"/>und hette zwar nit ermanglet mit <persName resp="#ner">Thoman Kloeckhnern</persName>
-<lb n="8"/>und siner frouwen über diße vhegicht die gebür
-<lb n="9"/>fürzenemen, wo nit die heillige zeit, und dann
-<lb n="10"/>sonsten ohnabstellige gscheft ingerissen weren.
-<lb n="11"/>Nichtßdestoweniger aber moechten die herren Nachbaren
-<lb n="12"/>mit ihrem gefangnen malificanten den einen allß
-<lb n="13"/>anderen weg fort procedieren: Ich will aber auch
-<lb n="14"/>zuo gelegner zeit nit underlaßen, mit gedachtem
-<lb n="15"/>Kloeckhner und siner frouwen die gebür fürze=
-<lb n="16"/>nemen, und deßen waß sye weiters bekennen
-<lb n="17"/>werdent, dieselben begerter maaßen zeavisieren
-<lb n="18"/>welches den herren Nachbaren ich hiemit zur
-<lb n="19"/>gegen antwurt nit verhalten, und mich darbij
-<lb n="20"/>zun sonsten angenemmen dienst erwißen, erbieten
-<lb n="21"/>wöllen, datt. <origPlace ref="stadtasg-places-29" cert="medium" resp="#ner">Frouwenfeldt</origPlace> den <origDate when="1624-04-06" resp="#ner">6. Aprilis
+<lb n="1"/><unclear cert="low" resp="#joint">Woledle</unclear>, Veste, Ehrnveste, Hochgelehrte, <unclear cert="medium" resp="#joint">Weiße</unclear>,
+<lb n="2"/>besonders günstige liebe Herren Nachbaren, <unclear cert="medium" resp="#joint">denselbigen</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">sigendt</unclear> mein willige dienst zuvor:
+<lb n="4"/><unclear cert="medium" resp="#joint">Der</unclear> herren Nachbaren <unclear cert="medium" resp="#joint">schriben</unclear> sambt der <unclear cert="medium" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">gschloßnen</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">vhegicht</unclear> hab ich empfangen, und daruß <unclear cert="low" resp="#joint">deßen</unclear>
+<lb n="6"/>inhalt nebet <unclear cert="medium" resp="#joint">ihrem</unclear> <unclear cert="medium" resp="#joint">begeren</unclear>, <unclear cert="medium" resp="#joint">angehoert</unclear> und <unclear cert="medium" resp="#joint">verstanden</unclear>,
+<lb n="7"/>und hette zwar nit ermanglet mit <persName resp="#ner"><unclear cert="medium" resp="#joint">Thoman</unclear> <unclear cert="low" resp="#joint">Kloeckhnern</unclear></persName>
+<lb n="8"/>und <unclear cert="low" resp="#joint">siner</unclear> <unclear cert="medium" resp="#joint">frouwen</unclear> über <unclear cert="low" resp="#joint">diße</unclear> <unclear cert="low" resp="#joint">vhegicht</unclear> die <unclear cert="low" resp="#joint">gebür</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">fürzenemen</unclear>, wo nit die <unclear cert="medium" resp="#joint">heillige</unclear> zeit, und dann
+<lb n="10"/>sonsten <unclear cert="medium" resp="#joint">ohnabstellige</unclear> <unclear cert="medium" resp="#joint">gscheft</unclear> <unclear cert="medium" resp="#joint">ingerissen</unclear> weren.
+<lb n="11"/><unclear cert="medium" resp="#joint">Nichtßdestoweniger</unclear> aber moechten die herren <unclear cert="low" resp="#joint">Nachbaren</unclear>
+<lb n="12"/>mit <unclear cert="low" resp="#joint">ihrem</unclear> gefangnen malificanten den <unclear cert="medium" resp="#joint">einen</unclear> <unclear cert="medium" resp="#joint">allß</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">anderen</unclear> weg fort procedieren: <unclear cert="medium" resp="#joint">Ich</unclear> will aber auch
+<lb n="14"/>zuo gelegner zeit nit <unclear cert="low" resp="#joint">underlaßen</unclear>, mit gedachtem
+<lb n="15"/><unclear cert="low" resp="#joint">Kloeckhner</unclear> und siner <unclear cert="medium" resp="#joint">frouwen</unclear> die <unclear cert="low" resp="#joint">gebür</unclear> fürze=
+<lb n="16"/>nemen, und <unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="medium" resp="#joint">sye</unclear> <unclear cert="medium" resp="#joint">weiters</unclear> <unclear cert="low" resp="#joint">bekennen</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">werdent</unclear>, dieselben <unclear cert="low" resp="#joint">begerter</unclear> maaßen <unclear cert="medium" resp="#joint">zeavisieren</unclear>
+<lb n="18"/>welches den herren <unclear cert="medium" resp="#joint">Nachbaren</unclear> ich hiemit zur
+<lb n="19"/>gegen antwurt nit verhalten, und mich <unclear cert="low" resp="#joint">darbij</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">zun</unclear> sonsten <unclear cert="low" resp="#joint">angenemmen</unclear> dienst <unclear cert="low" resp="#joint">erwißen</unclear>, erbieten
+<lb n="21"/>wöllen, <unclear cert="low" resp="#joint">datt</unclear>. <origPlace ref="stadtasg-places-29" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Frouwenfeldt</unclear></origPlace> den <origDate when="1624-04-06" resp="#ner">6. Aprilis
 <lb n="22"/>anno 1624</origDate>.
-<lb n="23"/>Der Hh. Nachbarn
-<lb n="24"/>dienstwillig
-<lb n="25"/><persName role="issuer" resp="#ner">Itel Reding</persName> deß Rhats zuo
-<lb n="26"/><placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Schwytz</placeName>, Landtvogt im oberen
-<lb n="27"/>und nideren <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Thurgöw</placeName> etc.
+<lb n="23"/>Der <unclear cert="low" resp="#joint">Hh</unclear>. <unclear cert="low" resp="#joint">Nachbarn</unclear>
+<lb n="24"/><unclear cert="medium" resp="#joint">dienstwillig</unclear>
+<lb n="25"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Itel</unclear> <unclear cert="medium" resp="#joint">Reding</unclear></persName> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">Rhats</unclear> <unclear cert="medium" resp="#joint">zuo</unclear>
+<lb n="26"/><placeName ref="stadtasg-places-71" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Schwytz</unclear></placeName>, Landtvogt im oberen
+<lb n="27"/>und <unclear cert="low" resp="#joint">nideren</unclear> <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Thurgöw</unclear></placeName> etc.
 <pb facs="StadtASG_Missive_2480_9562.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2480_9563.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2480_9564.jpg" n="4"/>
-<lb n="28"/>Denen Edlen, ehrenvesten, frommen, fürsichtigen, hochgelehrten unnd
-<lb n="29"/>wolweisen herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rhat der
-<lb n="30"/>loblichen Statt St. Gallen</orgName> p. Meinen hochgeehrten lieben
+<lb n="28"/>Denen <unclear cert="low" resp="#joint">Edlen</unclear>, <unclear cert="low" resp="#joint">ehrenvesten</unclear>, <unclear cert="low" resp="#joint">frommen</unclear>, <unclear cert="low" resp="#joint">fürsichtigen</unclear>, <unclear cert="low" resp="#joint">hochgelehrten</unclear> unnd
+<lb n="29"/><unclear cert="low" resp="#joint">wolweisen</unclear> herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd <unclear cert="low" resp="#joint">Rhat</unclear> der
+<lb n="30"/><unclear cert="low" resp="#joint">loblichen</unclear> Statt St. Gallen</orgName> <unclear cert="medium" resp="#joint">p</unclear>. <unclear cert="medium" resp="#joint">Meinen</unclear> <unclear cert="medium" resp="#joint">hochgeehrten</unclear> lieben
 <lb n="31"/>herren.
 </p>
         </body>

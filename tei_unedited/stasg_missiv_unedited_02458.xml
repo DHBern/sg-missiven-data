@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2458</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,64 +20,64 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Rat zu Luzern antworten auf ein Schreiben des Zürcher Rats. Sie bedauern, dass die Städte Schaffhausen und St. Gallen die geringen Reichstaler nicht aufgeben oder abwechseln wollen. Da dies die Eidgenossenschaft beschwere, erklärt Luzern, dass es im Falle fehlender Abhilfe die Taler nach dem Beispiel der Nachbarn abwerten werde. Es wird protestiert, dass Schäden bei den Münzorten geltend gemacht werden, welche die Taler mit gutem Geld abwechseln sollen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Rat zu Luzern</name><date when="1624-01-23" resp="#regest">23ten Jänner. ao 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Zürich</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2458_9473.jpg" n="1"/>
-<lb n="1"/>Unsßer fründtlich willig diennst getrüwe l. a. E.
-<lb n="2"/>Wir haben durch üwer schriben verstanden, was üwere
-<lb n="3"/>und unsßere liebe <orgName resp="#ner">Eidtgnoßen</orgName> beder Stetten <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schafhußen</placeName>
+<lb n="1"/>Unsßer fründtlich willig diennst <unclear cert="low" resp="#joint">getrüwe</unclear> <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">a</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="2"/>Wir haben durch üwer schriben verstanden, was <unclear cert="low" resp="#joint">üwere</unclear>
+<lb n="3"/>und <unclear cert="low" resp="#joint">unsßere</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName> beder Stetten <placeName ref="stadtasg-places-185" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schafhußen</unclear></placeName>
 <lb n="4"/>und <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, Irer erklärunng halben, uff den bij üch
-<lb n="5"/>ußgangnen abscheid von wegen der Rijchstaleren, Inn
-<lb n="6"/>anttwort ervolgen laßen, Unnd hettind unnß zu
-<lb n="7"/>vorderst die hofnung gemacht, es wurdint gedachte
-<lb n="8"/>üwere und unsßere lieben Eidtgnoßen, Inn ansehen
-<lb n="9"/>deß geringen halts Irer taleren, und dannenher,
-<lb n="10"/>und von Ires schwal, einer gantzen <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoschaft</orgName>
-<lb n="11"/>hochobligender beschwerd, sich umb so vil mehr erklert,
-<lb n="12"/>und die widerumb ufzewechßlen, oder sust durch
-<lb n="13"/>andere mittel zu remedieren entschloßen haben, Wan
+<lb n="5"/>ußgangnen abscheid von wegen der <unclear cert="low" resp="#joint">Rijchstaleren</unclear>, Inn
+<lb n="6"/><unclear cert="low" resp="#joint">anttwort</unclear> ervolgen laßen, Unnd <unclear cert="low" resp="#joint">hettind</unclear> unnß zu
+<lb n="7"/><unclear cert="low" resp="#joint">vorderst</unclear> die hofnung gemacht, es wurdint gedachte
+<lb n="8"/>üwere und <unclear cert="low" resp="#joint">unsßere</unclear> lieben <unclear cert="low" resp="#joint">Eidtgnoßen</unclear>, Inn <unclear cert="low" resp="#joint">ansehen</unclear>
+<lb n="9"/>deß geringen <unclear cert="low" resp="#joint">halts</unclear> <unclear cert="low" resp="#joint">Irer</unclear> <unclear cert="low" resp="#joint">taleren</unclear>, und <unclear cert="low" resp="#joint">dannenher</unclear>,
+<lb n="10"/>und von <unclear cert="medium" resp="#joint">Ires</unclear> <unclear cert="medium" resp="#joint">schwal</unclear>, <unclear cert="medium" resp="#joint">einer</unclear> <unclear cert="medium" resp="#joint">gantzen</unclear> <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoschaft</orgName>
+<lb n="11"/><unclear cert="medium" resp="#joint">hochobligender</unclear> <unclear cert="medium" resp="#joint">beschwerd</unclear>, sich umb so vil mehr <unclear cert="low" resp="#joint">erklert</unclear>,
+<lb n="12"/>und die widerumb <unclear cert="medium" resp="#joint">ufzewechßlen</unclear>, oder sust <unclear cert="low" resp="#joint">durch</unclear>
+<lb n="13"/>andere mittel zu remedieren <unclear cert="medium" resp="#joint">entschloßen</unclear> haben, Wan
 <lb n="14"/>aber die umb so vil sich nit begeben, und wir ver-
-<lb n="15"/>nünfftig erachtent, daß Im fal nit fürderliche,
-<lb n="16"/>gebürende fürsehung sol geschaffen werden, unsß-
-<lb n="17"/>er Statt und landtschafft durch den mercklichen
-<lb n="18"/>schwal diser geringen taleren Jhe lenger Jhe mehr
-<lb n="19"/>getrengt und beschwärt wurde, So sollent und
-<lb n="20"/>wöllent wir üch unsßeren g. l. a. E. bester wol-
-<lb n="21"/>meinung nit bergen, daß Im fahl durch ver-
-<lb n="22"/>melte bede Stett, dem nit fürderlichen remedierrt
-<lb n="23"/>wirt, wir unnß entschloßen, nach mittlen zetrachten,
-<lb n="24"/>unsßer Statt und landtschafft diser beschwerdt
-<lb n="25"/>zeentladen, und mit derglijchen taleren glijchfals
-<lb n="26"/>nach dem exempel der nachbarschafft, mit deren
-<lb n="27"/>die unsßeren unumbgänglich habent zehandlen,
-<lb n="28"/>abzerucken. Wir protestierent auch bester form,
-<lb n="29"/>Im fal wir gemeinlich oder Jemandts der
-<lb n="30"/>unsßeren durch sölichen abruck, zu schaden khomen
-<lb n="31"/>solte, wir den bij denen orten, an welchen dise
-<lb n="32"/>geringe taler gemüntzt werdent, zeerholen haben
-<lb n="33"/>wöllent, dann es Je der billichkeit gemäß sijn
-<lb n="34"/>wirt, daß selbige ort derglijchen taler unnß
-<lb n="35"/>und den unsßeren abnemint, und mit gutem
-<lb n="36"/>gelt abwechßlint. Daß habent wir üch unß-
-<lb n="37"/>eren getrüwen l. a. E. bester E. wol-
+<lb n="15"/><unclear cert="medium" resp="#joint">nünfftig</unclear> erachtent, daß Im fal nit <unclear cert="low" resp="#joint">fürderliche</unclear>,
+<lb n="16"/><unclear cert="low" resp="#joint">gebürende</unclear> <unclear cert="low" resp="#joint">fürsehung</unclear> <unclear cert="low" resp="#joint">sol</unclear> <unclear cert="low" resp="#joint">geschaffen</unclear> werden, unsß-
+<lb n="17"/>er Statt und landtschafft <unclear cert="low" resp="#joint">durch</unclear> den mercklichen
+<lb n="18"/>schwal diser geringen <unclear cert="low" resp="#joint">taleren</unclear> <unclear cert="low" resp="#joint">Jhe</unclear> lenger <unclear cert="low" resp="#joint">Jhe</unclear> mehr
+<lb n="19"/><unclear cert="low" resp="#joint">getrengt</unclear> und <unclear cert="medium" resp="#joint">beschwärt</unclear> wurde, So sollent und
+<lb n="20"/>wöllent wir üch <unclear cert="low" resp="#joint">unsßeren</unclear> <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">a</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">bester</unclear> wol-
+<lb n="21"/>meinung nit bergen, daß Im <unclear cert="low" resp="#joint">fahl</unclear> <unclear cert="low" resp="#joint">durch</unclear> ver-
+<lb n="22"/>melte <unclear cert="low" resp="#joint">bede</unclear> Stett, <unclear cert="low" resp="#joint">dem</unclear> nit fürderlichen <unclear cert="low" resp="#joint">remedierrt</unclear>
+<lb n="23"/>wirt, wir unnß entschloßen, nach <unclear cert="low" resp="#joint">mittlen</unclear> <unclear cert="low" resp="#joint">zetrachten</unclear>,
+<lb n="24"/><unclear cert="low" resp="#joint">unsßer</unclear> Statt und landtschafft diser beschwerdt
+<lb n="25"/><unclear cert="medium" resp="#joint">zeentladen</unclear>, und mit <unclear cert="low" resp="#joint">derglijchen</unclear> <unclear cert="low" resp="#joint">taleren</unclear> <unclear cert="low" resp="#joint">glijchfals</unclear>
+<lb n="26"/>nach dem exempel der nachbarschafft, mit <unclear cert="low" resp="#joint">deren</unclear>
+<lb n="27"/>die <unclear cert="low" resp="#joint">unsßeren</unclear> <unclear cert="low" resp="#joint">unumbgänglich</unclear> habent zehandlen,
+<lb n="28"/><unclear cert="low" resp="#joint">abzerucken</unclear>. Wir protestierent auch bester form,
+<lb n="29"/>Im fal wir <unclear cert="low" resp="#joint">gemeinlich</unclear> oder <unclear cert="low" resp="#joint">Jemandts</unclear> der
+<lb n="30"/><unclear cert="low" resp="#joint">unsßeren</unclear> <unclear cert="low" resp="#joint">durch</unclear> sölichen <unclear cert="low" resp="#joint">abruck</unclear>, zu schaden <unclear cert="low" resp="#joint">khomen</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">solte</unclear>, wir den bij denen <unclear cert="low" resp="#joint">orten</unclear>, an welchen dise
+<lb n="32"/>geringe <unclear cert="low" resp="#joint">taler</unclear> <unclear cert="low" resp="#joint">gemüntzt</unclear> <unclear cert="low" resp="#joint">werdent</unclear>, <unclear cert="low" resp="#joint">zeerholen</unclear> haben
+<lb n="33"/>wöllent, dann es <unclear cert="low" resp="#joint">Je</unclear> der billichkeit gemäß sijn
+<lb n="34"/>wirt, daß selbige <unclear cert="low" resp="#joint">ort</unclear> <unclear cert="low" resp="#joint">derglijchen</unclear> <unclear cert="low" resp="#joint">taler</unclear> unnß
+<lb n="35"/>und den <unclear cert="low" resp="#joint">unsßeren</unclear> <unclear cert="low" resp="#joint">abnemint</unclear>, und mit <unclear cert="low" resp="#joint">gutem</unclear>
+<lb n="36"/>gelt <unclear cert="low" resp="#joint">abwechßlint</unclear>. Daß habent wir üch unß-
+<lb n="37"/>eren getrüwen <unclear cert="medium" resp="#joint">l</unclear>. <unclear cert="medium" resp="#joint">a</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. bester <unclear cert="low" resp="#joint">E</unclear>. wol-
 <pb facs="StadtASG_Missive_2458_9474.jpg" n="2"/>
-<lb n="38"/>meinung Inn widerantwort anfügen wöllen, Goetlicher
-<lb n="39"/>protection unnß damit sambtlich wolbevelchende. Datum
-<lb n="40"/>den <origDate when="1624" resp="#ner">23ten Jänner. ao 1624</origDate>.
+<lb n="38"/>meinung Inn <unclear cert="medium" resp="#joint">widerantwort</unclear> <unclear cert="medium" resp="#joint">anfügen</unclear> wöllen, <unclear cert="low" resp="#joint">Goetlicher</unclear>
+<lb n="39"/>protection <unclear cert="medium" resp="#joint">unnß</unclear> damit sambtlich <unclear cert="medium" resp="#joint">wolbevelchende</unclear>. Datum
+<lb n="40"/>den <origDate when="1624" resp="#ner">23ten <unclear cert="medium" resp="#joint">Jänner</unclear>. <unclear cert="medium" resp="#joint">ao</unclear> 1624</origDate>.
 <lb n="41"/><orgName role="issuer" resp="#ner">Schulthaiß und Rath der
 <lb n="42"/>Statt Lucern</orgName>.
-<lb n="43"/>An <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath der Statt Zürych</orgName>.
+<lb n="43"/>An <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath der Statt <unclear cert="low" resp="#joint">Zürych</unclear></orgName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1092</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,47 +20,47 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz ersuchen Bürgermeister und Rat zu St. Gallen, ihren Bürger Melchior Rothmund über einen angesetzten Rechtstag für die Gläubiger des verstorbenen Konstanzer Bürgers Hans Dächinger zu informieren. Sie bitten zudem, das offene Edikt an den üblichen Orten aufzuschlagen und zu verkünden, damit niemand sein Recht verkürzt sieht.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz</name><date when="1574-12-14" cert="medium" resp="#regest">14 decembris, anno 74</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1092_3473.jpg" n="1"/>
-<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">fründtlich</unclear>, nachbürlich, und <unclear cert="low" resp="#joint">guotwillige</unclear> diennst,
-<lb n="2"/>sÿen uech jederzit berait zuvor. Fürsichtigen, Ersamen,
-<lb n="3"/><unclear cert="low" resp="#joint">Wÿsen</unclear>, besonders lieben und guoten fründt, wir
-<lb n="4"/>haben gemainen <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">usgetrettnen</unclear> <unclear cert="low" resp="#joint">burgers</unclear> <persName resp="#ner">Hannsen
-<lb n="5"/>Dachingers</persName>, schuldgläubigern, uff ettlicher derselben an=
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">fründtlich</unclear>, nachbürlich, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guotwillige</unclear> diennst,
+<lb n="2"/><unclear cert="low" resp="#joint">sÿen</unclear> uech jederzit berait zuvor. Fürsichtigen, Ersamen,
+<lb n="3"/><unclear cert="low" resp="#joint">Wÿsen</unclear>, <unclear cert="medium" resp="#joint">besonders</unclear> lieben <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">fründt</unclear>, wir
+<lb n="4"/>haben gemainen <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">usgetrettnen</unclear> <unclear cert="medium" resp="#joint">burgers</unclear> <persName resp="#ner">Hannsen
+<lb n="5"/><unclear cert="low" resp="#joint">Dachingers</unclear></persName>, <unclear cert="low" resp="#joint">schuldgläubigern</unclear>, <unclear cert="low" resp="#joint">uff</unclear> ettlicher derselben an=
 <lb n="6"/>halten, ainen algemainen rechtstag ernennt, und ange=
-<lb n="7"/>setzt. Wie <unclear cert="low" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">ußer</unclear> <unclear cert="low" resp="#joint">hiebÿ</unclear> <unclear cert="low" resp="#joint">verwartem</unclear> <unclear cert="low" resp="#joint">offnem</unclear> <unclear cert="low" resp="#joint">edict</unclear>,
-<lb n="8"/><unclear cert="low" resp="#joint">zuvernemen</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">diewil</unclear> dann, wie wir bericht,
-<lb n="9"/>üwer burger <persName resp="#ner">Melchior Rothmund</persName>, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">villichter</unclear> ettliche
-<lb n="10"/>anndere mer <unclear cert="low" resp="#joint">üwerer</unclear> burger, <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ermelts</unclear> <unclear cert="low" resp="#joint">Dachingers</unclear>
-<lb n="11"/>hab und guot, ouch vorderung und ansprach haben möchten,
+<lb n="7"/>setzt. Wie ir <unclear cert="medium" resp="#joint">ußer</unclear> <unclear cert="medium" resp="#joint">hiebÿ</unclear> <unclear cert="medium" resp="#joint">verwartem</unclear> <unclear cert="medium" resp="#joint">offnem</unclear> <unclear cert="medium" resp="#joint">edict</unclear>,
+<lb n="8"/><unclear cert="medium" resp="#joint">zuvernemen</unclear>, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">diewil</unclear> dann, wie wir bericht,
+<lb n="9"/><unclear cert="medium" resp="#joint">üwer</unclear> burger <persName resp="#ner">Melchior Rothmund</persName>, und <unclear cert="medium" resp="#joint">villichter</unclear> ettliche
+<lb n="10"/>anndere mer <unclear cert="low" resp="#joint">üwerer</unclear> <unclear cert="medium" resp="#joint">burger</unclear>, <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ermelts</unclear> <unclear cert="low" resp="#joint">Dachingers</unclear>
+<lb n="11"/>hab <unclear cert="medium" resp="#joint">und</unclear> guot, ouch vorderung und ansprach haben möchten,
 <lb n="12"/>so ersuochen wir üch demnach hiemit <unclear cert="low" resp="#joint">fründtlich</unclear>, und
-<lb n="13"/>nachbürlich, ir wellendt gedachtem <persName resp="#ner">Rotmundt</persName>, sölchen
-<lb n="14"/>angesetzten rechtstag ouch <unclear cert="low" resp="#joint">wüssenhafft</unclear> machen, und vor=
-<lb n="15"/>berüerts <unclear cert="low" resp="#joint">edict</unclear>, <unclear cert="low" resp="#joint">üwerm</unclear> habenden <unclear cert="medium" resp="#joint">gebruch</unclear> nach, an
-<lb n="16"/><unclear cert="low" resp="#joint">gepürenden</unclear> orthen, <unclear cert="low" resp="#joint">offennlichen</unclear> <unclear cert="low" resp="#joint">uffschlahen</unclear>, und ver=
-<lb n="17"/>künden <unclear cert="medium" resp="#joint">laßen</unclear>, damit an <unclear cert="low" resp="#joint">sinem</unclear> rechten niemandts
-<lb n="18"/>verkürtzt, noch sich der unwüssenhait zebeklagen ursach
-<lb n="19"/>habe, das sÿen wir umb üch hinwiderumb jeder=
-<lb n="20"/>zeit ganntz <unclear cert="low" resp="#joint">fründtlich</unclear> <unclear cert="medium" resp="#joint">und</unclear> nachbürlich <unclear cert="low" resp="#joint">zebeschulden</unclear>
-<lb n="21"/><unclear cert="low" resp="#joint">erbüttig</unclear>. Datum den <origDate when="1574-12-14" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">14</unclear> decembris, anno <unclear cert="low" resp="#joint">74</unclear></origDate>.
-<lb n="22"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Verwalter dhouptmanschafft Burger=
-<lb n="23"/>maister und Rath der statt Costantz</orgName>.
+<lb n="13"/>nachbürlich, ir wellendt gedachtem <persName resp="#ner"><unclear cert="low" resp="#joint">Rotmundt</unclear></persName>, sölchen
+<lb n="14"/>angesetzten rechtstag ouch <unclear cert="medium" resp="#joint">wüssenhafft</unclear> machen, <unclear cert="medium" resp="#joint">und</unclear> vor=
+<lb n="15"/><unclear cert="medium" resp="#joint">berüerts</unclear> <unclear cert="low" resp="#joint">edict</unclear>, <unclear cert="low" resp="#joint">üwerm</unclear> habenden gebruch nach, <unclear cert="medium" resp="#joint">an</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">gepürenden</unclear> <unclear cert="medium" resp="#joint">orthen</unclear>, <unclear cert="medium" resp="#joint">offennlichen</unclear> <unclear cert="low" resp="#joint">uffschlahen</unclear>, <unclear cert="medium" resp="#joint">und</unclear> ver=
+<lb n="17"/><unclear cert="medium" resp="#joint">künden</unclear> laßen, damit an <unclear cert="low" resp="#joint">sinem</unclear> rechten niemandts
+<lb n="18"/>verkürtzt, noch sich der unwüssenhait <unclear cert="low" resp="#joint">zebeklagen</unclear> ursach
+<lb n="19"/>habe, das <unclear cert="low" resp="#joint">sÿen</unclear> wir umb <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">hinwiderumb</unclear> jeder=
+<lb n="20"/>zeit ganntz <unclear cert="low" resp="#joint">fründtlich</unclear> und nachbürlich <unclear cert="low" resp="#joint">zebeschulden</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">erbüttig</unclear>. Datum den <origDate when="1574-12-14" cert="medium" resp="#ner">14 decembris, anno <unclear cert="low" resp="#joint">74</unclear></origDate>.
+<lb n="22"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Verwalter <unclear cert="low" resp="#joint">dhouptmanschafft</unclear> Burger=
+<lb n="23"/>maister und Rath der statt <unclear cert="medium" resp="#joint">Costantz</unclear></orgName>.
 <pb facs="StadtASG_Missive_1092_3474.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1092_3475.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1092_3476.jpg" n="4"/>
-<lb n="24"/>Den fuersichtigen, ersamen, weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaist=
+<lb n="24"/>Den <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, ersamen, weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaist=
 <lb n="25"/>er, unnd Rath zuo Sanct Gallen</orgName>, unnsern
 <lb n="26"/>besonders lieben, unnd guoten freunden.
 </p>

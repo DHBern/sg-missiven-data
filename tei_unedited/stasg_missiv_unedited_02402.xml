@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2402</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,101 +20,101 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Vogt und Rat zu Bischofszell bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Hans Koller, Metzger, die ausgesprochene Stadtverweisung aufzuheben. Koller habe sich wegen unbedachter Worte gegenüber Landammann Schüß in Ungnade gebracht und sei verhaftet worden. Er sei mit einer St. Gallerin verlobt und wolle seine Haushaltung in St. Gallen anlegen. Koller hoffe, dass Landammann Schüß selbst um Gnade bitten werde. Bischofszell bittet um Nachbarschaftshilfe und verspricht Gegenseitigkeit.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Vogt und Rat zu Bischofszell</name><placeName resp="#regest">Bischoffzell</placeName><date when="1623-03-17" resp="#regest">Bischoffzell den 17./27.ten Marty anno 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2402_9229.jpg" n="1"/>
-<lb n="1"/>Edle frome ernveste, hochgelerte, fürsichtige, ersame und weyse
-<lb n="2"/>insonders ehrende günstige liebe Herren Nachpuren, den Herren
-<lb n="3"/>seyen unnßer fründtlich gruoß, nachpurliche unnd gantz guot-
-<lb n="4"/>willige dienst jederzeüt züvor berait.
-<lb n="5"/>Eß sind vor unnß in versamletem <orgName resp="#ner">Rath</orgName> erschinen <persName resp="#ner">Hanß Koller</persName>
-<lb n="6"/>metzger, und mit ime maister <persName resp="#ner">David Held</persName> der alt unnßere burger,
-<lb n="7"/>unnß underthänig unnd demuettig fürgebracht und zevernemen
-<lb n="8"/>geben. Wie daß er nun ietz etliche jar bey herren <persName resp="#ner">Cunrad
-<lb n="9"/>Kaimen</persName> metzger euwerem burger dienstsweiße geweßen.
-<lb n="10"/>In hoffnung sinen obligenden dienst unnd waß ime alß
-<lb n="11"/>vertruwet unnd befolen worden, mit allen ehren, threuwen
-<lb n="12"/>unnd redlich, mit darspannung seines leibs früe unnd spat
-<lb n="13"/>willig unnd unverdrißig dermaßen verricht und versehen.
-<lb n="14"/>Daß nit allein bmelts seines herren nutz ob gott wil wol
-<lb n="15"/>befürderet, sonder auch die St. Gallische metzg, den Herren
-<lb n="16"/>dero burger unnd meniglichem zuo guotem versehen worden,
-<lb n="17"/>in mittelß aber ime etwaß unbedächtlicher reden wegen
-<lb n="18"/>ein unvorsehenlicher unglückh herren <persName resp="#ner">Landtaman Schüßen</persName>
-<lb n="19"/>betreffendt, bewißtermaßen laidig dergestalt zuogestanden,
-<lb n="20"/>daß ime neben usgestandner verhaftung auch die <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Stat
-<lb n="21"/>Sanct Gallen</placeName> ein zeütlang seinen wandel darinn und uß
-<lb n="22"/>derselbigen zehaben verbotten worden, welcheß nun ine
-<lb n="23"/>nit wenig sonder zum höchsten bedure. Dieweil er sich
-<lb n="24"/>dann mit einer burgerin zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> ehelichen verlobt,
-<lb n="25"/>auch sein haußhaltung alhie zuo erster gelegenheit, mit gottes
-<lb n="26"/>hilff unnd gnad anzestellen vorhabens, so er auch mit euweren
-<lb n="27"/>metzgeren unnd sunst in anderweg zehandtieren haben möchte.
-<lb n="28"/>Ime die midung der <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Stat S. Gallen</placeName> uferlegte zeüt
-<lb n="29"/>nit allein verwißenlich, sonder auch zuo schädlichem nachtheil
-<lb n="30"/>beschwerlich sein will. Er tröstet auch sovil verthruwen
-<lb n="31"/>daß besagter herr Landtaman Schüß umb keinen ainigen
-<lb n="32"/>yfer gegen ime stande, sonder veel so bald selbst für ine
-<lb n="33"/>umb gnad zeerweißen piten werde. Alß sige er bedacht
-<lb n="34"/>durch seinen fründtlichen lieben vatteren meisteren
-<lb n="35"/>diß, die Herren undertheniglich unnd demuettig zepiten,
-<lb n="36"/>unnd zeersuochen, ob ime sovil gn. zeerwerben, daß die
-<lb n="37"/>uferlegte straffart wider nach geloßen und den wandel
+<lb n="1"/>Edle <unclear cert="low" resp="#joint">frome</unclear> <unclear cert="low" resp="#joint">ernveste</unclear>, hochgelerte, fürsichtige, ersame und <unclear cert="medium" resp="#joint">weyse</unclear>
+<lb n="2"/><unclear cert="medium" resp="#joint">insonders</unclear> <unclear cert="medium" resp="#joint">ehrende</unclear> <unclear cert="medium" resp="#joint">günstige</unclear> liebe Herren <unclear cert="low" resp="#joint">Nachpuren</unclear>, den Herren
+<lb n="3"/><unclear cert="medium" resp="#joint">seyen</unclear> <unclear cert="low" resp="#joint">unnßer</unclear> fründtlich gruoß, <unclear cert="low" resp="#joint">nachpurliche</unclear> unnd <unclear cert="medium" resp="#joint">gantz</unclear> guot-
+<lb n="4"/>willige dienst <unclear cert="low" resp="#joint">jederzeüt</unclear> <unclear cert="low" resp="#joint">züvor</unclear> berait.
+<lb n="5"/>Eß sind vor unnß <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">versamletem</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Rath</unclear></orgName> erschinen <persName resp="#ner">Hanß <unclear cert="low" resp="#joint">Koller</unclear></persName>
+<lb n="6"/>metzger, und mit ime maister <persName resp="#ner">David Held</persName> der <unclear cert="low" resp="#joint">alt</unclear> <unclear cert="low" resp="#joint">unnßere</unclear> burger,
+<lb n="7"/><unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">underthänig</unclear> unnd <unclear cert="low" resp="#joint">demuettig</unclear> <unclear cert="medium" resp="#joint">fürgebracht</unclear> und <unclear cert="low" resp="#joint">zevernemen</unclear>
+<lb n="8"/>geben. Wie daß er nun <unclear cert="low" resp="#joint">ietz</unclear> <unclear cert="medium" resp="#joint">etliche</unclear> <unclear cert="low" resp="#joint">jar</unclear> bey herren <persName resp="#ner">Cunrad
+<lb n="9"/><unclear cert="low" resp="#joint">Kaimen</unclear></persName> <unclear cert="low" resp="#joint">metzger</unclear> <unclear cert="medium" resp="#joint">euwerem</unclear> burger <unclear cert="low" resp="#joint">dienstsweiße</unclear> <unclear cert="low" resp="#joint">geweßen</unclear>.
+<lb n="10"/>In <unclear cert="medium" resp="#joint">hoffnung</unclear> <unclear cert="medium" resp="#joint">sinen</unclear> <unclear cert="medium" resp="#joint">obligenden</unclear> dienst unnd waß ime alß
+<lb n="11"/><unclear cert="low" resp="#joint">vertruwet</unclear> unnd <unclear cert="low" resp="#joint">befolen</unclear> worden, mit <unclear cert="medium" resp="#joint">allen</unclear> ehren, <unclear cert="low" resp="#joint">threuwen</unclear>
+<lb n="12"/>unnd redlich, mit <unclear cert="low" resp="#joint">darspannung</unclear> seines leibs früe unnd spat
+<lb n="13"/>willig unnd <unclear cert="low" resp="#joint">unverdrißig</unclear> <unclear cert="low" resp="#joint">dermaßen</unclear> <unclear cert="low" resp="#joint">verricht</unclear> und <unclear cert="medium" resp="#joint">versehen</unclear>.
+<lb n="14"/>Daß nit <unclear cert="medium" resp="#joint">allein</unclear> <unclear cert="low" resp="#joint">bmelts</unclear> seines <unclear cert="low" resp="#joint">herren</unclear> nutz <unclear cert="medium" resp="#joint">ob</unclear> gott <unclear cert="low" resp="#joint">wil</unclear> <unclear cert="low" resp="#joint">wol</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">befürderet</unclear>, <unclear cert="medium" resp="#joint">sonder</unclear> auch die St. <unclear cert="medium" resp="#joint">Gallische</unclear> <unclear cert="low" resp="#joint">metzg</unclear>, den Herren
+<lb n="16"/><unclear cert="low" resp="#joint">dero</unclear> burger unnd <unclear cert="medium" resp="#joint">meniglichem</unclear> zuo guotem <unclear cert="low" resp="#joint">versehen</unclear> worden,
+<lb n="17"/>in <unclear cert="low" resp="#joint">mittelß</unclear> aber <unclear cert="medium" resp="#joint">ime</unclear> <unclear cert="low" resp="#joint">etwaß</unclear> <unclear cert="low" resp="#joint">unbedächtlicher</unclear> <unclear cert="medium" resp="#joint">reden</unclear> wegen
+<lb n="18"/>ein <unclear cert="low" resp="#joint">unvorsehenlicher</unclear> <unclear cert="low" resp="#joint">unglückh</unclear> herren <persName resp="#ner">Landtaman Schüßen</persName>
+<lb n="19"/>betreffendt, bewißtermaßen laidig dergestalt <unclear cert="low" resp="#joint">zuogestanden</unclear>,
+<lb n="20"/>daß ime neben <unclear cert="low" resp="#joint">usgestandner</unclear> verhaftung auch <unclear cert="low" resp="#joint">die</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Stat</unclear>
+<lb n="21"/>Sanct <unclear cert="medium" resp="#joint">Gallen</unclear></placeName> ein <unclear cert="low" resp="#joint">zeütlang</unclear> seinen wandel <unclear cert="low" resp="#joint">darinn</unclear> und uß
+<lb n="22"/>derselbigen zehaben verbotten worden, welcheß nun <unclear cert="low" resp="#joint">ine</unclear>
+<lb n="23"/>nit wenig sonder zum <unclear cert="medium" resp="#joint">höchsten</unclear> bedure. Dieweil er sich
+<lb n="24"/><unclear cert="low" resp="#joint">dann</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">einer</unclear> burgerin zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> ehelichen verlobt,
+<lb n="25"/>auch sein <unclear cert="medium" resp="#joint">haußhaltung</unclear> alhie zuo <unclear cert="medium" resp="#joint">erster</unclear> gelegenheit, mit gottes
+<lb n="26"/>hilff unnd gnad anzestellen vorhabens, so er auch mit <unclear cert="low" resp="#joint">euweren</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">metzgeren</unclear> unnd <unclear cert="medium" resp="#joint">sunst</unclear> in <unclear cert="medium" resp="#joint">anderweg</unclear> <unclear cert="low" resp="#joint">zehandtieren</unclear> haben möchte.
+<lb n="28"/><unclear cert="medium" resp="#joint">Ime</unclear> die <unclear cert="low" resp="#joint">midung</unclear> der <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Stat S. Gallen</placeName> <unclear cert="medium" resp="#joint">uferlegte</unclear> <unclear cert="low" resp="#joint">zeüt</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">nit</unclear> allein <unclear cert="low" resp="#joint">verwißenlich</unclear>, sonder auch zuo <unclear cert="low" resp="#joint">schädlichem</unclear> <unclear cert="low" resp="#joint">nachtheil</unclear>
+<lb n="30"/>beschwerlich sein will. Er <unclear cert="low" resp="#joint">tröstet</unclear> auch <unclear cert="low" resp="#joint">sovil</unclear> <unclear cert="low" resp="#joint">verthruwen</unclear>
+<lb n="31"/>daß besagter herr Landtaman <unclear cert="low" resp="#joint">Schüß</unclear> <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">keinen</unclear> <unclear cert="low" resp="#joint">ainigen</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">yfer</unclear> gegen ime stande, sonder <unclear cert="low" resp="#joint">veel</unclear> so bald <unclear cert="medium" resp="#joint">selbst</unclear> für ine
+<lb n="33"/><unclear cert="low" resp="#joint">umb</unclear> gnad <unclear cert="low" resp="#joint">zeerweißen</unclear> <unclear cert="low" resp="#joint">piten</unclear> werde. <unclear cert="medium" resp="#joint">Alß</unclear> <unclear cert="low" resp="#joint">sige</unclear> er bedacht
+<lb n="34"/>durch seinen fründtlichen lieben <unclear cert="low" resp="#joint">vatteren</unclear> <unclear cert="low" resp="#joint">meisteren</unclear>
+<lb n="35"/>diß, die Herren <unclear cert="low" resp="#joint">undertheniglich</unclear> unnd <unclear cert="low" resp="#joint">demuettig</unclear> <unclear cert="low" resp="#joint">zepiten</unclear>,
+<lb n="36"/>unnd <unclear cert="low" resp="#joint">zeersuochen</unclear>, ob ime sovil gn. <unclear cert="low" resp="#joint">zeerwerben</unclear>, daß <unclear cert="low" resp="#joint">die</unclear>
+<lb n="37"/>uferlegte <unclear cert="low" resp="#joint">straffart</unclear> wider nach <unclear cert="medium" resp="#joint">geloßen</unclear> und den wandel
 <pb facs="StadtASG_Missive_2402_9230.jpg" n="2"/>
-<lb n="38"/>in unnd us der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> wider geheben zue-
-<lb n="39"/>vergündt werden möchte. Derwegen an unnß sein
-<lb n="40"/>und seines vattern, gantz underthenigs und dienstlichs
-<lb n="41"/>pitten, ime an die Herren pitliches fürschryben, mit-
-<lb n="42"/>zethailen. In hoffnung deßten fruchtbarlich und gantz
-<lb n="43"/>wol zegenießen heben werde. Sollich sein Kellers
-<lb n="44"/>unnd seines vatters pitten, wir ime füeglich nit
-<lb n="45"/>verwaigren sollen. Sonder sind wir zue gueter befürder-
-<lb n="46"/>ung zeerweisen wolgenaigt. Gelangt also an
-<lb n="47"/>die Herren hierufegen unser gantz dienst: frünt:
-<lb n="48"/>unnd Nachparlichs pitten, die wellen dem gueten
-<lb n="49"/>jungen man, begangnen fäller gn. verzeihen unnd
-<lb n="50"/>ine mit gnaden dergestalt zebedenckhen, daß derselbig
-<lb n="51"/>wie ain anderer seinen ab- und zuegang, handel unnd
-<lb n="52"/>wandel, in dero lobliche Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> fürohin wider
-<lb n="53"/>offentlich geheben möge, unnd ine seiner threüen ange-
-<lb n="54"/>wenten diensten (deran die Herren zweifels ohne
-<lb n="55"/>auch kain mißfallen haben werdend) genießen laßen.
-<lb n="56"/>In bedenckhung daß der herr Landaman Schüß (wie
-<lb n="57"/>wir bericht) gegen ime kain sonderen yfer heben
-<lb n="58"/>sonder mit allen günsten woll gewogen sein solle.
-<lb n="59"/>Unnd also ime unßrem Burger dergestalt gnad wider-
-<lb n="60"/>faren laßen, unserer fürpit Nachparlich genoßen
-<lb n="61"/>zeheben würckhlich spüren möge. Wo
-<lb n="62"/>dann wir hingegen weß die Herren seintwegen in
-<lb n="63"/>begebenden felen unnd gelegenhaiten auch er sampt
+<lb n="38"/>in unnd <unclear cert="low" resp="#joint">us</unclear> der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> wider <unclear cert="low" resp="#joint">geheben</unclear> <unclear cert="low" resp="#joint">zue</unclear>-
+<lb n="39"/>vergündt werden möchte. <unclear cert="low" resp="#joint">Derwegen</unclear> an <unclear cert="medium" resp="#joint">unnß</unclear> sein
+<lb n="40"/>und seines <unclear cert="low" resp="#joint">vattern</unclear>, gantz <unclear cert="medium" resp="#joint">underthenigs</unclear> und <unclear cert="low" resp="#joint">dienstlichs</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">pitten</unclear>, <unclear cert="medium" resp="#joint">ime</unclear> an die Herren <unclear cert="low" resp="#joint">pitliches</unclear> <unclear cert="low" resp="#joint">fürschryben</unclear>, mit-
+<lb n="42"/><unclear cert="low" resp="#joint">zethailen</unclear>. In hoffnung <unclear cert="low" resp="#joint">deßten</unclear> fruchtbarlich und gantz
+<lb n="43"/>wol <unclear cert="low" resp="#joint">zegenießen</unclear> heben werde. Sollich sein <unclear cert="low" resp="#joint">Kellers</unclear>
+<lb n="44"/>unnd seines vatters <unclear cert="low" resp="#joint">pitten</unclear>, <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">ime</unclear> füeglich nit
+<lb n="45"/><unclear cert="low" resp="#joint">verwaigren</unclear> sollen. Sonder sind wir zue <unclear cert="medium" resp="#joint">gueter</unclear> befürder-
+<lb n="46"/>ung <unclear cert="low" resp="#joint">zeerweisen</unclear> wolgenaigt. <unclear cert="low" resp="#joint">Gelangt</unclear> also an
+<lb n="47"/>die Herren <unclear cert="low" resp="#joint">hierufegen</unclear> <unclear cert="low" resp="#joint">unser</unclear> gantz dienst: <unclear cert="medium" resp="#joint">frünt</unclear>:
+<lb n="48"/>unnd <unclear cert="low" resp="#joint">Nachparlichs</unclear> <unclear cert="medium" resp="#joint">pitten</unclear>, die <unclear cert="medium" resp="#joint">wellen</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">gueten</unclear>
+<lb n="49"/><unclear cert="medium" resp="#joint">jungen</unclear> man, begangnen <unclear cert="low" resp="#joint">fäller</unclear> <unclear cert="low" resp="#joint">gn</unclear>. <unclear cert="low" resp="#joint">verzeihen</unclear> unnd
+<lb n="50"/><unclear cert="low" resp="#joint">ine</unclear> mit gnaden dergestalt <unclear cert="low" resp="#joint">zebedenckhen</unclear>, daß derselbig
+<lb n="51"/>wie <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">anderer</unclear> seinen <unclear cert="medium" resp="#joint">ab</unclear>- und zuegang, handel unnd
+<lb n="52"/>wandel, in dero <unclear cert="medium" resp="#joint">lobliche</unclear> Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> fürohin wider
+<lb n="53"/><unclear cert="low" resp="#joint">offentlich</unclear> geheben möge, unnd <unclear cert="low" resp="#joint">ine</unclear> seiner <unclear cert="low" resp="#joint">threüen</unclear> ange-
+<lb n="54"/><unclear cert="low" resp="#joint">wenten</unclear> <unclear cert="medium" resp="#joint">diensten</unclear> (<unclear cert="low" resp="#joint">deran</unclear> die Herren <unclear cert="low" resp="#joint">zweifels</unclear> <unclear cert="low" resp="#joint">ohne</unclear>
+<lb n="55"/>auch kain mißfallen haben werdend) <unclear cert="low" resp="#joint">genießen</unclear> laßen.
+<lb n="56"/><unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">bedenckhung</unclear> daß der herr <unclear cert="low" resp="#joint">Landaman</unclear> <unclear cert="low" resp="#joint">Schüß</unclear> (wie
+<lb n="57"/>wir bericht) gegen <unclear cert="medium" resp="#joint">ime</unclear> <unclear cert="medium" resp="#joint">kain</unclear> <unclear cert="medium" resp="#joint">sonderen</unclear> <unclear cert="low" resp="#joint">yfer</unclear> heben
+<lb n="58"/>sonder mit allen <unclear cert="low" resp="#joint">günsten</unclear> <unclear cert="medium" resp="#joint">woll</unclear> <unclear cert="medium" resp="#joint">gewogen</unclear> sein solle.
+<lb n="59"/>Unnd also ime <unclear cert="low" resp="#joint">unßrem</unclear> Burger dergestalt gnad wider-
+<lb n="60"/>faren laßen, <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">fürpit</unclear> Nachparlich <unclear cert="low" resp="#joint">genoßen</unclear>
+<lb n="61"/>zeheben <unclear cert="low" resp="#joint">würckhlich</unclear> <unclear cert="low" resp="#joint">spüren</unclear> möge. Wo
+<lb n="62"/>dann wir hingegen <unclear cert="low" resp="#joint">weß</unclear> die Herren <unclear cert="low" resp="#joint">seintwegen</unclear> in
+<lb n="63"/><unclear cert="medium" resp="#joint">begebenden</unclear> <unclear cert="low" resp="#joint">felen</unclear> unnd <unclear cert="medium" resp="#joint">gelegenhaiten</unclear> auch er sampt
 <lb n="64"/>sein gantze fründtschaft selbs hiemit erweißende
-<lb n="65"/>gnad hinwiderumb verdienen unnd beschulden künden
-<lb n="66"/>wellen wir jederzait Nachparlich, gantz berait unnd
-<lb n="67"/>guetwillig erfunden werden. Damit unß allerzaits
+<lb n="65"/>gnad <unclear cert="low" resp="#joint">hinwiderumb</unclear> verdienen unnd <unclear cert="medium" resp="#joint">beschulden</unclear> künden
+<lb n="66"/><unclear cert="low" resp="#joint">wellen</unclear> wir <unclear cert="low" resp="#joint">jederzait</unclear> <unclear cert="low" resp="#joint">Nachparlich</unclear>, gantz <unclear cert="low" resp="#joint">berait</unclear> unnd
+<lb n="67"/><unclear cert="medium" resp="#joint">guetwillig</unclear> <unclear cert="medium" resp="#joint">erfunden</unclear> werden. Damit unß allerzaits
 <lb n="68"/>Göttlicher bewarung getrülich befelende.
-<lb n="69"/>Dath. <origPlace ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</origPlace> <origDate when="1623" resp="#ner">den 17./27.ten Marty anno 1623</origDate>.
-<lb n="70"/>Der Herren Nachparn
+<lb n="69"/>Dath. <origPlace ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</origPlace> <origDate when="1623" resp="#ner">den <unclear cert="low" resp="#joint">17./27.ten</unclear> Marty anno <unclear cert="medium" resp="#joint">1623</unclear></origDate>.
+<lb n="70"/>Der Herren <unclear cert="low" resp="#joint">Nachparn</unclear>
 <lb n="71"/>Dienstwillige
-<lb n="72"/><orgName role="issuer" resp="#ner">Vogt unnd Rath
+<lb n="72"/><orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Vogt</unclear> unnd Rath
 <lb n="73"/>daselbsten</orgName>.
 <pb facs="StadtASG_Missive_2402_9231.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2402_9232.jpg" n="4"/>
-<lb n="74"/>Den edlen, fromen, ernvesten, hochglereten,
+<lb n="74"/>Den edlen, fromen, <unclear cert="low" resp="#joint">ernvesten</unclear>, <unclear cert="low" resp="#joint">hochglereten</unclear>,
 <lb n="75"/>fuersichtigen, ehrsamen unnd weysen, herren,
 <lb n="76"/>herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaistern und Rath der loblichen
-<lb n="77"/>statt Sant Gallen</orgName>, unsern besonders
-<lb n="78"/>efründen guenstigen lieben herren unnd
+<lb n="77"/>statt <unclear cert="medium" resp="#joint">Sant</unclear> Gallen</orgName>, unsern besonders
+<lb n="78"/><unclear cert="low" resp="#joint">efründen</unclear> guenstigen lieben herren unnd
 <lb n="79"/>nachparn etc.
 </p>
         </body>

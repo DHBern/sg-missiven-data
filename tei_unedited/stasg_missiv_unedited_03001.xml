@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="stasg_missiv_unedited_03001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>StadtASG Missive, Nr. 3001</title>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universität Bern, Digital Humanities</publisher>
+                <date>2026</date>
+                <availability><p>Maschinelle Vorstufe zu einem noch nicht edierten Brief der Serie: weder Transkription noch Regest noch Auszeichnung sind geprüft. Nicht Teil der Edition des Stadtarchivs St. Gallen.</p></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <idno>StadtASG Missive_3001_11813/11814</idno>
+                    </msIdentifier>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <abstract><p resp="#regest">Vialar, der am Vorabend als Gesandter des Königs in allen Kantonen in Solothurn eingetroffen ist, teilt Bürgermeister und Rat zu Zürich dies mit. Er bittet sie, die Nachricht an die anderen Kantone weiterzugeben, damit er bald von ihnen empfangen werden kann. Er verspricht, ihnen die allgemeinen und die speziellen Briefe des Königs zu überreichen, und bietet seine Dienste an.</p></abstract>
+            <langUsage>
+                <language ident="deu">Deutsch</language>
+            </langUsage>
+            <correspDesc><correspAction type="sent"><name resp="#regest">Vialar</name><placeName resp="#regest">Solothurn</placeName><date when="1634-04-08" resp="#regest">De Soleurre ce 8. Auril 1634.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Zürich</name></correspAction></correspDesc>
+        </profileDesc>
+        <revisionDesc>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+<p>
+<pb facs="StadtASG_Missive_3001_11813.jpg" n="1"/>
+<lb n="1"/>Magnifiques Seigneurs, Dieu m'a faict la cette
+<lb n="2"/>grace que j'arriuay hier au soir à <placeName resp="#ner">Soleurre</placeName> en qualité d'Ambassadeur
+<lb n="3"/>du Roy en tous les <orgName resp="#ner">Cantons</orgName>; je n'ay pas voulu differer à vous en
+<lb n="4"/>donner auis comme aux treschers grands amis aliez et confoeder:
+<lb n="5"/>ez de sa Majesté; je m'asseure que vous le ferez scauoir
+<lb n="6"/>aux autres <orgName resp="#ner">Cantons</orgName> selon l'ordre ancien <unclear cert="low" resp="#joint">afinque</unclear> j'aye le bien
+<lb n="7"/>d'etre veu et uisité de uous, dans peu de temps et ainsi qu'il est
+<lb n="8"/>accoustumé lors je uous bailleray les lettres du Roy adressees genera:
+<lb n="9"/>lement aux <orgName resp="#ner">Cantons</orgName>, et celles que sa Majesté vous ecrit parti:
+<lb n="10"/>culierement: cependant je <unclear cert="low" resp="#joint">me</unclear> <unclear cert="low" resp="#joint">disposeray</unclear> à vous rendre <unclear cert="low" resp="#joint">tous</unclear> <unclear cert="low" resp="#joint">les</unclear>
+<lb n="11"/>offices que uous pouuez esperer de celuy qui est de toute son
+<lb n="12"/>affection
+<lb n="13"/>Magnifiques Seigneurs,
+<lb n="14"/>Aux Magnifiques Seigneurs,
+<lb n="15"/>Messieurs les Bourgmestres et Conseil
+<lb n="16"/>de la ville et Canton de <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Zurich</orgName>.
+<lb n="17"/><unclear cert="low" resp="#joint">Vostre</unclear> <unclear cert="low" resp="#joint">uray</unclear> <unclear cert="low" resp="#joint">amy</unclear> et seruiteur
+<lb n="18"/><persName role="issuer" resp="#ner">Vialar</persName>.
+<lb n="19"/>De <origPlace resp="#ner">Soleurre</origPlace> <origDate when="1634" resp="#ner">ce 8. Auril
+<lb n="20"/>1634</origDate>.
+<pb facs="StadtASG_Missive_3001_11814.jpg" n="2"/>
+</p>
+        </body>
+    </text>
+</TEI>

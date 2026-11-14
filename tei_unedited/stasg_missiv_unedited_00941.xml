@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 941</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,112 +20,112 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich übermitteln dem Rat zu St. Gallen eine Abschrift des Schreibens der Herzogin Anna Maria von Württemberg. Diese teilt mit, dass sie aufgrund der Hungersnot in ihrem Fürstentum und der laufenden Beratungen mit den Landständen kein Getreide liefern könne. Sie bietet jedoch an, bei Bedarf Getreide in der Grafschaft Mümpelgart oder Herrschaft Horchweiler für St. Gallen zu beschaffen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1571" cert="low" resp="#regest">datt sambstags den. x. t Martij. Anno C. lxxj.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_941_2773.jpg" n="1"/>
-<lb n="1"/>Unnser <unclear cert="low" resp="#joint">fründtlich</unclear> willig <unclear cert="medium" resp="#joint">diennst</unclear>, sambt was wir Eeren,
-<lb n="2"/>liebs unnd guots vermoegend, zuovor, fürsichtig
-<lb n="3"/><unclear cert="medium" resp="#joint">Eersam</unclear> wyß, <unclear cert="low" resp="#joint">Innsunders</unclear> guot fründ, unnd ge-
-<lb n="4"/>trüwen lieben Eydtgnossen, was die
-<lb n="5"/>frouw hertzogin zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Wirtenberg</unclear></placeName>, uff unnser für-
-<lb n="6"/>bittlichs schryben, üch ein <unclear cert="low" resp="#joint">antzal</unclear> korn, <unclear cert="medium" resp="#joint">uß</unclear> Ir F. G.
-<lb n="7"/>Suns fürstenthumb <placeName resp="#ner">Wirtenberg</placeName>, volgen zelaßen,
+<lb n="1"/>Unnser <unclear cert="medium" resp="#joint">fründtlich</unclear> willig diennst, sambt was wir Eeren,
+<lb n="2"/>liebs unnd guots <unclear cert="medium" resp="#joint">vermoegend</unclear>, zuovor, fürsichtig
+<lb n="3"/>Eersam wyß, <unclear cert="low" resp="#joint">Innsunders</unclear> guot fründ, unnd ge-
+<lb n="4"/><unclear cert="medium" resp="#joint">trüwen</unclear> lieben <unclear cert="medium" resp="#joint">Eydtgnossen</unclear>, was die
+<lb n="5"/><unclear cert="medium" resp="#joint">frouw</unclear> hertzogin zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Wirtenberg</unclear></placeName>, uff <unclear cert="medium" resp="#joint">unnser</unclear> für-
+<lb n="6"/><unclear cert="medium" resp="#joint">bittlichs</unclear> schryben, üch ein <unclear cert="low" resp="#joint">antzal</unclear> <unclear cert="medium" resp="#joint">korn</unclear>, <unclear cert="medium" resp="#joint">uß</unclear> Ir F. G.
+<lb n="7"/><unclear cert="low" resp="#joint">Suns</unclear> fürstenthumb <placeName resp="#ner"><unclear cert="low" resp="#joint">Wirtenberg</unclear></placeName>, volgen <unclear cert="low" resp="#joint">zelaßen</unclear>,
 <lb n="8"/>unns schrifftlichen geantwurtet, darvon
 <lb n="9"/>schicken wir üch hieby ein <unclear cert="low" resp="#joint">Copy</unclear>, mitt dem er-
 <lb n="10"/>bitten, wo wir üch, Inn der, oder andern sachen,
-<lb n="11"/><unclear cert="low" resp="#joint">ferners</unclear> <unclear cert="low" resp="#joint">befünderung</unclear>, <unclear cert="low" resp="#joint">fründtschafft</unclear> unnd <unclear cert="medium" resp="#joint">guote</unclear>
-<lb n="12"/><unclear cert="low" resp="#joint">Eydtgnoessische</unclear> liebe, bewyßen und <unclear cert="low" resp="#joint">erzeigen</unclear> <unclear cert="low" resp="#joint">koennen</unclear>,
-<lb n="13"/>das wir unns deß <unclear cert="low" resp="#joint">nützhit</unclear> <unclear cert="low" resp="#joint">sparren</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">Jetzzyt</unclear>
-<lb n="14"/><unclear cert="low" resp="#joint">guot</unclear> <unclear cert="low" resp="#joint">willig</unclear> finden laßen woellen, soellichs
-<lb n="15"/>wir üch nitt bergen, Ir nach üwer glägenheit,
-<lb n="16"/>uff Ir F. G. schlüßlich erbieten, witer zehand-
-<lb n="17"/>wußtind, unnd sind darmit, Im goettlichen
-<lb n="18"/><unclear cert="low" resp="#joint">schirm</unclear> wol <unclear cert="low" resp="#joint">bevolchen</unclear>, <unclear cert="medium" resp="#joint">datt</unclear> <origDate resp="#ner">sambstags
-<lb n="19"/>den. x. t Martij. Anno <unclear cert="medium" resp="#joint">C</unclear>. lxxj.</origDate>
+<lb n="11"/><unclear cert="low" resp="#joint">ferners</unclear> <unclear cert="low" resp="#joint">befünderung</unclear>, <unclear cert="medium" resp="#joint">fründtschafft</unclear> unnd <unclear cert="medium" resp="#joint">guote</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">Eydtgnoessische</unclear> liebe, <unclear cert="medium" resp="#joint">bewyßen</unclear> und <unclear cert="medium" resp="#joint">erzeigen</unclear> <unclear cert="low" resp="#joint">koennen</unclear>,
+<lb n="13"/>das wir unns deß <unclear cert="medium" resp="#joint">nützhit</unclear> <unclear cert="medium" resp="#joint">sparren</unclear>, sonders <unclear cert="medium" resp="#joint">Jetzzyt</unclear>
+<lb n="14"/>guot willig finden laßen woellen, soellichs
+<lb n="15"/>wir üch nitt bergen, Ir nach üwer <unclear cert="medium" resp="#joint">glägenheit</unclear>,
+<lb n="16"/>uff Ir F. G. <unclear cert="low" resp="#joint">schlüßlich</unclear> erbieten, witer zehand-
+<lb n="17"/>wußtind, unnd sind darmit, <unclear cert="medium" resp="#joint">Im</unclear> <unclear cert="medium" resp="#joint">goettlichen</unclear>
+<lb n="18"/><unclear cert="medium" resp="#joint">schirm</unclear> wol <unclear cert="low" resp="#joint">bevolchen</unclear>, datt <origDate resp="#ner">sambstags
+<lb n="19"/>den. x. t Martij. Anno C. <unclear cert="medium" resp="#joint">lxxj</unclear>.</origDate>
 <lb n="20"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister unnd Rath
 <lb n="21"/>der Statt Zürich</orgName>,
 <pb facs="StadtASG_Missive_941_2774.jpg" n="2"/>
 <pb facs="StadtASG_Missive_941_2775.jpg" n="3"/>
 <lb n="22"/>Von Gottes gnaden <persName role="issuer" resp="#ner">Anna Maria</persName> Hertzogin
-<lb n="23"/>zuo <placeName ref="stadtasg-places-167" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Wirttenberg</unclear></placeName> etc. Geborne Marggre-
-<lb n="24"/><unclear cert="low" resp="#joint">vin</unclear> zuo <placeName ref="stadtasg-places-147" cert="medium" resp="#ner">Brandenburg</placeName> etc. wittib.
-<lb n="25"/>Unnsern früntlichen gruoß, inn gebür zuovor, für-
+<lb n="23"/><unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-167" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Wirttenberg</unclear></placeName> etc. <unclear cert="medium" resp="#joint">Geborne</unclear> Marggre-
+<lb n="24"/><unclear cert="low" resp="#joint">vin</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-147" cert="medium" resp="#ner">Brandenburg</placeName> etc. wittib.
+<lb n="25"/>Unnsern <unclear cert="medium" resp="#joint">früntlichen</unclear> <unclear cert="medium" resp="#joint">gruoß</unclear>, inn gebür <unclear cert="medium" resp="#joint">zuovor</unclear>, für-
 <lb n="26"/>sichtigen, ersamen, wysen, lieben besondern. Wir
-<lb n="27"/>haben üwer fürbittlich schryben, <unclear cert="low" resp="#joint">üweren</unclear> Eydt-
+<lb n="27"/>haben üwer <unclear cert="medium" resp="#joint">fürbittlich</unclear> schryben, <unclear cert="low" resp="#joint">üweren</unclear> Eydt-
 <lb n="28"/>gnossen von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName>, ein <unclear cert="low" resp="#joint">antzal</unclear> korn <unclear cert="low" resp="#joint">ußer</unclear>
-<lb n="29"/>unnsers fründtlichen <unclear cert="low" resp="#joint">geliebten</unclear> <unclear cert="low" resp="#joint">Suns</unclear> fürsten-
-<lb n="30"/>thumb <placeName ref="stadtasg-places-167" cert="medium" resp="#ner">Wirttenberg</placeName> volgen zuolassen, etc. zuo unn-
+<lb n="29"/><unclear cert="medium" resp="#joint">unnsers</unclear> fründtlichen <unclear cert="low" resp="#joint">geliebten</unclear> <unclear cert="low" resp="#joint">Suns</unclear> fürsten-
+<lb n="30"/><unclear cert="low" resp="#joint">thumb</unclear> <placeName ref="stadtasg-places-167" cert="medium" resp="#ner">Wirttenberg</placeName> volgen <unclear cert="low" resp="#joint">zuolassen</unclear>, etc. <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">unn</unclear>-
 <lb n="31"/>sern handen woll empfangen. Unnd daruß mitt
-<lb n="32"/>christenlichem unnd fründtlichem <unclear cert="low" resp="#joint">mitleyden</unclear> ver-
+<lb n="32"/><unclear cert="medium" resp="#joint">christenlichem</unclear> unnd fründtlichem <unclear cert="low" resp="#joint">mitleyden</unclear> ver-
 <lb n="33"/>nomen, das die leidige <unclear cert="low" resp="#joint">grosse</unclear> unnd schwere thürings
-<lb n="34"/>noth, inn der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnosschafft</orgName>, ouch <unclear cert="low" resp="#joint">inryßen</unclear>
-<lb n="35"/>thüe. Unnd weren wir glychwol, üch nit allein
+<lb n="34"/><unclear cert="medium" resp="#joint">noth</unclear>, inn der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnosschafft</orgName>, ouch <unclear cert="low" resp="#joint">inryßen</unclear>
+<lb n="35"/>thüe. Unnd <unclear cert="medium" resp="#joint">weren</unclear> wir <unclear cert="low" resp="#joint">glychwol</unclear>, üch nit allein
 <lb n="36"/>inn disem fall, sonnder ouch inn mererm, gebür-
 <lb n="37"/>liche fründtliche wilsarung zuobewysen, bevorderst
 <lb n="38"/>geneigt. Wolten ouch von Gott dem Herren nichts
-<lb n="39"/>liebers <unclear cert="low" resp="#joint">wünschen</unclear>, dann das die <unclear cert="low" resp="#joint">gelägenheit</unclear>, diser
-<lb n="40"/>beschwerlichen <unclear cert="low" resp="#joint">zythen</unclear>, dermassen geschaffen weren,
-<lb n="41"/>das wir <unclear cert="medium" resp="#joint">obangeregtem</unclear> üwerem bitten unnd <unclear cert="low" resp="#joint">ansuchen</unclear>
-<lb n="42"/>statt <unclear cert="low" resp="#joint">thuon</unclear> <unclear cert="low" resp="#joint">khöndten</unclear>, inn sonnderlicher bedenckung,
-<lb n="43"/>deß guoten nachpürlichen willens unnd angenemen
-<lb n="44"/>gfallens, so unns von üch, inn jüngst <unclear cert="low" resp="#joint">volnbrach</unclear>-
-<lb n="45"/>ter unnser <placeName ref="stadtasg-places-53" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Badenfarth</unclear></placeName> vielfaltig <unclear cert="low" resp="#joint">erzeigt</unclear> worden,
+<lb n="39"/>liebers <unclear cert="medium" resp="#joint">wünschen</unclear>, dann das die <unclear cert="low" resp="#joint">gelägenheit</unclear>, diser
+<lb n="40"/><unclear cert="medium" resp="#joint">beschwerlichen</unclear> <unclear cert="low" resp="#joint">zythen</unclear>, dermassen geschaffen weren,
+<lb n="41"/>das wir <unclear cert="medium" resp="#joint">obangeregtem</unclear> <unclear cert="medium" resp="#joint">üwerem</unclear> bitten unnd <unclear cert="low" resp="#joint">ansuchen</unclear>
+<lb n="42"/>statt <unclear cert="low" resp="#joint">thuon</unclear> <unclear cert="medium" resp="#joint">khöndten</unclear>, inn sonnderlicher bedenckung,
+<lb n="43"/>deß <unclear cert="medium" resp="#joint">guoten</unclear> nachpürlichen willens unnd <unclear cert="medium" resp="#joint">angenemen</unclear>
+<lb n="44"/><unclear cert="medium" resp="#joint">gfallens</unclear>, so unns von üch, inn <unclear cert="medium" resp="#joint">jüngst</unclear> <unclear cert="low" resp="#joint">volnbrach</unclear>-
+<lb n="45"/>ter unnser <placeName ref="stadtasg-places-53" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Badenfarth</unclear></placeName> vielfaltig <unclear cert="medium" resp="#joint">erzeigt</unclear> worden,
 <lb n="46"/>unnd widerfaren ist.
-<lb n="47"/>Nachdem aber by unns im gantzen fürstenthumb
-<lb n="48"/><placeName ref="stadtasg-places-167" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Wirttenberg</unclear></placeName>, <unclear cert="low" resp="#joint">sölliche</unclear> <unclear cert="low" resp="#joint">wolverdiente</unclear> straff Gottes,
-<lb n="49"/>der gegenwürtigen <unclear cert="low" resp="#joint">hochlestigen</unclear> thürung, unnd hungers
-<lb n="50"/>noth, <unclear cert="low" resp="#joint">nunmer</unclear> ein guot <unclear cert="low" resp="#joint">zyth</unclear> <unclear cert="low" resp="#joint">hör</unclear> <unclear cert="low" resp="#joint">geweret</unclear>, unnd nit
-<lb n="51"/>allein nit abnimpt, oder zum <unclear cert="medium" resp="#joint">wenigisten</unclear> <unclear cert="low" resp="#joint">insteth</unclear>,
-<lb n="52"/>sonnder für unnd für, je lenger je beschwerlicher
+<lb n="47"/>Nachdem aber by unns <unclear cert="medium" resp="#joint">im</unclear> gantzen fürstenthumb
+<lb n="48"/><placeName ref="stadtasg-places-167" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Wirttenberg</unclear></placeName>, <unclear cert="medium" resp="#joint">sölliche</unclear> <unclear cert="low" resp="#joint">wolverdiente</unclear> straff Gottes,
+<lb n="49"/>der gegenwürtigen <unclear cert="low" resp="#joint">hochlestigen</unclear> thürung, unnd <unclear cert="medium" resp="#joint">hungers</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">noth</unclear>, <unclear cert="low" resp="#joint">nunmer</unclear> ein <unclear cert="medium" resp="#joint">guot</unclear> <unclear cert="low" resp="#joint">zyth</unclear> <unclear cert="low" resp="#joint">hör</unclear> <unclear cert="low" resp="#joint">geweret</unclear>, unnd nit
+<lb n="51"/>allein nit <unclear cert="medium" resp="#joint">abnimpt</unclear>, oder zum <unclear cert="low" resp="#joint">wenigisten</unclear> <unclear cert="low" resp="#joint">insteth</unclear>,
+<lb n="52"/>sonnder für unnd für, je lenger je <unclear cert="medium" resp="#joint">beschwerlicher</unclear>
 <lb n="53"/><unclear cert="low" resp="#joint">wachßen</unclear>, unnd <unclear cert="low" resp="#joint">ufstigen</unclear> will, also das es leider
-<lb n="54"/><unclear cert="low" resp="#joint">albereit</unclear> dahin <unclear cert="low" resp="#joint">grathen</unclear>, das die arme <unclear cert="low" resp="#joint">undertho</unclear>-
+<lb n="54"/><unclear cert="low" resp="#joint">albereit</unclear> dahin <unclear cert="medium" resp="#joint">grathen</unclear>, das die arme <unclear cert="low" resp="#joint">undertho</unclear>-
 <lb n="55"/>nen, die früchten unnd das liebe brott, umbs gelt
-<lb n="56"/>nit <unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">merr</unclear>, oder doch gar beschwerlich <unclear cert="low" resp="#joint">bekom</unclear>-
+<lb n="56"/>nit <unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">merr</unclear>, oder doch gar beschwerlich <unclear cert="medium" resp="#joint">bekom</unclear>-
 <pb facs="StadtASG_Missive_941_2776.jpg" n="4"/>
-<lb n="57"/>men moegen. Daher dann unnd sonst dheiner
-<lb n="58"/>anndern ursachen waegen, die hoche unnd ußerste
-<lb n="59"/>notturfft eruorderet hatt, disers fuersten=
+<lb n="57"/>men moegen. Daher dann unnd sonst <unclear cert="low" resp="#joint">dheiner</unclear>
+<lb n="58"/>anndern ursachen waegen, die hoche unnd <unclear cert="low" resp="#joint">ußerste</unclear>
+<lb n="59"/>notturfft <unclear cert="low" resp="#joint">eruorderet</unclear> hatt, <unclear cert="low" resp="#joint">disers</unclear> fuersten=
 <lb n="60"/>thumbs <placeName ref="stadtasg-places-167" cert="medium" resp="#ner">Wirttenberg</placeName>, gemeiner prelaten, unnd
-<lb n="61"/>lanndtschafft, <unclear cert="low" resp="#joint">großen</unclear> <unclear cert="low" resp="#joint">ußschuz</unclear> <unclear cert="low" resp="#joint">zesamen</unclear> <unclear cert="low" resp="#joint">zebeschry=</unclear>
-<lb n="62"/><unclear cert="low" resp="#joint">ben</unclear>, <unclear cert="low" resp="#joint">welliche</unclear> <unclear cert="low" resp="#joint">ouch</unclear> <unclear cert="low" resp="#joint">noch</unclear> diß tags, unnd nunmeer
-<lb n="63"/>inn die dritte wochen bysamen sygen (inmaßen
-<lb n="64"/>der abgesandte von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> selber gesaechen und
-<lb n="65"/>erfaren) unnd rathschlagen thuegen, wie die
-<lb n="66"/>fruechten uß <unclear cert="low" resp="#joint">der</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Wederaw</unclear></placeName>, <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Berner</unclear> <unclear cert="low" resp="#joint">linelin</unclear>,
-<lb n="67"/>den <placeName ref="stadtasg-places-92" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rhynstram</unclear></placeName> <unclear cert="low" resp="#joint">herufer</unclear>, unnd von annderen uß=
-<lb n="68"/>lendischen ortten haer inn das fuerstenthumb ge=
-<lb n="69"/>bracht, unnd also die <unclear cert="low" resp="#joint">arme</unclear> <unclear cert="low" resp="#joint">unnderthonen</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">fer=</unclear>
-<lb n="70"/><unclear cert="low" resp="#joint">ner</unclear> <unclear cert="low" resp="#joint">hungers</unclear> <unclear cert="low" resp="#joint">noth</unclear>, <unclear cert="low" resp="#joint">bewaren</unclear> werden moegen.
+<lb n="61"/>lanndtschafft, großen <unclear cert="medium" resp="#joint">ußschuz</unclear> <unclear cert="medium" resp="#joint">zesamen</unclear> <unclear cert="medium" resp="#joint">zebeschry=</unclear>
+<lb n="62"/>ben, welliche ouch <unclear cert="medium" resp="#joint">noch</unclear> diß tags, unnd <unclear cert="low" resp="#joint">nunmeer</unclear>
+<lb n="63"/>inn die dritte wochen <unclear cert="low" resp="#joint">bysamen</unclear> sygen (inmaßen
+<lb n="64"/>der abgesandte von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> <unclear cert="low" resp="#joint">selber</unclear> <unclear cert="low" resp="#joint">gesaechen</unclear> und
+<lb n="65"/><unclear cert="low" resp="#joint">erfaren</unclear>) unnd <unclear cert="low" resp="#joint">rathschlagen</unclear> <unclear cert="low" resp="#joint">thuegen</unclear>, wie die
+<lb n="66"/><unclear cert="low" resp="#joint">fruechten</unclear> uß <unclear cert="medium" resp="#joint">der</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Wederaw</unclear></placeName>, dem <unclear cert="medium" resp="#joint">Berner</unclear> <unclear cert="medium" resp="#joint">linelin</unclear>,
+<lb n="67"/>den <placeName ref="stadtasg-places-92" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Rhynstram</unclear></placeName> <unclear cert="medium" resp="#joint">herufer</unclear>, unnd von annderen uß=
+<lb n="68"/>lendischen ortten <unclear cert="low" resp="#joint">haer</unclear> inn das <unclear cert="low" resp="#joint">fuerstenthumb</unclear> ge=
+<lb n="69"/>bracht, unnd also die arme <unclear cert="medium" resp="#joint">unnderthonen</unclear> vor fer=
+<lb n="70"/>ner hungers noth, <unclear cert="medium" resp="#joint">bewaren</unclear> werden moegen.
 <lb n="71"/>So wellen wir demnach fründtlich verhoffen,
-<lb n="72"/>ir werden unns dise unnser ußhergige antwurt,
-<lb n="73"/>annders nit vermerckhen, dann das die ge=
-<lb n="74"/>hoerdte ursachen getrungenlich, wider unnsern wil=
-<lb n="75"/>len, sonnderlich aber <unclear cert="low" resp="#joint">daherr</unclear> <unclear cert="low" resp="#joint">ervolge</unclear>, <unclear cert="low" resp="#joint">diewyl</unclear> wir
-<lb n="76"/>den armen unnderthonen diß <unclear cert="low" resp="#joint">fuerstenthumbs</unclear> <unclear cert="low" resp="#joint">soelhs</unclear>
-<lb n="77"/>nit durchuß wie wir gern theten, widerfaren
-<lb n="78"/>khoenden. Wo aber ir oder sy von S. Gallen frü=
-<lb n="79"/>chten, inn der grafschafft <placeName resp="#ner">Muempelgart</placeName>, oder
-<lb n="80"/>herschafft <placeName ref="stadtasg-places-25" cert="medium" resp="#ner">Horchenwyler</placeName> inn erfarung brechten,
-<lb n="81"/>unnd ir unns deßselben verstendigen, sygen wir
-<lb n="82"/>urpietig, deßhalb an selbigen ortten bevelch ze=
-<lb n="83"/>geben, da sy üch, oder denen von S. Gallen, vor
-<lb n="84"/>annderen soellichen fruechten, gegen gepürender
-<lb n="85"/>bezalung ze stellen thuegen. Dann wir
+<lb n="72"/>ir werden unns dise unnser <unclear cert="low" resp="#joint">ußhergige</unclear> antwurt,
+<lb n="73"/>annders nit <unclear cert="low" resp="#joint">vermerckhen</unclear>, dann das die ge=
+<lb n="74"/><unclear cert="low" resp="#joint">hoerdte</unclear> ursachen getrungenlich, wider unnsern wil=
+<lb n="75"/>len, sonnderlich aber <unclear cert="medium" resp="#joint">daherr</unclear> <unclear cert="medium" resp="#joint">ervolge</unclear>, diewyl wir
+<lb n="76"/>den armen <unclear cert="low" resp="#joint">unnderthonen</unclear> diß <unclear cert="medium" resp="#joint">fuerstenthumbs</unclear> <unclear cert="medium" resp="#joint">soelhs</unclear>
+<lb n="77"/>nit durchuß wie wir gern <unclear cert="low" resp="#joint">theten</unclear>, widerfaren
+<lb n="78"/><unclear cert="low" resp="#joint">khoenden</unclear>. Wo aber ir oder sy von S. Gallen <unclear cert="low" resp="#joint">frü=</unclear>
+<lb n="79"/><unclear cert="low" resp="#joint">chten</unclear>, inn der grafschafft <placeName resp="#ner"><unclear cert="low" resp="#joint">Muempelgart</unclear></placeName>, oder
+<lb n="80"/><unclear cert="low" resp="#joint">herschafft</unclear> <placeName ref="stadtasg-places-25" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Horchenwyler</unclear></placeName> inn <unclear cert="low" resp="#joint">erfarung</unclear> brechten,
+<lb n="81"/>unnd ir unns <unclear cert="low" resp="#joint">deßselben</unclear> <unclear cert="low" resp="#joint">verstendigen</unclear>, sygen wir
+<lb n="82"/><unclear cert="low" resp="#joint">urpietig</unclear>, deßhalb an selbigen ortten <unclear cert="low" resp="#joint">bevelch</unclear> ze=
+<lb n="83"/><unclear cert="low" resp="#joint">geben</unclear>, da sy üch, oder <unclear cert="low" resp="#joint">denen</unclear> von S. Gallen, vor
+<lb n="84"/>annderen soellichen <unclear cert="low" resp="#joint">fruechten</unclear>, gegen <unclear cert="low" resp="#joint">gepürender</unclear>
+<lb n="85"/><unclear cert="low" resp="#joint">bezalung</unclear> <unclear cert="low" resp="#joint">ze</unclear> stellen <unclear cert="low" resp="#joint">thuegen</unclear>. Dann wir
 <lb n="86"/>sygen üch, inn aller gebür fründtlichen willen
-<lb n="87"/>zeerzeigen, sonnders <unclear cert="low" resp="#joint">wolgeneigt</unclear>. Datum don<origDate when="1571-02-22" cert="medium" resp="#ner">=
+<lb n="87"/><unclear cert="low" resp="#joint">zeerzeigen</unclear>, sonnders <unclear cert="low" resp="#joint">wolgeneigt</unclear>. Datum don<origDate when="1571-02-22" cert="medium" resp="#ner">=
 <lb n="88"/>stags den .22. februarii. Anno etc. lxxi</origDate>.
-<lb n="89"/><persName role="issuer" resp="#ner">Anna Maria herzogin
+<lb n="89"/><persName role="issuer" resp="#ner">Anna Maria <unclear cert="low" resp="#joint">herzogin</unclear>
 <lb n="90"/>zu Wirttenberg</persName>
 <lb n="91"/>Den fürsichtigen ersamen unnd wysen
 <lb n="92"/>unnsern lieben besondern. N. burger=
@@ -134,11 +134,11 @@
 <pb facs="StadtASG_Missive_941_2778.jpg" n="6"/>
 <pb facs="StadtASG_Missive_941_2779.jpg" n="7"/>
 <pb facs="StadtASG_Missive_941_2780.jpg" n="8"/>
-<lb n="94"/>Den fromen fuersichtigen ersamen
-<lb n="95"/>und <unclear cert="low" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="94"/>Den <unclear cert="medium" resp="#joint">fromen</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear> ersamen
+<lb n="95"/>und <unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und
 <lb n="96"/>Rath der statt Sanct Gallen</orgName>,
-<lb n="97"/>unsern <unclear cert="low" resp="#joint">innsonnders</unclear> guoten fruenden,
-<lb n="98"/>und <unclear cert="low" resp="#joint">getruewen</unclear> lieben eydtgnossen,
+<lb n="97"/><unclear cert="medium" resp="#joint">unsern</unclear> <unclear cert="medium" resp="#joint">innsonnders</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">fruenden</unclear>,
+<lb n="98"/>und <unclear cert="low" resp="#joint">getruewen</unclear> lieben <unclear cert="medium" resp="#joint">eydtgnossen</unclear>,
 </p>
         </body>
     </text>

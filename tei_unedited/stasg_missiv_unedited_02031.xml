@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2031</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,54 +20,54 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen teilen Stadtmann und Rat zu Altstätten mit, dass der gewöhnliche Weinkurs für das laufende Jahr nicht einvernehmlich festgelegt werden konnte. Da die Schätzungen der beiden Seiten auseinanderlagen, wurde ein ehrlicher Mann aus dem St. Galler Rat als Schiedsrichter ernannt. Dieser hat den Weinkurs auf sieben Gulden und sieben Batzen pro Salm festgesetzt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1616-09-27" resp="#regest">27. Septembris anno 1616</date></correspAction><correspAction type="received"><name resp="#regest">Stadtmann und Rat zu Altstätten</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2031_7583.jpg" n="1"/>
-<lb n="1"/>Unser freündt-, nachbarlich willig dienst
-<lb n="2"/>und was wir ehren liebs und guets ver-
-<lb n="3"/>moegend, zuvor, fromme, fürneme,
-<lb n="4"/>ersame und weise, sonders liebe
-<lb n="5"/>guete freündt, und nachbarn.
-<lb n="6"/>Nach dem, für das heürige jar, der gewohnliche
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündt</unclear>-, <unclear cert="medium" resp="#joint">nachbarlich</unclear> willig <unclear cert="medium" resp="#joint">dienst</unclear>
+<lb n="2"/>und was wir ehren liebs und <unclear cert="medium" resp="#joint">guets</unclear> ver-
+<lb n="3"/><unclear cert="low" resp="#joint">moegend</unclear>, zuvor, <unclear cert="medium" resp="#joint">fromme</unclear>, <unclear cert="low" resp="#joint">fürneme</unclear>,
+<lb n="4"/><unclear cert="low" resp="#joint">ersame</unclear> und weise, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="medium" resp="#joint">liebe</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">freündt</unclear>, und nachbarn.
+<lb n="6"/>Nach dem, für das <unclear cert="low" resp="#joint">heürige</unclear> <unclear cert="medium" resp="#joint">jar</unclear>, der <unclear cert="medium" resp="#joint">gewohnliche</unclear>
 <lb n="7"/>lauff des weins, durch unser beiderseits
-<lb n="8"/>darzue abgeordnete, weder einhaelligklich
-<lb n="9"/>noch durch das mehrer, moegen verglichen
-<lb n="10"/><unclear cert="low" resp="#joint">werden</unclear>, <unclear cert="low" resp="#joint">sonder</unclear> in der
-<lb n="11"/>schatzung die eüwerige auf acht guldin
-<lb n="12"/>acht batzen, die unsere aber auf siben
-<lb n="13"/>guldin, siben batzen verbliben, und also
-<lb n="14"/>der außspruch (: laut der vertraegen:)
-<lb n="15"/>auf den gmeinen mann komen, der
-<lb n="16"/>diß jars, dem umbgang nach, <unclear cert="low" resp="#joint">zuenamßen</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">darzue</unclear> abgeordnete, weder <unclear cert="low" resp="#joint">einhaelligklich</unclear>
+<lb n="9"/>noch durch das <unclear cert="medium" resp="#joint">mehrer</unclear>, <unclear cert="medium" resp="#joint">moegen</unclear> verglichen
+<lb n="10"/>werden, <unclear cert="low" resp="#joint">sonder</unclear> in der
+<lb n="11"/><unclear cert="medium" resp="#joint">schatzung</unclear> die <unclear cert="low" resp="#joint">eüwerige</unclear> auf acht guldin
+<lb n="12"/>acht <unclear cert="medium" resp="#joint">batzen</unclear>, die <unclear cert="medium" resp="#joint">unsere</unclear> aber auf siben
+<lb n="13"/>guldin, siben <unclear cert="medium" resp="#joint">batzen</unclear> <unclear cert="medium" resp="#joint">verbliben</unclear>, und also
+<lb n="14"/>der außspruch (: laut der <unclear cert="medium" resp="#joint">vertraegen</unclear>:)
+<lb n="15"/>auf den <unclear cert="low" resp="#joint">gmeinen</unclear> <unclear cert="medium" resp="#joint">mann</unclear> komen, <unclear cert="medium" resp="#joint">der</unclear>
+<lb n="16"/><unclear cert="medium" resp="#joint">diß</unclear> jars, dem umbgang nach, zuenamßen
 <lb n="17"/>an uns ist, haben wir einen ehr-
-<lb n="18"/>lichen <unclear cert="low" resp="#joint">unferleümbdeten</unclear> <unclear cert="low" resp="#joint">mann</unclear> <unclear cert="low" resp="#joint">auß</unclear>
-<lb n="19"/><unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">seines</unclear> <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">rahtsmitel</unclear> <unclear cert="low" resp="#joint">hierzue</unclear> <unclear cert="low" resp="#joint">ernent</unclear>,
-<lb n="20"/><unclear cert="low" resp="#joint">aids</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">pflichten</unclear>, welcher sich ins <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Reintal</placeName> verfuegt, auch
-<lb n="21"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">der</unclear> beschaffenheit und gstaltßame der <unclear cert="low" resp="#joint">sachen</unclear>
+<lb n="18"/>lichen unferleümbdeten mann auß
+<lb n="19"/><unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">seines</unclear> unsers <unclear cert="low" resp="#joint">rahtsmitel</unclear> <unclear cert="low" resp="#joint">hierzue</unclear> <unclear cert="low" resp="#joint">ernent</unclear>,
+<lb n="20"/><unclear cert="low" resp="#joint">aids</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">pflichten</unclear>, welcher sich <unclear cert="medium" resp="#joint">ins</unclear> <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Reintal</unclear></placeName> <unclear cert="low" resp="#joint">verfuegt</unclear>, auch
+<lb n="21"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">der</unclear> beschaffenheit und <unclear cert="low" resp="#joint">gstaltßame</unclear> der <unclear cert="low" resp="#joint">sachen</unclear>
 <lb n="22"/><unclear cert="low" resp="#joint">zuegethon</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ver</unclear>- sich nach erforderender notturfft
 <lb n="23"/><unclear cert="low" resp="#joint">wandt</unclear> <unclear cert="low" resp="#joint">ist</unclear>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">diser</unclear> erkundiget, der hat nun auf <unclear cert="low" resp="#joint">heüt</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">erlaßen</unclear>, dato <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">weinlauff</unclear>, auf sein gewüßen,
-<lb n="25"/>außgesprochen, namlich den soum umb
-<lb n="26"/>siben guldin, und siben batzen. Welches
-<lb n="27"/>wir eüch, an statt aller vier hoefen,
-<lb n="28"/>zur nachrichtung hiemit anfuegen wollen.
-<lb n="29"/>Und bleiben eüch zue gueter nachbarschafft
-<lb n="30"/>wol gewogen. Gottes obhalt uns samentlich
-<lb n="31"/>wol befelchende. Datum den. <origDate when="1616-09-27" resp="#ner"><unclear cert="low" resp="#joint">27</unclear>. Septembris
-<lb n="32"/>anno <unclear cert="low" resp="#joint">1616</unclear></origDate>. <unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">rahte</unclear>.
-<lb n="33"/><unclear cert="low" resp="#joint">An</unclear> <orgName ref="stadtasg-actors-67" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">stattamman</unclear> und
-<lb n="34"/>raht zue Altstetten</orgName>.
+<lb n="24"/><unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">erlaßen</unclear>, dato den weinlauff, auf sein <unclear cert="low" resp="#joint">gewüßen</unclear>,
+<lb n="25"/><unclear cert="low" resp="#joint">außgesprochen</unclear>, namlich den <unclear cert="medium" resp="#joint">soum</unclear> umb
+<lb n="26"/>siben guldin, und siben <unclear cert="medium" resp="#joint">batzen</unclear>. Welches
+<lb n="27"/>wir <unclear cert="medium" resp="#joint">eüch</unclear>, an statt aller vier <unclear cert="low" resp="#joint">hoefen</unclear>,
+<lb n="28"/>zur <unclear cert="medium" resp="#joint">nachrichtung</unclear> hiemit <unclear cert="medium" resp="#joint">anfuegen</unclear> <unclear cert="medium" resp="#joint">wollen</unclear>.
+<lb n="29"/>Und bleiben <unclear cert="medium" resp="#joint">eüch</unclear> zue <unclear cert="low" resp="#joint">gueter</unclear> <unclear cert="medium" resp="#joint">nachbarschafft</unclear>
+<lb n="30"/>wol <unclear cert="medium" resp="#joint">gewogen</unclear>. <unclear cert="medium" resp="#joint">Gottes</unclear> obhalt uns <unclear cert="low" resp="#joint">samentlich</unclear>
+<lb n="31"/>wol <unclear cert="low" resp="#joint">befelchende</unclear>. Datum den. <origDate when="1616-09-27" resp="#ner"><unclear cert="medium" resp="#joint">27</unclear>. Septembris
+<lb n="32"/><unclear cert="medium" resp="#joint">anno</unclear> 1616</origDate>. B. u. <unclear cert="low" resp="#joint">rahte</unclear>.
+<lb n="33"/><unclear cert="low" resp="#joint">An</unclear> <orgName ref="stadtasg-actors-67" cert="medium" role="recipient" resp="#ner">stattamman und
+<lb n="34"/><unclear cert="low" resp="#joint">raht</unclear> <unclear cert="low" resp="#joint">zue</unclear> Altstetten</orgName>.
 <pb facs="StadtASG_Missive_2031_7584.jpg" n="2"/>
 <lb n="35"/>[]
 </p>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2396</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Johannes Franz Reding lädt Bürgermeister und Rat zu St. Gallen zu seiner am 26. Oktober in Rorschach stattfindenden Hochzeit mit Susanna von Pflumern ein. Er bittet die Herren, am Vorabend einzukommen und am Hochzeitstag anwesend zu sein, um die Feier zu zieren. Er ersucht um eine Antwort.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Johannes Franz Reding</name><placeName resp="#regest">Rorschach</placeName><date when="1623-10-20" resp="#regest">Rorschach den 20. Octob. 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,54 +35,54 @@
 <p>
 <pb facs="StadtASG_Missive_2396_9199.jpg" n="1"/>
 <lb n="1"/>Edle wolgelarte Eerenueste Vorgerachte unnd Weise
-<lb n="2"/>innsonders guenstige herren, denselben seyen
-<lb n="3"/>meine willige unnd gvlissene diennst zuuor.
-<lb n="4"/>Demnach ich mich hieuorlobt ohne auß vorschung Gotes
-<lb n="5"/>des allmechtigen durch vorunnderhaib unvor gehabten
-<lb n="6"/>rrath unnd guethaissen zuo baider seits ehrnnden Eltern
-<lb n="7"/>unnd freunndtschafften, mit der edlen unnd tugntreichen
-<lb n="8"/>unnsere junckfraw <persName resp="#ner">Susanna von Pflumern</persName> ehelichen
-<lb n="9"/>verlobt und versprochen, auch vermittelst göttlicher
+<lb n="2"/>innsonders guenstige herren, <unclear cert="low" resp="#joint">denselben</unclear> seyen
+<lb n="3"/><unclear cert="medium" resp="#joint">meine</unclear> <unclear cert="medium" resp="#joint">willige</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">gvlissene</unclear> <unclear cert="medium" resp="#joint">diennst</unclear> <unclear cert="medium" resp="#joint">zuuor</unclear>.
+<lb n="4"/><unclear cert="medium" resp="#joint">Demnach</unclear> ich mich hieuorlobt ohne <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">vorschung</unclear> <unclear cert="low" resp="#joint">Gotes</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">des</unclear> allmechtigen durch <unclear cert="low" resp="#joint">vorunnderhaib</unclear> <unclear cert="low" resp="#joint">unvor</unclear> <unclear cert="low" resp="#joint">gehabten</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">rrath</unclear> unnd <unclear cert="low" resp="#joint">guethaissen</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">baider</unclear> <unclear cert="low" resp="#joint">seits</unclear> <unclear cert="low" resp="#joint">ehrnnden</unclear> <unclear cert="low" resp="#joint">Eltern</unclear>
+<lb n="7"/>unnd <unclear cert="low" resp="#joint">freunndtschafften</unclear>, mit <unclear cert="medium" resp="#joint">der</unclear> edlen <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">tugntreichen</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="low" resp="#joint">junckfraw</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Susanna</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Pflumern</unclear></persName> <unclear cert="low" resp="#joint">ehelichen</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">verlobt</unclear> und <unclear cert="low" resp="#joint">versprochen</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">vermittelst</unclear> <unclear cert="low" resp="#joint">göttlicher</unclear>
 <lb n="10"/>gnaden, sollich versprechen auf kunfftigen <date resp="#ner">Sontag
-<lb n="11"/>den 26z. diß</date> alhie in angesicht der christenlichen
-<lb n="12"/>kirchen nach altem gebrauch bestedigen ze=
+<lb n="11"/>den 26z. diß</date> alhie in <unclear cert="low" resp="#joint">angesicht</unclear> der christenlichen
+<lb n="12"/>kirchen nach <unclear cert="low" resp="#joint">altem</unclear> gebrauch <unclear cert="low" resp="#joint">bestedigen</unclear> ze=
 <lb n="13"/>lassen vorhabens.
-<lb n="14"/>Wann nun die herren ich, wegen mir erzaigtn gunsten
-<lb n="15"/>unnd gueten nachparschafft, bej disem meinem hoch=
-<lb n="16"/>zeitlichen ehren tag, mit Irer gegenwart neben
-<lb n="17"/>andern gladnen sonderß geren sehen und haben wolt,
-<lb n="18"/>alß gelangt an dieselben mein dienst nachparlich
-<lb n="19"/>pitt, sy wöllen mir, meiner vilgeliebten junckh=
-<lb n="20"/>fraw hochzeiterin und unnser baiderseits ehrend
-<lb n="21"/>freundtschafft zuo sonderm gfallen, zuuorderst aber
-<lb n="22"/>Gott dem almechtigen, und dem h. Sacrament der
-<lb n="23"/>ehe zuo ehren auf obangedeutten ehren tag erscheinen,
-<lb n="24"/>abennts zuuor alhie einkomen, unnd volgende
+<lb n="14"/>Wann nun die herren ich, wegen mir <unclear cert="medium" resp="#joint">erzaigtn</unclear> <unclear cert="medium" resp="#joint">gunsten</unclear>
+<lb n="15"/>unnd <unclear cert="medium" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">nachparschafft</unclear>, <unclear cert="medium" resp="#joint">bej</unclear> disem <unclear cert="low" resp="#joint">meinem</unclear> <unclear cert="low" resp="#joint">hoch=</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">zeitlichen</unclear> <unclear cert="low" resp="#joint">ehren</unclear> <unclear cert="low" resp="#joint">tag</unclear>, mit <unclear cert="low" resp="#joint">Irer</unclear> <unclear cert="low" resp="#joint">gegenwart</unclear> <unclear cert="low" resp="#joint">neben</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">gladnen</unclear> <unclear cert="low" resp="#joint">sonderß</unclear> <unclear cert="low" resp="#joint">geren</unclear> <unclear cert="low" resp="#joint">sehen</unclear> <unclear cert="low" resp="#joint">und</unclear> haben <unclear cert="low" resp="#joint">wolt</unclear>,
+<lb n="18"/>alß <unclear cert="low" resp="#joint">gelangt</unclear> an dieselben <unclear cert="medium" resp="#joint">mein</unclear> dienst nachparlich
+<lb n="19"/><unclear cert="low" resp="#joint">pitt</unclear>, <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">wöllen</unclear> mir, meiner <unclear cert="low" resp="#joint">vilgeliebten</unclear> <unclear cert="low" resp="#joint">junckh=</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">fraw</unclear> <unclear cert="low" resp="#joint">hochzeiterin</unclear> und unnser baiderseits <unclear cert="medium" resp="#joint">ehrend</unclear>
+<lb n="21"/>freundtschafft zuo <unclear cert="medium" resp="#joint">sonderm</unclear> gfallen, <unclear cert="medium" resp="#joint">zuuorderst</unclear> <unclear cert="medium" resp="#joint">aber</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">Gott</unclear> dem almechtigen, und <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">h</unclear>. <unclear cert="medium" resp="#joint">Sacrament</unclear> <unclear cert="medium" resp="#joint">der</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">ehe</unclear> zuo ehren auf obangedeutten ehren tag erscheinen,
+<lb n="24"/>abennts zuuor alhie <unclear cert="low" resp="#joint">einkomen</unclear>, unnd volgende
 <lb n="25"/>hochzeitliche ehren tag mit gewoennden freuden
 <lb n="26"/>mitt Irer gegenwart helffen zieren und volenden.
-<lb n="27"/>Daran erzaigen E. E. F. V. W. mir, meiner vil=
-<lb n="28"/>geliebten junckhfraw hochzeiterin ein sonderbaren
-<lb n="29"/>gunstigen willen, den wir neben baider=
-<lb n="30"/>seits ehrnden freundtschafften umb die herren
+<lb n="27"/>Daran erzaigen <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">W</unclear>. mir, meiner vil=
+<lb n="28"/>geliebten <unclear cert="medium" resp="#joint">junckhfraw</unclear> <unclear cert="medium" resp="#joint">hochzeiterin</unclear> ein sonderbaren
+<lb n="29"/><unclear cert="low" resp="#joint">gunstigen</unclear> willen, den wir <unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">baider=</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">seits</unclear> <unclear cert="low" resp="#joint">ehrnden</unclear> freundtschafften umb die herren
 <pb facs="StadtASG_Missive_2396_9200.jpg" n="2"/>
-<lb n="31"/>sambt und sonderß nach vermögen zubeschulden
-<lb n="32"/>ingedenckh verbliben. Und thue benebenß
-<lb n="33"/>den Herren mit diensstfründt und nachperlicher
-<lb n="34"/>willensag grüeßen, und ob wole ich
-<lb n="35"/>mich der Herren guethaten villicht getrösste,
-<lb n="36"/>bite ich doch zue meiner beßerer nachrichtung
-<lb n="37"/>umb geliebten antwurt. Damit unß aller-
-<lb n="38"/>seitß Goetlicher protection wol anbevelchende.
-<lb n="39"/><origPlace ref="stadtasg-places-87" cert="medium" resp="#ner">Rochach</origPlace> <origDate when="1623-10-20" resp="#ner">den 20. Octob. 1623.</origDate>
+<lb n="31"/>sambt und sonderß nach <unclear cert="low" resp="#joint">vermögen</unclear> <unclear cert="low" resp="#joint">zubeschulden</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">ingedenckh</unclear> <unclear cert="low" resp="#joint">verbliben</unclear>. <unclear cert="low" resp="#joint">Und</unclear> <unclear cert="low" resp="#joint">thue</unclear> <unclear cert="low" resp="#joint">benebenß</unclear>
+<lb n="33"/>den Herren mit <unclear cert="low" resp="#joint">diensstfründt</unclear> und nachperlicher
+<lb n="34"/>willensag grüeßen, und ob <unclear cert="low" resp="#joint">wole</unclear> ich
+<lb n="35"/>mich der Herren <unclear cert="low" resp="#joint">guethaten</unclear> <unclear cert="low" resp="#joint">villicht</unclear> <unclear cert="low" resp="#joint">getrösste</unclear>,
+<lb n="36"/><unclear cert="low" resp="#joint">bite</unclear> ich doch zue meiner <unclear cert="low" resp="#joint">beßerer</unclear> nachrichtung
+<lb n="37"/>umb geliebten <unclear cert="low" resp="#joint">antwurt</unclear>. Damit unß aller-
+<lb n="38"/>seitß <unclear cert="low" resp="#joint">Goetlicher</unclear> protection wol <unclear cert="low" resp="#joint">anbevelchende</unclear>.
+<lb n="39"/><origPlace ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rochach</unclear></origPlace> <origDate when="1623-10-20" resp="#ner">den 20. <unclear cert="low" resp="#joint">Octob</unclear>. 1623.</origDate>
 <lb n="40"/>E. E.
 <lb n="41"/>D. W.
-<lb n="42"/><persName role="issuer" resp="#ner">Joh. Francisc Reding</persName> mp.
+<lb n="42"/><persName role="issuer" resp="#ner">Joh. <unclear cert="medium" resp="#joint">Francisc</unclear> Reding</persName> <unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_2396_9201.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2396_9202.jpg" n="4"/>
-<lb n="43"/>Denen Edlen, Vhesten, Fuersichtigen, Ehrsamen, Wolgeachten
+<lb n="43"/><unclear cert="medium" resp="#joint">Denen</unclear> Edlen, <unclear cert="low" resp="#joint">Vhesten</unclear>, <unclear cert="low" resp="#joint">Fuersichtigen</unclear>, Ehrsamen, Wolgeachten
 <lb n="44"/>unnd Weisen, Herrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd
-<lb n="45"/>Rhatt der Statt Sanct Gallen</orgName>, Meinen son-
-<lb n="46"/>ders geehrten guenßtigen Herrn.
+<lb n="45"/><unclear cert="low" resp="#joint">Rhatt</unclear> der Statt Sanct Gallen</orgName>, <unclear cert="low" resp="#joint">Meinen</unclear> <unclear cert="low" resp="#joint">son</unclear>-
+<lb n="46"/><unclear cert="low" resp="#joint">ders</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="low" resp="#joint">guenßtigen</unclear> <unclear cert="low" resp="#joint">Herrn</unclear>.
 <lb n="47"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>.
 </p>
         </body>

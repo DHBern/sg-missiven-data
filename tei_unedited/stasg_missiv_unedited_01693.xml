@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1693</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bestätigen den Empfang zweier Briefe Lindaus vom 21. und 22. Juni. Sie bedanken sich für die nachbarschaftliche Zuwendung und erklären sich bereit, alles zu tun, was zur Erhaltung einer guten und beständigen nachbarschaftlichen Korrespondenz dienlich und förderlich sei.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1620-06-23" resp="#regest">Datum den 23. Junii Ao. 1620.</date></correspAction><correspAction type="received"><name resp="#regest">Lindau</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -38,25 +38,25 @@
 <lb n="2"/>sichtigen, Ersamen und Weisen, besonders lieben
 <lb n="3"/>guoten freündten und Nachbauren.
 <lb n="4"/><unclear cert="low" resp="#joint">Deroselben</unclear> abgangene zwei Nachbarliche schreiben
-<lb n="5"/>undterm dato den <date resp="#ner">21: und 22. Junii</date>, habendt
-<lb n="6"/>wir zuo Recht empfangen <unclear cert="low" resp="#joint">jüngsthin</unclear> und Innhalts ablesendt
+<lb n="5"/><unclear cert="low" resp="#joint">undterm</unclear> dato den <date resp="#ner">21: und 22. Junii</date>, habendt
+<lb n="6"/>wir <unclear cert="low" resp="#joint">zuo</unclear> Recht empfangen <unclear cert="low" resp="#joint">jüngsthin</unclear> und Innhalts ablesendt
 <lb n="7"/>vernommen, Und wie wir <unclear cert="low" resp="#joint">iederzeit</unclear> nachbarlich ge-
-<lb n="8"/><unclear cert="low" resp="#joint">neigt</unclear> undt willig sindt E: <unclear cert="low" resp="#joint">Ers</unclear>: <unclear cert="low" resp="#joint">W</unclear>: alles das
+<lb n="8"/><unclear cert="medium" resp="#joint">neigt</unclear> <unclear cert="medium" resp="#joint">undt</unclear> willig sindt E: <unclear cert="low" resp="#joint">Ers</unclear>: <unclear cert="low" resp="#joint">W</unclear>: alles das
 <lb n="9"/>Jenige mit ghatten zuo berichten, was wir erfaren
-<lb n="10"/><unclear cert="low" resp="#joint">kündten</unclear>, <unclear cert="low" resp="#joint">demselben</unclear> <unclear cert="low" resp="#joint">Nuzlich</unclear> oder <unclear cert="low" resp="#joint">schädlich</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">sein</unclear>,
+<lb n="10"/><unclear cert="medium" resp="#joint">kündten</unclear>, <unclear cert="medium" resp="#joint">demselben</unclear> <unclear cert="medium" resp="#joint">Nuzlich</unclear> oder <unclear cert="low" resp="#joint">schädlich</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">sein</unclear>,
 <lb n="11"/><unclear cert="low" resp="#joint">Also</unclear> <unclear cert="low" resp="#joint">undt</unclear> nit weniger haben wir <unclear cert="low" resp="#joint">aus</unclear> dero
 <lb n="12"/>bemelten schreiben Ir guotherzige Affection
 <lb n="13"/>undt Nachbarliche zuo Neigung gegen uns mit
 <lb n="14"/><unclear cert="low" resp="#joint">sonderm</unclear> belieben <unclear cert="low" resp="#joint">auch</unclear> verstanden, Wie wir
-<lb n="15"/>uns dann gegen E. Ers: W: von demselben alles
+<lb n="15"/>uns dann gegen E. <unclear cert="low" resp="#joint">Ers</unclear>: <unclear cert="low" resp="#joint">W</unclear>: <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">demselben</unclear> alles
 <lb n="16"/>Nachbarlichen willens, freündt: Nachbarlich bedanckhen
-<lb n="17"/>auch darbei erbieten thuon, alles das Jenige ied-
-<lb n="18"/>zeit an die handt <unclear cert="medium" resp="#joint">zuo</unclear> nemen, <unclear cert="low" resp="#joint">Was</unclear> wir <unclear cert="low" resp="#joint">zuo</unclear> erhaltung
-<lb n="19"/>guoter <unclear cert="low" resp="#joint">bestendigen</unclear> Nachbarlicher <unclear cert="low" resp="#joint">Correspondenz</unclear> Im-
-<lb n="20"/>mer dienlich und fürdersam <unclear cert="low" resp="#joint">erachten</unclear> sein mögen. Mit <unclear cert="low" resp="#joint">der</unclear>
-<lb n="21"/>hilff Gottes, den wir bitten er uns <unclear cert="medium" resp="#joint">zuo</unclear> allen
+<lb n="17"/>auch <unclear cert="low" resp="#joint">darbei</unclear> erbieten <unclear cert="low" resp="#joint">thuon</unclear>, alles das Jenige ied-
+<lb n="18"/>zeit <unclear cert="low" resp="#joint">an</unclear> die handt zuo nemen, <unclear cert="medium" resp="#joint">Was</unclear> wir <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">erhaltung</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">bestendigen</unclear> Nachbarlicher <unclear cert="low" resp="#joint">Correspondenz</unclear> <unclear cert="medium" resp="#joint">Im</unclear>-
+<lb n="20"/>mer dienlich und fürdersam <unclear cert="low" resp="#joint">erachten</unclear> sein <unclear cert="medium" resp="#joint">mögen</unclear>. Mit <unclear cert="medium" resp="#joint">der</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">hilff</unclear> <unclear cert="medium" resp="#joint">Gottes</unclear>, den wir bitten <unclear cert="medium" resp="#joint">er</unclear> uns zuo allen
 <lb n="22"/>theilen in seinem <unclear cert="low" resp="#joint">gnadenreichen</unclear> <unclear cert="low" resp="#joint">schuz</unclear> und schirm
-<lb n="23"/><unclear cert="low" resp="#joint">treülich</unclear> erhalten <unclear cert="low" resp="#joint">welle</unclear>, Datum den <origDate when="1620-06-23" resp="#ner">23. <unclear cert="low" resp="#joint">Junii</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">treülich</unclear> erhalten <unclear cert="low" resp="#joint">welle</unclear>, Datum den <origDate when="1620-06-23" resp="#ner">23. Junii
 <lb n="24"/><unclear cert="low" resp="#joint">Ao</unclear>. <unclear cert="low" resp="#joint">1620</unclear></origDate>.
 <lb n="25"/><unclear cert="low" resp="#joint">An</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">von</unclear> <placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lindau</unclear></placeName>.
 <lb n="26"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath

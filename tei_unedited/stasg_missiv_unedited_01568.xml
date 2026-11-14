@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1568</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,62 +20,62 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">König Heinrich von Frankreich bittet Bürgermeister und Rat zu Zürich, die Grauenpünfte zu ihrem eigenen Heil zurückzubringen und sie von den Unwesen zu züngen, die ihnen durch ihre Missgünstigen widerfahren. Er lobt den guten Rat, den die Zürcher den Grauenpünften erteilt haben, und versichert seine Unterstützung. Er bittet um Antwort und empfiehlt sich der göttlichen Obhut.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Heinrich von Frankreich</name><placeName resp="#regest">Paris</placeName><date when="1607-09-11" resp="#regest">Datum Parys den 11.ten Septembris. 1607.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Zürich</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1568_5667.jpg" n="1"/>
-<lb n="1"/><persName role="issuer" resp="#ner">Heinrich</persName> von Gottes gnaden künig zuo <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franck
-<lb n="2"/>rych</placeName> und <placeName resp="#ner"><unclear cert="low" resp="#joint">Navarren</unclear></placeName>. <unclear cert="low" resp="#joint">Fürgeliebte</unclear> <unclear cert="low" resp="#joint">grosse</unclear> fründt,
-<lb n="3"/>eydt: unnd pundtsverwandte. Die herren
-<lb n="4"/>von Refüge unnd <persName resp="#ner"><unclear cert="low" resp="#joint">Pascal</unclear></persName> <unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="low" resp="#joint">rhät</unclear>, unnd
-<lb n="5"/>ambassadoren inn der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> und Pündt,
-<lb n="6"/>werdent üch verstendiget haben, wie wir inen
-<lb n="7"/>ernstlich uferlegt das <unclear cert="low" resp="#joint">iedtvederer</unclear> uff synen
-<lb n="8"/>syten sich beflyße unsere fürgeliebte grosse
-<lb n="9"/>fründt unnd <unclear cert="low" resp="#joint">pundtsverwandte</unclear> <unclear cert="low" resp="#joint">uß</unclear> den Grawen-
-<lb n="10"/>pündten, zuo der erkantnuß ires eignen heils
-<lb n="11"/>widerumb zebringen unnd von dem unvesen ze-
-<lb n="12"/>zün, dasten sy inn der handthabung irer
-<lb n="13"/>wolstandts unnd fryheiten durch ire mißgünst-
+<lb n="1"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Heinrich</unclear></persName> von Gottes gnaden künig zuo <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franck
+<lb n="2"/>rych</placeName> und <placeName resp="#ner"><unclear cert="medium" resp="#joint">Navarren</unclear></placeName>. <unclear cert="medium" resp="#joint">Fürgeliebte</unclear> <unclear cert="medium" resp="#joint">grosse</unclear> fründt,
+<lb n="3"/>eydt: unnd <unclear cert="low" resp="#joint">pundtsverwandte</unclear>. Die herren
+<lb n="4"/>von <unclear cert="low" resp="#joint">Refüge</unclear> unnd <persName resp="#ner"><unclear cert="medium" resp="#joint">Pascal</unclear></persName> <unclear cert="medium" resp="#joint">unnsere</unclear> <unclear cert="medium" resp="#joint">rhät</unclear>, unnd
+<lb n="5"/><unclear cert="low" resp="#joint">ambassadoren</unclear> inn der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> und <unclear cert="low" resp="#joint">Pündt</unclear>,
+<lb n="6"/>werdent üch <unclear cert="low" resp="#joint">verstendiget</unclear> haben, wie wir inen
+<lb n="7"/>ernstlich uferlegt das <unclear cert="medium" resp="#joint">iedtvederer</unclear> uff synen
+<lb n="8"/>syten sich <unclear cert="low" resp="#joint">beflyße</unclear> unsere fürgeliebte grosse
+<lb n="9"/>fründt unnd <unclear cert="medium" resp="#joint">pundtsverwandte</unclear> uß den <unclear cert="low" resp="#joint">Grawen</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">pündten</unclear>, zuo der erkantnuß <unclear cert="low" resp="#joint">ires</unclear> eignen heils
+<lb n="11"/>widerumb zebringen unnd <unclear cert="low" resp="#joint">von</unclear> dem <unclear cert="low" resp="#joint">unvesen</unclear> <unclear cert="low" resp="#joint">ze</unclear>-
+<lb n="12"/><unclear cert="low" resp="#joint">zün</unclear>, dasten sy inn der handthabung irer
+<lb n="13"/><unclear cert="low" resp="#joint">wolstandts</unclear> unnd fryheiten durch ire <unclear cert="low" resp="#joint">mißgünst</unclear>-
 <lb n="14"/>igen vil unnd mengerlej spitzfündigkeiten, betrüebt
 <lb n="15"/>zuowerden getröüvt sind. Darumb wir
-<lb n="16"/>von wegen ouch unsers eignen intereß den
-<lb n="17"/>guoten unnd wysen rhat, welchen ir inen inn
+<lb n="16"/>von wegen ouch unsers eignen <unclear cert="low" resp="#joint">intereß</unclear> den
+<lb n="17"/>guoten unnd wysen <unclear cert="low" resp="#joint">rhat</unclear>, welchen ir inen inn
 <lb n="18"/>diseren uflouff mitgetheilt, nit gnuogsam loben
-<lb n="19"/>khönnen. Unnd glych wie wir zuo stillung
-<lb n="20"/>derselben einige mitel eines christenlichsten
-<lb n="21"/>königs ires guoten volkomnesten fründt
-<lb n="22"/>unnd liebhabenden irer ruow, bißher nit ge-
+<lb n="19"/><unclear cert="low" resp="#joint">khönnen</unclear>. Unnd glych wie wir zuo <unclear cert="low" resp="#joint">stillung</unclear>
+<lb n="20"/>derselben <unclear cert="low" resp="#joint">einige</unclear> mitel eines christenlichsten
+<lb n="21"/>königs ires guoten <unclear cert="low" resp="#joint">volkomnesten</unclear> fründt
+<lb n="22"/>unnd <unclear cert="low" resp="#joint">liebhabenden</unclear> <unclear cert="low" resp="#joint">irer</unclear> <unclear cert="low" resp="#joint">ruow</unclear>, <unclear cert="low" resp="#joint">bißher</unclear> nit ge-
 <lb n="23"/>spart. Alßo haben wir ouch gemelten
-<lb n="24"/>herren von Refüge und <persName resp="#ner">Pascal</persName>, nochmolen
-<lb n="25"/>befolchen wöllen, das sy uff das khünfftig
-<lb n="26"/>aber iren allen müglichsten flyß, unseren
-<lb n="27"/>intention <unclear cert="low" resp="#joint">ebenmessig</unclear> <unclear cert="low" resp="#joint">herzuostürent</unclear> als wir
-<lb n="28"/>tröstlicher hoffnung sind ir uff üwer sythen
-<lb n="29"/>ouch thuon werdent, <unclear cert="low" resp="#joint">darzuo</unclear> wir üch nach
+<lb n="24"/>herren von <unclear cert="low" resp="#joint">Refüge</unclear> und <persName resp="#ner"><unclear cert="low" resp="#joint">Pascal</unclear></persName>, <unclear cert="low" resp="#joint">nochmolen</unclear>
+<lb n="25"/>befolchen wöllen, das sy uff das <unclear cert="low" resp="#joint">khünfftig</unclear>
+<lb n="26"/>aber iren allen <unclear cert="low" resp="#joint">müglichsten</unclear> flyß, unseren
+<lb n="27"/>intention <unclear cert="medium" resp="#joint">ebenmessig</unclear> <unclear cert="medium" resp="#joint">herzuostürent</unclear> als wir
+<lb n="28"/><unclear cert="low" resp="#joint">tröstlicher</unclear> hoffnung sind ir uff <unclear cert="low" resp="#joint">üwer</unclear> sythen
+<lb n="29"/>ouch thuon werdent, <unclear cert="medium" resp="#joint">darzuo</unclear> wir üch nach
 <lb n="30"/>bestem unnsers vermügens wöllent hiemit
-<lb n="31"/>ersterckt haben. nebent vergwüsserung der
-<lb n="32"/>continuation unnsers zuo üch sampt unnd sonders
+<lb n="31"/><unclear cert="low" resp="#joint">ersterckt</unclear> haben. nebent <unclear cert="low" resp="#joint">vergwüsserung</unclear> der
+<lb n="32"/>continuation unnsers zuo üch <unclear cert="low" resp="#joint">sampt</unclear> unnd <unclear cert="low" resp="#joint">sonders</unclear>
 <lb n="33"/>habenden guoten willens, üch denselben inn
 <lb n="34"/>allen fürfallenden glegenheiten mit der that
 <pb facs="StadtASG_Missive_1568_5668.jpg" n="2"/>
-<lb n="35"/><unclear cert="low" resp="#joint">zuobefuegen</unclear> begerende, wie <unclear cert="medium" resp="#joint">ir</unclear> von gesagten
-<lb n="36"/>unseren <unclear cert="medium" resp="#joint">Ambassadoren</unclear> <unclear cert="medium" resp="#joint">wythloeuffiger</unclear> <unclear cert="medium" resp="#joint">zuo</unclear>-
-<lb n="37"/>vernemen <unclear cert="medium" resp="#joint">haben</unclear>, uff <unclear cert="medium" resp="#joint">welliche</unclear> unns <unclear cert="medium" resp="#joint">verlasse</unclear>-
-<lb n="38"/>ende, woellend wir hiemit Gott <unclear cert="medium" resp="#joint">gebetten</unclear>
-<lb n="39"/>haben, <unclear cert="medium" resp="#joint">das</unclear> er üch fürgeliebte <unclear cert="low" resp="#joint">groste</unclear> <unclear cert="low" resp="#joint">fründt</unclear>.
-<lb n="40"/><unclear cert="low" resp="#joint">Datum</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Parys</unclear></origPlace> <origDate when="1607" resp="#ner">den <unclear cert="medium" resp="#joint">11.ten</unclear> Septembris. 1607</origDate>.
-<lb n="41"/><unclear cert="medium" resp="#joint">An</unclear> <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rhat der Statt <unclear cert="medium" resp="#joint">Zürich</unclear></orgName>.
+<lb n="35"/><unclear cert="medium" resp="#joint">zuobefuegen</unclear> begerende, wie ir von gesagten
+<lb n="36"/>unseren <unclear cert="low" resp="#joint">Ambassadoren</unclear> <unclear cert="low" resp="#joint">wythloeuffiger</unclear> <unclear cert="low" resp="#joint">zuo</unclear>-
+<lb n="37"/>vernemen haben, uff welliche unns <unclear cert="low" resp="#joint">verlasse</unclear>-
+<lb n="38"/>ende, woellend wir hiemit Gott <unclear cert="low" resp="#joint">gebetten</unclear>
+<lb n="39"/>haben, <unclear cert="low" resp="#joint">das</unclear> er üch fürgeliebte <unclear cert="medium" resp="#joint">groste</unclear> fründt.
+<lb n="40"/><unclear cert="medium" resp="#joint">Datum</unclear> <origPlace resp="#ner"><unclear cert="medium" resp="#joint">Parys</unclear></origPlace> <origDate when="1607" resp="#ner">den 11.ten Septembris. 1607</origDate>.
+<lb n="41"/><unclear cert="low" resp="#joint">An</unclear> <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rhat der Statt Zürich</orgName>.
 </p>
         </body>
     </text>

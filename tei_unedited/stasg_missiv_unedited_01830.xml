@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1830</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Caspar Graf zu Hohenems und Gallara übersendet Bürgermeister und Rat zu St. Gallen die Urteile über in Hohenems inhaftierte und am 29. des Vormonats hingerichtete Malefizpersonen. Er bittet, die Urteile zu prüfen, damit noch umlaufende Buben verhaftet und nach Verdienst bestraft werden können.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Caspar Graf zu Hohenems und Gallara</name><placeName resp="#regest">Schloss zu Embs</placeName><date when="1613-04-04" resp="#regest">4 aprilis anno. 1613.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -40,24 +40,24 @@
 <lb n="4"/>fromme, fuersichtige, ersame unnd weyse, sonders
 <lb n="5"/>liebe unnd <unclear cert="low" resp="#joint">nachpaurn</unclear>.
 <lb n="6"/><unclear cert="low" resp="#joint">Auff</unclear> <unclear cert="low" resp="#joint">euwer</unclear> <unclear cert="low" resp="#joint">juengstes</unclear> <unclear cert="low" resp="#joint">schrifftliches</unclear> anerbieten.
-<lb n="7"/><unclear cert="low" resp="#joint">uebersenden</unclear> wir euch, der alhie gevangner, und <unclear cert="low" resp="#joint">den</unclear>
-<lb n="8"/><unclear cert="low" resp="#joint">29</unclear> <unclear cert="low" resp="#joint">etas</unclear> <unclear cert="low" resp="#joint">passats</unclear> <unclear cert="low" resp="#joint">hingerichter</unclear> <unclear cert="low" resp="#joint">Malefiz</unclear> <unclear cert="low" resp="#joint">persohnen</unclear>
-<lb n="9"/><unclear cert="low" resp="#joint">urgichten</unclear>, <unclear cert="low" resp="#joint">hierueber</unclear> <unclear cert="low" resp="#joint">desto</unclear> <unclear cert="low" resp="#joint">besser</unclear> <unclear cert="low" resp="#joint">nachsehens</unclear> <unclear cert="low" resp="#joint">haben</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">zuelassen</unclear>, damit die noch umblauffende bueben,
-<lb n="11"/>moechten in verhafft gebracht, unnd nach verdienst
+<lb n="7"/><unclear cert="medium" resp="#joint">uebersenden</unclear> wir euch, der alhie <unclear cert="low" resp="#joint">gevangner</unclear>, und den
+<lb n="8"/>29 <unclear cert="medium" resp="#joint">etas</unclear> <unclear cert="medium" resp="#joint">passats</unclear> <unclear cert="medium" resp="#joint">hingerichter</unclear> <unclear cert="medium" resp="#joint">Malefiz</unclear> <unclear cert="medium" resp="#joint">persohnen</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">urgichten</unclear>, <unclear cert="medium" resp="#joint">hierueber</unclear> desto <unclear cert="medium" resp="#joint">besser</unclear> <unclear cert="medium" resp="#joint">nachsehens</unclear> haben
+<lb n="10"/><unclear cert="low" resp="#joint">zuelassen</unclear>, damit die noch umblauffende <unclear cert="low" resp="#joint">bueben</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">moechten</unclear> in <unclear cert="low" resp="#joint">verhafft</unclear> gebracht, unnd nach <unclear cert="low" resp="#joint">verdienst</unclear>
 <lb n="12"/>gestrafft werden. Unnd bleiben euch mit
-<lb n="13"/>gnuegem nachpaeurlichen willen jederzeit beigethon.
-<lb n="14"/>Geben in unserm schloß zu Embs <origDate when="1613-04-04" resp="#ner">den. 4 <unclear cert="low" resp="#joint">aprilis</unclear>
-<lb n="15"/><unclear cert="low" resp="#joint">anno</unclear>. 1613.</origDate>
-<lb n="16"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear> <unclear cert="low" resp="#joint">graff</unclear></persName>
+<lb n="13"/>gnuegem nachpaeurlichen willen jederzeit <unclear cert="low" resp="#joint">beigethon</unclear>.
+<lb n="14"/>Geben in <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">schloß</unclear> zu <unclear cert="low" resp="#joint">Embs</unclear> <origDate when="1613-04-04" resp="#ner">den. 4 aprilis
+<lb n="15"/>anno. 1613.</origDate>
+<lb n="16"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Caspar</unclear> graff</persName>
 <lb n="17"/><unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">Hochen</unclear> <unclear cert="low" resp="#joint">Embs</unclear>
 <pb facs="StadtASG_Missive_1830_6790.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1830_6791.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1830_6792.jpg" n="4"/>
-<lb n="18"/>Den <unclear cert="low" resp="#joint">ehrnvesten</unclear> <unclear cert="low" resp="#joint">fürsichtig</unclear>, <unclear cert="low" resp="#joint">ehrsamen</unclear>, und weÿsen, unseren
-<lb n="19"/>besonders lieben und nachpaurn, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und
-<lb n="20"/>Rath der Statt Sant Gallen</orgName>.
-<lb n="21"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
+<lb n="18"/>Den <unclear cert="low" resp="#joint">ehrnvesten</unclear> fürsichtig, ehrsamen, und <unclear cert="low" resp="#joint">weÿsen</unclear>, <unclear cert="low" resp="#joint">unseren</unclear>
+<lb n="19"/>besonders lieben und <unclear cert="low" resp="#joint">nachpaurn</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> und
+<lb n="20"/><unclear cert="medium" resp="#joint">Rath</unclear> der Statt Sant Gallen</orgName>.
+<lb n="21"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>.
 </p>
         </body>
     </text>

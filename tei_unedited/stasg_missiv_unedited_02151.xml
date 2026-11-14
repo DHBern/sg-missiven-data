@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2151</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,46 +20,46 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Alfonso Casale teilt Bürgermeister und Rat zu St. Gallen mit, dass er den in ihrem Schreiben vom 14. oder 24. des Monats genannten Auftrag gerne übernommen habe. Er habe bereits in deren Sinne an Seine Exzellenz geschrieben und erwartet einen guten Ausgang der Sache. Er bietet seine Dienste für weitere Anliegen an und hofft, dass die St. Galler Bürger in den Staaten Seiner Majestät gleich gut behandelt werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Alfonso Casale</name><placeName resp="#regest">Altorffo</placeName><date when="1619-09-30" resp="#regest">Di Altorffo a 30 di settre. 1619</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2151_8061.jpg" n="1"/>
-<lb n="1"/>Illmi. Sigri.
-<lb n="2"/>Per il dissiderio che tengo di servire alle Ss. Vv., ho abbrac=
+<lb n="1"/><unclear cert="low" resp="#joint">Illmi</unclear>. <unclear cert="low" resp="#joint">Sigri</unclear>.
+<lb n="2"/>Per il <unclear cert="medium" resp="#joint">dissiderio</unclear> che tengo di servire alle Ss. Vv., ho abbrac=
 <lb n="3"/>ciato voluntieri il negotio che mi rapresentano nella
-<lb n="4"/>lor lettera de 14 24 del presente, havendo scritto in
-<lb n="5"/>favor d' esso à sua Eccza. di cossi buon inchiostro, come
-<lb n="6"/>credo mostrara l' essito della causa, et il simile faro
+<lb n="4"/>lor lettera de <unclear cert="low" resp="#joint">14</unclear> <unclear cert="low" resp="#joint">24</unclear> del presente, havendo scritto in
+<lb n="5"/><unclear cert="low" resp="#joint">favor</unclear> <unclear cert="low" resp="#joint">d</unclear>' <unclear cert="low" resp="#joint">esso</unclear> <unclear cert="low" resp="#joint">à</unclear> sua <unclear cert="medium" resp="#joint">Eccza</unclear>. di <unclear cert="medium" resp="#joint">cossi</unclear> buon inchiostro, come
+<lb n="6"/>credo mostrara <unclear cert="low" resp="#joint">l</unclear>' <unclear cert="low" resp="#joint">essito</unclear> della causa, et il simile faro
 <lb n="7"/>in tutte le altre occasioni, che le Ss. Vv. mi daranno
-<lb n="8"/>da poter servirli, sperando che nelle cose del servitio
-<lb n="9"/>del re mio sigre. anch' esse corrisponderano con ugual
-<lb n="10"/>volonta al buon trattamento, che riccevono i loro cittadini
+<lb n="8"/>da poter servirli, sperando che nelle cose del <unclear cert="low" resp="#joint">servitio</unclear>
+<lb n="9"/>del re mio sigre. <unclear cert="low" resp="#joint">anch</unclear>' <unclear cert="low" resp="#joint">esse</unclear> corrisponderano con ugual
+<lb n="10"/><unclear cert="low" resp="#joint">volonta</unclear> al buon trattamento, che <unclear cert="low" resp="#joint">riccevono</unclear> i loro cittadini
 <lb n="11"/>nelli stati di sua Mta. et la divina conceda alle
-<lb n="12"/>Sse. Vve. ogni vera felicita. Di <origPlace resp="#ner">Altorffo</origPlace> a <origDate when="1619" resp="#ner">30 di
-<lb n="13"/>settre. 1619</origDate>
-<lb n="14"/>De Sse. Vve. Illmi.
-<lb n="15"/>Servitor affmo.
-<lb n="16"/><persName role="issuer" resp="#ner">Alfonso Casale</persName>.
+<lb n="12"/><unclear cert="low" resp="#joint">Sse</unclear>. <unclear cert="low" resp="#joint">Vve</unclear>. ogni <unclear cert="low" resp="#joint">vera</unclear> felicita. Di <origPlace resp="#ner">Altorffo</origPlace> a <origDate when="1619" resp="#ner">30 di
+<lb n="13"/><unclear cert="low" resp="#joint">settre</unclear>. 1619</origDate>
+<lb n="14"/><unclear cert="low" resp="#joint">De</unclear> <unclear cert="low" resp="#joint">Sse</unclear>. <unclear cert="low" resp="#joint">Vve</unclear>. <unclear cert="low" resp="#joint">Illmi</unclear>.
+<lb n="15"/><unclear cert="low" resp="#joint">Servitor</unclear> affmo.
+<lb n="16"/><persName role="issuer" resp="#ner">Alfonso <unclear cert="medium" resp="#joint">Casale</unclear></persName>.
 <pb facs="StadtASG_Missive_2151_8062.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2151_8063.jpg" n="3"/>
-<lb n="17"/>All'illmi sigri li sigri Borgomro
-<lb n="18"/>et <orgName role="recipient" resp="#ner">Consiglio della Citta di
-<lb n="19"/>Sangallo</orgName>.
-<lb n="20"/>Sangallo
+<lb n="17"/><unclear cert="medium" resp="#joint">All'illmi</unclear> <unclear cert="medium" resp="#joint">sigri</unclear> <unclear cert="medium" resp="#joint">li</unclear> <unclear cert="medium" resp="#joint">sigri</unclear> <unclear cert="medium" resp="#joint">Borgomro</unclear>
+<lb n="18"/><unclear cert="medium" resp="#joint">et</unclear> <orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Consiglio</unclear> <unclear cert="medium" resp="#joint">della</unclear> <unclear cert="medium" resp="#joint">Citta</unclear> <unclear cert="medium" resp="#joint">di</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">Sangallo</unclear></orgName>.
+<lb n="20"/><unclear cert="medium" resp="#joint">Sangallo</unclear>
 <pb facs="StadtASG_Missive_2151_8064.jpg" n="4"/>
-<lb n="21"/>Alli Illre Sigri li <orgName role="recipient" resp="#ner">Signori Borgmro
+<lb n="21"/>Alli <unclear cert="medium" resp="#joint">Illre</unclear> <unclear cert="medium" resp="#joint">Sigri</unclear> <unclear cert="medium" resp="#joint">li</unclear> <orgName role="recipient" resp="#ner">Signori Borgmro
 <lb n="22"/>et Consiglio della Citta di
-<lb n="23"/>Sangallo</orgName> etc.
+<lb n="23"/>Sangallo</orgName> <unclear cert="medium" resp="#joint">etc</unclear>.
 <lb n="24"/>Sangallo
 </p>
         </body>

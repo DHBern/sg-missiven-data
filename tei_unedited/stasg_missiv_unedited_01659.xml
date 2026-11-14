@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1659</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Die Schmiedezunft zu St. Gallen bittet Schultheiss und Rat zu Winterthur, ihren Bürger Jörg Schellenberg anzuhalten, den Lehrjungen des St. Galler Goldschmieds Gabriel Gänser wieder auszuliefern oder sich selbst nach St. Gallen zu begeben, um die Streitigkeit zu klären. Der Junge habe die Lehrzeit nicht vollendet und sei ohne ordentliches Recht abgezogen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Zunftmeister und Geschworene der Schmiedezunft zu St. Gallen</name><date when="1609-10-24" resp="#regest">24. monats octobris a° 1609</date></correspAction><correspAction type="received"><name resp="#regest">Schultheiss und Rat zu Winterthur</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -114,31 +114,31 @@
 <lb n="77"/>gedachtem Maurern sich aintweders vergleiche,
 <lb n="78"/>oder vor unß erhebliche ursachen dises seines
 <pb facs="StadtASG_Missive_1659_6049.jpg" n="3"/>
-<lb n="79"/><unclear cert="low" resp="#joint">verhandlens</unclear> <unclear cert="low" resp="#joint">ersparen</unclear>. Wie dann zuo E. E. Wht.
+<lb n="79"/><unclear cert="medium" resp="#joint">verhandlens</unclear> <unclear cert="low" resp="#joint">ersparen</unclear>. Wie dann zuo E. E. <unclear cert="low" resp="#joint">Wht</unclear>.
 <lb n="80"/>wir daß guot vertrauwen haben, sy solches
 <lb n="81"/>nit <unclear cert="low" resp="#joint">fuer</unclear> unbillich erkennen werden. Dar=
-<lb n="82"/>durch <unclear cert="low" resp="#joint">wird</unclear> auch er <placeName ref="stadtasg-places-96" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schallenberg</unclear></placeName> verhueten,
+<lb n="82"/>durch <unclear cert="medium" resp="#joint">wird</unclear> auch er <placeName ref="stadtasg-places-96" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schallenberg</unclear></placeName> <unclear cert="medium" resp="#joint">verhueten</unclear>,
 <lb n="83"/>daß man nicht andere <unclear cert="low" resp="#joint">mitel</unclear>, an denen es
-<lb n="84"/>gleichwol nit mangelt, <unclear cert="low" resp="#joint">vileicht</unclear> aber seinen
-<lb n="85"/>sacn zuo schlechter befuerderung reichen moechte,
-<lb n="86"/>an die hand zuo nemen verursachet werde.
-<lb n="87"/>Wo dann umb E. E. Wht. wir solches hin=
-<lb n="88"/>widerumb koendten verdienen, deß erbieten
+<lb n="84"/>gleichwol nit mangelt, <unclear cert="low" resp="#joint">vileicht</unclear> aber <unclear cert="low" resp="#joint">seinen</unclear>
+<lb n="85"/><unclear cert="low" resp="#joint">sacn</unclear> zuo schlechter <unclear cert="low" resp="#joint">befuerderung</unclear> <unclear cert="medium" resp="#joint">reichen</unclear> <unclear cert="medium" resp="#joint">moechte</unclear>,
+<lb n="86"/>an die hand zuo nemen <unclear cert="medium" resp="#joint">verursachet</unclear> werde.
+<lb n="87"/>Wo dann umb E. E. <unclear cert="low" resp="#joint">Wht</unclear>. wir solches hin=
+<lb n="88"/>widerumb koendten verdienen, deß <unclear cert="low" resp="#joint">erbieten</unclear>
 <lb n="89"/>wir unß geneigt und willig. Und
-<lb n="90"/><unclear cert="medium" resp="#joint">thuond</unclear> darmit unß <unclear cert="low" resp="#joint">sametlichen</unclear> Goettlicher
-<lb n="91"/>allmacht <unclear cert="low" resp="#joint">treuwelich</unclear> bevolhen. <unclear cert="low" resp="#joint">Dat</unclear>
-<lb n="92"/><origDate when="1609-10-24" resp="#ner">den <unclear cert="low" resp="#joint">24</unclear>. monats octobris a° 1609</origDate>.
-<lb n="93"/>E. E. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="90"/>thuond darmit <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">sametlichen</unclear> <unclear cert="medium" resp="#joint">Goettlicher</unclear>
+<lb n="91"/>allmacht <unclear cert="low" resp="#joint">treuwelich</unclear> <unclear cert="medium" resp="#joint">bevolhen</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>
+<lb n="92"/><origDate when="1609-10-24" resp="#ner">den <unclear cert="low" resp="#joint">24</unclear>. monats octobris <unclear cert="low" resp="#joint">a°</unclear> 1609</origDate>.
+<lb n="93"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
 <lb n="94"/><unclear cert="low" resp="#joint">guotwillige</unclear> <unclear cert="low" resp="#joint">freuend</unclear>
 <lb n="95"/>und <unclear cert="low" resp="#joint">nachbarn</unclear>.
-<lb n="96"/><persName role="issuer" resp="#ner">Cirillus <unclear cert="low" resp="#joint">Fuesterling</unclear></persName>, zunfft=
-<lb n="97"/>meister und die geschwornen,
-<lb n="98"/><unclear cert="low" resp="#joint">samtlichen</unclear> der <orgName role="issuer" resp="#ner">schmidzunfft der
+<lb n="96"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Cirillus</unclear> <unclear cert="low" resp="#joint">Fuesterling</unclear></persName>, <unclear cert="medium" resp="#joint">zunfft=</unclear>
+<lb n="97"/><unclear cert="medium" resp="#joint">meister</unclear> und die geschwornen,
+<lb n="98"/><unclear cert="low" resp="#joint">samtlichen</unclear> der <orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">schmidzunfft</unclear> der
 <lb n="99"/>statt Sant Gallen</orgName>.
-<lb n="100"/>Den frommen, ehrnvesten <unclear cert="low" resp="#joint">fuersichtigen</unclear> und
-<lb n="101"/>weisen, <orgName ref="stadtasg-actors-718" cert="medium" role="recipient" resp="#ner">schultheiß und rhat der statt
+<lb n="100"/><unclear cert="medium" resp="#joint">Den</unclear> frommen, ehrnvesten <unclear cert="low" resp="#joint">fuersichtigen</unclear> und
+<lb n="101"/>weisen, <orgName ref="stadtasg-actors-718" cert="medium" role="recipient" resp="#ner">schultheiß und <unclear cert="medium" resp="#joint">rhat</unclear> der statt
 <lb n="102"/>Winterthur</orgName>, unsern insonders lieben herren,
-<lb n="103"/>guoten <unclear cert="low" resp="#joint">freuenden</unclear> und nachbarn.
+<lb n="103"/>guoten <unclear cert="low" resp="#joint">freuenden</unclear> und <unclear cert="medium" resp="#joint">nachbarn</unclear>.
 <pb facs="StadtASG_Missive_1659_6050.jpg" n="4"/>
 </p>
         </body>

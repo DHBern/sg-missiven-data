@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2476</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,53 +20,53 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Georg Langhans, Diener der Kirche zu Bern, bittet Bürgermeister und Rat zu St. Gallen, die Widmung einer lateinischen Chronik seines Bruders Jacob, Schreibers in Riggisberg, gütig zu empfangen und ihn gnädig zu empfehlen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Georg Langhans</name><date when="1624-03-21" resp="#regest">21. Martij, 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2476_9541.jpg" n="1"/>
-<lb n="1"/>Gestrenge, Edel, Ehrenveste, Fromme, Fuerneme,
-<lb n="2"/>fuersichtige, ersame, wyße, jnsonders großguenstige,
-<lb n="3"/>gnaedige liebe Herren. U. G. sye myn gantz geflißne
-<lb n="4"/>dienst jederzyt bevor.
-<lb n="5"/>Es hat myn geliebter bruoder <persName resp="#ner">Jacob, Schryber</persName> in <placeName resp="#ner">Riggiß-
-<lb n="6"/>berg</placeName>, U. G. zuo sonderen ehren, ein Chronographiam,
-<lb n="7"/>uff ein taffelen, in latinischer sprach, beschriben und
-<lb n="8"/>dediciert, jn wuelen U. G. die selbe jetzot zuoffe-
-<lb n="9"/>rieren. Diewyl er aber by U. G. unbekant, hat er
-<lb n="10"/>mich, alß sin fuererfueger subiungiert, sambt diß
-<lb n="11"/>kleine briefflj, bruederlich angesuocht. So jch
-<lb n="12"/>jmm billich communicieren suelen. Derwegen langet
-<lb n="13"/>an U. G. hochflyßig pet, solliche dedication von jmme
-<lb n="14"/>gnaedig zeempfachen, und jnne gnaedig commendiert zehaben.
-<lb n="15"/>Der guetig Gott wuele U. G. in guetem wolstand,
-<lb n="16"/>und gluecksaliger regierung vaetterlich erhalten.
-<lb n="17"/>Geben <origDate when="1624-03-21" resp="#ner">21. Martij, 1624</origDate>.
-<lb n="18"/>in uststendem <origPlace resp="#ner">Grichten</origPlace>, da er mit wenig geschaefften
+<lb n="1"/><unclear cert="low" resp="#joint">Gestrenge</unclear>, <unclear cert="medium" resp="#joint">Edel</unclear>, <unclear cert="medium" resp="#joint">Ehrenveste</unclear>, Fromme, <unclear cert="medium" resp="#joint">Fuerneme</unclear>,
+<lb n="2"/>fuersichtige, <unclear cert="medium" resp="#joint">ersame</unclear>, <unclear cert="medium" resp="#joint">wyße</unclear>, <unclear cert="medium" resp="#joint">jnsonders</unclear> <unclear cert="medium" resp="#joint">großguenstige</unclear>,
+<lb n="3"/>gnaedige <unclear cert="medium" resp="#joint">liebe</unclear> Herren. <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. sye <unclear cert="low" resp="#joint">myn</unclear> gantz <unclear cert="low" resp="#joint">geflißne</unclear>
+<lb n="4"/>dienst <unclear cert="low" resp="#joint">jederzyt</unclear> bevor.
+<lb n="5"/>Es hat <unclear cert="low" resp="#joint">myn</unclear> <unclear cert="medium" resp="#joint">geliebter</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Jacob</unclear>, <unclear cert="low" resp="#joint">Schryber</unclear></persName> in <placeName resp="#ner"><unclear cert="low" resp="#joint">Riggiß</unclear>-
+<lb n="6"/>berg</placeName>, <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">sonderen</unclear> <unclear cert="medium" resp="#joint">ehren</unclear>, ein Chronographiam,
+<lb n="7"/>uff <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">taffelen</unclear>, in <unclear cert="low" resp="#joint">latinischer</unclear> sprach, beschriben und
+<lb n="8"/>dediciert, jn <unclear cert="low" resp="#joint">wuelen</unclear> <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="medium" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">selbe</unclear> <unclear cert="low" resp="#joint">jetzot</unclear> <unclear cert="medium" resp="#joint">zuoffe</unclear>-
+<lb n="9"/>rieren. <unclear cert="low" resp="#joint">Diewyl</unclear> er aber by <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">unbekant</unclear>, hat er
+<lb n="10"/>mich, alß <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">fuererfueger</unclear> <unclear cert="low" resp="#joint">subiungiert</unclear>, <unclear cert="low" resp="#joint">sambt</unclear> diß
+<lb n="11"/><unclear cert="low" resp="#joint">kleine</unclear> <unclear cert="low" resp="#joint">briefflj</unclear>, <unclear cert="low" resp="#joint">bruederlich</unclear> <unclear cert="low" resp="#joint">angesuocht</unclear>. So jch
+<lb n="12"/><unclear cert="low" resp="#joint">jmm</unclear> <unclear cert="medium" resp="#joint">billich</unclear> communicieren <unclear cert="low" resp="#joint">suelen</unclear>. <unclear cert="low" resp="#joint">Derwegen</unclear> <unclear cert="low" resp="#joint">langet</unclear>
+<lb n="13"/>an <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">hochflyßig</unclear> <unclear cert="low" resp="#joint">pet</unclear>, solliche dedication von <unclear cert="low" resp="#joint">jmme</unclear>
+<lb n="14"/>gnaedig <unclear cert="low" resp="#joint">zeempfachen</unclear>, und <unclear cert="low" resp="#joint">jnne</unclear> <unclear cert="medium" resp="#joint">gnaedig</unclear> <unclear cert="medium" resp="#joint">commendiert</unclear> zehaben.
+<lb n="15"/>Der <unclear cert="low" resp="#joint">guetig</unclear> Gott <unclear cert="low" resp="#joint">wuele</unclear> <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>. in <unclear cert="low" resp="#joint">guetem</unclear> <unclear cert="medium" resp="#joint">wolstand</unclear>,
+<lb n="16"/>und <unclear cert="low" resp="#joint">gluecksaliger</unclear> regierung <unclear cert="medium" resp="#joint">vaetterlich</unclear> erhalten.
+<lb n="17"/><unclear cert="medium" resp="#joint">Geben</unclear> <origDate when="1624-03-21" resp="#ner">21. <unclear cert="medium" resp="#joint">Martij</unclear>, 1624</origDate>.
+<lb n="18"/>in <unclear cert="low" resp="#joint">uststendem</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Grichten</unclear></origPlace>, da er <unclear cert="medium" resp="#joint">mit</unclear> wenig <unclear cert="low" resp="#joint">geschaefften</unclear>
 <lb n="19"/>occupiert.
-<lb n="20"/>U. G.
+<lb n="20"/><unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">G</unclear>.
 <lb n="21"/>gehorsamer
-<lb n="22"/>und dienstgeflißner
-<lb n="23"/><persName role="issuer" resp="#ner">Geoerg Langhanß</persName>
-<lb n="24"/>Diener der Kilchen zuo
+<lb n="22"/>und <unclear cert="medium" resp="#joint">dienstgeflißner</unclear>
+<lb n="23"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Geoerg</unclear> <unclear cert="low" resp="#joint">Langhanß</unclear></persName>
+<lb n="24"/><unclear cert="medium" resp="#joint">Diener</unclear> der <unclear cert="medium" resp="#joint">Kilchen</unclear> zuo
 <lb n="25"/><placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Bern</placeName>.
 <pb facs="StadtASG_Missive_2476_9542.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2476_9543.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2476_9544.jpg" n="4"/>
-<lb n="26"/>Den Gestrengen, Edlen, Ehrenvesten,
-<lb n="27"/>frommen, fuernemmen, fuersichtigen, Ehrsamen,
-<lb n="28"/>wysen Herren: Hrn <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern und Rhat
-<lb n="29"/>der Statt St. Gallen</orgName>: Meinen insonders
-<lb n="30"/>gnaedig. großguenstigen Lieben Herren.
+<lb n="26"/>Den Gestrengen, Edlen, <unclear cert="low" resp="#joint">Ehrenvesten</unclear>,
+<lb n="27"/><unclear cert="low" resp="#joint">frommen</unclear>, <unclear cert="low" resp="#joint">fuernemmen</unclear>, fuersichtigen, Ehrsamen,
+<lb n="28"/><unclear cert="low" resp="#joint">wysen</unclear> <unclear cert="low" resp="#joint">Herren</unclear>: <unclear cert="low" resp="#joint">Hrn</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeistern</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear>
+<lb n="29"/>der Statt St. Gallen</orgName>: <unclear cert="medium" resp="#joint">Meinen</unclear> insonders
+<lb n="30"/><unclear cert="medium" resp="#joint">gnaedig</unclear>. <unclear cert="medium" resp="#joint">großguenstigen</unclear> Lieben <unclear cert="low" resp="#joint">Herren</unclear>.
 </p>
         </body>
     </text>

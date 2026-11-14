@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1397</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,38 +20,38 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">M. de Vic teilt mit, dass sein Gesandter am 16. August zurückgekehrt sei und die gute Willenskraft des Königs gegenüber St. Gallen bezüglich der Erneuerung des Bündnisses und der Befriedigung der Forderungen der Nation bestätigt habe. Er bittet, am 8. oder 9. September Gesandte mit Vollmacht nach Solothurn zu senden, um die Absichten des Königs zu hören. Zudem ersucht er, bis zur nächsten Tagsatzung alle Verfolgungen und Exekutionen gegen die in Frankreich gedienten Obersten und Hauptleute einzustellen, damit diese ihre Gläubiger befriedigen können.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">M. de Vic</name><placeName resp="#regest">Solleure</placeName><date when="1601-08-16" resp="#regest">de Solleurre ce xvije. Aoust 1601.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1397_4931.jpg" n="1"/>
-<lb n="1"/><unclear cert="low" resp="#joint">Magnificques</unclear> Seigneurs, Celluy que je <unclear cert="low" resp="#joint">depeschay</unclear> au roy <unclear cert="medium" resp="#joint">appres</unclear> <unclear cert="medium" resp="#joint">vostre</unclear> <unclear cert="medium" resp="#joint">derniere</unclear>
-<lb n="2"/>journee de <placeName resp="#ner"><unclear cert="medium" resp="#joint">Baden</unclear></placeName> a duquel <unclear cert="medium" resp="#joint">S</unclear>. M. promettoit le retour <date resp="#ner">le <unclear cert="medium" resp="#joint">quinzeisme</unclear> de ce mois</date>
-<lb n="3"/>est arrive <date resp="#ner">le <unclear cert="low" resp="#joint">seizeisme</unclear> au soir</date> avec <unclear cert="low" resp="#joint">telle</unclear> <unclear cert="low" resp="#joint">asseurance</unclear> de la bonne volonte de Sa Mate.
-<lb n="4"/>en <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">endroict</unclear> que je vous l'ay tousjours declaree par son commandement, et
-<lb n="5"/>que vous la scauriez desirer tant pour le <unclear cert="low" resp="#joint">renouvellement</unclear> de l'alliance que pour
-<lb n="6"/>la satisfaction du general et <unclear cert="low" resp="#joint">particullier</unclear> de toute <unclear cert="low" resp="#joint">vostre</unclear> nation, dequoy desirant
-<lb n="7"/>vous faire ressentir les effectz, je vous prie <unclear cert="low" resp="#joint">Magnificques</unclear> Seigneurs <unclear cert="low" resp="#joint">envoier</unclear>
-<lb n="8"/>messieurs vos ambassadeurs en ceste ville <date resp="#ner">le huictiesme ou neufiesme jour
+<lb n="1"/><unclear cert="low" resp="#joint">Magnificques</unclear> <unclear cert="medium" resp="#joint">Seigneurs</unclear>, Celluy que <unclear cert="medium" resp="#joint">je</unclear> <unclear cert="low" resp="#joint">depeschay</unclear> au roy <unclear cert="low" resp="#joint">appres</unclear> <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">derniere</unclear>
+<lb n="2"/>journee de <placeName resp="#ner"><unclear cert="low" resp="#joint">Baden</unclear></placeName> a duquel <unclear cert="low" resp="#joint">S</unclear>. M. <unclear cert="medium" resp="#joint">promettoit</unclear> le retour <date resp="#ner">le <unclear cert="medium" resp="#joint">quinzeisme</unclear> de ce mois</date>
+<lb n="3"/>est arrive <date resp="#ner">le <unclear cert="low" resp="#joint">seizeisme</unclear> au soir</date> avec <unclear cert="medium" resp="#joint">telle</unclear> <unclear cert="medium" resp="#joint">asseurance</unclear> de la bonne <unclear cert="medium" resp="#joint">volonte</unclear> de Sa <unclear cert="medium" resp="#joint">Mate</unclear>.
+<lb n="4"/>en <unclear cert="low" resp="#joint">vostre</unclear> <unclear cert="low" resp="#joint">endroict</unclear> que je <unclear cert="medium" resp="#joint">vous</unclear> l'ay tousjours <unclear cert="medium" resp="#joint">declaree</unclear> par son commandement, et
+<lb n="5"/>que <unclear cert="medium" resp="#joint">vous</unclear> la <unclear cert="medium" resp="#joint">scauriez</unclear> desirer tant pour le <unclear cert="low" resp="#joint">renouvellement</unclear> de l'alliance que pour
+<lb n="6"/>la satisfaction du general <unclear cert="medium" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">particullier</unclear> de toute <unclear cert="low" resp="#joint">vostre</unclear> nation, dequoy desirant
+<lb n="7"/>vous faire <unclear cert="medium" resp="#joint">ressentir</unclear> les <unclear cert="medium" resp="#joint">effectz</unclear>, je <unclear cert="medium" resp="#joint">vous</unclear> <unclear cert="medium" resp="#joint">prie</unclear> <unclear cert="low" resp="#joint">Magnificques</unclear> <unclear cert="medium" resp="#joint">Seigneurs</unclear> <unclear cert="low" resp="#joint">envoier</unclear>
+<lb n="8"/>messieurs <unclear cert="medium" resp="#joint">vos</unclear> ambassadeurs en ceste ville <date resp="#ner">le <unclear cert="medium" resp="#joint">huictiesme</unclear> ou <unclear cert="medium" resp="#joint">neufiesme</unclear> jour
 <lb n="9"/>du mois de Septembre prochain</date> avec le pouvoir que vous jugerez necessaire
-<lb n="10"/>pour entendre les intentions de Sa Mate. et <unclear cert="medium" resp="#joint">prandre</unclear> sur icelles une bonne
-<lb n="11"/>et saincte resolution. <unclear cert="medium" resp="#joint">Qui</unclear> <unclear cert="medium" resp="#joint">soit</unclear> a l'honneur de dieu, au <unclear cert="medium" resp="#joint">contantement</unclear> de Sa Mate.
+<lb n="10"/>pour entendre <unclear cert="medium" resp="#joint">les</unclear> intentions de Sa Mate. et <unclear cert="medium" resp="#joint">prandre</unclear> sur icelles une bonne
+<lb n="11"/>et saincte resolution. <unclear cert="low" resp="#joint">Qui</unclear> soit a l'honneur de dieu, au contantement de Sa Mate.
 <lb n="12"/>ensemble au bien, repos et union de toutes vos Ligues, dequoy je supplie
-<lb n="13"/>treshumblement le Createur. Et vous <unclear cert="medium" resp="#joint">donner</unclear>,
-<lb n="14"/><unclear cert="medium" resp="#joint">Magnificques</unclear> Seigneurs, <unclear cert="medium" resp="#joint">tresheureuse</unclear>, longue et <unclear cert="medium" resp="#joint">contante</unclear> vie, de
+<lb n="13"/>treshumblement le Createur. Et vous donner,
+<lb n="14"/><unclear cert="low" resp="#joint">Magnificques</unclear> Seigneurs, <unclear cert="low" resp="#joint">tresheureuse</unclear>, longue et <unclear cert="medium" resp="#joint">contante</unclear> vie, de
 <lb n="15"/><origPlace resp="#ner"><unclear cert="medium" resp="#joint">Solleurre</unclear></origPlace> <origDate when="1601" resp="#ner">ce <unclear cert="medium" resp="#joint">xvije</unclear>. Aoust 1601</origDate>.
-<lb n="16"/><unclear cert="medium" resp="#joint">Attandant</unclear> la fin de <unclear cert="medium" resp="#joint">ladte</unclear>. prochaine journee, je vous prie <unclear cert="medium" resp="#joint">tresaffectueusement</unclear> <unclear cert="medium" resp="#joint">derechef</unclear> <unclear cert="medium" resp="#joint">Magnificques</unclear>
-<lb n="17"/>Seigneurs, faire surceoir <unclear cert="medium" resp="#joint">touttes</unclear> <unclear cert="medium" resp="#joint">poursuittes</unclear> et executions contre les srs. <unclear cert="medium" resp="#joint">collonnelz</unclear> et cappitaines
-<lb n="18"/>ausquelz il est <unclear cert="low" resp="#joint">deub</unclear> pour les services faictz en <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">France</placeName>, affin qu'ilz puissent <unclear cert="low" resp="#joint">contanter</unclear> leurs creanciers
+<lb n="16"/>Attandant la fin de <unclear cert="low" resp="#joint">ladte</unclear>. prochaine journee, je vous prie <unclear cert="medium" resp="#joint">tresaffectueusement</unclear> <unclear cert="medium" resp="#joint">derechef</unclear> <unclear cert="medium" resp="#joint">Magnificques</unclear>
+<lb n="17"/>Seigneurs, faire surceoir <unclear cert="low" resp="#joint">touttes</unclear> <unclear cert="low" resp="#joint">poursuittes</unclear> et executions contre les srs. <unclear cert="medium" resp="#joint">collonnelz</unclear> et cappitaines
+<lb n="18"/>ausquelz il est <unclear cert="low" resp="#joint">deub</unclear> pour les services faictz en <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">France</placeName>, affin <unclear cert="medium" resp="#joint">qu'ilz</unclear> puissent <unclear cert="medium" resp="#joint">contanter</unclear> leurs creanciers
 <lb n="19"/>de <unclear cert="low" resp="#joint">ce</unclear> quy leur sera ordonne,
 <lb n="20"/>Vostre bien humble et plus <unclear cert="low" resp="#joint">affectionné</unclear>
 <lb n="21"/>serviteur <persName role="issuer" resp="#ner">M. de Vic.</persName>
@@ -59,8 +59,8 @@
 <pb facs="StadtASG_Missive_1397_4933.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1397_4934.jpg" n="4"/>
 <lb n="22"/><unclear cert="medium" resp="#joint">Magnifiques</unclear> Seigneurs
-<lb n="23"/>Messieurs les <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">BourgerMeister</unclear>
-<lb n="24"/>et Conseil <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">la</unclear> ville de
+<lb n="23"/>Messieurs les <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">BourgerMeister</unclear>
+<lb n="24"/>et Conseil de la ville de
 <lb n="25"/><unclear cert="low" resp="#joint">S.t</unclear> <unclear cert="low" resp="#joint">Gal</unclear></orgName>
 <lb n="26"/>a <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sainct Gal</placeName>.
 </p>

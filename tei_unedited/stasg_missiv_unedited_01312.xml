@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1312</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,57 +20,57 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau bitten Bürgermeister und Rat zu St. Gallen, ihnen einen Auszug aus dem Testament des verstorbenen Joachim Gaißberg zukommen zu lassen. Die Tochter des verstorbenen Lindauer Bürgers Georg Karg, Maria, sei in dem Testament als Nichte des Gaißberg bedacht worden, habe aber keine sichere Kenntnis davon. Sie bittet um Auskunft über das Vermächtnis, um sich weiter zu verhalten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1595-03-14" cert="medium" resp="#regest">Datum den. 14. Martii anno etc. 95.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1312_4505.jpg" n="1"/>
-<lb n="1"/>Unser <unclear cert="low" resp="#joint">freundtlich</unclear> willig dienst, zuvor, Ersamen unnd
-<lb n="2"/><unclear cert="low" resp="#joint">weüßen</unclear>, besondern lieben <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freundt</unclear>.
-<lb n="3"/><unclear cert="medium" resp="#joint">Unß</unclear> hatt unsers burgers, <persName resp="#ner">Georgen <unclear cert="low" resp="#joint">Kargen</unclear></persName> se-
-<lb n="4"/>ligen <unclear cert="low" resp="#joint">eheliche</unclear> <unclear cert="low" resp="#joint">nachgelaßne</unclear> dochter, <persName resp="#ner">Maria</persName> <unclear cert="low" resp="#joint">genant</unclear>
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freundtlich</unclear> willig dienst, zuvor, Ersamen unnd
+<lb n="2"/><unclear cert="low" resp="#joint">weüßen</unclear>, <unclear cert="medium" resp="#joint">besondern</unclear> lieben unnd <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">freundt</unclear>.
+<lb n="3"/>Unß hatt unsers burgers, <persName resp="#ner">Georgen <unclear cert="low" resp="#joint">Kargen</unclear></persName> <unclear cert="medium" resp="#joint">se</unclear>-
+<lb n="4"/>ligen <unclear cert="low" resp="#joint">eheliche</unclear> <unclear cert="low" resp="#joint">nachgelaßne</unclear> <unclear cert="medium" resp="#joint">dochter</unclear>, <persName resp="#ner">Maria</persName> <unclear cert="low" resp="#joint">genant</unclear>
 <lb n="5"/><unclear cert="low" resp="#joint">angebracht</unclear>, und zuerkennen geben, wie das ihr lie-
-<lb n="6"/>ber vetter, herr <persName resp="#ner">Joachim Gaißberg</persName> seliger, ain te-
-<lb n="7"/>stament, und letsten willen, nach seinem absterben,
-<lb n="8"/><unclear cert="low" resp="#joint">hinderlaßen</unclear>, und <unclear cert="medium" resp="#joint">sÿ</unclear>, alls sein <unclear cert="low" resp="#joint">Gaißbergs</unclear>, vatters
-<lb n="9"/>seligen, schwester dochter, darinnen <unclear cert="low" resp="#joint">bedacht</unclear> haben solle,
-<lb n="10"/>von deme <unclear cert="low" resp="#joint">sÿ</unclear> aber <unclear cert="low" resp="#joint">kainen</unclear> <unclear cert="low" resp="#joint">rehern</unclear> <unclear cert="low" resp="#joint">satten</unclear> bericht, und
-<lb n="11"/>wißenschafft hette, unß derowegen <unclear cert="low" resp="#joint">diemietig</unclear> an-
-<lb n="12"/>gerueffen, unnd gebetten, ihr unnser <unclear cert="low" resp="#joint">fürschrifft</unclear>
-<lb n="13"/>an E. E. W. <unclear cert="low" resp="#joint">mitzuthaylen</unclear>, damit <unclear cert="low" resp="#joint">sÿ</unclear> der sachen
-<lb n="14"/>grundtlichs wißens bekomen möchte,
-<lb n="15"/>Wann wir dann die <unclear cert="low" resp="#joint">unsern</unclear>, zu allem <unclear cert="medium" resp="#joint">guettem</unclear>, zu-
-<lb n="16"/><unclear cert="low" resp="#joint">befürdern</unclear>, so wol willig, alls schuldig, so haben
-<lb n="17"/>wir ihr, daß gebettene intercession schreiben, <unclear cert="low" resp="#joint">füg</unclear>-
-<lb n="18"/><unclear cert="low" resp="#joint">clich</unclear> nit <unclear cert="low" resp="#joint">waigern</unclear> <unclear cert="low" resp="#joint">könden</unclear>.
-<lb n="19"/><unclear cert="low" resp="#joint">Gelangt</unclear> demnach an E. E. W. unser <unclear cert="low" resp="#joint">freundtlichs</unclear>
-<lb n="20"/><unclear cert="medium" resp="#joint">ersuechen</unclear>, und <unclear cert="low" resp="#joint">pitt</unclear>, die wellen <unclear cert="medium" resp="#joint">unß</unclear> fürderlich, <unclear cert="medium" resp="#joint">ai</unclear>-
-<lb n="21"/><unclear cert="medium" resp="#joint">nen</unclear> extract, außer ermelts <persName resp="#ner">Joachim <unclear cert="low" resp="#joint">Gaüßbergs</unclear></persName>
+<lb n="6"/>ber vetter, herr <persName resp="#ner">Joachim <unclear cert="low" resp="#joint">Gaißberg</unclear></persName> seliger, <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">te</unclear>-
+<lb n="7"/><unclear cert="low" resp="#joint">stament</unclear>, und <unclear cert="medium" resp="#joint">letsten</unclear> willen, nach seinem absterben,
+<lb n="8"/><unclear cert="medium" resp="#joint">hinderlaßen</unclear>, und sÿ, alls sein <unclear cert="low" resp="#joint">Gaißbergs</unclear>, <unclear cert="medium" resp="#joint">vatters</unclear>
+<lb n="9"/>seligen, <unclear cert="medium" resp="#joint">schwester</unclear> <unclear cert="medium" resp="#joint">dochter</unclear>, darinnen <unclear cert="low" resp="#joint">bedacht</unclear> haben <unclear cert="medium" resp="#joint">solle</unclear>,
+<lb n="10"/>von <unclear cert="medium" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">sÿ</unclear> aber <unclear cert="low" resp="#joint">kainen</unclear> <unclear cert="low" resp="#joint">rehern</unclear> <unclear cert="low" resp="#joint">satten</unclear> bericht, und
+<lb n="11"/>wißenschafft hette, <unclear cert="low" resp="#joint">unß</unclear> derowegen <unclear cert="medium" resp="#joint">diemietig</unclear> an-
+<lb n="12"/><unclear cert="low" resp="#joint">gerueffen</unclear>, unnd gebetten, ihr unnser fürschrifft
+<lb n="13"/>an E. E. W. <unclear cert="low" resp="#joint">mitzuthaylen</unclear>, damit <unclear cert="low" resp="#joint">sÿ</unclear> der <unclear cert="medium" resp="#joint">sachen</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">grundtlichs</unclear> wißens bekomen möchte,
+<lb n="15"/><unclear cert="medium" resp="#joint">Wann</unclear> wir dann die <unclear cert="medium" resp="#joint">unsern</unclear>, zu allem <unclear cert="low" resp="#joint">guettem</unclear>, zu-
+<lb n="16"/><unclear cert="medium" resp="#joint">befürdern</unclear>, so wol willig, alls schuldig, so haben
+<lb n="17"/>wir ihr, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">gebettene</unclear> intercession schreiben, <unclear cert="medium" resp="#joint">füg</unclear>-
+<lb n="18"/><unclear cert="low" resp="#joint">clich</unclear> <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">waigern</unclear> <unclear cert="low" resp="#joint">könden</unclear>.
+<lb n="19"/><unclear cert="low" resp="#joint">Gelangt</unclear> demnach an E. E. W. unser <unclear cert="medium" resp="#joint">freundtlichs</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">ersuechen</unclear>, und <unclear cert="medium" resp="#joint">pitt</unclear>, die <unclear cert="medium" resp="#joint">wellen</unclear> unß fürderlich, ai-
+<lb n="21"/>nen extract, <unclear cert="low" resp="#joint">außer</unclear> ermelts <persName resp="#ner">Joachim <unclear cert="low" resp="#joint">Gaüßbergs</unclear></persName>
 <lb n="22"/>seligen, <unclear cert="low" resp="#joint">hinderlaßnem</unclear> testament, und <unclear cert="low" resp="#joint">letstem</unclear>
 <pb facs="StadtASG_Missive_1312_4506.jpg" n="2"/>
-<lb n="23"/>willen, souil ermelts unsers burgers seligen dochter,
-<lb n="24"/>unnd dißes verschaffte legat betrifft, zuekummen laßen,
+<lb n="23"/>willen, <unclear cert="low" resp="#joint">souil</unclear> ermelts <unclear cert="low" resp="#joint">unsers</unclear> burgers seligen dochter,
+<lb n="24"/>unnd <unclear cert="low" resp="#joint">dißes</unclear> <unclear cert="low" resp="#joint">verschaffte</unclear> legat betrifft, <unclear cert="low" resp="#joint">zuekummen</unclear> <unclear cert="medium" resp="#joint">laßen</unclear>,
 <lb n="25"/>damit sy sich <unclear cert="low" resp="#joint">verner</unclear> <unclear cert="low" resp="#joint">zuoerhaltten</unclear> hab. Das be-
-<lb n="26"/>geren wir, umb E. E. W. neben <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">eß</unclear>, an ime
-<lb n="27"/><unclear cert="medium" resp="#joint">selbß</unclear> billich, <unclear cert="low" resp="#joint">freündt</unclear>: und nachbarlich <unclear cert="low" resp="#joint">zuobeschulden</unclear>,
-<lb n="28"/>unnd zuoverdienen, Datum den. <origDate when="1595-03-14" cert="medium" resp="#ner">14. Martii
+<lb n="26"/>geren wir, umb <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. neben <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">eß</unclear>, an ime
+<lb n="27"/>selbß billich, <unclear cert="medium" resp="#joint">freündt</unclear>: und nachbarlich <unclear cert="low" resp="#joint">zuobeschulden</unclear>,
+<lb n="28"/>unnd <unclear cert="medium" resp="#joint">zuoverdienen</unclear>, Datum den. <origDate when="1595-03-14" cert="medium" resp="#ner">14. Martii
 <lb n="29"/>anno etc. 95</origDate>.
 <lb n="30"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister und rath,
-<lb n="31"/>der Statt <unclear cert="low" resp="#joint">Lindaw</unclear></orgName>.
+<lb n="31"/>der Statt <unclear cert="medium" resp="#joint">Lindaw</unclear></orgName>.
 <pb facs="StadtASG_Missive_1312_4507.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1312_4508.jpg" n="4"/>
 <lb n="32"/>Den fürsichtigen ersamen unnd <unclear cert="medium" resp="#joint">weysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermai</unclear>-
-<lb n="33"/><unclear cert="low" resp="#joint">ster</unclear> <unclear cert="low" resp="#joint">unnd</unclear> Rath der Statt Sanct Gallen</orgName>, un-
-<lb n="34"/>sern besondern lieben und guten <unclear cert="medium" resp="#joint">freunden</unclear>.
+<lb n="33"/><unclear cert="medium" resp="#joint">ster</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> Rath der Statt Sanct Gallen</orgName>, un-
+<lb n="34"/>sern besondern lieben und guten freunden.
 </p>
         </body>
     </text>

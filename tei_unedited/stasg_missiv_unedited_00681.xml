@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 681</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,100 +20,100 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten ihren Gesandten in Baden, dass sie die neuen Vereinigungsbriefe der Orte mit ihrem Siegel versehen hätten. Sie hätten sich nach Beratung mit den Gesandten des Königs und anderen Orten dazu entschlossen, der Vereinigung beizutreten, auch wenn die 400 Franken nicht zugesagt worden seien. Sie bitten die Gesandten, weiterhin mit den königlichen Bevollmächtigten zu verhandeln.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister, Klein- und Grossrat zu St. Gallen</name><date when="1549" resp="#regest">den letzten tag Junij anno 1549</date></correspAction><correspAction type="received"><name resp="#regest">Johann von Watt, Heinrich Locher, Lienhart Keller und Ambrosius Einbörn</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_681_1625.JPG" n="1"/>
-<lb n="1"/><unclear cert="low" resp="#joint">Unßern</unclear> früntlichen <unclear cert="low" resp="#joint">gruß</unclear> und alles gut zuvor, hoch-
+<lb n="1"/><unclear cert="low" resp="#joint">Unßern</unclear> früntlichen <unclear cert="low" resp="#joint">gruß</unclear> und alles <unclear cert="low" resp="#joint">gut</unclear> zuvor, hoch-
 <lb n="2"/><unclear cert="low" resp="#joint">gelert</unclear> <unclear cert="low" resp="#joint">fúrnemen</unclear> <unclear cert="low" resp="#joint">fürßichtig</unclear> und <unclear cert="low" resp="#joint">wiß</unclear>, <unclear cert="low" resp="#joint">sonderß</unclear> <unclear cert="low" resp="#joint">getruwen</unclear>
 <lb n="3"/>lieben ratsfrúnd. Es hat sich geßtrigß tags
-<lb n="4"/>uff den abent unversechner sach <unclear cert="low" resp="#joint">zůtragen</unclear>,
-<lb n="5"/>das herr schulthaiß und <unclear cert="low" resp="#joint">statschriber</unclear> von
+<lb n="4"/>uff den abent <unclear cert="low" resp="#joint">unversechner</unclear> sach <unclear cert="medium" resp="#joint">zůtragen</unclear>,
+<lb n="5"/>das herr <unclear cert="low" resp="#joint">schulthaiß</unclear> und <unclear cert="low" resp="#joint">statschriber</unclear> von
 <lb n="6"/><placeName ref="stadtasg-places-49" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Solaturn</unclear></placeName>, mit den nüwen uffgerichten verai-
 <lb n="7"/>nigúng brieffen, alher komen sind, und be-
 <lb n="8"/>gert, diewil die .7. ort <unclear cert="low" resp="#joint">geßiglet</unclear> habind, und
 <lb n="9"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Fribúrg</unclear></placeName> och <unclear cert="low" resp="#joint">ßiglen</unclear> werde, das wir gemai-
 <lb n="10"/>ner <unclear cert="low" resp="#joint">únsrer</unclear> statt <placeName resp="#ner"><unclear cert="low" resp="#joint">Inßigell</unclear></placeName>, auch an die brief
-<lb n="11"/>hencken <unclear cert="low" resp="#joint">wellten</unclear>, Uff sölichs habenn wir
-<lb n="12"/>am morgen umb .6. ur ain <unclear cert="medium" resp="#joint">klainen</unclear> rath
+<lb n="11"/><unclear cert="medium" resp="#joint">hencken</unclear> <unclear cert="low" resp="#joint">wellten</unclear>, <unclear cert="medium" resp="#joint">Uff</unclear> <unclear cert="medium" resp="#joint">sölichs</unclear> habenn wir
+<lb n="12"/>am <unclear cert="medium" resp="#joint">morgen</unclear> umb .6. <unclear cert="medium" resp="#joint">ur</unclear> ain <unclear cert="medium" resp="#joint">klainen</unclear> rath
 <lb n="13"/>gehalten und demnachin nach mittag umb
-<lb n="14"/>12 ur <unclear cert="medium" resp="#joint">klain</unclear> und <unclear cert="low" resp="#joint">groß</unclear> rath, und nach
+<lb n="14"/>12 <unclear cert="medium" resp="#joint">ur</unclear> klain und <unclear cert="low" resp="#joint">groß</unclear> rath, und nach
 <lb n="15"/>dem dann darzwüschen, der von <placeName resp="#ner">Friburg</placeName>
-<lb n="16"/>ßigell och an die brief <unclear cert="low" resp="#joint">gehenckt</unclear>, <unclear cert="medium" resp="#joint">Ißt</unclear> vil und
+<lb n="16"/>ßigell och an die brief <unclear cert="low" resp="#joint">gehenckt</unclear>, Ißt vil und
 <lb n="17"/>mangerlaij gerett und geraten worden,
-<lb n="18"/>und zůletßt mit merer hand für das <unclear cert="medium" resp="#joint">beßt</unclear>
-<lb n="19"/><unclear cert="medium" resp="#joint">angeßehen</unclear>, Nach dem wir vormalß
-<lb n="20"/>zů ettlichen tagen zů <placeName ref="stadtasg-places-49" cert="medium" resp="#ner">Solatúrn</placeName> gehalten
-<lb n="21"/>und <unclear cert="low" resp="#joint">súnßt</unclear> mit des <unclear cert="medium" resp="#joint">küngß</unclear> <unclear cert="low" resp="#joint">anwelten</unclear>, och
+<lb n="18"/>und <unclear cert="low" resp="#joint">zůletßt</unclear> mit merer hand für das beßt
+<lb n="19"/><unclear cert="low" resp="#joint">angeßehen</unclear>, Nach dem wir vormalß
+<lb n="20"/>zů ettlichen tagen zů <placeName ref="stadtasg-places-49" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Solatúrn</unclear></placeName> gehalten
+<lb n="21"/>und <unclear cert="low" resp="#joint">súnßt</unclear> mit des <unclear cert="low" resp="#joint">küngß</unclear> <unclear cert="low" resp="#joint">anwelten</unclear>, och
 <lb n="22"/>h. <persName resp="#ner">Hansen Wůlielich</persName> und den <unclear cert="low" resp="#joint">schulthaiß</unclear>-
 <lb n="23"/><unclear cert="medium" resp="#joint">ßen</unclear> <unclear cert="low" resp="#joint">zů</unclear> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lúzern</unclear></placeName>, werben und <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">zů</unclear> guotem
-<lb n="24"/>tail mercken <unclear cert="medium" resp="#joint">laßen</unclear>, wann der künig
-<lb n="25"/><unclear cert="low" resp="#joint">uns</unclear> das gebe, wie <unclear cert="low" resp="#joint">vornahen</unclear> sin vatter
-<lb n="26"/>künig <persName resp="#ner"><unclear cert="low" resp="#joint">Hainrich</unclear></persName> <unclear cert="low" resp="#joint">uns</unclear> geben hab, das wir
+<lb n="24"/>tail mercken laßen, wann der künig
+<lb n="25"/><unclear cert="low" resp="#joint">uns</unclear> das <unclear cert="medium" resp="#joint">gebe</unclear>, wie <unclear cert="low" resp="#joint">vornahen</unclear> sin vatter
+<lb n="26"/>künig <persName resp="#ner"><unclear cert="low" resp="#joint">Hainrich</unclear></persName> <unclear cert="medium" resp="#joint">uns</unclear> geben hab, das wir
 <pb facs="StadtASG_Missive_681_1626.JPG" n="2"/>
-<lb n="27"/>in die verainigung och gon lassenn, und och
+<lb n="27"/><unclear cert="medium" resp="#joint">in</unclear> die verainigung och gon <unclear cert="low" resp="#joint">lassenn</unclear>, und och
 <lb n="28"/>darzwueschenn zuom dikern malfuer sachen
 <lb n="29"/>geredt worden, wann uns die 400 fran-
-<lb n="30"/>cken gleich nit <unclear cert="low" resp="#joint">zuogseyt</unclear> <unclear cert="low" resp="#joint">wuerdenn</unclear>, <unclear cert="low" resp="#joint">wol</unclear>-
-<lb n="31"/><unclear cert="medium" resp="#joint">tend</unclear> wir uns dannocht von gemainen
-<lb n="32"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Aidtgnossen</orgName> nit <unclear cert="low" resp="#joint">suendern</unclear>, daruf wir
-<lb n="33"/><unclear cert="low" resp="#joint">uch</unclear> <unclear cert="low" resp="#joint">lut</unclear> <unclear cert="low" resp="#joint">üwer</unclear> instruction, gewalt geben,
+<lb n="30"/>cken gleich nit <unclear cert="low" resp="#joint">zuogseyt</unclear> <unclear cert="low" resp="#joint">wuerdenn</unclear>, <unclear cert="medium" resp="#joint">wol</unclear>-
+<lb n="31"/><unclear cert="low" resp="#joint">tend</unclear> wir uns dannocht von gemainen
+<lb n="32"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Aidtgnossen</unclear></orgName> nit <unclear cert="low" resp="#joint">suendern</unclear>, daruf wir
+<lb n="33"/><unclear cert="low" resp="#joint">uch</unclear> <unclear cert="low" resp="#joint">lut</unclear> <unclear cert="low" resp="#joint">üwer</unclear> <unclear cert="medium" resp="#joint">instruction</unclear>, gewalt geben,
 <lb n="34"/><unclear cert="low" resp="#joint">witer</unclear> mit des <unclear cert="low" resp="#joint">kuengs</unclear> <unclear cert="low" resp="#joint">anwaelten</unclear> ze-
-<lb n="35"/>handlen etc. und uff soelichs <unclear cert="low" resp="#joint">dieweil</unclear>
-<lb n="36"/>dann ain statt zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>, <unclear cert="low" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">bai</unclear>-
+<lb n="35"/>handlen etc. und uff <unclear cert="medium" resp="#joint">soelichs</unclear> <unclear cert="medium" resp="#joint">dieweil</unclear>
+<lb n="36"/>dann <unclear cert="medium" resp="#joint">ain</unclear> statt zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>, <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">bai</unclear>-
 <lb n="37"/>den <unclear cert="low" resp="#joint">briefen</unclear> gemeldet ist, <unclear cert="low" resp="#joint">desgelichen</unclear>
 <lb n="38"/>der merteil deren <unclear cert="low" resp="#joint">orthen</unclear> mit denen
-<lb n="39"/>wir in <unclear cert="low" resp="#joint">puendtnus</unclear> sind, inn die <unclear cert="low" resp="#joint">veraini</unclear>-
-<lb n="40"/>gung gangen, irer sigell an den <unclear cert="low" resp="#joint">briefen</unclear>
+<lb n="39"/>wir in <unclear cert="low" resp="#joint">puendtnus</unclear> sind, inn die <unclear cert="medium" resp="#joint">veraini</unclear>-
+<lb n="40"/>gung gangen, <unclear cert="medium" resp="#joint">irer</unclear> sigell an den <unclear cert="medium" resp="#joint">briefen</unclear>
 <lb n="41"/><unclear cert="low" resp="#joint">hanget</unclear>, und och wir in uns selbs kain
-<lb n="42"/>anders <unclear cert="medium" resp="#joint">kuennen</unclear> finden, dann das wir
-<lb n="43"/>nit ussen <unclear cert="low" resp="#joint">bliben</unclear>, sonder <unclear cert="low" resp="#joint">zuolest</unclear> och
+<lb n="42"/>anders <unclear cert="low" resp="#joint">kuennen</unclear> finden, dann das wir
+<lb n="43"/>nit <unclear cert="medium" resp="#joint">ussen</unclear> <unclear cert="low" resp="#joint">bliben</unclear>, sonder <unclear cert="low" resp="#joint">zuolest</unclear> och
 <lb n="44"/>inn die verainigung <unclear cert="low" resp="#joint">gon</unclear> <unclear cert="low" resp="#joint">wurdenn</unclear>,
 <lb n="45"/>das wir <unclear cert="low" resp="#joint">glaeich</unclear> <unclear cert="low" resp="#joint">tag</unclear> unser sigell an
-<lb n="46"/>die <unclear cert="low" resp="#joint">brief</unclear> <unclear cert="low" resp="#joint">hancktind</unclear>, als dann och ge-
+<lb n="46"/>die <unclear cert="medium" resp="#joint">brief</unclear> <unclear cert="low" resp="#joint">hancktind</unclear>, als dann och ge-
 <lb n="47"/>schehen ist, doch so <unclear cert="low" resp="#joint">habenn</unclear> wir
-<lb n="48"/>dem schulthaissen und stattschriber
+<lb n="48"/>dem <unclear cert="medium" resp="#joint">schulthaissen</unclear> und <unclear cert="low" resp="#joint">stattschriber</unclear>
 <lb n="49"/>zuo <placeName ref="stadtasg-places-49" cert="medium" resp="#ner">Soloturn</placeName> lassen anzaigen, was
-<lb n="50"/>uns <unclear cert="medium" resp="#joint">entwuerk</unclear> worden, durch Schult-
-<lb n="51"/>haissen <persName resp="#ner"><unclear cert="low" resp="#joint">Hugen</unclear> von <unclear cert="low" resp="#joint">Luzern</unclear></persName>, und andern,
-<lb n="52"/>aber gegen inen <unclear cert="low" resp="#joint">niemandt</unclear> <unclear cert="low" resp="#joint">genampet</unclear>,
+<lb n="50"/>uns <unclear cert="low" resp="#joint">entwuerk</unclear> worden, durch <unclear cert="medium" resp="#joint">Schult</unclear>-
+<lb n="51"/><unclear cert="medium" resp="#joint">haissen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hugen</unclear> von <unclear cert="low" resp="#joint">Luzern</unclear></persName>, und <unclear cert="medium" resp="#joint">andern</unclear>,
+<lb n="52"/>aber gegen inen <unclear cert="medium" resp="#joint">niemandt</unclear> <unclear cert="low" resp="#joint">genampet</unclear>,
 <pb facs="StadtASG_Missive_681_1627.JPG" n="3"/>
-<lb n="53"/><unclear cert="low" resp="#joint">uch</unclear>, was ir in <unclear cert="low" resp="#joint">bevelch</unclear> habind, <unclear cert="low" resp="#joint">ud</unclear> <unclear cert="medium" resp="#joint">wie</unclear> des <unclear cert="low" resp="#joint">kuenigs</unclear>
-<lb n="54"/><unclear cert="low" resp="#joint">anuoelten</unclear> <unclear cert="low" resp="#joint">hallten</unclear> <unclear cert="low" resp="#joint">werdent</unclear>, <unclear cert="medium" resp="#joint">ud</unclear> also uff
+<lb n="53"/><unclear cert="low" resp="#joint">uch</unclear>, was ir in <unclear cert="medium" resp="#joint">bevelch</unclear> habind, <unclear cert="low" resp="#joint">ud</unclear> <unclear cert="low" resp="#joint">wie</unclear> des <unclear cert="low" resp="#joint">kuenigs</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">anuoelten</unclear> <unclear cert="low" resp="#joint">hallten</unclear> <unclear cert="low" resp="#joint">werdent</unclear>, <unclear cert="low" resp="#joint">ud</unclear> also uff
 <lb n="55"/>soelich zuosagen ud vertroesten ud nit
 <lb n="56"/>anders, wellen versiglen, Deß-
-<lb n="57"/>halb ob ir glich nuetzit moechind erlangen,
-<lb n="58"/>hatt <unclear cert="low" resp="#joint">uns</unclear> dannocht fuer das best wellen
-<lb n="59"/>ansehen, das gelt nit anzuefahen, sonder
-<lb n="60"/>zuobesiglen, Das <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">uch</unclear>
-<lb n="61"/>also nit wellen verhalten, sonder <unclear cert="medium" resp="#joint">bij</unclear>
-<lb n="62"/><unclear cert="low" resp="#joint">disserem</unclear> unserm aignen botten in ijl
-<lb n="63"/>zuoberichten, damit ir <unclear cert="medium" resp="#joint">witter</unclear> ze-
-<lb n="64"/><unclear cert="low" resp="#joint">hallten</unclear> wissend Date <origDate when="1549" resp="#ner">den letsten
-<lb n="65"/>tag Junij umb 6 <unclear cert="low" resp="#joint">ur</unclear> nach mittag
+<lb n="57"/>halb ob ir glich <unclear cert="low" resp="#joint">nuetzit</unclear> <unclear cert="low" resp="#joint">moechind</unclear> erlangen,
+<lb n="58"/>hatt <unclear cert="medium" resp="#joint">uns</unclear> dannocht <unclear cert="medium" resp="#joint">fuer</unclear> das best wellen
+<lb n="59"/><unclear cert="medium" resp="#joint">ansehen</unclear>, das <unclear cert="low" resp="#joint">gelt</unclear> nit <unclear cert="low" resp="#joint">anzuefahen</unclear>, sonder
+<lb n="60"/>zuobesiglen, Das <unclear cert="medium" resp="#joint">haben</unclear> <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">uch</unclear>
+<lb n="61"/>also nit wellen verhalten, sonder bij
+<lb n="62"/><unclear cert="low" resp="#joint">disserem</unclear> <unclear cert="medium" resp="#joint">unserm</unclear> aignen botten in ijl
+<lb n="63"/>zuoberichten, damit ir <unclear cert="low" resp="#joint">witter</unclear> <unclear cert="medium" resp="#joint">ze</unclear>-
+<lb n="64"/><unclear cert="low" resp="#joint">hallten</unclear> wissend <unclear cert="medium" resp="#joint">Date</unclear> <origDate when="1549" resp="#ner"><unclear cert="medium" resp="#joint">den</unclear> letsten
+<lb n="65"/>tag <unclear cert="medium" resp="#joint">Junij</unclear> umb 6 <unclear cert="low" resp="#joint">ur</unclear> nach mittag
 <lb n="66"/>anno 1549</origDate>
 <lb n="67"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermaister clain ud
 <lb n="68"/>groß raet der statt <unclear cert="low" resp="#joint">zue</unclear>
 <lb n="69"/>sant Gallen</orgName>,
 <pb facs="StadtASG_Missive_681_1628.JPG" n="4"/>
-<lb n="70"/>Den hochgelerten <unclear cert="medium" resp="#joint">frommen</unclear> fuersichtigen unnd
-<lb n="71"/><unclear cert="medium" resp="#joint">wyßen</unclear> herren <persName role="recipient" resp="#ner">Joachimen von Watt</persName>
+<lb n="70"/>Den hochgelerten frommen fuersichtigen unnd
+<lb n="71"/>wyßen <unclear cert="medium" resp="#joint">herren</unclear> <persName role="recipient" resp="#ner">Joachimen von Watt</persName>
 <lb n="72"/>doctor <unclear cert="low" resp="#joint">uniseren</unclear> <unclear cert="low" resp="#joint">altburgermei</unclear>-
 <lb n="73"/>ster, <persName resp="#ner">Hainrichen Locher</persName>, <persName resp="#ner"><unclear cert="low" resp="#joint">Lienharten</unclear>
-<lb n="74"/><unclear cert="low" resp="#joint">Keller</unclear></persName> und <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Ambrosyen</unclear> <unclear cert="low" resp="#joint">Ainbůrnen</unclear></persName>,
+<lb n="74"/>Keller</persName> und <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Ambrosyen</unclear> <unclear cert="low" resp="#joint">Ainbůrnen</unclear></persName>,
 <lb n="75"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">getruewen</unclear> lieben <unclear cert="low" resp="#joint">ratz</unclear>-
 <lb n="76"/>fruenden und <unclear cert="medium" resp="#joint">ratsbotten</unclear>, jetz zuo
-<lb n="77"/><placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> im <placeName ref="stadtasg-places-266" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Ergoew</unclear></placeName>,
+<lb n="77"/><placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> im <placeName ref="stadtasg-places-266" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ergoew</unclear></placeName>,
 </p>
         </body>
     </text>

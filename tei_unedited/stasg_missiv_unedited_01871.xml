@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1871</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,107 +20,107 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Statthalter und Rat der Stadt St. Gallen bitten Ammann Hans Engeler zu Tägerwilen, sich für ihren Bürger Niklaus Zollikofer einzusetzen. Dieser habe von seinem verstorbenen Schwager Jacob Engeler eine geliehene Summe samt Zinsen zurückgefordert. Engeler habe die Rückzahlung verzögert und die Zinsen herabgesetzt. Zollikofer fürchtet, dass Engeler die Forderung nicht begleicht, und bittet um Unterstützung, damit er sein Geld erhält.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Statthalter und Rat der Stadt St. Gallen</name><date when="1619-02-04" resp="#regest">den iiij. februarii Ao 1619</date></correspAction><correspAction type="received"><name resp="#regest">Hans Engeler, Ammann zu Tägerwilen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1871_6959.jpg" n="1"/>
-<lb n="1"/>Unseren guenstigen gruoß, unnd geneigten willen
-<lb n="2"/>zuovor, Ersamer frommer unnd Weiser, beson-
-<lb n="3"/>ders getreuewer lieber Amann
-<lb n="4"/>Es hatt unß unser lieber Mitburger vecst
-<lb n="5"/><persName resp="#ner">Niclaus Zolikofer</persName> von und zuo <placeName resp="#ner">Altenklingen</placeName>
-<lb n="6"/>klagßweiß zuoerkennen geben, waßmassen
-<lb n="7"/>sein liebe schwester unsere getreuewere liebste
-<lb n="8"/>Rhatsfreündt <persName resp="#ner">Hannß Wildenhuober</persName> selig, Weil
-<lb n="9"/>er noch unser Vogt der herrschaft <placeName ref="stadtasg-places-59" cert="medium" resp="#ner">Bürglen</placeName> ge-
-<lb n="10"/>wesen, euwerem bruoder <persName resp="#ner">Jacob Engelin</persName>
-<lb n="11"/>selig ein zimliche Summ geltts fergelihen
-<lb n="12"/>dero Inen nun ettlich Jarlang ohnge-
-<lb n="13"/>fehr mit 7. pro Cento verzinstet, nachde-
-<lb n="14"/>aber Wildenhuober selig verstorb und sein hin-
-<lb n="15"/>derlaßene frauw daß haubtguott erfoerderen wollen.
-<lb n="16"/>So hette gedachter euwer bruoder selig sich seüstlich, dieweil
-<lb n="17"/>wil si bittlich erbetten daß Inen so hoechlich
-<lb n="18"/>das sie dasselbig Inen noch lenger zuo wueten wolten
-<lb n="19"/>sie fuersohin den selbigen
-<lb n="20"/>Brauch sich lbo biß zuo völliger ablosung Jehrlichen
-<lb n="21"/>groß schad zuo ist
-<lb n="22"/>bittlich erhalt:
-<lb n="23"/>mit 7. f. verzinsen wöllen, welliches sie dan
-<lb n="24"/>zuo trost Irer kinden über daß man gnugsam ursach hette
-<lb n="25"/>bewilliget, ohngeach
-<lb n="26"/>solliches sie daß haubtguot vill lieber gehebt
-<lb n="27"/>hette. Dem auch zuogelben hette gethrewer bruoder selig
-<lb n="28"/>vil Jar nachen lebt
-<lb n="29"/>so Ime disen dergstalt
-<lb n="30"/>mit einredt K.
-<lb n="31"/>Thun sohls gsach ubel
-<lb n="32"/>verfolgen sol, wie
-<lb n="33"/>in die zwenzig Jar treüwlich und erberlichen ohne
-<lb n="34"/>verweigerung erstattet hette.
+<lb n="1"/><unclear cert="low" resp="#joint">Unseren</unclear> <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="low" resp="#joint">gruoß</unclear>, unnd geneigten willen
+<lb n="2"/><unclear cert="low" resp="#joint">zuovor</unclear>, <unclear cert="low" resp="#joint">Ersamer</unclear> <unclear cert="low" resp="#joint">frommer</unclear> unnd Weiser, <unclear cert="low" resp="#joint">beson</unclear>-
+<lb n="3"/><unclear cert="low" resp="#joint">ders</unclear> getreuewer lieber <unclear cert="low" resp="#joint">Amann</unclear>
+<lb n="4"/>Es hatt <unclear cert="low" resp="#joint">unß</unclear> unser lieber Mitburger <unclear cert="medium" resp="#joint">vecst</unclear>
+<lb n="5"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Niclaus</unclear> <unclear cert="medium" resp="#joint">Zolikofer</unclear></persName> von <unclear cert="medium" resp="#joint">und</unclear> zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Altenklingen</unclear></placeName>
+<lb n="6"/><unclear cert="low" resp="#joint">klagßweiß</unclear> <unclear cert="low" resp="#joint">zuoerkennen</unclear> geben, <unclear cert="low" resp="#joint">waßmassen</unclear>
+<lb n="7"/>sein liebe <unclear cert="low" resp="#joint">schwester</unclear> <unclear cert="low" resp="#joint">unsere</unclear> <unclear cert="low" resp="#joint">getreuewere</unclear> liebste
+<lb n="8"/><unclear cert="low" resp="#joint">Rhatsfreündt</unclear> <persName resp="#ner">Hannß <unclear cert="low" resp="#joint">Wildenhuober</unclear></persName> selig, Weil
+<lb n="9"/>er noch <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">Vogt</unclear> der herrschaft <placeName ref="stadtasg-places-59" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bürglen</unclear></placeName> ge-
+<lb n="10"/>wesen, <unclear cert="low" resp="#joint">euwerem</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Engelin</unclear></persName>
+<lb n="11"/>selig ein <unclear cert="medium" resp="#joint">zimliche</unclear> Summ geltts <unclear cert="low" resp="#joint">fergelihen</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">Inen</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">ettlich</unclear> <unclear cert="low" resp="#joint">Jarlang</unclear> <unclear cert="low" resp="#joint">ohnge</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">fehr</unclear> mit 7. <unclear cert="medium" resp="#joint">pro</unclear> <unclear cert="medium" resp="#joint">Cento</unclear> <unclear cert="medium" resp="#joint">verzinstet</unclear>, <unclear cert="medium" resp="#joint">nachde</unclear>-
+<lb n="14"/><unclear cert="medium" resp="#joint">aber</unclear> <unclear cert="medium" resp="#joint">Wildenhuober</unclear> selig <unclear cert="medium" resp="#joint">verstorb</unclear> und sein <unclear cert="low" resp="#joint">hin</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">derlaßene</unclear> <unclear cert="low" resp="#joint">frauw</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">haubtguott</unclear> <unclear cert="low" resp="#joint">erfoerderen</unclear> wollen.
+<lb n="16"/><unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">hette</unclear> <unclear cert="low" resp="#joint">gedachter</unclear> <unclear cert="low" resp="#joint">euwer</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> selig sich <unclear cert="low" resp="#joint">seüstlich</unclear>, <unclear cert="low" resp="#joint">dieweil</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">wil</unclear> <unclear cert="low" resp="#joint">si</unclear> <unclear cert="low" resp="#joint">bittlich</unclear> <unclear cert="low" resp="#joint">erbetten</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">Inen</unclear> so <unclear cert="low" resp="#joint">hoechlich</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">dasselbig</unclear> <unclear cert="low" resp="#joint">Inen</unclear> noch <unclear cert="low" resp="#joint">lenger</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">wueten</unclear> <unclear cert="low" resp="#joint">wolten</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">fuersohin</unclear> den <unclear cert="low" resp="#joint">selbigen</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">Brauch</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">lbo</unclear> <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">völliger</unclear> <unclear cert="low" resp="#joint">ablosung</unclear> <unclear cert="low" resp="#joint">Jehrlichen</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">groß</unclear> <unclear cert="low" resp="#joint">schad</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ist</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">bittlich</unclear> <unclear cert="low" resp="#joint">erhalt</unclear>:
+<lb n="23"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">7</unclear>. <unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">verzinsen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, <unclear cert="low" resp="#joint">welliches</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">dan</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">trost</unclear> <unclear cert="low" resp="#joint">Irer</unclear> <unclear cert="low" resp="#joint">kinden</unclear> <unclear cert="low" resp="#joint">über</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">gnugsam</unclear> <unclear cert="low" resp="#joint">ursach</unclear> <unclear cert="low" resp="#joint">hette</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">bewilliget</unclear>, <unclear cert="low" resp="#joint">ohngeach</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">solliches</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">haubtguot</unclear> <unclear cert="low" resp="#joint">vill</unclear> <unclear cert="low" resp="#joint">lieber</unclear> <unclear cert="low" resp="#joint">gehebt</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">hette</unclear>. <unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">zuogelben</unclear> <unclear cert="low" resp="#joint">hette</unclear> <unclear cert="low" resp="#joint">gethrewer</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> <unclear cert="low" resp="#joint">selig</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">vil</unclear> <unclear cert="low" resp="#joint">Jar</unclear> <unclear cert="low" resp="#joint">nachen</unclear> <unclear cert="low" resp="#joint">lebt</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">disen</unclear> <unclear cert="low" resp="#joint">dergstalt</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">einredt</unclear> <unclear cert="low" resp="#joint">K</unclear>.
+<lb n="31"/><unclear cert="low" resp="#joint">Thun</unclear> <unclear cert="low" resp="#joint">sohls</unclear> <unclear cert="low" resp="#joint">gsach</unclear> <unclear cert="low" resp="#joint">ubel</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">verfolgen</unclear> <unclear cert="low" resp="#joint">sol</unclear>, <unclear cert="low" resp="#joint">wie</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">zwenzig</unclear> <unclear cert="low" resp="#joint">Jar</unclear> <unclear cert="low" resp="#joint">treüwlich</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">erberlichen</unclear> <unclear cert="low" resp="#joint">ohne</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">verweigerung</unclear> <unclear cert="low" resp="#joint">erstattet</unclear> <unclear cert="low" resp="#joint">hette</unclear>.
 <pb facs="StadtASG_Missive_1871_6960.jpg" n="2"/>
-<lb n="35"/>Nochdem ab vorermelten dienern zuo <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName>
-<lb n="36"/>gestorben
-<lb n="37"/>er besorgte Rorschach uß gnaden unßre
-<lb n="38"/>verhafft, darumb sy uß gnaden unßerm schaden und nach-
-<lb n="39"/>tail ledig
-<lb n="40"/>Inen widerfaren damitt demnach Rorschach
-<lb n="41"/>unser pit, Ir last also ob und bi
-<lb n="42"/>Rorschach etwas einrede
-<lb n="43"/>weilen die sach nit der
-<lb n="44"/>Rorschach fur an
-<lb n="45"/>entstond in lange
-<lb n="46"/>wider lauffen
-<lb n="47"/>dieweil ir
-<lb n="48"/>der ußzueg gelt zuo zilen abkauft
-<lb n="49"/>damit er sin liebe hußfraw zuo der haigl
-<lb n="50"/>seiner
-<lb n="51"/>sonder dem Englischen in fremde
-<lb n="52"/>syglich, so lange zeit daselbst raths begerten
-<lb n="53"/>werden, Eß möchte, hote eß deß gantz hochlich
-<lb n="54"/>da es uß ir Interceßion und fürpitt
-<lb n="55"/>zuo thailen, christenlichen mitleiden zue tragn
-<lb n="56"/>auch da deß hauses <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName> etliche stuck die
-<lb n="57"/>sechzig nachgeends ingenomen nachgends ehr
-<lb n="58"/>spät gemacht weil sy uß sonder
-<lb n="59"/>in E. g. namen Widerumb überig solichs alß sy dz
-<lb n="60"/>statz zubehalten
-<lb n="61"/>dieweil
-<lb n="62"/>woll erholen wöllen, verlobt <persName resp="#ner">Jergliß</persName>
-<lb n="63"/>wegen straft (in derselbig sy bi iren leibziten
-<lb n="64"/>uon inen ohne nachred unnd diewil eß
-<lb n="65"/>uß hoch
-<lb n="66"/>gantz an leiblichen ehr hab
-<lb n="67"/>sy kunfftig solich gut
-<lb n="68"/>zukhomen ohne
-<lb n="69"/>nachred unnd nicht
-<lb n="70"/>mit geburlicher straf
-<lb n="71"/>halbs wie Ime selbst zue Jedermenigclich waiss
-<lb n="72"/>Irtung clagts halber <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName> besichtigt
-<lb n="73"/>ist zue pitt, Ir wollet
-<lb n="74"/>ewers liebs laids solichs versehn unßers
+<lb n="35"/><unclear cert="low" resp="#joint">Nochdem</unclear> <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">vorermelten</unclear> <unclear cert="low" resp="#joint">dienern</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName>
+<lb n="36"/><unclear cert="low" resp="#joint">gestorben</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">besorgte</unclear> <unclear cert="low" resp="#joint">Rorschach</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">gnaden</unclear> <unclear cert="low" resp="#joint">unßre</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">verhafft</unclear>, darumb <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">gnaden</unclear> <unclear cert="low" resp="#joint">unßerm</unclear> <unclear cert="low" resp="#joint">schaden</unclear> und <unclear cert="low" resp="#joint">nach</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">tail</unclear> <unclear cert="low" resp="#joint">ledig</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">Inen</unclear> <unclear cert="low" resp="#joint">widerfaren</unclear> <unclear cert="low" resp="#joint">damitt</unclear> <unclear cert="low" resp="#joint">demnach</unclear> <unclear cert="low" resp="#joint">Rorschach</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">pit</unclear>, <unclear cert="low" resp="#joint">Ir</unclear> <unclear cert="low" resp="#joint">last</unclear> <unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">bi</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">Rorschach</unclear> etwas <unclear cert="low" resp="#joint">einrede</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">weilen</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">der</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">Rorschach</unclear> <unclear cert="low" resp="#joint">fur</unclear> <unclear cert="low" resp="#joint">an</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">entstond</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">lange</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">lauffen</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">dieweil</unclear> <unclear cert="low" resp="#joint">ir</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">ußzueg</unclear> <unclear cert="low" resp="#joint">gelt</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">zilen</unclear> <unclear cert="low" resp="#joint">abkauft</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">hußfraw</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">haigl</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">seiner</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Englischen</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">fremde</unclear>
+<lb n="52"/><unclear cert="low" resp="#joint">syglich</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">lange</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">daselbst</unclear> <unclear cert="low" resp="#joint">raths</unclear> <unclear cert="low" resp="#joint">begerten</unclear>
+<lb n="53"/><unclear cert="low" resp="#joint">werden</unclear>, <unclear cert="low" resp="#joint">Eß</unclear> <unclear cert="low" resp="#joint">möchte</unclear>, <unclear cert="low" resp="#joint">hote</unclear> <unclear cert="low" resp="#joint">eß</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">gantz</unclear> <unclear cert="low" resp="#joint">hochlich</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">Interceßion</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">fürpitt</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">thailen</unclear>, <unclear cert="low" resp="#joint">christenlichen</unclear> <unclear cert="low" resp="#joint">mitleiden</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">tragn</unclear>
+<lb n="56"/><unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">hauses</unclear> <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName> <unclear cert="low" resp="#joint">etliche</unclear> <unclear cert="low" resp="#joint">stuck</unclear> <unclear cert="low" resp="#joint">die</unclear>
+<lb n="57"/><unclear cert="low" resp="#joint">sechzig</unclear> <unclear cert="low" resp="#joint">nachgeends</unclear> <unclear cert="low" resp="#joint">ingenomen</unclear> <unclear cert="low" resp="#joint">nachgends</unclear> <unclear cert="low" resp="#joint">ehr</unclear>
+<lb n="58"/><unclear cert="low" resp="#joint">spät</unclear> <unclear cert="low" resp="#joint">gemacht</unclear> <unclear cert="low" resp="#joint">weil</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">sonder</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">namen</unclear> <unclear cert="low" resp="#joint">Widerumb</unclear> <unclear cert="low" resp="#joint">überig</unclear> <unclear cert="low" resp="#joint">solichs</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">dz</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">statz</unclear> <unclear cert="low" resp="#joint">zubehalten</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">dieweil</unclear>
+<lb n="62"/><unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">erholen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, <unclear cert="low" resp="#joint">verlobt</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Jergliß</unclear></persName>
+<lb n="63"/><unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">straft</unclear> (<unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">derselbig</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">bi</unclear> <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">leibziten</unclear>
+<lb n="64"/><unclear cert="low" resp="#joint">uon</unclear> <unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">nachred</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">diewil</unclear> <unclear cert="low" resp="#joint">eß</unclear>
+<lb n="65"/><unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">hoch</unclear>
+<lb n="66"/><unclear cert="low" resp="#joint">gantz</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">leiblichen</unclear> <unclear cert="low" resp="#joint">ehr</unclear> <unclear cert="low" resp="#joint">hab</unclear>
+<lb n="67"/><unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">kunfftig</unclear> <unclear cert="low" resp="#joint">solich</unclear> <unclear cert="low" resp="#joint">gut</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">zukhomen</unclear> <unclear cert="low" resp="#joint">ohne</unclear>
+<lb n="69"/><unclear cert="low" resp="#joint">nachred</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">nicht</unclear>
+<lb n="70"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">geburlicher</unclear> <unclear cert="low" resp="#joint">straf</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">halbs</unclear> <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">selbst</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">Jedermenigclich</unclear> <unclear cert="low" resp="#joint">waiss</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">Irtung</unclear> <unclear cert="low" resp="#joint">clagts</unclear> <unclear cert="low" resp="#joint">halber</unclear> <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName> <unclear cert="low" resp="#joint">besichtigt</unclear>
+<lb n="73"/><unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">pitt</unclear>, <unclear cert="low" resp="#joint">Ir</unclear> <unclear cert="low" resp="#joint">wollet</unclear>
+<lb n="74"/><unclear cert="low" resp="#joint">ewers</unclear> <unclear cert="low" resp="#joint">liebs</unclear> <unclear cert="low" resp="#joint">laids</unclear> <unclear cert="low" resp="#joint">solichs</unclear> <unclear cert="low" resp="#joint">versehn</unclear> <unclear cert="low" resp="#joint">unßers</unclear>
 <pb facs="StadtASG_Missive_1871_6961.jpg" n="3"/>
-<lb n="75"/><unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">disem</unclear> <unclear cert="low" resp="#joint">irem</unclear> <unclear cert="low" resp="#joint">begeren</unclear> <unclear cert="low" resp="#joint">willfaren</unclear> <unclear cert="low" resp="#joint">moechten</unclear>, und also
-<lb n="76"/><unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">D</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Zwinglj</unclear></persName>, <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Vberg</unclear>
-<lb n="77"/><unclear cert="low" resp="#joint">recht</unclear> <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">leüth</unclear> <unclear cert="low" resp="#joint">zů</unclear> <unclear cert="low" resp="#joint">lichten</unclear>,
-<lb n="78"/><unclear cert="low" resp="#joint">Das</unclear> <unclear cert="low" resp="#joint">begeren</unclear> wir
-<lb n="79"/><unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">hinwiderumb</unclear> uff alle <unclear cert="low" resp="#joint">zůtragende</unclear>
-<lb n="80"/><unclear cert="low" resp="#joint">begebenheit</unclear> <unclear cert="low" resp="#joint">guetlich</unclear> und <unclear cert="low" resp="#joint">fürderlich</unclear> <unclear cert="low" resp="#joint">zů</unclear> <unclear cert="low" resp="#joint">beschulden</unclear>,
-<lb n="81"/><unclear cert="low" resp="#joint">damit</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">goetlicher</unclear> <unclear cert="low" resp="#joint">schutzs</unclear> <unclear cert="low" resp="#joint">obhallt</unclear> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">bewohlende</unclear>.
-<lb n="82"/><unclear cert="low" resp="#joint">Datum</unclear> <unclear cert="low" resp="#joint">den</unclear> <origDate when="1619" resp="#ner"><unclear cert="low" resp="#joint">iiij</unclear>. <unclear cert="low" resp="#joint">februarii</unclear> <unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">1619</unclear></origDate>.
-<lb n="83"/><orgName ref="stadtasg-actors-629" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Statthallter</unclear> <unclear cert="low" resp="#joint">unnd</unclear> Rhate
-<lb n="84"/>der Statt Snt Gallen</orgName>.
-<lb n="85"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">Frommen</unclear> <unclear cert="low" resp="#joint">fürnemen</unclear> und <unclear cert="low" resp="#joint">Weisen</unclear> <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear> <unclear cert="low" resp="#joint">Engeler</unclear></persName>
+<lb n="75"/>ihr disem irem begeren willfaren moechten, und also
+<lb n="76"/><unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">D</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Zwinglj</unclear></persName>, <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">burger</unclear> die Vberg
+<lb n="77"/>recht <unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">leüth</unclear> <unclear cert="low" resp="#joint">zů</unclear> <unclear cert="low" resp="#joint">lichten</unclear>,
+<lb n="78"/>Das <unclear cert="low" resp="#joint">begeren</unclear> wir
+<lb n="79"/>umb eüch hinwiderumb uff alle zůtragende
+<lb n="80"/>begebenheit guetlich und fürderlich zů beschulden,
+<lb n="81"/>damit wir goetlicher schutzs obhallt wol bewohlende.
+<lb n="82"/>Datum den <origDate when="1619" resp="#ner">iiij. februarii Ao 1619</origDate>.
+<lb n="83"/><orgName ref="stadtasg-actors-629" cert="medium" role="issuer" resp="#ner">Statthallter unnd Rhate
+<lb n="84"/>der Statt <unclear cert="low" resp="#joint">Snt</unclear> Gallen</orgName>.
+<lb n="85"/><unclear cert="low" resp="#joint">Dem</unclear> Frommen fürnemen und Weisen <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear> <unclear cert="low" resp="#joint">Engeler</unclear></persName>
 <lb n="86"/><unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">gethrüwen</unclear> <unclear cert="low" resp="#joint">besonnders</unclear> lieben <unclear cert="low" resp="#joint">Burger</unclear>
 <lb n="87"/><unclear cert="low" resp="#joint">Lobl</unclear>. <unclear cert="low" resp="#joint">Ammann</unclear> <unclear cert="low" resp="#joint">zů</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Tägerßheim</unclear></placeName> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">handen</unclear>.
 <pb facs="StadtASG_Missive_1871_6962.jpg" n="4"/>

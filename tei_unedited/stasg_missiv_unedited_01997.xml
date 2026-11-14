@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1997</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau informieren Bürgermeister und Rat zu St. Gallen über Gerüchte, wonach zwei Regimenter Söldner des Grafen von Sulz über den Bodensee und den Gotthard nach Mailand ziehen sollen. Da solche Durchzüge die Stadt und Landchaft Lindau zuvor stark belastet hätten, bitten sie um Mitteilung, ob die Eidgenossenschaft den Truppen den Pass erlaube, um sich rechtzeitig vorzubereiten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1616-05-27" resp="#regest">Datum 27 Maÿ anno 1616.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,37 +35,37 @@
 <p>
 <pb facs="StadtASG_Missive_1997_7449.jpg" n="1"/>
 <lb n="1"/>Unser freuendtlich willig dienst, und was wir mehr
-<lb n="2"/>ehrn liebs und guets vermoegen zuvor, fuersichtigen,
+<lb n="2"/><unclear cert="low" resp="#joint">ehrn</unclear> liebs und <unclear cert="low" resp="#joint">guets</unclear> vermoegen zuvor, fuersichtigen,
 <lb n="3"/>ersamen und weisen, besonders lieben freuend unnd
-<lb n="4"/>guete nachbarn.
-<lb n="5"/>Wir werden durch gemeine ansag berichtet, das
-<lb n="6"/>abermahls ein durchzug zweÿer regiment knecht,
-<lb n="7"/>solch, deß herrn <persName resp="#ner">Graven von Sulz</persName> werbung, uber
+<lb n="4"/><unclear cert="low" resp="#joint">guete</unclear> nachbarn.
+<lb n="5"/>Wir werden durch gemeine <unclear cert="low" resp="#joint">ansag</unclear> berichtet, das
+<lb n="6"/><unclear cert="low" resp="#joint">abermahls</unclear> ein durchzug zweÿer regiment <unclear cert="low" resp="#joint">knecht</unclear>,
+<lb n="7"/><unclear cert="low" resp="#joint">solch</unclear>, deß <unclear cert="low" resp="#joint">herrn</unclear> <persName resp="#ner">Graven von Sulz</persName> <unclear cert="low" resp="#joint">werbung</unclear>, uber
 <lb n="8"/>den <placeName ref="stadtasg-places-157" cert="medium" resp="#ner">Bodensee</placeName>, durch die <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoschafft</orgName>, uber den
-<lb n="9"/><placeName resp="#ner">Gotthart</placeName> naher <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Mailand</placeName> solle obhanden sein, die-
+<lb n="9"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Gotthart</unclear></placeName> naher <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Mailand</placeName> <unclear cert="low" resp="#joint">solle</unclear> obhanden sein, die-
 <lb n="10"/>weil dann vor disem mehrmals unser Statt unnd
-<lb n="11"/>landtschafft, mit dergleichen durchzuegen nit wenig be-
+<lb n="11"/><unclear cert="low" resp="#joint">landtschafft</unclear>, mit dergleichen <unclear cert="low" resp="#joint">durchzuegen</unclear> nit wenig be-
 <lb n="12"/>schwert worden, dahero wir unß desto besser und zeit-
-<lb n="13"/>licher zuvoorsehen, dabeÿ aber zue E. E. Wht. unser sond-
-<lb n="14"/>guets vertrawen haben, was ihnen dises durchzugs
-<lb n="15"/>halber bewust, sie <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">solches</unclear> nit werden verhalten.
-<lb n="16"/><unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">gelangt</unclear> <unclear cert="low" resp="#joint">demnach</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">sie</unclear> unser freuend- und nachbar-
+<lb n="13"/>licher <unclear cert="low" resp="#joint">zuvoorsehen</unclear>, dabeÿ aber zue <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. Wht. <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">sond</unclear>-
+<lb n="14"/>guets <unclear cert="low" resp="#joint">vertrawen</unclear> haben, was ihnen dises durchzugs
+<lb n="15"/>halber <unclear cert="low" resp="#joint">bewust</unclear>, sie uns solches nit <unclear cert="low" resp="#joint">werden</unclear> verhalten.
+<lb n="16"/><unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">gelangt</unclear> demnach <unclear cert="medium" resp="#joint">an</unclear> sie unser freuend- und nachbar-
 <lb n="17"/>lich ansuechen, und pitten, unß <unclear cert="low" resp="#joint">zueberichten</unclear>, ob lob-
-<lb n="18"/>liche <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoschafft</orgName> <unclear cert="low" resp="#joint">solchen</unclear> <unclear cert="low" resp="#joint">geworbnen</unclear> <unclear cert="low" resp="#joint">volckh</unclear> <unclear cert="low" resp="#joint">d</unclear>-
-<lb n="19"/><unclear cert="low" resp="#joint">paß</unclear> <unclear cert="low" resp="#joint">zuegelassen</unclear>, oder wie es damit beschaffen,
-<lb n="20"/>E. E. Wht. hingegen nachbarliche dienst und freuend-
-<lb n="21"/>schafft zueerweisen, sein wir ganz willig, goettlicher
-<lb n="22"/>protection unß allerseits erholhende. Datum <origDate when="1616" resp="#ner">27
+<lb n="18"/>liche <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnoschafft</orgName> <unclear cert="medium" resp="#joint">solchen</unclear> <unclear cert="medium" resp="#joint">geworbnen</unclear> <unclear cert="medium" resp="#joint">volckh</unclear> <unclear cert="medium" resp="#joint">d</unclear>-
+<lb n="19"/>paß <unclear cert="medium" resp="#joint">zuegelassen</unclear>, oder wie es damit beschaffen,
+<lb n="20"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. Wht. hingegen nachbarliche dienst und freuend-
+<lb n="21"/>schafft <unclear cert="low" resp="#joint">zueerweisen</unclear>, sein wir ganz willig, goettlicher
+<lb n="22"/>protection unß allerseits <unclear cert="low" resp="#joint">erholhende</unclear>. Datum <origDate when="1616" resp="#ner">27
 <lb n="23"/>Maÿ anno 1616</origDate>.
 <lb n="24"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermeister und rhat
 <lb n="25"/>der Statt Lindaw</orgName>.
 <pb facs="StadtASG_Missive_1997_7450.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1997_7451.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1997_7452.jpg" n="4"/>
-<lb n="26"/>Den fuersichtigen ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="27"/>meister und Rhat der Statt St. Gallen</orgName>, unsern
-<lb n="28"/>besondern lieben freünden, und <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">nachbarn</unclear>.
-<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
+<lb n="26"/>Den <unclear cert="medium" resp="#joint">fuersichtigen</unclear> ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="27"/>meister und <unclear cert="medium" resp="#joint">Rhat</unclear> der Statt St. Gallen</orgName>, unsern
+<lb n="28"/>besondern lieben freünden, und gueten nachbarn.
+<lb n="29"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
 </p>
         </body>
     </text>

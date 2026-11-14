@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2526</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Landvogt Melchior Lussi, die erneute Vorladung ihres Bürgers Hans Weiser zum Landgericht in Frauenfeld wegen einer Forderung seiner verstorbenen Ehefrau zu unterlassen. Sie verweisen darauf, dass ihre Bürger nicht leibeigen seien, und fordern eine schriftliche Auskunft über den Sachverhalt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1625-01-04" resp="#regest">4ten Januarij. 1625</date></correspAction><correspAction type="received"><name resp="#regest">Melchior Lussi, Landvogt des unteren und oberen Thurgaus</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -37,95 +37,95 @@
 <lb n="1"/>Interceßion et Creditiv des gesandten
 <lb n="2"/>über eines fahls anforderung.
 <lb n="3"/>Unser freündt: nachbarlich willig dienst
-<lb n="4"/>und waß wir liebs und guts vermogen, zu-
-<lb n="5"/>samt wünschung
-<lb n="6"/>von Gott dem
-<lb n="7"/>Allmächtigen eines
-<lb n="8"/>glükhlich fredsamen
-<lb n="9"/>newen jahrs.
+<lb n="4"/>und <unclear cert="medium" resp="#joint">waß</unclear> wir <unclear cert="low" resp="#joint">liebs</unclear> und <unclear cert="low" resp="#joint">guts</unclear> <unclear cert="low" resp="#joint">vermogen</unclear>, <unclear cert="low" resp="#joint">zu</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">samt</unclear> <unclear cert="low" resp="#joint">wünschung</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">dem</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">Allmächtigen</unclear> <unclear cert="low" resp="#joint">eines</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">glükhlich</unclear> <unclear cert="low" resp="#joint">fredsamen</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">newen</unclear> <unclear cert="low" resp="#joint">jahrs</unclear>.
 <lb n="10"/>Edle, veste und weise, besonders liebe
 <lb n="11"/>herr Landtvogt gute freündt und nachbar.
-<lb n="12"/>Waß wir dem herren under dato den <date resp="#ner">31.t De-
-<lb n="13"/>cembris deß verwichenen . 1624. jahrs</date>, wegen
-<lb n="14"/>unsers angehörigen lieben mitburgers <persName resp="#ner">Hannß
-<lb n="15"/>Weiser</persName> diß
-<lb n="16"/>Ritters, und der gegen ihme fürgenomnen
-<lb n="17"/>neüwerung deß fahls von seiner verstorbnen
-<lb n="18"/>haußfrauwen seligen wegen, freündt: nach-
-<lb n="19"/>barlich zugeschriben, daß hat der herr uß
-<lb n="20"/>beÿligenden copia deß ubersandten schreibens
-<lb n="21"/>mit mehrerm zuvernemen: Und
+<lb n="12"/><unclear cert="low" resp="#joint">Waß</unclear> wir dem <unclear cert="low" resp="#joint">herren</unclear> under dato den <date resp="#ner">31.t De-
+<lb n="13"/>cembris deß <unclear cert="low" resp="#joint">verwichenen</unclear> . 1624. jahrs</date>, wegen
+<lb n="14"/><unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">angehörigen</unclear> lieben <unclear cert="low" resp="#joint">mitburgers</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">Weiser</unclear></persName> <unclear cert="low" resp="#joint">diß</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">Ritters</unclear>, und <unclear cert="medium" resp="#joint">der</unclear> gegen ihme <unclear cert="low" resp="#joint">fürgenomnen</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">neüwerung</unclear> deß <unclear cert="low" resp="#joint">fahls</unclear> von seiner verstorbnen
+<lb n="18"/><unclear cert="low" resp="#joint">haußfrauwen</unclear> seligen wegen, <unclear cert="low" resp="#joint">freündt</unclear>: nach-
+<lb n="19"/>barlich zugeschriben, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">hat</unclear> der herr <unclear cert="low" resp="#joint">uß</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">beÿligenden</unclear> copia deß <unclear cert="low" resp="#joint">ubersandten</unclear> schreibens
+<lb n="21"/>mit mehrerm <unclear cert="low" resp="#joint">zuvernemen</unclear>: Und
 <lb n="22"/>obgleichwolen wir verhofft, es solte der herr
 <lb n="23"/>uf unßern bricht hürbeÿ seinem amts-
 <lb n="24"/>diener und Landtgerichts knecht zu <placeName resp="#ner">Sulgen</placeName>
-<lb n="25"/>nit anders
-<lb n="26"/>daß nemlich der neü
-<lb n="27"/>erige
-<lb n="28"/>die oberkeitliche bestellung, daß nemlich der neü-
+<lb n="25"/><unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">anders</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">nemlich</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">neü</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">erige</unclear>
+<lb n="28"/>die oberkeitliche bestellung, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">nemlich</unclear> der neü-
 <lb n="29"/>erige
 <lb n="30"/>ferner unangefochten
-<lb n="31"/>hette verbleiben mögen, ungschafft oder aber wo
+<lb n="31"/>hette verbleiben mögen, <unclear cert="low" resp="#joint">ungschafft</unclear> <unclear cert="low" resp="#joint">oder</unclear> aber wo
 <lb n="32"/>es dises fahls halber ewas andre be-
-<lb n="33"/>danckhen, unß deßten, zu
-<lb n="34"/>ferneren unßern resolution, freündt: nach-
-<lb n="35"/>barlich berichtet haben; Wann wir aber
-<lb n="36"/>unangesehen
-<lb n="37"/>verstendiget werden
-<lb n="38"/>wir von dem Ritter
-<lb n="39"/>daß gedachter Landtgerichts
-<lb n="40"/>knecht zu <placeName resp="#ner">Sulgen</placeName>, ihne von neüwem beÿ
-<lb n="41"/>einer starckhen buß, uf den <date resp="#ner">nechstkünfftig
-<lb n="42"/>donstag</date> für Landtgricht gen <placeName ref="stadtasg-places-29" cert="medium" resp="#ner">Frawen-
-<lb n="43"/>feld</placeName> verkündt, So haben wir
-<lb n="44"/>burgern, alß die nit leibeigen sind, noch
-<lb n="45"/>weder für ein unnemende halbe, oder
+<lb n="33"/><unclear cert="low" resp="#joint">danckhen</unclear>, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">deßten</unclear>, <unclear cert="low" resp="#joint">zu</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">ferneren</unclear> <unclear cert="low" resp="#joint">unßern</unclear> resolution, freündt: nach-
+<lb n="35"/>barlich berichtet haben; <unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">aber</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">unangesehen</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">verstendiget</unclear> <unclear cert="low" resp="#joint">werden</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">wir</unclear> von <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Ritter</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">gedachter</unclear> <unclear cert="low" resp="#joint">Landtgerichts</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">knecht</unclear> <unclear cert="low" resp="#joint">zu</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Sulgen</unclear></placeName>, <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">neüwem</unclear> <unclear cert="low" resp="#joint">beÿ</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">starckhen</unclear> buß, <unclear cert="low" resp="#joint">uf</unclear> <unclear cert="low" resp="#joint">den</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">nechstkünfftig</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">donstag</unclear></date> <unclear cert="low" resp="#joint">für</unclear> Landtgricht gen <placeName ref="stadtasg-places-29" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Frawen</unclear>-
+<lb n="43"/><unclear cert="low" resp="#joint">feld</unclear></placeName> <unclear cert="low" resp="#joint">verkündt</unclear>, <unclear cert="low" resp="#joint">So</unclear> haben wir
+<lb n="44"/><unclear cert="low" resp="#joint">burgern</unclear>, <unclear cert="low" resp="#joint">alß</unclear> die nit leibeigen sind, noch
+<lb n="45"/><unclear cert="low" resp="#joint">weder</unclear> <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">unnemende</unclear> <unclear cert="low" resp="#joint">halbe</unclear>, <unclear cert="low" resp="#joint">oder</unclear>
 <pb facs="StadtASG_Missive_2526_9752.jpg" n="2"/>
-<lb n="46"/>den anschereg sampt sei-
-<lb n="47"/>ner battzen usißlands
+<lb n="46"/>den <unclear cert="low" resp="#joint">anschereg</unclear> <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">sei</unclear>-
+<lb n="47"/><unclear cert="low" resp="#joint">ner</unclear> <unclear cert="low" resp="#joint">battzen</unclear> <unclear cert="low" resp="#joint">usißlands</unclear>
 <lb n="48"/>und schweytz, um
 <lb n="49"/>sein liebe getreüe
 <lb n="50"/>eeyn Eydtgnoßische
 <lb n="51"/>vereinige freünds
 <lb n="52"/>zübegehren; und
-<lb n="53"/>dieweil wir diße
-<lb n="54"/>sache inn sonderem hohen
-<lb n="55"/>gegen unsern burgeren
-<lb n="56"/>(alß die frey und
-<lb n="57"/>niemands mit leib-
-<lb n="58"/>eygenschafft zuegethon
-<lb n="59"/>sind) hohs inn ein neü-
+<lb n="53"/>dieweil wir <unclear cert="low" resp="#joint">diße</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">sache</unclear> <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">sonderem</unclear> <unclear cert="low" resp="#joint">hohen</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">gegen</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">burgeren</unclear>
+<lb n="56"/>(<unclear cert="low" resp="#joint">alß</unclear> die frey und
+<lb n="57"/><unclear cert="low" resp="#joint">niemands</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">leib</unclear>-
+<lb n="58"/><unclear cert="low" resp="#joint">eygenschafft</unclear> <unclear cert="low" resp="#joint">zuegethon</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">sind</unclear>) <unclear cert="low" resp="#joint">hohs</unclear> <unclear cert="low" resp="#joint">inn</unclear> ein neü-
 <lb n="60"/>werung halten, und
 <lb n="61"/>wir nit gedenckhen
 <lb n="62"/>künnen, diße citation
-<lb n="63"/>auß deß Herren unß landt-
-<lb n="64"/>lichen befelch gegen dem
+<lb n="63"/>auß deß Herren <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">landt</unclear>-
+<lb n="64"/><unclear cert="low" resp="#joint">lichen</unclear> befelch gegen dem
 <lb n="65"/>unsseren aengelegt worden
-<lb n="66"/>seye, so gelangt an den Herren
+<lb n="66"/>seye, so <unclear cert="low" resp="#joint">gelangt</unclear> <unclear cert="low" resp="#joint">an</unclear> den Herren
 <lb n="67"/>unsser freündt- nach-
 <lb n="68"/>barliches ersuechen und
 <lb n="69"/>bitten den anschereg
-<lb n="70"/>diß orts von seinem
-<lb n="71"/>under nemmen endtlichen
-<lb n="72"/>zübeweegen
-<lb n="73"/>und dißem unsserem faeer knecht
-<lb n="74"/>solchs von seinem undernemmen
-<lb n="75"/>zeüwen; oder doch unß einen schriftlichen be-
-<lb n="76"/>richt züerthaillen, wie doch die sach
+<lb n="70"/>diß orts von <unclear cert="low" resp="#joint">seinem</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">under</unclear> <unclear cert="low" resp="#joint">nemmen</unclear> <unclear cert="low" resp="#joint">endtlichen</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">zübeweegen</unclear>
+<lb n="73"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">dißem</unclear> <unclear cert="low" resp="#joint">unsserem</unclear> <unclear cert="low" resp="#joint">faeer</unclear> <unclear cert="low" resp="#joint">knecht</unclear>
+<lb n="74"/><unclear cert="low" resp="#joint">solchs</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">undernemmen</unclear>
+<lb n="75"/><unclear cert="low" resp="#joint">zeüwen</unclear>; oder doch unß einen schriftlichen be-
+<lb n="76"/>richt <unclear cert="low" resp="#joint">züerthaillen</unclear>, <unclear cert="low" resp="#joint">wie</unclear> doch die sach
 <lb n="77"/>im grundt bewandt seye, wie wirze erbietig seinnd
 <lb n="78"/>das solhs umb gegen dem Herren, in begebner
-<lb n="79"/>occasion freündt- nachbarlichen zueerwidern.
-<lb n="80"/>Den Herren hiemit sampt unß Goettlicher pro-
-<lb n="81"/>tection wolbefelhende. Actum den. <origDate when="1625" resp="#ner">4ten Ja-
+<lb n="79"/>occasion freündt- <unclear cert="low" resp="#joint">nachbarlichen</unclear> <unclear cert="low" resp="#joint">zueerwidern</unclear>.
+<lb n="80"/><unclear cert="low" resp="#joint">Den</unclear> <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">Goettlicher</unclear> pro-
+<lb n="81"/><unclear cert="low" resp="#joint">tection</unclear> <unclear cert="low" resp="#joint">wolbefelhende</unclear>. <unclear cert="low" resp="#joint">Actum</unclear> <unclear cert="low" resp="#joint">den</unclear>. <origDate when="1625" resp="#ner"><unclear cert="low" resp="#joint">4ten</unclear> Ja-
 <lb n="82"/>nuarij. 1625</origDate>.
 <lb n="83"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="84"/>der statt Sanct Gallen</orgName>.
-<lb n="85"/>Dem edlen vesten und weysen <persName role="issuer" resp="#ner">Melhior Lussi</persName>
+<lb n="85"/>Dem edlen vesten und weysen <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Melhior</unclear> <unclear cert="low" resp="#joint">Lussi</unclear></persName>
 <lb n="86"/>deß raths zü <placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Schwitz</placeName>, landt-
 <lb n="87"/>vogt deß undern und obern <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgoews</placeName> un-
 <lb n="88"/>serm besonders lieben Herren gueten freünd
 <lb n="89"/>und nachbarn.
-<lb n="90"/>An H. Lvogt im <origPlace ref="stadtasg-places-103" cert="medium" resp="#ner">Turgoew</origPlace>
-<lb n="91"/><origDate when="1625-01-04" resp="#ner">4. Janr 1625</origDate>.
+<lb n="90"/><unclear cert="low" resp="#joint">An</unclear> <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">Lvogt</unclear> <unclear cert="low" resp="#joint">im</unclear> <origPlace ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Turgoew</unclear></origPlace>
+<lb n="91"/><origDate when="1625-01-04" resp="#ner"><unclear cert="low" resp="#joint">4</unclear>. <unclear cert="low" resp="#joint">Janr</unclear> <unclear cert="low" resp="#joint">1625</unclear></origDate>.
 </p>
         </body>
     </text>

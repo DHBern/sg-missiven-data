@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2523</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,82 +20,82 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Melchior Lussi, Landvogt im Thurgau, bittet Bürgermeister und Rat zu St. Gallen, ihren Mitbürger Hans Appenzeller anzuweisen, die ihm geschuldete Busse von 29 Florin 6½ Schilling für den Ankauf des Wirtshauses Schwinlehen zu bezahlen. Appenzeller habe die Zahlung innerhalb von drei Wochen versprochen und sei durch Sebastian Dober verbürgt. Lussi ersucht um Zahlung, um weitere Kosten zu vermeiden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Melchior Lussi, Landvogt im Thurgau</name><placeName resp="#regest">Frauenfeld</placeName><date when="1624-12-09" resp="#regest">Datum Frauenfeld den 9ten Decembris anno 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2523_9737.jpg" n="1"/>
-<lb n="1"/>Edle Veste Fromme Fuernemme, Hoch-
-<lb n="2"/>geachte unnd Weiße, insunders
-<lb n="3"/>liebe Herren guette freuendt unnd
+<lb n="1"/>Edle Veste Fromme <unclear cert="low" resp="#joint">Fuernemme</unclear>, Hoch-
+<lb n="2"/><unclear cert="low" resp="#joint">geachte</unclear> unnd <unclear cert="low" resp="#joint">Weiße</unclear>, <unclear cert="low" resp="#joint">insunders</unclear>
+<lb n="3"/><unclear cert="medium" resp="#joint">liebe</unclear> Herren <unclear cert="medium" resp="#joint">guette</unclear> <unclear cert="low" resp="#joint">freuendt</unclear> unnd
 <lb n="4"/>Nachbaren, denselben seie mein
-<lb n="5"/>freuendt: Nachbarlich diennst
-<lb n="6"/>unnd grueß zuevorahn.
-<lb n="7"/>Demnach der Herren mitburger <persName resp="#ner">Hanß
-<lb n="8"/>Appentzeller</persName>, mir von hoher ober-
-<lb n="9"/>kheit, wie auch mit weniger ver-
-<lb n="10"/>kraeme abkhauffung deß Wirthßhaußes
-<lb n="11"/><placeName resp="#ner">Schwinlehen</placeName>, ihrer Nideren Jurisdiction
-<lb n="12"/>weegen, fuer uberkhommne buoßen
-<lb n="13"/>29 fl. 6 1/2 ß. schuldigworden, hatt
-<lb n="14"/>darauf Er mir ahn eidts statt
-<lb n="15"/>angelobt versprochen und zuege-
-<lb n="16"/>sagt, solch gelt innerhalb drey
-<lb n="17"/>wochen unfehlbarlich zue erlegen,
-<lb n="18"/>unnd zue mehrerer versicherung,
-<lb n="19"/>hat <persName resp="#ner">Sebastian Dober</persName> auch ewer
-<lb n="20"/>mitburger fuer ihn buerg unnd
-<lb n="21"/>zahler zue sein, mir gleichfahls
-<lb n="22"/>angelobet. Wann nuhn
-<lb n="23"/>aber von ihme Appentzellern solche
-<lb n="24"/>bezahlung, biß dato, wider ver-
-<lb n="25"/>hoffen, noch nit erfolget, deß
-<lb n="26"/>langt an die Herren Nachbarn
-<lb n="27"/>mein freuendt: Nachbarlich
+<lb n="5"/><unclear cert="low" resp="#joint">freuendt</unclear>: Nachbarlich diennst
+<lb n="6"/>unnd grueß <unclear cert="low" resp="#joint">zuevorahn</unclear>.
+<lb n="7"/>Demnach der Herren mitburger <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">Appentzeller</unclear></persName>, <unclear cert="low" resp="#joint">mir</unclear> von <unclear cert="low" resp="#joint">hoher</unclear> ober-
+<lb n="9"/><unclear cert="medium" resp="#joint">kheit</unclear>, wie <unclear cert="low" resp="#joint">auch</unclear> mit weniger ver-
+<lb n="10"/><unclear cert="low" resp="#joint">kraeme</unclear> <unclear cert="low" resp="#joint">abkhauffung</unclear> deß <unclear cert="medium" resp="#joint">Wirthßhaußes</unclear>
+<lb n="11"/><placeName resp="#ner"><unclear cert="medium" resp="#joint">Schwinlehen</unclear></placeName>, <unclear cert="medium" resp="#joint">ihrer</unclear> Nideren Jurisdiction
+<lb n="12"/><unclear cert="low" resp="#joint">weegen</unclear>, fuer <unclear cert="low" resp="#joint">uberkhommne</unclear> buoßen
+<lb n="13"/>29 fl. 6 1/2 ß. <unclear cert="medium" resp="#joint">schuldigworden</unclear>, hatt
+<lb n="14"/><unclear cert="low" resp="#joint">darauf</unclear> Er <unclear cert="low" resp="#joint">mir</unclear> ahn <unclear cert="low" resp="#joint">eidts</unclear> statt
+<lb n="15"/><unclear cert="low" resp="#joint">angelobt</unclear> versprochen und <unclear cert="low" resp="#joint">zuege</unclear>-
+<lb n="16"/>sagt, <unclear cert="low" resp="#joint">solch</unclear> gelt <unclear cert="low" resp="#joint">innerhalb</unclear> drey
+<lb n="17"/>wochen unfehlbarlich <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">erlegen</unclear>,
+<lb n="18"/>unnd <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">mehrerer</unclear> versicherung,
+<lb n="19"/>hat <persName resp="#ner">Sebastian <unclear cert="medium" resp="#joint">Dober</unclear></persName> auch <unclear cert="low" resp="#joint">ewer</unclear>
+<lb n="20"/>mitburger fuer <unclear cert="low" resp="#joint">ihn</unclear> buerg unnd
+<lb n="21"/><unclear cert="medium" resp="#joint">zahler</unclear> zue sein, <unclear cert="medium" resp="#joint">mir</unclear> <unclear cert="medium" resp="#joint">gleichfahls</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">angelobet</unclear>. Wann <unclear cert="low" resp="#joint">nuhn</unclear>
+<lb n="23"/>aber von <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">Appentzellern</unclear> <unclear cert="medium" resp="#joint">solche</unclear>
+<lb n="24"/><unclear cert="medium" resp="#joint">bezahlung</unclear>, biß dato, <unclear cert="medium" resp="#joint">wider</unclear> <unclear cert="medium" resp="#joint">ver</unclear>-
+<lb n="25"/>hoffen, noch nit <unclear cert="medium" resp="#joint">erfolget</unclear>, deß
+<lb n="26"/>langt an die Herren <unclear cert="medium" resp="#joint">Nachbarn</unclear>
+<lb n="27"/>mein <unclear cert="low" resp="#joint">freuendt</unclear>: Nachbarlich
 <pb facs="StadtASG_Missive_2523_9738.jpg" n="2"/>
 <lb n="28"/>ersuechen, die wollen ihme
-<lb n="29"/>Appentzelleren von oberkheit
-<lb n="30"/>wegen dahin weisen unnd ver-
+<lb n="29"/>Appentzelleren von <unclear cert="low" resp="#joint">oberkheit</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">wegen</unclear> dahin <unclear cert="low" resp="#joint">weisen</unclear> unnd <unclear cert="low" resp="#joint">ver</unclear>-
 <lb n="31"/>moegen, darmit er seinem obig
-<lb n="32"/>versprechen und anloben ge-
-<lb n="33"/>maeß solhe bezallung unein-
-<lb n="34"/>stelt erstatt, unnd weitterer
-<lb n="35"/>uncosten verhuett werde;
-<lb n="36"/>Solches umb die Herren, Nachbaren,
-<lb n="37"/>in dergleichen und anderen
+<lb n="32"/>versprechen und anloben <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="33"/><unclear cert="low" resp="#joint">maeß</unclear> <unclear cert="low" resp="#joint">solhe</unclear> bezallung <unclear cert="medium" resp="#joint">unein</unclear>-
+<lb n="34"/><unclear cert="medium" resp="#joint">stelt</unclear> <unclear cert="medium" resp="#joint">erstatt</unclear>, unnd <unclear cert="low" resp="#joint">weitterer</unclear>
+<lb n="35"/>uncosten <unclear cert="low" resp="#joint">verhuett</unclear> <unclear cert="low" resp="#joint">werde</unclear>;
+<lb n="36"/><unclear cert="low" resp="#joint">Solches</unclear> umb die <unclear cert="low" resp="#joint">Herren</unclear>, <unclear cert="medium" resp="#joint">Nachbaren</unclear>,
+<lb n="37"/>in dergleichen und <unclear cert="medium" resp="#joint">anderen</unclear>
 <lb n="38"/>begebenheiten, zuerhaltung
 <lb n="39"/>guotter nachbarlicher Correspon-
 <lb n="40"/>dentz, hinwiderumb zuver-
 <lb n="41"/>diennen, bin ich jederzeit
-<lb n="42"/>uhrbietig. Gottes
-<lb n="43"/>obacht unß zumahlen trew-
-<lb n="44"/>lich empfehlendt. Datum Fraw-
-<lb n="45"/>enfeldt <origDate when="1624-12-09" resp="#ner">den 9ten Decembris
+<lb n="42"/><unclear cert="medium" resp="#joint">uhrbietig</unclear>. <unclear cert="medium" resp="#joint">Gottes</unclear>
+<lb n="43"/>obacht <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">zumahlen</unclear> <unclear cert="low" resp="#joint">trew</unclear>-
+<lb n="44"/>lich <unclear cert="low" resp="#joint">empfehlendt</unclear>. Datum <unclear cert="low" resp="#joint">Fraw</unclear>-
+<lb n="45"/><unclear cert="low" resp="#joint">enfeldt</unclear> <origDate when="1624-12-09" resp="#ner">den 9ten Decembris
 <lb n="46"/>anno 1624</origDate>.
-<lb n="47"/>Der Herren
-<lb n="48"/>fründt. dinstwillig
+<lb n="47"/><unclear cert="medium" resp="#joint">Der</unclear> <unclear cert="medium" resp="#joint">Herren</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">fründt</unclear>. <unclear cert="low" resp="#joint">dinstwillig</unclear>
 <lb n="49"/>Nachbar.
 <lb n="50"/><persName role="issuer" resp="#ner">Melchior Lussi</persName> des
-<lb n="51"/>Raths zuo <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Under-
+<lb n="51"/>Raths <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-72" cert="medium" resp="#ner">Under-
 <lb n="52"/>walden</placeName> Landtvogt
-<lb n="53"/>im <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Thurgöw</placeName>.
+<lb n="53"/>im <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Thurgöw</unclear></placeName>.
 <pb facs="StadtASG_Missive_2523_9739.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2523_9740.jpg" n="4"/>
-<lb n="54"/>Denen Edlen, Vesten, frommen, fuersich-
-<lb n="55"/>tig, eersammen und weisen Herren,
+<lb n="54"/>Denen Edlen, Vesten, frommen, <unclear cert="low" resp="#joint">fuersich</unclear>-
+<lb n="55"/><unclear cert="low" resp="#joint">tig</unclear>, <unclear cert="low" resp="#joint">eersammen</unclear> und weisen Herren,
 <lb n="56"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht der Statt
-<lb n="57"/>S. Gallen</orgName>, Meinen besonders lieben
-<lb n="58"/>Herren, gueten freünden und Nach-
-<lb n="59"/>paren.
+<lb n="57"/><unclear cert="low" resp="#joint">S</unclear>. Gallen</orgName>, Meinen besonders lieben
+<lb n="58"/><unclear cert="low" resp="#joint">Herren</unclear>, gueten freünden <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Nach</unclear>-
+<lb n="59"/><unclear cert="medium" resp="#joint">paren</unclear>.
 </p>
         </body>
     </text>

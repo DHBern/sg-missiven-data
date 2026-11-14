@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1646</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,82 +20,82 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen teilen dem Landvogt im Turgau mit, dass eine in St. Gallen inhaftierte Frau, Catharina Müllerin, einen Krömer namens Baschen Wepfer bei Sirnach als Fälscher von Silberkronen angezeigt habe. Sie bitten den Landvogt, den Mann festzunehmen und bei ihm nach Beweismitteln zu suchen, und um eine schriftliche Rückmeldung, damit sie gegen die Gefangene vorgehen können.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1609" resp="#regest">29.ten Junii Anno etc. 1609</date></correspAction><correspAction type="received"><name resp="#regest">Landvogt im Obern und Untern Turgau</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1646_5995.jpg" n="1"/>
-<lb n="1"/>An H. Landtvogt im <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgoeuw</placeName> <date resp="#ner">19 Junij
-<lb n="2"/>1609</date> <unclear cert="low" resp="#joint">weg</unclear> eins <unclear cert="medium" resp="#joint">gefangnen</unclear> weibs-
+<lb n="1"/><unclear cert="medium" resp="#joint">An</unclear> <unclear cert="medium" resp="#joint">H</unclear>. Landtvogt im <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Turgoeuw</unclear></placeName> <date resp="#ner">19 <unclear cert="medium" resp="#joint">Junij</unclear>
+<lb n="2"/>1609</date> <unclear cert="medium" resp="#joint">weg</unclear> <unclear cert="medium" resp="#joint">eins</unclear> gefangnen <unclear cert="medium" resp="#joint">weibs</unclear>-
 <lb n="3"/>bild.
 <pb facs="StadtASG_Missive_1646_5996.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1646_5997.jpg" n="3"/>
 <lb n="4"/>Extract auß <persName role="issuer" resp="#ner">Cathrina Muellerin</persName> von
-<lb n="5"/><placeName ref="stadtasg-places-70" cert="medium" resp="#ner">Urickhen</placeName> im <unclear cert="low" resp="#joint">gricht</unclear> <unclear cert="low" resp="#joint">Stäfen</unclear> <placeName ref="stadtasg-places-32" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zuericher</unclear></placeName> ge=
-<lb n="6"/>piets, der zeit in der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Santgallen</unclear></placeName>
+<lb n="5"/><placeName ref="stadtasg-places-70" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Urickhen</unclear></placeName> im gricht <unclear cert="medium" resp="#joint">Stäfen</unclear> <placeName ref="stadtasg-places-32" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Zuericher</unclear></placeName> ge=
+<lb n="6"/><unclear cert="low" resp="#joint">piets</unclear>, der zeit in der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Santgallen</unclear></placeName>
 <lb n="7"/><unclear cert="low" resp="#joint">fenckglichen</unclear> <unclear cert="low" resp="#joint">verstrickung</unclear>, vergicht
 <lb n="8"/>und bekanntnuß.
 <lb n="9"/>Item ungefär anderthalb stund weit von <placeName resp="#ner">Sirnach</placeName>
 <lb n="10"/>gegen <placeName ref="stadtasg-places-295" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Wissenthal</unclear></placeName> <unclear cert="low" resp="#joint">werts</unclear> <unclear cert="low" resp="#joint">wone</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">kromer</unclear>, ge=
-<lb n="11"/>nannt <persName resp="#ner">Baschen Wepfer</persName>, habe ein eigen hauß,
-<lb n="12"/>bißweilen mache er <placeName resp="#ner">Zuerichseckhel</placeName>, bißweilen
-<lb n="13"/>habe er kuehen, seÿe ein huepscher langer mann
+<lb n="11"/>nannt <persName resp="#ner"><unclear cert="low" resp="#joint">Baschen</unclear> <unclear cert="low" resp="#joint">Wepfer</unclear></persName>, habe ein <unclear cert="low" resp="#joint">eigen</unclear> hauß,
+<lb n="12"/>bißweilen mache er <placeName resp="#ner"><unclear cert="low" resp="#joint">Zuerichseckhel</unclear></placeName>, bißweilen
+<lb n="13"/>habe er <unclear cert="low" resp="#joint">kuehen</unclear>, <unclear cert="low" resp="#joint">seÿe</unclear> ein huepscher langer mann
 <lb n="14"/>mit einem braunen bart, der mache falsch
-<lb n="15"/>silberkronen und vor ungefär vier jaren
-<lb n="16"/>habe er iro neün falsch silberkronen, daß sÿ
+<lb n="15"/>silberkronen und vor <unclear cert="low" resp="#joint">ungefär</unclear> vier jaren
+<lb n="16"/>habe er iro <unclear cert="low" resp="#joint">neün</unclear> falsch silberkronen, daß sÿ
 <lb n="17"/>es außgebe und vertreibe, umb den halben theil,
-<lb n="18"/>waß sÿ darauß erlösen könne, welche sÿ auß=
+<lb n="18"/>waß sÿ darauß <unclear cert="low" resp="#joint">erlösen</unclear> könne, welche sÿ auß=
 <lb n="19"/>geben und vertriben habe, biß an zwo, und
-<lb n="20"/>aber darueber zue <placeName ref="stadtasg-places-11" cert="medium" resp="#ner">Altstetten im</placeName> <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Reinthal</placeName> in
+<lb n="20"/>aber darueber zue <placeName ref="stadtasg-places-11" cert="medium" resp="#ner">Altstetten im</placeName> <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Reinthal</unclear></placeName> in
 <lb n="21"/>fangenschaft komen.
-<lb n="22"/>Derselbig krömer gebe derselben silberkronen
-<lb n="23"/>auß wo er könne und möge, und habe <unclear cert="low" resp="#joint">einen</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">genannt</unclear> <persName resp="#ner">der Weidhauß</persName>, die kunst auch
-<lb n="25"/>gelert.
+<lb n="22"/>Derselbig <unclear cert="low" resp="#joint">krömer</unclear> gebe derselben silberkronen
+<lb n="23"/>auß wo er könne und möge, und habe einen
+<lb n="24"/><unclear cert="medium" resp="#joint">anderen</unclear> genannt <persName resp="#ner">der <unclear cert="low" resp="#joint">Weidhauß</unclear></persName>, die kunst auch
+<lb n="25"/><unclear cert="low" resp="#joint">gelert</unclear>.
 <pb facs="StadtASG_Missive_1646_5998.jpg" n="4"/>
 <lb n="26"/>Unser freündtlich willig dienst und <unclear cert="low" resp="#joint">waß</unclear> wir liebs
-<lb n="27"/>und guots vermoegend <unclear cert="medium" resp="#joint">zuovor</unclear>, <unclear cert="low" resp="#joint">fromer</unclear> <unclear cert="low" resp="#joint">Ehrnvester</unclear>
-<lb n="28"/>und <unclear cert="low" resp="#joint">Weiser</unclear>, <unclear cert="medium" resp="#joint">Jnsonders</unclear> lieber herr Landtvogt,
-<lb n="29"/>guoter freünd und Nachbar.
-<lb n="30"/>Nach dem ein <unclear cert="low" resp="#joint">verdaechtige</unclear> <unclear cert="low" resp="#joint">weibs</unclear> <unclear cert="low" resp="#joint">person</unclear> in unser <unclear cert="medium" resp="#joint">fan</unclear>-
-<lb n="31"/><unclear cert="medium" resp="#joint">genschafft</unclear> <unclear cert="medium" resp="#joint">komen</unclear>, hat dieselbig, nebend <unclear cert="low" resp="#joint">anderm</unclear>,
-<lb n="32"/><unclear cert="low" resp="#joint">auf</unclear> <unclear cert="low" resp="#joint">einen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Kroemer</unclear></persName> nit weit von <placeName resp="#ner"><unclear cert="low" resp="#joint">Sirnach</unclear></placeName> in <unclear cert="low" resp="#joint">euwrer</unclear>
-<lb n="33"/>Amptsverwaltung gelegen, <unclear cert="medium" resp="#joint">bekent</unclear>, wie ir
-<lb n="34"/>auß beyligendem extract mit mehrerm
-<lb n="35"/><unclear cert="medium" resp="#joint">zuovermemen</unclear>; <unclear cert="medium" resp="#joint">so</unclear> wir nit <unclear cert="low" resp="#joint">ermanglen</unclear>
-<lb n="36"/><unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">solches</unclear> bey <unclear cert="low" resp="#joint">zeigern</unclear> diß, allein deßhalb ab-
+<lb n="27"/>und <unclear cert="medium" resp="#joint">guots</unclear> <unclear cert="medium" resp="#joint">vermoegend</unclear> zuovor, <unclear cert="low" resp="#joint">fromer</unclear> <unclear cert="low" resp="#joint">Ehrnvester</unclear>
+<lb n="28"/>und <unclear cert="low" resp="#joint">Weiser</unclear>, Jnsonders lieber herr Landtvogt,
+<lb n="29"/><unclear cert="medium" resp="#joint">guoter</unclear> freünd und Nachbar.
+<lb n="30"/>Nach dem ein <unclear cert="low" resp="#joint">verdaechtige</unclear> weibs person in unser fan-
+<lb n="31"/>genschafft komen, hat dieselbig, nebend <unclear cert="low" resp="#joint">anderm</unclear>,
+<lb n="32"/><unclear cert="low" resp="#joint">auf</unclear> <unclear cert="low" resp="#joint">einen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Kroemer</unclear></persName> nit weit <unclear cert="medium" resp="#joint">von</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Sirnach</unclear></placeName> in <unclear cert="low" resp="#joint">euwrer</unclear>
+<lb n="33"/>Amptsverwaltung gelegen, <unclear cert="low" resp="#joint">bekent</unclear>, wie ir
+<lb n="34"/><unclear cert="medium" resp="#joint">auß</unclear> beyligendem extract mit mehrerm
+<lb n="35"/><unclear cert="medium" resp="#joint">zuovermemen</unclear>; <unclear cert="medium" resp="#joint">so</unclear> wir nit <unclear cert="medium" resp="#joint">ermanglen</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="medium" resp="#joint">solches</unclear> bey <unclear cert="low" resp="#joint">zeigern</unclear> <unclear cert="medium" resp="#joint">diß</unclear>, <unclear cert="medium" resp="#joint">allein</unclear> deßhalb ab-
 <lb n="37"/><unclear cert="low" resp="#joint">gesandtem</unclear> <unclear cert="low" resp="#joint">leüffersbotten</unclear>, beneben einer
-<lb n="38"/>andern abschrifft etlicher boeser <unclear cert="low" resp="#joint">buoben</unclear>,
-<lb n="39"/>die sy gleicher gestalt angegeben, guoter nach-
-<lb n="40"/>barlicher wolmeinung zuo <unclear cert="low" resp="#joint">überschickhen</unclear>.
-<lb n="41"/><unclear cert="medium" resp="#joint">Jm</unclear> fall dann <unclear cert="medium" resp="#joint">eüch</unclear> gelieben wirt den gemelten
-<lb n="42"/><persName resp="#ner">Kroemer</persName> <unclear cert="low" resp="#joint">fengkhlich</unclear> <unclear cert="low" resp="#joint">anzenemen</unclear>, und bey ime
-<lb n="43"/>etwas, deß die gemelte unser <unclear cert="low" resp="#joint">gfangne</unclear> <unclear cert="low" resp="#joint">bezügen</unclear>
-<lb n="44"/><unclear cert="low" resp="#joint">moechte</unclear>, befunden <unclear cert="low" resp="#joint">wurde</unclear>, <unclear cert="medium" resp="#joint">Biten</unclear> wir <unclear cert="low" resp="#joint">eüch</unclear>,
-<lb n="45"/>unß <unclear cert="low" resp="#joint">solches</unclear> unverlengt schrifftlich <unclear cert="low" resp="#joint">anzefüegen</unclear>,
+<lb n="38"/>andern abschrifft etlicher <unclear cert="medium" resp="#joint">boeser</unclear> <unclear cert="low" resp="#joint">buoben</unclear>,
+<lb n="39"/>die sy gleicher gestalt angegeben, <unclear cert="medium" resp="#joint">guoter</unclear> nach-
+<lb n="40"/>barlicher wolmeinung <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">überschickhen</unclear>.
+<lb n="41"/>Jm fall dann eüch gelieben wirt den gemelten
+<lb n="42"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Kroemer</unclear></persName> <unclear cert="low" resp="#joint">fengkhlich</unclear> <unclear cert="low" resp="#joint">anzenemen</unclear>, und bey <unclear cert="medium" resp="#joint">ime</unclear>
+<lb n="43"/><unclear cert="medium" resp="#joint">etwas</unclear>, <unclear cert="medium" resp="#joint">deß</unclear> die <unclear cert="medium" resp="#joint">gemelte</unclear> unser <unclear cert="low" resp="#joint">gfangne</unclear> <unclear cert="low" resp="#joint">bezügen</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">moechte</unclear>, <unclear cert="medium" resp="#joint">befunden</unclear> <unclear cert="medium" resp="#joint">wurde</unclear>, Biten wir <unclear cert="low" resp="#joint">eüch</unclear>,
+<lb n="45"/>unß <unclear cert="medium" resp="#joint">solches</unclear> <unclear cert="medium" resp="#joint">unverlengt</unclear> schrifftlich <unclear cert="low" resp="#joint">anzefüegen</unclear>,
 <lb n="46"/>damit wir gegen <unclear cert="low" resp="#joint">gemelter</unclear> <unclear cert="low" resp="#joint">unsrer</unclear> <unclear cert="low" resp="#joint">gfangnen</unclear>
-<lb n="47"/>(die wir biß dahin aufhalten wellen) dar-
+<lb n="47"/>(<unclear cert="medium" resp="#joint">die</unclear> wir biß dahin <unclear cert="medium" resp="#joint">aufhalten</unclear> wellen) <unclear cert="medium" resp="#joint">dar</unclear>-
 <lb n="48"/>nach procedieren koennen. Daß
-<lb n="49"/>umb <unclear cert="medium" resp="#joint">eüch</unclear> in <unclear cert="low" resp="#joint">anderweeg</unclear> zuoverdienen, und <unclear cert="low" resp="#joint">eüch</unclear>
-<lb n="50"/><unclear cert="low" resp="#joint">sonsten</unclear> freündtschafft und <unclear cert="low" resp="#joint">angeneme</unclear> <unclear cert="low" resp="#joint">liebe</unclear>
-<lb n="51"/>dienst <unclear cert="medium" resp="#joint">zuoerzeigen</unclear>, seyen wir
+<lb n="49"/>umb <unclear cert="low" resp="#joint">eüch</unclear> in <unclear cert="low" resp="#joint">anderweeg</unclear> <unclear cert="medium" resp="#joint">zuoverdienen</unclear>, und <unclear cert="low" resp="#joint">eüch</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">sonsten</unclear> freündtschafft und <unclear cert="low" resp="#joint">angeneme</unclear> <unclear cert="low" resp="#joint">liebe</unclear>
+<lb n="51"/>dienst <unclear cert="low" resp="#joint">zuoerzeigen</unclear>, seyen wir
 <lb n="52"/>erbietig willig und geneigt. Datum
-<lb n="53"/>den. <origDate when="1609" resp="#ner">29.ten Junii Anno etc. 1609</origDate>.
+<lb n="53"/>den. <origDate when="1609" resp="#ner">29.ten <unclear cert="medium" resp="#joint">Junii</unclear> Anno etc. 1609</origDate>.
 <lb n="54"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">Rhate</unclear>
 <lb n="55"/>der Statt <unclear cert="low" resp="#joint">Sanct</unclear> Gallen</orgName>.
-<lb n="56"/>Dem <unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="low" resp="#joint">Ehrnvesten</unclear> und Weisen Barthlome in
-<lb n="57"/>der <unclear cert="low" resp="#joint">Birg</unclear> deß <unclear cert="low" resp="#joint">Rhats</unclear> zuo <placeName ref="stadtasg-places-71" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schweitz</unclear></placeName> Landtvogt im
-<lb n="58"/><unclear cert="low" resp="#joint">Obern</unclear> und Undern <unclear cert="low" resp="#joint">Turgeüw</unclear>, <unclear cert="low" resp="#joint">unserm</unclear> sonders lieben
-<lb n="59"/>herrn und guoten freünd und nachbarn.
+<lb n="56"/>Dem <unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="medium" resp="#joint">Ehrnvesten</unclear> und Weisen <unclear cert="medium" resp="#joint">Barthlome</unclear> in
+<lb n="57"/>der <unclear cert="low" resp="#joint">Birg</unclear> deß <unclear cert="low" resp="#joint">Rhats</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-71" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schweitz</unclear></placeName> Landtvogt im
+<lb n="58"/><unclear cert="low" resp="#joint">Obern</unclear> und <unclear cert="medium" resp="#joint">Undern</unclear> <unclear cert="low" resp="#joint">Turgeüw</unclear>, <unclear cert="low" resp="#joint">unserm</unclear> sonders lieben
+<lb n="59"/>herrn und <unclear cert="medium" resp="#joint">guoten</unclear> freünd und nachbarn.
 </p>
         </body>
     </text>

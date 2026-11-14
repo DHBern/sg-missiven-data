@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2504</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,69 +20,69 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, der Witwe und den Kindern des verstorbenen St. Galler Kirchen- und Schuldienstlers Ulrich Philipp Ochsner bei deren Rückkehr nach St. Gallen wohlwollend zu begegnen. Sie verweisen auf die dreizehn Jahre treuen Dienstes Ochsners sowie auf dessen geringe Besoldung während der Münzsteigerung und bitten um Unterstützung, damit die Familie nicht in Vergessenheit gerät.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1624-09-10" resp="#regest">den 10.ten Septembris, Anno 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2504_9657.jpg" n="1"/>
-<lb n="1"/>Unßer fründtlich willig dinst, unnd was wir ehren, liebs und guets
-<lb n="2"/>vermoegend, zuvor, from, fürsychtig, ehrsam wyß, jnsonders guet fründt,
-<lb n="3"/>unnd gethrüw lieb <orgName role="recipient" resp="#ner">Eydtgnoßen</orgName>. Unß habent wylund herren
-<lb n="4"/><persName resp="#ner">Ulrich Philipp Ochsners</persName> üwers geweßnen kilchendienerßs. hinder-
-<lb n="5"/>laßner witfrauwen unnd kinderen nechstverwandte, unßere lieb-
-<lb n="6"/>en burger, mit sonderem beduren fürbringen laßen, welcher maßen
-<lb n="7"/>Gott der allmechtig denselben jren vetern unnd schwager unlangsten
-<lb n="8"/>zuo synen gnaden durch den zytlichen tod abgeforderet, unnd
-<lb n="9"/>diewyl dann deßselben verlaßne witfrauw sich sambt jren kinderen
-<lb n="10"/>widerumb alher jnn unßere statt als jr vaterlandt zuobegäben
-<lb n="11"/>bedacht, so were an unnß jr flyßige bitt, wir derselben
-<lb n="12"/>mit unßerer intercession an üch befündersam erschynen wolten,
-<lb n="13"/>der hoffnung, soelicher zuo jrem abzug gantz wol und fruchtbarlich
-<lb n="14"/>zuogenießen. Wann nun wir diß nit unzimlich begeren
-<lb n="15"/>versagen weder koennen noch woellen, alß thund wir unß zuovord-
-<lb n="16"/>erist nebent angedüteter fründtschafft gegen üch unßeren gethrüw-
-<lb n="17"/>en lieben <orgName role="recipient" resp="#ner">Eydtgnoßen</orgName> der angeregtem herren <persName resp="#ner">Ochsner</persName> seligen unnd
-<lb n="18"/>den synigen hievor bewißnen guetthaten halb gantz fründtlich be-
-<lb n="19"/>dancken, unnd üch darnebent eydtgnoßisch ersuochen unnd bitten,
-<lb n="20"/>sidtmalen die sach (leider) also beschaffen, daß die vilen vatterloßen
-<lb n="21"/>kinderen, (so ohne anderwertiger handtreichung nit erzogen werden
-<lb n="22"/>moegend) vorhanden, jr woellint soelichen armselligen zuostandt
-<lb n="23"/>wol beherzigen, unnd jnn ansechung bemelts herren <persName resp="#ner">Ochsners</persName> üch
-<lb n="24"/>am kilchen: unnd schuoldienst jnn die 13. jahr lang geleisteter
-<lb n="25"/>thrüwen diensten und ehrlichen verhaltens, wie nit weniger
-<lb n="26"/>der jnn verschinnener beschwerlichen müntzsteigerung gehabten
-<lb n="27"/>geringen bosoedung unnd anderer üch bewußter ursachen mehr,
-<lb n="28"/>gedachte witib unnd kinder zuo jrem abzug jnn gnaden bedencken,
-<lb n="29"/>und jnen mit gedeülicher handtreichung dergstalten günstig begegnen,
-<lb n="30"/>damit sy jres ehewürts und vatters s. tods etwellicher maßen
-<lb n="31"/>wider ergetzt werden moegint, wie dann von unnß, unangesehen
-<lb n="32"/>wir genambts h. <persName resp="#ner">Ochsnerß</persName> s. (den wir glychwol jnn unßeren
-<lb n="33"/>kosten zun studijs erzogen) diensten nit genoßen, auch etwas
-<lb n="34"/>hilff unnd handtreichung diß orts beschicht, unnd unnß nit
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> fründtlich willig <unclear cert="medium" resp="#joint">dinst</unclear>, unnd was wir <unclear cert="medium" resp="#joint">ehren</unclear>, liebs und guets
+<lb n="2"/><unclear cert="low" resp="#joint">vermoegend</unclear>, zuvor, from, <unclear cert="low" resp="#joint">fürsychtig</unclear>, ehrsam wyß, <unclear cert="low" resp="#joint">jnsonders</unclear> <unclear cert="low" resp="#joint">guet</unclear> fründt,
+<lb n="3"/>unnd gethrüw lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>. Unß habent <unclear cert="medium" resp="#joint">wylund</unclear> <unclear cert="medium" resp="#joint">herren</unclear>
+<lb n="4"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Ulrich</unclear> <unclear cert="low" resp="#joint">Philipp</unclear> <unclear cert="low" resp="#joint">Ochsners</unclear></persName> üwers <unclear cert="low" resp="#joint">geweßnen</unclear> <unclear cert="low" resp="#joint">kilchendienerßs</unclear>. hinder-
+<lb n="5"/><unclear cert="low" resp="#joint">laßner</unclear> <unclear cert="low" resp="#joint">witfrauwen</unclear> unnd <unclear cert="low" resp="#joint">kinderen</unclear> nechstverwandte, <unclear cert="low" resp="#joint">unßere</unclear> lieb-
+<lb n="6"/>en <unclear cert="low" resp="#joint">burger</unclear>, mit <unclear cert="low" resp="#joint">sonderem</unclear> <unclear cert="low" resp="#joint">beduren</unclear> fürbringen laßen, welcher <unclear cert="medium" resp="#joint">maßen</unclear>
+<lb n="7"/>Gott der allmechtig denselben <unclear cert="low" resp="#joint">jren</unclear> <unclear cert="low" resp="#joint">vetern</unclear> unnd schwager <unclear cert="low" resp="#joint">unlangsten</unclear>
+<lb n="8"/>zuo <unclear cert="medium" resp="#joint">synen</unclear> gnaden durch den <unclear cert="low" resp="#joint">zytlichen</unclear> tod <unclear cert="low" resp="#joint">abgeforderet</unclear>, unnd
+<lb n="9"/>diewyl dann <unclear cert="low" resp="#joint">deßselben</unclear> <unclear cert="medium" resp="#joint">verlaßne</unclear> <unclear cert="low" resp="#joint">witfrauw</unclear> sich sambt <unclear cert="low" resp="#joint">jren</unclear> <unclear cert="low" resp="#joint">kinderen</unclear>
+<lb n="10"/>widerumb alher jnn <unclear cert="low" resp="#joint">unßere</unclear> statt als jr <unclear cert="low" resp="#joint">vaterlandt</unclear> <unclear cert="low" resp="#joint">zuobegäben</unclear>
+<lb n="11"/>bedacht, so <unclear cert="low" resp="#joint">were</unclear> an unnß jr <unclear cert="medium" resp="#joint">flyßige</unclear> bitt, wir <unclear cert="low" resp="#joint">derselben</unclear>
+<lb n="12"/>mit <unclear cert="low" resp="#joint">unßerer</unclear> intercession an üch <unclear cert="low" resp="#joint">befündersam</unclear> <unclear cert="low" resp="#joint">erschynen</unclear> wolten,
+<lb n="13"/>der hoffnung, <unclear cert="low" resp="#joint">soelicher</unclear> zuo jrem abzug gantz wol und fruchtbarlich
+<lb n="14"/>zuogenießen. Wann nun wir diß nit <unclear cert="medium" resp="#joint">unzimlich</unclear> <unclear cert="low" resp="#joint">begeren</unclear>
+<lb n="15"/>versagen weder <unclear cert="medium" resp="#joint">koennen</unclear> noch <unclear cert="medium" resp="#joint">woellen</unclear>, alß <unclear cert="medium" resp="#joint">thund</unclear> wir <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">zuovord</unclear>-
+<lb n="16"/><unclear cert="low" resp="#joint">erist</unclear> <unclear cert="medium" resp="#joint">nebent</unclear> <unclear cert="low" resp="#joint">angedüteter</unclear> fründtschafft gegen üch <unclear cert="low" resp="#joint">unßeren</unclear> <unclear cert="medium" resp="#joint">gethrüw</unclear>-
+<lb n="17"/>en lieben <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName> der <unclear cert="low" resp="#joint">angeregtem</unclear> <unclear cert="medium" resp="#joint">herren</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Ochsner</unclear></persName> seligen unnd
+<lb n="18"/>den <unclear cert="medium" resp="#joint">synigen</unclear> <unclear cert="low" resp="#joint">hievor</unclear> <unclear cert="low" resp="#joint">bewißnen</unclear> <unclear cert="low" resp="#joint">guetthaten</unclear> halb gantz fründtlich be-
+<lb n="19"/><unclear cert="medium" resp="#joint">dancken</unclear>, unnd üch <unclear cert="medium" resp="#joint">darnebent</unclear> <unclear cert="low" resp="#joint">eydtgnoßisch</unclear> <unclear cert="medium" resp="#joint">ersuochen</unclear> unnd bitten,
+<lb n="20"/><unclear cert="low" resp="#joint">sidtmalen</unclear> die sach (<unclear cert="low" resp="#joint">leider</unclear>) <unclear cert="medium" resp="#joint">also</unclear> beschaffen, <unclear cert="medium" resp="#joint">daß</unclear> die <unclear cert="low" resp="#joint">vilen</unclear> <unclear cert="low" resp="#joint">vatterloßen</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">kinderen</unclear>, (so ohne <unclear cert="medium" resp="#joint">anderwertiger</unclear> <unclear cert="medium" resp="#joint">handtreichung</unclear> nit <unclear cert="medium" resp="#joint">erzogen</unclear> werden
+<lb n="22"/><unclear cert="medium" resp="#joint">moegend</unclear>) <unclear cert="medium" resp="#joint">vorhanden</unclear>, jr <unclear cert="low" resp="#joint">woellint</unclear> <unclear cert="low" resp="#joint">soelichen</unclear> <unclear cert="low" resp="#joint">armselligen</unclear> <unclear cert="low" resp="#joint">zuostandt</unclear>
+<lb n="23"/>wol <unclear cert="low" resp="#joint">beherzigen</unclear>, unnd jnn ansechung bemelts <unclear cert="medium" resp="#joint">herren</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Ochsners</unclear></persName> üch
+<lb n="24"/>am kilchen: unnd <unclear cert="low" resp="#joint">schuoldienst</unclear> jnn die 13. jahr lang <unclear cert="medium" resp="#joint">geleisteter</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">thrüwen</unclear> diensten und ehrlichen verhaltens, wie nit weniger
+<lb n="26"/>der jnn <unclear cert="medium" resp="#joint">verschinnener</unclear> beschwerlichen <unclear cert="low" resp="#joint">müntzsteigerung</unclear> gehabten
+<lb n="27"/>geringen <unclear cert="low" resp="#joint">bosoedung</unclear> unnd <unclear cert="medium" resp="#joint">anderer</unclear> üch bewußter ursachen mehr,
+<lb n="28"/>gedachte <unclear cert="low" resp="#joint">witib</unclear> unnd kinder zuo jrem abzug <unclear cert="low" resp="#joint">jnn</unclear> gnaden <unclear cert="medium" resp="#joint">bedencken</unclear>,
+<lb n="29"/>und <unclear cert="low" resp="#joint">jnen</unclear> mit <unclear cert="low" resp="#joint">gedeülicher</unclear> <unclear cert="medium" resp="#joint">handtreichung</unclear> <unclear cert="low" resp="#joint">dergstalten</unclear> <unclear cert="medium" resp="#joint">günstig</unclear> <unclear cert="low" resp="#joint">begegnen</unclear>,
+<lb n="30"/>damit sy <unclear cert="low" resp="#joint">jres</unclear> <unclear cert="low" resp="#joint">ehewürts</unclear> und <unclear cert="medium" resp="#joint">vatters</unclear> s. <unclear cert="low" resp="#joint">tods</unclear> <unclear cert="low" resp="#joint">etwellicher</unclear> maßen
+<lb n="31"/>wider ergetzt werden <unclear cert="medium" resp="#joint">moegint</unclear>, wie dann von <unclear cert="low" resp="#joint">unnß</unclear>, <unclear cert="medium" resp="#joint">unangesehen</unclear>
+<lb n="32"/>wir <unclear cert="low" resp="#joint">genambts</unclear> <unclear cert="low" resp="#joint">h</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Ochsnerß</unclear></persName> s. (<unclear cert="low" resp="#joint">den</unclear> wir <unclear cert="medium" resp="#joint">glychwol</unclear> <unclear cert="medium" resp="#joint">jnn</unclear> <unclear cert="medium" resp="#joint">unßeren</unclear>
+<lb n="33"/><unclear cert="medium" resp="#joint">kosten</unclear> <unclear cert="medium" resp="#joint">zun</unclear> studijs erzogen) diensten nit <unclear cert="low" resp="#joint">genoßen</unclear>, auch etwas
+<lb n="34"/><unclear cert="low" resp="#joint">hilff</unclear> unnd <unclear cert="medium" resp="#joint">handtreichung</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="medium" resp="#joint">orts</unclear> <unclear cert="medium" resp="#joint">beschicht</unclear>, unnd <unclear cert="low" resp="#joint">unnß</unclear> nit
 <pb facs="StadtASG_Missive_2504_9658.jpg" n="2"/>
-<lb n="35"/>zwyflet, Ir Inn erwaegung aller sachen bewandtnuß hierzuo one diß,
-<lb n="36"/>geneigt unnd guotwillig syn werdint. Daran erwyßend Ir ein,
-<lb n="37"/>Gott wolgefelliges werck, so mehrgemelte wyb unnd kinder Inn
-<lb n="38"/>keinn vergaeß stellen, unnd wir es von derselben waegen umb üch
-<lb n="39"/>unnser gethrüw lieb <orgName resp="#ner">Eidtgnoßen</orgName> hinwiderumb zubeschulden Jeder-
-<lb n="40"/>wylen geneigt syn werdent. Gottes schirm unß sa-
-<lb n="41"/>men zumal wol bevaelchende. Datum den <origDate when="1624" resp="#ner">10.ten Septembris, Anno 1624</origDate>.
-<lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister unnd Rath
+<lb n="35"/><unclear cert="low" resp="#joint">zwyflet</unclear>, Ir Inn erwaegung aller sachen <unclear cert="low" resp="#joint">bewandtnuß</unclear> hierzuo one diß,
+<lb n="36"/>geneigt unnd <unclear cert="low" resp="#joint">guotwillig</unclear> syn werdint. Daran <unclear cert="medium" resp="#joint">erwyßend</unclear> Ir ein,
+<lb n="37"/>Gott wolgefelliges werck, so mehrgemelte <unclear cert="low" resp="#joint">wyb</unclear> unnd kinder Inn
+<lb n="38"/><unclear cert="low" resp="#joint">keinn</unclear> <unclear cert="low" resp="#joint">vergaeß</unclear> stellen, unnd wir es von derselben <unclear cert="medium" resp="#joint">waegen</unclear> umb üch
+<lb n="39"/><unclear cert="low" resp="#joint">unnser</unclear> gethrüw lieb <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName> <unclear cert="low" resp="#joint">hinwiderumb</unclear> <unclear cert="low" resp="#joint">zubeschulden</unclear> Jeder-
+<lb n="40"/><unclear cert="low" resp="#joint">wylen</unclear> geneigt syn <unclear cert="medium" resp="#joint">werdent</unclear>. Gottes schirm <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">sa</unclear>-
+<lb n="41"/><unclear cert="low" resp="#joint">men</unclear> <unclear cert="medium" resp="#joint">zumal</unclear> wol <unclear cert="low" resp="#joint">bevaelchende</unclear>. Datum den <origDate when="1624" resp="#ner">10.ten Septembris, Anno 1624</origDate>.
+<lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> unnd <unclear cert="medium" resp="#joint">Rath</unclear>
 <lb n="43"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2504_9659.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2504_9660.jpg" n="4"/>
-<lb n="44"/>Den fromen, fürsichtigen, ersamen, wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeist-
-<lb n="45"/>er und Rath der statt St. Gallen</orgName>, unseren insonders
-<lb n="46"/>guten fründen und gethrüwen lieben Eydtgnossen.
+<lb n="44"/>Den <unclear cert="low" resp="#joint">fromen</unclear>, fürsichtigen, ersamen, wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeist-
+<lb n="45"/>er und Rath der statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">insonders</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">guten</unclear> fründen <unclear cert="medium" resp="#joint">und</unclear> gethrüwen lieben <unclear cert="medium" resp="#joint">Eydtgnossen</unclear>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2397</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,60 +20,60 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Frankfurt teilen Bürgermeister und Rat zu St. Gallen mit, dass sie den General Grafen von Tilly um einen freien Pass für die bevorstehende Fastenmesse ersucht haben. Tilly habe diesen gnädig erteilt. Die Frankfurter übersenden den Abdruck des Passes zur Kenntnisnahme.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Frankfurt</name><date when="1623-02-24" resp="#regest">24. Februarij A° 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2397_9203.jpg" n="1"/>
-<lb n="1"/>Unßer freundtlich willig dienste zuvor, Ehrnveste,
-<lb n="2"/>Fuersichtige, Ehrsame und Weiße, insonders liebe
-<lb n="3"/>und gute freunde.
-<lb n="4"/>Wegen der bevorstehenden unßerer fasten:
-<lb n="5"/>Meß und damit die Kauff: und handelß:
-<lb n="6"/>leuth ihrer Persohn und Wahren halber, dieselbe
-<lb n="7"/>zubesuchen sicherheit und freyen Paß haben moe:
-<lb n="8"/>gen, haben den herren Generaln, herren <persName resp="#ner">Jo:
-<lb n="9"/>hann Graven von Tilly</persName> p wir dißer tagen
-<lb n="10"/>abermahlß umb ertheylung dessen undertha:
-<lb n="11"/>niglichen zuersuchen nit unterlaßen,
-<lb n="12"/>Und demnach wolermelter herr <persName resp="#ner">General
-<lb n="13"/>Tilly</persName> unß solchen gnedig ertheilt und zugeferttigt,
-<lb n="14"/>wie beyligender Abtruck mit mehrerm
-<lb n="15"/>zuerkennen gibt, Alß thun E. F. W. ihrer und
-<lb n="16"/>der ihrigen Nachrichtung und wißenschafft
-<lb n="17"/>wir hiemit solchen ueberschicken, Und verblei:
+<lb n="1"/><unclear cert="medium" resp="#joint">Unßer</unclear> <unclear cert="medium" resp="#joint">freundtlich</unclear> willig dienste zuvor, <unclear cert="low" resp="#joint">Ehrnveste</unclear>,
+<lb n="2"/><unclear cert="medium" resp="#joint">Fuersichtige</unclear>, <unclear cert="low" resp="#joint">Ehrsame</unclear> und <unclear cert="low" resp="#joint">Weiße</unclear>, insonders liebe
+<lb n="3"/>und gute <unclear cert="medium" resp="#joint">freunde</unclear>.
+<lb n="4"/>Wegen der <unclear cert="low" resp="#joint">bevorstehenden</unclear> <unclear cert="low" resp="#joint">unßerer</unclear> <unclear cert="low" resp="#joint">fasten</unclear>:
+<lb n="5"/><unclear cert="low" resp="#joint">Meß</unclear> und <unclear cert="medium" resp="#joint">damit</unclear> die <unclear cert="low" resp="#joint">Kauff</unclear>: und handelß:
+<lb n="6"/>leuth ihrer Persohn und <unclear cert="low" resp="#joint">Wahren</unclear> halber, dieselbe
+<lb n="7"/><unclear cert="low" resp="#joint">zubesuchen</unclear> sicherheit und <unclear cert="medium" resp="#joint">freyen</unclear> <unclear cert="low" resp="#joint">Paß</unclear> haben <unclear cert="medium" resp="#joint">moe</unclear>:
+<lb n="8"/>gen, haben den <unclear cert="medium" resp="#joint">herren</unclear> <unclear cert="medium" resp="#joint">Generaln</unclear>, herren <persName resp="#ner">Jo:
+<lb n="9"/>hann Graven von Tilly</persName> <unclear cert="low" resp="#joint">p</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">dißer</unclear> tagen
+<lb n="10"/><unclear cert="low" resp="#joint">abermahlß</unclear> umb ertheylung dessen undertha:
+<lb n="11"/>niglichen zuersuchen <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">unterlaßen</unclear>,
+<lb n="12"/>Und demnach <unclear cert="low" resp="#joint">wolermelter</unclear> herr <persName resp="#ner">General
+<lb n="13"/>Tilly</persName> <unclear cert="low" resp="#joint">unß</unclear> solchen gnedig ertheilt und <unclear cert="low" resp="#joint">zugeferttigt</unclear>,
+<lb n="14"/>wie beyligender <unclear cert="low" resp="#joint">Abtruck</unclear> mit mehrerm
+<lb n="15"/><unclear cert="medium" resp="#joint">zuerkennen</unclear> gibt, Alß thun E. F. W. ihrer und
+<lb n="16"/>der ihrigen Nachrichtung und <unclear cert="low" resp="#joint">wißenschafft</unclear>
+<lb n="17"/>wir hiemit solchen <unclear cert="medium" resp="#joint">ueberschicken</unclear>, Und verblei:
 <lb n="18"/>ben denselben zu freundlicher diensterwei:
-<lb n="19"/>sung jederzeit willig und erbietig. Datum
-<lb n="20"/><origDate when="1623-02-24" resp="#ner">den 24. februarij A° 1623</origDate>.
+<lb n="19"/>sung jederzeit willig und <unclear cert="medium" resp="#joint">erbietig</unclear>. Datum
+<lb n="20"/><origDate when="1623-02-24" resp="#ner">den 24. <unclear cert="medium" resp="#joint">februarij</unclear> <unclear cert="low" resp="#joint">A°</unclear> 1623</origDate>.
 <lb n="21"/><orgName role="issuer" resp="#ner">Burgermeister und Rath
-<lb n="22"/>der Statt Franckfurt</orgName>.
+<lb n="22"/>der Statt <unclear cert="medium" resp="#joint">Franckfurt</unclear></orgName>.
 <pb facs="StadtASG_Missive_2397_9204.jpg" n="2"/>
 <lb n="23"/>[]
 <pb facs="StadtASG_Missive_2397_9205.jpg" n="3"/>
-<lb n="24"/>Min fründtlichen gruoß zuvor wiß <persName role="recipient" resp="#ner">Anna</persName> daß ich
-<lb n="25"/>dein schriben, Empfangen hab, und darinen
-<lb n="26"/>vernomen, nach dem begehren. ist, daß du gern
-<lb n="27"/>woeltest wißen was du in allem gehebt habest
-<lb n="28"/>so wiß daß ich dier zu gethelt hab vor deinem schwager
-<lb n="29"/>189 lb darmit ich quittiert bin und du woll
-<lb n="30"/>zu friden bist gwest nüt mehr denn gott
-<lb n="31"/>beuolhen datum denn <origDate when="1619-12-17" resp="#ner">17 decenber 1619</origDate>
-<lb n="32"/><persName role="issuer" resp="#ner">Yseich Graß</persName>
+<lb n="24"/>Min <unclear cert="medium" resp="#joint">fründtlichen</unclear> <unclear cert="low" resp="#joint">gruoß</unclear> zuvor <unclear cert="low" resp="#joint">wiß</unclear> <persName role="recipient" resp="#ner">Anna</persName> daß ich
+<lb n="25"/>dein <unclear cert="low" resp="#joint">schriben</unclear>, Empfangen hab, und <unclear cert="low" resp="#joint">darinen</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">vernomen</unclear>, nach <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">begehren</unclear>. ist, <unclear cert="medium" resp="#joint">daß</unclear> du gern
+<lb n="27"/>woeltest wißen was du in <unclear cert="medium" resp="#joint">allem</unclear> <unclear cert="low" resp="#joint">gehebt</unclear> habest
+<lb n="28"/>so <unclear cert="low" resp="#joint">wiß</unclear> <unclear cert="medium" resp="#joint">daß</unclear> ich <unclear cert="medium" resp="#joint">dier</unclear> zu <unclear cert="low" resp="#joint">gethelt</unclear> <unclear cert="medium" resp="#joint">hab</unclear> vor <unclear cert="low" resp="#joint">deinem</unclear> <unclear cert="medium" resp="#joint">schwager</unclear>
+<lb n="29"/>189 <unclear cert="low" resp="#joint">lb</unclear> darmit ich quittiert bin <unclear cert="medium" resp="#joint">und</unclear> du <unclear cert="medium" resp="#joint">woll</unclear>
+<lb n="30"/>zu friden bist <unclear cert="low" resp="#joint">gwest</unclear> <unclear cert="low" resp="#joint">nüt</unclear> mehr denn gott
+<lb n="31"/><unclear cert="low" resp="#joint">beuolhen</unclear> datum denn <origDate when="1619-12-17" resp="#ner">17 <unclear cert="low" resp="#joint">decenber</unclear> <unclear cert="medium" resp="#joint">1619</unclear></origDate>
+<lb n="32"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Yseich</unclear> <unclear cert="medium" resp="#joint">Graß</unclear></persName>
 <pb facs="StadtASG_Missive_2397_9206.jpg" n="4"/>
 <pb facs="StadtASG_Missive_2397_9207.jpg" n="5"/>
 <pb facs="StadtASG_Missive_2397_9208.jpg" n="6"/>
-<lb n="33"/>Den Ehrsamen, fuersichtigen, ehrbaren und weÿ-
-<lb n="34"/>sen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rath der Statt Sanct
-<lb n="35"/>Gallen</orgName>, unnßern innsonders lieben und guetten freunden.
+<lb n="33"/>Den <unclear cert="low" resp="#joint">Ehrsamen</unclear>, fuersichtigen, <unclear cert="low" resp="#joint">ehrbaren</unclear> und <unclear cert="low" resp="#joint">weÿ</unclear>-
+<lb n="34"/>sen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaister</unclear> und Rath der Statt Sanct
+<lb n="35"/>Gallen</orgName>, <unclear cert="low" resp="#joint">unnßern</unclear> innsonders lieben und guetten freunden.
 </p>
         </body>
     </text>

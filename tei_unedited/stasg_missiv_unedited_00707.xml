@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 707</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">König Heinrich II. von Frankreich antwortet auf die Beschwerde der Eidgenossen über die Erhebung von Zöllen und Subsidien auf Waren, insbesondere Gewürze und Safran. Er erklärt, durch ein neues Edikt seien die alten, getrennten Abgaben zu einer einzigen «imposition foraine» zusammengefasst und sogar gesenkt worden. Die bisherige niedrigere Besteuerung sei auf das Nachsehen der Pächter zurückzuführen. Als Vorleistung befreit er die eidgenössischen Kaufleute vorläufig von der Zahlung dieser Abgaben. Zudem verweist er auf die schwierige Lage bei der Forderung von Geldern des Markgrafen Albrecht von Brandenburg.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">König Heinrich II. von Frankreich</name><placeName resp="#regest">Paris</placeName><date when="1552" resp="#regest">fag 1552</date></correspAction><correspAction type="received"><name resp="#regest">Eidgenossen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,159 +35,159 @@
 <p>
 <pb facs="StadtASG_Missive_707_1733.JPG" n="1"/>
 <lb n="1"/><persName role="issuer" resp="#ner">Henry</persName> par la grace de dieu roy de France. <unclear cert="low" resp="#joint">Treschiers</unclear>
-<lb n="2"/>et <unclear cert="low" resp="#joint">grantz</unclear> amys, alliez, confederes, et bons <unclear cert="low" resp="#joint">compaires</unclear>. <unclear cert="low" resp="#joint">Nous</unclear>
-<lb n="3"/><unclear cert="low" resp="#joint">avons</unclear> receu la <unclear cert="low" resp="#joint">lre</unclear>. que nous avez <unclear cert="low" resp="#joint">escripte</unclear> par <unclear cert="low" resp="#joint">vre</unclear>. <unclear cert="low" resp="#joint">depputé</unclear>
-<lb n="4"/><unclear cert="low" resp="#joint">pnt</unclear>. porteur et par le contenu de <unclear cert="low" resp="#joint">icelle</unclear> <unclear cert="low" resp="#joint">lre</unclear>. et ce q. vostred.
-<lb n="5"/>depputé nous a dit <unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">bouche</unclear> entendu la remonstrance
+<lb n="2"/>et <unclear cert="low" resp="#joint">grantz</unclear> amys, alliez, confederes, et <unclear cert="medium" resp="#joint">bons</unclear> <unclear cert="low" resp="#joint">compaires</unclear>. <unclear cert="low" resp="#joint">Nous</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">avons</unclear> receu la <unclear cert="low" resp="#joint">lre</unclear>. que <unclear cert="medium" resp="#joint">nous</unclear> avez <unclear cert="low" resp="#joint">escripte</unclear> par <unclear cert="low" resp="#joint">vre</unclear>. <unclear cert="low" resp="#joint">depputé</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">pnt</unclear>. porteur et par le contenu de <unclear cert="low" resp="#joint">icelle</unclear> <unclear cert="low" resp="#joint">lre</unclear>. et ce <unclear cert="low" resp="#joint">q</unclear>. <unclear cert="low" resp="#joint">vostred</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">depputé</unclear> nous a dit <unclear cert="medium" resp="#joint">a</unclear> <unclear cert="medium" resp="#joint">bouche</unclear> entendu la remonstrance
 <lb n="6"/>que vous nous faictes de ce que lon a voulu contraindre
-<lb n="7"/>voz marchans a paier les droictz dimpostz et subsides q.lz
+<lb n="7"/>voz marchans a paier <unclear cert="low" resp="#joint">les</unclear> droictz dimpostz et subsides q.lz
 <lb n="8"/>nous doibvent por. raison des marchandises quilz tirent
-<lb n="9"/>et enlevent de noz royme. et pais, et mesmes pour
-<lb n="10"/>raison des espiceries et du saffran a plus hault pris
-<lb n="11"/>et taux quilz nont <unclear cert="low" resp="#joint">accoustumé</unclear>. Enquoy nous voulons
-<lb n="12"/>bien vous <unclear cert="medium" resp="#joint">fre</unclear>. entendre que par ledict que nous avons
-<lb n="13"/>faict <unclear cert="low" resp="#joint">dernieemem</unclear> <unclear cert="low" resp="#joint">expédier</unclear> <unclear cert="low" resp="#joint">led</unclear>. <unclear cert="low" resp="#joint">reigler</unclear> le paiement
-<lb n="14"/>et perception de noz droitz dimpoz foraine, nous
-<lb n="15"/>navons mis sus aucun subside nouveau, mais au <unclear cert="low" resp="#joint">gtraire</unclear>
-<lb n="16"/><unclear cert="low" resp="#joint">assemblé</unclear> en ung tous les <unclear cert="low" resp="#joint">droitz</unclear> et subsides que se
-<lb n="17"/>paioient <unclear cert="low" resp="#joint">divisement</unclear> <unclear cert="low" resp="#joint">por</unclear>. <unclear cert="low" resp="#joint">raison</unclear> de la traicte <unclear cert="low" resp="#joint">desd</unclear>.
-<lb n="18"/>marchandises. Affin <unclear cert="low" resp="#joint">q</unclear>. pour la consrvacon. de
+<lb n="9"/>et <unclear cert="low" resp="#joint">enlevent</unclear> de noz royme. et pais, et mesmes pour
+<lb n="10"/>raison des espiceries et du <unclear cert="medium" resp="#joint">saffran</unclear> a plus hault <unclear cert="medium" resp="#joint">pris</unclear>
+<lb n="11"/>et <unclear cert="medium" resp="#joint">taux</unclear> quilz <unclear cert="medium" resp="#joint">nont</unclear> <unclear cert="low" resp="#joint">accoustumé</unclear>. <unclear cert="medium" resp="#joint">Enquoy</unclear> <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">voulons</unclear>
+<lb n="12"/>bien vous fre. entendre que par ledict que nous avons
+<lb n="13"/>faict <unclear cert="medium" resp="#joint">dernieemem</unclear> <unclear cert="medium" resp="#joint">expédier</unclear> <unclear cert="medium" resp="#joint">led</unclear>. <unclear cert="medium" resp="#joint">reigler</unclear> le <unclear cert="low" resp="#joint">paiement</unclear>
+<lb n="14"/>et <unclear cert="medium" resp="#joint">perception</unclear> de <unclear cert="medium" resp="#joint">noz</unclear> <unclear cert="low" resp="#joint">droitz</unclear> <unclear cert="low" resp="#joint">dimpoz</unclear> foraine, nous
+<lb n="15"/>navons mis sus aucun <unclear cert="medium" resp="#joint">subside</unclear> nouveau, mais au <unclear cert="low" resp="#joint">gtraire</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">assemblé</unclear> en ung <unclear cert="low" resp="#joint">tous</unclear> <unclear cert="medium" resp="#joint">les</unclear> <unclear cert="low" resp="#joint">droitz</unclear> et subsides que se
+<lb n="17"/>paioient <unclear cert="medium" resp="#joint">divisement</unclear> <unclear cert="medium" resp="#joint">por</unclear>. <unclear cert="medium" resp="#joint">raison</unclear> de la <unclear cert="medium" resp="#joint">traicte</unclear> <unclear cert="low" resp="#joint">desd</unclear>.
+<lb n="18"/><unclear cert="medium" resp="#joint">marchandises</unclear>. <unclear cert="medium" resp="#joint">Affin</unclear> <unclear cert="low" resp="#joint">q</unclear>. pour la consrvacon. de
 <lb n="19"/>nosd. droitz et por. la <unclear cert="low" resp="#joint">commodité</unclear> des marchans qui
-<lb n="20"/>doibvent plustost desirer de <unclear cert="low" resp="#joint">les</unclear> paier en ung seul
-<lb n="21"/>lieu et a une <unclear cert="low" resp="#joint">seule</unclear> foys que en divers lieux et
+<lb n="20"/>doibvent plustost desirer de <unclear cert="low" resp="#joint">les</unclear> <unclear cert="medium" resp="#joint">paier</unclear> en ung <unclear cert="medium" resp="#joint">seul</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">lieu</unclear> et a une <unclear cert="medium" resp="#joint">seule</unclear> foys que en divers lieux et
 <lb n="22"/>a diverses foys. Iceulx droitz feussent levez ensemble
 <lb n="23"/>soubz <unclear cert="low" resp="#joint">led</unclear>. nom <unclear cert="low" resp="#joint">dimposon</unclear>. foraine, qui nous est ung
-<lb n="24"/><unclear cert="medium" resp="#joint">droit</unclear> ancien et <unclear cert="low" resp="#joint">domainal</unclear>. Lequel toutesfoys
-<lb n="25"/>par icell. edict nous avons <unclear cert="low" resp="#joint">encores</unclear> <unclear cert="medium" resp="#joint">por</unclear>. plus grand
-<lb n="26"/><unclear cert="low" resp="#joint">avantaige</unclear> et <unclear cert="low" resp="#joint">soullaigement</unclear> <unclear cert="low" resp="#joint">desd</unclear>. marchans et a
-<lb n="27"/>nre. perte modéré a moindre pris que ne <unclear cert="low" resp="#joint">soulloit</unclear>
-<lb n="28"/>monter la <unclear cert="medium" resp="#joint">cotte</unclear> et taux ancien dicellui et subsides
+<lb n="24"/>droit <unclear cert="medium" resp="#joint">ancien</unclear> et <unclear cert="low" resp="#joint">domainal</unclear>. <unclear cert="medium" resp="#joint">Lequel</unclear> <unclear cert="low" resp="#joint">toutesfoys</unclear>
+<lb n="25"/>par <unclear cert="low" resp="#joint">icell</unclear>. edict <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">avons</unclear> <unclear cert="low" resp="#joint">encores</unclear> por. plus grand
+<lb n="26"/><unclear cert="low" resp="#joint">avantaige</unclear> et <unclear cert="low" resp="#joint">soullaigement</unclear> <unclear cert="low" resp="#joint">desd</unclear>. <unclear cert="medium" resp="#joint">marchans</unclear> et a
+<lb n="27"/><unclear cert="low" resp="#joint">nre</unclear>. <unclear cert="low" resp="#joint">perte</unclear> <unclear cert="low" resp="#joint">modéré</unclear> a moindre <unclear cert="low" resp="#joint">pris</unclear> que ne <unclear cert="low" resp="#joint">soulloit</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">monter</unclear> la <unclear cert="low" resp="#joint">cotte</unclear> et <unclear cert="low" resp="#joint">taux</unclear> ancien <unclear cert="low" resp="#joint">dicellui</unclear> et subsides
 <lb n="29"/><unclear cert="low" resp="#joint">susd</unclear>. De facon quil ny a ung seul marchant qui
 <lb n="30"/>justement sen puisse plaindre ny <unclear cert="low" resp="#joint">doulloir</unclear>. <unclear cert="low" resp="#joint">Bien</unclear>
-<lb n="31"/>est vray <unclear cert="low" resp="#joint">q</unclear>. <unclear cert="low" resp="#joint">vosd</unclear>. marchans alleguent q. depuis le
+<lb n="31"/>est <unclear cert="medium" resp="#joint">vray</unclear> <unclear cert="low" resp="#joint">q</unclear>. <unclear cert="low" resp="#joint">vosd</unclear>. <unclear cert="medium" resp="#joint">marchans</unclear> <unclear cert="low" resp="#joint">alleguent</unclear> <unclear cert="low" resp="#joint">q</unclear>. <unclear cert="low" resp="#joint">depuis</unclear> <unclear cert="low" resp="#joint">le</unclear>
 <pb facs="StadtASG_Missive_707_1734.JPG" n="2"/>
-<lb n="32"/><unclear cert="low" resp="#joint">traicte</unclear> et <unclear cert="low" resp="#joint">paix</unclear>. <unclear cert="low" resp="#joint">Dentre</unclear> <unclear cert="low" resp="#joint">feu</unclear> <unclear cert="low" resp="#joint">nostre</unclear> <unclear cert="low" resp="#joint">tres</unclear> <unclear cert="low" resp="#joint">honnore</unclear> <unclear cert="low" resp="#joint">seigneur</unclear>
-<lb n="33"/>et <unclear cert="low" resp="#joint">pere</unclear> <unclear cert="low" resp="#joint">que</unclear> <unclear cert="low" resp="#joint">Dieu</unclear> <unclear cert="low" resp="#joint">absoille</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">eulx</unclear>. qui fut en <date resp="#ner">lan mil
-<lb n="34"/>cincq cens quinze</date>. Ilz nont reau lesdits droictz et
-<lb n="35"/>subsides a si hault pris quil est arbitre et limite
-<lb n="36"/>par <unclear cert="low" resp="#joint">icelluy</unclear> <unclear cert="low" resp="#joint">eedict</unclear> <unclear cert="low" resp="#joint">Mais</unclear> <unclear cert="low" resp="#joint">ce</unclear> <unclear cert="low" resp="#joint">a</unclear> <unclear cert="low" resp="#joint">este</unclear> <unclear cert="low" resp="#joint">par</unclear> <unclear cert="low" resp="#joint">lintelligence</unclear>
-<lb n="37"/><unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">souffrance</unclear> de ceulx. qui tenoient a ferme le
-<lb n="38"/>nomd. lesdits droictz. et subsides et non du consentement
-<lb n="39"/>de <unclear cert="low" resp="#joint">feu</unclear> <unclear cert="low" resp="#joint">icelluy</unclear> <unclear cert="low" resp="#joint">seigneur</unclear> et <unclear cert="low" resp="#joint">pere</unclear> et <unclear cert="low" resp="#joint">le</unclear> <unclear cert="low" resp="#joint">nostre</unclear>, <unclear cert="low" resp="#joint">En</unclear> <unclear cert="low" resp="#joint">quoy</unclear>
-<lb n="40"/><unclear cert="low" resp="#joint">cy</unclear> a fait <unclear cert="low" resp="#joint">se</unclear> <unclear cert="low" resp="#joint">ledit</unclear> <unclear cert="low" resp="#joint">fermier</unclear> <unclear cert="low" resp="#joint">non</unclear> <unclear cert="low" resp="#joint">eau</unclear> <unclear cert="low" resp="#joint">excederonz</unclear>
-<lb n="41"/><unclear cert="low" resp="#joint">ala</unclear> <unclear cert="low" resp="#joint">diminucion</unclear> de <unclear cert="low" resp="#joint">nosd</unclear>. <unclear cert="low" resp="#joint">droictz</unclear>. <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">crotre</unclear> <unclear cert="low" resp="#joint">ce</unclear>
-<lb n="42"/><unclear cert="low" resp="#joint">parce</unclear> <unclear cert="low" resp="#joint">quun</unclear> <unclear cert="low" resp="#joint">noue</unclear> en suont Juste occacion de
+<lb n="32"/><unclear cert="medium" resp="#joint">traicte</unclear> et <unclear cert="low" resp="#joint">paix</unclear>. <unclear cert="low" resp="#joint">Dentre</unclear> <unclear cert="low" resp="#joint">feu</unclear> <unclear cert="low" resp="#joint">nostre</unclear> <unclear cert="low" resp="#joint">tres</unclear> <unclear cert="low" resp="#joint">honnore</unclear> <unclear cert="low" resp="#joint">seigneur</unclear>
+<lb n="33"/>et <unclear cert="low" resp="#joint">pere</unclear> <unclear cert="low" resp="#joint">que</unclear> <unclear cert="low" resp="#joint">Dieu</unclear> <unclear cert="low" resp="#joint">absoille</unclear> <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">eulx</unclear>. qui <unclear cert="low" resp="#joint">fut</unclear> en <date resp="#ner">lan mil
+<lb n="34"/>cincq cens quinze</date>. Ilz nont reau lesdits <unclear cert="low" resp="#joint">droictz</unclear> et
+<lb n="35"/>subsides a <unclear cert="low" resp="#joint">si</unclear> hault <unclear cert="low" resp="#joint">pris</unclear> quil est <unclear cert="low" resp="#joint">arbitre</unclear> et limite
+<lb n="36"/>par <unclear cert="medium" resp="#joint">icelluy</unclear> <unclear cert="medium" resp="#joint">eedict</unclear> <unclear cert="medium" resp="#joint">Mais</unclear> <unclear cert="medium" resp="#joint">ce</unclear> a <unclear cert="medium" resp="#joint">este</unclear> par <unclear cert="medium" resp="#joint">lintelligence</unclear>
+<lb n="37"/>et <unclear cert="medium" resp="#joint">souffrance</unclear> de ceulx. qui tenoient a ferme <unclear cert="low" resp="#joint">le</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">nomd</unclear>. lesdits <unclear cert="low" resp="#joint">droictz</unclear>. et subsides et non du <unclear cert="low" resp="#joint">consentement</unclear>
+<lb n="39"/>de <unclear cert="medium" resp="#joint">feu</unclear> <unclear cert="medium" resp="#joint">icelluy</unclear> <unclear cert="medium" resp="#joint">seigneur</unclear> et <unclear cert="low" resp="#joint">pere</unclear> et <unclear cert="low" resp="#joint">le</unclear> <unclear cert="low" resp="#joint">nostre</unclear>, <unclear cert="low" resp="#joint">En</unclear> quoy
+<lb n="40"/><unclear cert="medium" resp="#joint">cy</unclear> a fait <unclear cert="low" resp="#joint">se</unclear> <unclear cert="low" resp="#joint">ledit</unclear> <unclear cert="low" resp="#joint">fermier</unclear> <unclear cert="low" resp="#joint">non</unclear> <unclear cert="low" resp="#joint">eau</unclear> <unclear cert="low" resp="#joint">excederonz</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">ala</unclear> <unclear cert="low" resp="#joint">diminucion</unclear> de <unclear cert="low" resp="#joint">nosd</unclear>. <unclear cert="low" resp="#joint">droictz</unclear>. <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">crotre</unclear> ce
+<lb n="42"/>parce <unclear cert="low" resp="#joint">quun</unclear> <unclear cert="low" resp="#joint">noue</unclear> en suont Juste occacion de
 <lb n="43"/>recours aus. taux aucun de vosd. marchans le
-<lb n="44"/>et qualites de la <unclear cert="low" resp="#joint">moderacion</unclear>. que nous en avons
+<lb n="44"/>et qualites de la <unclear cert="medium" resp="#joint">moderacion</unclear>. que nous en <unclear cert="low" resp="#joint">avons</unclear>
 <lb n="45"/>faicte par icelluy elre. eedict Et <unclear cert="low" resp="#joint">toutesfois</unclear> le scavie
-<lb n="46"/>pour <unclear cert="low" resp="#joint">se</unclear> <unclear cert="low" resp="#joint">congnoistre</unclear> <unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">quelle</unclear> <unclear cert="low" resp="#joint">faveur</unclear> et <unclear cert="low" resp="#joint">recommandacion</unclear>
+<lb n="46"/>pour <unclear cert="low" resp="#joint">se</unclear> <unclear cert="low" resp="#joint">congnoistre</unclear> en <unclear cert="low" resp="#joint">quelle</unclear> <unclear cert="low" resp="#joint">faveur</unclear> et <unclear cert="low" resp="#joint">recommandacion</unclear>
 <lb n="47"/><unclear cert="low" resp="#joint">nous</unclear> <unclear cert="low" resp="#joint">avons</unclear> <unclear cert="low" resp="#joint">tout</unclear> <unclear cert="low" resp="#joint">ce</unclear> <unclear cert="low" resp="#joint">qui</unclear> touche l estat en gnal.
 <lb n="48"/>Et a particulier de vos. noz bons amis alliez.
 <lb n="49"/>et confederez. Nous avons accorde que par provision
 <lb n="50"/>vosd. marchans ne sont tenuz paier pour raison de
 <lb n="51"/>La toille de leursd. marchans sur <unclear cert="low" resp="#joint">lune</unclear> <unclear cert="low" resp="#joint">se</unclear> <unclear cert="low" resp="#joint">subside</unclear>
-<lb n="52"/>et Impostz. ny en lune forme quilz. ont <unclear cert="low" resp="#joint">faict</unclear> <unclear cert="low" resp="#joint">parcydevant</unclear>
+<lb n="52"/>et Impostz. ny en lune forme quilz. ont faict <unclear cert="low" resp="#joint">parcydevant</unclear>
 <lb n="53"/>Et <unclear cert="low" resp="#joint">de</unclear> ce leur avons faict expedier noz lettres
 <lb n="54"/>patentes les de inear savere tellez que aulx porteur
-<lb n="55"/><unclear cert="low" resp="#joint">vous</unclear> <unclear cert="low" resp="#joint">exhibera</unclear>. <unclear cert="low" resp="#joint">Destimant</unclear> <unclear cert="low" resp="#joint">que</unclear> <unclear cert="low" resp="#joint">tant</unclear> <unclear cert="low" resp="#joint">ains</unclear>. cy <unclear cert="low" resp="#joint">vous</unclear>
+<lb n="55"/>vous <unclear cert="low" resp="#joint">exhibera</unclear>. <unclear cert="low" resp="#joint">Destimant</unclear> que <unclear cert="medium" resp="#joint">tant</unclear> <unclear cert="medium" resp="#joint">ains</unclear>. cy vous
 <lb n="56"/><unclear cert="low" resp="#joint">nond</unclear>. <unclear cert="low" resp="#joint">amis</unclear>. tousiours trouvez. prestz. a vous gratiffier
-<lb n="57"/>en toutes choses dont vous nous auez faict requirir
-<lb n="58"/>vous ferez le semblable <unclear cert="low" resp="#joint">pour</unclear> <unclear cert="low" resp="#joint">nostre</unclear> <unclear cert="low" resp="#joint">regard</unclear> <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">srain</unclear> <unclear cert="low" resp="#joint">loccacion</unclear>
+<lb n="57"/>en <unclear cert="low" resp="#joint">toutes</unclear> choses dont vous <unclear cert="low" resp="#joint">nous</unclear> <unclear cert="low" resp="#joint">auez</unclear> faict <unclear cert="low" resp="#joint">requirir</unclear>
+<lb n="58"/>vous ferez le semblable pour <unclear cert="low" resp="#joint">nostre</unclear> regard <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">srain</unclear> <unclear cert="low" resp="#joint">loccacion</unclear>
 <pb facs="StadtASG_Missive_707_1735.JPG" n="3"/>
-<lb n="59"/><persName role="issuer" resp="#ner">Hanrych</persName> durch die gnad gottes, künig in <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckrych</placeName>
-<lb n="60"/>gelieptt und guett fründ verwant und verknüpt gedrattsten.
+<lb n="59"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hanrych</unclear></persName> durch die gnad gottes, künig <unclear cert="low" resp="#joint">in</unclear> <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckrych</placeName>
+<lb n="60"/><unclear cert="low" resp="#joint">gelieptt</unclear> und <unclear cert="low" resp="#joint">guett</unclear> fründ <unclear cert="low" resp="#joint">verwant</unclear> und <unclear cert="low" resp="#joint">verknüpt</unclear> <unclear cert="low" resp="#joint">gedrattsten</unclear>.
 <lb n="61"/>Wyr hand empfangen den brieff ir unns geschryben
-<lb n="62"/>hand durch euwern gesantten treger des, un inhalt
-<lb n="63"/>euwer obgemeltt och uns euwer gesant monttlich zuo
-<lb n="64"/>verstand geben hatt och yr unns ermanet, wye
-<lb n="65"/>man hatt wellen zwyngen euwer koufflüt zallen
-<lb n="66"/>etthlich zoel oder gerechtykaytten sy unns scholdig send
-<lb n="67"/>um kouffmans guetter so sy züchent und füerent uß
-<lb n="68"/>unnßr künigrich und lender und namlich von wegen
-<lb n="69"/>spezerry und von safferan mitt hoecheren zol oder tax
-<lb n="70"/>dan sy gewonett hand, uff solychs wend wyr üch wol
-<lb n="71"/>verstendigen das wyr durch unnßr jningst abfertigung
-<lb n="72"/>durch uns thuon der zoellen und gerechtykaytten halb
+<lb n="62"/>hand durch <unclear cert="low" resp="#joint">euwern</unclear> gesantten <unclear cert="low" resp="#joint">treger</unclear> des, un inhalt
+<lb n="63"/>euwer obgemeltt och uns euwer gesant <unclear cert="low" resp="#joint">monttlich</unclear> zuo
+<lb n="64"/><unclear cert="low" resp="#joint">verstand</unclear> geben hatt och yr unns ermanet, wye
+<lb n="65"/>man hatt wellen <unclear cert="low" resp="#joint">zwyngen</unclear> euwer <unclear cert="low" resp="#joint">koufflüt</unclear> zallen
+<lb n="66"/><unclear cert="low" resp="#joint">etthlich</unclear> zoel oder <unclear cert="low" resp="#joint">gerechtykaytten</unclear> sy unns <unclear cert="low" resp="#joint">scholdig</unclear> <unclear cert="low" resp="#joint">send</unclear>
+<lb n="67"/>um kouffmans guetter so sy <unclear cert="low" resp="#joint">züchent</unclear> und <unclear cert="low" resp="#joint">füerent</unclear> <unclear cert="low" resp="#joint">uß</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">unnßr</unclear> künigrich und lender und namlich von wegen
+<lb n="69"/><unclear cert="low" resp="#joint">spezerry</unclear> und von <unclear cert="low" resp="#joint">safferan</unclear> mitt <unclear cert="low" resp="#joint">hoecheren</unclear> zol oder tax
+<lb n="70"/>dan sy gewonett hand, uff <unclear cert="low" resp="#joint">solychs</unclear> wend wyr üch wol
+<lb n="71"/><unclear cert="low" resp="#joint">verstendigen</unclear> das wyr durch <unclear cert="low" resp="#joint">unnßr</unclear> <unclear cert="low" resp="#joint">jningst</unclear> abfertigung
+<lb n="72"/>durch uns thuon der zoellen und <unclear cert="low" resp="#joint">gerechtykaytten</unclear> halb
 <lb n="73"/>so wyr an fyl ortten hand von wegen kouffmans
-<lb n="74"/>guetter och unnßr gerechtykaytten erhaltten werden
-<lb n="75"/>und koufflütt gefürderett sy sollen lieber zallen
-<lb n="76"/>an am aingen artt und in ainer meßs alain dan
-<lb n="77"/>an fyl artten obgemeltten gerechtikaitt, das ist uns
+<lb n="74"/><unclear cert="low" resp="#joint">guetter</unclear> och <unclear cert="low" resp="#joint">unnßr</unclear> <unclear cert="low" resp="#joint">gerechtykaytten</unclear> <unclear cert="low" resp="#joint">erhaltten</unclear> werden
+<lb n="75"/>und <unclear cert="low" resp="#joint">koufflütt</unclear> <unclear cert="low" resp="#joint">gefürderett</unclear> sy sollen lieber zallen
+<lb n="76"/>an am <unclear cert="low" resp="#joint">aingen</unclear> artt und in ainer <unclear cert="low" resp="#joint">meßs</unclear> alain dan
+<lb n="77"/>an fyl <unclear cert="low" resp="#joint">artten</unclear> <unclear cert="low" resp="#joint">obgemeltten</unclear> gerechtikaitt, das ist uns
 <lb n="78"/>ain altte gerechtigkaitt und domayne, wye wol wyr
-<lb n="79"/>durch unnßr jningst abfertigung gemilteret unnd
-<lb n="80"/>gemynderett obgedachtten zol oder gerechtigkaitten hand
-<lb n="81"/>unns zuo grossen nachtayl und abgang damytt
-<lb n="82"/>dye koufflütt gefürderett werden nach dem altten tax
+<lb n="79"/>durch <unclear cert="low" resp="#joint">unnßr</unclear> <unclear cert="low" resp="#joint">jningst</unclear> abfertigung <unclear cert="low" resp="#joint">gemilteret</unclear> unnd
+<lb n="80"/>gemynderett obgedachtten zol oder <unclear cert="low" resp="#joint">gerechtigkaitten</unclear> hand
+<lb n="81"/>unns zuo grossen <unclear cert="low" resp="#joint">nachtayl</unclear> und abgang <unclear cert="low" resp="#joint">damytt</unclear>
+<lb n="82"/><unclear cert="low" resp="#joint">dye</unclear> <unclear cert="low" resp="#joint">koufflütt</unclear> <unclear cert="low" resp="#joint">gefürderett</unclear> werden nach dem <unclear cert="low" resp="#joint">altten</unclear> tax
 <lb n="83"/>oder zoellen, das sich kain kouffman mytt der
 <lb n="84"/>warhaitt sich kan klagen, wol war yst das euwer ob
-<lb n="85"/>gemeltten tüsth koufflüt syder der aynung und fryda
-<lb n="86"/>zwüschent unnßr erlichen herren und vatter dem gott
-<lb n="87"/>gnedig syg geschachen im <date resp="#ner">tussend fünff hündertt un
-<lb n="88"/>fünffzecchnesten jar</date> sy nytt zaltt hand obgemeltten ge
-<lb n="89"/>rechtigkaitt und zoellen mitt so hochem geltt wye
-<lb n="90"/>es genampsett un gemeldett ist in unnßr jningsten
-<lb n="91"/>mandatt das ist aber geschaechen durch unsser amptlütt
+<lb n="85"/><unclear cert="low" resp="#joint">gemeltten</unclear> <unclear cert="low" resp="#joint">tüsth</unclear> <unclear cert="low" resp="#joint">koufflüt</unclear> syder der <unclear cert="low" resp="#joint">aynung</unclear> und <unclear cert="low" resp="#joint">fryda</unclear>
+<lb n="86"/><unclear cert="low" resp="#joint">zwüschent</unclear> <unclear cert="low" resp="#joint">unnßr</unclear> erlichen herren und vatter dem gott
+<lb n="87"/>gnedig <unclear cert="low" resp="#joint">syg</unclear> geschachen im <date resp="#ner"><unclear cert="low" resp="#joint">tussend</unclear> fünff <unclear cert="low" resp="#joint">hündertt</unclear> un
+<lb n="88"/><unclear cert="low" resp="#joint">fünffzecchnesten</unclear> jar</date> sy <unclear cert="low" resp="#joint">nytt</unclear> <unclear cert="low" resp="#joint">zaltt</unclear> hand <unclear cert="low" resp="#joint">obgemeltten</unclear> ge
+<lb n="89"/><unclear cert="low" resp="#joint">rechtigkaitt</unclear> und zoellen mitt so hochem geltt wye
+<lb n="90"/>es <unclear cert="low" resp="#joint">genampsett</unclear> un <unclear cert="low" resp="#joint">gemeldett</unclear> ist in <unclear cert="low" resp="#joint">unnßr</unclear> <unclear cert="low" resp="#joint">jningsten</unclear>
+<lb n="91"/>mandatt das ist aber <unclear cert="low" resp="#joint">geschaechen</unclear> durch unsser amptlütt
 <pb facs="StadtASG_Missive_707_1736.JPG" n="4"/>
 <lb n="92"/><unclear cert="low" resp="#joint">sy</unclear> handt nach gelassen oder <unclear cert="low" resp="#joint">geschaczen</unclear> lassen in
-<lb n="93"/>solicher gestalt un on erlopnuß und bwilgung unß
-<lb n="94"/>herr <unclear cert="low" resp="#joint">vatt</unclear> <unclear cert="medium" resp="#joint">sellig</unclear> und unß, des sy unsser ampt
-<lb n="95"/>lutt nit gwalt gehept hand zuo mynderung <unclear cert="low" resp="#joint">unsser</unclear>
-<lb n="96"/>gerechtikait, wie wol wir <unclear cert="low" resp="#joint">guot</unclear> <unclear cert="low" resp="#joint">fuog</unclear> und recht <unclear cert="low" resp="#joint">hett</unclear>
-<lb n="97"/>zuo <unclear cert="medium" resp="#joint">empfachen</unclear> den <unclear cert="medium" resp="#joint">altten</unclear> <unclear cert="low" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">vo</unclear> euwere <unclear cert="low" resp="#joint">kouffluott</unclear>
-<lb n="98"/>lutt des jungsten, edit, damyt <unclear cert="low" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">spueren</unclear> das
-<lb n="99"/>wir <unclear cert="low" resp="#joint">gnagt</unclear> und <unclear cert="low" resp="#joint">aine</unclear> <unclear cert="low" resp="#joint">guott</unclear> <unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">uech</unclear> <unclear cert="low" resp="#joint">geben</unclear>
-<lb n="100"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">erkenne</unclear> <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">euch</unclear> furdere und in befelch
-<lb n="101"/>haben namlich in general und <unclear cert="low" resp="#joint">partikulier</unclear> das ist
-<lb n="102"/><unclear cert="low" resp="#joint">al</unclear> in ainer <unclear cert="low" resp="#joint">som</unclear> und den ain <unclear cert="low" resp="#joint">lczigen</unclear> under <unclear cert="medium" resp="#joint">uech</unclear>,
-<lb n="103"/>unß guott frund <unclear cert="low" resp="#joint">vbwndten</unclear> und <unclear cert="low" resp="#joint">puncktgnossen</unclear>,
+<lb n="93"/>solicher gestalt un on erlopnuß und <unclear cert="low" resp="#joint">bwilgung</unclear> unß
+<lb n="94"/>herr <unclear cert="low" resp="#joint">vatt</unclear> <unclear cert="low" resp="#joint">sellig</unclear> und <unclear cert="medium" resp="#joint">unß</unclear>, des sy <unclear cert="medium" resp="#joint">unsser</unclear> ampt
+<lb n="95"/>lutt nit gwalt gehept hand zuo <unclear cert="medium" resp="#joint">mynderung</unclear> <unclear cert="low" resp="#joint">unsser</unclear>
+<lb n="96"/><unclear cert="medium" resp="#joint">gerechtikait</unclear>, wie wol wir <unclear cert="low" resp="#joint">guot</unclear> <unclear cert="low" resp="#joint">fuog</unclear> und <unclear cert="medium" resp="#joint">recht</unclear> <unclear cert="low" resp="#joint">hett</unclear>
+<lb n="97"/>zuo <unclear cert="medium" resp="#joint">empfachen</unclear> den altten <unclear cert="medium" resp="#joint">tax</unclear> <unclear cert="low" resp="#joint">vo</unclear> <unclear cert="medium" resp="#joint">euwere</unclear> <unclear cert="low" resp="#joint">kouffluott</unclear>
+<lb n="98"/>lutt des jungsten, edit, damyt ir spueren das
+<lb n="99"/>wir gnagt und aine <unclear cert="medium" resp="#joint">guott</unclear> willen und <unclear cert="medium" resp="#joint">uech</unclear> geben
+<lb n="100"/>zuo <unclear cert="medium" resp="#joint">erkenne</unclear> das wir euch furdere und in befelch
+<lb n="101"/>haben namlich <unclear cert="medium" resp="#joint">in</unclear> general und <unclear cert="low" resp="#joint">partikulier</unclear> das ist
+<lb n="102"/><unclear cert="medium" resp="#joint">al</unclear> in ainer <unclear cert="low" resp="#joint">som</unclear> und den ain <unclear cert="low" resp="#joint">lczigen</unclear> under <unclear cert="low" resp="#joint">uech</unclear>,
+<lb n="103"/><unclear cert="medium" resp="#joint">unß</unclear> guott frund <unclear cert="low" resp="#joint">vbwndten</unclear> und <unclear cert="low" resp="#joint">puncktgnossen</unclear>,
 <lb n="104"/>hand <unclear cert="low" resp="#joint">wir</unclear> zuo geben, par <unclear cert="low" resp="#joint">prouyssion</unclear>, das euwer
-<lb n="105"/><unclear cert="low" resp="#joint">kouffluot</unclear> <unclear cert="medium" resp="#joint">nytt</unclear> werdt <unclear cert="low" resp="#joint">scholdig</unclear> sin zuo bezalle von
-<lb n="106"/><unclear cert="low" resp="#joint">irra</unclear> <unclear cert="low" resp="#joint">obgemeltt</unclear> kouffmans <unclear cert="low" resp="#joint">guott</unclear> so sy <unclear cert="medium" resp="#joint">fuerend</unclear>
-<lb n="107"/><unclear cert="low" resp="#joint">ussem</unclear> land namlich ander <unclear cert="medium" resp="#joint">zoel</unclear> oder ain langungen
-<lb n="108"/>oder in anderer <unclear cert="medium" resp="#joint">gstalt</unclear> <unclear cert="medium" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">wie</unclear> sy bys her thuon hand
-<lb n="109"/>und des sy hand <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">inna</unclear> lassen <unclear cert="low" resp="#joint">usferttigen</unclear> unß
-<lb n="110"/>brief und sygel nach aller <unclear cert="medium" resp="#joint">notturft</unclear> wie dan treger
-<lb n="111"/>des briefs euch ain zaige wirtt, <unclear cert="low" resp="#joint">schczen</unclear> wie <unclear cert="low" resp="#joint">ir</unclear>
-<lb n="112"/>unns alweg hand <unclear cert="low" resp="#joint">erfonde</unclear> <unclear cert="medium" resp="#joint">willig</unclear> euch zuo <unclear cert="low" resp="#joint">furderre</unclear>
-<lb n="113"/>in allen dinge das ir uns hand lassen anlange
+<lb n="105"/><unclear cert="low" resp="#joint">kouffluot</unclear> <unclear cert="low" resp="#joint">nytt</unclear> <unclear cert="medium" resp="#joint">werdt</unclear> <unclear cert="medium" resp="#joint">scholdig</unclear> sin zuo <unclear cert="medium" resp="#joint">bezalle</unclear> von
+<lb n="106"/><unclear cert="low" resp="#joint">irra</unclear> <unclear cert="low" resp="#joint">obgemeltt</unclear> kouffmans <unclear cert="low" resp="#joint">guott</unclear> so sy <unclear cert="low" resp="#joint">fuerend</unclear>
+<lb n="107"/><unclear cert="low" resp="#joint">ussem</unclear> land namlich ander zoel oder ain <unclear cert="medium" resp="#joint">langungen</unclear>
+<lb n="108"/>oder in anderer gstalt <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">wie</unclear> sy bys her thuon hand
+<lb n="109"/>und des sy hand <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">inna</unclear> lassen <unclear cert="low" resp="#joint">usferttigen</unclear> <unclear cert="medium" resp="#joint">unß</unclear>
+<lb n="110"/>brief und <unclear cert="medium" resp="#joint">sygel</unclear> nach aller <unclear cert="medium" resp="#joint">notturft</unclear> <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">dan</unclear> <unclear cert="medium" resp="#joint">treger</unclear>
+<lb n="111"/>des briefs <unclear cert="medium" resp="#joint">euch</unclear> ain <unclear cert="medium" resp="#joint">zaige</unclear> wirtt, <unclear cert="low" resp="#joint">schczen</unclear> wie <unclear cert="medium" resp="#joint">ir</unclear>
+<lb n="112"/>unns alweg hand <unclear cert="low" resp="#joint">erfonde</unclear> <unclear cert="low" resp="#joint">willig</unclear> <unclear cert="medium" resp="#joint">euch</unclear> zuo <unclear cert="low" resp="#joint">furderre</unclear>
+<lb n="113"/>in allen <unclear cert="medium" resp="#joint">dinge</unclear> das ir uns hand lassen anlange
 <lb n="114"/><unclear cert="medium" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">glicherwyß</unclear> och thuon werden un gedulden die
-<lb n="115"/><unclear cert="low" resp="#joint">vrsach</unclear>, wytt und von wegen aines <unclear cert="medium" resp="#joint">andere</unclear> brieffs
-<lb n="116"/><unclear cert="low" resp="#joint">vo</unclear> <unclear cert="medium" resp="#joint">uech</unclear> empfange <unclear cert="low" resp="#joint">vo</unclear> <date resp="#ner">xxv october</date> <unclear cert="low" resp="#joint">vschinne</unclear> <unclear cert="medium" resp="#joint">ir</unclear> unns
-<lb n="117"/>pitten <unclear cert="low" resp="#joint">fuedere</unclear> <unclear cert="low" resp="#joint">ethlich</unclear> euwer kouffluott damytt inna
-<lb n="118"/>ethlich soma geltz <unclear cert="low" resp="#joint">inna</unclear> <unclear cert="low" resp="#joint">scholdig</unclear> der margraf Albrecht
-<lb n="119"/><unclear cert="low" resp="#joint">vo</unclear> <placeName ref="stadtasg-places-147" cert="medium" resp="#ner">Brandeburg</placeName> <unclear cert="low" resp="#joint">ethliche</unclear> kouffmans <unclear cert="low" resp="#joint">guott</unclear> die er hantt
-<lb n="120"/>lassen ain neme in zuo <unclear cert="low" resp="#joint">gehoerende</unclear>, ir hand wol
+<lb n="115"/><unclear cert="low" resp="#joint">vrsach</unclear>, <unclear cert="medium" resp="#joint">wytt</unclear> und von wegen aines <unclear cert="low" resp="#joint">andere</unclear> brieffs
+<lb n="116"/><unclear cert="low" resp="#joint">vo</unclear> <unclear cert="low" resp="#joint">uech</unclear> <unclear cert="medium" resp="#joint">empfange</unclear> <unclear cert="low" resp="#joint">vo</unclear> <date resp="#ner"><unclear cert="medium" resp="#joint">xxv</unclear> october</date> <unclear cert="low" resp="#joint">vschinne</unclear> <unclear cert="medium" resp="#joint">ir</unclear> unns
+<lb n="117"/>pitten <unclear cert="medium" resp="#joint">fuedere</unclear> <unclear cert="medium" resp="#joint">ethlich</unclear> euwer <unclear cert="low" resp="#joint">kouffluott</unclear> damytt <unclear cert="low" resp="#joint">inna</unclear>
+<lb n="118"/><unclear cert="low" resp="#joint">ethlich</unclear> soma geltz <unclear cert="low" resp="#joint">inna</unclear> <unclear cert="medium" resp="#joint">scholdig</unclear> der margraf Albrecht
+<lb n="119"/><unclear cert="low" resp="#joint">vo</unclear> <placeName ref="stadtasg-places-147" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Brandeburg</unclear></placeName> <unclear cert="low" resp="#joint">ethliche</unclear> kouffmans <unclear cert="low" resp="#joint">guott</unclear> die er <unclear cert="medium" resp="#joint">hantt</unclear>
+<lb n="120"/>lassen ain neme in zuo <unclear cert="medium" resp="#joint">gehoerende</unclear>, ir hand wol
 <lb n="121"/><unclear cert="low" resp="#joint">vstande</unclear> <unclear cert="low" resp="#joint">wie</unclear> es ain gestalt und sich der handel
-<lb n="122"/>erloffen hand <unclear cert="low" resp="#joint">zwueschen</unclear> im und uns, und <unclear cert="low" resp="#joint">wir</unclear>
-<lb n="123"/>wenig myttel hand <unclear cert="low" resp="#joint">inna</unclear> zuo hilff kome an dem <unclear cert="low" resp="#joint">ort</unclear>,
+<lb n="122"/>erloffen hand <unclear cert="low" resp="#joint">zwueschen</unclear> <unclear cert="medium" resp="#joint">im</unclear> und uns, und <unclear cert="low" resp="#joint">wir</unclear>
+<lb n="123"/>wenig <unclear cert="medium" resp="#joint">myttel</unclear> hand <unclear cert="low" resp="#joint">inna</unclear> zuo hilff <unclear cert="medium" resp="#joint">kome</unclear> an dem <unclear cert="low" resp="#joint">ort</unclear>,
 <pb facs="StadtASG_Missive_707_1737.JPG" n="5"/>
-<lb n="124"/>das wyrt <unclear cert="low" resp="#joint">drsach</unclear> sin das wyr <unclear cert="low" resp="#joint">üech</unclear> <unclear cert="low" resp="#joint">nytt</unclear> <unclear cert="low" resp="#joint">wytt</unclear> des halbe
-<lb n="125"/>schryben werdt. Wyr bitten gott <unclear cert="low" resp="#joint">gelieptt</unclear> und gros
-<lb n="126"/><unclear cert="low" resp="#joint">fruend</unclear> verwant und <unclear cert="low" resp="#joint">fruntt</unclear> und <unclear cert="low" resp="#joint">gevatter</unclear> das er <unclear cert="low" resp="#joint">üech</unclear>
-<lb n="127"/>haby in synner hallygen huot geschrybe zuo <origPlace resp="#ner">Parrys</origPlace>
-<lb n="128"/><unclear cert="low" resp="#joint">fag</unclear> <origDate when="1552" resp="#ner">1552</origDate>.
+<lb n="124"/>das <unclear cert="medium" resp="#joint">wyrt</unclear> <unclear cert="low" resp="#joint">drsach</unclear> sin das <unclear cert="medium" resp="#joint">wyr</unclear> <unclear cert="low" resp="#joint">üech</unclear> <unclear cert="low" resp="#joint">nytt</unclear> <unclear cert="low" resp="#joint">wytt</unclear> des <unclear cert="medium" resp="#joint">halbe</unclear>
+<lb n="125"/>schryben werdt. <unclear cert="medium" resp="#joint">Wyr</unclear> bitten gott <unclear cert="low" resp="#joint">gelieptt</unclear> und gros
+<lb n="126"/><unclear cert="low" resp="#joint">fruend</unclear> <unclear cert="medium" resp="#joint">verwant</unclear> und <unclear cert="low" resp="#joint">fruntt</unclear> und <unclear cert="low" resp="#joint">gevatter</unclear> das er <unclear cert="low" resp="#joint">üech</unclear>
+<lb n="127"/>haby <unclear cert="low" resp="#joint">in</unclear> synner <unclear cert="low" resp="#joint">hallygen</unclear> huot geschrybe <unclear cert="medium" resp="#joint">zuo</unclear> <origPlace resp="#ner">Parrys</origPlace>
+<lb n="128"/><unclear cert="medium" resp="#joint">fag</unclear> <origDate when="1552" resp="#ner">1552</origDate>.
 <pb facs="StadtASG_Missive_707_1738.JPG" n="6"/>
 <pb facs="StadtASG_Missive_707_1739.JPG" n="7"/>
-<lb n="129"/>Et quant a ce que par une <unclear cert="medium" resp="#joint">aultre</unclear> de <unclear cert="medium" resp="#joint">voz</unclear> <unclear cert="medium" resp="#joint">lettres</unclear> du
-<lb n="130"/><origDate resp="#ner"><unclear cert="medium" resp="#joint">xxvme</unclear> <unclear cert="medium" resp="#joint">doctobre</unclear> <unclear cert="medium" resp="#joint">drnr</unclear> passe</origDate> vous <unclear cert="low" resp="#joint">nous</unclear> priez
-<lb n="131"/><unclear cert="medium" resp="#joint">de</unclear> voulloir <unclear cert="low" resp="#joint">favoriser</unclear> aucunes de voz <unclear cert="medium" resp="#joint">marchans</unclear>
-<lb n="132"/>pour le <unclear cert="low" resp="#joint">recouurement</unclear> de <unclear cert="low" resp="#joint">certaine</unclear> <unclear cert="low" resp="#joint">sommes</unclear> <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">dnr</unclear>.
-<lb n="133"/><unclear cert="low" resp="#joint">que</unclear> <unclear cert="low" resp="#joint">ilz</unclear> <unclear cert="low" resp="#joint">sont</unclear> <unclear cert="low" resp="#joint">deuz</unclear> par <unclear cert="low" resp="#joint">le</unclear> <unclear cert="low" resp="#joint">marquis</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Albert</unclear> <unclear cert="low" resp="#joint">de</unclear>
-<lb n="134"/><unclear cert="low" resp="#joint">Brandebourg</unclear></persName> <unclear cert="low" resp="#joint">pour</unclear> raison <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">plusieurs</unclear> <unclear cert="low" resp="#joint">marchandises</unclear>
-<lb n="135"/><unclear cert="low" resp="#joint">quil</unclear> <unclear cert="low" resp="#joint">auoit</unclear> <unclear cert="low" resp="#joint">faict</unclear> <unclear cert="low" resp="#joint">prandre</unclear> a eulx <unclear cert="low" resp="#joint">appartenant</unclear> vous
-<lb n="136"/><unclear cert="low" resp="#joint">auez</unclear> <unclear cert="low" resp="#joint">bien</unclear> <unclear cert="low" resp="#joint">entendu</unclear> <unclear cert="low" resp="#joint">comme</unclear> <unclear cert="low" resp="#joint">les</unclear> <unclear cert="low" resp="#joint">choses</unclear> <unclear cert="low" resp="#joint">sont</unclear> <unclear cert="low" resp="#joint">depuis</unclear>
-<lb n="137"/><unclear cert="low" resp="#joint">passees</unclear> <unclear cert="low" resp="#joint">entre</unclear> <unclear cert="low" resp="#joint">nous</unclear> et <unclear cert="low" resp="#joint">luy</unclear>. <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">le</unclear> peu de
-<lb n="138"/><unclear cert="medium" resp="#joint">moyen</unclear> que <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">auons</unclear> <unclear cert="medium" resp="#joint">de</unclear> les <unclear cert="medium" resp="#joint">ayder</unclear> en cela qui
-<lb n="139"/><unclear cert="medium" resp="#joint">sera</unclear> <unclear cert="medium" resp="#joint">cause</unclear> que <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">nous</unclear> <unclear cert="medium" resp="#joint">depporterons</unclear> de vous
-<lb n="140"/>en <unclear cert="medium" resp="#joint">faire</unclear> plus <unclear cert="low" resp="#joint">longue</unclear> <unclear cert="low" resp="#joint">lettre</unclear> <unclear cert="low" resp="#joint">Priant</unclear> <unclear cert="low" resp="#joint">dieu</unclear>
-<lb n="141"/><unclear cert="low" resp="#joint">Treschiers</unclear> et <unclear cert="medium" resp="#joint">grans</unclear> <unclear cert="medium" resp="#joint">amys</unclear> alliez <unclear cert="medium" resp="#joint">confederez</unclear> <unclear cert="medium" resp="#joint">et</unclear>
+<lb n="129"/>Et quant a ce que par une <unclear cert="low" resp="#joint">aultre</unclear> de <unclear cert="low" resp="#joint">voz</unclear> <unclear cert="low" resp="#joint">lettres</unclear> du
+<lb n="130"/><origDate resp="#ner"><unclear cert="low" resp="#joint">xxvme</unclear> doctobre <unclear cert="medium" resp="#joint">drnr</unclear> passe</origDate> vous nous priez
+<lb n="131"/>de voulloir <unclear cert="low" resp="#joint">favoriser</unclear> aucunes de voz <unclear cert="medium" resp="#joint">marchans</unclear>
+<lb n="132"/>pour le <unclear cert="medium" resp="#joint">recouurement</unclear> de certaine <unclear cert="medium" resp="#joint">sommes</unclear> de <unclear cert="medium" resp="#joint">dnr</unclear>.
+<lb n="133"/>que <unclear cert="medium" resp="#joint">ilz</unclear> <unclear cert="medium" resp="#joint">sont</unclear> <unclear cert="medium" resp="#joint">deuz</unclear> par le <unclear cert="low" resp="#joint">marquis</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Albert</unclear> <unclear cert="low" resp="#joint">de</unclear>
+<lb n="134"/><unclear cert="low" resp="#joint">Brandebourg</unclear></persName> <unclear cert="low" resp="#joint">pour</unclear> raison <unclear cert="medium" resp="#joint">de</unclear> <unclear cert="medium" resp="#joint">plusieurs</unclear> <unclear cert="medium" resp="#joint">marchandises</unclear>
+<lb n="135"/><unclear cert="medium" resp="#joint">quil</unclear> <unclear cert="medium" resp="#joint">auoit</unclear> faict <unclear cert="medium" resp="#joint">prandre</unclear> a eulx <unclear cert="medium" resp="#joint">appartenant</unclear> vous
+<lb n="136"/><unclear cert="medium" resp="#joint">auez</unclear> bien entendu comme les <unclear cert="low" resp="#joint">choses</unclear> <unclear cert="low" resp="#joint">sont</unclear> <unclear cert="low" resp="#joint">depuis</unclear>
+<lb n="137"/><unclear cert="low" resp="#joint">passees</unclear> <unclear cert="low" resp="#joint">entre</unclear> <unclear cert="low" resp="#joint">nous</unclear> et <unclear cert="low" resp="#joint">luy</unclear>. <unclear cert="low" resp="#joint">et</unclear> le peu de
+<lb n="138"/>moyen que nous <unclear cert="low" resp="#joint">auons</unclear> de les ayder en cela qui
+<lb n="139"/><unclear cert="low" resp="#joint">sera</unclear> <unclear cert="low" resp="#joint">cause</unclear> que nous nous <unclear cert="low" resp="#joint">depporterons</unclear> de vous
+<lb n="140"/>en faire plus longue <unclear cert="low" resp="#joint">lettre</unclear> <unclear cert="low" resp="#joint">Priant</unclear> <unclear cert="low" resp="#joint">dieu</unclear>
+<lb n="141"/><unclear cert="low" resp="#joint">Treschiers</unclear> et <unclear cert="medium" resp="#joint">grans</unclear> <unclear cert="medium" resp="#joint">amys</unclear> alliez <unclear cert="medium" resp="#joint">confederez</unclear> et
 <lb n="142"/><unclear cert="medium" resp="#joint">bons</unclear> <unclear cert="medium" resp="#joint">coperes</unclear> <unclear cert="medium" resp="#joint">quil</unclear> vous ayt en sa <unclear cert="low" resp="#joint">saincte</unclear>
-<lb n="143"/>et <unclear cert="low" resp="#joint">digne</unclear> <unclear cert="low" resp="#joint">garde</unclear> <unclear cert="low" resp="#joint">Escript</unclear> <unclear cert="low" resp="#joint">a</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Flauie</unclear></origPlace>
-<lb n="144"/><origDate when="1552" resp="#ner"><unclear cert="low" resp="#joint">Le</unclear> Jour <unclear cert="medium" resp="#joint">de</unclear> <unclear cert="medium" resp="#joint">1552</unclear></origDate>.
+<lb n="143"/>et <unclear cert="low" resp="#joint">digne</unclear> <unclear cert="low" resp="#joint">garde</unclear> <unclear cert="low" resp="#joint">Escript</unclear> a <origPlace resp="#ner"><unclear cert="low" resp="#joint">Flauie</unclear></origPlace>
+<lb n="144"/><origDate when="1552" resp="#ner"><unclear cert="low" resp="#joint">Le</unclear> Jour <unclear cert="low" resp="#joint">de</unclear> 1552</origDate>.
 <pb facs="StadtASG_Missive_707_1740.JPG" n="8"/>
-<lb n="145"/>Copy frantzoesischs des koenigs schryben an die
-<lb n="146"/><orgName role="recipient" resp="#ner">Eidtgnossenn</orgName> von d zoellen ouch der Mar-
-<lb n="147"/>graeffischen vaeung wegen <date resp="#ner">Anno 1553</date>
+<lb n="145"/><unclear cert="low" resp="#joint">Copy</unclear> <unclear cert="low" resp="#joint">frantzoesischs</unclear> des koenigs schryben an die
+<lb n="146"/><orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnossenn</unclear></orgName> von d zoellen ouch der Mar-
+<lb n="147"/>graeffischen <unclear cert="low" resp="#joint">vaeung</unclear> wegen <date resp="#ner">Anno 1553</date>
 </p>
         </body>
     </text>

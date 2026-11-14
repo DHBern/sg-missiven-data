@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2544</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -14,63 +14,69 @@
             <sourceDesc>
                 <msDesc>
                     <msIdentifier>
-                        <idno>StadtASG Missive_2544_9819/9821</idno>
+                        <idno>StadtASG Missive_2544_9819/9822</idno>
                     </msIdentifier>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Hans Graf zu Montfort teilt mit, dass er seinem Forstmeister befohlen habe, ein Paar junge Böcke für St. Gallen zu beschaffen, die dann sofort geliefert würden. Zudem bittet er um schriftliche Auskunft über die Abrechnung mit seinem Münzverwalter Pietro Giovanni Fachinetto, insbesondere über die zwischen dem 1. November 1621 und dem jetzigen Zeitpunkt gelieferten Silbermengen und die dafür erhaltenen Münzen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hans Graf zu Montfort</name><placeName resp="#regest">Schloss Tettnang</placeName><date when="1625-06-05" resp="#regest">datum Schloß Tettnang den. 5. Junij anno 1625. newen calends. etc.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2544_9819.jpg" n="1"/>
-<lb n="1"/><persName role="issuer" resp="#ner">Haug Graf zue Montfort</persName>, herr von
-<lb n="2"/><placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenz</placeName> zue <placeName ref="stadtasg-places-93" cert="medium" resp="#ner">Tettnang</placeName> und <placeName ref="stadtasg-places-84" cert="medium" resp="#ner">Argen</placeName> etc.
-<lb n="3"/>Röm. kays. Mayt., auch Churfst. Pfalz=
-<lb n="4"/>ischer Duxtl. Herzog <persName role="issuer" resp="#ner">Maximilianj</persName>
+<lb n="1"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Haug</unclear> Graf <unclear cert="low" resp="#joint">zue</unclear> Montfort</persName>, herr von
+<lb n="2"/><placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregenz</unclear></placeName> zue <placeName ref="stadtasg-places-93" cert="medium" resp="#ner">Tettnang</placeName> und <placeName ref="stadtasg-places-84" cert="medium" resp="#ner">Argen</placeName> etc.
+<lb n="3"/><unclear cert="low" resp="#joint">Röm</unclear>. kays. Mayt., auch <unclear cert="low" resp="#joint">Churfst</unclear>. <unclear cert="low" resp="#joint">Pfalz=</unclear>
+<lb n="4"/>ischer <unclear cert="low" resp="#joint">Duxtl</unclear>. Herzog <persName role="issuer" resp="#ner">Maximilianj</persName>
 <lb n="5"/>in <placeName ref="stadtasg-places-132" cert="medium" resp="#ner">Bayern</placeName> Rath und Camerer.
-<lb n="6"/>Unnsern fhl. grueß, unnd genaigten willen zuvor, edle,
-<lb n="7"/>veste, frome, ehrnveste, fürsichtige unnd weiße, bsonders
+<lb n="6"/><unclear cert="low" resp="#joint">Unnsern</unclear> <unclear cert="low" resp="#joint">fhl</unclear>. <unclear cert="low" resp="#joint">grueß</unclear>, unnd <unclear cert="low" resp="#joint">genaigten</unclear> willen zuvor, edle,
+<lb n="7"/>veste, frome, <unclear cert="low" resp="#joint">ehrnveste</unclear>, fürsichtige unnd weiße, <unclear cert="low" resp="#joint">bsonders</unclear>
 <lb n="8"/>liebe herrn unnd Nachparen.
 <lb n="9"/>Deroselben ann unnß abganngen schreiben, ist unnß wol,
-<lb n="10"/>unnd zuerecht zuekhomen, unnd haben ablesend darauß
-<lb n="11"/>vernomen, wie die herrn ann etlichen vichwaidt stuckhen,
-<lb n="12"/>sonnderlichen von jungen pümmen, inn mangl stehn, und
-<lb n="13"/>dergleichen von unnß jnen zueertheilen begeren, Alß
-<lb n="14"/>haben wir hieüber Unnerweilt unnseren forstmai=
-<lb n="15"/>stern ghl. bevelch ertheilt, jhren möglichen fleiß an=
-<lb n="16"/>zuewennden, unnd sich umb ein paar dergleichen ehendist
-<lb n="17"/>zuebewerben, so baldt nun solche zur hanndt gebracht
-<lb n="18"/>werden khönnen, so sollen jhnen die alßbalden volgen,
-<lb n="19"/>Am anndern, nach deme dann nun wir inn belde, mit
-<lb n="20"/>unnserem Münnzverwalter s.or <persName resp="#ner">Pietro Giovanni Fachinetjo</persName>,
+<lb n="10"/>unnd <unclear cert="low" resp="#joint">zuerecht</unclear> zuekhomen, unnd haben <unclear cert="low" resp="#joint">ablesend</unclear> <unclear cert="low" resp="#joint">darauß</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">vernomen</unclear>, wie die herrn ann etlichen <unclear cert="low" resp="#joint">vichwaidt</unclear> <unclear cert="low" resp="#joint">stuckhen</unclear>,
+<lb n="12"/>sonnderlichen von jungen <unclear cert="low" resp="#joint">pümmen</unclear>, inn mangl <unclear cert="low" resp="#joint">stehn</unclear>, und
+<lb n="13"/>dergleichen von unnß <unclear cert="low" resp="#joint">jnen</unclear> zueertheilen begeren, <unclear cert="low" resp="#joint">Alß</unclear>
+<lb n="14"/>haben wir <unclear cert="medium" resp="#joint">hieüber</unclear> <unclear cert="medium" resp="#joint">Unnerweilt</unclear> <unclear cert="medium" resp="#joint">unnseren</unclear> <unclear cert="medium" resp="#joint">forstmai=</unclear>
+<lb n="15"/>stern <unclear cert="low" resp="#joint">ghl</unclear>. <unclear cert="low" resp="#joint">bevelch</unclear> ertheilt, <unclear cert="low" resp="#joint">jhren</unclear> möglichen fleiß <unclear cert="low" resp="#joint">an=</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">zuewennden</unclear>, unnd sich umb ein <unclear cert="low" resp="#joint">paar</unclear> dergleichen ehendist
+<lb n="17"/>zuebewerben, so baldt nun solche <unclear cert="low" resp="#joint">zur</unclear> <unclear cert="low" resp="#joint">hanndt</unclear> <unclear cert="low" resp="#joint">gebracht</unclear>
+<lb n="18"/>werden khönnen, so sollen <unclear cert="low" resp="#joint">jhnen</unclear> die <unclear cert="medium" resp="#joint">alßbalden</unclear> volgen,
+<lb n="19"/>Am anndern, nach <unclear cert="low" resp="#joint">deme</unclear> dann nun <unclear cert="low" resp="#joint">wir</unclear> inn <unclear cert="low" resp="#joint">belde</unclear>, mit
+<lb n="20"/><unclear cert="low" resp="#joint">unnserem</unclear> <unclear cert="low" resp="#joint">Münnzverwalter</unclear> s.or <persName resp="#ner">Pietro Giovanni <unclear cert="low" resp="#joint">Fachinetjo</unclear></persName>,
 <lb n="21"/>rechnung zuepflegen willens, unnd unnß was er Fachi=
-<lb n="22"/>netj zue der herrn Münnzstatt, vom <date resp="#ner">1. November Ao. 1621</date>.
-<lb n="23"/>ann, biß dato, für silber, auch wie hoch eingelifert, und
-<lb n="24"/>hergegen bey jhnen für Münnzen, inn was precio ein=
-<lb n="25"/>gewexelt und erhebt, ermangelt, Allß ist unnser
-<lb n="26"/>ghl. gesinnen an die herrn, sije wollen unnß ohnbeschwerdt,
+<lb n="22"/><unclear cert="low" resp="#joint">netj</unclear> zue der herrn <unclear cert="low" resp="#joint">Münnzstatt</unclear>, vom <date resp="#ner">1. November <unclear cert="low" resp="#joint">Ao</unclear>. <unclear cert="low" resp="#joint">1621</unclear></date>.
+<lb n="23"/>ann, biß dato, für silber, auch wie hoch <unclear cert="low" resp="#joint">eingelifert</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="24"/>hergegen bey <unclear cert="low" resp="#joint">jhnen</unclear> für <unclear cert="low" resp="#joint">Münnzen</unclear>, inn was precio ein=
+<lb n="25"/>gewexelt und erhebt, <unclear cert="low" resp="#joint">ermangelt</unclear>, Allß ist <unclear cert="low" resp="#joint">unnser</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">ghl</unclear>. <unclear cert="low" resp="#joint">gesinnen</unclear> an die herrn, <unclear cert="low" resp="#joint">sije</unclear> wollen unnß ohnbeschwerdt,
 <pb facs="StadtASG_Missive_2544_9820.jpg" n="2"/>
-<lb n="27"/>dißes also, unnd in specie. umb die gegeine schriftlichen
-<lb n="28"/>guothaten laßen, das wirt unnß umb dieselben
-<lb n="29"/>anndererorts wider nachbarlichen guen. wln., zuer=
-<lb n="30"/>wideren, denen wir dann ohne das, mit G W. wol
-<lb n="31"/>gewogen verbleiben, datum <origPlace resp="#ner">Schloß Tet=
-<lb n="32"/>nang</origPlace> den. <origDate when="1625-06-05" resp="#ner">5. Junij anno 1625</origDate>. newen calends. etc.
-<lb n="33"/><persName role="issuer" resp="#ner">Haug graf zue
+<lb n="27"/><unclear cert="low" resp="#joint">dißes</unclear> also, unnd in specie. umb die <unclear cert="low" resp="#joint">gegeine</unclear> <unclear cert="low" resp="#joint">schriftlichen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">guothaten</unclear> <unclear cert="low" resp="#joint">laßen</unclear>, das <unclear cert="low" resp="#joint">wirt</unclear> <unclear cert="low" resp="#joint">unnß</unclear> umb dieselben
+<lb n="29"/><unclear cert="medium" resp="#joint">anndererorts</unclear> wider nachbarlichen <unclear cert="low" resp="#joint">guen</unclear>. <unclear cert="low" resp="#joint">wln</unclear>., zuer=
+<lb n="30"/><unclear cert="medium" resp="#joint">wideren</unclear>, denen <unclear cert="low" resp="#joint">wir</unclear> dann ohne das, mit <unclear cert="medium" resp="#joint">G</unclear> <unclear cert="medium" resp="#joint">W</unclear>. wol
+<lb n="31"/><unclear cert="medium" resp="#joint">gewogen</unclear> verbleiben, <unclear cert="medium" resp="#joint">datum</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Schloß</unclear> <unclear cert="low" resp="#joint">Tet=</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">nang</unclear></origPlace> den. <origDate when="1625-06-05" resp="#ner">5. Junij anno 1625</origDate>. <unclear cert="medium" resp="#joint">newen</unclear> calends. <unclear cert="medium" resp="#joint">etc</unclear>.
+<lb n="33"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Haug</unclear> <unclear cert="medium" resp="#joint">graf</unclear> zue
 <lb n="34"/>Montfort</persName>,
-<lb n="35"/>mpria. s.
+<lb n="35"/><unclear cert="low" resp="#joint">mpria</unclear>. <unclear cert="low" resp="#joint">s</unclear>.
 <pb facs="StadtASG_Missive_2544_9821.jpg" n="3"/>
+<pb facs="StadtASG_Missive_2544_9822.jpg" n="4"/>
+<lb n="36"/>Den Edlen, <unclear cert="low" resp="#joint">Vösten</unclear>, <unclear cert="low" resp="#joint">Frommen</unclear>, <unclear cert="low" resp="#joint">Ehrenuesten</unclear>, <unclear cert="low" resp="#joint">Fuersich=</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">tigen</unclear> und Weisen, <unclear cert="low" resp="#joint">N</unclear>: <unclear cert="low" resp="#joint">N</unclear>: <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeisteren</unclear> und Rath,
+<lb n="38"/>der Statt St: Gallen</orgName>: Unnsern <unclear cert="medium" resp="#joint">sonnders</unclear> lieben
+<lb n="39"/>Herren <unclear cert="low" resp="#joint">Nachbauren</unclear>.
+<lb n="40"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear>: <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
 </p>
         </body>
     </text>

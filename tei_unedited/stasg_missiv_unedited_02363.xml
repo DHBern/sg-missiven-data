@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2363</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Stadtammann und Bannerherr Wolfgang Hasler im Namen der vier Höfe im Rheintal berichten Bürgermeister zu St. Gallen, dass sie kürzlich wegen des Weinaufs in St. Gallen gewesen seien. Da man sich nicht einigen konnte, wurde beschlossen, den Sommerwein mit 19 Gulden und 3 Schilling pro Maß zu 9 Kreuzer zu besteuern. Dies wurde durch nachbarliche Freundschaft bestätigt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Stadtammann und Bannerherr Wolfgang Hasler im Namen der vier Höfe im Rheintal</name><placeName resp="#regest">Altstätten</placeName><date when="1622" resp="#regest">Simeonis, et Judae Thadeij Anno Dni salutis 1622</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -39,32 +39,32 @@
 <lb n="3"/>licher williger. dienst undt freundtlicher gruotz.
 <lb n="4"/>sihe E. E. W. hieder zeidt beuohr.
 <lb n="5"/>Demnach so wuerd E. E. W. ohne zweifel,
-<lb n="6"/>wol. bewist sein, wie daß. wir. kurtz. verruckt
-<lb n="7"/>tagen. bei E. E. W. zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Santgallen</placeName>. gewesen. weg
-<lb n="8"/>deß weinlauffß. aber wir. uff dasselbig mal nit
-<lb n="9"/>kuenden mit ein andern vereiniget werden. sonder.
-<lb n="10"/>disen sachen. weiters. uff schub begerdt habend, soel=
-<lb n="11"/>iches. dennen gemeinden. fuer zuschlahen. derohalb=
-<lb n="12"/>Ist. durch unß alle sambt. und sonders beschlossen.
-<lb n="13"/>worden. daß desto uff diß mal der som wein.
+<lb n="6"/>wol. <unclear cert="low" resp="#joint">bewist</unclear> sein, wie daß. wir. kurtz. <unclear cert="low" resp="#joint">verruckt</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">tagen</unclear>. bei E. E. W. <unclear cert="low" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Santgallen</placeName>. gewesen. <unclear cert="low" resp="#joint">weg</unclear>
+<lb n="8"/>deß weinlauffß. <unclear cert="low" resp="#joint">aber</unclear> wir. uff dasselbig mal nit
+<lb n="9"/>kuenden mit <unclear cert="low" resp="#joint">ein</unclear> andern vereiniget werden. sonder.
+<lb n="10"/>disen sachen. weiters. uff <unclear cert="low" resp="#joint">schub</unclear> begerdt habend, <unclear cert="low" resp="#joint">soel=</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">iches</unclear>. <unclear cert="low" resp="#joint">dennen</unclear> <unclear cert="low" resp="#joint">gemeinden</unclear>. <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">zuschlahen</unclear>. derohalb=
+<lb n="12"/>Ist. durch unß <unclear cert="low" resp="#joint">alle</unclear> <unclear cert="low" resp="#joint">sambt</unclear>. und sonders <unclear cert="low" resp="#joint">beschlossen</unclear>.
+<lb n="13"/>worden. daß <unclear cert="low" resp="#joint">desto</unclear> uff diß mal der <unclear cert="low" resp="#joint">som</unclear> wein.
 <lb n="14"/>Namblich 19 fl 3 ß. werden sol. thued die maß.
-<lb n="15"/>9 kr. Ist solches. besehen. und Confirmiert
-<lb n="16"/>worden. durch nachbaurlicher freundtschafft, etc. Hie=
-<lb n="17"/>mit unß. sambtlich wol dem allmaechtig be=
+<lb n="15"/>9 kr. Ist solches. <unclear cert="low" resp="#joint">besehen</unclear>. und Confirmiert
+<lb n="16"/>worden. durch nachbaurlicher <unclear cert="low" resp="#joint">freundtschafft</unclear>, <unclear cert="low" resp="#joint">etc</unclear>. Hie=
+<lb n="17"/>mit unß. sambtlich <unclear cert="low" resp="#joint">wol</unclear> dem allmaechtig be=
 <lb n="18"/>folen. Datum. <origPlace ref="stadtasg-places-11" cert="medium" resp="#ner">Altsteden</origPlace>. <origDate when="1622" resp="#ner">uff den tag. Simeonis,
-<lb n="19"/>et Judae Thadeij Anno Dni salutis 1622</origDate>.
+<lb n="19"/>et Judae Thadeij Anno <unclear cert="low" resp="#joint">Dni</unclear> salutis 1622</origDate>.
 <lb n="20"/>E. E. W.
 <lb n="21"/>dienstwillige,
-<lb n="22"/>Stadamann. und Pannerher.
-<lb n="23"/><persName role="issuer" resp="#ner">Wolfgang Hasler</persName>. Ihn Namen.
-<lb n="24"/>der 4 hoeffen Jm <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Rheinthall</placeName>.
+<lb n="22"/>Stadamann. und <unclear cert="low" resp="#joint">Pannerher</unclear>.
+<lb n="23"/><persName role="issuer" resp="#ner">Wolfgang <unclear cert="low" resp="#joint">Hasler</unclear></persName>. Ihn Namen.
+<lb n="24"/>der 4 <unclear cert="low" resp="#joint">hoeffen</unclear> Jm <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rheinthall</unclear></placeName>.
 <pb facs="StadtASG_Missive_2363_9054.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2363_9055.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2363_9056.jpg" n="4"/>
-<lb n="25"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">ernvesten</unclear>, <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">fuer</unclear>-
-<lb n="26"/>sichtigen und wolweisen herren
+<lb n="25"/>Denen ernvesten, fromen, <unclear cert="low" resp="#joint">fuer</unclear>-
+<lb n="26"/>sichtigen und <unclear cert="low" resp="#joint">wolweisen</unclear> herren
 <lb n="27"/><unclear cert="low" resp="#joint">N</unclear> <unclear cert="low" resp="#joint">N</unclear> <unclear cert="low" resp="#joint">baiden</unclear> <unclear cert="low" resp="#joint">neüw</unclear> <unclear cert="low" resp="#joint">undt</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger-
-<lb n="28"/><unclear cert="low" resp="#joint">meister</unclear> der loblichen stadt
+<lb n="28"/><unclear cert="low" resp="#joint">meister</unclear> der <unclear cert="low" resp="#joint">loblichen</unclear> <unclear cert="low" resp="#joint">stadt</unclear>
 <lb n="29"/>Santgallen</orgName>, unseren <unclear cert="low" resp="#joint">son</unclear>-
 <lb n="30"/><unclear cert="low" resp="#joint">ders</unclear> <unclear cert="low" resp="#joint">gnedigen</unclear> herren zue handen
 <lb n="31"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Santgallen</placeName>.

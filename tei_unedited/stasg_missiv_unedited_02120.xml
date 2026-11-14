@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2120</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf ein Schreiben des Rates von St. Gallen vom 16. des Monats. Sie teilen mit, dass Erzherzog Leopold von Österreich als Gouverneur der Grafschaft Tirol und anderer Vorlande erwartet wird und um starke Kontributionen anhalten soll. Er werde innerhalb von drei Wochen nach Feldkirch kommen, um dort einen Landtag mit den vier Herrschaften vor dem Arlberg abzuhalten. Sein Gefolge solle über 120 Pferde und 210 Personen nicht betragen. Nach dem Landtag werde er vermutlich nach Bregenz und von dort per Schiff nach Konstanz reisen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1619-03-20" resp="#regest">Dato 20. Martij a° 1619</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -43,33 +43,33 @@
 <lb n="7"/>schreiben vernommen: daruff füegen wür
 <lb n="8"/>E. Fst. hiemit inn andtwortt zuewißen, das wür
 <lb n="9"/>bißanhero hievon mehrers nit bericht, alls das ihr
-<lb n="10"/>Dst. keiner andern gestalt herauß ziehe, dann <unclear cert="low" resp="#joint">für</unclear>
-<lb n="11"/><unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">gubernatorn</unclear> <unclear cert="low" resp="#joint">sowol</unclear> der Fr. graffschafft <placeName ref="stadtasg-places-99" cert="medium" resp="#ner">Tirol</placeName>,
-<lb n="12"/>alls auch aller anderen vorlanden sich darzugeben,
+<lb n="10"/><unclear cert="low" resp="#joint">Dst</unclear>. <unclear cert="low" resp="#joint">keiner</unclear> andern gestalt herauß ziehe, dann für
+<lb n="11"/><unclear cert="medium" resp="#joint">einen</unclear> <unclear cert="medium" resp="#joint">gubernatorn</unclear> <unclear cert="medium" resp="#joint">sowol</unclear> der Fr. <unclear cert="low" resp="#joint">graffschafft</unclear> <placeName ref="stadtasg-places-99" cert="medium" resp="#ner">Tirol</placeName>,
+<lb n="12"/><unclear cert="low" resp="#joint">alls</unclear> auch aller anderen <unclear cert="low" resp="#joint">vorlanden</unclear> sich <unclear cert="low" resp="#joint">darzugeben</unclear>,
 <lb n="13"/>und benebens umb starckhe contribution <unclear cert="low" resp="#joint">anzuhalten</unclear>,
-<lb n="14"/><unclear cert="low" resp="#joint">si</unclear> <unclear cert="low" resp="#joint">sollen</unclear> <unclear cert="low" resp="#joint">auch</unclear>, sovil <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">wißend</unclear>, <unclear cert="low" resp="#joint">inner</unclear> 14. tagen
-<lb n="15"/>oder 3. <unclear cert="low" resp="#joint">wochen</unclear> <unclear cert="low" resp="#joint">heraußer</unclear> <unclear cert="low" resp="#joint">nacher</unclear> <placeName ref="stadtasg-places-89" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Veldtkhirch</unclear></placeName> kommen,
-<lb n="16"/>allda den <unclear cert="low" resp="#joint">vier</unclear> <unclear cert="low" resp="#joint">herrschafften</unclear> <unclear cert="low" resp="#joint">vor</unclear> dem <placeName resp="#ner">Arlberg</placeName>, einen
-<lb n="17"/>landtag zuehalten, welches dann, allem verlaut
-<lb n="18"/>nach, allein umb gelt zuthun. Ihr Dst.
-<lb n="19"/>comitat soll, vermög furrier zettels, über 120.
-<lb n="20"/>pferdt und 210. personen nit sein, und ist
-<lb n="21"/>zuevermuethen, sie werden, <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">vollendtem</unclear>
-<lb n="22"/>landtag, inn die herrschafft <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregentz</placeName> herab kommen, und
-<lb n="23"/>von dannen per schiff <unclear cert="low" resp="#joint">nacher</unclear> <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costentz</unclear></placeName> <unclear cert="low" resp="#joint">fahren</unclear>, <unclear cert="low" resp="#joint">von</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">weiterm</unclear> haben wür für dißmal nit aviso.
-<lb n="25"/>So wür E. Fst. nachbarlich communicirn wöllen,
+<lb n="14"/><unclear cert="low" resp="#joint">si</unclear> <unclear cert="low" resp="#joint">sollen</unclear> auch, sovil <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">wißend</unclear>, <unclear cert="medium" resp="#joint">inner</unclear> 14. tagen
+<lb n="15"/>oder 3. wochen <unclear cert="medium" resp="#joint">heraußer</unclear> <unclear cert="medium" resp="#joint">nacher</unclear> <placeName ref="stadtasg-places-89" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Veldtkhirch</unclear></placeName> kommen,
+<lb n="16"/>allda den <unclear cert="medium" resp="#joint">vier</unclear> <unclear cert="medium" resp="#joint">herrschafften</unclear> <unclear cert="medium" resp="#joint">vor</unclear> dem <placeName resp="#ner"><unclear cert="low" resp="#joint">Arlberg</unclear></placeName>, einen
+<lb n="17"/>landtag zuehalten, welches dann, allem <unclear cert="low" resp="#joint">verlaut</unclear>
+<lb n="18"/>nach, <unclear cert="low" resp="#joint">allein</unclear> umb gelt zuthun. Ihr Dst.
+<lb n="19"/>comitat soll, <unclear cert="low" resp="#joint">vermög</unclear> <unclear cert="low" resp="#joint">furrier</unclear> <unclear cert="low" resp="#joint">zettels</unclear>, über 120.
+<lb n="20"/><unclear cert="low" resp="#joint">pferdt</unclear> und 210. personen nit sein, und ist
+<lb n="21"/><unclear cert="low" resp="#joint">zuevermuethen</unclear>, sie werden, <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">vollendtem</unclear>
+<lb n="22"/>landtag, inn die herrschafft <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregentz</unclear></placeName> herab kommen, und
+<lb n="23"/>von dannen <unclear cert="low" resp="#joint">per</unclear> schiff <unclear cert="medium" resp="#joint">nacher</unclear> <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Costentz</unclear></placeName> <unclear cert="medium" resp="#joint">fahren</unclear>, von
+<lb n="24"/><unclear cert="medium" resp="#joint">weiterm</unclear> haben wür für <unclear cert="low" resp="#joint">dißmal</unclear> nit <unclear cert="low" resp="#joint">aviso</unclear>.
+<lb n="25"/>So wür <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Fst</unclear>. nachbarlich communicirn wöllen,
 <lb n="26"/>und verpleiben derselben zue nachbarlichen diensten
-<lb n="27"/>jederzeit wol bejgethon. Dato <origDate when="1619-03-20" resp="#ner">20. Martij a° 1619</origDate>
-<lb n="28"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister und rhat d
-<lb n="29"/>Statt Lindaw</orgName>.
+<lb n="27"/><unclear cert="low" resp="#joint">jederzeit</unclear> wol <unclear cert="low" resp="#joint">bejgethon</unclear>. Dato <origDate when="1619-03-20" resp="#ner">20. Martij a° 1619</origDate>
+<lb n="28"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> und rhat d
+<lb n="29"/>Statt <unclear cert="low" resp="#joint">Lindaw</unclear></orgName>.
 <pb facs="StadtASG_Missive_2120_7942.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2120_7943.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2120_7944.jpg" n="4"/>
 <lb n="30"/>Den
-<lb n="31"/>fuersichtig ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger=
-<lb n="32"/>meister und rhat der statt <unclear cert="low" resp="#joint">Sanckht</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></orgName>,
-<lb n="33"/>unsern besondern lieben und gueten freünden.
+<lb n="31"/><unclear cert="low" resp="#joint">fuersichtig</unclear> ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger=
+<lb n="32"/>meister und rhat der statt <unclear cert="low" resp="#joint">Sanckht</unclear> Gallen</orgName>,
+<lb n="33"/>unsern besondern lieben und <unclear cert="medium" resp="#joint">gueten</unclear> freünden.
 </p>
         </body>
     </text>

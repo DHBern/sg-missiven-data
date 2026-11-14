@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2469</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,67 +20,67 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bestätigen den Empfang der Antwort vom 25. Februar 1624 zu Gunsten von Friedrich Huber und seiner Frau Magdalena Schlaepferin. Sie bitten um Entschuldigung, dass ihr Schreiben vom 3. Februar nicht rechtzeitig zugegangen ist. Zudem ersuchen sie Schaffhausen, künftig bei Verboten gegenüber ihren Bürgern Rücksicht zu nehmen, da sie ihrerseits gleiche Nachbarschaftsregeln einhalten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1624" resp="#regest">Datum den 21. Martii A 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Schaffhausen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2469_9515.jpg" n="1"/>
-<lb n="1"/>Unser fründtlich willig
-<lb n="2"/>dienst, samt was wir ehren liebs
-<lb n="3"/>und guots vermoegendt, zuvor, fromm
-<lb n="4"/>fürsichtig ehrsam und wiß, insonders
-<lb n="5"/>guot fründt und getrüwe liebe Eidt=
-<lb n="6"/>gnoßen.
-<lb n="7"/>Euwer andtwurt den <date resp="#ner">25 t. February</date>
-<lb n="8"/>jüngsthi, zuo gunst H. <persName resp="#ner">Friderich Huobers</persName>
-<lb n="9"/>und seiner hußfrauwen, frouw<persName resp="#ner">Mag=
-<lb n="10"/>dalena Schlaepferin</persName>, an uns ab=
-<lb n="11"/>gangnen schrybens, den abzug belangendt
-<lb n="12"/>haben wir wol empfangen und
-<lb n="13"/>uß selbigen sovil vermerckht, dz
-<lb n="14"/>üch unßers vorberuerten lieben Eidtgnoßen
-<lb n="15"/>uff verwahrte, unser sub dato den <date resp="#ner">3. February</date> noch nit
-<lb n="16"/>eingehandiget worden sein muoß.
-<lb n="17"/>wenigist desselben Inligendt zuo uberschickhen, darmit
-<lb n="18"/>nachricht hetten, dz Ihr meheren bericht und antwurt
-<lb n="19"/>Schrybens fürderlich zuovernemmen hetten. Welches
-<lb n="20"/>Ihr besten gefallen uffnemmen wöllen,
-<lb n="21"/>maindten iedoch, zumahl wie
-<lb n="22"/>wir hoffen wollen, dis werde im
-<lb n="23"/>argten nicht vermerckht. D.
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">fründtlich</unclear> willig
+<lb n="2"/>dienst, samt was wir <unclear cert="low" resp="#joint">ehren</unclear> liebs
+<lb n="3"/>und guots vermoegendt, <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">fromm</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">fürsichtig</unclear> <unclear cert="low" resp="#joint">ehrsam</unclear> und <unclear cert="low" resp="#joint">wiß</unclear>, insonders
+<lb n="5"/>guot <unclear cert="medium" resp="#joint">fründt</unclear> und <unclear cert="medium" resp="#joint">getrüwe</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> Eidt=
+<lb n="6"/><unclear cert="low" resp="#joint">gnoßen</unclear>.
+<lb n="7"/><unclear cert="low" resp="#joint">Euwer</unclear> <unclear cert="low" resp="#joint">andtwurt</unclear> den <date resp="#ner"><unclear cert="low" resp="#joint">25</unclear> <unclear cert="low" resp="#joint">t</unclear>. <unclear cert="low" resp="#joint">February</unclear></date>
+<lb n="8"/><unclear cert="low" resp="#joint">jüngsthi</unclear>, <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">gunst</unclear> H. <persName resp="#ner"><unclear cert="low" resp="#joint">Friderich</unclear> <unclear cert="low" resp="#joint">Huobers</unclear></persName>
+<lb n="9"/>und seiner <unclear cert="low" resp="#joint">hußfrauwen</unclear>, frouw<persName resp="#ner">Mag=
+<lb n="10"/><unclear cert="low" resp="#joint">dalena</unclear> <unclear cert="low" resp="#joint">Schlaepferin</unclear></persName>, an uns ab=
+<lb n="11"/><unclear cert="medium" resp="#joint">gangnen</unclear> <unclear cert="medium" resp="#joint">schrybens</unclear>, den <unclear cert="medium" resp="#joint">abzug</unclear> <unclear cert="medium" resp="#joint">belangendt</unclear>
+<lb n="12"/><unclear cert="medium" resp="#joint">haben</unclear> wir wol empfangen und
+<lb n="13"/>uß <unclear cert="low" resp="#joint">selbigen</unclear> <unclear cert="low" resp="#joint">sovil</unclear> vermerckht, dz
+<lb n="14"/><unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unßers</unclear> <unclear cert="low" resp="#joint">vorberuerten</unclear> <unclear cert="low" resp="#joint">lieben</unclear> <unclear cert="low" resp="#joint">Eidtgnoßen</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">verwahrte</unclear>, <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">sub</unclear> <unclear cert="low" resp="#joint">dato</unclear> <unclear cert="low" resp="#joint">den</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">3</unclear>. <unclear cert="low" resp="#joint">February</unclear></date> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">nit</unclear>
+<lb n="16"/>eingehandiget worden sein <unclear cert="low" resp="#joint">muoß</unclear>.
+<lb n="17"/><unclear cert="low" resp="#joint">wenigist</unclear> <unclear cert="low" resp="#joint">desselben</unclear> <unclear cert="low" resp="#joint">Inligendt</unclear> zuo <unclear cert="low" resp="#joint">uberschickhen</unclear>, <unclear cert="low" resp="#joint">darmit</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">nachricht</unclear> <unclear cert="low" resp="#joint">hetten</unclear>, <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">meheren</unclear> bericht und antwurt
+<lb n="19"/><unclear cert="low" resp="#joint">Schrybens</unclear> <unclear cert="low" resp="#joint">fürderlich</unclear> <unclear cert="low" resp="#joint">zuovernemmen</unclear> hetten. Welches
+<lb n="20"/><unclear cert="medium" resp="#joint">Ihr</unclear> besten <unclear cert="low" resp="#joint">gefallen</unclear> <unclear cert="low" resp="#joint">uffnemmen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>,
+<lb n="21"/><unclear cert="low" resp="#joint">maindten</unclear> <unclear cert="low" resp="#joint">iedoch</unclear>, <unclear cert="low" resp="#joint">zumahl</unclear> wie
+<lb n="22"/><unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hoffen</unclear> wollen, <unclear cert="medium" resp="#joint">dis</unclear> <unclear cert="medium" resp="#joint">werde</unclear> <unclear cert="medium" resp="#joint">im</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">argten</unclear> nicht vermerckht. <unclear cert="low" resp="#joint">D</unclear>.
 <pb facs="StadtASG_Missive_2469_9516.jpg" n="2"/>
-<lb n="24"/>keine abschaimung deß segenmeisters
-<lb n="25"/>gebraucht wollen wir aber
-<lb n="26"/>hiemit nochmalen wegest deß
-<lb n="27"/>verbotts halben ersuechen solch
-<lb n="28"/>fuerskuenfftig inn sölchen caesu
-<lb n="29"/>sich gegs den unsern zueverhalten
-<lb n="30"/>erleüteren werden, dan wir unsers
-<lb n="31"/>theils gegen den euweren ebenmeßige
-<lb n="32"/>nachberschafft zu observiren
-<lb n="33"/>gesinnet sind.
-<lb n="34"/>Sohin uebrigens euer ldt.
-<lb n="35"/>den unsers, odn euweren
-<lb n="36"/>und ghn. <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnßschafft</orgName> angenemes
-<lb n="37"/>gefallen zuerweisen sind wir so
-<lb n="38"/>willig alß stäts unerbietig, alß
+<lb n="24"/><unclear cert="medium" resp="#joint">keine</unclear> <unclear cert="medium" resp="#joint">abschaimung</unclear> deß <unclear cert="low" resp="#joint">segenmeisters</unclear>
+<lb n="25"/>gebraucht <unclear cert="low" resp="#joint">wollen</unclear> wir aber
+<lb n="26"/><unclear cert="medium" resp="#joint">hiemit</unclear> <unclear cert="medium" resp="#joint">nochmalen</unclear> <unclear cert="medium" resp="#joint">wegest</unclear> <unclear cert="medium" resp="#joint">deß</unclear>
+<lb n="27"/><unclear cert="medium" resp="#joint">verbotts</unclear> <unclear cert="medium" resp="#joint">halben</unclear> <unclear cert="medium" resp="#joint">ersuechen</unclear> <unclear cert="medium" resp="#joint">solch</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">fuerskuenfftig</unclear> <unclear cert="medium" resp="#joint">inn</unclear> <unclear cert="medium" resp="#joint">sölchen</unclear> <unclear cert="medium" resp="#joint">caesu</unclear>
+<lb n="29"/>sich <unclear cert="low" resp="#joint">gegs</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">zueverhalten</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">erleüteren</unclear> werden, <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">unsers</unclear>
+<lb n="31"/>theils gegen den <unclear cert="low" resp="#joint">euweren</unclear> <unclear cert="low" resp="#joint">ebenmeßige</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">nachberschafft</unclear> zu <unclear cert="medium" resp="#joint">observiren</unclear>
+<lb n="33"/><unclear cert="medium" resp="#joint">gesinnet</unclear> sind.
+<lb n="34"/><unclear cert="low" resp="#joint">Sohin</unclear> <unclear cert="low" resp="#joint">uebrigens</unclear> <unclear cert="low" resp="#joint">euer</unclear> <unclear cert="low" resp="#joint">ldt</unclear>.
+<lb n="35"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">unsers</unclear>, <unclear cert="low" resp="#joint">odn</unclear> <unclear cert="low" resp="#joint">euweren</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ghn</unclear>. <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnßschafft</unclear></orgName> <unclear cert="low" resp="#joint">angenemes</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">gefallen</unclear> <unclear cert="low" resp="#joint">zuerweisen</unclear> <unclear cert="low" resp="#joint">sind</unclear> wir so
+<lb n="38"/>willig <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">stäts</unclear> <unclear cert="medium" resp="#joint">unerbietig</unclear>, <unclear cert="medium" resp="#joint">alß</unclear>
 <lb n="39"/>wir Gott bittendt, daß Er
-<lb n="40"/>uns sambtlichen inn seinen gnad
-<lb n="41"/>schuz noch lang erhalts zueln.
-<lb n="42"/>Datum den <origDate when="1624-03-21" resp="#ner">21. Martii A 1624</origDate>.
-<lb n="43"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">B. und Rhatt
-<lb n="44"/>der Statt St. Gallen.</orgName>
-<lb n="45"/>an <orgName ref="stadtasg-actors-28" cert="medium" role="recipient" resp="#ner">Burgm. und Rhatt
-<lb n="46"/>der Statt Schaffhusen</orgName>.
+<lb n="40"/>uns <unclear cert="medium" resp="#joint">sambtlichen</unclear> <unclear cert="medium" resp="#joint">inn</unclear> seinen <unclear cert="low" resp="#joint">gnad</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">schuz</unclear> noch lang <unclear cert="low" resp="#joint">erhalts</unclear> <unclear cert="low" resp="#joint">zueln</unclear>.
+<lb n="42"/>Datum den <origDate when="1624-03-21" resp="#ner"><unclear cert="medium" resp="#joint">21</unclear>. <unclear cert="medium" resp="#joint">Martii</unclear> <unclear cert="medium" resp="#joint">A</unclear> 1624</origDate>.
+<lb n="43"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">B</unclear>. und <unclear cert="low" resp="#joint">Rhatt</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">der</unclear> Statt St. Gallen.</orgName>
+<lb n="45"/><unclear cert="medium" resp="#joint">an</unclear> <orgName ref="stadtasg-actors-28" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgm</unclear>. und <unclear cert="low" resp="#joint">Rhatt</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">der</unclear> Statt Schaffhusen</orgName>.
 </p>
         </body>
     </text>

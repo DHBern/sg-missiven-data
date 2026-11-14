@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2403</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,121 +20,121 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten den Vogt zu Neunkirch, ihrem Bürger Othmar Abbenzeller in einem Kaufstreit mit Hans Schüffelberger von Bichswil behilflich zu sein. Schüffelberger habe die gekauften Kühe heimlich gezählt und eine falsche Urkunde über die Hälfte des Eigentums von Lorenz Abbenzeller ausgestellt. Die St. Galler bitten um richterliche Hilfe, damit das Urteil des Bischofs vollstreckt und Abbenzeller die entstandenen Kosten erstattet werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1623" resp="#regest">Datum den 20 ten. Martij. 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Vogt zu Neunkirch</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2403_9233.jpg" n="1"/>
-<lb n="1"/>Unsern freundlichen und geneigten willen
-<lb n="2"/>zuovor, Frommer Ehrsamer und weiser,
-<lb n="3"/>besonders lieber Herr guoter freund und
-<lb n="4"/>Eidtgenoß.
-<lb n="5"/>Vor uns ist abermals verbuor erschinen,
-<lb n="6"/>weiser diß unser angehoeriger burger und
-<lb n="7"/>gerwer, <persName resp="#ner">Schmer Abbenzeller</persName>, mit beistand seins lieben vatters
-<lb n="8"/>unsers rathsfreunds und Zunfftmeisters
-<lb n="9"/><persName resp="#ner">Lorenz Abbenzellers</persName>, uns klags-
-<lb n="10"/>weiß fuerbringend, Wawol der
-<lb n="11"/>Herr in der zueschet ihme Abbenzeller (wie er uns berichtet.)
+<lb n="1"/>Unsern <unclear cert="low" resp="#joint">freundlichen</unclear> und geneigten willen
+<lb n="2"/>zuovor, <unclear cert="low" resp="#joint">Frommer</unclear> <unclear cert="low" resp="#joint">Ehrsamer</unclear> und <unclear cert="low" resp="#joint">weiser</unclear>,
+<lb n="3"/><unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">lieber</unclear> <unclear cert="low" resp="#joint">Herr</unclear> <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">freund</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">Eidtgenoß</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">Vor</unclear> uns ist abermals <unclear cert="low" resp="#joint">verbuor</unclear> <unclear cert="low" resp="#joint">erschinen</unclear>,
+<lb n="6"/><unclear cert="low" resp="#joint">weiser</unclear> diß unser <unclear cert="low" resp="#joint">angehoeriger</unclear> burger und
+<lb n="7"/><unclear cert="low" resp="#joint">gerwer</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Schmer</unclear> <unclear cert="low" resp="#joint">Abbenzeller</unclear></persName>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">beistand</unclear> <unclear cert="low" resp="#joint">seins</unclear> lieben <unclear cert="low" resp="#joint">vatters</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">rathsfreunds</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Zunfftmeisters</unclear>
+<lb n="9"/><persName resp="#ner"><unclear cert="low" resp="#joint">Lorenz</unclear> <unclear cert="low" resp="#joint">Abbenzellers</unclear></persName>, uns <unclear cert="low" resp="#joint">klags</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">weiß</unclear> <unclear cert="low" resp="#joint">fuerbringend</unclear>, <unclear cert="low" resp="#joint">Wawol</unclear> der
+<lb n="11"/>Herr in der zueschet ihme <unclear cert="low" resp="#joint">Abbenzeller</unclear> (<unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">berichtet</unclear>.)
 <lb n="12"/>und seinen amts Underthonen, <persName resp="#ner">Hannß
-<lb n="13"/>Schufelberger</persName> von <placeName resp="#ner">Kichchweil</placeName> gschwebten
-<lb n="14"/>strittigen kauffssach, ein Erkantnus
-<lb n="15"/>ußfahl außgesprochen, daß bemelter
+<lb n="13"/>Schufelberger</persName> von <placeName resp="#ner"><unclear cert="medium" resp="#joint">Kichchweil</unclear></placeName> <unclear cert="medium" resp="#joint">gschwebten</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">strittigen</unclear> <unclear cert="medium" resp="#joint">kauffssach</unclear>, ein <unclear cert="low" resp="#joint">Erkantnus</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">ußfahl</unclear> außgesprochen, daß bemelter
 <lb n="16"/><persName resp="#ner">Schufelberger</persName> mit dem Unserigen soelle
-<lb n="17"/>alhero sich begeben, die erkaufft kauffts fehe
-<lb n="18"/>abzeller, und alßdann ihme dieselbe,
-<lb n="19"/>vermoeg Contracts außrichten und bezahlen
-<lb n="20"/>und an den Uncosten ein gebuerende ab-
-<lb n="21"/>trag thuen soelle, deme aber zuwider,
-<lb n="22"/>so seije er <persName resp="#ner">Schuffelberger</persName> dem Unserigen
-<lb n="23"/>ohnewuessend und hinderrugs hiezuor
-<lb n="24"/>hiehero geeilet, zwen Erschchere Kuefere
-<lb n="25"/>alßbald zue ihme gnomen, uf die Tilli
-<lb n="26"/>gangen, die fehe abzelt, und ohne
-<lb n="27"/>machen, durch einen anderen ehrlichen
-<lb n="28"/>herrn ein Zedelin schreiben, wie vil
-<lb n="29"/>der fehlen befunden worden, und das
-<lb n="30"/>selbige nit sein Abbenzellers allein, sond
-<lb n="31"/>der halbe theil seins
-<lb n="32"/>Vatters seije und also zwen Undschidlich
-<lb n="33"/>so sich
+<lb n="17"/>alhero sich begeben, <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">erkaufft</unclear> <unclear cert="low" resp="#joint">kauffts</unclear> <unclear cert="low" resp="#joint">fehe</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">abzeller</unclear>, und alßdann ihme dieselbe,
+<lb n="19"/><unclear cert="low" resp="#joint">vermoeg</unclear> Contracts außrichten und <unclear cert="low" resp="#joint">bezahlen</unclear>
+<lb n="20"/>und an <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">Uncosten</unclear> ein <unclear cert="medium" resp="#joint">gebuerende</unclear> ab-
+<lb n="21"/>trag <unclear cert="medium" resp="#joint">thuen</unclear> <unclear cert="medium" resp="#joint">soelle</unclear>, <unclear cert="medium" resp="#joint">deme</unclear> aber zuwider,
+<lb n="22"/>so <unclear cert="medium" resp="#joint">seije</unclear> er <persName resp="#ner"><unclear cert="medium" resp="#joint">Schuffelberger</unclear></persName> dem <unclear cert="medium" resp="#joint">Unserigen</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">ohnewuessend</unclear> und <unclear cert="medium" resp="#joint">hinderrugs</unclear> <unclear cert="medium" resp="#joint">hiezuor</unclear>
+<lb n="24"/><unclear cert="medium" resp="#joint">hiehero</unclear> <unclear cert="medium" resp="#joint">geeilet</unclear>, <unclear cert="medium" resp="#joint">zwen</unclear> <unclear cert="medium" resp="#joint">Erschchere</unclear> <unclear cert="medium" resp="#joint">Kuefere</unclear>
+<lb n="25"/><unclear cert="medium" resp="#joint">alßbald</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">gnomen</unclear>, <unclear cert="medium" resp="#joint">uf</unclear> die <unclear cert="medium" resp="#joint">Tilli</unclear>
+<lb n="26"/>gangen, die <unclear cert="medium" resp="#joint">fehe</unclear> <unclear cert="medium" resp="#joint">abzelt</unclear>, und <unclear cert="medium" resp="#joint">ohne</unclear>
+<lb n="27"/>machen, durch <unclear cert="medium" resp="#joint">einen</unclear> anderen ehrlichen
+<lb n="28"/><unclear cert="medium" resp="#joint">herrn</unclear> ein <unclear cert="medium" resp="#joint">Zedelin</unclear> <unclear cert="medium" resp="#joint">schreiben</unclear>, wie vil
+<lb n="29"/>der <unclear cert="low" resp="#joint">fehlen</unclear> <unclear cert="low" resp="#joint">befunden</unclear> worden, und das
+<lb n="30"/>selbige nit sein Abbenzellers allein, <unclear cert="low" resp="#joint">sond</unclear>
+<lb n="31"/>der <unclear cert="low" resp="#joint">halbe</unclear> theil seins
+<lb n="32"/><unclear cert="low" resp="#joint">Vatters</unclear> seije und also zwen <unclear cert="low" resp="#joint">Undschidlich</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">sich</unclear>
 <pb facs="StadtASG_Missive_2403_9234.jpg" n="2"/>
-<lb n="34"/>stich auch gedachter <persName resp="#ner">Zilli</persName> gewesen seye: Wan
-<lb n="35"/>aber <persName resp="#ner">Schuffelberger</persName> ihme <persName resp="#ner">Abbtzeller</persName> diß orts hin-
-<lb n="36"/>derugs gehandlet, auch deß herren bischofs vorschriben
-<lb n="37"/>übel zuwider und entgegen gehandlet, welches be-
-<lb n="38"/>trugs er sich gege ihme im wenigsten nit ver-
-<lb n="39"/>sehen hette, und daher in sorgen stehn mueßte
-<lb n="40"/>er <persName resp="#ner">Schuffelberger</persName> möchte anjezo
-<lb n="41"/>bey den herren ihne dermaßen angeben
-<lb n="42"/>verleiden, samb er vorm degen die unwar-
-<lb n="43"/>heit fürgegeben, und ihme sich deß we-
-<lb n="44"/>heren halben zuentgelten möchte der-
+<lb n="34"/><unclear cert="medium" resp="#joint">stich</unclear> <unclear cert="medium" resp="#joint">auch</unclear> gedachter <persName resp="#ner"><unclear cert="low" resp="#joint">Zilli</unclear></persName> gewesen seye: <unclear cert="low" resp="#joint">Wan</unclear>
+<lb n="35"/>aber <persName resp="#ner">Schuffelberger</persName> ihme <persName resp="#ner">Abbtzeller</persName> diß <unclear cert="low" resp="#joint">orts</unclear> <unclear cert="low" resp="#joint">hin</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">derugs</unclear> gehandlet, auch deß herren <unclear cert="low" resp="#joint">bischofs</unclear> <unclear cert="low" resp="#joint">vorschriben</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">übel</unclear> <unclear cert="low" resp="#joint">zuwider</unclear> und entgegen gehandlet, welches be-
+<lb n="38"/><unclear cert="low" resp="#joint">trugs</unclear> er sich <unclear cert="low" resp="#joint">gege</unclear> <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">wenigsten</unclear> nit ver-
+<lb n="39"/>sehen hette, und <unclear cert="low" resp="#joint">daher</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">sorgen</unclear> <unclear cert="low" resp="#joint">stehn</unclear> <unclear cert="low" resp="#joint">mueßte</unclear>
+<lb n="40"/>er <persName resp="#ner"><unclear cert="low" resp="#joint">Schuffelberger</unclear></persName> <unclear cert="low" resp="#joint">möchte</unclear> <unclear cert="low" resp="#joint">anjezo</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">bey</unclear> den <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">dermaßen</unclear> <unclear cert="low" resp="#joint">angeben</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">verleiden</unclear>, <unclear cert="low" resp="#joint">samb</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">vorm</unclear> <unclear cert="low" resp="#joint">degen</unclear> die unwar-
+<lb n="43"/>heit fürgegeben, und <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">we</unclear>-
+<lb n="44"/><unclear cert="low" resp="#joint">heren</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">zuentgelten</unclear> möchte der-
 <lb n="45"/>wegen bate er uns ganz underthenig,
-<lb n="46"/>wir wolten vor obgedachten drey ehrliche
-<lb n="47"/>Persohnen den verlauff anhoeren
-<lb n="48"/>und den herren ihren bericht que intercedendo zu überschriben,
-<lb n="49"/>auch beynaben vorbesagten siner liebe Vetter
-<lb n="50"/>gleichfals verhoeren, ob er was theil od
-<lb n="51"/>ansprach an mehrberürten füllen hab
-<lb n="52"/>hette od nit.
+<lb n="46"/>wir wolten <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">obgedachten</unclear> drey ehrliche
+<lb n="47"/>Persohnen den <unclear cert="low" resp="#joint">verlauff</unclear> <unclear cert="low" resp="#joint">anhoeren</unclear>
+<lb n="48"/>und den <unclear cert="medium" resp="#joint">herren</unclear> ihren bericht <unclear cert="low" resp="#joint">que</unclear> <unclear cert="low" resp="#joint">intercedendo</unclear> zu <unclear cert="low" resp="#joint">überschriben</unclear>,
+<lb n="49"/>auch <unclear cert="low" resp="#joint">beynaben</unclear> <unclear cert="low" resp="#joint">vorbesagten</unclear> <unclear cert="low" resp="#joint">siner</unclear> <unclear cert="low" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">Vetter</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">gleichfals</unclear> <unclear cert="low" resp="#joint">verhoeren</unclear>, ob er was theil od
+<lb n="51"/><unclear cert="low" resp="#joint">ansprach</unclear> an <unclear cert="low" resp="#joint">mehrberürten</unclear> <unclear cert="medium" resp="#joint">füllen</unclear> hab
+<lb n="52"/>hette <unclear cert="medium" resp="#joint">od</unclear> nit.
 <lb n="53"/>Worauf nun wir erstlich die fürge-
-<lb n="54"/>stelte drey persohnen (die sich gleich-
-<lb n="55"/>ihne <persName resp="#ner">Schuffelberger</persName> solches ungleiches
-<lb n="56"/>und hinderführens halben nit wenig be-
-<lb n="57"/>schwert befunden) in ihrem bericht angehoert,
+<lb n="54"/>stelte drey <unclear cert="low" resp="#joint">persohnen</unclear> (die sich <unclear cert="low" resp="#joint">gleich</unclear>-
+<lb n="55"/>ihne <persName resp="#ner"><unclear cert="low" resp="#joint">Schuffelberger</unclear></persName> <unclear cert="low" resp="#joint">solches</unclear> <unclear cert="low" resp="#joint">ungleiches</unclear>
+<lb n="56"/>und <unclear cert="low" resp="#joint">hinderführens</unclear> <unclear cert="medium" resp="#joint">halben</unclear> nit wenig be-
+<lb n="57"/><unclear cert="low" resp="#joint">schwert</unclear> befunden) in <unclear cert="medium" resp="#joint">ihrem</unclear> bericht angehoert,
 <lb n="58"/>wie daß der beylag mit mehrerm zuvernemen, deßgleichen
-<lb n="59"/>(die wir den herren hie- unser mitrath und Zunfftmeister, alß sein
-<lb n="60"/>mit überschikhen) <persName resp="#ner">Abbtzellers</persName> Vetter vor uns selbst mundlich
-<lb n="61"/>bekennt, daß er an den vilgedachten füllen
-<lb n="62"/>vilangezognen kalbfühlen weder theil noch
-<lb n="63"/>gmein im wenigsten nit habe: Und
-<lb n="64"/>dieweil dann die sachen also bewandt
+<lb n="59"/>(die wir den herren hie- unser <unclear cert="low" resp="#joint">mitrath</unclear> und <unclear cert="low" resp="#joint">Zunfftmeister</unclear>, alß sein
+<lb n="60"/>mit überschikhen) <persName resp="#ner">Abbtzellers</persName> Vetter vor uns selbst <unclear cert="medium" resp="#joint">mundlich</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">bekennt</unclear>, daß er an den <unclear cert="low" resp="#joint">vilgedachten</unclear> <unclear cert="low" resp="#joint">füllen</unclear>
+<lb n="62"/><unclear cert="low" resp="#joint">vilangezognen</unclear> <unclear cert="low" resp="#joint">kalbfühlen</unclear> weder theil noch
+<lb n="63"/><unclear cert="low" resp="#joint">gmein</unclear> <unclear cert="medium" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">wenigsten</unclear> <unclear cert="medium" resp="#joint">nit</unclear> habe: Und
+<lb n="64"/>dieweil dann die sachen also <unclear cert="medium" resp="#joint">bewandt</unclear>
 <pb facs="StadtASG_Missive_2403_9235.jpg" n="3"/>
-<lb n="65"/>So habend wir dem unserigen diße
-<lb n="66"/>sein pitt umb so vil desto weniger
-<lb n="67"/>verweigeren koennen. gelangt
-<lb n="68"/>derhalben hierauf unser freüntlich
-<lb n="69"/>ansinnen und ersuochen an den herren,
-<lb n="70"/>er welle dem unserigen wie vor dißem
+<lb n="65"/>So habend wir dem <unclear cert="low" resp="#joint">unserigen</unclear> <unclear cert="medium" resp="#joint">diße</unclear>
+<lb n="66"/>sein <unclear cert="medium" resp="#joint">pitt</unclear> umb so vil desto weniger
+<lb n="67"/><unclear cert="medium" resp="#joint">verweigeren</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>. <unclear cert="low" resp="#joint">gelangt</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">derhalben</unclear> <unclear cert="medium" resp="#joint">hierauf</unclear> unser <unclear cert="low" resp="#joint">freüntlich</unclear>
+<lb n="69"/><unclear cert="low" resp="#joint">ansinnen</unclear> und <unclear cert="low" resp="#joint">ersuochen</unclear> an den herren,
+<lb n="70"/>er <unclear cert="medium" resp="#joint">welle</unclear> dem <unclear cert="low" resp="#joint">unserigen</unclear> wie vor dißem
 <lb n="71"/>als
-<lb n="72"/>auch in gegenwuertig verurßachter sach,
+<lb n="72"/>auch in <unclear cert="low" resp="#joint">gegenwuertig</unclear> <unclear cert="low" resp="#joint">verurßachter</unclear> sach,
 <lb n="73"/>abermals die Richterliche oberkeitliche
-<lb n="74"/>hilffliche hand bieten, damit er beij
-<lb n="75"/>getroffenem khauff, auch beij der deß-
-<lb n="76"/>halb vom herren ußgesprochnen urtel
-<lb n="77"/>verbleiben und gehandhabt werden moege,
-<lb n="78"/>und weil er durch solch sein Schuefel-
-<lb n="79"/>bergers, betriegliches verhandlen in wei-
-<lb n="80"/>teren uncosten gewachßen, daß ihme
-<lb n="81"/>derselbige auch moege erstattet werden.
-<lb n="82"/>Gleichwie uns nun nit zweiflet der
-<lb n="83"/>herr werde hierin thuon, was sich wirt
-<lb n="84"/>gebueren, damit nit die
-<lb n="85"/>oberkeit beidseits dißer sach halbe ferner unbehelliget
-<lb n="86"/>verbleibind; Daß be-
-<lb n="87"/>geren wir in gleichem und anderen faellen
-<lb n="88"/>umb den herren widerumb zuverdienen,
-<lb n="89"/>mit lust deß willens, in
-<lb n="90"/>in deß Hoechsten schuz und schirm wir uns
-<lb n="91"/>samtlich thuend bevelhen. Datum
-<lb n="92"/><origDate when="1623" resp="#ner">den. 20 ten. Martij. 1623.</origDate>
-<lb n="93"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
+<lb n="74"/>hilffliche hand bieten, damit er <unclear cert="medium" resp="#joint">beij</unclear>
+<lb n="75"/><unclear cert="low" resp="#joint">getroffenem</unclear> <unclear cert="low" resp="#joint">khauff</unclear>, auch <unclear cert="medium" resp="#joint">beij</unclear> der deß-
+<lb n="76"/>halb <unclear cert="low" resp="#joint">vom</unclear> herren <unclear cert="low" resp="#joint">ußgesprochnen</unclear> <unclear cert="low" resp="#joint">urtel</unclear>
+<lb n="77"/>verbleiben und gehandhabt werden <unclear cert="medium" resp="#joint">moege</unclear>,
+<lb n="78"/>und weil er durch solch sein <unclear cert="low" resp="#joint">Schuefel</unclear>-
+<lb n="79"/><unclear cert="low" resp="#joint">bergers</unclear>, <unclear cert="low" resp="#joint">betriegliches</unclear> verhandlen in wei-
+<lb n="80"/><unclear cert="low" resp="#joint">teren</unclear> uncosten gewachßen, daß <unclear cert="low" resp="#joint">ihme</unclear>
+<lb n="81"/>derselbige auch <unclear cert="medium" resp="#joint">moege</unclear> erstattet werden.
+<lb n="82"/><unclear cert="medium" resp="#joint">Gleichwie</unclear> uns <unclear cert="low" resp="#joint">nun</unclear> nit <unclear cert="low" resp="#joint">zweiflet</unclear> der
+<lb n="83"/><unclear cert="medium" resp="#joint">herr</unclear> werde <unclear cert="medium" resp="#joint">hierin</unclear> thuon, was sich <unclear cert="low" resp="#joint">wirt</unclear>
+<lb n="84"/><unclear cert="medium" resp="#joint">gebueren</unclear>, damit nit die
+<lb n="85"/>oberkeit beidseits <unclear cert="low" resp="#joint">dißer</unclear> <unclear cert="low" resp="#joint">sach</unclear> <unclear cert="low" resp="#joint">halbe</unclear> <unclear cert="low" resp="#joint">ferner</unclear> <unclear cert="low" resp="#joint">unbehelliget</unclear>
+<lb n="86"/><unclear cert="low" resp="#joint">verbleibind</unclear>; <unclear cert="low" resp="#joint">Daß</unclear> be-
+<lb n="87"/><unclear cert="low" resp="#joint">geren</unclear> <unclear cert="medium" resp="#joint">wir</unclear> in <unclear cert="low" resp="#joint">gleichem</unclear> und anderen <unclear cert="low" resp="#joint">faellen</unclear>
+<lb n="88"/>umb den <unclear cert="medium" resp="#joint">herren</unclear> widerumb <unclear cert="low" resp="#joint">zuverdienen</unclear>,
+<lb n="89"/>mit <unclear cert="low" resp="#joint">lust</unclear> deß <unclear cert="low" resp="#joint">willens</unclear>, <unclear cert="low" resp="#joint">in</unclear>
+<lb n="90"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Hoechsten</unclear> <unclear cert="low" resp="#joint">schuz</unclear> und schirm <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">uns</unclear>
+<lb n="91"/><unclear cert="low" resp="#joint">samtlich</unclear> <unclear cert="medium" resp="#joint">thuend</unclear> <unclear cert="low" resp="#joint">bevelhen</unclear>. Datum
+<lb n="92"/><origDate when="1623" resp="#ner">den. 20 <unclear cert="low" resp="#joint">ten</unclear>. Martij. 1623.</origDate>
+<lb n="93"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und rath
 <lb n="94"/>der Statt Sant
 <lb n="95"/>gallen</orgName>.
 <pb facs="StadtASG_Missive_2403_9236.jpg" n="4"/>
-<lb n="96"/><origDate when="1623-03-20" resp="#ner">20. Martij 1623</origDate>. Den vogt zuo
-<lb n="97"/><placeName resp="#ner">Neünckh.</placeName> betref. <persName resp="#ner">Othmar Appenzellers</persName>
-<lb n="98"/>mezgeren u. <persName resp="#ner">Hanß Schiffelbergers</persName>
+<lb n="96"/><origDate when="1623-03-20" resp="#ner">20. <unclear cert="medium" resp="#joint">Martij</unclear> 1623</origDate>. <unclear cert="medium" resp="#joint">Den</unclear> vogt zuo
+<lb n="97"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Neünckh</unclear>.</placeName> <unclear cert="low" resp="#joint">betref</unclear>. <persName resp="#ner">Othmar Appenzellers</persName>
+<lb n="98"/><unclear cert="low" resp="#joint">mezgeren</unclear> u. <persName resp="#ner">Hanß Schiffelbergers</persName>
 <lb n="99"/>v. <placeName resp="#ner">Sibschweil</placeName> streitigen kaufzug
 <pb facs="StadtASG_Missive_2403_9237.jpg" n="5"/>
 <lb n="100"/>Uff. <date resp="#ner">19. martij</date>
@@ -144,44 +144,44 @@
 <lb n="104"/><persName resp="#ner">Hans Schueßelberger</persName> von <placeName resp="#ner">Bribßweil</placeName> ußm <placeName resp="#ner">Bichenthel</placeName>
 <lb n="105"/>seye verschinen <date resp="#ner">sontag vor</date> predigzeit zuo ihnen
 <lb n="106"/>khommen, und sie gebeten, mit ihme uff <placeName resp="#ner">H. Lorentz</placeName>
-<lb n="107"/>Abbenzellers thile zuogohn, und die darauffligende fähl
-<lb n="108"/>helffen zellen, dann er einen bruoder im <placeName resp="#ner">Bichenthel</placeName>
-<lb n="109"/>der welle ihme die fähl eins zuo zwantzig batzen schwyzer
-<lb n="110"/>währung helffen zahlen, wann er ein urkhundt
-<lb n="111"/>bringe, daß er eben zwyfiel auff einer thile habe, und
-<lb n="112"/>daß ihm sölche durch zwen männer, also zuozehlt worden
-<lb n="113"/>seyen, so nun daß beschehe, mießte alsdann ihne der
-<lb n="114"/>bruoder haben, der sonst gern wider herauß schlieffen
-<lb n="115"/>welle, darauff sie beidt mit ihme gangen
-<lb n="116"/>unnd seinen worten glaubt, auch ihme helffen die fähl
-<lb n="117"/>zellen, inmaßen dann er <persName resp="#ner">Michel</persName> ihme die fähl
-<lb n="118"/>namblich. 144. mit seinen handen dargelegt, und auff
-<lb n="119"/>ein hauffen nidergelegt, darauff mit ihme zuo
-<lb n="120"/>Anderes Kuntzlern wirts zum schifflein gangen,
-<lb n="121"/>denselben beten, bloß ein linien zwo zemachen, daß
-<lb n="122"/>er ein bruoder die fähl halb seines vatters wie
-<lb n="123"/>vil derselben und dz zwer fiel auff einer thile gelegen
-<lb n="124"/>seyen, mit versprechen, daß ihme deßwegen ainicher
-<lb n="125"/>nachtheil noch schaden nicht darauß erfolgen solle, unnd
+<lb n="107"/>Abbenzellers thile zuogohn, und die <unclear cert="low" resp="#joint">darauffligende</unclear> <unclear cert="low" resp="#joint">fähl</unclear>
+<lb n="108"/>helffen zellen, dann er <unclear cert="medium" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> <unclear cert="low" resp="#joint">im</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Bichenthel</unclear></placeName>
+<lb n="109"/>der welle <unclear cert="low" resp="#joint">ihme</unclear> die <unclear cert="low" resp="#joint">fähl</unclear> <unclear cert="low" resp="#joint">eins</unclear> zuo <unclear cert="low" resp="#joint">zwantzig</unclear> batzen schwyzer
+<lb n="110"/>währung helffen zahlen, wann er <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">urkhundt</unclear>
+<lb n="111"/><unclear cert="low" resp="#joint">bringe</unclear>, daß er eben zwyfiel auff <unclear cert="medium" resp="#joint">einer</unclear> <unclear cert="medium" resp="#joint">thile</unclear> habe, und
+<lb n="112"/>daß ihm sölche durch <unclear cert="low" resp="#joint">zwen</unclear> <unclear cert="low" resp="#joint">männer</unclear>, also <unclear cert="low" resp="#joint">zuozehlt</unclear> worden
+<lb n="113"/>seyen, so nun daß <unclear cert="medium" resp="#joint">beschehe</unclear>, <unclear cert="low" resp="#joint">mießte</unclear> alsdann <unclear cert="low" resp="#joint">ihne</unclear> der
+<lb n="114"/><unclear cert="low" resp="#joint">bruoder</unclear> <unclear cert="medium" resp="#joint">haben</unclear>, der sonst gern wider herauß <unclear cert="low" resp="#joint">schlieffen</unclear>
+<lb n="115"/>welle, <unclear cert="medium" resp="#joint">darauff</unclear> <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">beidt</unclear> mit <unclear cert="low" resp="#joint">ihme</unclear> gangen
+<lb n="116"/>unnd <unclear cert="medium" resp="#joint">seinen</unclear> worten glaubt, auch <unclear cert="low" resp="#joint">ihme</unclear> helffen die <unclear cert="low" resp="#joint">fähl</unclear>
+<lb n="117"/>zellen, <unclear cert="low" resp="#joint">inmaßen</unclear> dann er <persName resp="#ner"><unclear cert="medium" resp="#joint">Michel</unclear></persName> <unclear cert="low" resp="#joint">ihme</unclear> die <unclear cert="low" resp="#joint">fähl</unclear>
+<lb n="118"/><unclear cert="low" resp="#joint">namblich</unclear>. 144. mit seinen handen dargelegt, und auff
+<lb n="119"/>ein <unclear cert="low" resp="#joint">hauffen</unclear> nidergelegt, darauff mit <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">zuo</unclear>
+<lb n="120"/><unclear cert="low" resp="#joint">Anderes</unclear> <unclear cert="low" resp="#joint">Kuntzlern</unclear> wirts zum <unclear cert="low" resp="#joint">schifflein</unclear> gangen,
+<lb n="121"/>denselben <unclear cert="low" resp="#joint">beten</unclear>, bloß ein <unclear cert="low" resp="#joint">linien</unclear> <unclear cert="medium" resp="#joint">zwo</unclear> <unclear cert="low" resp="#joint">zemachen</unclear>, daß
+<lb n="122"/>er ein <unclear cert="low" resp="#joint">bruoder</unclear> die <unclear cert="low" resp="#joint">fähl</unclear> halb seines vatters <unclear cert="medium" resp="#joint">wie</unclear>
+<lb n="123"/><unclear cert="medium" resp="#joint">vil</unclear> derselben und dz <unclear cert="low" resp="#joint">zwer</unclear> <unclear cert="low" resp="#joint">fiel</unclear> auff <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="medium" resp="#joint">thile</unclear> gelegen
+<lb n="124"/>seyen, mit versprechen, daß <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="medium" resp="#joint">ainicher</unclear>
+<lb n="125"/><unclear cert="medium" resp="#joint">nachtheil</unclear> noch schaden nicht <unclear cert="medium" resp="#joint">darauß</unclear> erfolgen solle, unnd
 <pb facs="StadtASG_Missive_2403_9238.jpg" n="6"/>
-<lb n="126"/>dieweil sie sich nichts boesers besorget, sondern vermeint,
-<lb n="127"/>es seye dem im warheit also, wie Schueßelburger
-<lb n="128"/>angeben, hette <persName resp="#ner">Andreas Kuontzler</persName> wirth zum
-<lb n="129"/>Schiffle, dz zedele uff sein fuergeben hin geschriben,
-<lb n="130"/>hernacher aber da Ohner heim komen, hetten sie erst
-<lb n="131"/>verstanden, daß er lauter unwarheit ihnen fuergeben,
-<lb n="132"/>wie dann <persName resp="#ner">M. Lorentz</persName> hierinn auch nichts gewueßt, sondern
-<lb n="133"/>anzeigt, daß er im geringsten kein kein gmeinder=
-<lb n="134"/>schafft, noch vil weniger einiche ansprach an die fähl habe,
-<lb n="135"/>als die seines sohns und nit daß seinige seyen. Unnd
-<lb n="136"/>sich hiemit uebel erklagt, daß er Schueßelburger ihnen
-<lb n="137"/>die unwarheit fuergeben, und sie darauff ihme ein
-<lb n="138"/>schein ertheilt haben, daß doch in der warheit nit seye.
-<lb n="139"/>Innmaaßen bericht unß ermelter Kuontzler, und zeiget
-<lb n="140"/>benueben an, daß es ihne nicht wenig geruewen,
-<lb n="141"/>daß er den zedel geschriben, und der sach nit beßer
+<lb n="126"/>dieweil sie sich nichts <unclear cert="low" resp="#joint">boesers</unclear> besorget, sondern vermeint,
+<lb n="127"/>es seye dem <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">warheit</unclear> also, wie <unclear cert="low" resp="#joint">Schueßelburger</unclear>
+<lb n="128"/>angeben, hette <persName resp="#ner"><unclear cert="low" resp="#joint">Andreas</unclear> <unclear cert="low" resp="#joint">Kuontzler</unclear></persName> <unclear cert="low" resp="#joint">wirth</unclear> <unclear cert="low" resp="#joint">zum</unclear>
+<lb n="129"/><unclear cert="low" resp="#joint">Schiffle</unclear>, dz <unclear cert="low" resp="#joint">zedele</unclear> uff sein <unclear cert="low" resp="#joint">fuergeben</unclear> hin geschriben,
+<lb n="130"/><unclear cert="medium" resp="#joint">hernacher</unclear> aber da Ohner <unclear cert="low" resp="#joint">heim</unclear> <unclear cert="low" resp="#joint">komen</unclear>, <unclear cert="low" resp="#joint">hetten</unclear> sie erst
+<lb n="131"/>verstanden, daß er <unclear cert="low" resp="#joint">lauter</unclear> unwarheit <unclear cert="low" resp="#joint">ihnen</unclear> fuergeben,
+<lb n="132"/>wie dann <persName resp="#ner"><unclear cert="low" resp="#joint">M</unclear>. <unclear cert="low" resp="#joint">Lorentz</unclear></persName> <unclear cert="low" resp="#joint">hierinn</unclear> <unclear cert="low" resp="#joint">auch</unclear> nichts <unclear cert="low" resp="#joint">gewueßt</unclear>, <unclear cert="low" resp="#joint">sondern</unclear>
+<lb n="133"/>anzeigt, daß er <unclear cert="low" resp="#joint">im</unclear> geringsten <unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">gmeinder=</unclear>
+<lb n="134"/>schafft, noch vil <unclear cert="low" resp="#joint">weniger</unclear> <unclear cert="low" resp="#joint">einiche</unclear> <unclear cert="low" resp="#joint">ansprach</unclear> an die <unclear cert="low" resp="#joint">fähl</unclear> habe,
+<lb n="135"/>als die seines <unclear cert="low" resp="#joint">sohns</unclear> und nit daß seinige seyen. Unnd
+<lb n="136"/>sich hiemit <unclear cert="low" resp="#joint">uebel</unclear> erklagt, daß er <unclear cert="low" resp="#joint">Schueßelburger</unclear> <unclear cert="low" resp="#joint">ihnen</unclear>
+<lb n="137"/>die unwarheit fuergeben, und sie darauff <unclear cert="low" resp="#joint">ihme</unclear> ein
+<lb n="138"/><unclear cert="low" resp="#joint">schein</unclear> ertheilt haben, daß doch in der warheit nit seye.
+<lb n="139"/><unclear cert="low" resp="#joint">Innmaaßen</unclear> bericht <unclear cert="low" resp="#joint">unß</unclear> ermelter <unclear cert="low" resp="#joint">Kuontzler</unclear>, und <unclear cert="low" resp="#joint">zeiget</unclear>
+<lb n="140"/><unclear cert="low" resp="#joint">benueben</unclear> an, daß es <unclear cert="low" resp="#joint">ihne</unclear> nicht <unclear cert="low" resp="#joint">wenig</unclear> <unclear cert="low" resp="#joint">geruewen</unclear>,
+<lb n="141"/>daß er den zedel geschriben, und der <unclear cert="medium" resp="#joint">sach</unclear> nit <unclear cert="medium" resp="#joint">beßer</unclear>
 <lb n="142"/>nachgefraget, er hab aber auch nichts geschriben,
-<lb n="143"/>dann waß ihme angeben worden.
+<lb n="143"/>dann waß <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">angeben</unclear> worden.
 <pb facs="StadtASG_Missive_2403_9239.jpg" n="7"/>
 <pb facs="StadtASG_Missive_2403_9240.jpg" n="8"/>
 </p>

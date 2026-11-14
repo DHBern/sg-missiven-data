@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1963</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten Appenzell über die Verhandlungen der jüngsten Zusammenkunft auf der Pfarrei St. Gallen wegen der Münzangelegenheit. Sie legen Kopien der von den Herren Verordneten, dem Prälaten und ihnen angenommenen Beschlüsse bei. Sie bitten Appenzell, ihnen schriftlich mitzuteilen, ob diese Beschlüsse auch ihnen genehm sind, damit das in der Abschiedsakte angedeutete Schreiben an Zürich übergeben werden kann.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1615-08-19" resp="#regest">Datum den. 19. ten Augusti. anno. 1615.</date></correspAction><correspAction type="received"><name resp="#regest">Appenzell</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,47 +35,47 @@
 <p>
 <pb facs="StadtASG_Missive_1963_7299.jpg" n="1"/>
 <lb n="1"/>Unser freündt: nachbarlich willig dienst, und
-<lb n="2"/>was wir ehren liebs und guets vermögend <unclear cert="low" resp="#joint">zuevor</unclear>,
-<lb n="3"/><unclear cert="low" resp="#joint">Fromen</unclear>, <unclear cert="low" resp="#joint">Fuersichtigen</unclear>, Ersamen und
-<lb n="4"/>Weisen, Insonders gueten freünden und ge-
-<lb n="5"/>treüwen lieben nachbaren.
-<lb n="6"/>Uß was ursachen Ihr die, <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">wegen</unclear> der
-<lb n="7"/>Müntzsachen, jüngst auf der Pfaltz des <orgName resp="#ner">Gottshaus
-<lb n="8"/>Sant</orgName> Gallen, angestellte freündt: nachbarliche
-<lb n="9"/>zuesamenkunfft nit besuechen lassen, das
-<lb n="10"/>haben wir, sampt eüwerer freündt: nachbar-
-<lb n="11"/>lichen erklaerung, was <unclear cert="low" resp="#joint">deßhalb</unclear>
-<lb n="12"/>verhandlet werden möchte, ihr eüch dasselbig
+<lb n="2"/>was wir ehren liebs und guets vermögend zuevor,
+<lb n="3"/>Fromen, Fuersichtigen, Ersamen und
+<lb n="4"/>Weisen, Insonders <unclear cert="low" resp="#joint">gueten</unclear> freünden und ge-
+<lb n="5"/>treüwen lieben <unclear cert="low" resp="#joint">nachbaren</unclear>.
+<lb n="6"/><unclear cert="low" resp="#joint">Uß</unclear> was <unclear cert="low" resp="#joint">ursachen</unclear> Ihr die, von wegen der
+<lb n="7"/><unclear cert="low" resp="#joint">Müntzsachen</unclear>, jüngst auf der <unclear cert="medium" resp="#joint">Pfaltz</unclear> des <orgName resp="#ner"><unclear cert="low" resp="#joint">Gottshaus</unclear>
+<lb n="8"/>Sant</orgName> Gallen, angestellte <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="medium" resp="#joint">nachbarliche</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">zuesamenkunfft</unclear> nit <unclear cert="low" resp="#joint">besuechen</unclear> lassen, das
+<lb n="10"/>haben wir, <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">eüwerer</unclear> <unclear cert="low" resp="#joint">freündt</unclear>: nachbar-
+<lb n="11"/>lichen <unclear cert="low" resp="#joint">erklaerung</unclear>, was deßhalb
+<lb n="12"/>verhandlet werden möchte, ihr eüch <unclear cert="low" resp="#joint">dasselbig</unclear>
 <lb n="13"/>auch wol gefallen lassen wellen <unclear cert="low" resp="#joint">uß</unclear>
-<lb n="14"/><unclear cert="low" resp="#joint">eüwerem</unclear>, <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">deßhalb</unclear> <unclear cert="low" resp="#joint">übersendten</unclear> <unclear cert="low" resp="#joint">schreiben</unclear>,
-<lb n="15"/><unclear cert="low" resp="#joint">mit</unclear> mehrerm verstanden.
-<lb n="16"/>Darauf wir nit <unclear cert="low" resp="#joint">ermanglen</unclear> <unclear cert="low" resp="#joint">wellen</unclear>, <unclear cert="low" resp="#joint">eüch</unclear>
-<lb n="17"/><unclear cert="low" resp="#joint">durch</unclear> <unclear cert="low" resp="#joint">beyligende</unclear> <unclear cert="low" resp="#joint">Copeyen</unclear>,
-<lb n="18"/>was hierinnen verhandlet und
-<lb n="19"/>wol von den Herren Verordneten, als auch dem
-<lb n="20"/>Herren Praelaten und uns albereit ange-
-<lb n="21"/>nomen und guet geachtet worden, freündt-
-<lb n="22"/>nachbarlich zueberichten.
-<lb n="23"/>Im fall nun (als wir uns versehen.)
-<lb n="24"/>solches eüch auch <unclear cert="low" resp="#joint">annemlich</unclear> <unclear cert="low" resp="#joint">seyn</unclear> <unclear cert="low" resp="#joint">wirt</unclear>, <unclear cert="low" resp="#joint">so</unclear>
-<lb n="25"/><unclear cert="low" resp="#joint">were</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">sachen</unclear> nit undienlich, daß wir
-<lb n="26"/><unclear cert="low" resp="#joint">dessen</unclear>, bey zeigeren diß, allein deßhalb
+<lb n="14"/><unclear cert="low" resp="#joint">eüwerem</unclear>, uns deßhalb übersendten schreiben,
+<lb n="15"/>mit mehrerm verstanden.
+<lb n="16"/>Darauf wir nit ermanglen wellen, <unclear cert="low" resp="#joint">eüch</unclear>
+<lb n="17"/>durch beyligende Copeyen,
+<lb n="18"/>was <unclear cert="medium" resp="#joint">hierinnen</unclear> verhandlet und
+<lb n="19"/>wol von den <unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">Verordneten</unclear>, als auch <unclear cert="medium" resp="#joint">dem</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">Praelaten</unclear> und uns albereit ange-
+<lb n="21"/><unclear cert="low" resp="#joint">nomen</unclear> und <unclear cert="low" resp="#joint">guet</unclear> <unclear cert="medium" resp="#joint">geachtet</unclear> worden, freündt-
+<lb n="22"/>nachbarlich <unclear cert="low" resp="#joint">zueberichten</unclear>.
+<lb n="23"/>Im fall nun (als wir <unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="medium" resp="#joint">versehen</unclear>.)
+<lb n="24"/>solches <unclear cert="medium" resp="#joint">eüch</unclear> auch annemlich seyn wirt, so
+<lb n="25"/>were den sachen nit <unclear cert="low" resp="#joint">undienlich</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> wir
+<lb n="26"/>dessen, bey <unclear cert="low" resp="#joint">zeigeren</unclear> diß, allein <unclear cert="medium" resp="#joint">deßhalb</unclear>
 <lb n="27"/>abgefertigten botten, schrifftlich verstaendiget wurden,
-<lb n="28"/>zue dem End, daß biß <date resp="#ner">künfftigen Mentag
-<lb n="29"/>zue</date> Mittag dem Züricher Ordinari botten
-<lb n="30"/>das in dem <unclear cert="low" resp="#joint">Abscheid</unclear> <unclear cert="low" resp="#joint">angedeütete</unclear> <unclear cert="low" resp="#joint">schreiben</unclear>
-<lb n="31"/>gen <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürich</placeName> (so Ihr Frl. Gnd. und <unclear cert="low" resp="#joint">ihren</unclear> <unclear cert="low" resp="#joint">Ge</unclear>-
+<lb n="28"/>zue dem End, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">biß</unclear> <date resp="#ner">künfftigen Mentag
+<lb n="29"/><unclear cert="medium" resp="#joint">zue</unclear></date> Mittag <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Züricher</unclear> <unclear cert="medium" resp="#joint">Ordinari</unclear> botten
+<lb n="30"/>das in dem Abscheid <unclear cert="low" resp="#joint">angedeütete</unclear> schreiben
+<lb n="31"/>gen <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürich</placeName> (so Ihr <unclear cert="low" resp="#joint">Frl</unclear>. <unclear cert="low" resp="#joint">Gnd</unclear>. und ihren Ge-
 <lb n="32"/><unclear cert="low" resp="#joint">dvernet</unclear> in aller namen <unclear cert="low" resp="#joint">ußfertigen</unclear> <unclear cert="low" resp="#joint">lassen</unclear> <unclear cert="low" resp="#joint">wil</unclear>
-<lb n="33"/><unclear cert="low" resp="#joint">überantwurtet</unclear> werden, und also diejenig
+<lb n="33"/><unclear cert="low" resp="#joint">überantwurtet</unclear> werden, und also <unclear cert="low" resp="#joint">diejenig</unclear>
 <pb facs="StadtASG_Missive_1963_7300.jpg" n="2"/>
-<lb n="34"/>(die ohne das ettwas lenger, als den zu
-<lb n="35"/><placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> berahtschlagten monat angestanden)
-<lb n="36"/>nit noch lenger verzogen wurde.
-<lb n="37"/>Und in erwartung eüwer freündt= nach=
-<lb n="38"/>barlichen antwurt, bevelchen wir eüch
-<lb n="39"/>und unß dem schirm des Allmechtigen.
-<lb n="40"/>Datum <origDate when="1615" resp="#ner">den. 19. ten Augusti. anno. 1615.</origDate>
-<lb n="41"/><orgName role="issuer" resp="#ner">B. und rhat etc.</orgName>
+<lb n="34"/>(die ohne das <unclear cert="low" resp="#joint">ettwas</unclear> <unclear cert="low" resp="#joint">lenger</unclear>, als den zu
+<lb n="35"/><placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> <unclear cert="low" resp="#joint">berahtschlagten</unclear> <unclear cert="low" resp="#joint">monat</unclear> angestanden)
+<lb n="36"/>nit noch lenger verzogen <unclear cert="low" resp="#joint">wurde</unclear>.
+<lb n="37"/>Und in erwartung <unclear cert="medium" resp="#joint">eüwer</unclear> <unclear cert="medium" resp="#joint">freündt=</unclear> nach=
+<lb n="38"/>barlichen <unclear cert="medium" resp="#joint">antwurt</unclear>, <unclear cert="medium" resp="#joint">bevelchen</unclear> wir eüch
+<lb n="39"/>und unß dem schirm des <unclear cert="low" resp="#joint">Allmechtigen</unclear>.
+<lb n="40"/>Datum <origDate when="1615" resp="#ner">den. <unclear cert="low" resp="#joint">19</unclear>. <unclear cert="low" resp="#joint">ten</unclear> Augusti. anno. 1615.</origDate>
+<lb n="41"/><orgName role="issuer" resp="#ner">B. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">rhat</unclear> <unclear cert="low" resp="#joint">etc</unclear>.</orgName>
 <lb n="42"/>An die von <orgName ref="stadtasg-actors-565" cert="medium" role="recipient" resp="#ner">Appenzell</orgName>.
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2434</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,77 +20,77 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, ihrem Bürger Caspar Oswald einen Arrest auf den Kaufpreis eines in der Grafschaft Thurgau gelegenen Guts namens Katzensteig zu gewähren. Oswald habe ein Testament gegen die Verwandten seiner verstorbenen Frau vor Gericht gebracht, die jedoch die Zuständigkeit des Bischofszellischen Gerichts geltend gemacht und dort Verlassenschaftsrechte in Arrest nehmen lassen. Da das Gut an einen unbekannten St. Galler Bürger verkauft worden sein soll, bittet Schaffhausen um Unterstützung bei der Sicherung des Kaufschillings.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Schaffhausen</name><date when="1623-09-18" resp="#regest">18. d Septembris a° 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2434_9371.jpg" n="1"/>
-<lb n="1"/>Unßer fründtlich willig dinst, sampt waß wier eeren
-<lb n="2"/>liebs unnd guots vermögen zuvor from fürsichtig
-<lb n="3"/>eersam weyß innsonders guot fründt unnd getrüw
-<lb n="4"/>lieb <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>.
-<lb n="5"/>Wier haben gedignen unßerem burger, herren <persName resp="#ner">Caspar
-<lb n="6"/>Oßwalden</persName>, seinem begeren nach, wider seiner hauß-
-<lb n="7"/>frauwen bruoder unnd verschwagerte, ein gewüß
-<lb n="8"/>vermugt testament, vor unß einen rechtstag an-
-<lb n="9"/>gesezt gehabt. welchen aber sy zubesuechen genzlich
-<lb n="10"/>abgeschlagen unnd daß er innen zu <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzel</placeName> red und
-<lb n="11"/>andtwurt geben solle begert, unnd zu dem endt hin,
-<lb n="12"/>gedachter seiner haußfrauwen seligen zuermelten
-<lb n="13"/><placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzel</placeName> ligende verlaßenschafft, in arrest zenemmen
-<lb n="14"/>verlauten laßen, ja unßerem burger aber innen da-
-<lb n="15"/>selbsten andtwurt zegeben, umb etwaß bedenckhlich
-<lb n="16"/>fallen wöllen. Wan dan sein haußfrauw selig in der
-<lb n="17"/><placeName resp="#ner">graffschafft Thüngen</placeName> ein guot Kazenstaig genant
-<lb n="18"/>gehabt, welchs er auch in haftumb legen laßen wöllen,
-<lb n="19"/>söllches aber wie er berichtet, euwerem burgeren
-<lb n="20"/>einen, deßen nam ime unerkhanndt, zekauffen
-<lb n="21"/>geben worden sein solle. Damit nun er sein ufge-
-<lb n="22"/>richte testament verthriben möchte, were er uf
-<lb n="23"/>den kauffschilling, biß zu guot: oder rechtlichen
-<lb n="24"/>ußtrag, by eüch umb einen arrest anzehalten unnd
-<lb n="25"/>zepiten bedacht, auf daß nun er sölchen desto eher
-<lb n="26"/>erlangen möchte, unß deßwegen umb unßere
-<lb n="27"/>furschrifft an eüch, deren er wol zugenießen verhofft
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">fründtlich</unclear> willig dinst, sampt <unclear cert="medium" resp="#joint">waß</unclear> <unclear cert="medium" resp="#joint">wier</unclear> <unclear cert="low" resp="#joint">eeren</unclear>
+<lb n="2"/>liebs unnd guots <unclear cert="medium" resp="#joint">vermögen</unclear> <unclear cert="medium" resp="#joint">zuvor</unclear> from <unclear cert="medium" resp="#joint">fürsichtig</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">eersam</unclear> <unclear cert="low" resp="#joint">weyß</unclear> <unclear cert="medium" resp="#joint">innsonders</unclear> guot fründt unnd getrüw
+<lb n="4"/>lieb <orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnossen</unclear></orgName>.
+<lb n="5"/>Wier haben <unclear cert="low" resp="#joint">gedignen</unclear> <unclear cert="low" resp="#joint">unßerem</unclear> burger, herren <persName resp="#ner">Caspar
+<lb n="6"/><unclear cert="low" resp="#joint">Oßwalden</unclear></persName>, seinem begeren nach, wider seiner <unclear cert="medium" resp="#joint">hauß</unclear>-
+<lb n="7"/><unclear cert="medium" resp="#joint">frauwen</unclear> <unclear cert="low" resp="#joint">bruoder</unclear> unnd verschwagerte, ein <unclear cert="low" resp="#joint">gewüß</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">vermugt</unclear> <unclear cert="low" resp="#joint">testament</unclear>, vor <unclear cert="medium" resp="#joint">unß</unclear> einen rechtstag an-
+<lb n="9"/><unclear cert="low" resp="#joint">gesezt</unclear> <unclear cert="low" resp="#joint">gehabt</unclear>. <unclear cert="low" resp="#joint">welchen</unclear> <unclear cert="medium" resp="#joint">aber</unclear> sy <unclear cert="low" resp="#joint">zubesuechen</unclear> <unclear cert="low" resp="#joint">genzlich</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">abgeschlagen</unclear> unnd daß er innen zu <placeName ref="stadtasg-places-19" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bischoffzel</unclear></placeName> <unclear cert="low" resp="#joint">red</unclear> und
+<lb n="11"/><unclear cert="low" resp="#joint">andtwurt</unclear> geben solle begert, unnd zu dem <unclear cert="low" resp="#joint">endt</unclear> <unclear cert="low" resp="#joint">hin</unclear>,
+<lb n="12"/><unclear cert="low" resp="#joint">gedachter</unclear> seiner <unclear cert="low" resp="#joint">haußfrauwen</unclear> seligen <unclear cert="low" resp="#joint">zuermelten</unclear>
+<lb n="13"/><placeName ref="stadtasg-places-19" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bischoffzel</unclear></placeName> ligende <unclear cert="low" resp="#joint">verlaßenschafft</unclear>, in arrest <unclear cert="low" resp="#joint">zenemmen</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">verlauten</unclear> laßen, <unclear cert="low" resp="#joint">ja</unclear> <unclear cert="low" resp="#joint">unßerem</unclear> burger aber <unclear cert="medium" resp="#joint">innen</unclear> da-
+<lb n="15"/>selbsten <unclear cert="low" resp="#joint">andtwurt</unclear> zegeben, <unclear cert="low" resp="#joint">umb</unclear> etwaß <unclear cert="low" resp="#joint">bedenckhlich</unclear>
+<lb n="16"/>fallen wöllen. <unclear cert="low" resp="#joint">Wan</unclear> dan sein <unclear cert="low" resp="#joint">haußfrauw</unclear> selig in der
+<lb n="17"/><placeName resp="#ner"><unclear cert="medium" resp="#joint">graffschafft</unclear> <unclear cert="low" resp="#joint">Thüngen</unclear></placeName> ein guot Kazenstaig genant
+<lb n="18"/><unclear cert="medium" resp="#joint">gehabt</unclear>, <unclear cert="low" resp="#joint">welchs</unclear> er auch in <unclear cert="low" resp="#joint">haftumb</unclear> legen laßen <unclear cert="low" resp="#joint">wöllen</unclear>,
+<lb n="19"/><unclear cert="low" resp="#joint">söllches</unclear> <unclear cert="low" resp="#joint">aber</unclear> wie er berichtet, <unclear cert="low" resp="#joint">euwerem</unclear> <unclear cert="low" resp="#joint">burgeren</unclear>
+<lb n="20"/>einen, deßen nam <unclear cert="medium" resp="#joint">ime</unclear> <unclear cert="low" resp="#joint">unerkhanndt</unclear>, <unclear cert="low" resp="#joint">zekauffen</unclear>
+<lb n="21"/>geben worden sein solle. Damit nun er sein <unclear cert="low" resp="#joint">ufge</unclear>-
+<lb n="22"/><unclear cert="low" resp="#joint">richte</unclear> testament <unclear cert="low" resp="#joint">verthriben</unclear> <unclear cert="medium" resp="#joint">möchte</unclear>, <unclear cert="low" resp="#joint">were</unclear> er <unclear cert="medium" resp="#joint">uf</unclear>
+<lb n="23"/>den <unclear cert="low" resp="#joint">kauffschilling</unclear>, biß <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">guot</unclear>: <unclear cert="medium" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">rechtlichen</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">ußtrag</unclear>, by eüch umb einen arrest <unclear cert="low" resp="#joint">anzehalten</unclear> unnd
+<lb n="25"/><unclear cert="low" resp="#joint">zepiten</unclear> <unclear cert="medium" resp="#joint">bedacht</unclear>, auf daß nun er <unclear cert="low" resp="#joint">sölchen</unclear> <unclear cert="medium" resp="#joint">desto</unclear> <unclear cert="medium" resp="#joint">eher</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">erlangen</unclear> <unclear cert="medium" resp="#joint">möchte</unclear>, <unclear cert="low" resp="#joint">unß</unclear> deßwegen <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">unßere</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">furschrifft</unclear> an eüch, <unclear cert="medium" resp="#joint">deren</unclear> er <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">zugenießen</unclear> verhofft
 <pb facs="StadtASG_Missive_2434_9372.jpg" n="2"/>
-<lb n="28"/>unnderthanigs fleißes gepeten. Welche wir Ime
-<lb n="29"/>gestaltsame der sachen nit zuversagen gewußt.
-<lb n="30"/>Allso gelangt unnd ist heruff an euch, unnßer frundt-
-<lb n="31"/>eidtgnößisches unnd furpitliches ersuochen, ir woellen
-<lb n="32"/>diß ortts unnßeren burgeren herren <persName resp="#ner">Caspar Oßwalden</persName>
-<lb n="33"/>gunstig recommendiert haben unnd den begerenden
-<lb n="34"/>arrest ime zuverwilligen wol geneigt sein, euch auch
-<lb n="35"/>von unnßertwegen hierin also wilfaehrig erzeigen, alß
-<lb n="36"/>zuo euch unnßer sonnder guot vertrauwen staht, unnd
-<lb n="37"/>damit er dißer unnßer intercession fruchtbarlich
-<lb n="38"/>genoßen im werckh spueren, unnd zuberhuemen haben
-<lb n="39"/>möge. Daß seyen wir umb euch unnd die euwerigen
-<lb n="40"/>in der gleichen unnd mehrerem zuerwideren, euch auch
-<lb n="41"/>ohne daß, iederweilen eidtgnößische treuw, ehr unnd
-<lb n="42"/>frundtschafft zuerweißen, so begirig, alß wir Gott
-<lb n="43"/>piten dc daß er unnß gemeinlich hinfuro in seinem
-<lb n="44"/>gotlichen schirm gnedig bewaren wölle. Datum
-<lb n="45"/>dc. <origDate when="1623" resp="#ner">18. d Septembris a° 1623</origDate>.
+<lb n="28"/><unclear cert="low" resp="#joint">unnderthanigs</unclear> fleißes <unclear cert="low" resp="#joint">gepeten</unclear>. <unclear cert="low" resp="#joint">Welche</unclear> wir <unclear cert="low" resp="#joint">Ime</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">gestaltsame</unclear> der sachen nit <unclear cert="low" resp="#joint">zuversagen</unclear> <unclear cert="medium" resp="#joint">gewußt</unclear>.
+<lb n="30"/><unclear cert="low" resp="#joint">Allso</unclear> gelangt unnd ist <unclear cert="low" resp="#joint">heruff</unclear> an euch, <unclear cert="low" resp="#joint">unnßer</unclear> frundt-
+<lb n="31"/><unclear cert="low" resp="#joint">eidtgnößisches</unclear> unnd <unclear cert="low" resp="#joint">furpitliches</unclear> ersuochen, ir <unclear cert="medium" resp="#joint">woellen</unclear>
+<lb n="32"/>diß <unclear cert="low" resp="#joint">ortts</unclear> <unclear cert="low" resp="#joint">unnßeren</unclear> <unclear cert="medium" resp="#joint">burgeren</unclear> herren <persName resp="#ner">Caspar <unclear cert="low" resp="#joint">Oßwalden</unclear></persName>
+<lb n="33"/>gunstig <unclear cert="low" resp="#joint">recommendiert</unclear> <unclear cert="low" resp="#joint">haben</unclear> unnd den <unclear cert="low" resp="#joint">begerenden</unclear>
+<lb n="34"/>arrest <unclear cert="low" resp="#joint">ime</unclear> <unclear cert="low" resp="#joint">zuverwilligen</unclear> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="medium" resp="#joint">geneigt</unclear> sein, <unclear cert="medium" resp="#joint">euch</unclear> <unclear cert="medium" resp="#joint">auch</unclear>
+<lb n="35"/>von unnßertwegen hierin also wilfaehrig erzeigen, <unclear cert="medium" resp="#joint">alß</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">zuo</unclear> euch <unclear cert="low" resp="#joint">unnßer</unclear> <unclear cert="low" resp="#joint">sonnder</unclear> guot <unclear cert="medium" resp="#joint">vertrauwen</unclear> <unclear cert="low" resp="#joint">staht</unclear>, unnd
+<lb n="37"/>damit er <unclear cert="low" resp="#joint">dißer</unclear> <unclear cert="low" resp="#joint">unnßer</unclear> intercession <unclear cert="low" resp="#joint">fruchtbarlich</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">genoßen</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">werckh</unclear> <unclear cert="low" resp="#joint">spueren</unclear>, unnd <unclear cert="low" resp="#joint">zuberhuemen</unclear> haben
+<lb n="39"/>möge. Daß <unclear cert="medium" resp="#joint">seyen</unclear> wir <unclear cert="medium" resp="#joint">umb</unclear> euch unnd die <unclear cert="medium" resp="#joint">euwerigen</unclear>
+<lb n="40"/>in der <unclear cert="low" resp="#joint">gleichen</unclear> unnd <unclear cert="low" resp="#joint">mehrerem</unclear> <unclear cert="low" resp="#joint">zuerwideren</unclear>, euch auch
+<lb n="41"/>ohne daß, <unclear cert="low" resp="#joint">iederweilen</unclear> <unclear cert="low" resp="#joint">eidtgnößische</unclear> <unclear cert="low" resp="#joint">treuw</unclear>, ehr unnd
+<lb n="42"/>frundtschafft <unclear cert="low" resp="#joint">zuerweißen</unclear>, so <unclear cert="medium" resp="#joint">begirig</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">wir</unclear> Gott
+<lb n="43"/><unclear cert="low" resp="#joint">piten</unclear> <unclear cert="low" resp="#joint">dc</unclear> daß er unnß <unclear cert="low" resp="#joint">gemeinlich</unclear> <unclear cert="low" resp="#joint">hinfuro</unclear> <unclear cert="low" resp="#joint">in</unclear> seinem
+<lb n="44"/><unclear cert="low" resp="#joint">gotlichen</unclear> schirm gnedig bewaren <unclear cert="medium" resp="#joint">wölle</unclear>. Datum
+<lb n="45"/>dc. <origDate when="1623" resp="#ner">18. d Septembris <unclear cert="medium" resp="#joint">a°</unclear> 1623</origDate>.
 <lb n="46"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister unnd rath der
-<lb n="47"/>stat Schaffhaußen</orgName>.
+<lb n="47"/>stat <unclear cert="low" resp="#joint">Schaffhaußen</unclear></orgName>.
 <pb facs="StadtASG_Missive_2434_9373.jpg" n="3"/>
 <lb n="48"/>[]
 <pb facs="StadtASG_Missive_2434_9374.jpg" n="4"/>
-<lb n="49"/>Den fromen fursichtigen ehrsamen
-<lb n="50"/>und weysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="49"/>Den fromen <unclear cert="medium" resp="#joint">fursichtigen</unclear> <unclear cert="medium" resp="#joint">ehrsamen</unclear>
+<lb n="50"/>und weysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear>
 <lb n="51"/>und Rath der Statt St. Gallen</orgName>.
-<lb n="52"/>unseren insonders gueten
-<lb n="53"/>frunden und getrauwen lieben
-<lb n="54"/><orgName role="recipient" resp="#ner">Eydtgnoßen</orgName>.
+<lb n="52"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="medium" resp="#joint">insonders</unclear> <unclear cert="medium" resp="#joint">gueten</unclear>
+<lb n="53"/>frunden und <unclear cert="low" resp="#joint">getrauwen</unclear> lieben
+<lb n="54"/><orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>.
 </p>
         </body>
     </text>

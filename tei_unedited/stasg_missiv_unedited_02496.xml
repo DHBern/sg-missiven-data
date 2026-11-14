@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2496</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,48 +20,48 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Stadthalter und Rat zu Schwyz danken Bürgermeister und Rat zu St. Gallen für die besondere Ehre und Freundschaft, die ihrem Landvogt im Rinthall widerfahren ist. Sie versichern, dies zu gutem nicht zu vergessen und in künftigen Fällen um St. Gallen zu dienen, und empfehlen sich der göttlichen Obhut.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Stadthalter und Rat zu Schwyz</name><date when="1624-08-18" resp="#regest">den 18.t Augusti. Ao. 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2496_9625.jpg" n="1"/>
-<lb n="1"/>Unser fründtlich willig dienst, sambt was wir ehren
-<lb n="2"/>liebs und guts vermoegen zuvor. From, fuersichtig,
-<lb n="3"/>ehrsam, wyß, insonders guttfründt und getrüwe lieb
-<lb n="4"/>Eydt. und pundtsgnoß.
-<lb n="5"/>Uß dem, unsere getrüwe liebe miträht, so den
-<lb n="6"/>Landtvogt im <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Rinthall</placeName>, unsern auch lieben und getrüwen
-<lb n="7"/>mitraht begleitet, die sonderbahre ehr gutte eydtgnössische
-<lb n="8"/>affection und fründtschaft, so demselbigen und den unsrigen
-<lb n="9"/>gmeincklichen in üwer reifier widerfahren, so hoch angerüembt,
-<lb n="10"/>habent wir nit umbgohn sollen noch woellen, darumb üch
-<lb n="11"/>unsern G. L. E. und Pundtsgnoß fründt und eydtgnößisch
-<lb n="12"/>zebedancken, und zuvergwüßen, dz wir söllches zu guetem
-<lb n="13"/>nit vergäßen, und in andern begäbenheiten, umb üch
-<lb n="14"/>unsern G. L. E. und pundtsgnoßen zuerwidern, uns be-
-<lb n="15"/>fleißen werden, deßen Ir üch eydtgnößisch zutruwen
-<lb n="16"/>soellend, uch damit (nebent wünschung all guter prosperitet)
-<lb n="17"/>dem lieben gtruewen Gott woll bevelende. Datum.
-<lb n="18"/><origDate when="1624" resp="#ner">den 18.t Augusti. Ao. 1624.</origDate>
-<lb n="19"/><orgName ref="stadtasg-actors-522" cert="medium" role="issuer" resp="#ner">Stadthalter und Raht
-<lb n="20"/>zu Schwyz</orgName>.
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">fründtlich</unclear> willig dienst, <unclear cert="medium" resp="#joint">sambt</unclear> was wir <unclear cert="medium" resp="#joint">ehren</unclear>
+<lb n="2"/>liebs und <unclear cert="medium" resp="#joint">guts</unclear> <unclear cert="low" resp="#joint">vermoegen</unclear> zuvor. <unclear cert="low" resp="#joint">From</unclear>, <unclear cert="medium" resp="#joint">fuersichtig</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">ehrsam</unclear>, <unclear cert="medium" resp="#joint">wyß</unclear>, insonders <unclear cert="low" resp="#joint">guttfründt</unclear> und <unclear cert="low" resp="#joint">getrüwe</unclear> lieb
+<lb n="4"/>Eydt. und <unclear cert="medium" resp="#joint">pundtsgnoß</unclear>.
+<lb n="5"/><unclear cert="medium" resp="#joint">Uß</unclear> <unclear cert="medium" resp="#joint">dem</unclear>, <unclear cert="medium" resp="#joint">unsere</unclear> <unclear cert="medium" resp="#joint">getrüwe</unclear> liebe <unclear cert="low" resp="#joint">miträht</unclear>, so den
+<lb n="6"/>Landtvogt <unclear cert="low" resp="#joint">im</unclear> <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Rinthall</unclear></placeName>, <unclear cert="low" resp="#joint">unsern</unclear> auch lieben und <unclear cert="low" resp="#joint">getrüwen</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">mitraht</unclear> begleitet, die <unclear cert="low" resp="#joint">sonderbahre</unclear> ehr gutte <unclear cert="low" resp="#joint">eydtgnössische</unclear>
+<lb n="8"/>affection und <unclear cert="low" resp="#joint">fründtschaft</unclear>, so demselbigen und <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">unsrigen</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">gmeincklichen</unclear> in <unclear cert="low" resp="#joint">üwer</unclear> <unclear cert="low" resp="#joint">reifier</unclear> widerfahren, so hoch <unclear cert="low" resp="#joint">angerüembt</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">habent</unclear> wir nit <unclear cert="low" resp="#joint">umbgohn</unclear> <unclear cert="low" resp="#joint">sollen</unclear> <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">woellen</unclear>, darumb <unclear cert="low" resp="#joint">üch</unclear>
+<lb n="11"/>unsern <unclear cert="medium" resp="#joint">G</unclear>. L. <unclear cert="medium" resp="#joint">E</unclear>. und Pundtsgnoß fründt und <unclear cert="low" resp="#joint">eydtgnößisch</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">zebedancken</unclear>, und <unclear cert="low" resp="#joint">zuvergwüßen</unclear>, dz wir <unclear cert="low" resp="#joint">söllches</unclear> zu <unclear cert="medium" resp="#joint">guetem</unclear>
+<lb n="13"/>nit <unclear cert="low" resp="#joint">vergäßen</unclear>, und in andern <unclear cert="low" resp="#joint">begäbenheiten</unclear>, umb <unclear cert="low" resp="#joint">üch</unclear>
+<lb n="14"/>unsern <unclear cert="medium" resp="#joint">G</unclear>. L. <unclear cert="medium" resp="#joint">E</unclear>. und <unclear cert="low" resp="#joint">pundtsgnoßen</unclear> <unclear cert="low" resp="#joint">zuerwidern</unclear>, <unclear cert="low" resp="#joint">uns</unclear> be-
+<lb n="15"/><unclear cert="low" resp="#joint">fleißen</unclear> werden, <unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="medium" resp="#joint">Ir</unclear> <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">eydtgnößisch</unclear> <unclear cert="low" resp="#joint">zutruwen</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">soellend</unclear>, <unclear cert="low" resp="#joint">uch</unclear> damit (<unclear cert="low" resp="#joint">nebent</unclear> <unclear cert="low" resp="#joint">wünschung</unclear> all <unclear cert="low" resp="#joint">guter</unclear> <unclear cert="medium" resp="#joint">prosperitet</unclear>)
+<lb n="17"/><unclear cert="medium" resp="#joint">dem</unclear> lieben <unclear cert="low" resp="#joint">gtruewen</unclear> <unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">bevelende</unclear>. Datum.
+<lb n="18"/><origDate when="1624" resp="#ner">den <unclear cert="low" resp="#joint">18.t</unclear> Augusti. <unclear cert="medium" resp="#joint">Ao</unclear>. <unclear cert="low" resp="#joint">1624</unclear>.</origDate>
+<lb n="19"/><orgName ref="stadtasg-actors-522" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Stadthalter</unclear> und <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="20"/>zu <unclear cert="low" resp="#joint">Schwyz</unclear></orgName>.
 <pb facs="StadtASG_Missive_2496_9626.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2496_9627.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2496_9628.jpg" n="4"/>
-<lb n="21"/>Denen frommen, fürsichtigen, ehrsamen
-<lb n="22"/>wÿsen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht
-<lb n="23"/>der stadt St. Gallen</orgName>, unsern insonders
-<lb n="24"/>guoten fründen, getrüwen lieben
-<lb n="25"/>Eÿdt- und Pundtsgnoßen.
+<lb n="21"/><unclear cert="medium" resp="#joint">Denen</unclear> frommen, fürsichtigen, <unclear cert="low" resp="#joint">ehrsamen</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">wÿsen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="23"/>der stadt St. Gallen</orgName>, <unclear cert="medium" resp="#joint">unsern</unclear> insonders
+<lb n="24"/><unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">fründen</unclear>, <unclear cert="low" resp="#joint">getrüwen</unclear> lieben
+<lb n="25"/><unclear cert="low" resp="#joint">Eÿdt</unclear>- und <unclear cert="medium" resp="#joint">Pundtsgnoßen</unclear>.
 <lb n="26"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
 </p>
         </body>

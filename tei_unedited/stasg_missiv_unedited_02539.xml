@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2539</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen über Gerüchte, wonach ein 800 Mann starkes Regiment aus Lindau über Rheineck ins Rheintal ziehen und dort einen Einbruch wagen werde, dem Graf Salm folgen solle. Sie bitten um Aufklärung durch Späher und um militärische Unterstützung im Rheintal und in Sax, falls es zu Gewalttätigkeiten komme.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1625-04-14" resp="#regest">Datum den 14 d. Aprilis. Anno 1625.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,59 +35,59 @@
 <p>
 <pb facs="StadtASG_Missive_2539_9801.jpg" n="1"/>
 <lb n="1"/>Unser fründtlich willig dienst, sambt was wir ehren liebs unnd
-<lb n="2"/>guots vermögend zuovor. Fromm fürsichtig Ehrsamm Wÿß, Insonders
-<lb n="3"/>guot fründ unnd getrüw lieb <orgName role="recipient" resp="#ner">Eÿdtgnoßen</orgName>, Wir werdent
-<lb n="4"/>von sonnderbaren verthrüwten Orten und Persohnen berichtet,
-<lb n="5"/>was gstalten die sag gange, das daß Jllowische zuo <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindouw</placeName>
-<lb n="6"/>ankommende Regiment von 800. Mann zuo Pferd sÿnen wëg uff
-<lb n="7"/><placeName ref="stadtasg-places-88" cert="medium" resp="#ner">Rhÿnegg</placeName> zuo nëmmen: unnd von dannen das <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Rhÿnthal</placeName> hinuf
-<lb n="8"/>gstrar gegen den Pünten züchen werde, Inn willens der
-<lb n="9"/>Orten von nüwem einen Inbruch zethuond, deme dann der
-<lb n="10"/><persName resp="#ner">Graf von Sultz</persName> mit sÿnem under habenden Regiment ouch
+<lb n="2"/>guots vermögend zuovor. Fromm fürsichtig Ehrsamm <unclear cert="low" resp="#joint">Wÿß</unclear>, Insonders
+<lb n="3"/>guot fründ unnd getrüw lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eÿdtgnoßen</unclear></orgName>, Wir werdent
+<lb n="4"/>von sonnderbaren <unclear cert="low" resp="#joint">verthrüwten</unclear> Orten und <unclear cert="low" resp="#joint">Persohnen</unclear> berichtet,
+<lb n="5"/>was gstalten die sag gange, das daß <unclear cert="low" resp="#joint">Jllowische</unclear> zuo <placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lindouw</unclear></placeName>
+<lb n="6"/>ankommende Regiment von 800. Mann zuo <unclear cert="low" resp="#joint">Pferd</unclear> <unclear cert="low" resp="#joint">sÿnen</unclear> <unclear cert="low" resp="#joint">wëg</unclear> uff
+<lb n="7"/><placeName ref="stadtasg-places-88" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rhÿnegg</unclear></placeName> zuo <unclear cert="low" resp="#joint">nëmmen</unclear>: unnd von dannen das <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rhÿnthal</unclear></placeName> hinuf
+<lb n="8"/><unclear cert="low" resp="#joint">gstrar</unclear> gegen den <unclear cert="low" resp="#joint">Pünten</unclear> züchen werde, Inn willens der
+<lb n="9"/>Orten von <unclear cert="low" resp="#joint">nüwem</unclear> <unclear cert="low" resp="#joint">einen</unclear> Inbruch zethuond, <unclear cert="low" resp="#joint">deme</unclear> dann der
+<lb n="10"/><persName resp="#ner">Graf von Sultz</persName> mit <unclear cert="low" resp="#joint">sÿnem</unclear> <unclear cert="low" resp="#joint">under</unclear> <unclear cert="low" resp="#joint">habenden</unclear> Regiment ouch
 <lb n="11"/>alß bald nachvolgen werde. Wann dann unns
-<lb n="12"/>nit zwÿflet, Ir als nechst geseßne hirumb gründtliches
-<lb n="13"/>wüßen haben werdint, So habent wir von wegen wichtig-
-<lb n="14"/>kheit der sach nit unnderlaßen wellen, unns deßwëgen
-<lb n="15"/>bÿ üch umb eigentlichen bricht zuoerholen. Gelangt demnach
-<lb n="16"/>an üch unnser getrüw lieb Eÿdtgnoßen unser fründt:
+<lb n="12"/>nit <unclear cert="low" resp="#joint">zwÿflet</unclear>, Ir als <unclear cert="low" resp="#joint">nechst</unclear> <unclear cert="low" resp="#joint">geseßne</unclear> <unclear cert="low" resp="#joint">hirumb</unclear> gründtliches
+<lb n="13"/><unclear cert="medium" resp="#joint">wüßen</unclear> haben werdint, So habent wir von wegen wichtig-
+<lb n="14"/><unclear cert="low" resp="#joint">kheit</unclear> der sach nit unnderlaßen wellen, unns <unclear cert="low" resp="#joint">deßwëgen</unclear>
+<lb n="15"/>bÿ üch umb eigentlichen <unclear cert="low" resp="#joint">bricht</unclear> <unclear cert="low" resp="#joint">zuoerholen</unclear>. <unclear cert="low" resp="#joint">Gelangt</unclear> demnach
+<lb n="16"/>an üch unnser getrüw lieb <unclear cert="low" resp="#joint">Eÿdtgnoßen</unclear> unser <unclear cert="low" resp="#joint">fründt</unclear>:
 <lb n="17"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eÿdtgnößisch</orgName> bitten und ersuochen, Ir wöllint uff diß Volckh
-<lb n="18"/>ein getrüwes ufsëchen haben, unnd durch ußschickung flÿßiger
-<lb n="19"/>verthruwter Spëcheren Inn gwüße erkhundigung bringen
-<lb n="20"/>laßen, wann unnd wie bald es Inn angedüten Orten an-
-<lb n="21"/>kommen, ob es bewehrt, unnd wellichen weg es nëmmen werde,
-<lb n="22"/>unnd unns volgendts deßelben uffs fürderlichiste als müglich
-<lb n="23"/>zuo unnser gebürenden nothwëndigen nachrichtung ohn-
-<lb n="24"/>beschwert berichten. Unnd wo fehr den unns Inge-
-<lb n="25"/>langten Zÿt: unnd warnungen nach, etwas daran
-<lb n="26"/>were, wöllent wir üch dienstwilligs flÿßes ersuocht
-<lb n="27"/>haben, das Ir uf das <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Rhÿnthal</placeName>, unnd unnsere Herrschafft
-<lb n="28"/><placeName resp="#ner">Sax</placeName> ein wachtbars oug haben, unnd beidersÿts under-
-<lb n="29"/>thanen, Im fhal Inen etwas gwaltthëtigs unnd ver-
-<lb n="30"/>drießlichs sölte dahero zuogefügt werden, einen redlichen
-<lb n="31"/><orgName resp="#ner">Eÿdtgnößischen</orgName> unverlengten bÿsprung thuon, unnd sÿ
-<lb n="32"/>vor unbillichem gwalt nach bestem üwerem vermögen
+<lb n="18"/>ein <unclear cert="low" resp="#joint">getrüwes</unclear> <unclear cert="low" resp="#joint">ufsëchen</unclear> haben, unnd durch ußschickung <unclear cert="low" resp="#joint">flÿßiger</unclear>
+<lb n="19"/>verthruwter <unclear cert="low" resp="#joint">Spëcheren</unclear> Inn <unclear cert="low" resp="#joint">gwüße</unclear> <unclear cert="low" resp="#joint">erkhundigung</unclear> bringen
+<lb n="20"/>laßen, wann unnd wie bald es Inn <unclear cert="low" resp="#joint">angedüten</unclear> Orten an-
+<lb n="21"/>kommen, ob es <unclear cert="low" resp="#joint">bewehrt</unclear>, unnd wellichen weg es <unclear cert="low" resp="#joint">nëmmen</unclear> werde,
+<lb n="22"/>unnd unns <unclear cert="low" resp="#joint">volgendts</unclear> deßelben uffs fürderlichiste als müglich
+<lb n="23"/>zuo unnser <unclear cert="low" resp="#joint">gebürenden</unclear> <unclear cert="low" resp="#joint">nothwëndigen</unclear> nachrichtung ohn-
+<lb n="24"/>beschwert berichten. Unnd <unclear cert="low" resp="#joint">wo</unclear> <unclear cert="low" resp="#joint">fehr</unclear> den unns <unclear cert="low" resp="#joint">Inge</unclear>-
+<lb n="25"/><unclear cert="low" resp="#joint">langten</unclear> <unclear cert="low" resp="#joint">Zÿt</unclear>: unnd warnungen nach, etwas daran
+<lb n="26"/><unclear cert="low" resp="#joint">were</unclear>, wöllent wir üch dienstwilligs <unclear cert="low" resp="#joint">flÿßes</unclear> ersuocht
+<lb n="27"/>haben, das Ir uf das <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rhÿnthal</unclear></placeName>, unnd <unclear cert="low" resp="#joint">unnsere</unclear> Herrschafft
+<lb n="28"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Sax</unclear></placeName> ein <unclear cert="low" resp="#joint">wachtbars</unclear> oug haben, unnd <unclear cert="low" resp="#joint">beidersÿts</unclear> under-
+<lb n="29"/>thanen, Im <unclear cert="medium" resp="#joint">fhal</unclear> <unclear cert="medium" resp="#joint">Inen</unclear> etwas <unclear cert="low" resp="#joint">gwaltthëtigs</unclear> unnd ver-
+<lb n="30"/><unclear cert="low" resp="#joint">drießlichs</unclear> sölte <unclear cert="low" resp="#joint">dahero</unclear> zuogefügt werden, einen redlichen
+<lb n="31"/><orgName resp="#ner">Eÿdtgnößischen</orgName> <unclear cert="low" resp="#joint">unverlengten</unclear> <unclear cert="low" resp="#joint">bÿsprung</unclear> thuon, unnd sÿ
+<lb n="32"/>vor unbillichem gwalt nach bestem <unclear cert="low" resp="#joint">üwerem</unclear> vermögen
 <pb facs="StadtASG_Missive_2539_9802.jpg" n="2"/>
-<lb n="33"/>schirmen, unnd retten helffen wellint, wie wir üch dann
-<lb n="34"/>ein sölliches sonnders wolvertrouwend, unnd es umb üch
-<lb n="35"/>inn glychem unnd annderem zuerwideren gantz willig unnd
-<lb n="36"/>geneigt, unnd üch zuo angenemmer dienst: und fründtschafft
-<lb n="37"/>erwysung nach fürbaß wol gewogen sind. Gott den
-<lb n="38"/>herren bittende, daß er unnserer fygenden bluottige an=
-<lb n="39"/>schleg gewaltigklich zerbrächen, unns vor unfürer gnedig
-<lb n="40"/>bewahren, unnd inn unserem geliebten vatterland nach
-<lb n="41"/>fürbaß inn fridlichem ruewigem wolstand erhalten welle.
-<lb n="42"/>Datum den <origDate when="1625" resp="#ner">14 d. Aprilis. Anno 1625</origDate>.
+<lb n="33"/>schirmen, unnd retten helffen wellint, wie wir <unclear cert="medium" resp="#joint">üch</unclear> dann
+<lb n="34"/>ein <unclear cert="medium" resp="#joint">sölliches</unclear> sonnders <unclear cert="low" resp="#joint">wolvertrouwend</unclear>, unnd es umb <unclear cert="medium" resp="#joint">üch</unclear>
+<lb n="35"/>inn <unclear cert="medium" resp="#joint">glychem</unclear> unnd annderem <unclear cert="low" resp="#joint">zuerwideren</unclear> gantz willig unnd
+<lb n="36"/>geneigt, unnd üch zuo <unclear cert="medium" resp="#joint">angenemmer</unclear> dienst: und fründtschafft
+<lb n="37"/><unclear cert="medium" resp="#joint">erwysung</unclear> nach fürbaß wol gewogen sind. Gott den
+<lb n="38"/>herren bittende, daß er <unclear cert="medium" resp="#joint">unnserer</unclear> <unclear cert="low" resp="#joint">fygenden</unclear> <unclear cert="low" resp="#joint">bluottige</unclear> an=
+<lb n="39"/>schleg <unclear cert="medium" resp="#joint">gewaltigklich</unclear> <unclear cert="low" resp="#joint">zerbrächen</unclear>, unns vor <unclear cert="low" resp="#joint">unfürer</unclear> gnedig
+<lb n="40"/><unclear cert="medium" resp="#joint">bewahren</unclear>, unnd inn unserem geliebten vatterland nach
+<lb n="41"/>fürbaß inn fridlichem <unclear cert="low" resp="#joint">ruewigem</unclear> <unclear cert="low" resp="#joint">wolstand</unclear> erhalten <unclear cert="medium" resp="#joint">welle</unclear>.
+<lb n="42"/>Datum den <origDate when="1625" resp="#ner">14 <unclear cert="medium" resp="#joint">d</unclear>. Aprilis. Anno 1625</origDate>.
 <lb n="43"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="44"/>der Stadt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2539_9803.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2539_9804.jpg" n="4"/>
 <lb n="45"/>Den frommen fürsichtigen
-<lb n="46"/>ehrsamen weyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="46"/><unclear cert="medium" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">weyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="47"/>meister unnd Rath der
-<lb n="48"/>Statt Sant Gallen</orgName>, unßren
-<lb n="49"/>innsonnders guoten fründen
+<lb n="48"/>Statt Sant Gallen</orgName>, <unclear cert="medium" resp="#joint">unßren</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">innsonnders</unclear> guoten fründen
 <lb n="50"/>unnd gethrüwen lieben
-<lb n="51"/>Eydtgnoßen.
+<lb n="51"/><unclear cert="low" resp="#joint">Eydtgnoßen</unclear>.
 </p>
         </body>
     </text>

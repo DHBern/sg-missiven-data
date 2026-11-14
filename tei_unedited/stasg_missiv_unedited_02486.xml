@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2486</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,68 +20,68 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Klöze antworten auf ein Schreiben vom 15. April 1624 betreffend den Erbteil des verstorbenen Abraham Gmuender. Sie teilen mit, dass dessen Sohn Christoph und seine Mutter Salomena noch leben. Wegen der aktuellen Kriegsgefahr kann die Erbschaft nicht erhoben werden. Sie bitten St. Gallen, den Anteil weiterhin sicher zu verwahren, bis die Erben oder ihre Bevollmächtigten ihn abholen können.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Klöze</name><placeName resp="#regest">Klöze</placeName><date when="1624-05-31" resp="#regest">31 maij ao 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2486_9583.jpg" n="1"/>
-<lb n="1"/>Unsere freundtlig ganzwillige deinst sambt wunßchung vo
-<lb n="2"/>goettlicher allmacht angenehmber wolergehen zuvor
+<lb n="1"/><unclear cert="low" resp="#joint">Unsere</unclear> <unclear cert="low" resp="#joint">freundtlig</unclear> <unclear cert="low" resp="#joint">ganzwillige</unclear> <unclear cert="low" resp="#joint">deinst</unclear> sambt <unclear cert="medium" resp="#joint">wunßchung</unclear> <unclear cert="medium" resp="#joint">vo</unclear>
+<lb n="2"/><unclear cert="medium" resp="#joint">goettlicher</unclear> allmacht <unclear cert="low" resp="#joint">angenehmber</unclear> <unclear cert="low" resp="#joint">wolergehen</unclear> zuvor
 <lb n="3"/>Ehrenveste, fursichtige, erßame undt wolweiße groß-
-<lb n="4"/>guenstige herren undt jnßonders liebe guette freundte
-<lb n="5"/>Euwer Ehr: weißheiten an unß gethanes schreiben de dato
-<lb n="6"/><date resp="#ner">15. Aprilis jnstehenden jahres</date>. Betreffende den erb-
+<lb n="4"/>guenstige herren undt jnßonders liebe <unclear cert="medium" resp="#joint">guette</unclear> <unclear cert="medium" resp="#joint">freundte</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">Euwer</unclear> <unclear cert="medium" resp="#joint">Ehr</unclear>: <unclear cert="medium" resp="#joint">weißheiten</unclear> an <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">gethanes</unclear> schreiben de dato
+<lb n="6"/><date resp="#ner">15. Aprilis <unclear cert="low" resp="#joint">jnstehenden</unclear> jahres</date>. Betreffende den erb-
 <lb n="7"/>theil so an den gottseelig <persName resp="#ner">Abraham Gmuender</persName> gewe-
-<lb n="8"/>ßenen mittbuergern alhier undt nun mehr seine nach-
-<lb n="9"/>gelaßene erben gefallen. haben wier uebersendet
-<lb n="10"/>empffangen, undt deßen jnhalt darauß vernomen,
-<lb n="11"/>Fuegen dehmnach E. E. W: hierauf uff dero begehren
-<lb n="12"/>nach dinstfreundtlichen zuewißen, daß nach gemel-
-<lb n="13"/>tem <persName resp="#ner">Abraham Gmuender</persName> seel: vor ohngefehrde vor
-<lb n="14"/>zwoelff jahren todes verblichen, nuhr ein leiblicher sohn
-<lb n="15"/>mit nahmen <persName resp="#ner">Christoff</persName>. welcher biß hero seinem erleren-
-<lb n="16"/>ten schwertfeger handtwerkh nachgewandert, nebent
-<lb n="17"/>seiner auch eheleiblichen mutter <persName resp="#ner">Salomena</persName> alhier
-<lb n="18"/>wohnendt befunden thut, undt nach beyjm leben seindt,
-<lb n="19"/>Wahn nun aber obangezogene erbschafft wegen der
-<lb n="20"/>jtzigen großen unfriendens zeit undt gefaehrligkei-
-<lb n="21"/>ten, so sich allenthalben jn den landern beher leßet,
-<lb n="22"/>zue dießen male nicht erhoben werden kan, sondern
-<lb n="23"/>noch umb etwas zue rucke bleiben muß alß ge-
-<lb n="24"/>langet an E. E. W: unser dienst freundtlich ersuch
-<lb n="25"/>undt biethen dieselben geruhen, wie sich bißhero
-<lb n="26"/>gethan, solchen antheil ßo dießen erben den rechtenweg
-<lb n="27"/>gepueren moechte, weitters jn guetter undt trewer
-<lb n="28"/>sicheren
+<lb n="8"/><unclear cert="low" resp="#joint">ßenen</unclear> <unclear cert="low" resp="#joint">mittbuergern</unclear> alhier undt <unclear cert="low" resp="#joint">nun</unclear> mehr <unclear cert="low" resp="#joint">seine</unclear> nach-
+<lb n="9"/>gelaßene erben gefallen. haben <unclear cert="low" resp="#joint">wier</unclear> <unclear cert="low" resp="#joint">uebersendet</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">empffangen</unclear>, undt <unclear cert="medium" resp="#joint">deßen</unclear> <unclear cert="medium" resp="#joint">jnhalt</unclear> darauß vernomen,
+<lb n="11"/><unclear cert="low" resp="#joint">Fuegen</unclear> <unclear cert="low" resp="#joint">dehmnach</unclear> E. E. <unclear cert="low" resp="#joint">W</unclear>: hierauf uff dero begehren
+<lb n="12"/>nach <unclear cert="medium" resp="#joint">dinstfreundtlichen</unclear> <unclear cert="medium" resp="#joint">zuewißen</unclear>, daß nach gemel-
+<lb n="13"/>tem <persName resp="#ner"><unclear cert="medium" resp="#joint">Abraham</unclear> <unclear cert="medium" resp="#joint">Gmuender</unclear></persName> <unclear cert="medium" resp="#joint">seel</unclear>: <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">ohngefehrde</unclear> <unclear cert="medium" resp="#joint">vor</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">zwoelff</unclear> jahren <unclear cert="low" resp="#joint">todes</unclear> <unclear cert="low" resp="#joint">verblichen</unclear>, <unclear cert="low" resp="#joint">nuhr</unclear> ein <unclear cert="low" resp="#joint">leiblicher</unclear> <unclear cert="low" resp="#joint">sohn</unclear>
+<lb n="15"/>mit <unclear cert="low" resp="#joint">nahmen</unclear> <persName resp="#ner">Christoff</persName>. welcher <unclear cert="low" resp="#joint">biß</unclear> <unclear cert="low" resp="#joint">hero</unclear> <unclear cert="low" resp="#joint">seinem</unclear> <unclear cert="low" resp="#joint">erleren</unclear>-
+<lb n="16"/><unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">schwertfeger</unclear> <unclear cert="low" resp="#joint">handtwerkh</unclear> <unclear cert="low" resp="#joint">nachgewandert</unclear>, <unclear cert="low" resp="#joint">nebent</unclear>
+<lb n="17"/>seiner auch <unclear cert="medium" resp="#joint">eheleiblichen</unclear> mutter <persName resp="#ner">Salomena</persName> alhier
+<lb n="18"/><unclear cert="medium" resp="#joint">wohnendt</unclear> <unclear cert="medium" resp="#joint">befunden</unclear> thut, <unclear cert="medium" resp="#joint">undt</unclear> nach <unclear cert="medium" resp="#joint">beyjm</unclear> leben <unclear cert="medium" resp="#joint">seindt</unclear>,
+<lb n="19"/><unclear cert="medium" resp="#joint">Wahn</unclear> nun aber <unclear cert="low" resp="#joint">obangezogene</unclear> erbschafft wegen der
+<lb n="20"/><unclear cert="low" resp="#joint">jtzigen</unclear> großen unfriendens zeit undt gefaehrligkei-
+<lb n="21"/>ten, so sich allenthalben <unclear cert="medium" resp="#joint">jn</unclear> den <unclear cert="low" resp="#joint">landern</unclear> <unclear cert="low" resp="#joint">beher</unclear> <unclear cert="low" resp="#joint">leßet</unclear>,
+<lb n="22"/>zue dießen male nicht <unclear cert="low" resp="#joint">erhoben</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">kan</unclear>, <unclear cert="low" resp="#joint">sondern</unclear>
+<lb n="23"/>noch umb etwas zue <unclear cert="low" resp="#joint">rucke</unclear> <unclear cert="low" resp="#joint">bleiben</unclear> muß alß ge-
+<lb n="24"/>langet an E. <unclear cert="low" resp="#joint">E</unclear>. W: <unclear cert="low" resp="#joint">unser</unclear> dienst freundtlich ersuch
+<lb n="25"/>undt <unclear cert="medium" resp="#joint">biethen</unclear> <unclear cert="medium" resp="#joint">dieselben</unclear> <unclear cert="medium" resp="#joint">geruhen</unclear>, wie sich <unclear cert="low" resp="#joint">bißhero</unclear>
+<lb n="26"/>gethan, solchen antheil ßo <unclear cert="low" resp="#joint">dießen</unclear> erben <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">rechtenweg</unclear>
+<lb n="27"/><unclear cert="medium" resp="#joint">gepueren</unclear> <unclear cert="medium" resp="#joint">moechte</unclear>, <unclear cert="medium" resp="#joint">weitters</unclear> <unclear cert="medium" resp="#joint">jn</unclear> <unclear cert="medium" resp="#joint">guetter</unclear> undt <unclear cert="low" resp="#joint">trewer</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">sicheren</unclear>
 <pb facs="StadtASG_Missive_2486_9584.jpg" n="2"/>
 <lb n="29"/>verwahrung unbeschedigt zubehaltten, damit er nicht ge-
-<lb n="30"/>mindert sondern vermehret werden moege, biß baldt Gott
-<lb n="31"/>der allmechtige beßern friede verleihen wirdt, werden wo
-<lb n="32"/>nicht die erben selbst, jedoch ihre vollmechtige abgeord-
-<lb n="33"/>nete sich an gehoerende oerth zur erhebung solcher erb-
-<lb n="34"/>schafft einstellen. Undt seind denselben es umb E. E.
-<lb n="35"/>W. in dergleichen was unß betroffen hette, auch
-<lb n="36"/>alle anderem hinwiederumb ganz willig. Die-
-<lb n="37"/>selbete hiemit Gottes gnadschutz treülich empfeh-
-<lb n="38"/>lendt. Dat. <origPlace resp="#ner">Kloeß</origPlace> <origDate when="1624-05-31" resp="#ner">den 31 maij ao 1624</origDate>.
+<lb n="30"/><unclear cert="medium" resp="#joint">mindert</unclear> sondern vermehret werden moege, <unclear cert="medium" resp="#joint">biß</unclear> <unclear cert="medium" resp="#joint">baldt</unclear> Gott
+<lb n="31"/>der <unclear cert="medium" resp="#joint">allmechtige</unclear> <unclear cert="medium" resp="#joint">beßern</unclear> <unclear cert="medium" resp="#joint">friede</unclear> <unclear cert="medium" resp="#joint">verleihen</unclear> wirdt, werden wo
+<lb n="32"/>nicht die erben selbst, jedoch ihre <unclear cert="medium" resp="#joint">vollmechtige</unclear> abgeord-
+<lb n="33"/>nete sich an <unclear cert="medium" resp="#joint">gehoerende</unclear> <unclear cert="medium" resp="#joint">oerth</unclear> zur erhebung solcher erb-
+<lb n="34"/>schafft einstellen. Undt <unclear cert="low" resp="#joint">seind</unclear> <unclear cert="low" resp="#joint">denselben</unclear> es umb E. E.
+<lb n="35"/>W. in dergleichen was unß <unclear cert="low" resp="#joint">betroffen</unclear> <unclear cert="low" resp="#joint">hette</unclear>, auch
+<lb n="36"/>alle anderem <unclear cert="low" resp="#joint">hinwiederumb</unclear> ganz willig. <unclear cert="low" resp="#joint">Die</unclear>-
+<lb n="37"/><unclear cert="low" resp="#joint">selbete</unclear> hiemit Gottes <unclear cert="low" resp="#joint">gnadschutz</unclear> <unclear cert="low" resp="#joint">treülich</unclear> empfeh-
+<lb n="38"/><unclear cert="low" resp="#joint">lendt</unclear>. Dat. <origPlace resp="#ner"><unclear cert="low" resp="#joint">Kloeß</unclear></origPlace> <origDate when="1624-05-31" resp="#ner">den 31 maij ao 1624</origDate>.
 <lb n="39"/><orgName role="issuer" resp="#ner">Bürgermeister undt rath
-<lb n="40"/>der stadt Kloeße</orgName>.
+<lb n="40"/>der <unclear cert="medium" resp="#joint">stadt</unclear> <unclear cert="low" resp="#joint">Kloeße</unclear></orgName>.
 <pb facs="StadtASG_Missive_2486_9585.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2486_9586.jpg" n="4"/>
 <lb n="41"/>Denen ehrenvesten fürsichtigen ehrsamen
 <lb n="42"/>und wolweisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern unnd
-<lb n="43"/>Räthe der stadt Sanct Gallen</orgName> unsern beson-
-<lb n="44"/>dern großgünstigen herren, und gutten freünd-
-<lb n="45"/>ten.
+<lb n="43"/>Räthe der stadt Sanct Gallen</orgName> unsern <unclear cert="medium" resp="#joint">beson</unclear>-
+<lb n="44"/>dern großgünstigen herren, und gutten <unclear cert="low" resp="#joint">freünd</unclear>-
+<lb n="45"/><unclear cert="low" resp="#joint">ten</unclear>.
 </p>
         </body>
     </text>

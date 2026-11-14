@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2409</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,86 +20,86 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Vogt Hans Caspar Heidegger zu Grüningen entschuldigt sich bei Bürgermeister und Rat zu St. Gallen für die Verhaftung seines Amtsangehörigen Martin Schüffelberger. Dieser habe in St. Gallen behauptet, der Vogt habe Heinrich Deeler erlaubt, den Metzger Jakob Appenzeller wegen einer Schuld zu verhaften. Heidegger bestreitet dies und verspricht, Schüffelberger für die falsche Anschuldigung zu bestrafen. Er bittet, die Verhafteten freizulassen und ihnen die Kosten zu erstatten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hans Caspar Heidegger, Vogt der Herrschaft Grüningen</name><date when="1623-12-23" resp="#regest">23 december ao. 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2409_9263.jpg" n="1"/>
-<lb n="1"/>Edler, Eerenvest, Fromm, Fuersichtiger, Eersam und wyß-
-<lb n="2"/>er, Herr Burgermeister, insonders gunstiger, ehrender, lieb-
-<lb n="3"/>er Herr, denen seyen myn guotwillige dienst und gruoß, sampt
-<lb n="4"/>wurbigg ehren, liebs und guots erwuerscht allzyt zuvor. By mir
-<lb n="5"/>ist erschinen myn lieber Amptsangehoeriger, <persName resp="#ner">Marthj Schuff-
-<lb n="6"/>elbeger</persName> von <placeName resp="#ner">Fischental</placeName>, im <placeName resp="#ner">Hof wald</placeName>, und nebent anderem
-<lb n="7"/>klagende fuergebracht. Als dann er vor etwus tagen, im
-<lb n="8"/>nammen synes brueders, <persName resp="#ner">Hannßen Schuffelbergers</persName>, uff B-
-<lb n="9"/>aaerg zuo <placeName resp="#ner">Fischental</placeName>, zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> in der Herren Statt ge-
-<lb n="10"/>weßen, und daselbst mit Irem Burger, <persName resp="#ner">Othmar Appenzeller</persName>,
-<lb n="11"/>dem Metzger, sampt den darzuo verordneten, die benamsten
-<lb n="12"/>kaelbfehl, nach luth des alhie zuo <placeName ref="stadtasg-places-413" cert="medium" resp="#ner">Grueningen</placeName> ergangenen
-<lb n="13"/>urtheils, besichtigenn helffen wellen etc. Da were Im neb-
-<lb n="14"/>ent anderen mehr begegneten schmerzlichkeiten (derer
+<lb n="1"/><unclear cert="low" resp="#joint">Edler</unclear>, <unclear cert="low" resp="#joint">Eerenvest</unclear>, <unclear cert="low" resp="#joint">Fromm</unclear>, <unclear cert="low" resp="#joint">Fuersichtiger</unclear>, <unclear cert="low" resp="#joint">Eersam</unclear> und <unclear cert="low" resp="#joint">wyß</unclear>-
+<lb n="2"/><unclear cert="low" resp="#joint">er</unclear>, Herr Burgermeister, <unclear cert="medium" resp="#joint">insonders</unclear> <unclear cert="medium" resp="#joint">gunstiger</unclear>, <unclear cert="medium" resp="#joint">ehrender</unclear>, lieb-
+<lb n="3"/>er Herr, denen seyen myn guotwillige dienst und <unclear cert="low" resp="#joint">gruoß</unclear>, sampt
+<lb n="4"/><unclear cert="low" resp="#joint">wurbigg</unclear> ehren, liebs und <unclear cert="low" resp="#joint">guots</unclear> <unclear cert="low" resp="#joint">erwuerscht</unclear> <unclear cert="medium" resp="#joint">allzyt</unclear> zuvor. By <unclear cert="low" resp="#joint">mir</unclear>
+<lb n="5"/>ist erschinen myn lieber Amptsangehoeriger, <persName resp="#ner"><unclear cert="low" resp="#joint">Marthj</unclear> Schuff-
+<lb n="6"/><unclear cert="low" resp="#joint">elbeger</unclear></persName> von <placeName resp="#ner"><unclear cert="low" resp="#joint">Fischental</unclear></placeName>, <unclear cert="low" resp="#joint">im</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Hof</unclear> <unclear cert="low" resp="#joint">wald</unclear></placeName>, und <unclear cert="medium" resp="#joint">nebent</unclear> anderem
+<lb n="7"/><unclear cert="medium" resp="#joint">klagende</unclear> <unclear cert="medium" resp="#joint">fuergebracht</unclear>. Als dann er <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">etwus</unclear> <unclear cert="low" resp="#joint">tagen</unclear>, <unclear cert="low" resp="#joint">im</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">nammen</unclear> <unclear cert="low" resp="#joint">synes</unclear> <unclear cert="low" resp="#joint">brueders</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Hannßen</unclear> <unclear cert="low" resp="#joint">Schuffelbergers</unclear></persName>, <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">B</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">aaerg</unclear> zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Fischental</unclear></placeName>, zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> <unclear cert="medium" resp="#joint">in</unclear> der Herren <unclear cert="low" resp="#joint">Statt</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">weßen</unclear>, und daselbst mit <unclear cert="low" resp="#joint">Irem</unclear> Burger, <persName resp="#ner">Othmar Appenzeller</persName>,
+<lb n="11"/>dem <unclear cert="low" resp="#joint">Metzger</unclear>, sampt den <unclear cert="medium" resp="#joint">darzuo</unclear> <unclear cert="medium" resp="#joint">verordneten</unclear>, die <unclear cert="low" resp="#joint">benamsten</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">kaelbfehl</unclear>, nach <unclear cert="medium" resp="#joint">luth</unclear> des alhie zuo <placeName ref="stadtasg-places-413" cert="medium" resp="#ner">Grueningen</placeName> ergangenen
+<lb n="13"/><unclear cert="low" resp="#joint">urtheils</unclear>, <unclear cert="low" resp="#joint">besichtigenn</unclear> helffen wellen etc. Da <unclear cert="medium" resp="#joint">were</unclear> <unclear cert="low" resp="#joint">Im</unclear> neb-
+<lb n="14"/>ent anderen mehr <unclear cert="low" resp="#joint">begegneten</unclear> <unclear cert="low" resp="#joint">schmerzlichkeiten</unclear> (derer
 <lb n="15"/>sich im wenigisten nit versehen) fuergehalten worden,
-<lb n="16"/>es habe myn Amptsangehoeriger, <persName resp="#ner">Hejnj Deeler</persName>, lehen-
-<lb n="17"/>halter, by wald, der Herren Burger, <persName resp="#ner">Jacoben Appen-
-<lb n="18"/>zeller</persName>, den Metzger, wegen einer schuld, daselbst im Hof
-<lb n="19"/>wald, verarestieren lassen, alß das er Jme einen
-<lb n="20"/>Troester zum rechten stellen muessen etc. Wellichs gethott
-<lb n="21"/>ich Jme Deeler erloubt haben solte, und sich die Herren
-<lb n="22"/>darab mechtig beschwaerdt, und mit vermeinen Jnen,
-<lb n="23"/>mir bewußt nit sye, was die Eidtgnoessischen bruch und
-<lb n="24"/>recht hierinne uswyßend und vermoegend etc. Uff welliches
-<lb n="25"/>dann eruolget, das er deßwegen ouch Jme arrest ge-
-<lb n="26"/>nomen worden, und an Eidts statt anloben muessen, sich
-<lb n="27"/>uff ein bestimpten tag, widerumb daselbst zum rechten
-<lb n="28"/>zestellen etc. Mit wellichen worten aber mir unguettlich,
-<lb n="29"/>gwalt und unrecht beschehen, ouch sich mit keiner war-
-<lb n="30"/>heit nit befinden wirt, das ich Jme Deeler soellichs
-<lb n="31"/>erloubt habe, deßwegen ich dann Jme, umb soelliches
+<lb n="16"/><unclear cert="medium" resp="#joint">es</unclear> habe myn Amptsangehoeriger, <persName resp="#ner"><unclear cert="medium" resp="#joint">Hejnj</unclear> <unclear cert="medium" resp="#joint">Deeler</unclear></persName>, <unclear cert="medium" resp="#joint">lehen</unclear>-
+<lb n="17"/><unclear cert="medium" resp="#joint">halter</unclear>, by wald, der <unclear cert="low" resp="#joint">Herren</unclear> Burger, <persName resp="#ner">Jacoben Appen-
+<lb n="18"/>zeller</persName>, den Metzger, wegen einer schuld, daselbst <unclear cert="low" resp="#joint">im</unclear> Hof
+<lb n="19"/>wald, <unclear cert="low" resp="#joint">verarestieren</unclear> lassen, <unclear cert="low" resp="#joint">alß</unclear> das er <unclear cert="low" resp="#joint">Jme</unclear> <unclear cert="medium" resp="#joint">einen</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">Troester</unclear> zum rechten stellen muessen <unclear cert="medium" resp="#joint">etc</unclear>. <unclear cert="low" resp="#joint">Wellichs</unclear> <unclear cert="low" resp="#joint">gethott</unclear>
+<lb n="21"/>ich <unclear cert="medium" resp="#joint">Jme</unclear> <unclear cert="medium" resp="#joint">Deeler</unclear> <unclear cert="medium" resp="#joint">erloubt</unclear> haben solte, und sich die Herren
+<lb n="22"/>darab <unclear cert="medium" resp="#joint">mechtig</unclear> <unclear cert="medium" resp="#joint">beschwaerdt</unclear>, und <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">vermeinen</unclear> <unclear cert="low" resp="#joint">Jnen</unclear>,
+<lb n="23"/><unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">bewußt</unclear> nit <unclear cert="low" resp="#joint">sye</unclear>, was die <unclear cert="medium" resp="#joint">Eidtgnoessischen</unclear> <unclear cert="low" resp="#joint">bruch</unclear> und
+<lb n="24"/><unclear cert="medium" resp="#joint">recht</unclear> <unclear cert="medium" resp="#joint">hierinne</unclear> <unclear cert="low" resp="#joint">uswyßend</unclear> und <unclear cert="medium" resp="#joint">vermoegend</unclear> etc. <unclear cert="low" resp="#joint">Uff</unclear> <unclear cert="low" resp="#joint">welliches</unclear>
+<lb n="25"/>dann <unclear cert="low" resp="#joint">eruolget</unclear>, <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">er</unclear> deßwegen ouch <unclear cert="low" resp="#joint">Jme</unclear> <unclear cert="low" resp="#joint">arrest</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="26"/><unclear cert="low" resp="#joint">nomen</unclear> worden, und an <unclear cert="low" resp="#joint">Eidts</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">anloben</unclear> muessen, sich
+<lb n="27"/>uff <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">bestimpten</unclear> tag, widerumb <unclear cert="medium" resp="#joint">daselbst</unclear> zum rechten
+<lb n="28"/>zestellen etc. Mit wellichen <unclear cert="low" resp="#joint">worten</unclear> aber mir unguettlich,
+<lb n="29"/>gwalt und unrecht beschehen, <unclear cert="medium" resp="#joint">ouch</unclear> sich mit keiner <unclear cert="medium" resp="#joint">war</unclear>-
+<lb n="30"/>heit nit befinden <unclear cert="low" resp="#joint">wirt</unclear>, das ich Jme Deeler soellichs
+<lb n="31"/>erloubt habe, deßwegen ich dann <unclear cert="low" resp="#joint">Jme</unclear>, umb <unclear cert="low" resp="#joint">soelliches</unclear>
 <pb facs="StadtASG_Missive_2409_9264.jpg" n="2"/>
-<lb n="32"/>fräfel und falsch fürgeben, innamen myner gnedigen
-<lb n="33"/>Herren unnd Oberen nach synem verdienen buessen und
-<lb n="34"/>straaffen wird, bit derhalb die Herren mich diß orts
-<lb n="35"/>für entschuldiget zehalten, und myne ampts angehörigen
-<lb n="36"/>(als die sich dessen nichts vermügend) entzit entgelten
-<lb n="37"/>zelassen, sonder jederzyt in günstigen willen zueer-
-<lb n="38"/>kennen, wie wir inen das gegentheil ouch gesinnet sind,
-<lb n="39"/>unnd diewyl ermerter <persName resp="#ner">Schuffelberger</persName>, wegen sölichen
-<lb n="40"/>unwarhafften fürgebens unschuldigerwyß inn arrest
-<lb n="41"/>genommen worden, inen der pfliht des deßwegen (wie
+<lb n="32"/><unclear cert="low" resp="#joint">fräfel</unclear> und <unclear cert="low" resp="#joint">falsch</unclear> <unclear cert="low" resp="#joint">fürgeben</unclear>, <unclear cert="low" resp="#joint">innamen</unclear> <unclear cert="low" resp="#joint">myner</unclear> gnedigen
+<lb n="33"/>Herren unnd <unclear cert="low" resp="#joint">Oberen</unclear> nach <unclear cert="low" resp="#joint">synem</unclear> <unclear cert="low" resp="#joint">verdienen</unclear> <unclear cert="low" resp="#joint">buessen</unclear> und
+<lb n="34"/>straaffen wird, bit derhalb die Herren <unclear cert="medium" resp="#joint">mich</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">orts</unclear>
+<lb n="35"/><unclear cert="medium" resp="#joint">für</unclear> entschuldiget zehalten, und <unclear cert="low" resp="#joint">myne</unclear> ampts angehörigen
+<lb n="36"/>(als die sich dessen nichts <unclear cert="medium" resp="#joint">vermügend</unclear>) <unclear cert="medium" resp="#joint">entzit</unclear> <unclear cert="medium" resp="#joint">entgelten</unclear>
+<lb n="37"/>zelassen, sonder <unclear cert="medium" resp="#joint">jederzyt</unclear> <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">günstigen</unclear> willen <unclear cert="low" resp="#joint">zueer</unclear>-
+<lb n="38"/><unclear cert="low" resp="#joint">kennen</unclear>, wie wir inen das gegentheil <unclear cert="medium" resp="#joint">ouch</unclear> gesinnet sind,
+<lb n="39"/><unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">diewyl</unclear> <unclear cert="medium" resp="#joint">ermerter</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Schuffelberger</unclear></persName>, wegen <unclear cert="low" resp="#joint">sölichen</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">unwarhafften</unclear> <unclear cert="low" resp="#joint">fürgebens</unclear> <unclear cert="low" resp="#joint">unschuldigerwyß</unclear> inn arrest
+<lb n="41"/><unclear cert="medium" resp="#joint">genommen</unclear> worden, <unclear cert="low" resp="#joint">inen</unclear> der pfliht des deßwegen (wie
 <lb n="42"/>gemelt) thonen wunsches widererlassen und ledig sagen,
-<lb n="43"/>und die jehnigen so etwas an inen zesprechen, gewünnen
-<lb n="44"/>luth und kostens wegen alherwysen, soll jedem (wie
-<lb n="45"/>billich) guet unnd gebürlich gricht und recht gehalten werden,
-<lb n="46"/>alß das sich niemants rechtmessiger wyß zueerklagen
-<lb n="47"/>haben wirt, etc. Das hab den Herren ich zuo myner
-<lb n="48"/>notwendigen entschuldigung, wie ouch zuo rettung
-<lb n="49"/>mynes verthruwten ampts zuogethanen, im besten nit
-<lb n="50"/>verhalten können, dieselben hiemit sampt uns allne dem
-<lb n="51"/>schirm göttlicher gnaden bevelhende. Dat. den <origDate when="1623-12-23" resp="#ner">23 dec-
-<lb n="52"/>ember ao. 1623</origDate>.
-<lb n="53"/>Der Herren allzyt ganntz
+<lb n="43"/>und die <unclear cert="low" resp="#joint">jehnigen</unclear> so etwas an inen zesprechen, <unclear cert="low" resp="#joint">gewünnen</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">luth</unclear> und <unclear cert="low" resp="#joint">kostens</unclear> wegen alherwysen, soll <unclear cert="medium" resp="#joint">jedem</unclear> (wie
+<lb n="45"/>billich) <unclear cert="medium" resp="#joint">guet</unclear> unnd gebürlich <unclear cert="low" resp="#joint">gricht</unclear> und recht gehalten werden,
+<lb n="46"/><unclear cert="medium" resp="#joint">alß</unclear> das sich niemants <unclear cert="medium" resp="#joint">rechtmessiger</unclear> <unclear cert="medium" resp="#joint">wyß</unclear> <unclear cert="low" resp="#joint">zueerklagen</unclear>
+<lb n="47"/>haben wirt, <unclear cert="medium" resp="#joint">etc</unclear>. Das hab den Herren ich zuo <unclear cert="medium" resp="#joint">myner</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">notwendigen</unclear> entschuldigung, wie ouch zuo rettung
+<lb n="49"/>mynes verthruwten ampts <unclear cert="low" resp="#joint">zuogethanen</unclear>, <unclear cert="low" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">besten</unclear> nit
+<lb n="50"/>verhalten können, dieselben hiemit sampt <unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">allne</unclear> dem
+<lb n="51"/>schirm <unclear cert="medium" resp="#joint">göttlicher</unclear> gnaden <unclear cert="low" resp="#joint">bevelhende</unclear>. <unclear cert="medium" resp="#joint">Dat</unclear>. den <origDate when="1623-12-23" resp="#ner">23 <unclear cert="low" resp="#joint">dec</unclear>-
+<lb n="52"/><unclear cert="low" resp="#joint">ember</unclear> <unclear cert="low" resp="#joint">ao</unclear>. 1623</origDate>.
+<lb n="53"/>Der Herren <unclear cert="low" resp="#joint">allzyt</unclear> <unclear cert="medium" resp="#joint">ganntz</unclear>
 <lb n="54"/>dienst: unnd guotwilliger
-<lb n="55"/><persName role="issuer" resp="#ner">Hanns Caspar Heidegger</persName> vogt der
-<lb n="56"/>Herrschafft <placeName ref="stadtasg-places-413" cert="medium" resp="#ner">Grüningen</placeName>.
+<lb n="55"/><persName role="issuer" resp="#ner">Hanns Caspar <unclear cert="medium" resp="#joint">Heidegger</unclear></persName> <unclear cert="medium" resp="#joint">vogt</unclear> der
+<lb n="56"/><unclear cert="medium" resp="#joint">Herrschafft</unclear> <placeName ref="stadtasg-places-413" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Grüningen</unclear></placeName>.
 <pb facs="StadtASG_Missive_2409_9265.jpg" n="3"/>
-<lb n="57"/>Den fromen fursichtigen und wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister
-<lb n="58"/>und rat der statt Santgallen</orgName> unsern besundern
-<lb n="59"/>guten frunden und getruwen lieben eidgnossen.
+<lb n="57"/>Den <unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="low" resp="#joint">fursichtigen</unclear> und wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">burgermeister</unclear>
+<lb n="58"/>und <unclear cert="low" resp="#joint">rat</unclear> der statt <unclear cert="low" resp="#joint">Santgallen</unclear></orgName> unsern <unclear cert="low" resp="#joint">besundern</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">guten</unclear> <unclear cert="low" resp="#joint">frunden</unclear> und getruwen lieben eidgnossen.
 <pb facs="StadtASG_Missive_2409_9266.jpg" n="4"/>
 <lb n="60"/>Den edlen, ehrnuesten, frommen, fuersichtigen,
 <lb n="61"/>ersamen unnd wisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister
-<lb n="62"/>unnd Rath der Statt St. Gallen</orgName>, meynen
-<lb n="63"/>sonders guenstigen, ehrenden lieben herren.
+<lb n="62"/>unnd Rath der Statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">meynen</unclear>
+<lb n="63"/><unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">guenstigen</unclear>, ehrenden lieben <unclear cert="medium" resp="#joint">herren</unclear>.
 </p>
         </body>
     </text>

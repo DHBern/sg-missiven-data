@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2516</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,45 +20,45 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau informieren Bürgermeister und Rat zu St. Gallen, dass sie für ihren ausgetretenen Bürger Michael Albrecht und dessen Ehefrau Margarethe Dietrichin einen allgemeinen Rechtstag angesetzt haben. Sie bitten die St. Galler Behörden, das betreffende Edikt gemäss ihrem Brauch öffentlich anzuschlagen und zu publizieren, damit keine Gläubiger verkürzt werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1624-11-02" resp="#regest">2. novembris, a° 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2516_9701.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienst zuvor, fürsichtig, ersam
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freündtlich</unclear> willig dienst zuvor, fürsichtig, ersam
 <lb n="2"/>und weise, besonders liebe freünd und nachbarn,
-<lb n="3"/>Welchermaßen wir, unsers außgetrettnen burgers
-<lb n="4"/><persName resp="#ner">Michael Albrechts</persName> und seiner eewürtin <persName resp="#ner">Margretha
-<lb n="5"/>Dietrichin</persName>, gemainen gläubigern, ainen algemainen
-<lb n="6"/>rechtstag ernent und angesetzt, daß haben e. f. w.
-<lb n="7"/>auß beiverwartem edict zuevernemen,
-<lb n="8"/>Wann dann, derselben burger villeicht auch interessiert
-<lb n="9"/>sein, und hie ermelten eegemechten forderung und
-<lb n="10"/>ansprach haben möchten, so bitten wir freündlich e.
-<lb n="11"/>f. w. wöllen solch edict, irem habendem gebrauch nach,
-<lb n="12"/>bei ihnen an gebührenden orten, offentlich anschlagen und
-<lb n="13"/>publicieren laßen, damit an seinen rechten niemand
-<lb n="14"/>verkürzt werd, noch der unwisenhait sich zubeclagen
-<lb n="15"/>ursach hab, daß sein wir umb e. f. w. freündt:
-<lb n="16"/>nachbarlich zueverdienen erbietig, datum den <origDate when="1624-11-02" resp="#ner">2.
-<lb n="17"/>novembris, a° 1624</origDate>.
+<lb n="3"/><unclear cert="low" resp="#joint">Welchermaßen</unclear> wir, unsers außgetrettnen burgers
+<lb n="4"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Michael</unclear> Albrechts</persName> und seiner <unclear cert="low" resp="#joint">eewürtin</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Margretha</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">Dietrichin</unclear></persName>, <unclear cert="medium" resp="#joint">gemainen</unclear> <unclear cert="medium" resp="#joint">gläubigern</unclear>, <unclear cert="low" resp="#joint">ainen</unclear> <unclear cert="low" resp="#joint">algemainen</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">rechtstag</unclear> ernent und angesetzt, daß haben e. <unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">w</unclear>.
+<lb n="7"/>auß beiverwartem edict <unclear cert="medium" resp="#joint">zuevernemen</unclear>,
+<lb n="8"/><unclear cert="medium" resp="#joint">Wann</unclear> dann, derselben burger villeicht auch <unclear cert="medium" resp="#joint">interessiert</unclear>
+<lb n="9"/>sein, und <unclear cert="medium" resp="#joint">hie</unclear> <unclear cert="medium" resp="#joint">ermelten</unclear> <unclear cert="low" resp="#joint">eegemechten</unclear> forderung und
+<lb n="10"/>ansprach haben <unclear cert="medium" resp="#joint">möchten</unclear>, so bitten wir freündlich e.
+<lb n="11"/><unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">w</unclear>. <unclear cert="low" resp="#joint">wöllen</unclear> solch edict, <unclear cert="low" resp="#joint">irem</unclear> habendem gebrauch nach,
+<lb n="12"/>bei ihnen an gebührenden orten, <unclear cert="medium" resp="#joint">offentlich</unclear> anschlagen und
+<lb n="13"/>publicieren <unclear cert="medium" resp="#joint">laßen</unclear>, damit an <unclear cert="medium" resp="#joint">seinen</unclear> rechten niemand
+<lb n="14"/><unclear cert="low" resp="#joint">verkürzt</unclear> werd, noch der unwisenhait sich <unclear cert="low" resp="#joint">zubeclagen</unclear>
+<lb n="15"/>ursach hab, daß <unclear cert="low" resp="#joint">sein</unclear> wir umb e. <unclear cert="low" resp="#joint">f</unclear>. <unclear cert="low" resp="#joint">w</unclear>. freündt:
+<lb n="16"/>nachbarlich <unclear cert="low" resp="#joint">zueverdienen</unclear> erbietig, datum den <origDate when="1624-11-02" resp="#ner">2.
+<lb n="17"/>novembris, <unclear cert="medium" resp="#joint">a°</unclear> 1624</origDate>.
 <lb n="18"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister und rath
 <lb n="19"/>der statt Lindaw</orgName>.
 <pb facs="StadtASG_Missive_2516_9702.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2516_9703.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2516_9704.jpg" n="4"/>
-<lb n="20"/>Denen fürsichtig ersamen und weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="21"/>und Rhat der Statt Sanct Gallen</orgName>, unsern besondere
-<lb n="22"/>lieben freündten und gueten Nachbarn.
+<lb n="20"/>Denen <unclear cert="medium" resp="#joint">fürsichtig</unclear> ersamen und weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="21"/>und <unclear cert="low" resp="#joint">Rhat</unclear> der Statt Sanct Gallen</orgName>, unsern <unclear cert="low" resp="#joint">besondere</unclear>
+<lb n="22"/>lieben <unclear cert="low" resp="#joint">freündten</unclear> und gueten Nachbarn.
 <lb n="23"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St: Gallen</placeName>.
 </p>
         </body>

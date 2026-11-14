@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2538</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,93 +20,93 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich danken St. Gallen für den Bericht über das von Rorschach nach Liechtensteig ziehende fremde Kriegsvolk. Sie teilen mit, dass das Volk auch bei Rapperswil und am Gotthard aufgehalten sei, weil der Pass neu geschnitten und das Wetter schlecht sei. Zudem fehle es an Proviant. Zürich habe Boten ausgesandt, um die Lage zu erkunden, und werde St. Gallen unverzüglich informieren. Über den Pass für die Ländler wisse man nichts. Man bittet um weitere Berichte und verspricht eidgenössische Unterstützung.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1625-04-14" resp="#regest">den 14. Aprilis, Anno 1625</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2538_9797.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig dienste, sambt was wir ehren
+<lb n="1"/>Unnser fründtlich willig dienste, <unclear cert="low" resp="#joint">sambt</unclear> was wir <unclear cert="low" resp="#joint">ehren</unclear>
 <lb n="2"/>liebs unnd guots vermoegend zuovor. Fromm, fürsichtig,
-<lb n="3"/>ehrsam wyß, insonnders guot fründ unnd gethrüw
-<lb n="4"/>lieb <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>. Uß üwerm schryben
-<lb n="5"/>und postscripto habend wir mit mehrerem verstanden,
-<lb n="6"/>wasmaßen sich das frömbde gegen dem hertzogthumb
+<lb n="3"/><unclear cert="low" resp="#joint">ehrsam</unclear> <unclear cert="low" resp="#joint">wyß</unclear>, insonnders guot fründ unnd gethrüw
+<lb n="4"/>lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnossen</unclear></orgName>. <unclear cert="low" resp="#joint">Uß</unclear> üwerm schryben
+<lb n="5"/>und postscripto <unclear cert="low" resp="#joint">habend</unclear> wir mit <unclear cert="low" resp="#joint">mehrerem</unclear> verstanden,
+<lb n="6"/><unclear cert="low" resp="#joint">wasmaßen</unclear> sich das frömbde gegen dem hertzogthumb
 <lb n="7"/><placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meyland</placeName> ziechende kriegsvolck von <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Roschach</placeName> naher
-<lb n="8"/>biß gen <placeName ref="stadtasg-places-33" cert="medium" resp="#ner">Liechtensteig</placeName> geschwelt habe, unnd was üwer
-<lb n="9"/>begehren deß paßes halber inn den landman syge.
-<lb n="10"/>Thuond unns vorderist der üwern verthruwliche
-<lb n="11"/>berichts comunication gantz fründtlich bedancken,
-<lb n="12"/>und füegend üch inn antwordt hinwider eydtgnößisch
-<lb n="13"/>zuvernëmmen, das unns ouch schrifft: und mundt-
-<lb n="14"/>lichen bericht ynkommen, das sich diß volck glychergstalt
-<lb n="15"/>von <placeName ref="stadtasg-places-225" cert="medium" resp="#ner">Rappershwyl</placeName> dannen biß gegen dem <persName resp="#ner">Gothart</persName>
-<lb n="16"/>uffhalte und samble. Unnd wovern wir nun die ur-
-<lb n="17"/>sachen deßelben erkhundiget, habend wir anders
-<lb n="18"/>nütjit inn erfahrung bringen koennen, dann das
-<lb n="19"/>diß volck von deßwëgen, das der <persName resp="#ner">Gothart</persName> von
-<lb n="20"/>nüwem überschnydt, unnd im <placeName resp="#ner">Urnersee</placeName> etwas
-<lb n="21"/>ungestümen winderhigen wätters entstanden syge,
-<lb n="22"/>nit habe fortmarschieren koennen, nëbent dem das
-<lb n="23"/>söllich volck mit gar starckhen truggen herbyzogen,
-<lb n="24"/>alß das man sy jëtzmaals herwärts: und uff dëm
-<lb n="25"/><persName resp="#ner">Gothart</persName> wëgen mangels der victualien nit gnuogsam
-<lb n="26"/>proviantieren koennen, welliches dann nit die gringsten
+<lb n="8"/>biß gen <placeName ref="stadtasg-places-33" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Liechtensteig</unclear></placeName> <unclear cert="low" resp="#joint">geschwelt</unclear> habe, unnd was üwer
+<lb n="9"/><unclear cert="low" resp="#joint">begehren</unclear> deß <unclear cert="low" resp="#joint">paßes</unclear> halber inn den landman <unclear cert="low" resp="#joint">syge</unclear>.
+<lb n="10"/><unclear cert="low" resp="#joint">Thuond</unclear> unns <unclear cert="low" resp="#joint">vorderist</unclear> der üwern <unclear cert="low" resp="#joint">verthruwliche</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">berichts</unclear> comunication gantz fründtlich <unclear cert="low" resp="#joint">bedancken</unclear>,
+<lb n="12"/>und <unclear cert="low" resp="#joint">füegend</unclear> üch inn <unclear cert="medium" resp="#joint">antwordt</unclear> <unclear cert="medium" resp="#joint">hinwider</unclear> <unclear cert="medium" resp="#joint">eydtgnößisch</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">zuvernëmmen</unclear>, das unns ouch schrifft: und mundt-
+<lb n="14"/>lichen bericht <unclear cert="low" resp="#joint">ynkommen</unclear>, das sich diß volck glychergstalt
+<lb n="15"/>von <placeName ref="stadtasg-places-225" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Rappershwyl</unclear></placeName> <unclear cert="medium" resp="#joint">dannen</unclear> biß gegen dem <persName resp="#ner"><unclear cert="low" resp="#joint">Gothart</unclear></persName>
+<lb n="16"/>uffhalte und <unclear cert="low" resp="#joint">samble</unclear>. Unnd <unclear cert="low" resp="#joint">wovern</unclear> wir nun die ur-
+<lb n="17"/>sachen deßelben <unclear cert="low" resp="#joint">erkhundiget</unclear>, habend wir anders
+<lb n="18"/><unclear cert="low" resp="#joint">nütjit</unclear> inn <unclear cert="low" resp="#joint">erfahrung</unclear> bringen koennen, dann das
+<lb n="19"/><unclear cert="low" resp="#joint">diß</unclear> volck <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">deßwëgen</unclear>, <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">der</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Gothart</unclear></persName> <unclear cert="low" resp="#joint">von</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">nüwem</unclear> <unclear cert="low" resp="#joint">überschnydt</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">im</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Urnersee</unclear></placeName> <unclear cert="low" resp="#joint">etwas</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">ungestümen</unclear> <unclear cert="low" resp="#joint">winderhigen</unclear> <unclear cert="low" resp="#joint">wätters</unclear> <unclear cert="low" resp="#joint">entstanden</unclear> <unclear cert="low" resp="#joint">syge</unclear>,
+<lb n="22"/><unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">habe</unclear> <unclear cert="low" resp="#joint">fortmarschieren</unclear> <unclear cert="low" resp="#joint">koennen</unclear>, <unclear cert="low" resp="#joint">nëbent</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">das</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">söllich</unclear> <unclear cert="low" resp="#joint">volck</unclear> <unclear cert="low" resp="#joint">mit</unclear> gar <unclear cert="low" resp="#joint">starckhen</unclear> <unclear cert="low" resp="#joint">truggen</unclear> <unclear cert="low" resp="#joint">herbyzogen</unclear>,
+<lb n="24"/><unclear cert="low" resp="#joint">alß</unclear> das man sy <unclear cert="low" resp="#joint">jëtzmaals</unclear> <unclear cert="low" resp="#joint">herwärts</unclear>: und <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">dëm</unclear>
+<lb n="25"/><persName resp="#ner"><unclear cert="low" resp="#joint">Gothart</unclear></persName> <unclear cert="low" resp="#joint">wëgen</unclear> <unclear cert="low" resp="#joint">mangels</unclear> <unclear cert="low" resp="#joint">der</unclear> victualien nit <unclear cert="low" resp="#joint">gnuogsam</unclear>
+<lb n="26"/>proviantieren koennen, welliches dann nit <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">gringsten</unclear>
 <pb facs="StadtASG_Missive_2538_9798.jpg" n="2"/>
-<lb n="27"/>vrsachen nuer gewüßte, daß man die Conpangnen
-<lb n="28"/>uß ettwas ynnemme, vnd daß anziechend volck
-<lb n="29"/>nach vnnd nach hinderhaltten mueßte. Diewyl
-<lb n="30"/>aber ihem nit dvrch vß glaůben zegäben,
-<lb n="31"/>sonnders by söllichem schwall Jnn vnserm ge-
-<lb n="32"/>liebten vatterland bald ettwas vngelägenheit
-<lb n="33"/>angerichtet werden möchte, So haben wir gestrigs
-<lb n="34"/>tags ettliche verthrüwte personen an vnderschiedliche
-<lb n="35"/>ortt vßgeschickt, vnnd den eigendtlichen bricht
-<lb n="36"/>dißers volcks beschaffenheit vnd verhalttens ynnze-
-<lb n="37"/>nämmen, deren widerckunfft dann wir stündt-
-<lb n="38"/>en gewerttig sind. Vnnd waß sy nun deßwäg-
-<lb n="39"/>en Jnn gewüße erfahrung bringen werdent,
-<lb n="40"/>deßen söllent Jr vnsere getrüwe lieb Eydtgnoßen
-<lb n="41"/>vnuerzogenlich berichtet werden. Daß aber
-<lb n="42"/>der paß Jnen den Lännderen beschloßen, deßen
-<lb n="43"/>tragend wir gantz kein wüßen, vnnd künnend
-<lb n="44"/>eß vnß oůch nit wol ynbilden, dann diß volck
-<lb n="45"/>Jnen am nechsten vff dem halß liggen, vnd wägen
-<lb n="46"/>der vnnderhalttung gantz beschwerlich syn wurde,
-<lb n="47"/>wir wöllent aber daßälbig ouch noch baß ettwas
-<lb n="48"/>beßer erkunnen. Vnnderzwüschent wellend Jr
-<lb n="49"/>vff diß durchziehende kriegsvolck noch wyter
-<lb n="50"/>eüwr wachendes oůg werffen, vnd vnnß deßen, so
-<lb n="51"/>üch glöüblich anlangt, Jederzytt by tag vnnd nacht
-<lb n="52"/>berichten, So wöllent wir vnsers theils nit allein
+<lb n="27"/><unclear cert="medium" resp="#joint">vrsachen</unclear> <unclear cert="medium" resp="#joint">nuer</unclear> <unclear cert="medium" resp="#joint">gewüßte</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> man die <unclear cert="low" resp="#joint">Conpangnen</unclear>
+<lb n="28"/>uß <unclear cert="medium" resp="#joint">ettwas</unclear> <unclear cert="medium" resp="#joint">ynnemme</unclear>, <unclear cert="medium" resp="#joint">vnd</unclear> <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">anziechend</unclear> <unclear cert="medium" resp="#joint">volck</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">nach</unclear> <unclear cert="medium" resp="#joint">vnnd</unclear> <unclear cert="medium" resp="#joint">nach</unclear> <unclear cert="medium" resp="#joint">hinderhaltten</unclear> <unclear cert="medium" resp="#joint">mueßte</unclear>. Diewyl
+<lb n="30"/>aber <unclear cert="medium" resp="#joint">ihem</unclear> nit <unclear cert="medium" resp="#joint">dvrch</unclear> <unclear cert="medium" resp="#joint">vß</unclear> <unclear cert="medium" resp="#joint">glaůben</unclear> <unclear cert="medium" resp="#joint">zegäben</unclear>,
+<lb n="31"/><unclear cert="medium" resp="#joint">sonnders</unclear> by söllichem schwall Jnn <unclear cert="low" resp="#joint">vnserm</unclear> ge-
+<lb n="32"/><unclear cert="medium" resp="#joint">liebten</unclear> <unclear cert="medium" resp="#joint">vatterland</unclear> bald ettwas <unclear cert="low" resp="#joint">vngelägenheit</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">angerichtet</unclear> werden möchte, So haben wir gestrigs
+<lb n="34"/>tags <unclear cert="medium" resp="#joint">ettliche</unclear> <unclear cert="medium" resp="#joint">verthrüwte</unclear> <unclear cert="medium" resp="#joint">personen</unclear> an <unclear cert="medium" resp="#joint">vnderschiedliche</unclear>
+<lb n="35"/><unclear cert="medium" resp="#joint">ortt</unclear> <unclear cert="medium" resp="#joint">vßgeschickt</unclear>, <unclear cert="medium" resp="#joint">vnnd</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">eigendtlichen</unclear> <unclear cert="medium" resp="#joint">bricht</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">dißers</unclear> volcks beschaffenheit <unclear cert="low" resp="#joint">vnd</unclear> <unclear cert="low" resp="#joint">verhalttens</unclear> <unclear cert="low" resp="#joint">ynnze</unclear>-
+<lb n="37"/><unclear cert="low" resp="#joint">nämmen</unclear>, deren <unclear cert="medium" resp="#joint">widerckunfft</unclear> dann wir <unclear cert="medium" resp="#joint">stündt</unclear>-
+<lb n="38"/>en <unclear cert="low" resp="#joint">gewerttig</unclear> sind. <unclear cert="low" resp="#joint">Vnnd</unclear> waß sy nun <unclear cert="low" resp="#joint">deßwäg</unclear>-
+<lb n="39"/>en Jnn <unclear cert="low" resp="#joint">gewüße</unclear> <unclear cert="low" resp="#joint">erfahrung</unclear> bringen <unclear cert="low" resp="#joint">werdent</unclear>,
+<lb n="40"/>deßen <unclear cert="low" resp="#joint">söllent</unclear> Jr <unclear cert="low" resp="#joint">vnsere</unclear> <unclear cert="low" resp="#joint">getrüwe</unclear> lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear>
+<lb n="41"/><unclear cert="low" resp="#joint">vnuerzogenlich</unclear> berichtet werden. Daß aber
+<lb n="42"/>der <unclear cert="low" resp="#joint">paß</unclear> Jnen den <unclear cert="low" resp="#joint">Lännderen</unclear> beschloßen, deßen
+<lb n="43"/><unclear cert="medium" resp="#joint">tragend</unclear> wir gantz <unclear cert="low" resp="#joint">kein</unclear> wüßen, vnnd <unclear cert="low" resp="#joint">künnend</unclear>
+<lb n="44"/>eß <unclear cert="low" resp="#joint">vnß</unclear> <unclear cert="low" resp="#joint">oůch</unclear> nit wol <unclear cert="low" resp="#joint">ynbilden</unclear>, dann diß volck
+<lb n="45"/>Jnen am <unclear cert="low" resp="#joint">nechsten</unclear> vff dem <unclear cert="low" resp="#joint">halß</unclear> liggen, vnd <unclear cert="low" resp="#joint">wägen</unclear>
+<lb n="46"/>der <unclear cert="low" resp="#joint">vnnderhalttung</unclear> gantz beschwerlich syn wurde,
+<lb n="47"/>wir <unclear cert="low" resp="#joint">wöllent</unclear> aber <unclear cert="low" resp="#joint">daßälbig</unclear> <unclear cert="low" resp="#joint">ouch</unclear> noch <unclear cert="medium" resp="#joint">baß</unclear> ettwas
+<lb n="48"/><unclear cert="low" resp="#joint">beßer</unclear> <unclear cert="low" resp="#joint">erkunnen</unclear>. <unclear cert="low" resp="#joint">Vnnderzwüschent</unclear> <unclear cert="low" resp="#joint">wellend</unclear> <unclear cert="low" resp="#joint">Jr</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">vff</unclear> diß <unclear cert="medium" resp="#joint">durchziehende</unclear> kriegsvolck noch wyter
+<lb n="50"/><unclear cert="medium" resp="#joint">eüwr</unclear> <unclear cert="medium" resp="#joint">wachendes</unclear> <unclear cert="medium" resp="#joint">oůg</unclear> <unclear cert="medium" resp="#joint">werffen</unclear>, <unclear cert="medium" resp="#joint">vnd</unclear> <unclear cert="medium" resp="#joint">vnnß</unclear> deßen, so
+<lb n="51"/><unclear cert="medium" resp="#joint">üch</unclear> <unclear cert="medium" resp="#joint">glöüblich</unclear> anlangt, <unclear cert="medium" resp="#joint">Jederzytt</unclear> by tag vnnd nacht
+<lb n="52"/>berichten, So <unclear cert="low" resp="#joint">wöllent</unclear> wir <unclear cert="low" resp="#joint">vnsers</unclear> <unclear cert="low" resp="#joint">theils</unclear> nit allein
 <pb facs="StadtASG_Missive_2538_9799.jpg" n="3"/>
-<lb n="53"/>an gethrüwem uffsechen glycherwyß nügit erwinden
-<lb n="54"/>laßen, sonders üch ouch uff allen fhal der noth uß erfor
-<lb n="55"/>manung trostlich und Eidtgnößisch bÿspringen, wie
-<lb n="56"/>wir dann deßwëgen Jetz und vor dißerm schon alle
-<lb n="57"/>guote anordnung gethan habent. Der gnedig
-<lb n="58"/>Gott ( deme wir unß sambtlich zuo gnaden befelch-
-<lb n="59"/>end) behüete unnß vor uffruor, und zerstöre
-<lb n="60"/>alle böße praticken. Datt. <origDate when="1625-04-14" resp="#ner">den 14. Aprilis,
-<lb n="61"/>Anno 1625</origDate>.
+<lb n="53"/>an <unclear cert="low" resp="#joint">gethrüwem</unclear> <unclear cert="low" resp="#joint">uffsechen</unclear> <unclear cert="low" resp="#joint">glycherwyß</unclear> <unclear cert="low" resp="#joint">nügit</unclear> <unclear cert="medium" resp="#joint">erwinden</unclear>
+<lb n="54"/>laßen, sonders üch ouch <unclear cert="medium" resp="#joint">uff</unclear> allen <unclear cert="medium" resp="#joint">fhal</unclear> der noth <unclear cert="medium" resp="#joint">uß</unclear> erfor
+<lb n="55"/><unclear cert="medium" resp="#joint">manung</unclear> trostlich und <unclear cert="low" resp="#joint">Eidtgnößisch</unclear> <unclear cert="low" resp="#joint">bÿspringen</unclear>, wie
+<lb n="56"/>wir dann <unclear cert="low" resp="#joint">deßwëgen</unclear> <unclear cert="low" resp="#joint">Jetz</unclear> und vor <unclear cert="low" resp="#joint">dißerm</unclear> schon alle
+<lb n="57"/>guote anordnung gethan <unclear cert="medium" resp="#joint">habent</unclear>. Der gnedig
+<lb n="58"/>Gott ( <unclear cert="low" resp="#joint">deme</unclear> wir <unclear cert="low" resp="#joint">unß</unclear> sambtlich zuo gnaden befelch-
+<lb n="59"/>end) <unclear cert="low" resp="#joint">behüete</unclear> <unclear cert="low" resp="#joint">unnß</unclear> vor <unclear cert="low" resp="#joint">uffruor</unclear>, und <unclear cert="medium" resp="#joint">zerstöre</unclear>
+<lb n="60"/>alle <unclear cert="low" resp="#joint">böße</unclear> <unclear cert="low" resp="#joint">praticken</unclear>. Datt. <origDate when="1625-04-14" resp="#ner">den 14. Aprilis,
+<lb n="61"/>Anno <unclear cert="low" resp="#joint">1625</unclear></origDate>.
 <lb n="62"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="63"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2538_9800.jpg" n="4"/>
-<lb n="64"/>Den frommen fuersichtigen,
-<lb n="65"/>ersamen wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="64"/>Den frommen <unclear cert="medium" resp="#joint">fuersichtigen</unclear>,
+<lb n="65"/><unclear cert="low" resp="#joint">ersamen</unclear> <unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="66"/>meister unnd rath der
-<lb n="67"/>statt Sanct Gallen</orgName>, unße-
-<lb n="68"/>renn innsonders guoten
-<lb n="69"/>fruenden, unnd gethruewen
-<lb n="70"/>lieben Eidtgnoßen.
+<lb n="67"/>statt <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>, <unclear cert="low" resp="#joint">unße</unclear>-
+<lb n="68"/>renn <unclear cert="medium" resp="#joint">innsonders</unclear> guoten
+<lb n="69"/><unclear cert="medium" resp="#joint">fruenden</unclear>, unnd <unclear cert="low" resp="#joint">gethruewen</unclear>
+<lb n="70"/>lieben <unclear cert="low" resp="#joint">Eidtgnoßen</unclear>.
 </p>
         </body>
     </text>

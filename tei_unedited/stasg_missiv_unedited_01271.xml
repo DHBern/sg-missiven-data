@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1271</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau bitten Bürgermeister und Rat zu St. Gallen, ein Edikt über die Abtretung des Vermögens ihres Bürgers Ludwig Leyen an seine Gläubiger in St. Gallen zu publizieren. Leyen habe einen Tag zur gütlichen Vergleichung oder, falls diese fehlschlage, einen Schuldgerichtstag angesetzt. Die St. Galler Bürger könnten ihm schuldig sein.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1590-09-23" cert="medium" resp="#regest">23. septembris anno 90</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -37,27 +37,27 @@
 <lb n="1"/>Unnser <unclear cert="low" resp="#joint">freundtlich</unclear> willig diennst, <unclear cert="low" resp="#joint">zuuvor</unclear>, Ersamen,
 <lb n="2"/>unnd weysen, besonndern liebenn unnd <unclear cert="low" resp="#joint">guetenn</unclear>
 <lb n="3"/><unclear cert="low" resp="#joint">freund</unclear>, <unclear cert="low" resp="#joint">Welchermassen</unclear> wir uff unnsers burgers,
-<lb n="4"/><persName resp="#ner">Ludwig <unclear cert="low" resp="#joint">Leyen</unclear></persName>, so mit <unclear cert="low" resp="#joint">saltz</unclear>, <unclear cert="low" resp="#joint">eisen</unclear>, unnd <unclear cert="low" resp="#joint">stahal</unclear> <unclear cert="low" resp="#joint">gehand</unclear>-
-<lb n="5"/>let <unclear cert="medium" resp="#joint">vor</unclear> unns <unclear cert="low" resp="#joint">gethones</unclear> <unclear cert="low" resp="#joint">uebergeben</unclear>, <unclear cert="low" resp="#joint">cedieren</unclear> unnd ab-
-<lb n="6"/>trettenn, seiner haab unnd <unclear cert="low" resp="#joint">guetere</unclear>, allenn <unclear cert="low" resp="#joint">seinenn</unclear>
+<lb n="4"/><persName resp="#ner">Ludwig <unclear cert="low" resp="#joint">Leyen</unclear></persName>, so mit <unclear cert="medium" resp="#joint">saltz</unclear>, <unclear cert="low" resp="#joint">eisen</unclear>, unnd <unclear cert="low" resp="#joint">stahal</unclear> <unclear cert="medium" resp="#joint">gehand</unclear>-
+<lb n="5"/>let vor unns <unclear cert="low" resp="#joint">gethones</unclear> <unclear cert="low" resp="#joint">uebergeben</unclear>, <unclear cert="low" resp="#joint">cedieren</unclear> unnd ab-
+<lb n="6"/>trettenn, <unclear cert="medium" resp="#joint">seiner</unclear> <unclear cert="medium" resp="#joint">haab</unclear> unnd <unclear cert="low" resp="#joint">guetere</unclear>, allenn <unclear cert="low" resp="#joint">seinenn</unclear>
 <lb n="7"/>gemainenn <unclear cert="low" resp="#joint">creditorn</unclear>, unnd <unclear cert="low" resp="#joint">schuldglaubigern</unclear>,
-<lb n="8"/>ainen tag, zur guetlichen vergleichung, zwischenn ime
-<lb n="9"/><persName resp="#ner">Ludwig <unclear cert="low" resp="#joint">Leyen</unclear></persName>, unnd seinen glaubigern, oder da solche
+<lb n="8"/>ainen tag, zur guetlichen vergleichung, <unclear cert="medium" resp="#joint">zwischenn</unclear> <unclear cert="medium" resp="#joint">ime</unclear>
+<lb n="9"/><persName resp="#ner">Ludwig <unclear cert="low" resp="#joint">Leyen</unclear></persName>, unnd seinen glaubigern, <unclear cert="low" resp="#joint">oder</unclear> da <unclear cert="low" resp="#joint">solche</unclear>
 <lb n="10"/>guetliche <unclear cert="medium" resp="#joint">hanndlung</unclear>, nit statt habenn wurde, ainen
-<lb n="11"/><unclear cert="low" resp="#joint">enndlichenn</unclear> <unclear cert="low" resp="#joint">schuldgerichts</unclear> tag, vonn <unclear cert="low" resp="#joint">obrigkait</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">enndlichenn</unclear> <unclear cert="low" resp="#joint">schuldgerichts</unclear> tag, <unclear cert="medium" resp="#joint">vonn</unclear> <unclear cert="low" resp="#joint">obrigkait</unclear>
 <lb n="12"/>wegen <unclear cert="low" resp="#joint">ernennnt</unclear>, unnd angesetzt, das habenn E. E. Wt.
 <lb n="13"/>ausser inngeschloßnem edict, verrers innhaltz zuver-
-<lb n="14"/>nemen, <unclear cert="low" resp="#joint">Dieweil</unclear> dann <unclear cert="low" resp="#joint">ermelter</unclear> <persName resp="#ner">Ludwig Ley</persName>,
-<lb n="15"/><orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">E. E. W.</orgName> burgern, auch zuthun unnd schuldig sein mochte,
-<lb n="16"/>So ist an E. E. W. unnser <unclear cert="low" resp="#joint">freundtlich</unclear> unnd fleissig pitt,
-<lb n="17"/>Sy <unclear cert="low" resp="#joint">woellenn</unclear> <unclear cert="low" resp="#joint">beruert</unclear> <unclear cert="low" resp="#joint">edict</unclear>, inn irer statt, an gepueren-
-<lb n="18"/>den ortenn, affigieren, publicieren, unnd denn <unclear cert="low" resp="#joint">irigenn</unclear>
-<lb n="19"/><unclear cert="low" resp="#joint">wissenhafft</unclear> machen lassenn, auff das an <unclear cert="low" resp="#joint">seinem</unclear>
-<lb n="20"/><unclear cert="medium" resp="#joint">rechtenn</unclear>, <unclear cert="low" resp="#joint">niemannds</unclear> <unclear cert="low" resp="#joint">verkuertzt</unclear> werde, oder sich
+<lb n="14"/>nemen, <unclear cert="low" resp="#joint">Dieweil</unclear> dann <unclear cert="low" resp="#joint">ermelter</unclear> <persName resp="#ner">Ludwig <unclear cert="low" resp="#joint">Ley</unclear></persName>,
+<lb n="15"/><orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">E. E. W.</orgName> <unclear cert="low" resp="#joint">burgern</unclear>, auch zuthun unnd schuldig sein <unclear cert="low" resp="#joint">mochte</unclear>,
+<lb n="16"/>So ist an <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. unnser <unclear cert="low" resp="#joint">freundtlich</unclear> unnd fleissig pitt,
+<lb n="17"/>Sy <unclear cert="low" resp="#joint">woellenn</unclear> <unclear cert="low" resp="#joint">beruert</unclear> <unclear cert="low" resp="#joint">edict</unclear>, inn <unclear cert="medium" resp="#joint">irer</unclear> statt, an <unclear cert="low" resp="#joint">gepueren</unclear>-
+<lb n="18"/>den ortenn, affigieren, publicieren, unnd <unclear cert="medium" resp="#joint">denn</unclear> <unclear cert="low" resp="#joint">irigenn</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">wissenhafft</unclear> machen lassenn, auff das <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="medium" resp="#joint">seinem</unclear>
+<lb n="20"/>rechtenn, <unclear cert="low" resp="#joint">niemannds</unclear> <unclear cert="low" resp="#joint">verkuertzt</unclear> werde, <unclear cert="medium" resp="#joint">oder</unclear> sich
 <lb n="21"/>der <unclear cert="low" resp="#joint">unwissenhait</unclear> <unclear cert="low" resp="#joint">zubeclagen</unclear> ursach habe, Das
-<lb n="22"/><unclear cert="low" resp="#joint">umb</unclear> <orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">E. E. W.</orgName> inn dergleichenn, unnd mehrerm
-<lb n="23"/><unclear cert="low" resp="#joint">zuverdienen</unclear>, <unclear cert="medium" resp="#joint">seyen</unclear> wir willig. Datum <origDate when="1590-09-23" cert="medium" resp="#ner">denn
-<lb n="24"/>.23. septembris anno 90.</origDate>
+<lb n="22"/><unclear cert="low" resp="#joint">umb</unclear> <orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>.</orgName> inn <unclear cert="medium" resp="#joint">dergleichenn</unclear>, unnd mehrerm
+<lb n="23"/><unclear cert="medium" resp="#joint">zuverdienen</unclear>, seyen wir willig. Datum <origDate when="1590-09-23" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">denn</unclear>
+<lb n="24"/>.<unclear cert="medium" resp="#joint">23</unclear>. septembris anno 90.</origDate>
 <lb n="25"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgmaister</unclear> unnd rath
 <lb n="26"/>der statt <unclear cert="low" resp="#joint">Linndaw</unclear></orgName> ,.
 <pb facs="StadtASG_Missive_1271_4288.jpg" n="2"/>

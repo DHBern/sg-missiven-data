@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2530</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,73 +20,73 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Bürgermeister und Rat zu St. Gallen, ihren Einwohner Joachim Zollikoffer, der Schneider, als Bürger aufzunehmen. Zollikoffer wolle sich in St. Gallen niederlassen und habe dort bereits ein Haus erworben. In Zürich habe er sich in den letzten siebzehn Jahren ehrlich und fromm verhalten. Die Zürcher bitten um gewillfährte Aufnahme, damit er seinen Lebensabend dort verbringen könne.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1625-02-02" resp="#regest">den ij t. Februarij. Anno 1625.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2530_9765.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig dienste, sambt was wir ehren
+<lb n="1"/><unclear cert="medium" resp="#joint">Unnser</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> willig <unclear cert="low" resp="#joint">dienste</unclear>, <unclear cert="low" resp="#joint">sambt</unclear> was wir <unclear cert="low" resp="#joint">ehren</unclear>
 <lb n="2"/>liebs unnd guots vermögend zuovor, From, Fürsichtig,
-<lb n="3"/>Ehrsamm Wyß, Innsonders guot fründ unnd getrüw lieb
-<lb n="4"/><orgName role="recipient" resp="#ner">Eydtgnoßen</orgName>. Unns hat unnser Ynwohner
-<lb n="5"/><persName resp="#ner">Joachim Zollikhoffer</persName> der Schuomacher mit meherem
-<lb n="6"/>fürgebracht, wie das er willens unnd bedacht syge,
-<lb n="7"/>sich umb beßeren syner gelaegenheit unnd kombligkeit
-<lb n="8"/>willen, by üch widerumb hußhaeblich niderzuelaßen,
-<lb n="9"/>unnd üch voelligklich umb das burgerrecht dee-
-<lb n="10"/>müetigs flyßes anzuosuochen. Mit fründtlichem
-<lb n="11"/>begaehren, wir wolten inne deßhalb mit unnser
-<lb n="12"/>fürdernuß an üch begleiten, Inn hoffnung deroselben
-<lb n="13"/>zuo erlangung synes begaehrens wol zuogenießen.
-<lb n="14"/>Wann dann ernendter Zollikhoffer innert den siben-
-<lb n="15"/>zaehen jaren, die er sich by unns hindersaeß wyße er-
-<lb n="16"/>halten, sich jeederzyt sovill unns inn wüßen ist
-<lb n="17"/>frommklich ehrlich unnd wol betragen, syn erlehrete
-<lb n="18"/>handtierung yferig und ernstlich getriben, unnd mit
-<lb n="19"/>synem Eewyb redlich unnd ohne klag gehußet, unnd wir
-<lb n="20"/>inne hiemit zuo synem intent, nutz unnd frommen
-<lb n="21"/>geren befürderet saehen möchten. So habend
-<lb n="22"/>wir ime diß syn bittliches ersuochen nit verweigeren
-<lb n="23"/>können noch söllen, unnd gelangt deßhalb an üch unnsere
-<lb n="24"/>getrüw lieb Eydtgnoßen unnser fründtliche bitt,
-<lb n="25"/>Ir wöllind gedachten Joachim Zollikhoffer der allbereits
-<lb n="26"/>ein zimbliches güetli unnder handen, unnd noch etwas
-<lb n="27"/>wyters inn synem Eeherren zuoewarten hat,
-<lb n="28"/>von unnsertwaegen Inn allem guotem für bevolchen
-<lb n="29"/>haben, demselben syner bitt mit gnaden gewähren,
-<lb n="30"/>unnd inne alß widerumb zuo üwerem burger uf: und
-<lb n="31"/>annaemmen, damit er syn handtierung dest komblicher
+<lb n="3"/>Ehrsamm Wyß, <unclear cert="medium" resp="#joint">Innsonders</unclear> guot fründ unnd <unclear cert="low" resp="#joint">getrüw</unclear> lieb
+<lb n="4"/><orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>. Unns hat unnser <unclear cert="low" resp="#joint">Ynwohner</unclear>
+<lb n="5"/><persName resp="#ner"><unclear cert="low" resp="#joint">Joachim</unclear> <unclear cert="low" resp="#joint">Zollikhoffer</unclear></persName> der Schuomacher mit <unclear cert="low" resp="#joint">meherem</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">fürgebracht</unclear>, wie das er willens unnd <unclear cert="medium" resp="#joint">bedacht</unclear> <unclear cert="medium" resp="#joint">syge</unclear>,
+<lb n="7"/>sich <unclear cert="medium" resp="#joint">umb</unclear> beßeren <unclear cert="low" resp="#joint">syner</unclear> <unclear cert="low" resp="#joint">gelaegenheit</unclear> unnd <unclear cert="low" resp="#joint">kombligkeit</unclear>
+<lb n="8"/>willen, by üch widerumb <unclear cert="low" resp="#joint">hußhaeblich</unclear> <unclear cert="low" resp="#joint">niderzuelaßen</unclear>,
+<lb n="9"/>unnd üch <unclear cert="low" resp="#joint">voelligklich</unclear> umb das <unclear cert="low" resp="#joint">burgerrecht</unclear> <unclear cert="low" resp="#joint">dee</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">müetigs</unclear> <unclear cert="low" resp="#joint">flyßes</unclear> <unclear cert="low" resp="#joint">anzuosuochen</unclear>. Mit <unclear cert="medium" resp="#joint">fründtlichem</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">begaehren</unclear>, wir wolten <unclear cert="low" resp="#joint">inne</unclear> deßhalb mit <unclear cert="low" resp="#joint">unnser</unclear>
+<lb n="12"/>fürdernuß an üch begleiten, <unclear cert="low" resp="#joint">Inn</unclear> <unclear cert="low" resp="#joint">hoffnung</unclear> <unclear cert="low" resp="#joint">deroselben</unclear>
+<lb n="13"/>zuo erlangung <unclear cert="medium" resp="#joint">synes</unclear> <unclear cert="low" resp="#joint">begaehrens</unclear> wol <unclear cert="low" resp="#joint">zuogenießen</unclear>.
+<lb n="14"/>Wann dann <unclear cert="low" resp="#joint">ernendter</unclear> <unclear cert="low" resp="#joint">Zollikhoffer</unclear> <unclear cert="low" resp="#joint">innert</unclear> den <unclear cert="medium" resp="#joint">siben</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">zaehen</unclear> <unclear cert="low" resp="#joint">jaren</unclear>, die er sich by <unclear cert="low" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">hindersaeß</unclear> <unclear cert="low" resp="#joint">wyße</unclear> <unclear cert="medium" resp="#joint">er</unclear>-
+<lb n="16"/>halten, sich <unclear cert="medium" resp="#joint">jeederzyt</unclear> <unclear cert="medium" resp="#joint">sovill</unclear> unns inn <unclear cert="medium" resp="#joint">wüßen</unclear> <unclear cert="medium" resp="#joint">ist</unclear>
+<lb n="17"/><unclear cert="medium" resp="#joint">frommklich</unclear> ehrlich unnd wol betragen, <unclear cert="medium" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">erlehrete</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">handtierung</unclear> <unclear cert="low" resp="#joint">yferig</unclear> und ernstlich <unclear cert="medium" resp="#joint">getriben</unclear>, unnd mit
+<lb n="19"/><unclear cert="low" resp="#joint">synem</unclear> <unclear cert="low" resp="#joint">Eewyb</unclear> <unclear cert="medium" resp="#joint">redlich</unclear> unnd ohne klag <unclear cert="low" resp="#joint">gehußet</unclear>, unnd wir
+<lb n="20"/><unclear cert="low" resp="#joint">inne</unclear> hiemit <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">synem</unclear> <unclear cert="medium" resp="#joint">intent</unclear>, <unclear cert="medium" resp="#joint">nutz</unclear> unnd frommen
+<lb n="21"/><unclear cert="low" resp="#joint">geren</unclear> <unclear cert="medium" resp="#joint">befürderet</unclear> <unclear cert="low" resp="#joint">saehen</unclear> möchten. So habend
+<lb n="22"/>wir <unclear cert="low" resp="#joint">ime</unclear> diß <unclear cert="medium" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">bittliches</unclear> <unclear cert="medium" resp="#joint">ersuochen</unclear> nit <unclear cert="low" resp="#joint">verweigeren</unclear>
+<lb n="23"/>können noch söllen, unnd gelangt deßhalb an üch <unclear cert="low" resp="#joint">unnsere</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">getrüw</unclear> lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> unnser <unclear cert="medium" resp="#joint">fründtliche</unclear> bitt,
+<lb n="25"/>Ir <unclear cert="low" resp="#joint">wöllind</unclear> <unclear cert="low" resp="#joint">gedachten</unclear> <unclear cert="medium" resp="#joint">Joachim</unclear> <unclear cert="low" resp="#joint">Zollikhoffer</unclear> der <unclear cert="low" resp="#joint">allbereits</unclear>
+<lb n="26"/>ein <unclear cert="medium" resp="#joint">zimbliches</unclear> <unclear cert="medium" resp="#joint">güetli</unclear> <unclear cert="medium" resp="#joint">unnder</unclear> handen, unnd noch <unclear cert="medium" resp="#joint">etwas</unclear>
+<lb n="27"/>wyters <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">synem</unclear> <unclear cert="low" resp="#joint">Eeherren</unclear> <unclear cert="low" resp="#joint">zuoewarten</unclear> hat,
+<lb n="28"/>von <unclear cert="low" resp="#joint">unnsertwaegen</unclear> Inn allem guotem <unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">bevolchen</unclear>
+<lb n="29"/>haben, <unclear cert="low" resp="#joint">demselben</unclear> <unclear cert="low" resp="#joint">syner</unclear> bitt <unclear cert="medium" resp="#joint">mit</unclear> <unclear cert="medium" resp="#joint">gnaden</unclear> <unclear cert="low" resp="#joint">gewähren</unclear>,
+<lb n="30"/>unnd <unclear cert="low" resp="#joint">inne</unclear> alß widerumb <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">üwerem</unclear> burger uf: und
+<lb n="31"/><unclear cert="low" resp="#joint">annaemmen</unclear>, damit er <unclear cert="medium" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">handtierung</unclear> dest <unclear cert="medium" resp="#joint">komblicher</unclear>
 <pb facs="StadtASG_Missive_2530_9766.jpg" n="2"/>
-<lb n="32"/>tryben, unnd syn Läben an dem ort er das empfangen,
-<lb n="33"/>verschlyßen, und enden koenne, so ist er des erpietens,
-<lb n="34"/>sich by üch inmaßen zeverhalten, das es vorab Gott
-<lb n="35"/>dem Herren unnd ouch üch gefellig, und im loblich und
-<lb n="36"/>ruemlich syn soelle. Wollend unns also zuo üch aller
-<lb n="37"/>günstiger fründlicher willfahr versehen, unnd es umb
-<lb n="38"/>üch uff yede fürfallende glägenheit hinwiderumb
-<lb n="39"/>Eidgnoeßisch, unnd nach gebür beschulden, und verdienen.
-<lb n="40"/>Unns damit samptlich Goettlicher obhalt von hertzen
-<lb n="41"/>bevelchende. Date den <origDate when="1625" resp="#ner">ij t. Februarij. Anno 1625</origDate>.
-<lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rhat
+<lb n="32"/><unclear cert="medium" resp="#joint">tryben</unclear>, unnd <unclear cert="low" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">Läben</unclear> an dem ort er <unclear cert="low" resp="#joint">das</unclear> empfangen,
+<lb n="33"/><unclear cert="medium" resp="#joint">verschlyßen</unclear>, und <unclear cert="low" resp="#joint">enden</unclear> <unclear cert="low" resp="#joint">koenne</unclear>, so ist er des <unclear cert="low" resp="#joint">erpietens</unclear>,
+<lb n="34"/>sich by üch <unclear cert="low" resp="#joint">inmaßen</unclear> <unclear cert="low" resp="#joint">zeverhalten</unclear>, das es <unclear cert="medium" resp="#joint">vorab</unclear> <unclear cert="low" resp="#joint">Gott</unclear>
+<lb n="35"/>dem Herren unnd <unclear cert="medium" resp="#joint">ouch</unclear> üch gefellig, und <unclear cert="low" resp="#joint">im</unclear> loblich und
+<lb n="36"/><unclear cert="low" resp="#joint">ruemlich</unclear> syn <unclear cert="low" resp="#joint">soelle</unclear>. <unclear cert="low" resp="#joint">Wollend</unclear> unns also <unclear cert="medium" resp="#joint">zuo</unclear> üch aller
+<lb n="37"/><unclear cert="low" resp="#joint">günstiger</unclear> <unclear cert="low" resp="#joint">fründlicher</unclear> <unclear cert="medium" resp="#joint">willfahr</unclear> <unclear cert="low" resp="#joint">versehen</unclear>, unnd es <unclear cert="medium" resp="#joint">umb</unclear>
+<lb n="38"/>üch uff <unclear cert="low" resp="#joint">yede</unclear> fürfallende <unclear cert="low" resp="#joint">glägenheit</unclear> hinwiderumb
+<lb n="39"/><unclear cert="low" resp="#joint">Eidgnoeßisch</unclear>, unnd nach <unclear cert="medium" resp="#joint">gebür</unclear> beschulden, und verdienen.
+<lb n="40"/>Unns damit <unclear cert="low" resp="#joint">samptlich</unclear> <unclear cert="low" resp="#joint">Goettlicher</unclear> <unclear cert="medium" resp="#joint">obhalt</unclear> von <unclear cert="medium" resp="#joint">hertzen</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">bevelchende</unclear>. <unclear cert="low" resp="#joint">Date</unclear> den <origDate when="1625" resp="#ner"><unclear cert="medium" resp="#joint">ij</unclear> <unclear cert="medium" resp="#joint">t</unclear>. Februarij. Anno <unclear cert="low" resp="#joint">1625</unclear></origDate>.
+<lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">Rhat</unclear>
 <lb n="43"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2530_9767.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2530_9768.jpg" n="4"/>
-<lb n="44"/>Den frommen, fürsichtigen,
-<lb n="45"/>ehrsammen wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="44"/><unclear cert="medium" resp="#joint">Den</unclear> frommen, fürsichtigen,
+<lb n="45"/>ehrsammen <unclear cert="low" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="46"/>meister unnd Rath der
 <lb n="47"/>Statt Sanct Gallen</orgName>, unße-
 <lb n="48"/>ren jnßonders gueten
-<lb n="49"/>fründen, unnd getrüwen
-<lb n="50"/>lieben Eidtgnoßen.
+<lb n="49"/>fründen, unnd <unclear cert="low" resp="#joint">getrüwen</unclear>
+<lb n="50"/>lieben <unclear cert="low" resp="#joint">Eidtgnoßen</unclear>.
 </p>
         </body>
     </text>

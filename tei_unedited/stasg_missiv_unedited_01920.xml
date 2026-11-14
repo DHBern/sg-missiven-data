@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1920</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,106 +20,106 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen berichten dem Glarner Rat über die Klage von Jos Pfendler, Jacob Tschudi, Rudolf Wichser und Esaias Kubli gegen den St. Galler Bürger Jacob Rietman, genannt Vogt, wegen eines erkauften Rosses. Rietman habe erklärt, das Ross nur für vier Wochen als gesund versprochen zu haben. Da die Frist abgelaufen sei, ohne dass das Tier zurückgegeben wurde, könne er nicht weiter gezwungen werden. Die Sache wurde an das St. Galler Stadtgericht verwiesen, wo den Glarnern unparteiisch Recht geschehen solle.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1614-11-25" resp="#regest">25. ten. Novembris a° 1614</date></correspAction><correspAction type="received"><name resp="#regest">Vogt und Rat zu Glarus</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1920_7149.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienst, und was wir
-<lb n="2"/>ehren liebs und guots vermögend, zuvor, fromen,
-<lb n="3"/>fürsichtigen, eersamen und weisen, insonders
-<lb n="4"/>guoten freünden, und getreüwen lieben
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freündtlich</unclear> willig dienst, und was wir
+<lb n="2"/>ehren liebs und guots vermögend, <unclear cert="medium" resp="#joint">zuvor</unclear>, fromen,
+<lb n="3"/>fürsichtigen, <unclear cert="low" resp="#joint">eersamen</unclear> und weisen, insonders
+<lb n="4"/>guoten <unclear cert="medium" resp="#joint">freünden</unclear>, und <unclear cert="low" resp="#joint">getreüwen</unclear> lieben
 <lb n="5"/>eidtgnossen.
-<lb n="6"/>Derselben, auf anhalten ihrer angehörigen
-<lb n="7"/>landtleüten, <persName resp="#ner">Jos Pfendlers</persName>, <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Tschudis</unclear></persName>,
-<lb n="8"/><persName resp="#ner"><unclear cert="low" resp="#joint">Ruodolph</unclear> <unclear cert="low" resp="#joint">Wichsers</unclear></persName> und <persName resp="#ner">Esachias Kublis</persName>, wegen
-<lb n="9"/>ihres von unserm mitburger <persName resp="#ner">Jacob Rietman</persName>
-<lb n="10"/>genannt Vogt erkaufften rosses, an uns ab=
-<lb n="11"/>gangen schreiben, haben wir <unclear cert="low" resp="#joint">ihme</unclear> Riet=
-<lb n="12"/>man oder Vogt angentz vor unserm ge=
-<lb n="13"/>seßnen raht, in des botten <unclear cert="low" resp="#joint">gegenwürtig=</unclear>
-<lb n="14"/><unclear cert="low" resp="#joint">keit</unclear> <unclear cert="low" resp="#joint">verlesen</unclear> lassen, und sein verantwur=
+<lb n="6"/>Derselben, auf anhalten ihrer <unclear cert="medium" resp="#joint">angehörigen</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">landtleüten</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Jos</unclear> <unclear cert="low" resp="#joint">Pfendlers</unclear></persName>, <persName resp="#ner">Jacob Tschudis</persName>,
+<lb n="8"/><persName resp="#ner"><unclear cert="low" resp="#joint">Ruodolph</unclear> <unclear cert="low" resp="#joint">Wichsers</unclear></persName> und <persName resp="#ner"><unclear cert="low" resp="#joint">Esachias</unclear> <unclear cert="low" resp="#joint">Kublis</unclear></persName>, wegen
+<lb n="9"/>ihres von unserm <unclear cert="medium" resp="#joint">mitburger</unclear> <persName resp="#ner">Jacob <unclear cert="medium" resp="#joint">Rietman</unclear></persName>
+<lb n="10"/>genannt Vogt <unclear cert="low" resp="#joint">erkaufften</unclear> <unclear cert="medium" resp="#joint">rosses</unclear>, an uns ab=
+<lb n="11"/>gangen schreiben, haben wir ihme Riet=
+<lb n="12"/>man oder Vogt <unclear cert="low" resp="#joint">angentz</unclear> vor unserm <unclear cert="medium" resp="#joint">ge=</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">seßnen</unclear> <unclear cert="medium" resp="#joint">raht</unclear>, in des botten gegenwürtig=
+<lb n="14"/>keit verlesen lassen, und sein verantwur=
 <lb n="15"/>tung darüber angehört. Und zwar,
-<lb n="16"/>wann der eüweren, uech unseren getreüwen
-<lb n="17"/>lieben eidtgnossen, fürgebrachte klag, und
-<lb n="18"/>deß unseren dawider eingewendte antwurt,
-<lb n="19"/>miteinanderen übereinstimmte, hette es unsers
-<lb n="20"/>theils nit söllen ermanglen, den Vogt, daß
-<lb n="21"/>er gegen <unclear cert="low" resp="#joint">annemmung</unclear> des rosses,
-<lb n="22"/>das dafür empfangne gelt wider solte
-<lb n="23"/>herauß geben, <unclear cert="low" resp="#joint">oberkeitlich</unclear> <unclear cert="low" resp="#joint">zuvermögen</unclear>.
-<lb n="24"/><unclear cert="low" resp="#joint">Dieweil</unclear> er aber (: wie dann der bott
-<lb n="25"/>selber gehört:) den verlauff des bschechnen
+<lb n="16"/>wann der <unclear cert="low" resp="#joint">eüweren</unclear>, <unclear cert="low" resp="#joint">uech</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">getreüwen</unclear>
+<lb n="17"/>lieben eidtgnossen, <unclear cert="low" resp="#joint">fürgebrachte</unclear> klag, und
+<lb n="18"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">unseren</unclear> dawider <unclear cert="low" resp="#joint">eingewendte</unclear> antwurt,
+<lb n="19"/>miteinanderen <unclear cert="low" resp="#joint">übereinstimmte</unclear>, hette es unsers
+<lb n="20"/>theils nit söllen ermanglen, <unclear cert="medium" resp="#joint">den</unclear> Vogt, <unclear cert="medium" resp="#joint">daß</unclear>
+<lb n="21"/>er gegen annemmung des <unclear cert="medium" resp="#joint">rosses</unclear>,
+<lb n="22"/>das <unclear cert="low" resp="#joint">dafür</unclear> empfangne gelt wider <unclear cert="low" resp="#joint">solte</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">herauß</unclear> geben, <unclear cert="low" resp="#joint">oberkeitlich</unclear> <unclear cert="low" resp="#joint">zuvermögen</unclear>.
+<lb n="24"/>Dieweil er aber (: wie dann der bott
+<lb n="25"/><unclear cert="medium" resp="#joint">selber</unclear> gehört:) den verlauff des <unclear cert="low" resp="#joint">bschechnen</unclear>
 <lb n="26"/>kauffs anderst fürgibt, in dem er anzeigt,
-<lb n="27"/>derselbige andrer gstalt nit beschlossen worden,
-<lb n="28"/>als daß er ihnen das roß <unclear cert="low" resp="#joint">zwaren</unclear> für gsund und gerecht
+<lb n="27"/>derselbige <unclear cert="low" resp="#joint">andrer</unclear> <unclear cert="medium" resp="#joint">gstalt</unclear> nit beschlossen worden,
+<lb n="28"/>als <unclear cert="medium" resp="#joint">daß</unclear> er ihnen das roß <unclear cert="low" resp="#joint">zwaren</unclear> für <unclear cert="medium" resp="#joint">gsund</unclear> und <unclear cert="medium" resp="#joint">gerecht</unclear>
 <lb n="29"/>gegeben, und er habe es aber ihnen allein 4. wochen lang, und nit
-<lb n="30"/>lenger gewähret, mit dem beding, daß man es
-<lb n="31"/>möge, wie sichs gebürt, gebrauchen, und <unclear cert="low" resp="#joint">wann</unclear>
+<lb n="30"/><unclear cert="medium" resp="#joint">lenger</unclear> <unclear cert="medium" resp="#joint">gewähret</unclear>, mit dem beding, <unclear cert="low" resp="#joint">daß</unclear> man es
+<lb n="31"/>möge, wie sichs <unclear cert="low" resp="#joint">gebürt</unclear>, gebrauchen, und <unclear cert="low" resp="#joint">wann</unclear>
 <lb n="32"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">bestimbten</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">anderst</unclear> <unclear cert="low" resp="#joint">erfinde</unclear>,
 <pb facs="StadtASG_Missive_1920_7150.jpg" n="2"/>
-<lb n="33"/><unclear cert="low" resp="#joint">solle</unclear> man ihme das roßs widerumb <unclear cert="low" resp="#joint">zueschicken</unclear>,
-<lb n="34"/><unclear cert="low" resp="#joint">dargegen</unclear> er das gelt wider <unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">herauß</unclear>
+<lb n="33"/>solle man <unclear cert="medium" resp="#joint">ihme</unclear> das roßs widerumb <unclear cert="low" resp="#joint">zueschicken</unclear>,
+<lb n="34"/>dargegen er das gelt wider <unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">herauß</unclear>
 <lb n="35"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">daruf</unclear> <unclear cert="low" resp="#joint">ferner</unclear>
 <lb n="36"/><unclear cert="low" resp="#joint">vermeldet</unclear>,
-<lb n="37"/>geben. <unclear cert="low" resp="#joint">Uff</unclear> <unclear cert="low" resp="#joint">den</unclear> fall nun ihme das roßs
-<lb n="38"/>inner den bestimbten vier wuchen, in der
-<lb n="39"/>maaß, wie si es von ihme empfangen, were
-<lb n="40"/>wider zuegeschickt worden, wolte ers unbe=
-<lb n="41"/>schwert angenommen, und sein versprechen
+<lb n="37"/>geben. <unclear cert="low" resp="#joint">Uff</unclear> den fall nun ihme das roßs
+<lb n="38"/>inner den <unclear cert="low" resp="#joint">bestimbten</unclear> vier wuchen, in der
+<lb n="39"/><unclear cert="medium" resp="#joint">maaß</unclear>, wie <unclear cert="low" resp="#joint">si</unclear> es von <unclear cert="medium" resp="#joint">ihme</unclear> empfangen, were
+<lb n="40"/>wider <unclear cert="low" resp="#joint">zuegeschickt</unclear> worden, <unclear cert="low" resp="#joint">wolte</unclear> ers unbe=
+<lb n="41"/>schwert angenommen, und sein <unclear cert="low" resp="#joint">versprechen</unclear>
 <lb n="42"/>erstattet haben. Man habe aber
 <lb n="43"/>die vier wuchen verschinen lassen, und hie=
-<lb n="44"/>zwüschet das roßs ihme nit wider zuegeschickt,
-<lb n="45"/>darumb er <unclear cert="low" resp="#joint">vermeine</unclear>, seines theils
-<lb n="46"/>gnuegsam geleistet <unclear cert="low" resp="#joint">zuehaben</unclear>, und <unclear cert="low" resp="#joint">derowegen</unclear>
-<lb n="47"/>er witers nit <unclear cert="low" resp="#joint">zuetreiben</unclear>:
-<lb n="48"/>und solches uch umb so vil weniger,
-<lb n="49"/>diewil das roßs in hohen gebirgen schwär=
-<lb n="50"/>lich gebraucht, starck überladen worden,
-<lb n="51"/>und einen gar harten fall erlitten, dar=
-<lb n="52"/>durch es <unclear cert="low" resp="#joint">mächtig</unclear> <unclear cert="low" resp="#joint">abkomen</unclear>, und beij
-<lb n="53"/>weitem nit mehr constituiert sije, als zue der
-<lb n="54"/>zeit, wie ers ihnen zuekauffen gegeben habe.
-<lb n="55"/><unclear cert="low" resp="#joint">So</unclear> <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">wir</unclear>, ohne erfolgtes recht, dem vogt
-<lb n="56"/>uf der zeit weiters nit <unclear cert="low" resp="#joint">zuemueten</unclear> <unclear cert="low" resp="#joint">koennen</unclear>,
-<lb n="57"/><unclear cert="low" resp="#joint">darbij</unclear> aber auch nit ermanglen woellen,
-<lb n="58"/>üch unser getrüwe lieb <orgName role="recipient" resp="#ner">Eijdtgnossen</orgName> dessen
-<lb n="59"/>also hinwider zueberichten. Im fall dann
-<lb n="60"/>die ihrigen hieran sich nit <unclear cert="low" resp="#joint">koennen</unclear>
-<lb n="61"/><unclear cert="low" resp="#joint">ersettigen</unclear>, und zue den unsern fernere
-<lb n="62"/>ansprach zuehaben vermeinten, haben wir
-<lb n="63"/>die handlung (uf des ungerchten kosten.)
-<lb n="64"/>an unser stattgericht gwisen, da den
-<lb n="65"/>üweren, uf ihr anrueffen, dasselbige
+<lb n="44"/><unclear cert="low" resp="#joint">zwüschet</unclear> das roßs <unclear cert="medium" resp="#joint">ihme</unclear> nit wider <unclear cert="low" resp="#joint">zuegeschickt</unclear>,
+<lb n="45"/>darumb er vermeine, seines <unclear cert="medium" resp="#joint">theils</unclear>
+<lb n="46"/><unclear cert="medium" resp="#joint">gnuegsam</unclear> geleistet <unclear cert="low" resp="#joint">zuehaben</unclear>, und derowegen
+<lb n="47"/>er <unclear cert="low" resp="#joint">witers</unclear> nit <unclear cert="low" resp="#joint">zuetreiben</unclear>:
+<lb n="48"/>und solches <unclear cert="low" resp="#joint">uch</unclear> umb so vil weniger,
+<lb n="49"/>diewil das roßs in hohen gebirgen <unclear cert="low" resp="#joint">schwär=</unclear>
+<lb n="50"/>lich gebraucht, <unclear cert="low" resp="#joint">starck</unclear> überladen worden,
+<lb n="51"/>und einen gar harten fall <unclear cert="medium" resp="#joint">erlitten</unclear>, dar=
+<lb n="52"/>durch es mächtig abkomen, und <unclear cert="medium" resp="#joint">beij</unclear>
+<lb n="53"/><unclear cert="medium" resp="#joint">weitem</unclear> nit mehr <unclear cert="medium" resp="#joint">constituiert</unclear> <unclear cert="low" resp="#joint">sije</unclear>, als <unclear cert="low" resp="#joint">zue</unclear> der
+<lb n="54"/>zeit, wie ers <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="low" resp="#joint">zuekauffen</unclear> gegeben habe.
+<lb n="55"/>So haben wir, ohne <unclear cert="low" resp="#joint">erfolgtes</unclear> recht, <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">vogt</unclear>
+<lb n="56"/><unclear cert="low" resp="#joint">uf</unclear> der zeit weiters nit zuemueten koennen,
+<lb n="57"/>darbij aber auch nit ermanglen <unclear cert="low" resp="#joint">woellen</unclear>,
+<lb n="58"/><unclear cert="low" resp="#joint">üch</unclear> unser <unclear cert="low" resp="#joint">getrüwe</unclear> lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eijdtgnossen</unclear></orgName> <unclear cert="medium" resp="#joint">dessen</unclear>
+<lb n="59"/>also hinwider <unclear cert="low" resp="#joint">zueberichten</unclear>. Im fall dann
+<lb n="60"/>die <unclear cert="medium" resp="#joint">ihrigen</unclear> <unclear cert="medium" resp="#joint">hieran</unclear> sich nit <unclear cert="low" resp="#joint">koennen</unclear>
+<lb n="61"/>ersettigen, und <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">den</unclear> unsern <unclear cert="low" resp="#joint">fernere</unclear>
+<lb n="62"/><unclear cert="low" resp="#joint">ansprach</unclear> <unclear cert="medium" resp="#joint">zuehaben</unclear> <unclear cert="medium" resp="#joint">vermeinten</unclear>, haben wir
+<lb n="63"/>die handlung (<unclear cert="low" resp="#joint">uf</unclear> des <unclear cert="low" resp="#joint">ungerchten</unclear> <unclear cert="medium" resp="#joint">kosten</unclear>.)
+<lb n="64"/>an unser stattgericht <unclear cert="low" resp="#joint">gwisen</unclear>, da den
+<lb n="65"/><unclear cert="low" resp="#joint">üweren</unclear>, uf ihr <unclear cert="low" resp="#joint">anrueffen</unclear>, <unclear cert="medium" resp="#joint">dasselbige</unclear>
 <pb facs="StadtASG_Missive_1920_7151.jpg" n="3"/>
-<lb n="66"/><unclear cert="low" resp="#joint">fuerderlich</unclear> <unclear cert="low" resp="#joint">unparthejisch</unclear> und in
-<lb n="67"/>der <unclear cert="low" resp="#joint">gstalt</unclear> <unclear cert="low" resp="#joint">gedejen</unclear> <unclear cert="low" resp="#joint">widerfahren</unclear> und <unclear cert="low" resp="#joint">gehalten</unclear>
+<lb n="66"/>fuerderlich unparthejisch und in
+<lb n="67"/>der gstalt <unclear cert="low" resp="#joint">gedejen</unclear> widerfahren und gehalten
 <lb n="68"/>werden solle, daß es nit zuoverweisen stehn
 <lb n="69"/>solle. Das wolden wir euch
-<lb n="70"/>unsern getreuewen lieben Eüdtgnossen, zuo
+<lb n="70"/><unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">getreuewen</unclear> lieben Eüdtgnossen, zuo
 <lb n="71"/>der ihrigen nachrichtung, <unclear cert="low" resp="#joint">freuendtlich</unclear> <unclear cert="low" resp="#joint">Eüdt=</unclear>
-<lb n="72"/><unclear cert="low" resp="#joint">gnoßisch</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">antwurdt</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">bergen</unclear>, <unclear cert="low" resp="#joint">versehende</unclear>
-<lb n="73"/>sich <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">unsrer</unclear> resolution nit werden
-<lb n="74"/>beschwaeren. Denen wir, angeneme
-<lb n="75"/>liebe dienst, <unclear cert="low" resp="#joint">freuendtlichen</unclear> <unclear cert="low" resp="#joint">wolgefelligen</unclear>
-<lb n="76"/>willen, und alles guots jederzeit bests ver=
-<lb n="77"/>moegens zuoerweisen wol geneügt und
-<lb n="78"/>erbietig seijen. Datum <origDate when="1614" resp="#ner">den <unclear cert="low" resp="#joint">25</unclear>. <unclear cert="low" resp="#joint">ten</unclear>.
+<lb n="72"/><unclear cert="low" resp="#joint">gnoßisch</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">antwurdt</unclear> nit <unclear cert="medium" resp="#joint">bergen</unclear>, <unclear cert="medium" resp="#joint">versehende</unclear>
+<lb n="73"/>sich sie sich diser <unclear cert="low" resp="#joint">unsrer</unclear> resolution nit werden
+<lb n="74"/><unclear cert="low" resp="#joint">beschwaeren</unclear>. Denen wir, <unclear cert="low" resp="#joint">angeneme</unclear>
+<lb n="75"/>liebe dienst, <unclear cert="medium" resp="#joint">freuendtlichen</unclear> <unclear cert="medium" resp="#joint">wolgefelligen</unclear>
+<lb n="76"/>willen, und alles <unclear cert="medium" resp="#joint">guots</unclear> <unclear cert="low" resp="#joint">jederzeit</unclear> <unclear cert="medium" resp="#joint">bests</unclear> ver=
+<lb n="77"/><unclear cert="low" resp="#joint">moegens</unclear> <unclear cert="low" resp="#joint">zuoerweisen</unclear> wol <unclear cert="low" resp="#joint">geneügt</unclear> und
+<lb n="78"/>erbietig <unclear cert="low" resp="#joint">seijen</unclear>. Datum <origDate when="1614" resp="#ner">den 25. <unclear cert="low" resp="#joint">ten</unclear>.
 <lb n="79"/>Novembris a° 1614</origDate>.
 <lb n="80"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Burgermr. u. Rh</orgName>
 <lb n="81"/>An die von <orgName ref="stadtasg-actors-502" cert="medium" role="recipient" resp="#ner">Glaruß</orgName>
 <pb facs="StadtASG_Missive_1920_7152.jpg" n="4"/>
-<lb n="82"/><date resp="#ner">15. <unclear cert="low" resp="#joint">9b</unclear>. 1614.</date> an Clauß vogt
-<lb n="83"/>und 1 <persName resp="#ner">Jacob Reitman</persName> genant
+<lb n="82"/><date resp="#ner">15. 9b. 1614.</date> an <unclear cert="medium" resp="#joint">Clauß</unclear> <unclear cert="low" resp="#joint">vogt</unclear>
+<lb n="83"/>und 1 <persName resp="#ner">Jacob <unclear cert="medium" resp="#joint">Reitman</unclear></persName> genant
 <lb n="84"/><unclear cert="low" resp="#joint">vogt</unclear> <unclear cert="low" resp="#joint">verkaufft</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Roßßel</unclear></placeName>.
 </p>
         </body>

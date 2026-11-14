@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1819</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,145 +20,145 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Eine Frau bittet den Rat zu St. Gallen, bei Jacob Alther zu intervenieren, damit er sie und das gemeinsame Kind ehre. Sie erklärt, Alther habe ihr dies versprochen, sie sei aber arm und könne das Bürgerrecht nicht selbst erwerben. Sie bittet um Verzeihung für ihr Verhalten und um Unterstützung, damit Alther seine Versprechen einlöse.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Eine ungenannte Frau (Mutter des Kindes von Jacob Alther)</name></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1819_6751.jpg" n="1"/>
-<lb n="1"/>Edel, vest, ernvest, fürsichtig, ersamb und weiß,
-<lb n="2"/>gepietendt günstige herren und vätter,
-<lb n="3"/>Was die auch edle, <unclear cert="low" resp="#joint">frome</unclear>, <unclear cert="low" resp="#joint">veste</unclear>, <unclear cert="low" resp="#joint">ernvest</unclear>, fürsichtig,
-<lb n="4"/>ersamb und weisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister und
+<lb n="1"/>Edel, vest, <unclear cert="low" resp="#joint">ernvest</unclear>, fürsichtig, <unclear cert="low" resp="#joint">ersamb</unclear> und <unclear cert="medium" resp="#joint">weiß</unclear>,
+<lb n="2"/><unclear cert="low" resp="#joint">gepietendt</unclear> günstige herren und vätter,
+<lb n="3"/>Was <unclear cert="medium" resp="#joint">die</unclear> auch edle, <unclear cert="low" resp="#joint">frome</unclear>, veste, <unclear cert="low" resp="#joint">ernvest</unclear>, fürsichtig,
+<lb n="4"/><unclear cert="low" resp="#joint">ersamb</unclear> und weisen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">burgermaister</unclear> und
 <lb n="5"/>rath der löblichen statt Sanct Gallen</orgName>, auff
-<lb n="6"/>supplicieren, deren burgers <persName resp="#ner">Jacob Althern</persName>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
-<lb n="7"/><unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">ungnar</unclear> bey dreyen wochen, und dann
-<lb n="8"/><unclear cert="low" resp="#joint">nechstuerschinen</unclear> tag widerumben intercedendo zu-
-<lb n="9"/>geschriben, habe <unclear cert="low" resp="#joint">auß</unclear> <unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">beeden</unclear> schreiben, und
-<lb n="10"/>eingeschloßnen deß <persName resp="#ner">Altheren</persName> supplicationen (deren
-<lb n="11"/>communication ich mich demüetigs fleiß bedanckhen
-<lb n="12"/>thue) ich gnuegsamb vernomen, Unnd solte ich
-<lb n="13"/>zwar über das erste schreiben, alls baldt mein ver-
-<lb n="14"/>andtwurtung gethan haben, damit die beede ober-
-<lb n="15"/>kaiten alls <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. dann auch ain loblicher
+<lb n="6"/><unclear cert="low" resp="#joint">supplicieren</unclear>, <unclear cert="medium" resp="#joint">deren</unclear> burgers <persName resp="#ner">Jacob Althern</persName>, E. <unclear cert="low" resp="#joint">V</unclear>. E.
+<lb n="7"/>F. E. Wt. ungnar bey dreyen <unclear cert="low" resp="#joint">wochen</unclear>, und dann
+<lb n="8"/><unclear cert="low" resp="#joint">nechstuerschinen</unclear> tag widerumben <unclear cert="low" resp="#joint">intercedendo</unclear> zu-
+<lb n="9"/>geschriben, habe auß denselben beeden schreiben, und
+<lb n="10"/>eingeschloßnen deß <persName resp="#ner"><unclear cert="low" resp="#joint">Altheren</unclear></persName> supplicationen (<unclear cert="medium" resp="#joint">deren</unclear>
+<lb n="11"/>communication ich mich <unclear cert="low" resp="#joint">demüetigs</unclear> fleiß bedanckhen
+<lb n="12"/>thue) ich <unclear cert="low" resp="#joint">gnuegsamb</unclear> vernomen, Unnd <unclear cert="medium" resp="#joint">solte</unclear> ich
+<lb n="13"/>zwar über das <unclear cert="medium" resp="#joint">erste</unclear> schreiben, alls baldt mein ver-
+<lb n="14"/><unclear cert="medium" resp="#joint">andtwurtung</unclear> gethan haben, damit die beede ober-
+<lb n="15"/><unclear cert="low" resp="#joint">kaiten</unclear> alls <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">V</unclear>. E. F. E. Wt. dann auch ain <unclear cert="medium" resp="#joint">loblicher</unclear>
 <lb n="16"/><orgName ref="stadtasg-actors-148" cert="medium" resp="#ner">magistrat der statt Sanct Gallen</orgName>, derhalben nicht
-<lb n="17"/>mehr behelligt werden miessen, so wissen aber
-<lb n="18"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">das</unclear> ich, alls ain betrüebtes weibsbilldt,
-<lb n="19"/>mich auff dergleichen sachen nichts verstee, und eben
-<lb n="20"/>anderer verstendiger leüten rath und hilff hier-
-<lb n="21"/>innen gebrauchen mueß, derhalben ich dann notari
-<lb n="22"/> <persName resp="#ner">Hannß Georg Kernen</persName> alhie, ersuecht, und gepetten,
-<lb n="23"/>meine verandtwurtung und gegennothurfft dar-
-<lb n="24"/>auff anzustellen, der ist aber, wie bewußt, inn
-<lb n="25"/>dessen erkrannckhet, und bißhero so übel auff gewesen
-<lb n="26"/>das ers nicht verfertigen khünden, sonderen ist ich
-<lb n="27"/>das schreiben wider vonn ime nemen miessen,
-<lb n="28"/>allso die schuldt nicht an mir, dann ich, waiß Gott,
-<lb n="29"/>selbst mehr dann gern deßwegen zue ruee sein und
+<lb n="17"/>mehr behelligt werden <unclear cert="low" resp="#joint">miessen</unclear>, so wissen aber
+<lb n="18"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">V</unclear>. E. F. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wt</unclear>. das ich, alls ain <unclear cert="low" resp="#joint">betrüebtes</unclear> <unclear cert="low" resp="#joint">weibsbilldt</unclear>,
+<lb n="19"/>mich auff dergleichen sachen <unclear cert="low" resp="#joint">nichts</unclear> <unclear cert="low" resp="#joint">verstee</unclear>, und eben
+<lb n="20"/><unclear cert="medium" resp="#joint">anderer</unclear> <unclear cert="medium" resp="#joint">verstendiger</unclear> leüten rath und hilff <unclear cert="medium" resp="#joint">hier</unclear>-
+<lb n="21"/><unclear cert="medium" resp="#joint">innen</unclear> gebrauchen <unclear cert="medium" resp="#joint">mueß</unclear>, derhalben ich dann <unclear cert="medium" resp="#joint">notari</unclear>
+<lb n="22"/> <persName resp="#ner"><unclear cert="medium" resp="#joint">Hannß</unclear> <unclear cert="medium" resp="#joint">Georg</unclear> <unclear cert="low" resp="#joint">Kernen</unclear></persName> <unclear cert="medium" resp="#joint">alhie</unclear>, <unclear cert="low" resp="#joint">ersuecht</unclear>, und gepetten,
+<lb n="23"/>meine <unclear cert="medium" resp="#joint">verandtwurtung</unclear> und <unclear cert="low" resp="#joint">gegennothurfft</unclear> dar-
+<lb n="24"/>auff anzustellen, der ist aber, wie <unclear cert="medium" resp="#joint">bewußt</unclear>, inn
+<lb n="25"/>dessen <unclear cert="low" resp="#joint">erkrannckhet</unclear>, und bißhero so übel auff gewesen
+<lb n="26"/>das <unclear cert="low" resp="#joint">ers</unclear> nicht verfertigen <unclear cert="medium" resp="#joint">khünden</unclear>, <unclear cert="medium" resp="#joint">sonderen</unclear> <unclear cert="medium" resp="#joint">ist</unclear> ich
+<lb n="27"/>das <unclear cert="medium" resp="#joint">schreiben</unclear> wider vonn <unclear cert="low" resp="#joint">ime</unclear> nemen <unclear cert="low" resp="#joint">miessen</unclear>,
+<lb n="28"/>allso die <unclear cert="medium" resp="#joint">schuldt</unclear> nicht an mir, dann ich, <unclear cert="medium" resp="#joint">waiß</unclear> <unclear cert="medium" resp="#joint">Gott</unclear>,
+<lb n="29"/>selbst mehr dann gern deßwegen zue <unclear cert="medium" resp="#joint">ruee</unclear> sein und
 <pb facs="StadtASG_Missive_1819_6752.jpg" n="2"/>
-<lb n="30"/>lieber wolte, daß es dessen gar nichz bederffte.
-<lb n="31"/>Weiln es aber diser diser zeit allso bewandt, daß ich,
-<lb n="32"/>auß <unclear cert="low" resp="#joint">menschlicher</unclear> <unclear cert="low" resp="#joint">bloedigkhait</unclear> gefallen, so bitt ich,
-<lb n="33"/>alls ain <unclear cert="low" resp="#joint">bueßfertige</unclear> <unclear cert="low" resp="#joint">suenderin</unclear> <unclear cert="low" resp="#joint">demietigclich</unclear> und
-<lb n="34"/>umb Gottes willen, mirs zueverzeihen, und sich
+<lb n="30"/>lieber wolte, <unclear cert="low" resp="#joint">daß</unclear> es <unclear cert="medium" resp="#joint">dessen</unclear> gar <unclear cert="medium" resp="#joint">nichz</unclear> <unclear cert="low" resp="#joint">bederffte</unclear>.
+<lb n="31"/>Weiln es aber diser diser zeit allso <unclear cert="medium" resp="#joint">bewandt</unclear>, daß ich,
+<lb n="32"/>auß menschlicher <unclear cert="low" resp="#joint">bloedigkhait</unclear> gefallen, so bitt ich,
+<lb n="33"/>alls ain bueßfertige suenderin <unclear cert="low" resp="#joint">demietigclich</unclear> und
+<lb n="34"/>umb Gottes willen, <unclear cert="medium" resp="#joint">mirs</unclear> <unclear cert="low" resp="#joint">zueverzeihen</unclear>, und sich
 <lb n="35"/>meiner inn disem, mir, wiß Gott, mehr dann
-<lb n="36"/>schwerlich angelegnen fahl und handel, veterlich
-<lb n="37"/>mit gnaden <unclear cert="low" resp="#joint">anzenemen</unclear>. Und sovil nun
-<lb n="38"/>die sach an ir <unclear cert="low" resp="#joint">selbs</unclear> <unclear cert="low" resp="#joint">betrifft</unclear>, <unclear cert="low" resp="#joint">haltet</unclear> sich die im
-<lb n="39"/>wahrhafftigen grundt allso, daß, alls gedacht-
-<lb n="40"/>er <persName resp="#ner">Jacob Althrer</persName> und ich. vor dem beÿ <persName resp="#ner">Danil Geberling</persName>
-<lb n="41"/>neben ain andren gewesen, hatt er <persName resp="#ner">Althrer</persName> offt und
-<lb n="42"/>vilmahlen an mich gesezt, mich seinem willen
-<lb n="43"/>zuvergeben, da ich ime allwegen die andtwort
-<lb n="44"/>geben, <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">wiß</unclear> wol, daß ich ain arme dochter, die
-<lb n="45"/>nicht inn vermügen, daß ich inn der statt, <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct
-<lb n="46"/>Gallen</placeName> daß burgerrecht erlangen khünte, so wcher
-<lb n="47"/>es auch inn meiner eltren vermügen nicht, mir
-<lb n="48"/>die <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">leben</unclear> <unclear cert="low" resp="#joint">vil</unclear> geben khünden, sondren
-<lb n="49"/>mieste, wann ich vom ime <persName resp="#ner">Althrer</persName>n meiner
-<lb n="50"/>ehren endtsezt worden, allso inn schach sizen
-<lb n="51"/>bleiben. Darüber er <persName resp="#ner">Althrer</persName> mir allwegen
+<lb n="36"/>schwerlich angelegnen <unclear cert="medium" resp="#joint">fahl</unclear> und handel, <unclear cert="medium" resp="#joint">veterlich</unclear>
+<lb n="37"/>mit gnaden <unclear cert="low" resp="#joint">anzenemen</unclear>. Und <unclear cert="medium" resp="#joint">sovil</unclear> nun
+<lb n="38"/>die sach an ir <unclear cert="low" resp="#joint">selbs</unclear> betrifft, haltet sich die <unclear cert="low" resp="#joint">im</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">wahrhafftigen</unclear> grundt allso, daß, <unclear cert="medium" resp="#joint">alls</unclear> gedacht-
+<lb n="40"/><unclear cert="medium" resp="#joint">er</unclear> <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Althrer</unclear></persName> und ich. vor dem beÿ <persName resp="#ner"><unclear cert="medium" resp="#joint">Danil</unclear> <unclear cert="low" resp="#joint">Geberling</unclear></persName>
+<lb n="41"/>neben ain <unclear cert="medium" resp="#joint">andren</unclear> gewesen, hatt er <persName resp="#ner"><unclear cert="low" resp="#joint">Althrer</unclear></persName> <unclear cert="medium" resp="#joint">offt</unclear> und
+<lb n="42"/>vilmahlen an mich <unclear cert="low" resp="#joint">gesezt</unclear>, mich seinem willen
+<lb n="43"/><unclear cert="low" resp="#joint">zuvergeben</unclear>, <unclear cert="medium" resp="#joint">da</unclear> ich <unclear cert="medium" resp="#joint">ime</unclear> allwegen die <unclear cert="low" resp="#joint">andtwort</unclear>
+<lb n="44"/>geben, er <unclear cert="low" resp="#joint">wiß</unclear> wol, daß ich ain <unclear cert="medium" resp="#joint">arme</unclear> dochter, die
+<lb n="45"/>nicht inn vermügen, daß ich inn der statt, <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Sanct</unclear>
+<lb n="46"/><unclear cert="medium" resp="#joint">Gallen</unclear></placeName> daß burgerrecht erlangen <unclear cert="low" resp="#joint">khünte</unclear>, so <unclear cert="low" resp="#joint">wcher</unclear>
+<lb n="47"/>es auch inn meiner <unclear cert="low" resp="#joint">eltren</unclear> vermügen nicht, mir
+<lb n="48"/>die <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">iren</unclear> leben vil geben <unclear cert="low" resp="#joint">khünden</unclear>, <unclear cert="low" resp="#joint">sondren</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">mieste</unclear>, wann ich <unclear cert="medium" resp="#joint">vom</unclear> <unclear cert="medium" resp="#joint">ime</unclear> <persName resp="#ner">Althrer</persName>n meiner
+<lb n="50"/>ehren <unclear cert="low" resp="#joint">endtsezt</unclear> worden, <unclear cert="medium" resp="#joint">allso</unclear> <unclear cert="medium" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">schach</unclear> <unclear cert="low" resp="#joint">sizen</unclear>
+<lb n="51"/>bleiben. Darüber er <persName resp="#ner"><unclear cert="low" resp="#joint">Althrer</unclear></persName> <unclear cert="medium" resp="#joint">mir</unclear> allwegen
 <lb n="52"/>und <unclear cert="low" resp="#joint">vilmahlen</unclear> <unclear cert="low" resp="#joint">versprochen</unclear>, er wolle mich, wann
-<lb n="53"/>ich seines willens seÿe, ehrlichen, und er frage
-<lb n="54"/>dem gelt nichz nach, er wolle der sach wol
-<lb n="55"/>thun, solle nur ine sorgen lassen, darüber
-<lb n="56"/>ich dann, alls ain weibs billdt, laider, auß
-<lb n="57"/>menschlicher bloedigkhait, mich mit ime <persName resp="#ner">Alt-
-<lb n="58"/>hrern</persName> vbersehen. Gleich inn. 14. tagen hernach,
+<lb n="53"/>ich seines willens <unclear cert="low" resp="#joint">seÿe</unclear>, ehrlichen, und er frage
+<lb n="54"/>dem gelt <unclear cert="medium" resp="#joint">nichz</unclear> nach, er wolle der sach wol
+<lb n="55"/><unclear cert="medium" resp="#joint">thun</unclear>, solle <unclear cert="medium" resp="#joint">nur</unclear> <unclear cert="low" resp="#joint">ine</unclear> sorgen lassen, darüber
+<lb n="56"/>ich dann, alls ain weibs <unclear cert="low" resp="#joint">billdt</unclear>, laider, auß
+<lb n="57"/><unclear cert="medium" resp="#joint">menschlicher</unclear> <unclear cert="low" resp="#joint">bloedigkhait</unclear>, mich mit <unclear cert="low" resp="#joint">ime</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Alt</unclear>-
+<lb n="58"/><unclear cert="low" resp="#joint">hrern</unclear></persName> <unclear cert="low" resp="#joint">vbersehen</unclear>. <unclear cert="low" resp="#joint">Gleich</unclear> <unclear cert="medium" resp="#joint">inn</unclear>. <unclear cert="medium" resp="#joint">14</unclear>. tagen hernach,
 <pb facs="StadtASG_Missive_1819_6753.jpg" n="3"/>
-<lb n="59"/>ist er Alther vonn hiedannen hinweg gezogen, da
-<lb n="60"/>er mir zuuerstehn gegeben, er nach <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName> ziechen
-<lb n="61"/>wolle, der ist aber gehn <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Galln</placeName>, und ich zuuor,
-<lb n="62"/>weil er noch alhie gewesen, <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">meiner</unclear> <unclear cert="low" resp="#joint">schwester</unclear>
-<lb n="63"/><unclear cert="low" resp="#joint">gehn</unclear> <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregentz</unclear></placeName> gezogen, ich auch dazumahln nicht
+<lb n="59"/>ist er <unclear cert="low" resp="#joint">Alther</unclear> vonn <unclear cert="low" resp="#joint">hiedannen</unclear> hinweg gezogen, da
+<lb n="60"/>er mir <unclear cert="low" resp="#joint">zuuerstehn</unclear> gegeben, er nach <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName> <unclear cert="medium" resp="#joint">ziechen</unclear>
+<lb n="61"/>wolle, der ist aber <unclear cert="medium" resp="#joint">gehn</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Galln</placeName>, und ich <unclear cert="low" resp="#joint">zuuor</unclear>,
+<lb n="62"/>weil er noch alhie gewesen, zue meiner schwester
+<lb n="63"/>gehn <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregentz</placeName> gezogen, ich auch <unclear cert="low" resp="#joint">dazumahln</unclear> nicht
 <lb n="64"/>gewußt, ob ich schwanger oder nicht, vil weniger,
 <lb n="65"/>wo er sich auffgehalten, derhalben ichs ime, alls
-<lb n="66"/>ichs laider gemerkt, ehender nicht <unclear cert="low" resp="#joint">zuwissen</unclear> machen
-<lb n="67"/>khünden, biß ich ine erfahrn, aber mir beschicht
-<lb n="68"/>hierinnen unguetlich, das ich ime drithalb hundert
-<lb n="69"/>guldin zuzuebringen versprochen, dann ich dozu-
-<lb n="70"/>mahlen an barem gelt mehrers nicht, alls inn
-<lb n="71"/>50 fl. neben gueten klaidern und andrem, für
-<lb n="72"/>mich selbst gehabt, wol ist nicht ohn, das ain <unclear cert="low" resp="#joint">andere</unclear>
-<lb n="73"/><unclear cert="low" resp="#joint">persohn</unclear>, <unclear cert="low" resp="#joint">ime</unclear> .200 fl., für mich herzugeben ver-
-<lb n="74"/>sprochen, aber es hernach, anderer gestalt nicht,
-<lb n="75"/>mehr hergeben wollen, alls wann er <persName resp="#ner">Altherr</persName>
-<lb n="76"/>mit mir inn das <placeName resp="#ner">Bapstumb</placeName> zieche, und wir unß
-<lb n="77"/>zue derselben religion <unclear cert="low" resp="#joint">bekennen</unclear>,
-<lb n="78"/><unclear cert="low" resp="#joint">auff</unclear> <unclear cert="low" resp="#joint">sein</unclear> <persName resp="#ner">Altherr</persName>n
+<lb n="66"/>ichs laider <unclear cert="low" resp="#joint">gemerkt</unclear>, <unclear cert="low" resp="#joint">ehender</unclear> nicht zuwissen machen
+<lb n="67"/><unclear cert="low" resp="#joint">khünden</unclear>, biß ich <unclear cert="medium" resp="#joint">ine</unclear> <unclear cert="low" resp="#joint">erfahrn</unclear>, aber mir <unclear cert="low" resp="#joint">beschicht</unclear>
+<lb n="68"/>hierinnen <unclear cert="low" resp="#joint">unguetlich</unclear>, das ich ime drithalb hundert
+<lb n="69"/>guldin <unclear cert="low" resp="#joint">zuzuebringen</unclear> versprochen, dann ich dozu-
+<lb n="70"/>mahlen an <unclear cert="low" resp="#joint">barem</unclear> gelt mehrers nicht, alls inn
+<lb n="71"/>50 fl. neben <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">klaidern</unclear> und <unclear cert="low" resp="#joint">andrem</unclear>, für
+<lb n="72"/>mich selbst gehabt, wol ist nicht <unclear cert="medium" resp="#joint">ohn</unclear>, das ain andere
+<lb n="73"/>persohn, <unclear cert="low" resp="#joint">ime</unclear> .200 fl., für mich <unclear cert="low" resp="#joint">herzugeben</unclear> ver-
+<lb n="74"/>sprochen, aber es hernach, <unclear cert="medium" resp="#joint">anderer</unclear> gestalt <unclear cert="medium" resp="#joint">nicht</unclear>,
+<lb n="75"/>mehr <unclear cert="medium" resp="#joint">hergeben</unclear> wollen, alls wann er <persName resp="#ner"><unclear cert="low" resp="#joint">Altherr</unclear></persName>
+<lb n="76"/>mit mir inn das <placeName resp="#ner"><unclear cert="low" resp="#joint">Bapstumb</unclear></placeName> <unclear cert="low" resp="#joint">zieche</unclear>, und wir <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="77"/>zue derselben religion bekennen,
+<lb n="78"/>auff <unclear cert="low" resp="#joint">sein</unclear> <persName resp="#ner">Altherr</persName>n
 <lb n="79"/><unclear cert="low" resp="#joint">staitthas</unclear> <unclear cert="low" resp="#joint">behaarr</unclear>-
 <lb n="80"/><unclear cert="low" resp="#joint">liches</unclear> <unclear cert="low" resp="#joint">zusetzen</unclear>,
 <lb n="81"/><unclear cert="low" resp="#joint">aber</unclear> <unclear cert="low" resp="#joint">gar</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">uß</unclear>
 <lb n="82"/><unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">aignen</unclear> <unclear cert="low" resp="#joint">bgir</unclear>
 <lb n="83"/><unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">noch</unclear>
 <lb n="84"/><unclear cert="low" resp="#joint">annaigung</unclear>,
-<lb n="85"/><unclear cert="low" resp="#joint">Wann</unclear> dann die sachen allso beschaffen, das ich,
-<lb n="86"/>laider, Gott erbarms, inn disen betruebten fahl
-<lb n="87"/>gerathen, und der <persName resp="#ner">Alther</persName> einmahl inn seiner ersten
+<lb n="85"/>Wann dann die sachen allso beschaffen, das ich,
+<lb n="86"/>laider, Gott <unclear cert="low" resp="#joint">erbarms</unclear>, inn <unclear cert="medium" resp="#joint">disen</unclear> <unclear cert="low" resp="#joint">betruebten</unclear> fahl
+<lb n="87"/><unclear cert="medium" resp="#joint">gerathen</unclear>, und der <persName resp="#ner"><unclear cert="medium" resp="#joint">Alther</unclear></persName> <unclear cert="low" resp="#joint">einmahl</unclear> inn seiner ersten
 <lb n="88"/>supplication selbst gestendig, er mir, auff mein
-<lb n="89"/><unclear cert="low" resp="#joint">und</unclear>
-<lb n="90"/>bitt zuegeschriben versprochen, er mich und das kindt
-<lb n="91"/>zue ehern setzen wolle, allain das an das gelt setzt,
-<lb n="92"/>die ehr aber nicht <unclear cert="low" resp="#joint">nur</unclear> <unclear cert="low" resp="#joint">an</unclear> dem <unclear cert="low" resp="#joint">gut</unclear>, <unclear cert="low" resp="#joint">und</unclear> gelt hangt,
-<lb n="93"/>und ich dannoch diser zeit, an baarem gelt inn
-<lb n="94"/>die 30 fl. das andre ist mir dise <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">hero</unclear> <unclear cert="low" resp="#joint">darauff</unclear>
+<lb n="89"/>und
+<lb n="90"/>bitt <unclear cert="low" resp="#joint">zuegeschriben</unclear> versprochen, er mich und das kindt
+<lb n="91"/>zue ehern setzen wolle, <unclear cert="medium" resp="#joint">allain</unclear> das an das gelt setzt,
+<lb n="92"/>die ehr aber nicht nur an dem <unclear cert="low" resp="#joint">gut</unclear>, und gelt <unclear cert="medium" resp="#joint">hangt</unclear>,
+<lb n="93"/>und ich <unclear cert="low" resp="#joint">dannoch</unclear> diser zeit, an <unclear cert="medium" resp="#joint">baarem</unclear> gelt inn
+<lb n="94"/>die 30 fl. das <unclear cert="medium" resp="#joint">andre</unclear> ist mir dise zeit hero darauff
 <pb facs="StadtASG_Missive_1819_6754.jpg" n="4"/>
-<lb n="95"/>gangen) neben guten klaidern, angemachten bett:
-<lb n="96"/>und bettstatt hab, so auch Inn die wol werdt,
-<lb n="97"/>Innmassen sich das Im augenschein erfinden wurd=
-<lb n="98"/>et, darzuo auch vonn meinen lieben öltern Inns
-<lb n="99"/>khünfftig noch was zuererben, alß das vermigen
-<lb n="100"/>der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName> gebrauch nach, auff be=
-<lb n="101"/>gebenden fahl, verhoffentlich, wol hab und be=
-<lb n="102"/>khom, Unnd Je und allwegen, auß der noth, wie man
+<lb n="95"/>gangen) neben guten <unclear cert="low" resp="#joint">klaidern</unclear>, angemachten bett:
+<lb n="96"/>und <unclear cert="low" resp="#joint">bettstatt</unclear> hab, so auch <unclear cert="low" resp="#joint">Inn</unclear> die <unclear cert="low" resp="#joint">wol</unclear> werdt,
+<lb n="97"/><unclear cert="low" resp="#joint">Innmassen</unclear> sich das Im augenschein <unclear cert="low" resp="#joint">erfinden</unclear> <unclear cert="low" resp="#joint">wurd=</unclear>
+<lb n="98"/>et, darzuo auch <unclear cert="low" resp="#joint">vonn</unclear> meinen lieben <unclear cert="low" resp="#joint">öltern</unclear> Inns
+<lb n="99"/><unclear cert="low" resp="#joint">khünfftig</unclear> noch was <unclear cert="low" resp="#joint">zuererben</unclear>, alß das <unclear cert="low" resp="#joint">vermigen</unclear>
+<lb n="100"/>der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName> <unclear cert="low" resp="#joint">gebrauch</unclear> nach, auff be=
+<lb n="101"/>gebenden fahl, <unclear cert="low" resp="#joint">verhoffentlich</unclear>, wol hab und be=
+<lb n="102"/>khom, <unclear cert="low" resp="#joint">Unnd</unclear> <unclear cert="low" resp="#joint">Je</unclear> und allwegen, auß der noth, wie man
 <lb n="103"/>Im gemainen sprichword sagt, ain tugendt ge=
-<lb n="104"/>macht worden, allß zweiffel Ich auch nicht,
-<lb n="105"/>wann E. v. e. f. e. wht. beij wolgedachtem ainem
+<lb n="104"/>macht worden, <unclear cert="medium" resp="#joint">allß</unclear> <unclear cert="medium" resp="#joint">zweiffel</unclear> Ich auch nicht,
+<lb n="105"/>wann E. <unclear cert="low" resp="#joint">v</unclear>. e. <unclear cert="low" resp="#joint">f</unclear>. e. wht. beij wolgedachtem ainem
 <lb n="106"/>ersamen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">rath der statt Sanct Gallen</orgName>, für mich
-<lb n="107"/>Intercedierten, die mich begnadigen und Inn dero
-<lb n="108"/>buergerrecht einkhomen lassen wurden, Ist
-<lb n="109"/>demnach an dieselben mein demietiges, und
-<lb n="110"/>umb Gottes willen anrüeffen und bitt, die wollen
-<lb n="111"/>erst wolgedachtem ain ersamen rath der statt
-<lb n="112"/>Sanct Gallen, disen meinen bericht ubersenden
-<lb n="113"/>und beneben für mich Intercedieren, mich Inn
-<lb n="114"/>dero buergerrecht gnedig einkhomen zulassen, mit=
+<lb n="107"/><unclear cert="low" resp="#joint">Intercedierten</unclear>, die mich begnadigen und Inn dero
+<lb n="108"/>buergerrecht <unclear cert="low" resp="#joint">einkhomen</unclear> lassen <unclear cert="low" resp="#joint">wurden</unclear>, Ist
+<lb n="109"/>demnach an dieselben mein <unclear cert="low" resp="#joint">demietiges</unclear>, und
+<lb n="110"/>umb Gottes willen <unclear cert="medium" resp="#joint">anrüeffen</unclear> und bitt, die wollen
+<lb n="111"/>erst wolgedachtem <unclear cert="low" resp="#joint">ain</unclear> ersamen rath der statt
+<lb n="112"/>Sanct Gallen, disen meinen bericht <unclear cert="low" resp="#joint">ubersenden</unclear>
+<lb n="113"/>und beneben für mich <unclear cert="low" resp="#joint">Intercedieren</unclear>, mich Inn
+<lb n="114"/>dero buergerrecht <unclear cert="low" resp="#joint">gnedig</unclear> <unclear cert="low" resp="#joint">einkhomen</unclear> zulassen, mit=
 <lb n="115"/>dem Irigen <persName resp="#ner">Jacob Altherrn</persName> dahin zueverfiegen,
-<lb n="116"/>er mich zu kirchen und strassen fuehren, allß
-<lb n="117"/>mich und unser mit ain andern erzeügtes kindt,
-<lb n="118"/>ehrlichen thue, Daran beschicht ain werkh, so dem
-<lb n="119"/>allmechtigen ain wolgefallen, das er auch un=
-<lb n="120"/>belohnt nicht lassen wierdt, darumben Ich dann,
+<lb n="116"/>er mich zu kirchen und strassen fuehren, <unclear cert="low" resp="#joint">allß</unclear>
+<lb n="117"/>mich und <unclear cert="medium" resp="#joint">unser</unclear> mit ain <unclear cert="medium" resp="#joint">andern</unclear> <unclear cert="medium" resp="#joint">erzeügtes</unclear> kindt,
+<lb n="118"/>ehrlichen thue, Daran beschicht <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">werkh</unclear>, so dem
+<lb n="119"/>allmechtigen <unclear cert="low" resp="#joint">ain</unclear> wolgefallen, das er auch un=
+<lb n="120"/>belohnt nicht lassen <unclear cert="low" resp="#joint">wierdt</unclear>, darumben Ich dann,
 <lb n="121"/>mit meinem armen waisen, die tag meines
-<lb n="122"/>lebens ohnauffherlich bitten will, thue allß.
+<lb n="122"/>lebens <unclear cert="low" resp="#joint">ohnauffherlich</unclear> bitten will, thue allß.
 </p>
         </body>
     </text>

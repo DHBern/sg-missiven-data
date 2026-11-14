@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2425</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Vogt Hans Joachim Krimm von Freylingen zu Stettlieben berichtet Bürgermeister und Rat zu St. Gallen, dass Clara Hillerin nach ihrer Rückkehr vor ihm erschienen sei. Sie habe den Scheidungsvertrag mit Melchior Nef vorgelegt und beantragt, die beiden Kinder aus ihrer ersten Ehe mit Alexander Heron bei sich behalten und selbst erziehen zu dürfen, da Nef den Vertrag nicht einhalte. Krimm lehnt dies ab, da er befürchtet, die Kinder würden bei Hillerin schlecht erzogen, und übergibt den Herren die Sache zur Entscheidung. Er übergibt ihnen eine beglaubigte Abschrift des Vertrags.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hans Joachim Krimm von Freylingen, Vogt zu Stettlieben</name><placeName resp="#regest">Stettlieben</placeName><date when="1623-07-23" cert="low" resp="#regest">den 23./13. Julii ao etc. 623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,70 +35,70 @@
 <p>
 <pb facs="StadtASG_Missive_2425_9329.jpg" n="1"/>
 <lb n="1"/>Edle, gestrenge, ehrenveste, vorsichtige unnd weiße,
-<lb n="2"/>guenstige herren, burgermaister unnd rath, denen selben
+<lb n="2"/>guenstige herren, burgermaister <unclear cert="medium" resp="#joint">unnd</unclear> rath, denen selben
 <lb n="3"/>seyen meine jederzeit beflißne ganz guotwillige
 <lb n="4"/>dienst unnd grueß zuovor.
-<lb n="5"/>Demnach zaigerin diß <persName resp="#ner">Clara Hillerin</persName> nach ihrer heimb-
-<lb n="6"/>kuonfft vor mir erschinen, unnd mir den receß deß abschidts,
+<lb n="5"/>Demnach zaigerin diß <persName resp="#ner"><unclear cert="low" resp="#joint">Clara</unclear> <unclear cert="low" resp="#joint">Hillerin</unclear></persName> nach <unclear cert="low" resp="#joint">ihrer</unclear> <unclear cert="low" resp="#joint">heimb</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">kuonfft</unclear> <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">erschinen</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">mir</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">receß</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">abschidts</unclear>,
 <lb n="7"/>zwischen ihro unnd herrn <persName resp="#ner">Melchior Nefen</persName> den <date resp="#ner">12. diß
-<lb n="8"/>ergangnen urtel</date>, gezaigt, mit vermelden, daß ire
-<lb n="9"/>bej irem ersten ehemann <persName resp="#ner">Alexander Heronen</persName> sel:
-<lb n="10"/>ehlichen erzeügte zway kinder nit mehr bej ihme herrn
-<lb n="11"/><persName resp="#ner">Nefen</persName> in der cost, oder underhaltung, laut deßwegen
-<lb n="12"/>aufgerichten vertrags, seyen, derowegen sy ver-
-<lb n="13"/>maindt, weilen herr Nef dem vertrag zuo wider gang,
+<lb n="8"/>ergangnen urtel</date>, gezaigt, mit vermelden, daß <unclear cert="low" resp="#joint">ire</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">bej</unclear> <unclear cert="low" resp="#joint">irem</unclear> <unclear cert="low" resp="#joint">ersten</unclear> ehemann <persName resp="#ner">Alexander <unclear cert="low" resp="#joint">Heronen</unclear></persName> <unclear cert="low" resp="#joint">sel</unclear>:
+<lb n="10"/><unclear cert="low" resp="#joint">ehlichen</unclear> <unclear cert="low" resp="#joint">erzeügte</unclear> <unclear cert="low" resp="#joint">zway</unclear> <unclear cert="low" resp="#joint">kinder</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">mehr</unclear> <unclear cert="low" resp="#joint">bej</unclear> <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">herrn</unclear>
+<lb n="11"/><persName resp="#ner"><unclear cert="low" resp="#joint">Nefen</unclear></persName> in der cost, oder underhaltung, laut deßwegen
+<lb n="12"/>aufgerichten vertrags, <unclear cert="low" resp="#joint">seyen</unclear>, <unclear cert="low" resp="#joint">derowegen</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="13"/><unclear cert="low" resp="#joint">maindt</unclear>, weilen herr Nef dem vertrag zuo wider gang,
 <lb n="14"/>so den kindern ihr vätterlich ererbt haubtguot, so er
-<lb n="15"/>zuo handen empfangen, oder aber davon daß jerliche
+<lb n="15"/>zuo handen empfangen, <unclear cert="low" resp="#joint">oder</unclear> aber <unclear cert="low" resp="#joint">davon</unclear> <unclear cert="low" resp="#joint">daß</unclear> jerliche
 <lb n="16"/>interesse erlegen solte, mit angeheffter pit, ich ihro
 <lb n="17"/>alß alhie verordnete oberkait vergünstigen wolte,
-<lb n="18"/>daß sy die kinder bej ihro behalten, unnd selbsten auferziehen,
-<lb n="19"/>wie sy billicher ihro alß frembden daß costgelt gegeben
+<lb n="18"/>daß sy die kinder bej ihro behalten, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">selbsten</unclear> <unclear cert="low" resp="#joint">auferziehen</unclear>,
+<lb n="19"/><unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">sy</unclear> billicher ihro alß frembden daß costgelt gegeben
 <lb n="20"/>werden, unnd ich ihro an die herrn schrifftliche urkundt unnd
 <lb n="21"/>gemeltes vertrags fidinierte abschrifft ertheilen
 <lb n="22"/>wolte.
-<lb n="23"/>Wann dann ich hiebej den herrn die warhait nit ver-
-<lb n="24"/>halten will, daß ich so <persName resp="#ner">Hillerin</persName> der kinder vermög
-<lb n="25"/>zuogestelt oder gegeben werden soll, ich für mein thail
-<lb n="26"/>selbiges für ubel anhalte, vil weniger zuo ihro in
-<lb n="27"/>die cost verdingt, sonder mahl sy <persName resp="#ner">Hillerin</persName> wol beschaffen,
-<lb n="28"/>waß sy deß ihrigen alß hab ein ehrlichen haußzünden dermüeglich
-<lb n="29"/>verzert, unnd hiendurch gerichtet, zuo deme niemants
-<lb n="30"/>wederss radten noch gestalt sy sich hin: und wider aufhaltet,
+<lb n="23"/>Wann dann ich <unclear cert="low" resp="#joint">hiebej</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">herrn</unclear> die warhait nit ver-
+<lb n="24"/>halten will, daß <unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">so</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hillerin</unclear></persName> der <unclear cert="low" resp="#joint">kinder</unclear> <unclear cert="low" resp="#joint">vermög</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">zuogestelt</unclear> oder gegeben werden soll, ich für <unclear cert="low" resp="#joint">mein</unclear> <unclear cert="low" resp="#joint">thail</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">selbiges</unclear> für <unclear cert="low" resp="#joint">ubel</unclear> <unclear cert="low" resp="#joint">anhalte</unclear>, <unclear cert="low" resp="#joint">vil</unclear> <unclear cert="low" resp="#joint">weniger</unclear> zuo <unclear cert="low" resp="#joint">ihro</unclear> <unclear cert="low" resp="#joint">in</unclear>
+<lb n="27"/>die <unclear cert="low" resp="#joint">cost</unclear> <unclear cert="low" resp="#joint">verdingt</unclear>, <unclear cert="low" resp="#joint">sonder</unclear> <unclear cert="low" resp="#joint">mahl</unclear> sy <persName resp="#ner"><unclear cert="low" resp="#joint">Hillerin</unclear></persName> <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">beschaffen</unclear>,
+<lb n="28"/><unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">sy</unclear> deß <unclear cert="low" resp="#joint">ihrigen</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">ehrlichen</unclear> <unclear cert="low" resp="#joint">haußzünden</unclear> <unclear cert="low" resp="#joint">dermüeglich</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">verzert</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">hiendurch</unclear> gerichtet, zuo <unclear cert="low" resp="#joint">deme</unclear> <unclear cert="low" resp="#joint">niemants</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">wederss</unclear> <unclear cert="low" resp="#joint">radten</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">gestalt</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">hin</unclear>: und <unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">aufhaltet</unclear>,
 <pb facs="StadtASG_Missive_2425_9330.jpg" n="2"/>
-<lb n="31"/>vil weniger recht mit Ihme umbgahet, und die kinder
-<lb n="32"/>ohne zweifel nuhr zue faullenzen und müessig gang,
-<lb n="33"/>alß zue Eeren gerachtlichen, fraeumb glimpung (welich-
-<lb n="34"/>es doch umb die Eere buwende Jugendt sehr schadt
-<lb n="35"/>wehre) ufferziechen wurde, derohalben Ich
-<lb n="36"/>(wilen den kinderen diß Ir güetli und klegi vermag
+<lb n="31"/><unclear cert="medium" resp="#joint">vil</unclear> weniger recht mit <unclear cert="medium" resp="#joint">Ihme</unclear> <unclear cert="medium" resp="#joint">umbgahet</unclear>, und die kinder
+<lb n="32"/>ohne zweifel <unclear cert="medium" resp="#joint">nuhr</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">faullenzen</unclear> und <unclear cert="low" resp="#joint">müessig</unclear> <unclear cert="low" resp="#joint">gang</unclear>,
+<lb n="33"/><unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">Eeren</unclear> <unclear cert="low" resp="#joint">gerachtlichen</unclear>, <unclear cert="low" resp="#joint">fraeumb</unclear> <unclear cert="low" resp="#joint">glimpung</unclear> (<unclear cert="low" resp="#joint">welich</unclear>-
+<lb n="34"/>es doch umb die Eere buwende Jugendt sehr <unclear cert="low" resp="#joint">schadt</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">wehre</unclear>) <unclear cert="low" resp="#joint">ufferziechen</unclear> wurde, derohalben Ich
+<lb n="36"/>(<unclear cert="medium" resp="#joint">wilen</unclear> den <unclear cert="medium" resp="#joint">kinderen</unclear> diß Ir <unclear cert="low" resp="#joint">güetli</unclear> und klegi vermag
 <lb n="37"/>zue guettem uffgehalten worden, sich den kinderen deß
-<lb n="38"/>Ihren mit sampt dem Zeigen hiedurch ziechenden ver-
-<lb n="39"/>zihren könde) uff nimer mein ferebch noch seel seeligkeit
-<lb n="40"/>hiedurch nit beschwehren, sonder solliches den
+<lb n="38"/>Ihren mit sampt dem <unclear cert="low" resp="#joint">Zeigen</unclear> <unclear cert="low" resp="#joint">hiedurch</unclear> <unclear cert="low" resp="#joint">ziechenden</unclear> ver-
+<lb n="39"/>zihren könde) uff nimer mein <unclear cert="low" resp="#joint">ferebch</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">seel</unclear> <unclear cert="low" resp="#joint">seeligkeit</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">hiedurch</unclear> nit beschwehren, sonder <unclear cert="low" resp="#joint">solliches</unclear> den
 <lb n="41"/>herren alß Ihren geordnten übergeben haben, auch
-<lb n="42"/>gegen Gott, und der welt entschuldiget sin will,
-<lb n="43"/>und verblib den herren angeneeme dienest zue-
-<lb n="44"/>erwisen Erpietig, und der Götlichen protection
-<lb n="45"/>uns aller seits befelchende, dat: <origPlace resp="#ner">Stettlieben</origPlace>
-<lb n="46"/><origDate resp="#ner">den 23./13. Julii ao etc. 623.</origDate>
+<lb n="42"/>gegen Gott, und der welt <unclear cert="medium" resp="#joint">entschuldiget</unclear> <unclear cert="low" resp="#joint">sin</unclear> will,
+<lb n="43"/><unclear cert="medium" resp="#joint">und</unclear> verblib den herren <unclear cert="low" resp="#joint">angeneeme</unclear> <unclear cert="low" resp="#joint">dienest</unclear> <unclear cert="medium" resp="#joint">zue</unclear>-
+<lb n="44"/><unclear cert="low" resp="#joint">erwisen</unclear> <unclear cert="low" resp="#joint">Erpietig</unclear>, und der <unclear cert="low" resp="#joint">Götlichen</unclear> protection
+<lb n="45"/><unclear cert="low" resp="#joint">uns</unclear> aller seits befelchende, dat: <origPlace resp="#ner"><unclear cert="low" resp="#joint">Stettlieben</unclear></origPlace>
+<lb n="46"/><origDate resp="#ner">den 23./13. Julii ao <unclear cert="low" resp="#joint">etc</unclear>. 623.</origDate>
 <lb n="47"/>der herren
 <lb n="48"/>dienstwilliger
 <lb n="49"/><persName role="issuer" resp="#ner">Hannß Joachim</persName>
-<lb n="50"/>Krimß. v. freb-
-<lb n="51"/>lingen vogt da-
-<lb n="52"/>selbste manu propria
-<lb n="53"/>P: sc:
+<lb n="50"/><unclear cert="low" resp="#joint">Krimß</unclear>. <unclear cert="low" resp="#joint">v</unclear>. <unclear cert="low" resp="#joint">freb</unclear>-
+<lb n="51"/><unclear cert="low" resp="#joint">lingen</unclear> vogt <unclear cert="low" resp="#joint">da</unclear>-
+<lb n="52"/><unclear cert="low" resp="#joint">selbste</unclear> <unclear cert="low" resp="#joint">manu</unclear> <unclear cert="low" resp="#joint">propria</unclear>
+<lb n="53"/><unclear cert="low" resp="#joint">P</unclear>: <unclear cert="low" resp="#joint">sc</unclear>:
 <lb n="54"/>hiebey haben die herren diße bey
-<lb n="55"/>ligende fidi mirate abschrifft von
+<lb n="55"/>ligende <unclear cert="low" resp="#joint">fidi</unclear> <unclear cert="low" resp="#joint">mirate</unclear> abschrifft von
 <lb n="56"/>dem besigleten vertrag zueempfahen, welliche
 <lb n="57"/>durch gemeinen geschwornen grichtschreiber
-<lb n="58"/>fidimiret und abgeschriben worden, etc.
+<lb n="58"/>fidimiret und abgeschriben worden, <unclear cert="low" resp="#joint">etc</unclear>.
 <pb facs="StadtASG_Missive_2425_9331.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2425_9332.jpg" n="4"/>
-<lb n="59"/>Denen edlen, vesten, erenvesten, fürsichtigen
-<lb n="60"/>und wolweysen hern, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht
+<lb n="59"/><unclear cert="medium" resp="#joint">Denen</unclear> edlen, <unclear cert="medium" resp="#joint">vesten</unclear>, <unclear cert="low" resp="#joint">erenvesten</unclear>, fürsichtigen
+<lb n="60"/>und <unclear cert="medium" resp="#joint">wolweysen</unclear> <unclear cert="low" resp="#joint">hern</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">Raht</unclear>
 <lb n="61"/>der statt Sanct Gallen</orgName> etc. Meinen insonders
-<lb n="62"/>günstigen lieben herrn fründ und nachparn.
+<lb n="62"/><unclear cert="low" resp="#joint">günstigen</unclear> lieben herrn <unclear cert="low" resp="#joint">fründ</unclear> und nachparn.
 <lb n="63"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>.
 </p>
         </body>

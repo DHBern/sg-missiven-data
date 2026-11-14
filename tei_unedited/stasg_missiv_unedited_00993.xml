@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 993</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Statthalter und Rat zu St. Gallen bitten Vogt und Rat zu Bischofszell, das Testament des verstorbenen Stoffel Suter zu bestätigen und in Kraft zu belassen. Die Kinder des Suter, die Nacherben sind, fürchten, dass ihr Großvater-Erbgut vom jetzigen Ehemann der Mutter oder dem Vormund entzogen wird. St. Gallen unterstützt die Kinder, da sie Bürger sind, und ersucht Bischofszell, dem Vormund und dessen Herrn beizustehen, damit das Vermächtnis wirksam bleibt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Statthalter und Rat zu St. Gallen</name><date when="1573-06-27" resp="#regest">sambstag den 27ten Junij ao etc. 1573.</date></correspAction><correspAction type="received"><name resp="#regest">Vogt und Rat zu Bischofszell</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -36,40 +36,40 @@
 <pb facs="StadtASG_Missive_993_3029.jpg" n="1"/>
 <lb n="1"/>An BischoffZell
 <lb n="2"/>Unßer früntlich unnd nachpürlich willig diennst,
-<lb n="3"/>unnd was wir eeren, liebs, unnd guots vermögend
+<lb n="3"/>unnd was wir <unclear cert="medium" resp="#joint">eeren</unclear>, liebs, unnd guots vermögend
 <lb n="4"/>zuvor. Ersam, wyß, innsonnders guot fründ,
 <lb n="5"/>getrüw lieb Nachpuren. Es wirt
 <lb n="6"/>unns durch <persName resp="#ner">Zacharias Waelter</persName> als <unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">verord=</unclear>
-<lb n="7"/><unclear cert="low" resp="#joint">neten</unclear> Vogt <persName resp="#ner">Hanns Kisers</persName> unßers Burgers saeligen
+<lb n="7"/><unclear cert="low" resp="#joint">neten</unclear> Vogt <persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Kisers</unclear></persName> <unclear cert="low" resp="#joint">unßers</unclear> Burgers saeligen
 <lb n="8"/>by <persName resp="#ner">Stoffel Suters</persName> saeligen eelicher tochter, eelich er=
-<lb n="9"/>bornnen kinderen, sampt <unclear cert="medium" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">eerlichen</unclear> fründt=
-<lb n="10"/>schafft fürgebrocht. Nach dem bemelter
-<lb n="11"/><persName resp="#ner">Stoffel Suter</persName> mit tod <unclear cert="low" resp="#joint">abganngen</unclear>, unnd gesagte sin
-<lb n="12"/>tochter (. die sich aber jn annder weg verhyrat haben
+<lb n="9"/>bornnen kinderen, sampt <unclear cert="low" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">eerlichen</unclear> fründt=
+<lb n="10"/>schafft <unclear cert="low" resp="#joint">fürgebrocht</unclear>. Nach dem bemelter
+<lb n="11"/><persName resp="#ner">Stoffel Suter</persName> mit tod <unclear cert="low" resp="#joint">abganngen</unclear>, unnd <unclear cert="medium" resp="#joint">gesagte</unclear> sin
+<lb n="12"/>tochter (. die <unclear cert="medium" resp="#joint">sich</unclear> aber jn <unclear cert="low" resp="#joint">annder</unclear> <unclear cert="low" resp="#joint">weg</unclear> <unclear cert="low" resp="#joint">verhyrat</unclear> haben
 <lb n="13"/>sol .) ein rechte Notherbin jms Vaetterlichen ver=
-<lb n="14"/>laßnen haab unnd guots jst, Stanndind Sy
+<lb n="14"/><unclear cert="low" resp="#joint">laßnen</unclear> <unclear cert="low" resp="#joint">haab</unclear> unnd guots jst, Stanndind Sy
 <lb n="15"/>jn sorgen, es möchte villicht das ererbt <unclear cert="medium" resp="#joint">guot</unclear> by jetzigem
-<lb n="16"/>Eman, villicht wie by vorigem Eman geschweint, und
-<lb n="17"/>sinen Vogtkhinden, auch <unclear cert="low" resp="#joint">denen</unclear> so die frow noch
+<lb n="16"/>Eman, villicht wie by vorigem <unclear cert="low" resp="#joint">Eman</unclear> <unclear cert="medium" resp="#joint">geschweint</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">sinen</unclear> <unclear cert="low" resp="#joint">Vogtkhinden</unclear>, auch <unclear cert="low" resp="#joint">denen</unclear> so die frow noch
 <lb n="18"/><unclear cert="low" resp="#joint">erbaeren</unclear> möchte Ir <unclear cert="low" resp="#joint">Großvaetterlich</unclear> <unclear cert="low" resp="#joint">Erbguot</unclear>
 <lb n="19"/>entzogen werden. Welches aber
-<lb n="20"/>dem Testament unnd <unclear cert="low" resp="#joint">Gmaecht</unclear>, so <unclear cert="low" resp="#joint">eemehrgedachter</unclear>
+<lb n="20"/>dem <unclear cert="low" resp="#joint">Testament</unclear> unnd <unclear cert="low" resp="#joint">Gmaecht</unclear>, so <unclear cert="low" resp="#joint">eemehrgedachter</unclear>
 <lb n="21"/><persName resp="#ner"><unclear cert="low" resp="#joint">Suter</unclear></persName>, durch sonnder <unclear cert="low" resp="#joint">ussprüechliche</unclear> <unclear cert="low" resp="#joint">fürsehung</unclear>
-<lb n="22"/>unnd erkhanndter notturft vor Vogt unnd
-<lb n="23"/>Raath als <unclear cert="low" resp="#joint">ordennlichen</unclear> Oberkhait zuo <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName>
+<lb n="22"/>unnd <unclear cert="low" resp="#joint">erkhanndter</unclear> <unclear cert="low" resp="#joint">notturft</unclear> <unclear cert="medium" resp="#joint">vor</unclear> Vogt unnd
+<lb n="23"/><unclear cert="medium" resp="#joint">Raath</unclear> als <unclear cert="medium" resp="#joint">ordennlichen</unclear> Oberkhait zuo <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName>
 <lb n="24"/>ufgricht, gantz zuwider were. Batend
-<lb n="25"/>deßhalben Innen mit <unclear cert="low" resp="#joint">fürschrifft</unclear> an <unclear cert="low" resp="#joint">üch</unclear> beholffen
-<lb n="26"/><unclear cert="low" resp="#joint">zesin</unclear>, <unclear cert="low" resp="#joint">diewil</unclear> doch die Khinder unßer Burger
-<lb n="27"/><unclear cert="low" resp="#joint">syend</unclear>. So <unclear cert="low" resp="#joint">dann</unclear> wir Sy mündt=
-<lb n="28"/>lich jn <unclear cert="low" resp="#joint">Irem</unclear> <unclear cert="low" resp="#joint">fürtrag</unclear> <unclear cert="low" resp="#joint">verstannden</unclear>, unnd dann ouch
-<lb n="29"/>das <unclear cert="low" resp="#joint">Gmaecht</unclear> nach der lennge verhoert. Khönnend
+<lb n="25"/>deßhalben Innen mit <unclear cert="medium" resp="#joint">fürschrifft</unclear> an <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="medium" resp="#joint">beholffen</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">zesin</unclear>, <unclear cert="medium" resp="#joint">diewil</unclear> doch die Khinder unßer Burger
+<lb n="27"/><unclear cert="low" resp="#joint">syend</unclear>. So <unclear cert="medium" resp="#joint">dann</unclear> wir Sy mündt=
+<lb n="28"/>lich <unclear cert="medium" resp="#joint">jn</unclear> <unclear cert="medium" resp="#joint">Irem</unclear> <unclear cert="medium" resp="#joint">fürtrag</unclear> <unclear cert="medium" resp="#joint">verstannden</unclear>, unnd dann ouch
+<lb n="29"/>das <unclear cert="low" resp="#joint">Gmaecht</unclear> nach der <unclear cert="low" resp="#joint">lennge</unclear> <unclear cert="low" resp="#joint">verhoert</unclear>. <unclear cert="low" resp="#joint">Khönnend</unclear>
 <lb n="30"/>wir von <unclear cert="medium" resp="#joint">Oberkhait</unclear> wegen den <unclear cert="low" resp="#joint">unßeren</unclear> behilfflich <unclear cert="low" resp="#joint">ze=</unclear>
-<lb n="31"/>sin, <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">verweigeren</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">abschlachen</unclear>, sonnder <unclear cert="low" resp="#joint">wüß=</unclear>
-<lb n="32"/><unclear cert="low" resp="#joint">end</unclear> wir unns deß schuldig, <unclear cert="low" resp="#joint">dennen</unclear> <unclear cert="low" resp="#joint">waißen</unclear> <unclear cert="low" resp="#joint">räthlich</unclear>
+<lb n="31"/>sin, nit <unclear cert="low" resp="#joint">verweigeren</unclear> <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">abschlachen</unclear>, sonnder <unclear cert="medium" resp="#joint">wüß=</unclear>
+<lb n="32"/><unclear cert="medium" resp="#joint">end</unclear> wir unns deß schuldig, <unclear cert="low" resp="#joint">dennen</unclear> <unclear cert="low" resp="#joint">waißen</unclear> <unclear cert="medium" resp="#joint">räthlich</unclear>
 <lb n="33"/>unnd befürderlich <unclear cert="low" resp="#joint">zesin</unclear>. <unclear cert="low" resp="#joint">Gelanngt</unclear> hieruf an <unclear cert="low" resp="#joint">üch</unclear>
-<lb n="34"/><unclear cert="medium" resp="#joint">unßer</unclear> getrüw lieb Nachpuren (. <unclear cert="low" resp="#joint">wil</unclear> <unclear cert="low" resp="#joint">zebesorgen</unclear>,
+<lb n="34"/><unclear cert="low" resp="#joint">unßer</unclear> getrüw lieb Nachpuren (. <unclear cert="low" resp="#joint">wil</unclear> <unclear cert="low" resp="#joint">zebesorgen</unclear>,
 <lb n="35"/>das villicht jemanndt, das berüert gmaecht umbzekheren
-<lb n="36"/>oder <unclear cert="low" resp="#joint">zewiderfächten</unclear> <unclear cert="low" resp="#joint">unnderstan</unclear> möchte, Ir <unclear cert="low" resp="#joint">wellind</unclear>
+<lb n="36"/>oder <unclear cert="low" resp="#joint">zewiderfächten</unclear> unnderstan möchte, Ir wellind
 <pb facs="StadtASG_Missive_993_3030.jpg" n="2"/>
 <lb n="37"/>umb <unclear cert="low" resp="#joint">unsert</unclear>, der armen waisen, auch der <unclear cert="low" resp="#joint">nachkhom=</unclear>
 <lb n="38"/>menden <unclear cert="medium" resp="#joint">khinder</unclear> willen, <unclear cert="low" resp="#joint">Insehens</unclear> <unclear cert="low" resp="#joint">thuon</unclear>, damit das
@@ -107,8 +107,8 @@
 <pb facs="StadtASG_Missive_993_3031.jpg" n="3"/>
 <pb facs="StadtASG_Missive_993_3032.jpg" n="4"/>
 <lb n="70"/>Den <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">vesten</unclear>, ersamen, <unclear cert="low" resp="#joint">wÿsenn</unclear>,
-<lb n="71"/><orgName ref="stadtasg-actors-532" cert="medium" role="recipient" resp="#ner">vogt, unnd <unclear cert="low" resp="#joint">raath</unclear> zuo <unclear cert="medium" resp="#joint">Bÿschoffzell</unclear></orgName>, <unclear cert="medium" resp="#joint">unser</unclear>
-<lb n="72"/><unclear cert="medium" resp="#joint">innsonnders</unclear> guoten fründen, getrüwen,
+<lb n="71"/><orgName ref="stadtasg-actors-532" cert="medium" role="recipient" resp="#ner">vogt, unnd <unclear cert="low" resp="#joint">raath</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> Bÿschoffzell</orgName>, <unclear cert="medium" resp="#joint">unser</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">innsonnders</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> fründen, getrüwen,
 <lb n="73"/>lieben nachpuren.
 </p>
         </body>

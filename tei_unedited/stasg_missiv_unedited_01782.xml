@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1782</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,59 +20,59 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz antworten auf eine Anfrage St. Gallens bezüglich der Zuger und Zürcher Dukaten. Sie teilen mit, dass die Münzordnung Nürnbergs in Konstanz noch nicht beachtet werde und die Dukaten weiterhin zu 23 Kreuzern kursierten. Sie bitten St. Gallen, ihnen mitzuteilen, falls dort eine neue Taxierung beschlossen werde.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz</name><date when="1612-07-26" resp="#regest">26. Julij. Anno. 1612.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1782_6581.jpg" n="1"/>
-<lb n="1"/>Unnser freündt: nachbarlich und guotwillige
+<lb n="1"/>Unnser freündt: nachbarlich und <unclear cert="low" resp="#joint">guotwillige</unclear>
 <lb n="2"/>diennst zuovor, fürsichtige, ersame, weise,
 <lb n="3"/>besonnders liebe freündt, und guote Nachbarn.
-<lb n="4"/>Was Ihr an unß wegen der <orgName resp="#ner">Zuger</orgName>, und <orgName resp="#ner">Zyricher</orgName>
-<lb n="5"/>Dükhen schrifftlichen gelangen laßen und begert,
-<lb n="6"/>das haben wür mit mehrern verstannden.
-<lb n="7"/>Fuegen Eüch hierüber freündt: nachbarlichen
-<lb n="8"/><unclear cert="low" resp="#joint">zuovernemmen</unclear>, das gleich wol wür von etwelch
-<lb n="9"/>unserer handelsleüthen bericht worden, was
-<lb n="10"/>maßen die Herren der Statt <orgName ref="stadtasg-actors-571" cert="medium" resp="#ner">Nürmberg</orgName> was
+<lb n="4"/>Was Ihr an <unclear cert="low" resp="#joint">unß</unclear> wegen der <orgName resp="#ner">Zuger</orgName>, und <orgName resp="#ner"><unclear cert="low" resp="#joint">Zyricher</unclear></orgName>
+<lb n="5"/><unclear cert="low" resp="#joint">Dükhen</unclear> schrifftlichen gelangen laßen und begert,
+<lb n="6"/>das haben wür mit <unclear cert="low" resp="#joint">mehrern</unclear> <unclear cert="low" resp="#joint">verstannden</unclear>.
+<lb n="7"/><unclear cert="low" resp="#joint">Fuegen</unclear> <unclear cert="low" resp="#joint">Eüch</unclear> hierüber freündt: nachbarlichen
+<lb n="8"/><unclear cert="medium" resp="#joint">zuovernemmen</unclear>, das gleich wol wür von etwelch
+<lb n="9"/><unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">handelsleüthen</unclear> bericht worden, was
+<lb n="10"/>maßen die Herren der <unclear cert="low" resp="#joint">Statt</unclear> <orgName ref="stadtasg-actors-571" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Nürmberg</unclear></orgName> was
 <lb n="11"/>münzordnung publiciert, dem selben aber
-<lb n="12"/>alhie bis dato weil noch nit achtung gegeben
-<lb n="13"/>worden, sonndern seÿen obbesagte Zuger Dükhpfen-
-<lb n="14"/>ning bißhero alhie umb. 23 kreüzer gangbar,
+<lb n="12"/>alhie bis dato weil noch nit <unclear cert="low" resp="#joint">achtung</unclear> gegeben
+<lb n="13"/>worden, <unclear cert="low" resp="#joint">sonndern</unclear> <unclear cert="low" resp="#joint">seÿen</unclear> obbesagte <unclear cert="low" resp="#joint">Zuger</unclear> <unclear cert="low" resp="#joint">Dükhpfen</unclear>-
+<lb n="14"/><unclear cert="low" resp="#joint">ning</unclear> <unclear cert="low" resp="#joint">bißhero</unclear> alhie umb. 23 <unclear cert="low" resp="#joint">kreüzer</unclear> <unclear cert="low" resp="#joint">gangbar</unclear>,
 <lb n="15"/>unnd seÿe von unnß diß orts noch khain absezung
-<lb n="16"/>oder taxation beschehen, wie wÿr auch gewilt,
-<lb n="17"/>der sachen etwas alls zuezusehen, und da ÿe
-<lb n="18"/>die notdurfft erfordern wirt, hierunder was
+<lb n="16"/>oder taxation beschehen, <unclear cert="low" resp="#joint">wie</unclear> wÿr auch <unclear cert="low" resp="#joint">gewilt</unclear>,
+<lb n="17"/>der sachen <unclear cert="low" resp="#joint">etwas</unclear> alls zuezusehen, und da <unclear cert="low" resp="#joint">ÿe</unclear>
+<lb n="18"/>die notdurfft erfordern <unclear cert="low" resp="#joint">wirt</unclear>, hierunder was
 <lb n="19"/><unclear cert="low" resp="#joint">fürzuenemmen</unclear>, wollen wür solches Eüch nach-
 <lb n="20"/>barlichen <unclear cert="low" resp="#joint">auisieren</unclear>. <unclear cert="low" resp="#joint">Hiemit</unclear> <unclear cert="low" resp="#joint">verners</unclear> <unclear cert="low" resp="#joint">befhelend</unclear>,
 <pb facs="StadtASG_Missive_1782_6582.jpg" n="2"/>
 <lb n="21"/>unnd nachbarlich <unclear cert="low" resp="#joint">begerend</unclear>, <unclear cert="low" resp="#joint">faals</unclear> Ihr in ewerer
-<lb n="22"/>statt dißer müntzsorten unnd <unclear cert="low" resp="#joint">dickhpfenning</unclear>
-<lb n="23"/>halber was zuoerordnen bedacht, ihr <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">es</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">unnß</unclear> nachbarlichen <unclear cert="low" resp="#joint">ebnermaßen</unclear> <unclear cert="low" resp="#joint">zubericht</unclear>,
-<lb n="25"/><unclear cert="low" resp="#joint">eüch</unclear> nit entgegen sein laßen <unclear cert="low" resp="#joint">wöllet</unclear>.
-<lb n="26"/>Wolten wir <unclear cert="medium" resp="#joint">Eüch</unclear> <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">v</unclear> nachparlich <unclear cert="low" resp="#joint">zuor</unclear>
-<lb n="27"/>begerten <unclear cert="low" resp="#joint">antwort</unclear> <unclear cert="low" resp="#joint">anfüegen</unclear>, <unclear cert="low" resp="#joint">Ihnnenn</unclear> wir
-<lb n="28"/><unclear cert="low" resp="#joint">angenemme</unclear> <unclear cert="medium" resp="#joint">dienst</unclear> unnd <unclear cert="low" resp="#joint">behaarliche</unclear> nach-
-<lb n="29"/><unclear cert="low" resp="#joint">barschafft</unclear> <unclear cert="low" resp="#joint">zuoerwisen</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">beraith</unclear> unnd
-<lb n="30"/>willig. Geben <unclear cert="low" resp="#joint">denn</unclear>. <origDate when="1612-07-26" resp="#ner">26. Julij. Anno. 1612</origDate>.
-<lb n="31"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Verwalter der haubtmanschafft,
+<lb n="22"/>statt <unclear cert="low" resp="#joint">dißer</unclear> <unclear cert="low" resp="#joint">müntzsorten</unclear> unnd <unclear cert="low" resp="#joint">dickhpfenning</unclear>
+<lb n="23"/>halber was <unclear cert="low" resp="#joint">zuoerordnen</unclear> bedacht, ihr <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">es</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">unnß</unclear> nachbarlichen <unclear cert="medium" resp="#joint">ebnermaßen</unclear> <unclear cert="medium" resp="#joint">zubericht</unclear>,
+<lb n="25"/><unclear cert="medium" resp="#joint">eüch</unclear> nit entgegen sein <unclear cert="medium" resp="#joint">laßen</unclear> <unclear cert="low" resp="#joint">wöllet</unclear>.
+<lb n="26"/><unclear cert="medium" resp="#joint">Wolten</unclear> <unclear cert="medium" resp="#joint">wir</unclear> Eüch <unclear cert="low" resp="#joint">freündt</unclear>: <unclear cert="low" resp="#joint">v</unclear> <unclear cert="medium" resp="#joint">nachparlich</unclear> <unclear cert="low" resp="#joint">zuor</unclear>
+<lb n="27"/><unclear cert="medium" resp="#joint">begerten</unclear> <unclear cert="medium" resp="#joint">antwort</unclear> <unclear cert="low" resp="#joint">anfüegen</unclear>, <unclear cert="low" resp="#joint">Ihnnenn</unclear> <unclear cert="medium" resp="#joint">wir</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">angenemme</unclear> <unclear cert="medium" resp="#joint">dienst</unclear> unnd <unclear cert="low" resp="#joint">behaarliche</unclear> nach-
+<lb n="29"/><unclear cert="medium" resp="#joint">barschafft</unclear> <unclear cert="low" resp="#joint">zuoerwisen</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">beraith</unclear> unnd
+<lb n="30"/>willig. Geben <unclear cert="low" resp="#joint">denn</unclear>. <origDate when="1612-07-26" resp="#ner">26. <unclear cert="medium" resp="#joint">Julij</unclear>. Anno. 1612</origDate>.
+<lb n="31"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Verwalter der <unclear cert="low" resp="#joint">haubtmanschafft</unclear>,
 <lb n="32"/>Burgermeister und Rath,
-<lb n="33"/>der statt Costantz</orgName>.
+<lb n="33"/>der statt <unclear cert="low" resp="#joint">Costantz</unclear></orgName>.
 <pb facs="StadtASG_Missive_1782_6583.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1782_6584.jpg" n="4"/>
-<lb n="34"/>Denen fürsichtigen, ersamen <unclear cert="medium" resp="#joint">unnd</unclear> weisen,
-<lb n="35"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaistern</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> Rath zue St. Gallen</orgName>,
-<lb n="36"/><unclear cert="medium" resp="#joint">unnsern</unclear> besonders lieben freünden und <unclear cert="low" resp="#joint">guoten</unclear>
+<lb n="34"/>Denen <unclear cert="medium" resp="#joint">fürsichtigen</unclear>, ersamen <unclear cert="medium" resp="#joint">unnd</unclear> weisen,
+<lb n="35"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaistern</unclear> unnd Rath zue St. Gallen</orgName>,
+<lb n="36"/><unclear cert="medium" resp="#joint">unnsern</unclear> besonders lieben <unclear cert="low" resp="#joint">freünden</unclear> und <unclear cert="low" resp="#joint">guoten</unclear>
 <lb n="37"/><unclear cert="low" resp="#joint">Nachbarn</unclear>.
 <lb n="38"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
 </p>

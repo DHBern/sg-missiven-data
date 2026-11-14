@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2540</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,62 +20,62 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Landammann und Rat zu Appenzell bitten Bürgermeister und Rat zu St. Gallen, den drei Brüdern Jakob, Jörg und Thomas Thoma, die Söhne des verstorbenen St. Galler Bürgers Joseph Oewe, zu helfen. Sie ersuchen, das Erbe der drei Appenzeller Landleute schnell und mit geringen Kosten zu erledigen, damit diese ihre Geschäfte nicht lange aufhalten müssen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Landammann und Rat zu Appenzell</name><date when="1581" resp="#regest">datum 17 may anno 1581</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2540_9805.jpg" n="1"/>
-<lb n="1"/>Unnser fründt. nachparlich willig diennst unnd
-<lb n="2"/>waß wir Eer, liebß unnd guotß vermügendt, zuo-
-<lb n="3"/>vor. Fromb, fürsychtig, eersame unnd wyse, insunders
-<lb n="4"/>guot fründt unnd getrüw lieb nachparren.
-<lb n="5"/>Unnser lieb landtlüth <persName resp="#ner">Jacob</persName>, <persName resp="#ner">Joerg</persName> unnd <persName resp="#ner">Thoman</persName>,
-<lb n="6"/>die Thoeume, habendt unnß erinoert, wie daß
-<lb n="7"/>ihre vatter <persName resp="#ner">Joseph Oewe</persName>, üwer burger, kurtz
-<lb n="8"/>verschyner zyth von Gott dem allmechttigen uß
-<lb n="9"/>disem jammerthal vockoestelich zuo ewiger früd
-<lb n="10"/>unnd seligkeit erfordert sye worden, welcher ettwaß
-<lb n="11"/>hab unnd guotß hinder ihme verlaßen. Wann nung
-<lb n="12"/>solicheß halb niemandt anderem dan ihnen gedachten
-<lb n="13"/>bruederen zuogehoerig sye, unnd sye dißß zuo erben
-<lb n="14"/>vorhabend, so sye an unnß ihre underthonig bith,
-<lb n="15"/>daß wir ihnen an üch mit fürschrifften dero
-<lb n="16"/>sy zuo fürderlicher erlangung deßselben brucht-
-<lb n="17"/>barlichen zugnießen verhofftendt, erschießlich
-<lb n="18"/>syn welten. Ist derhalben hiemith an üch unnser
+<lb n="1"/>Unnser <unclear cert="low" resp="#joint">fründt</unclear>. <unclear cert="low" resp="#joint">nachparlich</unclear> willig diennst unnd
+<lb n="2"/><unclear cert="medium" resp="#joint">waß</unclear> wir <unclear cert="medium" resp="#joint">Eer</unclear>, <unclear cert="medium" resp="#joint">liebß</unclear> unnd <unclear cert="medium" resp="#joint">guotß</unclear> <unclear cert="medium" resp="#joint">vermügendt</unclear>, zuo-
+<lb n="3"/>vor. <unclear cert="medium" resp="#joint">Fromb</unclear>, <unclear cert="medium" resp="#joint">fürsychtig</unclear>, <unclear cert="medium" resp="#joint">eersame</unclear> unnd <unclear cert="medium" resp="#joint">wyse</unclear>, <unclear cert="medium" resp="#joint">insunders</unclear>
+<lb n="4"/><unclear cert="medium" resp="#joint">guot</unclear> fründt unnd getrüw lieb <unclear cert="medium" resp="#joint">nachparren</unclear>.
+<lb n="5"/>Unnser lieb <unclear cert="medium" resp="#joint">landtlüth</unclear> <persName resp="#ner">Jacob</persName>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Joerg</unclear></persName> unnd <persName resp="#ner"><unclear cert="medium" resp="#joint">Thoman</unclear></persName>,
+<lb n="6"/>die <unclear cert="medium" resp="#joint">Thoeume</unclear>, <unclear cert="medium" resp="#joint">habendt</unclear> <unclear cert="medium" resp="#joint">unnß</unclear> <unclear cert="medium" resp="#joint">erinoert</unclear>, wie <unclear cert="medium" resp="#joint">daß</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">ihre</unclear> <unclear cert="medium" resp="#joint">vatter</unclear> <persName resp="#ner">Joseph <unclear cert="medium" resp="#joint">Oewe</unclear></persName>, <unclear cert="medium" resp="#joint">üwer</unclear> burger, <unclear cert="medium" resp="#joint">kurtz</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">verschyner</unclear> <unclear cert="medium" resp="#joint">zyth</unclear> von <unclear cert="low" resp="#joint">Gott</unclear> dem allmechttigen uß
+<lb n="9"/>disem <unclear cert="low" resp="#joint">jammerthal</unclear> <unclear cert="low" resp="#joint">vockoestelich</unclear> zuo ewiger <unclear cert="medium" resp="#joint">früd</unclear>
+<lb n="10"/>unnd <unclear cert="low" resp="#joint">seligkeit</unclear> erfordert <unclear cert="low" resp="#joint">sye</unclear> worden, welcher ettwaß
+<lb n="11"/>hab unnd <unclear cert="medium" resp="#joint">guotß</unclear> hinder <unclear cert="low" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">verlaßen</unclear>. Wann <unclear cert="medium" resp="#joint">nung</unclear>
+<lb n="12"/><unclear cert="medium" resp="#joint">solicheß</unclear> halb <unclear cert="medium" resp="#joint">niemandt</unclear> <unclear cert="medium" resp="#joint">anderem</unclear> <unclear cert="medium" resp="#joint">dan</unclear> <unclear cert="medium" resp="#joint">ihnen</unclear> gedachten
+<lb n="13"/><unclear cert="low" resp="#joint">bruederen</unclear> <unclear cert="low" resp="#joint">zuogehoerig</unclear> <unclear cert="low" resp="#joint">sye</unclear>, unnd <unclear cert="low" resp="#joint">sye</unclear> <unclear cert="low" resp="#joint">dißß</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">erben</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">vorhabend</unclear>, so <unclear cert="low" resp="#joint">sye</unclear> an unnß <unclear cert="low" resp="#joint">ihre</unclear> <unclear cert="low" resp="#joint">underthonig</unclear> <unclear cert="low" resp="#joint">bith</unclear>,
+<lb n="15"/>daß wir <unclear cert="low" resp="#joint">ihnen</unclear> an <unclear cert="low" resp="#joint">üch</unclear> mit <unclear cert="low" resp="#joint">fürschrifften</unclear> <unclear cert="low" resp="#joint">dero</unclear>
+<lb n="16"/>sy zuo fürderlicher erlangung <unclear cert="low" resp="#joint">deßselben</unclear> <unclear cert="low" resp="#joint">brucht</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">barlichen</unclear> <unclear cert="low" resp="#joint">zugnießen</unclear> <unclear cert="low" resp="#joint">verhofftendt</unclear>, <unclear cert="low" resp="#joint">erschießlich</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">welten</unclear>. Ist derhalben hiemith an üch unnser
 <lb n="19"/>fründt. nachparlich bitth, ihr woellendt die für-
-<lb n="20"/>sehung thuon, daß gedachten unnseren landtlüthen
-<lb n="21"/>ermeltes ihre vatters verlaßenschafft (da ihree
+<lb n="20"/>sehung thuon, daß <unclear cert="low" resp="#joint">gedachten</unclear> <unclear cert="low" resp="#joint">unnseren</unclear> <unclear cert="low" resp="#joint">landtlüthen</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">ermeltes</unclear> <unclear cert="low" resp="#joint">ihre</unclear> <unclear cert="low" resp="#joint">vatters</unclear> <unclear cert="low" resp="#joint">verlaßenschafft</unclear> (<unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">ihree</unclear>
 <lb n="22"/>nit groß syn sol) mit geringstem kosten, uffs für-
-<lb n="23"/>derlichst bhendiget, unnd also sye nit lang, mit
-<lb n="24"/>sumnuß ihre gschefften uffgehalten werden, auch syg
-<lb n="25"/>disere unnserer fürbith (wie zuo üch unnser
-<lb n="26"/>fründt. nachparliches vertruwen staht) üch
-<lb n="27"/>zuo imer, so guthwillig erwyßen, daß sy
+<lb n="23"/>derlichst <unclear cert="low" resp="#joint">bhendiget</unclear>, unnd also sye nit lang, mit
+<lb n="24"/><unclear cert="low" resp="#joint">sumnuß</unclear> <unclear cert="low" resp="#joint">ihre</unclear> <unclear cert="low" resp="#joint">gschefften</unclear> <unclear cert="low" resp="#joint">uffgehalten</unclear> <unclear cert="low" resp="#joint">werden</unclear>, auch <unclear cert="medium" resp="#joint">syg</unclear>
+<lb n="25"/><unclear cert="medium" resp="#joint">disere</unclear> <unclear cert="medium" resp="#joint">unnserer</unclear> <unclear cert="medium" resp="#joint">fürbith</unclear> (wie <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">unnser</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">fründt</unclear>. <unclear cert="low" resp="#joint">nachparliches</unclear> vertruwen <unclear cert="low" resp="#joint">staht</unclear>) <unclear cert="low" resp="#joint">üch</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">imer</unclear>, so <unclear cert="low" resp="#joint">guthwillig</unclear> <unclear cert="low" resp="#joint">erwyßen</unclear>, daß sy
 <pb facs="StadtASG_Missive_2540_9806.jpg" n="2"/>
-<lb n="28"/>deren fruchtbarlich genossen zuohaben verspueren
-<lb n="29"/>unnd unnß dasselbige rhuemen muegendt, daß
-<lb n="30"/>begerendt wir umb üch, unnd die üwigen in
-<lb n="31"/>der glichen, unnd mererem, fründt: nachbarlich
-<lb n="32"/>zuo erwideren, unnß hiemit allersyts wol
-<lb n="33"/>bevelchende. datum <origDate when="1581-05-17" resp="#ner">17 may anno 1581</origDate>.
-<lb n="34"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtamman und rhat
+<lb n="28"/><unclear cert="low" resp="#joint">deren</unclear> <unclear cert="low" resp="#joint">fruchtbarlich</unclear> <unclear cert="low" resp="#joint">genossen</unclear> zuohaben <unclear cert="low" resp="#joint">verspueren</unclear>
+<lb n="29"/>unnd unnß <unclear cert="low" resp="#joint">dasselbige</unclear> <unclear cert="low" resp="#joint">rhuemen</unclear> <unclear cert="low" resp="#joint">muegendt</unclear>, daß
+<lb n="30"/><unclear cert="medium" resp="#joint">begerendt</unclear> wir <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">üch</unclear>, unnd die üwigen <unclear cert="low" resp="#joint">in</unclear>
+<lb n="31"/>der glichen, unnd <unclear cert="medium" resp="#joint">mererem</unclear>, <unclear cert="medium" resp="#joint">fründt</unclear>: nachbarlich
+<lb n="32"/>zuo <unclear cert="low" resp="#joint">erwideren</unclear>, <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">allersyts</unclear> wol
+<lb n="33"/><unclear cert="low" resp="#joint">bevelchende</unclear>. datum <origDate when="1581-05-17" resp="#ner"><unclear cert="low" resp="#joint">17</unclear> may anno <unclear cert="low" resp="#joint">1581</unclear></origDate>.
+<lb n="34"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Landtamman</unclear> und rhat
 <lb n="35"/>zuo Appentzell</orgName>.
 <pb facs="StadtASG_Missive_2540_9807.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2540_9808.jpg" n="4"/>
-<lb n="36"/>Denen frommen, fürsichtigen, ersammen und weysen
-<lb n="37"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der Statt Sanct
-<lb n="38"/>Gallen</orgName>, unseren insonders gueten fründen
-<lb n="39"/>und getrüwen lieben nachbaren.
+<lb n="36"/><unclear cert="medium" resp="#joint">Denen</unclear> frommen, fürsichtigen, <unclear cert="low" resp="#joint">ersammen</unclear> und weysen
+<lb n="37"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear> der Statt Sanct
+<lb n="38"/>Gallen</orgName>, <unclear cert="medium" resp="#joint">unseren</unclear> insonders gueten fründen
+<lb n="39"/><unclear cert="medium" resp="#joint">und</unclear> getrüwen lieben <unclear cert="medium" resp="#joint">nachbaren</unclear>.
 </p>
         </body>
     </text>

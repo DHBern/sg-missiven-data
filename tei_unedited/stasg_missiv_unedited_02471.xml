@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2471</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,89 +20,89 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Rat zu Luzern danken Bürgermeister und Rat zu St. Gallen für die schnelle Bearbeitung der Klagen von Hans Müller und Jacob Schärman. Sie bitten um Mitteilung, welche weiteren Vorwürfe die Luzerner gegen die St. Galler hätten, da ihre Bürger sich stark beschwert fühlten. Sie bieten weiterhin eidgenössische Treue und Freundschaft an.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Rat zu Luzern</name><date when="1624" resp="#regest">9. t. Martij. Ao: 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2471_9521.jpg" n="1"/>
-<lb n="1"/>Unnser früntlich willig dienst, sambt waß wir Ehren,
-<lb n="2"/>liebs unnd guots vermögent zuovor, Fromb, Fürsichtig,
-<lb n="3"/>Eersamb, Wyß, insonders guot fründ unnd getrüw lieb
+<lb n="1"/>Unnser <unclear cert="low" resp="#joint">früntlich</unclear> willig dienst, sambt waß wir <unclear cert="medium" resp="#joint">Ehren</unclear>,
+<lb n="2"/>liebs unnd guots <unclear cert="medium" resp="#joint">vermögent</unclear> <unclear cert="medium" resp="#joint">zuovor</unclear>, Fromb, Fürsichtig,
+<lb n="3"/><unclear cert="medium" resp="#joint">Eersamb</unclear>, Wyß, insonders guot fründ unnd <unclear cert="low" resp="#joint">getrüw</unclear> lieb
 <lb n="4"/><orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eydgnossen</orgName>.
-<lb n="5"/>Waß Ir unnser G. L. E. von wegen der üweren <persName resp="#ner">Hannß
-<lb n="6"/>Müllers</persName> unnd <persName resp="#ner">Jacoben Schärmans</persName>, unnß by aignem
-<lb n="7"/>botten zuoschrybent, daß habent wir ablesent mehrers
-<lb n="8"/>innhallts verstanden, Unnd thuondt unnß deren, den
-<lb n="9"/>unnseren erzaigten so schleinigen unnd willigen be=
-<lb n="10"/>fürderung, fründlichen bedanckhen, Unnd habent
-<lb n="11"/>nit ermanglet, glych nachfrag zehalten, Waß noch
-<lb n="12"/>verners die unnsern uff die üweren zuklagen haben
-<lb n="13"/>möchtent, Da wir nachmalen, in erfahrenheit
-<lb n="14"/>gebracht, wie Ir uß dem bylag zuosähen, Unnd
-<lb n="15"/>wan dann die unnsern irenthalben höchlichen be=
-<lb n="16"/>schwardt, So habent wir üch zu begerter nachrichtung,
+<lb n="5"/><unclear cert="low" resp="#joint">Waß</unclear> Ir unnser G. <unclear cert="low" resp="#joint">L</unclear>. E. von wegen der <unclear cert="medium" resp="#joint">üweren</unclear> <persName resp="#ner">Hannß
+<lb n="6"/><unclear cert="low" resp="#joint">Müllers</unclear></persName> unnd <persName resp="#ner">Jacoben <unclear cert="low" resp="#joint">Schärmans</unclear></persName>, <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">aignem</unclear>
+<lb n="7"/>botten <unclear cert="low" resp="#joint">zuoschrybent</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> habent wir <unclear cert="low" resp="#joint">ablesent</unclear> mehrers
+<lb n="8"/><unclear cert="low" resp="#joint">innhallts</unclear> verstanden, Unnd <unclear cert="low" resp="#joint">thuondt</unclear> <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="medium" resp="#joint">deren</unclear>, den
+<lb n="9"/>unnseren <unclear cert="low" resp="#joint">erzaigten</unclear> so <unclear cert="low" resp="#joint">schleinigen</unclear> unnd willigen be=
+<lb n="10"/>fürderung, <unclear cert="low" resp="#joint">fründlichen</unclear> <unclear cert="low" resp="#joint">bedanckhen</unclear>, Unnd habent
+<lb n="11"/>nit ermanglet, <unclear cert="low" resp="#joint">glych</unclear> <unclear cert="medium" resp="#joint">nachfrag</unclear> zehalten, <unclear cert="medium" resp="#joint">Waß</unclear> noch
+<lb n="12"/><unclear cert="low" resp="#joint">verners</unclear> die unnsern uff die <unclear cert="medium" resp="#joint">üweren</unclear> <unclear cert="medium" resp="#joint">zuklagen</unclear> haben
+<lb n="13"/><unclear cert="medium" resp="#joint">möchtent</unclear>, Da wir nachmalen, in <unclear cert="low" resp="#joint">erfahrenheit</unclear>
+<lb n="14"/>gebracht, wie Ir <unclear cert="medium" resp="#joint">uß</unclear> dem <unclear cert="low" resp="#joint">bylag</unclear> <unclear cert="medium" resp="#joint">zuosähen</unclear>, Unnd
+<lb n="15"/>wan dann die <unclear cert="medium" resp="#joint">unnsern</unclear> <unclear cert="low" resp="#joint">irenthalben</unclear> <unclear cert="medium" resp="#joint">höchlichen</unclear> be=
+<lb n="16"/><unclear cert="low" resp="#joint">schwardt</unclear>, So habent wir üch zu begerter nachrichtung,
 <lb n="17"/>dessen zuberichten, nit underlassen söllen, Die
-<lb n="18"/>wir hiemit, nebent anerbietung aller beharrlichen
-<lb n="19"/>Eydtgnösischen trüw, fründtschafft unnd diensten,
-<lb n="20"/>sambt unnß Gottes gnädigem schirm wolbevelchen.
-<lb n="21"/>Geben den <origDate when="1624" resp="#ner">9. t. Martij. Ao: 1624</origDate>.
+<lb n="18"/>wir hiemit, nebent <unclear cert="low" resp="#joint">anerbietung</unclear> aller beharrlichen
+<lb n="19"/><unclear cert="low" resp="#joint">Eydtgnösischen</unclear> <unclear cert="low" resp="#joint">trüw</unclear>, <unclear cert="medium" resp="#joint">fründtschafft</unclear> unnd diensten,
+<lb n="20"/>sambt <unclear cert="low" resp="#joint">unnß</unclear> Gottes <unclear cert="medium" resp="#joint">gnädigem</unclear> schirm <unclear cert="low" resp="#joint">wolbevelchen</unclear>.
+<lb n="21"/><unclear cert="low" resp="#joint">Geben</unclear> den <origDate when="1624" resp="#ner">9. <unclear cert="low" resp="#joint">t</unclear>. Martij. <unclear cert="medium" resp="#joint">Ao</unclear>: 1624</origDate>.
 <lb n="22"/><orgName role="issuer" resp="#ner">Schultheiß und Rhat
 <lb n="23"/>der Statt Lucern</orgName>.
 <pb facs="StadtASG_Missive_2471_9522.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2471_9523.jpg" n="3"/>
-<lb n="24"/>Klagpuncten. <persName role="issuer" resp="#ner">Renwarden Kueppels</persName>
-<lb n="25"/>burgers unnd kraemers der statt <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName>,
-<lb n="26"/>Des ersten, als ains tags <persName resp="#ner">Hanns Mueller</persName> syner
-<lb n="27"/>tochter (als man vermeint.) zuo der ehe begert,
-<lb n="28"/>er derglychen gethen
-<lb n="29"/>unnd
-<lb n="30"/>unnd ime darinn von dem vatter nit gewillfahret
-<lb n="31"/>worden, hat er am volgenden tag, ald morn deß,
-<lb n="32"/>darnach (. da der vatter sich naher <placeName ref="stadtasg-places-102" cert="medium" resp="#ner">Williṣow</placeName>,
-<lb n="33"/>mit syner wahr zemaerckht begeben unnd nit
-<lb n="34"/>anheimsch ware.) die tochter angereitzen, das
-<lb n="35"/>sy einen buentel gemacht, dem vatter, etliche
-<lb n="36"/>lynlaechen, Englische struempf, kappen unnd
-<lb n="37"/>haentschen, sambt anderem uss dem laden ent-
-<lb n="38"/>froembdet, unnd volgends er <persName resp="#ner">Hanns Mueller</persName>,
-<lb n="39"/>sambt <persName resp="#ner">Jacoben Wyermann</persName> sy die tochter, un-
-<lb n="40"/>wüssent deß vatters, nit allein hinwaeg
-<lb n="41"/>gefuert, dieselbige beschissen unnd betrogen,
-<lb n="42"/>sonder ouch, ime dem vatter hernach zuo
-<lb n="43"/><placeName ref="stadtasg-places-70" cert="medium" resp="#ner">Ury</placeName> uß synem daselbs habenden laden, etliche
-<lb n="44"/>schoene <persName resp="#ner">Maylander</persName> gleser unnd derglychen
-<lb n="45"/>mehr sachen, abermalen entfroembdet,
-<lb n="46"/>unnd solches alles sambtlich zuo Ury unnd
-<lb n="47"/><placeName resp="#ner">Brunnen</placeName> im wirtzhuß unnd anderswo,
-<lb n="48"/>verzechet unnd hindurch gerichtet, volgends
-<lb n="49"/>aber, als die tochter nichts mehr gehabt, habent
-<lb n="50"/>sy dieselbige, nach dem sy iren muotwillen
-<lb n="51"/>wie lychtlich zuo ver-
-<lb n="52"/>muotten,
-<lb n="53"/>gnuogsamb mit iro geuebt, widerumb von sich
-<lb n="54"/>gestossen unnd verlassen, welches alles mit
+<lb n="24"/>Klagpuncten. <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Renwarden</unclear> <unclear cert="low" resp="#joint">Kueppels</unclear></persName>
+<lb n="25"/>burgers unnd <unclear cert="medium" resp="#joint">kraemers</unclear> der statt <placeName ref="stadtasg-places-69" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Lucern</unclear></placeName>,
+<lb n="26"/><unclear cert="medium" resp="#joint">Des</unclear> <unclear cert="medium" resp="#joint">ersten</unclear>, <unclear cert="medium" resp="#joint">als</unclear> <unclear cert="medium" resp="#joint">ains</unclear> <unclear cert="medium" resp="#joint">tags</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Hanns</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName> syner
+<lb n="27"/>tochter (<unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">vermeint</unclear>.) <unclear cert="low" resp="#joint">zuo</unclear> der ehe begert,
+<lb n="28"/><unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">derglychen</unclear> <unclear cert="low" resp="#joint">gethen</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">unnd</unclear>
+<lb n="30"/>unnd ime darinn von dem vatter nit <unclear cert="low" resp="#joint">gewillfahret</unclear>
+<lb n="31"/>worden, <unclear cert="medium" resp="#joint">hat</unclear> er am volgenden tag, <unclear cert="medium" resp="#joint">ald</unclear> morn deß,
+<lb n="32"/>darnach (. da der vatter sich <unclear cert="medium" resp="#joint">naher</unclear> <placeName ref="stadtasg-places-102" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Williṣow</unclear></placeName>,
+<lb n="33"/>mit syner <unclear cert="medium" resp="#joint">wahr</unclear> <unclear cert="medium" resp="#joint">zemaerckht</unclear> begeben unnd nit
+<lb n="34"/><unclear cert="medium" resp="#joint">anheimsch</unclear> <unclear cert="medium" resp="#joint">ware</unclear>.) die tochter <unclear cert="medium" resp="#joint">angereitzen</unclear>, das
+<lb n="35"/>sy einen <unclear cert="medium" resp="#joint">buentel</unclear> gemacht, dem vatter, etliche
+<lb n="36"/><unclear cert="medium" resp="#joint">lynlaechen</unclear>, <unclear cert="medium" resp="#joint">Englische</unclear> <unclear cert="medium" resp="#joint">struempf</unclear>, kappen unnd
+<lb n="37"/><unclear cert="medium" resp="#joint">haentschen</unclear>, <unclear cert="medium" resp="#joint">sambt</unclear> anderem <unclear cert="medium" resp="#joint">uss</unclear> dem <unclear cert="medium" resp="#joint">laden</unclear> ent-
+<lb n="38"/>froembdet, unnd <unclear cert="medium" resp="#joint">volgends</unclear> er <persName resp="#ner"><unclear cert="medium" resp="#joint">Hanns</unclear> <unclear cert="medium" resp="#joint">Mueller</unclear></persName>,
+<lb n="39"/><unclear cert="medium" resp="#joint">sambt</unclear> <persName resp="#ner">Jacoben <unclear cert="medium" resp="#joint">Wyermann</unclear></persName> sy die tochter, <unclear cert="medium" resp="#joint">un</unclear>-
+<lb n="40"/><unclear cert="medium" resp="#joint">wüssent</unclear> deß vatters, nit allein <unclear cert="medium" resp="#joint">hinwaeg</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">gefuert</unclear>, dieselbige beschissen unnd betrogen,
+<lb n="42"/>sonder <unclear cert="medium" resp="#joint">ouch</unclear>, ime dem vatter hernach <unclear cert="medium" resp="#joint">zuo</unclear>
+<lb n="43"/><placeName ref="stadtasg-places-70" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Ury</unclear></placeName> <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">synem</unclear> <unclear cert="medium" resp="#joint">daselbs</unclear> habenden <unclear cert="medium" resp="#joint">laden</unclear>, etliche
+<lb n="44"/><unclear cert="medium" resp="#joint">schoene</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Maylander</unclear></persName> <unclear cert="medium" resp="#joint">gleser</unclear> unnd <unclear cert="medium" resp="#joint">derglychen</unclear>
+<lb n="45"/>mehr <unclear cert="medium" resp="#joint">sachen</unclear>, abermalen <unclear cert="medium" resp="#joint">entfroembdet</unclear>,
+<lb n="46"/>unnd solches alles sambtlich <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">Ury</unclear> unnd
+<lb n="47"/><placeName resp="#ner"><unclear cert="medium" resp="#joint">Brunnen</unclear></placeName> im wirtzhuß unnd anderswo,
+<lb n="48"/><unclear cert="medium" resp="#joint">verzechet</unclear> unnd hindurch <unclear cert="medium" resp="#joint">gerichtet</unclear>, <unclear cert="medium" resp="#joint">volgends</unclear>
+<lb n="49"/>aber, als die tochter nichts mehr gehabt, <unclear cert="medium" resp="#joint">habent</unclear>
+<lb n="50"/>sy dieselbige, nach dem sy <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">muotwillen</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">lychtlich</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="52"/><unclear cert="low" resp="#joint">muotten</unclear>,
+<lb n="53"/><unclear cert="low" resp="#joint">gnuogsamb</unclear> mit <unclear cert="medium" resp="#joint">iro</unclear> <unclear cert="medium" resp="#joint">geuebt</unclear>, widerumb von sich
+<lb n="54"/><unclear cert="medium" resp="#joint">gestossen</unclear> unnd verlassen, welches alles mit
 <pb facs="StadtASG_Missive_2471_9524.jpg" n="4"/>
-<lb n="55"/>gnuogsamber khundtschafft zubewysen unnd by=
-<lb n="56"/>zebringen sye.
+<lb n="55"/>gnuogsamber <unclear cert="medium" resp="#joint">khundtschafft</unclear> <unclear cert="medium" resp="#joint">zubewysen</unclear> unnd by=
+<lb n="56"/><unclear cert="low" resp="#joint">zebringen</unclear> <unclear cert="medium" resp="#joint">sye</unclear>.
 <pb facs="StadtASG_Missive_2471_9525.jpg" n="5"/>
 <pb facs="StadtASG_Missive_2471_9526.jpg" n="6"/>
 <pb facs="StadtASG_Missive_2471_9527.jpg" n="7"/>
 <pb facs="StadtASG_Missive_2471_9528.jpg" n="8"/>
-<lb n="57"/>Den fromben, fürsichtigen, ehr-
-<lb n="58"/>samben, wÿsen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="59"/>unnd Rhat der Statt Sanct
-<lb n="60"/>Gallen</orgName>, unnsern in-
-<lb n="61"/>sonders gueten fründen und ge-
-<lb n="62"/>threwen lieben Eÿdtgnossen. ʃ.
+<lb n="57"/>Den fromben, fürsichtigen, <unclear cert="medium" resp="#joint">ehr</unclear>-
+<lb n="58"/>samben, <unclear cert="low" resp="#joint">wÿsen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear>
+<lb n="59"/>unnd Rhat der Statt <unclear cert="medium" resp="#joint">Sanct</unclear>
+<lb n="60"/>Gallen</orgName>, <unclear cert="medium" resp="#joint">unnsern</unclear> in-
+<lb n="61"/>sonders <unclear cert="medium" resp="#joint">gueten</unclear> fründen und ge-
+<lb n="62"/><unclear cert="low" resp="#joint">threwen</unclear> lieben <unclear cert="low" resp="#joint">Eÿdtgnossen</unclear>. <unclear cert="low" resp="#joint">ʃ</unclear>.
 </p>
         </body>
     </text>

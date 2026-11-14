@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1934</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf zwei Schreiben des Lützelner Rats vom 22. Januar und 9. Februar 1615 betreffend die Forderung des Lützelner Bürgers Gabriel Zolicofer gegen Bartholomäus und Hieronymus Zolicofer um ein Almosen. Sie verlängern den Termin um acht Tage und laden Gabriel Zolicofer für den 27. Februar 1615, 8 Uhr morgens, auf das Rathaus ein. Sollte dieser Termin zu kurz sein, wird ein weiterer Termin am 11. Juli 1615 angesetzt. Sie bitten um eine gütliche Einigung und versprechen unparteiische Rechtsprechung.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1615-02-18" resp="#regest">18. Febr. 1615</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Lützel</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -40,115 +40,115 @@
 <lb n="4"/><unclear cert="low" resp="#joint">bedencken</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">der</unclear>
 <lb n="5"/><unclear cert="low" resp="#joint">missif</unclear> <unclear cert="low" resp="#joint">zunemmen</unclear>.
 <lb n="6"/><unclear cert="low" resp="#joint">fe</unclear>
-<lb n="7"/>Unser freündtlich willig dienst <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">Ehnveste</unclear>,
-<lb n="8"/><unclear cert="low" resp="#joint">Fürsichtige</unclear>, <unclear cert="low" resp="#joint">Weise</unclear>, <unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">liebe</unclear> und guote freünd.
-<lb n="9"/>Uff deroselben an uns wegen ihres burgers Gabriel
-<lb n="10"/><unclear cert="low" resp="#joint">Zolikoffers</unclear> <unclear cert="low" resp="#joint">bewüßten</unclear> <unclear cert="low" resp="#joint">zuschwechenden</unclear> <unclear cert="low" resp="#joint">Allmuosen</unclear>
-<lb n="11"/><unclear cert="low" resp="#joint">gelts</unclear>, <unclear cert="low" resp="#joint">under</unclear> dato <date resp="#ner">22. Januarii und 9. diß</date> abgangen
-<lb n="12"/>zwey underschiedliche schreiben, mögen wir sie,
-<lb n="13"/>erstlich über ihre klag, daß der von uns deßhalb
-<lb n="14"/><unclear cert="low" resp="#joint">jüngst</unclear> <unclear cert="low" resp="#joint">fürgeschribne</unclear> termin zu kurtz praefigiert ge-
-<lb n="15"/>wesen, <unclear cert="low" resp="#joint">unberichtet</unclear> nit lassen, daß wir unsers
-<lb n="16"/>theils denselben umb acht tag <unclear cert="low" resp="#joint">zuverlengeren</unclear>, <unclear cert="low" resp="#joint">albereit</unclear>
-<lb n="17"/><unclear cert="low" resp="#joint">entschlossen</unclear> gewesen; und aber auf vermelts <persName resp="#ner">Ga-
-<lb n="18"/>briel Zolikoffers</persName> hierinn gebrauchten Agenten
-<lb n="19"/>selbst andeüten und begeren derselbige selbigen auf
-<lb n="20"/>den in der citation benamseten tag, angesehen
-<lb n="21"/>worden.
-<lb n="22"/>Was dann besagts <persName resp="#ner">Zolikoffers</persName> uns angefügte cession
-<lb n="23"/>seines theils, so <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">angeregtem</unclear> <unclear cert="low" resp="#joint">Allmuosen</unclear> <unclear cert="low" resp="#joint">gelt</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">zuhaben</unclear> <unclear cert="low" resp="#joint">praetendiert</unclear>, <unclear cert="low" resp="#joint">belangen</unclear> <unclear cert="low" resp="#joint">thuot</unclear>; <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">be</unclear>-
-<lb n="25"/><unclear cert="low" resp="#joint">geren</unclear> wir (als ein ehr- und rechtliebende Oberkeit)
-<lb n="26"/>ihne an dem jenigen, worzu er befüegt und be-
-<lb n="27"/>mächtiget, unsers theils in keinen weg <unclear cert="low" resp="#joint">zuverhinderen</unclear>,
-<lb n="28"/>dieweil aber sein gegentheil, ihme <persName resp="#ner">Gabriel</persName>, daß
-<lb n="29"/>er hieran etwas theil haben sölte, nit geständig, und
-<lb n="30"/>alß das jehnige, was er für richtig cediert, noch un-
-<lb n="31"/>richtig und <unclear cert="low" resp="#joint">disputierlich</unclear> ist; so wirt ihme deß-
-<lb n="32"/>wegen billich gebüren und obligen, daß er
-<lb n="33"/>solche sein praetension zuvor eintweders güetigklich,
-<lb n="34"/>oder, in mangel dessen, durch ordenlich gebürend
-<lb n="35"/><unclear cert="low" resp="#joint">Recht</unclear> <unclear cert="low" resp="#joint">liquidieren</unclear> und richtig machen
-<lb n="36"/>solle; <unclear cert="low" resp="#joint">ehemalen</unclear> wir die unseren weder zu bahrer
-<lb n="37"/>bezahlung solcher noch unrichtigen anforderung,
-<lb n="38"/>noch <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">deroselben</unclear> <unclear cert="low" resp="#joint">versicherung</unclear> (wie aber uns durch
-<lb n="39"/><unclear cert="low" resp="#joint">obangedeütete</unclear> <unclear cert="low" resp="#joint">schreiben</unclear> <unclear cert="low" resp="#joint">zugemuotet</unclear> <unclear cert="low" resp="#joint">wirt</unclear>) mit einichem
-<lb n="40"/>fuog (wie <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">selber</unclear>
-<lb n="41"/><unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">zuermessen</unclear>) <unclear cert="low" resp="#joint">wüßten</unclear> <unclear cert="low" resp="#joint">anzuweisen</unclear>.
+<lb n="7"/>Unser <unclear cert="low" resp="#joint">freündtlich</unclear> willig dienst <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">Ehnveste</unclear>,
+<lb n="8"/>Fürsichtige, Weise, besonders liebe und <unclear cert="medium" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">freünd</unclear>.
+<lb n="9"/><unclear cert="medium" resp="#joint">Uff</unclear> <unclear cert="low" resp="#joint">deroselben</unclear> an uns wegen <unclear cert="medium" resp="#joint">ihres</unclear> burgers Gabriel
+<lb n="10"/><unclear cert="low" resp="#joint">Zolikoffers</unclear> <unclear cert="low" resp="#joint">bewüßten</unclear> <unclear cert="low" resp="#joint">zuschwechenden</unclear> Allmuosen
+<lb n="11"/>gelts, under dato <date resp="#ner">22. <unclear cert="medium" resp="#joint">Januarii</unclear> und 9. <unclear cert="medium" resp="#joint">diß</unclear></date> abgangen
+<lb n="12"/><unclear cert="medium" resp="#joint">zwey</unclear> <unclear cert="medium" resp="#joint">underschiedliche</unclear> <unclear cert="medium" resp="#joint">schreiben</unclear>, mögen wir <unclear cert="low" resp="#joint">sie</unclear>,
+<lb n="13"/><unclear cert="medium" resp="#joint">erstlich</unclear> über ihre klag, daß der <unclear cert="low" resp="#joint">von</unclear> uns deßhalb
+<lb n="14"/><unclear cert="low" resp="#joint">jüngst</unclear> fürgeschribne termin zu kurtz praefigiert ge-
+<lb n="15"/><unclear cert="medium" resp="#joint">wesen</unclear>, unberichtet nit lassen, daß wir <unclear cert="low" resp="#joint">unsers</unclear>
+<lb n="16"/>theils <unclear cert="low" resp="#joint">denselben</unclear> umb acht tag <unclear cert="medium" resp="#joint">zuverlengeren</unclear>, <unclear cert="medium" resp="#joint">albereit</unclear>
+<lb n="17"/>entschlossen gewesen; und aber auf <unclear cert="low" resp="#joint">vermelts</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Ga</unclear>-
+<lb n="18"/><unclear cert="medium" resp="#joint">briel</unclear> <unclear cert="low" resp="#joint">Zolikoffers</unclear></persName> hierinn gebrauchten Agenten
+<lb n="19"/>selbst <unclear cert="low" resp="#joint">andeüten</unclear> und begeren <unclear cert="low" resp="#joint">derselbige</unclear> selbigen auf
+<lb n="20"/>den in der citation <unclear cert="medium" resp="#joint">benamseten</unclear> tag, <unclear cert="low" resp="#joint">angesehen</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">worden</unclear>.
+<lb n="22"/>Was dann <unclear cert="medium" resp="#joint">besagts</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Zolikoffers</unclear></persName> uns <unclear cert="medium" resp="#joint">angefügte</unclear> cession
+<lb n="23"/>seines theils, so <unclear cert="low" resp="#joint">er</unclear> bey angeregtem <unclear cert="medium" resp="#joint">Allmuosen</unclear> gelt
+<lb n="24"/>zuhaben praetendiert, belangen thuot; da be-
+<lb n="25"/>geren wir (als ein ehr- und <unclear cert="medium" resp="#joint">rechtliebende</unclear> Oberkeit)
+<lb n="26"/><unclear cert="low" resp="#joint">ihne</unclear> an dem jenigen, <unclear cert="medium" resp="#joint">worzu</unclear> er <unclear cert="low" resp="#joint">befüegt</unclear> und be-
+<lb n="27"/><unclear cert="medium" resp="#joint">mächtiget</unclear>, <unclear cert="low" resp="#joint">unsers</unclear> theils in <unclear cert="medium" resp="#joint">keinen</unclear> weg <unclear cert="low" resp="#joint">zuverhinderen</unclear>,
+<lb n="28"/>dieweil aber sein gegentheil, ihme <persName resp="#ner"><unclear cert="medium" resp="#joint">Gabriel</unclear></persName>, daß
+<lb n="29"/>er <unclear cert="medium" resp="#joint">hieran</unclear> etwas theil haben <unclear cert="low" resp="#joint">sölte</unclear>, nit <unclear cert="medium" resp="#joint">geständig</unclear>, und
+<lb n="30"/><unclear cert="medium" resp="#joint">alß</unclear> das <unclear cert="low" resp="#joint">jehnige</unclear>, was er für richtig cediert, noch un-
+<lb n="31"/>richtig und disputierlich ist; so wirt ihme deß-
+<lb n="32"/>wegen billich <unclear cert="medium" resp="#joint">gebüren</unclear> und <unclear cert="low" resp="#joint">obligen</unclear>, daß er
+<lb n="33"/>solche sein <unclear cert="low" resp="#joint">praetension</unclear> <unclear cert="low" resp="#joint">zuvor</unclear> <unclear cert="low" resp="#joint">eintweders</unclear> <unclear cert="low" resp="#joint">güetigklich</unclear>,
+<lb n="34"/>oder, in mangel <unclear cert="medium" resp="#joint">dessen</unclear>, durch <unclear cert="medium" resp="#joint">ordenlich</unclear> <unclear cert="medium" resp="#joint">gebürend</unclear>
+<lb n="35"/>Recht liquidieren und <unclear cert="low" resp="#joint">richtig</unclear> machen
+<lb n="36"/>solle; <unclear cert="low" resp="#joint">ehemalen</unclear> wir die unseren weder <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">bahrer</unclear>
+<lb n="37"/>bezahlung solcher noch <unclear cert="medium" resp="#joint">unrichtigen</unclear> anforderung,
+<lb n="38"/>noch zu deroselben versicherung (wie aber uns durch
+<lb n="39"/><unclear cert="low" resp="#joint">obangedeütete</unclear> schreiben zugemuotet wirt) mit einichem
+<lb n="40"/><unclear cert="low" resp="#joint">fuog</unclear> (wie E. E. <unclear cert="low" resp="#joint">Wht</unclear>. selber
+<lb n="41"/>wol zuermessen) wüßten <unclear cert="low" resp="#joint">anzuweisen</unclear>.
 <lb n="42"/><unclear cert="low" resp="#joint">Sidmalen</unclear> dann sein gegentheil <persName resp="#ner">Barthlome <unclear cert="low" resp="#joint">Zolikoffer</unclear></persName>
-<lb n="43"/>für sich selbst und <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">namen</unclear> seines bruoders
-<lb n="44"/><persName resp="#ner">Jeronimus Zolikoffers</persName>, mit diser sach eben gern
+<lb n="43"/>für sich selbst und <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">namen</unclear> seines <unclear cert="medium" resp="#joint">bruoders</unclear>
+<lb n="44"/><persName resp="#ner">Jeronimus <unclear cert="low" resp="#joint">Zolikoffers</unclear></persName>, mit diser sach eben <unclear cert="medium" resp="#joint">gern</unclear>
 <pb facs="StadtASG_Missive_1934_7202.jpg" n="2"/>
-<lb n="45"/>an ainem end were; und derowegen unß umb be=
-<lb n="46"/>fürderung deroselben instendig gebetten; so haben
-<lb n="47"/>wir hierzuo ainen andern termin ernamset, namlich
-<lb n="48"/>auf <date resp="#ner">montag den <unclear cert="low" resp="#joint">sibenundzwainzigsten</unclear> gegenwürtigen
-<lb n="49"/><unclear cert="low" resp="#joint">monats</unclear> <unclear cert="low" resp="#joint">Februarij</unclear> <unclear cert="low" resp="#joint">alten</unclear> <unclear cert="low" resp="#joint">Calenders</unclear></date>, <unclear cert="low" resp="#joint">morgens</unclear> umb
-<lb n="50"/>8. uhren alhie auf unserm <unclear cert="low" resp="#joint">Rahthauß</unclear> <unclear cert="low" resp="#joint">zuerscheinen</unclear>.
-<lb n="51"/>Da wir <unclear cert="low" resp="#joint">gar</unclear> <unclear cert="low" resp="#joint">geren</unclear> sehen <unclear cert="low" resp="#joint">wolten</unclear>, <unclear cert="low" resp="#joint">daß</unclear>
-<lb n="52"/><unclear cert="low" resp="#joint">diser</unclear> <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">besuocht</unclear>, <unclear cert="low" resp="#joint">und</unclear> die sach (wo imer möglich.) ain guoten gebürenden außtrag erraichen,
-<lb n="53"/>und hiemit menigklichem zuo ruowen ver=
-<lb n="54"/>holffen werden möchte.
-<lb n="55"/>Uuf den fahl aber diser termin (den wir wegen be=
-<lb n="56"/>sagts <persName resp="#ner">Bartlome Zolikofter</persName>s vorhabenden raiß, nit
-<lb n="57"/>wol anderst bestimen koennen.) mehrerwentem
-<lb n="58"/><persName resp="#ner">Gabriel Zolikofter</persName> abermals (daß wir doch nit achten
-<lb n="59"/>woellen.) zu <unclear cert="low" resp="#joint">kurz</unclear> <unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">ungelegen</unclear> <unclear cert="low" resp="#joint">seyn</unclear> <unclear cert="low" resp="#joint">wolte</unclear>; so
-<lb n="60"/>haben wir hierzuo ainen andern tag ernennt, und
-<lb n="61"/>mehrgedachtem <persName resp="#ner">Bartlome Zolikofter</persName> alberait an=
-<lb n="62"/>künden lassen, namlich auf <date resp="#ner">Zinstag den <unclear cert="low" resp="#joint">11</unclear>. <unclear cert="low" resp="#joint">21</unclear>. <unclear cert="low" resp="#joint">mo=</unclear>
-<lb n="63"/><unclear cert="low" resp="#joint">natstag</unclear> <unclear cert="low" resp="#joint">Julij</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">gegenwuertigen</unclear> <unclear cert="low" resp="#joint">jars</unclear></date>, <unclear cert="low" resp="#joint">zumahl=</unclear>
-<lb n="64"/>mal widerumb morgens umb acht uhren, alhie
-<lb n="65"/>auf unserm Rahthauß zuerscheinen; welches ter=
-<lb n="66"/>mins (als der auß gehoerter ursach nit belder koennen
-<lb n="67"/>ernamset werden.) mehrgedachter <persName resp="#ner">Gabriel Zolikofter</persName>
-<lb n="68"/>sich <unclear cert="low" resp="#joint">destoweniger</unclear> <unclear cert="low" resp="#joint">zubeschwaeren</unclear>, <unclear cert="low" resp="#joint">dieweil</unclear> das
-<lb n="69"/>gelt <unclear cert="low" resp="#joint">hiezwüschend</unclear> sein nuzung ertragt
-<lb n="70"/>und nichts verschlaffen thuot.
-<lb n="71"/>Und hierauf so woellen wir hiemit ihne <persName resp="#ner">Gabriel Zoli=
-<lb n="72"/>koftern</persName> der gstalt citiert und geladen haben, daß
-<lb n="73"/>er eintweders den obbestimbten ersten termin, oder
-<lb n="74"/>aber (<unclear cert="low" resp="#joint">sos</unclear> nit seyn kan.) den anderen (im fahl hie=
-<lb n="75"/>zwüschet von unß kain andrer ernamset wirt.) oben=
-<lb n="76"/>gedeüter maßen mit aller notturfft <unclear cert="low" resp="#joint">verfasset</unclear>, solle
-<lb n="77"/>besuochen; und sehen, ob die sach guetigklich möchte ver=
-<lb n="78"/>glichen werden, wo aber das nit, <unclear cert="low" resp="#joint">alßdann</unclear> <unclear cert="low" resp="#joint">hierüber</unclear>
-<lb n="79"/><unclear cert="low" resp="#joint">gebürenden</unclear> <unclear cert="low" resp="#joint">Rechtens</unclear> <unclear cert="low" resp="#joint">erwarten</unclear>, und hierunder
-<lb n="80"/>das jehnige thuon und fürnemen, was auf <unclear cert="low" resp="#joint">ainen</unclear> <unclear cert="low" resp="#joint">oder</unclear>
-<lb n="81"/><unclear cert="low" resp="#joint">den</unclear> andern <unclear cert="low" resp="#joint">weg</unclear>, die <unclear cert="low" resp="#joint">gebür</unclear> <unclear cert="low" resp="#joint">und</unclear> sein notturfft
-<lb n="82"/>wirt erforderen.
+<lb n="45"/>an ainem end were; und derowegen <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">be=</unclear>
+<lb n="46"/>fürderung <unclear cert="medium" resp="#joint">deroselben</unclear> <unclear cert="low" resp="#joint">instendig</unclear> <unclear cert="medium" resp="#joint">gebetten</unclear>; so haben
+<lb n="47"/>wir <unclear cert="low" resp="#joint">hierzuo</unclear> <unclear cert="medium" resp="#joint">ainen</unclear> andern termin <unclear cert="low" resp="#joint">ernamset</unclear>, namlich
+<lb n="48"/>auf <date resp="#ner"><unclear cert="medium" resp="#joint">montag</unclear> den sibenundzwainzigsten gegenwürtigen
+<lb n="49"/>monats Februarij alten <unclear cert="low" resp="#joint">Calenders</unclear></date>, morgens umb
+<lb n="50"/>8. uhren alhie auf unserm <unclear cert="low" resp="#joint">Rahthauß</unclear> zuerscheinen.
+<lb n="51"/>Da wir <unclear cert="low" resp="#joint">gar</unclear> <unclear cert="low" resp="#joint">geren</unclear> sehen wolten, daß
+<lb n="52"/><unclear cert="low" resp="#joint">diser</unclear> tag <unclear cert="low" resp="#joint">besuocht</unclear>, und die sach (wo <unclear cert="medium" resp="#joint">imer</unclear> möglich.) ain guoten gebürenden außtrag erraichen,
+<lb n="53"/>und hiemit <unclear cert="low" resp="#joint">menigklichem</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">ruowen</unclear> <unclear cert="medium" resp="#joint">ver=</unclear>
+<lb n="54"/><unclear cert="medium" resp="#joint">holffen</unclear> werden <unclear cert="medium" resp="#joint">möchte</unclear>.
+<lb n="55"/><unclear cert="low" resp="#joint">Uuf</unclear> den <unclear cert="medium" resp="#joint">fahl</unclear> aber <unclear cert="medium" resp="#joint">diser</unclear> termin (den wir wegen be=
+<lb n="56"/><unclear cert="medium" resp="#joint">sagts</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Bartlome</unclear> Zolikofter</persName>s <unclear cert="medium" resp="#joint">vorhabenden</unclear> <unclear cert="low" resp="#joint">raiß</unclear>, nit
+<lb n="57"/>wol anderst <unclear cert="low" resp="#joint">bestimen</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>.) <unclear cert="low" resp="#joint">mehrerwentem</unclear>
+<lb n="58"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Gabriel</unclear> <unclear cert="low" resp="#joint">Zolikofter</unclear></persName> abermals (daß wir doch nit achten
+<lb n="59"/><unclear cert="medium" resp="#joint">woellen</unclear>.) zu <unclear cert="medium" resp="#joint">kurz</unclear> <unclear cert="medium" resp="#joint">oder</unclear> <unclear cert="medium" resp="#joint">ungelegen</unclear> seyn <unclear cert="low" resp="#joint">wolte</unclear>; so
+<lb n="60"/>haben wir <unclear cert="low" resp="#joint">hierzuo</unclear> <unclear cert="medium" resp="#joint">ainen</unclear> andern tag <unclear cert="low" resp="#joint">ernennt</unclear>, und
+<lb n="61"/><unclear cert="medium" resp="#joint">mehrgedachtem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Bartlome</unclear> <unclear cert="low" resp="#joint">Zolikofter</unclear></persName> <unclear cert="low" resp="#joint">alberait</unclear> an=
+<lb n="62"/>künden lassen, namlich auf <date resp="#ner">Zinstag den <unclear cert="medium" resp="#joint">11</unclear>. 21. mo=
+<lb n="63"/>natstag Julij diß gegenwuertigen jars</date>, zumahl=
+<lb n="64"/>mal widerumb <unclear cert="medium" resp="#joint">morgens</unclear> umb acht uhren, alhie
+<lb n="65"/>auf unserm <unclear cert="low" resp="#joint">Rahthauß</unclear> <unclear cert="medium" resp="#joint">zuerscheinen</unclear>; welches ter=
+<lb n="66"/>mins (als der auß <unclear cert="low" resp="#joint">gehoerter</unclear> ursach nit <unclear cert="low" resp="#joint">belder</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>
+<lb n="67"/><unclear cert="low" resp="#joint">ernamset</unclear> werden.) <unclear cert="medium" resp="#joint">mehrgedachter</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Gabriel</unclear> <unclear cert="low" resp="#joint">Zolikofter</unclear></persName>
+<lb n="68"/>sich destoweniger <unclear cert="low" resp="#joint">zubeschwaeren</unclear>, dieweil das
+<lb n="69"/>gelt <unclear cert="low" resp="#joint">hiezwüschend</unclear> sein <unclear cert="low" resp="#joint">nuzung</unclear> <unclear cert="medium" resp="#joint">ertragt</unclear>
+<lb n="70"/>und nichts <unclear cert="medium" resp="#joint">verschlaffen</unclear> thuot.
+<lb n="71"/>Und hierauf so <unclear cert="medium" resp="#joint">woellen</unclear> wir hiemit <unclear cert="medium" resp="#joint">ihne</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Gabriel</unclear> <unclear cert="medium" resp="#joint">Zoli=</unclear>
+<lb n="72"/><unclear cert="low" resp="#joint">koftern</unclear></persName> der <unclear cert="low" resp="#joint">gstalt</unclear> citiert und geladen haben, daß
+<lb n="73"/>er <unclear cert="low" resp="#joint">eintweders</unclear> den <unclear cert="low" resp="#joint">obbestimbten</unclear> <unclear cert="medium" resp="#joint">ersten</unclear> termin, oder
+<lb n="74"/>aber (<unclear cert="medium" resp="#joint">sos</unclear> nit seyn kan.) den anderen (im <unclear cert="medium" resp="#joint">fahl</unclear> hie=
+<lb n="75"/><unclear cert="low" resp="#joint">zwüschet</unclear> von unß kain <unclear cert="medium" resp="#joint">andrer</unclear> <unclear cert="low" resp="#joint">ernamset</unclear> wirt.) <unclear cert="medium" resp="#joint">oben=</unclear>
+<lb n="76"/><unclear cert="low" resp="#joint">gedeüter</unclear> <unclear cert="medium" resp="#joint">maßen</unclear> mit aller notturfft verfasset, solle
+<lb n="77"/><unclear cert="medium" resp="#joint">besuochen</unclear>; und sehen, ob die sach <unclear cert="medium" resp="#joint">guetigklich</unclear> möchte ver=
+<lb n="78"/>glichen werden, wo aber das nit, alßdann hierüber
+<lb n="79"/><unclear cert="low" resp="#joint">gebürenden</unclear> Rechtens <unclear cert="low" resp="#joint">erwarten</unclear>, und <unclear cert="low" resp="#joint">hierunder</unclear>
+<lb n="80"/>das <unclear cert="medium" resp="#joint">jehnige</unclear> thuon und <unclear cert="medium" resp="#joint">fürnemen</unclear>, was auf <unclear cert="low" resp="#joint">ainen</unclear> oder
+<lb n="81"/>den andern weg, die <unclear cert="low" resp="#joint">gebür</unclear> und sein <unclear cert="medium" resp="#joint">notturfft</unclear>
+<lb n="82"/>wirt <unclear cert="medium" resp="#joint">erforderen</unclear>.
 <pb facs="StadtASG_Missive_1934_7203.jpg" n="3"/>
-<lb n="83"/>da nun die sach guetigkeit, und ohne rechtlichen proceß
-<lb n="84"/>mit zuo beeder theilen benuegen mag geschlichtet werden
-<lb n="85"/>woellen wirs am liebsten sehen, und als die frid=
+<lb n="83"/>da nun die sach <unclear cert="low" resp="#joint">guetigkeit</unclear>, und ohne rechtlichen proceß
+<lb n="84"/><unclear cert="medium" resp="#joint">mit</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">beeder</unclear> theilen <unclear cert="medium" resp="#joint">benuegen</unclear> mag geschlichtet werden
+<lb n="85"/><unclear cert="low" resp="#joint">woellen</unclear> wirs am liebsten sehen, und als die frid=
 <lb n="86"/>liebenden gern darzu verhelffen. Im widrigen
-<lb n="87"/>fahl aber, sollen und muegen E. E. Wht. uns wol
+<lb n="87"/><unclear cert="low" resp="#joint">fahl</unclear> aber, sollen und <unclear cert="medium" resp="#joint">muegen</unclear> E. E. <unclear cert="low" resp="#joint">Wht</unclear>. uns wol
 <lb n="88"/>und gwußlich vtrauwuen, daß wir hin=
-<lb n="89"/>rinnen justitiam sölcher maßen werden ad=
-<lb n="90"/>ministrieren, wie einer ehrlichen und unpartheüjschen
+<lb n="89"/><unclear cert="low" resp="#joint">rinnen</unclear> justitiam sölcher maßen werden ad=
+<lb n="90"/>ministrieren, wie einer ehrlichen und <unclear cert="low" resp="#joint">unpartheüjschen</unclear>
 <lb n="91"/>oberkeit, tragenden ampts halben gebüert, und daß
-<lb n="92"/>wir deßhalben einigen ungleichen verwiß nit allein
-<lb n="93"/>nit gedenckhen auf uns zuladen; sonderen auch E. E. Wht. zuo anderen
-<lb n="94"/>in ihro schriben angetröuwten mitlen
+<lb n="92"/>wir deßhalben einigen ungleichen <unclear cert="medium" resp="#joint">verwiß</unclear> nit allein
+<lb n="93"/>nit <unclear cert="low" resp="#joint">gedenckhen</unclear> auf uns zuladen; <unclear cert="low" resp="#joint">sonderen</unclear> auch E. E. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">anderen</unclear>
+<lb n="94"/>in <unclear cert="low" resp="#joint">ihro</unclear> schriben <unclear cert="medium" resp="#joint">angetröuwten</unclear> <unclear cert="medium" resp="#joint">mitlen</unclear>
 <lb n="95"/>einiche billiche ursach haben werden; inmaßen wir
-<lb n="96"/>uns nit zuerinneren wüßen, E. E. Wht. zuo einichem
-<lb n="97"/>mißtrauwen jeemalen bestendigen anlaß gegeben zuhaben;
-<lb n="98"/>derhalben es (unsers erachtens) einer sölcher com=
+<lb n="96"/><unclear cert="low" resp="#joint">uns</unclear> nit <unclear cert="low" resp="#joint">zuerinneren</unclear> <unclear cert="low" resp="#joint">wüßen</unclear>, E. E. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">zuo</unclear> einichem
+<lb n="97"/><unclear cert="low" resp="#joint">mißtrauwen</unclear> <unclear cert="low" resp="#joint">jeemalen</unclear> bestendigen anlaß gegeben <unclear cert="low" resp="#joint">zuhaben</unclear>;
+<lb n="98"/>derhalben es (unsers erachtens) einer <unclear cert="low" resp="#joint">sölcher</unclear> com=
 <lb n="99"/>mination und so hiziger federen nit bedörfft hette.
-<lb n="100"/>Wiewol wir nichts destoweniger dafür halten
-<lb n="101"/>wellen, E. E. Wht. werden sich von widerwärtiger
-<lb n="102"/>passionierter information so hefftig nit ynemmen
-<lb n="103"/>laßen, daß sie uns nit sölten aller billichkeit
+<lb n="100"/>Wiewol wir nichts destoweniger <unclear cert="low" resp="#joint">dafür</unclear> halten
+<lb n="101"/>wellen, E. E. <unclear cert="low" resp="#joint">Wht</unclear>. werden sich <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">widerwärtiger</unclear>
+<lb n="102"/><unclear cert="low" resp="#joint">passionierter</unclear> information so hefftig nit <unclear cert="low" resp="#joint">ynemmen</unclear>
+<lb n="103"/>laßen, daß sie uns nit <unclear cert="low" resp="#joint">sölten</unclear> aller billichkeit
 <lb n="104"/>getrauwen
-<lb n="105"/>Wolten wir E. E. Wht. zuo der ihrigen nachrichtung
-<lb n="106"/>bester wolmeinung in antwurt nit bergen, denen wir zuo
-<lb n="107"/>angenemmer diensterzeigung wol bijgethuon
-<lb n="108"/>vliben. Dath den. <origDate when="1615" resp="#ner">18. th. obgemelts
+<lb n="105"/>Wolten wir E. E. <unclear cert="low" resp="#joint">Wht</unclear>. zuo der ihrigen nachrichtung
+<lb n="106"/><unclear cert="medium" resp="#joint">bester</unclear> <unclear cert="medium" resp="#joint">wolmeinung</unclear> in antwurt nit bergen, denen wir zuo
+<lb n="107"/><unclear cert="low" resp="#joint">angenemmer</unclear> <unclear cert="low" resp="#joint">diensterzeigung</unclear> wol <unclear cert="low" resp="#joint">bijgethuon</unclear>
+<lb n="108"/><unclear cert="low" resp="#joint">vliben</unclear>. Dath den. <origDate when="1615" resp="#ner">18. th. <unclear cert="low" resp="#joint">obgemelts</unclear>
 <lb n="109"/>monats Febr: 1615.</origDate>
 <lb n="110"/><orgName role="issuer" resp="#ner">B. u Rhäte</orgName>
 <lb n="111"/>An <orgName ref="stadtasg-actors-798" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat zuo Lütchirch</orgName>
 <pb facs="StadtASG_Missive_1934_7204.jpg" n="4"/>
-<lb n="112"/>An <origPlace ref="stadtasg-places-244" cert="medium" resp="#ner">Luetkirch</origPlace> <origDate when="1615-02-10" resp="#ner">10 febr. 1615</origDate>
+<lb n="112"/>An <origPlace ref="stadtasg-places-244" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Luetkirch</unclear></origPlace> <origDate when="1615-02-10" resp="#ner">10 febr. 1615</origDate>
 </p>
         </body>
     </text>

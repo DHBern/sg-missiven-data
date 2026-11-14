@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1954</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,75 +20,75 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Joan. Baptista Gabaleone berichtet dem Schultheiss und Rat zu Luzern über seine Verhandlungen mit den St. Galler Kaufleuten in Piemont. Diese bitten um individuelle Geleitbriefe für ihre Gesandten, was er gewähren will. Er bestätigt den Empfang ihres Schreibens vom 24. Juni und erklärt sich bereit, die Gesandten der St. Galler und Zürcher zu unterstützen, obwohl er wegen der Entlassung des Kriegsvolks und anderer Aufgaben derzeit eingeschränkt ist.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Joan. Baptista Gabaleone</name><placeName resp="#regest">Turin</placeName><date when="1615-07-10" resp="#regest">den zechenten tag Julii. 1615.</date></correspAction><correspAction type="received"><name resp="#regest">Schultheiss und Rat zu Luzern</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1954_7267.jpg" n="1"/>
-<lb n="1"/>Hochgeachte und mächtige Herren.
-<lb n="2"/>Nach der abredung so ich zuo <placeName ref="stadtasg-places-70" cert="medium" resp="#ner">Ury</placeName> mit den Herren,
-<lb n="3"/>Stathalter <persName resp="#ner">Rooll</persName>, und <persName resp="#ner">Ledogario Pfyffer</persName>, und den
-<lb n="4"/>kauffleüten von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> gehabt, hab ich nit ermanglet
-<lb n="5"/>so bald ich in <placeName ref="stadtasg-places-372" cert="medium" resp="#ner">Piemond</placeName> ankommen, gemelten kauffleüten
-<lb n="6"/>gehn <placeName ref="stadtasg-places-196" cert="medium" resp="#ner">Leon</placeName> zuo zuschreiben, dz sie mir die namen der Jeni-
-<lb n="7"/>gen verzeichnet zuoschickten, welliche in dem salvo conducto
-<lb n="8"/>+ von Ihr Durch-
-<lb n="9"/>leücht
-<lb n="10"/>oder gleitsbrieff, so sie zuo versicherung Irer verburgten
-<lb n="11"/>gelten, solen genamsat werden, auff welliches mein
+<lb n="1"/>Hochgeachte und <unclear cert="low" resp="#joint">mächtige</unclear> Herren.
+<lb n="2"/>Nach der abredung so ich zuo <placeName ref="stadtasg-places-70" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ury</unclear></placeName> mit den Herren,
+<lb n="3"/>Stathalter <persName resp="#ner">Rooll</persName>, und <persName resp="#ner"><unclear cert="low" resp="#joint">Ledogario</unclear> <unclear cert="low" resp="#joint">Pfyffer</unclear></persName>, und den
+<lb n="4"/><unclear cert="low" resp="#joint">kauffleüten</unclear> von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> gehabt, hab ich nit <unclear cert="low" resp="#joint">ermanglet</unclear>
+<lb n="5"/>so bald ich <unclear cert="medium" resp="#joint">in</unclear> <placeName ref="stadtasg-places-372" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Piemond</unclear></placeName> ankommen, <unclear cert="low" resp="#joint">gemelten</unclear> <unclear cert="low" resp="#joint">kauffleüten</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">gehn</unclear> <placeName ref="stadtasg-places-196" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Leon</unclear></placeName> zuo <unclear cert="low" resp="#joint">zuschreiben</unclear>, dz sie mir die <unclear cert="low" resp="#joint">namen</unclear> der <unclear cert="medium" resp="#joint">Jeni</unclear>-
+<lb n="7"/>gen <unclear cert="low" resp="#joint">verzeichnet</unclear> <unclear cert="low" resp="#joint">zuoschickten</unclear>, welliche in dem <unclear cert="low" resp="#joint">salvo</unclear> <unclear cert="low" resp="#joint">conducto</unclear>
+<lb n="8"/>+ <unclear cert="medium" resp="#joint">von</unclear> Ihr <unclear cert="low" resp="#joint">Durch</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">leücht</unclear>
+<lb n="10"/>oder <unclear cert="low" resp="#joint">gleitsbrieff</unclear>, so sie zuo <unclear cert="medium" resp="#joint">versicherung</unclear> Irer <unclear cert="low" resp="#joint">verburgten</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">gelten</unclear>, <unclear cert="low" resp="#joint">solen</unclear> <unclear cert="low" resp="#joint">genamsat</unclear> <unclear cert="low" resp="#joint">werden</unclear>, <unclear cert="low" resp="#joint">auff</unclear> welliches mein
 <lb n="12"/>schreiben sie mir geantwurtet, und mich gebetten, ich welte
-<lb n="13"/>Inen beholffen sein, damit iedem hauß in sonderheit
-<lb n="14"/>ein absünderliches für mehren Iren nuzt und ruwigkeit
-<lb n="15"/>werde; Wellichem Irem begehren ich nachkommen will,
-<lb n="16"/>und mit erstem will ich sie Inen zuoschicken.
-<lb n="17"/>Vor 8. tagen hab ich dz geliebte schreiben ewer herlich-
-<lb n="18"/>keiten von <date resp="#ner">24. des vergangnen monats</date> empfangen, und da-
-<lb n="19"/>rauß verstanden die recomendation und fürpit so sie
-<lb n="20"/>für gemelte kauff
-<lb n="21"/>leüt
-<lb n="22"/>bei mir thun, und wie dz sie sich mit den Herren von <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürich</placeName>
-<lb n="23"/>berhatschlaget und entschloßen Inen Iren gesanten zuozugeben,
-<lb n="24"/>damit sie hiedurch zuo glücklicherer und Inen angenemeren
-<lb n="25"/>verrichtung Ires geschäffts bei Ihr Durchleücht gelangen
-<lb n="26"/>mügen. Welliches zwar wie alß ich vermeine, nit noht-
-<lb n="27"/>wendig wehre, in ansehen ich bei Ihr Durchleücht anderst
+<lb n="13"/>Inen beholffen sein, damit iedem hauß in <unclear cert="low" resp="#joint">sonderheit</unclear>
+<lb n="14"/>ein <unclear cert="low" resp="#joint">absünderliches</unclear> für mehren <unclear cert="low" resp="#joint">Iren</unclear> <unclear cert="low" resp="#joint">nuzt</unclear> und <unclear cert="low" resp="#joint">ruwigkeit</unclear>
+<lb n="15"/>werde; Wellichem Irem begehren ich <unclear cert="low" resp="#joint">nachkommen</unclear> will,
+<lb n="16"/>und mit erstem will ich sie <unclear cert="low" resp="#joint">Inen</unclear> <unclear cert="low" resp="#joint">zuoschicken</unclear>.
+<lb n="17"/>Vor 8. tagen hab ich dz geliebte schreiben <unclear cert="low" resp="#joint">ewer</unclear> <unclear cert="low" resp="#joint">herlich</unclear>-
+<lb n="18"/>keiten <unclear cert="low" resp="#joint">von</unclear> <date resp="#ner">24. des vergangnen monats</date> empfangen, und da-
+<lb n="19"/>rauß verstanden die recomendation und <unclear cert="low" resp="#joint">fürpit</unclear> so sie
+<lb n="20"/><unclear cert="low" resp="#joint">für</unclear> <unclear cert="low" resp="#joint">gemelte</unclear> <unclear cert="low" resp="#joint">kauff</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">leüt</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">bei</unclear> mir thun, und wie dz sie sich mit den Herren von <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zürich</placeName>
+<lb n="23"/><unclear cert="low" resp="#joint">berhatschlaget</unclear> und entschloßen Inen Iren gesanten zuozugeben,
+<lb n="24"/>damit sie <unclear cert="medium" resp="#joint">hiedurch</unclear> zuo <unclear cert="medium" resp="#joint">glücklicherer</unclear> und Inen <unclear cert="medium" resp="#joint">angenemeren</unclear>
+<lb n="25"/>verrichtung <unclear cert="low" resp="#joint">Ires</unclear> geschäffts bei Ihr <unclear cert="low" resp="#joint">Durchleücht</unclear> gelangen
+<lb n="26"/>mügen. Welliches zwar wie alß ich vermeine, nit <unclear cert="low" resp="#joint">noht</unclear>-
+<lb n="27"/><unclear cert="low" resp="#joint">wendig</unclear> <unclear cert="low" resp="#joint">wehre</unclear>, in ansehen ich bei Ihr <unclear cert="low" resp="#joint">Durchleücht</unclear> <unclear cert="low" resp="#joint">anderst</unclear>
 <lb n="28"/>nicht gespürre alß gueten willen gegaen Iren sachen
-<lb n="29"/>in der güetigkeit Inen ein uschlag zuogeben, und zuoverschaffen
-<lb n="30"/>das Inen ein recht billich vernügen gemacht werde.
-<lb n="31"/>Jedoch so gemelte herren gesante kummen, werden sie
+<lb n="29"/>in der <unclear cert="medium" resp="#joint">güetigkeit</unclear> Inen <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">uschlag</unclear> <unclear cert="low" resp="#joint">zuogeben</unclear>, und <unclear cert="low" resp="#joint">zuoverschaffen</unclear>
+<lb n="30"/>das Inen ein recht billich <unclear cert="low" resp="#joint">vernügen</unclear> gemacht werde.
+<lb n="31"/><unclear cert="low" resp="#joint">Jedoch</unclear> so gemelte herren gesante kummen, werden sie
 <lb n="32"/>willkummen, und von Ihr Dht. wol angesehen sein, und ich
 <lb n="33"/>will Inen beistand leisten und denselben dienen in allem
-<lb n="34"/>dem so mir müglich ist, sowol in ansehen der Jenigen
-<lb n="35"/>von denen sie gesandt werden, alß umb der gesandten
-<lb n="36"/>selbsteignen würdigkeit willen. Allein hab ich dise
-<lb n="37"/>zuogleich fürfallende ungelegenheit nit gern, dz, wylen Ihr Dht.
+<lb n="34"/>dem so mir müglich ist, <unclear cert="low" resp="#joint">sowol</unclear> in ansehen der Jenigen
+<lb n="35"/><unclear cert="low" resp="#joint">von</unclear> denen sie gesandt werden, alß umb der <unclear cert="medium" resp="#joint">gesandten</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">selbsteignen</unclear> <unclear cert="medium" resp="#joint">würdigkeit</unclear> willen. <unclear cert="medium" resp="#joint">Allein</unclear> hab ich dise
+<lb n="37"/>zuogleich fürfallende ungelegenheit nit gern, <unclear cert="low" resp="#joint">dz</unclear>, <unclear cert="low" resp="#joint">wylen</unclear> Ihr Dht.
 <lb n="38"/>in abdanckung des kriegsvolcks beschäfftiget nach laut der
-<lb n="39"/>fridens tractation, und mein Person dem ienigen nachkummen
-<lb n="40"/>muoß so vor gemelter Ihrer Dht. mir anbefohlen, wirt
-<lb n="41"/>ich vilicht Inen so stätig und fleißig nit künden abwahrten künden
-<lb n="42"/>alß ich gern thete. Jedoch hoffe ich es werde bald alles zuo
+<lb n="39"/>fridens tractation, und mein <unclear cert="low" resp="#joint">Person</unclear> dem ienigen <unclear cert="low" resp="#joint">nachkummen</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">muoß</unclear> so vor gemelter Ihrer Dht. mir anbefohlen, <unclear cert="low" resp="#joint">wirt</unclear>
+<lb n="41"/>ich vilicht Inen so stätig und fleißig nit <unclear cert="low" resp="#joint">künden</unclear> <unclear cert="low" resp="#joint">abwahrten</unclear> <unclear cert="low" resp="#joint">künden</unclear>
+<lb n="42"/>alß ich gern thete. <unclear cert="low" resp="#joint">Jedoch</unclear> hoffe ich es werde bald alles zuo
 <lb n="43"/>end gebracht, und ich andern geschäfften entlediget werden
 <lb n="44"/>damit ich Inen dienen künde, welliches ich mit guetem
-<lb n="45"/>willen von herzen so gern thuon will, alß hiemit nach dem
-<lb n="46"/>ich Eweren Herrlichkeiten die händ geküßet, ich den selben
-<lb n="47"/>von got dem allmechtigen alle glückliche wolfahrt wün-
-<lb n="48"/>schen thuo. Von <origPlace resp="#ner">Turin</origPlace>. <origDate when="1615" resp="#ner">den zechenten tag Julii. 1615.</origDate>
-<lb n="49"/>Ewer herligkeiten
+<lb n="45"/>willen von <unclear cert="medium" resp="#joint">herzen</unclear> so gern thuon will, alß hiemit nach dem
+<lb n="46"/>ich <unclear cert="low" resp="#joint">Eweren</unclear> Herrlichkeiten die händ <unclear cert="medium" resp="#joint">geküßet</unclear>, ich den selben
+<lb n="47"/><unclear cert="medium" resp="#joint">von</unclear> <unclear cert="medium" resp="#joint">got</unclear> dem allmechtigen alle glückliche <unclear cert="low" resp="#joint">wolfahrt</unclear> <unclear cert="low" resp="#joint">wün</unclear>-
+<lb n="48"/>schen <unclear cert="low" resp="#joint">thuo</unclear>. Von <origPlace resp="#ner"><unclear cert="low" resp="#joint">Turin</unclear></origPlace>. <origDate when="1615" resp="#ner">den zechenten tag <unclear cert="low" resp="#joint">Julii</unclear>. 1615.</origDate>
+<lb n="49"/>Ewer <unclear cert="low" resp="#joint">herligkeiten</unclear>
 <lb n="50"/>geneigter diener.
-<lb n="51"/>Den hochgeachten und mächtigen herren
-<lb n="52"/>Herren <orgName role="recipient" resp="#ner">Schultheiß und rhat der stat
-<lb n="53"/>Lucern</orgName>, Meinen hochehrenden
+<lb n="51"/><unclear cert="medium" resp="#joint">Den</unclear> hochgeachten und mächtigen herren
+<lb n="52"/>Herren <orgName role="recipient" resp="#ner">Schultheiß und rhat der <unclear cert="medium" resp="#joint">stat</unclear>
+<lb n="53"/><unclear cert="medium" resp="#joint">Lucern</unclear></orgName>, Meinen hochehrenden
 <lb n="54"/>herren etc.
-<lb n="55"/><persName role="issuer" resp="#ner">Joan. Baptista Gabaleone</persName>. Ritter.
+<lb n="55"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Joan</unclear>. Baptista <unclear cert="medium" resp="#joint">Gabaleone</unclear></persName>. <unclear cert="medium" resp="#joint">Ritter</unclear>.
 <pb facs="StadtASG_Missive_1954_7268.jpg" n="2"/>
 <lb n="56"/>[]
 </p>

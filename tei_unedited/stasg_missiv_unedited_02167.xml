@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2167</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,51 +20,51 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bedanken sich bei Bürgermeister und Rat zu St. Gallen für den vertraulichen Bericht vom 15. November über das spanische Kriegsvolk in Bregenz und dessen Vorrücken. Sie bitten, in dieser guten Vorsorge fortzufahren und sie über alle wichtigen und notwendigen Vorfälle weiterhin eidgenössisch vertrauensvoll zu berichten. Zürich erklärt sich seinerseits bereit, St. Gallen alle eidgenössische Treue und Freundschaft zu erweisen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1619-11-20" resp="#regest">Datum den 20. t Novembris, anno 1619.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2167_8123.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig dienst, und was wir ehren
+<lb n="1"/>Unnser <unclear cert="low" resp="#joint">fründtlich</unclear> willig dienst, und was wir ehren
 <lb n="2"/>liebs und guots vermögend, zuovor. Fromm
-<lb n="3"/>fürsichtig, ehrsam wÿß, innsonders guot fründt, und
-<lb n="4"/>gethrüw lieb eidtgnossen. Deß ver-
-<lb n="5"/>thrüwlichen berichts, so ir deß Spanischen zuo <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenntz</placeName>
+<lb n="3"/>fürsichtig, ehrsam <unclear cert="low" resp="#joint">wÿß</unclear>, innsonders guot fründt, und
+<lb n="4"/><unclear cert="medium" resp="#joint">gethrüw</unclear> lieb eidtgnossen. Deß ver-
+<lb n="5"/><unclear cert="low" resp="#joint">thrüwlichen</unclear> berichts, so ir deß Spanischen zuo <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenntz</placeName>
 <lb n="6"/>und selbiger enden ligenden kriegsvolcks, und desselben
-<lb n="7"/>vortzugs halber, vom <date resp="#ner">15. t diß</date> uns ferners zuogethan,
-<lb n="8"/>thund wir üch abermalen eidtgnössisch fründtlich be-
+<lb n="7"/><unclear cert="medium" resp="#joint">vortzugs</unclear> halber, vom <date resp="#ner"><unclear cert="low" resp="#joint">15</unclear>. <unclear cert="low" resp="#joint">t</unclear> diß</date> uns <unclear cert="low" resp="#joint">ferners</unclear> <unclear cert="low" resp="#joint">zuogethan</unclear>,
+<lb n="8"/>thund wir üch abermalen <unclear cert="medium" resp="#joint">eidtgnössisch</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> be-
 <lb n="9"/>dancken, mit bitt, ir inn söllichem guoten uffsechen
-<lb n="10"/>bÿ diseren geschwinden löüffen füro im besten con-
-<lb n="11"/>tinuiren, und deßen was ehaffts und nothwendigs für-
-<lb n="12"/>fallen, daran gelegen und zewüssen von nöthen sÿn
-<lb n="13"/>mag, unns wÿter inn eidtgnössischem verthrüwen
-<lb n="14"/>berichten wellind. Wie wir gegen üch hinwider-
-<lb n="15"/>ummb ouch zethund, und üch samptlich alle eidtgnöss-
-<lb n="16"/>ische thrüw und fründtschafft iederzÿt zuoerzeigen
-<lb n="17"/>besten willens und erbietens sind. Gott
-<lb n="18"/>bittend, das er üch samptlich wÿter vor unfaal,
-<lb n="19"/>und übel behüten, und inn sÿnen gnaden erhalten
-<lb n="20"/>wölle. Datum den <origDate when="1619" resp="#ner">20. t Novembris, anno 1619</origDate>.
+<lb n="10"/><unclear cert="low" resp="#joint">bÿ</unclear> <unclear cert="low" resp="#joint">diseren</unclear> geschwinden <unclear cert="low" resp="#joint">löüffen</unclear> <unclear cert="low" resp="#joint">füro</unclear> <unclear cert="low" resp="#joint">im</unclear> besten con-
+<lb n="11"/>tinuiren, und deßen was <unclear cert="low" resp="#joint">ehaffts</unclear> und nothwendigs für-
+<lb n="12"/>fallen, <unclear cert="low" resp="#joint">daran</unclear> gelegen und <unclear cert="medium" resp="#joint">zewüssen</unclear> von nöthen <unclear cert="low" resp="#joint">sÿn</unclear>
+<lb n="13"/>mag, unns <unclear cert="low" resp="#joint">wÿter</unclear> <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">eidtgnössischem</unclear> <unclear cert="low" resp="#joint">verthrüwen</unclear>
+<lb n="14"/>berichten wellind. Wie wir gegen üch <unclear cert="low" resp="#joint">hinwider</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">ummb</unclear> ouch <unclear cert="low" resp="#joint">zethund</unclear>, und üch <unclear cert="medium" resp="#joint">samptlich</unclear> <unclear cert="medium" resp="#joint">alle</unclear> <unclear cert="medium" resp="#joint">eidtgnöss</unclear>-
+<lb n="16"/><unclear cert="medium" resp="#joint">ische</unclear> <unclear cert="medium" resp="#joint">thrüw</unclear> und <unclear cert="medium" resp="#joint">fründtschafft</unclear> <unclear cert="medium" resp="#joint">iederzÿt</unclear> <unclear cert="medium" resp="#joint">zuoerzeigen</unclear>
+<lb n="17"/>besten willens und <unclear cert="medium" resp="#joint">erbietens</unclear> sind. Gott
+<lb n="18"/>bittend, das er üch <unclear cert="low" resp="#joint">samptlich</unclear> <unclear cert="low" resp="#joint">wÿter</unclear> vor unfaal,
+<lb n="19"/>und <unclear cert="low" resp="#joint">übel</unclear> behüten, und inn <unclear cert="low" resp="#joint">sÿnen</unclear> gnaden erhalten
+<lb n="20"/><unclear cert="low" resp="#joint">wölle</unclear>. Datum den <origDate when="1619" resp="#ner"><unclear cert="low" resp="#joint">20</unclear>. <unclear cert="low" resp="#joint">t</unclear> Novembris, anno 1619</origDate>.
 <lb n="21"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="22"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2167_8124.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2167_8125.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2167_8126.jpg" n="4"/>
-<lb n="23"/>Den frommen <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, <unclear cert="medium" resp="#joint">er</unclear>-
+<lb n="23"/>Den frommen <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, er-
 <lb n="24"/>sammen <unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="25"/>meister und Rath der statt
-<lb n="26"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>, <unclear cert="medium" resp="#joint">unserenn</unclear>
+<lb n="26"/>Sanct Gallen</orgName>, <unclear cert="low" resp="#joint">unserenn</unclear>
 <lb n="27"/>innsonders guoten <unclear cert="medium" resp="#joint">fruenden</unclear>,
-<lb n="28"/>und <unclear cert="medium" resp="#joint">gethruwenn</unclear> lieben
+<lb n="28"/>und <unclear cert="low" resp="#joint">gethruwenn</unclear> lieben
 <lb n="29"/><unclear cert="medium" resp="#joint">eidtgnossen</unclear>.
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2444</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,100 +20,100 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, den St. Galler Bürger Sebastian Zwickher anzuhalten, sein Eheversprechen gegenüber der Tochter des Schaffhauser Schlossers Ulrich Wirrin einzuhalten. Zwickher habe die Tochter geschwängert, sei aber nach Ulm abgereist. Wirrin wolle die Sache nun in St. Gallen anhängig machen. Schaffhausen ersucht um Unterstützung, damit Zwickher die Ehe eingeht.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Schaffhausen</name><date when="1623-10-25" resp="#regest">25.t Octobris anno 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2444_9411.jpg" n="1"/>
-<lb n="1"/>Unßer frundtlich willig dienst, sampt waß wier ehren
-<lb n="2"/>liebs unnd guots vermögen, zuvor from, fursichtig
-<lb n="3"/>ehrsam, wiß, jnsonders guot frundt unnd getreuw
-<lb n="4"/>lieb <orgName role="recipient" resp="#ner">Eydtgnoßen</orgName>.
-<lb n="5"/>Unß hat unnßer burger Meister <persName resp="#ner">Ulrich Wirrin</persName> der
-<lb n="6"/>schloßermacher, geburender maaßen furbringen unnd
-<lb n="7"/>zuoerkennen geben laßen. Wie daß ungefehr bij zwej
-<lb n="8"/>jahren euwers burgers <persName resp="#ner">Sebastian Zwickhers</persName> Sohn
-<lb n="9"/>auch Sebastian Zwickher genant, alß er bij unnßerm
-<lb n="10"/>burger Mr. <persName resp="#ner">Hannß wihlhelm Kuller</persName> dem Tischler
+<lb n="1"/><unclear cert="medium" resp="#joint">Unßer</unclear> <unclear cert="medium" resp="#joint">frundtlich</unclear> willig dienst, sampt waß wier ehren
+<lb n="2"/>liebs unnd guots <unclear cert="low" resp="#joint">vermögen</unclear>, zuvor <unclear cert="medium" resp="#joint">from</unclear>, <unclear cert="medium" resp="#joint">fursichtig</unclear>
+<lb n="3"/><unclear cert="medium" resp="#joint">ehrsam</unclear>, <unclear cert="medium" resp="#joint">wiß</unclear>, <unclear cert="medium" resp="#joint">jnsonders</unclear> guot frundt unnd <unclear cert="low" resp="#joint">getreuw</unclear>
+<lb n="4"/>lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>.
+<lb n="5"/>Unß hat <unclear cert="low" resp="#joint">unnßer</unclear> burger Meister <persName resp="#ner">Ulrich <unclear cert="low" resp="#joint">Wirrin</unclear></persName> der
+<lb n="6"/><unclear cert="low" resp="#joint">schloßermacher</unclear>, <unclear cert="low" resp="#joint">geburender</unclear> <unclear cert="low" resp="#joint">maaßen</unclear> furbringen unnd
+<lb n="7"/><unclear cert="low" resp="#joint">zuoerkennen</unclear> geben laßen. Wie daß <unclear cert="low" resp="#joint">ungefehr</unclear> bij <unclear cert="low" resp="#joint">zwej</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">jahren</unclear> <unclear cert="medium" resp="#joint">euwers</unclear> <unclear cert="medium" resp="#joint">burgers</unclear> <persName resp="#ner">Sebastian <unclear cert="medium" resp="#joint">Zwickhers</unclear></persName> Sohn
+<lb n="9"/>auch <unclear cert="low" resp="#joint">Sebastian</unclear> <unclear cert="low" resp="#joint">Zwickher</unclear> <unclear cert="low" resp="#joint">genant</unclear>, <unclear cert="low" resp="#joint">alß</unclear> er bij unnßerm
+<lb n="10"/>burger <unclear cert="low" resp="#joint">Mr</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Hannß</unclear> <unclear cert="low" resp="#joint">wihlhelm</unclear> <unclear cert="low" resp="#joint">Kuller</unclear></persName> dem Tischler
 <lb n="11"/>gearbeitet, bij wellichem dan sein Wirrins Tochter
-<lb n="12"/>selbiger zitt auch geweßen, jro nit allein die ehe uf-
-<lb n="13"/>recht unnd redlich versprochen: sondern auch sie ge-
-<lb n="14"/>schwängert unnd jro ein frucht anbeholfen, deßen sij
-<lb n="15"/>sye derzitt vor einem jahr niderkhomen, Alß nun
-<lb n="16"/>er <persName resp="#ner">Wirrin</persName>, deß der Vatter selbiges jn erfahrung
-<lb n="17"/>gebracht, habe er eß jme augen gethon, unnd jme dar-
-<lb n="18"/>uber zuogeschriben, darauf er geant, habe jro die
-<lb n="19"/>ehe ehrlich unnd redlich zuogesagt, wölle auch deß halten
-<lb n="20"/>sie zuo kirchen unnd straßen fueren unnd ehrlichen, auch
-<lb n="21"/>jme den Vatter deß daß jhennige so zuo söllchen
-<lb n="22"/>sachen gehörig, praeparien unnd rüsten zelaßen
-<lb n="23"/>gebetten, wellchs er auch gethon. Bijnebents vermeindt
-<lb n="24"/>wölle hiezwüschent naher <placeName ref="stadtasg-places-28" cert="medium" resp="#ner">Vlm</placeName> züchen, sich daselbsten
-<lb n="25"/>zuo einem gesellen machen laßen, volgendts sich wider-
-<lb n="26"/>umben dahero begeben unnd sein versprechen jns werckh
-<lb n="27"/>zerichten. Er aen er seinem vorgeben gelebt, wider
-<lb n="28"/>deß verheisen unnd versprechen aber sich nit jngestelt
-<lb n="29"/>sonder den weitteren weg gesuocht. Daruber er zum
-<lb n="30"/>anderen mahl seine elteren frundtlich darumben zuobe-
-<lb n="31"/>grueßen, unnd daß sij jren Sohne zur haltung stellen,
-<lb n="32"/>zebitten nit ermanglen wöllen, aber khein anderen
+<lb n="12"/>selbiger zitt auch geweßen, jro nit allein die <unclear cert="medium" resp="#joint">ehe</unclear> uf-
+<lb n="13"/><unclear cert="medium" resp="#joint">recht</unclear> unnd redlich <unclear cert="medium" resp="#joint">versprochen</unclear>: <unclear cert="low" resp="#joint">sondern</unclear> auch <unclear cert="medium" resp="#joint">sie</unclear> ge-
+<lb n="14"/><unclear cert="low" resp="#joint">schwängert</unclear> unnd <unclear cert="low" resp="#joint">jro</unclear> ein <unclear cert="low" resp="#joint">frucht</unclear> <unclear cert="low" resp="#joint">anbeholfen</unclear>, deßen sij
+<lb n="15"/><unclear cert="low" resp="#joint">sye</unclear> <unclear cert="low" resp="#joint">derzitt</unclear> vor einem jahr niderkhomen, <unclear cert="low" resp="#joint">Alß</unclear> nun
+<lb n="16"/>er <persName resp="#ner"><unclear cert="low" resp="#joint">Wirrin</unclear></persName>, deß der Vatter <unclear cert="low" resp="#joint">selbiges</unclear> <unclear cert="low" resp="#joint">jn</unclear> <unclear cert="low" resp="#joint">erfahrung</unclear>
+<lb n="17"/>gebracht, habe er <unclear cert="low" resp="#joint">eß</unclear> <unclear cert="low" resp="#joint">jme</unclear> <unclear cert="low" resp="#joint">augen</unclear> <unclear cert="low" resp="#joint">gethon</unclear>, unnd <unclear cert="low" resp="#joint">jme</unclear> <unclear cert="medium" resp="#joint">dar</unclear>-
+<lb n="18"/><unclear cert="medium" resp="#joint">uber</unclear> <unclear cert="low" resp="#joint">zuogeschriben</unclear>, darauf er <unclear cert="low" resp="#joint">geant</unclear>, <unclear cert="medium" resp="#joint">habe</unclear> <unclear cert="low" resp="#joint">jro</unclear> die
+<lb n="19"/><unclear cert="low" resp="#joint">ehe</unclear> <unclear cert="medium" resp="#joint">ehrlich</unclear> unnd redlich <unclear cert="medium" resp="#joint">zuogesagt</unclear>, <unclear cert="low" resp="#joint">wölle</unclear> auch deß <unclear cert="low" resp="#joint">halten</unclear>
+<lb n="20"/>sie zuo <unclear cert="low" resp="#joint">kirchen</unclear> unnd <unclear cert="low" resp="#joint">straßen</unclear> <unclear cert="low" resp="#joint">fueren</unclear> unnd <unclear cert="low" resp="#joint">ehrlichen</unclear>, auch
+<lb n="21"/><unclear cert="medium" resp="#joint">jme</unclear> den Vatter <unclear cert="low" resp="#joint">deß</unclear> daß <unclear cert="low" resp="#joint">jhennige</unclear> so <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">söllchen</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">sachen</unclear> <unclear cert="low" resp="#joint">gehörig</unclear>, <unclear cert="low" resp="#joint">praeparien</unclear> unnd <unclear cert="medium" resp="#joint">rüsten</unclear> <unclear cert="low" resp="#joint">zelaßen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">gebetten</unclear>, <unclear cert="low" resp="#joint">wellchs</unclear> er auch gethon. <unclear cert="low" resp="#joint">Bijnebents</unclear> <unclear cert="low" resp="#joint">vermeindt</unclear>
+<lb n="24"/>wölle hiezwüschent naher <placeName ref="stadtasg-places-28" cert="medium" resp="#ner">Vlm</placeName> züchen, sich <unclear cert="medium" resp="#joint">daselbsten</unclear>
+<lb n="25"/><unclear cert="medium" resp="#joint">zuo</unclear> einem gesellen machen laßen, <unclear cert="low" resp="#joint">volgendts</unclear> <unclear cert="medium" resp="#joint">sich</unclear> wider-
+<lb n="26"/>umben <unclear cert="low" resp="#joint">dahero</unclear> begeben unnd sein <unclear cert="low" resp="#joint">versprechen</unclear> <unclear cert="medium" resp="#joint">jns</unclear> <unclear cert="low" resp="#joint">werckh</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">zerichten</unclear>. <unclear cert="medium" resp="#joint">Er</unclear> <unclear cert="low" resp="#joint">aen</unclear> er seinem <unclear cert="low" resp="#joint">vorgeben</unclear> <unclear cert="low" resp="#joint">gelebt</unclear>, wider
+<lb n="28"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">verheisen</unclear> unnd <unclear cert="low" resp="#joint">versprechen</unclear> aber sich <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">jngestelt</unclear>
+<lb n="29"/>sonder den <unclear cert="medium" resp="#joint">weitteren</unclear> <unclear cert="medium" resp="#joint">weg</unclear> <unclear cert="low" resp="#joint">gesuocht</unclear>. <unclear cert="low" resp="#joint">Daruber</unclear> er zum
+<lb n="30"/><unclear cert="medium" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">mahl</unclear> seine <unclear cert="low" resp="#joint">elteren</unclear> <unclear cert="low" resp="#joint">frundtlich</unclear> <unclear cert="medium" resp="#joint">darumben</unclear> <unclear cert="low" resp="#joint">zuobe</unclear>-
+<lb n="31"/><unclear cert="low" resp="#joint">grueßen</unclear>, unnd <unclear cert="medium" resp="#joint">daß</unclear> sij <unclear cert="medium" resp="#joint">jren</unclear> <unclear cert="medium" resp="#joint">Sohne</unclear> <unclear cert="medium" resp="#joint">zur</unclear> <unclear cert="medium" resp="#joint">haltung</unclear> stellen,
+<lb n="32"/>zebitten nit <unclear cert="low" resp="#joint">ermanglen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, aber khein anderen
 <lb n="33"/>bscheid
 <pb facs="StadtASG_Missive_2444_9412.jpg" n="2"/>
-<lb n="34"/>bescheid, dan daß sie nit wußindt wo er sich ufhalten
-<lb n="35"/>thueye, erfolgt, unndt also wider seinen willen
-<lb n="36"/>patientieren mueßen. Wan dan er in glaubwurdige
-<lb n="37"/>erfahrung gebracht, daß er <persName resp="#ner">Sebastian Zwickher</persName> dißer
-<lb n="38"/>zeit zur <placeName resp="#ner">Freistad</placeName> by <persName resp="#ner">Michael Wartenberg</persName> sich uffent=
-<lb n="39"/>halten solle, dahero dan er, damit sein tochter unnd
-<lb n="40"/>derselben kindt, moechten geehelicht werden der sachen
-<lb n="41"/>nachzezogen verhabens unnd bedacht were, unndt
-<lb n="42"/>deßwegen unns, umb unnsere furschrifft an euch
-<lb n="43"/>deren er nitt wenig zugenießen sich getroesten thet, under=
-<lb n="44"/>thenig gebetten. Weilen dan unns sein begeren zu seinem
-<lb n="45"/>intent nit unzimblich sein bedunckht, wir auch die uuß=
-<lb n="46"/>eren in der gleichen billichmaeßigen sachen, zubefurderen
-<lb n="47"/>so geneigt alß schuldig wußen, alß haben wir ime soelches
-<lb n="48"/>umb destoweniger zuversagen gewußt. So gelangt und
+<lb n="34"/><unclear cert="low" resp="#joint">bescheid</unclear>, <unclear cert="low" resp="#joint">dan</unclear> daß sie nit <unclear cert="low" resp="#joint">wußindt</unclear> wo er sich <unclear cert="low" resp="#joint">ufhalten</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">thueye</unclear>, <unclear cert="low" resp="#joint">erfolgt</unclear>, unndt also wider seinen willen
+<lb n="36"/>patientieren <unclear cert="low" resp="#joint">mueßen</unclear>. Wan dan er in <unclear cert="low" resp="#joint">glaubwurdige</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">erfahrung</unclear> gebracht, daß er <persName resp="#ner">Sebastian <unclear cert="low" resp="#joint">Zwickher</unclear></persName> <unclear cert="low" resp="#joint">dißer</unclear>
+<lb n="38"/>zeit <unclear cert="low" resp="#joint">zur</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Freistad</unclear></placeName> by <persName resp="#ner">Michael <unclear cert="low" resp="#joint">Wartenberg</unclear></persName> sich <unclear cert="low" resp="#joint">uffent=</unclear>
+<lb n="39"/>halten <unclear cert="low" resp="#joint">solle</unclear>, <unclear cert="low" resp="#joint">dahero</unclear> dan er, damit sein tochter unnd
+<lb n="40"/>derselben kindt, moechten <unclear cert="low" resp="#joint">geehelicht</unclear> werden der sachen
+<lb n="41"/>nachzezogen verhabens unnd <unclear cert="low" resp="#joint">bedacht</unclear> were, unndt
+<lb n="42"/><unclear cert="low" resp="#joint">deßwegen</unclear> unns, <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="low" resp="#joint">furschrifft</unclear> an euch
+<lb n="43"/>deren er <unclear cert="low" resp="#joint">nitt</unclear> wenig <unclear cert="low" resp="#joint">zugenießen</unclear> sich getroesten <unclear cert="low" resp="#joint">thet</unclear>, under=
+<lb n="44"/>thenig <unclear cert="low" resp="#joint">gebetten</unclear>. Weilen dan unns sein begeren zu seinem
+<lb n="45"/>intent nit unzimblich sein bedunckht, <unclear cert="low" resp="#joint">wir</unclear> auch die <unclear cert="low" resp="#joint">uuß=</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">eren</unclear> <unclear cert="low" resp="#joint">in</unclear> der <unclear cert="low" resp="#joint">gleichen</unclear> <unclear cert="low" resp="#joint">billichmaeßigen</unclear> sachen, <unclear cert="low" resp="#joint">zubefurderen</unclear>
+<lb n="47"/>so geneigt alß schuldig <unclear cert="medium" resp="#joint">wußen</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> haben <unclear cert="medium" resp="#joint">wir</unclear> ime <unclear cert="medium" resp="#joint">soelches</unclear>
+<lb n="48"/><unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">destoweniger</unclear> <unclear cert="medium" resp="#joint">zuversagen</unclear> <unclear cert="medium" resp="#joint">gewußt</unclear>. So gelangt und
 <lb n="49"/>ist hierauf an euch, unnser frundt: Eydtgnößisch und
-<lb n="50"/>fleißigst ersuechen, ihr wellen diß orts mehrbe=
-<lb n="51"/>ruerten unnseren burgern Meister <persName resp="#ner">Ulrich Wiserin</persName>
-<lb n="52"/>wol recommendiert unnd furbefolhen haben, unndt
-<lb n="53"/>solche oberkheitlichen gewalt anwenden, daß offtge=
-<lb n="54"/>sagter <persName resp="#ner">Sebastian Zwickher</persName> der Jungen seinem thueren
-<lb n="55"/>versprechen würckhlichen platz unnd stadt gebe, unnd
-<lb n="56"/>sein Ulrichens tochter ehelichen thueye. Inmaaßen
-<lb n="57"/>euch auch alß wilfährig erweisen, daß er dißer unßer
-<lb n="58"/>intercession genoßen im werckh verspuren unndt
-<lb n="59"/>deren zerhuemen unnd zuefrewen haben möge. Das
-<lb n="60"/>syen wir umb euch unnd die euwerigen, uf jede
-<lb n="61"/>abgebende occasion mit gleichmäßiger verhaltung ander=
-<lb n="62"/>werts zuerwideren, euch dargegen uß jederweilen
-<lb n="63"/>eydtgnößische treuw, ehr unnd frundtschafft zuerweisen,
-<lb n="64"/>so begirig unnd geneigt, alß wir Gott pittendt, daß
-<lb n="65"/>er unns hinfuro gemeinlich in fridferdtigem wolstandt
-<lb n="66"/>vatter=
+<lb n="50"/><unclear cert="low" resp="#joint">fleißigst</unclear> ersuechen, ihr <unclear cert="low" resp="#joint">wellen</unclear> diß orts <unclear cert="low" resp="#joint">mehrbe=</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">ruerten</unclear> unnseren <unclear cert="low" resp="#joint">burgern</unclear> Meister <persName resp="#ner">Ulrich <unclear cert="medium" resp="#joint">Wiserin</unclear></persName>
+<lb n="52"/><unclear cert="medium" resp="#joint">wol</unclear> <unclear cert="medium" resp="#joint">recommendiert</unclear> unnd <unclear cert="low" resp="#joint">furbefolhen</unclear> haben, unndt
+<lb n="53"/><unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">oberkheitlichen</unclear> gewalt anwenden, daß offtge=
+<lb n="54"/>sagter <persName resp="#ner">Sebastian <unclear cert="low" resp="#joint">Zwickher</unclear></persName> der <unclear cert="low" resp="#joint">Jungen</unclear> seinem <unclear cert="low" resp="#joint">thueren</unclear>
+<lb n="55"/>versprechen <unclear cert="low" resp="#joint">würckhlichen</unclear> <unclear cert="low" resp="#joint">platz</unclear> unnd stadt gebe, unnd
+<lb n="56"/>sein <unclear cert="low" resp="#joint">Ulrichens</unclear> tochter <unclear cert="medium" resp="#joint">ehelichen</unclear> <unclear cert="medium" resp="#joint">thueye</unclear>. <unclear cert="medium" resp="#joint">Inmaaßen</unclear>
+<lb n="57"/><unclear cert="medium" resp="#joint">euch</unclear> <unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">wilfährig</unclear> erweisen, daß er <unclear cert="low" resp="#joint">dißer</unclear> unßer
+<lb n="58"/>intercession <unclear cert="low" resp="#joint">genoßen</unclear> <unclear cert="low" resp="#joint">im</unclear> werckh <unclear cert="low" resp="#joint">verspuren</unclear> unndt
+<lb n="59"/>deren <unclear cert="low" resp="#joint">zerhuemen</unclear> unnd <unclear cert="low" resp="#joint">zuefrewen</unclear> haben möge. Das
+<lb n="60"/><unclear cert="low" resp="#joint">syen</unclear> wir umb <unclear cert="low" resp="#joint">euch</unclear> unnd die <unclear cert="low" resp="#joint">euwerigen</unclear>, uf jede
+<lb n="61"/>abgebende occasion mit <unclear cert="low" resp="#joint">gleichmäßiger</unclear> <unclear cert="low" resp="#joint">verhaltung</unclear> ander=
+<lb n="62"/><unclear cert="low" resp="#joint">werts</unclear> <unclear cert="low" resp="#joint">zuerwideren</unclear>, <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">dargegen</unclear> <unclear cert="low" resp="#joint">uß</unclear> jederweilen
+<lb n="63"/>eydtgnößische <unclear cert="low" resp="#joint">treuw</unclear>, ehr unnd frundtschafft zuerweisen,
+<lb n="64"/>so begirig unnd geneigt, alß wir Gott <unclear cert="low" resp="#joint">pittendt</unclear>, daß
+<lb n="65"/>er <unclear cert="low" resp="#joint">unns</unclear> hinfuro <unclear cert="low" resp="#joint">gemeinlich</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">fridferdtigem</unclear> wolstandt
+<lb n="66"/><unclear cert="low" resp="#joint">vatter=</unclear>
 <pb facs="StadtASG_Missive_2444_9413.jpg" n="3"/>
 <lb n="67"/>under sinem goetlichen schirm wol erhaltten welle.
 <lb n="68"/>Datum <origDate when="1623" resp="#ner">den 25.t Octobris anno 1623</origDate>.
 <lb n="69"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermeister unnd rath
 <lb n="70"/>der statt Schaffhausen</orgName>
 <pb facs="StadtASG_Missive_2444_9414.jpg" n="4"/>
-<lb n="71"/>Den frommen, fürsichtigen ehr=
+<lb n="71"/>Den frommen, fürsichtigen <unclear cert="medium" resp="#joint">ehr=</unclear>
 <lb n="72"/>samen unnd weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger=
-<lb n="73"/>meister unnd rath der stadt
+<lb n="73"/><unclear cert="medium" resp="#joint">meister</unclear> unnd rath der stadt
 <lb n="74"/>Sanct Gallen</orgName>. Unseren
-<lb n="75"/>inßunders guoten freünden,
-<lb n="76"/>unnd getreuwen lieben eydt=
-<lb n="77"/>gnoßen.
+<lb n="75"/>inßunders guoten <unclear cert="low" resp="#joint">freünden</unclear>,
+<lb n="76"/>unnd <unclear cert="medium" resp="#joint">getreuwen</unclear> lieben eydt=
+<lb n="77"/><unclear cert="low" resp="#joint">gnoßen</unclear>.
 </p>
         </body>
     </text>

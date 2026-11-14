@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1194</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Stadtschreiber Caspar Kyter zu St. Gallen über die Antwort des Herzogs von Savoyen auf das Getreideverbot. Sie verweisen auf eine Übersetzung, die in der nächsten Missive enthalten sein wird. Zudem geben sie die Entschuldigung der Eidgenossen von Bern weiter, die behaupten, zuerst das Getreideverbot verantwortet zu haben und den Handel nicht behindert zu haben.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1586-08-25" resp="#regest">den 25.t Augustj anno 1586</date></correspAction><correspAction type="received"><name resp="#regest">Caspar Kyter, Stadtschreiber zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -36,33 +36,33 @@
 <pb facs="StadtASG_Missive_1194_3929.jpg" n="1"/>
 <lb n="1"/>Unser fründtlich willig dienst, sambt was wir eren liebs unnd guots
 <lb n="2"/>vermögend zuovor from, fürsichtig ersam wyß, insunders guot fründt,
-<lb n="3"/>unnd getrüwen lieben Eydtgnossen was <persName resp="#ner">F. Dt. zuo Savoy</persName>, über unnser
-<lb n="4"/>der nülich orthen loblicher <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschaft</orgName> ab jüngst gehalltner <placeName resp="#ner">Badischer</placeName>
-<lb n="5"/>tagleystung ußgangen schryben ires edicts unnd verbott halber <unclear cert="low" resp="#joint">deß</unclear>
-<lb n="6"/><unclear cert="low" resp="#joint">getreidts</unclear> <unclear cert="low" resp="#joint">abfuerung</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">dero</unclear> landen gantwortet, das werdendt ir
-<lb n="7"/>uß biligender vertütschter abgeschrifft irer Dt. unns zuo komner Mis-
-<lb n="8"/>siff vernemen deßen wir üch <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">zuoberichten</unclear> nit <unclear cert="low" resp="#joint">unnderlaßen</unclear> <unclear cert="low" resp="#joint">söllen</unclear>
-<lb n="9"/><unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, unnd so dan wir glych angentz üwern unnd unnsern lieben
-<lb n="10"/><orgName ref="stadtasg-actors-514" cert="medium" resp="#ner">Eydtgnossen von Bern</orgName> (als denen s die sach beruert) sölcher ervolgten
-<lb n="11"/>antwurt ein copy zuokomen laßen, habent sich <unclear cert="low" resp="#joint">dieselben</unclear> unnser
-<lb n="12"/>lieb Eydtgnossen, über ir <unclear cert="low" resp="#joint">Dt</unclear>. <unclear cert="low" resp="#joint">darinne</unclear> <unclear cert="low" resp="#joint">unnder</unclear> <unclear cert="low" resp="#joint">anderm</unclear> angezogen
-<lb n="13"/>vermelden, das <unclear cert="low" resp="#joint">namlich</unclear> sy die erst gwesen, so <unclear cert="low" resp="#joint">s</unclear> <unclear cert="low" resp="#joint">getreydt</unclear> <unclear cert="low" resp="#joint">verpotte</unclear>
-<lb n="14"/>gegen unns verantwort, dergstalt, dz ir Dt: (als sy die von Bern
-<lb n="15"/>mit warheit bezygen mögind) deßwegen <unclear cert="low" resp="#joint">übel</unclear> <unclear cert="low" resp="#joint">berichtet</unclear> <unclear cert="low" resp="#joint">worden</unclear> <unclear cert="low" resp="#joint">dan</unclear>
-<lb n="16"/><unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">nie</unclear> <unclear cert="low" resp="#joint">zuogemuot</unclear> <unclear cert="low" resp="#joint">komen</unclear> <unclear cert="low" resp="#joint">hinder</unclear> <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">weltschen</unclear> lannden, <unclear cert="low" resp="#joint">iemandts</unclear>
-<lb n="17"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">gemeinen</unclear> <unclear cert="low" resp="#joint">kauff</unclear> des getreidts zuoversperren unntz uff die zit sy
-<lb n="18"/>warer bericht angelanget dz ir Dt: den veilen kauff in iren gebiethen
-<lb n="19"/>gentzlich abgestrickt unnd verbotten, dannocht syge ir gegen verbott
-<lb n="20"/>darüber nit ee gevolgt biß lanng darnach, als sy durch <unclear cert="low" resp="#joint">gnuchsame</unclear>
-<lb n="21"/>er kundigung in gwüße erfarung komen dz sölchs verbott inn
-<lb n="22"/>iren landen ußgangen. So habent sy ouch irer Dt. unnderthonnen
-<lb n="23"/>weder zinß zehenden noch frücht, so inen uff iren, hinder in dero
-<lb n="24"/><unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Bern</unclear> <unclear cert="low" resp="#joint">landen</unclear> <unclear cert="low" resp="#joint">gelegnen</unclear> <unclear cert="low" resp="#joint">guetern</unclear> <unclear cert="low" resp="#joint">gewachßen</unclear> unnd zuoghört kheins
-<lb n="25"/>wegs vorgehalten, sunders frygelaßen, die selben zuo <unclear cert="low" resp="#joint">verkouffen</unclear>
-<lb n="26"/>oder ab zefueren wie inen gfellig gsin. Wölcher ir unnsern lieben
-<lb n="27"/>Eydtgnossen von Bern entschuldigung unnd verantwurtung, wir üch hiebey
-<lb n="28"/>irem begeren nach zuo <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">glimpfs</unclear> <unclear cert="low" resp="#joint">verstendigen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, unnd
-<lb n="29"/>thuond üch darmit dem <unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Allmechtigen</unclear> <unclear cert="low" resp="#joint">bevelhen</unclear> <unclear cert="low" resp="#joint">dt</unclear> <date resp="#ner">den
+<lb n="3"/>unnd getrüwen lieben Eydtgnossen was <persName resp="#ner">F. <unclear cert="low" resp="#joint">Dt</unclear>. zuo <unclear cert="low" resp="#joint">Savoy</unclear></persName>, über unnser
+<lb n="4"/>der <unclear cert="low" resp="#joint">nülich</unclear> <unclear cert="low" resp="#joint">orthen</unclear> <unclear cert="low" resp="#joint">loblicher</unclear> <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschaft</unclear></orgName> ab <unclear cert="low" resp="#joint">jüngst</unclear> <unclear cert="low" resp="#joint">gehalltner</unclear> <placeName resp="#ner">Badischer</placeName>
+<lb n="5"/><unclear cert="low" resp="#joint">tagleystung</unclear> ußgangen schryben ires edicts unnd <unclear cert="low" resp="#joint">verbott</unclear> halber <unclear cert="low" resp="#joint">deß</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">getreidts</unclear> <unclear cert="low" resp="#joint">abfuerung</unclear> <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">dero</unclear> landen <unclear cert="low" resp="#joint">gantwortet</unclear>, das werdendt ir
+<lb n="7"/>uß biligender <unclear cert="low" resp="#joint">vertütschter</unclear> <unclear cert="low" resp="#joint">abgeschrifft</unclear> irer Dt. unns zuo komner Mis-
+<lb n="8"/>siff vernemen deßen wir üch hiemit <unclear cert="low" resp="#joint">zuoberichten</unclear> nit <unclear cert="medium" resp="#joint">unnderlaßen</unclear> söllen
+<lb n="9"/><unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, unnd so dan wir <unclear cert="low" resp="#joint">glych</unclear> <unclear cert="low" resp="#joint">angentz</unclear> <unclear cert="low" resp="#joint">üwern</unclear> unnd unnsern lieben
+<lb n="10"/><orgName ref="stadtasg-actors-514" cert="medium" resp="#ner">Eydtgnossen von Bern</orgName> (als denen <unclear cert="low" resp="#joint">s</unclear> die sach <unclear cert="low" resp="#joint">beruert</unclear>) <unclear cert="low" resp="#joint">sölcher</unclear> <unclear cert="low" resp="#joint">ervolgten</unclear>
+<lb n="11"/>antwurt ein copy <unclear cert="low" resp="#joint">zuokomen</unclear> laßen, habent sich <unclear cert="low" resp="#joint">dieselben</unclear> unnser
+<lb n="12"/>lieb Eydtgnossen, über ir <unclear cert="medium" resp="#joint">Dt</unclear>. <unclear cert="medium" resp="#joint">darinne</unclear> unnder <unclear cert="medium" resp="#joint">anderm</unclear> angezogen
+<lb n="13"/><unclear cert="low" resp="#joint">vermelden</unclear>, das <unclear cert="medium" resp="#joint">namlich</unclear> sy die <unclear cert="low" resp="#joint">erst</unclear> <unclear cert="low" resp="#joint">gwesen</unclear>, so <unclear cert="medium" resp="#joint">s</unclear> <unclear cert="medium" resp="#joint">getreydt</unclear> <unclear cert="medium" resp="#joint">verpotte</unclear>
+<lb n="14"/>gegen unns verantwort, <unclear cert="low" resp="#joint">dergstalt</unclear>, dz ir <unclear cert="low" resp="#joint">Dt</unclear>: (als sy die von Bern
+<lb n="15"/>mit warheit <unclear cert="low" resp="#joint">bezygen</unclear> mögind) deßwegen <unclear cert="medium" resp="#joint">übel</unclear> berichtet worden dan
+<lb n="16"/>inen nie <unclear cert="low" resp="#joint">zuogemuot</unclear> <unclear cert="low" resp="#joint">komen</unclear> hinder <unclear cert="medium" resp="#joint">iren</unclear> <unclear cert="medium" resp="#joint">weltschen</unclear> lannden, <unclear cert="medium" resp="#joint">iemandts</unclear>
+<lb n="17"/><unclear cert="medium" resp="#joint">den</unclear> gemeinen <unclear cert="medium" resp="#joint">kauff</unclear> des getreidts zuoversperren unntz uff die zit sy
+<lb n="18"/><unclear cert="low" resp="#joint">warer</unclear> bericht <unclear cert="low" resp="#joint">angelanget</unclear> dz ir <unclear cert="low" resp="#joint">Dt</unclear>: den veilen kauff in <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">gebiethen</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">gentzlich</unclear> <unclear cert="low" resp="#joint">abgestrickt</unclear> unnd verbotten, <unclear cert="low" resp="#joint">dannocht</unclear> syge ir gegen <unclear cert="low" resp="#joint">verbott</unclear>
+<lb n="20"/>darüber nit ee <unclear cert="low" resp="#joint">gevolgt</unclear> biß lanng darnach, als sy durch <unclear cert="low" resp="#joint">gnuchsame</unclear>
+<lb n="21"/>er kundigung in <unclear cert="low" resp="#joint">gwüße</unclear> <unclear cert="low" resp="#joint">erfarung</unclear> komen dz <unclear cert="low" resp="#joint">sölchs</unclear> <unclear cert="low" resp="#joint">verbott</unclear> inn
+<lb n="22"/><unclear cert="low" resp="#joint">iren</unclear> landen ußgangen. So habent sy ouch irer <unclear cert="low" resp="#joint">Dt</unclear>. <unclear cert="low" resp="#joint">unnderthonnen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">weder</unclear> <unclear cert="low" resp="#joint">zinß</unclear> <unclear cert="low" resp="#joint">zehenden</unclear> noch frücht, so inen uff iren, <unclear cert="low" resp="#joint">hinder</unclear> in dero
+<lb n="24"/>von Bern landen gelegnen <unclear cert="medium" resp="#joint">guetern</unclear> <unclear cert="medium" resp="#joint">gewachßen</unclear> unnd <unclear cert="low" resp="#joint">zuoghört</unclear> <unclear cert="low" resp="#joint">kheins</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">wegs</unclear> <unclear cert="low" resp="#joint">vorgehalten</unclear>, <unclear cert="low" resp="#joint">sunders</unclear> <unclear cert="low" resp="#joint">frygelaßen</unclear>, die selben zuo <unclear cert="medium" resp="#joint">verkouffen</unclear>
+<lb n="26"/>oder ab zefueren wie inen <unclear cert="low" resp="#joint">gfellig</unclear> gsin. Wölcher ir unnsern lieben
+<lb n="27"/>Eydtgnossen von Bern entschuldigung unnd <unclear cert="low" resp="#joint">verantwurtung</unclear>, wir üch hiebey
+<lb n="28"/>irem begeren nach zuo <unclear cert="low" resp="#joint">iren</unclear> glimpfs <unclear cert="medium" resp="#joint">verstendigen</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, unnd
+<lb n="29"/><unclear cert="low" resp="#joint">thuond</unclear> üch darmit dem schirm deß Allmechtigen <unclear cert="medium" resp="#joint">bevelhen</unclear> <unclear cert="medium" resp="#joint">dt</unclear> <date resp="#ner">den
 <lb n="30"/>.25.t Augustj anno 1586</date>.
 <lb n="31"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister unnd rath
 <lb n="32"/>der statt Zürich</orgName>.
@@ -70,8 +70,8 @@
 <lb n="33"/>Dem Erenvesten fromen fuer-
 <lb n="34"/>nemen unnd wysen <persName role="recipient" resp="#ner">Caspar
 <lb n="35"/>Kytter</persName> Statschryber zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct
-<lb n="36"/>Gallen</placeName> minem guenstigen Eeren
-<lb n="37"/>unnd wolferer lieben herren
+<lb n="36"/>Gallen</placeName> <unclear cert="low" resp="#joint">minem</unclear> <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="low" resp="#joint">Eeren</unclear>
+<lb n="37"/>unnd <unclear cert="low" resp="#joint">wolferer</unclear> lieben herren
 <lb n="38"/>und frund.
 <lb n="39"/><origPlace ref="stadtasg-places-38" cert="medium" resp="#ner">St. S. Gallen</origPlace>.
 </p>

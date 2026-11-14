@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1392</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,105 +20,105 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Nürnberg antworten auf das Gesuch der Ehefrau des Nürnberger Bürgers Jacob Mair. Sie erklären, dass vor ihrem Gericht jedem Gläubiger, der seine Forderung liquidiert und eine bessere Rechtsgrundlage nachweist, unparteiisch Recht geschehe, ohne Bevorzugung von Einheimischen. Sie bitten St. Gallen, Mair in seiner Klage gegen die Güter der Familie Rhiner (Sichmer) das gebührende Recht gewähren zu lassen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Nürnberg</name><date when="1601-05-15" resp="#regest">Datum den .15. Maij Anno 1601.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1392_4909.jpg" n="1"/>
-<lb n="1"/>Edle, <unclear cert="low" resp="#joint">Ehrnveste</unclear>, <unclear cert="low" resp="#joint">Vorsichtig</unclear>, Weise, Großgünstige
+<lb n="1"/>Edle, <unclear cert="low" resp="#joint">Ehrnveste</unclear>, <unclear cert="medium" resp="#joint">Vorsichtig</unclear>, Weise, Großgünstige
 <lb n="2"/>gepiettende Herren, E. E. unnd Herrligkt. soll und
 <lb n="3"/>kann ich supplicando inn <unclear cert="low" resp="#joint">underthänigkeit</unclear> <unclear cert="low" resp="#joint">zubehelligen</unclear>
 <lb n="4"/>nicht <unclear cert="low" resp="#joint">umbgehn</unclear>, unnd tragen E. E. unnd <unclear cert="low" resp="#joint">Herrligkt</unclear>. noch-
-<lb n="5"/>malen sonder <unclear cert="low" resp="#joint">zweiffell</unclear> <unclear cert="low" resp="#joint">guett</unclear> wissens, welch massen
-<lb n="6"/>mein haußwirth <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Mair</unclear></persName>, <unclear cert="low" resp="#joint">burg</unclear>. unnd han-
-<lb n="7"/><unclear cert="low" resp="#joint">delsmann</unclear> alhie, so dem <persName resp="#ner">Hanß Heinrichen Rhiner</persName>,
-<lb n="8"/><persName resp="#ner">Jacob Schachermann</persName> unnd <unclear cert="low" resp="#joint">mitverwantten</unclear> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St.
-<lb n="9"/>Gallen</placeName>, eine zeithero factorirt, durch sie seine
+<lb n="5"/>malen sonder <unclear cert="low" resp="#joint">zweiffell</unclear> <unclear cert="low" resp="#joint">guett</unclear> <unclear cert="medium" resp="#joint">wissens</unclear>, welch <unclear cert="low" resp="#joint">massen</unclear>
+<lb n="6"/>mein <unclear cert="medium" resp="#joint">haußwirth</unclear> <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Mair</unclear></persName>, <unclear cert="medium" resp="#joint">burg</unclear>. unnd <unclear cert="medium" resp="#joint">han</unclear>-
+<lb n="7"/><unclear cert="medium" resp="#joint">delsmann</unclear> alhie, so <unclear cert="medium" resp="#joint">dem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Heinrichen</unclear> <unclear cert="low" resp="#joint">Rhiner</unclear></persName>,
+<lb n="8"/><persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Schachermann</unclear></persName> unnd <unclear cert="low" resp="#joint">mitverwantten</unclear> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St.
+<lb n="9"/>Gallen</placeName>, eine <unclear cert="low" resp="#joint">zeithero</unclear> <unclear cert="medium" resp="#joint">factorirt</unclear>, durch sie <unclear cert="low" resp="#joint">seine</unclear>
 <lb n="10"/>committenten, so ohne langst außgetretten,
-<lb n="11"/>deren haab unnd <unclear cert="low" resp="#joint">guetter</unclear> zu besagtem <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St.
-<lb n="12"/>Gallen</placeName> ein curator gesezt) inn grossen unüber-
+<lb n="11"/>deren <unclear cert="low" resp="#joint">haab</unclear> unnd <unclear cert="low" resp="#joint">guetter</unclear> zu <unclear cert="medium" resp="#joint">besagtem</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St.
+<lb n="12"/>Gallen</placeName> <unclear cert="medium" resp="#joint">ein</unclear> curator <unclear cert="medium" resp="#joint">gesezt</unclear>) <unclear cert="medium" resp="#joint">inn</unclear> <unclear cert="medium" resp="#joint">grossen</unclear> unüber-
 <lb n="13"/>windtlich schaden <unclear cert="low" resp="#joint">gefürtt</unclear> worden,
-<lb n="14"/>Dieweile aber noch daselbst zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>
+<lb n="14"/>Dieweile aber noch <unclear cert="medium" resp="#joint">daselbst</unclear> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>
 <lb n="15"/>sovill vorhand sein solle, das ermelter
-<lb n="16"/>mein haußwirth seines schadens etlich massen
+<lb n="16"/>mein <unclear cert="medium" resp="#joint">haußwirth</unclear> <unclear cert="medium" resp="#joint">seines</unclear> schadens etlich <unclear cert="low" resp="#joint">massen</unclear>
 <lb n="17"/>ergözt werden <unclear cert="low" resp="#joint">kan</unclear>, zu welchem effect und
-<lb n="18"/>endt er zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> seine action wider
+<lb n="18"/>endt er zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> <unclear cert="medium" resp="#joint">seine</unclear> action wider
 <lb n="19"/>die vorhandene <unclear cert="low" resp="#joint">wehrende</unclear> <unclear cert="low" resp="#joint">Rhinerische</unclear> haab
 <lb n="20"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">guetter</unclear> angestelt, der <unclear cert="low" resp="#joint">gefasten</unclear> hofnung
-<lb n="21"/>inn der <unclear cert="medium" resp="#joint">prlation</unclear> vor den andern <unclear cert="low" resp="#joint">Rhinerischen</unclear>
-<lb n="22"/>creditoren seinen außstandt zuerlangen, unnd
-<lb n="23"/>es an <unclear cert="low" resp="#joint">jezo</unclear> allein darauff beruhett, das vor
-<lb n="24"/>E. E. unnd Herrligkeit <unclear cert="low" resp="#joint">obgedachter</unclear> mein hauß-
-<lb n="25"/>wirth wie dann ime solchs zuthun von einem
-<lb n="26"/>E. Rhatt der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> ufferlegt)
-<lb n="27"/>gnugsamen <unclear cert="medium" resp="#joint">schein</unclear> <unclear cert="low" resp="#joint">aufflegt</unclear>, das dieselbe an
+<lb n="21"/>inn der <unclear cert="low" resp="#joint">prlation</unclear> vor den andern <unclear cert="low" resp="#joint">Rhinerischen</unclear>
+<lb n="22"/>creditoren seinen außstandt <unclear cert="medium" resp="#joint">zuerlangen</unclear>, unnd
+<lb n="23"/>es an <unclear cert="low" resp="#joint">jezo</unclear> allein darauff <unclear cert="low" resp="#joint">beruhett</unclear>, das <unclear cert="low" resp="#joint">vor</unclear>
+<lb n="24"/>E. E. unnd <unclear cert="medium" resp="#joint">Herrligkeit</unclear> <unclear cert="low" resp="#joint">obgedachter</unclear> mein hauß-
+<lb n="25"/><unclear cert="medium" resp="#joint">wirth</unclear> wie dann ime solchs zuthun von einem
+<lb n="26"/>E. Rhatt der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> <unclear cert="medium" resp="#joint">ufferlegt</unclear>)
+<lb n="27"/><unclear cert="medium" resp="#joint">gnugsamen</unclear> schein <unclear cert="low" resp="#joint">aufflegt</unclear>, das dieselbe an
 <lb n="28"/>ihro
 <pb facs="StadtASG_Missive_1392_4910.jpg" n="2"/>
-<lb n="29"/><unclear cert="medium" resp="#joint">dero</unclear> stattgericht <unclear cert="medium" resp="#joint">ainen</unclear> <unclear cert="low" resp="#joint">ieden</unclear>, ohne ansehen,
-<lb n="30"/>er <unclear cert="low" resp="#joint">inheimisch</unclear> od <unclear cert="low" resp="#joint">außlendisch</unclear>, alhie burger, inwohner
+<lb n="29"/>dero stattgericht ainen <unclear cert="low" resp="#joint">ieden</unclear>, ohne ansehen,
+<lb n="30"/>er <unclear cert="low" resp="#joint">inheimisch</unclear> <unclear cert="medium" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">außlendisch</unclear>, alhie burger, inwohner
 <lb n="31"/>od frembdt sei, dr sein <unclear cert="low" resp="#joint">bessere</unclear> gerechtigkeit
 <lb n="32"/>docirt unnd erweisen, unpartheisches recht <unclear cert="low" resp="#joint">gedeien</unclear>
-<lb n="33"/>lassen, auch deßen sich ercleren, daß im fall ein
-<lb n="34"/>burger zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> inn einer curation alhie
+<lb n="33"/>lassen, auch <unclear cert="medium" resp="#joint">deßen</unclear> sich ercleren, daß im fall ein
+<lb n="34"/><unclear cert="medium" resp="#joint">burger</unclear> zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName> inn einer curation alhie
 <lb n="35"/><unclear cert="low" resp="#joint">kunfftig</unclear> klagen <unclear cert="low" resp="#joint">wurde</unclear>, ime, so fern er seine <unclear cert="low" resp="#joint">schuldt</unclear>
-<lb n="36"/>der gebühr liquidiren, vor einem burger <unclear cert="low" resp="#joint">ehr</unclear> <unclear cert="low" resp="#joint">bessere</unclear>
-<lb n="37"/>gerechtigkeit beibringen <unclear cert="low" resp="#joint">wurde</unclear>, vor dero <unclear cert="low" resp="#joint">burnch</unclear>
-<lb n="38"/>verholffen werden <unclear cert="medium" resp="#joint">soll</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">uff</unclear> solchen fall
-<lb n="39"/><unclear cert="low" resp="#joint">ehrngl</unclear>. <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">erb</unclear>. rhatt der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
-<lb n="40"/>meinem haußwirth (so vor <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">burgen</unclear> be=
-<lb n="41"/>rechtigt) dergleichen justitiam widfahren zu=
-<lb n="42"/>lassen <unclear cert="low" resp="#joint">woll</unclear> gemeinet,
+<lb n="36"/>der <unclear cert="medium" resp="#joint">gebühr</unclear> liquidiren, <unclear cert="medium" resp="#joint">vor</unclear> einem <unclear cert="medium" resp="#joint">burger</unclear> <unclear cert="low" resp="#joint">ehr</unclear> <unclear cert="low" resp="#joint">bessere</unclear>
+<lb n="37"/>gerechtigkeit <unclear cert="medium" resp="#joint">beibringen</unclear> <unclear cert="low" resp="#joint">wurde</unclear>, vor dero <unclear cert="low" resp="#joint">burnch</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">verholffen</unclear> werden soll, daß uff solchen fall
+<lb n="39"/><unclear cert="medium" resp="#joint">ehrngl</unclear>. ein <unclear cert="low" resp="#joint">erb</unclear>. rhatt der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>
+<lb n="40"/>meinem <unclear cert="medium" resp="#joint">haußwirth</unclear> (so vor <unclear cert="medium" resp="#joint">iren</unclear> <unclear cert="low" resp="#joint">burgen</unclear> be=
+<lb n="41"/>rechtigt) dergleichen justitiam <unclear cert="low" resp="#joint">widfahren</unclear> zu=
+<lb n="42"/>lassen <unclear cert="medium" resp="#joint">woll</unclear> <unclear cert="medium" resp="#joint">gemeinet</unclear>,
 <lb n="43"/>Demnach gelanget an E. <unclear cert="low" resp="#joint">V</unclear>. unnd <unclear cert="low" resp="#joint">Herrligkh</unclear>. mein
-<lb n="44"/><unclear cert="low" resp="#joint">underthenig</unclear> bitt, meinem haußwirth dero
-<lb n="45"/><unclear cert="low" resp="#joint">burgern</unclear> <unclear cert="low" resp="#joint">hierinnen</unclear> mit einer <unclear cert="low" resp="#joint">vorshrifft</unclear>
+<lb n="44"/><unclear cert="medium" resp="#joint">underthenig</unclear> bitt, meinem haußwirth dero
+<lb n="45"/><unclear cert="medium" resp="#joint">burgern</unclear> <unclear cert="medium" resp="#joint">hierinnen</unclear> mit einer <unclear cert="low" resp="#joint">vorshrifft</unclear>
 <lb n="46"/>inn so <unclear cert="low" resp="#joint">offenbar</unclear> billichen dingen, <unclear cert="low" resp="#joint">gunstig</unclear> zuver=
-<lb n="47"/>helffen, <unclear cert="medium" resp="#joint">daß</unclear> wirdt gegen E. <unclear cert="low" resp="#joint">V</unclear>. <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Herrligkh</unclear>.
-<lb n="48"/>er inn schuldigem gehorsam zuerkennen <unclear cert="low" resp="#joint">ied=</unclear>
-<lb n="49"/>zeit geflißen sein, E. <unclear cert="low" resp="#joint">V</unclear>. unnd <unclear cert="low" resp="#joint">Herrligkh</unclear>. zu
+<lb n="47"/>helffen, daß <unclear cert="medium" resp="#joint">wirdt</unclear> gegen E. <unclear cert="low" resp="#joint">V</unclear>. und <unclear cert="low" resp="#joint">Herrligkh</unclear>.
+<lb n="48"/>er inn schuldigem gehorsam zuerkennen <unclear cert="medium" resp="#joint">ied=</unclear>
+<lb n="49"/>zeit <unclear cert="medium" resp="#joint">geflißen</unclear> sein, E. <unclear cert="low" resp="#joint">V</unclear>. unnd <unclear cert="low" resp="#joint">Herrligkh</unclear>. zu
 <lb n="50"/><unclear cert="low" resp="#joint">gluckhseligem</unclear> regiment dem Allmechtigen be=
-<lb n="51"/><unclear cert="medium" resp="#joint">fhelendt</unclear>,
+<lb n="51"/><unclear cert="low" resp="#joint">fhelendt</unclear>,
 <lb n="52"/>E. <unclear cert="low" resp="#joint">V</unclear>. unnd <unclear cert="low" resp="#joint">Herrligkh</unclear>.
 <lb n="53"/><unclear cert="low" resp="#joint">undthenige</unclear>
 <lb n="54"/><unclear cert="low" resp="#joint">mitburgerin</unclear>,
 <lb n="55"/><persName resp="#ner">Dorothea</persName>, <persName resp="#ner">Jacob
-<lb n="56"/>Mairs</persName> <unclear cert="low" resp="#joint">handelßmans</unclear>
+<lb n="56"/><unclear cert="medium" resp="#joint">Mairs</unclear></persName> <unclear cert="low" resp="#joint">handelßmans</unclear>
 <lb n="57"/>alhie <unclear cert="low" resp="#joint">ehewirthin</unclear>,
 <pb facs="StadtASG_Missive_1392_4911.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1392_4912.jpg" n="4"/>
 <pb facs="StadtASG_Missive_1392_4913.jpg" n="5"/>
-<lb n="58"/>Unser freundtlich willig dienst Euer Fuersichtigkait mit vleiß voran berait, Frommen, Fuersichtigen, Ersamen und Weißen, besonder lieben und gueten Freundt,
-<lb n="59"/>Was Ursachen halben <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">Burger</unclear> <persName resp="#ner">Jacoben Mairle</persName> haubtschreiben an jetho ab selben ort Ehenwerts umb dieße unsere Intercessionschrifft an
-<lb n="60"/>E. Ft. angelangt, haben dieselben auß dem einschluß mit mehrerm freundtlich <unclear cert="low" resp="#joint">zuvernemmen</unclear>. <unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">furgeben</unclear> <unclear cert="low" resp="#joint">wendt</unclear> hat, das
-<lb n="61"/>die <unclear cert="low" resp="#joint">Rechtliche</unclear> <unclear cert="low" resp="#joint">hilf</unclear> <unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Ehenwert</unclear> <unclear cert="low" resp="#joint">sachen</unclear> bey E. Ft. allain an dem erwindet, das Er bey unß gebuehrender schein ußbringe, was an unserm
-<lb n="62"/>Stattgericht alhie <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">Jeden</unclear>, <unclear cert="low" resp="#joint">ohne</unclear> ansehen der person, es sey ain Ynheimbischer oder außlaendischer, Burger Ynnwohner oder Frembder, der sein beßere
-<lb n="63"/>gerechtigkait docirt und erweißt, Unpartheysch Recht mitgethailt werde, wir unß auch <unclear cert="low" resp="#joint">dahero</unclear> <unclear cert="low" resp="#joint">gegen</unclear> E. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">ercleren</unclear>, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">Jmfall</unclear> E. <unclear cert="low" resp="#joint">Ft</unclear>. Burger
-<lb n="64"/>einer Inn ainer Curation sachen kunfftig alhie clagen wurde, demselben zuevorn er sein schuldt der gebuer nach Liquidiren, und vor ainem
-<lb n="65"/>Burger ein beßere gerechtigkait beybringen wurde, vor unsern Burgern verholffen werden solle, daß uff solchen fall E. Ft. Jne der Sychli-
-<lb n="66"/>merin Ehewirth, derselben iustitiam vor Jren Burgern auch gedeyen zulaßen uhrpietig, So konnen E. Ft. wir freundtlich nicht pergen,
-<lb n="67"/>daß bey unß und unserm Gerichten alhie so wol Inn Curation als andren sachen Je und allzeit gebreuchlich herkommen, und <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">anderst</unclear> <unclear cert="low" resp="#joint">nicht</unclear>
-<lb n="68"/>gehalten wirdt, Dann welcher Creditor sein schuldtforderung der gebuer nach Liquidirt, und ain beßere gerechtikait vor ainem andern
-<lb n="69"/>docirt und dargethan hat, das demselben alweeg vermoeege Rechts Jedesmahls vor andern, die seyen geseeßen wer sie wollen, zu dem seinen
-<lb n="70"/>verholfen, und hierjnn unsere Burger und Ynnwohner, den Frembden und außlaendern gar nicht praferirt oder vorgezogen werden, deß sich
-<lb n="71"/>sich dann E. Ft. Burger <unclear cert="low" resp="#joint">Inkunfftigen</unclear> <unclear cert="low" resp="#joint">begebenden</unclear> <unclear cert="low" resp="#joint">fellen</unclear>, <unclear cert="low" resp="#joint">ebner</unclear> <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">unzweiffenlich</unclear> <unclear cert="low" resp="#joint">zuversehen</unclear> haben sollen. Und bitten hieruff
-<lb n="72"/>E. Ft. freundtlich, die wollen obgedachtem unserm Burger <persName resp="#ner">Jacob Mairne</persName>, Inn seiner wider der Sichmerischen haab und gueter verordneten Curatorem
-<lb n="73"/>angestelten action und forderung, gebuhrlich Rechtens genißen laßen, und Jhme zu dem er befuegt sein wirdt, ordenliche hilff mitthailen,
-<lb n="74"/>daß seind dem Rechten und billigkait gemeß, seien umb E. Ft. und die Jhrigen wir Inn gleichem zuverschulden willig, auch denselben ohne das
-<lb n="75"/>zu angenehmen diensten wolgenaigt, Datum den .<origDate when="1601-05-15" resp="#ner">15. Maij Anno 1601</origDate>.
-<lb n="76"/><orgName ref="stadtasg-actors-571" cert="medium" role="issuer" resp="#ner">Burgermaister und Rathe
-<lb n="77"/>zu Nuermberg</orgName>.
+<lb n="58"/>Unser freundtlich willig dienst <unclear cert="low" resp="#joint">Euer</unclear> <unclear cert="low" resp="#joint">Fuersichtigkait</unclear> mit vleiß voran berait, Frommen, <unclear cert="low" resp="#joint">Fuersichtigen</unclear>, Ersamen und Weißen, besonder lieben und <unclear cert="low" resp="#joint">gueten</unclear> Freundt,
+<lb n="59"/>Was <unclear cert="low" resp="#joint">Ursachen</unclear> halben wir von <unclear cert="medium" resp="#joint">unserm</unclear> <unclear cert="medium" resp="#joint">Burger</unclear> <persName resp="#ner">Jacoben <unclear cert="low" resp="#joint">Mairle</unclear></persName> <unclear cert="low" resp="#joint">haubtschreiben</unclear> an <unclear cert="low" resp="#joint">jetho</unclear> <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">selben</unclear> <unclear cert="low" resp="#joint">ort</unclear> <unclear cert="low" resp="#joint">Ehenwerts</unclear> umb dieße unsere Intercessionschrifft an
+<lb n="60"/>E. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">angelangt</unclear>, haben dieselben auß dem <unclear cert="low" resp="#joint">einschluß</unclear> mit mehrerm freundtlich <unclear cert="low" resp="#joint">zuvernemmen</unclear>. <unclear cert="low" resp="#joint">Wann</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">furgeben</unclear> <unclear cert="low" resp="#joint">wendt</unclear> hat, das
+<lb n="61"/>die <unclear cert="medium" resp="#joint">Rechtliche</unclear> <unclear cert="medium" resp="#joint">hilf</unclear> <unclear cert="medium" resp="#joint">In</unclear> <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="medium" resp="#joint">Ehenwert</unclear> <unclear cert="medium" resp="#joint">sachen</unclear> bey E. <unclear cert="low" resp="#joint">Ft</unclear>. allain an dem <unclear cert="low" resp="#joint">erwindet</unclear>, das Er bey unß <unclear cert="low" resp="#joint">gebuehrender</unclear> <unclear cert="low" resp="#joint">schein</unclear> <unclear cert="low" resp="#joint">ußbringe</unclear>, was an unserm
+<lb n="62"/><unclear cert="low" resp="#joint">Stattgericht</unclear> alhie <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">Jeden</unclear>, <unclear cert="low" resp="#joint">ohne</unclear> ansehen der person, es sey ain <unclear cert="low" resp="#joint">Ynheimbischer</unclear> oder <unclear cert="low" resp="#joint">außlaendischer</unclear>, Burger Ynnwohner oder Frembder, der sein <unclear cert="low" resp="#joint">beßere</unclear>
+<lb n="63"/><unclear cert="low" resp="#joint">gerechtigkait</unclear> docirt und <unclear cert="low" resp="#joint">erweißt</unclear>, <unclear cert="low" resp="#joint">Unpartheysch</unclear> Recht <unclear cert="low" resp="#joint">mitgethailt</unclear> werde, wir unß auch <unclear cert="low" resp="#joint">dahero</unclear> <unclear cert="low" resp="#joint">gegen</unclear> E. <unclear cert="medium" resp="#joint">Ft</unclear>. <unclear cert="medium" resp="#joint">ercleren</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">Jmfall</unclear> E. <unclear cert="medium" resp="#joint">Ft</unclear>. Burger
+<lb n="64"/>einer Inn ainer Curation sachen <unclear cert="low" resp="#joint">kunfftig</unclear> alhie clagen <unclear cert="low" resp="#joint">wurde</unclear>, demselben <unclear cert="low" resp="#joint">zuevorn</unclear> er sein schuldt der gebuer nach Liquidiren, und vor ainem
+<lb n="65"/>Burger ein beßere gerechtigkait beybringen wurde, vor unsern Burgern verholffen werden solle, daß <unclear cert="low" resp="#joint">uff</unclear> solchen fall E. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">Jne</unclear> der <unclear cert="low" resp="#joint">Sychli</unclear>-
+<lb n="66"/><unclear cert="low" resp="#joint">merin</unclear> <unclear cert="low" resp="#joint">Ehewirth</unclear>, <unclear cert="low" resp="#joint">derselben</unclear> iustitiam vor Jren Burgern auch <unclear cert="low" resp="#joint">gedeyen</unclear> <unclear cert="low" resp="#joint">zulaßen</unclear> <unclear cert="low" resp="#joint">uhrpietig</unclear>, So <unclear cert="low" resp="#joint">konnen</unclear> E. <unclear cert="low" resp="#joint">Ft</unclear>. wir freundtlich nicht <unclear cert="low" resp="#joint">pergen</unclear>,
+<lb n="67"/>daß bey unß und <unclear cert="low" resp="#joint">unserm</unclear> Gerichten alhie so wol Inn Curation als andren sachen <unclear cert="low" resp="#joint">Je</unclear> und allzeit <unclear cert="low" resp="#joint">gebreuchlich</unclear> herkommen, und <unclear cert="medium" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">anderst</unclear> nicht
+<lb n="68"/>gehalten wirdt, Dann welcher Creditor sein schuldtforderung der gebuer nach Liquidirt, und <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">beßere</unclear> <unclear cert="low" resp="#joint">gerechtikait</unclear> vor ainem andern
+<lb n="69"/>docirt und <unclear cert="low" resp="#joint">dargethan</unclear> hat, das demselben <unclear cert="low" resp="#joint">alweeg</unclear> <unclear cert="low" resp="#joint">vermoeege</unclear> <unclear cert="low" resp="#joint">Rechts</unclear> <unclear cert="low" resp="#joint">Jedesmahls</unclear> vor andern, die <unclear cert="low" resp="#joint">seyen</unclear> <unclear cert="low" resp="#joint">geseeßen</unclear> wer sie wollen, zu dem seinen
+<lb n="70"/><unclear cert="low" resp="#joint">verholfen</unclear>, und <unclear cert="low" resp="#joint">hierjnn</unclear> unsere Burger und Ynnwohner, den Frembden und <unclear cert="low" resp="#joint">außlaendern</unclear> gar nicht <unclear cert="low" resp="#joint">praferirt</unclear> oder vorgezogen werden, deß sich
+<lb n="71"/>sich dann E. <unclear cert="low" resp="#joint">Ft</unclear>. Burger <unclear cert="low" resp="#joint">Inkunfftigen</unclear> <unclear cert="low" resp="#joint">begebenden</unclear> <unclear cert="low" resp="#joint">fellen</unclear>, <unclear cert="low" resp="#joint">ebner</unclear> <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">unzweiffenlich</unclear> <unclear cert="low" resp="#joint">zuversehen</unclear> haben sollen. Und bitten hieruff
+<lb n="72"/>E. <unclear cert="low" resp="#joint">Ft</unclear>. freundtlich, die wollen obgedachtem unserm Burger <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Mairne</unclear></persName>, Inn seiner wider der <unclear cert="low" resp="#joint">Sichmerischen</unclear> haab und <unclear cert="low" resp="#joint">gueter</unclear> verordneten Curatorem
+<lb n="73"/>angestelten action und forderung, gebuhrlich Rechtens genißen laßen, und <unclear cert="low" resp="#joint">Jhme</unclear> zu dem er befuegt sein <unclear cert="low" resp="#joint">wirdt</unclear>, <unclear cert="low" resp="#joint">ordenliche</unclear> <unclear cert="low" resp="#joint">hilff</unclear> <unclear cert="low" resp="#joint">mitthailen</unclear>,
+<lb n="74"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">seind</unclear> <unclear cert="low" resp="#joint">dem</unclear> Rechten und billigkait gemeß, seien umb E. <unclear cert="low" resp="#joint">Ft</unclear>. und die Jhrigen wir Inn gleichem <unclear cert="low" resp="#joint">zuverschulden</unclear> willig, auch denselben ohne das
+<lb n="75"/>zu <unclear cert="low" resp="#joint">angenehmen</unclear> diensten <unclear cert="low" resp="#joint">wolgenaigt</unclear>, Datum den .<origDate when="1601-05-15" resp="#ner">15. Maij Anno 1601</origDate>.
+<lb n="76"/><orgName ref="stadtasg-actors-571" cert="medium" role="issuer" resp="#ner">Burgermaister und <unclear cert="low" resp="#joint">Rathe</unclear>
+<lb n="77"/>zu <unclear cert="low" resp="#joint">Nuermberg</unclear></orgName>.
 <pb facs="StadtASG_Missive_1392_4914.jpg" n="6"/>
 <lb n="78"/>Den frommen <unclear cert="low" resp="#joint">fursichtigen</unclear> ersamen und weisen
-<lb n="79"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und Rathe zu Sant Gallen</orgName>,
-<lb n="80"/>unsern besondern <unclear cert="low" resp="#joint">gueten</unclear> freunden,
+<lb n="79"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und Rathe <unclear cert="medium" resp="#joint">zu</unclear> Sant Gallen</orgName>,
+<lb n="80"/>unsern besondern <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">freunden</unclear>,
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1623</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Bürgermeister zu Buchenbach bitten um eine Brandsteuer für den Bürger Hans Nester, dessen Haus am 8. August durch einen Brand zerstört wurde. Sie weisen darauf hin, dass der Rat und die Gemeinde die Stadt in dieser Notlage unterstützen werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Bürgermeister zu Buchenbach</name><date when="1608" cert="low" resp="#regest">25 tagh septembres im jar nach Christi geburt tausend sechshundert undt acht</date></correspAction><correspAction type="received"><name resp="#regest">alle edlen und unedlen, geistlichen und weltlichen Herren und Leute</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,9 +35,9 @@
 <p>
 <pb facs="StadtASG_Missive_1623_5903.jpg" n="1"/>
 <lb n="1"/>Unsern freuntlichen <unclear cert="low" resp="#joint">gruesch</unclear> und <unclear cert="low" resp="#joint">wijligen</unclear>
-<lb n="2"/>dinst zu <unclear cert="medium" resp="#joint">for</unclear> an allen <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">jden</unclear> <unclear cert="low" resp="#joint">sije</unclear> <unclear cert="low" resp="#joint">sint</unclear> <unclear cert="low" resp="#joint">edell</unclear>
-<lb n="3"/>oder unedell geistlich oder weltlich waß <unclear cert="low" resp="#joint">wirten</unclear> oder
-<lb n="4"/>stauß <unclear cert="medium" resp="#joint">sij</unclear> sein <unclear cert="medium" resp="#joint">mogen</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">dun</unclear> mir <unclear cert="medium" resp="#joint">zuwissen</unclear> <unclear cert="medium" resp="#joint">wje</unclear>
+<lb n="2"/><unclear cert="medium" resp="#joint">dinst</unclear> <unclear cert="medium" resp="#joint">zu</unclear> for an allen undt <unclear cert="low" resp="#joint">jden</unclear> <unclear cert="low" resp="#joint">sije</unclear> <unclear cert="low" resp="#joint">sint</unclear> edell
+<lb n="3"/>oder <unclear cert="medium" resp="#joint">unedell</unclear> <unclear cert="medium" resp="#joint">geistlich</unclear> oder weltlich waß <unclear cert="medium" resp="#joint">wirten</unclear> oder
+<lb n="4"/><unclear cert="medium" resp="#joint">stauß</unclear> <unclear cert="low" resp="#joint">sij</unclear> sein <unclear cert="medium" resp="#joint">mogen</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">dun</unclear> mir <unclear cert="medium" resp="#joint">zuwissen</unclear> <unclear cert="medium" resp="#joint">wje</unclear>
 <lb n="5"/><unclear cert="medium" resp="#joint">beij</unclear> <unclear cert="medium" resp="#joint">unß</unclear> zu <placeName resp="#ner"><unclear cert="medium" resp="#joint">Bouckenburck</unclear></placeName> <unclear cert="medium" resp="#joint">gar</unclear> ein <unclear cert="low" resp="#joint">krosser</unclear> schatt geschen
 <lb n="6"/>ist durch <unclear cert="low" resp="#joint">feuwreß</unclear> nott den <date resp="#ner">8 <unclear cert="low" resp="#joint">dagh</unclear> augustij</date> sint
 <lb n="7"/><unclear cert="medium" resp="#joint">fer</unclear> <unclear cert="medium" resp="#joint">brent</unclear> 26 <unclear cert="low" resp="#joint">firsten</unclear> mit samt <unclear cert="medium" resp="#joint">allen</unclear> waß dar in ist
@@ -53,34 +53,34 @@
 <lb n="17"/>alleß ferbrent ist in unserem namen auß gesent <unclear cert="medium" resp="#joint">biten</unclear>
 <lb n="18"/>der halben alle undt <unclear cert="low" resp="#joint">jde</unclear> <unclear cert="low" resp="#joint">edell</unclear> oder <unclear cert="low" resp="#joint">unedel</unclear> <unclear cert="low" resp="#joint">gestlich</unclear>
 <lb n="19"/>oder weltlich waß <unclear cert="low" resp="#joint">wirten</unclear> oder <unclear cert="low" resp="#joint">stanß</unclear> sie sein <unclear cert="low" resp="#joint">megten</unclear>
-<lb n="20"/>ist unser freuntlich <unclear cert="low" resp="#joint">biten</unclear> undt begeren sie <unclear cert="medium" resp="#joint">wollten</unclear> ein
+<lb n="20"/>ist unser freuntlich <unclear cert="low" resp="#joint">biten</unclear> undt begeren <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">wollten</unclear> ein
 <lb n="21"/>werck der <unclear cert="medium" resp="#joint">barmhertzig</unclear> <unclear cert="medium" resp="#joint">keit</unclear> <unclear cert="medium" resp="#joint">beweijssen</unclear> undt dissem
-<lb n="22"/><persName resp="#ner">Hanß Nester</persName> in unserem namen ein <unclear cert="low" resp="#joint">almuessen</unclear> undt
-<lb n="23"/>brant <unclear cert="low" resp="#joint">steuwer</unclear> mit <unclear cert="low" resp="#joint">deillen</unclear> <unclear cert="low" resp="#joint">solgeß</unclear> wollen mir
-<lb n="24"/>allß ein <unclear cert="low" resp="#joint">ersamer</unclear> rott mit samt ener gemeine
-<lb n="25"/>statt noch gelegenheit <unclear cert="medium" resp="#joint">fer</unclear> <unclear cert="medium" resp="#joint">dinen</unclear> undt <unclear cert="low" resp="#joint">beschulen</unclear>
-<lb n="26"/><unclear cert="low" resp="#joint">solgeß</unclear> zu warer urkunt haben mir beijte allß
+<lb n="22"/><persName resp="#ner">Hanß Nester</persName> in <unclear cert="medium" resp="#joint">unserem</unclear> namen ein <unclear cert="low" resp="#joint">almuessen</unclear> undt
+<lb n="23"/>brant <unclear cert="low" resp="#joint">steuwer</unclear> mit <unclear cert="low" resp="#joint">deillen</unclear> <unclear cert="medium" resp="#joint">solgeß</unclear> wollen mir
+<lb n="24"/>allß ein <unclear cert="low" resp="#joint">ersamer</unclear> rott mit <unclear cert="medium" resp="#joint">samt</unclear> <unclear cert="medium" resp="#joint">ener</unclear> <unclear cert="medium" resp="#joint">gemeine</unclear>
+<lb n="25"/>statt noch gelegenheit <unclear cert="low" resp="#joint">fer</unclear> dinen undt <unclear cert="low" resp="#joint">beschulen</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">solgeß</unclear> <unclear cert="medium" resp="#joint">zu</unclear> warer urkunt haben <unclear cert="medium" resp="#joint">mir</unclear> <unclear cert="medium" resp="#joint">beijte</unclear> allß
 <pb facs="StadtASG_Missive_1623_5904.jpg" n="2"/>
-<lb n="27"/>allß <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">schultest</unclear> undt <unclear cert="low" resp="#joint">bürremester</unclear> unsern
-<lb n="28"/><unclear cert="medium" resp="#joint">gnetigen</unclear> <unclear cert="medium" resp="#joint">hern</unclear> undt <unclear cert="low" resp="#joint">oberfockt</unclear> mit namen <persName resp="#ner"><unclear cert="medium" resp="#joint">Hanß</unclear>
-<lb n="29"/><unclear cert="medium" resp="#joint">Jerg</unclear> Rudolff Schwerter</persName> <unclear cert="low" resp="#joint">oberfockt</unclear> <unclear cert="low" resp="#joint">allhie</unclear> <unclear cert="low" resp="#joint">zu</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Bück=</unclear>
-<lb n="30"/><unclear cert="low" resp="#joint">enburck</unclear></placeName> <unclear cert="low" resp="#joint">ersucht</unclear> undt angesprochen <unclear cert="low" resp="#joint">solgeß</unclear> <unclear cert="medium" resp="#joint">zu</unclear>
-<lb n="31"/><unclear cert="low" resp="#joint">warer</unclear> <unclear cert="low" resp="#joint">urkunt</unclear> undt <unclear cert="low" resp="#joint">segerheyt</unclear> mit seinem secret
+<lb n="27"/>allß <unclear cert="low" resp="#joint">hab</unclear> <unclear cert="low" resp="#joint">schultest</unclear> undt <unclear cert="medium" resp="#joint">bürremester</unclear> unsern
+<lb n="28"/><unclear cert="low" resp="#joint">gnetigen</unclear> hern undt <unclear cert="low" resp="#joint">oberfockt</unclear> mit namen <persName resp="#ner">Hanß
+<lb n="29"/>Jerg Rudolff Schwerter</persName> <unclear cert="low" resp="#joint">oberfockt</unclear> allhie <unclear cert="low" resp="#joint">zu</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Bück=</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">enburck</unclear></placeName> <unclear cert="low" resp="#joint">ersucht</unclear> undt angesprochen <unclear cert="low" resp="#joint">solgeß</unclear> zu
+<lb n="31"/><unclear cert="low" resp="#joint">warer</unclear> <unclear cert="medium" resp="#joint">urkunt</unclear> undt <unclear cert="low" resp="#joint">segerheyt</unclear> mit <unclear cert="medium" resp="#joint">seinem</unclear> <unclear cert="medium" resp="#joint">secret</unclear>
 <lb n="32"/>undt <unclear cert="low" resp="#joint">jnsigell</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">fürsigeren</unclear> <unclear cert="low" resp="#joint">welges</unclear> er <unclear cert="low" resp="#joint">sigh</unclear> <unclear cert="medium" resp="#joint">gut</unclear>
-<lb n="33"/>willig erzeygt hatt undt <unclear cert="low" resp="#joint">solge</unclear> <unclear cert="low" resp="#joint">urkunt</unclear> mit seinem
-<lb n="34"/>eigen secret undt <unclear cert="low" resp="#joint">jnsigel</unclear> <unclear cert="low" resp="#joint">ferwart</unclear> <unclear cert="low" resp="#joint">dog</unclear> <unclear cert="low" resp="#joint">jme</unclear> und
-<lb n="35"/>seine erben one <unclear cert="medium" resp="#joint">schaten</unclear> <unclear cert="low" resp="#joint">aug</unclear> mit seiner hant unter
-<lb n="36"/>schriben <unclear cert="low" resp="#joint">solgeß</unclear> beschen <origDate resp="#ner">25 tag septemper <unclear cert="medium" resp="#joint">jm</unclear> jar
+<lb n="33"/>willig <unclear cert="medium" resp="#joint">erzeygt</unclear> hatt undt <unclear cert="low" resp="#joint">solge</unclear> <unclear cert="medium" resp="#joint">urkunt</unclear> mit <unclear cert="medium" resp="#joint">seinem</unclear>
+<lb n="34"/>eigen <unclear cert="medium" resp="#joint">secret</unclear> undt <unclear cert="low" resp="#joint">jnsigel</unclear> <unclear cert="low" resp="#joint">ferwart</unclear> <unclear cert="low" resp="#joint">dog</unclear> <unclear cert="low" resp="#joint">jme</unclear> und
+<lb n="35"/><unclear cert="medium" resp="#joint">seine</unclear> erben one schaten <unclear cert="low" resp="#joint">aug</unclear> mit seiner hant <unclear cert="medium" resp="#joint">unter</unclear>
+<lb n="36"/>schriben <unclear cert="low" resp="#joint">solgeß</unclear> beschen <origDate resp="#ner">25 tag <unclear cert="medium" resp="#joint">septemper</unclear> jm jar
 <lb n="37"/><unclear cert="low" resp="#joint">nag</unclear> Cristi geburt <unclear cert="low" resp="#joint">dauset</unclear> <unclear cert="low" resp="#joint">sechshunter</unclear> undt <unclear cert="low" resp="#joint">aght</unclear></origDate>
 <lb n="38"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Simo</unclear> <unclear cert="low" resp="#joint">Ridlinger</unclear></persName> <unclear cert="low" resp="#joint">statschreiber</unclear>
-<lb n="39"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> Jorg Rudolff Schwerter</persName>
-<lb n="40"/><unclear cert="medium" resp="#joint">oberfockt</unclear> <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">Bücken</unclear>
-<lb n="41"/>burck <unclear cert="low" resp="#joint">mp</unclear>
+<lb n="39"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Hanß</unclear> Jorg Rudolff <unclear cert="medium" resp="#joint">Schwerter</unclear></persName>
+<lb n="40"/>oberfockt <unclear cert="low" resp="#joint">zu</unclear> Bücken
+<lb n="41"/><unclear cert="medium" resp="#joint">burck</unclear> <unclear cert="low" resp="#joint">mp</unclear>
 <pb facs="StadtASG_Missive_1623_5905.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1623_5906.jpg" n="4"/>
-<lb n="42"/>Fir bit um ein
-<lb n="43"/>brant steuwer
-<lb n="44"/><placeName resp="#ner">Braitenbuech</placeName>
+<lb n="42"/><unclear cert="medium" resp="#joint">Fir</unclear> bit um ein
+<lb n="43"/><unclear cert="low" resp="#joint">brant</unclear> <unclear cert="low" resp="#joint">steuwer</unclear>
+<lb n="44"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Braitenbuech</unclear></placeName>
 </p>
         </body>
     </text>

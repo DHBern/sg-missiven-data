@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1669</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Die Ältesten und Geheime des Rates zu Ulm danken Bürgermeister und Rat zu St. Gallen für die Antwort vom 8. März, in der die Lage des kriegsvolks im Mailändischen Gebiet geschildert wird. Sie bedauern die Mitteilung und bekunden ihre gute Gesinnung. Sie bitten, ihnen bei gefährlichen Läuften Tag und Nacht auf eigene Kosten Bericht zu erstatten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Ältesten und Geheime des Rates zu Ulm</name><date when="1610-03-16" resp="#regest">Datum den .16.ten Martij, anno etc. .1610.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,52 +35,52 @@
 <p>
 <pb facs="StadtASG_Missive_1669_6087.jpg" n="1"/>
 <lb n="1"/>Unser <unclear cert="low" resp="#joint">freüntlich</unclear> willig dienst voran,
-<lb n="2"/>Ersame und weise, liebe freündt,
+<lb n="2"/><unclear cert="medium" resp="#joint">Ersame</unclear> und weise, liebe freündt,
 <lb n="3"/><unclear cert="low" resp="#joint">unß</unclear> ist ewer <unclear cert="low" resp="#joint">antwurttschreiben</unclear>,
-<lb n="4"/>à dato <origDate resp="#ner">den. 8. diß</origDate>, wol <unclear cert="medium" resp="#joint">eingehn</unclear>-
-<lb n="5"/>digt worden, <unclear cert="low" resp="#joint">darauß</unclear> wir <unclear cert="low" resp="#joint">ab</unclear>-
-<lb n="6"/><unclear cert="low" resp="#joint">lesend</unclear> vernomen, waß es für ein
+<lb n="4"/>à dato <origDate resp="#ner">den. 8. diß</origDate>, wol <unclear cert="low" resp="#joint">eingehn</unclear>-
+<lb n="5"/><unclear cert="medium" resp="#joint">digt</unclear> <unclear cert="medium" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">darauß</unclear> wir <unclear cert="medium" resp="#joint">ab</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">lesend</unclear> <unclear cert="medium" resp="#joint">vernomen</unclear>, waß es für ein
 <lb n="7"/>beschaffenheit deß, Im <orgName resp="#ner"><unclear cert="low" resp="#joint">Mayländi</unclear>-
-<lb n="8"/><unclear cert="medium" resp="#joint">schen</unclear> Stado</orgName> oder gebiett, ligenden
+<lb n="8"/><unclear cert="low" resp="#joint">schen</unclear> <unclear cert="medium" resp="#joint">Stado</unclear></orgName> oder <unclear cert="medium" resp="#joint">gebiett</unclear>, ligenden
 <lb n="9"/>kriegsvolcks hat, unnd
-<lb n="10"/><unclear cert="medium" resp="#joint">weil</unclear> <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">darauß</unclear> <unclear cert="medium" resp="#joint">ewer</unclear> <unclear cert="medium" resp="#joint">gegen</unclear>
-<lb n="11"/>unß tragende <unclear cert="low" resp="#joint">guete</unclear> unnd ge-
-<lb n="12"/><unclear cert="low" resp="#joint">treühertzige</unclear> Affection unnd <unclear cert="medium" resp="#joint">zu</unclear>-
+<lb n="10"/><unclear cert="low" resp="#joint">weil</unclear> wir <unclear cert="low" resp="#joint">darauß</unclear> <unclear cert="low" resp="#joint">ewer</unclear> <unclear cert="low" resp="#joint">gegen</unclear>
+<lb n="11"/>unß <unclear cert="medium" resp="#joint">tragende</unclear> <unclear cert="low" resp="#joint">guete</unclear> unnd ge-
+<lb n="12"/><unclear cert="low" resp="#joint">treühertzige</unclear> Affection unnd zu-
 <lb n="13"/>naigung, auch dz <unclear cert="low" resp="#joint">Ir</unclear> dieselbige,
-<lb n="14"/><unclear cert="low" resp="#joint">ewern</unclear> <unclear cert="low" resp="#joint">geehrtten</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> Vor-
-<lb n="15"/>fahren gleich gegen unß <unclear cert="low" resp="#joint">zue</unclear> conti-
-<lb n="16"/><unclear cert="low" resp="#joint">nuiren</unclear>, euch <unclear cert="low" resp="#joint">entschloßen</unclear> vernomen,
+<lb n="14"/><unclear cert="low" resp="#joint">ewern</unclear> <unclear cert="low" resp="#joint">geehrtten</unclear> <unclear cert="low" resp="#joint">geehrten</unclear> <unclear cert="medium" resp="#joint">Vor</unclear>-
+<lb n="15"/>fahren gleich <unclear cert="medium" resp="#joint">gegen</unclear> unß <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">conti</unclear>-
+<lb n="16"/><unclear cert="low" resp="#joint">nuiren</unclear>, euch <unclear cert="low" resp="#joint">entschloßen</unclear> <unclear cert="medium" resp="#joint">vernomen</unclear>,
 <lb n="17"/>so thun so wol deßelben, allß
-<lb n="18"/>auch der <unclear cert="low" resp="#joint">beschehnen</unclear> comunication
+<lb n="18"/>auch der <unclear cert="low" resp="#joint">beschehnen</unclear> <unclear cert="medium" resp="#joint">comunication</unclear>
 <lb n="19"/>wir unß gegen <unclear cert="medium" resp="#joint">eüch</unclear>, sonders
 <lb n="20"/><unclear cert="low" resp="#joint">freüntlich</unclear> <unclear cert="low" resp="#joint">bedanckhen</unclear>, unnd
-<lb n="21"/><unclear cert="medium" resp="#joint">wie</unclear> wir daran <unclear cert="medium" resp="#joint">Im</unclear> <unclear cert="medium" resp="#joint">wenigsten</unclear>
-<lb n="22"/><unclear cert="medium" resp="#joint">zweifflen</unclear>, allß sindt wir
-<lb n="23"/>auch gegen <unclear cert="medium" resp="#joint">eüch</unclear>, uff alle für-
+<lb n="21"/>wie wir daran <unclear cert="low" resp="#joint">Im</unclear> <unclear cert="low" resp="#joint">wenigsten</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">zweifflen</unclear>, <unclear cert="medium" resp="#joint">allß</unclear> sindt wir
+<lb n="23"/><unclear cert="medium" resp="#joint">auch</unclear> gegen <unclear cert="medium" resp="#joint">eüch</unclear>, uff alle für-
 <lb n="24"/>fäll, die an unß gelangen
 <lb n="25"/>werden, <unclear cert="medium" resp="#joint">zuthun</unclear> <unclear cert="medium" resp="#joint">Iederzeit</unclear>
 <lb n="26"/>beflißen unnd <unclear cert="low" resp="#joint">erpiettig</unclear>,
-<lb n="27"/>dann denselben <unclear cert="medium" resp="#joint">angenemme</unclear>
+<lb n="27"/><unclear cert="medium" resp="#joint">dann</unclear> denselben angenemme
 <lb n="28"/>dienst: und <unclear cert="medium" resp="#joint">wolgefälligen</unclear>
-<lb n="29"/><unclear cert="medium" resp="#joint">guetten</unclear> willen <unclear cert="low" resp="#joint">zueerweisen</unclear>,
+<lb n="29"/><unclear cert="medium" resp="#joint">guetten</unclear> willen <unclear cert="medium" resp="#joint">zueerweisen</unclear>,
 <lb n="30"/>sindt wir <unclear cert="medium" resp="#joint">Iederzeit</unclear> <unclear cert="medium" resp="#joint">berait</unclear>
 <lb n="31"/>unnd willig, Mit
 <pb facs="StadtASG_Missive_1669_6088.jpg" n="2"/>
 <lb n="32"/><unclear cert="low" resp="#joint">schließlichster</unclear> dienstlicher bitt,
-<lb n="33"/>im fall <unclear cert="low" resp="#joint">gefehrlicher</unclear> laeuff halb
+<lb n="33"/><unclear cert="medium" resp="#joint">im</unclear> fall <unclear cert="low" resp="#joint">gefehrlicher</unclear> laeuff halb
 <lb n="34"/>weitters an sie gelangen wurde
 <lb n="35"/>unß dessen so tags so nachts auch
-<lb n="36"/>uff unsern costen zuberichten,
-<lb n="37"/>Thuen unß <unclear cert="medium" resp="#joint">darbeü</unclear> samptlich
-<lb n="38"/>Gottes gnadenreichen schutz
-<lb n="39"/>bevelhen. Datum <origDate when="1610" resp="#ner">den .16.ten Martij,
+<lb n="36"/>uff unsern costen <unclear cert="low" resp="#joint">zuberichten</unclear>,
+<lb n="37"/><unclear cert="medium" resp="#joint">Thuen</unclear> unß darbeü <unclear cert="medium" resp="#joint">samptlich</unclear>
+<lb n="38"/>Gottes <unclear cert="medium" resp="#joint">gnadenreichen</unclear> schutz
+<lb n="39"/><unclear cert="low" resp="#joint">bevelhen</unclear>. Datum <origDate when="1610" resp="#ner">den .16.ten <unclear cert="medium" resp="#joint">Martij</unclear>,
 <lb n="40"/>anno etc. .1610.</origDate>,
-<lb n="41"/>Die <unclear cert="low" resp="#joint">eltern</unclear> und <unclear cert="low" resp="#joint">geheime</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">Die</unclear> <unclear cert="low" resp="#joint">eltern</unclear> und <unclear cert="low" resp="#joint">geheime</unclear>
 <lb n="42"/>deß <orgName ref="stadtasg-actors-510" cert="medium" role="issuer" resp="#ner">rhats zue <unclear cert="low" resp="#joint">Vlm</unclear></orgName>.
 <pb facs="StadtASG_Missive_1669_6089.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1669_6090.jpg" n="4"/>
 <lb n="43"/>Den ersamen unnd weysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und
-<lb n="44"/><unclear cert="low" resp="#joint">Rhat</unclear> der Statt Sanct Gallen</orgName>, <unclear cert="low" resp="#joint">unsern</unclear>
+<lb n="44"/><unclear cert="medium" resp="#joint">Rhat</unclear> der Statt <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>, <unclear cert="low" resp="#joint">unsern</unclear>
 <lb n="45"/><unclear cert="low" resp="#joint">besondern</unclear> <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">freunden</unclear>,
 <lb n="46"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S: Gallen</placeName>,
 </p>

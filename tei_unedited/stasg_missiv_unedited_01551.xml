@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1551</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Alfonso Casale berichtet, dass der Gouverneur von Mailand die heimkehrenden Landsknechte angewiesen habe, nicht durch das Land zu ziehen, um Unruhen zu vermeiden. Da die Pässe blockiert seien, würden die Truppen nun durch das Land marschieren. Er bittet um Verständnis, da er die Umleitung nicht habe verhindern können, und versichert die Freundschaft der katholischen Majestät.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Alfonso Casale</name><placeName resp="#regest">Lucern</placeName><date when="1607-06-01" resp="#regest">datum Lucern den ersten tag junij anno 1607</date></correspAction><correspAction type="received"><name resp="#regest">Hochgeachte Großmechtige ehrende Herren u. hoch. wt.</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -66,35 +66,35 @@
 <lb n="30"/>unnd hoch nottwendig angesehen u. hoch. wt. die sach unnd
 <lb n="31"/>irer beschaffenheit. durch dis schryben wolmeinnend
 <pb facs="StadtASG_Missive_1551_5608.jpg" n="2"/>
-<lb n="32"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">früntlich</unclear> <unclear cert="medium" resp="#joint">zuberichten</unclear> <unclear cert="medium" resp="#joint">damit</unclear> sy <unclear cert="medium" resp="#joint">sich</unclear> nit <unclear cert="low" resp="#joint">etwann</unclear>
-<lb n="33"/><unclear cert="low" resp="#joint">zubeschwären</unclear> und bedencken <unclear cert="medium" resp="#joint">hebent</unclear>, so <unclear cert="medium" resp="#joint">dise</unclear> <unclear cert="medium" resp="#joint">landts=</unclear>
-<lb n="34"/>knecht, <unclear cert="medium" resp="#joint">also</unclear> <unclear cert="medium" resp="#joint">unversechen</unclear> und <unclear cert="low" resp="#joint">ungewarnnet</unclear> durch <unclear cert="medium" resp="#joint">ire</unclear>
-<lb n="35"/><unclear cert="medium" resp="#joint">landtschafft</unclear> <unclear cert="medium" resp="#joint">reisen</unclear> <unclear cert="medium" resp="#joint">soltend</unclear>. Ich hette auch <unclear cert="medium" resp="#joint">soverr</unclear>, da sy
-<lb n="36"/>die <unclear cert="medium" resp="#joint">landtsknecht</unclear> <unclear cert="medium" resp="#joint">hievür</unclear> inn <placeName ref="stadtasg-places-273" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Italiam</unclear></placeName> <unclear cert="low" resp="#joint">gezogen</unclear> <unclear cert="low" resp="#joint">sölches</unclear>
-<lb n="37"/><unclear cert="low" resp="#joint">zueduon</unclear> <unclear cert="low" resp="#joint">sicher</unclear> nit <unclear cert="medium" resp="#joint">underlaßen</unclear>, <unclear cert="medium" resp="#joint">wan</unclear> aber inen <unclear cert="medium" resp="#joint">denn</unclear>
-<lb n="38"/><unclear cert="medium" resp="#joint">landtsknechtenn</unclear>, zu <unclear cert="low" resp="#joint">irer</unclear> <unclear cert="low" resp="#joint">vorhabenden</unclear> <unclear cert="low" resp="#joint">reiß</unclear>, <unclear cert="low" resp="#joint">ein</unclear>
-<lb n="39"/><unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">straß</unclear>, und gelegenheit <unclear cert="medium" resp="#joint">gezeigt</unclear> <unclear cert="medium" resp="#joint">worden</unclear> <unclear cert="medium" resp="#joint">hat</unclear>
-<lb n="40"/>ich auch gar <unclear cert="low" resp="#joint">nüt</unclear> <unclear cert="low" resp="#joint">verhoffen</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">Hoch</unclear>. <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">grentzen</unclear>
-<lb n="41"/>berüren, unnd <unclear cert="medium" resp="#joint">man</unclear> darmit inen <unclear cert="medium" resp="#joint">zu</unclear> was <unclear cert="medium" resp="#joint">nachdenckens</unclear>
-<lb n="42"/>ursach geben <unclear cert="medium" resp="#joint">sölte</unclear>, <unclear cert="medium" resp="#joint">derwegen</unclear> <unclear cert="medium" resp="#joint">sy</unclear> mich <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">orts</unclear>
-<lb n="43"/>günstig <unclear cert="medium" resp="#joint">für</unclear> <unclear cert="medium" resp="#joint">entschuldiget</unclear> <unclear cert="medium" resp="#joint">halten</unclear> unnd es im besten
-<lb n="44"/><unclear cert="medium" resp="#joint">verstehn</unclear> wellen, <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">ich</unclear> hieby gantz <unclear cert="medium" resp="#joint">flyßig</unclear>
-<lb n="45"/>bitten <unclear cert="medium" resp="#joint">thuon</unclear>, Sy <unclear cert="medium" resp="#joint">vertrüwt</unclear> <unclear cert="medium" resp="#joint">syn</unclear> unnd glauben <unclear cert="medium" resp="#joint">wellend</unclear>
-<lb n="46"/><unclear cert="medium" resp="#joint">dz</unclear> <unclear cert="medium" resp="#joint">Ir</unclear>. <unclear cert="medium" resp="#joint">Kö</unclear>. <unclear cert="medium" resp="#joint">Cathn</unclear>. <unclear cert="medium" resp="#joint">Mt</unclear>. <unclear cert="medium" resp="#joint">myn</unclear> <unclear cert="medium" resp="#joint">gnedigster</unclear> herr gegen
-<lb n="47"/><unclear cert="medium" resp="#joint">U</unclear>. <unclear cert="medium" resp="#joint">Hoch</unclear>. <unclear cert="medium" resp="#joint">H</unclear>. <unclear cert="medium" resp="#joint">keines</unclear> anderen nit, dann <unclear cert="medium" resp="#joint">alles</unclear> <unclear cert="medium" resp="#joint">guoten</unclear>
-<lb n="48"/><unclear cert="medium" resp="#joint">frünt</unclear>: unnd <unclear cert="medium" resp="#joint">nachbarschafft</unclear> unnd gnedigisten
-<lb n="49"/>willens inn allen <unclear cert="medium" resp="#joint">gelegenheiten</unclear> <unclear cert="medium" resp="#joint">gemeint</unclear> unnd
-<lb n="50"/><unclear cert="medium" resp="#joint">gewogen</unclear>, wo dann ich <unclear cert="low" resp="#joint">hierinn</unclear> <unclear cert="low" resp="#joint">khöndte</unclear> <unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">Hoch</unclear>. <unclear cert="low" resp="#joint">H</unclear>.
-<lb n="51"/><unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">guotem</unclear> <unclear cert="low" resp="#joint">benügen</unclear> dienst: unnd <unclear cert="medium" resp="#joint">befürderlich</unclear> syn <unclear cert="medium" resp="#joint">will</unclear>
-<lb n="52"/>ich nach <unclear cert="medium" resp="#joint">bestem</unclear> mynen <unclear cert="medium" resp="#joint">vermügen</unclear> <unclear cert="medium" resp="#joint">allen</unclear> <unclear cert="medium" resp="#joint">flyß</unclear> <unclear cert="medium" resp="#joint">anwenden</unclear>
-<lb n="53"/>unnd <unclear cert="medium" resp="#joint">denen</unclear> inen allen ehr unnd <unclear cert="low" resp="#joint">angeneme</unclear>
-<lb n="54"/><unclear cert="low" resp="#joint">dienste</unclear> <unclear cert="low" resp="#joint">zubeerygen</unclear> <unclear cert="low" resp="#joint">iederzyt</unclear> <unclear cert="low" resp="#joint">willig</unclear> syn, <unclear cert="medium" resp="#joint">denen</unclear>
-<lb n="55"/>ich von Gott alle <unclear cert="medium" resp="#joint">bestendige</unclear> glückliche <unclear cert="medium" resp="#joint">wolfart</unclear>
-<lb n="56"/><unclear cert="medium" resp="#joint">wüntschen</unclear> thuon datum <origPlace ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</origPlace> <origDate when="1607" resp="#ner">den ersten tag
-<lb n="57"/><unclear cert="medium" resp="#joint">junij</unclear> anno 1607</origDate>
-<lb n="58"/><unclear cert="low" resp="#joint">U</unclear>. <unclear cert="low" resp="#joint">Hoch</unclear>. <unclear cert="low" resp="#joint">Hrn</unclear>.
+<lb n="32"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">früntlich</unclear> <unclear cert="low" resp="#joint">zuberichten</unclear> damit sy sich nit etwann
+<lb n="33"/><unclear cert="medium" resp="#joint">zubeschwären</unclear> und bedencken hebent, so dise <unclear cert="low" resp="#joint">landts=</unclear>
+<lb n="34"/>knecht, also <unclear cert="low" resp="#joint">unversechen</unclear> und <unclear cert="medium" resp="#joint">ungewarnnet</unclear> durch <unclear cert="low" resp="#joint">ire</unclear>
+<lb n="35"/>landtschafft <unclear cert="low" resp="#joint">reisen</unclear> <unclear cert="low" resp="#joint">soltend</unclear>. Ich hette auch <unclear cert="low" resp="#joint">soverr</unclear>, da sy
+<lb n="36"/>die <unclear cert="low" resp="#joint">landtsknecht</unclear> <unclear cert="low" resp="#joint">hievür</unclear> inn <placeName ref="stadtasg-places-273" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Italiam</unclear></placeName> <unclear cert="low" resp="#joint">gezogen</unclear> <unclear cert="low" resp="#joint">sölches</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">zueduon</unclear> <unclear cert="low" resp="#joint">sicher</unclear> nit <unclear cert="low" resp="#joint">underlaßen</unclear>, <unclear cert="low" resp="#joint">wan</unclear> aber inen <unclear cert="low" resp="#joint">denn</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">landtsknechtenn</unclear>, zu irer <unclear cert="low" resp="#joint">vorhabenden</unclear> <unclear cert="low" resp="#joint">reiß</unclear>, <unclear cert="low" resp="#joint">ein</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">straß</unclear>, und gelegenheit gezeigt <unclear cert="low" resp="#joint">worden</unclear> hat
+<lb n="40"/>ich auch gar <unclear cert="low" resp="#joint">nüt</unclear> <unclear cert="low" resp="#joint">verhoffen</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">U</unclear>. Hoch. <unclear cert="medium" resp="#joint">H</unclear>. <unclear cert="medium" resp="#joint">grentzen</unclear>
+<lb n="41"/>berüren, unnd <unclear cert="low" resp="#joint">man</unclear> darmit inen zu was <unclear cert="low" resp="#joint">nachdenckens</unclear>
+<lb n="42"/>ursach geben <unclear cert="low" resp="#joint">sölte</unclear>, <unclear cert="low" resp="#joint">derwegen</unclear> sy mich <unclear cert="medium" resp="#joint">deß</unclear> orts
+<lb n="43"/>günstig <unclear cert="medium" resp="#joint">für</unclear> <unclear cert="medium" resp="#joint">entschuldiget</unclear> halten unnd es im besten
+<lb n="44"/><unclear cert="low" resp="#joint">verstehn</unclear> wellen, wie ich hieby gantz <unclear cert="low" resp="#joint">flyßig</unclear>
+<lb n="45"/>bitten thuon, Sy <unclear cert="low" resp="#joint">vertrüwt</unclear> syn unnd glauben wellend
+<lb n="46"/>dz <unclear cert="medium" resp="#joint">Ir</unclear>. <unclear cert="medium" resp="#joint">Kö</unclear>. <unclear cert="medium" resp="#joint">Cathn</unclear>. <unclear cert="medium" resp="#joint">Mt</unclear>. <unclear cert="medium" resp="#joint">myn</unclear> <unclear cert="medium" resp="#joint">gnedigster</unclear> herr gegen
+<lb n="47"/><unclear cert="low" resp="#joint">U</unclear>. Hoch. <unclear cert="medium" resp="#joint">H</unclear>. <unclear cert="medium" resp="#joint">keines</unclear> anderen nit, dann alles <unclear cert="low" resp="#joint">guoten</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">frünt</unclear>: unnd nachbarschafft unnd gnedigisten
+<lb n="49"/>willens inn allen <unclear cert="low" resp="#joint">gelegenheiten</unclear> <unclear cert="low" resp="#joint">gemeint</unclear> unnd
+<lb n="50"/>gewogen, wo dann ich <unclear cert="low" resp="#joint">hierinn</unclear> <unclear cert="low" resp="#joint">khöndte</unclear> <unclear cert="low" resp="#joint">U</unclear>. Hoch. <unclear cert="low" resp="#joint">H</unclear>.
+<lb n="51"/>zu <unclear cert="medium" resp="#joint">guotem</unclear> <unclear cert="medium" resp="#joint">benügen</unclear> dienst: unnd befürderlich syn <unclear cert="low" resp="#joint">will</unclear>
+<lb n="52"/>ich nach bestem mynen vermügen allen flyß <unclear cert="low" resp="#joint">anwenden</unclear>
+<lb n="53"/>unnd <unclear cert="low" resp="#joint">denen</unclear> inen allen ehr unnd <unclear cert="low" resp="#joint">angeneme</unclear>
+<lb n="54"/><unclear cert="low" resp="#joint">dienste</unclear> <unclear cert="low" resp="#joint">zubeerygen</unclear> <unclear cert="low" resp="#joint">iederzyt</unclear> willig syn, denen
+<lb n="55"/>ich von Gott alle bestendige glückliche <unclear cert="low" resp="#joint">wolfart</unclear>
+<lb n="56"/><unclear cert="low" resp="#joint">wüntschen</unclear> thuon datum <origPlace ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</origPlace> <origDate when="1607" resp="#ner">den ersten tag
+<lb n="57"/>junij anno 1607</origDate>
+<lb n="58"/><unclear cert="medium" resp="#joint">U</unclear>. Hoch. <unclear cert="low" resp="#joint">Hrn</unclear>.
 <lb n="59"/><unclear cert="low" resp="#joint">dienstwilliger</unclear>
-<lb n="60"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Alfonso</unclear> <unclear cert="low" resp="#joint">Casale</unclear></persName> <unclear cert="low" resp="#joint">mp</unclear>.
+<lb n="60"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Alfonso</unclear> Casale</persName> <unclear cert="low" resp="#joint">mp</unclear>.
 </p>
         </body>
     </text>

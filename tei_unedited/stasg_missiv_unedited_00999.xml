@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 999</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,53 +20,53 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Rat zu Bern informieren Bürgermeister und Rat zu St. Gallen über die Ankunft des französischen Gesandten Boisrigault. Dieser meldet, dass der König von Frankreich mit grossem Heerzug nach Mailand ziehen und am 20. August über den Pass gehen wolle. Er bittet die Eidgenossen um Hilfe und Truppen. Bern ersucht St. Gallen, sich zu informieren und dem König zu vertrauen, nicht aber den päpstlichen Intrigen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Rat zu Bern</name><date when="1623" cert="medium" resp="#regest">donstag nach Margarete, anno etc. xxiii.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_999_3053.jpg" n="1"/>
-<lb n="1"/><unclear cert="medium" resp="#joint">Unnser</unclear> fruntlich willig <unclear cert="medium" resp="#joint">diennst</unclear>, unnd was wir erenn und <unclear cert="low" resp="#joint">guotz</unclear> vermogen zuovor,
-<lb n="2"/><unclear cert="medium" resp="#joint">from</unclear> fursichtig wyß <unclear cert="low" resp="#joint">sonnders</unclear> <unclear cert="low" resp="#joint">guoten</unclear> frundt unnd getruwen lieben <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydgnon</orgName>,
-<lb n="3"/>diser stund ist <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">erschinen</unclear>, des kungs von <placeName ref="stadtasg-places-131" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Frannckrychs</unclear></placeName> <unclear cert="low" resp="#joint">bottschafft</unclear>
-<lb n="4"/>der her von <persName resp="#ner">Boysrigault</persName>, unnd <unclear cert="low" resp="#joint">hatt</unclear> unns uff <unclear cert="low" resp="#joint">dargelegte</unclear>, des kungs gloub-
-<lb n="5"/>wirdig credentz bericht, wie die selb kungklich maiestat, <unclear cert="low" resp="#joint">furgesatzt</unclear> willens
-<lb n="6"/>und <unclear cert="low" resp="#joint">anschlags</unclear> sye, in eigner person, unnd mit einem mercklichen gezug, zuo
-<lb n="7"/>roß und fuoß ouch einem tapffern geschutz, in <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meyland</placeName> zuziechenn, und in sonder-
-<lb n="8"/><unclear cert="medium" resp="#joint">heitt</unclear>, sich uff dem <date resp="#ner"><unclear cert="low" resp="#joint">zwantzigosten</unclear> tag des nechstkomendenn monats</date> ougsten, uber
-<lb n="9"/>das gebirg zuerhebenn, mit anzoig, das der kung <unclear cert="low" resp="#joint">andre</unclear> <unclear cert="low" resp="#joint">sine</unclear> land, gegen <unclear cert="low" resp="#joint">sinen</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">vienden</unclear> unnd <unclear cert="low" resp="#joint">widerwertigen</unclear>, <unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">versechenn</unclear> und <unclear cert="low" resp="#joint">gesterckt</unclear>, damit er dero halb
-<lb n="11"/>dehein besorg noch <unclear cert="low" resp="#joint">beschward</unclear> habe, unnd <unclear cert="low" resp="#joint">so</unclear> der kung, zuo <unclear cert="low" resp="#joint">soellichem</unclear> zug, und fur-
-<lb n="12"/><unclear cert="low" resp="#joint">naemenn</unclear>, unnser <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydgnoschaft</unclear></orgName> hilff, und knecht <unclear cert="low" resp="#joint">notturfftig</unclear> sye, und die, denen
+<lb n="1"/><unclear cert="medium" resp="#joint">Unnser</unclear> fruntlich willig diennst, unnd was wir <unclear cert="medium" resp="#joint">erenn</unclear> und <unclear cert="low" resp="#joint">guotz</unclear> vermogen zuovor,
+<lb n="2"/><unclear cert="medium" resp="#joint">from</unclear> <unclear cert="medium" resp="#joint">fursichtig</unclear> wyß <unclear cert="low" resp="#joint">sonnders</unclear> <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">frundt</unclear> unnd <unclear cert="medium" resp="#joint">getruwen</unclear> lieben <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydgnon</orgName>,
+<lb n="3"/>diser stund ist vor unns <unclear cert="medium" resp="#joint">erschinen</unclear>, des kungs von <placeName ref="stadtasg-places-131" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Frannckrychs</unclear></placeName> <unclear cert="medium" resp="#joint">bottschafft</unclear>
+<lb n="4"/>der her von <persName resp="#ner">Boysrigault</persName>, unnd <unclear cert="low" resp="#joint">hatt</unclear> unns uff <unclear cert="medium" resp="#joint">dargelegte</unclear>, des kungs <unclear cert="low" resp="#joint">gloub</unclear>-
+<lb n="5"/>wirdig <unclear cert="medium" resp="#joint">credentz</unclear> bericht, wie die selb kungklich maiestat, <unclear cert="low" resp="#joint">furgesatzt</unclear> willens
+<lb n="6"/>und <unclear cert="low" resp="#joint">anschlags</unclear> sye, in eigner person, unnd mit einem mercklichen <unclear cert="low" resp="#joint">gezug</unclear>, zuo
+<lb n="7"/>roß und fuoß ouch einem tapffern geschutz, in <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meyland</placeName> <unclear cert="low" resp="#joint">zuziechenn</unclear>, und in sonder-
+<lb n="8"/>heitt, sich uff dem <date resp="#ner"><unclear cert="low" resp="#joint">zwantzigosten</unclear> tag des nechstkomendenn monats</date> <unclear cert="medium" resp="#joint">ougsten</unclear>, <unclear cert="medium" resp="#joint">uber</unclear>
+<lb n="9"/>das gebirg zuerhebenn, mit <unclear cert="low" resp="#joint">anzoig</unclear>, das der kung <unclear cert="low" resp="#joint">andre</unclear> <unclear cert="low" resp="#joint">sine</unclear> land, gegen <unclear cert="low" resp="#joint">sinen</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">vienden</unclear> unnd <unclear cert="low" resp="#joint">widerwertigen</unclear>, also <unclear cert="medium" resp="#joint">versechenn</unclear> und <unclear cert="medium" resp="#joint">gesterckt</unclear>, damit er <unclear cert="low" resp="#joint">dero</unclear> halb
+<lb n="11"/>dehein besorg noch <unclear cert="low" resp="#joint">beschward</unclear> habe, unnd <unclear cert="medium" resp="#joint">so</unclear> der kung, zuo <unclear cert="low" resp="#joint">soellichem</unclear> <unclear cert="medium" resp="#joint">zug</unclear>, und fur-
+<lb n="12"/><unclear cert="low" resp="#joint">naemenn</unclear>, unnser <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydgnoschaft</unclear></orgName> hilff, und knecht <unclear cert="medium" resp="#joint">notturfftig</unclear> sye, und die, denen
 <lb n="13"/>er am <unclear cert="low" resp="#joint">hoijchstenn</unclear> <unclear cert="low" resp="#joint">vertruwt</unclear>, so im <unclear cert="low" resp="#joint">begaere</unclear> <unclear cert="low" resp="#joint">zuhabenn</unclear>, ouch im gebuere, dieselbenn
-<lb n="14"/>nach <unclear cert="low" resp="#joint">anzoig</unclear> der <unclear cert="low" resp="#joint">vereynung</unclear> <unclear cert="low" resp="#joint">zuerfordern</unclear>, woelle er <unclear cert="low" resp="#joint">soellichs</unclear> <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">uß</unclear> bevelch
-<lb n="15"/>deß kungs <unclear cert="low" resp="#joint">gethan</unclear> habenn, mit <unclear cert="medium" resp="#joint">bitlicher</unclear> ersuochung, <unclear cert="low" resp="#joint">uch</unclear> unnd ander uwer
-<lb n="16"/>und unser lieben Eydgnon, deß zuberichtenn, unnd <unclear cert="low" resp="#joint">uch</unclear> daby zuerscheinenn,
-<lb n="17"/>das der her general <persName resp="#ner">Morelet</persName>, in kurtzem, harzuo unns komen, und <unclear cert="low" resp="#joint">uch</unclear> unnd
-<lb n="18"/>uns gemeinlichen, der <unclear cert="low" resp="#joint">houptluetenn</unclear> namen, ouch der zal <unclear cert="low" resp="#joint">dero</unclear>, so hinziechenn
-<lb n="19"/>soellenn, deßglichen der zit, deß anzugs, ouch uff wellich strassen, werde berichten,
-<lb n="20"/>daby so hatt die genampt <unclear cert="low" resp="#joint">Frantzoessisch</unclear> <unclear cert="low" resp="#joint">bottschafft</unclear>, unns <unclear cert="low" resp="#joint">anzoigt</unclear>, allerley <unclear cert="low" resp="#joint">praticken</unclear>,
-<lb n="21"/>so der bapst wider den kung, und nachvolgend, uns Eydgnon gebruche, und
+<lb n="14"/>nach <unclear cert="low" resp="#joint">anzoig</unclear> der <unclear cert="medium" resp="#joint">vereynung</unclear> <unclear cert="low" resp="#joint">zuerfordern</unclear>, woelle er <unclear cert="low" resp="#joint">soellichs</unclear> <unclear cert="medium" resp="#joint">hiemit</unclear> <unclear cert="medium" resp="#joint">uß</unclear> bevelch
+<lb n="15"/><unclear cert="medium" resp="#joint">deß</unclear> kungs <unclear cert="medium" resp="#joint">gethan</unclear> habenn, <unclear cert="medium" resp="#joint">mit</unclear> bitlicher <unclear cert="medium" resp="#joint">ersuochung</unclear>, <unclear cert="low" resp="#joint">uch</unclear> unnd ander <unclear cert="medium" resp="#joint">uwer</unclear>
+<lb n="16"/>und unser lieben <unclear cert="medium" resp="#joint">Eydgnon</unclear>, deß <unclear cert="low" resp="#joint">zuberichtenn</unclear>, unnd <unclear cert="low" resp="#joint">uch</unclear> daby <unclear cert="low" resp="#joint">zuerscheinenn</unclear>,
+<lb n="17"/>das der her general <persName resp="#ner">Morelet</persName>, in kurtzem, harzuo unns komen, und <unclear cert="medium" resp="#joint">uch</unclear> unnd
+<lb n="18"/>uns gemeinlichen, der <unclear cert="low" resp="#joint">houptluetenn</unclear> namen, ouch der zal <unclear cert="low" resp="#joint">dero</unclear>, so <unclear cert="low" resp="#joint">hinziechenn</unclear>
+<lb n="19"/>soellenn, deßglichen der zit, deß anzugs, ouch uff <unclear cert="medium" resp="#joint">wellich</unclear> strassen, werde <unclear cert="low" resp="#joint">berichten</unclear>,
+<lb n="20"/>daby so hatt die <unclear cert="medium" resp="#joint">genampt</unclear> <unclear cert="low" resp="#joint">Frantzoessisch</unclear> <unclear cert="medium" resp="#joint">bottschafft</unclear>, unns <unclear cert="low" resp="#joint">anzoigt</unclear>, allerley <unclear cert="low" resp="#joint">praticken</unclear>,
+<lb n="21"/>so der <unclear cert="medium" resp="#joint">bapst</unclear> wider den <unclear cert="medium" resp="#joint">kung</unclear>, und nachvolgend, uns Eydgnon gebruche, und
 <lb n="22"/>unns daruff gebetten, demselbenn <unclear cert="low" resp="#joint">dehein</unclear> <unclear cert="low" resp="#joint">gehoerd</unclear>, noch glouben zuogeben, sonder
-<lb n="23"/>dem kung an zuhangenn, unnd brieff und sigel zuo halten, wie er <unclear cert="medium" resp="#joint">dan</unclear> hie-
+<lb n="23"/>dem kung an zuhangenn, unnd brieff und sigel zuo halten, wie er dan hie-
 <lb n="24"/>wider zethuond, geneigt und <unclear cert="low" resp="#joint">erbuettig</unclear> sye, ungezweiffleter hoffnung, das soellichs
-<lb n="25"/>beiden taillen, zuo <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">wuerde</unclear> <unclear cert="low" resp="#joint">erschiessenn</unclear>, <unclear cert="low" resp="#joint">diß</unclear> alles wolten wir <unclear cert="low" resp="#joint">uch</unclear>, ouch
-<lb n="26"/>andern unsern lieben Eydgnon, uff begaer, deß kungcklichen botten berichtenn,
-<lb n="27"/><unclear cert="low" resp="#joint">uch</unclear> darnach wussen zuohaltenn, datum <origDate when="1623" cert="medium" resp="#ner">donstag nach <unclear cert="low" resp="#joint">Margarete</unclear>, anno <unclear cert="low" resp="#joint">etc</unclear>. <unclear cert="low" resp="#joint">xxiii</unclear></origDate>.
-<lb n="28"/><orgName ref="stadtasg-actors-514" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Schulthes</unclear> unnd ratt
+<lb n="25"/>beiden taillen, zuo <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">wuerde</unclear> <unclear cert="medium" resp="#joint">erschiessenn</unclear>, <unclear cert="medium" resp="#joint">diß</unclear> <unclear cert="medium" resp="#joint">alles</unclear> wolten wir <unclear cert="medium" resp="#joint">uch</unclear>, ouch
+<lb n="26"/>andern unsern lieben <unclear cert="medium" resp="#joint">Eydgnon</unclear>, uff begaer, deß kungcklichen botten berichtenn,
+<lb n="27"/><unclear cert="low" resp="#joint">uch</unclear> darnach <unclear cert="low" resp="#joint">wussen</unclear> zuohaltenn, datum <origDate when="1623" cert="medium" resp="#ner">donstag nach <unclear cert="low" resp="#joint">Margarete</unclear>, anno <unclear cert="low" resp="#joint">etc</unclear>. <unclear cert="low" resp="#joint">xxiii</unclear></origDate>.
+<lb n="28"/><orgName ref="stadtasg-actors-514" cert="medium" role="issuer" resp="#ner">Schulthes unnd ratt
 <lb n="29"/>der statt Bernn</orgName>,
 <pb facs="StadtASG_Missive_999_3054.jpg" n="2"/>
 <lb n="30"/>Den fromen fürsichtigenn wysenn, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="31"/>und Rat, der Statt Sannt Gallen</orgName>, unsern <unclear cert="low" resp="#joint">sonder</unclear>
-<lb n="32"/>guoten fründenn und getrüwen lieben <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydgnon</unclear></orgName>
+<lb n="31"/>und Rat, der Statt Sannt Gallen</orgName>, unsern <unclear cert="medium" resp="#joint">sonder</unclear>
+<lb n="32"/>guoten fründenn und getrüwen lieben <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eydgnon</orgName>
 </p>
         </body>
     </text>

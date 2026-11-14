@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1121</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Ulrich Philipsen, Freiherr von Hohen-Sax, um Hilfe, damit sein Untertan Andres Ortner dem St. Galler Bürger Hans Schlapparici 35 Florin samt Kosten und Schaden bezahle. Ortner habe die Summe bereits vor Jahren per Handschlag versprochen, aber nicht beglichen. Der Rat bittet, Ortner zur Zahlung zu veranlassen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1579" resp="#regest">7 t Novembr, a° etc. 1579</date></correspAction><correspAction type="received"><name resp="#regest">Ulrich Philipsen, Freiherr von Hohen-Sax</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -75,37 +75,37 @@
 <lb n="39"/><unclear cert="low" resp="#joint">Ine</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="low" resp="#joint">bißher</unclear> <unclear cert="low" resp="#joint">khain</unclear> <unclear cert="low" resp="#joint">mechtigenn</unclear> Anwalts <unclear cert="low" resp="#joint">gemeldts</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Schlapparitzis</unclear></persName>
 <lb n="40"/><unclear cert="low" resp="#joint">vernüg</unclear> <unclear cert="low" resp="#joint">bschehenn</unclear>,
 <pb facs="StadtASG_Missive_1121_3610.jpg" n="2"/>
-<lb n="41"/>gnediglich verhilfflich sin, <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Ine</unclear> Anndres
-<lb n="42"/><unclear cert="low" resp="#joint">Durren</unclear> dahin vermoegen, unnd <unclear cert="medium" resp="#joint">hallten</unclear>, das
+<lb n="41"/><unclear cert="low" resp="#joint">gnediglich</unclear> verhilfflich sin, <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Ine</unclear> <unclear cert="medium" resp="#joint">Anndres</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">Durren</unclear> dahin <unclear cert="medium" resp="#joint">vermoegen</unclear>, unnd hallten, das
 <lb n="43"/>er angeregte <unclear cert="low" resp="#joint">Summ</unclear> <unclear cert="low" resp="#joint">gelltß</unclear> <unclear cert="low" resp="#joint">Welches</unclear> <unclear cert="low" resp="#joint">er</unclear> nach <unclear cert="low" resp="#joint">sinem</unclear>
 <lb n="44"/><unclear cert="low" resp="#joint">gethuenen</unclear> <unclear cert="low" resp="#joint">glübd</unclear> <unclear cert="low" resp="#joint">lengst</unclear>
 <lb n="45"/><unclear cert="low" resp="#joint">sind</unclear> <unclear cert="low" resp="#joint">hette</unclear> <unclear cert="low" resp="#joint">soellen</unclear>
 <lb n="46"/>one <unclear cert="low" resp="#joint">lengers</unclear> uf-
 <lb n="47"/>zuchen, erlege entrichte unnd <unclear cert="low" resp="#joint">bezale</unclear> mit
-<lb n="48"/><unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">ufgeloffnen</unclear> costenn und schadenn,
-<lb n="49"/>Wie wir nitt zwiflend E. <unclear cert="low" resp="#joint">Wht</unclear>. In betrach-
-<lb n="50"/>tung der billigkhait one diß unnser fürpitt
-<lb n="51"/>hierzuo gnedig unnd guotwillig sin, ouch In-
-<lb n="52"/>massen sich erzaigen werde, das Er
+<lb n="48"/><unclear cert="medium" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">ufgeloffnen</unclear> costenn und schadenn,
+<lb n="49"/>Wie wir nitt zwiflend E. <unclear cert="medium" resp="#joint">Wht</unclear>. In <unclear cert="low" resp="#joint">betrach</unclear>-
+<lb n="50"/>tung der <unclear cert="low" resp="#joint">billigkhait</unclear> <unclear cert="low" resp="#joint">one</unclear> diß unnser <unclear cert="low" resp="#joint">fürpitt</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">hierzuo</unclear> gnedig unnd guotwillig sin, ouch In-
+<lb n="52"/><unclear cert="low" resp="#joint">massen</unclear> sich <unclear cert="low" resp="#joint">erzaigen</unclear> werde, das Er
 <lb n="53"/>unnser <unclear cert="low" resp="#joint">Burg</unclear> diser unnser fürschrifft genossen
-<lb n="54"/>haben würckhlich gespüren moege. Das
-<lb n="55"/>gegenn E. <unclear cert="low" resp="#joint">Wht</unclear>. unnd den <unclear cert="low" resp="#joint">Irnn</unclear> gannz
-<lb n="56"/>dienstlich, <unclear cert="low" resp="#joint">nachpurlich</unclear> unnd früntlich <unclear cert="medium" resp="#joint">zebeschulden</unclear>, unnd
-<lb n="57"/><unclear cert="low" resp="#joint">zeuferglichenn</unclear> <unclear cert="medium" resp="#joint">erbietend</unclear> wir unns <unclear cert="low" resp="#joint">Jede</unclear>
-<lb n="58"/>zit gannz <unclear cert="medium" resp="#joint">berait</unclear> unnd guotwillig. Damit
-<lb n="59"/><unclear cert="low" resp="#joint">dieselbenn</unclear> unnd unns In den schirm
+<lb n="54"/>haben <unclear cert="low" resp="#joint">würckhlich</unclear> gespüren <unclear cert="low" resp="#joint">moege</unclear>. Das
+<lb n="55"/><unclear cert="low" resp="#joint">gegenn</unclear> E. <unclear cert="medium" resp="#joint">Wht</unclear>. unnd den <unclear cert="low" resp="#joint">Irnn</unclear> gannz
+<lb n="56"/>dienstlich, <unclear cert="low" resp="#joint">nachpurlich</unclear> unnd <unclear cert="medium" resp="#joint">früntlich</unclear> zebeschulden, unnd
+<lb n="57"/><unclear cert="low" resp="#joint">zeuferglichenn</unclear> <unclear cert="low" resp="#joint">erbietend</unclear> wir unns <unclear cert="low" resp="#joint">Jede</unclear>
+<lb n="58"/><unclear cert="medium" resp="#joint">zit</unclear> <unclear cert="medium" resp="#joint">gannz</unclear> berait unnd guotwillig. Damit
+<lb n="59"/><unclear cert="low" resp="#joint">dieselbenn</unclear> unnd <unclear cert="medium" resp="#joint">unns</unclear> In den schirm
 <lb n="60"/><unclear cert="low" resp="#joint">Goettlich</unclear> gnad <unclear cert="low" resp="#joint">befelhennde</unclear>. <unclear cert="low" resp="#joint">Dat</unclear> den
 <lb n="61"/><origDate when="1579-11-07" resp="#ner">7 <unclear cert="low" resp="#joint">t</unclear> Novembr, <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">etc</unclear>. 1579</origDate>
-<lb n="62"/>E. <unclear cert="low" resp="#joint">W</unclear>.
+<lb n="62"/>E. <unclear cert="medium" resp="#joint">W</unclear>.
 <lb n="63"/>dienst unnd <unclear cert="low" resp="#joint">guotwillige</unclear>.
-<lb n="64"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermaister unnd
-<lb n="65"/>Rath <unclear cert="medium" resp="#joint">d</unclear> Statt St.
+<lb n="64"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaister</unclear> unnd
+<lb n="65"/><unclear cert="medium" resp="#joint">Rath</unclear> d Statt St.
 <lb n="66"/>Gallen</orgName>.
 <pb facs="StadtASG_Missive_1121_3611.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1121_3612.jpg" n="4"/>
-<lb n="67"/>Dem Wolgebornen Herren, Herrn
+<lb n="67"/>Dem <unclear cert="low" resp="#joint">Wolgebornen</unclear> Herren, Herrn
 <lb n="68"/><persName role="recipient" resp="#ner">Ulrichen <unclear cert="low" resp="#joint">Philipsen</unclear></persName>, <unclear cert="low" resp="#joint">fryherren</unclear> <unclear cert="low" resp="#joint">von</unclear>
-<lb n="69"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Hochen</unclear> Sax</placeName>, <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">Sax</unclear>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Forstegk</unclear></placeName>
+<lb n="69"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Hochen</unclear> Sax</placeName>, <unclear cert="low" resp="#joint">herren</unclear> zuo <unclear cert="low" resp="#joint">Sax</unclear>, <placeName resp="#ner"><unclear cert="low" resp="#joint">Forstegk</unclear></placeName>
 <lb n="70"/>unnd <placeName resp="#ner">Frischenberg</placeName>, unserm gnedigen
 <lb n="71"/><unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">etc</unclear>.
 </p>

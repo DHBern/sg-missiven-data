@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 912</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Christoff Fischer und Hans Scheuffelin melden sich zu einer von St. Gallen an sie gerichteten Ladung im Streit mit Hans Fisch. Sie erklären, die Sache betreffe sie nicht, da sie mit Fisch nichts zu tun hätten. Ihr Diener Hans Lechner habe Geld verloren, das sie bei ihm einfordern würden. Sie beabsichtigen nicht, gegen Fisch zu klagen, und sind nicht bereit, sich einem fremden Gericht zu unterwerfen. Falls Fisch gegen sie klage, werde er vor ihrer Obrigkeit Antwort erhalten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Christoff Fischer und Hans Scheuffelin</name></correspAction><correspAction type="received"><name resp="#regest">E. H. F. E. W.</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,29 +35,29 @@
 <p>
 <pb facs="StadtASG_Missive_912_2663.jpg" n="1"/>
 <lb n="1"/>Ehrnnveste fuersichtige, erbare unnd <unclear cert="low" resp="#joint">weisse</unclear> <unclear cert="low" resp="#joint">gebiettende</unclear>.
-<lb n="2"/><unclear cert="low" resp="#joint">guenstige</unclear> <unclear cert="medium" resp="#joint">herrrn</unclear>, nach dem kurtz verschinen tagen. von <unclear cert="low" resp="#joint">eim</unclear> erbarn.
+<lb n="2"/><unclear cert="low" resp="#joint">guenstige</unclear> <unclear cert="low" resp="#joint">herrrn</unclear>, nach dem <unclear cert="medium" resp="#joint">kurtz</unclear> <unclear cert="medium" resp="#joint">verschinen</unclear> tagen. von <unclear cert="low" resp="#joint">eim</unclear> erbarn.
 <lb n="3"/>unnd <unclear cert="low" resp="#joint">weissenn</unclear> <orgName ref="stadtasg-actors-148" cert="medium" resp="#ner">rath der statt zu <unclear cert="low" resp="#joint">sannet</unclear> gallen</orgName>. von wegen <persName resp="#ner"><unclear cert="low" resp="#joint">hanssen</unclear>
-<lb n="4"/>fisch</persName>. inwonners unnd burger. <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">selbs</unclear> an mich und meine mitt
-<lb n="5"/><unclear cert="low" resp="#joint">verwondenn</unclear>, eine citacion <unclear cert="medium" resp="#joint">aus</unclear> gangen. und die selbig euern herlig-
-<lb n="6"/>kaiten. zu geschickt wordenn sielche gegen uns zu <unclear cert="low" resp="#joint">exequirn</unclear>. dar
-<lb n="7"/>auff dan <unclear cert="low" resp="#joint">eur</unclear> <unclear cert="low" resp="#joint">herligkaiten</unclear>. <unclear cert="low" resp="#joint">unsern</unclear>. gegen <unclear cert="low" resp="#joint">bericht</unclear>. <unclear cert="low" resp="#joint">begert</unclear>, der.
-<lb n="8"/>halbenn. solche hiemitt gehorsamlich zu <unclear cert="low" resp="#joint">thuen</unclear>, so zaigen <unclear cert="low" resp="#joint">euer</unclear> <unclear cert="low" resp="#joint">herligkaitt</unclear>
-<lb n="9"/>wir <unclear cert="medium" resp="#joint">hiemitt</unclear> inn <unclear cert="low" resp="#joint">underthenigkaitt</unclear> ann, das uns <unclear cert="low" resp="#joint">solche</unclear> sachen im
-<lb n="10"/>wenigstenn nitt <unclear cert="low" resp="#joint">angehet</unclear> wir auch die selben. niemalls unß ann
-<lb n="11"/>gnumen, oder noch ann <unclear cert="low" resp="#joint">zunemen</unclear> gedenckenn so hab wir auch mit
-<lb n="12"/>gedachtem hans fisch nichts <unclear cert="low" resp="#joint">zuthun</unclear> gehabt sunder es woll. nitt
-<lb n="13"/>ane das. unsser diener <persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Lechner</unclear></persName> uns angezaigt das er etlich
-<lb n="14"/>gellt. aus einer beschlossenn bulgenn auff dem weg auff <unclear cert="low" resp="#joint">hieher</unclear>.
-<lb n="15"/>verlorn. da <unclear cert="low" resp="#joint">zumall</unclear>. er mitt gedachtem. <persName resp="#ner">Hanns Fisch</persName>. <unclear cert="low" resp="#joint">hie</unclear> her <unclear cert="low" resp="#joint">gritten</unclear>.
-<lb n="16"/>so lassen wir. doch unssern diener. die sachen <unclear cert="medium" resp="#joint">aus</unclear> tragen. und sein
-<lb n="17"/>wir <unclear cert="low" resp="#joint">unssers</unclear> <unclear cert="low" resp="#joint">gellts</unclear>. pey ime gewertig also das wir auff gedachtenn
-<lb n="18"/><persName resp="#ner">Hanns Fisch</persName>. <unclear cert="low" resp="#joint">niemalls</unclear> <unclear cert="low" resp="#joint">gclagenn</unclear> oder noch mals gedencken zu <unclear cert="low" resp="#joint">clagenn</unclear>.
-<lb n="19"/>sein dero wegen auch <unclear cert="medium" resp="#joint">nitt</unclear> schuldig uns sielcher sachenn. halbenn.
+<lb n="4"/>fisch</persName>. inwonners unnd burger. <unclear cert="low" resp="#joint">da</unclear> <unclear cert="low" resp="#joint">selbs</unclear> an mich und <unclear cert="medium" resp="#joint">meine</unclear> mitt
+<lb n="5"/><unclear cert="low" resp="#joint">verwondenn</unclear>, eine citacion <unclear cert="medium" resp="#joint">aus</unclear> gangen. und die selbig <unclear cert="low" resp="#joint">euern</unclear> <unclear cert="low" resp="#joint">herlig</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">kaiten</unclear>. zu geschickt wordenn <unclear cert="low" resp="#joint">sielche</unclear> gegen uns zu <unclear cert="low" resp="#joint">exequirn</unclear>. dar
+<lb n="7"/>auff dan <unclear cert="medium" resp="#joint">eur</unclear> <unclear cert="low" resp="#joint">herligkaiten</unclear>. <unclear cert="low" resp="#joint">unsern</unclear>. gegen <unclear cert="low" resp="#joint">bericht</unclear>. <unclear cert="low" resp="#joint">begert</unclear>, der.
+<lb n="8"/><unclear cert="low" resp="#joint">halbenn</unclear>. <unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">hiemitt</unclear> <unclear cert="medium" resp="#joint">gehorsamlich</unclear> zu <unclear cert="low" resp="#joint">thuen</unclear>, so <unclear cert="medium" resp="#joint">zaigen</unclear> <unclear cert="low" resp="#joint">euer</unclear> <unclear cert="low" resp="#joint">herligkaitt</unclear>
+<lb n="9"/>wir <unclear cert="medium" resp="#joint">hiemitt</unclear> inn <unclear cert="medium" resp="#joint">underthenigkaitt</unclear> ann, das uns <unclear cert="low" resp="#joint">solche</unclear> sachen im
+<lb n="10"/>wenigstenn nitt <unclear cert="low" resp="#joint">angehet</unclear> wir auch die selben. <unclear cert="low" resp="#joint">niemalls</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">ann</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">gnumen</unclear>, oder noch ann <unclear cert="low" resp="#joint">zunemen</unclear> gedenckenn so hab wir auch mit
+<lb n="12"/>gedachtem hans fisch nichts <unclear cert="low" resp="#joint">zuthun</unclear> gehabt sunder es <unclear cert="medium" resp="#joint">woll</unclear>. nitt
+<lb n="13"/>ane das. unsser diener <persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Lechner</unclear></persName> <unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="medium" resp="#joint">angezaigt</unclear> das er <unclear cert="low" resp="#joint">etlich</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">gellt</unclear>. aus einer beschlossenn <unclear cert="low" resp="#joint">bulgenn</unclear> auff dem weg auff <unclear cert="medium" resp="#joint">hieher</unclear>.
+<lb n="15"/>verlorn. da <unclear cert="low" resp="#joint">zumall</unclear>. er mitt gedachtem. <persName resp="#ner">Hanns Fisch</persName>. <unclear cert="low" resp="#joint">hie</unclear> her <unclear cert="medium" resp="#joint">gritten</unclear>.
+<lb n="16"/>so lassen wir. doch <unclear cert="medium" resp="#joint">unssern</unclear> diener. die sachen aus tragen. und sein
+<lb n="17"/><unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">unssers</unclear> <unclear cert="low" resp="#joint">gellts</unclear>. <unclear cert="medium" resp="#joint">pey</unclear> <unclear cert="medium" resp="#joint">ime</unclear> gewertig also das wir auff gedachtenn
+<lb n="18"/><persName resp="#ner">Hanns Fisch</persName>. <unclear cert="low" resp="#joint">niemalls</unclear> <unclear cert="low" resp="#joint">gclagenn</unclear> oder noch mals gedencken <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">clagenn</unclear>.
+<lb n="19"/>sein dero <unclear cert="medium" resp="#joint">wegen</unclear> auch <unclear cert="medium" resp="#joint">nitt</unclear> schuldig uns sielcher sachenn. halbenn.
 <lb n="20"/>zugeschweigenn, rats frembde, und aussern gerichtenn. ein zu
-<lb n="21"/>lassen. da aber gedachter Fisch wider uns zu klagen hatt. und das
-<lb n="22"/>selbig alhie vor unsser. gepuerendenn. ordenlichenn. obrigkaitt
+<lb n="21"/>lassen. da aber gedachter Fisch wider uns <unclear cert="medium" resp="#joint">zu</unclear> klagen <unclear cert="medium" resp="#joint">hatt</unclear>. und das
+<lb n="22"/>selbig <unclear cert="medium" resp="#joint">alhie</unclear> vor unsser. gepuerendenn. ordenlichenn. obrigkaitt
 <lb n="23"/>thun wirtt. soll ime <unclear cert="medium" resp="#joint">anttwortt</unclear> <unclear cert="low" resp="#joint">ervolgen</unclear>. wie recht ist, <unclear cert="low" resp="#joint">welches</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">euen</unclear> <unclear cert="low" resp="#joint">herligkaittenn</unclear>. zu underthenigem. gehorsam. also auff
+<lb n="24"/><unclear cert="low" resp="#joint">euen</unclear> <unclear cert="low" resp="#joint">herligkaittenn</unclear>. <unclear cert="medium" resp="#joint">zu</unclear> underthenigem. gehorsam. also auff
 <lb n="25"/><unclear cert="low" resp="#joint">solche</unclear>. <unclear cert="low" resp="#joint">auss</unclear> <unclear cert="low" resp="#joint">gangen</unclear> citacion, zu ermelden. nit umb gheen. sollen.
 <lb n="26"/>denselben. uns dienstlich <unclear cert="low" resp="#joint">bevelhentt</unclear>.
 <lb n="27"/>E. H. F. <unclear cert="low" resp="#joint">E</unclear>. W.

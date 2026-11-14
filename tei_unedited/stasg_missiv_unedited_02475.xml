@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2475</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,51 +20,51 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bedanken sich bei Landvogt zu Rorschach für dessen Unterstützung im Fall des Stephan Kramers. Sie teilen die Aussage des Kramers mit, wonach er wegen Verdächtigung durch einen in Kosten gesetzten Fleischer in Mordverdacht geraten sei. Sie bitten den Landvogt, die Sache bei seiner Obrigkeit zu klären und die Meinung der Rorschacher zu übermitteln, um die Feldkircher zu beruhigen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1624-03-17" resp="#regest">17. Martij Anno 1624</date></correspAction><correspAction type="received"><name resp="#regest">Landvogt zu Rorschach</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2475_9539.jpg" n="1"/>
-<lb n="1"/>Unser fründtnachbarlich willig
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">fründtnachbarlich</unclear> willig
 <lb n="2"/>dienst zuvor. Edler <persName resp="#ner">Vester
-<lb n="3"/>Wyser</persName>, insonders lieber herr
-<lb n="4"/>Landtvogt.
-<lb n="5"/>Uwer Nachbarlich willfahrig bei-
-<lb n="6"/>fange deß Steffanischen Kramers
-<lb n="7"/>thuond wir uns fründtnachbar-
-<lb n="8"/>lich bedankhen. Waß sich
-<lb n="9"/>derselbig so wohl guetlich alß
-<lb n="10"/>peinlich bekhendt daß hat der
-<lb n="11"/>herr uß der bylag nach
-<lb n="12"/>lengs zuvernemmen. Welches
-<lb n="13"/>wir dem herren daruß communi-
-<lb n="14"/>cieren, die wir nit für un-
-<lb n="15"/>notturfft erachtet Inewe in
-<lb n="16"/>wolbesagter bekhandtnuß
-<lb n="17"/>den Im dafelbe wesen (demaßen
-<lb n="18"/>denn dergleichen frau zu
-<lb n="19"/>Coßten geseßten fleisch mitredt,
-<lb n="20"/>verdächtung, dernach er an
-<lb n="21"/>Morter verharret, wie man Ihn
-<lb n="22"/>d mehrers nit bekhennen
-<lb n="23"/>wöllen. wil.
-<lb n="24"/>Wan wir dann uß uwers
-<lb n="25"/>Richßschreibers selbs luthli
-<lb n="26"/>anbringen verstanden, daß
+<lb n="3"/><unclear cert="low" resp="#joint">Wyser</unclear></persName>, insonders <unclear cert="medium" resp="#joint">lieber</unclear> herr
+<lb n="4"/><unclear cert="medium" resp="#joint">Landtvogt</unclear>.
+<lb n="5"/><unclear cert="low" resp="#joint">Uwer</unclear> <unclear cert="low" resp="#joint">Nachbarlich</unclear> <unclear cert="low" resp="#joint">willfahrig</unclear> <unclear cert="low" resp="#joint">bei</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">fange</unclear> <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Steffanischen</unclear> <unclear cert="low" resp="#joint">Kramers</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">thuond</unclear> wir uns <unclear cert="medium" resp="#joint">fründtnachbar</unclear>-
+<lb n="8"/>lich <unclear cert="medium" resp="#joint">bedankhen</unclear>. <unclear cert="medium" resp="#joint">Waß</unclear> <unclear cert="medium" resp="#joint">sich</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">derselbig</unclear> so wohl guetlich alß
+<lb n="10"/>peinlich <unclear cert="medium" resp="#joint">bekhendt</unclear> daß hat der
+<lb n="11"/>herr <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">bylag</unclear> nach
+<lb n="12"/><unclear cert="medium" resp="#joint">lengs</unclear> <unclear cert="medium" resp="#joint">zuvernemmen</unclear>. Welches
+<lb n="13"/>wir dem <unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">daruß</unclear> communi-
+<lb n="14"/><unclear cert="medium" resp="#joint">cieren</unclear>, die wir nit für <unclear cert="low" resp="#joint">un</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">notturfft</unclear> <unclear cert="low" resp="#joint">erachtet</unclear> <unclear cert="low" resp="#joint">Inewe</unclear> in
+<lb n="16"/><unclear cert="low" resp="#joint">wolbesagter</unclear> <unclear cert="low" resp="#joint">bekhandtnuß</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Im</unclear> <unclear cert="low" resp="#joint">dafelbe</unclear> <unclear cert="low" resp="#joint">wesen</unclear> (<unclear cert="low" resp="#joint">demaßen</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">denn</unclear> <unclear cert="low" resp="#joint">dergleichen</unclear> <unclear cert="low" resp="#joint">frau</unclear> zu
+<lb n="19"/><unclear cert="low" resp="#joint">Coßten</unclear> <unclear cert="low" resp="#joint">geseßten</unclear> <unclear cert="low" resp="#joint">fleisch</unclear> <unclear cert="low" resp="#joint">mitredt</unclear>,
+<lb n="20"/><unclear cert="low" resp="#joint">verdächtung</unclear>, <unclear cert="low" resp="#joint">dernach</unclear> er <unclear cert="low" resp="#joint">an</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">Morter</unclear> <unclear cert="low" resp="#joint">verharret</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">Ihn</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">mehrers</unclear> nit <unclear cert="medium" resp="#joint">bekhennen</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">wöllen</unclear>. <unclear cert="medium" resp="#joint">wil</unclear>.
+<lb n="24"/><unclear cert="medium" resp="#joint">Wan</unclear> wir dann <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">uwers</unclear>
+<lb n="25"/><unclear cert="medium" resp="#joint">Richßschreibers</unclear> <unclear cert="medium" resp="#joint">selbs</unclear> <unclear cert="medium" resp="#joint">luthli</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">anbringen</unclear> <unclear cert="medium" resp="#joint">verstanden</unclear>, daß
 <lb n="27"/>der herr sich nachbarlich anerbotten
-<lb n="28"/>die mitredte sach Costen des fleischs
-<lb n="29"/>so sie Ihme entpfrembdet, geseßten
-<lb n="30"/>seiner Werth oben ußhengell
-<lb n="31"/>volgzelassen. Alß sol
+<lb n="28"/>die <unclear cert="medium" resp="#joint">mitredte</unclear> <unclear cert="medium" resp="#joint">sach</unclear> <unclear cert="medium" resp="#joint">Costen</unclear> <unclear cert="medium" resp="#joint">des</unclear> <unclear cert="medium" resp="#joint">fleischs</unclear>
+<lb n="29"/>so <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> <unclear cert="low" resp="#joint">entpfrembdet</unclear>, <unclear cert="low" resp="#joint">geseßten</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">Werth</unclear> <unclear cert="low" resp="#joint">oben</unclear> <unclear cert="low" resp="#joint">ußhengell</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">volgzelassen</unclear>. Alß sol
 <pb facs="StadtASG_Missive_2475_9540.jpg" n="2"/>
 <lb n="32"/>den hern zuo <placeName ref="stadtasg-places-87" cert="medium" resp="#ner">Rorschach</placeName>
 <lb n="33"/>fründt=
