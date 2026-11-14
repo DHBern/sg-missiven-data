@@ -29,6 +29,54 @@ editor's regest.
   median 4 pages, Nr. 152–3999). A letter is drafted only when every one of
   its pages has been read (`--complete-against readings/series_pages.txt`).
 
+## The run of 14.11.2026
+
+**Gate (step 2 below), on 100 edited letters: missed.**
+
+| measure | gate | result |
+| --- | --- | --- |
+| sender at least 80 similar | 80 % | 70 % |
+| recipient at least 80 similar | 80 % | 89 % |
+| both | 80 % | 63 % |
+| year right (rule) | 50 % | 43 % (57 % within a year) |
+
+What the misses are:
+- **Names.** Most sender misses are not wrong. The draft names the office
+  the letter gives ("Heinrich, Abt des Klosters St. Gallen"); the edition
+  names the person it identified from its register ("Heinrich von
+  Mansdorf"). A few are wrong (the Confederates for Bern, Wil for Chur).
+- **Years.** Most are one year off: the edition starts the year on 1 January,
+  and letters dated by feasts around the turn of the year ("an der kindlin tag
+  anno xxxviiii") land a year early or late. Others are misreadings in the
+  reading itself ("Mcccc tricesimo" read as 1930).
+
+The run went ahead on the project's request, with the gate missed and said so.
+The drafts carry the same marks as before: draft, unchecked, names and dates
+may be wrong. The corrections the Missiven team makes from 18.11. are the
+measure for a second prompt.
+
+**Drafted:** every letter not yet edited that Gemini 4 Argon had read completely
+on 14.11. (the readings published that day, PR #33). Letters whose reading
+completes later are drafted by running step 3 again: it keeps the drafts it has.
+
+## Keywords (experimental)
+
+`scripts/keywords.py` gives the letters not yet edited keywords from the
+edition's own vocabulary (602 keywords, about 8 per edited letter). Qwen3.8-27B
+gets the vocabulary, the reading and the draft regest, with four edited letters
+as examples, and picks 4–12 keywords; a word not in the vocabulary is dropped.
+
+On 40 edited letters (with the editors' regest, so a best case): **precision
+0.67, recall 0.60, F1 0.63**; 7 keywords outside the vocabulary dropped. Two of
+three keywords it gives the editors gave too, and it finds three in five of
+theirs.
+
+The viewer shows them only as automatic and experimental: dashed chips with a
+label on the letter, a section of their own on each keyword page, a facet of
+their own in the search ("Schlagwort (automatisch)"), and in the heatmap only
+when "+ automatisch" is chosen. The network and the edition's counts use the
+edition's keywords alone.
+
 ## The rerun
 
 **When:** once Gemini 4 Argon has read the whole series.
@@ -90,4 +138,4 @@ their readings; until then the script refuses (see below).
   Linking them waits for the automatic tagging of the readings. The tagger
   (`scripts/ner.py`) has so far only been evaluated on the edition's pages
   (F1 0.73) and has not tagged an unedited page.
-- Keywords (`textClass/keywords`) are not drafted.
+- Keywords are drafted (experimental, above) but not written to TEI.

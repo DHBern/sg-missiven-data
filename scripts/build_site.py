@@ -9,6 +9,7 @@ Inputs
   readings/readers.json         who each reader is (label, kind, caveat)
   readings/lines.jsonl          line boxes of the line readers (docs/LINES.md)
   entities/<reader>.jsonl       automatic tagging of a reading (optional)
+  keywords/draft_<reader>.jsonl automatic keywords for letters not yet edited (experimental)
 
 Outputs (site/data/)
   index.json                    letters with date, sender, recipient, pages
@@ -242,6 +243,19 @@ def load_drafts() -> dict[str, dict]:
     return out
 
 
+def load_auto_keywords() -> dict[str, list[str]]:
+    """Keywords a language model picked from the edition's vocabulary for the
+    letters not yet edited (scripts/keywords.py). Experimental, shown as such."""
+    out: dict[str, list[str]] = {}
+    for path in sorted((ROOT / "keywords").glob("draft_*.jsonl")) if (ROOT / "keywords").exists() else []:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                if r.get("keywords"):
+                    out[r["id"]] = r["keywords"]
+    return out
+
+
 def write_missing_geo(reg: dict[str, dict]) -> None:
     """docs/places_without_coordinates.md: the register's places the map cannot show."""
     rows = sorted((e for e in reg.values() if e["kind"] == "place" and "geo" not in e),
@@ -298,7 +312,7 @@ def write_search(letters: list[dict], index: list[dict], reg: dict, best_reader:
                 pages.append([i, page["readings"][best_reader]["text"], best_reader]); srcs.add("machine")
         meta.append({"id": letter["id"], "y": int(year) if year.isdigit() else None,
                      "ed": letter["edited"], "s": e["sender"], "r": e["recipient"], "op": places,
-                     "kw": letter.get("keywords", []), "dr": bool(e.get("draft")),
+                     "kw": letter.get("keywords", []), "kwa": letter.get("auto_keywords", []), "dr": bool(e.get("draft")),
                      "src": sorted(srcs), "sh": len(shards)})
         cur[letter["id"]] = pages
         size += sum(len(t) for _, t, _ in pages)
@@ -373,6 +387,7 @@ def main() -> None:
     letters += unedited_letters(letters, readings)
     entities = load_entities()
     drafts = load_drafts()
+    auto_kw = load_auto_keywords()
     lines = load_lines()
     linked = {"pages": 0, "lines": 0, "of": 0}
     readers = json.loads((ROOT / "readings" / "readers.json").read_text(encoding="utf-8"))
@@ -424,6 +439,8 @@ def main() -> None:
                     page.setdefault("auto_entities", {})[reader] = pages[page["facs"]]
         if letter["id"] in drafts:
             letter["auto_regest"] = drafts[letter["id"]]
+        if not letter["edited"] and auto_kw.get(letter["id"]):
+            letter["auto_keywords"] = auto_kw[letter["id"]]
         (OUT / "letters" / f"{letter['id']}.json").write_text(
             json.dumps(letter, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         index.append({
