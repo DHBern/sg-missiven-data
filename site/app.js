@@ -26,7 +26,7 @@
     document.documentElement.lang = LANG;
     document.title = T("St. Gallen Missives Readings", "St. Galler Missiven: Lesungen");
     const nav = { letters: T("Letters", "Briefe"), search: T("Search", "Suche"), places: T("Places", "Orte"), names: T("Names", "Namen"),
-                  map: T("Map", "Karte"), readers: T("Readers", "Leser"), about: T("About", "Über") };
+                  map: T("Map", "Karte"), keywords: T("Keywords", "Schlagwörter"), readers: T("Readers", "Leser"), about: T("About", "Über") };
     document.querySelectorAll("[data-nav]").forEach((a) => { a.textContent = nav[a.dataset.nav]; });
     const brand = document.querySelector(".brand");
     if (brand) brand.innerHTML = `${T("St. Gallen Missives", "St. Galler Missiven")} <span>· ${T("readings", "Lesungen")}</span>`;
@@ -87,6 +87,8 @@
     if (parts[0] === "places") return showRegister("places");
     if (parts[0] === "names") return showRegister("names");
     if (parts[0] === "map") return showMap();
+    if (parts[0] === "keywords") return showKeywords();
+    if (parts[0] === "keyword" && parts[1]) return showKeyword(parts[1]);
     if (parts[0] === "entry" && parts[1]) return showEntry(parts[1]);
     if (parts[0] === "about") return showAbout();
     return showList(new URLSearchParams(qs || ""));
@@ -125,9 +127,26 @@
     const top = Math.max(1, ...bins);
     document.getElementById(`${id}-hist`).innerHTML = bins.map((n, i) => {
       const lo = (b0 + i) * Y_BIN;
-      return `<i class="${lo + Y_BIN - 1 >= from && lo <= to ? "in" : ""}" style="height:${n ? Math.max(6, Math.round(100 * n / top)) : 0}%"></i>`;
+      const lab = `${lo}–${lo + Y_BIN - 1}: ${n} ${P(n, "letter", "letters", "Brief", "Briefe")}`;
+      return `<i class="${lo + Y_BIN - 1 >= from && lo <= to ? "in" : ""}" data-lo="${lo}" title="${lab}" style="height:${n ? Math.max(6, Math.round(100 * n / top)) : 0}%"></i>`;
     }).join("");
     document.getElementById(`${id}-lab`).textContent = `${from}–${to}`;
+  }
+  /* a click on a bar narrows the years to its decade; a second click on the same bar widens them again */
+  function bindBars(id, min, max, get, set) {
+    const hist = document.getElementById(`${id}-hist`);
+    hist.removeAttribute("aria-hidden");
+    hist.addEventListener("click", (ev) => {
+      const bar = ev.target.closest("i[data-lo]");
+      if (!bar) return;
+      let lo = Math.max(min, +bar.dataset.lo), hi = Math.min(max, +bar.dataset.lo + Y_BIN - 1);
+      const [from, to] = get();
+      if (from === lo && to === hi) { lo = min; hi = max; }
+      document.getElementById(`${id}-from`).value = lo;
+      document.getElementById(`${id}-to`).value = hi;
+      document.getElementById(`${id}-lab`).textContent = `${lo}–${hi}`;
+      set(lo, hi);
+    });
   }
   const yArg = (v, d, min, max) => { const n = parseInt(v, 10); return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : d; };
 
@@ -210,6 +229,7 @@
     };
     q.addEventListener("input", draw);
     bindSlider("ly", (a, b) => { state.from = a; state.to = b; draw(); }, sync);
+    bindBars("ly", yMin, yMax, () => [state.from, state.to], (a, b) => { state.from = a; state.to = b; sync(); draw(); });
     ed.addEventListener("click", (ev) => {
       const b = ev.target.closest("button[data-v]");
       if (!b) return;
@@ -784,6 +804,7 @@
     $("stol").addEventListener("change", () => { ui.tol = $("stol").checked; run(); });
     $("ssort").addEventListener("change", () => { ui.sort = $("ssort").value; run(); });
     bindSlider("sy", (a, b) => { ui.from = a; ui.to = b; ui.shown = 50; later(run, 60); });
+    bindBars("sy", yMin, yMax, () => [ui.from, ui.to], (a, b) => { ui.from = a; ui.to = b; ui.shown = 50; run(); });
     $("sreset").addEventListener("click", () => { location.hash = "#/search"; });
     $("ftoggle").addEventListener("click", () => {
       const open = $("facets").classList.toggle("shown");
@@ -808,6 +829,192 @@
       if (b) { ui.open.add(b.dataset.k); run(); }
     });
     await run();
+  }
+
+  /* ---------- keywords ----------
+     The edition's keywords (TEI <keywords>, only on edited letters), from the
+     search data: per letter its year and keywords. */
+  const KW_BIN = 20, KW_THIN = 10;
+  async function kwData() {
+    const meta = await searchMeta();
+    // a copy per letter: empty keywords (the edition has a few) dropped, the search's own data untouched
+    const letters = meta.letters.map((m) => ({ ...m, kw: [...new Set((m.kw || []).map((k) => k.trim()).filter(Boolean))] }))
+      .filter((m) => m.kw.length);
+    const count = new Map();
+    for (const m of letters) for (const k of m.kw) count.set(k, (count.get(k) || 0) + 1);
+    const ys = letters.map((m) => m.y).filter(Boolean);
+    const b0 = Math.floor(Math.min(...ys) / KW_BIN) * KW_BIN, b1 = Math.floor(Math.max(...ys) / KW_BIN) * KW_BIN;
+    const bins = [];
+    for (let lo = b0; lo <= b1; lo += KW_BIN) bins.push(lo);
+    const binOf = (y) => (y ? bins.indexOf(Math.floor(y / KW_BIN) * KW_BIN) : -1);
+    const totals = bins.map(() => 0);
+    for (const m of letters) { const b = binOf(m.y); if (b >= 0) totals[b]++; }
+    return { letters, count, bins, binOf, totals };
+  }
+  const kwHref = (k) => `#/keyword/${encodeURIComponent(k)}`;
+  const kwSearch = (k, from, to) => `#/search?kw=${encodeURIComponent(k)}${from ? `&from=${from}&to=${to}` : ""}`;
+  // sequential: one hue (the brand red) from the panel colour to full strength
+  const heat = (v) => (v > 0 ? `color-mix(in oklab, var(--brand) ${Math.round(12 + 88 * Math.sqrt(v))}%, var(--panel))` : "transparent");
+
+  async function showKeywords() {
+    setNav("keywords");
+    destroyOsd();
+    app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
+    const d = await kwData();
+    const f = state.kwView = state.kwView || { top: 40, sort: "count", mode: "n", q: "" };
+    const all = [...d.count.entries()];
+    app.innerHTML = `
+      <section class="intro">
+        <h1>${T("Keywords", "Schlagwörter")}</h1>
+        <p>${T(`The edition gives its letters keywords: ${all.length} of them on ${d.letters.length} edited letters, about ${Math.round(d.letters.reduce((a, m) => a + m.kw.length, 0) / d.letters.length)} per letter. Letters not yet edited have none.
+          The heatmap shows in how many letters of each twenty years a keyword stands; a click on a cell opens those letters in the search.`,
+          `Die Edition verschlagwortet ihre Briefe: ${all.length} Schlagwörter auf ${d.letters.length} edierten Briefen, etwa ${Math.round(d.letters.reduce((a, m) => a + m.kw.length, 0) / d.letters.length)} pro Brief. Noch nicht edierte Briefe haben keine.
+          Die Heatmap zeigt, in wie vielen Briefen von je zwanzig Jahren ein Schlagwort steht; ein Klick auf eine Zelle öffnet diese Briefe in der Suche.`)}</p>
+      </section>
+      <div class="filters">
+        <input id="kq" type="search" placeholder="${T("Find a keyword…", "Schlagwort finden…")}" value="${esc(f.q)}" aria-label="${T("Find a keyword", "Schlagwort finden")}">
+        <select id="ktop" aria-label="${T("How many", "Wie viele")}">
+          ${[20, 40, 80, 0].map((n) => `<option value="${n}" ${f.top === n ? "selected" : ""}>${n ? T(`${n} most frequent`, `${n} häufigste`) : T("all", "alle")}</option>`).join("")}
+        </select>
+        <select id="ksort" aria-label="${T("Order", "Reihenfolge")}">
+          <option value="count" ${f.sort === "count" ? "selected" : ""}>${T("by frequency", "nach Häufigkeit")}</option>
+          <option value="time" ${f.sort === "time" ? "selected" : ""}>${T("by period of most use", "nach Zeit des Schwerpunkts")}</option>
+          <option value="alpha" ${f.sort === "alpha" ? "selected" : ""}>${T("alphabetically", "alphabetisch")}</option>
+        </select>
+        <div class="seg" id="kmode" role="group" aria-label="${T("Value", "Wert")}">
+          ${[["n", T("Letters", "Briefe")], ["share", T("Share of the period", "Anteil am Zeitraum")]].map(([v, l]) =>
+            `<button type="button" data-v="${v}" aria-pressed="${f.mode === v}" class="${f.mode === v ? "on" : ""}">${l}</button>`).join("")}
+        </div>
+      </div>
+      <div class="heatwrap" id="heat"></div>
+      <p class="muted small" id="hnote"></p>
+      <h2>${T("All keywords", "Alle Schlagwörter")}</h2>
+      <div class="kwindex" id="kwindex"></div>`;
+    const centre = (k) => {  // mean year of a keyword's letters, for "by period"
+      let s = 0, n = 0;
+      for (const m of d.letters) if (m.y && m.kw.includes(k)) { s += m.y; n++; }
+      return n ? s / n : 0;
+    };
+    const cells = new Map();
+    for (const m of d.letters) {
+      const b = d.binOf(m.y);
+      if (b < 0) continue;
+      for (const k of m.kw) { if (!cells.has(k)) cells.set(k, d.bins.map(() => 0)); cells.get(k)[b]++; }
+    }
+    const draw = () => {
+      const words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
+      let rows = all.filter(([k]) => words.every((w) => k.toLowerCase().includes(w))).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "de"));
+      if (f.top && !words.length) rows = rows.slice(0, f.top);
+      if (f.sort === "alpha") rows.sort((a, b) => a[0].localeCompare(b[0], "de"));
+      if (f.sort === "time") rows.sort((a, b) => centre(a[0]) - centre(b[0]));
+      const val = (k, b) => { const n = (cells.get(k) || [])[b] || 0; return f.mode === "n" ? n : (d.totals[b] ? n / d.totals[b] : 0); };
+      // a share over a handful of letters says nothing: those periods stay out of the colour scale
+      const thin = (b) => f.mode === "share" && d.totals[b] < KW_THIN;
+      let top = 0;
+      for (const [k] of rows) d.bins.forEach((_, b) => { if (!thin(b)) top = Math.max(top, val(k, b)); });
+      const fmt = (v) => (f.mode === "n" ? String(v) : `${Math.round(v * 100)} %`);
+      const cols = `grid-template-columns: minmax(120px, 13rem) repeat(${d.bins.length}, minmax(30px, 1fr)) 3.2rem;`;
+      document.getElementById("heat").innerHTML = rows.length ? `
+        <div class="heat" style="${cols}" role="table" aria-label="${T("Keywords by twenty years", "Schlagwörter nach zwanzig Jahren")}">
+          <div class="hh" role="columnheader"></div>
+          ${d.bins.map((lo) => `<div class="hh" role="columnheader">${lo}<span>–${String(lo + KW_BIN - 1).slice(2)}</span></div>`).join("")}
+          <div class="hh hn" role="columnheader">${T("all", "alle")}</div>
+          <div class="hk muted" role="rowheader">${T("letters with keywords", "Briefe mit Schlagwörtern")}</div>
+          ${d.totals.map((n, b) => `<div class="htot${thin(b) ? " thin" : ""}">${n}</div>`).join("")}
+          <div class="hn muted">${d.letters.length}</div>
+          ${rows.map(([k, n]) => `
+            <a class="hk" role="rowheader" href="${kwHref(k)}">${esc(k)}</a>
+            ${d.bins.map((lo, b) => {
+              const v = val(k, b), c = (cells.get(k) || [])[b] || 0;
+              return `<a class="hc${thin(b) ? " thin" : ""}" role="cell" href="${c ? kwSearch(k, lo, lo + KW_BIN - 1) : kwHref(k)}" style="background:${thin(b) ? "" : heat(top ? v / top : 0)}"
+                data-tip="${esc(k)} · ${lo}–${lo + KW_BIN - 1}: ${c} ${P(c, "letter", "letters", "Brief", "Briefe")} ${T("of", "von")} ${d.totals[b]}${d.totals[b] ? ` (${Math.round(100 * c / d.totals[b])} %)` : ""}"
+                aria-label="${esc(k)} ${lo}–${lo + KW_BIN - 1}: ${c}">${c && rows.length <= 40 ? `<span>${c}</span>` : ""}</a>`;
+            }).join("")}
+            <div class="hn">${n}</div>`).join("")}
+        </div>` : `<p class="muted">${T("No keyword matches.", "Kein Schlagwort passt.")}</p>`;
+      document.getElementById("hnote").innerHTML = `<span class="hlegend"><span>${f.mode === "n" ? "0" : "0 %"}</span><i></i><span>${fmt(top)}</span></span>
+        ${f.mode === "n" ? T("Number of letters in twenty years.", "Anzahl Briefe in zwanzig Jahren.") : T(`Share of the period's letters with keywords: evens out that the edition holds far more letters from some periods than from others. Periods with fewer than ${KW_THIN} letters are hatched and left out of the colours: one letter there would count as a large share.`, `Anteil an den verschlagworteten Briefen des Zeitraums: gleicht aus, dass die Edition aus manchen Zeiten viel mehr Briefe hat als aus anderen. Zeiträume mit weniger als ${KW_THIN} Briefen sind schraffiert und nicht eingefärbt: ein einziger Brief wäre dort schon ein grosser Anteil.`)}
+        ${T(`Years by the letter's date; ${d.letters.filter((m) => !m.y).length} undated letters are counted only in "all".`, `Jahre nach dem Datum des Briefs; ${d.letters.filter((m) => !m.y).length} undatierte Briefe zählen nur unter «alle».`)}`;
+    };
+    // the index below: every keyword, A–Z, with its count
+    const byLetter = new Map();
+    for (const [k, n] of [...all].sort((a, b) => a[0].localeCompare(b[0], "de"))) {
+      const l = k[0].toUpperCase();
+      if (!byLetter.has(l)) byLetter.set(l, []);
+      byLetter.get(l).push([k, n]);
+    }
+    document.getElementById("kwindex").innerHTML = [...byLetter].map(([l, ks]) => `
+      <section><h3>${esc(l)}</h3><div class="kw">${ks.map(([k, n]) => `<a href="${kwHref(k)}">${esc(k)} <span class="n">${n}</span></a>`).join("")}</div></section>`).join("");
+    const heatEl = document.getElementById("heat");
+    heatEl.addEventListener("mouseover", (ev) => {
+      const c = ev.target.closest(".hc");
+      if (!c) return;
+      hideTip();
+      tipEl = document.createElement("div");
+      tipEl.className = "tip";
+      tipEl.textContent = c.dataset.tip;
+      document.body.appendChild(tipEl);
+      const r = c.getBoundingClientRect();
+      tipEl.style.left = Math.max(8, Math.min(window.innerWidth - tipEl.offsetWidth - 8, r.left)) + "px";
+      tipEl.style.top = (r.bottom + 6 + tipEl.offsetHeight > window.innerHeight ? r.top - tipEl.offsetHeight - 6 : r.bottom + 6) + "px";
+    });
+    heatEl.addEventListener("mouseleave", hideTip);
+    document.getElementById("kq").addEventListener("input", (ev) => { f.q = ev.target.value; draw(); });
+    document.getElementById("ktop").addEventListener("change", (ev) => { f.top = +ev.target.value; draw(); });
+    document.getElementById("ksort").addEventListener("change", (ev) => { f.sort = ev.target.value; draw(); });
+    document.getElementById("kmode").addEventListener("click", (ev) => {
+      const b = ev.target.closest("button[data-v]");
+      if (!b) return;
+      f.mode = b.dataset.v;
+      document.querySelectorAll("#kmode button").forEach((x) => { const on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+      draw();
+    });
+    draw();
+  }
+
+  async function showKeyword(k) {
+    setNav("keywords");
+    destroyOsd();
+    app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
+    const d = await kwData();
+    const mine = d.letters.filter((m) => m.kw.includes(k));
+    if (!mine.length) { app.innerHTML = `<p>${T("No letter has the keyword", "Kein Brief hat das Schlagwort")} «${esc(k)}». <a href="#/keywords">${T("All keywords", "Alle Schlagwörter")}</a></p>`; return; }
+    const per = d.bins.map(() => 0);
+    for (const m of mine) { const b = d.binOf(m.y); if (b >= 0) per[b]++; }
+    const top = Math.max(1, ...per);
+    const co = new Map();
+    for (const m of mine) for (const x of m.kw) if (x !== k) co.set(x, (co.get(x) || 0) + 1);
+    const coTop = [...co.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "de")).slice(0, 24);
+    const rows = mine.map((m) => byId(m.id)).filter(Boolean).sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    app.innerHTML = `
+      <section class="intro">
+        <div class="muted small"><a href="#/keywords">${T("Keywords", "Schlagwörter")}</a></div>
+        <h1>${esc(k)}</h1>
+        <p>${T(`${mine.length} edited ${P(mine.length, "letter", "letters", "", "")} with this keyword.`, `${mine.length} edierte ${P(mine.length, "", "", "Brief", "Briefe")} mit diesem Schlagwort.`)}
+          <a href="${kwSearch(k)}">${T("Open in the search", "In der Suche öffnen")}</a></p>
+      </section>
+      <div class="kwcols">
+        <section class="pane">
+          <h2>${T("Over time", "Über die Zeit")}</h2>
+          <div class="kwbars" role="table" aria-label="${T("Letters per twenty years", "Briefe pro zwanzig Jahre")}">
+            ${d.bins.map((lo, b) => `<a href="${per[b] ? kwSearch(k, lo, lo + KW_BIN - 1) : "#/keyword/" + encodeURIComponent(k)}" role="row" title="${lo}–${lo + KW_BIN - 1}: ${per[b]} ${T("of", "von")} ${d.totals[b]}">
+              <span class="yr">${lo}</span><span class="bar"><i style="width:${Math.round(100 * per[b] / top)}%"></i></span><span class="n">${per[b] || ""}</span></a>`).join("")}
+          </div>
+          <p class="muted small">${T("Letters with this keyword per twenty years; a click opens them in the search.", "Briefe mit diesem Schlagwort pro zwanzig Jahre; ein Klick öffnet sie in der Suche.")}</p>
+        </section>
+        <section class="pane">
+          <h2>${T("Often together with", "Oft zusammen mit")}</h2>
+          <div class="kw">${coTop.map(([x, n]) => `<a href="${kwHref(x)}">${esc(x)} <span class="n">${n}</span></a>`).join("")}</div>
+          <p class="muted small">${T("The number: letters that carry both keywords.", "Die Zahl: Briefe, die beide Schlagwörter tragen.")}</p>
+        </section>
+      </div>
+      <h2>${T("Letters", "Briefe")}</h2>
+      <div class="list">${rows.map((l) => `
+        <a class="row" href="#/letter/${l.id}/1">
+          <span class="num">${esc(nrOf(l))}</span>
+          <span class="date">${esc(fmtDate(l.date))}</span>
+          <span><span class="who">${esc(l.sender.join(", ") || "?")} → ${esc(l.recipient.join(", ") || "?")}</span><span class="reg">${esc(l.regest)}</span></span>
+        </a>`).join("")}</div>`;
   }
 
   /* ---------- letter ---------- */
@@ -853,7 +1060,7 @@
           <div class="meta"><span class="parties">${esc(s || "?")} → ${esc(r || "?")}</span></div>
           <details class="regest" ${store.get("regest", true) ? "open" : ""}><summary>Regest</summary>
             <p>${esc(letter.regest)}</p>
-            ${letter.keywords.length ? `<div class="kw">${letter.keywords.map((k) => `<span>${esc(k)}</span>`).join("")}</div>` : ""}
+            ${letter.keywords.some((k) => k.trim()) ? `<div class="kw">${letter.keywords.filter((k) => k.trim()).map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}
           </details>` : `
           <h1>${esc(nrOf(letter))}${letter.auto_regest && letter.auto_regest.year ? ` <span class="muted">· ${esc(letter.auto_regest.year)}?</span>` : ""}</h1>
           <p class="caveat">${T("Not yet edited: the Stadtarchiv has not published this letter. What follows are machine readings only, with no edition to compare them with.",

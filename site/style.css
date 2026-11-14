@@ -130,7 +130,10 @@ h2 { font-size: 1.15rem; margin: 24px 0 8px; }
 details.regest { margin: 8px 0 12px; }
 details.regest summary { cursor: pointer; color: var(--muted); font-size: .9rem; }
 .kw { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-.kw span { font-size: .8rem; background: var(--chip); padding: 1px 8px; border-radius: 99px; }
+.kw span, .kw a { font-size: .8rem; background: var(--chip); padding: 1px 8px; border-radius: 99px; color: var(--ink); text-decoration: none; }
+.kw a:hover { background: var(--chip-on); color: var(--chip-on-ink); }
+.kw a .n { background: none; padding: 0; color: var(--muted); font-variant-numeric: tabular-nums; }
+.kw a:hover .n { color: inherit; }
 
 .pages { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
 .pages .lbl { font-size: .85rem; color: var(--muted); margin-right: 4px; }
@@ -289,3 +292,33 @@ mark { background: var(--date-bg); color: inherit; padding: 0 1px; border-radius
 .text .line.hl { background: var(--chip); border-radius: 3px; }
 .row-hl { outline: 2px solid var(--brand); background: color-mix(in srgb, var(--brand) 14%, transparent); border-radius: 2px; pointer-events: none; }
 .line-note { margin: 4px 0 6px; }
+
+/* year bars: a click narrows the years to that decade */
+.yr-hist i { cursor: pointer; }
+.yr-hist i:hover { background: var(--ink); }
+
+/* keywords: heatmap, index, keyword page */
+.heatwrap { overflow-x: auto; margin: 8px 0 4px; }
+.heat { display: grid; gap: 2px; min-width: 560px; font-size: .8rem; }
+.heat .hh { color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; line-height: 1.1; padding-bottom: 4px; align-self: end; }
+.heat .hh span { display: block; font-size: .7rem; }
+.heat .hk { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 6px; color: var(--ink); text-decoration: none; align-self: center; }
+.heat a.hk:hover { text-decoration: underline; }
+.heat .hc { min-height: 22px; border-radius: 2px; box-shadow: inset 0 0 0 1px var(--line); display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); font-variant-numeric: tabular-nums; }
+.heat .hc:hover { outline: 2px solid var(--ink); outline-offset: -1px; }
+.heat .hc span { font-size: .7rem; background: var(--panel); border-radius: 3px; padding: 0 3px; line-height: 1.3; }
+.heat .htot { text-align: center; color: var(--muted); font-variant-numeric: tabular-nums; }
+.heat .hn { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; align-self: center; }
+.hlegend { display: inline-flex; align-items: center; gap: 6px; margin-right: 10px; vertical-align: middle; }
+.hlegend i { width: 90px; height: 10px; border-radius: 2px; background: linear-gradient(90deg, color-mix(in oklab, var(--brand) 12%, var(--panel)), var(--brand)); }
+.kwindex section { margin: 10px 0; }
+.kwindex h3 { margin: 0 0 4px; font-size: .95rem; color: var(--muted); }
+.kwcols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-bottom: 16px; }
+@media (max-width: 860px) { .kwcols { grid-template-columns: 1fr; } }
+.kwbars a { display: grid; grid-template-columns: 3rem 1fr 2.2rem; gap: 8px; align-items: center; text-decoration: none; color: var(--ink); font-size: .85rem; padding: 1px 0; }
+.kwbars .yr { color: var(--muted); font-variant-numeric: tabular-nums; }
+.kwbars .bar { height: 12px; }
+.kwbars .bar i { display: block; height: 100%; background: var(--brand); border-radius: 0 4px 4px 0; }
+.kwbars .n { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+.kwbars a:hover .bar i { background: var(--ink); }
+.heat .hc.thin, .heat .htot.thin { background: repeating-linear-gradient(135deg, transparent 0 4px, var(--line) 4px 5px); }
