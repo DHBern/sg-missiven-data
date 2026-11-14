@@ -322,9 +322,15 @@ def main() -> None:
 
     totals = {r: {"edits": 0, "chars": 0, "pages": 0, "per_page": [], "read": 0} for r in readings}
     index = []
+    # the fine-tuned readers trained on the edited pages with text, except the
+    # held-out ones (readings/heldout_pages.txt): the viewer warns on those only
+    heldout_file = ROOT / "readings" / "heldout_pages.txt"
+    heldout = {l.strip() for l in heldout_file.read_text().splitlines() if l.strip()} if heldout_file.exists() else set()
     for letter in letters:
         for page in letter["pages"]:
             ref = flat(page["text"])
+            if letter["edited"] and ref:
+                page["fit"] = "heldout" if Path(page["facs"]).stem in heldout else "train"
             page["readings"] = {}
             if unc.get(page["facs"]):
                 page["unc"] = unc[page["facs"]]
