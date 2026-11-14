@@ -26,7 +26,35 @@ ORDINAL = {"primo": 1, "secundo": 2, "tertio": 3, "quarto": 4, "quinto": 5, "sex
            "septuagesimo": 70, "octuagesimo": 80, "octogesimo": 80, "nonagesimo": 90}
 ROMAN = {"i": 1, "j": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
 # where the year starts: after "anno", "a°", "ao", "jar(s)", "im", or a bare four-digit year
-ANCHOR = re.compile(r"\b(?:anno|ano|a[°o]|im|jar|jars|jahr|jahrs)\b\.?|\ba°", re.I)
+ANCHOR = re.compile(r"\b(?:anno|ano|a[°o]|[ij]m|jar|jars|jahr|jahrs)\b\.?|\ba°", re.I)
+# French number words, for date lines like "mil cinq cens huitante trois"
+FRENCH = {"un": 1, "deux": 2, "trois": 3, "quatre": 4, "cinq": 5, "six": 6, "sept": 7, "huit": 8, "neuf": 9,
+          "dix": 10, "onze": 11, "douze": 12, "treize": 13, "quatorze": 14, "quinze": 15, "seize": 16,
+          "vingt": 20, "vingts": 20, "vingtz": 20, "trente": 30, "quarante": 40, "cinquante": 50, "soixante": 60,
+          "septante": 70, "huitante": 80, "octante": 80, "nonante": 90}
+
+
+def french_year(text: str) -> int | None:
+    """'mil cinq cens huitante trois' -> 1583. "mil" is a word here, not the
+    Roman figures M, I, L (which would make 1049)."""
+    m = re.search(r"\bmil(?:le)?\b", text, re.I)
+    if not m:
+        return None
+    total, cur = 1000, 0
+    for w in re.findall(r"[a-zàâçéèêëîïôûü]+", text[m.end():].lower()):
+        if w == "et":
+            continue
+        if w in ("cens", "cent", "cents"):
+            total += max(cur, 1) * 100
+            cur = 0
+        elif w in ("vingt", "vingts", "vingtz") and cur == 4:  # quatre-vingt(s)
+            cur = 80
+        elif w in FRENCH:
+            cur += FRENCH[w]
+        else:
+            break
+    total += cur
+    return total if 1300 <= total <= 1700 else None
 
 
 def roman(tok: str) -> int | None:
@@ -47,7 +75,10 @@ def written_year(text: str) -> tuple[int | None, bool]:
     full = re.findall(r"(?<!\d)(1[2-7]\d\d)(?!\d)", text)
     if full:
         return int(full[-1]), True
-    m = re.search(r"\bim\s+([ivxlcj]+)\s+(?:jar|jahr)", text, re.I)  # "im lij jar"
+    fr = french_year(text)
+    if fr:
+        return fr, True
+    m = re.search(r"\b[ij]m\s+([ivxlcj]+)\s+(?:jar|jahr)", text, re.I)  # "im lij jar", "jm liij jar"
     if m:
         v = roman(m.group(1))
         if v:
@@ -81,6 +112,8 @@ def written_year(text: str) -> tuple[int | None, bool]:
             elif seen:
                 break
     if seen and total:
+        if total >= 1000 and not 1300 <= total <= 1700:
+            return None, False  # Roman figures read out of words ("jm", "mil"): no year
         return total, total >= 1000
     return None, False
 

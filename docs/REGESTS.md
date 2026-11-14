@@ -139,3 +139,15 @@ their readings; until then the script refuses (see below).
   (`scripts/ner.py`) has so far only been evaluated on the edition's pages
   (F1 0.73) and has not tagged an unedited page.
 - Keywords are drafted (experimental, above) but not written to TEI.
+
+## Corrections (14.11.2026)
+
+- **French date lines.** `scripts/dates.py` read «mil cinq cens huitante trois» as the Roman figures M, I, L (1049). It now reads French number words (`french_year`, 1583 here). A year read out of words that falls outside 1300–1700 is dropped rather than kept. «jm» counts as «im» («jm liij» had been read as J, M, LIIJ = 1052).
+  - Changed: 4 drafts. Nr. 953 → 1553, 999 → 1523, 1161 → 1583, 1321 → 1595. The last two moved because the two false anchors had bent the timeline.
+  - The evaluation is unchanged: the rule gets 43 of 100 years right, the model 40.
+- **Years set by hand:** `regests/year_corrections.json`. `regest.py` applies them whenever it settles the years, with `year_how: "corrected"` and a note. The viewer shows «Jahr von Hand gesetzt», and the TEI writes `cert="medium"`.
+  - First entry: Nr. 953, 1553 confirmed (1453 considered). The letter is filed among letters of 1571.
+- **Regests in German only.** The model had written the regests of the two French Geneva letters (Nr. 1161, 1469) in English.
+  - The prompt now asks for German whatever the letter's language.
+  - `ask()` checks the answer (`german()`). If it is not German, it asks again in the same conversation. For Nr. 1161, only that follow-up gave German.
+  - Both letters were drafted again, and their keywords as well.

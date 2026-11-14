@@ -59,6 +59,8 @@ Schreibung der Namen (z.B. «Bürgermeister und Rat zu St. Gallen», «Konstanz�
 Erfinde nichts: was der Brief nicht sagt, steht nicht im Regest. Der Brieftext ist eine
 ungeprüfte maschinelle Lesung und kann Lesefehler enthalten; Namen, die du nicht sicher
 lesen kannst, gibst du so wieder, wie sie dastehen.
+Schreibe immer auf Deutsch (Regest, Absender, Empfänger, Ort), auch wenn der Brief
+französisch, italienisch oder lateinisch geschrieben ist.
 
 Antworte ausschliesslich mit JSON:
 {"sender": "...", "recipient": "...", "place": "Ausstellungsort oder null",
@@ -74,6 +76,11 @@ PROMPT_DIGEST = hashlib.sha256(SYSTEM.encode()).hexdigest()[:8]
 def nr_of(letter_id: str, title: str = "") -> int | None:
     m = re.search(r"Nr\.\s*(\d+)", title) or re.search(r"unedited_(\d+)$", letter_id)
     return int(m.group(1)) if m else None
+
+
+_corr = ROOT / "regests" / "year_corrections.json"
+# years set by a person (regests/year_corrections.json): they win over the rule
+CORRECTIONS = json.loads(_corr.read_text(encoding="utf-8"))["years"] if _corr.exists() else {}
 
 
 def settle_years(rows: list[dict], letters: list[dict]) -> dict[str, int]:
@@ -105,6 +112,10 @@ def settle_years(rows: list[dict], letters: list[dict]) -> dict[str, int]:
         if y is None:
             y, how = d.get("year_model"), "model" if d.get("year_model") else ""
         d["year"], d["year_how"] = y, how
+        fix = CORRECTIONS.get(r["id"])
+        if fix:
+            d["year"], d["year_how"], d["year_note"] = fix["year"], "corrected", fix.get("note", "")
+            how = "corrected"
         counts[how or "none"] = counts.get(how or "none", 0) + 1
     return counts
 
@@ -140,6 +151,19 @@ def example_block(letters_by_id: dict, readings: dict) -> list[dict]:
     return msgs
 
 
+_DE = re.compile(r"\b(der|die|das|und|des|den|dem|zu|von|mit|für|wegen|bittet|bitten)\b", re.I)
+_EN = re.compile(r"\b(the|and|of|to|with|for|that|requests|asks|thank)\b", re.I)
+_FR = re.compile(r"\b(le|la|les|et|du|des|pour|que|demande|prie)\b", re.I)
+
+
+def german(answer: dict) -> bool:
+    """Whether a drafted regest is in German: the model wrote two Geneva letters'
+    regests in English (14.11.2026), though the prompt asks for German."""
+    t = answer.get("regest") or ""
+    de = len(_DE.findall(t))
+    return de >= len(_EN.findall(t)) and de >= len(_FR.findall(t))
+
+
 def ask(client: httpx.Client, shots: list[dict], text: str) -> dict:
     body = {"model": MODEL, "temperature": 0.2, "max_tokens": 1200,
             "chat_template_kwargs": {"enable_thinking": False},
@@ -153,7 +177,16 @@ def ask(client: httpx.Client, shots: list[dict], text: str) -> dict:
             content = r.json()["choices"][0]["message"]["content"] or ""
             content = re.sub(r"^```(?:json)?|```$", "", content.strip(), flags=re.M).strip()
             m = re.search(r"\{.*\}", content, re.S)
-            return json.loads(m.group(0) if m else content)
+            answer = json.loads(m.group(0) if m else content)
+            if not german(answer) and attempt < 3:
+                # not in German: ask once more, in the same conversation
+                body["messages"] = body["messages"][:len(shots) + 2] + [
+                    {"role": "assistant", "content": content},
+                    {"role": "user", "content": "Das Regest ist nicht auf Deutsch. Schreibe dieselbe Antwort noch einmal, "
+                                                "Regest, Absender, Empfänger und Ort auf Deutsch."}]
+                last = ValueError("regest not in German")
+                continue
+            return answer
         except Exception as e:  # noqa: BLE001
             last = e
             time.sleep(5 * (attempt + 1))
