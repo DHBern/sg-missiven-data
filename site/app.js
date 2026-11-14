@@ -921,9 +921,17 @@
     return `<div class="legend"><span class="per"><i></i>${T("person", "Person")}</span><span class="org"><i></i>${T("organisation", "Organisation")}</span><span class="place"><i></i>${T("place", "Ort")}</span><span class="date"><i></i>${T("date", "Datum")}</span></div>`;
   }
 
+  /* a fine-tuned reader's caveat belongs on the pages it trained on, not on held-out or unedited ones */
+  function pageCaveat(r, page) {
+    if (r.caveat_scope !== "training_pages") return r.caveat ? `<p class="caveat">${esc(loc(r, "caveat"))}</p>` : "";
+    if (page.fit === "train") return `<p class="caveat">${esc(loc(r, "caveat_page"))}</p>`;
+    if (page.fit === "heldout") return `<p class="about-reader">${esc(loc(r, "heldout_note"))}</p>`;
+    return "";
+  }
+
   function readingHtml(page, readerId) {
     const r = state.readers.find((x) => x.id === readerId) || state.readers[0];
-    const head = `${r.about ? `<p class="about-reader">${esc(loc(r, "about"))}${fnMark(r)}</p>` : ""}${r.caveat ? `<p class="caveat">${esc(loc(r, "caveat"))}</p>` : ""}${fnHtml(r)}`;
+    const head = `${r.about ? `<p class="about-reader">${esc(loc(r, "about"))}${fnMark(r)}</p>` : ""}${pageCaveat(r, page)}${fnHtml(r)}`;
     const showEnts = state.ents && hasEnts(page, readerId);
     if (readerId === "edition") {
       if (!page.html) return head + `<p class="empty">${T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
