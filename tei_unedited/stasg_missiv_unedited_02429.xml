@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2429</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,76 +20,76 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Johann Rudolf Reding von Bierberg, Graf von Toggenburg, teilt mit, dass am 15. April 1622 in Heimberg ein Blitz in den Kirchturm eingeschlagen und Kirche, Turm und Glocken beschädigt habe. Die Kirchengemeinde bitte um Unterstützung für den Wiederaufbau. Reding ersucht Bürgermeister und Rat zu St. Gallen, aus christlichem Mitleid und nachbarlicher Zuneigung eine ansehnliche Hilfe zu leisten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Johann Rudolf Reding von Bierberg</name><placeName resp="#regest">Liechtensteig</placeName><date when="1622-08-15" resp="#regest">den 5. 15. Augusti Ao 1622</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2429_9347.jpg" n="1"/>
-<lb n="1"/>Edle veste und hochgelerte, frome, ehrnveste,
-<lb n="2"/>fuersichtige und wyse, sonders guenstige ehrende
-<lb n="3"/>liebe herren, denen syge mein nachparlicher
-<lb n="4"/>gruos, und willige dienst bevor etc.
+<lb n="1"/>Edle veste und <unclear cert="low" resp="#joint">hochgelerte</unclear>, <unclear cert="low" resp="#joint">frome</unclear>, <unclear cert="low" resp="#joint">ehrnveste</unclear>,
+<lb n="2"/>fuersichtige und <unclear cert="low" resp="#joint">wyse</unclear>, sonders <unclear cert="medium" resp="#joint">guenstige</unclear> <unclear cert="medium" resp="#joint">ehrende</unclear>
+<lb n="3"/>liebe herren, <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">syge</unclear> mein <unclear cert="medium" resp="#joint">nachparlicher</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">gruos</unclear>, und willige dienst bevor etc.
 <lb n="5"/>Waß massen den <date resp="#ner">15. t. aprilis</date> diß zedem <placeName ref="stadtasg-places-467" cert="medium" resp="#ner">Heim-
 <lb n="6"/>berg</placeName> disere miner anbeuohlnen grafschafft
-<lb n="7"/><placeName ref="stadtasg-places-199" cert="medium" resp="#ner">Toggenburg</placeName>, die stral in das thurn der kirchen
-<lb n="8"/>geschlagen, und dardurch dis kirchen gebuew
-<lb n="9"/>und thurn, mit fuhr verzert, und vil an-
-<lb n="10"/>sehenlich kostliche gloggen, verschnelzt syend
-<lb n="11"/>worden, achte ich die hern syen nun mer
-<lb n="12"/>landtleuffig bricht. Diewyl aber di kirch-
-<lb n="13"/>gnossen daselbsten mit hoechster begird, und
-<lb n="14"/>yffer, sich bemuehen, solliche kirchen zu der
-<lb n="15"/>ehr gottes widr zu restituieren, und zu
-<lb n="16"/>erbuwen, wegen schwer erlitnen und noch
-<lb n="17"/>wehrenden zeiten aber, sich darzu zu schwach,
+<lb n="7"/><placeName ref="stadtasg-places-199" cert="medium" resp="#ner">Toggenburg</placeName>, die <unclear cert="medium" resp="#joint">stral</unclear> in <unclear cert="low" resp="#joint">das</unclear> thurn der kirchen
+<lb n="8"/>geschlagen, und dardurch <unclear cert="low" resp="#joint">dis</unclear> kirchen gebuew
+<lb n="9"/>und thurn, mit <unclear cert="low" resp="#joint">fuhr</unclear> <unclear cert="low" resp="#joint">verzert</unclear>, und vil an-
+<lb n="10"/>sehenlich kostliche <unclear cert="low" resp="#joint">gloggen</unclear>, <unclear cert="low" resp="#joint">verschnelzt</unclear> <unclear cert="low" resp="#joint">syend</unclear>
+<lb n="11"/>worden, achte ich die <unclear cert="low" resp="#joint">hern</unclear> <unclear cert="low" resp="#joint">syen</unclear> <unclear cert="low" resp="#joint">nun</unclear> mer
+<lb n="12"/>landtleuffig bricht. Diewyl aber <unclear cert="low" resp="#joint">di</unclear> <unclear cert="low" resp="#joint">kirch</unclear>-
+<lb n="13"/>gnossen <unclear cert="low" resp="#joint">daselbsten</unclear> mit hoechster begird, und
+<lb n="14"/><unclear cert="low" resp="#joint">yffer</unclear>, sich <unclear cert="medium" resp="#joint">bemuehen</unclear>, <unclear cert="medium" resp="#joint">solliche</unclear> kirchen zu der
+<lb n="15"/>ehr gottes <unclear cert="low" resp="#joint">widr</unclear> zu <unclear cert="low" resp="#joint">restituieren</unclear>, und zu
+<lb n="16"/><unclear cert="medium" resp="#joint">erbuwen</unclear>, wegen <unclear cert="low" resp="#joint">schwer</unclear> <unclear cert="low" resp="#joint">erlitnen</unclear> und noch
+<lb n="17"/><unclear cert="low" resp="#joint">wehrenden</unclear> zeiten aber, sich darzu zu schwach,
 <lb n="18"/>befinden. Als habend sie mich underthenig
-<lb n="19"/>bricht, daB inen ganz nit zwyfle, wan den
+<lb n="19"/>bricht, daB inen ganz nit <unclear cert="low" resp="#joint">zwyfle</unclear>, <unclear cert="low" resp="#joint">wan</unclear> <unclear cert="low" resp="#joint">den</unclear>
 <lb n="20"/>benachparten obrigkeiten, sollicher irer schwerer
-<lb n="21"/>zustand zu gmueth gefuert, und zu sinne ge-
-<lb n="22"/>legt wurde, die selbiges vß christlichem
-<lb n="23"/>mit leiden, und nachparlicher zuneigung,
-<lb n="24"/>inen ansehenliche, handreichung, und hulff
-<lb n="25"/>thun wurden, deßwegen bitende, daß
-<lb n="26"/>ich ein solliches von iretwegen thun wolte,
+<lb n="21"/>zustand zu gmueth gefuert, und zu <unclear cert="low" resp="#joint">sinne</unclear> ge-
+<lb n="22"/>legt wurde, die selbiges <unclear cert="low" resp="#joint">vß</unclear> christlichem
+<lb n="23"/>mit leiden, und <unclear cert="medium" resp="#joint">nachparlicher</unclear> zuneigung,
+<lb n="24"/><unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">ansehenliche</unclear>, <unclear cert="medium" resp="#joint">handreichung</unclear>, und <unclear cert="low" resp="#joint">hulff</unclear>
+<lb n="25"/><unclear cert="medium" resp="#joint">thun</unclear> wurden, <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="medium" resp="#joint">bitende</unclear>, <unclear cert="medium" resp="#joint">daß</unclear>
+<lb n="26"/>ich ein <unclear cert="medium" resp="#joint">solliches</unclear> von <unclear cert="low" resp="#joint">iretwegen</unclear> thun <unclear cert="medium" resp="#joint">wolte</unclear>,
 <pb facs="StadtASG_Missive_2429_9348.jpg" n="2"/>
-<lb n="27"/>Wan dan mir der underthonen zustand, leidige
-<lb n="28"/>beschaffenheit, deß vom fiendt verherteggt-
-<lb n="29"/>fuerstend, bey die unvermoegenheit, und beschwaert
-<lb n="30"/>der kriegs gnoßen, gnugsam bekandt. Als
-<lb n="31"/>hab ich ihnen diß ihr bit nit weigern nachab
-<lb n="32"/>sagen kuenden.
-<lb n="33"/>Gelangt derowegen an die herren mein nach-
-<lb n="34"/>par: und dienstlichs ansuchen, sie wollen auß
-<lb n="35"/>Christ: und nachparlichen mitleiden, und affection
-<lb n="36"/>deß bit und zutrauwen, im besten verkhern
-<lb n="37"/>und im werckh gewohren, daß si diser
-<lb n="38"/>meiner fuergschrifft gnoßen zhaben, sich ruehmen
-<lb n="39"/>kuendend. Den hern hingegen alle nachpar-
-<lb n="40"/>liche dienst. und fruendtschafft zuerweißen,
+<lb n="27"/><unclear cert="low" resp="#joint">Wan</unclear> <unclear cert="medium" resp="#joint">dan</unclear> mir der <unclear cert="medium" resp="#joint">underthonen</unclear> <unclear cert="medium" resp="#joint">zustand</unclear>, leidige
+<lb n="28"/>beschaffenheit, <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">vom</unclear> <unclear cert="medium" resp="#joint">fiendt</unclear> <unclear cert="medium" resp="#joint">verherteggt</unclear>-
+<lb n="29"/><unclear cert="medium" resp="#joint">fuerstend</unclear>, <unclear cert="medium" resp="#joint">bey</unclear> die <unclear cert="medium" resp="#joint">unvermoegenheit</unclear>, und <unclear cert="medium" resp="#joint">beschwaert</unclear>
+<lb n="30"/>der <unclear cert="low" resp="#joint">kriegs</unclear> <unclear cert="low" resp="#joint">gnoßen</unclear>, <unclear cert="low" resp="#joint">gnugsam</unclear> <unclear cert="medium" resp="#joint">bekandt</unclear>. Als
+<lb n="31"/>hab ich <unclear cert="medium" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">diß</unclear> <unclear cert="medium" resp="#joint">ihr</unclear> <unclear cert="medium" resp="#joint">bit</unclear> <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">weigern</unclear> nachab
+<lb n="32"/>sagen <unclear cert="medium" resp="#joint">kuenden</unclear>.
+<lb n="33"/><unclear cert="medium" resp="#joint">Gelangt</unclear> derowegen an die herren mein nach-
+<lb n="34"/>par: und <unclear cert="low" resp="#joint">dienstlichs</unclear> ansuchen, <unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">wollen</unclear> auß
+<lb n="35"/>Christ: und <unclear cert="medium" resp="#joint">nachparlichen</unclear> mitleiden, und affection
+<lb n="36"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">bit</unclear> und <unclear cert="low" resp="#joint">zutrauwen</unclear>, <unclear cert="low" resp="#joint">im</unclear> besten <unclear cert="low" resp="#joint">verkhern</unclear>
+<lb n="37"/>und im <unclear cert="medium" resp="#joint">werckh</unclear> <unclear cert="low" resp="#joint">gewohren</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">si</unclear> <unclear cert="medium" resp="#joint">diser</unclear>
+<lb n="38"/>meiner <unclear cert="medium" resp="#joint">fuergschrifft</unclear> <unclear cert="medium" resp="#joint">gnoßen</unclear> <unclear cert="medium" resp="#joint">zhaben</unclear>, sich <unclear cert="medium" resp="#joint">ruehmen</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">kuendend</unclear>. Den hern hingegen alle nachpar-
+<lb n="40"/>liche dienst. und <unclear cert="low" resp="#joint">fruendtschafft</unclear> <unclear cert="low" resp="#joint">zuerweißen</unclear>,
 <lb n="41"/>bin ich bereit. Gottes bewahrung.
-<lb n="42"/>bevehlende. <origPlace ref="stadtasg-places-33" cert="medium" resp="#ner">Liechtensteig</origPlace> <origDate resp="#ner">den 5. 15. Augusti.
-<lb n="43"/>Ao j622</origDate>.
-<lb n="44"/>Der hern.
-<lb n="45"/>dwilli.
-<lb n="46"/><persName role="issuer" resp="#ner">Johan Rudolph</persName>.
-<lb n="47"/>Reding von
-<lb n="48"/>Bieregg.
+<lb n="42"/><unclear cert="low" resp="#joint">bevehlende</unclear>. <origPlace ref="stadtasg-places-33" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Liechtensteig</unclear></origPlace> <origDate resp="#ner">den <unclear cert="medium" resp="#joint">5</unclear>. <unclear cert="medium" resp="#joint">15</unclear>. Augusti.
+<lb n="43"/>Ao <unclear cert="low" resp="#joint">j622</unclear></origDate>.
+<lb n="44"/>Der <unclear cert="low" resp="#joint">hern</unclear>.
+<lb n="45"/><unclear cert="low" resp="#joint">dwilli</unclear>.
+<lb n="46"/><persName role="issuer" resp="#ner">Johan <unclear cert="low" resp="#joint">Rudolph</unclear></persName>.
+<lb n="47"/><unclear cert="low" resp="#joint">Reding</unclear> von
+<lb n="48"/><unclear cert="medium" resp="#joint">Bieregg</unclear>.
 <pb facs="StadtASG_Missive_2429_9349.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2429_9350.jpg" n="4"/>
-<lb n="49"/>Den edlen, vesten unnd hochgelerten, fromen,
-<lb n="50"/>ernvesten, fürsichtigen unnd weyßen herren
-<lb n="51"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat der stadt S. Gallen</orgName>,
-<lb n="52"/>meinen sonders günstihen, ehrenden herren und
-<lb n="53"/>getrauen, lieben nachparen.
+<lb n="49"/>Den edlen, vesten unnd <unclear cert="low" resp="#joint">hochgelerten</unclear>, <unclear cert="low" resp="#joint">fromen</unclear>,
+<lb n="50"/><unclear cert="low" resp="#joint">ernvesten</unclear>, <unclear cert="low" resp="#joint">fürsichtigen</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">weyßen</unclear> herren
+<lb n="51"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaister</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear> der <unclear cert="medium" resp="#joint">stadt</unclear> <unclear cert="medium" resp="#joint">S</unclear>. Gallen</orgName>,
+<lb n="52"/>meinen <unclear cert="medium" resp="#joint">sonders</unclear> <unclear cert="medium" resp="#joint">günstihen</unclear>, ehrenden herren und
+<lb n="53"/><unclear cert="low" resp="#joint">getrauen</unclear>, lieben <unclear cert="medium" resp="#joint">nachparen</unclear>.
 <lb n="54"/>St. Gallen.
 </p>
         </body>

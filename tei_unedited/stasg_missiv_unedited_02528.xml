@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2528</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,61 +20,61 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Überlingen antworten auf das Ersuchen der St. Galler, nach der Herkunft ehrenverletzender Reden zu forschen. Sie geben an, bei ihrem Bürger und Schiffer, der den Jacob Schmidlin von Arbon über See geführt habe, ermittelt zu haben. Dieser habe ausgesagt, Jacob Abt sei in St. Gallen gefangen genommen und am Freitag nachts das Haupt abgeschlagen worden. Von einem Überfall des Klosters habe Schmidlin nichts gesagt. Es habe sich also ein Missverständnis ergeben.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Überlingen</name><date when="1625-01-15" resp="#regest">den 15 januarii anno 1625</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2528_9757.jpg" n="1"/>
-<lb n="1"/>Unser freundt: und nachparlich guotwillige
-<lb n="2"/>diennst zuvor Fuersichtig, Ehrsamb, und weÿße
-<lb n="3"/>besonders liebe freundt, und guote nachparn.
-<lb n="4"/>Uff E. F. E. und wst. an unß unlangst abge=
-<lb n="5"/>gebenes ersuoch schreiben, deren vund ehrnverletz-
-<lb n="6"/>in unser statt außgesprengten reden halber,
-<lb n="7"/>gebuerende nachforschung und inquisition an zu=
-<lb n="8"/>stellen, haben wier nit underlaßen, d sachen nach
-<lb n="9"/>zusetzen, und haben darauff beÿ unseren burger
-<lb n="10"/>und schiffman ainem (der den <persName resp="#ner">Jacoben
-<lb n="11"/>Schmidlin</persName> von <placeName ref="stadtasg-places-5" cert="medium" resp="#ner">Arben</placeName> montags vor dem Neüen
-<lb n="12"/>Ihars tag stÿlo novo naher unser Statt Ueber
-<lb n="13"/>See gefuehret.) so vill befunden, und in erfahrung
-<lb n="14"/>gebracht, das gedachter <persName resp="#ner">Schmidli</persName> ime anzaigt
-<lb n="15"/>das <persName resp="#ner">Jacob Abbt</persName> in E. F. E. und wst. statt
-<lb n="16"/>gefangen genomen, und verschinen Freÿtags
-<lb n="17"/>bäÿ der nacht das haubt inn feinß abge=
-<lb n="18"/>schlagen worden. Das aber vorgedachter
-<lb n="19"/><persName resp="#ner">Schmidlin</persName>, Ifrer frl. Gn. zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>,
-<lb n="20"/>noch ainiges vorgefalnen Uberfahls des
-<lb n="21"/>Closters, mit dem weinigisten wortt nit ge=
-<lb n="22"/>dacht habe, hat unser burger, beÿ seinen burger=
-<lb n="23"/>lichen trawen vund pflichten erhalten.
+<lb n="1"/><unclear cert="low" resp="#joint">Unser</unclear> <unclear cert="low" resp="#joint">freundt</unclear>: und nachparlich <unclear cert="medium" resp="#joint">guotwillige</unclear>
+<lb n="2"/>diennst zuvor Fuersichtig, <unclear cert="low" resp="#joint">Ehrsamb</unclear>, und <unclear cert="low" resp="#joint">weÿße</unclear>
+<lb n="3"/>besonders liebe <unclear cert="low" resp="#joint">freundt</unclear>, und guote <unclear cert="medium" resp="#joint">nachparn</unclear>.
+<lb n="4"/><unclear cert="low" resp="#joint">Uff</unclear> E. <unclear cert="medium" resp="#joint">F</unclear>. E. und <unclear cert="low" resp="#joint">wst</unclear>. an unß unlangst abge=
+<lb n="5"/><unclear cert="low" resp="#joint">gebenes</unclear> <unclear cert="low" resp="#joint">ersuoch</unclear> schreiben, deren <unclear cert="low" resp="#joint">vund</unclear> ehrnverletz-
+<lb n="6"/>in <unclear cert="medium" resp="#joint">unser</unclear> statt <unclear cert="low" resp="#joint">außgesprengten</unclear> <unclear cert="low" resp="#joint">reden</unclear> halber,
+<lb n="7"/><unclear cert="low" resp="#joint">gebuerende</unclear> nachforschung und inquisition an zu=
+<lb n="8"/>stellen, haben <unclear cert="low" resp="#joint">wier</unclear> nit <unclear cert="low" resp="#joint">underlaßen</unclear>, d <unclear cert="low" resp="#joint">sachen</unclear> nach
+<lb n="9"/>zusetzen, und haben <unclear cert="medium" resp="#joint">darauff</unclear> beÿ <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="medium" resp="#joint">burger</unclear>
+<lb n="10"/>und <unclear cert="low" resp="#joint">schiffman</unclear> <unclear cert="low" resp="#joint">ainem</unclear> (der den <persName resp="#ner"><unclear cert="medium" resp="#joint">Jacoben</unclear>
+<lb n="11"/>Schmidlin</persName> von <placeName ref="stadtasg-places-5" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Arben</unclear></placeName> <unclear cert="low" resp="#joint">montags</unclear> vor dem <unclear cert="low" resp="#joint">Neüen</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">Ihars</unclear> tag <unclear cert="low" resp="#joint">stÿlo</unclear> <unclear cert="medium" resp="#joint">novo</unclear> <unclear cert="medium" resp="#joint">naher</unclear> <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">Statt</unclear> Ueber
+<lb n="13"/><unclear cert="low" resp="#joint">See</unclear> <unclear cert="low" resp="#joint">gefuehret</unclear>.) so vill <unclear cert="low" resp="#joint">befunden</unclear>, und in erfahrung
+<lb n="14"/>gebracht, das gedachter <persName resp="#ner"><unclear cert="medium" resp="#joint">Schmidli</unclear></persName> ime anzaigt
+<lb n="15"/>das <persName resp="#ner"><unclear cert="medium" resp="#joint">Jacob</unclear> <unclear cert="medium" resp="#joint">Abbt</unclear></persName> in E. <unclear cert="medium" resp="#joint">F</unclear>. E. und <unclear cert="low" resp="#joint">wst</unclear>. statt
+<lb n="16"/>gefangen <unclear cert="low" resp="#joint">genomen</unclear>, und <unclear cert="medium" resp="#joint">verschinen</unclear> <unclear cert="medium" resp="#joint">Freÿtags</unclear>
+<lb n="17"/><unclear cert="medium" resp="#joint">bäÿ</unclear> der nacht <unclear cert="medium" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">haubt</unclear> <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">feinß</unclear> abge=
+<lb n="18"/><unclear cert="medium" resp="#joint">schlagen</unclear> worden. Das aber vorgedachter
+<lb n="19"/><persName resp="#ner">Schmidlin</persName>, <unclear cert="low" resp="#joint">Ifrer</unclear> frl. <unclear cert="low" resp="#joint">Gn</unclear>. zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>,
+<lb n="20"/>noch ainiges <unclear cert="low" resp="#joint">vorgefalnen</unclear> <unclear cert="low" resp="#joint">Uberfahls</unclear> <unclear cert="medium" resp="#joint">des</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">Closters</unclear>, mit dem <unclear cert="low" resp="#joint">weinigisten</unclear> <unclear cert="low" resp="#joint">wortt</unclear> nit ge=
+<lb n="22"/>dacht habe, hat <unclear cert="medium" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">burger</unclear>, beÿ seinen <unclear cert="medium" resp="#joint">burger=</unclear>
+<lb n="23"/>lichen <unclear cert="low" resp="#joint">trawen</unclear> <unclear cert="low" resp="#joint">vund</unclear> pflichten erhalten.
 <pb facs="StadtASG_Missive_2528_9758.jpg" n="2"/>
-<lb n="24"/>muoß derowegen ain mißverstandt, underlauffen sein,
-<lb n="25"/>und haben dergleichen nichtzit gehört od vernomen.
-<lb n="26"/>Wollen E. F. E. und wst. ( denen wür in meh-
-<lb n="27"/>reren. frl. nachparlichen willen zuoerweisen
-<lb n="28"/>urpietig.) zuo paubgerter andtwortt anfüegen
-<lb n="29"/>und darbej göttlicher obhalt unß allers-
-<lb n="30"/>seits empfehlen datum den <origDate when="1625-01-15" resp="#ner">15 januarii anno
+<lb n="24"/><unclear cert="low" resp="#joint">muoß</unclear> <unclear cert="medium" resp="#joint">derowegen</unclear> ain <unclear cert="medium" resp="#joint">mißverstandt</unclear>, <unclear cert="medium" resp="#joint">underlauffen</unclear> <unclear cert="medium" resp="#joint">sein</unclear>,
+<lb n="25"/>und haben dergleichen <unclear cert="low" resp="#joint">nichtzit</unclear> gehört <unclear cert="medium" resp="#joint">od</unclear> <unclear cert="medium" resp="#joint">vernomen</unclear>.
+<lb n="26"/>Wollen E. F. E. und <unclear cert="low" resp="#joint">wst</unclear>. ( <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">wür</unclear> in meh-
+<lb n="27"/>reren. frl. nachparlichen willen <unclear cert="low" resp="#joint">zuoerweisen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">urpietig</unclear>.) zuo <unclear cert="low" resp="#joint">paubgerter</unclear> <unclear cert="low" resp="#joint">andtwortt</unclear> <unclear cert="low" resp="#joint">anfüegen</unclear>
+<lb n="29"/>und darbej göttlicher <unclear cert="medium" resp="#joint">obhalt</unclear> unß <unclear cert="low" resp="#joint">allers</unclear>-
+<lb n="30"/>seits empfehlen datum den <origDate when="1625-01-15" resp="#ner">15 <unclear cert="low" resp="#joint">januarii</unclear> anno
 <lb n="31"/>1625</origDate>
 <lb n="32"/><orgName ref="stadtasg-actors-68" cert="medium" role="issuer" resp="#ner">Burgermaister und
-<lb n="33"/>rath d stat Über-
+<lb n="33"/>rath <unclear cert="medium" resp="#joint">d</unclear> stat Über-
 <lb n="34"/>lingen</orgName>.
 <pb facs="StadtASG_Missive_2528_9759.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2528_9760.jpg" n="4"/>
-<lb n="35"/>Den fursichtigen, ersamen, und weysen
-<lb n="36"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister und rath, der statt
-<lb n="37"/>St. Gallen</orgName> unßeren besonders lieben
-<lb n="38"/>freünden und guetten nachpeern.
+<lb n="35"/>Den <unclear cert="low" resp="#joint">fursichtigen</unclear>, ersamen, und <unclear cert="medium" resp="#joint">weysen</unclear>
+<lb n="36"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">burgermaister</unclear> und rath, der statt
+<lb n="37"/>St. Gallen</orgName> <unclear cert="low" resp="#joint">unßeren</unclear> besonders lieben
+<lb n="38"/><unclear cert="low" resp="#joint">freünden</unclear> und <unclear cert="medium" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">nachpeern</unclear>.
 </p>
         </body>
     </text>

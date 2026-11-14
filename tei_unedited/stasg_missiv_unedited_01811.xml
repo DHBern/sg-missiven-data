@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1811</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,71 +20,71 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Landvogt Dietrich Reding, ihrem Bürger Heinrich Tobler den Geburtsbrief seiner Verlobten Elisabeth Baumgartner aus der Vogtei auszustellen. Tobler habe erfahren, dass man von ihm zuvor eine Urkunde über sein Verhalten verlange. Die St. Galler halten dies für eine bedenkliche Neuerung und ersuchen Reding, dem Gesuch ohne Aufschub zu willfahren oder ihnen schriftlich ihre Bedenken mitzuteilen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1615-01-28" resp="#regest">Datum den .28. Januarii anno 1615.</date></correspAction><correspAction type="received"><name resp="#regest">Dietrich Reding, Landvogt der Grafschaft Toggenburg</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1811_6713.jpg" n="1"/>
-<lb n="1"/>Unsern fründtlichen gruoß und nachbarlichen
-<lb n="2"/>dienst zuovor, Edler, Ehervester und Weiser,
-<lb n="3"/>sonders lieber Herr Landtvogt gueter fründ
+<lb n="1"/>Unsern <unclear cert="low" resp="#joint">fründtlichen</unclear> <unclear cert="medium" resp="#joint">gruoß</unclear> und <unclear cert="medium" resp="#joint">nachbarlichen</unclear>
+<lb n="2"/>dienst <unclear cert="medium" resp="#joint">zuovor</unclear>, Edler, <unclear cert="low" resp="#joint">Ehervester</unclear> und <unclear cert="medium" resp="#joint">Weiser</unclear>,
+<lb n="3"/>sonders lieber Herr Landtvogt <unclear cert="medium" resp="#joint">gueter</unclear> <unclear cert="medium" resp="#joint">fründ</unclear>
 <lb n="4"/>und Nachbar.
-<lb n="5"/>Vor uns ist erschinen, unser lieber mitburger
-<lb n="6"/><persName resp="#ner">Hainrich Tobler</persName> der glaßer, zaiger diß, und
+<lb n="5"/><unclear cert="medium" resp="#joint">Vor</unclear> uns ist erschinen, unser lieber <unclear cert="medium" resp="#joint">mitburger</unclear>
+<lb n="6"/><persName resp="#ner">Hainrich Tobler</persName> der <unclear cert="low" resp="#joint">glaßer</unclear>, <unclear cert="low" resp="#joint">zaiger</unclear> <unclear cert="medium" resp="#joint">diß</unclear>, und
 <lb n="7"/>hat uns underthenig fürgebracht, nach dem er
-<lb n="8"/>auf absterben seiner erstgehabten haußfrawen
-<lb n="9"/>seligen, sich mit <persName resp="#ner"><unclear cert="low" resp="#joint">Elßbeta</unclear> <unclear cert="low" resp="#joint">Bawmaennin</unclear></persName> <unclear cert="low" resp="#joint">üwerer</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">Ambtsverwaltung</unclear> ehelich versprochen, und
-<lb n="11"/>hierauf ihren gebuertsbrief von eüch auß-
-<lb n="12"/>bitten wöllen, haben ihr etwas bedenckhen
-<lb n="13"/>gefaßt, und ihne zuogemuetet, er <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">zuovor</unclear>
-<lb n="14"/><unclear cert="low" resp="#joint">ein</unclear>
-<lb n="15"/><unclear cert="low" resp="#joint">urkünd</unclear> <unclear cert="low" resp="#joint">seines</unclear> <unclear cert="low" resp="#joint">verhaltens</unclear>,
-<lb n="16"/><unclear cert="low" resp="#joint">thun</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">laßens</unclear> <unclear cert="low" resp="#joint">beschinen</unclear> <unclear cert="low" resp="#joint">solle</unclear>. Mit undert-
-<lb n="17"/>heniger pit, wir wolten ihne hierinen
-<lb n="18"/>hilf fürderlich erschinen, damit er durch
-<lb n="19"/>sein <unclear cert="low" resp="#joint">haußhaltung</unclear> <unclear cert="low" resp="#joint">auhs</unclear> <unclear cert="low" resp="#joint">beldest</unclear> <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">be</unclear>-
-<lb n="20"/><unclear cert="low" resp="#joint">stellen</unclear> <unclear cert="low" resp="#joint">könne</unclear>.
-<lb n="21"/><unclear cert="low" resp="#joint">Ob</unclear> er nun die sach recht verstanden habe, oder
-<lb n="22"/>aber nit, mögen wir zwar nit wüßen, wann
-<lb n="23"/>aber <unclear cert="low" resp="#joint">dem</unclear> (. wie er fürgibt .) also seyn solte,
-<lb n="24"/>würde uns solches umb etwas frömbd und
-<lb n="25"/>als ein bedenckhliche neüwerung
-<lb n="26"/>für komen, welche ein <unclear cert="low" resp="#joint">beschwerliche</unclear> <unclear cert="low" resp="#joint">nachvolg</unclear>
+<lb n="8"/>auf absterben seiner <unclear cert="medium" resp="#joint">erstgehabten</unclear> <unclear cert="low" resp="#joint">haußfrawen</unclear>
+<lb n="9"/>seligen, sich mit <persName resp="#ner">Elßbeta Bawmaennin</persName> üwerer
+<lb n="10"/>Ambtsverwaltung ehelich versprochen, und
+<lb n="11"/>hierauf ihren <unclear cert="low" resp="#joint">gebuertsbrief</unclear> von <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">auß</unclear>-
+<lb n="12"/>bitten wöllen, haben ihr etwas <unclear cert="medium" resp="#joint">bedenckhen</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">gefaßt</unclear>, und <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">zuogemuetet</unclear>, er <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="medium" resp="#joint">zuovor</unclear>
+<lb n="14"/>ein
+<lb n="15"/><unclear cert="low" resp="#joint">urkünd</unclear> seines <unclear cert="medium" resp="#joint">verhaltens</unclear>,
+<lb n="16"/><unclear cert="medium" resp="#joint">thun</unclear> und <unclear cert="low" resp="#joint">laßens</unclear> <unclear cert="low" resp="#joint">beschinen</unclear> <unclear cert="low" resp="#joint">solle</unclear>. Mit <unclear cert="low" resp="#joint">undert</unclear>-
+<lb n="17"/><unclear cert="low" resp="#joint">heniger</unclear> <unclear cert="low" resp="#joint">pit</unclear>, <unclear cert="medium" resp="#joint">wir</unclear> wolten <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">hierinen</unclear>
+<lb n="18"/>hilf <unclear cert="medium" resp="#joint">fürderlich</unclear> <unclear cert="low" resp="#joint">erschinen</unclear>, damit er durch
+<lb n="19"/>sein haußhaltung <unclear cert="low" resp="#joint">auhs</unclear> <unclear cert="low" resp="#joint">beldest</unclear> widerumb be-
+<lb n="20"/>stellen könne.
+<lb n="21"/>Ob er nun die sach <unclear cert="medium" resp="#joint">recht</unclear> verstanden habe, oder
+<lb n="22"/>aber nit, mögen wir zwar nit <unclear cert="low" resp="#joint">wüßen</unclear>, wann
+<lb n="23"/>aber dem (. wie er fürgibt .) also <unclear cert="low" resp="#joint">seyn</unclear> <unclear cert="low" resp="#joint">solte</unclear>,
+<lb n="24"/><unclear cert="medium" resp="#joint">würde</unclear> uns solches umb etwas <unclear cert="medium" resp="#joint">frömbd</unclear> und
+<lb n="25"/>als ein <unclear cert="low" resp="#joint">bedenckhliche</unclear> neüwerung
+<lb n="26"/>für komen, welche ein beschwerliche nachvolg
 <lb n="27"/>mit sich bringen möchte.
-<lb n="28"/>Sintmalen dann <unclear cert="low" resp="#joint">dißersoee</unclear> <unclear cert="low" resp="#joint">begeren</unclear> anders
-<lb n="29"/>nichts ist, als kundschaft und zeügknus der
-<lb n="30"/>warheit, welche <unclear cert="low" resp="#joint">niemands</unclear> <unclear cert="low" resp="#joint">verweigert</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">Sintmalen</unclear> dann <unclear cert="low" resp="#joint">dißersoee</unclear> begeren anders
+<lb n="29"/>nichts ist, als <unclear cert="low" resp="#joint">kundschaft</unclear> und <unclear cert="medium" resp="#joint">zeügknus</unclear> der
+<lb n="30"/>warheit, welche niemands <unclear cert="low" resp="#joint">verweigert</unclear>
 <lb n="31"/><unclear cert="low" resp="#joint">sonderen</unclear> billich
 <pb facs="StadtASG_Missive_1811_6714.jpg" n="2"/>
-<lb n="32"/>jedem begerenden mitgetheilt werden sol,
-<lb n="33"/>alß gelangt an eüch unser freündt- nachbaur-
-<lb n="34"/>liches gesinnen, ihr wellent den unseren in
+<lb n="32"/>jedem <unclear cert="medium" resp="#joint">begerenden</unclear> mitgetheilt werden sol,
+<lb n="33"/>alß gelangt an <unclear cert="low" resp="#joint">eüch</unclear> unser freündt- <unclear cert="low" resp="#joint">nachbaur</unclear>-
+<lb n="34"/>liches <unclear cert="medium" resp="#joint">gesinnen</unclear>, ihr wellent den unseren in
 <lb n="35"/>ertheilung des be-
-<lb n="36"/>gerten urkundtsbrieffs ohne ferneren auff-
-<lb n="37"/>zug ohnbeschwert willfahren; oder, da
-<lb n="38"/>ihr etwas bedenckhen hetten, unß desselben
-<lb n="39"/><unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">brieffszeigern</unclear> schrifftlich berichten. Begeren wir umb
-<lb n="40"/>eüch mit erzeigung aller angenemen
+<lb n="36"/><unclear cert="low" resp="#joint">gerten</unclear> <unclear cert="low" resp="#joint">urkundtsbrieffs</unclear> ohne ferneren <unclear cert="low" resp="#joint">auff</unclear>-
+<lb n="37"/>zug <unclear cert="medium" resp="#joint">ohnbeschwert</unclear> willfahren; <unclear cert="medium" resp="#joint">oder</unclear>, da
+<lb n="38"/>ihr etwas <unclear cert="medium" resp="#joint">bedenckhen</unclear> hetten, unß desselben
+<lb n="39"/>beÿ <unclear cert="low" resp="#joint">brieffszeigern</unclear> schrifftlich berichten. Begeren wir umb
+<lb n="40"/><unclear cert="low" resp="#joint">eüch</unclear> mit erzeigung aller <unclear cert="medium" resp="#joint">angenemen</unclear>
 <lb n="41"/>nachbarschafft widerumb zuvergleichen.
-<lb n="42"/>Unß damit sambtlich goettlicher versehung
-<lb n="43"/>bevelchende. Datum den .<origDate when="1615-01-28" resp="#ner"><unclear cert="low" resp="#joint">28</unclear>. Januarii
+<lb n="42"/><unclear cert="low" resp="#joint">Unß</unclear> damit <unclear cert="low" resp="#joint">sambtlich</unclear> <unclear cert="low" resp="#joint">goettlicher</unclear> <unclear cert="low" resp="#joint">versehung</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">bevelchende</unclear>. Datum den .<origDate when="1615-01-28" resp="#ner">28. Januarii
 <lb n="44"/>anno <unclear cert="low" resp="#joint">1615</unclear></origDate>.
-<lb n="45"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und raht
+<lb n="45"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">raht</unclear>
 <lb n="46"/>der statt Sant Gallen</orgName>.
-<lb n="47"/>Dem edlen ehrnvesten weisen hauptman
-<lb n="48"/><persName role="issuer" resp="#ner">Dietrich Reding</persName>, fürstl. santgallischen raht,
-<lb n="49"/>und landtvogt der graffschafft <placeName resp="#ner">Toggenburg</placeName>,
-<lb n="50"/>unserem lieben guten freünd und nachbaurn.
+<lb n="47"/>Dem edlen <unclear cert="low" resp="#joint">ehrnvesten</unclear> weisen <unclear cert="medium" resp="#joint">hauptman</unclear>
+<lb n="48"/><persName role="issuer" resp="#ner">Dietrich Reding</persName>, <unclear cert="medium" resp="#joint">fürstl</unclear>. <unclear cert="low" resp="#joint">santgallischen</unclear> <unclear cert="medium" resp="#joint">raht</unclear>,
+<lb n="49"/>und landtvogt der graffschafft <placeName resp="#ner"><unclear cert="low" resp="#joint">Toggenburg</unclear></placeName>,
+<lb n="50"/><unclear cert="medium" resp="#joint">unserem</unclear> lieben guten <unclear cert="medium" resp="#joint">freünd</unclear> und <unclear cert="low" resp="#joint">nachbaurn</unclear>.
 <pb facs="StadtASG_Missive_1811_6715.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1811_6716.jpg" n="4"/>
 </p>

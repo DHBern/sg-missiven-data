@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2500</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,51 +20,51 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Landammann und Rat zu Appenzell bitten Bürgermeister und Rat zu St. Gallen, ihnen mitzuteilen, ob diese die neuen halben Örtli und Pfenig verpötet haben. Appenzell sei darüber informiert worden, dass St. Gallen dies getan habe. Dies widerspreche dem vor einigen Jahren geschlossenen Vertrag, wonach keine Seite Münzen ohne Zustimmung der anderen verpöten dürfe.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Landammann und Rat zu Appenzell</name><date when="1624" cert="medium" resp="#regest">den 29ten Augusti Anno etc. 24</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2500_9641.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienßt, unnd gruoß
-<lb n="2"/>samdt waß wir eehren liebß unnd guotß vermüegendt
-<lb n="3"/>zevoor, Fromme, Fürsichtige, Eersame und Wyse insonders
-<lb n="4"/>guete fründt, unnd getreüwe liebe Nachbaaren,
-<lb n="5"/>Wir sind brichtet worden, daß ihr die <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantzischen</placeName> halben
-<lb n="6"/>örtli, auch Pfenig bÿ eüch verpotten haben, ob ihme
-<lb n="7"/>alßo in dem selbigen sie, oder nit, ißt deß es unnß
-<lb n="8"/>fremedt nimdt, Wann dan aber zwüschendt beider
-<lb n="9"/>sÿtß verschinen Jarß beschloßen unnd gemacht worden
-<lb n="10"/>daß kei ohrt oder oberkeit, ohn deß anderen, die
-<lb n="11"/>Müntzen abruoffen, unnd verpieten söllen, sonder
-<lb n="12"/>iedre Ehe daß ander, eß söliches beschechen brichten
-<lb n="13"/>söle, Gelangt deßhalben an eüch unser frundt
-<lb n="14"/>Nachbarlich ersuechen ihr weelendt unß von guoter
-<lb n="15"/>frundt und Nachbarschafft wegen, fründt Nachbar-
-<lb n="16"/>lichen brichten, ob ihr die obgedachten halben oortli
-<lb n="17"/>auch Pfenig so niw gefallen, vor disem guetten
-<lb n="18"/>verruefft, unnd verpotten haben oder nit,
-<lb n="19"/>welches wir umb eüch frundt: Nachbarlichen ze-
-<lb n="20"/>beschulden, und zuoverglichen erbietig, unß
+<lb n="1"/><unclear cert="medium" resp="#joint">Unser</unclear> <unclear cert="low" resp="#joint">freündtlich</unclear> willig <unclear cert="low" resp="#joint">dienßt</unclear>, unnd gruoß
+<lb n="2"/><unclear cert="low" resp="#joint">samdt</unclear> waß wir <unclear cert="low" resp="#joint">eehren</unclear> liebß unnd <unclear cert="low" resp="#joint">guotß</unclear> <unclear cert="low" resp="#joint">vermüegendt</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">zevoor</unclear>, <unclear cert="low" resp="#joint">Fromme</unclear>, <unclear cert="medium" resp="#joint">Fürsichtige</unclear>, <unclear cert="low" resp="#joint">Eersame</unclear> und Wyse insonders
+<lb n="4"/>guete fründt, unnd <unclear cert="low" resp="#joint">getreüwe</unclear> <unclear cert="medium" resp="#joint">liebe</unclear> <unclear cert="low" resp="#joint">Nachbaaren</unclear>,
+<lb n="5"/>Wir sind <unclear cert="low" resp="#joint">brichtet</unclear> worden, daß ihr die <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costantzischen</unclear></placeName> halben
+<lb n="6"/><unclear cert="low" resp="#joint">örtli</unclear>, auch <unclear cert="low" resp="#joint">Pfenig</unclear> bÿ <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">verpotten</unclear> haben, ob <unclear cert="medium" resp="#joint">ihme</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">alßo</unclear> <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">selbigen</unclear> <unclear cert="medium" resp="#joint">sie</unclear>, oder nit, <unclear cert="low" resp="#joint">ißt</unclear> deß <unclear cert="low" resp="#joint">es</unclear> unnß
+<lb n="8"/><unclear cert="low" resp="#joint">fremedt</unclear> <unclear cert="low" resp="#joint">nimdt</unclear>, Wann dan aber <unclear cert="low" resp="#joint">zwüschendt</unclear> beider
+<lb n="9"/><unclear cert="low" resp="#joint">sÿtß</unclear> <unclear cert="low" resp="#joint">verschinen</unclear> <unclear cert="low" resp="#joint">Jarß</unclear> beschloßen unnd <unclear cert="low" resp="#joint">gemacht</unclear> worden
+<lb n="10"/>daß <unclear cert="medium" resp="#joint">kei</unclear> <unclear cert="medium" resp="#joint">ohrt</unclear> oder <unclear cert="medium" resp="#joint">oberkeit</unclear>, <unclear cert="medium" resp="#joint">ohn</unclear> deß <unclear cert="medium" resp="#joint">anderen</unclear>, die
+<lb n="11"/>Müntzen <unclear cert="low" resp="#joint">abruoffen</unclear>, unnd <unclear cert="low" resp="#joint">verpieten</unclear> <unclear cert="low" resp="#joint">söllen</unclear>, sonder
+<lb n="12"/><unclear cert="low" resp="#joint">iedre</unclear> <unclear cert="low" resp="#joint">Ehe</unclear> daß ander, <unclear cert="low" resp="#joint">eß</unclear> <unclear cert="low" resp="#joint">söliches</unclear> <unclear cert="low" resp="#joint">beschechen</unclear> <unclear cert="low" resp="#joint">brichten</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">söle</unclear>, <unclear cert="low" resp="#joint">Gelangt</unclear> deßhalben an eüch unser <unclear cert="low" resp="#joint">frundt</unclear>
+<lb n="14"/>Nachbarlich <unclear cert="low" resp="#joint">ersuechen</unclear> ihr <unclear cert="medium" resp="#joint">weelendt</unclear> <unclear cert="medium" resp="#joint">unß</unclear> von guoter
+<lb n="15"/><unclear cert="medium" resp="#joint">frundt</unclear> und Nachbarschafft wegen, <unclear cert="medium" resp="#joint">fründt</unclear> Nachbar-
+<lb n="16"/>lichen <unclear cert="low" resp="#joint">brichten</unclear>, ob ihr die obgedachten halben <unclear cert="low" resp="#joint">oortli</unclear>
+<lb n="17"/>auch <unclear cert="low" resp="#joint">Pfenig</unclear> so <unclear cert="medium" resp="#joint">niw</unclear> <unclear cert="medium" resp="#joint">gefallen</unclear>, vor disem guetten
+<lb n="18"/><unclear cert="low" resp="#joint">verruefft</unclear>, unnd <unclear cert="medium" resp="#joint">verpotten</unclear> <unclear cert="medium" resp="#joint">haben</unclear> oder nit,
+<lb n="19"/>welches wir umb <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">frundt</unclear>: <unclear cert="medium" resp="#joint">Nachbarlichen</unclear> <unclear cert="low" resp="#joint">ze</unclear>-
+<lb n="20"/><unclear cert="low" resp="#joint">beschulden</unclear>, und <unclear cert="low" resp="#joint">zuoverglichen</unclear> <unclear cert="low" resp="#joint">erbietig</unclear>, unß
 <lb n="21"/>hiemit Gottes Allmacht wolbefehlende
-<lb n="22"/>den <origDate when="1624-08-29" cert="medium" resp="#ner">29ten Augusti Anno etc. 24</origDate>,
-<lb n="23"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtamman und Rhat
+<lb n="22"/><unclear cert="medium" resp="#joint">den</unclear> <origDate when="1624-08-29" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">29ten</unclear> Augusti Anno etc. 24</origDate>,
+<lb n="23"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Landtamman</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear>
 <lb n="24"/>zeo Appenzell</orgName>.
 <pb facs="StadtASG_Missive_2500_9642.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2500_9643.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2500_9644.jpg" n="4"/>
-<lb n="25"/>Den Ersamen, Fuersichtigen, Ehrbaren unnd Wey-
-<lb n="26"/>sen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd Rhatt der Statt
-<lb n="27"/>Sanct Gallen</orgName>, unnseren insonders guotten
-<lb n="28"/>frunden, unnd getruwen lieben Nachtbaren.
+<lb n="25"/>Den <unclear cert="medium" resp="#joint">Ersamen</unclear>, <unclear cert="medium" resp="#joint">Fuersichtigen</unclear>, <unclear cert="medium" resp="#joint">Ehrbaren</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">Wey</unclear>-
+<lb n="26"/><unclear cert="medium" resp="#joint">sen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">Rhatt</unclear> der Statt
+<lb n="27"/><unclear cert="low" resp="#joint">Sanct</unclear> Gallen</orgName>, <unclear cert="low" resp="#joint">unnseren</unclear> insonders <unclear cert="low" resp="#joint">guotten</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">frunden</unclear>, unnd <unclear cert="low" resp="#joint">getruwen</unclear> lieben <unclear cert="low" resp="#joint">Nachtbaren</unclear>.
 </p>
         </body>
     </text>

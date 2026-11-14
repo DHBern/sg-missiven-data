@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2435</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bedanken sich bei St. Gallen für den Bericht über Schmähreden des Meiländer Ordinarius Hilprand Späler. Sie erklären, St. Gallen nicht weiter belästigen zu wollen, da sie die Sache anderweitig regeln werden. Sie bitten jedoch, die schriftliche Kunde unter dem St. Galler Siegel in authentischer Form zu übermitteln, damit sie bei Bedarf verwendet werden kann.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1623-09-18" resp="#regest">den 18ten Septembris, anno 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,54 +35,54 @@
 <p>
 <pb facs="StadtASG_Missive_2435_9375.jpg" n="1"/>
 <lb n="1"/>Unnßer fründtlich willig diennst, und was wir ehren,
-<lb n="2"/>liebs und guets vermögend, zuevor, From Fuersichtig,
-<lb n="3"/>Ehrsam Wyß, innsonders guet fründt und gethrüw
-<lb n="4"/>lieb <orgName role="recipient" resp="#ner">Eidtgnoßen</orgName>. Wir habent sowol uß
-<lb n="5"/>üwerm schryben und yngenomner schriftlichen kundt=
-<lb n="6"/>schafft, alß üwers abgeordnten Mitrhats herrn
-<lb n="7"/><persName resp="#ner">Thoman Zwickhers</persName> fernerem mundtlichen anbringen
-<lb n="8"/>verstanden, was schandtlicher ehrrueriger reden <persName resp="#ner">Hilt=
-<lb n="9"/>prand Späler</persName> von <placeName ref="stadtasg-places-105" cert="medium" resp="#ner">Fußach</placeName> <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meilander</placeName> Ordinari
-<lb n="10"/>bott, nechst vergangner tagen by üch, sonderlich über
-<lb n="11"/>unnß und die unnßerigen ußgoßen, und was darueb=
-<lb n="12"/>er üwer wytere meinung und begehren waere.
-<lb n="13"/>Da wir unnß zum vorderisten umb sölichen verträw=
-<lb n="14"/>lichen wolmeinenden bericht gegen üch <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnößisch</orgName>
-<lb n="15"/>fründtlich bedanckhend, mit erbiutung deßselbig
-<lb n="16"/>umb üch zue jeder gelegenheit guetwillig zuebeschulden.
-<lb n="17"/>Und wylen wir daby vermerckt, uß waß ursachen
-<lb n="18"/>Ir lieber sähen möchten, daß diser Bott umb söliche
-<lb n="19"/>schmachreden anderwerts dann by üch behändiget
-<lb n="20"/>und gerechtfertiget wurde. Allso sind wir auch nit
+<lb n="2"/>liebs und guets vermögend, <unclear cert="low" resp="#joint">zuevor</unclear>, From Fuersichtig,
+<lb n="3"/>Ehrsam Wyß, <unclear cert="low" resp="#joint">innsonders</unclear> guet fründt und gethrüw
+<lb n="4"/>lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName>. Wir habent <unclear cert="low" resp="#joint">sowol</unclear> uß
+<lb n="5"/>üwerm schryben und <unclear cert="low" resp="#joint">yngenomner</unclear> schriftlichen kundt=
+<lb n="6"/>schafft, alß üwers <unclear cert="low" resp="#joint">abgeordnten</unclear> <unclear cert="low" resp="#joint">Mitrhats</unclear> <unclear cert="low" resp="#joint">herrn</unclear>
+<lb n="7"/><persName resp="#ner">Thoman <unclear cert="low" resp="#joint">Zwickhers</unclear></persName> <unclear cert="low" resp="#joint">fernerem</unclear> mundtlichen anbringen
+<lb n="8"/>verstanden, was <unclear cert="low" resp="#joint">schandtlicher</unclear> <unclear cert="low" resp="#joint">ehrrueriger</unclear> reden <persName resp="#ner"><unclear cert="low" resp="#joint">Hilt=</unclear>
+<lb n="9"/>prand Späler</persName> von <placeName ref="stadtasg-places-105" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Fußach</unclear></placeName> <placeName ref="stadtasg-places-311" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Meilander</unclear></placeName> <unclear cert="medium" resp="#joint">Ordinari</unclear>
+<lb n="10"/>bott, <unclear cert="medium" resp="#joint">nechst</unclear> vergangner tagen by üch, sonderlich über
+<lb n="11"/>unnß und die <unclear cert="low" resp="#joint">unnßerigen</unclear> <unclear cert="low" resp="#joint">ußgoßen</unclear>, und was darueb=
+<lb n="12"/>er üwer <unclear cert="low" resp="#joint">wytere</unclear> meinung und begehren waere.
+<lb n="13"/>Da wir <unclear cert="medium" resp="#joint">unnß</unclear> zum <unclear cert="medium" resp="#joint">vorderisten</unclear> umb <unclear cert="low" resp="#joint">sölichen</unclear> <unclear cert="low" resp="#joint">verträw=</unclear>
+<lb n="14"/>lichen <unclear cert="low" resp="#joint">wolmeinenden</unclear> bericht gegen üch <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnößisch</orgName>
+<lb n="15"/>fründtlich <unclear cert="low" resp="#joint">bedanckhend</unclear>, mit <unclear cert="medium" resp="#joint">erbiutung</unclear> <unclear cert="medium" resp="#joint">deßselbig</unclear>
+<lb n="16"/>umb üch <unclear cert="low" resp="#joint">zue</unclear> jeder gelegenheit <unclear cert="medium" resp="#joint">guetwillig</unclear> <unclear cert="medium" resp="#joint">zuebeschulden</unclear>.
+<lb n="17"/>Und wylen wir <unclear cert="low" resp="#joint">daby</unclear> vermerckt, uß <unclear cert="medium" resp="#joint">waß</unclear> ursachen
+<lb n="18"/>Ir lieber <unclear cert="low" resp="#joint">sähen</unclear> möchten, daß diser Bott umb <unclear cert="low" resp="#joint">söliche</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">schmachreden</unclear> <unclear cert="low" resp="#joint">anderwerts</unclear> dann by üch <unclear cert="low" resp="#joint">behändiget</unclear>
+<lb n="20"/>und <unclear cert="low" resp="#joint">gerechtfertiget</unclear> wurde. Allso sind wir auch nit
 <lb n="21"/>gesinnet, üch deßwegen wider üwer gelegenheit
-<lb n="22"/>ferners zuezemuoten, sonders wellend üch unnß=
-<lb n="23"/>eren lieben <orgName resp="#ner">Eidtgnoßen</orgName> hiemit gern verschonen,
+<lb n="22"/>ferners <unclear cert="low" resp="#joint">zuezemuoten</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> wellend üch <unclear cert="low" resp="#joint">unnß=</unclear>
+<lb n="23"/>eren lieben <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName> hiemit gern verschonen,
 <lb n="24"/>und nachtrachtung haben, wie der sach durch andere
-<lb n="25"/>gelegenheit gebürender maßen begegnet werden
-<lb n="26"/>möchte. Allein ist hieby an üch unnßer fründt=
-<lb n="27"/>lich ansuechen, Ir wöllind unnß die hierumb uff=
-<lb n="28"/>genomne kundtschafft inn authentischer form
+<lb n="25"/>gelegenheit <unclear cert="low" resp="#joint">gebürender</unclear> <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">begegnet</unclear> werden
+<lb n="26"/>möchte. Allein ist hieby an üch <unclear cert="low" resp="#joint">unnßer</unclear> fründt=
+<lb n="27"/>lich ansuechen, Ir wöllind <unclear cert="low" resp="#joint">unnß</unclear> die hierumb <unclear cert="low" resp="#joint">uff=</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">genomne</unclear> kundtschafft inn <unclear cert="low" resp="#joint">authentischer</unclear> form
 <lb n="29"/>under üwerem Ehren sigel verwahret zuekhomen
-<lb n="30"/>laßen, damit man darmit dest baß erford=
+<lb n="30"/>laßen, damit man darmit dest <unclear cert="low" resp="#joint">baß</unclear> <unclear cert="low" resp="#joint">erford=</unclear>
 <pb facs="StadtASG_Missive_2435_9376.jpg" n="2"/>
-<lb n="31"/>uelicher notturfft nach versechen sye, und sich alß Inn alle
-<lb n="32"/>wäg deßt baß zuoverhalten haben möge. Und sind üch
-<lb n="33"/>darby zuoerwyßung Eydtgnoesischen thrüw und fründt=
-<lb n="34"/>schafft fürer zum beßten geneigt, wie Ihr von ge=
-<lb n="35"/>dachtem üwerem Rathßgsandten alleß hinwider mit
-<lb n="36"/>mehrerm zuovernemmen. Goetlichem schirm unß
-<lb n="37"/>sambtlich damit bevelchende. Datt den <origDate when="1623-09-18" resp="#ner">18ten
+<lb n="31"/><unclear cert="low" resp="#joint">uelicher</unclear> <unclear cert="low" resp="#joint">notturfft</unclear> nach <unclear cert="low" resp="#joint">versechen</unclear> sye, und sich alß Inn alle
+<lb n="32"/><unclear cert="low" resp="#joint">wäg</unclear> <unclear cert="low" resp="#joint">deßt</unclear> <unclear cert="medium" resp="#joint">baß</unclear> <unclear cert="low" resp="#joint">zuoverhalten</unclear> haben möge. Und sind üch
+<lb n="33"/>darby <unclear cert="low" resp="#joint">zuoerwyßung</unclear> <unclear cert="low" resp="#joint">Eydtgnoesischen</unclear> <unclear cert="low" resp="#joint">thrüw</unclear> und <unclear cert="medium" resp="#joint">fründt=</unclear>
+<lb n="34"/>schafft <unclear cert="medium" resp="#joint">fürer</unclear> zum beßten geneigt, wie Ihr von ge=
+<lb n="35"/><unclear cert="medium" resp="#joint">dachtem</unclear> <unclear cert="medium" resp="#joint">üwerem</unclear> <unclear cert="low" resp="#joint">Rathßgsandten</unclear> <unclear cert="low" resp="#joint">alleß</unclear> <unclear cert="low" resp="#joint">hinwider</unclear> mit
+<lb n="36"/><unclear cert="medium" resp="#joint">mehrerm</unclear> <unclear cert="low" resp="#joint">zuovernemmen</unclear>. <unclear cert="low" resp="#joint">Goetlichem</unclear> schirm <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="37"/>sambtlich damit bevelchende. <unclear cert="low" resp="#joint">Datt</unclear> den <origDate when="1623-09-18" resp="#ner">18ten
 <lb n="38"/>Septembris, anno 1623</origDate>.
-<lb n="39"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeißter und Rath
+<lb n="39"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeißter</unclear> und Rath
 <lb n="40"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2435_9377.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2435_9378.jpg" n="4"/>
-<lb n="41"/>Den frommen, fuersichtigen,
-<lb n="42"/>ehrsammen, wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
-<lb n="43"/>meister und Raht der statt
-<lb n="44"/>Sanct Gallen</orgName>, unseren in=
-<lb n="45"/>sonders gueten fruenden, und
-<lb n="46"/>getruewen lieben <orgName role="recipient" resp="#ner">Eidtgnoßen</orgName>.
+<lb n="41"/>Den frommen, <unclear cert="medium" resp="#joint">fuersichtigen</unclear>,
+<lb n="42"/><unclear cert="medium" resp="#joint">ehrsammen</unclear>, <unclear cert="medium" resp="#joint">wysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
+<lb n="43"/>meister und <unclear cert="medium" resp="#joint">Raht</unclear> der statt
+<lb n="44"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>, <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">in=</unclear>
+<lb n="45"/>sonders <unclear cert="low" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">fruenden</unclear>, und
+<lb n="46"/><unclear cert="low" resp="#joint">getruewen</unclear> lieben <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName>.
 </p>
         </body>
     </text>

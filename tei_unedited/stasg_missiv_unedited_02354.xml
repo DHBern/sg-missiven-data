@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2354</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,64 +20,64 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich danken Bürgermeister und Rat zu St. Gallen für die gastfreundliche Aufnahme und Bewirtung ihrer Gesandten auf der eidgenössischen Konferenz in Lindau. Sie erklären sich bereit, St. Gallen in ähnlichen Fällen zu dienen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1622-10-12" resp="#regest">12ten Octobris a° 1622</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2354_9017.jpg" n="1"/>
-<lb n="1"/>Unßer fründtlich willig dienst, und was wir ehren,
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> willig dienst, und was wir ehren,
 <lb n="2"/>liebs und guots vermögend, zuovor, from, fürsichtig,
-<lb n="3"/>ersam, wÿß, inßonders guote fründt und gethrüw
-<lb n="4"/>lieb <orgName role="recipient" resp="#ner">Eÿdtgnoßen</orgName>. Es habent unßere Ehren-
-<lb n="5"/>gsandten so unglengsthinero zÿt uff <unclear cert="low" resp="#joint">der</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eÿdt</unclear>-
-<lb n="6"/><unclear cert="low" resp="#joint">gnößischen</unclear></orgName> <unclear cert="low" resp="#joint">Conferentz</unclear> zuo <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindauw</placeName> geweßen, unß
-<lb n="7"/>under anderm ouch vermeldet und zum höchsten
-<lb n="8"/>angerüembt, die sonderbaren und vilfeltige ehr,
-<lb n="9"/>fründtschafft und guotthaten, so Ir inen und <unclear cert="low" resp="#joint">üebrig</unclear>-
-<lb n="10"/><unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">unßeren</unclear> lieben <orgName resp="#ner">Eidtgnoßen</orgName> Ehrengsandten,
-<lb n="11"/>so wol im hiniß: als heimbreißen, mit stattlich-
-<lb n="12"/>er tractation und gasthaltung, wÿnverehrung, und
-<lb n="13"/>inn all ander weg bewißen und erzeigt habint,
-<lb n="14"/>darumbe sÿ sich so wol von <unclear cert="low" resp="#joint">unßertwegen</unclear>, als ir-
-<lb n="15"/>er perßonen halber gegen Üch und den Üweren
-<lb n="16"/>höchlich verpflichtet wüßind und haltind.
-<lb n="17"/>Und wann nun ein sölliches unß und unßeren
-<lb n="18"/>gesandten zuo sondern ehren und fründtschafft ge-
-<lb n="19"/>reicht, So habent wir nit underlaßen söll-
-<lb n="20"/>en noch wöllen, Üch unßeren lieben Eidtgnoß-
-<lb n="21"/>en umb sölliche bewißne vilfeltige fründtligkeit
-<lb n="22"/>ehren und guotthaten gantz dienstfründtlich und
-<lb n="23"/>flÿßig zedanken, Mit dem geneigt willig-
-<lb n="24"/>en anerbieten, wo wir diß und anders so unß
-<lb n="25"/>und den unßeren inn mehr weg erzeigt word-
-<lb n="26"/>en, umb Üch und die Üweren widerumb beschuld-
-<lb n="27"/>en khönnend, daß wir daßelbig zuo jeder
-<lb n="28"/>gelegenheit zethuond so bereit und <unclear cert="low" resp="#joint">guotwillig</unclear> sind
-<lb n="29"/>Als wir Gott bittend, <unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">hierzuo</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">mittel</unclear>
+<lb n="3"/><unclear cert="medium" resp="#joint">ersam</unclear>, <unclear cert="low" resp="#joint">wÿß</unclear>, <unclear cert="low" resp="#joint">inßonders</unclear> <unclear cert="low" resp="#joint">guote</unclear> fründt und gethrüw
+<lb n="4"/>lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eÿdtgnoßen</unclear></orgName>. Es habent <unclear cert="low" resp="#joint">unßere</unclear> Ehren-
+<lb n="5"/>gsandten so unglengsthinero zÿt uff der <orgName resp="#ner">Eÿdt-
+<lb n="6"/>gnößischen</orgName> Conferentz zuo <placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lindauw</unclear></placeName> geweßen, <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">under</unclear> <unclear cert="medium" resp="#joint">anderm</unclear> <unclear cert="medium" resp="#joint">ouch</unclear> vermeldet und zum <unclear cert="medium" resp="#joint">höchsten</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">angerüembt</unclear>, die <unclear cert="low" resp="#joint">sonderbaren</unclear> und <unclear cert="medium" resp="#joint">vilfeltige</unclear> ehr,
+<lb n="9"/>fründtschafft und <unclear cert="low" resp="#joint">guotthaten</unclear>, so Ir <unclear cert="low" resp="#joint">inen</unclear> und <unclear cert="low" resp="#joint">üebrig</unclear>-
+<lb n="10"/>en <unclear cert="low" resp="#joint">unßeren</unclear> lieben <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName> <unclear cert="low" resp="#joint">Ehrengsandten</unclear>,
+<lb n="11"/>so wol im <unclear cert="low" resp="#joint">hiniß</unclear>: als <unclear cert="low" resp="#joint">heimbreißen</unclear>, mit stattlich-
+<lb n="12"/>er tractation und <unclear cert="low" resp="#joint">gasthaltung</unclear>, <unclear cert="low" resp="#joint">wÿnverehrung</unclear>, und
+<lb n="13"/><unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">all</unclear> ander weg <unclear cert="low" resp="#joint">bewißen</unclear> und <unclear cert="low" resp="#joint">erzeigt</unclear> habint,
+<lb n="14"/>darumbe sÿ sich so wol von unßertwegen, als ir-
+<lb n="15"/>er <unclear cert="low" resp="#joint">perßonen</unclear> halber gegen Üch und den <unclear cert="medium" resp="#joint">Üweren</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">höchlich</unclear> verpflichtet <unclear cert="low" resp="#joint">wüßind</unclear> und haltind.
+<lb n="17"/><unclear cert="medium" resp="#joint">Und</unclear> wann nun ein <unclear cert="medium" resp="#joint">sölliches</unclear> unß und <unclear cert="low" resp="#joint">unßeren</unclear>
+<lb n="18"/>gesandten zuo <unclear cert="low" resp="#joint">sondern</unclear> ehren und <unclear cert="medium" resp="#joint">fründtschafft</unclear> ge-
+<lb n="19"/><unclear cert="low" resp="#joint">reicht</unclear>, So habent wir nit underlaßen <unclear cert="low" resp="#joint">söll</unclear>-
+<lb n="20"/>en noch wöllen, Üch <unclear cert="low" resp="#joint">unßeren</unclear> lieben <unclear cert="low" resp="#joint">Eidtgnoß</unclear>-
+<lb n="21"/>en umb <unclear cert="medium" resp="#joint">sölliche</unclear> <unclear cert="low" resp="#joint">bewißne</unclear> <unclear cert="medium" resp="#joint">vilfeltige</unclear> <unclear cert="low" resp="#joint">fründtligkeit</unclear>
+<lb n="22"/>ehren und <unclear cert="low" resp="#joint">guotthaten</unclear> gantz <unclear cert="medium" resp="#joint">dienstfründtlich</unclear> und
+<lb n="23"/><unclear cert="low" resp="#joint">flÿßig</unclear> <unclear cert="low" resp="#joint">zedanken</unclear>, Mit dem <unclear cert="medium" resp="#joint">geneigt</unclear> willig-
+<lb n="24"/><unclear cert="medium" resp="#joint">en</unclear> anerbieten, wo wir <unclear cert="medium" resp="#joint">diß</unclear> und anders so <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="25"/>und den <unclear cert="low" resp="#joint">unßeren</unclear> <unclear cert="medium" resp="#joint">inn</unclear> mehr weg <unclear cert="low" resp="#joint">erzeigt</unclear> word-
+<lb n="26"/>en, umb Üch und die <unclear cert="medium" resp="#joint">Üweren</unclear> widerumb <unclear cert="medium" resp="#joint">beschuld</unclear>-
+<lb n="27"/><unclear cert="medium" resp="#joint">en</unclear> <unclear cert="medium" resp="#joint">khönnend</unclear>, daß wir <unclear cert="medium" resp="#joint">daßelbig</unclear> zuo jeder
+<lb n="28"/>gelegenheit zethuond so <unclear cert="low" resp="#joint">bereit</unclear> und <unclear cert="low" resp="#joint">guotwillig</unclear> sind
+<lb n="29"/>Als wir Gott bittend, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">er</unclear> <unclear cert="medium" resp="#joint">hierzuo</unclear> die mittel
 <pb facs="StadtASG_Missive_2354_9018.jpg" n="2"/>
-<lb n="30"/><unclear cert="low" resp="#joint">verlijchen</unclear>, und <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">gemeinem</unclear> <unclear cert="low" resp="#joint">vatt=</unclear>
-<lb n="31"/><unclear cert="low" resp="#joint">erlandt</unclear> <unclear cert="low" resp="#joint">wyter</unclear> <unclear cert="low" resp="#joint">jnn</unclear> <unclear cert="low" resp="#joint">synem</unclear> schirm <unclear cert="low" resp="#joint">erhalten</unclear> <unclear cert="low" resp="#joint">wölle</unclear>.
-<lb n="32"/><unclear cert="low" resp="#joint">Datum</unclear> <origDate when="1622-10-12" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">12ten</unclear> <unclear cert="low" resp="#joint">Octobris</unclear> <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">1622</unclear></origDate>.
-<lb n="33"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">rath</unclear>
-<lb n="34"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">Zürich</unclear></orgName>.
+<lb n="30"/><unclear cert="low" resp="#joint">verlijchen</unclear>, und üch und <unclear cert="medium" resp="#joint">unß</unclear> sambt gemeinem <unclear cert="medium" resp="#joint">vatt=</unclear>
+<lb n="31"/><unclear cert="medium" resp="#joint">erlandt</unclear> wyter <unclear cert="medium" resp="#joint">jnn</unclear> synem schirm <unclear cert="medium" resp="#joint">erhalten</unclear> wölle.
+<lb n="32"/>Datum <origDate when="1622-10-12" resp="#ner">den 12ten Octobris <unclear cert="low" resp="#joint">a°</unclear> 1622</origDate>.
+<lb n="33"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
+<lb n="34"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2354_9019.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2354_9020.jpg" n="4"/>
 <lb n="35"/>Den frommen fuersichtigen,
-<lb n="36"/>ehrsamen wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="37"/>meister und Rath der stat
-<lb n="38"/>Sant Gallen</orgName>, unseren in-
-<lb n="39"/>sunders guoten fründen
-<lb n="40"/>und gethrüwen lieben <orgName role="recipient" resp="#ner">Eydt-
-<lb n="41"/>gnossen</orgName>.
+<lb n="36"/><unclear cert="medium" resp="#joint">ehrsamen</unclear> <unclear cert="low" resp="#joint">wysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="37"/><unclear cert="medium" resp="#joint">meister</unclear> und Rath der <unclear cert="medium" resp="#joint">stat</unclear>
+<lb n="38"/>Sant Gallen</orgName>, <unclear cert="low" resp="#joint">unseren</unclear> in-
+<lb n="39"/><unclear cert="low" resp="#joint">sunders</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> fründen
+<lb n="40"/>und <unclear cert="medium" resp="#joint">gethrüwen</unclear> lieben <orgName role="recipient" resp="#ner">Eydt-
+<lb n="41"/><unclear cert="medium" resp="#joint">gnossen</unclear></orgName>.
 </p>
         </body>
     </text>

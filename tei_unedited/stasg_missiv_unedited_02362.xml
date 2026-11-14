@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2362</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,72 +20,72 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich beschweren sich bei Bürgermeister und Rat zu St. Gallen darüber, dass St. Galler Metzger, namentlich Konrad Thür und sein Knecht Kaspar Appenzeller, Vieh aus der Zürcher Landschaft aufkaufen und an Fremde verkaufen, wodurch die Preise steigen. Sie bitten die St. Galler, ihre Bürger davon abzuhalten, und drohen andernfalls mit Strafen und dem Verbot, Zürcher Vieh zu kaufen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1622-10-23" resp="#regest">23ten octobris. anno 1622.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2362_9049.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig dienpst, sambt was wir ehren
-<lb n="2"/>liebs unnd guots vermögend zuovor, from, fürsichtig,
-<lb n="3"/>ehrsam, wyß, insonnders guot fründt unnd gethrüwe lieb
-<lb n="4"/>Eydtgnossen. Wir werdent berichtet, das et=
-<lb n="5"/>liche üwere metzger, sonnderlichen aber <persName resp="#ner">Conrat Thüer</persName>
-<lb n="6"/>unnd syn knecht <persName resp="#ner">Caspar Appenzeller</persName>, das vech uß unnß=
-<lb n="7"/>erer landtschafft, hin und wider huffenwyß uff gwünn
-<lb n="8"/>unnd mehrschatz uffköuffind, unnd dann dasselbig gägen den
-<lb n="9"/>frömbden den nechsten widerumb verkouffind unnd also
-<lb n="10"/>das vech inn unseren landen nit wenig uffthrybind unnd
-<lb n="11"/>verthüerind. Unnd so dann wir darhienby gloubwürd=
-<lb n="12"/>ig verstendiget worden, das sy die üweren mit derglych=
-<lb n="13"/>en fürköuffen an anderen orten der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> ouch
-<lb n="14"/>umbzühen söllind, inmassen dann, ir desselben von unnseren
-<lb n="15"/>Eydtgnossen der Statt <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Bern</placeName> ouch schon allbereit werdent
-<lb n="16"/>berichtet worden syn, als ist unns diß ir vorteiligs
-<lb n="17"/>fürnemmen mit desto grösserm mißfallen unnd beduren für=
+<lb n="1"/>Unnser fründtlich willig <unclear cert="low" resp="#joint">dienpst</unclear>, sambt was wir ehren
+<lb n="2"/>liebs unnd guots vermögend zuovor, <unclear cert="low" resp="#joint">from</unclear>, fürsichtig,
+<lb n="3"/><unclear cert="low" resp="#joint">ehrsam</unclear>, wyß, insonnders guot fründt unnd <unclear cert="low" resp="#joint">gethrüwe</unclear> lieb
+<lb n="4"/>Eydtgnossen. Wir <unclear cert="low" resp="#joint">werdent</unclear> <unclear cert="low" resp="#joint">berichtet</unclear>, das et=
+<lb n="5"/>liche <unclear cert="low" resp="#joint">üwere</unclear> <unclear cert="low" resp="#joint">metzger</unclear>, <unclear cert="low" resp="#joint">sonnderlichen</unclear> aber <persName resp="#ner">Conrat <unclear cert="low" resp="#joint">Thüer</unclear></persName>
+<lb n="6"/>unnd <unclear cert="low" resp="#joint">syn</unclear> knecht <persName resp="#ner">Caspar Appenzeller</persName>, das <unclear cert="low" resp="#joint">vech</unclear> uß <unclear cert="low" resp="#joint">unnß=</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">erer</unclear> landtschafft, hin und wider <unclear cert="low" resp="#joint">huffenwyß</unclear> uff <unclear cert="low" resp="#joint">gwünn</unclear>
+<lb n="8"/>unnd <unclear cert="low" resp="#joint">mehrschatz</unclear> <unclear cert="low" resp="#joint">uffköuffind</unclear>, unnd dann dasselbig gägen den
+<lb n="9"/>frömbden den <unclear cert="low" resp="#joint">nechsten</unclear> widerumb <unclear cert="low" resp="#joint">verkouffind</unclear> unnd also
+<lb n="10"/>das <unclear cert="low" resp="#joint">vech</unclear> <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">landen</unclear> nit wenig <unclear cert="low" resp="#joint">uffthrybind</unclear> unnd
+<lb n="11"/><unclear cert="low" resp="#joint">verthüerind</unclear>. Unnd so dann <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">darhienby</unclear> gloubwürd=
+<lb n="12"/>ig <unclear cert="low" resp="#joint">verstendiget</unclear> worden, das sy die üweren mit derglych=
+<lb n="13"/>en <unclear cert="low" resp="#joint">fürköuffen</unclear> an anderen orten der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> ouch
+<lb n="14"/><unclear cert="low" resp="#joint">umbzühen</unclear> <unclear cert="low" resp="#joint">söllind</unclear>, <unclear cert="low" resp="#joint">inmassen</unclear> dann, <unclear cert="low" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">desselben</unclear> von unnseren
+<lb n="15"/><unclear cert="medium" resp="#joint">Eydtgnossen</unclear> der Statt <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Bern</placeName> ouch schon <unclear cert="low" resp="#joint">allbereit</unclear> <unclear cert="low" resp="#joint">werdent</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">berichtet</unclear> worden syn, als ist unns diß <unclear cert="low" resp="#joint">ir</unclear> <unclear cert="low" resp="#joint">vorteiligs</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">fürnemmen</unclear> mit desto <unclear cert="low" resp="#joint">grösserm</unclear> mißfallen unnd beduren für=
 <lb n="18"/>kommen. Unnd diewyl dann das vech hierdurch
-<lb n="19"/>aber stende, verthüert, unnd ouch unseren burgeren den metzg=
-<lb n="20"/>eren sodarumb wylen sy es nit wytters als inn unnsere
-<lb n="21"/>statt thryben, unnd keins wägs gägen den frömbden ver=
-<lb n="22"/>kouffen dörffend, zuo derselben nit geringen beschwerd ent=
-<lb n="23"/>zogen wirt, so wellend wir üch hiemit Eydt=
-<lb n="24"/>gnössisch fründtlich ersuocht unnd gebetten haben, das ir ge=
-<lb n="25"/>sagte üwere burger für üch bescheiden, sy von derglychen wyt=
-<lb n="26"/>erm uffkouffen des vychs ernstlichen abmanen, unnd dahin halt=
-<lb n="27"/>en wöllind, das sy das vech nun fürhin inn aller bescheid=
-<lb n="28"/>enheit unnd allein sovil sy zuom verlag ires handtwercks
-<lb n="29"/>bedürfftig uffköuffind unnd darmit kein wyttere gfhreg=
-<lb n="30"/>nery thrybind. Wo nit, unnd unns irethalb einiche wyttere
-<lb n="31"/>klagten kommen wurdent, wie wir dann hieuff ein flyssigs
-<lb n="32"/>uffsächen haben lassen werdent, könnend wir üch nit verhalt=
+<lb n="19"/>aber stende, verthüert, unnd ouch <unclear cert="low" resp="#joint">unseren</unclear> burgeren den <unclear cert="medium" resp="#joint">metzg=</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">eren</unclear> <unclear cert="medium" resp="#joint">sodarumb</unclear> <unclear cert="medium" resp="#joint">wylen</unclear> sy es nit <unclear cert="low" resp="#joint">wytters</unclear> als <unclear cert="low" resp="#joint">inn</unclear> unnsere
+<lb n="21"/>statt <unclear cert="low" resp="#joint">thryben</unclear>, unnd <unclear cert="low" resp="#joint">keins</unclear> <unclear cert="low" resp="#joint">wägs</unclear> <unclear cert="low" resp="#joint">gägen</unclear> den frömbden ver=
+<lb n="22"/><unclear cert="low" resp="#joint">kouffen</unclear> <unclear cert="low" resp="#joint">dörffend</unclear>, zuo derselben nit geringen <unclear cert="low" resp="#joint">beschwerd</unclear> ent=
+<lb n="23"/>zogen wirt, so <unclear cert="low" resp="#joint">wellend</unclear> wir üch hiemit Eydt=
+<lb n="24"/><unclear cert="low" resp="#joint">gnössisch</unclear> fründtlich ersuocht unnd gebetten haben, das ir ge=
+<lb n="25"/>sagte <unclear cert="low" resp="#joint">üwere</unclear> burger für üch <unclear cert="low" resp="#joint">bescheiden</unclear>, sy von derglychen <unclear cert="low" resp="#joint">wyt=</unclear>
+<lb n="26"/>erm <unclear cert="low" resp="#joint">uffkouffen</unclear> des <unclear cert="low" resp="#joint">vychs</unclear> ernstlichen abmanen, unnd dahin <unclear cert="low" resp="#joint">halt=</unclear>
+<lb n="27"/>en <unclear cert="low" resp="#joint">wöllind</unclear>, das sy das vech nun fürhin inn aller bescheid=
+<lb n="28"/>enheit unnd allein sovil sy zuom verlag <unclear cert="low" resp="#joint">ires</unclear> <unclear cert="low" resp="#joint">handtwercks</unclear>
+<lb n="29"/>bedürfftig <unclear cert="low" resp="#joint">uffköuffind</unclear> unnd <unclear cert="low" resp="#joint">darmit</unclear> <unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">wyttere</unclear> <unclear cert="low" resp="#joint">gfhreg=</unclear>
+<lb n="30"/>nery <unclear cert="low" resp="#joint">thrybind</unclear>. Wo nit, unnd unns <unclear cert="low" resp="#joint">irethalb</unclear> <unclear cert="low" resp="#joint">einiche</unclear> <unclear cert="low" resp="#joint">wyttere</unclear>
+<lb n="31"/>klagten kommen <unclear cert="low" resp="#joint">wurdent</unclear>, wie wir dann hieuff ein <unclear cert="low" resp="#joint">flyssigs</unclear>
+<lb n="32"/>uffsächen haben lassen werdent, könnend wir üch nit <unclear cert="low" resp="#joint">verhalt=</unclear>
 <lb n="33"/>en, das wir als dann nit allein ir vech in unseren land=
-<lb n="34"/>en nemmen lassen, sonders sy ouch hierumb wytters nach ver=
-<lb n="35"/>dienen straffen wurdent, dessen wir aber lieber überhebt
-<lb n="36"/>syn wellend. Das werdent ir nun von uns inn bester
-<lb n="37"/>wolmeinung verstohn, unnd unns üwers gfallens darüber
-<lb n="38"/>hinwider unbeschwert verstendigen. Unnd darby üch (denen
-<lb n="39"/>wir zuoerwysung fründtschafft wolbygethan) sambt uns
-<lb n="40"/>dem schirm Gottes bevohlen. Dat. <origDate when="1622-10-23" resp="#ner">den 23ten octobris.
+<lb n="34"/>en nemmen lassen, sonders sy ouch hierumb <unclear cert="low" resp="#joint">wytters</unclear> nach ver=
+<lb n="35"/>dienen straffen wurdent, dessen wir aber lieber <unclear cert="low" resp="#joint">überhebt</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">syn</unclear> wellend. Das werdent <unclear cert="low" resp="#joint">ir</unclear> nun von uns inn bester
+<lb n="37"/>wolmeinung <unclear cert="low" resp="#joint">verstohn</unclear>, unnd unns <unclear cert="low" resp="#joint">üwers</unclear> <unclear cert="low" resp="#joint">gfallens</unclear> darüber
+<lb n="38"/>hinwider unbeschwert <unclear cert="low" resp="#joint">verstendigen</unclear>. <unclear cert="low" resp="#joint">Unnd</unclear> darby üch (<unclear cert="medium" resp="#joint">denen</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">zuoerwysung</unclear> fründtschafft wolbygethan) sambt uns
+<lb n="40"/>dem schirm Gottes <unclear cert="low" resp="#joint">bevohlen</unclear>. <unclear cert="low" resp="#joint">Dat</unclear>. <origDate when="1622-10-23" resp="#ner">den 23ten octobris.
 <lb n="41"/>anno 1622</origDate>.
 <lb n="42"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister unnd rath
 <lb n="43"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2362_9050.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2362_9051.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2362_9052.jpg" n="4"/>
-<lb n="44"/>Den Fromen, Fürsichtigen, Ehr=
-<lb n="45"/>samen Wüßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="44"/>Den <unclear cert="low" resp="#joint">Fromen</unclear>, Fürsichtigen, Ehr=
+<lb n="45"/>samen <unclear cert="low" resp="#joint">Wüßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="46"/>unnd Raht der Statt Sanct Gall=
-<lb n="47"/>en</orgName>, Unnseren Insonders guoten
-<lb n="48"/>fründen, unnd getrüwen lieben
-<lb n="49"/>Eüdtgnoßen.
+<lb n="47"/>en</orgName>, Unnseren Insonders <unclear cert="low" resp="#joint">guoten</unclear>
+<lb n="48"/>fründen, unnd <unclear cert="low" resp="#joint">getrüwen</unclear> lieben
+<lb n="49"/><unclear cert="low" resp="#joint">Eüdtgnoßen</unclear>.
 </p>
         </body>
     </text>

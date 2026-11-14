@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1723</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,59 +20,59 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Rat zu Wil antworten auf ein Schreiben der St. Galler Behörden bezüglich des Gefangenen Hans Heer. Sie berichten, dass Heer sich bei ihnen beschwert habe, seine Frau sei ihm entzogen worden. Er sei in St. Gallen nicht sesshaft gewesen, sondern im Hofgericht. Die St. Galler Hofräte hätten ihn verhandelt und bestraft. Seine Frau sei als Tochter eines alten Bürgers kurzzeitig als Hintersässin aufgenommen worden. Wil verweist für weitere Details auf das Schreiben der Hofräte.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Rat zu Wil</name><date when="1621" resp="#regest">6 t. Meyenn anno 1621</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1723_6325.jpg" n="1"/>
-<lb n="1"/>Unseren <unclear cert="low" resp="#joint">früntlichen</unclear> <unclear cert="low" resp="#joint">nachpurlichen</unclear> willen,
+<lb n="1"/><unclear cert="medium" resp="#joint">Unseren</unclear> <unclear cert="low" resp="#joint">früntlichen</unclear> <unclear cert="low" resp="#joint">nachpurlichen</unclear> <unclear cert="medium" resp="#joint">willen</unclear>,
 <lb n="2"/>unnd alles <unclear cert="low" resp="#joint">guotz</unclear> zuvor, Edle <unclear cert="low" resp="#joint">fromme</unclear> <unclear cert="low" resp="#joint">Erenveste</unclear>
-<lb n="3"/><unclear cert="low" resp="#joint">fürsichtige</unclear> <unclear cert="low" resp="#joint">wyse</unclear> <unclear cert="low" resp="#joint">günstige</unclear> liebe herren unnd
-<lb n="4"/>gethrüwe liebe nachpuren. Üwer ann unns
-<lb n="5"/>gethannes schryben, habend wir durch zäigeren
-<lb n="6"/>empfanngen unnd dessen innhallt verstanden,
-<lb n="7"/>annbetreffende üweren gefanngnen <persName resp="#ner">Hanns
-<lb n="8"/>Heeren</persName> so sich unnser hinndersaeß nennet. etc.
+<lb n="3"/><unclear cert="medium" resp="#joint">fürsichtige</unclear> <unclear cert="medium" resp="#joint">wyse</unclear> <unclear cert="low" resp="#joint">günstige</unclear> liebe herren unnd
+<lb n="4"/><unclear cert="low" resp="#joint">gethrüwe</unclear> liebe nachpuren. Üwer <unclear cert="low" resp="#joint">ann</unclear> unns
+<lb n="5"/><unclear cert="low" resp="#joint">gethannes</unclear> schryben, habend wir durch <unclear cert="low" resp="#joint">zäigeren</unclear>
+<lb n="6"/>empfanngen unnd dessen innhallt <unclear cert="low" resp="#joint">verstanden</unclear>,
+<lb n="7"/><unclear cert="low" resp="#joint">annbetreffende</unclear> <unclear cert="low" resp="#joint">üweren</unclear> gefanngnen <persName resp="#ner">Hanns
+<lb n="8"/><unclear cert="low" resp="#joint">Heeren</unclear></persName> so sich unnser hinndersaeß nennet. etc.
 <lb n="9"/>So geben wir üwer E. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wßh</unclear>. <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">verners</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">sin</unclear> Hanns Heeren wegen disen bericht,
-<lb n="11"/>das <unclear cert="low" resp="#joint">offt</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">züt</unclear> <unclear cert="low" resp="#joint">einer</unclear> <unclear cert="low" resp="#joint">vom</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Buechl</unclear></placeName> <unclear cert="low" resp="#joint">usserm</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Heüptlendli</unclear></placeName>
-<lb n="12"/><unclear cert="low" resp="#joint">allher</unclear> <unclear cert="low" resp="#joint">kommen</unclear>, <unclear cert="low" resp="#joint">und</unclear> sich höchlich clagt. Wie
-<lb n="13"/>das er <persName resp="#ner">Hanns Heer</persName>. Ime sin wyb entzogen,
-<lb n="14"/>unnd ann sich genommen. wyl er Heer da-
-<lb n="15"/>selbst uff der <placeName resp="#ner">Bläychi</placeName> gedienet. Als er Hanns
-<lb n="16"/>Heer inn unnser Stadt (<unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">ist</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">seßhafft</unclear> noch
-<lb n="17"/>ein hinndersaeß gewessen, sonnder in unnsers
-<lb n="18"/>g. herren hoffmans gricht seßhafft.) habent
-<lb n="19"/>wir inne daher gewissen, dann er Hanns
+<lb n="10"/><unclear cert="low" resp="#joint">sin</unclear> Hanns Heeren wegen <unclear cert="low" resp="#joint">disen</unclear> <unclear cert="low" resp="#joint">bericht</unclear>,
+<lb n="11"/>das <unclear cert="medium" resp="#joint">offt</unclear> <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">züt</unclear> einer <unclear cert="medium" resp="#joint">vom</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Buechl</unclear></placeName> <unclear cert="medium" resp="#joint">usserm</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Heüptlendli</unclear></placeName>
+<lb n="12"/><unclear cert="medium" resp="#joint">allher</unclear> <unclear cert="medium" resp="#joint">kommen</unclear>, <unclear cert="medium" resp="#joint">und</unclear> sich höchlich <unclear cert="low" resp="#joint">clagt</unclear>. Wie
+<lb n="13"/>das er <persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Heer</unclear></persName>. <unclear cert="low" resp="#joint">Ime</unclear> <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">wyb</unclear> entzogen,
+<lb n="14"/>unnd ann sich <unclear cert="low" resp="#joint">genommen</unclear>. <unclear cert="low" resp="#joint">wyl</unclear> er <unclear cert="low" resp="#joint">Heer</unclear> da-
+<lb n="15"/>selbst uff der <placeName resp="#ner"><unclear cert="low" resp="#joint">Bläychi</unclear></placeName> <unclear cert="low" resp="#joint">gedienet</unclear>. Als er Hanns
+<lb n="16"/><unclear cert="low" resp="#joint">Heer</unclear> inn unnser Stadt (<unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">ist</unclear> nit <unclear cert="medium" resp="#joint">seßhafft</unclear> noch
+<lb n="17"/>ein <unclear cert="low" resp="#joint">hinndersaeß</unclear> gewessen, <unclear cert="low" resp="#joint">sonnder</unclear> in unnsers
+<lb n="18"/>g. herren <unclear cert="low" resp="#joint">hoffmans</unclear> gricht <unclear cert="low" resp="#joint">seßhafft</unclear>.) habent
+<lb n="19"/>wir <unclear cert="low" resp="#joint">inne</unclear> daher gewissen, dann er Hanns
 <lb n="20"/>Heer daruff vonn den hoffRäthen alhie. lut
-<lb n="21"/>byligenndens schrybens vonn denn hoff-
-<lb n="22"/>Räthen usganngen. Was er <unclear cert="low" resp="#joint">verhanndlet</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">byligenndens</unclear> <unclear cert="low" resp="#joint">schrybens</unclear> vonn denn hoff-
+<lb n="22"/>Räthen <unclear cert="low" resp="#joint">usganngen</unclear>. Was er <unclear cert="low" resp="#joint">verhanndlet</unclear>
 <lb n="23"/><unclear cert="low" resp="#joint">gestrafft</unclear> <unclear cert="low" resp="#joint">worden</unclear>. <unclear cert="low" resp="#joint">Zuo</unclear> dem wie Ihr
-<lb n="24"/>inn üwerem schryben vermelden, das er
-<lb n="25"/><unclear cert="low" resp="#joint">Heer</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">gebe</unclear> das er ein hindersaeß by uns
-<lb n="26"/>sin. Ist nit also, sonnder allein das er etlich
-<lb n="27"/>zyt uff der Bläychi by unns gediennet.
-<lb n="28"/>Unnd <unclear cert="medium" resp="#joint">allein</unclear> man <unclear cert="medium" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">frow</unclear> by kurtzer
+<lb n="24"/>inn üwerem schryben <unclear cert="low" resp="#joint">vermelden</unclear>, das er
+<lb n="25"/><unclear cert="low" resp="#joint">Heer</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">gebe</unclear> das er ein <unclear cert="low" resp="#joint">hindersaeß</unclear> by uns
+<lb n="26"/><unclear cert="low" resp="#joint">sin</unclear>. <unclear cert="low" resp="#joint">Ist</unclear> nit also, sonnder allein das er etlich
+<lb n="27"/>zyt uff der <unclear cert="low" resp="#joint">Bläychi</unclear> by unns gediennet.
+<lb n="28"/>Unnd allein <unclear cert="medium" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">frow</unclear> by <unclear cert="low" resp="#joint">kurtzer</unclear>
 <lb n="29"/>zyt. diewyl sy eines allten Burgers dochter
-<lb n="30"/>lasst sy wolhallten hin zuo einer hindersaeßin
-<lb n="31"/>anngenommen. Was dann <unclear cert="medium" resp="#joint">sin</unclear> thuon und
-<lb n="32"/>lassen. Werden üwer E. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wßh</unclear>. <unclear cert="low" resp="#joint">uß</unclear> dem
-<lb n="33"/><unclear cert="low" resp="#joint">schryben</unclear> so vonn denn hoffRäthen alhie us-
-<lb n="34"/>ganngen woll vernemmen. Somlichs
+<lb n="30"/>lasst sy wolhallten hin zuo einer <unclear cert="low" resp="#joint">hindersaeßin</unclear>
+<lb n="31"/>anngenommen. Was dann <unclear cert="medium" resp="#joint">sin</unclear> <unclear cert="medium" resp="#joint">thuon</unclear> und
+<lb n="32"/><unclear cert="medium" resp="#joint">lassen</unclear>. Werden üwer E. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wßh</unclear>. <unclear cert="low" resp="#joint">uß</unclear> dem
+<lb n="33"/>schryben so vonn denn hoffRäthen alhie us-
+<lb n="34"/>ganngen woll <unclear cert="low" resp="#joint">vernemmen</unclear>. Somlichs
 <pb facs="StadtASG_Missive_1723_6326.jpg" n="2"/>
-<lb n="35"/><unclear cert="low" resp="#joint">habent</unclear> wir üwer E. F. <unclear cert="low" resp="#joint">Wyßheit</unclear> <unclear cert="low" resp="#joint">nachbuwlichen</unclear> wyß
-<lb n="36"/>unberichtt nit laßen soellen. Sonstten üch <unclear cert="low" resp="#joint">allen</unclear> nach-
-<lb n="37"/>buwlichen willen zuoerzeügen, sind wir <unclear cert="low" resp="#joint">geneigt</unclear>
-<lb n="38"/>unnd guottwillig. Samit unß sampttlich
+<lb n="35"/><unclear cert="low" resp="#joint">habent</unclear> wir üwer E. F. Wyßheit <unclear cert="low" resp="#joint">nachbuwlichen</unclear> wyß
+<lb n="36"/><unclear cert="low" resp="#joint">unberichtt</unclear> nit <unclear cert="low" resp="#joint">laßen</unclear> <unclear cert="low" resp="#joint">soellen</unclear>. <unclear cert="low" resp="#joint">Sonstten</unclear> üch allen nach-
+<lb n="37"/><unclear cert="low" resp="#joint">buwlichen</unclear> willen <unclear cert="low" resp="#joint">zuoerzeügen</unclear>, <unclear cert="low" resp="#joint">sind</unclear> wir <unclear cert="medium" resp="#joint">geneigt</unclear>
+<lb n="38"/>unnd <unclear cert="low" resp="#joint">guottwillig</unclear>. Samit <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">sampttlich</unclear>
 <lb n="39"/>Gottes allmacht <unclear cert="low" resp="#joint">wolbevelchende</unclear>. Datum
 <lb n="40"/><unclear cert="low" resp="#joint">denn</unclear> <origDate when="1621" resp="#ner"><unclear cert="low" resp="#joint">6</unclear> <unclear cert="low" resp="#joint">t</unclear>. <unclear cert="low" resp="#joint">Meyenn</unclear> anno <unclear cert="low" resp="#joint">1621</unclear></origDate>.
 <lb n="41"/><orgName ref="stadtasg-actors-517" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Schultheiß</unclear> unnd Raeth

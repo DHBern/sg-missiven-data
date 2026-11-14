@@ -338,6 +338,15 @@ def tag_unedited(a, shots, linker, cands) -> None:
     if not backup.exists():
         backup.parent.mkdir(exist_ok=True)
         backup.write_text(path.read_text(encoding="utf-8"), encoding="utf-8")
+    # pages hmBERT tagged after the backup was made (ner.py tag appends them):
+    # their hmBERT records go into the backup too, so they are proposals here
+    known = {json.loads(line)["key"] for line in backup.read_text(encoding="utf-8").splitlines() if line.strip()}
+    new = [r for k, r in records.items() if k not in known and r.get("method") != "combined"]
+    if new:
+        with backup.open("a", encoding="utf-8") as fh:
+            for r in new:
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+        print(f"{len(new)} pages tagged by hmBERT since the backup, added to {backup.relative_to(ROOT)}", flush=True)
     hm = load_hmbert(backup)
     report = json.loads((OUT / "combined_report.json").read_text())
     prec = report["hmbert+qwen+judge"]["linking"]["precision_by_kind"]

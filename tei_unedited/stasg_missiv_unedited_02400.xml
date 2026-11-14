@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2400</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bestätigen den Erhalt eines Schreibens vom 25. November 1622 bezüglich des Rechtsstreits zwischen dem Zürcher Ferdinand Holey und dem St. Galler Sebastian Zollikofer. Sie haben einen neuen Rechtstag auf den Montag nach Judica angesetzt und bitten die Zürcher Behörden, Holey diesen Termin mitzuteilen und ihn ernsthaft zu verpflichten, pünktlich zu erscheinen, um weitere Verzögerungen zu vermeiden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1623" resp="#regest">Geben den 8t. Martij A° 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Zürich</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,54 +35,54 @@
 <p>
 <pb facs="StadtASG_Missive_2400_9223.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst, und was wir
-<lb n="2"/>liebs und guets vermuegendt zuvor, Ehrnveste, Für-
-<lb n="3"/>sichtige Eersame und weise, insonders liebe Herren
+<lb n="2"/>liebs und guets <unclear cert="low" resp="#joint">vermuegendt</unclear> zuvor, Ehrnveste, Für-
+<lb n="3"/>sichtige <unclear cert="low" resp="#joint">Eersame</unclear> und weise, insonders liebe Herren
 <lb n="4"/>und guete Freündt.
 <lb n="5"/>Derselben de dato den. <date resp="#ner">25.ten. Novembris deß verfloßnen
-<lb n="6"/>1622. Jars</date>, wegen ihres burgers <persName resp="#ner">Ferdinand Holey</persName>
-<lb n="7"/>an uns abgangen schreiben, samt eingeschloßner
-<lb n="8"/>deß <persName resp="#ner">Holey</persName> Abweigks Erklerungs schrifft, haben
-<lb n="9"/>wir wol entpfangen, und deß beides Innhalt
-<lb n="10"/>neben den eingefuerten Ursachen warumb er,
-<lb n="11"/><persName resp="#ner">Holey</persName> den zwüschet ihme und unserm bur-
+<lb n="6"/>1622. Jars</date>, wegen ihres burgers <persName resp="#ner">Ferdinand <unclear cert="low" resp="#joint">Holey</unclear></persName>
+<lb n="7"/>an uns abgangen schreiben, <unclear cert="low" resp="#joint">samt</unclear> <unclear cert="low" resp="#joint">eingeschloßner</unclear>
+<lb n="8"/>deß <persName resp="#ner"><unclear cert="low" resp="#joint">Holey</unclear></persName> <unclear cert="low" resp="#joint">Abweigks</unclear> <unclear cert="low" resp="#joint">Erklerungs</unclear> schrifft, haben
+<lb n="9"/>wir wol entpfangen, und deß <unclear cert="low" resp="#joint">beides</unclear> Innhalt
+<lb n="10"/>neben den eingefuerten Ursachen <unclear cert="low" resp="#joint">warumb</unclear> er,
+<lb n="11"/><persName resp="#ner"><unclear cert="low" resp="#joint">Holey</unclear></persName> den <unclear cert="low" resp="#joint">zwüschet</unclear> ihme und <unclear cert="low" resp="#joint">unserm</unclear> bur-
 <lb n="12"/>ger <persName resp="#ner">Sebastian Zollikhofern</persName>, damals angeseczten
-<lb n="13"/>Rechtstag zu exequirung der zuegelaßnen Appellation nit besuechen könden, wol verstanden, daß
-<lb n="14"/>gedachter <persName resp="#ner">Holey</persName> sich auff den nechst fernen Rechtstag
-<lb n="15"/>angeseczten tag, der gebür und billigkeit gemeß
+<lb n="13"/>Rechtstag <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">exequirung</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">zuegelaßnen</unclear> <unclear cert="low" resp="#joint">Appellation</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">besuechen</unclear> <unclear cert="low" resp="#joint">könden</unclear>, <unclear cert="low" resp="#joint">wol</unclear> <unclear cert="low" resp="#joint">verstanden</unclear>, daß
+<lb n="14"/>gedachter <persName resp="#ner"><unclear cert="low" resp="#joint">Holey</unclear></persName> sich auff den nechst fernen Rechtstag
+<lb n="15"/>angeseczten tag, der <unclear cert="low" resp="#joint">gebür</unclear> und billigkeit gemeß
 <lb n="16"/>erzeigen solle und wolle.
-<lb n="17"/>Dieweil dann der unserige widrumb vor uns
-<lb n="18"/>erschinen, und umb anderwertige citation tags-
-<lb n="19"/>ernennung instendig angehalten. So
-<lb n="20"/>haben wir, damit doch dermaln einest, disere
-<lb n="21"/>langgeschwebte verdrießliche sach möchte zn ein
+<lb n="17"/>Dieweil dann der <unclear cert="low" resp="#joint">unserige</unclear> <unclear cert="low" resp="#joint">widrumb</unclear> vor uns
+<lb n="18"/>erschinen, und <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">anderwertige</unclear> <unclear cert="low" resp="#joint">citation</unclear> tags-
+<lb n="19"/><unclear cert="medium" resp="#joint">ernennung</unclear> <unclear cert="medium" resp="#joint">instendig</unclear> angehalten. <unclear cert="low" resp="#joint">So</unclear>
+<lb n="20"/>haben wir, damit doch dermaln <unclear cert="low" resp="#joint">einest</unclear>, disere
+<lb n="21"/><unclear cert="low" resp="#joint">langgeschwebte</unclear> verdrießliche sach möchte zn ein
 <lb n="22"/>end gebracht werden, zwüschet ihnen beiden ein
-<lb n="23"/>andern tag ernennt, bestimt und angeseczt, nem-
-<lb n="24"/>lich uf <date resp="#ner">Mentag nach Judica wirdt sein der letste
-<lb n="25"/>diß lauffenden Monats Martij</date>, alts Calenders, Mit
+<lb n="23"/>andern tag ernennt, bestimt und <unclear cert="low" resp="#joint">angeseczt</unclear>, nem-
+<lb n="24"/>lich uf <date resp="#ner"><unclear cert="low" resp="#joint">Mentag</unclear> nach Judica <unclear cert="low" resp="#joint">wirdt</unclear> sein der <unclear cert="low" resp="#joint">letste</unclear>
+<lb n="25"/>diß lauffenden Monats Martij</date>, <unclear cert="low" resp="#joint">alts</unclear> Calenders, <unclear cert="low" resp="#joint">Mit</unclear>
 <lb n="26"/>freündtlich bitten E. E. Ft. E. W. wöllen ge-
-<lb n="27"/>dachtem <persName resp="#ner">Ferdinand Holey</persName> solch tag nit allein
-<lb n="28"/>ankünden lassen, sondern ihme mit ernst
-<lb n="29"/>daß ze imponirn, daß er denselben mit aller
-<lb n="30"/>notturfft und seim erbeiten gemeß, ohne weitre
+<lb n="27"/>dachtem <persName resp="#ner">Ferdinand <unclear cert="low" resp="#joint">Holey</unclear></persName> solch tag nit <unclear cert="low" resp="#joint">allein</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">ankünden</unclear> <unclear cert="low" resp="#joint">lassen</unclear>, sondern <unclear cert="medium" resp="#joint">ihme</unclear> mit ernst
+<lb n="29"/><unclear cert="low" resp="#joint">daß</unclear> <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">imponirn</unclear>, daß er denselben mit aller
+<lb n="30"/><unclear cert="low" resp="#joint">notturfft</unclear> und <unclear cert="low" resp="#joint">seim</unclear> <unclear cert="low" resp="#joint">erbeiten</unclear> gemeß, ohne <unclear cert="medium" resp="#joint">weitre</unclear>
 <pb facs="StadtASG_Missive_2400_9224.jpg" n="2"/>
-<lb n="31"/>ußbleibe und dilation besuechẽ od besuechẽ laßen
-<lb n="32"/>thuee, nach innhalt unßerer zu underschidlich malen
-<lb n="33"/>an ihne ußgangner citationen; daruff
-<lb n="34"/>wir unß alhie umb kürtze willen referirn,
-<lb n="35"/>verhofentlich, er werde sich hieruf gehorsamlich
-<lb n="36"/>einstellen, unß die beid oberkeiten vor weiterm
-<lb n="37"/>molestirn, und ihme selbsten vor Vogt mehrern
-<lb n="38"/>ungelegenheit auch vhuoten sein. Damit
-<lb n="39"/>befehlen E. F. E. E. Wht. wir sampt unß
-<lb n="40"/>dem lieben Gott. Geben den <origDate when="1623" resp="#ner">8t. Martij
-<lb n="41"/>A° 1623</origDate>.
+<lb n="31"/><unclear cert="low" resp="#joint">ußbleibe</unclear> und dilation <unclear cert="low" resp="#joint">besuechẽ</unclear> <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">besuechẽ</unclear> <unclear cert="low" resp="#joint">laßen</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">thuee</unclear>, nach innhalt <unclear cert="low" resp="#joint">unßerer</unclear> zu <unclear cert="low" resp="#joint">underschidlich</unclear> malen
+<lb n="33"/>an <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">ußgangner</unclear> citationen; <unclear cert="low" resp="#joint">daruff</unclear>
+<lb n="34"/>wir unß alhie umb <unclear cert="low" resp="#joint">kürtze</unclear> <unclear cert="medium" resp="#joint">willen</unclear> <unclear cert="medium" resp="#joint">referirn</unclear>,
+<lb n="35"/><unclear cert="low" resp="#joint">verhofentlich</unclear>, <unclear cert="medium" resp="#joint">er</unclear> werde sich <unclear cert="low" resp="#joint">hieruf</unclear> <unclear cert="low" resp="#joint">gehorsamlich</unclear>
+<lb n="36"/>einstellen, <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">beid</unclear> oberkeiten vor <unclear cert="low" resp="#joint">weiterm</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">molestirn</unclear>, und ihme selbsten vor <unclear cert="low" resp="#joint">Vogt</unclear> <unclear cert="medium" resp="#joint">mehrern</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">ungelegenheit</unclear> auch <unclear cert="low" resp="#joint">vhuoten</unclear> sein. Damit
+<lb n="39"/>befehlen E. <unclear cert="low" resp="#joint">F</unclear>. E. E. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">unß</unclear>
+<lb n="40"/>dem lieben <unclear cert="medium" resp="#joint">Gott</unclear>. <unclear cert="low" resp="#joint">Geben</unclear> <unclear cert="medium" resp="#joint">den</unclear> <origDate when="1623" resp="#ner"><unclear cert="low" resp="#joint">8t</unclear>. <unclear cert="medium" resp="#joint">Martij</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">A°</unclear> 1623</origDate>.
 <lb n="42"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und
-<lb n="43"/>rhat der statt
+<lb n="43"/><unclear cert="low" resp="#joint">rhat</unclear> der statt
 <lb n="44"/>Sanct Gallen</orgName>.
-<lb n="45"/>Den Frommen Fürsichtig Ersam und
-<lb n="46"/>Weysen <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rhat
-<lb n="47"/>der statt Zuerich</orgName> unnsern insonders
-<lb n="48"/>lieben herren und gueten Fründen.
+<lb n="45"/>Den <unclear cert="medium" resp="#joint">Frommen</unclear> <unclear cert="medium" resp="#joint">Fürsichtig</unclear> <unclear cert="medium" resp="#joint">Ersam</unclear> und
+<lb n="46"/><unclear cert="low" resp="#joint">Weysen</unclear> <orgName ref="stadtasg-actors-503" cert="medium" role="recipient" resp="#ner">Burgermeister unnd <unclear cert="low" resp="#joint">Rhat</unclear>
+<lb n="47"/>der statt <unclear cert="low" resp="#joint">Zuerich</unclear></orgName> unnsern insonders
+<lb n="48"/>lieben herren und <unclear cert="low" resp="#joint">gueten</unclear> Fründen.
 </p>
         </body>
     </text>

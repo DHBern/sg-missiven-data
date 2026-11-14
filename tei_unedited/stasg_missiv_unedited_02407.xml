@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2407</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,51 +20,51 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Decastille in Solothurn beklagt sich bei Bürgermeister und Rat zu St. Gallen über die Änderung des Botensystems. Der bisherige berittene Bote aus dem Gascogne habe ihm zuverlässig alle zwei Wochen am Donnerstagabend die benötigten Güter aus Lyon gebracht. Der neue Fussbote weigere sich, die Sendungen zu übernehmen, und halte sich nicht auf, um Briefe entgegenzunehmen. Decastille bittet, den alten Boten wieder einzusetzen, da er keine Mängel an ihm bemerkt habe.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Decastille</name><placeName resp="#regest">Solothurn</placeName><date when="1613" resp="#regest">ce xbiijme auril 1613</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2407_9257.jpg" n="1"/>
-<lb n="1"/>Messieurs Je n'ay encor peu scauoir ce qui vo' peut auoir occasionné
-<lb n="2"/>de changer l'ordre qui estoit cy deuant du messager qui portoit
-<lb n="3"/>voz pacquetz et affaires, et les miens a <placeName resp="#ner">Geneue</placeName>. Je m'en trouue
-<lb n="4"/>aucunement incommodé dautant q le Gascon messager a cheual
+<lb n="1"/><unclear cert="low" resp="#joint">Messieurs</unclear> Je n'ay encor peu <unclear cert="low" resp="#joint">scauoir</unclear> <unclear cert="low" resp="#joint">ce</unclear> qui <unclear cert="medium" resp="#joint">vo</unclear>' <unclear cert="medium" resp="#joint">peut</unclear> <unclear cert="medium" resp="#joint">auoir</unclear> occasionné
+<lb n="2"/>de <unclear cert="low" resp="#joint">changer</unclear> l'ordre qui estoit cy <unclear cert="medium" resp="#joint">deuant</unclear> du messager qui <unclear cert="medium" resp="#joint">portoit</unclear>
+<lb n="3"/><unclear cert="medium" resp="#joint">voz</unclear> <unclear cert="medium" resp="#joint">pacquetz</unclear> et affaires, <unclear cert="low" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">les</unclear> <unclear cert="low" resp="#joint">miens</unclear> a <placeName resp="#ner"><unclear cert="low" resp="#joint">Geneue</unclear></placeName>. Je <unclear cert="low" resp="#joint">m'en</unclear> <unclear cert="low" resp="#joint">trouue</unclear>
+<lb n="4"/>aucunement <unclear cert="low" resp="#joint">incommodé</unclear> dautant <unclear cert="medium" resp="#joint">q</unclear> le <unclear cert="medium" resp="#joint">Gascon</unclear> messager a <unclear cert="low" resp="#joint">cheual</unclear>
 <lb n="5"/>qui auoit ceste commission de quinze jours en quinze jours
-<lb n="6"/>m'apportoit le jeudy au soir les necessitéz que je desirois faie
-<lb n="7"/>venir de <placeName ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</placeName>. Ce que je ne puis commodement receuoir apnt
-<lb n="8"/>par la voye de vre messager a pied qui ne s'en veult charger,
-<lb n="9"/>et qui ne prent le loisir de s'arrester icy por attendre mes lres.
+<lb n="6"/>m'apportoit le <unclear cert="low" resp="#joint">jeudy</unclear> au soir <unclear cert="low" resp="#joint">les</unclear> <unclear cert="low" resp="#joint">necessitéz</unclear> que je desirois <unclear cert="medium" resp="#joint">faie</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">venir</unclear> <unclear cert="medium" resp="#joint">de</unclear> <placeName ref="stadtasg-places-196" cert="medium" resp="#ner">Lyon</placeName>. Ce que je ne puis <unclear cert="medium" resp="#joint">commodement</unclear> <unclear cert="medium" resp="#joint">receuoir</unclear> <unclear cert="medium" resp="#joint">apnt</unclear>
+<lb n="8"/>par <unclear cert="low" resp="#joint">la</unclear> <unclear cert="low" resp="#joint">voye</unclear> de <unclear cert="medium" resp="#joint">vre</unclear> messager a <unclear cert="low" resp="#joint">pied</unclear> <unclear cert="low" resp="#joint">qui</unclear> ne s'en <unclear cert="medium" resp="#joint">veult</unclear> <unclear cert="medium" resp="#joint">charger</unclear>,
+<lb n="9"/><unclear cert="medium" resp="#joint">et</unclear> <unclear cert="medium" resp="#joint">qui</unclear> ne <unclear cert="medium" resp="#joint">prent</unclear> le loisir de <unclear cert="medium" resp="#joint">s'arrester</unclear> <unclear cert="medium" resp="#joint">icy</unclear> <unclear cert="medium" resp="#joint">por</unclear> attendre <unclear cert="medium" resp="#joint">mes</unclear> <unclear cert="medium" resp="#joint">lres</unclear>.
 <lb n="10"/>Je ne scay si on vous a faict quelque mauuais rapport dud
-<lb n="11"/>Gascon, mais je n'y trouue aucune faute pour ce qui est de
-<lb n="12"/>la charge de messager que l'on luy auoit donneé L'ayant tousjoz
-<lb n="13"/>veu arriuer icy auant le terme qui luy estoit prefix. Cest
-<lb n="14"/>pourquoy je vous prie sy n'auez subiect de le changer, et si
-<lb n="15"/>la chose ne vous est beaucoup importante me faire ce
-<lb n="16"/>plaisir de laisser les choses en l'estat quelles estoiet, dont je
-<lb n="17"/>me resouuiendray aux occasions qui se presenteront, priant
+<lb n="11"/><unclear cert="low" resp="#joint">Gascon</unclear>, mais je n'y <unclear cert="low" resp="#joint">trouue</unclear> aucune <unclear cert="low" resp="#joint">faute</unclear> pour ce qui est de
+<lb n="12"/>la charge de <unclear cert="medium" resp="#joint">messager</unclear> que l'on luy auoit <unclear cert="low" resp="#joint">donneé</unclear> L'ayant <unclear cert="medium" resp="#joint">tousjoz</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">veu</unclear> <unclear cert="medium" resp="#joint">arriuer</unclear> <unclear cert="medium" resp="#joint">icy</unclear> <unclear cert="medium" resp="#joint">auant</unclear> le terme <unclear cert="medium" resp="#joint">qui</unclear> luy estoit <unclear cert="medium" resp="#joint">prefix</unclear>. <unclear cert="medium" resp="#joint">Cest</unclear>
+<lb n="14"/>pourquoy je vous prie sy <unclear cert="medium" resp="#joint">n'auez</unclear> <unclear cert="medium" resp="#joint">subiect</unclear> de le <unclear cert="low" resp="#joint">changer</unclear>, <unclear cert="low" resp="#joint">et</unclear> si
+<lb n="15"/>la chose ne vous est <unclear cert="medium" resp="#joint">beaucoup</unclear> importante <unclear cert="medium" resp="#joint">me</unclear> faire ce
+<lb n="16"/>plaisir de <unclear cert="low" resp="#joint">laisser</unclear> les choses en l'estat quelles <unclear cert="low" resp="#joint">estoiet</unclear>, dont je
+<lb n="17"/>me <unclear cert="medium" resp="#joint">resouuiendray</unclear> aux occasions <unclear cert="medium" resp="#joint">qui</unclear> se <unclear cert="medium" resp="#joint">presenteront</unclear>, priant
 <lb n="18"/>Dieu
-<lb n="19"/>Messieurs vo' auoir en sa ste garde a <origPlace resp="#ner">Soleurre</origPlace>
-<lb n="20"/><origDate when="1613" resp="#ner">ce xbiijme auril 1613</origDate>
-<lb n="21"/>Vostre bien humble et tres
-<lb n="22"/>affectionné seruiteur
-<lb n="23"/><persName role="issuer" resp="#ner">Decastille</persName>
+<lb n="19"/><unclear cert="low" resp="#joint">Messieurs</unclear> <unclear cert="low" resp="#joint">vo</unclear>' <unclear cert="low" resp="#joint">auoir</unclear> <unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">sa</unclear> <unclear cert="low" resp="#joint">ste</unclear> <unclear cert="low" resp="#joint">garde</unclear> a <origPlace resp="#ner"><unclear cert="medium" resp="#joint">Soleurre</unclear></origPlace>
+<lb n="20"/><origDate when="1613" resp="#ner"><unclear cert="medium" resp="#joint">ce</unclear> <unclear cert="medium" resp="#joint">xbiijme</unclear> <unclear cert="medium" resp="#joint">auril</unclear> 1613</origDate>
+<lb n="21"/><unclear cert="medium" resp="#joint">Vostre</unclear> bien humble et tres
+<lb n="22"/><unclear cert="medium" resp="#joint">affectionné</unclear> <unclear cert="medium" resp="#joint">seruiteur</unclear>
+<lb n="23"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Decastille</unclear></persName>
 <pb facs="StadtASG_Missive_2407_9258.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2407_9259.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2407_9260.jpg" n="4"/>
 <lb n="24"/>Messieurs
-<lb n="25"/>Mrs. <orgName role="recipient" resp="#ner">les bourguemestre
-<lb n="26"/>et conseil de la ville
-<lb n="27"/>de Sainct Gaal</orgName>
-<lb n="28"/>A <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gaal</placeName>.
+<lb n="25"/><unclear cert="medium" resp="#joint">Mrs</unclear>. <orgName role="recipient" resp="#ner">les <unclear cert="medium" resp="#joint">bourguemestre</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">et</unclear> conseil de la ville
+<lb n="27"/>de Sainct <unclear cert="medium" resp="#joint">Gaal</unclear></orgName>
+<lb n="28"/>A <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. <unclear cert="medium" resp="#joint">Gaal</unclear></placeName>.
 </p>
         </body>
     </text>

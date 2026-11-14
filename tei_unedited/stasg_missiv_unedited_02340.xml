@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2340</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,101 +20,101 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf eine Interzession der Stadt Konstanz für ihren Bürger Ferdinand Felen. Sie weisen die Bitte nach, Felen durch einen Anwalt vertreten zu lassen, da dies den städtischen Satzungen widerspreche und die persönliche Anwesenheit für die Klärung des Rechtsstreits mit dem St. Galler Bürger Haler nötig sei. Sie haben für den 2. Juli 1622 einen Rechtstag vor dem St. Galler Stadtgericht angesetzt und ersuchen Konstanz, Felen diesen Tag mitzuteilen und ihn zur persönlichen Erscheinung zu zwingen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1622-06-22" resp="#regest">22ten. junij. 1622.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Konstanz</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2340_8959.jpg" n="1"/>
-<lb n="1"/>Unser freundtlich willig dienst
-<lb n="2"/>zuvor, Ehrnveste, Fuersichtige Eerbare
-<lb n="3"/>und weise, besonders liebe und guote
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freundtlich</unclear> willig <unclear cert="medium" resp="#joint">dienst</unclear>
+<lb n="2"/>zuvor, <unclear cert="low" resp="#joint">Ehrnveste</unclear>, <unclear cert="low" resp="#joint">Fuersichtige</unclear> <unclear cert="low" resp="#joint">Eerbare</unclear>
+<lb n="3"/>und weise, besonders liebe und <unclear cert="low" resp="#joint">guote</unclear>
 <lb n="4"/>Freündt.
-<lb n="5"/><unclear cert="low" resp="#joint">Deroselben</unclear> <unclear cert="low" resp="#joint">widerbeantwortliche</unclear> inter-
-<lb n="6"/>cessionales, <unclear cert="low" resp="#joint">beruerende</unclear> <unclear cert="low" resp="#joint">ihren</unclear> <unclear cert="low" resp="#joint">angehoerig</unclear>
-<lb n="7"/><unclear cert="low" resp="#joint">burger</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Ferdinand</unclear> <unclear cert="low" resp="#joint">Felen</unclear></persName>, sambt den
-<lb n="8"/>beÿlag, haben wir verschinen tagen,
-<lb n="9"/>empfangen, und ablesendt guotßame
-<lb n="10"/>verstanden, auch <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">ermanglet</unclear>,
-<lb n="11"/>den unserigen solches zu seiner erinner-
+<lb n="5"/>Deroselben widerbeantwortliche inter-
+<lb n="6"/>cessionales, beruerende ihren angehoerig
+<lb n="7"/><unclear cert="low" resp="#joint">burger</unclear> <persName resp="#ner">Ferdinand <unclear cert="low" resp="#joint">Felen</unclear></persName>, sambt den
+<lb n="8"/><unclear cert="medium" resp="#joint">beÿlag</unclear>, haben wir <unclear cert="low" resp="#joint">verschinen</unclear> <unclear cert="low" resp="#joint">tagen</unclear>,
+<lb n="9"/>empfangen, und <unclear cert="low" resp="#joint">ablesendt</unclear> <unclear cert="low" resp="#joint">guotßame</unclear>
+<lb n="10"/><unclear cert="medium" resp="#joint">verstanden</unclear>, auch nit ermanglet,
+<lb n="11"/>den <unclear cert="low" resp="#joint">unserigen</unclear> <unclear cert="low" resp="#joint">solches</unclear> zu seiner erinner-
 <lb n="12"/>ung, <unclear cert="low" resp="#joint">alßbaldt</unclear> <unclear cert="low" resp="#joint">einhendigen</unclear> <unclear cert="low" resp="#joint">zulassen</unclear>,
-<lb n="13"/><unclear cert="low" resp="#joint">welcher</unclear> hierauf wider <unclear cert="low" resp="#joint">vor</unclear> uns <unclear cert="low" resp="#joint">erschinen</unclear>,
-<lb n="14"/><unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">gegenbricht</unclear> <unclear cert="low" resp="#joint">gethun</unclear>, <unclear cert="low" resp="#joint">und</unclear>
-<lb n="15"/><unclear cert="low" resp="#joint">substanzlich</unclear> aber auf sein <persName resp="#ner">Felen</persName> per-
-<lb n="16"/>sonliche einstellung und <unclear cert="low" resp="#joint">gegenwuor</unclear>-
-<lb n="17"/><unclear cert="low" resp="#joint">tigkeit</unclear> <unclear cert="low" resp="#joint">getrungen</unclear>, und
-<lb n="18"/>deßwegen an <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. umb
-<lb n="19"/>unser anderwertige fuerschrift,
-<lb n="20"/>nit allein den ihrigen oberkeitlich
-<lb n="21"/>dahin <unclear cert="low" resp="#joint">zuvermoegen</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">ihnen</unclear>
+<lb n="13"/>welcher hierauf wider vor uns erschinen,
+<lb n="14"/><unclear cert="low" resp="#joint">seinen</unclear> gegenbricht <unclear cert="low" resp="#joint">gethun</unclear>, und
+<lb n="15"/>substanzlich aber auf sein <persName resp="#ner"><unclear cert="low" resp="#joint">Felen</unclear></persName> <unclear cert="low" resp="#joint">per</unclear>-
+<lb n="16"/><unclear cert="low" resp="#joint">sonliche</unclear> <unclear cert="low" resp="#joint">einstellung</unclear> und <unclear cert="low" resp="#joint">gegenwuor</unclear>-
+<lb n="17"/>tigkeit <unclear cert="low" resp="#joint">getrungen</unclear>, und
+<lb n="18"/><unclear cert="medium" resp="#joint">deßwegen</unclear> an E. E. W. F. W. umb
+<lb n="19"/>unser <unclear cert="low" resp="#joint">anderwertige</unclear> <unclear cert="low" resp="#joint">fuerschrift</unclear>,
+<lb n="20"/><unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">allein</unclear> den <unclear cert="medium" resp="#joint">ihrigen</unclear> <unclear cert="medium" resp="#joint">oberkeitlich</unclear>
+<lb n="21"/>dahin <unclear cert="low" resp="#joint">zuvermoegen</unclear>, sonders ihnen
 <lb n="22"/><unclear cert="low" resp="#joint">beeden</unclear> <unclear cert="low" resp="#joint">gleich</unclear> <unclear cert="low" resp="#joint">einen</unclear> tag <unclear cert="low" resp="#joint">zubestimen</unclear>,
-<lb n="23"/>gantz eynstendig gebetten.
-<lb n="24"/><unclear cert="low" resp="#joint">Wiewol</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">W</unclear>. für
-<lb n="25"/>ihne <persName resp="#ner">Felen</persName> gethunes intercedieren,
+<lb n="23"/>gantz <unclear cert="low" resp="#joint">eynstendig</unclear> gebetten.
+<lb n="24"/><unclear cert="medium" resp="#joint">Wiewol</unclear> nun E. E. W. <unclear cert="low" resp="#joint">F</unclear>. W. für
+<lb n="25"/><unclear cert="low" resp="#joint">ihne</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Felen</unclear></persName> <unclear cert="low" resp="#joint">gethunes</unclear> intercedieren,
 <lb n="26"/>in dem daß er die sach durch <unclear cert="low" resp="#joint">die</unclear>
 <lb n="27"/><unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">seiner</unclear> <unclear cert="low" resp="#joint">eingebrachter</unclear> <unclear cert="low" resp="#joint">schrift</unclear> be-
-<lb n="28"/>nambsete Persohn, oder ein <unclear cert="low" resp="#joint">andern</unclear>
-<lb n="29"/><unclear cert="low" resp="#joint">qualificierte</unclear> <unclear cert="low" resp="#joint">anwald</unclear>, vor unsern
+<lb n="28"/><unclear cert="low" resp="#joint">nambsete</unclear> <unclear cert="low" resp="#joint">Persohn</unclear>, oder ein <unclear cert="low" resp="#joint">andern</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">qualificierte</unclear> anwald, vor <unclear cert="medium" resp="#joint">unsern</unclear>
 <pb facs="StadtASG_Missive_2340_8960.jpg" n="2"/>
-<lb n="30"/>iren respectivè Vettern
-<lb n="31"/>der thayls <placeName resp="#ner">Beßbüehl</placeName>. Weil
-<lb n="32"/>aber dises procedieren unserm Statt
-<lb n="33"/>satzungen und ordnungen strackhs
-<lb n="34"/>zuwider laufft, uberdiß wir den
-<lb n="35"/>handel ohnediß so gestaltet befindt, daß
-<lb n="36"/>deß <persName resp="#ner">Halers</persName> persöhnliche praesenz zu schleiniger eroerterung und
-<lb n="37"/>abschneidung weitlaeuffigkeit, ne-
-<lb n="38"/>ben ihme <persName resp="#ner">Haler</persName> besorgender unkoestung
+<lb n="30"/><unclear cert="medium" resp="#joint">iren</unclear> <unclear cert="medium" resp="#joint">respectivè</unclear> <unclear cert="medium" resp="#joint">Vettern</unclear>
+<lb n="31"/>der <unclear cert="low" resp="#joint">thayls</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Beßbüehl</unclear></placeName>. Weil
+<lb n="32"/>aber <unclear cert="low" resp="#joint">dises</unclear> procedieren <unclear cert="low" resp="#joint">unserm</unclear> Statt
+<lb n="33"/>satzungen und <unclear cert="medium" resp="#joint">ordnungen</unclear> <unclear cert="medium" resp="#joint">strackhs</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">zuwider</unclear> laufft, <unclear cert="medium" resp="#joint">uberdiß</unclear> <unclear cert="medium" resp="#joint">wir</unclear> den
+<lb n="35"/>handel <unclear cert="low" resp="#joint">ohnediß</unclear> so gestaltet befindt, daß
+<lb n="36"/><unclear cert="low" resp="#joint">deß</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Halers</unclear></persName> <unclear cert="low" resp="#joint">persöhnliche</unclear> <unclear cert="low" resp="#joint">praesenz</unclear> zu <unclear cert="low" resp="#joint">schleiniger</unclear> <unclear cert="low" resp="#joint">eroerterung</unclear> und
+<lb n="37"/><unclear cert="low" resp="#joint">abschneidung</unclear> <unclear cert="low" resp="#joint">weitlaeuffigkeit</unclear>, <unclear cert="low" resp="#joint">ne</unclear>-
+<lb n="38"/><unclear cert="low" resp="#joint">ben</unclear> ihme <persName resp="#ner"><unclear cert="low" resp="#joint">Haler</unclear></persName> besorgender <unclear cert="low" resp="#joint">unkoestung</unclear>
 <lb n="39"/>vil mehr fruchtbarlich und
-<lb n="40"/>gedeylich sein werde, weder aber
-<lb n="41"/>wann man dergleich anwald-
-<lb n="42"/>schafften sich gebrauchen wurde.
-<lb n="43"/>Deßhalben wir dem Anfangen
-<lb n="44"/>seiner nit unzimliche Pitt ge-
+<lb n="40"/><unclear cert="low" resp="#joint">gedeylich</unclear> sein <unclear cert="low" resp="#joint">werde</unclear>, weder aber
+<lb n="41"/>wann man <unclear cert="medium" resp="#joint">dergleich</unclear> <unclear cert="medium" resp="#joint">anwald</unclear>-
+<lb n="42"/><unclear cert="medium" resp="#joint">schafften</unclear> sich gebrauchen wurde.
+<lb n="43"/>Deßhalben wir dem <unclear cert="medium" resp="#joint">Anfangen</unclear>
+<lb n="44"/><unclear cert="medium" resp="#joint">seiner</unclear> <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">unzimliche</unclear> Pitt ge-
 <lb n="45"/>willfahret, und <persName resp="#ner">Haler</persName>
-<lb n="46"/>darauff ihme baide newe Rechts-
-<lb n="47"/>tag bestimbt, bestimmen und er-
-<lb n="48"/>nennen ihme hiemit auff <date resp="#ner">Mon-
-<lb n="49"/>tags Mentag den andern nechst-
-<lb n="50"/>angehenden Monats tag Julij</date> alts
-<lb n="51"/>Calenders alhie vor unserm Statt-
-<lb n="52"/>gricht, alß daselbst-
-<lb n="53"/>hi dise Rechtssach ghoerig, und albe-
-<lb n="54"/>reit Rechtsanhengig gemacht ist.
-<lb n="55"/>Gelangt dem allem nach an E. E.
-<lb n="56"/>W. L. u. G. unser freundtlichs
-<lb n="57"/>begern und ersuechen, dieselben
+<lb n="46"/><unclear cert="low" resp="#joint">darauff</unclear> ihme <unclear cert="low" resp="#joint">baide</unclear> <unclear cert="low" resp="#joint">newe</unclear> Rechts-
+<lb n="47"/>tag <unclear cert="low" resp="#joint">bestimbt</unclear>, bestimmen und er-
+<lb n="48"/><unclear cert="low" resp="#joint">nennen</unclear> ihme <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">auff</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">Mon</unclear>-
+<lb n="49"/><unclear cert="low" resp="#joint">tags</unclear> <unclear cert="low" resp="#joint">Mentag</unclear> <unclear cert="low" resp="#joint">den</unclear> andern <unclear cert="low" resp="#joint">nechst</unclear>-
+<lb n="50"/><unclear cert="low" resp="#joint">angehenden</unclear> <unclear cert="low" resp="#joint">Monats</unclear> tag Julij</date> <unclear cert="low" resp="#joint">alts</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">Calenders</unclear> alhie vor <unclear cert="low" resp="#joint">unserm</unclear> Statt-
+<lb n="52"/><unclear cert="medium" resp="#joint">gricht</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> daselbst-
+<lb n="53"/><unclear cert="low" resp="#joint">hi</unclear> <unclear cert="low" resp="#joint">dise</unclear> Rechtssach <unclear cert="medium" resp="#joint">ghoerig</unclear>, und albe-
+<lb n="54"/><unclear cert="low" resp="#joint">reit</unclear> <unclear cert="low" resp="#joint">Rechtsanhengig</unclear> gemacht ist.
+<lb n="55"/><unclear cert="low" resp="#joint">Gelangt</unclear> dem allem nach an E. E.
+<lb n="56"/>W. <unclear cert="low" resp="#joint">L</unclear>. <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">G</unclear>. unser <unclear cert="low" resp="#joint">freundtlichs</unclear>
+<lb n="57"/>begern und <unclear cert="low" resp="#joint">ersuechen</unclear>, dieselben
 <pb facs="StadtASG_Missive_2340_8961.jpg" n="3"/>
-<lb n="58"/><unclear cert="medium" resp="#joint">geliebe</unclear> <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">allein</unclear> <unclear cert="medium" resp="#joint">mehrermeltem</unclear>
-<lb n="59"/>ihrem <unclear cert="medium" resp="#joint">angehoerigen</unclear> <unclear cert="medium" resp="#joint">burgern</unclear>, disen
-<lb n="60"/><unclear cert="low" resp="#joint">ernanten</unclear> <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">anzekünden</unclear>, sonder
-<lb n="61"/><unclear cert="medium" resp="#joint">darbeij</unclear> auch <unclear cert="medium" resp="#joint">nohmalen</unclear> mit allem
-<lb n="62"/><unclear cert="medium" resp="#joint">oberkeitlichem</unclear> <unclear cert="medium" resp="#joint">ernst</unclear> <unclear cert="medium" resp="#joint">ihne</unclear> <unclear cert="medium" resp="#joint">zur</unclear> <unclear cert="medium" resp="#joint">gebürr</unclear>
-<lb n="63"/><unclear cert="medium" resp="#joint">dergstalt</unclear> <unclear cert="medium" resp="#joint">anzeweißen</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> er
-<lb n="64"/>sich <unclear cert="medium" resp="#joint">nunmehr</unclear> <unclear cert="medium" resp="#joint">ohne</unclear> <unclear cert="medium" resp="#joint">ferners</unclear> <unclear cert="medium" resp="#joint">ußbleiben</unclear>
-<lb n="65"/><unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">obgemeltem</unclear> <unclear cert="medium" resp="#joint">unsers</unclear> <unclear cert="medium" resp="#joint">stattgrichts</unclear>
-<lb n="66"/><unclear cert="medium" resp="#joint">weder</unclear> <unclear cert="medium" resp="#joint">persoendlih</unclear> <unclear cert="medium" resp="#joint">erscheine</unclear> und <unclear cert="low" resp="#joint">stelle</unclear>,
-<lb n="67"/><unclear cert="low" resp="#joint">sein</unclear> <unclear cert="low" resp="#joint">gethanes</unclear> <unclear cert="low" resp="#joint">versprechen</unclear> und das recht <unclear cert="low" resp="#joint">angefangener</unclear>
+<lb n="58"/><unclear cert="medium" resp="#joint">geliebe</unclear> <unclear cert="medium" resp="#joint">nit</unclear> allein <unclear cert="low" resp="#joint">mehrermeltem</unclear>
+<lb n="59"/>ihrem <unclear cert="low" resp="#joint">angehoerigen</unclear> <unclear cert="low" resp="#joint">burgern</unclear>, disen
+<lb n="60"/><unclear cert="medium" resp="#joint">ernanten</unclear> tag <unclear cert="low" resp="#joint">anzekünden</unclear>, sonder
+<lb n="61"/><unclear cert="low" resp="#joint">darbeij</unclear> auch <unclear cert="low" resp="#joint">nohmalen</unclear> mit allem
+<lb n="62"/><unclear cert="low" resp="#joint">oberkeitlichem</unclear> <unclear cert="medium" resp="#joint">ernst</unclear> <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">zur</unclear> <unclear cert="low" resp="#joint">gebürr</unclear>
+<lb n="63"/><unclear cert="low" resp="#joint">dergstalt</unclear> <unclear cert="low" resp="#joint">anzeweißen</unclear>, daß er
+<lb n="64"/>sich <unclear cert="medium" resp="#joint">nunmehr</unclear> ohne ferners <unclear cert="low" resp="#joint">ußbleiben</unclear>
+<lb n="65"/>vor obgemeltem <unclear cert="medium" resp="#joint">unsers</unclear> <unclear cert="medium" resp="#joint">stattgrichts</unclear>
+<lb n="66"/><unclear cert="medium" resp="#joint">weder</unclear> <unclear cert="medium" resp="#joint">persoendlih</unclear> erscheine und stelle,
+<lb n="67"/>sein <unclear cert="low" resp="#joint">gethanes</unclear> <unclear cert="low" resp="#joint">versprechen</unclear> und das recht <unclear cert="low" resp="#joint">angefangener</unclear>
 <lb n="68"/><unclear cert="low" resp="#joint">noher</unclear> <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">ußüebe</unclear>.
-<lb n="69"/>Das <unclear cert="medium" resp="#joint">gereiht</unclear> zu <unclear cert="medium" resp="#joint">befuerderung</unclear> der
-<lb n="70"/><unclear cert="medium" resp="#joint">justici</unclear>, und <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">sind</unclear> <unclear cert="low" resp="#joint">es</unclear> umb
-<lb n="71"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">Fr</unclear>. <unclear cert="low" resp="#joint">Nl</unclear>. <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">glihen</unclear>
-<lb n="72"/>und <unclear cert="medium" resp="#joint">andern</unclear> <unclear cert="medium" resp="#joint">begebenden</unclear> <unclear cert="medium" resp="#joint">fählen</unclear>,
-<lb n="73"/><unclear cert="medium" resp="#joint">zeerwideren</unclear>, willigen <unclear cert="medium" resp="#joint">erabiets</unclear>.
-<lb n="74"/><unclear cert="medium" resp="#joint">Damit</unclear> uns <unclear cert="medium" resp="#joint">beederseits</unclear> gottes
-<lb n="75"/>obhalt wol <unclear cert="medium" resp="#joint">bevelhende</unclear>. <unclear cert="medium" resp="#joint">Dat</unclear>.
-<lb n="76"/><origDate when="1622" resp="#ner"><unclear cert="medium" resp="#joint">den</unclear>. <unclear cert="medium" resp="#joint">22ten</unclear>. <unclear cert="medium" resp="#joint">junij</unclear>. 1622.</origDate>
-<lb n="77"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="69"/>Das <unclear cert="low" resp="#joint">gereiht</unclear> zu <unclear cert="low" resp="#joint">befuerderung</unclear> der
+<lb n="70"/>justici, und wir <unclear cert="low" resp="#joint">sind</unclear> <unclear cert="low" resp="#joint">es</unclear> umb
+<lb n="71"/>E. E. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">Fr</unclear>. <unclear cert="low" resp="#joint">Nl</unclear>. in <unclear cert="low" resp="#joint">glihen</unclear>
+<lb n="72"/>und <unclear cert="medium" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">begebenden</unclear> <unclear cert="low" resp="#joint">fählen</unclear>,
+<lb n="73"/><unclear cert="low" resp="#joint">zeerwideren</unclear>, <unclear cert="medium" resp="#joint">willigen</unclear> <unclear cert="low" resp="#joint">erabiets</unclear>.
+<lb n="74"/><unclear cert="medium" resp="#joint">Damit</unclear> uns <unclear cert="low" resp="#joint">beederseits</unclear> gottes
+<lb n="75"/>obhalt wol <unclear cert="low" resp="#joint">bevelhende</unclear>. <unclear cert="medium" resp="#joint">Dat</unclear>.
+<lb n="76"/><origDate when="1622" resp="#ner">den. <unclear cert="low" resp="#joint">22ten</unclear>. <unclear cert="medium" resp="#joint">junij</unclear>. 1622.</origDate>
+<lb n="77"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wht</unclear>.
 <lb n="78"/>d. <unclear cert="low" resp="#joint">w</unclear>. <unclear cert="low" resp="#joint">guete</unclear>
-<lb n="79"/><unclear cert="low" resp="#joint">An</unclear> <unclear cert="low" resp="#joint">statt</unclear> <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costanz</unclear></placeName>.
+<lb n="79"/>An statt <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costanz</unclear></placeName>.
 <pb facs="StadtASG_Missive_2340_8962.jpg" n="4"/>
 <lb n="80"/>[]
 </p>

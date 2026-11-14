@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2143</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,91 +20,91 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich bitten Kurfürst Friedrich von der Pfalz, den von ihnen als Bevollmächtigten für die Witwe Adriana Francisca von der Hohen Sax bestimmten Melchior Guldin mit einer Empfehlung an die Generalstaaten der Vereinigten Niederlande oder den hohen Rat von Holland sowie an Prinz Mauritz von Oranien zu versehen, damit dieser die Erbschaftsansprüche der Witwe in den Niederlanden erfolgreich durchsetzen kann.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1619-09-11" resp="#regest">11.t septembris, anno 1619</date></correspAction><correspAction type="received"><name resp="#regest">Friedrich, Pfalzgraf bei Rhein, Kurfürst und Herzog zu Bayern</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2143_8031.jpg" n="1"/>
-<lb n="1"/>Gewaldts brieff.
-<lb n="2"/>Durchleüchtigister hochgeborner Fürst, gnedigister herr.
-<lb n="3"/>Ü. Fürstl. Gdn. seyen unsere gantz willige dienst, mit
-<lb n="4"/>erbietung aller eeren jederzeyt zuvor. Gnedigister
-<lb n="5"/>herr. Demnach der wolgebornen frauw=
-<lb n="6"/>en <persName resp="#ner">Adriana Francisca</persName> freyfrauwen von der <placeName resp="#ner">Hohen
-<lb n="7"/>Sax</placeName>, geborner graefin zuo <placeName resp="#ner">Brederodes</placeName> wittib, unse=
-<lb n="8"/>rer lieben frauwen und burgerin sachen beschaffen=
-<lb n="9"/>heit deß bewegenden und tringenden versehens er=
-<lb n="10"/>forderen will, das zuo nothwendiger und eehrer
-<lb n="11"/>sustentation und erhaltung irer Gdn. standts, und
-<lb n="12"/>zuo fürkhommung allerley obligenden beschweerlichen
-<lb n="13"/>unglaegenheiten, man daruf bedacht seyn mueß, wie
-<lb n="14"/>irer Gn. geliebten herren vatters seliger gedaechtnuß,
+<lb n="1"/><unclear cert="low" resp="#joint">Gewaldts</unclear> brieff.
+<lb n="2"/><unclear cert="medium" resp="#joint">Durchleüchtigister</unclear> hochgeborner Fürst, gnedigister herr.
+<lb n="3"/><unclear cert="low" resp="#joint">Ü</unclear>. <unclear cert="low" resp="#joint">Fürstl</unclear>. <unclear cert="low" resp="#joint">Gdn</unclear>. seyen unsere gantz willige dienst, mit
+<lb n="4"/><unclear cert="low" resp="#joint">erbietung</unclear> aller eeren <unclear cert="low" resp="#joint">jederzeyt</unclear> zuvor. <unclear cert="low" resp="#joint">Gnedigister</unclear>
+<lb n="5"/>herr. Demnach der wolgebornen <unclear cert="medium" resp="#joint">frauw=</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">en</unclear> <persName resp="#ner">Adriana Francisca</persName> <unclear cert="medium" resp="#joint">freyfrauwen</unclear> von der <placeName resp="#ner">Hohen
+<lb n="7"/>Sax</placeName>, <unclear cert="medium" resp="#joint">geborner</unclear> <unclear cert="medium" resp="#joint">graefin</unclear> zuo <placeName resp="#ner"><unclear cert="medium" resp="#joint">Brederodes</unclear></placeName> <unclear cert="medium" resp="#joint">wittib</unclear>, <unclear cert="medium" resp="#joint">unse=</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">rer</unclear> lieben <unclear cert="low" resp="#joint">frauwen</unclear> und burgerin <unclear cert="low" resp="#joint">sachen</unclear> beschaffen=
+<lb n="9"/>heit deß bewegenden und <unclear cert="low" resp="#joint">tringenden</unclear> <unclear cert="low" resp="#joint">versehens</unclear> er=
+<lb n="10"/><unclear cert="low" resp="#joint">forderen</unclear> will, das zuo <unclear cert="low" resp="#joint">nothwendiger</unclear> und <unclear cert="low" resp="#joint">eehrer</unclear>
+<lb n="11"/>sustentation und erhaltung irer <unclear cert="medium" resp="#joint">Gdn</unclear>. <unclear cert="medium" resp="#joint">standts</unclear>, und
+<lb n="12"/>zuo <unclear cert="low" resp="#joint">fürkhommung</unclear> allerley obligenden beschweerlichen
+<lb n="13"/><unclear cert="low" resp="#joint">unglaegenheiten</unclear>, man daruf bedacht <unclear cert="low" resp="#joint">seyn</unclear> mueß, wie
+<lb n="14"/>irer <unclear cert="low" resp="#joint">Gn</unclear>. geliebten <unclear cert="medium" resp="#joint">herren</unclear> vatters seliger <unclear cert="low" resp="#joint">gedaechtnuß</unclear>,
 <lb n="15"/><date resp="#ner">anno 1585.</date> ufgerichtes testament exequiert und
-<lb n="16"/>volzogen, und irer Gdn. ir bestimptes anerstoren
-<lb n="17"/>und von raechtswegen zuogehoeriges patrimonium
-<lb n="18"/>und was dem anhangt, oder iro inn andere wege
-<lb n="19"/>noch inn den <placeName ref="stadtasg-places-446" cert="medium" resp="#ner">Niderlanden</placeName> zuostendig seyn und werden
-<lb n="20"/>moechte, ohn ferneren verzug eroberet, auch zuo der=
-<lb n="21"/>selben nothwendigem gebrauch alher inn disere landt
-<lb n="22"/>gezogen, und mit demselben dann weytrer noth=
-<lb n="23"/>wendige fürsechung und bestellung fürgenommen
-<lb n="24"/>werden moege. Habent wir uß krafft des
-<lb n="25"/>burgerrechtens darmit wolbedachte frauw wittib
-<lb n="26"/>von der Hohen Sax p uns zuogethan, und dahero
-<lb n="27"/>uns obtragener tutel und vormundtschafft, uff
-<lb n="28"/>ir Gdn. ansuechen und begeren, nit umbgehen
-<lb n="29"/>woellen, iro behilflich zeseyn, das soelliches für=
-<lb n="30"/>derlich gebürender bester maßen zuo werck gesezt
-<lb n="31"/>werde. Und dieweyl dan zuo verrichtung
-<lb n="32"/>diß gscheffts, so wol irer Gdn. gemelte frauw wittib,
+<lb n="16"/>volzogen, und irer <unclear cert="medium" resp="#joint">Gdn</unclear>. <unclear cert="medium" resp="#joint">ir</unclear> bestimptes <unclear cert="low" resp="#joint">anerstoren</unclear>
+<lb n="17"/>und von <unclear cert="medium" resp="#joint">raechtswegen</unclear> <unclear cert="medium" resp="#joint">zuogehoeriges</unclear> patrimonium
+<lb n="18"/>und was dem anhangt, oder iro inn <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">wege</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">noch</unclear> inn den <placeName ref="stadtasg-places-446" cert="medium" resp="#ner">Niderlanden</placeName> zuostendig <unclear cert="low" resp="#joint">seyn</unclear> und werden
+<lb n="20"/><unclear cert="low" resp="#joint">moechte</unclear>, ohn <unclear cert="low" resp="#joint">ferneren</unclear> verzug <unclear cert="low" resp="#joint">eroberet</unclear>, auch zuo der=
+<lb n="21"/>selben nothwendigem <unclear cert="low" resp="#joint">gebrauch</unclear> alher inn <unclear cert="low" resp="#joint">disere</unclear> landt
+<lb n="22"/>gezogen, und mit demselben dann <unclear cert="low" resp="#joint">weytrer</unclear> noth=
+<lb n="23"/>wendige <unclear cert="low" resp="#joint">fürsechung</unclear> und bestellung fürgenommen
+<lb n="24"/>werden moege. Habent wir uß <unclear cert="low" resp="#joint">krafft</unclear> des
+<lb n="25"/><unclear cert="low" resp="#joint">burgerrechtens</unclear> darmit <unclear cert="low" resp="#joint">wolbedachte</unclear> <unclear cert="low" resp="#joint">frauw</unclear> wittib
+<lb n="26"/>von der Hohen Sax <unclear cert="low" resp="#joint">p</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">zuogethan</unclear>, und <unclear cert="low" resp="#joint">dahero</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">obtragener</unclear> tutel und vormundtschafft, uff
+<lb n="28"/>ir <unclear cert="medium" resp="#joint">Gdn</unclear>. ansuechen und begeren, nit umbgehen
+<lb n="29"/><unclear cert="low" resp="#joint">woellen</unclear>, iro <unclear cert="low" resp="#joint">behilflich</unclear> <unclear cert="low" resp="#joint">zeseyn</unclear>, das <unclear cert="low" resp="#joint">soelliches</unclear> für=
+<lb n="30"/>derlich <unclear cert="low" resp="#joint">gebürender</unclear> <unclear cert="low" resp="#joint">bester</unclear> maßen zuo werck gesezt
+<lb n="31"/>werde. Und dieweyl <unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">verrichtung</unclear>
+<lb n="32"/>diß <unclear cert="medium" resp="#joint">gscheffts</unclear>, so wol <unclear cert="medium" resp="#joint">irer</unclear> <unclear cert="medium" resp="#joint">Gdn</unclear>. gemelte <unclear cert="low" resp="#joint">frauw</unclear> wittib,
 <lb n="33"/>als wir, den ehrnvesten und weysen, herrn
 <pb facs="StadtASG_Missive_2143_8032.jpg" n="2"/>
-<lb n="34"/><persName role="issuer" resp="#ner">Melchior Guldin</persName> alt stattschrybern der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct
-<lb n="35"/>Gallen</placeName>, zeigern diß, zum commissario und buecl-
-<lb n="36"/>habern (vermoeg der hierüber verfertigten und
-<lb n="37"/>ihne zugestelten gwaelten und vollmachten)
-<lb n="38"/>verordnet, und nun derselbig by u. Churf.
-<lb n="39"/>Dl. auch fürrüber reysen
-<lb n="40"/>wirt. Als haben wir nit umb-
-<lb n="41"/>gehn woellen, u. Churf. Dl. hiemit dienstfleyßig
-<lb n="42"/>zebitten, die woellen unbeschwaerdt syn, genant-
-<lb n="43"/>en anwalt zuo befünderung guoter verrichtung
+<lb n="34"/><persName role="issuer" resp="#ner">Melchior <unclear cert="medium" resp="#joint">Guldin</unclear></persName> alt <unclear cert="low" resp="#joint">stattschrybern</unclear> der statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct
+<lb n="35"/>Gallen</placeName>, zeigern diß, zum commissario und <unclear cert="low" resp="#joint">buecl</unclear>-
+<lb n="36"/><unclear cert="low" resp="#joint">habern</unclear> (vermoeg der <unclear cert="low" resp="#joint">hierüber</unclear> verfertigten und
+<lb n="37"/><unclear cert="low" resp="#joint">ihne</unclear> zugestelten <unclear cert="low" resp="#joint">gwaelten</unclear> und vollmachten)
+<lb n="38"/>verordnet, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">derselbig</unclear> <unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">Churf</unclear>.
+<lb n="39"/><unclear cert="low" resp="#joint">Dl</unclear>. <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">fürrüber</unclear> <unclear cert="low" resp="#joint">reysen</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">wirt</unclear>. Als haben wir nit umb-
+<lb n="41"/>gehn woellen, u. Churf. <unclear cert="low" resp="#joint">Dl</unclear>. hiemit dienstfleyßig
+<lb n="42"/><unclear cert="low" resp="#joint">zebitten</unclear>, die woellen <unclear cert="low" resp="#joint">unbeschwaerdt</unclear> syn, <unclear cert="low" resp="#joint">genant</unclear>-
+<lb n="43"/>en anwalt zuo <unclear cert="low" resp="#joint">befünderung</unclear> guoter verrichtung
 <lb n="44"/>syner comission mit günstiger recommendation an
-<lb n="45"/>die hochmoegenden herren general Staden der ver-
-<lb n="46"/>einigten <placeName ref="stadtasg-places-446" cert="medium" resp="#ner">Niderlanden</placeName> oder hochen raht von <placeName resp="#ner">Holand</placeName>,
-<lb n="47"/>wie auch ihr fr. g. herren printzen <persName resp="#ner">Mauritzen
-<lb n="48"/>von Oranien</persName> etc. gnedig begleidten zelaßen. Der
+<lb n="45"/>die <unclear cert="low" resp="#joint">hochmoegenden</unclear> herren general Staden der ver-
+<lb n="46"/>einigten <placeName ref="stadtasg-places-446" cert="medium" resp="#ner">Niderlanden</placeName> oder hochen <unclear cert="low" resp="#joint">raht</unclear> von <placeName resp="#ner">Holand</placeName>,
+<lb n="47"/>wie auch <unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">fr</unclear>. <unclear cert="low" resp="#joint">g</unclear>. herren printzen <persName resp="#ner">Mauritzen
+<lb n="48"/>von Oranien</persName> <unclear cert="medium" resp="#joint">etc</unclear>. gnedig begleidten <unclear cert="low" resp="#joint">zelaßen</unclear>. Der
 <lb n="49"/>hoffnung, er derselben hierinnen würcklich und
-<lb n="50"/>fruchtbarlich zugenießen haben werde, wie
-<lb n="51"/>zu u. Churf. Dl. derselben gegen uns und den
+<lb n="50"/>fruchtbarlich <unclear cert="low" resp="#joint">zugenießen</unclear> haben werde, wie
+<lb n="51"/><unclear cert="low" resp="#joint">zu</unclear> u. Churf. <unclear cert="low" resp="#joint">Dl</unclear>. derselben gegen uns und den
 <lb n="52"/>unserigen biß anhero erzeigten besten affection
 <lb n="53"/>nach, aller gnedigen und günstigen willfahr und
-<lb n="54"/>fürdernuß wir ein ungezweyflet verthruwen
-<lb n="55"/>tragend, und soelliches umb dieselbe zu jeder ge-
-<lb n="56"/>legenheit zuverdienen bereitwillig sind.
-<lb n="57"/>Gott bittend, das er u. Churf. Dl. alle wol-
-<lb n="58"/>fahrt und glückseligkeit vermehren, unnd
+<lb n="54"/>fürdernuß wir ein <unclear cert="low" resp="#joint">ungezweyflet</unclear> <unclear cert="low" resp="#joint">verthruwen</unclear>
+<lb n="55"/>tragend, und soelliches umb dieselbe <unclear cert="medium" resp="#joint">zu</unclear> jeder ge-
+<lb n="56"/>legenheit <unclear cert="low" resp="#joint">zuverdienen</unclear> bereitwillig sind.
+<lb n="57"/>Gott <unclear cert="medium" resp="#joint">bittend</unclear>, das er u. Churf. <unclear cert="low" resp="#joint">Dl</unclear>. alle wol-
+<lb n="58"/>fahrt und <unclear cert="low" resp="#joint">glückseligkeit</unclear> vermehren, unnd
 <lb n="59"/>dieselb inn synem schirm erhalten woelle. Date
 <lb n="60"/>den <origDate when="1619" resp="#ner">11.t septembris, anno 1619</origDate>.
-<lb n="61"/>U. Churf. Dl.
+<lb n="61"/>U. Churf. <unclear cert="low" resp="#joint">Dl</unclear>.
 <lb n="62"/>gantz dienstwillige
 <lb n="63"/>Dem durchlüchtigisten hochgeborn-
 <lb n="64"/>en fürsten und herren, herren
 <lb n="65"/><persName role="recipient" resp="#ner">Friderich</persName>, pfaltzgraven by <placeName ref="stadtasg-places-92" cert="medium" resp="#ner">Rhyn</placeName>,
-<lb n="66"/>deß <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Heyl</orgName>. Roem. Rychs ertztruch-
-<lb n="67"/>seßen und Churfürsten hertzogen zu
-<lb n="68"/><placeName ref="stadtasg-places-132" cert="medium" resp="#ner">Beyern</placeName> etc. unserm gnedigisten herren.
-<lb n="69"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und raht
-<lb n="70"/>der statt Zürich</orgName>.
+<lb n="66"/>deß <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Heyl</orgName>. Roem. <unclear cert="low" resp="#joint">Rychs</unclear> ertztruch-
+<lb n="67"/><unclear cert="low" resp="#joint">seßen</unclear> und Churfürsten hertzogen zu
+<lb n="68"/><placeName ref="stadtasg-places-132" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Beyern</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>. <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">gnedigisten</unclear> <unclear cert="low" resp="#joint">herren</unclear>.
+<lb n="69"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und <unclear cert="low" resp="#joint">raht</unclear>
+<lb n="70"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">statt</unclear> <unclear cert="low" resp="#joint">Zürich</unclear></orgName>.
 <pb facs="StadtASG_Missive_2143_8033.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2143_8034.jpg" n="4"/>
 </p>

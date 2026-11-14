@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2410</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,72 +20,72 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Landammann und Verordnete der Äusseren Roden des Landes Appenzell informieren Bürgermeister und Rat zu St. Gallen, dass der St. Galler Bürger Jakob Hiller am Samstag im Wirtshaus zum Schäfli den Appenzeller Landammann und Bannerherrn Johannes Schüss verleumdet habe. Sie bitten St. Gallen, Hiller zur Rede zu stellen und eine schriftliche Antwort zu übersenden. Zudem weisen sie die Behauptung zurück, St. Galler Bürger hätten keinen Zugang zur Landrechnung.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Landammann und die Verordneten zur Landrechnung der Äusseren Roden des Landes Appenzell</name><date when="1623" resp="#regest">Dato den 29. d Apprellen. Anno 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2410_9267.jpg" n="1"/>
-<lb n="1"/>Unßer fruendtlich willig dienst. sambt was wir ehren
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">fruendtlich</unclear> willig dienst. <unclear cert="medium" resp="#joint">sambt</unclear> was wir ehren
 <lb n="2"/>liebs und guots vermoegend, zuvor, Edell. Ehrnevest.
 <lb n="3"/>Ehrenvyst. Fuersichtig, Eersam und Wyß In sonders guot
-<lb n="4"/>fruendt, und getruew lieb Nachparnn
-<lb n="5"/>Nach dem wir eben an hutzo von zweyen der unßeren Mit-
-<lb n="6"/>raethen, nit ohne beduren, berichtet worden. Waß maßen
-<lb n="7"/>uewer Burger, mit Namen <persName resp="#ner">Jacob Hiller</persName>. letst verschinen
-<lb n="8"/>sambstages. Im Wirts huß zum <placeName resp="#ner">Schaeflin</placeName>. ohne verhollen
-<lb n="9"/>uß goßen. das unßer getruewer lieber Herr alt Landt-
-<lb n="10"/>aman und Pannerherr <persName resp="#ner">Johanes Schueß</persName>. nicht allein Ime
-<lb n="11"/>selbst, sonder dem gemeinen Vatter Land, schmaach und schand.
-<lb n="12"/>angethun habe, werde auch an gantz allen sinen ehren
-<lb n="13"/>entsetzt. dan nach dem er von unsß. der Muentz halber ab
-<lb n="14"/>geordent geweßen, habe Er damalen geseit, er welle ge-
-<lb n="15"/>wynnen. sige aber ab gefallen, und habe mit den 400 dbt
-<lb n="16"/>gwuonnen, und werde alßo nit mehr Landt aman s.
-<lb n="17"/>Welliches dan nit allein unß, sonder auch gemelten Herren
+<lb n="4"/>fruendt, und <unclear cert="low" resp="#joint">getruew</unclear> lieb <unclear cert="medium" resp="#joint">Nachparnn</unclear>
+<lb n="5"/>Nach dem wir <unclear cert="medium" resp="#joint">eben</unclear> an <unclear cert="low" resp="#joint">hutzo</unclear> von <unclear cert="low" resp="#joint">zweyen</unclear> der <unclear cert="low" resp="#joint">unßeren</unclear> Mit-
+<lb n="6"/><unclear cert="low" resp="#joint">raethen</unclear>, nit ohne <unclear cert="medium" resp="#joint">beduren</unclear>, berichtet worden. Waß <unclear cert="low" resp="#joint">maßen</unclear>
+<lb n="7"/>uewer Burger, mit Namen <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Hiller</unclear></persName>. <unclear cert="low" resp="#joint">letst</unclear> <unclear cert="low" resp="#joint">verschinen</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">sambstages</unclear>. Im Wirts huß zum <placeName resp="#ner"><unclear cert="low" resp="#joint">Schaeflin</unclear></placeName>. <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">verhollen</unclear>
+<lb n="9"/>uß <unclear cert="medium" resp="#joint">goßen</unclear>. das unßer <unclear cert="low" resp="#joint">getruewer</unclear> lieber Herr alt Landt-
+<lb n="10"/><unclear cert="medium" resp="#joint">aman</unclear> und <unclear cert="low" resp="#joint">Pannerherr</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Johanes</unclear> <unclear cert="low" resp="#joint">Schueß</unclear></persName>. nicht allein <unclear cert="low" resp="#joint">Ime</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">selbst</unclear>, sonder dem <unclear cert="medium" resp="#joint">gemeinen</unclear> Vatter Land, <unclear cert="low" resp="#joint">schmaach</unclear> und <unclear cert="low" resp="#joint">schand</unclear>.
+<lb n="12"/>angethun habe, <unclear cert="low" resp="#joint">werde</unclear> <unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">an</unclear> gantz <unclear cert="low" resp="#joint">allen</unclear> <unclear cert="low" resp="#joint">sinen</unclear> ehren
+<lb n="13"/>entsetzt. dan nach dem er von <unclear cert="low" resp="#joint">unsß</unclear>. der <unclear cert="low" resp="#joint">Muentz</unclear> halber ab
+<lb n="14"/>geordent geweßen, habe Er <unclear cert="low" resp="#joint">damalen</unclear> <unclear cert="low" resp="#joint">geseit</unclear>, er welle <unclear cert="low" resp="#joint">ge</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">wynnen</unclear>. <unclear cert="low" resp="#joint">sige</unclear> aber ab gefallen, und habe mit den <unclear cert="low" resp="#joint">400</unclear> <unclear cert="low" resp="#joint">dbt</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">gwuonnen</unclear>, und <unclear cert="low" resp="#joint">werde</unclear> <unclear cert="low" resp="#joint">alßo</unclear> nit mehr Landt <unclear cert="medium" resp="#joint">aman</unclear> s.
+<lb n="17"/>Welliches dan nit allein unß, sonder <unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">gemelten</unclear> Herren
 <lb n="18"/>Landt aman und Panner herren Schueßen. (wie gut zu erachten)
-<lb n="19"/>nit wenig befroemdet, das besagter Jacob Hiller, deme
-<lb n="20"/>er Niemahlen kein leid gethun, sich sollicher schantlichen un-
-<lb n="21"/>wahrhafften Reden, nit enthalten. Deßwegen
-<lb n="22"/>wir nit umb gahn koennen, dan uch unßeren getruewen lieben
-<lb n="23"/>Nachparen, solliches wueßenhafft zu machen, und darby
-<lb n="24"/>gantz fruendt: und Nachparlich ersuchen und Pitten woellen,
-<lb n="25"/>Ir wellend uch unßert wegen, sovill bemuehen, und den
-<lb n="26"/>besagten <persName resp="#ner">Hiller</persName> deßen zu red stellen, alß dan unß by
-<lb n="27"/>zeiger dißer unßerm deßwegen ab gefertigeten
+<lb n="19"/>nit wenig <unclear cert="low" resp="#joint">befroemdet</unclear>, das besagter Jacob <unclear cert="low" resp="#joint">Hiller</unclear>, <unclear cert="low" resp="#joint">deme</unclear>
+<lb n="20"/>er <unclear cert="low" resp="#joint">Niemahlen</unclear> kein leid gethun, sich <unclear cert="low" resp="#joint">sollicher</unclear> <unclear cert="low" resp="#joint">schantlichen</unclear> <unclear cert="medium" resp="#joint">un</unclear>-
+<lb n="21"/>wahrhafften Reden, nit <unclear cert="low" resp="#joint">enthalten</unclear>. <unclear cert="low" resp="#joint">Deßwegen</unclear>
+<lb n="22"/>wir nit umb <unclear cert="low" resp="#joint">gahn</unclear> <unclear cert="low" resp="#joint">koennen</unclear>, dan <unclear cert="low" resp="#joint">uch</unclear> <unclear cert="medium" resp="#joint">unßeren</unclear> <unclear cert="low" resp="#joint">getruewen</unclear> lieben
+<lb n="23"/>Nachparen, <unclear cert="low" resp="#joint">solliches</unclear> <unclear cert="low" resp="#joint">wueßenhafft</unclear> zu machen, und darby
+<lb n="24"/>gantz <unclear cert="medium" resp="#joint">fruendt</unclear>: und Nachparlich ersuchen und <unclear cert="low" resp="#joint">Pitten</unclear> <unclear cert="low" resp="#joint">woellen</unclear>,
+<lb n="25"/>Ir wellend <unclear cert="low" resp="#joint">uch</unclear> <unclear cert="low" resp="#joint">unßert</unclear> wegen, <unclear cert="low" resp="#joint">sovill</unclear> <unclear cert="low" resp="#joint">bemuehen</unclear>, und den
+<lb n="26"/>besagten <persName resp="#ner"><unclear cert="low" resp="#joint">Hiller</unclear></persName> <unclear cert="medium" resp="#joint">deßen</unclear> zu red stellen, alß dan unß by
+<lb n="27"/>zeiger <unclear cert="medium" resp="#joint">dißer</unclear> <unclear cert="medium" resp="#joint">unßerm</unclear> deßwegen <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">gefertigeten</unclear>
 <pb facs="StadtASG_Missive_2410_9268.jpg" n="2"/>
-<lb n="28"/>botten. sÿn andtwurt, schrifftlich verschlossen, ueberschicken.
-<lb n="29"/>Damit man sich Jns kuenfftig. gegen Jme <persName resp="#ner">Hoelder</persName>. was fuer
-<lb n="30"/>zuonemmen von noeten sin wirt, desto basser zuoverhalten
-<lb n="31"/>wuesse. Solliches begerend wir umb üch In allen zuotragenden
-<lb n="32"/>begebenheiten. hin widerumb Jeder zÿt gantz fründt: und
-<lb n="33"/>nachparlich zuobeschulden.
-<lb n="34"/>Nebent sollichem sind wir auch berichtet, als das üch fürgeben
-<lb n="35"/>worden sige. das üwere burger. vast an unser landts
-<lb n="36"/>gmeind, nit an nemlich. So hat man üch doch hierinen
-<lb n="37"/>gwüßlich die un wahrheit fürgeben. dan so ÿemandts
-<lb n="38"/>begerte solliche zuobesichtigen. Ist man deß gantz uerbietig
-<lb n="39"/>vnnd. vnd so wir Jnen Jnden alle gebürende ehr erwÿsen
-<lb n="40"/>koendtend. wärend wir gantz geneigt und guotwillig.
-<lb n="41"/>Jn erwartung vorgedachter andtwurt. thnd wir uns
-<lb n="42"/>aller sÿts Goettes obhalt wol beuehlen. Dato den
-<lb n="43"/><origDate when="1623" resp="#ner">29. d Apprellen. Anno 1623.</origDate>
-<lb n="44"/><orgName role="issuer" resp="#ner">Landtaman und die verordenten zuo der landt Jahr
-<lb n="45"/>rechnung der usseren roden des landts Appenzell</orgName>.
+<lb n="28"/><unclear cert="medium" resp="#joint">botten</unclear>. <unclear cert="medium" resp="#joint">sÿn</unclear> <unclear cert="medium" resp="#joint">andtwurt</unclear>, schrifftlich <unclear cert="low" resp="#joint">verschlossen</unclear>, <unclear cert="low" resp="#joint">ueberschicken</unclear>.
+<lb n="29"/>Damit man sich <unclear cert="low" resp="#joint">Jns</unclear> kuenfftig. gegen <unclear cert="low" resp="#joint">Jme</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Hoelder</unclear></persName>. was <unclear cert="low" resp="#joint">fuer</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">zuonemmen</unclear> von noeten sin <unclear cert="medium" resp="#joint">wirt</unclear>, desto <unclear cert="low" resp="#joint">basser</unclear> <unclear cert="low" resp="#joint">zuoverhalten</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">wuesse</unclear>. <unclear cert="medium" resp="#joint">Solliches</unclear> begerend wir umb üch In allen <unclear cert="low" resp="#joint">zuotragenden</unclear>
+<lb n="32"/>begebenheiten. <unclear cert="low" resp="#joint">hin</unclear> <unclear cert="medium" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">Jeder</unclear> <unclear cert="low" resp="#joint">zÿt</unclear> gantz <unclear cert="low" resp="#joint">fründt</unclear>: und
+<lb n="33"/>nachparlich <unclear cert="low" resp="#joint">zuobeschulden</unclear>.
+<lb n="34"/><unclear cert="low" resp="#joint">Nebent</unclear> sollichem sind wir auch berichtet, als das üch fürgeben
+<lb n="35"/>worden <unclear cert="medium" resp="#joint">sige</unclear>. das <unclear cert="low" resp="#joint">üwere</unclear> burger. <unclear cert="low" resp="#joint">vast</unclear> an unser <unclear cert="medium" resp="#joint">landts</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">gmeind</unclear>, nit an <unclear cert="medium" resp="#joint">nemlich</unclear>. So hat man üch doch <unclear cert="low" resp="#joint">hierinen</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">gwüßlich</unclear> die un wahrheit fürgeben. dan so <unclear cert="low" resp="#joint">ÿemandts</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">begerte</unclear> solliche zuobesichtigen. Ist man deß gantz <unclear cert="low" resp="#joint">uerbietig</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">vnnd</unclear>. <unclear cert="low" resp="#joint">vnd</unclear> so wir <unclear cert="low" resp="#joint">Jnen</unclear> <unclear cert="low" resp="#joint">Jnden</unclear> alle <unclear cert="low" resp="#joint">gebürende</unclear> ehr <unclear cert="low" resp="#joint">erwÿsen</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">koendtend</unclear>. <unclear cert="low" resp="#joint">wärend</unclear> wir gantz geneigt und <unclear cert="low" resp="#joint">guotwillig</unclear>.
+<lb n="41"/><unclear cert="low" resp="#joint">Jn</unclear> erwartung <unclear cert="low" resp="#joint">vorgedachter</unclear> <unclear cert="low" resp="#joint">andtwurt</unclear>. <unclear cert="low" resp="#joint">thnd</unclear> wir uns
+<lb n="42"/>aller <unclear cert="low" resp="#joint">sÿts</unclear> <unclear cert="low" resp="#joint">Goettes</unclear> <unclear cert="medium" resp="#joint">obhalt</unclear> wol <unclear cert="low" resp="#joint">beuehlen</unclear>. <unclear cert="low" resp="#joint">Dato</unclear> den
+<lb n="43"/><origDate when="1623" resp="#ner"><unclear cert="low" resp="#joint">29</unclear>. <unclear cert="low" resp="#joint">d</unclear> <unclear cert="low" resp="#joint">Apprellen</unclear>. Anno 1623.</origDate>
+<lb n="44"/><orgName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Landtaman</unclear> und die verordenten zuo der landt <unclear cert="low" resp="#joint">Jahr</unclear>
+<lb n="45"/>rechnung der <unclear cert="low" resp="#joint">usseren</unclear> roden des landts Appenzell</orgName>.
 <pb facs="StadtASG_Missive_2410_9269.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2410_9270.jpg" n="4"/>
-<lb n="46"/>Den Edlen, Fromen, Vesten, Fuernemmen, Fuersichtigen, Ersammen
-<lb n="47"/>Und wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath der Statt Sanct Gallen</orgName>
-<lb n="48"/>Unseren Insonders guoten Frunden und getruewen lieben Nach=
-<lb n="49"/>puren.
+<lb n="46"/>Den Edlen, <unclear cert="medium" resp="#joint">Fromen</unclear>, Vesten, <unclear cert="low" resp="#joint">Fuernemmen</unclear>, <unclear cert="medium" resp="#joint">Fuersichtigen</unclear>, <unclear cert="low" resp="#joint">Ersammen</unclear>
+<lb n="47"/>Und <unclear cert="low" resp="#joint">wysen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath der Statt <unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>
+<lb n="48"/><unclear cert="low" resp="#joint">Unseren</unclear> Insonders <unclear cert="low" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">Frunden</unclear> und <unclear cert="medium" resp="#joint">getruewen</unclear> lieben Nach=
+<lb n="49"/><unclear cert="low" resp="#joint">puren</unclear>.
 </p>
         </body>
     </text>

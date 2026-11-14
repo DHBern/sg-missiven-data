@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2457</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,51 +20,51 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Hauptmann, Bürgermeister und Rat zu Konstanz bitten Bürgermeister und Rat zu St. Gallen, ihnen mitzuteilen, wie hoch der Preis für Rind- und Bratfleisch bei ihnen sei und welche Fleischtaxen sie ihren Metzgern verordnet hätten. Sie wollen ihre eigene Metzgerordnung verbessern und versprechen, bei Gelegenheit ihrerseits die Nachbarschaft zu erweisen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hauptmann, Bürgermeister und Rat zu Konstanz</name><date when="1624-01-22" resp="#regest">22 Jenner Ao. 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2457_9469.jpg" n="1"/>
-<lb n="1"/>Unßer freündt- nachparlich und guottwillige,
-<lb n="2"/>dienst zuovor, Fürsichtige, Ersame weiße be-
-<lb n="3"/>sonders liebe freünd und guotte Nachparn.
-<lb n="4"/>Demnach das vor disem lang geweerte verender-
-<lb n="5"/>liche müntz weßen, vilmaln, auch enderung und
-<lb n="6"/>unbestendige taxation der victualien nach sich gezogen,
-<lb n="7"/>bey yetziger gelt valuta aber, fürohin, alles in
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> freündt- nachparlich und <unclear cert="low" resp="#joint">guottwillige</unclear>,
+<lb n="2"/>dienst <unclear cert="low" resp="#joint">zuovor</unclear>, Fürsichtige, Ersame <unclear cert="low" resp="#joint">weiße</unclear> be-
+<lb n="3"/>sonders liebe freünd und <unclear cert="medium" resp="#joint">guotte</unclear> <unclear cert="medium" resp="#joint">Nachparn</unclear>.
+<lb n="4"/>Demnach das <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">disem</unclear> lang <unclear cert="low" resp="#joint">geweerte</unclear> <unclear cert="low" resp="#joint">verender</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">liche</unclear> müntz <unclear cert="low" resp="#joint">weßen</unclear>, <unclear cert="low" resp="#joint">vilmaln</unclear>, auch <unclear cert="medium" resp="#joint">enderung</unclear> und
+<lb n="6"/><unclear cert="medium" resp="#joint">unbestendige</unclear> taxation der <unclear cert="low" resp="#joint">victualien</unclear> nach sich gezogen,
+<lb n="7"/>bey yetziger gelt <unclear cert="low" resp="#joint">valuta</unclear> aber, <unclear cert="low" resp="#joint">fürohin</unclear>, alles in
 <lb n="8"/>bestendigem preiß widerumb gelang möchte, und
 <lb n="9"/>auch nit zweifelt, Ir alberaith fleisch kaufs
 <lb n="10"/>halber, mit guotter ordnung werd verseh sein.
-<lb n="11"/>Alß an Eüch unnßer freündt nachparlich
-<lb n="12"/>pit. Ir geruhet unns nachparlich ze comuniciern
-<lb n="13"/>und in schrifften zukomen zelaßn wie hoch und in
-<lb n="14"/>was valor das pfund rind und bratfleisch
-<lb n="15"/>bey Eüch außgehawen, was auch in anderem,
-<lb n="16"/>fleisch tax halber Ir Eweren Metzgern verordnet
-<lb n="17"/>haben,
-<lb n="18"/>Wie nun unns solches zu vorhabend verbeßerung
-<lb n="19"/>der metzger ordnung, nachrichtlich und dienlich,
-<lb n="20"/>deßhalb ein nachparliches sonders gefallen beschicht.
-<lb n="21"/>Alß stehn wir bey fürfallender occasion, Eüch
-<lb n="22"/>hinwiderumb beliebende nachparschaft zeerweißn
-<lb n="23"/>vorders willig. Act. <date resp="#ner">22 Jenner Ao. 1624</date>.
+<lb n="11"/>Alß an Eüch <unclear cert="medium" resp="#joint">unnßer</unclear> freündt nachparlich
+<lb n="12"/>pit. <unclear cert="medium" resp="#joint">Ir</unclear> geruhet unns nachparlich <unclear cert="medium" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">comuniciern</unclear>
+<lb n="13"/>und in schrifften <unclear cert="medium" resp="#joint">zukomen</unclear> <unclear cert="low" resp="#joint">zelaßn</unclear> wie hoch und in
+<lb n="14"/>was <unclear cert="medium" resp="#joint">valor</unclear> das pfund rind und <unclear cert="low" resp="#joint">bratfleisch</unclear>
+<lb n="15"/>bey Eüch <unclear cert="low" resp="#joint">außgehawen</unclear>, was auch in <unclear cert="low" resp="#joint">anderem</unclear>,
+<lb n="16"/><unclear cert="low" resp="#joint">fleisch</unclear> tax halber Ir <unclear cert="low" resp="#joint">Eweren</unclear> Metzgern verordnet
+<lb n="17"/><unclear cert="medium" resp="#joint">haben</unclear>,
+<lb n="18"/>Wie nun <unclear cert="medium" resp="#joint">unns</unclear> solches zu <unclear cert="low" resp="#joint">vorhabend</unclear> verbeßerung
+<lb n="19"/>der <unclear cert="medium" resp="#joint">metzger</unclear> ordnung, nachrichtlich und dienlich,
+<lb n="20"/>deßhalb <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">nachparliches</unclear> <unclear cert="medium" resp="#joint">sonders</unclear> gefallen beschicht.
+<lb n="21"/><unclear cert="low" resp="#joint">Alß</unclear> <unclear cert="low" resp="#joint">stehn</unclear> wir bey fürfallender occasion, Eüch
+<lb n="22"/>hinwiderumb beliebende <unclear cert="low" resp="#joint">nachparschaft</unclear> <unclear cert="low" resp="#joint">zeerweißn</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">vorders</unclear> willig. <unclear cert="low" resp="#joint">Act</unclear>. <date resp="#ner">22 Jenner <unclear cert="low" resp="#joint">Ao</unclear>. 1624</date>.
 <lb n="24"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Haubtman auch Burger-
 <lb n="25"/>meister und Rath der
-<lb n="26"/>Statt Costantz</orgName>.
+<lb n="26"/>Statt <unclear cert="medium" resp="#joint">Costantz</unclear></orgName>.
 <pb facs="StadtASG_Missive_2457_9470.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2457_9471.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2457_9472.jpg" n="4"/>
-<lb n="27"/>Den fuersichtigen, ersamen, unnd weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burg=
-<lb n="28"/>ermaister, unnd Rhat zuo St: Gallen</orgName>, unßern
+<lb n="27"/>Den <unclear cert="medium" resp="#joint">fuersichtigen</unclear>, ersamen, unnd weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burg=</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">ermaister</unclear>, unnd <unclear cert="low" resp="#joint">Rhat</unclear> zuo <unclear cert="medium" resp="#joint">St</unclear>: Gallen</orgName>, unßern
 <lb n="29"/>besonders lieben freund unnd guetten Nachparn, .
 </p>
         </body>

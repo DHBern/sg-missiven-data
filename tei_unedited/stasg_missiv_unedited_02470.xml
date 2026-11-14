@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2470</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Jost Ulrich, Landvogt in Ober- und Nidern Turgau, teilt Bürgermeister und Rat zu St. Gallen mit, dass er den gefangenen Hans Wettern am nächsten Tag auf der Grenze durch seinen geschworenen Diener Felix Engelin übergeben werde. Er bittet die St. Galler, ihre Deputierten auf die Grenze zu schicken, um den Gefangenen in Empfang zu nehmen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Jost Ulrich, Landvogt in Ober- und Nidern Turgau</name><placeName resp="#regest">Frauenfeld</placeName><date when="1622-03-08" resp="#regest">Datum Frauenfeld den 8. 7. Martij Anno 1622.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,40 +35,40 @@
 <p>
 <pb facs="StadtASG_Missive_2470_9517.jpg" n="1"/>
 <lb n="1"/>Edle, Gestrenge, Hochgelehrte, Ehrenveste
-<lb n="2"/>Weise, besonders guenstige liebe Herren guote
-<lb n="3"/>freuendt: unnd Nachbarn, dennselbigen seÿenndt
-<lb n="4"/>mein freuendt: Nachbarlich willig dienst zuovor
-<lb n="5"/>Unnd soll denselben hiemit zuo anttwortt
-<lb n="6"/>nit verhalten: Wie daß den Herren
-<lb n="7"/>Nachbarn, ich uff uberschickten Revers den
-<lb n="8"/>begerten gefangnen <persName resp="#ner">Hannsen Wettern</persName> durch mei-
-<lb n="9"/>nen geschwornen diener <persName resp="#ner">Felix Engellin</persName> zuo <placeName resp="#ner">Sulgen</placeName>
-<lb n="10"/>mornderigs tags uff den grenzen gebürlicher massen
-<lb n="11"/>uberanttwortten lassen will: Deß wöllendt
-<lb n="12"/>die Herren Nachbarn ihre deputierte auff
-<lb n="13"/>mornderigen tag uff die grenzen (innmassen
-<lb n="14"/>dann sich ihr abgordneter Grichtschriber
-<lb n="15"/><persName resp="#ner">Heinrich Rothmundt</persName> mit meinem geschwornen
-<lb n="16"/>dienner deß orths, wo man die lifferung thuon
-<lb n="17"/>wölle verglichen haben wirdt) abordnen und
-<lb n="18"/>selchen malificanten empfahen lassen: Wel-
+<lb n="2"/>Weise, besonders <unclear cert="low" resp="#joint">guenstige</unclear> liebe Herren guote
+<lb n="3"/><unclear cert="medium" resp="#joint">freuendt</unclear>: <unclear cert="medium" resp="#joint">unnd</unclear> Nachbarn, <unclear cert="medium" resp="#joint">dennselbigen</unclear> <unclear cert="medium" resp="#joint">seÿenndt</unclear>
+<lb n="4"/>mein <unclear cert="medium" resp="#joint">freuendt</unclear>: Nachbarlich willig dienst <unclear cert="low" resp="#joint">zuovor</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">Unnd</unclear> soll denselben hiemit zuo <unclear cert="low" resp="#joint">anttwortt</unclear>
+<lb n="6"/>nit <unclear cert="medium" resp="#joint">verhalten</unclear>: Wie <unclear cert="low" resp="#joint">daß</unclear> den Herren
+<lb n="7"/>Nachbarn, ich <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">uberschickten</unclear> <unclear cert="low" resp="#joint">Revers</unclear> den
+<lb n="8"/><unclear cert="low" resp="#joint">begerten</unclear> gefangnen <persName resp="#ner">Hannsen <unclear cert="low" resp="#joint">Wettern</unclear></persName> durch mei-
+<lb n="9"/>nen geschwornen diener <persName resp="#ner">Felix <unclear cert="low" resp="#joint">Engellin</unclear></persName> zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Sulgen</unclear></placeName>
+<lb n="10"/><unclear cert="low" resp="#joint">mornderigs</unclear> <unclear cert="low" resp="#joint">tags</unclear> <unclear cert="low" resp="#joint">uff</unclear> den <unclear cert="medium" resp="#joint">grenzen</unclear> gebürlicher <unclear cert="low" resp="#joint">massen</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">uberanttwortten</unclear> lassen will: <unclear cert="medium" resp="#joint">Deß</unclear> <unclear cert="low" resp="#joint">wöllendt</unclear>
+<lb n="12"/>die Herren Nachbarn ihre deputierte <unclear cert="low" resp="#joint">auff</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">mornderigen</unclear> tag <unclear cert="low" resp="#joint">uff</unclear> die <unclear cert="low" resp="#joint">grenzen</unclear> (<unclear cert="low" resp="#joint">innmassen</unclear>
+<lb n="14"/>dann sich ihr <unclear cert="medium" resp="#joint">abgordneter</unclear> <unclear cert="medium" resp="#joint">Grichtschriber</unclear>
+<lb n="15"/><persName resp="#ner">Heinrich <unclear cert="low" resp="#joint">Rothmundt</unclear></persName> mit meinem geschwornen
+<lb n="16"/>dienner <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">orths</unclear>, wo man die <unclear cert="low" resp="#joint">lifferung</unclear> <unclear cert="low" resp="#joint">thuon</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">wölle</unclear> verglichen haben wirdt) <unclear cert="medium" resp="#joint">abordnen</unclear> und
+<lb n="18"/><unclear cert="low" resp="#joint">selchen</unclear> <unclear cert="low" resp="#joint">malificanten</unclear> <unclear cert="medium" resp="#joint">empfahen</unclear> lassen: Wel-
 <lb n="19"/>liches den Herren Nachbarn, ich zuo ihrer
-<lb n="20"/>desto bessern nachrichtung nachbarlichen nit
-<lb n="21"/>verhalten unnd unß zuomahl Goettlicher
-<lb n="22"/>protection bevelchen wöllen: Datum
-<lb n="23"/><origPlace ref="stadtasg-places-29" cert="medium" resp="#ner">Frauwenfeldt</origPlace> <origDate when="1622-03-07" resp="#ner">den 8. 7. Martij Anno 1622</origDate>.
-<lb n="24"/>Den Herren Nachbaren
+<lb n="20"/><unclear cert="medium" resp="#joint">desto</unclear> <unclear cert="medium" resp="#joint">bessern</unclear> nachrichtung nachbarlichen nit
+<lb n="21"/><unclear cert="low" resp="#joint">verhalten</unclear> unnd <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">zuomahl</unclear> <unclear cert="low" resp="#joint">Goettlicher</unclear>
+<lb n="22"/>protection <unclear cert="low" resp="#joint">bevelchen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>: Datum
+<lb n="23"/><origPlace ref="stadtasg-places-29" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Frauwenfeldt</unclear></origPlace> <origDate when="1622-03-07" resp="#ner">den <unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">7</unclear>. Martij Anno <unclear cert="medium" resp="#joint">1622</unclear></origDate>.
+<lb n="24"/><unclear cert="low" resp="#joint">Den</unclear> Herren Nachbaren
 <lb n="25"/>dienstwilliger:
-<lb n="26"/><persName role="issuer" resp="#ner">Jost Ullrich</persName> des Rhats zuo
-<lb n="27"/><placeName resp="#ner">Schweiz</placeName>, Landtvogt in obern
-<lb n="28"/>und <placeName resp="#ner">Nidern Turgoeuw</placeName>.
+<lb n="26"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Jost</unclear> <unclear cert="low" resp="#joint">Ullrich</unclear></persName> des <unclear cert="low" resp="#joint">Rhats</unclear> zuo
+<lb n="27"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Schweiz</unclear></placeName>, Landtvogt in obern
+<lb n="28"/>und <placeName resp="#ner">Nidern <unclear cert="low" resp="#joint">Turgoeuw</unclear></placeName>.
 <pb facs="StadtASG_Missive_2470_9518.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2470_9519.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2470_9520.jpg" n="4"/>
-<lb n="29"/>Denen Edlen, Vesten, Frommen, Hochgelehrten, Ehrsammen,
-<lb n="30"/>Fuersichtigen, undt Wysen Herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeistern undt Raht
-<lb n="31"/>der Statt St. Gallen</orgName>; Minen insonders guentsti-
-<lb n="32"/>gen lieben Herren unndt frueendtlichen Nachpuren.
+<lb n="29"/>Denen Edlen, <unclear cert="low" resp="#joint">Vesten</unclear>, Frommen, <unclear cert="low" resp="#joint">Hochgelehrten</unclear>, <unclear cert="low" resp="#joint">Ehrsammen</unclear>,
+<lb n="30"/><unclear cert="low" resp="#joint">Fuersichtigen</unclear>, <unclear cert="low" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">Wysen</unclear> Herren, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeistern</unclear> <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="medium" resp="#joint">Raht</unclear>
+<lb n="31"/>der Statt St. Gallen</orgName>; <unclear cert="low" resp="#joint">Minen</unclear> insonders <unclear cert="low" resp="#joint">guentsti</unclear>-
+<lb n="32"/><unclear cert="medium" resp="#joint">gen</unclear> lieben Herren <unclear cert="low" resp="#joint">unndt</unclear> <unclear cert="low" resp="#joint">frueendtlichen</unclear> <unclear cert="low" resp="#joint">Nachpuren</unclear>.
 </p>
         </body>
     </text>

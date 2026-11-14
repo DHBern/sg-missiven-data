@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 870</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,79 +20,79 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau informieren Statthalter und Rat zu St. Gallen über die Forderung des Grafen Ulrich von Montfort, das Geld des St. Galler Bürgermeisters Caspar Schlumpf zurückzuerstatten. Lindau erklärt, aufgrund von Reichs- und Kreisabschieden zur Rückgabe verpflichtet zu sein, und bittet St. Gallen, die Sache zu prüfen. Man werde den Grafen durch Gesandte informieren.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1564" cert="medium" resp="#regest">14. decembris anno etc. 64</date></correspAction><correspAction type="received"><name resp="#regest">Statthalter und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_870_2453.jpg" n="1"/>
-<lb n="1"/>Unnser frundtlich willig deinst zuvor. Ersamen
+<lb n="1"/>Unnser frundtlich willig <unclear cert="low" resp="#joint">deinst</unclear> zuvor. Ersamen
 <lb n="2"/>und weisen, lieben unnd gueten freund. Was
-<lb n="3"/>wir hievor mit dem wolgebornen herren,
-<lb n="4"/>herrn <persName resp="#ner">Ulrichen Graven</persName> zuo <placeName ref="stadtasg-places-100" cert="medium" resp="#ner">Monntfort</placeName> unnd
-<lb n="5"/><placeName ref="stadtasg-places-179" cert="medium" resp="#ner">Rotenfels</placeName>. herrn zuo <placeName ref="stadtasg-places-93" cert="medium" resp="#ner">Tettnang</placeName> und Arge
-<lb n="6"/>von wegen des <unclear cert="low" resp="#joint">gelts</unclear>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wß</unclear>. <unclear cert="low" resp="#joint">burgermeist=</unclear>
-<lb n="7"/><unclear cert="low" resp="#joint">er</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear> <unclear cert="low" resp="#joint">Schlumpffen</unclear></persName> <unclear cert="low" resp="#joint">zuoghoerig</unclear>. <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">lenzer</unclear>
-<lb n="8"/>burger halben, so dasselbig, Inn <placeName resp="#ner">Iller</placeName> paß
-<lb n="9"/>alheer geprocht. die wir deßhalben zuo:
+<lb n="3"/>wir <unclear cert="low" resp="#joint">hievor</unclear> mit dem wolgebornen herren,
+<lb n="4"/>herrn <persName resp="#ner">Ulrichen <unclear cert="low" resp="#joint">Graven</unclear></persName> zuo <placeName ref="stadtasg-places-100" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Monntfort</unclear></placeName> unnd
+<lb n="5"/><placeName ref="stadtasg-places-179" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rotenfels</unclear></placeName>. herrn zuo <placeName ref="stadtasg-places-93" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Tettnang</unclear></placeName> und Arge
+<lb n="6"/>von wegen des gelts, <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">wß</unclear>. <unclear cert="medium" resp="#joint">burgermeist=</unclear>
+<lb n="7"/><unclear cert="medium" resp="#joint">er</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Caspar</unclear> Schlumpffen</persName> <unclear cert="low" resp="#joint">zuoghoerig</unclear>. <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">lenzer</unclear>
+<lb n="8"/>burger <unclear cert="low" resp="#joint">halben</unclear>, so <unclear cert="low" resp="#joint">dasselbig</unclear>, Inn <placeName resp="#ner"><unclear cert="low" resp="#joint">Iller</unclear></placeName> <unclear cert="low" resp="#joint">paß</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">alheer</unclear> <unclear cert="low" resp="#joint">geprocht</unclear>. die wir deßhalben zuo:
 <lb n="10"/>recht stellen sollten, gehanndelt. unnd unns
-<lb n="11"/>daruff begegnet. Das werden <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
-<lb n="12"/><unclear cert="low" resp="#joint">wß</unclear>. sich <unclear cert="low" resp="#joint">one</unclear> <unclear cert="low" resp="#joint">zweifel</unclear>, <unclear cert="low" resp="#joint">ußer</unclear> unnserm Jungst
+<lb n="11"/><unclear cert="low" resp="#joint">daruff</unclear> <unclear cert="low" resp="#joint">begegnet</unclear>. Das werden <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>.
+<lb n="12"/><unclear cert="low" resp="#joint">wß</unclear>. sich <unclear cert="low" resp="#joint">one</unclear> <unclear cert="low" resp="#joint">zweifel</unclear>, <unclear cert="low" resp="#joint">ußer</unclear> unnserm <unclear cert="low" resp="#joint">Jungst</unclear>
 <lb n="13"/>schriben, wol zuoerInneren wissen, und
-<lb n="14"/>kunden wir E. E. wß. nit bergen. das
-<lb n="15"/>wir <unclear cert="low" resp="#joint">sider</unclear> <unclear cert="low" resp="#joint">weiter</unclear>, von wolgemeltem
-<lb n="16"/>Graven schrifftlich, mit allem Ernst ersucht
-<lb n="17"/>werden seyen, benante unnsere burger
+<lb n="14"/>kunden wir E. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wß</unclear>. nit <unclear cert="low" resp="#joint">bergen</unclear>. das
+<lb n="15"/>wir <unclear cert="medium" resp="#joint">sider</unclear> weiter, von wolgemeltem
+<lb n="16"/>Graven schrifftlich, mit allem Ernst <unclear cert="low" resp="#joint">ersucht</unclear>
+<lb n="17"/>werden seyen, <unclear cert="low" resp="#joint">benante</unclear> unnsere burger
 <lb n="18"/><unclear cert="low" resp="#joint">zuostellen</unclear>, unnd denselben uffzuelegen.
-<lb n="19"/>das <unclear cert="low" resp="#joint">Entweert</unclear> <unclear cert="low" resp="#joint">gelt</unclear>, <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">ers</unclear> <unclear cert="low" resp="#joint">nempt</unclear> <unclear cert="low" resp="#joint">Irn</unclear>
-<lb n="20"/><unclear cert="low" resp="#joint">gnaden</unclear>, <unclear cert="low" resp="#joint">widerumben</unclear> zuo uberantwurten.
-<lb n="21"/>Nun haben wir sider den sachen, mit
-<lb n="22"/>allem vleiße nochgedacht, unnd souil In
-<lb n="23"/>rath funden. das wir vermueg der
-<lb n="24"/>Richs. unnd <unclear cert="low" resp="#joint">kreyß</unclear> <unclear cert="low" resp="#joint">abschiden</unclear> <unclear cert="low" resp="#joint">schuldig</unclear> <unclear cert="low" resp="#joint">sin</unclear>,
-<lb n="25"/><unclear cert="low" resp="#joint">sollch</unclear> gelt, <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">an</unclear> die ort, liffern
+<lb n="19"/>das <unclear cert="medium" resp="#joint">Entweert</unclear> gelt, wie <unclear cert="medium" resp="#joint">ers</unclear> <unclear cert="medium" resp="#joint">nempt</unclear> <unclear cert="medium" resp="#joint">Irn</unclear>
+<lb n="20"/>gnaden, widerumben zuo <unclear cert="low" resp="#joint">uberantwurten</unclear>.
+<lb n="21"/>Nun haben wir <unclear cert="low" resp="#joint">sider</unclear> den sachen, mit
+<lb n="22"/>allem <unclear cert="low" resp="#joint">vleiße</unclear> nochgedacht, unnd souil In
+<lb n="23"/>rath <unclear cert="low" resp="#joint">funden</unclear>. das wir <unclear cert="low" resp="#joint">vermueg</unclear> der
+<lb n="24"/><unclear cert="low" resp="#joint">Richs</unclear>. unnd <unclear cert="medium" resp="#joint">kreyß</unclear> abschiden schuldig <unclear cert="medium" resp="#joint">sin</unclear>,
+<lb n="25"/><unclear cert="medium" resp="#joint">sollch</unclear> gelt, <unclear cert="medium" resp="#joint">widerumb</unclear> an die <unclear cert="low" resp="#joint">ort</unclear>, <unclear cert="low" resp="#joint">liffern</unclear>
 <pb facs="StadtASG_Missive_870_2454.jpg" n="2"/>
-<lb n="26"/>zuelassen, alß er gewunnen. unnd <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="medium" resp="#joint">lande</unclear>
+<lb n="26"/>zuelassen, alß er <unclear cert="low" resp="#joint">gewunnen</unclear>. unnd <unclear cert="low" resp="#joint">ze</unclear> lande
 <lb n="27"/>kommen, dieweil wir aber ye
-<lb n="28"/>E. E. <unclear cert="low" resp="#joint">ws</unclear>. <unclear cert="low" resp="#joint">burgermeistern</unclear> <unclear cert="low" resp="#joint">gern</unclear> <unclear cert="low" resp="#joint">zu</unclear> hilff
-<lb n="29"/>kommen. wollen <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">Ire</unclear> <unclear cert="low" resp="#joint">gnaden</unclear> noch:
-<lb n="30"/>malen, durch <unclear cert="low" resp="#joint">unnser</unclear> <unclear cert="medium" resp="#joint">gesanndten</unclear>, so
-<lb n="31"/>wir itzo albereit abgeferttigt, unnd:
-<lb n="32"/>thenig <unclear cert="low" resp="#joint">darfur</unclear> pitten unnd daneben berichten
+<lb n="28"/>E. E. <unclear cert="low" resp="#joint">ws</unclear>. <unclear cert="low" resp="#joint">burgermeistern</unclear> <unclear cert="low" resp="#joint">gern</unclear> zu hilff
+<lb n="29"/>kommen. wollen wir <unclear cert="medium" resp="#joint">Ire</unclear> gnaden noch:
+<lb n="30"/>malen, durch <unclear cert="low" resp="#joint">unnser</unclear> <unclear cert="low" resp="#joint">gesanndten</unclear>, so
+<lb n="31"/>wir itzo albereit <unclear cert="low" resp="#joint">abgeferttigt</unclear>, unnd:
+<lb n="32"/><unclear cert="medium" resp="#joint">thenig</unclear> <unclear cert="low" resp="#joint">darfur</unclear> pitten unnd <unclear cert="low" resp="#joint">daneben</unclear> berichten
 <lb n="33"/>lassen, was es fur gellt unnd <unclear cert="low" resp="#joint">muntz</unclear> seye.,
-<lb n="34"/><unclear cert="medium" resp="#joint">do</unclear> aber <unclear cert="medium" resp="#joint">Ire</unclear> gnaden. <unclear cert="low" resp="#joint">ye</unclear> nit von dem
+<lb n="34"/><unclear cert="low" resp="#joint">do</unclear> aber <unclear cert="low" resp="#joint">Ire</unclear> gnaden. <unclear cert="medium" resp="#joint">ye</unclear> nit von dem
 <lb n="35"/>vorhaben weichen wöll. künnden E. E.
 <lb n="36"/><unclear cert="low" resp="#joint">ws</unclear>. <unclear cert="low" resp="#joint">alls</unclear> die <unclear cert="low" resp="#joint">hochverstendigen</unclear>, selbs
-<lb n="37"/>vernunfftig ermessen, das wir
+<lb n="37"/><unclear cert="medium" resp="#joint">vernunfftig</unclear> ermessen, das wir
 <lb n="38"/>den <unclear cert="low" resp="#joint">kraiß</unclear> unnd <unclear cert="low" resp="#joint">reichsabschiden</unclear> <unclear cert="low" resp="#joint">zuge</unclear>:
 <lb n="39"/>horsamen schuldig. unnd wir unnsere
-<lb n="40"/><unclear cert="low" resp="#joint">buergen</unclear>. <unclear cert="low" resp="#joint">die</unclear> dann auch <unclear cert="low" resp="#joint">unschuldigclich</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">buergen</unclear>. <unclear cert="medium" resp="#joint">die</unclear> dann auch <unclear cert="low" resp="#joint">unschuldigclich</unclear>
 <lb n="41"/>und allein <unclear cert="low" resp="#joint">us</unclear> <unclear cert="low" resp="#joint">treuwen</unclear>. hinder die sach
-<lb n="42"/>komen, zu recht stellen. und dahin halten
-<lb n="43"/>muessen, das <unclear cert="low" resp="#joint">gelt</unclear> <unclear cert="low" resp="#joint">widerumben</unclear> zu
-<lb n="44"/>uberantwurten. Das wir E. E.
-<lb n="45"/><unclear cert="low" resp="#joint">ws</unclear>. zu <unclear cert="low" resp="#joint">weiterm</unclear> bericht anzeigen wollen,
-<lb n="46"/>damit sy und Ir <unclear cert="low" resp="#joint">burgermeister</unclear>. sich
+<lb n="42"/><unclear cert="low" resp="#joint">komen</unclear>, <unclear cert="low" resp="#joint">zu</unclear> recht stellen. und dahin <unclear cert="low" resp="#joint">halten</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">muessen</unclear>, das gelt widerumben zu
+<lb n="44"/><unclear cert="medium" resp="#joint">uberantwurten</unclear>. Das wir <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>.
+<lb n="45"/><unclear cert="low" resp="#joint">ws</unclear>. zu <unclear cert="medium" resp="#joint">weiterm</unclear> bericht anzeigen <unclear cert="medium" resp="#joint">wollen</unclear>,
+<lb n="46"/>damit sy und Ir <unclear cert="medium" resp="#joint">burgermeister</unclear>. sich
 <lb n="47"/>weiter. der <unclear cert="medium" resp="#joint">notdurfft</unclear> nach. zuverhalten
 <lb n="48"/><unclear cert="low" resp="#joint">wissen</unclear>, und derselben alle <unclear cert="low" resp="#joint">freundt</unclear>:
-<lb n="49"/>liche nachparschafft zuerweisen, seind
+<lb n="49"/><unclear cert="medium" resp="#joint">liche</unclear> nachparschafft zuerweisen, seind
 <pb facs="StadtASG_Missive_870_2455.jpg" n="3"/>
-<lb n="50"/>wir mit willen genaigt. Datum den
-<lb n="51"/><origDate when="1564-12-14" cert="medium" resp="#ner">14. decembris anno etc. 64</origDate>.
+<lb n="50"/><unclear cert="low" resp="#joint">wir</unclear> mit willen genaigt. Datum den
+<lb n="51"/><origDate when="1564-12-14" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">14</unclear>. decembris anno etc. 64</origDate>.
 <lb n="52"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister und
-<lb n="53"/><unclear cert="medium" resp="#joint">rathe</unclear> der statt Lindaw</orgName>.
+<lb n="53"/><unclear cert="medium" resp="#joint">rathe</unclear> der statt <unclear cert="low" resp="#joint">Lindaw</unclear></orgName>.
 <pb facs="StadtASG_Missive_870_2456.jpg" n="4"/>
 <lb n="54"/>Den ersamen unnd weisen <orgName ref="stadtasg-actors-629" cert="medium" role="recipient" resp="#ner">statthalter
 <lb n="55"/>und rathe der statt Sannt Gallen</orgName> un-
-<lb n="56"/>sern lieben unnd gueten freunden.
+<lb n="56"/>sern lieben unnd <unclear cert="medium" resp="#joint">gueten</unclear> freunden.
 </p>
         </body>
     </text>

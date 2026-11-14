@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1994</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,57 +20,57 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen teilen Schultheiss und Rat zu Luzern mit, dass sie die Forderung ihres Bürgers Hans Stähelin gegen den verstorbenen Scherrer vollständig in barer Münze beglichen hätten. Dies geschah auf Bitten der Luzerner, obwohl andere Gläubiger des Scherrer nur einen Teil ihrer Forderungen sofort erhielten und den Rest zinslos über sieben Jahre stunden liessen. St. Gallen hofft, damit Stähelin befriedigt zu haben, und bekräftigt die freundschaftlichen eidgenössischen Beziehungen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1616-05-21" resp="#regest">21. Maij A° 1616</date></correspAction><correspAction type="received"><name resp="#regest">Schultheiss und Rat zu Luzern</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1994_7431.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienst und was wir ehren
-<lb n="2"/>liebs und guots vermögend, zuvor, Edlen, Vesten,
-<lb n="3"/>Fromen, Fürsichtigen, Ersamen und Weisen,
-<lb n="4"/>Insonders guoten Freünden, und getreüwen,
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freündtlich</unclear> willig dienst und was wir <unclear cert="medium" resp="#joint">ehren</unclear>
+<lb n="2"/><unclear cert="medium" resp="#joint">liebs</unclear> und guots vermögend, <unclear cert="medium" resp="#joint">zuvor</unclear>, <unclear cert="medium" resp="#joint">Edlen</unclear>, Vesten,
+<lb n="3"/><unclear cert="low" resp="#joint">Fromen</unclear>, <unclear cert="medium" resp="#joint">Fürsichtigen</unclear>, Ersamen und <unclear cert="medium" resp="#joint">Weisen</unclear>,
+<lb n="4"/><unclear cert="medium" resp="#joint">Insonders</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">Freünden</unclear>, und getreüwen,
 <lb n="5"/>lieben Eidtgnossen.
-<lb n="6"/>Dieweil E. Vt. und Fr. E. Wht. darfür halten, daß
-<lb n="7"/>ihr Zuosatz M. <persName resp="#ner">Hanns Stähelin</persName>, die ihme vor unseren
-<lb n="8"/>burgeren den Scherreren fürgeschlagen bezahlung,
-<lb n="9"/>ohne seinen sonderen nachtheil und schaden, ze thuon
-<lb n="10"/>nit könndte annemen, Als haben auf E. Vt.
-<lb n="11"/>und Fr. E. Wht. für ihne widermalig freündtlich
-<lb n="12"/>Eidtgnosisches fürschreiben, wir die sachen
-<lb n="13"/>dahin gericht, daß ihme seine vollkomnen
-<lb n="14"/>fl. 642. gleich alhie an barem gelt zuogestelt
+<lb n="6"/><unclear cert="medium" resp="#joint">Dieweil</unclear> E. <unclear cert="low" resp="#joint">Vt</unclear>. und Fr. E. <unclear cert="low" resp="#joint">Wht</unclear>. darfür halten, <unclear cert="medium" resp="#joint">daß</unclear>
+<lb n="7"/>ihr <unclear cert="low" resp="#joint">Zuosatz</unclear> M. <persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Stähelin</unclear></persName>, die <unclear cert="low" resp="#joint">ihme</unclear> vor <unclear cert="low" resp="#joint">unseren</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">burgeren</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Scherreren</unclear> <unclear cert="medium" resp="#joint">fürgeschlagen</unclear> <unclear cert="medium" resp="#joint">bezahlung</unclear>,
+<lb n="9"/>ohne seinen <unclear cert="low" resp="#joint">sonderen</unclear> nachtheil und schaden, <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">thuon</unclear>
+<lb n="10"/>nit <unclear cert="low" resp="#joint">könndte</unclear> annemen, Als haben <unclear cert="medium" resp="#joint">auf</unclear> E. <unclear cert="low" resp="#joint">Vt</unclear>.
+<lb n="11"/>und Fr. E. <unclear cert="low" resp="#joint">Wht</unclear>. für <unclear cert="medium" resp="#joint">ihne</unclear> <unclear cert="low" resp="#joint">widermalig</unclear> freündtlich
+<lb n="12"/><unclear cert="low" resp="#joint">Eidtgnosisches</unclear> <unclear cert="medium" resp="#joint">fürschreiben</unclear>, wir die sachen
+<lb n="13"/>dahin <unclear cert="medium" resp="#joint">gericht</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">ihme</unclear> seine <unclear cert="low" resp="#joint">vollkomnen</unclear>
+<lb n="14"/>fl. 642. gleich alhie an <unclear cert="low" resp="#joint">barem</unclear> gelt <unclear cert="low" resp="#joint">zuogestelt</unclear>
 <lb n="15"/>worden, Ungeachtet alle andere der gemelten
-<lb n="16"/>Scherreren creditores frömbd und anheimsch,
-<lb n="17"/>an ihren forderungen nit allein den vierten
-<lb n="18"/>theil guotwillig lassen sinckhen, sonderen auch
-<lb n="19"/>umb die übrigen dreij viertheil erst in Siben
-<lb n="20"/>jars zahlungen, und <unclear cert="low" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">zinß</unclear>, <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">bezahlen</unclear> <unclear cert="low" resp="#joint">lassend</unclear>.
-<lb n="21"/><unclear cert="low" resp="#joint">Verhoffend</unclear> also gedachter <persName resp="#ner">Stähelin</persName> hiemit also
-<lb n="22"/>befridiget seijn werde, welcher in solchem
-<lb n="23"/>genossen hat, seiner Herren und Oberen, unsrer
-<lb n="24"/>sonders guoten Freünden und getreüwen,
+<lb n="16"/><unclear cert="low" resp="#joint">Scherreren</unclear> <unclear cert="medium" resp="#joint">creditores</unclear> <unclear cert="low" resp="#joint">frömbd</unclear> und <unclear cert="low" resp="#joint">anheimsch</unclear>,
+<lb n="17"/>an ihren forderungen nit allein <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">vierten</unclear>
+<lb n="18"/>theil <unclear cert="medium" resp="#joint">guotwillig</unclear> lassen <unclear cert="low" resp="#joint">sinckhen</unclear>, <unclear cert="medium" resp="#joint">sonderen</unclear> auch
+<lb n="19"/>umb die übrigen dreij <unclear cert="medium" resp="#joint">viertheil</unclear> erst in Siben
+<lb n="20"/>jars zahlungen, und ohne zinß, <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">bezahlen</unclear> <unclear cert="low" resp="#joint">lassend</unclear>.
+<lb n="21"/><unclear cert="low" resp="#joint">Verhoffend</unclear> also gedachter <persName resp="#ner"><unclear cert="low" resp="#joint">Stähelin</unclear></persName> hiemit also
+<lb n="22"/>befridiget <unclear cert="low" resp="#joint">seijn</unclear> werde, welcher in <unclear cert="medium" resp="#joint">solchem</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">genossen</unclear> hat, <unclear cert="medium" resp="#joint">seiner</unclear> Herren und <unclear cert="low" resp="#joint">Oberen</unclear>, <unclear cert="low" resp="#joint">unsrer</unclear>
+<lb n="24"/>sonders guoten <unclear cert="medium" resp="#joint">Freünden</unclear> und getreüwen,
 <lb n="25"/>lieben Eidtgnossen, Denen wir nit allein
-<lb n="26"/>in dergleichen, sonder auch noch mehrerm
-<lb n="27"/>freündtliches gefallen zeerweisen, und <unclear cert="low" resp="#joint">bests</unclear>
-<lb n="28"/><unclear cert="low" resp="#joint">vermögens</unclear> <unclear cert="low" resp="#joint">angeneme</unclear> <unclear cert="low" resp="#joint">dienst</unclear> <unclear cert="low" resp="#joint">zeerzeigen</unclear>,
-<lb n="29"/><unclear cert="low" resp="#joint">begirig</unclear> und geneigt bleiben, Als wir sie
-<lb n="30"/>samt uns, zu bestendigem wolefart dem schirm
-<lb n="31"/>des Höchsten in treüwen thuond befelchen. Datum
+<lb n="26"/>in dergleichen, sonder auch noch <unclear cert="medium" resp="#joint">mehrerm</unclear>
+<lb n="27"/>freündtliches gefallen <unclear cert="low" resp="#joint">zeerweisen</unclear>, und <unclear cert="low" resp="#joint">bests</unclear>
+<lb n="28"/>vermögens angeneme dienst zeerzeigen,
+<lb n="29"/>begirig und geneigt <unclear cert="medium" resp="#joint">bleiben</unclear>, Als wir sie
+<lb n="30"/><unclear cert="low" resp="#joint">samt</unclear> uns, <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">bestendigem</unclear> <unclear cert="low" resp="#joint">wolefart</unclear> dem <unclear cert="low" resp="#joint">schirm</unclear>
+<lb n="31"/>des <unclear cert="low" resp="#joint">Höchsten</unclear> in <unclear cert="medium" resp="#joint">treüwen</unclear> <unclear cert="low" resp="#joint">thuond</unclear> <unclear cert="low" resp="#joint">befelchen</unclear>. Datum
 <lb n="32"/>den <origDate when="1616-05-21" resp="#ner"><unclear cert="low" resp="#joint">21</unclear>. <unclear cert="low" resp="#joint">Maij</unclear> <unclear cert="low" resp="#joint">A°</unclear> 1616</origDate>.
 <lb n="33"/>An <orgName role="issuer" resp="#ner">Schultheiß und <unclear cert="low" resp="#joint">Raht</unclear>
-<lb n="34"/><unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">R</unclear>.
-<lb n="35"/>zuo <unclear cert="low" resp="#joint">Liron</unclear></orgName>.
+<lb n="34"/><unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">u</unclear>. R.
+<lb n="35"/>zuo Liron</orgName>.
 <pb facs="StadtASG_Missive_1994_7432.jpg" n="2"/>
-<lb n="36"/>An <origPlace ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</origPlace> <origDate when="1616-05-11" resp="#ner">11. maij 1616</origDate>.
+<lb n="36"/><unclear cert="medium" resp="#joint">An</unclear> <origPlace ref="stadtasg-places-69" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lucern</unclear></origPlace> <origDate when="1616-05-11" resp="#ner">11. <unclear cert="low" resp="#joint">maij</unclear> <unclear cert="low" resp="#joint">1616</unclear></origDate>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2021</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,89 +20,89 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich antworten auf eine Anfrage St. Gallens bezüglich des Durchzugs von Kriegsvolk nach Italien. Sie teilen mit, dass 6000 Mann bereits durchgekommen seien und sich in Mailand aufhielten. Ob die Orte den Pass weiterhin öffnen, sei unklar. Zürich und die anderen evangelischen Orte würden die Eidgenossen wegen der Passbewilligungen und Durchzüge anschreiben. Zudem berichten sie über die Lage in Mailand, Savoyen und Venedig sowie über Rekrutierungen in der Schweiz.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1616-07-30" resp="#regest">Datum den 30ten Julij, Anno 1616.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2021_7551.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig dinst, unnd was wir ehren
-<lb n="2"/>liebs unnd guots vermögend zuovor, From, fürsichtig,
-<lb n="3"/>Ersam, wyß, Innsonders guot fründt unnd gethrüw
-<lb n="4"/>lieb <orgName resp="#ner">Eydtgnossen</orgName>. Uß üwerem schryben unnd
-<lb n="5"/>dem Inschluß habent wir verstanden, was üch
-<lb n="6"/>von wegen deß die zyt hero durch ein <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName>
-<lb n="7"/>uff <placeName ref="stadtasg-places-273" cert="medium" resp="#ner">Italien</placeName> <unclear cert="low" resp="#joint">zuozüchenden</unclear> <unclear cert="low" resp="#joint">kriegßvolcks</unclear> <unclear cert="low" resp="#joint">angelanget</unclear>,
-<lb n="8"/>unnd wie Ir darüber unnsers brichts begerend.
-<lb n="9"/>Daruf wir <unclear cert="low" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">verthrüwlichen</unclear> <unclear cert="low" resp="#joint">avis</unclear> gegen
-<lb n="10"/>üch vorderst Eydtgnössisch fründtlich bedanckend,
-<lb n="11"/>unnd demnach üch In antwort zeverstendigen
-<lb n="12"/>nit ermanglen wöllen, das unns von unnseren
-<lb n="13"/>lieben Eydt: unnd Pundtgnossen <orgName ref="stadtasg-actors-570" cert="medium" resp="#ner">der Statt Straßburg</orgName>
-<lb n="14"/>albereit verschiner tagen glyche meinung auch zuogeschriben
-<lb n="15"/>worden. Sittenmaln aber by zweyen monaten
-<lb n="16"/>unnd uff <unclear cert="low" resp="#joint">Jüngstgehaltner</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">Badischen</unclear> <unclear cert="low" resp="#joint">Jarrechnung</unclear></date>
-<lb n="17"/>von unnseren Eydtgnossen den 5. Orten für 4000. man
-<lb n="18"/>under den Grauen zuo <placeName resp="#ner">Sultz</placeName>, unnd für <unclear cert="low" resp="#joint">ungefehr</unclear>
-<lb n="19"/>noch 2000. man zuo <unclear cert="low" resp="#joint">ergentzung</unclear> <unclear cert="low" resp="#joint">deß</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Madrutzischen</unclear></orgName>
-<lb n="20"/><unclear cert="low" resp="#joint">Regiments</unclear>, <unclear cert="low" resp="#joint">alß</unclear> Ir wüssend, zwahen wider unnsern
-<lb n="21"/>unnd anderer unnserer <orgName resp="#ner">Eydtgnossen</orgName> willen, der
-<lb n="22"/>paß durch ein <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> vergünstiget worden.
-<lb n="23"/>Das wir an Jetzo diß volcks halber die gwüsse
-<lb n="24"/>nachrichtung habent, das sy sich <unclear cert="low" resp="#joint">weder</unclear> <unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">den</unclear>
-<lb n="25"/><unclear cert="low" resp="#joint">Orten</unclear> <unclear cert="low" resp="#joint">der</unclear> <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschafft</unclear></orgName> noch zuo <placeName ref="stadtasg-places-462" cert="medium" resp="#ner">Bäeltz</placeName> ald der
-<lb n="26"/>enden nit gesümbt noch gesterckt, sonder sölliche
-<lb n="27"/>6000. man schon völlig durchpassiert, unnd uff
-<lb n="28"/>Gryß unnd den <placeName ref="stadtasg-places-355" cert="medium" resp="#ner">Meylendischen</placeName> boden zuo gezogen,
-<lb n="29"/>unnd sich daselbst uffhalten thüegen. Ob nun sy
-<lb n="30"/>unnsere <orgName resp="#ner">Eydtgnossen</orgName> von den Orten den paß noch-
-<lb n="31"/>maln uff ein gantzen monat lang von söllichen
-<lb n="32"/>kriegßvolcks unnd werbungen wegen offen zehalten
-<lb n="33"/>willens unnd gesinnet syn söllint, darumb Ist
-<lb n="34"/>unns noch nützit <unclear cert="low" resp="#joint">zewüssen</unclear>. Es khombt unns aber
+<lb n="1"/><unclear cert="medium" resp="#joint">Unnser</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> willig <unclear cert="low" resp="#joint">dinst</unclear>, unnd <unclear cert="medium" resp="#joint">was</unclear> wir ehren
+<lb n="2"/>liebs unnd guots vermögend zuovor, <unclear cert="low" resp="#joint">From</unclear>, fürsichtig,
+<lb n="3"/><unclear cert="low" resp="#joint">Ersam</unclear>, wyß, <unclear cert="low" resp="#joint">Innsonders</unclear> guot <unclear cert="medium" resp="#joint">fründt</unclear> unnd <unclear cert="medium" resp="#joint">gethrüw</unclear>
+<lb n="4"/>lieb <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnossen</unclear></orgName>. <unclear cert="medium" resp="#joint">Uß</unclear> <unclear cert="low" resp="#joint">üwerem</unclear> schryben unnd
+<lb n="5"/>dem <unclear cert="medium" resp="#joint">Inschluß</unclear> <unclear cert="low" resp="#joint">habent</unclear> wir <unclear cert="medium" resp="#joint">verstanden</unclear>, was üch
+<lb n="6"/>von wegen <unclear cert="medium" resp="#joint">deß</unclear> die <unclear cert="medium" resp="#joint">zyt</unclear> <unclear cert="medium" resp="#joint">hero</unclear> durch ein <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschafft</unclear></orgName>
+<lb n="7"/>uff <placeName ref="stadtasg-places-273" cert="medium" resp="#ner">Italien</placeName> zuozüchenden kriegßvolcks angelanget,
+<lb n="8"/>unnd wie Ir <unclear cert="medium" resp="#joint">darüber</unclear> <unclear cert="medium" resp="#joint">unnsers</unclear> <unclear cert="low" resp="#joint">brichts</unclear> <unclear cert="low" resp="#joint">begerend</unclear>.
+<lb n="9"/><unclear cert="medium" resp="#joint">Daruf</unclear> wir unns <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">verthrüwlichen</unclear> <unclear cert="low" resp="#joint">avis</unclear> gegen
+<lb n="10"/><unclear cert="medium" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">vorderst</unclear> <unclear cert="low" resp="#joint">Eydtgnössisch</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> <unclear cert="medium" resp="#joint">bedanckend</unclear>,
+<lb n="11"/>unnd demnach üch <unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">antwort</unclear> <unclear cert="low" resp="#joint">zeverstendigen</unclear>
+<lb n="12"/>nit <unclear cert="low" resp="#joint">ermanglen</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, das unns von <unclear cert="low" resp="#joint">unnseren</unclear>
+<lb n="13"/>lieben <unclear cert="low" resp="#joint">Eydt</unclear>: unnd <unclear cert="low" resp="#joint">Pundtgnossen</unclear> <orgName ref="stadtasg-actors-570" cert="medium" resp="#ner">der Statt <unclear cert="low" resp="#joint">Straßburg</unclear></orgName>
+<lb n="14"/><unclear cert="medium" resp="#joint">albereit</unclear> <unclear cert="low" resp="#joint">verschiner</unclear> <unclear cert="low" resp="#joint">tagen</unclear> <unclear cert="medium" resp="#joint">glyche</unclear> meinung auch zuogeschriben
+<lb n="15"/><unclear cert="low" resp="#joint">worden</unclear>. <unclear cert="low" resp="#joint">Sittenmaln</unclear> aber <unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">zweyen</unclear> <unclear cert="medium" resp="#joint">monaten</unclear>
+<lb n="16"/>unnd uff <unclear cert="low" resp="#joint">Jüngstgehaltner</unclear> <date resp="#ner">Badischen <unclear cert="low" resp="#joint">Jarrechnung</unclear></date>
+<lb n="17"/>von <unclear cert="low" resp="#joint">unnseren</unclear> <unclear cert="low" resp="#joint">Eydtgnossen</unclear> den <unclear cert="medium" resp="#joint">5</unclear>. <unclear cert="medium" resp="#joint">Orten</unclear> für 4000. man
+<lb n="18"/><unclear cert="medium" resp="#joint">under</unclear> den <unclear cert="low" resp="#joint">Grauen</unclear> zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Sultz</unclear></placeName>, unnd für ungefehr
+<lb n="19"/>noch 2000. man zuo <unclear cert="low" resp="#joint">ergentzung</unclear> deß <orgName resp="#ner"><unclear cert="low" resp="#joint">Madrutzischen</unclear></orgName>
+<lb n="20"/>Regiments, <unclear cert="low" resp="#joint">alß</unclear> Ir <unclear cert="low" resp="#joint">wüssend</unclear>, <unclear cert="low" resp="#joint">zwahen</unclear> wider <unclear cert="low" resp="#joint">unnsern</unclear>
+<lb n="21"/>unnd <unclear cert="low" resp="#joint">anderer</unclear> <unclear cert="medium" resp="#joint">unnserer</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnossen</unclear></orgName> willen, der
+<lb n="22"/><unclear cert="medium" resp="#joint">paß</unclear> durch ein <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschafft</unclear></orgName> <unclear cert="low" resp="#joint">vergünstiget</unclear> worden.
+<lb n="23"/>Das wir an <unclear cert="low" resp="#joint">Jetzo</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="medium" resp="#joint">volcks</unclear> halber die <unclear cert="low" resp="#joint">gwüsse</unclear>
+<lb n="24"/><unclear cert="medium" resp="#joint">nachrichtung</unclear> <unclear cert="medium" resp="#joint">habent</unclear>, das sy sich weder In den
+<lb n="25"/>Orten der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschafft</unclear></orgName> noch zuo <placeName ref="stadtasg-places-462" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bäeltz</unclear></placeName> <unclear cert="medium" resp="#joint">ald</unclear> der
+<lb n="26"/><unclear cert="medium" resp="#joint">enden</unclear> nit <unclear cert="low" resp="#joint">gesümbt</unclear> noch <unclear cert="low" resp="#joint">gesterckt</unclear>, <unclear cert="low" resp="#joint">sonder</unclear> sölliche
+<lb n="27"/>6000. man schon <unclear cert="medium" resp="#joint">völlig</unclear> <unclear cert="medium" resp="#joint">durchpassiert</unclear>, unnd uff
+<lb n="28"/><unclear cert="low" resp="#joint">Gryß</unclear> unnd den <placeName ref="stadtasg-places-355" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Meylendischen</unclear></placeName> boden zuo gezogen,
+<lb n="29"/>unnd sich <unclear cert="medium" resp="#joint">daselbst</unclear> <unclear cert="low" resp="#joint">uffhalten</unclear> <unclear cert="low" resp="#joint">thüegen</unclear>. Ob nun <unclear cert="medium" resp="#joint">sy</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">unnsere</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnossen</unclear></orgName> von den <unclear cert="medium" resp="#joint">Orten</unclear> den <unclear cert="medium" resp="#joint">paß</unclear> noch-
+<lb n="31"/><unclear cert="medium" resp="#joint">maln</unclear> uff ein gantzen monat lang von <unclear cert="medium" resp="#joint">söllichen</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">kriegßvolcks</unclear> unnd <unclear cert="medium" resp="#joint">werbungen</unclear> wegen offen zehalten
+<lb n="33"/><unclear cert="medium" resp="#joint">willens</unclear> unnd <unclear cert="medium" resp="#joint">gesinnet</unclear> <unclear cert="low" resp="#joint">syn</unclear> <unclear cert="low" resp="#joint">söllint</unclear>, darumb Ist
+<lb n="34"/><unclear cert="medium" resp="#joint">unns</unclear> noch nützit zewüssen. Es <unclear cert="low" resp="#joint">khombt</unclear> unns aber
 <pb facs="StadtASG_Missive_2021_7552.jpg" n="2"/>
-<lb n="35"/>fuir, das noch iemerdar volck uß- und nach uff
-<lb n="36"/><placeName ref="stadtasg-places-273" cert="medium" resp="#ner">Italien</placeName> zuo durchzuche, unnd <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">auch</unclear> von iren
-<lb n="37"/>den Orten ein ufbruch von zwey regimenten
-<lb n="38"/>inn Spannischen dienst beghert worden, unnd
-<lb n="39"/>darumb bewilligung beschechen sölle. Deßhalb
-<lb n="40"/>wir unnd <unclear cert="low" resp="#joint">übrige</unclear> <unclear cert="low" resp="#joint">drüy</unclear> <orgName ref="stadtasg-actors-771" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Evangelischen</unclear> <unclear cert="low" resp="#joint">Ohrt</unclear> <unclear cert="low" resp="#joint">sambt</unclear></orgName>
-<lb n="41"/><placeName ref="stadtasg-places-73" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Glaruß</unclear></placeName> <unclear cert="low" resp="#joint">alberait</unclear> im werckh unnd vorhabens
-<lb n="42"/>sind, von <unclear cert="low" resp="#joint">söllicher</unclear> unnd <unclear cert="low" resp="#joint">andrer</unclear> <unclear cert="low" resp="#joint">eben</unclear> <unclear cert="low" resp="#joint">beschwer</unclear>-
-<lb n="43"/>unnd <unclear cert="low" resp="#joint">bedencklicher</unclear> <unclear cert="low" resp="#joint">paßbewilligungen</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">frömbd</unclear>-
-<lb n="44"/><unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">durchzügen</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">derselbigen</unclear> <unclear cert="low" resp="#joint">abschaffung</unclear>
-<lb n="45"/>wegen, gedachten unsern Eidtgnossen von den
-<lb n="46"/>Orten alles ernsts unnd <unclear cert="low" resp="#joint">jnnserer</unclear> obligenden
-<lb n="47"/>nottdurfft nach samentlich zuozeschryben. Und
-<lb n="48"/>wyl nun diß alles <unclear cert="low" resp="#joint">eben</unclear> <unclear cert="low" resp="#joint">seltzame</unclear>, <unclear cert="low" resp="#joint">jnns</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">and</unclear>-
-<lb n="49"/><unclear cert="low" resp="#joint">eren</unclear> <unclear cert="low" resp="#joint">Evangelischen</unclear> <unclear cert="low" resp="#joint">Stenden</unclear> wol bedenckliche sachen
-<lb n="50"/>sind, so werdend wir unnd andere uff die ding
-<lb n="51"/><unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">mehrere</unclear> <unclear cert="low" resp="#joint">uffsicht</unclear>, <unclear cert="low" resp="#joint">nachfrag</unclear> und <unclear cert="low" resp="#joint">erkundigung</unclear>,
-<lb n="52"/><unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">jnns</unclear> <unclear cert="low" resp="#joint">deßte</unclear> <unclear cert="low" resp="#joint">füro</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">huot</unclear> <unclear cert="low" resp="#joint">halten</unclear>, <unclear cert="low" resp="#joint">und</unclear>
-<lb n="53"/><unclear cert="low" resp="#joint">darby</unclear> nit ermanglen, üch deß so inn erfahrung
-<lb n="54"/>gebracht werden unnd daran üch unnd anderen
-<lb n="55"/>gelegen syn mag, iederwylen nottwendigen gebür-
-<lb n="56"/>enden avis und bericht zethuond, unnd deßteer
-<lb n="57"/>zuo üch unnd <unclear cert="low" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">Evangelischen</unclear> <unclear cert="low" resp="#joint">fridliebenden</unclear>
-<lb n="58"/><unclear cert="low" resp="#joint">Stenden</unclear> <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">hinwider</unclear> <unclear cert="low" resp="#joint">vertruwlich</unclear> <unclear cert="low" resp="#joint">versechen</unclear>
-<lb n="59"/>unnd getrösten. Sonsten habend wir deß
-<lb n="60"/>Meilendischen <placeName ref="stadtasg-places-437" cert="medium" resp="#ner">Savoischen</placeName> unnd <placeName ref="stadtasg-places-188" cert="medium" resp="#ner">Venetianischen</placeName>
-<lb n="61"/>wesens halber noch kein andere nachrichtung,
-<lb n="62"/>dann das <placeName ref="stadtasg-places-188" cert="medium" resp="#ner">Venedig</placeName> gegen dem huß <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Oesterych</placeName>
-<lb n="63"/>noch inn stetem krieg stande, unnd das es sich
-<lb n="64"/>zwüschend <placeName ref="stadtasg-places-311" cert="medium" resp="#ner">Meiland</placeName> unnd <placeName ref="stadtasg-places-437" cert="medium" resp="#ner">Savoy</placeName> auch noch zuo
-<lb n="65"/>keinem bestendigen friden ansehen laßen wölle.
-<lb n="66"/>Unnd das auch inn Savoy zwüschent demselbigen
-<lb n="67"/>Hertzogen, und dem Hertzogen von Nemours sich auch
-<lb n="68"/>etwas mißthrouwens unnd unruow erzeigen
+<lb n="35"/><unclear cert="low" resp="#joint">fuir</unclear>, das noch <unclear cert="low" resp="#joint">iemerdar</unclear> <unclear cert="medium" resp="#joint">volck</unclear> <unclear cert="low" resp="#joint">uß</unclear>- und nach uff
+<lb n="36"/><placeName ref="stadtasg-places-273" cert="medium" resp="#ner">Italien</placeName> zuo <unclear cert="low" resp="#joint">durchzuche</unclear>, unnd das auch von iren
+<lb n="37"/>den Orten ein <unclear cert="low" resp="#joint">ufbruch</unclear> von <unclear cert="low" resp="#joint">zwey</unclear> regimenten
+<lb n="38"/>inn <unclear cert="low" resp="#joint">Spannischen</unclear> dienst <unclear cert="low" resp="#joint">beghert</unclear> <unclear cert="low" resp="#joint">worden</unclear>, unnd
+<lb n="39"/>darumb bewilligung beschechen <unclear cert="low" resp="#joint">sölle</unclear>. Deßhalb
+<lb n="40"/>wir unnd <unclear cert="low" resp="#joint">übrige</unclear> <unclear cert="low" resp="#joint">drüy</unclear> <orgName ref="stadtasg-actors-771" cert="medium" resp="#ner">Evangelischen <unclear cert="low" resp="#joint">Ohrt</unclear> sambt</orgName>
+<lb n="41"/><placeName ref="stadtasg-places-73" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Glaruß</unclear></placeName> <unclear cert="low" resp="#joint">alberait</unclear> <unclear cert="medium" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">werckh</unclear> unnd <unclear cert="medium" resp="#joint">vorhabens</unclear>
+<lb n="42"/>sind, von <unclear cert="low" resp="#joint">söllicher</unclear> unnd <unclear cert="low" resp="#joint">andrer</unclear> eben beschwer-
+<lb n="43"/>unnd <unclear cert="low" resp="#joint">bedencklicher</unclear> <unclear cert="low" resp="#joint">paßbewilligungen</unclear> und <unclear cert="low" resp="#joint">frömbd</unclear>-
+<lb n="44"/>en <unclear cert="low" resp="#joint">durchzügen</unclear> unnd <unclear cert="low" resp="#joint">derselbigen</unclear> abschaffung
+<lb n="45"/>wegen, <unclear cert="low" resp="#joint">gedachten</unclear> <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">Eidtgnossen</unclear> von den
+<lb n="46"/><unclear cert="medium" resp="#joint">Orten</unclear> alles <unclear cert="low" resp="#joint">ernsts</unclear> unnd <unclear cert="low" resp="#joint">jnnserer</unclear> obligenden
+<lb n="47"/><unclear cert="low" resp="#joint">nottdurfft</unclear> nach <unclear cert="low" resp="#joint">samentlich</unclear> <unclear cert="low" resp="#joint">zuozeschryben</unclear>. <unclear cert="medium" resp="#joint">Und</unclear>
+<lb n="48"/>wyl nun <unclear cert="medium" resp="#joint">diß</unclear> alles eben <unclear cert="low" resp="#joint">seltzame</unclear>, <unclear cert="low" resp="#joint">jnns</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">and</unclear>-
+<lb n="49"/><unclear cert="low" resp="#joint">eren</unclear> Evangelischen Stenden wol <unclear cert="medium" resp="#joint">bedenckliche</unclear> sachen
+<lb n="50"/>sind, so <unclear cert="low" resp="#joint">werdend</unclear> wir unnd <unclear cert="low" resp="#joint">andere</unclear> uff die ding
+<lb n="51"/>deß <unclear cert="low" resp="#joint">mehrere</unclear> <unclear cert="low" resp="#joint">uffsicht</unclear>, nachfrag <unclear cert="medium" resp="#joint">und</unclear> erkundigung,
+<lb n="52"/>auch <unclear cert="low" resp="#joint">jnns</unclear> <unclear cert="low" resp="#joint">deßte</unclear> <unclear cert="low" resp="#joint">füro</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">huot</unclear> halten, und
+<lb n="53"/>darby nit ermanglen, <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">deß</unclear> so inn <unclear cert="medium" resp="#joint">erfahrung</unclear>
+<lb n="54"/>gebracht werden unnd daran <unclear cert="medium" resp="#joint">üch</unclear> unnd <unclear cert="low" resp="#joint">anderen</unclear>
+<lb n="55"/>gelegen <unclear cert="medium" resp="#joint">syn</unclear> mag, <unclear cert="low" resp="#joint">iederwylen</unclear> <unclear cert="low" resp="#joint">nottwendigen</unclear> <unclear cert="medium" resp="#joint">gebür</unclear>-
+<lb n="56"/>enden avis <unclear cert="medium" resp="#joint">und</unclear> bericht zethuond, unnd <unclear cert="low" resp="#joint">deßteer</unclear>
+<lb n="57"/>zuo üch unnd anderen Evangelischen <unclear cert="low" resp="#joint">fridliebenden</unclear>
+<lb n="58"/>Stenden <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">hinwider</unclear> <unclear cert="low" resp="#joint">vertruwlich</unclear> versechen
+<lb n="59"/>unnd <unclear cert="medium" resp="#joint">getrösten</unclear>. Sonsten <unclear cert="medium" resp="#joint">habend</unclear> wir <unclear cert="medium" resp="#joint">deß</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">Meilendischen</unclear> <placeName ref="stadtasg-places-437" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Savoischen</unclear></placeName> unnd <placeName ref="stadtasg-places-188" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Venetianischen</unclear></placeName>
+<lb n="61"/><unclear cert="medium" resp="#joint">wesens</unclear> <unclear cert="medium" resp="#joint">halber</unclear> noch <unclear cert="medium" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="medium" resp="#joint">nachrichtung</unclear>,
+<lb n="62"/>dann das <placeName ref="stadtasg-places-188" cert="medium" resp="#ner">Venedig</placeName> gegen dem <unclear cert="low" resp="#joint">huß</unclear> <placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Oesterych</unclear></placeName>
+<lb n="63"/>noch inn <unclear cert="low" resp="#joint">stetem</unclear> krieg stande, unnd das es sich
+<lb n="64"/><unclear cert="low" resp="#joint">zwüschend</unclear> <placeName ref="stadtasg-places-311" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Meiland</unclear></placeName> unnd <placeName ref="stadtasg-places-437" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Savoy</unclear></placeName> <unclear cert="medium" resp="#joint">auch</unclear> noch <unclear cert="medium" resp="#joint">zuo</unclear>
+<lb n="65"/><unclear cert="medium" resp="#joint">keinem</unclear> <unclear cert="medium" resp="#joint">bestendigen</unclear> <unclear cert="low" resp="#joint">friden</unclear> <unclear cert="medium" resp="#joint">ansehen</unclear> <unclear cert="low" resp="#joint">laßen</unclear> <unclear cert="medium" resp="#joint">wölle</unclear>.
+<lb n="66"/>Unnd das <unclear cert="medium" resp="#joint">auch</unclear> inn <unclear cert="low" resp="#joint">Savoy</unclear> zwüschent <unclear cert="medium" resp="#joint">demselbigen</unclear>
+<lb n="67"/>Hertzogen, und dem Hertzogen von Nemours sich <unclear cert="medium" resp="#joint">auch</unclear>
+<lb n="68"/><unclear cert="low" resp="#joint">etwas</unclear> <unclear cert="low" resp="#joint">mißthrouwens</unclear> unnd <unclear cert="low" resp="#joint">unruow</unclear> <unclear cert="low" resp="#joint">erzeigen</unclear>
 <pb facs="StadtASG_Missive_2021_7553.jpg" n="3"/>
 <lb n="69"/>schüzge, <placeName resp="#ner">Sarnen</placeName> unnd annden orthen schige und
 <lb n="70"/><unclear cert="low" resp="#joint">füruß</unclear> <unclear cert="low" resp="#joint">imdt</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Inn</unclear></placeName> <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Turgeuw</unclear></placeName> <unclear cert="low" resp="#joint">allerleij</unclear> <unclear cert="low" resp="#joint">volckh</unclear> <unclear cert="low" resp="#joint">geworben</unclear>
@@ -121,11 +121,11 @@
 <lb n="83"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
 <lb n="84"/>der Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2021_7554.jpg" n="4"/>
-<lb n="85"/>Den fromen, fürsichtigen, ersamen,
-<lb n="86"/>wyßen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath
-<lb n="87"/>der Statt St. Gallen</orgName>, unßeren
-<lb n="88"/>jnßunders guoten fründen und
-<lb n="89"/>getrüwen lieben Eydtgnossen.
+<lb n="85"/>Den <unclear cert="low" resp="#joint">fromen</unclear>, fürsichtigen, <unclear cert="medium" resp="#joint">ersamen</unclear>,
+<lb n="86"/><unclear cert="low" resp="#joint">wyßen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear> Rath
+<lb n="87"/>der Statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">unßeren</unclear>
+<lb n="88"/><unclear cert="low" resp="#joint">jnßunders</unclear> guoten fründen und
+<lb n="89"/><unclear cert="medium" resp="#joint">getrüwen</unclear> lieben <unclear cert="low" resp="#joint">Eydtgnossen</unclear>.
 </p>
         </body>
     </text>

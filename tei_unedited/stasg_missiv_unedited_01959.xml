@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1959</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,114 +20,114 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Landammann und Rat zu Appenzell bitten Bürgermeister und Rat zu St. Gallen, ihnen ihre Meinung zu einer neuen badischen Münzordnung und Taxierung schriftlich mitzuteilen. Sie selbst hätten ohne Wissen der benachbarten Oberkeiten nichts unternehmen wollen und wünschten, dass in der Nachbarschaft keine Ungleichheit hinsichtlich der Münze entstehe.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Landammann und Rat zu Appenzell</name><date when="1625" resp="#regest">den letzten Julij. a. 1625.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1959_7281.jpg" n="1"/>
-<lb n="1"/>Unser freündtlich willig dienst, und was wir ehren, liebs,
-<lb n="2"/>und guotß vermoegendt, zuovor, frome, fürsichtige, ehrsame,
-<lb n="3"/>und wyße, insonders guote freündt, und getreüwe liebe
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündtlich</unclear> willig dienst, und was wir ehren, liebs,
+<lb n="2"/>und <unclear cert="low" resp="#joint">guotß</unclear> <unclear cert="low" resp="#joint">vermoegendt</unclear>, <unclear cert="medium" resp="#joint">zuovor</unclear>, <unclear cert="medium" resp="#joint">frome</unclear>, <unclear cert="medium" resp="#joint">fürsichtige</unclear>, <unclear cert="medium" resp="#joint">ehrsame</unclear>,
+<lb n="3"/>und <unclear cert="medium" resp="#joint">wyße</unclear>, insonders <unclear cert="medium" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">freündt</unclear>, und <unclear cert="low" resp="#joint">getreüwe</unclear> liebe
 <lb n="4"/>nachbaren.
-<lb n="5"/>Ihr werdet villichte shon berichtet worden sin, wie das uff
-<lb n="6"/>jüngster Badischer Jahrrechnung, ein müntzordnung und
-<lb n="7"/>taxierung der guldin- und <unclear cert="low" resp="#joint">silbernen</unclear> <unclear cert="low" resp="#joint">müntzsorten</unclear>; (<unclear cert="low" resp="#joint">alß</unclear>
-<lb n="8"/><unclear cert="low" resp="#joint">ihr</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">byliggender</unclear> <unclear cert="low" resp="#joint">abschrift</unclear> ze <unclear cert="low" resp="#joint">sehen</unclear>,) uff <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">Oberkheiten</unclear>
-<lb n="9"/><unclear cert="low" resp="#joint">bekrefftigung</unclear>, <unclear cert="low" resp="#joint">gestelt</unclear>, und darmit befolhen worden, das jeders
-<lb n="10"/>orth, sin volkmenung darüber, üwern und unsern g. l. <unclear cert="low" resp="#joint">a</unclear>.
-<lb n="11"/><orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnossen</unclear> der Statt Zürich</orgName>, <unclear cert="low" resp="#joint">ohnverlengt</unclear>, <unclear cert="low" resp="#joint">überschikhen</unclear> <unclear cert="low" resp="#joint">soelle</unclear>.
-<lb n="12"/>Wann dann wir, ohne der benachbarten Oberkheiten vor=
-<lb n="13"/>wüssen, in soliche sach, etwas ze thuon nit gesinnet; So
+<lb n="5"/>Ihr <unclear cert="medium" resp="#joint">werdet</unclear> <unclear cert="low" resp="#joint">villichte</unclear> <unclear cert="low" resp="#joint">shon</unclear> berichtet worden sin, wie das uff
+<lb n="6"/><unclear cert="low" resp="#joint">jüngster</unclear> Badischer <unclear cert="low" resp="#joint">Jahrrechnung</unclear>, ein <unclear cert="low" resp="#joint">müntzordnung</unclear> und
+<lb n="7"/><unclear cert="medium" resp="#joint">taxierung</unclear> der <unclear cert="low" resp="#joint">guldin</unclear>- und <unclear cert="low" resp="#joint">silbernen</unclear> <unclear cert="low" resp="#joint">müntzsorten</unclear>; (alß
+<lb n="8"/>ihr in byliggender <unclear cert="medium" resp="#joint">abschrift</unclear> ze sehen,) uff der <unclear cert="low" resp="#joint">Oberkheiten</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">bekrefftigung</unclear>, gestelt, und darmit <unclear cert="low" resp="#joint">befolhen</unclear> worden, das <unclear cert="low" resp="#joint">jeders</unclear>
+<lb n="10"/><unclear cert="medium" resp="#joint">orth</unclear>, <unclear cert="medium" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">volkmenung</unclear> darüber, <unclear cert="low" resp="#joint">üwern</unclear> und unsern g. l. a.
+<lb n="11"/><orgName role="recipient" resp="#ner">Eidtgnossen der Statt Zürich</orgName>, ohnverlengt, überschikhen soelle.
+<lb n="12"/>Wann dann <unclear cert="medium" resp="#joint">wir</unclear>, ohne der benachbarten Oberkheiten vor=
+<lb n="13"/><unclear cert="low" resp="#joint">wüssen</unclear>, in <unclear cert="low" resp="#joint">soliche</unclear> <unclear cert="low" resp="#joint">sach</unclear>, etwas ze thuon nit <unclear cert="medium" resp="#joint">gesinnet</unclear>; So
 <lb n="14"/>haben wir üch <unclear cert="low" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">freündt</unclear>. <unclear cert="low" resp="#joint">nachbarlichen</unclear> <unclear cert="low" resp="#joint">biten</unclear> <unclear cert="low" resp="#joint">woellen</unclear>,
-<lb n="15"/><unclear cert="low" resp="#joint">unbeschwärt</unclear> ze <unclear cert="low" resp="#joint">sin</unclear>, <unclear cert="low" resp="#joint">was</unclear> <unclear cert="low" resp="#joint">üwere</unclear> <unclear cert="low" resp="#joint">meinung</unclear> <unclear cert="low" resp="#joint">hierinen</unclear> <unclear cert="low" resp="#joint">syge</unclear>,
-<lb n="16"/><unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">dasselbige</unclear>, <unclear cert="low" resp="#joint">bey</unclear> <unclear cert="low" resp="#joint">ersten</unclear>, <unclear cert="low" resp="#joint">schriftlichen</unclear> <unclear cert="low" resp="#joint">Bricht</unclear> <unclear cert="low" resp="#joint">zuozeschikhen</unclear>,
-<lb n="17"/>damit in umbliggender nachbarschaft, der müntz halber,
-<lb n="18"/>khein unglichheit fürgebracht werde; und wir der Badisch=
-<lb n="19"/>en erkhandtnuß nit <unclear cert="low" resp="#joint">zuowider</unclear> handlen thuoindt. p.
-<lb n="20"/>In erwartung deßen, verbleibendt wir eüch zuo jeder
-<lb n="21"/>freündt. nachbarlicher diensterzeigung wolgeneigt,
-<lb n="22"/>Goettlicher bewahrung unß allersits wolbefelhende.
-<lb n="23"/><origDate when="1625" resp="#ner">den letsten Julij. a. 1625.</origDate>
-<lb n="24"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtaman unndt rath
+<lb n="15"/><unclear cert="low" resp="#joint">unbeschwärt</unclear> ze sin, was <unclear cert="low" resp="#joint">üwere</unclear> meinung <unclear cert="low" resp="#joint">hierinen</unclear> syge,
+<lb n="16"/>unß <unclear cert="low" resp="#joint">dasselbige</unclear>, bey ersten, schriftlichen Bricht zuozeschikhen,
+<lb n="17"/>damit <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">umbliggender</unclear> nachbarschaft, <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">müntz</unclear> halber,
+<lb n="18"/><unclear cert="low" resp="#joint">khein</unclear> <unclear cert="low" resp="#joint">unglichheit</unclear> <unclear cert="low" resp="#joint">fürgebracht</unclear> werde; und wir der Badisch=
+<lb n="19"/>en <unclear cert="low" resp="#joint">erkhandtnuß</unclear> nit zuowider handlen <unclear cert="low" resp="#joint">thuoindt</unclear>. p.
+<lb n="20"/>In <unclear cert="medium" resp="#joint">erwartung</unclear> <unclear cert="low" resp="#joint">deßen</unclear>, verbleibendt <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">eüch</unclear> zuo <unclear cert="low" resp="#joint">jeder</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">freündt</unclear>. nachbarlicher <unclear cert="low" resp="#joint">diensterzeigung</unclear> <unclear cert="low" resp="#joint">wolgeneigt</unclear>,
+<lb n="22"/><unclear cert="low" resp="#joint">Goettlicher</unclear> bewahrung unß <unclear cert="low" resp="#joint">allersits</unclear> <unclear cert="medium" resp="#joint">wolbefelhende</unclear>.
+<lb n="23"/><origDate when="1625" resp="#ner">den letsten <unclear cert="medium" resp="#joint">Julij</unclear>. <unclear cert="medium" resp="#joint">a</unclear>. 1625.</origDate>
+<lb n="24"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Landtaman</unclear> <unclear cert="medium" resp="#joint">unndt</unclear> rath
 <lb n="25"/>zuo Appenzell</orgName>.
 <pb facs="StadtASG_Missive_1959_7282.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1959_7283.jpg" n="3"/>
-<lb n="26"/>Verzeichnuß und Taxierung der Guldin-
-<lb n="27"/>und Silbernen Müntzsorten.
-<lb n="28"/>Ein dopple Sppanische Kronen 68. btz
-<lb n="29"/>Ein halbe dopler; Undt Sonnenkronen 34. btz
-<lb n="30"/>Ein doppelte Italianische, oder Pistoletkronen 66. btz
-<lb n="31"/>Ein Einfache Pistolet 32. btz
-<lb n="32"/>1 Ducat 36 1/2. btz
-<lb n="33"/>1 Venedisch Zecchin 37 1/2. btz
-<lb n="34"/>1 Crützducat 34. btz
-<lb n="35"/>1 Goldguldi 27. btz
-<lb n="36"/>1 doppelter Guldi Real 48. btz
-<lb n="37"/>1 halber guldi Real 24. btz
-<lb n="38"/>Silber Sorten.
-<lb n="39"/>Ein Silber Genueser Kronen 32. btz
-<lb n="40"/>Silberkronen 26. btz
-<lb n="41"/>1 Philips thaler 24. btz
-<lb n="42"/>Dero fünfftheil, daß stuckh für. 16. <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucerner</placeName> schilling,
-<lb n="43"/>bringt. 5. stuckh 24. btz
-<lb n="44"/>Ein Kronen Crützdickh, 4. für 1 kronen
-<lb n="45"/>und drj franckhen auch für 1 kronen p. 30. btz
-<lb n="46"/>Ein kronen alt frantzoesisch dickh 29. btz
-<lb n="47"/>1 Richsthaler 22 1/2 btz
-<lb n="48"/>1 gantz Silber Real 21 1/2. btz
-<lb n="49"/>1 Guldin thaler 20. btz
-<lb n="50"/>1 Eydtgnößischer dickh 6. btz
-<lb n="51"/>Dise gesetzt Guldine und Silberne Sorten, verstehet sich alles,
-<lb n="52"/>wen ein jedes Stuckh, sein recht und ordenliches Gewicht Zehaben.
-<lb n="53"/>Und diewil bißhero und In Jaresfrist allerlej sonderbare Schläg
-<lb n="54"/>an Italianischen Taleren, gantz, halb, und vierthel, Ingeschlichen, dern
-<lb n="55"/>underschiedlich und gering haltige Prob und korn sich befündendt, auch
-<lb n="56"/>In der Prob und Gewicht große Verenderung, alß daß solche böse
-<lb n="57"/>Sorten nit Zu Taxieren, sonders Ingemein Zuverrueffen,
-<lb n="58"/>Weliche auch die wärendt, frembd, oder Heümisch, so diser Sorten,
-<lb n="59"/>In unsrer Stat, Lantschafften, od gebiete, wurden Infüehren unndt
-<lb n="60"/>ußgeben; So solle daß gelt alles, der obrigkeit verfallen, und den
+<lb n="26"/><unclear cert="medium" resp="#joint">Verzeichnuß</unclear> und <unclear cert="medium" resp="#joint">Taxierung</unclear> der <unclear cert="medium" resp="#joint">Guldin</unclear>-
+<lb n="27"/>und Silbernen <unclear cert="low" resp="#joint">Müntzsorten</unclear>.
+<lb n="28"/>Ein <unclear cert="medium" resp="#joint">dopple</unclear> <unclear cert="medium" resp="#joint">Sppanische</unclear> <unclear cert="medium" resp="#joint">Kronen</unclear> 68. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="29"/>Ein <unclear cert="medium" resp="#joint">halbe</unclear> <unclear cert="medium" resp="#joint">dopler</unclear>; <unclear cert="medium" resp="#joint">Undt</unclear> <unclear cert="medium" resp="#joint">Sonnenkronen</unclear> 34. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="30"/>Ein <unclear cert="medium" resp="#joint">doppelte</unclear> <unclear cert="medium" resp="#joint">Italianische</unclear>, oder <unclear cert="medium" resp="#joint">Pistoletkronen</unclear> 66. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="31"/>Ein <unclear cert="medium" resp="#joint">Einfache</unclear> <unclear cert="medium" resp="#joint">Pistolet</unclear> 32. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="32"/><unclear cert="medium" resp="#joint">1</unclear> Ducat 36 <unclear cert="low" resp="#joint">1/2</unclear>. <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">Venedisch</unclear> <unclear cert="low" resp="#joint">Zecchin</unclear> 37 <unclear cert="medium" resp="#joint">1/2</unclear>. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">1</unclear> <unclear cert="medium" resp="#joint">Crützducat</unclear> 34. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="35"/><unclear cert="medium" resp="#joint">1</unclear> <unclear cert="medium" resp="#joint">Goldguldi</unclear> 27. <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">1</unclear> doppelter <unclear cert="low" resp="#joint">Guldi</unclear> <unclear cert="low" resp="#joint">Real</unclear> 48. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="37"/><unclear cert="medium" resp="#joint">1</unclear> halber <unclear cert="low" resp="#joint">guldi</unclear> <unclear cert="low" resp="#joint">Real</unclear> 24. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="38"/>Silber <unclear cert="low" resp="#joint">Sorten</unclear>.
+<lb n="39"/>Ein Silber <unclear cert="medium" resp="#joint">Genueser</unclear> <unclear cert="medium" resp="#joint">Kronen</unclear> 32. <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">Silberkronen</unclear> 26. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">1</unclear> <unclear cert="medium" resp="#joint">Philips</unclear> <unclear cert="medium" resp="#joint">thaler</unclear> 24. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="42"/><unclear cert="medium" resp="#joint">Dero</unclear> fünfftheil, <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">stuckh</unclear> für. 16. <placeName ref="stadtasg-places-69" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Lucerner</unclear></placeName> schilling,
+<lb n="43"/>bringt. 5. <unclear cert="medium" resp="#joint">stuckh</unclear> 24. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="44"/>Ein <unclear cert="medium" resp="#joint">Kronen</unclear> <unclear cert="medium" resp="#joint">Crützdickh</unclear>, 4. für 1 <unclear cert="low" resp="#joint">kronen</unclear>
+<lb n="45"/>und <unclear cert="medium" resp="#joint">drj</unclear> <unclear cert="medium" resp="#joint">franckhen</unclear> <unclear cert="medium" resp="#joint">auch</unclear> für 1 <unclear cert="low" resp="#joint">kronen</unclear> <unclear cert="low" resp="#joint">p</unclear>. <unclear cert="low" resp="#joint">30</unclear>. <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="46"/>Ein <unclear cert="low" resp="#joint">kronen</unclear> <unclear cert="low" resp="#joint">alt</unclear> <unclear cert="low" resp="#joint">frantzoesisch</unclear> <unclear cert="low" resp="#joint">dickh</unclear> 29. <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">Richsthaler</unclear> 22 <unclear cert="low" resp="#joint">1/2</unclear> <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">gantz</unclear> Silber <unclear cert="medium" resp="#joint">Real</unclear> 21 <unclear cert="low" resp="#joint">1/2</unclear>. <unclear cert="low" resp="#joint">btz</unclear>
+<lb n="49"/><unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">Guldin</unclear> <unclear cert="low" resp="#joint">thaler</unclear> 20. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">1</unclear> <unclear cert="medium" resp="#joint">Eydtgnößischer</unclear> <unclear cert="medium" resp="#joint">dickh</unclear> 6. <unclear cert="medium" resp="#joint">btz</unclear>
+<lb n="51"/><unclear cert="medium" resp="#joint">Dise</unclear> <unclear cert="medium" resp="#joint">gesetzt</unclear> <unclear cert="medium" resp="#joint">Guldine</unclear> und <unclear cert="medium" resp="#joint">Silberne</unclear> <unclear cert="medium" resp="#joint">Sorten</unclear>, <unclear cert="medium" resp="#joint">verstehet</unclear> sich alles,
+<lb n="52"/><unclear cert="medium" resp="#joint">wen</unclear> ein <unclear cert="medium" resp="#joint">jedes</unclear> <unclear cert="medium" resp="#joint">Stuckh</unclear>, sein recht und <unclear cert="low" resp="#joint">ordenliches</unclear> <unclear cert="low" resp="#joint">Gewicht</unclear> Zehaben.
+<lb n="53"/>Und <unclear cert="medium" resp="#joint">diewil</unclear> <unclear cert="medium" resp="#joint">bißhero</unclear> und In <unclear cert="medium" resp="#joint">Jaresfrist</unclear> <unclear cert="medium" resp="#joint">allerlej</unclear> <unclear cert="medium" resp="#joint">sonderbare</unclear> Schläg
+<lb n="54"/>an <unclear cert="medium" resp="#joint">Italianischen</unclear> <unclear cert="medium" resp="#joint">Taleren</unclear>, <unclear cert="medium" resp="#joint">gantz</unclear>, halb, und <unclear cert="low" resp="#joint">vierthel</unclear>, <unclear cert="low" resp="#joint">Ingeschlichen</unclear>, <unclear cert="low" resp="#joint">dern</unclear>
+<lb n="55"/><unclear cert="low" resp="#joint">underschiedlich</unclear> und gering <unclear cert="medium" resp="#joint">haltige</unclear> Prob und <unclear cert="medium" resp="#joint">korn</unclear> sich <unclear cert="medium" resp="#joint">befündendt</unclear>, <unclear cert="medium" resp="#joint">auch</unclear>
+<lb n="56"/>In der Prob und <unclear cert="medium" resp="#joint">Gewicht</unclear> große <unclear cert="medium" resp="#joint">Verenderung</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">solche</unclear> böse
+<lb n="57"/>Sorten nit Zu <unclear cert="low" resp="#joint">Taxieren</unclear>, <unclear cert="low" resp="#joint">sonders</unclear> <unclear cert="low" resp="#joint">Ingemein</unclear> <unclear cert="low" resp="#joint">Zuverrueffen</unclear>,
+<lb n="58"/><unclear cert="low" resp="#joint">Weliche</unclear> auch die <unclear cert="medium" resp="#joint">wärendt</unclear>, frembd, oder <unclear cert="medium" resp="#joint">Heümisch</unclear>, <unclear cert="medium" resp="#joint">so</unclear> diser <unclear cert="medium" resp="#joint">Sorten</unclear>,
+<lb n="59"/>In <unclear cert="low" resp="#joint">unsrer</unclear> <unclear cert="low" resp="#joint">Stat</unclear>, <unclear cert="low" resp="#joint">Lantschafften</unclear>, <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">gebiete</unclear>, <unclear cert="low" resp="#joint">wurden</unclear> <unclear cert="low" resp="#joint">Infüehren</unclear> <unclear cert="low" resp="#joint">unndt</unclear>
+<lb n="60"/><unclear cert="low" resp="#joint">ußgeben</unclear>; So solle <unclear cert="medium" resp="#joint">daß</unclear> <unclear cert="medium" resp="#joint">gelt</unclear> alles, der obrigkeit verfallen, und <unclear cert="medium" resp="#joint">den</unclear>
 <pb facs="StadtASG_Missive_1959_7284.jpg" n="4"/>
-<lb n="61"/>anzeiger, od angeber dessen dermaerckhs der virde theijl des guets zu-
-<lb n="62"/>gstellt werden; im fahl aber solche sorten, in gedacht unser herschafften
-<lb n="63"/>khoemend, moegen solche in den muentzen, nach der marckh, und der prob,
+<lb n="61"/><unclear cert="low" resp="#joint">anzeiger</unclear>, od <unclear cert="low" resp="#joint">angeber</unclear> dessen <unclear cert="low" resp="#joint">dermaerckhs</unclear> der <unclear cert="low" resp="#joint">virde</unclear> <unclear cert="low" resp="#joint">theijl</unclear> des <unclear cert="low" resp="#joint">guets</unclear> zu-
+<lb n="62"/>gstellt werden; im <unclear cert="low" resp="#joint">fahl</unclear> aber solche sorten, in gedacht unser herschafften
+<lb n="63"/>khoemend, moegen solche in den muentzen, nach der marckh, und der <unclear cert="low" resp="#joint">prob</unclear>,
 <lb n="64"/>auch dem werth nach, uffkhaufft werden.
-<lb n="65"/>Was das licht goldt und silber betrifft, deren sorten, alß insonderheit
-<lb n="66"/>silber, mer theiil ingeschlagen, sollen solche glichfahls, nit fuer werschafft,
-<lb n="67"/>alß die gewichtigen, ußgeben werden; sonder nach dem ingesetzten gewicht,
-<lb n="68"/>dero saes und korn; wie insonderheit der silbern sorten, nach dem
+<lb n="65"/>Was das <unclear cert="low" resp="#joint">licht</unclear> goldt und silber betrifft, deren sorten, alß insonderheit
+<lb n="66"/>silber, <unclear cert="low" resp="#joint">mer</unclear> <unclear cert="low" resp="#joint">theiil</unclear> <unclear cert="low" resp="#joint">ingeschlagen</unclear>, sollen solche <unclear cert="low" resp="#joint">glichfahls</unclear>, nit fuer <unclear cert="low" resp="#joint">werschafft</unclear>,
+<lb n="67"/>alß die gewichtigen, ußgeben werden; <unclear cert="low" resp="#joint">sonder</unclear> nach dem ingesetzten gewicht,
+<lb n="68"/><unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">saes</unclear> und <unclear cert="low" resp="#joint">korn</unclear>; wie insonderheit der <unclear cert="low" resp="#joint">silbern</unclear> sorten, nach dem
 <lb n="69"/>gewicht, alß fuer ein <unclear cert="low" resp="#joint">korn</unclear> .<unclear cert="low" resp="#joint">j</unclear>. <unclear cert="low" resp="#joint">guoth</unclear> <unclear cert="low" resp="#joint">ß</unclear> <unclear cert="low" resp="#joint">od</unclear> <unclear cert="low" resp="#joint">1</unclear> <unclear cert="low" resp="#joint">1/2</unclear> <unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">creutzer</unclear> <unclear cert="low" resp="#joint">derfue</unclear> abgezogen
-<lb n="70"/>werden; und nit ußgeben, sonder zu <unclear cert="low" resp="#joint">jeder</unclear> <unclear cert="low" resp="#joint">oberkheit</unclear> <unclear cert="low" resp="#joint">verordnungen</unclear>
-<lb n="71"/>handen zuuerschaffen verschafft werden; im fahl auch ein, oder die
-<lb n="72"/>ander person; frembdt, oder heimbß, diß uebersechen, und ferner-
-<lb n="73"/>lichte wyß ußgeben wurde; soll glichfals das gelt, der oberkheit,
-<lb n="74"/>an welchem orth solches beschicht, heimbegefallen, auch nach verbrechen
-<lb n="75"/>gestrafft; dem angeber der <unclear cert="low" resp="#joint">vierthetheil</unclear> <unclear cert="low" resp="#joint">zugestelt</unclear>, und nit offenbar
+<lb n="70"/>werden; und nit <unclear cert="low" resp="#joint">ußgeben</unclear>, sonder zu jeder <unclear cert="medium" resp="#joint">oberkheit</unclear> <unclear cert="medium" resp="#joint">verordnungen</unclear>
+<lb n="71"/>handen zuuerschaffen verschafft werden; im <unclear cert="low" resp="#joint">fahl</unclear> auch ein, oder die
+<lb n="72"/><unclear cert="low" resp="#joint">ander</unclear> <unclear cert="low" resp="#joint">person</unclear>; frembdt, oder <unclear cert="low" resp="#joint">heimbß</unclear>, diß <unclear cert="low" resp="#joint">uebersechen</unclear>, und <unclear cert="low" resp="#joint">ferner</unclear>-
+<lb n="73"/><unclear cert="low" resp="#joint">lichte</unclear> wyß ußgeben <unclear cert="low" resp="#joint">wurde</unclear>; soll <unclear cert="low" resp="#joint">glichfals</unclear> das gelt, der <unclear cert="low" resp="#joint">oberkheit</unclear>,
+<lb n="74"/>an welchem <unclear cert="low" resp="#joint">orth</unclear> solches <unclear cert="low" resp="#joint">beschicht</unclear>, <unclear cert="low" resp="#joint">heimbegefallen</unclear>, auch nach <unclear cert="low" resp="#joint">verbrechen</unclear>
+<lb n="75"/>gestrafft; dem <unclear cert="low" resp="#joint">angeber</unclear> der <unclear cert="low" resp="#joint">vierthetheil</unclear> <unclear cert="low" resp="#joint">zugestelt</unclear>, und nit offenbar
 <lb n="76"/>gemacht werden.
-<lb n="77"/>Sol auch dise satz: und ordnung ihren anfang haben, nach publicie-
-<lb n="78"/>rung, eines monats, darnach, auch offentlich uff <unclear cert="low" resp="#joint">nechstkhonfftigen</unclear>
-<lb n="79"/><placeName ref="stadtasg-places-101" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zurzacher</unclear> <unclear cert="low" resp="#joint">St</unclear> <unclear cert="low" resp="#joint">Verenae</unclear> <unclear cert="low" resp="#joint">marckht</unclear></placeName>, und <unclear cert="low" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">jarmaerckhten</unclear>,
-<lb n="80"/>durch die regierende landtvoegt, und beambten ußgeruefft.
-<lb n="81"/>Welcher auch der <unclear cert="low" resp="#joint">waere</unclear>, <unclear cert="low" resp="#joint">frembdt</unclear>, oder <unclear cert="low" resp="#joint">heimbß</unclear>, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">vorgemelte</unclear> <unclear cert="low" resp="#joint">sorten</unclear>
-<lb n="82"/><unclear cert="low" resp="#joint">goldt</unclear>, <unclear cert="low" resp="#joint">silbergelt</unclear>, <unclear cert="low" resp="#joint">anderst</unclear>, <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">taxt</unclear> <unclear cert="low" resp="#joint">gesetzt</unclear>, <unclear cert="low" resp="#joint">inneme</unclear>, <unclear cert="low" resp="#joint">noch</unclear>
-<lb n="83"/><unclear cert="low" resp="#joint">ußgebe</unclear>, <unclear cert="low" resp="#joint">der</unclear>, <unclear cert="low" resp="#joint">od</unclear> dieselben sollen glichfahls in vorgemelte obrigkhlich
-<lb n="84"/>gesetzte straffen verfallen, erhalten, wie in beeden gemelten
-<lb n="85"/>artickels. s.
+<lb n="77"/>Sol auch <unclear cert="low" resp="#joint">dise</unclear> <unclear cert="low" resp="#joint">satz</unclear>: und ordnung <unclear cert="low" resp="#joint">ihren</unclear> anfang haben, nach <unclear cert="low" resp="#joint">publicie</unclear>-
+<lb n="78"/>rung, eines <unclear cert="low" resp="#joint">monats</unclear>, darnach, auch offentlich uff <unclear cert="low" resp="#joint">nechstkhonfftigen</unclear>
+<lb n="79"/><placeName ref="stadtasg-places-101" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zurzacher</unclear> <unclear cert="low" resp="#joint">St</unclear> <unclear cert="low" resp="#joint">Verenae</unclear> marckht</placeName>, und <unclear cert="medium" resp="#joint">andern</unclear> <unclear cert="medium" resp="#joint">jarmaerckhten</unclear>,
+<lb n="80"/>durch die regierende <unclear cert="low" resp="#joint">landtvoegt</unclear>, und beambten <unclear cert="low" resp="#joint">ußgeruefft</unclear>.
+<lb n="81"/>Welcher auch der <unclear cert="medium" resp="#joint">waere</unclear>, <unclear cert="medium" resp="#joint">frembdt</unclear>, oder <unclear cert="medium" resp="#joint">heimbß</unclear>, so <unclear cert="medium" resp="#joint">vorgemelte</unclear> sorten
+<lb n="82"/>goldt, <unclear cert="low" resp="#joint">silbergelt</unclear>, <unclear cert="low" resp="#joint">anderst</unclear>, alß wie der <unclear cert="low" resp="#joint">taxt</unclear> <unclear cert="low" resp="#joint">gesetzt</unclear>, <unclear cert="low" resp="#joint">inneme</unclear>, <unclear cert="low" resp="#joint">noch</unclear>
+<lb n="83"/><unclear cert="low" resp="#joint">ußgebe</unclear>, <unclear cert="low" resp="#joint">der</unclear>, <unclear cert="low" resp="#joint">od</unclear> dieselben <unclear cert="low" resp="#joint">sollen</unclear> <unclear cert="low" resp="#joint">glichfahls</unclear> in vorgemelte <unclear cert="low" resp="#joint">obrigkhlich</unclear>
+<lb n="84"/><unclear cert="low" resp="#joint">gesetzte</unclear> <unclear cert="low" resp="#joint">straffen</unclear> verfallen, erhalten, wie in <unclear cert="low" resp="#joint">beeden</unclear> gemelten
+<lb n="85"/><unclear cert="low" resp="#joint">artickels</unclear>. <unclear cert="low" resp="#joint">s</unclear>.
 <pb facs="StadtASG_Missive_1959_7285.jpg" n="5"/>
 <pb facs="StadtASG_Missive_1959_7286.jpg" n="6"/>
-<lb n="86"/>Denen frommen, fürsichtigen, <unclear cert="low" resp="#joint">ehrsamen</unclear> unnd
-<lb n="87"/>wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Raht der Statt
-<lb n="88"/>Sanct Gallen</orgName>. Unseren besonders guotten
-<lb n="89"/>fründen, und getrüwen lieben Nachbaren.
+<lb n="86"/><unclear cert="medium" resp="#joint">Denen</unclear> frommen, fürsichtigen, ehrsamen unnd
+<lb n="87"/>wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> unnd Raht der Statt
+<lb n="88"/>Sanct Gallen</orgName>. Unseren <unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">guotten</unclear>
+<lb n="89"/>fründen, und <unclear cert="medium" resp="#joint">getrüwen</unclear> lieben <unclear cert="medium" resp="#joint">Nachbaren</unclear>.
 </p>
         </body>
     </text>

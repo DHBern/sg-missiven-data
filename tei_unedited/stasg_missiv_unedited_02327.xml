@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2327</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,48 +20,48 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Schultheiss und Rat zu Tuttlingen, ihrem Bürger Georg Stauder den peremptorischen Rechtstag am 12. März zu notifizieren und ihn anzuhalten, persönlich oder durch einen Bevollmächtigten zu erscheinen. Stauder habe zwei früheren Terminen wegen eines Arrests nicht Folge geleistet. Bei erneutem Ausbleiben werde auf das Erscheinen des Gegners Hans Meger von Arbon hin abgeurteilt werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1622-02-24" resp="#regest">Datum den 24. February Ao 1622.</date></correspAction><correspAction type="received"><name resp="#regest">Schultheiss und Rat zu Tuttlingen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2327_8883.jpg" n="1"/>
-<lb n="1"/>St. G. R
-<lb n="2"/>Unser freundtlich willig dienst zuuor,
-<lb n="3"/>fürsichtigen ersamen und weisen,
-<lb n="4"/>insonders liebe und guette freundt.
-<lb n="5"/>Wiewolen wir dem angezaigten
-<lb n="6"/>euwerm buerger <persName resp="#ner">Staenglin</persName>, wegen
-<lb n="7"/>ains arrests, so <persName resp="#ner">Hanns Meger</persName>
-<lb n="8"/>von <placeName ref="stadtasg-places-5" cert="medium" resp="#ner">Arbon</placeName> uff ein schuldt, so er
-<lb n="9"/><persName resp="#ner">Staengli</persName> bij unserm burger <persName resp="#ner">Joachim
-<lb n="10"/>Reinerer</persName>, erlangt, zum
-<lb n="11"/>andern mahl ein rechtstag
-<lb n="12"/>angesezt, und ordenlich darzue
-<lb n="13"/>verkünden, so ist doch
-<lb n="14"/>er <persName resp="#ner">Staengli</persName> baide mahl ungehors-
-<lb n="15"/>ußbliben.
-<lb n="16"/>Wann aber gedachter <persName resp="#ner">Hannß Meger</persName>
-<lb n="17"/>ermelt sein sach zue faren begert,
-<lb n="18"/>und abermahl umb ein rechtstag
-<lb n="19"/>vor dem freijen raucht veblich
-<lb n="20"/>zelaisten gar ein stendig angehalten,
-<lb n="21"/>allß haben wir hieruff in disen
-<lb n="22"/>arrest sach den letsten endtlich
-<lb n="23"/>rechtstag peremptorie bestimpt er ernembt,
-<lb n="24"/>namlich <date resp="#ner">zinstag den zwoelfften
-<lb n="25"/>nachstkunfftig monatstag martij</date>,
-<lb n="26"/>alten Calenders morgens umb
-<lb n="27"/>8 uhren vormit allhie auf unserm
-<lb n="28"/>rhathuß zueerscheinen,
+<lb n="1"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">G</unclear>. <unclear cert="low" resp="#joint">R</unclear>
+<lb n="2"/>Unser <unclear cert="medium" resp="#joint">freundtlich</unclear> willig dienst <unclear cert="medium" resp="#joint">zuuor</unclear>,
+<lb n="3"/>fürsichtigen ersamen und <unclear cert="medium" resp="#joint">weisen</unclear>,
+<lb n="4"/>insonders <unclear cert="medium" resp="#joint">liebe</unclear> und <unclear cert="medium" resp="#joint">guette</unclear> <unclear cert="medium" resp="#joint">freundt</unclear>.
+<lb n="5"/><unclear cert="medium" resp="#joint">Wiewolen</unclear> wir <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">angezaigten</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">euwerm</unclear> <unclear cert="medium" resp="#joint">buerger</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Staenglin</unclear></persName>, wegen
+<lb n="7"/><unclear cert="medium" resp="#joint">ains</unclear> <unclear cert="medium" resp="#joint">arrests</unclear>, so <persName resp="#ner"><unclear cert="low" resp="#joint">Hanns</unclear> <unclear cert="low" resp="#joint">Meger</unclear></persName>
+<lb n="8"/>von <placeName ref="stadtasg-places-5" cert="medium" resp="#ner">Arbon</placeName> uff <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">schuldt</unclear>, so er
+<lb n="9"/><persName resp="#ner"><unclear cert="low" resp="#joint">Staengli</unclear></persName> <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">burger</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Joachim</unclear>
+<lb n="10"/><unclear cert="low" resp="#joint">Reinerer</unclear></persName>, erlangt, <unclear cert="medium" resp="#joint">zum</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">andern</unclear> <unclear cert="medium" resp="#joint">mahl</unclear> ein <unclear cert="medium" resp="#joint">rechtstag</unclear>
+<lb n="12"/><unclear cert="medium" resp="#joint">angesezt</unclear>, und ordenlich <unclear cert="low" resp="#joint">darzue</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">verkünden</unclear>, so ist <unclear cert="medium" resp="#joint">doch</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">er</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Staengli</unclear></persName> <unclear cert="medium" resp="#joint">baide</unclear> <unclear cert="medium" resp="#joint">mahl</unclear> <unclear cert="medium" resp="#joint">ungehors</unclear>-
+<lb n="15"/><unclear cert="medium" resp="#joint">ußbliben</unclear>.
+<lb n="16"/><unclear cert="medium" resp="#joint">Wann</unclear> aber gedachter <persName resp="#ner"><unclear cert="medium" resp="#joint">Hannß</unclear> <unclear cert="medium" resp="#joint">Meger</unclear></persName>
+<lb n="17"/><unclear cert="medium" resp="#joint">ermelt</unclear> <unclear cert="medium" resp="#joint">sein</unclear> <unclear cert="medium" resp="#joint">sach</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">faren</unclear> begert,
+<lb n="18"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">abermahl</unclear> umb <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">rechtstag</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">dem</unclear> <unclear cert="medium" resp="#joint">freijen</unclear> <unclear cert="medium" resp="#joint">raucht</unclear> <unclear cert="medium" resp="#joint">veblich</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">zelaisten</unclear> gar ein <unclear cert="medium" resp="#joint">stendig</unclear> <unclear cert="medium" resp="#joint">angehalten</unclear>,
+<lb n="21"/><unclear cert="medium" resp="#joint">allß</unclear> haben wir <unclear cert="medium" resp="#joint">hieruff</unclear> in <unclear cert="medium" resp="#joint">disen</unclear>
+<lb n="22"/>arrest <unclear cert="low" resp="#joint">sach</unclear> den <unclear cert="low" resp="#joint">letsten</unclear> <unclear cert="low" resp="#joint">endtlich</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">rechtstag</unclear> <unclear cert="low" resp="#joint">peremptorie</unclear> <unclear cert="low" resp="#joint">bestimpt</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">ernembt</unclear>,
+<lb n="24"/><unclear cert="low" resp="#joint">namlich</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">zinstag</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">zwoelfften</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">nachstkunfftig</unclear> monatstag <unclear cert="medium" resp="#joint">martij</unclear></date>,
+<lb n="26"/><unclear cert="medium" resp="#joint">alten</unclear> <unclear cert="medium" resp="#joint">Calenders</unclear> <unclear cert="medium" resp="#joint">morgens</unclear> umb
+<lb n="27"/><unclear cert="medium" resp="#joint">8</unclear> <unclear cert="medium" resp="#joint">uhren</unclear> <unclear cert="medium" resp="#joint">vormit</unclear> allhie auf <unclear cert="medium" resp="#joint">unserm</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">rhathuß</unclear> <unclear cert="medium" resp="#joint">zueerscheinen</unclear>,
 <pb facs="StadtASG_Missive_2327_8884.jpg" n="2"/>
 <lb n="29"/>Gelangt hieruf an E. F.
 <lb n="30"/>E. Wht unser fründtlichs
@@ -99,22 +99,22 @@
 <lb n="62"/>waß rcht ist.
 <lb n="63"/>darnach zrichten.
 <pb facs="StadtASG_Missive_2327_8885.jpg" n="3"/>
-<lb n="64"/>dast begerendt umb sy Frd.w.
-<lb n="65"/>wir in dgleichen, und andern
+<lb n="64"/><unclear cert="low" resp="#joint">dast</unclear> begerendt <unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">sy</unclear> <unclear cert="medium" resp="#joint">Frd.w</unclear>.
+<lb n="65"/><unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">in</unclear> <unclear cert="medium" resp="#joint">dgleichen</unclear>, und andern
 <lb n="66"/>mit so guetem, willen zuo
-<lb n="67"/>vergleichen, alß wir ihren
-<lb n="68"/>ohn daß mit Beharlichen
-<lb n="69"/>gueten willen Jedeßir wahl
-<lb n="70"/>bygeth verbleiben. Datum
+<lb n="67"/>vergleichen, alß wir <unclear cert="low" resp="#joint">ihren</unclear>
+<lb n="68"/>ohn daß mit <unclear cert="low" resp="#joint">Beharlichen</unclear>
+<lb n="69"/><unclear cert="low" resp="#joint">gueten</unclear> willen <unclear cert="low" resp="#joint">Jedeßir</unclear> wahl
+<lb n="70"/><unclear cert="low" resp="#joint">bygeth</unclear> verbleiben. Datum
 <lb n="71"/><origDate when="1622-02-24" resp="#ner">den 24. February Ao 1622.</origDate>
-<lb n="72"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister u.Rhat
+<lb n="72"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister <unclear cert="low" resp="#joint">u.Rhat</unclear>
 <lb n="73"/>der Statt St. Gallen</orgName>
-<lb n="74"/>Den Fuersichtigen Ersamen und weisen
-<lb n="75"/><orgName role="recipient" resp="#ner">Schultheisen u. Rhat der
+<lb n="74"/>Den <unclear cert="low" resp="#joint">Fuersichtigen</unclear> Ersamen und weisen
+<lb n="75"/><orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Schultheisen</unclear> <unclear cert="medium" resp="#joint">u</unclear>. Rhat der
 <lb n="76"/>Statt Tutlingen</orgName>, unsern
-<lb n="77"/>besunders lieben und guetten
-<lb n="78"/>Freuendten.
-<lb n="79"/><origPlace resp="#ner">Tutlingen</origPlace> am <placeName resp="#ner">Neckher</placeName>.
+<lb n="77"/><unclear cert="low" resp="#joint">besunders</unclear> lieben und <unclear cert="low" resp="#joint">guetten</unclear>
+<lb n="78"/><unclear cert="low" resp="#joint">Freuendten</unclear>.
+<lb n="79"/><origPlace resp="#ner"><unclear cert="low" resp="#joint">Tutlingen</unclear></origPlace> am <placeName resp="#ner"><unclear cert="medium" resp="#joint">Neckher</unclear></placeName>.
 <pb facs="StadtASG_Missive_2327_8886.jpg" n="4"/>
 <lb n="80"/>[]
 </p>

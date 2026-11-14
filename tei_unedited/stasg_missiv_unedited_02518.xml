@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2518</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Leopold, Erzherzog zu Österreich, bestätigt die Einhaltung der Erbvereinigung und bittet die 13 Orte, unbekannte Kriegsvolk, das durch ihr Gebiet gezogen und sich auf dem Steig festgesetzt habe, abzufordern oder deren Befehlshaber zu verweisen. Er warnt vor einer Gefährdung des Friedens und bittet um eine eilige Antwort.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Leopold, Erzherzog zu Österreich</name><placeName resp="#regest">Breisach</placeName><date when="1624-09-05" resp="#regest">Geben zu Breisach den 5ten 9b. Anno 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister, Schultheiß, Landammann und Räte der 13 Orte</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,86 +35,86 @@
 <p>
 <pb facs="StadtASG_Missive_2518_9709.jpg" n="1"/>
 <lb n="1"/><persName role="issuer" resp="#ner">Leopold</persName>. Ertzhertzog zuo <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Österreich</placeName> etc.
-<lb n="2"/>Ersame, weise, besunnders liebe. Wir haben uß
-<lb n="3"/>euweren, beÿ jüngstlicher versamblung zuo <placeName ref="stadtasg-places-148" cert="medium" resp="#ner">Baden</placeName>,
-<lb n="4"/>gewesten rats: unnd sanndtpotten, den <date resp="#ner">24.ten
-<lb n="5"/>octobris</date>, abgangenem wideranntwortlichen schreiben,
-<lb n="6"/>euwer treüwes piten, die vertröste befünderung
-<lb n="7"/>zur abfuorung, inn der <placeName resp="#ner">Marggrafßchafft</placeName> ligenden
-<lb n="8"/>kriegsvolcks, inns werckh ze setzen, sambt eüw=
-<lb n="9"/>erem erpieten, die Erbeinigung treülich ze halt=
-<lb n="10"/>en, unnd zuo continuieren vernommen, soellen dargeg=
-<lb n="11"/>en eüch versicheren, daß wir an vollziechung
-<lb n="12"/>dessen, so wir eüch sowoll schriftlich, als durch
-<lb n="13"/>abgeordnete sincerieren lassen, nichts ermang=
-<lb n="14"/>let, sonndern alle muglichkeit, dienstlicher orten
+<lb n="2"/><unclear cert="low" resp="#joint">Ersame</unclear>, <unclear cert="low" resp="#joint">weise</unclear>, <unclear cert="low" resp="#joint">besunnders</unclear> liebe. Wir haben uß
+<lb n="3"/><unclear cert="medium" resp="#joint">euweren</unclear>, <unclear cert="medium" resp="#joint">beÿ</unclear> <unclear cert="medium" resp="#joint">jüngstlicher</unclear> <unclear cert="medium" resp="#joint">versamblung</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-148" cert="medium" resp="#ner">Baden</placeName>,
+<lb n="4"/><unclear cert="medium" resp="#joint">gewesten</unclear> <unclear cert="medium" resp="#joint">rats</unclear>: unnd <unclear cert="low" resp="#joint">sanndtpotten</unclear>, den <date resp="#ner">24.ten
+<lb n="5"/>octobris</date>, <unclear cert="medium" resp="#joint">abgangenem</unclear> <unclear cert="medium" resp="#joint">wideranntwortlichen</unclear> schreiben,
+<lb n="6"/>euwer <unclear cert="medium" resp="#joint">treüwes</unclear> piten, die <unclear cert="low" resp="#joint">vertröste</unclear> befünderung
+<lb n="7"/>zur <unclear cert="low" resp="#joint">abfuorung</unclear>, inn der <placeName resp="#ner"><unclear cert="low" resp="#joint">Marggrafßchafft</unclear></placeName> <unclear cert="low" resp="#joint">ligenden</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">kriegsvolcks</unclear>, <unclear cert="low" resp="#joint">inns</unclear> <unclear cert="low" resp="#joint">werckh</unclear> <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">setzen</unclear>, <unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">eüw=</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">erem</unclear> <unclear cert="low" resp="#joint">erpieten</unclear>, die <unclear cert="low" resp="#joint">Erbeinigung</unclear> <unclear cert="low" resp="#joint">treülich</unclear> <unclear cert="low" resp="#joint">ze</unclear> <unclear cert="low" resp="#joint">halt=</unclear>
+<lb n="10"/>en, unnd zuo <unclear cert="low" resp="#joint">continuieren</unclear> <unclear cert="low" resp="#joint">vernommen</unclear>, <unclear cert="low" resp="#joint">soellen</unclear> <unclear cert="low" resp="#joint">dargeg=</unclear>
+<lb n="11"/>en <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">versicheren</unclear>, <unclear cert="low" resp="#joint">daß</unclear> wir an <unclear cert="medium" resp="#joint">vollziechung</unclear>
+<lb n="12"/>dessen, so wir eüch sowoll schriftlich, als <unclear cert="low" resp="#joint">durch</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">abgeordnete</unclear> sincerieren lassen, nichts ermang=
+<lb n="14"/>let, sonndern alle <unclear cert="low" resp="#joint">muglichkeit</unclear>, dienstlicher <unclear cert="low" resp="#joint">orten</unclear>
 <lb n="15"/>für unnd angewendet. Darüber wir dann
-<lb n="16"/>nochmalen ungezweifelter hoffnung, der würck=
-<lb n="17"/>liche erfolg, disere unnsere bemuochung und
-<lb n="18"/>gelegenheit, inn kurtzem bescheinen werde.
-<lb n="19"/>Wie wir nun unns jederzeithe, der Erbeinung
-<lb n="20"/>steiffen observantz beflissen, ouch mit fuog kein
+<lb n="16"/><unclear cert="low" resp="#joint">nochmalen</unclear> <unclear cert="low" resp="#joint">ungezweifelter</unclear> <unclear cert="low" resp="#joint">hoffnung</unclear>, der würck=
+<lb n="17"/>liche <unclear cert="low" resp="#joint">erfolg</unclear>, <unclear cert="low" resp="#joint">disere</unclear> unnsere <unclear cert="low" resp="#joint">bemuochung</unclear> und
+<lb n="18"/>gelegenheit, inn kurtzem <unclear cert="low" resp="#joint">bescheinen</unclear> werde.
+<lb n="19"/>Wie wir nun unns <unclear cert="low" resp="#joint">jederzeithe</unclear>, der <unclear cert="low" resp="#joint">Erbeinung</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">steiffen</unclear> <unclear cert="low" resp="#joint">observantz</unclear> <unclear cert="low" resp="#joint">beflissen</unclear>, ouch mit fuog kein
 <lb n="21"/>widriges beÿzemessen, also sein wir fürohin
-<lb n="22"/>nit weniger zuo ohnfellbarlicher obacht beharr=
-<lb n="23"/>lich geneigt. Soellen dabeÿ aber eüch nicht
-<lb n="24"/>verhalten, wir erst diser tagen, durch gloüb=
-<lb n="25"/>würdige avisen berichtet, wie unbekandtes kriegs=
-<lb n="26"/>volckh, durch theils eüwer gebiets: unnd obrig=
+<lb n="22"/>nit weniger zuo <unclear cert="low" resp="#joint">ohnfellbarlicher</unclear> obacht beharr=
+<lb n="23"/>lich geneigt. Soellen dabeÿ aber <unclear cert="low" resp="#joint">eüch</unclear> nicht
+<lb n="24"/>verhalten, wir erst <unclear cert="low" resp="#joint">diser</unclear> tagen, durch <unclear cert="low" resp="#joint">gloüb=</unclear>
+<lb n="25"/>würdige <unclear cert="low" resp="#joint">avisen</unclear> berichtet, wie <unclear cert="low" resp="#joint">unbekandtes</unclear> kriegs=
+<lb n="26"/>volckh, durch theils eüwer gebiets: unnd <unclear cert="low" resp="#joint">obrig=</unclear>
 <pb facs="StadtASG_Missive_2518_9710.jpg" n="2"/>
-<lb n="27"/>leüten passirt, unnd durchgezogen, uff den Steig
-<lb n="28"/>bemächtiget heben, unnd witter Jnen fuoß zesezen,
-<lb n="29"/>in unnd unserem land by beysendtiger willens
-<lb n="30"/>sin sollen. Dieweil aber da solliches
-<lb n="31"/>nit mit eüweren wüßen willen unnd zuothuon
-<lb n="32"/>beschehen, oder bemelter dritzehen theils zuege=
-<lb n="33"/>want sin soll. angeregte Erbeinigung, eüwere
-<lb n="34"/>Abscheiden, schrifft: und mündtlichen vertröst:
-<lb n="35"/>und versprechungen, uff <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindawischen</placeName> ver=
-<lb n="36"/>gleich, bey wellichem wir allein unseres huß=
-<lb n="37"/>es recht: und gerechtigkeiten zueerhalten,
-<lb n="38"/>und niemanden weder die <orgName resp="#ner">Cron Franckreich</orgName>
-<lb n="39"/>an dero habenden püntnußen, noch den Pünt=
-<lb n="40"/>en an Jrem Juri belli erobreten landen, uff
-<lb n="41"/>eüwer Jngerente bewerliche Interposition,
-<lb n="42"/>wie wir wol befüegt gewest, zue Endtziehen
-<lb n="43"/>begehrt. redt sagen, hebt Jr unbeschwert zue=
-<lb n="44"/>erachten, wir nicht unbillig deßertwegen
-<lb n="45"/>allerhandt empfindtliche gedanckhen,
-<lb n="46"/>zue schöpffen getrenget. Weil danuß eüch
-<lb n="47"/>sowohl als andern benachparten, sicht ge=
-<lb n="48"/>ringe gefahren zueerwachßen, und endtstehen
+<lb n="27"/><unclear cert="low" resp="#joint">leüten</unclear> <unclear cert="low" resp="#joint">passirt</unclear>, unnd <unclear cert="low" resp="#joint">durchgezogen</unclear>, <unclear cert="low" resp="#joint">uff</unclear> den <unclear cert="low" resp="#joint">Steig</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">bemächtiget</unclear> <unclear cert="low" resp="#joint">heben</unclear>, unnd witter <unclear cert="low" resp="#joint">Jnen</unclear> <unclear cert="low" resp="#joint">fuoß</unclear> <unclear cert="low" resp="#joint">zesezen</unclear>,
+<lb n="29"/><unclear cert="low" resp="#joint">in</unclear> unnd <unclear cert="medium" resp="#joint">unserem</unclear> <unclear cert="medium" resp="#joint">land</unclear> <unclear cert="medium" resp="#joint">by</unclear> <unclear cert="medium" resp="#joint">beysendtiger</unclear> willens
+<lb n="30"/>sin sollen. <unclear cert="low" resp="#joint">Dieweil</unclear> aber da solliches
+<lb n="31"/>nit mit <unclear cert="low" resp="#joint">eüweren</unclear> <unclear cert="low" resp="#joint">wüßen</unclear> willen unnd <unclear cert="low" resp="#joint">zuothuon</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">beschehen</unclear>, oder <unclear cert="medium" resp="#joint">bemelter</unclear> <unclear cert="medium" resp="#joint">dritzehen</unclear> theils <unclear cert="medium" resp="#joint">zuege=</unclear>
+<lb n="33"/>want <unclear cert="medium" resp="#joint">sin</unclear> soll. <unclear cert="medium" resp="#joint">angeregte</unclear> <unclear cert="medium" resp="#joint">Erbeinigung</unclear>, <unclear cert="medium" resp="#joint">eüwere</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">Abscheiden</unclear>, schrifft: und <unclear cert="low" resp="#joint">mündtlichen</unclear> <unclear cert="low" resp="#joint">vertröst</unclear>:
+<lb n="35"/>und versprechungen, <unclear cert="low" resp="#joint">uff</unclear> <placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lindawischen</unclear></placeName> ver=
+<lb n="36"/>gleich, bey wellichem wir allein <unclear cert="low" resp="#joint">unseres</unclear> huß=
+<lb n="37"/>es recht: und <unclear cert="medium" resp="#joint">gerechtigkeiten</unclear> <unclear cert="medium" resp="#joint">zueerhalten</unclear>,
+<lb n="38"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">niemanden</unclear> <unclear cert="medium" resp="#joint">weder</unclear> <unclear cert="medium" resp="#joint">die</unclear> <orgName resp="#ner"><unclear cert="medium" resp="#joint">Cron</unclear> <unclear cert="medium" resp="#joint">Franckreich</unclear></orgName>
+<lb n="39"/>an dero <unclear cert="low" resp="#joint">habenden</unclear> <unclear cert="low" resp="#joint">püntnußen</unclear>, <unclear cert="low" resp="#joint">noch</unclear> den Pünt=
+<lb n="40"/>en an Jrem Juri belli <unclear cert="low" resp="#joint">erobreten</unclear> landen, uff
+<lb n="41"/>eüwer <unclear cert="low" resp="#joint">Jngerente</unclear> <unclear cert="low" resp="#joint">bewerliche</unclear> Interposition,
+<lb n="42"/>wie wir wol <unclear cert="medium" resp="#joint">befüegt</unclear> <unclear cert="medium" resp="#joint">gewest</unclear>, <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">Endtziehen</unclear>
+<lb n="43"/>begehrt. <unclear cert="low" resp="#joint">redt</unclear> <unclear cert="low" resp="#joint">sagen</unclear>, <unclear cert="low" resp="#joint">hebt</unclear> <unclear cert="low" resp="#joint">Jr</unclear> unbeschwert <unclear cert="medium" resp="#joint">zue=</unclear>
+<lb n="44"/>erachten, wir nicht <unclear cert="medium" resp="#joint">unbillig</unclear> <unclear cert="medium" resp="#joint">deßertwegen</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">allerhandt</unclear> <unclear cert="medium" resp="#joint">empfindtliche</unclear> <unclear cert="medium" resp="#joint">gedanckhen</unclear>,
+<lb n="46"/><unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">schöpffen</unclear> <unclear cert="medium" resp="#joint">getrenget</unclear>. Weil <unclear cert="low" resp="#joint">danuß</unclear> <unclear cert="low" resp="#joint">eüch</unclear>
+<lb n="47"/>sowohl als <unclear cert="low" resp="#joint">andern</unclear> benachparten, <unclear cert="low" resp="#joint">sicht</unclear> ge=
+<lb n="48"/><unclear cert="low" resp="#joint">ringe</unclear> <unclear cert="low" resp="#joint">gefahren</unclear> <unclear cert="low" resp="#joint">zueerwachßen</unclear>, und <unclear cert="low" resp="#joint">endtstehen</unclear>
 <lb n="49"/>künden, werdet Jr zeits eben selbigen beyfall nit
-<lb n="50"/>geben, sondern unß gegen eüch versehen wollen,
-<lb n="51"/>Jr an eüwerem ohrt, nichts gestatten werdet,
-<lb n="52"/>der Erbeinigung und nachparlichen Correspondents
-<lb n="53"/>zuewider: oder den frieden was betrüeben solte.
-<lb n="54"/>Eüch demnach gnedig ersuchende, Jr zu würck=
-<lb n="55"/>licher haltung, mehrermelter Erbeinigung
+<lb n="50"/>geben, sondern unß gegen <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">versehen</unclear> wollen,
+<lb n="51"/><unclear cert="low" resp="#joint">Jr</unclear> an <unclear cert="low" resp="#joint">eüwerem</unclear> <unclear cert="low" resp="#joint">ohrt</unclear>, nichts <unclear cert="medium" resp="#joint">gestatten</unclear> <unclear cert="medium" resp="#joint">werdet</unclear>,
+<lb n="52"/>der <unclear cert="low" resp="#joint">Erbeinigung</unclear> und nachparlichen Correspondents
+<lb n="53"/>zuewider: oder den <unclear cert="low" resp="#joint">frieden</unclear> was betrüeben solte.
+<lb n="54"/><unclear cert="low" resp="#joint">Eüch</unclear> demnach gnedig <unclear cert="low" resp="#joint">ersuchende</unclear>, Jr zu <unclear cert="low" resp="#joint">würck=</unclear>
+<lb n="55"/>licher haltung, <unclear cert="low" resp="#joint">mehrermelter</unclear> <unclear cert="low" resp="#joint">Erbeinigung</unclear>
 <pb facs="StadtASG_Missive_2518_9711.jpg" n="3"/>
-<lb n="56"/>und wollstendigen nachbarschafft. euch
-<lb n="57"/>bewußter abscheiden, euch angelegen sin lasse-
-<lb n="58"/>en wollet. Die eüernige so sich villeicht
-<lb n="59"/>beÿ obgemeltem kriegsvolckh befinden.
-<lb n="60"/>Allßbald der orten abzuforderen, oder geg-
-<lb n="61"/>en den jenigen, welliche solliches an Jrer
-<lb n="62"/>Direction oder Comando haben, durch euwre
-<lb n="63"/>vertrauwliche Interposition zuuermellten
-<lb n="64"/>damit die abfüerung fürderlich fürgenomen
-<lb n="65"/>und unßere der enden, anrüerende landt
-<lb n="66"/>und leüt, nicht betrangt, noch zu anderen
-<lb n="67"/>glosieren. oder weiterung, anlaß erweckt
-<lb n="68"/>werde. Jnmaßen wir der billichen willfar
+<lb n="56"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">wollstendigen</unclear> nachbarschafft. <unclear cert="medium" resp="#joint">euch</unclear>
+<lb n="57"/><unclear cert="medium" resp="#joint">bewußter</unclear> <unclear cert="medium" resp="#joint">abscheiden</unclear>, <unclear cert="medium" resp="#joint">euch</unclear> angelegen sin <unclear cert="medium" resp="#joint">lasse</unclear>-
+<lb n="58"/>en <unclear cert="medium" resp="#joint">wollet</unclear>. Die <unclear cert="low" resp="#joint">eüernige</unclear> so sich <unclear cert="low" resp="#joint">villeicht</unclear>
+<lb n="59"/><unclear cert="low" resp="#joint">beÿ</unclear> obgemeltem <unclear cert="low" resp="#joint">kriegsvolckh</unclear> befinden.
+<lb n="60"/>Allßbald der orten <unclear cert="low" resp="#joint">abzuforderen</unclear>, oder <unclear cert="low" resp="#joint">geg</unclear>-
+<lb n="61"/>en den jenigen, <unclear cert="medium" resp="#joint">welliche</unclear> solliches an <unclear cert="low" resp="#joint">Jrer</unclear>
+<lb n="62"/>Direction oder Comando haben, durch <unclear cert="low" resp="#joint">euwre</unclear>
+<lb n="63"/><unclear cert="low" resp="#joint">vertrauwliche</unclear> Interposition <unclear cert="low" resp="#joint">zuuermellten</unclear>
+<lb n="64"/>damit die <unclear cert="low" resp="#joint">abfüerung</unclear> fürderlich fürgenomen
+<lb n="65"/>und <unclear cert="low" resp="#joint">unßere</unclear> der <unclear cert="low" resp="#joint">enden</unclear>, <unclear cert="low" resp="#joint">anrüerende</unclear> landt
+<lb n="66"/>und <unclear cert="medium" resp="#joint">leüt</unclear>, nicht <unclear cert="medium" resp="#joint">betrangt</unclear>, noch <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">anderen</unclear>
+<lb n="67"/><unclear cert="low" resp="#joint">glosieren</unclear>. oder <unclear cert="low" resp="#joint">weiterung</unclear>, <unclear cert="medium" resp="#joint">anlaß</unclear> <unclear cert="low" resp="#joint">erweckt</unclear>
+<lb n="68"/>werde. <unclear cert="low" resp="#joint">Jnmaßen</unclear> wir der billichen <unclear cert="low" resp="#joint">willfar</unclear>
 <lb n="69"/>kein zweifell, und euwre andtworthlichen
 <lb n="70"/>erklerung ehist erwarten. Denen wir
-<lb n="71"/>beneben mit gnedigsten und nachbarlichen
-<lb n="72"/>willen, wollbeigethon verbleiben. Geben
-<lb n="73"/>zu <origPlace ref="stadtasg-places-448" cert="medium" resp="#ner">Breisach</origPlace> <origDate when="1624" resp="#ner">den 5ten 9b. Anno 1624</origDate>.
+<lb n="71"/><unclear cert="low" resp="#joint">beneben</unclear> mit gnedigsten und nachbarlichen
+<lb n="72"/>willen, <unclear cert="low" resp="#joint">wollbeigethon</unclear> verbleiben. Geben
+<lb n="73"/><unclear cert="medium" resp="#joint">zu</unclear> <origPlace ref="stadtasg-places-448" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Breisach</unclear></origPlace> <origDate when="1624" resp="#ner">den 5ten <unclear cert="low" resp="#joint">9b</unclear>. Anno <unclear cert="medium" resp="#joint">1624</unclear></origDate>.
 <lb n="74"/><persName role="issuer" resp="#ner">Leopold</persName>.
-<lb n="75"/>Ad mandatum Ser.mi Domni:
+<lb n="75"/>Ad mandatum <unclear cert="medium" resp="#joint">Ser.mi</unclear> Domni:
 <lb n="76"/>Archiducis proprium
-<lb n="77"/><persName role="issuer" resp="#ner">Joh: Balth: Tischlerzoll</persName>.
-<lb n="78"/>An <orgName role="recipient" resp="#ner">burgermeister. Schultheiß. landt-
-<lb n="79"/>aman und räthe. der. 13. orten lobl: eÿdtge.</orgName>
+<lb n="77"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Joh</unclear>: <unclear cert="medium" resp="#joint">Balth</unclear>: <unclear cert="low" resp="#joint">Tischlerzoll</unclear></persName>.
+<lb n="78"/><unclear cert="low" resp="#joint">An</unclear> <orgName role="recipient" resp="#ner">burgermeister. Schultheiß. landt-
+<lb n="79"/>aman und <unclear cert="low" resp="#joint">räthe</unclear>. der. 13. orten <unclear cert="low" resp="#joint">lobl</unclear>: <unclear cert="low" resp="#joint">eÿdtge</unclear>.</orgName>
 <pb facs="StadtASG_Missive_2518_9712.jpg" n="4"/>
 </p>
         </body>

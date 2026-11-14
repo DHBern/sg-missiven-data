@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1976</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,64 +20,64 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Ammann und Gericht zu Thal bitten Bürgermeister und Rat zu St. Gallen, dem jungen Mann Hans Kun das verfallene Stiftslehen am Buchbach zu verleihen. Kun habe das Lehen bisher bewirtschaftet, sei aber jung und habe viele Kinder. Die Bitte geht darauf zurück, dass Kun das Lehen weiter bewirtschaften und aufbauen wolle, was dem Stift und der Bürgerschaft zugute käme.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Ammann und Gericht zu Thal</name><date when="1616" resp="#regest">2 tag hornung anno 1616</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1976_7365.jpg" n="1"/>
-<lb n="1"/>Wir der aman und gricht zuo <placeName ref="stadtasg-places-295" cert="medium" resp="#ner">Thal</placeName> im <placeName resp="#ner">Rinthall</placeName>
-<lb n="2"/>wie ouch hoffman <persName resp="#ner">Jacob Walcher von Diesen-
-<lb n="3"/>hoffen</persName> piettend den edlen ouch ehrnvesten
-<lb n="4"/>fromen fuersichtigen ersamen und wysen
-<lb n="5"/>heren burger <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">meister und ratth der statt
-<lb n="6"/>Santt Gallen</orgName> unseren frindlichen dienst
-<lb n="7"/>und nachpuerlichen willen jeder zitt zuo vor.
-<lb n="8"/>Dem nach zuo vernemen wie dz an huett datto.
-<lb n="9"/>fuer uns komen und erschinen ist. unser getruwer
-<lb n="10"/>lieber hoffman <persName resp="#ner">Hans Cun</persName> hoff weibel mitt an-
+<lb n="1"/><unclear cert="low" resp="#joint">Wir</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">aman</unclear> und gricht zuo <placeName ref="stadtasg-places-295" cert="medium" resp="#ner">Thal</placeName> im <placeName resp="#ner"><unclear cert="low" resp="#joint">Rinthall</unclear></placeName>
+<lb n="2"/>wie <unclear cert="low" resp="#joint">ouch</unclear> hoffman <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Walcher</unclear> von <unclear cert="low" resp="#joint">Diesen</unclear>-
+<lb n="3"/><unclear cert="low" resp="#joint">hoffen</unclear></persName> <unclear cert="low" resp="#joint">piettend</unclear> den edlen <unclear cert="low" resp="#joint">ouch</unclear> ehrnvesten
+<lb n="4"/>fromen <unclear cert="medium" resp="#joint">fuersichtigen</unclear> ersamen und <unclear cert="low" resp="#joint">wysen</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">heren</unclear> burger <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">meister und ratth der statt
+<lb n="6"/>Santt Gallen</orgName> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">frindlichen</unclear> dienst
+<lb n="7"/>und <unclear cert="low" resp="#joint">nachpuerlichen</unclear> <unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">jeder</unclear> <unclear cert="low" resp="#joint">zitt</unclear> <unclear cert="low" resp="#joint">zuo</unclear> vor.
+<lb n="8"/><unclear cert="low" resp="#joint">Dem</unclear> <unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">vernemen</unclear> wie dz an huett datto.
+<lb n="9"/>fuer uns komen und <unclear cert="low" resp="#joint">erschinen</unclear> ist. unser getruwer
+<lb n="10"/>lieber hoffman <persName resp="#ner"><unclear cert="low" resp="#joint">Hans</unclear> <unclear cert="low" resp="#joint">Cun</unclear></persName> <unclear cert="low" resp="#joint">hoff</unclear> <unclear cert="low" resp="#joint">weibel</unclear> mitt an-
 <lb n="11"/>zeiging. wie dan <persName resp="#ner">Hans Scherer</persName> saellig der.
-<lb n="12"/>stifft und burger schafft ain lehen am <placeName resp="#ner">Buchbag</placeName>
-<lb n="13"/>buwen hattz, jezunder dz selbig verfallen. seige
-<lb n="14"/>er willens dem selbigen lehen nach zforschen
+<lb n="12"/><unclear cert="low" resp="#joint">stifft</unclear> und burger schafft ain lehen am <placeName resp="#ner">Buchbag</placeName>
+<lb n="13"/>buwen hattz, jezunder dz selbig verfallen. <unclear cert="low" resp="#joint">seige</unclear>
+<lb n="14"/>er willens dem selbigen lehen nach <unclear cert="low" resp="#joint">zforschen</unclear>
 <lb n="15"/>dan er ain junger man und mit fill kinder
 <lb n="16"/>geaden an ainem hus derhalben mess umb
-<lb n="17"/>ein stifft lehen wider umb zuo suechen dan er uns
-<lb n="18"/>bekandt seige. Ist derhalben unser gantz
+<lb n="17"/><unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">stifft</unclear> <unclear cert="low" resp="#joint">lehen</unclear> <unclear cert="low" resp="#joint">wider</unclear> umb <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">suechen</unclear> dan er <unclear cert="low" resp="#joint">uns</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">bekandt</unclear> <unclear cert="low" resp="#joint">seige</unclear>. <unclear cert="low" resp="#joint">Ist</unclear> <unclear cert="low" resp="#joint">derhalben</unclear> <unclear cert="low" resp="#joint">unser</unclear> gantz
 <lb n="19"/>frundlich pitt an die heren <orgName ref="stadtasg-actors-148" cert="medium" resp="#ner">burger meister und
-<lb n="20"/>ratth</orgName> wellend so woll thuen und ime <persName resp="#ner">Hanssen
-<lb n="21"/>Cun</persName> dz selbig lehen verlihen. dan mir guotter
-<lb n="22"/>hoffnung er werde dar uff setzen und dz lehen buwen
-<lb n="23"/>dz die heren burger meister und ratth ain woll
-<lb n="24"/>gefallen dar an haben werdend. dan er ain junger
+<lb n="20"/>ratth</orgName> wellend so woll <unclear cert="low" resp="#joint">thuen</unclear> und ime <persName resp="#ner"><unclear cert="low" resp="#joint">Hanssen</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">Cun</unclear></persName> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">selbig</unclear> lehen verlihen. dan mir guotter
+<lb n="22"/>hoffnung <unclear cert="low" resp="#joint">er</unclear> werde <unclear cert="medium" resp="#joint">dar</unclear> uff <unclear cert="medium" resp="#joint">setzen</unclear> und <unclear cert="low" resp="#joint">dz</unclear> lehen <unclear cert="low" resp="#joint">buwen</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">dz</unclear> die heren burger meister und ratth ain woll
+<lb n="24"/>gefallen <unclear cert="low" resp="#joint">dar</unclear> <unclear cert="low" resp="#joint">an</unclear> haben werdend. dan er ain junger
 <lb n="25"/>man und junge kinder hatt. pittend derhalben gantz
-<lb n="26"/>fruendlichen wellend dz best thuen. wo mir dan ain
-<lb n="27"/>heren burger meister und ratth wie ouch ainer
+<lb n="26"/>fruendlichen wellend <unclear cert="low" resp="#joint">dz</unclear> best thuen. wo mir dan <unclear cert="low" resp="#joint">ain</unclear>
+<lb n="27"/>heren burger meister und ratth wie <unclear cert="low" resp="#joint">ouch</unclear> ainer
 <lb n="28"/>gantzen burger schafft dienen koenend wend mir
-<lb n="29"/>all zitt geneigt und guottwillig sin. Zuo urkuend
-<lb n="30"/>diss so hab ich <persName role="issuer" resp="#ner">Jacob Cun der</persName> zitt aman im hoff
+<lb n="29"/><unclear cert="low" resp="#joint">all</unclear> zitt <unclear cert="low" resp="#joint">geneigt</unclear> und guottwillig sin. Zuo urkuend
+<lb n="30"/>diss so hab ich <persName role="issuer" resp="#ner">Jacob <unclear cert="low" resp="#joint">Cun</unclear> der</persName> zitt aman im hoff
 <lb n="31"/><placeName ref="stadtasg-places-295" cert="medium" resp="#ner">Thall</placeName> dissen brieff mit minem aignen insiegell
-<lb n="32"/>beschlossen und gaeben uff den <origDate when="1616" resp="#ner">2 tag hornung
+<lb n="32"/>beschlossen und <unclear cert="low" resp="#joint">gaeben</unclear> uff den <origDate when="1616" resp="#ner">2 tag hornung
 <lb n="33"/>anno. 1616</origDate> jar
-<lb n="34"/>U W D
-<lb n="35"/><orgName ref="stadtasg-actors-864" cert="medium" role="issuer" resp="#ner">aman und gricht
+<lb n="34"/><unclear cert="medium" resp="#joint">U</unclear> <unclear cert="medium" resp="#joint">W</unclear> <unclear cert="medium" resp="#joint">D</unclear>
+<lb n="35"/><orgName ref="stadtasg-actors-864" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">aman</unclear> und gricht
 <lb n="36"/>zuo Thall</orgName>
 <pb facs="StadtASG_Missive_1976_7366.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1976_7367.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1976_7368.jpg" n="4"/>
-<lb n="37"/>Denen <unclear cert="low" resp="#joint">eerenveßten</unclear> frommen <unclear cert="low" resp="#joint">fuersichtigen</unclear>
-<lb n="38"/><unclear cert="low" resp="#joint">ersammen</unclear> und <unclear cert="medium" resp="#joint">wyßen</unclear> herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">burger</unclear>-
-<lb n="39"/><unclear cert="low" resp="#joint">meißter</unclear> und <unclear cert="medium" resp="#joint">rhaet</unclear> der Statt <unclear cert="medium" resp="#joint">sancte</unclear>
-<lb n="40"/>Gallen</orgName>, <unclear cert="low" resp="#joint">unßeren</unclear> <unclear cert="low" resp="#joint">gůnstigen</unclear> lieben
-<lb n="41"/><unclear cert="low" resp="#joint">herren</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">eroffnen</unclear>.
+<lb n="37"/>Denen <unclear cert="medium" resp="#joint">eerenveßten</unclear> frommen <unclear cert="medium" resp="#joint">fuersichtigen</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">ersammen</unclear> und <unclear cert="low" resp="#joint">wyßen</unclear> herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger-
+<lb n="39"/><unclear cert="medium" resp="#joint">meißter</unclear> und <unclear cert="low" resp="#joint">rhaet</unclear> der Statt <unclear cert="low" resp="#joint">sancte</unclear>
+<lb n="40"/>Gallen</orgName>, unßeren <unclear cert="low" resp="#joint">gůnstigen</unclear> lieben
+<lb n="41"/>herren <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">eroffnen</unclear>.
 <lb n="42"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">St</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>
 </p>
         </body>

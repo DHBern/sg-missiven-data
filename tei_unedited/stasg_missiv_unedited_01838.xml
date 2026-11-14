@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1838</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,61 +20,61 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Bürgermeister und Rat zu Lindau, ihrem Bürger Erasmus Abbenzeller zu helfen. Dieser habe seinem Schwager Mathias Bletscher, einem Lindauer Bürger, ein Haus und einen Garten als Sicherheit für ein Erbgut von weniger als zwanzig Gulden überlassen. Bletscher wolle sich aber nicht damit begnügen. St. Gallen ersucht Lindau, auf Bletscher einzuwirken oder schriftlich zu berichten, woran es fehle, damit Abbenzeller nicht länger aufgehalten werde.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1623-04-22" resp="#regest">22. Aprilis ao 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu Lindau</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1838_6821.jpg" n="1"/>
-<lb n="1"/>Unser freundt- nachbarlich willig dienst, zuvor,
-<lb n="2"/>fuersichtigen, ehrsamen undt weisen, sonders
-<lb n="3"/>liebe guete freündt, und nachbarn.
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freundt</unclear>- nachbarlich willig dienst, zuvor,
+<lb n="2"/><unclear cert="medium" resp="#joint">fuersichtigen</unclear>, ehrsamen <unclear cert="low" resp="#joint">undt</unclear> weisen, sonders
+<lb n="3"/>liebe <unclear cert="low" resp="#joint">guete</unclear> <unclear cert="low" resp="#joint">freündt</unclear>, und <unclear cert="medium" resp="#joint">nachbarn</unclear>.
 <lb n="4"/>Vor uns ist abermals erschinen, unser ange-
-<lb n="5"/>hoeriger burger <persName resp="#ner">Erasmus Abbenzeller</persName>,
-<lb n="6"/>und uns geklagt, ob wol er <unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">schwager</unclear>
-<lb n="7"/><persName resp="#ner"><unclear cert="low" resp="#joint">Mathias</unclear> <unclear cert="low" resp="#joint">Bletschern</unclear></persName>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">zugethonen</unclear>
-<lb n="8"/><unclear cert="low" resp="#joint">burgern</unclear>, <unclear cert="low" resp="#joint">bewüßtes</unclear> <unclear cert="low" resp="#joint">erbguetlins</unclear> wegen, uf
-<lb n="9"/>sein hauß und garten versicheret, wolle
-<lb n="10"/>iedoch er <persName resp="#ner">Bletscher</persName> sich daran nit ersettigen,
-<lb n="11"/>und hierauf umb unser <unclear cert="low" resp="#joint">fernere</unclear>
-<lb n="12"/><unclear cert="low" resp="#joint">hülf</unclear> und raht underthoenig gebetten,
+<lb n="5"/><unclear cert="medium" resp="#joint">hoeriger</unclear> burger <persName resp="#ner">Erasmus <unclear cert="low" resp="#joint">Abbenzeller</unclear></persName>,
+<lb n="6"/>und uns geklagt, ob wol er seinen schwager
+<lb n="7"/><persName resp="#ner">Mathias <unclear cert="low" resp="#joint">Bletschern</unclear></persName>, E. F. <unclear cert="low" resp="#joint">Wht</unclear>. zugethonen
+<lb n="8"/><unclear cert="low" resp="#joint">burgern</unclear>, <unclear cert="low" resp="#joint">bewüßtes</unclear> <unclear cert="low" resp="#joint">erbguetlins</unclear> wegen, <unclear cert="medium" resp="#joint">uf</unclear>
+<lb n="9"/>sein hauß und garten <unclear cert="medium" resp="#joint">versicheret</unclear>, wolle
+<lb n="10"/>iedoch er <persName resp="#ner"><unclear cert="low" resp="#joint">Bletscher</unclear></persName> sich daran nit <unclear cert="low" resp="#joint">ersettigen</unclear>,
+<lb n="11"/>und hierauf umb unser <unclear cert="medium" resp="#joint">fernere</unclear>
+<lb n="12"/>hülf und <unclear cert="medium" resp="#joint">raht</unclear> underthoenig gebetten,
 <lb n="13"/>so wir ihme nit wol <unclear cert="low" resp="#joint">verweigeren</unclear>.
-<lb n="14"/><unclear cert="low" resp="#joint">Sittenmalen</unclear> wir aber von ihme, woran
-<lb n="15"/>es doch <unclear cert="low" resp="#joint">eigenthlich</unclear> <unclear cert="low" resp="#joint">erwindte</unclear>, <unclear cert="low" resp="#joint">auch</unclear> nit grundtlich
-<lb n="16"/>vernemen koennen, so gelanget
-<lb n="17"/>an <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">F</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. unser nachbarlichs gesinnen,
-<lb n="18"/>die geruehen gegen dem ihrigen <unclear cert="low" resp="#joint">mit</unclear>-
-<lb n="19"/><unclear cert="low" resp="#joint">wuerkend</unclear> <unclear cert="low" resp="#joint">zuverschaffen</unclear>, <unclear cert="low" resp="#joint">dieweil</unclear> <unclear cert="low" resp="#joint">doch</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">Sittenmalen</unclear> wir aber von ihme, <unclear cert="medium" resp="#joint">woran</unclear>
+<lb n="15"/>es doch <unclear cert="medium" resp="#joint">eigenthlich</unclear> <unclear cert="medium" resp="#joint">erwindte</unclear>, auch nit grundtlich
+<lb n="16"/><unclear cert="low" resp="#joint">vernemen</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>, so <unclear cert="medium" resp="#joint">gelanget</unclear>
+<lb n="17"/>an E. F. <unclear cert="low" resp="#joint">Wht</unclear>. unser <unclear cert="low" resp="#joint">nachbarlichs</unclear> <unclear cert="medium" resp="#joint">gesinnen</unclear>,
+<lb n="18"/>die <unclear cert="low" resp="#joint">geruehen</unclear> gegen dem ihrigen mit-
+<lb n="19"/>wuerkend zuverschaffen, dieweil doch
 <lb n="20"/>die erbschafft so gering, daß es nit vil
-<lb n="21"/>über zweinzig belaufft, dahero
+<lb n="21"/>über <unclear cert="low" resp="#joint">zweinzig</unclear> belaufft, <unclear cert="low" resp="#joint">dahero</unclear>
 <lb n="22"/>er an <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">geschlagener</unclear>
-<lb n="23"/><unclear cert="low" resp="#joint">versicherueng</unclear> sich desto beßer benügen
-<lb n="24"/>koendte, daß derowegen er <unclear cert="low" resp="#joint">den</unclear>
-<lb n="25"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">lenger</unclear> nit aufhalte,
-<lb n="26"/>oder so das nit gesein mag, wollen
-<lb n="27"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. uns zum wenigsten
-<lb n="28"/>schrifftlich berichten, woran doch
+<lb n="23"/><unclear cert="low" resp="#joint">versicherueng</unclear> sich desto <unclear cert="low" resp="#joint">beßer</unclear> <unclear cert="low" resp="#joint">benügen</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">koendte</unclear>, daß derowegen er den
+<lb n="25"/>unseren lenger nit <unclear cert="low" resp="#joint">aufhalte</unclear>,
+<lb n="26"/><unclear cert="low" resp="#joint">oder</unclear> so das nit <unclear cert="low" resp="#joint">gesein</unclear> mag, wollen
+<lb n="27"/>E. <unclear cert="low" resp="#joint">Ft</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. uns zum wenigsten
+<lb n="28"/><unclear cert="medium" resp="#joint">schrifftlich</unclear> berichten, <unclear cert="medium" resp="#joint">woran</unclear> doch
 <pb facs="StadtASG_Missive_1838_6822.jpg" n="2"/>
-<lb n="29"/>ber mangel seije, warumb den
-<lb n="30"/>unseren noch biß daher nit moegen
-<lb n="31"/>gewillfaret werden. Begeren
-<lb n="32"/>umb E. F. W. wir in andrem
-<lb n="33"/>zuoerwideren. Datt den <origDate when="1623-04-04" resp="#ner">22. 4.
-<lb n="34"/>Aprilis ao 1623</origDate>.
-<lb n="35"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Raht
+<lb n="29"/>ber mangel <unclear cert="low" resp="#joint">seije</unclear>, warumb <unclear cert="low" resp="#joint">den</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">biß</unclear> daher nit <unclear cert="low" resp="#joint">moegen</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">gewillfaret</unclear> werden. <unclear cert="low" resp="#joint">Begeren</unclear>
+<lb n="32"/>umb E. <unclear cert="low" resp="#joint">F</unclear>. W. wir in <unclear cert="low" resp="#joint">andrem</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">zuoerwideren</unclear>. <unclear cert="low" resp="#joint">Datt</unclear> den <origDate when="1623-04-04" resp="#ner">22. 4.
+<lb n="34"/>Aprilis <unclear cert="medium" resp="#joint">ao</unclear> 1623</origDate>.
+<lb n="35"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="36"/>der Statt Sant Gallen</orgName>.
 <lb n="37"/>Den fürsichtigen, ersamen, weisen
-<lb n="38"/><orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">Burgermeister und Raht der Statt
-<lb n="39"/>Lindauw</orgName>, unseren sonders lieben
-<lb n="40"/>guoten freünden und nachbaurn.
+<lb n="38"/><orgName ref="stadtasg-actors-511" cert="medium" role="recipient" resp="#ner">Burgermeister und <unclear cert="medium" resp="#joint">Raht</unclear> der Statt
+<lb n="39"/>Lindauw</orgName>, unseren <unclear cert="low" resp="#joint">sonders</unclear> lieben
+<lb n="40"/><unclear cert="low" resp="#joint">guoten</unclear> freünden und <unclear cert="low" resp="#joint">nachbaurn</unclear>.
 <pb facs="StadtASG_Missive_1838_6823.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1838_6824.jpg" n="4"/>
 <lb n="41"/>[]

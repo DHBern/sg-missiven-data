@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 650</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,42 +20,42 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Jehan Moucher entschuldigt sich bei Bürgermeister und Rat zu St. Gallen für die verspätete Übermittlung der kaiserlichen Briefe, die wegen der Erkrankung des Boten erst jetzt eintreffen. Er erklärt, der Kaiser bitte die St. Galler, ihre gute Nachbarschaft mit dem Grafen von Burgund gemäß dem Erbvertrag fortzusetzen. Die beiden letzten Fälligkeiten des Vertrags seien in Zürich bezahlt worden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Jehan Moucher</name><placeName resp="#regest">Zürich</placeName><date when="1546-05-20" cert="medium" resp="#regest">Dez Zuric le xxe de may a° 46.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_650_1505.JPG" n="1"/>
-<lb n="1"/><unclear cert="low" resp="#joint">Magniffiques</unclear> et puissans seigneurs j'esperois vous porter <unclear cert="medium" resp="#joint">dez</unclear> <unclear cert="medium" resp="#joint">icy</unclear>
-<lb n="2"/>les lres de la <unclear cert="low" resp="#joint">maieste</unclear> de l'empereur qu'elle escript a voz
+<lb n="1"/><unclear cert="low" resp="#joint">Magniffiques</unclear> et puissans seigneurs j'esperois vous porter dez <unclear cert="low" resp="#joint">icy</unclear>
+<lb n="2"/>les lres de la <unclear cert="low" resp="#joint">maieste</unclear> de <unclear cert="medium" resp="#joint">l'empereur</unclear> qu'elle <unclear cert="medium" resp="#joint">escript</unclear> a <unclear cert="medium" resp="#joint">voz</unclear>
 <lb n="3"/>excellances. Mais pour quelque affaire en <unclear cert="low" resp="#joint">suys</unclear> <unclear cert="low" resp="#joint">este</unclear>
-<lb n="4"/>empesche pourquoy <unclear cert="medium" resp="#joint">il</unclear> vous plaira m'excuser. Je les vous <unclear cert="low" resp="#joint">envoie</unclear>
-<lb n="5"/>pntement elles sont de vielle date acause de <unclear cert="low" resp="#joint">l'indisposition</unclear>
-<lb n="6"/>du messaigier qui les a apportees. Et quant a la credance
-<lb n="7"/>sur moy mencionnee es lres. <unclear cert="medium" resp="#joint">Magniffiques</unclear> seigneurs ce n'est
-<lb n="8"/>aultre. Sinon que sa <unclear cert="low" resp="#joint">maieste</unclear> imperialle vous prie de
-<lb n="9"/><unclear cert="medium" resp="#joint">tousiours</unclear> continuer en bonne <unclear cert="low" resp="#joint">volunte</unclear> et <unclear cert="low" resp="#joint">voisinance</unclear> a vec ceulx
-<lb n="10"/>de son conte de <placeName resp="#ner"><unclear cert="low" resp="#joint">Bourgoingne</unclear></placeName> qui feront <unclear cert="medium" resp="#joint">aussi</unclear> le semblable
+<lb n="4"/>empesche pourquoy il vous plaira m'excuser. Je les vous <unclear cert="medium" resp="#joint">envoie</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">pntement</unclear> elles sont de <unclear cert="medium" resp="#joint">vielle</unclear> date <unclear cert="medium" resp="#joint">acause</unclear> de <unclear cert="low" resp="#joint">l'indisposition</unclear>
+<lb n="6"/>du <unclear cert="medium" resp="#joint">messaigier</unclear> <unclear cert="medium" resp="#joint">qui</unclear> les a apportees. Et quant a la credance
+<lb n="7"/>sur moy mencionnee es lres. <unclear cert="low" resp="#joint">Magniffiques</unclear> seigneurs ce n'est
+<lb n="8"/>aultre. Sinon que sa <unclear cert="low" resp="#joint">maieste</unclear> <unclear cert="medium" resp="#joint">imperialle</unclear> vous prie de
+<lb n="9"/><unclear cert="low" resp="#joint">tousiours</unclear> <unclear cert="medium" resp="#joint">continuer</unclear> en bonne <unclear cert="medium" resp="#joint">volunte</unclear> et <unclear cert="low" resp="#joint">voisinance</unclear> a <unclear cert="medium" resp="#joint">vec</unclear> ceulx
+<lb n="10"/>de son conte de <placeName resp="#ner"><unclear cert="medium" resp="#joint">Bourgoingne</unclear></placeName> <unclear cert="medium" resp="#joint">qui</unclear> feront <unclear cert="medium" resp="#joint">aussi</unclear> le semblable
 <lb n="11"/>conforme a l'aliance hereditaire. Les deux termes <unclear cert="low" resp="#joint">derniers</unclear>
-<lb n="12"/><unclear cert="low" resp="#joint">escheuz</unclear> de laquelle aliance ont estez pntement payez
+<lb n="12"/><unclear cert="low" resp="#joint">escheuz</unclear> de laquelle aliance ont estez pntement <unclear cert="medium" resp="#joint">payez</unclear>
 <lb n="13"/>en ce lieu selon qu'elle le porte.
-<lb n="14"/><unclear cert="low" resp="#joint">Magniffiques</unclear> et puissans seigneurs je prie dieu que donet
-<lb n="15"/>a voz excellances <unclear cert="medium" resp="#joint">tousiours</unclear> tresbonne prosperite. <unclear cert="low" resp="#joint">Dez</unclear>
-<lb n="16"/><origPlace ref="stadtasg-places-32" cert="medium" resp="#ner">Zuric</origPlace> <origDate when="1546" cert="medium" resp="#ner">le <unclear cert="low" resp="#joint">xxe</unclear> de may a° 46</origDate>.
+<lb n="14"/><unclear cert="low" resp="#joint">Magniffiques</unclear> et puissans seigneurs je prie dieu que <unclear cert="medium" resp="#joint">donet</unclear>
+<lb n="15"/>a <unclear cert="medium" resp="#joint">voz</unclear> excellances <unclear cert="low" resp="#joint">tousiours</unclear> <unclear cert="medium" resp="#joint">tresbonne</unclear> <unclear cert="medium" resp="#joint">prosperite</unclear>. <unclear cert="low" resp="#joint">Dez</unclear>
+<lb n="16"/><origPlace ref="stadtasg-places-32" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Zuric</unclear></origPlace> <origDate when="1546" cert="medium" resp="#ner">le <unclear cert="low" resp="#joint">xxe</unclear> de may <unclear cert="medium" resp="#joint">a°</unclear> 46</origDate>.
 <lb n="17"/>Vre treshumble et <unclear cert="low" resp="#joint">tresobeissant</unclear>
 <lb n="18"/><unclear cert="low" resp="#joint">serviter</unclear> <persName role="issuer" resp="#ner">Jehan <unclear cert="low" resp="#joint">Moucher</unclear></persName>.
 <pb facs="StadtASG_Missive_650_1506.JPG" n="2"/>
 <lb n="19"/>A <unclear cert="medium" resp="#joint">magnifficques</unclear> et
 <lb n="20"/>puissans seigneurs
-<lb n="21"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Messeigneurs les <unclear cert="low" resp="#joint">burguemre</unclear>
+<lb n="21"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Messeigneurs</unclear> les <unclear cert="low" resp="#joint">burguemre</unclear>
 <lb n="22"/>et conseil de Sanct Gallen</orgName>.
 </p>
         </body>

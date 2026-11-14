@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1639</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,66 +20,66 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Stein am Rhein bitten Bürgermeister und Rat zu St. Gallen, schriftlich mitzuteilen, ob der Pfarrer Heinrich Blasius zu Gachnang einen Schuldbrief über 138 Gulden besitzt, der als Sicherheit für ein Darlehen an den Steinburger Jörg Schmid und dessen Ehefrau Barbara Appenzellerin dient. Sie erfragen zudem, ob die Appenzellerin noch weitere Erbgüter hat, da der Pfarrer den Brief gegen Rückzahlung des Abzugs ablösen möchte.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Stein am Rhein</name><date when="1609" resp="#regest">Datum den. 23te Maÿ Anno. 1609.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1639_5971.jpg" n="1"/>
-<lb n="1"/>Edle, Eerenveßte, fromme, fürsichtige, unnd wÿse, besonders günstige
-<lb n="2"/>liebe Herren, guotte fründ, unnd Nachparren, denselben sÿgenn
-<lb n="3"/>unnser fründtlich gannz guottwillig diennst, unnd was wir
-<lb n="4"/>Ehren, Liebs, unnd guots <unclear cert="low" resp="#joint">vermögend</unclear>. <unclear cert="low" resp="#joint">zuvor</unclear>. <unclear cert="low" resp="#joint">Jüngßt</unclear>
+<lb n="1"/>Edle, <unclear cert="low" resp="#joint">Eerenveßte</unclear>, fromme, fürsichtige, unnd <unclear cert="low" resp="#joint">wÿse</unclear>, besonders günstige
+<lb n="2"/>liebe Herren, <unclear cert="low" resp="#joint">guotte</unclear> fründ, unnd <unclear cert="low" resp="#joint">Nachparren</unclear>, denselben <unclear cert="low" resp="#joint">sÿgenn</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">unnser</unclear> fründtlich gannz guottwillig diennst, unnd was wir
+<lb n="4"/>Ehren, Liebs, unnd guots vermögend. zuvor. <unclear cert="low" resp="#joint">Jüngßt</unclear>
 <lb n="5"/>dato, ißt vor unns erschinen, der Wollgelertt Herr Hain-
 <lb n="6"/>rich Blassius Pfarer zuo <placeName resp="#ner">Gachnang</placeName>, unnd hatt unns berichtet,
 <lb n="7"/>wie das er unlanng hievvor verschinen Zÿtt, unnserem Burger <persName resp="#ner">Jerg
-<lb n="8"/>Schmiden</persName> dem Schuomacher, unnd <persName resp="#ner">Barbara Appentzellerin</persName>,
-<lb n="9"/>siner Eefrowen, uff Ihr baider fründtlichs begerenn, <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">benandte</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">suma</unclear> <unclear cert="low" resp="#joint">gelltts</unclear>, <unclear cert="low" resp="#joint">ußgebrocht</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">sovill</unclear>, <unclear cert="low" resp="#joint">Inn</unclear> <unclear cert="low" resp="#joint">trewen</unclear> <unclear cert="low" resp="#joint">fürgestreckht</unclear>
-<lb n="11"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">gelichen</unclear> habe, daß dann Ihme (<unclear cert="low" resp="#joint">neben</unclear> <unclear cert="low" resp="#joint">annderem</unclear>.)
-<lb n="12"/><unclear cert="low" resp="#joint">Ingewüßer</unclear> <unclear cert="low" resp="#joint">versicherung</unclear> <unclear cert="low" resp="#joint">Ingesetzt</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">vbernommen</unclear>, <unclear cert="low" resp="#joint">Ir</unclear>
-<lb n="13"/><unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">gemellten</unclear> <unclear cert="low" resp="#joint">Appenzelleren</unclear> <unclear cert="low" resp="#joint">Erbguott</unclear>, <unclear cert="low" resp="#joint">sovvermöge</unclear> <unclear cert="low" resp="#joint">ains</unclear> <unclear cert="low" resp="#joint">bÿe</unclear>
-<lb n="14"/>. 138. fl. Innhallt aines krefftigen brieffs, Wellicher wägen
-<lb n="15"/>des Abzugs, den sÿ noch schuldig sÿend, hinder E. E: W:
+<lb n="8"/>Schmiden</persName> dem Schuomacher, unnd <persName resp="#ner">Barbara <unclear cert="low" resp="#joint">Appentzellerin</unclear></persName>,
+<lb n="9"/><unclear cert="low" resp="#joint">siner</unclear> <unclear cert="low" resp="#joint">Eefrowen</unclear>, uff <unclear cert="low" resp="#joint">Ihr</unclear> baider fründtlichs begerenn, <unclear cert="medium" resp="#joint">ain</unclear> <unclear cert="medium" resp="#joint">benandte</unclear>
+<lb n="10"/><unclear cert="medium" resp="#joint">suma</unclear> <unclear cert="medium" resp="#joint">gelltts</unclear>, <unclear cert="medium" resp="#joint">ußgebrocht</unclear>, unnd <unclear cert="low" resp="#joint">sovill</unclear>, <unclear cert="low" resp="#joint">Inn</unclear> <unclear cert="low" resp="#joint">trewen</unclear> <unclear cert="low" resp="#joint">fürgestreckht</unclear>
+<lb n="11"/>unnd <unclear cert="medium" resp="#joint">gelichen</unclear> habe, daß dann Ihme (<unclear cert="medium" resp="#joint">neben</unclear> <unclear cert="medium" resp="#joint">annderem</unclear>.)
+<lb n="12"/><unclear cert="medium" resp="#joint">Ingewüßer</unclear> versicherung Ingesetzt, unnd <unclear cert="medium" resp="#joint">vbernommen</unclear>, <unclear cert="medium" resp="#joint">Ir</unclear>
+<lb n="13"/>der <unclear cert="medium" resp="#joint">gemellten</unclear> <unclear cert="medium" resp="#joint">Appenzelleren</unclear> <unclear cert="medium" resp="#joint">Erbguott</unclear>, <unclear cert="medium" resp="#joint">sovvermöge</unclear> <unclear cert="medium" resp="#joint">ains</unclear> <unclear cert="medium" resp="#joint">bÿe</unclear>
+<lb n="14"/>. 138. fl. Innhallt aines krefftigen brieffs, Wellicher <unclear cert="low" resp="#joint">wägen</unclear>
+<lb n="15"/>des Abzugs, den sÿ noch schuldig <unclear cert="low" resp="#joint">sÿend</unclear>, hinder E. E: W:
 <lb n="16"/>liiggen sige.
 <lb n="17"/>Dieweill dann ernandter Herr Pfarer berichtet worden,
-<lb n="18"/>das gesagts unnsers Burgers des Schmiden hanndlung, und
-<lb n="19"/>sach siner Schuldtforderer halben, nitt bÿ dem beßten beschaffen
+<lb n="18"/>das gesagts <unclear cert="low" resp="#joint">unnsers</unclear> Burgers des <unclear cert="low" resp="#joint">Schmiden</unclear> hanndlung, und
+<lb n="19"/>sach siner <unclear cert="low" resp="#joint">Schuldtforderer</unclear> halben, nitt bÿ dem beßten <unclear cert="low" resp="#joint">beschaffen</unclear>
 <lb n="20"/>sige, hat er unns fründtlichen gepetten, Wir wölltend Ihme
-<lb n="21"/>zu siner gewüssen nachrichtung sovill fründtschafft bewÿsen, und
-<lb n="22"/>bÿ V. E. W: erkhundigen laßen, ob er an obbemelltem hinder-
+<lb n="21"/>zu siner <unclear cert="low" resp="#joint">gewüssen</unclear> nachrichtung <unclear cert="low" resp="#joint">sovill</unclear> fründtschafft <unclear cert="low" resp="#joint">bewÿsen</unclear>, und
+<lb n="22"/>bÿ V. E. W: erkhundigen laßen, ob er an <unclear cert="low" resp="#joint">obbemelltem</unclear> hinder-
 <lb n="23"/>legten <unclear cert="low" resp="#joint">Schuldtbriff</unclear> (<unclear cert="low" resp="#joint">dan</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">mitt</unclear> <unclear cert="low" resp="#joint">erßtattung</unclear> des abzugs, alß
-<lb n="24"/>sin verpfendt guott, zu sinen handen gern lößenn gesinnett
-<lb n="25"/>unnd bedacht were.) habend unnd gwüß sin möchte, oder nitt,
-<lb n="26"/>Allß wir Ihme söllich sin psinnen, nitt wellen waigeren könden,
-<lb n="27"/>Unnd ißt dem nach An dieselben unnser gannz diennßt-
-<lb n="28"/>fründt: unnd Nachparlichs Pitt, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">begerenn</unclear>, die <unclear cert="low" resp="#joint">wöllend</unclear>
-<lb n="29"/><unclear cert="low" resp="#joint">unbeschwerdt</unclear>, <unclear cert="low" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">deßen</unclear>, auch <unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">vilicht</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">nante</unclear>
-<lb n="30"/><unclear cert="low" resp="#joint">Appentzellerin</unclear>, <unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="low" resp="#joint">Burgerin</unclear>, <unclear cert="low" resp="#joint">bÿ</unclear> <unclear cert="low" resp="#joint">bis</unclear> <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">d</unclear>: <unclear cert="low" resp="#joint">z</unclear> <unclear cert="low" resp="#joint">fällenn</unclear>,
-<lb n="31"/><unclear cert="low" resp="#joint">sonßt</unclear> <unclear cert="low" resp="#joint">was</unclear> <unclear cert="low" resp="#joint">wÿtters</unclear> <unclear cert="low" resp="#joint">Erblichs</unclear> <unclear cert="low" resp="#joint">zuogewartten</unclear> haben möchte
-<lb n="32"/>oder nitt, hiebÿ zaigern, schrifftlichen Zuuersßenndigenn,
-<lb n="33"/>das Umb E. E: W: Inn glÿchem, unnd mererem, Begerend
+<lb n="24"/>sin <unclear cert="low" resp="#joint">verpfendt</unclear> guott, zu sinen handen <unclear cert="low" resp="#joint">gern</unclear> <unclear cert="low" resp="#joint">lößenn</unclear> <unclear cert="low" resp="#joint">gesinnett</unclear>
+<lb n="25"/>unnd <unclear cert="low" resp="#joint">bedacht</unclear> were.) habend unnd <unclear cert="low" resp="#joint">gwüß</unclear> sin möchte, oder nitt,
+<lb n="26"/><unclear cert="low" resp="#joint">Allß</unclear> wir Ihme söllich sin psinnen, nitt wellen waigeren könden,
+<lb n="27"/>Unnd ißt dem nach An dieselben <unclear cert="low" resp="#joint">unnser</unclear> gannz <unclear cert="low" resp="#joint">diennßt</unclear>-
+<lb n="28"/>fründt: unnd Nachparlichs Pitt, unnd <unclear cert="medium" resp="#joint">begerenn</unclear>, die <unclear cert="low" resp="#joint">wöllend</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">unbeschwerdt</unclear>, <unclear cert="low" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">deßen</unclear>, auch <unclear cert="medium" resp="#joint">ob</unclear> <unclear cert="medium" resp="#joint">vilicht</unclear> <unclear cert="medium" resp="#joint">er</unclear> <unclear cert="medium" resp="#joint">nante</unclear>
+<lb n="30"/><unclear cert="medium" resp="#joint">Appentzellerin</unclear>, <unclear cert="medium" resp="#joint">unnsere</unclear> <unclear cert="medium" resp="#joint">Burgerin</unclear>, <unclear cert="medium" resp="#joint">bÿ</unclear> <unclear cert="medium" resp="#joint">bis</unclear> <unclear cert="medium" resp="#joint">uff</unclear> <unclear cert="medium" resp="#joint">d</unclear>: <unclear cert="medium" resp="#joint">z</unclear> <unclear cert="medium" resp="#joint">fällenn</unclear>,
+<lb n="31"/><unclear cert="medium" resp="#joint">sonßt</unclear> was <unclear cert="medium" resp="#joint">wÿtters</unclear> <unclear cert="medium" resp="#joint">Erblichs</unclear> <unclear cert="medium" resp="#joint">zuogewartten</unclear> haben möchte
+<lb n="32"/>oder nitt, <unclear cert="low" resp="#joint">hiebÿ</unclear> <unclear cert="low" resp="#joint">zaigern</unclear>, <unclear cert="low" resp="#joint">schrifftlichen</unclear> <unclear cert="low" resp="#joint">Zuuersßenndigenn</unclear>,
+<lb n="33"/>das Umb E. E: W: Inn <unclear cert="low" resp="#joint">glÿchem</unclear>, unnd <unclear cert="low" resp="#joint">mererem</unclear>, Begerend
 <lb n="34"/>wir gannz guottwillig fründt: unnd Nachparlichen zuuer-
-<lb n="35"/>diennen. Unns damitt samptlichen Göttlicher
-<lb n="36"/>bewahrung beuelchende. Datum den. <origDate when="1609" resp="#ner">23te Maÿ
+<lb n="35"/><unclear cert="low" resp="#joint">diennen</unclear>. Unns damitt samptlichen Göttlicher
+<lb n="36"/>bewahrung beuelchende. Datum den. <origDate when="1609" resp="#ner">23te <unclear cert="low" resp="#joint">Maÿ</unclear>
 <lb n="37"/>Anno. 1609</origDate>.
-<lb n="38"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermaißter unnd Rath der
+<lb n="38"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermaißter</unclear> unnd Rath der
 <lb n="39"/>Statt Stain Am Rÿn</orgName>,
 <pb facs="StadtASG_Missive_1639_5972.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1639_5973.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1639_5974.jpg" n="4"/>
-<lb n="40"/>Denen edlen, erenvesten, fromen, fürsichtigen unnd
-<lb n="41"/><unclear cert="low" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd rath der statt S.
-<lb n="42"/>Gallen</orgName>. Unseren besonders günstigen,
-<lb n="43"/>lieben herren, guetten fründt: und nachpauren.
+<lb n="40"/><unclear cert="low" resp="#joint">Denen</unclear> edlen, <unclear cert="low" resp="#joint">erenvesten</unclear>, fromen, fürsichtigen unnd
+<lb n="41"/><unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd rath der statt S.
+<lb n="42"/>Gallen</orgName>. <unclear cert="low" resp="#joint">Unseren</unclear> <unclear cert="low" resp="#joint">besonders</unclear> <unclear cert="low" resp="#joint">günstigen</unclear>,
+<lb n="43"/>lieben herren, <unclear cert="low" resp="#joint">guetten</unclear> <unclear cert="low" resp="#joint">fründt</unclear>: und <unclear cert="medium" resp="#joint">nachpauren</unclear>.
 </p>
         </body>
     </text>

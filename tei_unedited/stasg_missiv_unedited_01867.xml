@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1867</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Innroden und Ußroden informieren Bürgermeister und Rat zu St. Gallen, dass sie wegen der gestiegenen Preise im Reich den Reichstaler auf 2 1/2 Gulden festgesetzt hätten. Dies erfolgte mit Gutachten des Prälaten von St. Gallen. Sie hätten ihre Untertanen angewiesen, andere Münzsorten nicht zu steigern, sondern deren Wert beizubehalten, andernfalls drohe eine Busse.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Innroden und Ußroden</name><date when="1613-12-14" resp="#regest">Datum den .14.ten Decembris 1613.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,43 +35,43 @@
 <p>
 <pb facs="StadtASG_Missive_1867_6941.jpg" n="1"/>
 <lb n="1"/>Unnsere freuendt- nachbarlich willig dienst, und
-<lb n="2"/>was wir ehren liebs und <unclear cert="low" resp="#joint">guts</unclear> <unclear cert="low" resp="#joint">vermogen</unclear>,
-<lb n="3"/><unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">ehrsamen</unclear> und
+<lb n="2"/>was wir ehren liebs und <unclear cert="medium" resp="#joint">guts</unclear> <unclear cert="medium" resp="#joint">vermogen</unclear>,
+<lb n="3"/>zuvor, <unclear cert="low" resp="#joint">fromen</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">ehrsamen</unclear> und
 <lb n="4"/><unclear cert="low" resp="#joint">weisen</unclear>, <unclear cert="low" resp="#joint">inßonders</unclear> <unclear cert="low" resp="#joint">guten</unclear> <unclear cert="low" resp="#joint">freunden</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">ge</unclear>-
 <lb n="5"/><unclear cert="low" resp="#joint">treuewen</unclear> lieben nachbarn.
 <lb n="6"/>Wiewol vor disem durch gemein
 <lb n="7"/>zuthun auch allerleij muentzsorten
-<lb n="8"/>(wie euch bewueßt) auf ein gewüssen
-<lb n="9"/>praeis gesetzt worden, in hoffnung, es
-<lb n="10"/>solte ohne fernere steigerung darbeij ver-
-<lb n="11"/>bleiben, Dieweil aber die selben
-<lb n="12"/>im <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Reich</orgName> abermals aufgestigen, sofer,
-<lb n="13"/>wir beij denen ußern eines uber-
-<lb n="14"/>schwalls allerhand geringen nichts-
+<lb n="8"/>(wie euch bewueßt) auf ein <unclear cert="low" resp="#joint">gewüssen</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">praeis</unclear> <unclear cert="low" resp="#joint">gesetzt</unclear> worden, in hoffnung, es
+<lb n="10"/>solte ohne <unclear cert="low" resp="#joint">fernere</unclear> <unclear cert="low" resp="#joint">steigerung</unclear> darbeij ver-
+<lb n="11"/>bleiben, <unclear cert="low" resp="#joint">Dieweil</unclear> aber die selben
+<lb n="12"/>im <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">Reich</orgName> abermals <unclear cert="low" resp="#joint">aufgestigen</unclear>, sofer,
+<lb n="13"/>wir beij <unclear cert="low" resp="#joint">denen</unclear> ußern eines uber-
+<lb n="14"/><unclear cert="low" resp="#joint">schwalls</unclear> allerhand geringen nichts-
 <lb n="15"/>wertigen muentzsorten, dene fuer-
 <lb n="16"/>zukomen, sind wir gleichsam ge-
-<lb n="17"/>noetiget worden, uns etwelcher
-<lb n="18"/>maßen der gelegenheit der zeit zu-
+<lb n="17"/>noetiget worden, uns <unclear cert="low" resp="#joint">etwelcher</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">maßen</unclear> der gelegenheit der zeit zu-
 <lb n="19"/>accomodieren, haben derowegen,
-<lb n="20"/>mit gutachten des herren Praelate
-<lb n="21"/>von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> euewers und unsers
+<lb n="20"/>mit gutachten des herren <unclear cert="low" resp="#joint">Praelate</unclear>
+<lb n="21"/>von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName> <unclear cert="low" resp="#joint">euewers</unclear> und unsers
 <lb n="22"/>gnedigen lieben hern und nachbarn,
-<lb n="23"/>die <unclear cert="low" resp="#joint">Reichstaler</unclear> <unclear cert="low" resp="#joint">auf</unclear> .<unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">fl</unclear> <unclear cert="low" resp="#joint">1/2</unclear>. <unclear cert="low" resp="#joint">gesetzt</unclear>,
-<lb n="24"/><unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">darbeij</unclear> die unßern gewarnet,
-<lb n="25"/>einiche andere <unclear cert="low" resp="#joint">muentzsorten</unclear> <unclear cert="low" resp="#joint">zusteigern</unclear>,
-<lb n="26"/><unclear cert="low" resp="#joint">sondern</unclear> <unclear cert="low" resp="#joint">diesselbe</unclear> in ihrem <unclear cert="low" resp="#joint">be</unclear>-
+<lb n="23"/>die Reichstaler <unclear cert="low" resp="#joint">auf</unclear> .<unclear cert="low" resp="#joint">2</unclear> <unclear cert="low" resp="#joint">fl</unclear> 1/2. <unclear cert="low" resp="#joint">gesetzt</unclear>,
+<lb n="24"/>doch <unclear cert="medium" resp="#joint">darbeij</unclear> die <unclear cert="low" resp="#joint">unßern</unclear> <unclear cert="low" resp="#joint">gewarnet</unclear>,
+<lb n="25"/><unclear cert="low" resp="#joint">einiche</unclear> andere <unclear cert="medium" resp="#joint">muentzsorten</unclear> <unclear cert="medium" resp="#joint">zusteigern</unclear>,
+<lb n="26"/><unclear cert="medium" resp="#joint">sondern</unclear> <unclear cert="medium" resp="#joint">diesselbe</unclear> in ihrem be-
 <lb n="27"/><unclear cert="low" resp="#joint">stimten</unclear> <unclear cert="low" resp="#joint">waerth</unclear> <unclear cert="low" resp="#joint">verbleiben</unclear> <unclear cert="low" resp="#joint">zu</unclear>-
-<lb n="28"/>lassen, beij den darauf gesetzten
-<lb n="29"/>buß. Welches wir euch unßern
-<lb n="30"/>getreuewen lieben nachbarn zur nach-
-<lb n="31"/>richtung unangefuegt nit lassen
-<lb n="32"/>wollen, Und bleiben ihnen zu
-<lb n="33"/>guter nachbarschafft jederzeit wol
+<lb n="28"/>lassen, beij den darauf <unclear cert="low" resp="#joint">gesetzten</unclear>
+<lb n="29"/>buß. Welches wir euch <unclear cert="low" resp="#joint">unßern</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">getreuewen</unclear> lieben nachbarn zur nach-
+<lb n="31"/>richtung <unclear cert="low" resp="#joint">unangefuegt</unclear> nit lassen
+<lb n="32"/><unclear cert="low" resp="#joint">wollen</unclear>, Und bleiben ihnen zu
+<lb n="33"/><unclear cert="low" resp="#joint">guter</unclear> nachbarschafft jederzeit wol
 <lb n="34"/>gewogen. Datum den <origDate when="1613" resp="#ner">.14.ten
-<lb n="35"/><unclear cert="low" resp="#joint">Decembris</unclear> 1613</origDate>.
-<lb n="36"/>den <orgName role="issuer" resp="#ner">Innroden
+<lb n="35"/>Decembris 1613</origDate>.
+<lb n="36"/>den <orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Innroden</unclear>
 <lb n="37"/>und
-<lb n="38"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Ußroden</unclear>
+<lb n="38"/>den <unclear cert="low" resp="#joint">Ußroden</unclear>
 <lb n="39"/><unclear cert="low" resp="#joint">B</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Rh</unclear></orgName>
 <pb facs="StadtASG_Missive_1867_6942.jpg" n="2"/>
 </p>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1462</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau ersuchen Bürgermeister und Rat zu St. Gallen, sich bei dem verstorbenen Daniel Zolligkofen zu erkundigen, wie der Maurer heisse, der vor drei Monaten 800 ungebrannte Ziegelsteine abgeholt und bezahlt habe. Sie bitten, den Maurer vorzuladen und unter Eid zu vernehmen, bei welchem Lindauer Verordneten er sich zuerst gemeldet habe, wer ihm die Steine gegeben und was er bezahlt habe. Die Antwort soll dem Bote oder schriftlich mitgeteilt werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1604-08-29" resp="#regest">29 19. augusti a° 1604</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -36,55 +36,55 @@
 <pb facs="StadtASG_Missive_1462_5241.jpg" n="1"/>
 <lb n="1"/>Unser freundtlich willig dienst zuvor,
 <lb n="2"/>Ersamen und Weisen, besondern lieben
-<lb n="3"/>und gueten freündt.
-<lb n="4"/>Demnach waß bedenckhens mit unsern
-<lb n="5"/>verordneten <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">Kalchhueten</unclear>,
-<lb n="6"/>alhie, so E. E. W. burger, herrn <persName resp="#ner">Danieln
-<lb n="7"/>Zollighofern</persName>, verschinen zeit, alß 3.
+<lb n="3"/>und gueten <unclear cert="low" resp="#joint">freündt</unclear>.
+<lb n="4"/>Demnach waß bedenckhens mit <unclear cert="low" resp="#joint">unsern</unclear>
+<lb n="5"/>verordneten in <unclear cert="medium" resp="#joint">unserer</unclear> <unclear cert="medium" resp="#joint">Kalchhueten</unclear>,
+<lb n="6"/>alhie, so E. <unclear cert="low" resp="#joint">E</unclear>. W. burger, herrn <persName resp="#ner"><unclear cert="low" resp="#joint">Danieln</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">Zollighofern</unclear></persName>, verschinen zeit, alß 3.
 <lb n="8"/><unclear cert="low" resp="#joint">monaten</unclear> <unclear cert="low" resp="#joint">ungevar</unclear>, <unclear cert="low" resp="#joint">bej</unclear> <unclear cert="low" resp="#joint">desselben</unclear> <unclear cert="low" resp="#joint">alher</unclear>
 <lb n="9"/><unclear cert="low" resp="#joint">gesandtem</unclear> <unclear cert="low" resp="#joint">maurer</unclear>, 800. <unclear cert="low" resp="#joint">ungebrannt</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">gebachen</unclear> <unclear cert="low" resp="#joint">ziegelstain</unclear>, gegen bahrer
-<lb n="11"/>bezalung geben, und <unclear cert="low" resp="#joint">verkaufft</unclear>, <unclear cert="low" resp="#joint">fürgefallen</unclear>
-<lb n="12"/>unnd wir gern wüssen wolten, bej welchem
-<lb n="13"/>unserer verordneten in der kalchhueten,
-<lb n="14"/>sich, der berüerte maurer, am ersten
-<lb n="15"/>erzaigt, und umb soliche stain angehalten.
-<lb n="16"/>Damit wir dann <unclear cert="low" resp="#joint">dessen</unclear> ain <unclear cert="low" resp="#joint">gewißhait</unclear>,
-<lb n="17"/>und satten bericht bekomen mögen, so
-<lb n="18"/>gelangt an E. E. W. unnser freundt-
-<lb n="19"/>und nachbarlich ersuechen und bitten,
-<lb n="20"/>sij wöllen, bej gedachtem herrn <persName resp="#ner">Daniel
-<lb n="21"/>Zollighofer</persName> erkundigen, wie der gedachte
-<lb n="22"/>maurer, der seinetwegen die 800. stain,
-<lb n="23"/>alhie abgeholet und bezalt habe, haisse.
-<lb n="24"/>Unnd dann <unclear cert="low" resp="#joint">denselben</unclear> <unclear cert="low" resp="#joint">maurer</unclear>, für <unclear cert="low" resp="#joint">E</unclear>.
-<lb n="25"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">beschickhen</unclear>, <unclear cert="low" resp="#joint">denselben</unclear> mit gebüer-
-<lb n="26"/>endem aijd beladen, klag grund anzu-
-<lb n="27"/>zaigen, zue welchem der unnsern, in der
-<lb n="28"/>kalchhueten, Er maurer, am ersten
+<lb n="10"/>oder <unclear cert="medium" resp="#joint">gebachen</unclear> <unclear cert="medium" resp="#joint">ziegelstain</unclear>, gegen <unclear cert="low" resp="#joint">bahrer</unclear>
+<lb n="11"/>bezalung geben, und <unclear cert="medium" resp="#joint">verkaufft</unclear>, <unclear cert="medium" resp="#joint">fürgefallen</unclear>
+<lb n="12"/>unnd wir gern wüssen wolten, <unclear cert="low" resp="#joint">bej</unclear> welchem
+<lb n="13"/><unclear cert="low" resp="#joint">unserer</unclear> verordneten in der <unclear cert="low" resp="#joint">kalchhueten</unclear>,
+<lb n="14"/><unclear cert="low" resp="#joint">sich</unclear>, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">berüerte</unclear> <unclear cert="low" resp="#joint">maurer</unclear>, am ersten
+<lb n="15"/><unclear cert="low" resp="#joint">erzaigt</unclear>, und umb <unclear cert="low" resp="#joint">soliche</unclear> stain angehalten.
+<lb n="16"/>Damit wir dann dessen ain <unclear cert="medium" resp="#joint">gewißhait</unclear>,
+<lb n="17"/>und <unclear cert="low" resp="#joint">satten</unclear> bericht <unclear cert="low" resp="#joint">bekomen</unclear> mögen, so
+<lb n="18"/>gelangt an E. <unclear cert="low" resp="#joint">E</unclear>. W. unnser freundt-
+<lb n="19"/>und nachbarlich <unclear cert="low" resp="#joint">ersuechen</unclear> und bitten,
+<lb n="20"/>sij wöllen, <unclear cert="low" resp="#joint">bej</unclear> gedachtem herrn <persName resp="#ner"><unclear cert="low" resp="#joint">Daniel</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">Zollighofer</unclear></persName> erkundigen, wie der gedachte
+<lb n="22"/>maurer, <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">seinetwegen</unclear> die 800. <unclear cert="low" resp="#joint">stain</unclear>,
+<lb n="23"/>alhie <unclear cert="low" resp="#joint">abgeholet</unclear> und bezalt habe, <unclear cert="low" resp="#joint">haisse</unclear>.
+<lb n="24"/>Unnd dann denselben <unclear cert="medium" resp="#joint">maurer</unclear>, für <unclear cert="medium" resp="#joint">E</unclear>.
+<lb n="25"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. <unclear cert="medium" resp="#joint">beschickhen</unclear>, denselben mit gebüer-
+<lb n="26"/><unclear cert="low" resp="#joint">endem</unclear> <unclear cert="low" resp="#joint">aijd</unclear> beladen, <unclear cert="low" resp="#joint">klag</unclear> grund <unclear cert="low" resp="#joint">anzu</unclear>-
+<lb n="27"/><unclear cert="low" resp="#joint">zaigen</unclear>, <unclear cert="low" resp="#joint">zue</unclear> welchem <unclear cert="low" resp="#joint">der</unclear> unnsern, in der
+<lb n="28"/><unclear cert="low" resp="#joint">kalchhueten</unclear>, <unclear cert="low" resp="#joint">Er</unclear> <unclear cert="low" resp="#joint">maurer</unclear>, am ersten
 <lb n="29"/>alhie komen, unnd umb die stain ange-
-<lb n="30"/>hallten, waß im derselb für beschaidt
+<lb n="30"/>hallten, <unclear cert="low" resp="#joint">waß</unclear> im derselb für beschaidt
 <pb facs="StadtASG_Missive_1462_5242.jpg" n="2"/>
-<lb n="31"/>und <unclear cert="low" resp="#joint">antwortt</unclear> geben, und wer inen entlichen
-<lb n="32"/>selbige zuegeben verwilligt, auch was, und
-<lb n="33"/>wievil er darumben <unclear cert="low" resp="#joint">zalt</unclear> habe? Unnd wie
-<lb n="34"/>es damit <unclear cert="low" resp="#joint">bewanndt</unclear> seie. Und uns solches
+<lb n="31"/>und <unclear cert="medium" resp="#joint">antwortt</unclear> geben, und wer <unclear cert="low" resp="#joint">inen</unclear> entlichen
+<lb n="32"/>selbige <unclear cert="low" resp="#joint">zuegeben</unclear> verwilligt, auch was, und
+<lb n="33"/>wievil er darumben <unclear cert="medium" resp="#joint">zalt</unclear> habe? Unnd wie
+<lb n="34"/>es damit <unclear cert="low" resp="#joint">bewanndt</unclear> <unclear cert="medium" resp="#joint">seie</unclear>. Und uns solches
 <lb n="35"/><unclear cert="low" resp="#joint">alls</unclear>, wo müglich, bej zaigern disem unnserm
 <lb n="36"/>allain darumben <unclear cert="low" resp="#joint">abgesandten</unclear> botten <unclear cert="low" resp="#joint">oder</unclear>
-<lb n="37"/>doch bej erster <unclear cert="low" resp="#joint">glegenhait</unclear> in schrifft <unclear cert="low" resp="#joint">vertraue</unclear>-
-<lb n="38"/>lich berichten, uns darüber desto basßer
-<lb n="39"/>wisßen der gebür zuverhalten. Das
-<lb n="40"/>begeren umb E. E. W. wir <unclear cert="low" resp="#joint">hinwider</unclear> in
-<lb n="41"/>dergleichen und <unclear cert="low" resp="#joint">anderm</unclear>, freündtlich unnd
+<lb n="37"/>doch <unclear cert="medium" resp="#joint">bej</unclear> erster <unclear cert="low" resp="#joint">glegenhait</unclear> <unclear cert="medium" resp="#joint">in</unclear> schrifft <unclear cert="low" resp="#joint">vertraue</unclear>-
+<lb n="38"/>lich berichten, uns darüber <unclear cert="low" resp="#joint">desto</unclear> <unclear cert="low" resp="#joint">basßer</unclear>
+<lb n="39"/><unclear cert="low" resp="#joint">wisßen</unclear> der <unclear cert="medium" resp="#joint">gebür</unclear> <unclear cert="medium" resp="#joint">zuverhalten</unclear>. Das
+<lb n="40"/>begeren umb <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. wir <unclear cert="medium" resp="#joint">hinwider</unclear> in
+<lb n="41"/><unclear cert="medium" resp="#joint">dergleichen</unclear> und <unclear cert="low" resp="#joint">anderm</unclear>, <unclear cert="medium" resp="#joint">freündtlich</unclear> unnd
 <lb n="42"/>nachbarlich <unclear cert="low" resp="#joint">zubeschulden</unclear> und zuverdienen.
-<lb n="43"/>Datum <origDate when="1604-08-19" resp="#ner">29 <unclear cert="low" resp="#joint">19</unclear>. augusti a° 1604</origDate>.
+<lb n="43"/>Datum <origDate when="1604-08-19" resp="#ner">29 <unclear cert="low" resp="#joint">19</unclear>. augusti <unclear cert="medium" resp="#joint">a°</unclear> 1604</origDate>.
 <lb n="44"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister und rhat
 <lb n="45"/>der statt Lindaw</orgName>.
 <pb facs="StadtASG_Missive_1462_5243.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1462_5244.jpg" n="4"/>
 <lb n="46"/>Den Ersamen und Weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister
 <lb n="47"/>und Rhat der Statt St. Gallen</orgName> <unclear cert="low" resp="#joint">unsern</unclear>
-<lb n="48"/><unclear cert="medium" resp="#joint">besondern</unclear> lieben und gueten freunden.
+<lb n="48"/>besondern lieben und gueten freunden.
 <lb n="49"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>.
 </p>
         </body>

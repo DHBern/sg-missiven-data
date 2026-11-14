@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 737</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Hugo Graf zu Montfort und Rotenfels, Herr zu Tettnang und Argen, bittet Bürgermeister und Rat zu St. Gallen, seine Untertanin Magdalena Gigerin, Witwe des verstorbenen Jakob Schlapfer, anzuweisen, ihrem Untertanen Claus Beck zu Hemmersreith die zugesagte Geldsumme zu zahlen. Er verweist darauf, dass Versprechen von Frauen in St. Gallen durch die Stadt vollzogen würden, und bittet um nachbarliche Unterstützung.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hugo Graf zu Montfort und Rotenfels, Herr zu Tettnang und Argen</name><date when="1554" cert="medium" resp="#regest">den ersten novembris anno etc. im liiij.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -58,10 +58,10 @@
 <pb facs="StadtASG_Missive_737_1870.JPG" n="2"/>
 <pb facs="StadtASG_Missive_737_1871.JPG" n="3"/>
 <pb facs="StadtASG_Missive_737_1872.JPG" n="4"/>
-<lb n="22"/>Den ersamen weisen, <unclear cert="low" resp="#joint">unnsern</unclear> besonndern
+<lb n="22"/>Den ersamen weisen, <unclear cert="medium" resp="#joint">unnsern</unclear> besonndern
 <lb n="23"/>lieben unnd guoten <unclear cert="low" resp="#joint">nachpaurn</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="24"/>maister unnd Rat der Statt sannt
-<lb n="25"/>Gallen</orgName> zeantwurtten
+<lb n="24"/>maister unnd Rat der Statt <unclear cert="low" resp="#joint">sannt</unclear>
+<lb n="25"/>Gallen</orgName> <unclear cert="low" resp="#joint">zeantwurtten</unclear>
 </p>
         </body>
     </text>

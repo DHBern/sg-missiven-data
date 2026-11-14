@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1844</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,113 +20,113 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Landammann und Rat der Äusseren Rhoden des Landes Appenzell antworten auf eine Anfrage der Stadt St. Gallen bezüglich des in Appenzell inhaftierten Peter Nägeli. Nägeli sei 1612 wegen Bettelns und Landstreicherei verurteilt und aus dem Land verwiesen worden. Die Anschuldigung des 1615 in Bregenz hingerichteten Lukas Knechtli gegen Nägeli sei falsch. Knechtli habe erst kurz vor seiner Hinrichtung zugegeben, Nägeli fälschlich beschuldigt zu haben. Appenzell überlässt St. Gallen die weitere Handhabung des Falls.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Landammann und Rat der Äusseren Rhoden des Landes Appenzell</name><placeName resp="#regest">Trogen</placeName><date when="1613-05-12" resp="#regest">Datum Trogen in unserem gsessnen rath. den 12.ten Maij. Anno 1613.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1844_6845.jpg" n="1"/>
-<lb n="1"/>Unser frünt: nachparlich willig dienst. sampt was
-<lb n="2"/>wir ehren liebs und guets vermögend zuevor, From
-<lb n="3"/>Fuersichtig Ehrsam und Wyß, Inbsonders guet Fründ,
-<lb n="4"/>und gethrüew lieb Nachparen.
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">frünt</unclear>: nachparlich willig dienst. sampt was
+<lb n="2"/>wir ehren liebs und <unclear cert="low" resp="#joint">guets</unclear> vermögend <unclear cert="low" resp="#joint">zuevor</unclear>, From
+<lb n="3"/>Fuersichtig <unclear cert="low" resp="#joint">Ehrsam</unclear> und <unclear cert="low" resp="#joint">Wyß</unclear>, <unclear cert="low" resp="#joint">Inbsonders</unclear> <unclear cert="low" resp="#joint">guet</unclear> Fründ,
+<lb n="4"/>und <unclear cert="low" resp="#joint">gethrüew</unclear> lieb Nachparen.
 <lb n="5"/>Was ir unß, wegen deß, hievor disem verstrickten,
 <lb n="6"/>vor kurtzem aber <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">hingerichten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Lucaß</unclear>
-<lb n="7"/><unclear cert="low" resp="#joint">Knechtlj</unclear></persName>, <unclear cert="low" resp="#joint">angegebnen</unclear>. <unclear cert="low" resp="#joint">dißmals</unclear> by üch <unclear cert="low" resp="#joint">verhafften</unclear>
-<lb n="8"/><unclear cert="low" resp="#joint">gellen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Thönjs</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">Appentzel</unclear></persName>. <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">bericht</unclear> <unclear cert="low" resp="#joint">schrifftlichen</unclear>
-<lb n="9"/><unclear cert="low" resp="#joint">ersuecht</unclear>. habend <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">woll</unclear> <unclear cert="low" resp="#joint">yngenomben</unclear>, empfangen
-<lb n="10"/>und verstanden. Daruff wir zue begerter antwurt
-<lb n="11"/>üch fründt: und nachparlich nit verhalten <unclear cert="low" resp="#joint">söllend</unclear>.
-<lb n="12"/>Was <unclear cert="low" resp="#joint">erstlich</unclear> <unclear cert="low" resp="#joint">belangt</unclear>. <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">er</unclear> durch die unseren
-<lb n="13"/>vor abgeloffner zyth gfengklich angenomen. Ist söliches
-<lb n="14"/>volgender ursachen <unclear cert="low" resp="#joint">bschechen</unclear>. Als er <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">unseren</unclear>
-<lb n="15"/><unclear cert="low" resp="#joint">rhoe</unclear> <placeName ref="stadtasg-places-159" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Hundtwyll</unclear></placeName> <unclear cert="low" resp="#joint">angelangt</unclear>. <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">starcker</unclear> <unclear cert="low" resp="#joint">bettler</unclear>
-<lb n="16"/>und <unclear cert="low" resp="#joint">landtstricher</unclear>. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">man</unclear> <unclear cert="low" resp="#joint">ime</unclear> <unclear cert="low" resp="#joint">damals</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">nach</unclear>
-<lb n="17"/><unclear cert="low" resp="#joint">synem</unclear> <unclear cert="low" resp="#joint">wänen</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">almußen</unclear> <unclear cert="low" resp="#joint">vernuegt</unclear>. <unclear cert="low" resp="#joint">hat</unclear>
-<lb n="18"/>er <unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">ungebürlichen</unclear> <unclear cert="low" resp="#joint">trowworten</unclear> <unclear cert="low" resp="#joint">vermercken</unclear>
-<lb n="19"/><unclear cert="low" resp="#joint">lassen</unclear>. <unclear cert="low" resp="#joint">Item</unclear> <unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">synes</unclear> <unclear cert="low" resp="#joint">heimets</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">vatterlandts</unclear>
-<lb n="20"/><unclear cert="low" resp="#joint">halber</unclear> <unclear cert="low" resp="#joint">befragt</unclear> <unclear cert="low" resp="#joint">ward</unclear>. <unclear cert="low" resp="#joint">hat</unclear> er sich by den druen nächsten hüseren
-<lb n="21"/>einem uß dem <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Turgöew</unclear></placeName>. <unclear cert="low" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">uß</unclear> dem Zuercher
-<lb n="22"/>gepeit. und <unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">dritten</unclear> <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">ort</unclear> <unclear cert="low" resp="#joint">genembt</unclear>.
-<lb n="23"/><unclear cert="low" resp="#joint">Item</unclear> als er wegen sölich erhebnen luegens und <unclear cert="low" resp="#joint">troewens</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">red</unclear> <unclear cert="low" resp="#joint">gstellt</unclear>. und <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">jenigen</unclear>. da er <unclear cert="low" resp="#joint">nachtherberg</unclear>
-<lb n="25"/><unclear cert="low" resp="#joint">begert</unclear>. nit bherberget worden. hat er sich in ein schüer
-<lb n="26"/>zue ingänder nacht. unfer von dem <unclear cert="low" resp="#joint">Sitterthobell</unclear>
-<lb n="27"/>gelegt. und anfachen mit <unclear cert="low" resp="#joint">fheurstein</unclear> <unclear cert="low" resp="#joint">füechren</unclear>. Als
-<lb n="28"/>daß habend sich zwen <unclear cert="low" resp="#joint">ander</unclear> starck <unclear cert="low" resp="#joint">landtstricher</unclear> <unclear cert="low" resp="#joint">sächen</unclear>
-<lb n="29"/><unclear cert="low" resp="#joint">lassen</unclear>. Als man aber <unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">nachsetzen</unclear>. und sy gfencklich
-<lb n="30"/>annemen wöllen. habend sy sich. <unclear cert="low" resp="#joint">diewyll</unclear> <unclear cert="low" resp="#joint">eß</unclear> <unclear cert="low" resp="#joint">schon</unclear>
-<lb n="31"/><unclear cert="low" resp="#joint">albereit</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">ingenter</unclear> <unclear cert="low" resp="#joint">nacht</unclear> <unclear cert="low" resp="#joint">ward</unclear>, im wald verschloffen
-<lb n="32"/>und selbigs mals nit mögen betretten werden.
+<lb n="7"/><unclear cert="low" resp="#joint">Knechtlj</unclear></persName>, angegebnen. <unclear cert="medium" resp="#joint">dißmals</unclear> by üch verhafften
+<lb n="8"/><unclear cert="low" resp="#joint">gellen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Thönjs</unclear> von Appentzel</persName>. <unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">bericht</unclear> schrifftlichen
+<lb n="9"/>ersuecht. habend wir woll yngenomben, empfangen
+<lb n="10"/>und verstanden. Daruff wir <unclear cert="low" resp="#joint">zue</unclear> begerter <unclear cert="low" resp="#joint">antwurt</unclear>
+<lb n="11"/>üch <unclear cert="low" resp="#joint">fründt</unclear>: und nachparlich nit verhalten söllend.
+<lb n="12"/>Was erstlich belangt. <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">er</unclear> durch die <unclear cert="low" resp="#joint">unseren</unclear>
+<lb n="13"/>vor <unclear cert="medium" resp="#joint">abgeloffner</unclear> <unclear cert="low" resp="#joint">zyth</unclear> <unclear cert="low" resp="#joint">gfengklich</unclear> <unclear cert="low" resp="#joint">angenomen</unclear>. Ist <unclear cert="low" resp="#joint">söliches</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">volgender</unclear> ursachen bschechen. Als er in der <unclear cert="low" resp="#joint">unseren</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">rhoe</unclear> <placeName ref="stadtasg-places-159" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Hundtwyll</unclear></placeName> angelangt. als ein starcker bettler
+<lb n="16"/>und <unclear cert="low" resp="#joint">landtstricher</unclear>. und man ime damals nit nach
+<lb n="17"/>synem <unclear cert="low" resp="#joint">wänen</unclear> mit dem <unclear cert="low" resp="#joint">almußen</unclear> <unclear cert="low" resp="#joint">vernuegt</unclear>. hat
+<lb n="18"/>er sich mit <unclear cert="low" resp="#joint">ungebürlichen</unclear> <unclear cert="low" resp="#joint">trowworten</unclear> <unclear cert="low" resp="#joint">vermercken</unclear>
+<lb n="19"/>lassen. Item als er <unclear cert="low" resp="#joint">synes</unclear> <unclear cert="low" resp="#joint">heimets</unclear> und vatterlandts
+<lb n="20"/>halber befragt ward. hat er sich by den <unclear cert="low" resp="#joint">druen</unclear> nächsten <unclear cert="medium" resp="#joint">hüseren</unclear>
+<lb n="21"/>einem <unclear cert="low" resp="#joint">uß</unclear> dem <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgöew</placeName>. anderen uß dem <unclear cert="low" resp="#joint">Zuercher</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">gepeit</unclear>. und am dritten <unclear cert="low" resp="#joint">ab</unclear> einem anderen ort <unclear cert="low" resp="#joint">genembt</unclear>.
+<lb n="23"/><unclear cert="low" resp="#joint">Item</unclear> als er wegen <unclear cert="low" resp="#joint">sölich</unclear> <unclear cert="low" resp="#joint">erhebnen</unclear> <unclear cert="low" resp="#joint">luegens</unclear> und troewens
+<lb n="24"/>zue red gstellt. und von den jenigen. da er <unclear cert="medium" resp="#joint">nachtherberg</unclear>
+<lb n="25"/>begert. nit <unclear cert="low" resp="#joint">bherberget</unclear> worden. <unclear cert="medium" resp="#joint">hat</unclear> er sich in ein <unclear cert="low" resp="#joint">schüer</unclear>
+<lb n="26"/>zue <unclear cert="low" resp="#joint">ingänder</unclear> nacht. <unclear cert="low" resp="#joint">unfer</unclear> von dem <unclear cert="low" resp="#joint">Sitterthobell</unclear>
+<lb n="27"/>gelegt. und <unclear cert="medium" resp="#joint">anfachen</unclear> mit <unclear cert="low" resp="#joint">fheurstein</unclear> <unclear cert="low" resp="#joint">füechren</unclear>. Als
+<lb n="28"/><unclear cert="low" resp="#joint">daß</unclear> habend sich zwen <unclear cert="low" resp="#joint">ander</unclear> starck <unclear cert="medium" resp="#joint">landtstricher</unclear> <unclear cert="medium" resp="#joint">sächen</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">lassen</unclear>. Als man aber <unclear cert="low" resp="#joint">inen</unclear> nachsetzen. und <unclear cert="medium" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">gfencklich</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">annemen</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>. habend sy sich. diewyll eß schon
+<lb n="31"/>albereit zue ingenter nacht ward, im <unclear cert="low" resp="#joint">wald</unclear> <unclear cert="low" resp="#joint">verschloffen</unclear>
+<lb n="32"/>und <unclear cert="medium" resp="#joint">selbigs</unclear> <unclear cert="low" resp="#joint">mals</unclear> nit <unclear cert="medium" resp="#joint">mögen</unclear> <unclear cert="low" resp="#joint">betretten</unclear> werden.
 <pb facs="StadtASG_Missive_1844_6846.jpg" n="2"/>
-<lb n="33"/><unclear cert="low" resp="#joint">Haruff</unclear> <unclear cert="low" resp="#joint">vorgemelter</unclear> <persName resp="#ner">Petter Nagell</persName> gefengkliß ange-
-<lb n="34"/>nomen, und <unclear cert="low" resp="#joint">sowol</unclear> <unclear cert="low" resp="#joint">peinlich</unclear> <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">guettlich</unclear> <unclear cert="low" resp="#joint">examiniert</unclear>
-<lb n="35"/>worden. do man doch nichts sonderlichß von ihme
-<lb n="36"/>bringen moegen. Darumb man ihne denn
-<lb n="37"/><date resp="#ner">27. t. aprilis, <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">hingewichnen</unclear> 1612 t. jars</date>
-<lb n="38"/>uff <unclear cert="low" resp="#joint">nachfolgend</unclear> <unclear cert="low" resp="#joint">urphecht</unclear> der banden erlediget.
-<lb n="39"/>Namlich das er sich uß unserem land <unclear cert="low" resp="#joint">hinweg</unclear> be-
-<lb n="40"/>geben, und insolicher bethles gestalt nimmermehr
-<lb n="41"/>darin sehen lassen: oder widrumb gfengklich
-<lb n="42"/>angenomen und mit groesserem ernst gegen ime
-<lb n="43"/>verhandlet werden solle. Doch <unclear cert="low" resp="#joint">sige</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">zugelassen</unclear>,
-<lb n="44"/>wann er etwas ehrlichs zu handtieren begere, soll ihme
-<lb n="45"/>offner freijer handel und wandel zugelassen sin.
-<lb n="46"/>Belangend dann, das er von dem <unclear cert="low" resp="#joint">alhie</unclear> <unclear cert="low" resp="#joint">den</unclear>
-<lb n="47"/><date resp="#ner"><unclear cert="low" resp="#joint">15</unclear> <unclear cert="low" resp="#joint">t</unclear>. aprilis, diß 1615. jars</date> alhie zu <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregenß</placeName> hinge-
-<lb n="48"/>richten <persName resp="#ner">Lucaß Knechtli</persName>, angegeben. Ist nicht ohn, das
-<lb n="49"/>gemelter Knechtlj vor dem, ehemale er den
-<lb n="50"/>gesagten <persName resp="#ner">Petter Nagel</persName> verklagt, hat er <unclear cert="low" resp="#joint">zůvor</unclear>
-<lb n="51"/><unclear cert="low" resp="#joint">dryg</unclear> <unclear cert="low" resp="#joint">ander</unclear> <unclear cert="low" resp="#joint">persohnen</unclear> <unclear cert="low" resp="#joint">angeben</unclear> <unclear cert="low" resp="#joint">alß</unclear> er aber <unclear cert="low" resp="#joint">erstlich</unclear>
-<lb n="52"/><unclear cert="low" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">angenambt</unclear>, der im land <placeName ref="stadtasg-places-71" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schwytz</unclear></placeName> dißmals
-<lb n="53"/>wohnhafft ist alß das nit zu glouben gewest, uff
-<lb n="54"/>gegenwurme bericht, hatt er syne eigne bruederen
-<lb n="55"/>angeben, do man doch synen worten nit gloub
-<lb n="56"/>bericht, uff sy <unclear cert="low" resp="#joint">erkantnuß</unclear> ferner nit befragen
-<lb n="57"/>wellen, sonder die fürsehung gethon, das sy ouch soltend
-<lb n="58"/>gfengklich angenommen werden. Alß aber die
-<lb n="59"/>sach so wyth komen, das man ine Knechtli nun-
-<lb n="60"/>mehr innert zweijen stunden vom leben zum tod
-<lb n="61"/>hinrichten wellen, und ime die herzen predig-
-<lb n="62"/>kanten, zůgesprochen und ernstlich <unclear cert="low" resp="#joint">vermandt</unclear>, <unclear cert="low" resp="#joint">sidt</unclear>-
-<lb n="63"/><unclear cert="low" resp="#joint">male</unclear> <unclear cert="low" resp="#joint">eß</unclear> <unclear cert="low" resp="#joint">doch</unclear> <unclear cert="low" resp="#joint">synethalben</unclear> <unclear cert="low" resp="#joint">am</unclear> <unclear cert="low" resp="#joint">letsten</unclear> sige, solte er mit
-<lb n="64"/>der warheit umbgehn, und niemandt unrecht thun,
+<lb n="33"/><unclear cert="low" resp="#joint">Haruff</unclear> vorgemelter <persName resp="#ner">Petter <unclear cert="low" resp="#joint">Nagell</unclear></persName> <unclear cert="low" resp="#joint">gefengkliß</unclear> ange-
+<lb n="34"/>nomen, und <unclear cert="low" resp="#joint">sowol</unclear> peinlich alß guettlich examiniert
+<lb n="35"/>worden. do man doch nichts <unclear cert="low" resp="#joint">sonderlichß</unclear> von <unclear cert="low" resp="#joint">ihme</unclear>
+<lb n="36"/>bringen moegen. Darumb man <unclear cert="low" resp="#joint">ihne</unclear> <unclear cert="medium" resp="#joint">denn</unclear>
+<lb n="37"/><date resp="#ner">27. <unclear cert="low" resp="#joint">t</unclear>. aprilis, deß hingewichnen 1612 <unclear cert="low" resp="#joint">t</unclear>. jars</date>
+<lb n="38"/>uff nachfolgend <unclear cert="low" resp="#joint">urphecht</unclear> der <unclear cert="medium" resp="#joint">banden</unclear> erlediget.
+<lb n="39"/>Namlich das er sich uß unserem land hinweg be-
+<lb n="40"/>geben, und <unclear cert="low" resp="#joint">insolicher</unclear> <unclear cert="low" resp="#joint">bethles</unclear> gestalt nimmermehr
+<lb n="41"/><unclear cert="medium" resp="#joint">darin</unclear> sehen lassen: <unclear cert="medium" resp="#joint">oder</unclear> widrumb <unclear cert="low" resp="#joint">gfengklich</unclear>
+<lb n="42"/>angenomen und mit <unclear cert="low" resp="#joint">groesserem</unclear> <unclear cert="medium" resp="#joint">ernst</unclear> gegen <unclear cert="low" resp="#joint">ime</unclear>
+<lb n="43"/>verhandlet werden solle. Doch <unclear cert="low" resp="#joint">sige</unclear> im zugelassen,
+<lb n="44"/>wann er etwas <unclear cert="medium" resp="#joint">ehrlichs</unclear> zu <unclear cert="medium" resp="#joint">handtieren</unclear> <unclear cert="medium" resp="#joint">begere</unclear>, soll <unclear cert="low" resp="#joint">ihme</unclear>
+<lb n="45"/><unclear cert="medium" resp="#joint">offner</unclear> <unclear cert="low" resp="#joint">freijer</unclear> <unclear cert="low" resp="#joint">handel</unclear> und <unclear cert="low" resp="#joint">wandel</unclear> zugelassen sin.
+<lb n="46"/><unclear cert="medium" resp="#joint">Belangend</unclear> dann, das er von dem <unclear cert="low" resp="#joint">alhie</unclear> den
+<lb n="47"/><date resp="#ner">15 t. aprilis, diß <unclear cert="low" resp="#joint">1615</unclear>. <unclear cert="medium" resp="#joint">jars</unclear></date> <unclear cert="low" resp="#joint">alhie</unclear> zu <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregenß</unclear></placeName> <unclear cert="medium" resp="#joint">hinge</unclear>-
+<lb n="48"/><unclear cert="medium" resp="#joint">richten</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Lucaß</unclear> <unclear cert="medium" resp="#joint">Knechtli</unclear></persName>, angegeben. Ist nicht <unclear cert="medium" resp="#joint">ohn</unclear>, das
+<lb n="49"/>gemelter <unclear cert="low" resp="#joint">Knechtlj</unclear> vor dem, <unclear cert="low" resp="#joint">ehemale</unclear> er <unclear cert="medium" resp="#joint">den</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">gesagten</unclear> <persName resp="#ner">Petter <unclear cert="medium" resp="#joint">Nagel</unclear></persName> verklagt, hat er <unclear cert="low" resp="#joint">zůvor</unclear>
+<lb n="51"/><unclear cert="low" resp="#joint">dryg</unclear> ander <unclear cert="low" resp="#joint">persohnen</unclear> <unclear cert="low" resp="#joint">angeben</unclear> alß er aber erstlich
+<lb n="52"/>einen <unclear cert="low" resp="#joint">angenambt</unclear>, der <unclear cert="low" resp="#joint">im</unclear> land <placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Schwytz</placeName> dißmals
+<lb n="53"/><unclear cert="low" resp="#joint">wohnhafft</unclear> ist alß das nit <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">glouben</unclear> <unclear cert="medium" resp="#joint">gewest</unclear>, uff
+<lb n="54"/><unclear cert="low" resp="#joint">gegenwurme</unclear> bericht, <unclear cert="medium" resp="#joint">hatt</unclear> er syne <unclear cert="medium" resp="#joint">eigne</unclear> <unclear cert="low" resp="#joint">bruederen</unclear>
+<lb n="55"/>angeben, do man doch <unclear cert="medium" resp="#joint">synen</unclear> worten nit <unclear cert="medium" resp="#joint">gloub</unclear>
+<lb n="56"/><unclear cert="low" resp="#joint">bericht</unclear>, uff sy <unclear cert="medium" resp="#joint">erkantnuß</unclear> ferner nit befragen
+<lb n="57"/><unclear cert="low" resp="#joint">wellen</unclear>, sonder die fürsehung gethon, das sy ouch <unclear cert="medium" resp="#joint">soltend</unclear>
+<lb n="58"/><unclear cert="low" resp="#joint">gfengklich</unclear> angenommen werden. <unclear cert="low" resp="#joint">Alß</unclear> aber die
+<lb n="59"/>sach so <unclear cert="medium" resp="#joint">wyth</unclear> <unclear cert="low" resp="#joint">komen</unclear>, das man <unclear cert="low" resp="#joint">ine</unclear> <unclear cert="medium" resp="#joint">Knechtli</unclear> <unclear cert="medium" resp="#joint">nun</unclear>-
+<lb n="60"/>mehr <unclear cert="low" resp="#joint">innert</unclear> <unclear cert="low" resp="#joint">zweijen</unclear> <unclear cert="medium" resp="#joint">stunden</unclear> vom leben zum <unclear cert="medium" resp="#joint">tod</unclear>
+<lb n="61"/>hinrichten <unclear cert="low" resp="#joint">wellen</unclear>, und <unclear cert="low" resp="#joint">ime</unclear> die <unclear cert="low" resp="#joint">herzen</unclear> predig-
+<lb n="62"/><unclear cert="medium" resp="#joint">kanten</unclear>, <unclear cert="low" resp="#joint">zůgesprochen</unclear> und ernstlich <unclear cert="low" resp="#joint">vermandt</unclear>, <unclear cert="low" resp="#joint">sidt</unclear>-
+<lb n="63"/><unclear cert="low" resp="#joint">male</unclear> eß doch <unclear cert="low" resp="#joint">synethalben</unclear> am letsten sige, solte er mit
+<lb n="64"/>der warheit <unclear cert="medium" resp="#joint">umbgehn</unclear>, und <unclear cert="medium" resp="#joint">niemandt</unclear> <unclear cert="medium" resp="#joint">unrecht</unclear> thun,
 <pb facs="StadtASG_Missive_1844_6847.jpg" n="3"/>
-<lb n="65"/>Uff solches er uff sijn end genomen. das er die
-<lb n="66"/>vorgemelten personen fälschlich verklagt. unnd
-<lb n="67"/>habe ime allein <persName resp="#ner">Petter Wagner</persName> von <placeName ref="stadtasg-places-8" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Appenzell</unclear></placeName>
-<lb n="68"/>zu dem ijnbruch in <persName resp="#ner">Jungen Hanß Altëggers</persName>
-<lb n="69"/>keller geholffen. Diewijl er aber solche wort
-<lb n="70"/>eerst in sijner letsten stund. ouch <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">ußfueren</unclear>
-<lb n="71"/><unclear cert="low" resp="#joint">geredt</unclear>, <unclear cert="low" resp="#joint">hat</unclear> er nit wol mehr <unclear cert="low" resp="#joint">künden</unclear> <unclear cert="low" resp="#joint">gijchtigen</unclear>
-<lb n="72"/><unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">eben</unclear> erfraget werden. Ist ouch wijtters uff
-<lb n="73"/>solches nützig mehr dißfals gegen ime fürgenommen
+<lb n="65"/>Uff <unclear cert="medium" resp="#joint">solches</unclear> er uff <unclear cert="low" resp="#joint">sijn</unclear> end genomen. das er die
+<lb n="66"/><unclear cert="low" resp="#joint">vorgemelten</unclear> <unclear cert="low" resp="#joint">personen</unclear> <unclear cert="medium" resp="#joint">fälschlich</unclear> verklagt. unnd
+<lb n="67"/>habe ime <unclear cert="low" resp="#joint">allein</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Petter</unclear> <unclear cert="low" resp="#joint">Wagner</unclear></persName> von <placeName ref="stadtasg-places-8" cert="medium" resp="#ner">Appenzell</placeName>
+<lb n="68"/>zu dem <unclear cert="low" resp="#joint">ijnbruch</unclear> in <persName resp="#ner">Jungen <unclear cert="medium" resp="#joint">Hanß</unclear> <unclear cert="low" resp="#joint">Altëggers</unclear></persName>
+<lb n="69"/><unclear cert="medium" resp="#joint">keller</unclear> <unclear cert="low" resp="#joint">geholffen</unclear>. <unclear cert="low" resp="#joint">Diewijl</unclear> er aber solche wort
+<lb n="70"/><unclear cert="low" resp="#joint">eerst</unclear> in <unclear cert="low" resp="#joint">sijner</unclear> <unclear cert="low" resp="#joint">letsten</unclear> stund. ouch <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">ußfueren</unclear>
+<lb n="71"/>geredt, hat er nit wol mehr künden gijchtigen
+<lb n="72"/>unnd eben erfraget werden. Ist ouch <unclear cert="low" resp="#joint">wijtters</unclear> uff
+<lb n="73"/>solches <unclear cert="low" resp="#joint">nützig</unclear> mehr <unclear cert="low" resp="#joint">dißfals</unclear> gegen ime <unclear cert="low" resp="#joint">fürgenommen</unclear>
 <lb n="74"/>worden.
-<lb n="75"/>Diß habend wir üch. denen wir zu aller nach-
-<lb n="76"/>parlicher gutwilliger diensts erzeigung wollgeneigt.
-<lb n="77"/>uff begeren unangefüegt nit lassen: <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">koennend</unclear>
-<lb n="78"/>üch hiemit kein ordnung geben. wie ir üch gegen
-<lb n="79"/>üwerem verstrickten zuverhalten habend. dann
-<lb n="80"/>ir üch wol werdend zuverhalten wüssen.
-<lb n="81"/>Damit göttlicher bewahrung wollbevelchend.
-<lb n="82"/>Datum <origPlace ref="stadtasg-places-263" cert="medium" resp="#ner">Trogen</origPlace> in unserem gsessnen rath. den
-<lb n="83"/><origDate when="1613" resp="#ner"><unclear cert="low" resp="#joint">12.ten</unclear> <unclear cert="low" resp="#joint">Maij</unclear>. Anno 1613</origDate>.
-<lb n="84"/><orgName ref="stadtasg-actors-565" cert="medium" role="issuer" resp="#ner">Landtaman und Rath der Usseren
-<lb n="85"/>Roden deß Landts Appenzell</orgName>.
+<lb n="75"/>Diß habend wir üch. <unclear cert="medium" resp="#joint">denen</unclear> wir <unclear cert="medium" resp="#joint">zu</unclear> aller nach-
+<lb n="76"/><unclear cert="medium" resp="#joint">parlicher</unclear> <unclear cert="low" resp="#joint">gutwilliger</unclear> diensts <unclear cert="medium" resp="#joint">erzeigung</unclear> <unclear cert="low" resp="#joint">wollgeneigt</unclear>.
+<lb n="77"/>uff <unclear cert="low" resp="#joint">begeren</unclear> <unclear cert="low" resp="#joint">unangefüegt</unclear> nit lassen: und koennend
+<lb n="78"/>üch hiemit kein <unclear cert="medium" resp="#joint">ordnung</unclear> geben. wie ir üch gegen
+<lb n="79"/><unclear cert="low" resp="#joint">üwerem</unclear> <unclear cert="low" resp="#joint">verstrickten</unclear> <unclear cert="low" resp="#joint">zuverhalten</unclear> habend. dann
+<lb n="80"/>ir üch wol <unclear cert="medium" resp="#joint">werdend</unclear> <unclear cert="low" resp="#joint">zuverhalten</unclear> <unclear cert="low" resp="#joint">wüssen</unclear>.
+<lb n="81"/>Damit <unclear cert="medium" resp="#joint">göttlicher</unclear> <unclear cert="low" resp="#joint">bewahrung</unclear> <unclear cert="low" resp="#joint">wollbevelchend</unclear>.
+<lb n="82"/>Datum <origPlace ref="stadtasg-places-263" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Trogen</unclear></origPlace> in <unclear cert="medium" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">gsessnen</unclear> rath. den
+<lb n="83"/><origDate when="1613" resp="#ner">12.ten Maij. Anno 1613</origDate>.
+<lb n="84"/><orgName ref="stadtasg-actors-565" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Landtaman</unclear> und Rath der <unclear cert="medium" resp="#joint">Usseren</unclear>
+<lb n="85"/>Roden <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Landts</unclear> Appenzell</orgName>.
 <pb facs="StadtASG_Missive_1844_6848.jpg" n="4"/>
-<lb n="86"/><unclear cert="low" resp="#joint">Denen</unclear> <unclear cert="low" resp="#joint">fromen</unclear> <unclear cert="low" resp="#joint">fuersichtigen</unclear> <unclear cert="low" resp="#joint">ehrsamen</unclear> und
-<lb n="87"/><unclear cert="low" resp="#joint">weyßen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear> der statt
-<lb n="88"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>. Unseren <unclear cert="low" resp="#joint">insonders</unclear>
-<lb n="89"/><unclear cert="low" resp="#joint">guten</unclear> fründen und getrüwen lieben
-<lb n="90"/><unclear cert="medium" resp="#joint">nachpauren</unclear>.
+<lb n="86"/>Denen fromen fuersichtigen ehrsamen und
+<lb n="87"/>weyßen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der statt
+<lb n="88"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>. <unclear cert="medium" resp="#joint">Unseren</unclear> insonders
+<lb n="89"/><unclear cert="low" resp="#joint">guten</unclear> fründen und <unclear cert="medium" resp="#joint">getrüwen</unclear> lieben
+<lb n="90"/><unclear cert="low" resp="#joint">nachpauren</unclear>.
 </p>
         </body>
     </text>

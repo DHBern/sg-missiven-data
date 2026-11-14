@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2413</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">De Castille bittet Bürgermeister und Rat zu St. Gallen, ihm mitzuteilen, ob sie die Änderung des gewöhnlichen Boten zwischen den Städten genehmigt hätten oder ob ein Grund für diese Änderung vorliege. Er hofft, dass sie ihm die beantragte Bequemlichkeit nicht verwehren werden, da sie ihnen keinen Nachteil bringe.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">De Castille</name><placeName resp="#regest">Solothurn</placeName><date when="1613-04-27" resp="#regest">ce xxviie avril 1613</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,28 +35,28 @@
 <p>
 <pb facs="StadtASG_Missive_2413_9279.jpg" n="1"/>
 <lb n="1"/>Messieurs Vous ayant cy devant escrit pour le faict du
-<lb n="2"/>messager ordinaire d'entre icy, afin qu'il vous pleust laisser les
-<lb n="3"/>choses en leur entier s'il n'y a quelque cause pare qui vous puisse
-<lb n="4"/>avoir donné Juste subiet de faire ce changement, j'attendoye d'
-<lb n="5"/>entendre sur ce vre resolution Neantmoins ayant trouvé
-<lb n="6"/>l'occasion de vous escrire derechef par <persName resp="#ner">Monsegr Zollcoffer</persName>
-<lb n="7"/>present porteur. Je vous ay faict ce mot d'abondant pour
-<lb n="8"/>vous prier me donner advis de ce qu'avez résolu afin q
-<lb n="9"/>j'y pourvoye, si tant estois que n'eussiez agreable la
-<lb n="10"/>proposition que je vous ay faicte Ayant toutesfois ceste
-<lb n="11"/>croyance qu'en chose qui ne vous preiudicie vous n'empescherez
+<lb n="2"/><unclear cert="medium" resp="#joint">messager</unclear> ordinaire <unclear cert="medium" resp="#joint">d'entre</unclear> icy, afin qu'il vous pleust laisser <unclear cert="low" resp="#joint">les</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">choses</unclear> <unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">leur</unclear> <unclear cert="low" resp="#joint">entier</unclear> s'il n'y a quelque cause <unclear cert="low" resp="#joint">pare</unclear> qui vous puisse
+<lb n="4"/>avoir <unclear cert="medium" resp="#joint">donné</unclear> Juste <unclear cert="low" resp="#joint">subiet</unclear> de faire ce changement, <unclear cert="low" resp="#joint">j'attendoye</unclear> <unclear cert="low" resp="#joint">d</unclear>'
+<lb n="5"/><unclear cert="low" resp="#joint">entendre</unclear> <unclear cert="low" resp="#joint">sur</unclear> <unclear cert="low" resp="#joint">ce</unclear> vre resolution Neantmoins ayant <unclear cert="medium" resp="#joint">trouvé</unclear>
+<lb n="6"/>l'occasion de vous escrire <unclear cert="medium" resp="#joint">derechef</unclear> par <persName resp="#ner"><unclear cert="low" resp="#joint">Monsegr</unclear> <unclear cert="low" resp="#joint">Zollcoffer</unclear></persName>
+<lb n="7"/>present porteur. Je vous ay faict <unclear cert="medium" resp="#joint">ce</unclear> <unclear cert="medium" resp="#joint">mot</unclear> <unclear cert="medium" resp="#joint">d'abondant</unclear> pour
+<lb n="8"/>vous prier me donner advis de ce <unclear cert="low" resp="#joint">qu'avez</unclear> résolu afin q
+<lb n="9"/>j'y <unclear cert="low" resp="#joint">pourvoye</unclear>, <unclear cert="low" resp="#joint">si</unclear> <unclear cert="low" resp="#joint">tant</unclear> <unclear cert="low" resp="#joint">estois</unclear> que n'eussiez agreable la
+<lb n="10"/>proposition que je vous ay faicte <unclear cert="low" resp="#joint">Ayant</unclear> toutesfois <unclear cert="low" resp="#joint">ceste</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">croyance</unclear> qu'en chose qui ne vous preiudicie vous <unclear cert="low" resp="#joint">n'empescherez</unclear>
 <lb n="12"/>point ce qui me peu apporter de la commodité Priant Dieu.
-<lb n="13"/>Messieurs Vs avoir en sa s.te garde a <origPlace resp="#ner">Soleurre</origPlace> <origDate when="1613" resp="#ner">ce xxviie
-<lb n="14"/>avril 1613</origDate>
-<lb n="15"/>Vostre tresaffectionné serviteur
+<lb n="13"/>Messieurs <unclear cert="medium" resp="#joint">Vs</unclear> <unclear cert="medium" resp="#joint">avoir</unclear> en sa <unclear cert="low" resp="#joint">s.te</unclear> garde <unclear cert="low" resp="#joint">a</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Soleurre</unclear></origPlace> <origDate when="1613" resp="#ner">ce <unclear cert="low" resp="#joint">xxviie</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">avril</unclear> 1613</origDate>
+<lb n="15"/>Vostre <unclear cert="medium" resp="#joint">tresaffectionné</unclear> <unclear cert="medium" resp="#joint">serviteur</unclear>
 <lb n="16"/><persName role="issuer" resp="#ner">De Castille</persName>
 <pb facs="StadtASG_Missive_2413_9280.jpg" n="2"/>
 <lb n="17"/>[]
 <pb facs="StadtASG_Missive_2413_9281.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2413_9282.jpg" n="4"/>
-<lb n="18"/>A Messieurs
-<lb n="19"/>Messieurs les <orgName role="recipient" resp="#ner">Bourguemestre
-<lb n="20"/>&amp; Conseil de la ville de
+<lb n="18"/><unclear cert="low" resp="#joint">A</unclear> Messieurs
+<lb n="19"/>Messieurs les <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Bourguemestre</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">&amp;</unclear> Conseil de la ville de
 <lb n="21"/>Sainct Gal</orgName>
 </p>
         </body>

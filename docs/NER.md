@@ -139,8 +139,11 @@ letter is seen (`ner_llm/combined_report.json`):
 
 ### Run
 
-- **Unedited pages:** all 6,079 with text, tagged with 21,865 tags. `entities/gemini-4-argon.jsonl` has `"method": "combined"` per record and `by` per tag. hmBERT's tags alone are kept in `entities/hmbert/`.
-- **TEI:** `scripts/tei_export.py` writes `tei_unedited/`, 1,840 letters.
+- **Unedited pages:** all 9,576 with text, tagged with 36,709 tags (13.11.2026: 6,079 pages; 14.11.2026: the 3,497 pages Argon had read since). `entities/gemini-4-argon.jsonl` has `"method": "combined"` per record and `by` per tag. hmBERT's tags alone are kept in `entities/hmbert/`.
+- **Adding pages later:** `ner.py tag` (hmBERT, appends only pages not yet tagged), then `ner_llm.py tag` (combined, only pages not yet `combined`). Before it starts, `ner_llm.py tag` copies the hmBERT records of pages added since into `entities/hmbert/`, so they are proposals for the judge; without that, new pages would get qwen3.8's proposals only.
+- **Links written:** organisations 5,818, places 7,887 (judge, `@cert="medium"`); none for persons.
+- **Unlinked names:** `entities/unlinked_gemini-4-argon.tsv`, 13,865 groups, from the combined tags.
+- **TEI:** `scripts/tei_export.py` writes `tei_unedited/`, 2,935 letters (14.11.2026).
   - Every file validates against TEI P5 4.12 (`tei_all`).
   - Every tag carries `resp="#ner"`, and the `respStmt` names the method.
   - Words the machine readings disagree on are `<unclear cert="low|medium" resp="#joint">` (see `docs/PIPELINE.md`).

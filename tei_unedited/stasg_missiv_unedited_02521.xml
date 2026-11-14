@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2521</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,85 +20,85 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Geheimer Rat der Stadt Zürich informieren Bürgermeister und Rat der Stadt St. Gallen über die Ergebnisse der jüngsten Aargauer Zusammenkunft. Sie bestätigen die mündliche Erklärung der Gesandten, wonach die Eidgenossen im Notfall ihre Freiheiten mit Leben, Gut und Blut verteidigen und einander beistehen wollen. Da sie die schriftliche Fassung des Konzepts aus bestimmten Gründen für bedenklich halten, bitten sie St. Gallen, sich mit der mündlichen Relation und dieser summarischen Erinnerung zu begnügen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Geheime Rat der Stadt Zürich</name><date when="1624-11-27" resp="#regest">Datum den 27ten Novembris Anno 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat der Stadt St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2521_9721.jpg" n="1"/>
-<lb n="1"/>Unser fründtlich willig diennst, und was wir
-<lb n="2"/>ehren, liebs und guets vermögend, zuvor, From
-<lb n="3"/>Fürsichtig, Ehrsam Wyß, innsonders guet fründt
-<lb n="4"/>und gethrüw lieb <orgName resp="#ner">Eidtgnoßen</orgName>. Ir
-<lb n="5"/>werdent uß üwers uff Jüngstgehaltner
-<lb n="6"/><placeName ref="stadtasg-places-51" cert="medium" resp="#ner">Arowischer</placeName> zusamenkunfft gehabten Ehrsamen gsandten
-<lb n="7"/>mündtlicher relation, zwyfelsohn, albereit ver=
-<lb n="8"/>standen haben, was gstalten man über das
-<lb n="9"/>bewüßte defensionswerck uff den einen unnd
-<lb n="10"/>andern weg verthruwliche underred gehalten,
-<lb n="11"/>und hieruff fürnemblich dise gemeine erkle=
-<lb n="12"/>rung gegen einandern erfolget, daß man nam=
-<lb n="13"/>lich zuo erhaltung unnserer Gist: und lyblich=
-<lb n="14"/>er frygheiten, uff den erforderenden nothfal,
-<lb n="15"/>mit der hilff Gottes, lyb guet und bluet zu=
-<lb n="16"/>samensetzen, und einandern nach ußwyßung der
-<lb n="17"/>Pündten, und üßerstem vermögen, glych wie unß=
-<lb n="18"/>ere fromen vorderen auch gethan, <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eidtgnößisch</orgName>
-<lb n="19"/>redlich byspringen welle. Nun ist zwar
-<lb n="20"/>über die gantze Conferentz ein schrifftliches
+<lb n="1"/><unclear cert="low" resp="#joint">Unser</unclear> fründtlich willig diennst, und was wir
+<lb n="2"/>ehren, liebs und guets vermögend, <unclear cert="medium" resp="#joint">zuvor</unclear>, From
+<lb n="3"/>Fürsichtig, <unclear cert="low" resp="#joint">Ehrsam</unclear> Wyß, innsonders guet fründt
+<lb n="4"/>und gethrüw lieb <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName>. Ir
+<lb n="5"/>werdent <unclear cert="medium" resp="#joint">uß</unclear> üwers <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">Jüngstgehaltner</unclear>
+<lb n="6"/><placeName ref="stadtasg-places-51" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Arowischer</unclear></placeName> <unclear cert="low" resp="#joint">zusamenkunfft</unclear> gehabten <unclear cert="low" resp="#joint">Ehrsamen</unclear> <unclear cert="low" resp="#joint">gsandten</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">mündtlicher</unclear> relation, <unclear cert="low" resp="#joint">zwyfelsohn</unclear>, albereit ver=
+<lb n="8"/>standen haben, was <unclear cert="medium" resp="#joint">gstalten</unclear> man über das
+<lb n="9"/><unclear cert="low" resp="#joint">bewüßte</unclear> <unclear cert="medium" resp="#joint">defensionswerck</unclear> <unclear cert="low" resp="#joint">uff</unclear> den <unclear cert="low" resp="#joint">einen</unclear> unnd
+<lb n="10"/><unclear cert="medium" resp="#joint">andern</unclear> weg <unclear cert="low" resp="#joint">verthruwliche</unclear> <unclear cert="medium" resp="#joint">underred</unclear> gehalten,
+<lb n="11"/>und <unclear cert="low" resp="#joint">hieruff</unclear> fürnemblich dise <unclear cert="medium" resp="#joint">gemeine</unclear> <unclear cert="low" resp="#joint">erkle=</unclear>
+<lb n="12"/>rung gegen <unclear cert="medium" resp="#joint">einandern</unclear> <unclear cert="medium" resp="#joint">erfolget</unclear>, daß man <unclear cert="low" resp="#joint">nam=</unclear>
+<lb n="13"/>lich <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">erhaltung</unclear> <unclear cert="medium" resp="#joint">unnserer</unclear> <unclear cert="low" resp="#joint">Gist</unclear>: und <unclear cert="low" resp="#joint">lyblich=</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">frygheiten</unclear>, <unclear cert="medium" resp="#joint">uff</unclear> den <unclear cert="medium" resp="#joint">erforderenden</unclear> nothfal,
+<lb n="15"/>mit der hilff Gottes, lyb <unclear cert="medium" resp="#joint">guet</unclear> und <unclear cert="low" resp="#joint">bluet</unclear> zu=
+<lb n="16"/><unclear cert="low" resp="#joint">samensetzen</unclear>, und <unclear cert="medium" resp="#joint">einandern</unclear> nach <unclear cert="low" resp="#joint">ußwyßung</unclear> der
+<lb n="17"/><unclear cert="low" resp="#joint">Pündten</unclear>, und <unclear cert="low" resp="#joint">üßerstem</unclear> vermögen, glych wie unß=
+<lb n="18"/>ere fromen <unclear cert="low" resp="#joint">vorderen</unclear> auch gethan, <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Eidtgnößisch</unclear></orgName>
+<lb n="19"/><unclear cert="medium" resp="#joint">redlich</unclear> <unclear cert="low" resp="#joint">byspringen</unclear> welle. Nun ist <unclear cert="low" resp="#joint">zwar</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">über</unclear> die gantze <unclear cert="medium" resp="#joint">Conferentz</unclear> ein schrifftliches
 <lb n="21"/>concept gemachet worden, Wann wir
-<lb n="22"/>aber daßelbig inn sölicher wytlöffiger form,
-<lb n="23"/>wie von disem werck inn beid weg ver=
-<lb n="24"/>thruwlich conferiert worden, abscheidts wyße
-<lb n="25"/>verfertigen zelaßen, uß ursachen die ir
-<lb n="26"/>selbsten unschwer züerachten, eben bedencklich
-<lb n="27"/>finden. Als haben wir üch unnseren
-<lb n="28"/>gethrüwen lieben <orgName resp="#ner">Eidtgnoßen</orgName> deßwegen
-<lb n="29"/>fründtlich zuoschryben wöllen, der hoffnung,
+<lb n="22"/>aber <unclear cert="low" resp="#joint">daßelbig</unclear> <unclear cert="medium" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">sölicher</unclear> <unclear cert="low" resp="#joint">wytlöffiger</unclear> form,
+<lb n="23"/>wie von disem <unclear cert="low" resp="#joint">werck</unclear> inn beid weg ver=
+<lb n="24"/><unclear cert="low" resp="#joint">thruwlich</unclear> conferiert worden, <unclear cert="medium" resp="#joint">abscheidts</unclear> wyße
+<lb n="25"/>verfertigen <unclear cert="low" resp="#joint">zelaßen</unclear>, uß <unclear cert="medium" resp="#joint">ursachen</unclear> die <unclear cert="low" resp="#joint">ir</unclear>
+<lb n="26"/>selbsten <unclear cert="low" resp="#joint">unschwer</unclear> <unclear cert="low" resp="#joint">züerachten</unclear>, eben bedencklich
+<lb n="27"/>finden. Als haben wir üch <unclear cert="low" resp="#joint">unnseren</unclear>
+<lb n="28"/>gethrüwen lieben <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName> deßwegen
+<lb n="29"/>fründtlich <unclear cert="medium" resp="#joint">zuoschryben</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, der hoffnung,
 <pb facs="StadtASG_Missive_2521_9722.jpg" n="2"/>
-<lb n="30"/>ir üch gedachts üwers herren ehrngsandten
-<lb n="31"/>mundtlichen relation, und dißere unnserer
-<lb n="32"/>jetzmaligen summarischen erynnerung unnd
-<lb n="33"/>erbietens, wol settigen laßen werdind.
-<lb n="34"/>Unnd wie wir dann der von üwer unnserer
-<lb n="35"/>lieben eidtgnosßen wegen beschehenen erklerung
-<lb n="36"/>dißmalen wol vernuegt, alß werdend wir
-<lb n="37"/>nit ermanglen üch etwan mit gelegenheit, was
-<lb n="38"/>unnser, und anderer üwerer und unnserer
-<lb n="39"/>lieben eidtgnosßen ferner guetachten hierjnnen
-<lb n="40"/>syn mögte, mundt: ald schrifftlich der gebür nach
-<lb n="41"/>zeberichten. Da wir dann nit zwyflen,
-<lb n="42"/>ir fürbaß sambt unnß und anderen unnseren
-<lb n="43"/>eidtgnosßen zuo allem dem, so zuo gemeiner wol=
+<lb n="30"/><unclear cert="medium" resp="#joint">ir</unclear> üch <unclear cert="medium" resp="#joint">gedachts</unclear> <unclear cert="low" resp="#joint">üwers</unclear> herren <unclear cert="low" resp="#joint">ehrngsandten</unclear>
+<lb n="31"/><unclear cert="medium" resp="#joint">mundtlichen</unclear> relation, und <unclear cert="low" resp="#joint">dißere</unclear> <unclear cert="low" resp="#joint">unnserer</unclear>
+<lb n="32"/>jetzmaligen <unclear cert="low" resp="#joint">summarischen</unclear> <unclear cert="low" resp="#joint">erynnerung</unclear> unnd
+<lb n="33"/>erbietens, wol <unclear cert="low" resp="#joint">settigen</unclear> <unclear cert="medium" resp="#joint">laßen</unclear> <unclear cert="medium" resp="#joint">werdind</unclear>.
+<lb n="34"/>Unnd wie wir dann der von üwer <unclear cert="low" resp="#joint">unnserer</unclear>
+<lb n="35"/>lieben <unclear cert="medium" resp="#joint">eidtgnosßen</unclear> wegen beschehenen <unclear cert="medium" resp="#joint">erklerung</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">dißmalen</unclear> wol <unclear cert="low" resp="#joint">vernuegt</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">werdend</unclear> wir
+<lb n="37"/>nit <unclear cert="medium" resp="#joint">ermanglen</unclear> üch etwan mit gelegenheit, was
+<lb n="38"/><unclear cert="medium" resp="#joint">unnser</unclear>, und <unclear cert="medium" resp="#joint">anderer</unclear> üwerer und <unclear cert="low" resp="#joint">unnserer</unclear>
+<lb n="39"/>lieben eidtgnosßen <unclear cert="medium" resp="#joint">ferner</unclear> <unclear cert="medium" resp="#joint">guetachten</unclear> <unclear cert="medium" resp="#joint">hierjnnen</unclear>
+<lb n="40"/>syn <unclear cert="low" resp="#joint">mögte</unclear>, <unclear cert="low" resp="#joint">mundt</unclear>: ald schrifftlich der <unclear cert="medium" resp="#joint">gebür</unclear> nach
+<lb n="41"/><unclear cert="low" resp="#joint">zeberichten</unclear>. Da wir dann nit <unclear cert="medium" resp="#joint">zwyflen</unclear>,
+<lb n="42"/>ir fürbaß sambt unnß und anderen <unclear cert="medium" resp="#joint">unnseren</unclear>
+<lb n="43"/>eidtgnosßen zuo allem dem, so <unclear cert="medium" resp="#joint">zuo</unclear> gemeiner wol=
 <lb n="44"/>fahrt dienen und reichen mag, begirig und ge=
-<lb n="45"/>neigt syn werdint. Alß wir dann üch
-<lb n="46"/>unnseren lieben eidtgnosßen auch jnnsonder=
-<lb n="47"/>heit alle eidtgnoßische uffrechte thrüw
-<lb n="48"/>und fründtschafft jeder zyt zeleisten willig
-<lb n="49"/>und erbietig sind. Unnß damit sambt=
-<lb n="50"/>lich Gottes gnediger bewahrung wol be=
+<lb n="45"/>neigt syn werdint. <unclear cert="medium" resp="#joint">Alß</unclear> wir dann üch
+<lb n="46"/><unclear cert="low" resp="#joint">unnseren</unclear> lieben <unclear cert="medium" resp="#joint">eidtgnosßen</unclear> auch <unclear cert="low" resp="#joint">jnnsonder=</unclear>
+<lb n="47"/><unclear cert="medium" resp="#joint">heit</unclear> alle <unclear cert="low" resp="#joint">eidtgnoßische</unclear> <unclear cert="low" resp="#joint">uffrechte</unclear> <unclear cert="low" resp="#joint">thrüw</unclear>
+<lb n="48"/>und <unclear cert="low" resp="#joint">fründtschafft</unclear> <unclear cert="low" resp="#joint">jeder</unclear> zyt <unclear cert="low" resp="#joint">zeleisten</unclear> willig
+<lb n="49"/>und <unclear cert="medium" resp="#joint">erbietig</unclear> sind. <unclear cert="medium" resp="#joint">Unnß</unclear> damit sambt=
+<lb n="50"/>lich Gottes <unclear cert="low" resp="#joint">gnediger</unclear> bewahrung wol be=
 <lb n="51"/>velchende. Datum den <origDate when="1624-11-27" resp="#ner">27ten Novembris
 <lb n="52"/>Anno 1624</origDate>.
 <lb n="53"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Ge=
-<lb n="54"/>heime Räth der
+<lb n="54"/>heime <unclear cert="low" resp="#joint">Räth</unclear> der
 <lb n="55"/>Statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2521_9723.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2521_9724.jpg" n="4"/>
-<lb n="56"/>Denen frommen, für=
-<lb n="57"/>sichtigen, ehrsamen, wyßen,
+<lb n="56"/><unclear cert="medium" resp="#joint">Denen</unclear> frommen, für=
+<lb n="57"/>sichtigen, <unclear cert="medium" resp="#joint">ehrsamen</unclear>, <unclear cert="medium" resp="#joint">wyßen</unclear>,
 <lb n="58"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rath
-<lb n="59"/>der Statt S. Gallen</orgName>, unß=
-<lb n="60"/>eren innsonders gueten fründ=
+<lb n="59"/>der Statt S. Gallen</orgName>, <unclear cert="medium" resp="#joint">unß=</unclear>
+<lb n="60"/><unclear cert="medium" resp="#joint">eren</unclear> innsonders <unclear cert="medium" resp="#joint">gueten</unclear> fründ=
 <lb n="61"/>en und getrüwen lieben
-<lb n="62"/>Eidtgnosßen.
+<lb n="62"/><unclear cert="low" resp="#joint">Eidtgnosßen</unclear>.
 </p>
         </body>
     </text>

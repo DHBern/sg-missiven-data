@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2447</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,181 +20,181 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Das Stadtgericht zu Lindau ersucht Bürgermeister und Rat zu St. Gallen, den dortigen Bürger Caspar Kürißamer als Zeugen in einem Rechtsstreit zwischen Anna Rietmännin und Johannes Hößlin über eine Weinschuld zu vernehmen. Die Parteien streiten über die Währung und den Kurs der Zahlung. Lindau bittet, den Zeugen eidlich zu befragen und die Aussagen verschlossen zu übermitteln.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Stadtschreiber und Richter des Stadtgerichts zu Lindau</name><date when="1623" resp="#regest">datum j. Novembris ao p 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2447_9425.jpg" n="1"/>
-<lb n="1"/>Unser freuendtlich willig dienst zuovor Eurn-
-<lb n="2"/>uest fuersichtig Ersame und weiße, besonders
-<lb n="3"/>liebe herrn guote freuend und nachbarn,
-<lb n="4"/>Und geben Ihenn beneben zuouernemen, daß sich
-<lb n="5"/>vor unß aine rechtfertigung erhalt entzwischen
-<lb n="6"/>frawen <persName resp="#ner">Anna Rietmaennin</persName> burgerin zue
-<lb n="7"/><placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName>, claegerin an ainem, und <persName resp="#ner">Johannes
-<lb n="8"/>Hößlin</persName>, goldschmid, burgern alhie zue <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>,
-<lb n="9"/>beclagten, andern theilß, ainen Ihr claegerin,
-<lb n="10"/>bei Ime, beclagten, außstehende weinschuld
-<lb n="11"/>die er Ihr uff <date resp="#ner">Liechtmeß Juengsthin</date>, mit
-<lb n="12"/>wehrung wie sie dannzuomahl zue Bischoff-
-<lb n="13"/>zell gangbar sein, werde, zuobezahlen ver-
-<lb n="14"/>sprochen, welches aber vom beclagten theil
-<lb n="15"/>vernaint und fuergegeben wurdt, er hab mit
-<lb n="16"/>der claegerin, nit auff guldin, sonder thaler und
-<lb n="17"/>daß sie Jeden thaler von Ihme inn der be-
-<lb n="18"/>zahlung umb 3 fl. annemen soll, gehandelt.
-<lb n="19"/>Inn welcher rechtfertigung ouch die partheyen
-<lb n="20"/>so feer, verfahren, daß sie beederseits, zuer
-<lb n="21"/>anerbottnen beweisung rechtlichen gelaßen
-<lb n="22"/>und Inen compaßbrief erkendt worden.
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freuendtlich</unclear> willig dienst zuovor <unclear cert="low" resp="#joint">Eurn</unclear>-
+<lb n="2"/><unclear cert="low" resp="#joint">uest</unclear> <unclear cert="medium" resp="#joint">fuersichtig</unclear> Ersame und weiße, besonders
+<lb n="3"/>liebe herrn guote <unclear cert="low" resp="#joint">freuend</unclear> und nachbarn,
+<lb n="4"/>Und geben <unclear cert="low" resp="#joint">Ihenn</unclear> <unclear cert="medium" resp="#joint">beneben</unclear> <unclear cert="low" resp="#joint">zuouernemen</unclear>, daß sich
+<lb n="5"/>vor unß <unclear cert="low" resp="#joint">aine</unclear> rechtfertigung <unclear cert="medium" resp="#joint">erhalt</unclear> <unclear cert="medium" resp="#joint">entzwischen</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">frawen</unclear> <persName resp="#ner">Anna <unclear cert="low" resp="#joint">Rietmaennin</unclear></persName> burgerin <unclear cert="medium" resp="#joint">zue</unclear>
+<lb n="7"/><placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName>, <unclear cert="low" resp="#joint">claegerin</unclear> an <unclear cert="medium" resp="#joint">ainem</unclear>, und <persName resp="#ner">Johannes
+<lb n="8"/><unclear cert="low" resp="#joint">Hößlin</unclear></persName>, <unclear cert="medium" resp="#joint">goldschmid</unclear>, <unclear cert="medium" resp="#joint">burgern</unclear> alhie <unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName>,
+<lb n="9"/>beclagten, andern <unclear cert="medium" resp="#joint">theilß</unclear>, <unclear cert="low" resp="#joint">ainen</unclear> <unclear cert="low" resp="#joint">Ihr</unclear> <unclear cert="low" resp="#joint">claegerin</unclear>,
+<lb n="10"/>bei Ime, <unclear cert="medium" resp="#joint">beclagten</unclear>, außstehende <unclear cert="low" resp="#joint">weinschuld</unclear>
+<lb n="11"/>die er Ihr uff <date resp="#ner"><unclear cert="medium" resp="#joint">Liechtmeß</unclear> <unclear cert="low" resp="#joint">Juengsthin</unclear></date>, mit
+<lb n="12"/><unclear cert="medium" resp="#joint">wehrung</unclear> wie sie <unclear cert="medium" resp="#joint">dannzuomahl</unclear> <unclear cert="medium" resp="#joint">zue</unclear> Bischoff-
+<lb n="13"/>zell gangbar sein, werde, <unclear cert="low" resp="#joint">zuobezahlen</unclear> ver-
+<lb n="14"/>sprochen, welches aber <unclear cert="medium" resp="#joint">vom</unclear> <unclear cert="medium" resp="#joint">beclagten</unclear> theil
+<lb n="15"/><unclear cert="low" resp="#joint">vernaint</unclear> und <unclear cert="low" resp="#joint">fuergegeben</unclear> wurdt, er hab mit
+<lb n="16"/>der <unclear cert="low" resp="#joint">claegerin</unclear>, nit auff guldin, <unclear cert="medium" resp="#joint">sonder</unclear> <unclear cert="medium" resp="#joint">thaler</unclear> und
+<lb n="17"/>daß sie Jeden <unclear cert="medium" resp="#joint">thaler</unclear> von Ihme <unclear cert="medium" resp="#joint">inn</unclear> der be-
+<lb n="18"/>zahlung umb 3 fl. <unclear cert="low" resp="#joint">annemen</unclear> soll, gehandelt.
+<lb n="19"/><unclear cert="medium" resp="#joint">Inn</unclear> welcher rechtfertigung ouch die partheyen
+<lb n="20"/>so <unclear cert="low" resp="#joint">feer</unclear>, verfahren, daß sie <unclear cert="medium" resp="#joint">beederseits</unclear>, <unclear cert="low" resp="#joint">zuer</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">anerbottnen</unclear> beweisung rechtlichen <unclear cert="medium" resp="#joint">gelaßen</unclear>
+<lb n="22"/>und <unclear cert="medium" resp="#joint">Inen</unclear> compaßbrief <unclear cert="medium" resp="#joint">erkendt</unclear> worden.
 <lb n="23"/>Wann
 <pb facs="StadtASG_Missive_2447_9426.jpg" n="2"/>
-<lb n="24"/>Wann dann jede obrigkhait der andern inn
-<lb n="25"/>solchen faellen hilff und beistand zuthun, auch be=
-<lb n="26"/>clagter <persName resp="#ner">Heßlin</persName> neben andern E. F. E. Wht.
-<lb n="27"/>mitburger <persName resp="#ner">Caspar Kuerißamer</persName> zum zeügen
-<lb n="28"/>ernenndt. So gelangt an dieselb E. F. E.
-<lb n="29"/>Wht. von ambts und grichts wegen unser dienst=
-<lb n="30"/>freuendt und nachbarlich ersuchen, die woellen
-<lb n="31"/>besagten Kuerißamer ehister gelegenhait für sie
-<lb n="32"/>beschaiden, doch den clegerin, (ob sie solchen ge=
-<lb n="33"/>zeügen woelle sehen, hoeren uffnemmen geloben
-<lb n="34"/>und schwoeren, od fragstuckh übergeben) darzuo
-<lb n="35"/>gebuerlich verkünden, volgents den gezeügen über
-<lb n="36"/>deß beclagten beweißen articul sub no. 1. beiligend,
-<lb n="37"/>sowol auch uber der clegerin fragstuckh (da
-<lb n="38"/>einiche von ihr producirt werden) vermitelst
-<lb n="39"/>eydts ordenlich verhoeren, sein ußsag nach
-<lb n="40"/>notdurfft fleißig beschreiben und unß nach
-<lb n="41"/>solchem die uffgehebne kundtschafft, sambt
-<lb n="42"/>aller dabei fürkomender handlung, uff deß
-<lb n="43"/>producenten costen verschloßen übersenden,
-<lb n="44"/>damit wir fernners im rechten verfahren und
-<lb n="45"/>den parthyen zuo schleüniger ußträglickhait
+<lb n="24"/>Wann dann jede <unclear cert="low" resp="#joint">obrigkhait</unclear> der andern <unclear cert="medium" resp="#joint">inn</unclear>
+<lb n="25"/>solchen <unclear cert="low" resp="#joint">faellen</unclear> hilff und <unclear cert="medium" resp="#joint">beistand</unclear> zuthun, auch be=
+<lb n="26"/>clagter <persName resp="#ner"><unclear cert="low" resp="#joint">Heßlin</unclear></persName> neben andern E. F. E. <unclear cert="low" resp="#joint">Wht</unclear>.
+<lb n="27"/>mitburger <persName resp="#ner">Caspar <unclear cert="low" resp="#joint">Kuerißamer</unclear></persName> zum <unclear cert="low" resp="#joint">zeügen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">ernenndt</unclear>. So gelangt an dieselb E. F. E.
+<lb n="29"/><unclear cert="medium" resp="#joint">Wht</unclear>. von <unclear cert="medium" resp="#joint">ambts</unclear> und <unclear cert="low" resp="#joint">grichts</unclear> <unclear cert="low" resp="#joint">wegen</unclear> unser dienst=
+<lb n="30"/>freuendt und nachbarlich ersuchen, die <unclear cert="medium" resp="#joint">woellen</unclear>
+<lb n="31"/>besagten <unclear cert="low" resp="#joint">Kuerißamer</unclear> <unclear cert="low" resp="#joint">ehister</unclear> gelegenhait für sie
+<lb n="32"/>beschaiden, doch den <unclear cert="low" resp="#joint">clegerin</unclear>, (ob sie solchen ge=
+<lb n="33"/><unclear cert="medium" resp="#joint">zeügen</unclear> woelle <unclear cert="medium" resp="#joint">sehen</unclear>, hoeren <unclear cert="medium" resp="#joint">uffnemmen</unclear> geloben
+<lb n="34"/>und <unclear cert="low" resp="#joint">schwoeren</unclear>, od <unclear cert="low" resp="#joint">fragstuckh</unclear> übergeben) darzuo
+<lb n="35"/>gebuerlich <unclear cert="low" resp="#joint">verkünden</unclear>, <unclear cert="low" resp="#joint">volgents</unclear> den <unclear cert="low" resp="#joint">gezeügen</unclear> über
+<lb n="36"/>deß beclagten <unclear cert="low" resp="#joint">beweißen</unclear> articul sub no. 1. beiligend,
+<lb n="37"/><unclear cert="low" resp="#joint">sowol</unclear> auch <unclear cert="low" resp="#joint">uber</unclear> der <unclear cert="low" resp="#joint">clegerin</unclear> <unclear cert="low" resp="#joint">fragstuckh</unclear> (da
+<lb n="38"/><unclear cert="low" resp="#joint">einiche</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">ihr</unclear> producirt werden) <unclear cert="medium" resp="#joint">vermitelst</unclear>
+<lb n="39"/><unclear cert="medium" resp="#joint">eydts</unclear> <unclear cert="medium" resp="#joint">ordenlich</unclear> <unclear cert="medium" resp="#joint">verhoeren</unclear>, sein <unclear cert="low" resp="#joint">ußsag</unclear> nach
+<lb n="40"/>notdurfft fleißig beschreiben und <unclear cert="medium" resp="#joint">unß</unclear> nach
+<lb n="41"/>solchem die <unclear cert="low" resp="#joint">uffgehebne</unclear> <unclear cert="low" resp="#joint">kundtschafft</unclear>, <unclear cert="medium" resp="#joint">sambt</unclear>
+<lb n="42"/>aller <unclear cert="medium" resp="#joint">dabei</unclear> <unclear cert="low" resp="#joint">fürkomender</unclear> handlung, <unclear cert="low" resp="#joint">uff</unclear> deß
+<lb n="43"/><unclear cert="medium" resp="#joint">producenten</unclear> <unclear cert="medium" resp="#joint">costen</unclear> <unclear cert="medium" resp="#joint">verschloßen</unclear> <unclear cert="low" resp="#joint">übersenden</unclear>,
+<lb n="44"/>damit wir <unclear cert="low" resp="#joint">fernners</unclear> im rechten verfahren und
+<lb n="45"/>den <unclear cert="medium" resp="#joint">parthyen</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">schleüniger</unclear> <unclear cert="medium" resp="#joint">ußträglickhait</unclear>
 <lb n="46"/>verhelffen mög, Daß begehren wir,
-<lb n="47"/>zuo sambt deme daß recht dardurch befürderet
+<lb n="47"/>zuo <unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="medium" resp="#joint">deme</unclear> <unclear cert="medium" resp="#joint">daß</unclear> recht dardurch <unclear cert="low" resp="#joint">befürderet</unclear>
 <lb n="48"/>wirdt
 <pb facs="StadtASG_Missive_2447_9427.jpg" n="3"/>
-<lb n="49"/>reiet inn dergleichen und andern freündt
-<lb n="50"/>nachbarlich zuverdienen, datum <origDate when="1623" resp="#ner">j. Novembris
-<lb n="51"/>ao p 1623</origDate>.
-<lb n="52"/><persName resp="#ner">Andereas Neükhom</persName>, Stattaman,
-<lb n="53"/>und N: die richter und urthel-
+<lb n="49"/><unclear cert="low" resp="#joint">reiet</unclear> inn dergleichen und andern <unclear cert="medium" resp="#joint">freündt</unclear>
+<lb n="50"/>nachbarlich <unclear cert="medium" resp="#joint">zuverdienen</unclear>, datum <origDate when="1623" resp="#ner">j. Novembris
+<lb n="51"/>ao <unclear cert="low" resp="#joint">p</unclear> 1623</origDate>.
+<lb n="52"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Andereas</unclear> <unclear cert="medium" resp="#joint">Neükhom</unclear></persName>, <unclear cert="medium" resp="#joint">Stattaman</unclear>,
+<lb n="53"/>und N: die richter und <unclear cert="medium" resp="#joint">urthel</unclear>-
 <lb n="54"/>sprecher deß stattgerichts zu
-<lb n="55"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> p.
+<lb n="55"/><placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindaw</placeName> <unclear cert="medium" resp="#joint">p</unclear>.
 <pb facs="StadtASG_Missive_2447_9428.jpg" n="4"/>
 <lb n="56"/>Den Ernvesten, Fürsichtigen, Ersamen und
-<lb n="57"/>Weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Rhat der Statt
+<lb n="57"/>Weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und <unclear cert="medium" resp="#joint">Rhat</unclear> der Statt
 <lb n="58"/>S: Gallen</orgName>, unsern besondern lieben Herrn,
-<lb n="59"/>gueten Freünden und nachbarn.
+<lb n="59"/>gueten <unclear cert="medium" resp="#joint">Freünden</unclear> und nachbarn.
 <pb facs="StadtASG_Missive_2447_9429.jpg" n="5"/>
-<lb n="60"/>Vor euch den Deputirten Herren Comissarijs er=
-<lb n="61"/>scheinet beklagter <persName resp="#ner">Johannes Höslin</persName>, und
-<lb n="62"/>übergibet seinen gegenbeweiß sambt und
-<lb n="63"/>neben der zeügen nahmen, bittet seinem
-<lb n="64"/>gegentheil abschrifft dessen zugeben, ob
-<lb n="65"/>ihm beliebte zimliche interrogatoria darauff
-<lb n="66"/>einzuebringen, Eß behalt ihme auch
-<lb n="67"/>beklagter bevor, additionales und schrifftliche
-<lb n="68"/>urkhunden, ob es nötig sein wurde, anzuegeben,
-<lb n="69"/>und zugebrauchen, und da die beweisung nit
-<lb n="70"/>vollkomlich und plenè volführt, bittet er
-<lb n="71"/>ihme auff den fahl iuramentum necessarium
-<lb n="72"/>in supplementum probationis auffzuelegen,
-<lb n="73"/>vermeinend es beschehe billich, saget
-<lb n="74"/>demnach.
-<lb n="75"/>.1. War, daß beklagter zue thalern und nicht
+<lb n="60"/><unclear cert="medium" resp="#joint">Vor</unclear> euch den Deputirten Herren <unclear cert="medium" resp="#joint">Comissarijs</unclear> <unclear cert="medium" resp="#joint">er=</unclear>
+<lb n="61"/>scheinet beklagter <persName resp="#ner">Johannes <unclear cert="low" resp="#joint">Höslin</unclear></persName>, und
+<lb n="62"/><unclear cert="low" resp="#joint">übergibet</unclear> seinen <unclear cert="medium" resp="#joint">gegenbeweiß</unclear> sambt und
+<lb n="63"/>neben der <unclear cert="low" resp="#joint">zeügen</unclear> nahmen, bittet seinem
+<lb n="64"/><unclear cert="medium" resp="#joint">gegentheil</unclear> abschrifft <unclear cert="low" resp="#joint">dessen</unclear> <unclear cert="medium" resp="#joint">zugeben</unclear>, ob
+<lb n="65"/><unclear cert="medium" resp="#joint">ihm</unclear> beliebte <unclear cert="low" resp="#joint">zimliche</unclear> <unclear cert="medium" resp="#joint">interrogatoria</unclear> <unclear cert="low" resp="#joint">darauff</unclear>
+<lb n="66"/><unclear cert="low" resp="#joint">einzuebringen</unclear>, <unclear cert="medium" resp="#joint">Eß</unclear> behalt ihme auch
+<lb n="67"/>beklagter <unclear cert="low" resp="#joint">bevor</unclear>, additionales und schrifftliche
+<lb n="68"/><unclear cert="low" resp="#joint">urkhunden</unclear>, ob es <unclear cert="medium" resp="#joint">nötig</unclear> sein <unclear cert="medium" resp="#joint">wurde</unclear>, <unclear cert="medium" resp="#joint">anzuegeben</unclear>,
+<lb n="69"/>und <unclear cert="medium" resp="#joint">zugebrauchen</unclear>, und da die beweisung nit
+<lb n="70"/>vollkomlich und <unclear cert="medium" resp="#joint">plenè</unclear> <unclear cert="low" resp="#joint">volführt</unclear>, bittet er
+<lb n="71"/>ihme <unclear cert="medium" resp="#joint">auff</unclear> den <unclear cert="medium" resp="#joint">fahl</unclear> iuramentum necessarium
+<lb n="72"/>in supplementum probationis <unclear cert="low" resp="#joint">auffzuelegen</unclear>,
+<lb n="73"/><unclear cert="low" resp="#joint">vermeinend</unclear> es beschehe billich, <unclear cert="low" resp="#joint">saget</unclear>
+<lb n="74"/><unclear cert="medium" resp="#joint">demnach</unclear>.
+<lb n="75"/>.1. War, daß beklagter zue <unclear cert="low" resp="#joint">thalern</unclear> und nicht
 <lb n="76"/>guldin weiß gehandelt.
-<lb n="77"/>.2. War, daß man zur zeit deß getroffenen
-<lb n="78"/>contracts mehrern theils, und fast nur
-<lb n="79"/>mit thalern gehandelt.
+<lb n="77"/>.2. War, daß man <unclear cert="medium" resp="#joint">zur</unclear> zeit deß <unclear cert="medium" resp="#joint">getroffenen</unclear>
+<lb n="78"/>contracts <unclear cert="medium" resp="#joint">mehrern</unclear> theils, und <unclear cert="medium" resp="#joint">fast</unclear> nur
+<lb n="79"/>mit <unclear cert="low" resp="#joint">thalern</unclear> gehandelt.
 <lb n="80"/>Wahr
 <pb facs="StadtASG_Missive_2447_9430.jpg" n="6"/>
-<lb n="81"/>.3 Wahr daß <persName resp="#ner">Johannes Hoeßlin</persName> mit der Rieth=
-<lb n="82"/>maennin abgerechnet, den thaler pr. 3 fl.
+<lb n="81"/>.3 Wahr daß <persName resp="#ner">Johannes Hoeßlin</persName> mit der <unclear cert="low" resp="#joint">Rieth=</unclear>
+<lb n="82"/>maennin abgerechnet, den <unclear cert="low" resp="#joint">thaler</unclear> <unclear cert="low" resp="#joint">pr</unclear>. 3 fl.
 <lb n="83"/>zubezahlen.
 <lb n="84"/>.4 Wahr daß <persName resp="#ner">Johannes Hoeßlin</persName>, laut seines ver=
 <lb n="85"/>sprechens, ihr allezeit auff begehren, und
-<lb n="86"/>alß biß auf 300 thlr., ehe daß die muentz
-<lb n="87"/>herunder kommen, geschickt.
-<lb n="88"/>5. Wahr, daß eß gantz ein ungereimbt ding ist,
-<lb n="89"/>daß <persName resp="#ner">Johannes Hoeßlin</persName> nicht schuldig gewesen vor
-<lb n="90"/><date resp="#ner">Liechtmeß</date> (wie klagerin ihme daß ziel selber
+<lb n="86"/><unclear cert="low" resp="#joint">alß</unclear> biß auf 300 thlr., ehe daß die <unclear cert="low" resp="#joint">muentz</unclear>
+<lb n="87"/><unclear cert="low" resp="#joint">herunder</unclear> kommen, geschickt.
+<lb n="88"/>5. Wahr, daß <unclear cert="low" resp="#joint">eß</unclear> gantz ein ungereimbt ding ist,
+<lb n="89"/>daß <persName resp="#ner">Johannes Hoeßlin</persName> nicht schuldig gewesen <unclear cert="medium" resp="#joint">vor</unclear>
+<lb n="90"/><date resp="#ner"><unclear cert="medium" resp="#joint">Liechtmeß</unclear></date> (<unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">klagerin</unclear> ihme daß ziel selber
 <lb n="91"/>gesetzt, zubezahlen, und soll doch den schaden
-<lb n="92"/>tragen, der sich zwischen dem ziel, ohne sein,
+<lb n="92"/>tragen, der sich zwischen dem ziel, <unclear cert="low" resp="#joint">ohne</unclear> sein,
 <lb n="93"/>schuldt zutragen, und geschehen, ist.
-<lb n="94"/>6 War, daß eß ein ueberauß juedisches und
-<lb n="95"/>ueber wucherisches begehren, (darein <persName resp="#ner">Hoeßlin</persName>,
-<lb n="96"/>wann er gleich gewolt hette, vermoeg der
-<lb n="97"/>rechten, nicht hette willigen kuenden) daß
-<lb n="98"/><persName resp="#ner">Johannes Hoeßlin</persName> ihr Rietmaennin solte fuer
-<lb n="99"/>748 thaler, innerhalb einer gar kurtzen
+<lb n="94"/>6 War, daß eß ein <unclear cert="low" resp="#joint">ueberauß</unclear> <unclear cert="low" resp="#joint">juedisches</unclear> und
+<lb n="95"/><unclear cert="low" resp="#joint">ueber</unclear> <unclear cert="low" resp="#joint">wucherisches</unclear> begehren, (<unclear cert="low" resp="#joint">darein</unclear> <persName resp="#ner">Hoeßlin</persName>,
+<lb n="96"/>wann er gleich <unclear cert="medium" resp="#joint">gewolt</unclear> <unclear cert="medium" resp="#joint">hette</unclear>, <unclear cert="medium" resp="#joint">vermoeg</unclear> der
+<lb n="97"/><unclear cert="low" resp="#joint">rechten</unclear>, nicht hette willigen kuenden) daß
+<lb n="98"/><persName resp="#ner">Johannes Hoeßlin</persName> ihr <unclear cert="low" resp="#joint">Rietmaennin</unclear> solte fuer
+<lb n="99"/>748 <unclear cert="low" resp="#joint">thaler</unclear>, innerhalb einer gar kurtzen
 <lb n="100"/>zeit 1496 thlr geben.
 <lb n="101"/>Wahr daß
 <pb facs="StadtASG_Missive_2447_9431.jpg" n="7"/>
-<lb n="102"/>7 Wahr daß <persName resp="#ner">Johannes Hößlin</persName> die guetthat,
-<lb n="103"/>wider alle billigkeit, zue grossem schaden
+<lb n="102"/>7 Wahr daß <persName resp="#ner">Johannes Hößlin</persName> die <unclear cert="low" resp="#joint">guetthat</unclear>,
+<lb n="103"/>wider alle billigkeit, zue <unclear cert="low" resp="#joint">grossem</unclear> schaden
 <lb n="104"/>gereichte.
-<lb n="105"/>. 8 . Wahr daß novatio contractus entzwischen
-<lb n="106"/>komen, und Klägerin, nur 2 Monat vor
-<lb n="107"/>der litis contestation, dem beklagten zuege-
-<lb n="108"/>schriben, er solle gehn <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName> kommen,
-<lb n="109"/>sie welle mit ihme rechnen, und ihme
-<lb n="110"/>noch lenger warten.
+<lb n="105"/>. 8 . <unclear cert="low" resp="#joint">Wahr</unclear> daß novatio contractus <unclear cert="medium" resp="#joint">entzwischen</unclear>
+<lb n="106"/><unclear cert="medium" resp="#joint">komen</unclear>, und <unclear cert="low" resp="#joint">Klägerin</unclear>, nur 2 Monat vor
+<lb n="107"/>der litis contestation, dem beklagten <unclear cert="low" resp="#joint">zuege</unclear>-
+<lb n="108"/>schriben, er solle <unclear cert="medium" resp="#joint">gehn</unclear> <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName> kommen,
+<lb n="109"/><unclear cert="medium" resp="#joint">sie</unclear> <unclear cert="medium" resp="#joint">welle</unclear> mit ihme rechnen, und ihme
+<lb n="110"/>noch <unclear cert="medium" resp="#joint">lenger</unclear> warten.
 <lb n="111"/>9 Daß <persName resp="#ner">Johannes Hößlin</persName>, ihr Rietmännin
-<lb n="112"/>offt zuegeschriben, sie welle die handtschrifft
-<lb n="113"/>schickhen, aber eß ist niemahlen erfolget,
-<lb n="114"/>10 Daß mein schwager <persName resp="#ner">Hanß Jacob Schryber</persName> seel.,
-<lb n="115"/>ihr, in deß Hößlins abwesen 2 mahl zue-
-<lb n="116"/>geschriben, sie solle die handtschrifft schickhen,
+<lb n="112"/><unclear cert="low" resp="#joint">offt</unclear> zuegeschriben, sie welle die <unclear cert="low" resp="#joint">handtschrifft</unclear>
+<lb n="113"/><unclear cert="low" resp="#joint">schickhen</unclear>, aber <unclear cert="medium" resp="#joint">eß</unclear> ist niemahlen erfolget,
+<lb n="114"/>10 Daß mein schwager <persName resp="#ner">Hanß Jacob <unclear cert="low" resp="#joint">Schryber</unclear></persName> <unclear cert="low" resp="#joint">seel</unclear>.,
+<lb n="115"/>ihr, in <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="medium" resp="#joint">Hößlins</unclear> abwesen 2 mahl zue-
+<lb n="116"/>geschriben, <unclear cert="medium" resp="#joint">sie</unclear> solle die <unclear cert="low" resp="#joint">handtschrifft</unclear> <unclear cert="medium" resp="#joint">schickhen</unclear>,
 <lb n="117"/>so werde sie bezahlt werden,
-<lb n="118"/>11. Daß mein vatter, <persName resp="#ner">Christoff Koyen</persName>,
-<lb n="119"/>alß ihr der Rietmännin factor, ange-
-<lb n="120"/>redt, er soll ihr zueschriben, sie solle
+<lb n="118"/>11. Daß mein <unclear cert="medium" resp="#joint">vatter</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Christoff</unclear> <unclear cert="low" resp="#joint">Koyen</unclear></persName>,
+<lb n="119"/>alß ihr der <unclear cert="medium" resp="#joint">Rietmännin</unclear> factor, ange-
+<lb n="120"/><unclear cert="low" resp="#joint">redt</unclear>, er soll ihr zueschriben, sie solle
 <lb n="121"/>die
 <pb facs="StadtASG_Missive_2447_9432.jpg" n="8"/>
 <lb n="122"/>die quitung ueberschikhen, so werde sie
-<lb n="123"/>daß gelt empfangen, eß lige bei niemand.
-<lb n="124"/>12 Daß <persName resp="#ner">Johannes Hößlin</persName> einem schuster nit
-<lb n="125"/>weit von <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName> wohnend, wann
-<lb n="126"/>er gelt in nahmen der Rietmännin be=
-<lb n="127"/>gehret, allzeit zur antwurt geben, wan
+<lb n="123"/><unclear cert="medium" resp="#joint">daß</unclear> gelt empfangen, eß lige bei niemand.
+<lb n="124"/>12 Daß <persName resp="#ner">Johannes Hößlin</persName> <unclear cert="medium" resp="#joint">einem</unclear> <unclear cert="medium" resp="#joint">schuster</unclear> <unclear cert="medium" resp="#joint">nit</unclear>
+<lb n="125"/>weit von <placeName ref="stadtasg-places-19" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bischoffzell</unclear></placeName> <unclear cert="medium" resp="#joint">wohnend</unclear>, wann
+<lb n="126"/>er gelt in nahmen der <unclear cert="low" resp="#joint">Rietmännin</unclear> be=
+<lb n="127"/>gehret, allzeit zur antwurt geben, <unclear cert="medium" resp="#joint">wan</unclear>
 <lb n="128"/>sie ihme die quitung schikhe, so wolle
 <lb n="129"/>er sie mit dem gelt nit auffhalten,
-<lb n="130"/>13. Wahr daß wann gleich gegnerin in ein
-<lb n="131"/>schaden kommen were, so gebührt ihr doch nit
-<lb n="132"/>ein solche unbilliche unchristliche forderung
-<lb n="133"/>zuthun sonder ein gebührliches interesse,
-<lb n="134"/>daß handelßleüth in solcher zeit gemeinlich
-<lb n="135"/>gewinnen und erwerben können, zubegehren.
+<lb n="130"/>13. <unclear cert="low" resp="#joint">Wahr</unclear> daß wann gleich <unclear cert="low" resp="#joint">gegnerin</unclear> in ein
+<lb n="131"/>schaden <unclear cert="medium" resp="#joint">kommen</unclear> were, so <unclear cert="medium" resp="#joint">gebührt</unclear> ihr doch nit
+<lb n="132"/>ein solche unbilliche <unclear cert="low" resp="#joint">unchristliche</unclear> forderung
+<lb n="133"/>zuthun sonder ein <unclear cert="medium" resp="#joint">gebührliches</unclear> interesse,
+<lb n="134"/>daß <unclear cert="medium" resp="#joint">handelßleüth</unclear> in solcher zeit gemeinlich
+<lb n="135"/><unclear cert="medium" resp="#joint">gewinnen</unclear> und <unclear cert="medium" resp="#joint">erwerben</unclear> <unclear cert="medium" resp="#joint">können</unclear>, <unclear cert="medium" resp="#joint">zubegehren</unclear>.
 <pb facs="StadtASG_Missive_2447_9433.jpg" n="9"/>
 <lb n="136"/>Directorium
-<lb n="137"/><persName resp="#ner">Caspar Wuertaman</persName> von S.
+<lb n="137"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Caspar</unclear> <unclear cert="medium" resp="#joint">Wuertaman</unclear></persName> von S.
 <lb n="138"/>Gallen soll auf die erste acht
-<lb n="139"/>und letsten Art: befraget
+<lb n="139"/>und letsten <unclear cert="low" resp="#joint">Art</unclear>: <unclear cert="low" resp="#joint">befraget</unclear>
 <lb n="140"/>werden
-<lb n="141"/>Mein Vatter und Brueder auf
+<lb n="141"/>Mein Vatter und <unclear cert="low" resp="#joint">Brueder</unclear> auf
 <lb n="142"/>den .9. und 10. <persName resp="#ner">Hanß Jacob
-<lb n="143"/>Schreivogel</persName> auff den 10.t
-<lb n="144"/>Der Schuetter beij <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName>
-<lb n="145"/>wohnend auff den 12.
-<lb n="146"/><persName resp="#ner">Christoph Loij</persName> auff den 11.
+<lb n="143"/><unclear cert="low" resp="#joint">Schreivogel</unclear></persName> auff den 10.t
+<lb n="144"/>Der <unclear cert="low" resp="#joint">Schuetter</unclear> beij <placeName ref="stadtasg-places-19" cert="medium" resp="#ner">Bischoffzell</placeName>
+<lb n="145"/><unclear cert="low" resp="#joint">wohnend</unclear> auff den 12.
+<lb n="146"/><persName resp="#ner"><unclear cert="low" resp="#joint">Christoph</unclear> <unclear cert="low" resp="#joint">Loij</unclear></persName> auff den 11.
 <pb facs="StadtASG_Missive_2447_9434.jpg" n="10"/>
 <pb facs="StadtASG_Missive_2447_9435.jpg" n="11"/>
 <pb facs="StadtASG_Missive_2447_9436.jpg" n="12"/>
-<lb n="147"/>Beweiß articul
-<lb n="148"/><persName role="issuer" resp="#ner">Joannis Jößlins</persName>
+<lb n="147"/><unclear cert="low" resp="#joint">Beweiß</unclear> <unclear cert="low" resp="#joint">articul</unclear>
+<lb n="148"/><persName role="issuer" resp="#ner">Joannis <unclear cert="low" resp="#joint">Jößlins</unclear></persName>
 <lb n="149"/>contra
-<lb n="150"/>Fraw <persName role="recipient" resp="#ner">Catharina Rieth-
+<lb n="150"/><unclear cert="medium" resp="#joint">Fraw</unclear> <persName role="recipient" resp="#ner">Catharina <unclear cert="low" resp="#joint">Rieth</unclear>-
 <lb n="151"/>mannin</persName>.
 <lb n="152"/>No. 1.
 </p>

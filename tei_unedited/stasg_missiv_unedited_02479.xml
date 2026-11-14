@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2479</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Basel erinnern an die Vereinbarung der drei Städte Basel, Schaffhausen und St. Gallen, geringhaltige Taler einzulösen. Da Schaffhausen und St. Gallen dies nicht getan hätten, seien die Taler der drei Städte in Collmar verbotene worden. Basel bittet St. Gallen, die noch in der Stadt haltenden Taler gegen andere Reichstaler einzulösen, um eine gegenseitige Verbotung zu vermeiden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Basel</name><date when="1624" resp="#regest">den 1.en aprilis. Anno 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,69 +35,69 @@
 <p>
 <pb facs="StadtASG_Missive_2479_9557.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst, sambt was
-<lb n="2"/>wir liebs und guets vermoegen zuevor,
-<lb n="3"/>fromb, ehrsam, weiiß, insunders guet
-<lb n="4"/>freündt und getreüe lieb eijdtgnossen.
-<lb n="5"/>Wir setzen außer allen zweiffel, ihr werden
-<lb n="6"/>eüch nachmahls zueerinneren wüßen, was auff
-<lb n="7"/>verwichner Züruchischer conferentz, von unseren
-<lb n="8"/>ehren gesandten dazumahl, neben andrem, auß
-<lb n="9"/>anlas, der zuevor in der stadt <placeName ref="stadtasg-places-469" cert="medium" resp="#ner">Collmar</placeName> ge-
-<lb n="10"/>haltener conferentz, unßer der dreij stedten,
-<lb n="11"/><placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>, <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhausen</placeName> und <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, gemüntzten
+<lb n="2"/>wir liebs und <unclear cert="low" resp="#joint">guets</unclear> vermoegen <unclear cert="low" resp="#joint">zuevor</unclear>,
+<lb n="3"/>fromb, <unclear cert="low" resp="#joint">ehrsam</unclear>, <unclear cert="low" resp="#joint">weiiß</unclear>, <unclear cert="low" resp="#joint">insunders</unclear> <unclear cert="low" resp="#joint">guet</unclear>
+<lb n="4"/>freündt und <unclear cert="low" resp="#joint">getreüe</unclear> lieb <unclear cert="low" resp="#joint">eijdtgnossen</unclear>.
+<lb n="5"/>Wir setzen außer allen <unclear cert="low" resp="#joint">zweiffel</unclear>, ihr werden
+<lb n="6"/><unclear cert="low" resp="#joint">eüch</unclear> nachmahls <unclear cert="medium" resp="#joint">zueerinneren</unclear> <unclear cert="medium" resp="#joint">wüßen</unclear>, was auff
+<lb n="7"/><unclear cert="low" resp="#joint">verwichner</unclear> <unclear cert="low" resp="#joint">Züruchischer</unclear> conferentz, von unseren
+<lb n="8"/><unclear cert="low" resp="#joint">ehren</unclear> <unclear cert="low" resp="#joint">gesandten</unclear> <unclear cert="low" resp="#joint">dazumahl</unclear>, neben <unclear cert="low" resp="#joint">andrem</unclear>, <unclear cert="low" resp="#joint">auß</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">anlas</unclear>, der <unclear cert="medium" resp="#joint">zuevor</unclear> in der <unclear cert="medium" resp="#joint">stadt</unclear> <placeName ref="stadtasg-places-469" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Collmar</unclear></placeName> ge-
+<lb n="10"/>haltener conferentz, <unclear cert="low" resp="#joint">unßer</unclear> der dreij <unclear cert="low" resp="#joint">stedten</unclear>,
+<lb n="11"/><placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>, <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhausen</placeName> und <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St. Gallen</placeName>, <unclear cert="low" resp="#joint">gemüntzten</unclear>
 <lb n="12"/>gringhaltigen thalern halben, wegen dero abschaff-
-<lb n="13"/>ung oder einwechßlung erkandt, und dabeij
+<lb n="13"/>ung oder <unclear cert="low" resp="#joint">einwechßlung</unclear> <unclear cert="low" resp="#joint">erkandt</unclear>, und dabeij
 <lb n="14"/>angezeigt worden, daß zu erhaltung gemein-
-<lb n="15"/>nützigen wesens, wir unßere hirovor gemüntzte
-<lb n="16"/>geringhaltige thaler einwechßlen zelassen
-<lb n="17"/>(gestalten dann allbereit so vil moglich gewest,
-<lb n="18"/>beschehen) erbiethig seijen, inn getroester hoff-
-<lb n="19"/>nung ihr übrige beede stedt (ob wohl solches
-<lb n="20"/>von dero ehren gesandten ad referendum ge-
-<lb n="21"/>nomen worden) eüch gleichmeßige einwechßlung
-<lb n="22"/>nit werden entgegen sein lassen. Wann
+<lb n="15"/>nützigen <unclear cert="low" resp="#joint">wesens</unclear>, wir <unclear cert="medium" resp="#joint">unßere</unclear> <unclear cert="medium" resp="#joint">hirovor</unclear> <unclear cert="medium" resp="#joint">gemüntzte</unclear>
+<lb n="16"/><unclear cert="medium" resp="#joint">geringhaltige</unclear> thaler <unclear cert="low" resp="#joint">einwechßlen</unclear> zelassen
+<lb n="17"/>(gestalten dann <unclear cert="medium" resp="#joint">allbereit</unclear> so <unclear cert="low" resp="#joint">vil</unclear> <unclear cert="low" resp="#joint">moglich</unclear> <unclear cert="low" resp="#joint">gewest</unclear>,
+<lb n="18"/><unclear cert="low" resp="#joint">beschehen</unclear>) <unclear cert="low" resp="#joint">erbiethig</unclear> <unclear cert="low" resp="#joint">seijen</unclear>, <unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">getroester</unclear> hoff-
+<lb n="19"/>nung ihr übrige <unclear cert="medium" resp="#joint">beede</unclear> <unclear cert="medium" resp="#joint">stedt</unclear> (ob wohl solches
+<lb n="20"/>von dero <unclear cert="medium" resp="#joint">ehren</unclear> <unclear cert="medium" resp="#joint">gesandten</unclear> ad referendum ge-
+<lb n="21"/>nomen worden) <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="medium" resp="#joint">gleichmeßige</unclear> <unclear cert="medium" resp="#joint">einwechßlung</unclear>
+<lb n="22"/>nit werden <unclear cert="low" resp="#joint">entgegen</unclear> <unclear cert="low" resp="#joint">sein</unclear> lassen. Wann
 <lb n="23"/>aber wider verhoffen, ein solches weder von
-<lb n="24"/>eüch, noch unseren getreüen lieben eijdtgnossen
-<lb n="25"/>von <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhausen</placeName> ins werckh gesetzt, alß daß
+<lb n="24"/><unclear cert="medium" resp="#joint">eüch</unclear>, noch unseren <unclear cert="medium" resp="#joint">getreüen</unclear> lieben <unclear cert="low" resp="#joint">eijdtgnossen</unclear>
+<lb n="25"/>von <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhausen</placeName> <unclear cert="low" resp="#joint">ins</unclear> werckh gesetzt, alß <unclear cert="low" resp="#joint">daß</unclear>
 <lb n="26"/>hiemit nit geringer anlaß gegeben worden,
 <pb facs="StadtASG_Missive_2479_9558.jpg" n="2"/>
-<lb n="27"/>daß nit allein den <date resp="#ner">18.en Martii</date> jüngsthin,
+<lb n="27"/>daß nit allein <unclear cert="low" resp="#joint">den</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">18.en</unclear> Martii</date> jüngsthin,
 <lb n="28"/>in der stadt <placeName ref="stadtasg-places-469" cert="medium" resp="#ner">Collmar</placeName> uff angestehner etlich
-<lb n="29"/>fuersten, herren, ständ und stedten conferentz
-<lb n="30"/>der drey stedten, <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schafhusen</placeName>, <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St Galln</placeName>,
-<lb n="31"/>und <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName>, gemüntzte geringhaltige thaler
-<lb n="32"/>gäntzlichen verruefft und abgesetzt: sondern
-<lb n="33"/>daß auch zu eingeschiffnen disen beeden stedten
-<lb n="34"/>thaler, dismahln, in unser stadt und landt-
-<lb n="35"/>schafft merckliche ursach gegeben worden. Alß
-<lb n="36"/>haben Ihr unser g. l. e. unschwer abzenemmen,
-<lb n="37"/>wie beschwerlich nit allein unserem gemeinen guet,
-<lb n="38"/>sondern gemeiner unser burger: und landtschafft
-<lb n="39"/>solche verrueffung (.wo Ihr unser g. l. e.
-<lb n="40"/>von beeden stedten durch die ihrigen, dero
-<lb n="41"/>thaler gegen andern gueten und unverruefften
-<lb n="42"/>rychßthaler, widerumb einwechßlen lassen.) fallen wurde.
-<lb n="43"/>Gelangt derowegen an euch unser freündt
-<lb n="44"/>eydtgnoßisch ersuchen, die unverlengte anordnung
-<lb n="45"/>zuverschaffen, daß durch die Eweren, die in
-<lb n="46"/>unser stadt noch haltende thaler gegen andern
-<lb n="47"/>vorgemelten rychßthalern eingewechßlet, und
-<lb n="48"/>auff widrigen unverhoffenden fall, uns nit zu
-<lb n="49"/>ebenmeßiger verrueffung ursach möchte gegeben
-<lb n="50"/>werden. Daß wöllen von uns im besten verstehn,
-<lb n="51"/>alß denen wir mit beharrlicher eydtgnoßischer
-<lb n="52"/>wohlmeinung beygethon verbleiben uns zumahlen
-<lb n="53"/>sambtlich der gn. Gottes wohlbefehlend den <origDate when="1624" resp="#ner">1.en
+<lb n="29"/><unclear cert="low" resp="#joint">fuersten</unclear>, herren, ständ und <unclear cert="low" resp="#joint">stedten</unclear> conferentz
+<lb n="30"/>der drey <unclear cert="medium" resp="#joint">stedten</unclear>, <placeName ref="stadtasg-places-185" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schafhusen</unclear></placeName>, <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St <unclear cert="medium" resp="#joint">Galln</unclear></placeName>,
+<lb n="31"/>und <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName>, <unclear cert="low" resp="#joint">gemüntzte</unclear> geringhaltige thaler
+<lb n="32"/>gäntzlichen <unclear cert="low" resp="#joint">verruefft</unclear> und <unclear cert="low" resp="#joint">abgesetzt</unclear>: sondern
+<lb n="33"/><unclear cert="low" resp="#joint">daß</unclear> auch zu <unclear cert="low" resp="#joint">eingeschiffnen</unclear> <unclear cert="low" resp="#joint">disen</unclear> <unclear cert="low" resp="#joint">beeden</unclear> <unclear cert="low" resp="#joint">stedten</unclear>
+<lb n="34"/>thaler, <unclear cert="low" resp="#joint">dismahln</unclear>, in unser stadt und landt-
+<lb n="35"/>schafft <unclear cert="low" resp="#joint">merckliche</unclear> ursach gegeben <unclear cert="medium" resp="#joint">worden</unclear>. Alß
+<lb n="36"/>haben Ihr unser g. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">e</unclear>. <unclear cert="low" resp="#joint">unschwer</unclear> <unclear cert="low" resp="#joint">abzenemmen</unclear>,
+<lb n="37"/>wie <unclear cert="medium" resp="#joint">beschwerlich</unclear> nit allein <unclear cert="low" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">gemeinen</unclear> <unclear cert="low" resp="#joint">guet</unclear>,
+<lb n="38"/><unclear cert="low" resp="#joint">sondern</unclear> gemeiner <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="medium" resp="#joint">burger</unclear>: und landtschafft
+<lb n="39"/><unclear cert="medium" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">verrueffung</unclear> (.wo Ihr unser g. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">e</unclear>.
+<lb n="40"/>von <unclear cert="low" resp="#joint">beeden</unclear> <unclear cert="low" resp="#joint">stedten</unclear> durch die ihrigen, dero
+<lb n="41"/>thaler gegen <unclear cert="medium" resp="#joint">andern</unclear> <unclear cert="low" resp="#joint">gueten</unclear> und <unclear cert="low" resp="#joint">unverruefften</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">rychßthaler</unclear>, <unclear cert="low" resp="#joint">widerumb</unclear> <unclear cert="low" resp="#joint">einwechßlen</unclear> <unclear cert="low" resp="#joint">lassen</unclear>.) fallen <unclear cert="medium" resp="#joint">wurde</unclear>.
+<lb n="43"/><unclear cert="medium" resp="#joint">Gelangt</unclear> derowegen an euch <unclear cert="medium" resp="#joint">unser</unclear> freündt
+<lb n="44"/>eydtgnoßisch ersuchen, die <unclear cert="low" resp="#joint">unverlengte</unclear> anordnung
+<lb n="45"/><unclear cert="low" resp="#joint">zuverschaffen</unclear>, daß durch die <unclear cert="medium" resp="#joint">Eweren</unclear>, die in
+<lb n="46"/><unclear cert="medium" resp="#joint">unser</unclear> stadt noch haltende thaler gegen <unclear cert="low" resp="#joint">andern</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">vorgemelten</unclear> <unclear cert="low" resp="#joint">rychßthalern</unclear> <unclear cert="low" resp="#joint">eingewechßlet</unclear>, und
+<lb n="48"/>auff widrigen <unclear cert="low" resp="#joint">unverhoffenden</unclear> fall, uns nit zu
+<lb n="49"/><unclear cert="low" resp="#joint">ebenmeßiger</unclear> <unclear cert="low" resp="#joint">verrueffung</unclear> ursach möchte gegeben
+<lb n="50"/>werden. Daß <unclear cert="low" resp="#joint">wöllen</unclear> <unclear cert="low" resp="#joint">von</unclear> uns im <unclear cert="low" resp="#joint">besten</unclear> <unclear cert="low" resp="#joint">verstehn</unclear>,
+<lb n="51"/>alß denen wir mit beharrlicher <unclear cert="low" resp="#joint">eydtgnoßischer</unclear>
+<lb n="52"/>wohlmeinung <unclear cert="medium" resp="#joint">beygethon</unclear> verbleiben uns <unclear cert="low" resp="#joint">zumahlen</unclear>
+<lb n="53"/>sambtlich <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">gn</unclear>. Gottes <unclear cert="low" resp="#joint">wohlbefehlend</unclear> den <origDate when="1624" resp="#ner">1.en
 <lb n="54"/>aprilis. Anno 1624</origDate>.
 <lb n="55"/><orgName ref="stadtasg-actors-530" cert="medium" role="issuer" resp="#ner">Burgermeister und raht
 <lb n="56"/>der stadt Basel</orgName>.
 <pb facs="StadtASG_Missive_2479_9559.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2479_9560.jpg" n="4"/>
 <lb n="57"/>Den
-<lb n="58"/>frommen, fuernemen, weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">bur-
-<lb n="59"/>germeister und rhat der statt St:
-<lb n="60"/>Gallen</orgName>, unsern insonders guoten fruenden
-<lb n="61"/>und getruewen lieben <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eydgnoßen</orgName>.
+<lb n="58"/>frommen, <unclear cert="low" resp="#joint">fuernemen</unclear>, weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">bur</unclear>-
+<lb n="59"/><unclear cert="medium" resp="#joint">germeister</unclear> und <unclear cert="medium" resp="#joint">rhat</unclear> der statt St:
+<lb n="60"/>Gallen</orgName>, unsern insonders guoten <unclear cert="medium" resp="#joint">fruenden</unclear>
+<lb n="61"/>und <unclear cert="low" resp="#joint">getruewen</unclear> lieben <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydgnoßen</unclear></orgName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2514</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich teilen dem Landammann und Rat der Inneren und Äusseren Roden des Landes Appenzell mit, dass Erzherzog Leopold von Österreich erneut um die Abführung des in der oberen Markgrafschaft Baden stationierten Kriegsvolks bittet. Sie senden eine Abschrift der Antwort des Erzherzogs und bitten Appenzell, sich bei Bedarf dazu zu äussern. Zürich selbst hat Frankreichs Königin bereits Truppen bewilligt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1627" resp="#regest">Datt den 29. X8b. 1627.</date></correspAction><correspAction type="received"><name resp="#regest">Landammann und Rat der Inneren und Äusseren Roden des Landes Appenzell</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,44 +35,44 @@
 <p>
 <pb facs="StadtASG_Missive_2514_9693.jpg" n="1"/>
 <lb n="1"/>Unnser fründtlich willig dinst, unnd was wir ehr=
-<lb n="2"/>en liebs unnd guets vermögend zuvor. From, für=
-<lb n="3"/>sichtig, ehrsam, wiß, innsonders guet fründ und
-<lb n="4"/>getrüw lieb <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>. Wasmassen
-<lb n="5"/>ir frl. drtl. ertzhertzog <persName resp="#ner">Leopoldt</persName> zuo <placeName ref="stadtasg-places-91" cert="medium" resp="#ner">Österrich</placeName>
-<lb n="6"/>über das an dieselbe umb fürderliche abfüer=
-<lb n="7"/>ung, deß in der oberen <placeName ref="stadtasg-places-148" cert="medium" resp="#ner">Marggraffschafft Baden</placeName>
-<lb n="8"/>ligenden kriegsvolcks, ab der jüngst zuo Baden
-<lb n="9"/>gehaltenen gemeinen Eydtgnößischen tagleistung
-<lb n="10"/>abgangene schriben, sich nochmahlen erklere,
-<lb n="11"/>unnd von mehren orten der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName>
-<lb n="12"/>deß albereits in die Pünt getzognen kriegs=
-<lb n="13"/>volckhs, halber, hingegen begere, daß werd=
-<lb n="14"/>end ir u. g. l. E. uß hiebeyligender abschrifft
-<lb n="15"/>hochermelter ir frl. drtl. widerandtwortlichen
-<lb n="16"/>schribens, der lenge nach vernemen, haben,
-<lb n="17"/>welliche wir üch darumb zuoschicktend, damit ihr
-<lb n="18"/>darüber, so es üch vonnötten sin bedunckte, ir
-<lb n="19"/>drtl. mit fernerem bscheid gebürender massen
-<lb n="20"/>begegnen könnend, inmassen dann dasselbig
-<lb n="21"/>von unnß, als die, diß schriben, neben etlichen
-<lb n="22"/>anderen orten, die ir kön. mtt. zuo <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckh=
-<lb n="23"/>reich</placeName>, uß krafft der mit derselben habenden, ver=
-<lb n="24"/>einigung, etwas volckhs bewilliget, fürnem=
-<lb n="25"/>lich berüeren wil, glicherweiß ouch beschehen
-<lb n="26"/>wirt, versehens es werden ir. frl. drtl.
-<lb n="27"/>als gegen deren, wir, die erbeinigung uff
+<lb n="2"/>en liebs unnd guets vermögend <unclear cert="medium" resp="#joint">zuvor</unclear>. From, für=
+<lb n="3"/>sichtig, <unclear cert="medium" resp="#joint">ehrsam</unclear>, <unclear cert="low" resp="#joint">wiß</unclear>, <unclear cert="low" resp="#joint">innsonders</unclear> guet fründ <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">getrüw</unclear> lieb <orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnossen</unclear></orgName>. <unclear cert="medium" resp="#joint">Wasmassen</unclear>
+<lb n="5"/>ir <unclear cert="medium" resp="#joint">frl</unclear>. <unclear cert="medium" resp="#joint">drtl</unclear>. ertzhertzog <persName resp="#ner">Leopoldt</persName> zuo <placeName ref="stadtasg-places-91" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Österrich</unclear></placeName>
+<lb n="6"/>über das an dieselbe umb fürderliche <unclear cert="low" resp="#joint">abfüer=</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">ung</unclear>, deß in der oberen <placeName ref="stadtasg-places-148" cert="medium" resp="#ner">Marggraffschafft Baden</placeName>
+<lb n="8"/>ligenden <unclear cert="medium" resp="#joint">kriegsvolcks</unclear>, ab <unclear cert="medium" resp="#joint">der</unclear> <unclear cert="medium" resp="#joint">jüngst</unclear> zuo Baden
+<lb n="9"/>gehaltenen gemeinen <unclear cert="low" resp="#joint">Eydtgnößischen</unclear> <unclear cert="low" resp="#joint">tagleistung</unclear>
+<lb n="10"/>abgangene schriben, sich <unclear cert="low" resp="#joint">nochmahlen</unclear> <unclear cert="low" resp="#joint">erklere</unclear>,
+<lb n="11"/>unnd <unclear cert="medium" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">mehren</unclear> orten der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoschafft</unclear></orgName>
+<lb n="12"/>deß albereits in die <unclear cert="low" resp="#joint">Pünt</unclear> <unclear cert="low" resp="#joint">getzognen</unclear> kriegs=
+<lb n="13"/>volckhs, halber, hingegen <unclear cert="low" resp="#joint">begere</unclear>, <unclear cert="medium" resp="#joint">daß</unclear> werd=
+<lb n="14"/>end ir u. g. l. E. <unclear cert="low" resp="#joint">uß</unclear> hiebeyligender abschrifft
+<lb n="15"/><unclear cert="medium" resp="#joint">hochermelter</unclear> ir <unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">drtl</unclear>. <unclear cert="low" resp="#joint">widerandtwortlichen</unclear>
+<lb n="16"/>schribens, der <unclear cert="medium" resp="#joint">lenge</unclear> <unclear cert="medium" resp="#joint">nach</unclear> <unclear cert="medium" resp="#joint">vernemen</unclear>, haben,
+<lb n="17"/><unclear cert="low" resp="#joint">welliche</unclear> wir üch darumb <unclear cert="medium" resp="#joint">zuoschicktend</unclear>, damit ihr
+<lb n="18"/>darüber, <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">es</unclear> üch <unclear cert="medium" resp="#joint">vonnötten</unclear> sin <unclear cert="low" resp="#joint">bedunckte</unclear>, ir
+<lb n="19"/><unclear cert="low" resp="#joint">drtl</unclear>. mit <unclear cert="medium" resp="#joint">fernerem</unclear> <unclear cert="low" resp="#joint">bscheid</unclear> <unclear cert="medium" resp="#joint">gebürender</unclear> <unclear cert="medium" resp="#joint">massen</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">begegnen</unclear> könnend, <unclear cert="low" resp="#joint">inmassen</unclear> dann dasselbig
+<lb n="21"/>von <unclear cert="medium" resp="#joint">unnß</unclear>, als die, <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">schriben</unclear>, neben etlichen
+<lb n="22"/>anderen orten, die ir <unclear cert="low" resp="#joint">kön</unclear>. <unclear cert="low" resp="#joint">mtt</unclear>. <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckh=
+<lb n="23"/>reich</placeName>, <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">krafft</unclear> <unclear cert="low" resp="#joint">der</unclear> mit derselben habenden, ver=
+<lb n="24"/><unclear cert="low" resp="#joint">einigung</unclear>, etwas volckhs bewilliget, fürnem=
+<lb n="25"/>lich <unclear cert="medium" resp="#joint">berüeren</unclear> wil, <unclear cert="low" resp="#joint">glicherweiß</unclear> ouch beschehen
+<lb n="26"/>wirt, <unclear cert="medium" resp="#joint">versehens</unclear> es werden ir. <unclear cert="low" resp="#joint">frl</unclear>. <unclear cert="low" resp="#joint">drtl</unclear>.
+<lb n="27"/>als gegen <unclear cert="low" resp="#joint">deren</unclear>, wir, die <unclear cert="low" resp="#joint">erbeinigung</unclear> <unclear cert="low" resp="#joint">uff</unclear>
 <pb facs="StadtASG_Missive_2514_9694.jpg" n="2"/>
-<lb n="28"/>weiters steyff unnd stät zuhalten gesinnet
-<lb n="29"/>deren wir vermügen haben. Unnd unß uß
-<lb n="30"/>erzehlten ursachen fuer entschuldiget halten.
-<lb n="31"/>Unnd hiebey neben anerbietung unnserer
-<lb n="32"/>guetwilligen diensten. uch sambt unß goet=
-<lb n="33"/>licher obacht woll bevehlen, Datt den <origDate when="1627" resp="#ner">29. X=
-<lb n="34"/>8b. 1627</origDate>.
+<lb n="28"/>weiters <unclear cert="low" resp="#joint">steyff</unclear> unnd <unclear cert="medium" resp="#joint">stät</unclear> zuhalten <unclear cert="medium" resp="#joint">gesinnet</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">deren</unclear> <unclear cert="medium" resp="#joint">wir</unclear> vermügen haben. Unnd unß <unclear cert="medium" resp="#joint">uß</unclear>
+<lb n="30"/><unclear cert="medium" resp="#joint">erzehlten</unclear> <unclear cert="medium" resp="#joint">ursachen</unclear> <unclear cert="medium" resp="#joint">fuer</unclear> entschuldiget halten.
+<lb n="31"/><unclear cert="low" resp="#joint">Unnd</unclear> <unclear cert="low" resp="#joint">hiebey</unclear> <unclear cert="low" resp="#joint">neben</unclear> anerbietung unnserer
+<lb n="32"/>guetwilligen diensten. <unclear cert="low" resp="#joint">uch</unclear> sambt <unclear cert="medium" resp="#joint">unß</unclear> <unclear cert="medium" resp="#joint">goet=</unclear>
+<lb n="33"/>licher obacht woll <unclear cert="low" resp="#joint">bevehlen</unclear>, <unclear cert="medium" resp="#joint">Datt</unclear> den <origDate when="1627" resp="#ner">29. <unclear cert="low" resp="#joint">X=</unclear>
+<lb n="34"/>8b. <unclear cert="low" resp="#joint">1627</unclear></origDate>.
 <lb n="35"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermaister und Rath
-<lb n="36"/>der Statt Zuerich</orgName>,
-<lb n="37"/>Den <orgName role="recipient" resp="#ner">Landtamen und Rath. der Jnneren
-<lb n="38"/>und ußeren Roden. deß Landts Appenzell.</orgName>,
+<lb n="36"/>der Statt <unclear cert="medium" resp="#joint">Zuerich</unclear></orgName>,
+<lb n="37"/>Den <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Landtamen</unclear> und Rath. der <unclear cert="low" resp="#joint">Jnneren</unclear>
+<lb n="38"/>und ußeren Roden. <unclear cert="medium" resp="#joint">deß</unclear> Landts Appenzell.</orgName>,
 <pb facs="StadtASG_Missive_2514_9695.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2514_9696.jpg" n="4"/>
 </p>

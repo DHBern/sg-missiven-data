@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2532</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,56 +20,56 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat der Stadt Konstanz leiten die Suppliken der St. Galler Bürger Hans Öheli und Kaspar Reiner weiter. Sie erklären, dass das väterliche und mütterliche Gut der Ehefrau von Konrad Reiner nicht gesperrt oder aufbehalten werde, sondern wegen anhängiger Rechtsstreitigkeiten der Erben bis zur Klärung der Sache ungeteilt geblieben sei. Sie bitten die St. Galler, den Supplicanten keine Kosten aufzuerlegen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat der Stadt Konstanz</name><date when="1625-02-15" resp="#regest">15 Februarij. anno 1625</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2532_9773.jpg" n="1"/>
-<lb n="1"/>Unßre freündt: nachparlich unnd
-<lb n="2"/>guettwillige dienst zuvor, fürsichtige,
-<lb n="3"/>ersame, weiße, besonders liebe freündt
-<lb n="4"/>unnd guette nachparn.
-<lb n="5"/>Waß unßere burgere <persName resp="#ner">Hanns Öhely</persName> undt
-<lb n="6"/><persName resp="#ner">Caspar Reiner</persName>, an unß supplicando gelangen
-<lb n="7"/>laßen, das beliebe Eüch auß dem einschluß
+<lb n="1"/><unclear cert="low" resp="#joint">Unßre</unclear> freündt: nachparlich unnd
+<lb n="2"/><unclear cert="low" resp="#joint">guettwillige</unclear> dienst zuvor, fürsichtige,
+<lb n="3"/>ersame, <unclear cert="low" resp="#joint">weiße</unclear>, besonders liebe freündt
+<lb n="4"/>unnd <unclear cert="medium" resp="#joint">guette</unclear> nachparn.
+<lb n="5"/><unclear cert="medium" resp="#joint">Waß</unclear> <unclear cert="medium" resp="#joint">unßere</unclear> burgere <persName resp="#ner">Hanns <unclear cert="medium" resp="#joint">Öhely</unclear></persName> <unclear cert="medium" resp="#joint">undt</unclear>
+<lb n="6"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Caspar</unclear> <unclear cert="medium" resp="#joint">Reiner</unclear></persName>, <unclear cert="medium" resp="#joint">an</unclear> unß supplicando gelangen
+<lb n="7"/><unclear cert="low" resp="#joint">laßen</unclear>, das beliebe Eüch auß dem einschluß
 <lb n="8"/>zueßehen.
-<lb n="9"/>Wann dann wir unnß nit zererindern,
-<lb n="10"/>dz niemahl gedacht worde, euwerß burgerß
-<lb n="11"/><persName resp="#ner">Conradt Reinerß</persName> ehefrawen obrikeit wege
-<lb n="12"/>ihr vaterlich unnd muetterlich guett zesperren
-<lb n="13"/>oder uffzehalten, sonder weilen gemeine
-<lb n="14"/>erben dißer erbschafft halber, selbß spennig,
-<lb n="15"/>inn hangend rechten, (deß wir wlaß
-<lb n="16"/>bedawren) habend ist die erbschafft, biß zue
-<lb n="17"/>der sach eroerterung, bißhero unzexteilt
-<lb n="18"/>verpliben.
-<lb n="19"/>Allß habend wir ihnen supplicante mit dißr
-<lb n="20"/>gegenwürtiger gezügknuß nit ermanglen
+<lb n="9"/>Wann dann wir unnß nit <unclear cert="low" resp="#joint">zererindern</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">niemahl</unclear> gedacht <unclear cert="medium" resp="#joint">worde</unclear>, <unclear cert="medium" resp="#joint">euwerß</unclear> <unclear cert="medium" resp="#joint">burgerß</unclear>
+<lb n="11"/><persName resp="#ner">Conradt <unclear cert="medium" resp="#joint">Reinerß</unclear></persName> <unclear cert="medium" resp="#joint">ehefrawen</unclear> <unclear cert="medium" resp="#joint">obrikeit</unclear> <unclear cert="medium" resp="#joint">wege</unclear>
+<lb n="12"/><unclear cert="medium" resp="#joint">ihr</unclear> <unclear cert="medium" resp="#joint">vaterlich</unclear> unnd muetterlich guett <unclear cert="medium" resp="#joint">zesperren</unclear>
+<lb n="13"/>oder uffzehalten, sonder weilen <unclear cert="low" resp="#joint">gemeine</unclear>
+<lb n="14"/>erben dißer erbschafft halber, <unclear cert="low" resp="#joint">selbß</unclear> <unclear cert="low" resp="#joint">spennig</unclear>,
+<lb n="15"/><unclear cert="low" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">hangend</unclear> rechten, (<unclear cert="low" resp="#joint">deß</unclear> wir <unclear cert="low" resp="#joint">wlaß</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">bedawren</unclear>) habend ist die erbschafft, biß zue
+<lb n="17"/>der sach <unclear cert="medium" resp="#joint">eroerterung</unclear>, bißhero <unclear cert="medium" resp="#joint">unzexteilt</unclear>
+<lb n="18"/><unclear cert="medium" resp="#joint">verpliben</unclear>.
+<lb n="19"/><unclear cert="medium" resp="#joint">Allß</unclear> habend wir ihnen <unclear cert="low" resp="#joint">supplicante</unclear> mit <unclear cert="low" resp="#joint">dißr</unclear>
+<lb n="20"/>gegenwürtiger <unclear cert="low" resp="#joint">gezügknuß</unclear> nit <unclear cert="low" resp="#joint">ermanglen</unclear>
 <lb n="21"/>wellen.
-<lb n="22"/>Mit freündt: nachparlich ersueche Ihr wider-
-<lb n="23"/>igeß Eüch nit einbilde, und obgedachts <persName resp="#ner">Reiners</persName>
-<lb n="24"/>ehefrawe diß werckh nichts entgelten laßen
-<lb n="25"/>wellend.
+<lb n="22"/>Mit freündt: nachparlich <unclear cert="medium" resp="#joint">ersueche</unclear> Ihr wider-
+<lb n="23"/><unclear cert="low" resp="#joint">igeß</unclear> Eüch nit einbilde, und obgedachts <persName resp="#ner"><unclear cert="low" resp="#joint">Reiners</unclear></persName>
+<lb n="24"/><unclear cert="low" resp="#joint">ehefrawe</unclear> <unclear cert="low" resp="#joint">diß</unclear> <unclear cert="low" resp="#joint">werckh</unclear> nichts entgelten <unclear cert="low" resp="#joint">laßen</unclear>
+<lb n="25"/><unclear cert="low" resp="#joint">wellend</unclear>.
 <pb facs="StadtASG_Missive_2532_9774.jpg" n="2"/>
 <lb n="26"/>Damit beschiht was zimlich, thun wir
-<lb n="27"/>hingegen jederzeit was eüch lieb und an-
-<lb n="28"/>genem. Actum <origDate when="1625-02-15" resp="#ner">15 Februarij. anno 1625</origDate>.
-<lb n="29"/>Verwalter der haubtmanschafft, auch
-<lb n="30"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Burgermeister und rath der stat Costantz</orgName>.
+<lb n="27"/>hingegen <unclear cert="low" resp="#joint">jederzeit</unclear> was eüch lieb und an-
+<lb n="28"/>genem. Actum <origDate when="1625-02-15" resp="#ner">15 Februarij. anno <unclear cert="medium" resp="#joint">1625</unclear></origDate>.
+<lb n="29"/>Verwalter der <unclear cert="medium" resp="#joint">haubtmanschafft</unclear>, auch
+<lb n="30"/><orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear> und rath der stat Costantz</orgName>.
 <pb facs="StadtASG_Missive_2532_9775.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2532_9776.jpg" n="4"/>
-<lb n="31"/>Denen fürsichtigen, ersamen, weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
-<lb n="32"/>maister unndt Rhat zuo St. Gallen</orgName>, unnsern
-<lb n="33"/>besonnders lieben freund und guetten nachbarn.
+<lb n="31"/><unclear cert="low" resp="#joint">Denen</unclear> fürsichtigen, ersamen, weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
+<lb n="32"/>maister <unclear cert="low" resp="#joint">unndt</unclear> <unclear cert="low" resp="#joint">Rhat</unclear> <unclear cert="low" resp="#joint">zuo</unclear> St. Gallen</orgName>, unnsern
+<lb n="33"/><unclear cert="low" resp="#joint">besonnders</unclear> lieben freund und <unclear cert="low" resp="#joint">guetten</unclear> nachbarn.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1146</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Rat zu Solothurn informieren Bürgermeister und Rat zu St. Gallen über die auf der letzten Tagsatzung in Solothurn besprochenen Verhandlungen zur Erneuerung der Vereinigung zwischen dem König und den Eidgenossen. Sie bitten die St. Galler, die von ihnen entsandten Vertreter Urs Suter und Hans Jacob von Stal bei der Versiegelung der Briefe und Verträge in deutscher und französischer Sprache zu unterstützen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Rat zu Solothurn</name><placeName resp="#regest">Solothurn</placeName><date when="1582-07-26" resp="#regest">den 26. tag julÿ 1582</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,23 +35,23 @@
 <p>
 <pb facs="StadtASG_Missive_1146_3727.jpg" n="1"/>
 <lb n="1"/>Unnsern fründtlichen <unclear cert="low" resp="#joint">gruoß</unclear> mit sampt aller eeren unnd guts zuvor
-<lb n="2"/>günstige herren unnd <unclear cert="low" resp="#joint">guote</unclear> fründt. Ir werdent durch <unclear cert="low" resp="#joint">üwere</unclear>
-<lb n="3"/><unclear cert="low" resp="#joint">abgesandte</unclear> dessen so <unclear cert="low" resp="#joint">allhie</unclear> zu Sollothurn uff letst gehalltner
-<lb n="4"/>tagsatzung vonn ernüwerung der vereynung halben zwüschen
-<lb n="5"/>dem könig unnserm allergnädigisten herren, unnd ein <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnosschafft</orgName>
-<lb n="6"/>gehandlet unnd beschlossen worden <unclear cert="low" resp="#joint">gnugsam</unclear> <unclear cert="low" resp="#joint">verstenndiget</unclear>
-<lb n="7"/>worden syn. Daruff ein <unclear cert="low" resp="#joint">schulthes</unclear> unnd <unclear cert="low" resp="#joint">wÿsen</unclear> rhatt
+<lb n="2"/>günstige herren unnd <unclear cert="low" resp="#joint">guote</unclear> fründt. Ir <unclear cert="medium" resp="#joint">werdent</unclear> durch <unclear cert="low" resp="#joint">üwere</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">abgesandte</unclear> dessen so <unclear cert="medium" resp="#joint">allhie</unclear> zu <unclear cert="medium" resp="#joint">Sollothurn</unclear> uff <unclear cert="low" resp="#joint">letst</unclear> gehalltner
+<lb n="4"/>tagsatzung vonn ernüwerung der vereynung halben <unclear cert="medium" resp="#joint">zwüschen</unclear>
+<lb n="5"/>dem <unclear cert="low" resp="#joint">könig</unclear> unnserm allergnädigisten herren, unnd ein <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnosschafft</orgName>
+<lb n="6"/>gehandlet unnd beschlossen worden <unclear cert="low" resp="#joint">gnugsam</unclear> <unclear cert="medium" resp="#joint">verstenndiget</unclear>
+<lb n="7"/>worden syn. Daruff ein <unclear cert="low" resp="#joint">schulthes</unclear> unnd <unclear cert="low" resp="#joint">wÿsen</unclear> <unclear cert="medium" resp="#joint">rhatt</unclear>
 <lb n="8"/>diser statt die edlen <unclear cert="low" resp="#joint">erenvessten</unclear> <unclear cert="low" resp="#joint">fürnämen</unclear> <unclear cert="low" resp="#joint">wÿsen</unclear>
-<lb n="9"/>herren <persName resp="#ner"><unclear cert="low" resp="#joint">Ursen</unclear> <unclear cert="low" resp="#joint">Surier</unclear></persName> seckelmeister unnd <persName resp="#ner">Hannß Jacoben
-<lb n="10"/>vonn Stall</persName> <unclear cert="low" resp="#joint">stattschrÿber</unclear> <unclear cert="low" resp="#joint">allhie</unclear>, verordnet, die brieff
+<lb n="9"/>herren <persName resp="#ner"><unclear cert="medium" resp="#joint">Ursen</unclear> <unclear cert="low" resp="#joint">Surier</unclear></persName> seckelmeister unnd <persName resp="#ner">Hannß Jacoben
+<lb n="10"/>vonn Stall</persName> <unclear cert="low" resp="#joint">stattschrÿber</unclear> <unclear cert="medium" resp="#joint">allhie</unclear>, verordnet, die brieff
 <lb n="11"/>unnd <unclear cert="low" resp="#joint">contract</unclear> gedachter vereynung inn teutscher unnd
 <lb n="12"/>frantzösischer sprach versiglen zelassen, mit gantz
-<lb n="13"/>fründtlicher pitt ir wellendt <unclear cert="medium" resp="#joint">sÿ</unclear> inn selbige befürdern
-<lb n="14"/>thund üch hiemit günstige herren unnd guote fründt
-<lb n="15"/>gott woll bevelchen, Inn <origPlace ref="stadtasg-places-49" cert="medium" resp="#ner">Sollothurn</origPlace> den <origDate when="1582-07-26" resp="#ner">26. tag
+<lb n="13"/>fründtlicher pitt ir <unclear cert="medium" resp="#joint">wellendt</unclear> <unclear cert="low" resp="#joint">sÿ</unclear> inn selbige befürdern
+<lb n="14"/>thund üch hiemit günstige <unclear cert="medium" resp="#joint">herren</unclear> unnd <unclear cert="medium" resp="#joint">guote</unclear> fründt
+<lb n="15"/>gott woll bevelchen, Inn <origPlace ref="stadtasg-places-49" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Sollothurn</unclear></origPlace> den <origDate when="1582-07-26" resp="#ner">26. tag
 <lb n="16"/><unclear cert="low" resp="#joint">julÿ</unclear> 1582</origDate>.
 <pb facs="StadtASG_Missive_1146_3728.jpg" n="2"/>
-<lb n="17"/>Den <unclear cert="medium" resp="#joint">gestrengen</unclear> edlen
+<lb n="17"/>Den gestrengen edlen
 <lb n="18"/><unclear cert="medium" resp="#joint">erenvesten</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear>
 <lb n="19"/><unclear cert="medium" resp="#joint">wyßen</unclear> <unclear cert="medium" resp="#joint">heren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="20"/><unclear cert="medium" resp="#joint">und</unclear> Rhat der Statt <unclear cert="medium" resp="#joint">S</unclear>.

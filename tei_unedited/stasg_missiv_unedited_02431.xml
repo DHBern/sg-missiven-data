@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2431</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,64 +20,64 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich empfehlen ihrem eidgenössischen Freundeskreis in St. Gallen den Ratsherrn Michael Rosset, der sich mit besonderen Geschäften an sie wenden will. Sie bitten, Rosset in seinen Anliegen freundlich und wohlwollend anzuhören und ihm eine zufriedenstellende Antwort zu geben, damit er sich bei seiner Rückkehr in Zürich darüber freuen könne.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1623-08-19" resp="#regest">19 d. Augusti. A° 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2431_9355.jpg" n="1"/>
-<lb n="1"/>Unßer früntlich willig dienest, sambt was wir
-<lb n="2"/>ehren liebs unnd guots vermögend zuovor, fromm
-<lb n="3"/>fürsichtig ehrsam wyß, innsonders guot fründ,
-<lb n="4"/>und gethrüw lieb Eydtgnoßen. Nachdem
-<lb n="5"/>der edel unnd vest, herr <persName resp="#ner">Michael Roßet</persName> deß
-<lb n="6"/>raths by unßeren gethrüwen lieben Eydt: und
-<lb n="7"/>pundtsgnoßen der statt <placeName ref="stadtasg-places-169" cert="medium" resp="#ner">Genff</placeName>, sich bij unß umb
-<lb n="8"/>etlicher sonderbarer gschäfften willen ingestelt,
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">früntlich</unclear> willig <unclear cert="low" resp="#joint">dienest</unclear>, sambt was wir
+<lb n="2"/>ehren liebs unnd guots vermögend <unclear cert="medium" resp="#joint">zuovor</unclear>, <unclear cert="medium" resp="#joint">fromm</unclear>
+<lb n="3"/>fürsichtig <unclear cert="low" resp="#joint">ehrsam</unclear> <unclear cert="medium" resp="#joint">wyß</unclear>, <unclear cert="medium" resp="#joint">innsonders</unclear> guot fründ,
+<lb n="4"/>und gethrüw lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear>. Nachdem
+<lb n="5"/>der edel unnd vest, herr <persName resp="#ner">Michael <unclear cert="low" resp="#joint">Roßet</unclear></persName> deß
+<lb n="6"/>raths by <unclear cert="low" resp="#joint">unßeren</unclear> <unclear cert="low" resp="#joint">gethrüwen</unclear> lieben Eydt: <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="7"/>pundtsgnoßen der statt <placeName ref="stadtasg-places-169" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Genff</unclear></placeName>, sich <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">unß</unclear> umb
+<lb n="8"/><unclear cert="medium" resp="#joint">etlicher</unclear> <unclear cert="medium" resp="#joint">sonderbarer</unclear> <unclear cert="low" resp="#joint">gschäfften</unclear> willen <unclear cert="low" resp="#joint">ingestelt</unclear>,
 <lb n="9"/>unnd er nun willens, sich am nechsten zuo üch
-<lb n="10"/>unßeren lieben Eydtgnoßen (geliebts Gott)
-<lb n="11"/>zeverfüegen, unnd syn werbung habendem be=
-<lb n="12"/>velch, unnd der sachen notturfft nach bij üch ab=
-<lb n="13"/>zuoleggen, und zeverrichten, So
-<lb n="14"/>habend wir nit wöllen ermanglen, gedachten
-<lb n="15"/>herren <persName resp="#ner">Roset</persName> mit dißer unßer recomendation
-<lb n="16"/>an üch unnßer lieb Eydtgnoßen zuobegleiten.
-<lb n="17"/>Mit Eydtgnößischer dienestfründtlicher bitt,
-<lb n="18"/>ir wöllind inne herren <persName resp="#ner">Rosetten</persName> inn synem für=
-<lb n="19"/>bringen günstig unnd fründtlich anhören,
-<lb n="20"/>ime mit willfähriger verhoffender antwort,
-<lb n="21"/>so wyt müglich, begegnen, unnd inne von unß=
-<lb n="22"/>ertwägen durch uß zum besten, und dergestalt
-<lb n="23"/>für bevolchen haben, daß er sich deßelben zuobe=
-<lb n="24"/>fröuwen, unnd unß zuo syner widerkunfft an=
-<lb n="25"/>rüehmen möge, dißer unnßer fürdernuß würck=
-<lb n="26"/>lich unnd zuo guotem synem content gnoßen
-<lb n="27"/>haben, wie dann zuo üch ouch ohn das, unnßer sonder
-<lb n="28"/>guots und ungezwyfflets verthrüwen stadt.
-<lb n="29"/>Das sind wir alßdann umb üch hinwider zuo ieder
-<lb n="30"/>fürfallenheit fründtlich und Eydtgnößisch ze=
+<lb n="10"/><unclear cert="low" resp="#joint">unßeren</unclear> lieben <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> (<unclear cert="low" resp="#joint">geliebts</unclear> <unclear cert="medium" resp="#joint">Gott</unclear>)
+<lb n="11"/><unclear cert="low" resp="#joint">zeverfüegen</unclear>, unnd syn werbung habendem be=
+<lb n="12"/><unclear cert="medium" resp="#joint">velch</unclear>, unnd der sachen <unclear cert="medium" resp="#joint">notturfft</unclear> nach <unclear cert="low" resp="#joint">bij</unclear> üch ab=
+<lb n="13"/><unclear cert="low" resp="#joint">zuoleggen</unclear>, und zeverrichten, So
+<lb n="14"/>habend wir nit wöllen <unclear cert="medium" resp="#joint">ermanglen</unclear>, <unclear cert="medium" resp="#joint">gedachten</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">herren</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Roset</unclear></persName> mit dißer <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="medium" resp="#joint">recomendation</unclear>
+<lb n="16"/>an üch <unclear cert="low" resp="#joint">unnßer</unclear> lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> <unclear cert="low" resp="#joint">zuobegleiten</unclear>.
+<lb n="17"/>Mit <unclear cert="low" resp="#joint">Eydtgnößischer</unclear> <unclear cert="low" resp="#joint">dienestfründtlicher</unclear> bitt,
+<lb n="18"/>ir wöllind <unclear cert="low" resp="#joint">inne</unclear> herren <persName resp="#ner">Rosetten</persName> <unclear cert="medium" resp="#joint">inn</unclear> synem für=
+<lb n="19"/>bringen <unclear cert="medium" resp="#joint">günstig</unclear> unnd fründtlich <unclear cert="low" resp="#joint">anhören</unclear>,
+<lb n="20"/><unclear cert="medium" resp="#joint">ime</unclear> mit willfähriger <unclear cert="medium" resp="#joint">verhoffender</unclear> antwort,
+<lb n="21"/>so wyt <unclear cert="medium" resp="#joint">müglich</unclear>, <unclear cert="medium" resp="#joint">begegnen</unclear>, unnd <unclear cert="low" resp="#joint">inne</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">unß=</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">ertwägen</unclear> <unclear cert="low" resp="#joint">durch</unclear> uß zum besten, und dergestalt
+<lb n="23"/>für <unclear cert="medium" resp="#joint">bevolchen</unclear> haben, daß er sich deßelben <unclear cert="low" resp="#joint">zuobe=</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">fröuwen</unclear>, unnd <unclear cert="low" resp="#joint">unß</unclear> zuo syner widerkunfft an=
+<lb n="25"/><unclear cert="low" resp="#joint">rüehmen</unclear> möge, dißer <unclear cert="low" resp="#joint">unnßer</unclear> fürdernuß <unclear cert="low" resp="#joint">würck=</unclear>
+<lb n="26"/>lich unnd zuo guotem synem content <unclear cert="low" resp="#joint">gnoßen</unclear>
+<lb n="27"/>haben, wie dann zuo üch ouch <unclear cert="medium" resp="#joint">ohn</unclear> das, unnßer sonder
+<lb n="28"/>guots und <unclear cert="medium" resp="#joint">ungezwyfflets</unclear> <unclear cert="medium" resp="#joint">verthrüwen</unclear> <unclear cert="medium" resp="#joint">stadt</unclear>.
+<lb n="29"/>Das sind wir <unclear cert="low" resp="#joint">alßdann</unclear> umb üch hinwider zuo <unclear cert="low" resp="#joint">ieder</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">fürfallenheit</unclear> fründtlich <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Eydtgnößisch</unclear> <unclear cert="low" resp="#joint">ze=</unclear>
 <lb n="31"/>beschulden geneigt. Mit hilff Gottes, inn
-<lb n="32"/>deßen gnadenschirm wir üch und unß von hertzen
-<lb n="33"/>bevelchend. Date den <origDate when="1623" resp="#ner">19 d. Augusti. A° 1623</origDate>.
+<lb n="32"/><unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">gnadenschirm</unclear> wir üch und unß von hertzen
+<lb n="33"/>bevelchend. <unclear cert="low" resp="#joint">Date</unclear> den <origDate when="1623" resp="#ner"><unclear cert="low" resp="#joint">19</unclear> <unclear cert="low" resp="#joint">d</unclear>. Augusti. A° 1623</origDate>.
 <lb n="34"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="35"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2431_9356.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2431_9357.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2431_9358.jpg" n="4"/>
-<lb n="36"/>Den frommen, fuersichtigen,
-<lb n="37"/>ehrsamen, wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
+<lb n="36"/>Den frommen, <unclear cert="low" resp="#joint">fuersichtigen</unclear>,
+<lb n="37"/>ehrsamen, <unclear cert="medium" resp="#joint">wysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger=
 <lb n="38"/>meister unnd Rath der statt
-<lb n="39"/>Sanct Gallen</orgName>, unnseren inn=
-<lb n="40"/>sonders gueten fründen, und
-<lb n="41"/>gethreuwen lieben <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>.
+<lb n="39"/>Sanct Gallen</orgName>, <unclear cert="medium" resp="#joint">unnseren</unclear> inn=
+<lb n="40"/>sonders <unclear cert="low" resp="#joint">gueten</unclear> fründen, und
+<lb n="41"/><unclear cert="low" resp="#joint">gethreuwen</unclear> lieben <orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnossen</unclear></orgName>.
 </p>
         </body>
     </text>

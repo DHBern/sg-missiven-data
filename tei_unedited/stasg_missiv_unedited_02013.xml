@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2013</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Ammann und Gericht zu Thal, die Witwe Margaretha Sandnerin in ihrem Erbrecht an einem Drittel des Nachlasses ihres verstorbenen Vaters zu schützen und zu handhaben. Sie verweisen auf einen früheren Abschied und weisen darauf hin, dass ein solches Urteil endgültig sei. Sie fordern, dass die Erbin ihre Rechte ohne Widerstand und mit den nötigen Kosten durchsetzen könne.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1615" resp="#regest">Datum den 27ten Junij 1615.</date></correspAction><correspAction type="received"><name resp="#regest">Ammann und Gericht zu Thal</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -36,45 +36,45 @@
 <pb facs="StadtASG_Missive_2013_7509.jpg" n="1"/>
 <lb n="1"/>An <orgName ref="stadtasg-actors-864" cert="medium" role="recipient" resp="#ner">Aman und Gricht zu
 <lb n="2"/>Thal</orgName>
-<lb n="3"/>Zueschriben wegen einer erbschafft.
-<lb n="4"/>Unser freündt nachberlich willig dinst zuvor,
-<lb n="5"/>Ersame, Fromme, Erbare und Weyse, bsunders
+<lb n="3"/><unclear cert="low" resp="#joint">Zueschriben</unclear> wegen einer erbschafft.
+<lb n="4"/>Unser freündt nachberlich willig <unclear cert="low" resp="#joint">dinst</unclear> zuvor,
+<lb n="5"/>Ersame, Fromme, Erbare und Weyse, <unclear cert="low" resp="#joint">bsunders</unclear>
 <lb n="6"/>liebe und gute Nachbarn.
-<lb n="7"/>Was wir üch vor schon allbereit verfloßner zyt
-<lb n="8"/>bedechter <persName resp="#ner">Margrethen Sandnerin</persName>, Ihres ver-
-<lb n="9"/>wylt Sandner, <persName resp="#ner">Jörgen</persName> lieben vatters, üwern
+<lb n="7"/><unclear cert="low" resp="#joint">Was</unclear> wir <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">vor</unclear> schon <unclear cert="low" resp="#joint">allbereit</unclear> <unclear cert="low" resp="#joint">verfloßner</unclear> <unclear cert="low" resp="#joint">zyt</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">bedechter</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Margrethen</unclear> <unclear cert="low" resp="#joint">Sandnerin</unclear></persName>, <unclear cert="low" resp="#joint">Ihres</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">wylt</unclear> <unclear cert="low" resp="#joint">Sandner</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Jörgen</unclear></persName> lieben vatters, üwern
 <lb n="10"/>geweßnen ghorsamen seligen zuegefallnen Erbs
-<lb n="11"/>freündtnachberlich zuegeschriben, und gebetten,
-<lb n="12"/>deßen werden wir üch Zweiffels frey, noch
-<lb n="13"/>wohl zueerinnern haben.
-<lb n="14"/>Sidhar wir nun heruff an unsern Spittal-
-<lb n="15"/>schriber als wie Jhrn demnach zu eim bystandt
-<lb n="16"/>zugegeben, verstandiget word: weßgstalt
-<lb n="17"/>es nit by Jm Eerb beschehe, Jst es
-<lb n="18"/>wider uns, mit eim verwundern
-<lb n="19"/>furkhommen. Jndem die Jehnige volkhumene
-<lb n="20"/>Schin, so Jhro von üch so wohl Jhrs haab und guts
-<lb n="21"/>also ehrlichen geburt und verhaltens, sölle
-<lb n="22"/>zue eim schirm angenommen werden solle, ubersen-
-<lb n="23"/>det, mitgetheilt worden, anderst zedeüten
-<lb n="24"/>und ußzelegen welle, in dem aber <placeName resp="#ner">Spital</placeName>
+<lb n="11"/><unclear cert="low" resp="#joint">freündtnachberlich</unclear> <unclear cert="low" resp="#joint">zuegeschriben</unclear>, und gebetten,
+<lb n="12"/><unclear cert="low" resp="#joint">deßen</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">üch</unclear> <unclear cert="low" resp="#joint">Zweiffels</unclear> <unclear cert="low" resp="#joint">frey</unclear>, <unclear cert="low" resp="#joint">noch</unclear>
+<lb n="13"/><unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">zueerinnern</unclear> haben.
+<lb n="14"/><unclear cert="low" resp="#joint">Sidhar</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">nun</unclear> <unclear cert="low" resp="#joint">heruff</unclear> an <unclear cert="low" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">Spittal</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">schriber</unclear> als <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">Jhrn</unclear> <unclear cert="low" resp="#joint">demnach</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">eim</unclear> <unclear cert="low" resp="#joint">bystandt</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">zugegeben</unclear>, <unclear cert="low" resp="#joint">verstandiget</unclear> <unclear cert="low" resp="#joint">word</unclear>: <unclear cert="low" resp="#joint">weßgstalt</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">Jm</unclear> <unclear cert="low" resp="#joint">Eerb</unclear> <unclear cert="low" resp="#joint">beschehe</unclear>, <unclear cert="low" resp="#joint">Jst</unclear> <unclear cert="low" resp="#joint">es</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">uns</unclear>, <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">eim</unclear> <unclear cert="low" resp="#joint">verwundern</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">furkhommen</unclear>. <unclear cert="low" resp="#joint">Jndem</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">Jehnige</unclear> <unclear cert="low" resp="#joint">volkhumene</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">Schin</unclear>, so <unclear cert="medium" resp="#joint">Jhro</unclear> von <unclear cert="medium" resp="#joint">üch</unclear> so wohl <unclear cert="low" resp="#joint">Jhrs</unclear> <unclear cert="low" resp="#joint">haab</unclear> und <unclear cert="low" resp="#joint">guts</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">also</unclear> <unclear cert="low" resp="#joint">ehrlichen</unclear> geburt und <unclear cert="low" resp="#joint">verhaltens</unclear>, <unclear cert="low" resp="#joint">sölle</unclear>
+<lb n="22"/>zue <unclear cert="low" resp="#joint">eim</unclear> <unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">angenommen</unclear> <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">solle</unclear>, <unclear cert="low" resp="#joint">ubersen</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">det</unclear>, <unclear cert="low" resp="#joint">mitgetheilt</unclear> <unclear cert="low" resp="#joint">worden</unclear>, <unclear cert="low" resp="#joint">anderst</unclear> <unclear cert="low" resp="#joint">zedeüten</unclear>
+<lb n="24"/>und <unclear cert="low" resp="#joint">ußzelegen</unclear> <unclear cert="low" resp="#joint">welle</unclear>, <unclear cert="low" resp="#joint">in</unclear> dem aber <placeName resp="#ner">Spital</placeName>
 <lb n="25"/> vermeinet demnach so wenig ihr als
-<lb n="26"/>wir darzu gethon, dan wie der lautere
-<lb n="27"/>und bloße Buchstaben khlarlich mitbringt, dz
-<lb n="28"/>namlich so sy Jro, Jhr ermelter vatter baid
-<lb n="29"/>selig vor Jro one lyb erben mit tod abgohn solte,
-<lb n="30"/>als dan an Jhrn an alle seine verlaßene,
-<lb n="31"/>sain Closter haab und gut an der
+<lb n="26"/>wir <unclear cert="low" resp="#joint">darzu</unclear> <unclear cert="low" resp="#joint">gethon</unclear>, <unclear cert="low" resp="#joint">dan</unclear> wie <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">lautere</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">bloße</unclear> <unclear cert="low" resp="#joint">Buchstaben</unclear> <unclear cert="low" resp="#joint">khlarlich</unclear> <unclear cert="low" resp="#joint">mitbringt</unclear>, <unclear cert="low" resp="#joint">dz</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">namlich</unclear> <unclear cert="low" resp="#joint">so</unclear> <unclear cert="low" resp="#joint">sy</unclear> <unclear cert="low" resp="#joint">Jro</unclear>, <unclear cert="low" resp="#joint">Jhr</unclear> <unclear cert="low" resp="#joint">ermelter</unclear> <unclear cert="low" resp="#joint">vatter</unclear> <unclear cert="low" resp="#joint">baid</unclear>
+<lb n="29"/>selig <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">Jro</unclear> <unclear cert="low" resp="#joint">one</unclear> <unclear cert="low" resp="#joint">lyb</unclear> <unclear cert="low" resp="#joint">erben</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">tod</unclear> <unclear cert="low" resp="#joint">abgohn</unclear> <unclear cert="low" resp="#joint">solte</unclear>,
+<lb n="30"/><unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">dan</unclear> an <unclear cert="low" resp="#joint">Jhrn</unclear> an alle <unclear cert="low" resp="#joint">seine</unclear> <unclear cert="low" resp="#joint">verlaßene</unclear>,
+<lb n="31"/><unclear cert="low" resp="#joint">sain</unclear> <unclear cert="low" resp="#joint">Closter</unclear> <unclear cert="low" resp="#joint">haab</unclear> und <unclear cert="low" resp="#joint">gut</unclear> <unclear cert="low" resp="#joint">an</unclear> der
 <lb n="32"/>dritte theil ledig zuefallen, und heim-
-<lb n="33"/>erbe solte, so wohl füruß Erbrecht, ob dz gliche
-<lb n="34"/>möchte
-<lb n="35"/>werd: wie dan sy uff solche zuegesprochne
-<lb n="36"/>als ein wie glübd uß zu eim schirm ange-
-<lb n="37"/>nomen word: welchs aber
-<lb n="38"/>diewil es Jnhalt unser Statt recht soll uß billiche
-<lb n="39"/>ist beschechen.
-<lb n="40"/><persName role="issuer" resp="#ner">Margretha Sandnerin</persName> betref
-<lb n="41"/><origDate when="1616-06-27" resp="#ner">27. Junij 1616</origDate>.
+<lb n="33"/>erbe solte, so wohl <unclear cert="low" resp="#joint">füruß</unclear> <unclear cert="low" resp="#joint">Erbrecht</unclear>, <unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">gliche</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">möchte</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">werd</unclear>: wie <unclear cert="low" resp="#joint">dan</unclear> sy <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">zuegesprochne</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">als</unclear> <unclear cert="low" resp="#joint">ein</unclear> wie <unclear cert="medium" resp="#joint">glübd</unclear> <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">eim</unclear> <unclear cert="medium" resp="#joint">schirm</unclear> <unclear cert="medium" resp="#joint">ange</unclear>-
+<lb n="37"/><unclear cert="medium" resp="#joint">nomen</unclear> <unclear cert="medium" resp="#joint">word</unclear>: <unclear cert="medium" resp="#joint">welchs</unclear> aber
+<lb n="38"/><unclear cert="low" resp="#joint">diewil</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">Jnhalt</unclear> unser Statt recht soll uß billiche
+<lb n="39"/>ist <unclear cert="medium" resp="#joint">beschechen</unclear>.
+<lb n="40"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Margretha</unclear> <unclear cert="medium" resp="#joint">Sandnerin</unclear></persName> <unclear cert="medium" resp="#joint">betref</unclear>
+<lb n="41"/><origDate when="1616-06-27" resp="#ner">27. <unclear cert="medium" resp="#joint">Junij</unclear> <unclear cert="medium" resp="#joint">1616</unclear></origDate>.
 <pb facs="StadtASG_Missive_2013_7510.jpg" n="2"/>
 <lb n="42"/>Diewil dan uff <date resp="#ner">nechstkuenfftigen Mentag</date> bij
 <lb n="43"/>E. E. W. gericht werden, und sie uff den selbigen
@@ -108,21 +108,21 @@
 <lb n="71"/>wolt sonder solle sie nach lut desselbigen widerkehren wol
 <lb n="72"/>gebt ir solches daneben mit recht vernemen, q.
 <pb facs="StadtASG_Missive_2013_7511.jpg" n="3"/>
-<lb n="73"/>und ihn an Irn Adelichen Siet wohlhaebt aufs fuederlichst, und mit weniigsten
-<lb n="74"/>nach gebuer Wolgedacht <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costen</placeName> aus schraegen zu fuer wohl bevolch
-<lb n="75"/>volfhln zu gabe zu laßn. Daß sie beschichts erwenung mueg-
-<lb n="76"/>lichst legen sie huebste freundbarlich vergnuesse heb.
-<lb n="77"/>heiß Ihrn uns geg E.E. und der euwrig in dgleichen
-<lb n="78"/>und andr falhn mit unserm Freündtvermueßs Ende,
-<lb n="79"/>nachbarlich zubschulden. Hemit dß dselb us
-<lb n="80"/>Obhallt in Gnaden wohlbevohlnde. Datum den <origDate when="1615-06-27" resp="#ner">27ten Junij 1615</origDate>.
-<lb n="81"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">BurgrMeistr und Raht
+<lb n="73"/>und <unclear cert="low" resp="#joint">ihn</unclear> <unclear cert="low" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">Irn</unclear> <unclear cert="low" resp="#joint">Adelichen</unclear> <unclear cert="low" resp="#joint">Siet</unclear> <unclear cert="low" resp="#joint">wohlhaebt</unclear> <unclear cert="low" resp="#joint">aufs</unclear> <unclear cert="low" resp="#joint">fuederlichst</unclear>, und <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">weniigsten</unclear>
+<lb n="74"/><unclear cert="low" resp="#joint">nach</unclear> <unclear cert="low" resp="#joint">gebuer</unclear> <unclear cert="low" resp="#joint">Wolgedacht</unclear> <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costen</unclear></placeName> <unclear cert="low" resp="#joint">aus</unclear> <unclear cert="low" resp="#joint">schraegen</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">fuer</unclear> <unclear cert="low" resp="#joint">wohl</unclear> <unclear cert="low" resp="#joint">bevolch</unclear>
+<lb n="75"/><unclear cert="low" resp="#joint">volfhln</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">gabe</unclear> <unclear cert="low" resp="#joint">zu</unclear> <unclear cert="low" resp="#joint">laßn</unclear>. Daß sie <unclear cert="low" resp="#joint">beschichts</unclear> <unclear cert="low" resp="#joint">erwenung</unclear> <unclear cert="low" resp="#joint">mueg</unclear>-
+<lb n="76"/><unclear cert="low" resp="#joint">lichst</unclear> <unclear cert="low" resp="#joint">legen</unclear> <unclear cert="low" resp="#joint">sie</unclear> <unclear cert="low" resp="#joint">huebste</unclear> <unclear cert="low" resp="#joint">freundbarlich</unclear> <unclear cert="low" resp="#joint">vergnuesse</unclear> <unclear cert="low" resp="#joint">heb</unclear>.
+<lb n="77"/><unclear cert="low" resp="#joint">heiß</unclear> <unclear cert="low" resp="#joint">Ihrn</unclear> <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">geg</unclear> E.E. und <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">euwrig</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">dgleichen</unclear>
+<lb n="78"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">andr</unclear> <unclear cert="low" resp="#joint">falhn</unclear> <unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">Freündtvermueßs</unclear> <unclear cert="low" resp="#joint">Ende</unclear>,
+<lb n="79"/><unclear cert="low" resp="#joint">nachbarlich</unclear> <unclear cert="low" resp="#joint">zubschulden</unclear>. <unclear cert="low" resp="#joint">Hemit</unclear> <unclear cert="low" resp="#joint">dß</unclear> <unclear cert="low" resp="#joint">dselb</unclear> <unclear cert="low" resp="#joint">us</unclear>
+<lb n="80"/><unclear cert="low" resp="#joint">Obhallt</unclear> <unclear cert="low" resp="#joint">in</unclear> <unclear cert="low" resp="#joint">Gnaden</unclear> <unclear cert="low" resp="#joint">wohlbevohlnde</unclear>. <unclear cert="low" resp="#joint">Datum</unclear> <unclear cert="low" resp="#joint">den</unclear> <origDate when="1615-06-27" resp="#ner"><unclear cert="low" resp="#joint">27ten</unclear> <unclear cert="low" resp="#joint">Junij</unclear> <unclear cert="low" resp="#joint">1615</unclear></origDate>.
+<lb n="81"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">BurgrMeistr</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Raht</unclear>
 <lb n="82"/>der Statt St. Gallen</orgName>.
-<lb n="83"/>Den <orgName ref="stadtasg-actors-864" cert="medium" role="recipient" resp="#ner">Ammann und Gricht zu
-<lb n="84"/>Thal im Rheinthal</orgName>.
+<lb n="83"/>Den <orgName ref="stadtasg-actors-864" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Ammann</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Gricht</unclear> <unclear cert="low" resp="#joint">zu</unclear>
+<lb n="84"/><unclear cert="low" resp="#joint">Thal</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">Rheinthal</unclear></orgName>.
 <pb facs="StadtASG_Missive_2013_7512.jpg" n="4"/>
-<lb n="85"/>An <orgName role="issuer" resp="#ner">Ammann und <unclear cert="low" resp="#joint">Gricht</unclear> <unclear cert="low" resp="#joint">z'Thal</unclear></orgName> <origDate when="1616-06-27" resp="#ner"><unclear cert="low" resp="#joint">27</unclear>. <unclear cert="low" resp="#joint">junii</unclear> <unclear cert="low" resp="#joint">1616</unclear></origDate>.
-<lb n="86"/><unclear cert="low" resp="#joint">weg</unclear> <persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Margretha</unclear> <unclear cert="low" resp="#joint">Leübin</unclear></persName>
+<lb n="85"/>An <orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Ammann</unclear> und Gricht <unclear cert="low" resp="#joint">z'Thal</unclear></orgName> <origDate when="1616-06-27" resp="#ner">27. junii 1616</origDate>.
+<lb n="86"/>weg <persName role="issuer" resp="#ner">Margretha Leübin</persName>
 </p>
         </body>
     </text>

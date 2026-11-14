@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2478</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,92 +20,92 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Joell Reding, Landvogt im Thurgau, teilt St. Gallen mit, dass er auf deren Anfrage hin Thomas Studer und dessen Ehefrau Barbara Kollerin in Konstanz nicht persönlich, sondern durch andere Zeugen befragen ließ. Diese gaben an, dass ein Mann namens Hans, der sich als Fieberkranker ausgab, bei ihnen übernachtete und Tuch verkaufte. Reding bittet St. Gallen, ihm mitzuteilen, was der Beschuldigte unter Folter über diese Personen aussagen könnte.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Joell Reding, Landvogt im oberen und unteren Thurgau</name><placeName resp="#regest">Frauenfeld</placeName><date when="1624-03-28" resp="#regest">den 28 ten Martij Ao p 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2478_9549.jpg" n="1"/>
-<lb n="1"/>Edle Veste, Ehrnveste, Fuersichtige Weysse, sonders
-<lb n="2"/>liebe Herren, freündt unnd nachparen, denselben seyen
-<lb n="3"/>meine freündt nachparliche dienst unnd grueß
+<lb n="1"/>Edle Veste, <unclear cert="low" resp="#joint">Ehrnveste</unclear>, Fuersichtige Weysse, sonders
+<lb n="2"/>liebe Herren, <unclear cert="low" resp="#joint">freündt</unclear> unnd nachparen, denselben seyen
+<lb n="3"/>meine <unclear cert="low" resp="#joint">freündt</unclear> <unclear cert="medium" resp="#joint">nachparliche</unclear> dienst unnd grueß
 <lb n="4"/>zuvor p.
-<lb n="5"/>Den Herren Nachparen hab ich uff ihr an herren
-<lb n="6"/><persName resp="#ner">Jacob Zandren</persName> vogten uff der <placeName ref="stadtasg-places-296" cert="medium" resp="#ner">Eggen</placeName>, abgangnes
-<lb n="7"/>unnd hernach von ime Zandren (weil die begerte
-<lb n="8"/>verrichtung der hochen oberkeit zuegehoerig) mir
-<lb n="9"/>überschickhtes schreiben, zue begerter antwurt nit
-<lb n="10"/>verhalten woellen; daß ich <persName resp="#ner">Thoman Schloehner</persName>
-<lb n="11"/>unnd sein haußfrawen für mich nach <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanz</placeName> in
-<lb n="12"/>dz Wiertzhauß <placeName ref="stadtasg-places-255" cert="medium" resp="#ner">Crentzlingen</placeName> Citieren, weil sy aber
-<lb n="13"/>vor meinem unnd meiner ambtleüthen hinwegreysen
-<lb n="14"/>nit erschinen, durch andere verordnete examinieren
+<lb n="5"/><unclear cert="low" resp="#joint">Den</unclear> Herren <unclear cert="medium" resp="#joint">Nachparen</unclear> hab ich uff ihr an herren
+<lb n="6"/><persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Zandren</unclear></persName> <unclear cert="medium" resp="#joint">vogten</unclear> uff der <placeName ref="stadtasg-places-296" cert="medium" resp="#ner">Eggen</placeName>, abgangnes
+<lb n="7"/>unnd hernach von ime <unclear cert="low" resp="#joint">Zandren</unclear> (<unclear cert="low" resp="#joint">weil</unclear> die begerte
+<lb n="8"/>verrichtung der <unclear cert="medium" resp="#joint">hochen</unclear> oberkeit zuegehoerig) mir
+<lb n="9"/><unclear cert="low" resp="#joint">überschickhtes</unclear> schreiben, zue begerter antwurt nit
+<lb n="10"/>verhalten <unclear cert="low" resp="#joint">woellen</unclear>; daß ich <persName resp="#ner"><unclear cert="low" resp="#joint">Thoman</unclear> <unclear cert="low" resp="#joint">Schloehner</unclear></persName>
+<lb n="11"/>unnd sein <unclear cert="low" resp="#joint">haußfrawen</unclear> für mich nach <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Costanz</unclear></placeName> in
+<lb n="12"/><unclear cert="low" resp="#joint">dz</unclear> <unclear cert="low" resp="#joint">Wiertzhauß</unclear> <placeName ref="stadtasg-places-255" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Crentzlingen</unclear></placeName> <unclear cert="low" resp="#joint">Citieren</unclear>, <unclear cert="low" resp="#joint">weil</unclear> <unclear cert="medium" resp="#joint">sy</unclear> aber
+<lb n="13"/>vor <unclear cert="low" resp="#joint">meinem</unclear> unnd meiner <unclear cert="low" resp="#joint">ambtleüthen</unclear> <unclear cert="low" resp="#joint">hinwegreysen</unclear>
+<lb n="14"/>nit <unclear cert="medium" resp="#joint">erschinen</unclear>, durch andere verordnete examinieren
 <lb n="15"/>lassen, welche ußgesagt, wie die Herren Nachparen
-<lb n="16"/>hiebeygschlossen, zueempfachen habendt. Ersueche die=
-<lb n="17"/>selben hiemit freündtlich sye woellendt dz ienige so
-<lb n="18"/>weiters ernenter malificant an der Tortur
-<lb n="19"/>willig uff dise Persohnen bekhenen moechten,
-<lb n="20"/>mir nachparlich ze comunicieren. Daß soth umb
-<lb n="21"/>die Herren Nachparen Jn begebenden fellen, zueerwidern.
-<lb n="22"/>Datum <origPlace ref="stadtasg-places-29" cert="medium" resp="#ner">Frawenfeldt</origPlace>. <origDate when="1624-03-28" resp="#ner">den 28 ten Martij Ao p 1624</origDate>.
-<lb n="23"/><persName role="issuer" resp="#ner">Joell Reding</persName> des <orgName ref="stadtasg-actors-522" cert="medium" role="issuer" resp="#ner">Rhats</orgName> zue
-<lb n="24"/><placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Schwyz</placeName>, Landtvogt im oberen
-<lb n="25"/>und nideren <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Thurgöew</placeName>.
+<lb n="16"/><unclear cert="medium" resp="#joint">hiebeygschlossen</unclear>, <unclear cert="medium" resp="#joint">zueempfachen</unclear> habendt. <unclear cert="low" resp="#joint">Ersueche</unclear> die=
+<lb n="17"/>selben <unclear cert="medium" resp="#joint">hiemit</unclear> <unclear cert="low" resp="#joint">freündtlich</unclear> <unclear cert="low" resp="#joint">sye</unclear> <unclear cert="medium" resp="#joint">woellendt</unclear> <unclear cert="medium" resp="#joint">dz</unclear> ienige so
+<lb n="18"/><unclear cert="low" resp="#joint">weiters</unclear> <unclear cert="low" resp="#joint">ernenter</unclear> <unclear cert="medium" resp="#joint">malificant</unclear> an der <unclear cert="medium" resp="#joint">Tortur</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">willig</unclear> uff dise <unclear cert="low" resp="#joint">Persohnen</unclear> <unclear cert="low" resp="#joint">bekhenen</unclear> <unclear cert="medium" resp="#joint">moechten</unclear>,
+<lb n="20"/>mir <unclear cert="medium" resp="#joint">nachparlich</unclear> ze comunicieren. <unclear cert="medium" resp="#joint">Daß</unclear> <unclear cert="low" resp="#joint">soth</unclear> umb
+<lb n="21"/>die Herren <unclear cert="medium" resp="#joint">Nachparen</unclear> <unclear cert="low" resp="#joint">Jn</unclear> <unclear cert="medium" resp="#joint">begebenden</unclear> fellen, <unclear cert="medium" resp="#joint">zueerwidern</unclear>.
+<lb n="22"/>Datum <origPlace ref="stadtasg-places-29" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Frawenfeldt</unclear></origPlace>. <origDate when="1624-03-28" resp="#ner">den 28 <unclear cert="low" resp="#joint">ten</unclear> Martij <unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">p</unclear> 1624</origDate>.
+<lb n="23"/><persName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Joell</unclear> Reding</persName> des <orgName ref="stadtasg-actors-522" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Rhats</unclear></orgName> zue
+<lb n="24"/><placeName ref="stadtasg-places-71" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schwyz</unclear></placeName>, Landtvogt <unclear cert="medium" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">oberen</unclear>
+<lb n="25"/>und <unclear cert="low" resp="#joint">nideren</unclear> <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Thurgöew</unclear></placeName>.
 <pb facs="StadtASG_Missive_2478_9550.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2478_9551.jpg" n="3"/>
 <lb n="26"/>Copia.
-<lb n="27"/><persName role="issuer" resp="#ner">Thoman Studers</persName> unnd <persName resp="#ner">Barbara Kollerin</persName> als
-<lb n="28"/>elüthen, güettliche bekanntnus.
-<lb n="29"/>Erstlich zaigendt sy einmündig an, daß vorschiner haber-
-<lb n="30"/>erndt, einer mit namen <persName resp="#ner">Hannß</persName>, zue ihnen khomen, umb
-<lb n="31"/>die nachtherberg gebetten, mit vermelden, daß er
-<lb n="32"/>uß dem <placeName resp="#ner">Rychs Tobell</placeName> gebürtig, unnd mit dem fieber
-<lb n="33"/>behafft seige. Welcher uff den abendt sye <persName resp="#ner">Barba-
-<lb n="34"/>ran</persName> befragt, ob sye khain <persName resp="#ner">Naerin</persName> were, unnd sye
-<lb n="35"/>gebetten, ihme ein hembt zemachen, wie dann er ein
-<lb n="36"/>stukhin tuoch, ohngefehr eilff ellen, uß einem sackh
-<lb n="37"/>gezogen, vermeint daruß ein hembt machen zelassen,
-<lb n="38"/>alß aber biß erzelten verlauff, <persName resp="#ner">Jagli Zeller</persName>, sunst,
-<lb n="39"/><persName resp="#ner">Thoeni Jaglis Sohn</persName> genant, gewahret, das tuoch
-<lb n="40"/>besichtiget, unnd begert zekhauffen, da habe er
-<lb n="41"/><persName resp="#ner">Hannß</persName> ihme soliches umb drey bazen, uffschlag unnd
-<lb n="42"/>zuekhauffen geben; hernach aber hab er ein anders
-<lb n="43"/>stükhlin tuoch herfurgezogen, ußwelchem sye <persName resp="#ner">Kollerin</persName>
-<lb n="44"/>ihme ein hembt, unnd ein leilachen geschniten, daß
-<lb n="45"/>überig aber ungevahr 8 ellen, er dem <persName resp="#ner">Lunggen
-<lb n="46"/>Khuenlin</persName> genant, zekhauffen geben, glicher gestalt
-<lb n="47"/>umb 3 bz. mit fürgeben, wie ihme soliches <orgName resp="#ner">Teütschen
-<lb n="48"/>Schwaab</orgName> an ain kalb ertauschet habe, welches er
-<lb n="49"/>verfressen habe.
+<lb n="27"/><persName role="issuer" resp="#ner">Thoman <unclear cert="low" resp="#joint">Studers</unclear></persName> unnd <persName resp="#ner">Barbara <unclear cert="low" resp="#joint">Kollerin</unclear></persName> als
+<lb n="28"/><unclear cert="low" resp="#joint">elüthen</unclear>, <unclear cert="low" resp="#joint">güettliche</unclear> <unclear cert="low" resp="#joint">bekanntnus</unclear>.
+<lb n="29"/>Erstlich <unclear cert="low" resp="#joint">zaigendt</unclear> sy <unclear cert="low" resp="#joint">einmündig</unclear> an, daß <unclear cert="medium" resp="#joint">vorschiner</unclear> <unclear cert="medium" resp="#joint">haber</unclear>-
+<lb n="30"/><unclear cert="medium" resp="#joint">erndt</unclear>, einer mit namen <persName resp="#ner">Hannß</persName>, <unclear cert="low" resp="#joint">zue</unclear> ihnen <unclear cert="medium" resp="#joint">khomen</unclear>, umb
+<lb n="31"/>die <unclear cert="medium" resp="#joint">nachtherberg</unclear> gebetten, mit <unclear cert="medium" resp="#joint">vermelden</unclear>, daß er
+<lb n="32"/>uß <unclear cert="medium" resp="#joint">dem</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Rychs</unclear> <unclear cert="low" resp="#joint">Tobell</unclear></placeName> <unclear cert="medium" resp="#joint">gebürtig</unclear>, unnd mit dem fieber
+<lb n="33"/><unclear cert="medium" resp="#joint">behafft</unclear> <unclear cert="low" resp="#joint">seige</unclear>. <unclear cert="medium" resp="#joint">Welcher</unclear> <unclear cert="medium" resp="#joint">uff</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">abendt</unclear> <unclear cert="medium" resp="#joint">sye</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Barba</unclear>-
+<lb n="34"/><unclear cert="low" resp="#joint">ran</unclear></persName> <unclear cert="medium" resp="#joint">befragt</unclear>, ob sye <unclear cert="medium" resp="#joint">khain</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Naerin</unclear></persName> <unclear cert="low" resp="#joint">were</unclear>, unnd sye
+<lb n="35"/><unclear cert="medium" resp="#joint">gebetten</unclear>, ihme ein <unclear cert="low" resp="#joint">hembt</unclear> <unclear cert="medium" resp="#joint">zemachen</unclear>, wie dann er ein
+<lb n="36"/><unclear cert="low" resp="#joint">stukhin</unclear> <unclear cert="low" resp="#joint">tuoch</unclear>, <unclear cert="low" resp="#joint">ohngefehr</unclear> <unclear cert="low" resp="#joint">eilff</unclear> <unclear cert="medium" resp="#joint">ellen</unclear>, <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">einem</unclear> <unclear cert="low" resp="#joint">sackh</unclear>
+<lb n="37"/>gezogen, <unclear cert="low" resp="#joint">vermeint</unclear> daruß ein <unclear cert="low" resp="#joint">hembt</unclear> machen <unclear cert="low" resp="#joint">zelassen</unclear>,
+<lb n="38"/><unclear cert="medium" resp="#joint">alß</unclear> aber <unclear cert="medium" resp="#joint">biß</unclear> erzelten <unclear cert="medium" resp="#joint">verlauff</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Jagli</unclear> <unclear cert="medium" resp="#joint">Zeller</unclear></persName>, <unclear cert="medium" resp="#joint">sunst</unclear>,
+<lb n="39"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Thoeni</unclear> Jaglis Sohn</persName> genant, <unclear cert="low" resp="#joint">gewahret</unclear>, das <unclear cert="low" resp="#joint">tuoch</unclear>
+<lb n="40"/><unclear cert="medium" resp="#joint">besichtiget</unclear>, unnd begert <unclear cert="low" resp="#joint">zekhauffen</unclear>, da habe er
+<lb n="41"/><persName resp="#ner">Hannß</persName> <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="low" resp="#joint">soliches</unclear> umb <unclear cert="low" resp="#joint">drey</unclear> bazen, <unclear cert="low" resp="#joint">uffschlag</unclear> unnd
+<lb n="42"/><unclear cert="low" resp="#joint">zuekhauffen</unclear> <unclear cert="medium" resp="#joint">geben</unclear>; <unclear cert="medium" resp="#joint">hernach</unclear> aber hab er ein anders
+<lb n="43"/><unclear cert="medium" resp="#joint">stükhlin</unclear> <unclear cert="medium" resp="#joint">tuoch</unclear> <unclear cert="medium" resp="#joint">herfurgezogen</unclear>, ußwelchem sye <persName resp="#ner"><unclear cert="low" resp="#joint">Kollerin</unclear></persName>
+<lb n="44"/>ihme ein <unclear cert="low" resp="#joint">hembt</unclear>, unnd ein <unclear cert="medium" resp="#joint">leilachen</unclear> <unclear cert="medium" resp="#joint">geschniten</unclear>, daß
+<lb n="45"/><unclear cert="medium" resp="#joint">überig</unclear> aber <unclear cert="medium" resp="#joint">ungevahr</unclear> 8 ellen, er <unclear cert="medium" resp="#joint">dem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Lunggen</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">Khuenlin</unclear></persName> <unclear cert="medium" resp="#joint">genant</unclear>, <unclear cert="low" resp="#joint">zekhauffen</unclear> <unclear cert="medium" resp="#joint">geben</unclear>, <unclear cert="low" resp="#joint">glicher</unclear> gestalt
+<lb n="47"/>umb 3 <unclear cert="low" resp="#joint">bz</unclear>. mit <unclear cert="low" resp="#joint">fürgeben</unclear>, wie ihme soliches <orgName resp="#ner"><unclear cert="low" resp="#joint">Teütschen</unclear>
+<lb n="48"/><unclear cert="low" resp="#joint">Schwaab</unclear></orgName> an <unclear cert="low" resp="#joint">ain</unclear> <unclear cert="low" resp="#joint">kalb</unclear> <unclear cert="low" resp="#joint">ertauschet</unclear> <unclear cert="low" resp="#joint">habe</unclear>, welches er
+<lb n="49"/><unclear cert="medium" resp="#joint">verfressen</unclear> habe.
 <pb facs="StadtASG_Missive_2478_9552.jpg" n="4"/>
-<lb n="50"/>Item sige er abermallen zuo ihnen khomen, umb die
-<lb n="51"/>herbrig gebetten, aber nichts bij ihme gehabt, unnd
-<lb n="52"/>fürgeben wie er vorhabens naher <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhußen</placeName>
-<lb n="53"/>in dem herbst zezienh sige.
-<lb n="54"/>Drittens unnd letstlichs, in midten des herbsts,
-<lb n="55"/>sige er widerumb ohnguar zwanzig elen thuochs,
-<lb n="56"/>bijsich habend, khomen, sijen zwaij underschidlich
-<lb n="57"/>stuckhlinen geweßen, wer aber ihme selbe geben,
+<lb n="50"/>Item sige er <unclear cert="low" resp="#joint">abermallen</unclear> zuo <unclear cert="low" resp="#joint">ihnen</unclear> khomen, umb die
+<lb n="51"/><unclear cert="low" resp="#joint">herbrig</unclear> gebetten, aber nichts <unclear cert="low" resp="#joint">bij</unclear> <unclear cert="low" resp="#joint">ihme</unclear> gehabt, unnd
+<lb n="52"/><unclear cert="low" resp="#joint">fürgeben</unclear> wie er <unclear cert="low" resp="#joint">vorhabens</unclear> naher <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaffhußen</placeName>
+<lb n="53"/>in dem herbst <unclear cert="low" resp="#joint">zezienh</unclear> sige.
+<lb n="54"/>Drittens unnd <unclear cert="low" resp="#joint">letstlichs</unclear>, in <unclear cert="low" resp="#joint">midten</unclear> des herbsts,
+<lb n="55"/>sige er widerumb <unclear cert="low" resp="#joint">ohnguar</unclear> <unclear cert="low" resp="#joint">zwanzig</unclear> <unclear cert="low" resp="#joint">elen</unclear> <unclear cert="low" resp="#joint">thuochs</unclear>,
+<lb n="56"/><unclear cert="low" resp="#joint">bijsich</unclear> <unclear cert="low" resp="#joint">habend</unclear>, khomen, <unclear cert="low" resp="#joint">sijen</unclear> <unclear cert="low" resp="#joint">zwaij</unclear> underschidlich
+<lb n="57"/><unclear cert="medium" resp="#joint">stuckhlinen</unclear> <unclear cert="medium" resp="#joint">geweßen</unclear>, wer aber <unclear cert="low" resp="#joint">ihme</unclear> selbe geben,
 <lb n="58"/>oder wo er die genomen, sige ihnen ganz unnd
-<lb n="59"/>gar nit bewußt, glich wie von allem anderem
-<lb n="60"/>sinem thuon unnd laßen, hiemit habend sij ihre
-<lb n="61"/>bekhandtnuß geendet.
+<lb n="59"/>gar nit bewußt, glich wie <unclear cert="low" resp="#joint">von</unclear> allem anderem
+<lb n="60"/><unclear cert="low" resp="#joint">sinem</unclear> thuon unnd <unclear cert="medium" resp="#joint">laßen</unclear>, <unclear cert="medium" resp="#joint">hiemit</unclear> <unclear cert="medium" resp="#joint">habend</unclear> <unclear cert="medium" resp="#joint">sij</unclear> <unclear cert="medium" resp="#joint">ihre</unclear>
+<lb n="61"/><unclear cert="medium" resp="#joint">bekhandtnuß</unclear> geendet.
 <pb facs="StadtASG_Missive_2478_9553.jpg" n="5"/>
 <pb facs="StadtASG_Missive_2478_9554.jpg" n="6"/>
 <pb facs="StadtASG_Missive_2478_9555.jpg" n="7"/>
 <pb facs="StadtASG_Missive_2478_9556.jpg" n="8"/>
-<lb n="62"/>Den Edlen, Vösten, Eerenvesten, füer-
+<lb n="62"/>Den Edlen, Vösten, <unclear cert="low" resp="#joint">Eerenvesten</unclear>, <unclear cert="low" resp="#joint">füer</unclear>-
 <lb n="63"/>sichtigen unnd Weisen Herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="64"/>meistern und Rhat der Statt St: Gallen</orgName>,
-<lb n="65"/>Meinen sonders Lieben Herren, Fründt,
+<lb n="65"/>Meinen sonders Lieben Herren, <unclear cert="low" resp="#joint">Fründt</unclear>,
 <lb n="66"/>unnd Nachbaren.
 </p>
         </body>

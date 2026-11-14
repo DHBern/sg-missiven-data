@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1316</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,72 +20,72 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Meister und Rat zu Straßburg informieren Bürgermeister und Rat zu St. Gallen, dass der ausgetretene Straßburger Bürger Othmar Schlaipffer ihnen einen Generalpassbrief vorgelegt habe. Er begehre, sieben Zeugen gegen die St. Galler und Melchior Rothmann samt Söhnen zu verhören. Straßburg bestimmt den 29. Juni (alter Stil) um 7 Uhr morgens in der Kanzlei als Termin und fordert die St. Galler auf, zu erscheinen oder Bevollmächtigte zu entsenden. Andernfalls werde ohne sie verhandelt.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Meister und Rat zu Straßburg</name><date when="1595-07-09" resp="#regest">Mittwochs den 9t Julij. aō 1595.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1316_4525.jpg" n="1"/>
-<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündtlich</unclear> dienst <unclear cert="low" resp="#joint">zuovor</unclear>, Erbar, Weis,
-<lb n="2"/><unclear cert="low" resp="#joint">lieb</unclear> undt <unclear cert="low" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">freündt</unclear>. Demnach uns uff
-<lb n="3"/>heüt dato, vor offnem sitzendem <orgName resp="#ner">Rhat</orgName>, <unclear cert="low" resp="#joint">ewer</unclear>
+<lb n="1"/>Unser <unclear cert="medium" resp="#joint">freündtlich</unclear> dienst <unclear cert="medium" resp="#joint">zuovor</unclear>, Erbar, <unclear cert="medium" resp="#joint">Weis</unclear>,
+<lb n="2"/><unclear cert="medium" resp="#joint">lieb</unclear> <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">freündt</unclear>. Demnach uns uff
+<lb n="3"/><unclear cert="medium" resp="#joint">heüt</unclear> dato, vor offnem sitzendem <orgName resp="#ner">Rhat</orgName>, <unclear cert="low" resp="#joint">ewer</unclear>
 <lb n="4"/><unclear cert="low" resp="#joint">außgetrettener</unclear> burger <persName resp="#ner">Othmar <unclear cert="low" resp="#joint">Schlaipffer</unclear></persName> ein
-<lb n="5"/>offenen General Compaßbrieff, under der Statt
-<lb n="6"/><placeName ref="stadtasg-places-13" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bernes</unclear></placeName> Insigel, wie auch <unclear cert="medium" resp="#joint">siben</unclear> <unclear cert="medium" resp="#joint">verwahrter</unclear> Zeü=
-<lb n="7"/>gen nahmen undt <unclear cert="low" resp="#joint">Anzüg</unclear> vorgelegt, undt dar=
+<lb n="5"/><unclear cert="medium" resp="#joint">offenen</unclear> General <unclear cert="medium" resp="#joint">Compaßbrieff</unclear>, under der Statt
+<lb n="6"/><placeName ref="stadtasg-places-13" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bernes</unclear></placeName> Insigel, wie auch <unclear cert="low" resp="#joint">siben</unclear> <unclear cert="low" resp="#joint">verwahrter</unclear> Zeü=
+<lb n="7"/>gen nahmen <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">Anzüg</unclear> vorgelegt, <unclear cert="medium" resp="#joint">undt</unclear> dar=
 <lb n="8"/>neben begehrt, <unclear cert="medium" resp="#joint">dieweilen</unclear> er <unclear cert="medium" resp="#joint">willens</unclear> etliche un=
-<lb n="9"/>serer burger nach <unclear cert="low" resp="#joint">außweisung</unclear> <unclear cert="medium" resp="#joint">des</unclear> <unclear cert="low" resp="#joint">Rechten</unclear>
-<lb n="10"/>wider eüch undt <persName resp="#ner"><unclear cert="medium" resp="#joint">Melchior</unclear> <unclear cert="medium" resp="#joint">Rothman</unclear></persName> sambt <unclear cert="low" resp="#joint">Söhn</unclear>
-<lb n="11"/>mit Consorten verhören <unclear cert="low" resp="#joint">zulaßen</unclear>, das wir
-<lb n="12"/><unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">solicher</unclear> production undt <unclear cert="low" resp="#joint">beeÿdigung</unclear> der zeü=
-<lb n="13"/>gen ihme einen gewißen tag undt zeit bestimmen,
-<lb n="14"/>undt eüch als <unclear cert="medium" resp="#joint">seinen</unclear> <unclear cert="medium" resp="#joint">gegentheilen</unclear>, wider die
-<lb n="15"/>er <unclear cert="medium" resp="#joint">khundtschafft</unclear> <unclear cert="medium" resp="#joint">zuezüchen</unclear> <unclear cert="medium" resp="#joint">begert</unclear>, <unclear cert="medium" resp="#joint">beÿ</unclear> <unclear cert="medium" resp="#joint">guoter</unclear>
-<lb n="16"/>zeit undt <unclear cert="low" resp="#joint">gebüerlich</unclear> <unclear cert="low" resp="#joint">denunciéren</unclear> <unclear cert="low" resp="#joint">laßen</unclear>
-<lb n="17"/>wolten. Wan wir dan <unclear cert="low" resp="#joint">ihme</unclear> sein <unclear cert="low" resp="#joint">rechtmäßigs</unclear>
-<lb n="18"/>begehren nicht verweigern <unclear cert="low" resp="#joint">solen</unclear> noch wöllen,
-<lb n="19"/>So <unclear cert="low" resp="#joint">denunciéren</unclear> undt <unclear cert="low" resp="#joint">verkhuendigen</unclear> wir eüch durch
+<lb n="9"/>serer burger nach <unclear cert="low" resp="#joint">außweisung</unclear> des <unclear cert="medium" resp="#joint">Rechten</unclear>
+<lb n="10"/>wider eüch undt <persName resp="#ner"><unclear cert="low" resp="#joint">Melchior</unclear> <unclear cert="low" resp="#joint">Rothman</unclear></persName> sambt <unclear cert="low" resp="#joint">Söhn</unclear>
+<lb n="11"/>mit <unclear cert="medium" resp="#joint">Consorten</unclear> verhören <unclear cert="low" resp="#joint">zulaßen</unclear>, das wir
+<lb n="12"/><unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">solicher</unclear> production <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">beeÿdigung</unclear> der zeü=
+<lb n="13"/>gen ihme einen gewißen tag <unclear cert="medium" resp="#joint">undt</unclear> zeit bestimmen,
+<lb n="14"/><unclear cert="medium" resp="#joint">undt</unclear> eüch als <unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">gegentheilen</unclear>, wider die
+<lb n="15"/>er khundtschafft <unclear cert="medium" resp="#joint">zuezüchen</unclear> begert, <unclear cert="low" resp="#joint">beÿ</unclear> guoter
+<lb n="16"/>zeit undt <unclear cert="low" resp="#joint">gebüerlich</unclear> <unclear cert="low" resp="#joint">denunciéren</unclear> <unclear cert="medium" resp="#joint">laßen</unclear>
+<lb n="17"/><unclear cert="medium" resp="#joint">wolten</unclear>. Wan wir dan <unclear cert="medium" resp="#joint">ihme</unclear> sein <unclear cert="low" resp="#joint">rechtmäßigs</unclear>
+<lb n="18"/>begehren nicht <unclear cert="medium" resp="#joint">verweigern</unclear> <unclear cert="low" resp="#joint">solen</unclear> noch wöllen,
+<lb n="19"/>So <unclear cert="low" resp="#joint">denunciéren</unclear> <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">verkhuendigen</unclear> wir eüch durch
 <lb n="20"/><unclear cert="low" resp="#joint">weiseren</unclear> dißes <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Baste</unclear></persName> unsern deßhalb <unclear cert="medium" resp="#joint">aigens</unclear>
 <lb n="21"/>abgefertigten undt geschwornen <unclear cert="low" resp="#joint">Leüffersbotten</unclear>,
-<lb n="22"/><unclear cert="low" resp="#joint">solichen</unclear> production undt verhör tag, das Ihr oder
-<lb n="23"/><unclear cert="low" resp="#joint">ewere</unclear> <unclear cert="medium" resp="#joint">hierzuo</unclear> <unclear cert="low" resp="#joint">sonders</unclear> abgeordnete bevelchs= undt
-<lb n="24"/>gewalt <unclear cert="medium" resp="#joint">haber</unclear>, uff <date resp="#ner">Zinstag den <unclear cert="low" resp="#joint">29t</unclear> <unclear cert="low" resp="#joint">Junii</unclear> stylo
-<lb n="25"/>antiquo</date>, Morgens umb 7. uhren ob Ihr <unclear cert="low" resp="#joint">wöllent</unclear>,
-<lb n="26"/>In unserer <unclear cert="low" resp="#joint">Canzleÿ</unclear> erscheinendt, die ernandte
+<lb n="22"/><unclear cert="low" resp="#joint">solichen</unclear> production <unclear cert="medium" resp="#joint">undt</unclear> verhör tag, das <unclear cert="medium" resp="#joint">Ihr</unclear> oder
+<lb n="23"/><unclear cert="medium" resp="#joint">ewere</unclear> hierzuo <unclear cert="medium" resp="#joint">sonders</unclear> abgeordnete bevelchs= undt
+<lb n="24"/>gewalt <unclear cert="medium" resp="#joint">haber</unclear>, uff <date resp="#ner"><unclear cert="medium" resp="#joint">Zinstag</unclear> den <unclear cert="low" resp="#joint">29t</unclear> <unclear cert="low" resp="#joint">Junii</unclear> stylo
+<lb n="25"/>antiquo</date>, Morgens umb 7. <unclear cert="medium" resp="#joint">uhren</unclear> ob Ihr <unclear cert="low" resp="#joint">wöllent</unclear>,
+<lb n="26"/><unclear cert="medium" resp="#joint">In</unclear> unserer <unclear cert="low" resp="#joint">Canzleÿ</unclear> <unclear cert="medium" resp="#joint">erscheinendt</unclear>, die <unclear cert="medium" resp="#joint">ernandte</unclear>
 <lb n="27"/>Zeügen, wie die in <unclear cert="medium" resp="#joint">aÿdt</unclear> <unclear cert="low" resp="#joint">uffgenohmen</unclear> werden,
-<lb n="28"/><unclear cert="low" resp="#joint">sehent</unclear> undt <unclear cert="low" resp="#joint">hörent</unclear>, auch <unclear cert="low" resp="#joint">ewere</unclear> Interrogatoria
+<lb n="28"/><unclear cert="low" resp="#joint">sehent</unclear> <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="medium" resp="#joint">hörent</unclear>, auch <unclear cert="medium" resp="#joint">ewere</unclear> Interrogatoria
 <pb facs="StadtASG_Missive_1316_4526.jpg" n="2"/>
-<lb n="29"/><unclear cert="low" resp="#joint">übergebendt</unclear>, undt was <unclear cert="medium" resp="#joint">sonsten</unclear> <unclear cert="medium" resp="#joint">euwer</unclear> noturfft
-<lb n="30"/><unclear cert="low" resp="#joint">erforderen</unclear> moegte <unclear cert="low" resp="#joint">vorschaffendt</unclear>, undt <unclear cert="medium" resp="#joint">verhandt</unclear>-
-<lb n="31"/><unclear cert="medium" resp="#joint">lendt</unclear>, dann ihr <unclear cert="medium" resp="#joint">erscheinendt</unclear> als <unclear cert="medium" resp="#joint">dan</unclear> oder nicht,
-<lb n="32"/>wuerdt nicht desto weniger mit verhoer der
+<lb n="29"/><unclear cert="low" resp="#joint">übergebendt</unclear>, <unclear cert="medium" resp="#joint">undt</unclear> was <unclear cert="low" resp="#joint">sonsten</unclear> <unclear cert="low" resp="#joint">euwer</unclear> <unclear cert="medium" resp="#joint">noturfft</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">erforderen</unclear> <unclear cert="medium" resp="#joint">moegte</unclear> <unclear cert="low" resp="#joint">vorschaffendt</unclear>, <unclear cert="medium" resp="#joint">undt</unclear> <unclear cert="low" resp="#joint">verhandt</unclear>-
+<lb n="31"/><unclear cert="low" resp="#joint">lendt</unclear>, dann ihr erscheinendt als dan oder nicht,
+<lb n="32"/><unclear cert="medium" resp="#joint">wuerdt</unclear> nicht desto weniger mit <unclear cert="medium" resp="#joint">verhoer</unclear> der
 <lb n="33"/><unclear cert="low" resp="#joint">zeugen</unclear> <unclear cert="low" resp="#joint">procediert</unclear> undt vortgeschritten wer=
 <lb n="34"/>den wie sich dan <unclear cert="low" resp="#joint">solches</unclear> rechtlicher ordnung
-<lb n="35"/>nach <unclear cert="low" resp="#joint">gepuert</unclear>, undt damit wir uns
+<lb n="35"/>nach <unclear cert="low" resp="#joint">gepuert</unclear>, <unclear cert="medium" resp="#joint">undt</unclear> damit wir uns
 <lb n="36"/>desto <unclear cert="low" resp="#joint">gepuerlicher</unclear> hierin zuerweisen,
-<lb n="37"/>bitten wir zeigern dieses glaubwuerdig
-<lb n="38"/><unclear cert="low" resp="#joint">urkhundt</unclear>, das <unclear cert="medium" resp="#joint">solche</unclear> denuntiation
-<lb n="39"/>von <unclear cert="medium" resp="#joint">ihme</unclear> wol <unclear cert="low" resp="#joint">eingeantwortet</unclear>, undt eu=
+<lb n="37"/>bitten wir zeigern dieses <unclear cert="medium" resp="#joint">glaubwuerdig</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">urkhundt</unclear>, das solche denuntiation
+<lb n="39"/>von ihme wol <unclear cert="low" resp="#joint">eingeantwortet</unclear>, undt eu=
 <lb n="40"/>werer resolution zuertheilen, undt
 <lb n="41"/><unclear cert="low" resp="#joint">sindt</unclear> euch <unclear cert="low" resp="#joint">angenehmes</unclear> gefallen <unclear cert="medium" resp="#joint">zuerzeigen</unclear>
 <lb n="42"/>gutwillig <unclear cert="low" resp="#joint">berait</unclear>. Geben <origDate when="1595-07-09" resp="#ner">Mittwochs
-<lb n="43"/>den <unclear cert="medium" resp="#joint">9t</unclear> Julij. <unclear cert="low" resp="#joint">aō</unclear> 1595</origDate>.
-<lb n="44"/><persName role="issuer" resp="#ner">Hannß Philips <unclear cert="low" resp="#joint">Boeckhelin</unclear></persName>
+<lb n="43"/>den 9t <unclear cert="medium" resp="#joint">Julij</unclear>. <unclear cert="low" resp="#joint">aō</unclear> 1595</origDate>.
+<lb n="44"/><persName role="issuer" resp="#ner">Hannß <unclear cert="medium" resp="#joint">Philips</unclear> <unclear cert="low" resp="#joint">Boeckhelin</unclear></persName>
 <lb n="45"/>der Meister undt
-<lb n="46"/>rhat der Statt Straß=
+<lb n="46"/>rhat <unclear cert="medium" resp="#joint">der</unclear> Statt Straß=
 <lb n="47"/>burg.
 <pb facs="StadtASG_Missive_1316_4527.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1316_4528.jpg" n="4"/>
-<lb n="48"/>Den erbaren weisen, unsern lieben und <unclear cert="low" resp="#joint">gueten</unclear>
-<lb n="49"/>freunden dem <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister <unclear cert="medium" resp="#joint">unnd</unclear> dem rhat
+<lb n="48"/>Den <unclear cert="medium" resp="#joint">erbaren</unclear> weisen, unsern lieben und <unclear cert="low" resp="#joint">gueten</unclear>
+<lb n="49"/><unclear cert="medium" resp="#joint">freunden</unclear> dem <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister unnd dem rhat
 <lb n="50"/>zu S: Gallenn</orgName>.
 </p>
         </body>

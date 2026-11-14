@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 760</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Markgraf Georg Friedrich zu Brandenburg antwortet auf die Beschwerde der Eidgenossen über den Raub von St. Galler Kaufleuten bei Gunzenhausen. Er bedauert den Vorfall, erklärt jedoch, dass die offenen Grenzen seines Territoriums eine vollständige Prävention erschweren. Da die Kaufleute nicht im brandenburgischen Geleit waren, lehnt er eine Entschädigung ab. Er bietet an, die Täter zu bestrafen, falls diese identifiziert werden können.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Georg Friedrich, Markgraf zu Brandenburg</name><placeName resp="#regest">Oudezbach</placeName><date when="1557" cert="medium" resp="#regest">Datum Oudezbach den ije martii anno etc. lvii.</date></correspAction><correspAction type="received"><name resp="#regest">Räte und Gesandte der Eidgenossenschaft zu Baden</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -36,87 +36,87 @@
 <pb facs="StadtASG_Missive_760_1983.JPG" n="1"/>
 <lb n="1"/>Von gottes gnaden <persName role="issuer" resp="#ner">GeorgFriderich</persName>
 <lb n="2"/>Marggraf <unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-147" cert="medium" resp="#ner">Brandenburg</placeName> etc.
-<lb n="3"/><unclear cert="medium" resp="#joint">Unßern</unclear> <unclear cert="low" resp="#joint">guenstigen</unclear> grueß zueuor, Eurnuesten und erbarn,
-<lb n="4"/><unclear cert="medium" resp="#joint">besondern</unclear> lieben. Wir haben gnedig angehoert,
+<lb n="3"/>Unßern <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="medium" resp="#joint">grueß</unclear> zueuor, <unclear cert="low" resp="#joint">Eurnuesten</unclear> und <unclear cert="medium" resp="#joint">erbarn</unclear>,
+<lb n="4"/><unclear cert="medium" resp="#joint">besondern</unclear> lieben. Wir haben gnedig <unclear cert="medium" resp="#joint">angehoert</unclear>,
 <lb n="5"/>was uns des <unclear cert="low" resp="#joint">angrifs</unclear> und <unclear cert="low" resp="#joint">nahm</unclear> halben, so verschienen
 <lb n="6"/><date resp="#ner">Lxvi. Jhars, im Monat Augusto</date>, euren eidgnoßen
 <lb n="7"/>zu <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>, <unclear cert="low" resp="#joint">verwandten</unclear> <unclear cert="low" resp="#joint">kaufleuthen</unclear>, <unclear cert="low" resp="#joint">ungeuerlich</unclear>
-<lb n="8"/><unclear cert="low" resp="#joint">eine</unclear> meyl von <unclear cert="low" resp="#joint">unßer</unclear> stadt <placeName resp="#ner"><unclear cert="low" resp="#joint">Guntzenhaußen</unclear></placeName>, gleich-
-<lb n="9"/>wohl in unßer hohen obrigkeit, von etlichen reutern,
-<lb n="10"/><unclear cert="low" resp="#joint">begegnet</unclear>, <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">weitleuftigem</unclear> beschwerlichem <unclear cert="low" resp="#joint">auß</unclear>-
-<lb n="11"/>fuehren, <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">plackereyen</unclear> halben, und <unclear cert="low" resp="#joint">angeheftter</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">eine</unclear> <unclear cert="medium" resp="#joint">meyl</unclear> von <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="medium" resp="#joint">stadt</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Guntzenhaußen</unclear></placeName>, gleich-
+<lb n="9"/><unclear cert="medium" resp="#joint">wohl</unclear> in <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="low" resp="#joint">hohen</unclear> obrigkeit, von <unclear cert="medium" resp="#joint">etlichen</unclear> <unclear cert="medium" resp="#joint">reutern</unclear>,
+<lb n="10"/><unclear cert="low" resp="#joint">begegnet</unclear>, <unclear cert="medium" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">weitleuftigem</unclear> beschwerlichem <unclear cert="low" resp="#joint">auß</unclear>-
+<lb n="11"/><unclear cert="medium" resp="#joint">fuehren</unclear>, <unclear cert="low" resp="#joint">dero</unclear> <unclear cert="low" resp="#joint">plackereyen</unclear> halben, und <unclear cert="low" resp="#joint">angeheftter</unclear>
 <lb n="12"/><unclear cert="low" resp="#joint">euer</unclear> <unclear cert="low" resp="#joint">bitt</unclear>, underthenig geschrieben worden. Und
-<lb n="13"/>wir geben euch <unclear cert="low" resp="#joint">gnediger</unclear> meynung zueerkennen,
+<lb n="13"/>wir geben euch <unclear cert="low" resp="#joint">gnediger</unclear> meynung <unclear cert="medium" resp="#joint">zueerkennen</unclear>,
 <lb n="14"/>das wir uns der antwort, so wir den <unclear cert="low" resp="#joint">weisen</unclear> und
-<lb n="15"/><unclear cert="low" resp="#joint">ersamen</unclear>, <unclear cert="medium" resp="#joint">unßern</unclear> lieben <unclear cert="medium" resp="#joint">besondern</unclear>, stadthalter und
+<lb n="15"/><unclear cert="low" resp="#joint">ersamen</unclear>, unßern lieben <unclear cert="medium" resp="#joint">besondern</unclear>, stadthalter <unclear cert="medium" resp="#joint">und</unclear>
 <lb n="16"/><unclear cert="low" resp="#joint">rathe</unclear> der stadt <unclear cert="low" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sandt</unclear> Gallen</placeName>, uff ihr derhalben,
-<lb n="17"/>bey uns <unclear cert="low" resp="#joint">gethone</unclear> underthenig anlangen, gegeben,
+<lb n="17"/>bey uns <unclear cert="low" resp="#joint">gethone</unclear> underthenig <unclear cert="medium" resp="#joint">anlangen</unclear>, gegeben,
 <lb n="18"/><unclear cert="low" resp="#joint">wesz</unclear> wir uns auch darinnen <unclear cert="low" resp="#joint">erbothen</unclear> haben, gnedig
-<lb n="19"/>wohl <unclear cert="low" resp="#joint">zueerinnern</unclear>. Und nach deme wir <unclear cert="medium" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">solch</unclear>
+<lb n="19"/>wohl <unclear cert="low" resp="#joint">zueerinnern</unclear>. Und <unclear cert="medium" resp="#joint">nach</unclear> <unclear cert="medium" resp="#joint">deme</unclear> wir ob <unclear cert="medium" resp="#joint">solch</unclear>
 <lb n="20"/><unclear cert="low" resp="#joint">hochstraflichen</unclear> <unclear cert="low" resp="#joint">unthatten</unclear> der <unclear cert="low" resp="#joint">plackerey</unclear> und <unclear cert="low" resp="#joint">rauberey</unclear>,
-<lb n="21"/><unclear cert="low" resp="#joint">desz</unclear> ihr uns in <unclear cert="low" resp="#joint">warheit</unclear> <unclear cert="low" resp="#joint">gentzlich</unclear> glauben mueget,
-<lb n="22"/><unclear cert="low" resp="#joint">hochstes</unclear> misfallen und <unclear cert="low" resp="#joint">beschwerd</unclear> tragen, und <unclear cert="medium" resp="#joint">damitt</unclear>
-<lb n="23"/>demselben ubel <unclear cert="low" resp="#joint">gewerdt</unclear> und <unclear cert="low" resp="#joint">gesteuert</unclear> werden muege,
-<lb n="24"/><unclear cert="low" resp="#joint">mitt</unclear> <unclear cert="low" resp="#joint">vielfeltigen</unclear> <unclear cert="low" resp="#joint">streiffen</unclear>, und <unclear cert="low" resp="#joint">anderer</unclear> bestellung
-<lb n="25"/>in muegliche wege, in <unclear cert="low" resp="#joint">unßerm</unclear> <unclear cert="low" resp="#joint">furstenthumb</unclear>, landt
+<lb n="21"/><unclear cert="low" resp="#joint">desz</unclear> ihr uns in <unclear cert="low" resp="#joint">warheit</unclear> <unclear cert="low" resp="#joint">gentzlich</unclear> glauben <unclear cert="medium" resp="#joint">mueget</unclear>,
+<lb n="22"/><unclear cert="low" resp="#joint">hochstes</unclear> misfallen und <unclear cert="medium" resp="#joint">beschwerd</unclear> <unclear cert="medium" resp="#joint">tragen</unclear>, und <unclear cert="medium" resp="#joint">damitt</unclear>
+<lb n="23"/>demselben <unclear cert="medium" resp="#joint">ubel</unclear> <unclear cert="low" resp="#joint">gewerdt</unclear> und <unclear cert="low" resp="#joint">gesteuert</unclear> werden <unclear cert="medium" resp="#joint">muege</unclear>,
+<lb n="24"/><unclear cert="low" resp="#joint">mitt</unclear> <unclear cert="medium" resp="#joint">vielfeltigen</unclear> <unclear cert="low" resp="#joint">streiffen</unclear>, und <unclear cert="medium" resp="#joint">anderer</unclear> bestellung
+<lb n="25"/>in <unclear cert="medium" resp="#joint">muegliche</unclear> wege, in <unclear cert="low" resp="#joint">unßerm</unclear> <unclear cert="low" resp="#joint">furstenthumb</unclear>, <unclear cert="medium" resp="#joint">landt</unclear>
 <pb facs="StadtASG_Missive_760_1984.JPG" n="2"/>
-<lb n="26"/>oëbrigkeit und gebiet, alls wir uns gleichwohl von landts-
-<lb n="27"/>füerstlicher oberkeit weegen, zue handthaben unserer
+<lb n="26"/>oëbrigkeit und gebiet, alls wir uns <unclear cert="low" resp="#joint">gleichwohl</unclear> von landts-
+<lb n="27"/>füerstlicher <unclear cert="low" resp="#joint">oberkeit</unclear> weegen, zue handthaben <unclear cert="low" resp="#joint">unserer</unclear>
 <lb n="28"/>regal schuldig erkennen, an uns nichts erwinden lassen.
-<lb n="29"/>So <unclear cert="low" resp="#joint">kann</unclear> <unclear cert="low" resp="#joint">doch</unclear> der <unclear cert="low" resp="#joint">ursachen</unclear> <unclear cert="low" resp="#joint">halben</unclear>, das wir <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">etliche</unclear>
-<lb n="30"/><unclear cert="low" resp="#joint">chüerfüersten</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">füersten</unclear>, im heyl. Rö. Reich, auch auhser
-<lb n="31"/>herrenn und obern, ein verschlossen landt haben,
-<lb n="32"/><unclear cert="low" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">ünrat</unclear> und <unclear cert="low" resp="#joint">unfall</unclear>, <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">durchwanderen</unclear> <unclear cert="low" resp="#joint">frembd</unclear>
-<lb n="33"/><unclear cert="low" resp="#joint">ünd</unclear> <unclear cert="low" resp="#joint">inhaimischer</unclear> personen, nicht allerding füer kommen
+<lb n="29"/>So <unclear cert="medium" resp="#joint">kann</unclear> doch der <unclear cert="medium" resp="#joint">ursachen</unclear> halben, das wir <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">etliche</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">chüerfüersten</unclear> und <unclear cert="medium" resp="#joint">füersten</unclear>, im <unclear cert="low" resp="#joint">heyl</unclear>. <unclear cert="low" resp="#joint">Rö</unclear>. Reich, auch <unclear cert="low" resp="#joint">auhser</unclear>
+<lb n="31"/>herrenn und <unclear cert="low" resp="#joint">obern</unclear>, ein <unclear cert="low" resp="#joint">verschlossen</unclear> landt haben,
+<lb n="32"/><unclear cert="medium" resp="#joint">aller</unclear> <unclear cert="medium" resp="#joint">ünrat</unclear> und <unclear cert="medium" resp="#joint">unfall</unclear>, <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">durchwanderen</unclear> <unclear cert="medium" resp="#joint">frembd</unclear>
+<lb n="33"/>ünd <unclear cert="medium" resp="#joint">inhaimischer</unclear> personen, nicht <unclear cert="low" resp="#joint">allerding</unclear> füer <unclear cert="low" resp="#joint">kommen</unclear>
 <lb n="34"/>noch abgewendet werden, sonderlich dieweyll unsers
-<lb n="35"/>füerstenthumb und land, mitt hohen vilen herrschafften,
-<lb n="36"/>allenthalben offne lande vermenget, do wegen dan
-<lb n="37"/>auch alhir zue landt, viel reüttereynn. Und dogleich
-<lb n="38"/>dadurch in unser hohen obrigkait, angrif bescheen, können
-<lb n="39"/>solche rauber, gantz balde, anderer benachbaurten und
-<lb n="40"/>anrainenden herrschafften öbrigkeit erreichen, und
-<lb n="41"/>dergstallt desto leichter, sampt der geraubten hab, ehe
-<lb n="42"/>man solch unthaten recht erfaren kan, uneröbert
-<lb n="43"/>danen, und füerter in ihr gewarsam, kommen,
-<lb n="44"/>welches nicht, alls gleichwohl leichtlich zuerachten, durch
-<lb n="45"/>die chüerfüersten und füersten im <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">heyligen Reich</orgName>, auch
-<lb n="46"/>andere, so verschlossene füerstenthumb und landt haben,
-<lb n="47"/>viel besser kann vorkommen werd.
-<lb n="48"/>Soviel aber gemeltte kaufleut von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>
-<lb n="49"/>belangt, haben wir unserm, gegen den ehesten
+<lb n="35"/>füerstenthumb und land, mitt <unclear cert="low" resp="#joint">hohen</unclear> <unclear cert="low" resp="#joint">vilen</unclear> herrschafften,
+<lb n="36"/>allenthalben <unclear cert="low" resp="#joint">offne</unclear> <unclear cert="low" resp="#joint">lande</unclear> vermenget, do <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">dan</unclear>
+<lb n="37"/>auch <unclear cert="low" resp="#joint">alhir</unclear> zue landt, viel reüttereynn. Und <unclear cert="low" resp="#joint">dogleich</unclear>
+<lb n="38"/>dadurch in unser hohen obrigkait, <unclear cert="low" resp="#joint">angrif</unclear> <unclear cert="low" resp="#joint">bescheen</unclear>, können
+<lb n="39"/>solche rauber, gantz balde, <unclear cert="low" resp="#joint">anderer</unclear> <unclear cert="low" resp="#joint">benachbaurten</unclear> und
+<lb n="40"/>anrainenden herrschafften <unclear cert="low" resp="#joint">öbrigkeit</unclear> erreichen, und
+<lb n="41"/>dergstallt desto leichter, sampt <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">geraubten</unclear> hab, ehe
+<lb n="42"/>man <unclear cert="low" resp="#joint">solch</unclear> <unclear cert="low" resp="#joint">unthaten</unclear> recht erfaren kan, <unclear cert="low" resp="#joint">uneröbert</unclear>
+<lb n="43"/><unclear cert="low" resp="#joint">danen</unclear>, und füerter in <unclear cert="low" resp="#joint">ihr</unclear> gewarsam, kommen,
+<lb n="44"/><unclear cert="low" resp="#joint">welches</unclear> <unclear cert="low" resp="#joint">nicht</unclear>, alls <unclear cert="low" resp="#joint">gleichwohl</unclear> <unclear cert="low" resp="#joint">leichtlich</unclear> <unclear cert="low" resp="#joint">zuerachten</unclear>, durch
+<lb n="45"/>die <unclear cert="low" resp="#joint">chüerfüersten</unclear> und <unclear cert="low" resp="#joint">füersten</unclear> im <orgName ref="stadtasg-actors-559" cert="medium" resp="#ner">heyligen Reich</orgName>, auch
+<lb n="46"/><unclear cert="low" resp="#joint">andere</unclear>, so <unclear cert="low" resp="#joint">verschlossene</unclear> <unclear cert="low" resp="#joint">füerstenthumb</unclear> und landt haben,
+<lb n="47"/>viel besser kann <unclear cert="low" resp="#joint">vorkommen</unclear> werd.
+<lb n="48"/>Soviel aber <unclear cert="low" resp="#joint">gemeltte</unclear> kaufleut von <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> Gallen</placeName>
+<lb n="49"/>belangt, haben wir <unclear cert="low" resp="#joint">unserm</unclear>, gegen den <unclear cert="low" resp="#joint">ehesten</unclear>
 <pb facs="StadtASG_Missive_760_1985.JPG" n="3"/>
-<lb n="50"/>und ersamen, unsern lieben besondern, statthalltern
+<lb n="50"/><unclear cert="medium" resp="#joint">und</unclear> ersamen, unsern lieben besondern, <unclear cert="low" resp="#joint">statthalltern</unclear>
 <lb n="51"/>und raethen doselbsten, gethonen gnedigen <unclear cert="low" resp="#joint">erbieten</unclear> nach,
-<lb n="52"/><unclear cert="low" resp="#joint">seithero</unclear> mit allem <unclear cert="low" resp="#joint">vlaiß</unclear>, nachforschen lassen,
-<lb n="53"/>aber doch, wer dieselben raeuber gewest, nicht erfaren
-<lb n="54"/><unclear cert="low" resp="#joint">koennen</unclear>, <unclear cert="low" resp="#joint">darinnen</unclear> wir auch <unclear cert="low" resp="#joint">nochferner</unclear>, an
-<lb n="55"/><unclear cert="low" resp="#joint">gueter</unclear> bestellung, ob <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">moechten</unclear> <unclear cert="low" resp="#joint">erfarn</unclear>, und zue
-<lb n="56"/>widerkerung der geraubten haab, und <unclear cert="low" resp="#joint">auch</unclear> zue <unclear cert="low" resp="#joint">verschuldter</unclear>
-<lb n="57"/>straff <unclear cert="medium" resp="#joint">angehallten</unclear> werden, bey uns nicht mangel
-<lb n="58"/>sein soll. Und <unclear cert="low" resp="#joint">woferrn</unclear> gemelte <unclear cert="low" resp="#joint">kaufleuth</unclear>, wer
+<lb n="52"/><unclear cert="low" resp="#joint">seithero</unclear> <unclear cert="medium" resp="#joint">mit</unclear> allem <unclear cert="low" resp="#joint">vlaiß</unclear>, <unclear cert="medium" resp="#joint">nachforschen</unclear> lassen,
+<lb n="53"/><unclear cert="low" resp="#joint">aber</unclear> doch, <unclear cert="medium" resp="#joint">wer</unclear> dieselben <unclear cert="low" resp="#joint">raeuber</unclear> <unclear cert="medium" resp="#joint">gewest</unclear>, nicht erfaren
+<lb n="54"/><unclear cert="medium" resp="#joint">koennen</unclear>, darinnen wir auch <unclear cert="medium" resp="#joint">nochferner</unclear>, an
+<lb n="55"/><unclear cert="low" resp="#joint">gueter</unclear> <unclear cert="medium" resp="#joint">bestellung</unclear>, ob <unclear cert="medium" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">moechten</unclear> <unclear cert="low" resp="#joint">erfarn</unclear>, und <unclear cert="low" resp="#joint">zue</unclear>
+<lb n="56"/><unclear cert="low" resp="#joint">widerkerung</unclear> der geraubten haab, und <unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">verschuldter</unclear>
+<lb n="57"/>straff <unclear cert="low" resp="#joint">angehallten</unclear> werden, bey uns nicht mangel
+<lb n="58"/>sein soll. Und <unclear cert="low" resp="#joint">woferrn</unclear> <unclear cert="medium" resp="#joint">gemelte</unclear> <unclear cert="low" resp="#joint">kaufleuth</unclear>, <unclear cert="medium" resp="#joint">wer</unclear>
 <lb n="59"/>die <unclear cert="low" resp="#joint">reutter</unclear>, so inen das <unclear cert="low" resp="#joint">ire</unclear> <unclear cert="low" resp="#joint">raeublich</unclear> <unclear cert="low" resp="#joint">abetrungen</unclear>
-<lb n="60"/>und <unclear cert="low" resp="#joint">entwendet</unclear>, gewest sein, anzaigen <unclear cert="medium" resp="#joint">koennen</unclear>,
-<lb n="61"/>seind wir gnedig gnaigt, und <unclear cert="low" resp="#joint">erbuetig</unclear>, uns <unclear cert="low" resp="#joint">dermassen</unclear>
-<lb n="62"/>gegen den <unclear cert="low" resp="#joint">thettern</unclear> <unclear cert="low" resp="#joint">zueerzaigen</unclear>, das <unclear cert="medium" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">hoches</unclear>
-<lb n="63"/>ungnedigs mißfallen, im werck <unclear cert="low" resp="#joint">gespuert</unclear> soll werden,
-<lb n="64"/>wir <unclear cert="medium" resp="#joint">koennen</unclear> <unclear cert="low" resp="#joint">auch</unclear> in bericht nicht befinden, das obgemelte
-<lb n="65"/><unclear cert="low" resp="#joint">kaufleuth</unclear>, <unclear cert="low" resp="#joint">dazumal</unclear>, alls sie beraubt <unclear cert="low" resp="#joint">wordn</unclear>, in habendem
-<lb n="66"/>unserm glait gezogen weren, derhalben wir,
-<lb n="67"/>denselben <unclear cert="low" resp="#joint">kaufleutten</unclear> <unclear cert="low" resp="#joint">iren</unclear> erlittenen schaden, <unclear cert="low" resp="#joint">wie</unclear>
-<lb n="68"/><unclear cert="medium" resp="#joint">euch</unclear> <unclear cert="medium" resp="#joint">begerten</unclear> massen, von dem unsern <unclear cert="low" resp="#joint">zueergetzen</unclear>,
-<lb n="69"/>nicht schuldig, und uns <unclear cert="low" resp="#joint">solchs</unclear> von <unclear cert="medium" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">unfueglich</unclear> an=
-<lb n="70"/><unclear cert="low" resp="#joint">gemuethet</unclear> <unclear cert="low" resp="#joint">wirdet</unclear>. Solchs wolten wir <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">ferr=</unclear>
-<lb n="71"/><unclear cert="low" resp="#joint">nerm</unclear> bericht der sachen, auch <unclear cert="low" resp="#joint">unserer</unclear> erhaischenden
+<lb n="60"/>und <unclear cert="low" resp="#joint">entwendet</unclear>, gewest sein, <unclear cert="medium" resp="#joint">anzaigen</unclear> koennen,
+<lb n="61"/><unclear cert="medium" resp="#joint">seind</unclear> wir gnedig <unclear cert="medium" resp="#joint">gnaigt</unclear>, und <unclear cert="low" resp="#joint">erbuetig</unclear>, uns <unclear cert="low" resp="#joint">dermassen</unclear>
+<lb n="62"/>gegen den <unclear cert="low" resp="#joint">thettern</unclear> <unclear cert="low" resp="#joint">zueerzaigen</unclear>, das <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">hoches</unclear>
+<lb n="63"/>ungnedigs <unclear cert="medium" resp="#joint">mißfallen</unclear>, im <unclear cert="medium" resp="#joint">werck</unclear> <unclear cert="low" resp="#joint">gespuert</unclear> soll werden,
+<lb n="64"/>wir koennen <unclear cert="medium" resp="#joint">auch</unclear> in bericht nicht befinden, das obgemelte
+<lb n="65"/><unclear cert="low" resp="#joint">kaufleuth</unclear>, <unclear cert="medium" resp="#joint">dazumal</unclear>, alls sie <unclear cert="medium" resp="#joint">beraubt</unclear> <unclear cert="low" resp="#joint">wordn</unclear>, in habendem
+<lb n="66"/>unserm <unclear cert="medium" resp="#joint">glait</unclear> gezogen <unclear cert="medium" resp="#joint">weren</unclear>, <unclear cert="medium" resp="#joint">derhalben</unclear> wir,
+<lb n="67"/>denselben <unclear cert="low" resp="#joint">kaufleutten</unclear> <unclear cert="low" resp="#joint">iren</unclear> <unclear cert="medium" resp="#joint">erlittenen</unclear> schaden, <unclear cert="low" resp="#joint">wie</unclear>
+<lb n="68"/>euch <unclear cert="low" resp="#joint">begerten</unclear> massen, von dem <unclear cert="medium" resp="#joint">unsern</unclear> <unclear cert="low" resp="#joint">zueergetzen</unclear>,
+<lb n="69"/>nicht schuldig, und uns <unclear cert="low" resp="#joint">solchs</unclear> von <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">unfueglich</unclear> an=
+<lb n="70"/><unclear cert="low" resp="#joint">gemuethet</unclear> <unclear cert="low" resp="#joint">wirdet</unclear>. <unclear cert="medium" resp="#joint">Solchs</unclear> wolten wir <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">ferr=</unclear>
+<lb n="71"/><unclear cert="low" resp="#joint">nerm</unclear> bericht der sachen, auch <unclear cert="medium" resp="#joint">unserer</unclear> erhaischenden
 <lb n="72"/><unclear cert="low" resp="#joint">notturfft</unclear> nach, <unclear cert="low" resp="#joint">zue</unclear> unser entschuldigung, in <unclear cert="medium" resp="#joint">antwort</unclear>,
-<lb n="73"/>gnediger <unclear cert="medium" resp="#joint">maynung</unclear> nicht unangezaigt lassen, und seind
-<lb n="74"/>euch sunsten gnedigen und <unclear cert="medium" resp="#joint">guenstigen</unclear> willen <unclear cert="low" resp="#joint">zueerzaigen</unclear>
-<lb n="75"/><unclear cert="low" resp="#joint">wol</unclear> gnaigt. Datum <origPlace resp="#ner"><unclear cert="low" resp="#joint">Oudezbach</unclear></origPlace> <origDate when="1557" cert="medium" resp="#ner">den <unclear cert="low" resp="#joint">ije</unclear> martii anno etc. lvii</origDate>.
-<lb n="76"/>GFMZBC
-<lb n="77"/>manu ppia sst.
+<lb n="73"/>gnediger maynung nicht <unclear cert="medium" resp="#joint">unangezaigt</unclear> lassen, und seind
+<lb n="74"/><unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">sunsten</unclear> gnedigen und guenstigen willen <unclear cert="low" resp="#joint">zueerzaigen</unclear>
+<lb n="75"/><unclear cert="low" resp="#joint">wol</unclear> <unclear cert="medium" resp="#joint">gnaigt</unclear>. Datum <origPlace resp="#ner"><unclear cert="low" resp="#joint">Oudezbach</unclear></origPlace> <origDate when="1557" cert="medium" resp="#ner">den <unclear cert="low" resp="#joint">ije</unclear> <unclear cert="medium" resp="#joint">martii</unclear> anno etc. <unclear cert="low" resp="#joint">lvii</unclear></origDate>.
+<lb n="76"/><unclear cert="low" resp="#joint">GFMZBC</unclear>
+<lb n="77"/>manu <unclear cert="low" resp="#joint">ppia</unclear> <unclear cert="low" resp="#joint">sst</unclear>.
 <pb facs="StadtASG_Missive_760_1986.JPG" n="4"/>
-<lb n="78"/>Den eernvesten und erbarn, unsern besonder lieben,
-<lb n="79"/><orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">der <unclear cert="low" resp="#joint">Stette</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Lande</unclear>, der dreyzehen ortte gemainer
-<lb n="80"/>Eidgnoschaft in Schweitz</orgName>, zuo <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> im <placeName ref="stadtasg-places-266" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ergaew</unclear></placeName>, ver-
+<lb n="78"/>Den <unclear cert="low" resp="#joint">eernvesten</unclear> und <unclear cert="medium" resp="#joint">erbarn</unclear>, unsern <unclear cert="medium" resp="#joint">besonder</unclear> lieben,
+<lb n="79"/><orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">der <unclear cert="medium" resp="#joint">Stette</unclear> und <unclear cert="medium" resp="#joint">Lande</unclear>, der dreyzehen ortte gemainer
+<lb n="80"/><unclear cert="low" resp="#joint">Eidgnoschaft</unclear> in <unclear cert="medium" resp="#joint">Schweitz</unclear></orgName>, <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> im <placeName ref="stadtasg-places-266" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Ergaew</unclear></placeName>, ver-
 <lb n="81"/><unclear cert="low" resp="#joint">sambleten</unclear> <unclear cert="low" resp="#joint">raeten</unclear> und <unclear cert="low" resp="#joint">sandpotten</unclear>.
 </p>
         </body>

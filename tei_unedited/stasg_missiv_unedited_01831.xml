@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1831</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,68 +20,68 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Statthalter und Rat zu St. Gallen antworten auf ein Schreiben des Landvogts Rippel. Sie erklären sich bereit, den Vorschlag des Landvogts zu unterstützen, um eine gütliche Einigung in der Sache zwischen Brünzhorn und den jungen Leuten zu erzielen. Die Tochter werde am nächsten Dienstag früh mit den bisherigen Sätzen und Vogten in Rineck erscheinen, um auf weitere gütliche Verhandlungen zu warten. Sie bitten, das zuvor erteilte Geleit auch für diese Gelegenheit zu bestätigen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Statthalter und Rat zu St. Gallen</name><date when="1613-04-08" resp="#regest">Dath den .8. th. Aprilis .1613.</date></correspAction><correspAction type="received"><name resp="#regest">Landvogt Rippel</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1831_6793.jpg" n="1"/>
-<lb n="1"/>Unser freuendt: nachbarlich willig dienst, und
-<lb n="2"/>was wir ehren liebs und guots vermoegend,
-<lb n="3"/>zuevor, fromer ehrenvester und weiser,
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freuendt</unclear>: nachbarlich willig dienst, und
+<lb n="2"/>was wir ehren liebs und <unclear cert="medium" resp="#joint">guots</unclear> <unclear cert="medium" resp="#joint">vermoegend</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">zuevor</unclear>, <unclear cert="low" resp="#joint">fromer</unclear> <unclear cert="low" resp="#joint">ehrenvester</unclear> und weiser,
 <lb n="4"/>sonders lieber herr landvogt, lieber
 <lb n="5"/>guoter
 <lb n="6"/>freuend und nachbar.
-<lb n="7"/>Uff euwer an uns abermals abgangen
-<lb n="8"/>schreiben, fueegen wir eüch in antwurt
-<lb n="9"/>freuendt: nachbarlich <unclear cert="low" resp="#joint">zuovernemmen</unclear>.
+<lb n="7"/>Uff <unclear cert="medium" resp="#joint">euwer</unclear> an uns <unclear cert="medium" resp="#joint">abermals</unclear> abgangen
+<lb n="8"/>schreiben, <unclear cert="low" resp="#joint">fueegen</unclear> wir <unclear cert="medium" resp="#joint">eüch</unclear> in antwurt
+<lb n="9"/><unclear cert="low" resp="#joint">freuendt</unclear>: nachbarlich zuovernemmen.
 <lb n="10"/>Ob gleichwol unsere zuo <placeName ref="stadtasg-places-87" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rorschach</unclear></placeName> <unclear cert="low" resp="#joint">gewesene</unclear> <unclear cert="low" resp="#joint">saetz</unclear>
-<lb n="11"/>und schidleüt uns berichten, daß die von
-<lb n="12"/>eüch angedeütete fernere güetliche ver-
-<lb n="13"/>anlaßung andrer gestalt von ihnen nit
-<lb n="14"/>bewilliget worden, dann so fern <placeName resp="#ner">Brünz-
-<lb n="15"/>horn</placeName> leiden moege, daß sein fürge-
-<lb n="16"/>wendte ansprach ufgehebt, und beede
-<lb n="17"/>junge bey einander gethaedinget werden
-<lb n="18"/>moegen. Nichts destoweniger, und
-<lb n="19"/>damit unsers theils einiche güetige mitel
-<lb n="20"/>ußgeschlagen, sonderen dieselbige vil mehr
-<lb n="21"/>für die hand genommen, und fernere
-<lb n="22"/>weitlaeuffigkeit (wo imer moeglich.)
-<lb n="23"/>verhüetet werden moege, so laßen wir
-<lb n="24"/>uns euweren fürschlag <unclear cert="low" resp="#joint">nit</unclear> <unclear cert="low" resp="#joint">zuowider</unclear> <unclear cert="low" resp="#joint">seyn</unclear>.
-<lb n="25"/>Und derowegen haben wir all ordnung
-<lb n="26"/>gethun, daß die tochter mit den
-<lb n="27"/>vordrigen herren saetzen und voegten und
-<lb n="28"/>beystaenden, uf <date resp="#ner">nechstkommenden zinstag</date>
-<lb n="29"/>bey guoter früeer tagzeit, sich zuo <placeName ref="stadtasg-places-88" cert="medium" resp="#ner">Rinegk</placeName>
-<lb n="30"/>werde einstellen, und fernerer güetiger
+<lb n="11"/>und <unclear cert="low" resp="#joint">schidleüt</unclear> uns berichten, daß die von
+<lb n="12"/><unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">angedeütete</unclear> <unclear cert="low" resp="#joint">fernere</unclear> <unclear cert="low" resp="#joint">güetliche</unclear> ver-
+<lb n="13"/>anlaßung andrer gestalt von <unclear cert="medium" resp="#joint">ihnen</unclear> nit
+<lb n="14"/>bewilliget worden, dann so <unclear cert="medium" resp="#joint">fern</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Brünz</unclear>-
+<lb n="15"/><unclear cert="low" resp="#joint">horn</unclear></placeName> <unclear cert="medium" resp="#joint">leiden</unclear> <unclear cert="medium" resp="#joint">moege</unclear>, daß sein <unclear cert="medium" resp="#joint">fürge</unclear>-
+<lb n="16"/><unclear cert="low" resp="#joint">wendte</unclear> <unclear cert="low" resp="#joint">ansprach</unclear> <unclear cert="low" resp="#joint">ufgehebt</unclear>, und <unclear cert="medium" resp="#joint">beede</unclear>
+<lb n="17"/>junge <unclear cert="medium" resp="#joint">bey</unclear> einander <unclear cert="low" resp="#joint">gethaedinget</unclear> werden
+<lb n="18"/><unclear cert="medium" resp="#joint">moegen</unclear>. <unclear cert="medium" resp="#joint">Nichts</unclear> <unclear cert="medium" resp="#joint">destoweniger</unclear>, und
+<lb n="19"/>damit unsers <unclear cert="low" resp="#joint">theils</unclear> <unclear cert="medium" resp="#joint">einiche</unclear> <unclear cert="low" resp="#joint">güetige</unclear> mitel
+<lb n="20"/>ußgeschlagen, <unclear cert="low" resp="#joint">sonderen</unclear> dieselbige vil mehr
+<lb n="21"/>für die hand genommen, und <unclear cert="low" resp="#joint">fernere</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">weitlaeuffigkeit</unclear> (wo <unclear cert="low" resp="#joint">imer</unclear> <unclear cert="medium" resp="#joint">moeglich</unclear>.)
+<lb n="23"/><unclear cert="low" resp="#joint">verhüetet</unclear> werden <unclear cert="medium" resp="#joint">moege</unclear>, so <unclear cert="low" resp="#joint">laßen</unclear> wir
+<lb n="24"/>uns <unclear cert="medium" resp="#joint">euweren</unclear> fürschlag nit zuowider seyn.
+<lb n="25"/>Und <unclear cert="medium" resp="#joint">derowegen</unclear> haben wir <unclear cert="medium" resp="#joint">all</unclear> ordnung
+<lb n="26"/>gethun, daß die <unclear cert="medium" resp="#joint">tochter</unclear> mit den
+<lb n="27"/><unclear cert="low" resp="#joint">vordrigen</unclear> herren <unclear cert="low" resp="#joint">saetzen</unclear> und <unclear cert="medium" resp="#joint">voegten</unclear> und
+<lb n="28"/><unclear cert="low" resp="#joint">beystaenden</unclear>, <unclear cert="medium" resp="#joint">uf</unclear> <date resp="#ner"><unclear cert="medium" resp="#joint">nechstkommenden</unclear> <unclear cert="low" resp="#joint">zinstag</unclear></date>
+<lb n="29"/>bey <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">früeer</unclear> tagzeit, sich <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-88" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rinegk</unclear></placeName>
+<lb n="30"/><unclear cert="low" resp="#joint">werde</unclear> <unclear cert="low" resp="#joint">einstellen</unclear>, und <unclear cert="medium" resp="#joint">fernerer</unclear> <unclear cert="low" resp="#joint">güetiger</unclear>
 <pb facs="StadtASG_Missive_1831_6794.jpg" n="2"/>
-<lb n="31"/>handlung abwarten. Doch alles keiner
-<lb n="32"/>andern gestalt, dann daß <unclear cert="low" resp="#joint">eüwer</unclear> <unclear cert="low" resp="#joint">voriges</unclear>
-<lb n="33"/><unclear cert="low" resp="#joint">gegebenes</unclear> <unclear cert="low" resp="#joint">geleüt</unclear> (. wie ihr dann in
-<lb n="34"/>eüwerm schreiben selber andeütung thund.)
-<lb n="35"/>auch beÿ diser vorstehenden gütigkeit
-<lb n="36"/>nochmalen krefftig seÿe. Und
-<lb n="37"/>wünschen, daß solche mittel funden werden,
-<lb n="38"/>damit fernere weïterung vermitten
-<lb n="39"/>bleiben <unclear cert="low" resp="#joint">moegend</unclear>.
-<lb n="40"/><unclear cert="low" resp="#joint">Wolten</unclear> wir eüch in antwurt nit
-<lb n="41"/>bergen, und bleiben eüch zuo ange-
-<lb n="42"/>nemer nachbarschafft geneigt
-<lb n="43"/>willig. Dath <origDate when="1613" resp="#ner">den .<unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">th</unclear>. Aprilis .1613.</origDate>
-<lb n="44"/><orgName ref="stadtasg-actors-629" cert="medium" role="issuer" resp="#ner">Statthalter und Raht
+<lb n="31"/>handlung <unclear cert="medium" resp="#joint">abwarten</unclear>. Doch alles <unclear cert="low" resp="#joint">keiner</unclear>
+<lb n="32"/><unclear cert="low" resp="#joint">andern</unclear> gestalt, dann daß eüwer voriges
+<lb n="33"/>gegebenes geleüt (. wie <unclear cert="medium" resp="#joint">ihr</unclear> dann in
+<lb n="34"/><unclear cert="low" resp="#joint">eüwerm</unclear> <unclear cert="medium" resp="#joint">schreiben</unclear> selber <unclear cert="medium" resp="#joint">andeütung</unclear> thund.)
+<lb n="35"/>auch beÿ diser <unclear cert="low" resp="#joint">vorstehenden</unclear> <unclear cert="medium" resp="#joint">gütigkeit</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">nochmalen</unclear> <unclear cert="low" resp="#joint">krefftig</unclear> <unclear cert="medium" resp="#joint">seÿe</unclear>. Und
+<lb n="37"/><unclear cert="medium" resp="#joint">wünschen</unclear>, daß solche mittel <unclear cert="medium" resp="#joint">funden</unclear> <unclear cert="medium" resp="#joint">werden</unclear>,
+<lb n="38"/>damit <unclear cert="low" resp="#joint">fernere</unclear> <unclear cert="low" resp="#joint">weïterung</unclear> vermitten
+<lb n="39"/>bleiben moegend.
+<lb n="40"/>Wolten wir <unclear cert="medium" resp="#joint">eüch</unclear> in <unclear cert="medium" resp="#joint">antwurt</unclear> nit
+<lb n="41"/><unclear cert="low" resp="#joint">bergen</unclear>, und bleiben <unclear cert="medium" resp="#joint">eüch</unclear> zuo ange-
+<lb n="42"/><unclear cert="medium" resp="#joint">nemer</unclear> <unclear cert="medium" resp="#joint">nachbarschafft</unclear> <unclear cert="medium" resp="#joint">geneigt</unclear>
+<lb n="43"/>willig. <unclear cert="low" resp="#joint">Dath</unclear> <origDate when="1613" resp="#ner">den .8. <unclear cert="low" resp="#joint">th</unclear>. Aprilis .1613.</origDate>
+<lb n="44"/><orgName ref="stadtasg-actors-629" cert="medium" role="issuer" resp="#ner">Statthalter und <unclear cert="medium" resp="#joint">Raht</unclear>
 <lb n="45"/>der Statt Sant Gallen</orgName>.
-<lb n="46"/>An hern Landtvogt <persName role="recipient" resp="#ner">Rÿppel</persName>.
-<lb n="47"/>Rh.
+<lb n="46"/>An <unclear cert="low" resp="#joint">hern</unclear> Landtvogt <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Rÿppel</unclear></persName>.
+<lb n="47"/><unclear cert="low" resp="#joint">Rh</unclear>.
 <pb facs="StadtASG_Missive_1831_6795.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1831_6796.jpg" n="4"/>
 </p>

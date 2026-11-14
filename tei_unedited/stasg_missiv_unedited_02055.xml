@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2055</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen antworten auf ein Schreiben der Arboner vom 6. Juni 1617 über eine Schuldenforderung der St. Galler Schule. Sie bestätigen, dass die Schultheissen die Erklärung der Arboner annehmen, bis zum nächsten Martini als Schuldner zu gelten und den Bürgen Leuz Mezger zu entlasten. Dies geschehe ohne Abzug der vereinbarten 25 Gulden und ohne Beeinträchtigung der Rechte der Schultheissen bis zur vollen Bezahlung.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1617-06-29" resp="#regest">den. 29. junii anno 1617</date></correspAction><correspAction type="received"><name resp="#regest">Statthalter und Rat zu Arbon</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,49 +35,49 @@
 <p>
 <pb facs="StadtASG_Missive_2055_7687.jpg" n="1"/>
 <lb n="1"/>Unseren freundt- nachbarlichen grueß, und willigen
-<lb n="2"/>dienst, zuovor Fromme, Ersame, Weise, sonders
-<lb n="3"/>liebe guete freünd und nachbarn.
-<lb n="4"/>Euwer underm dato <date resp="#ner">6/16 diß</date> an uns abgangen
-<lb n="5"/>schreiben, <unclear cert="low" resp="#joint">betreffende</unclear> <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">schuol</unclear> <unclear cert="low" resp="#joint">beÿ</unclear> eüch
+<lb n="2"/>dienst, zuovor <unclear cert="low" resp="#joint">Fromme</unclear>, Ersame, Weise, sonders
+<lb n="3"/>liebe <unclear cert="low" resp="#joint">guete</unclear> freünd und nachbarn.
+<lb n="4"/><unclear cert="low" resp="#joint">Euwer</unclear> <unclear cert="low" resp="#joint">underm</unclear> dato <date resp="#ner"><unclear cert="low" resp="#joint">6/16</unclear> diß</date> an uns abgangen
+<lb n="5"/>schreiben, betreffende <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">schuol</unclear> <unclear cert="low" resp="#joint">beÿ</unclear> eüch
 <lb n="6"/><unclear cert="low" resp="#joint">usfendg</unclear> ußstehenden <unclear cert="low" resp="#joint">schuldtresten</unclear>, haben wir
 <lb n="7"/>dahin verstanden, daß ihr entschlossen
-<lb n="8"/>seÿet, umb den angezogenen rest, was <unclear cert="low" resp="#joint">sich</unclear>
-<lb n="9"/>derselbige über die bezahlte f. xxxx. noch er-
+<lb n="8"/><unclear cert="low" resp="#joint">seÿet</unclear>, umb den <unclear cert="low" resp="#joint">angezogenen</unclear> <unclear cert="low" resp="#joint">rest</unclear>, was <unclear cert="medium" resp="#joint">sich</unclear>
+<lb n="9"/>derselbige über die <unclear cert="low" resp="#joint">bezahlte</unclear> f. <unclear cert="low" resp="#joint">xxxx</unclear>. <unclear cert="low" resp="#joint">noch</unclear> er-
 <lb n="10"/>lauffen mag, es seÿe an hauptguet, zinß, kosten
-<lb n="11"/>oder schaden, auch ohne abzug der breüfften
-<lb n="12"/>mit eürem sonderbaren geding versprochnen
-<lb n="13"/>aber unersochs wider kommenußten fünff-
+<lb n="11"/>oder <unclear cert="low" resp="#joint">schaden</unclear>, auch ohne <unclear cert="low" resp="#joint">abzug</unclear> der <unclear cert="low" resp="#joint">breüfften</unclear>
+<lb n="12"/>mit <unclear cert="low" resp="#joint">eürem</unclear> <unclear cert="low" resp="#joint">sonderbaren</unclear> geding versprochnen
+<lb n="13"/>aber <unclear cert="low" resp="#joint">unersochs</unclear> wider <unclear cert="low" resp="#joint">kommenußten</unclear> <unclear cert="low" resp="#joint">fünff</unclear>-
 <lb n="14"/>und zwainzig guldinen, biß auf <date resp="#ner">nechst-
-<lb n="15"/>kommenden Martini</date>, diß gegenwürtigen
-<lb n="16"/>jars, gegen <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">schuol</unclear> <unclear cert="low" resp="#joint">kisten</unclear> <unclear cert="low" resp="#joint">selbs</unclear> <unclear cert="low" resp="#joint">schuldner</unclear>
+<lb n="15"/><unclear cert="low" resp="#joint">kommenden</unclear> <unclear cert="low" resp="#joint">Martini</unclear></date>, diß gegenwürtigen
+<lb n="16"/><unclear cert="low" resp="#joint">jars</unclear>, gegen <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">schuol</unclear> <unclear cert="low" resp="#joint">kisten</unclear> <unclear cert="low" resp="#joint">selbs</unclear> <unclear cert="low" resp="#joint">schuldner</unclear>
 <lb n="17"/>und <unclear cert="low" resp="#joint">bezahlerzuseÿn</unclear>,
-<lb n="18"/>und <unclear cert="low" resp="#joint">zubleiben</unclear>; und daß ihr <unclear cert="low" resp="#joint">endzwischen</unclear>
+<lb n="18"/>und zubleiben; und daß ihr <unclear cert="low" resp="#joint">endzwischen</unclear>
 <lb n="19"/><unclear cert="low" resp="#joint">eüwern</unclear> <unclear cert="low" resp="#joint">Ruckbürgen</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Lrez</unclear> <unclear cert="low" resp="#joint">Mezgeren</unclear></persName>, (doch
-<lb n="20"/>unseren schuolherren an ihren rechten ohne
-<lb n="21"/>schaden.) so weit treiben wellet, daß er eüch
-<lb n="22"/>ohne <unclear cert="low" resp="#joint">eüwern</unclear> und unserer schuol-
+<lb n="20"/>unseren schuolherren an <unclear cert="low" resp="#joint">ihren</unclear> rechten ohne
+<lb n="21"/><unclear cert="low" resp="#joint">schaden</unclear>.) so weit <unclear cert="low" resp="#joint">treiben</unclear> <unclear cert="low" resp="#joint">wellet</unclear>, daß er eüch
+<lb n="22"/>ohne <unclear cert="low" resp="#joint">eüwern</unclear> und <unclear cert="low" resp="#joint">unserer</unclear> schuol-
 <lb n="23"/>herren kosten und schaden entheben und ledig
 <lb n="24"/>machen thüe etc.
-<lb n="25"/>Und dieweil nun wir solches
-<lb n="26"/><unclear cert="low" resp="#joint">vorermelten</unclear> <unclear cert="low" resp="#joint">unseren</unclear> verordneten schuol-
-<lb n="27"/>herren fürhalten lassen, haben dieselben
-<lb n="28"/>sich hierauf dahin resolviert; daß sie
-<lb n="29"/>solche eüwere erklaerung hiemit für
+<lb n="25"/>Und <unclear cert="low" resp="#joint">dieweil</unclear> nun wir solches
+<lb n="26"/><unclear cert="low" resp="#joint">vorermelten</unclear> unseren verordneten schuol-
+<lb n="27"/>herren <unclear cert="low" resp="#joint">fürhalten</unclear> lassen, haben dieselben
+<lb n="28"/>sich hierauf dahin <unclear cert="low" resp="#joint">resolviert</unclear>; daß sie
+<lb n="29"/>solche <unclear cert="low" resp="#joint">eüwere</unclear> <unclear cert="low" resp="#joint">erklaerung</unclear> hiemit für
 <pb facs="StadtASG_Missive_2055_7688.jpg" n="2"/>
-<lb n="30"/><unclear cert="medium" resp="#joint">=darawegen</unclear>
-<lb n="31"/><unclear cert="medium" resp="#joint">bekant</unclear> angenomen haben, und der ange=
-<lb n="32"/><unclear cert="medium" resp="#joint">botnen</unclear> <unclear cert="medium" resp="#joint">loßung</unclear> (wie <unclear cert="medium" resp="#joint">obgemeldt</unclear>) <unclear cert="medium" resp="#joint">biß</unclear>
-<lb n="33"/>auf <unclear cert="medium" resp="#joint">nachstkunftigen</unclear> <unclear cert="medium" resp="#joint">Martini</unclear> <unclear cert="medium" resp="#joint">erwarten</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">=darawegen</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">bekant</unclear> angenomen haben, und der ange=
+<lb n="32"/><unclear cert="low" resp="#joint">botnen</unclear> <unclear cert="low" resp="#joint">loßung</unclear> (wie <unclear cert="medium" resp="#joint">obgemeldt</unclear>) biß
+<lb n="33"/>auf <unclear cert="low" resp="#joint">nachstkunftigen</unclear> <unclear cert="low" resp="#joint">Martini</unclear> <unclear cert="medium" resp="#joint">erwarten</unclear>
 <lb n="34"/><unclear cert="medium" resp="#joint">wellen</unclear>; doch solches alles ihnen an <unclear cert="medium" resp="#joint">ihrem</unclear>
-<lb n="35"/>gegen <unclear cert="medium" resp="#joint">euch</unclear> habendem <unclear cert="medium" resp="#joint">rechten</unclear>, <unclear cert="medium" resp="#joint">biß</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">voel=</unclear>
-<lb n="36"/>liger <unclear cert="low" resp="#joint">bezahlung</unclear>, in allweg ohne schaden.
-<lb n="37"/>Welches wir, auf <unclear cert="medium" resp="#joint">des</unclear> <orgName ref="stadtasg-actors-552" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">St</unclear>. <unclear cert="medium" resp="#joint">Spitalherren</unclear></orgName> <unclear cert="medium" resp="#joint">be=</unclear>
-<lb n="38"/><unclear cert="medium" resp="#joint">geren</unclear>, <unclear cert="medium" resp="#joint">euch</unclear> in <unclear cert="medium" resp="#joint">antwurt</unclear> <unclear cert="medium" resp="#joint">nit</unclear> verhalten
-<lb n="39"/><unclear cert="medium" resp="#joint">wellen</unclear>. <unclear cert="medium" resp="#joint">Bevehlen</unclear> <unclear cert="medium" resp="#joint">euch</unclear> unser lieb <unclear cert="low" resp="#joint">nach=</unclear>
-<lb n="40"/><unclear cert="low" resp="#joint">baren</unclear> samt <unclear cert="medium" resp="#joint">uns</unclear> dem <unclear cert="medium" resp="#joint">schirm</unclear> <unclear cert="medium" resp="#joint">des</unclear> Allmechtig.
-<lb n="41"/><unclear cert="medium" resp="#joint">dato</unclear> <origDate when="1617-06-29" resp="#ner">den. 29. <unclear cert="medium" resp="#joint">junii</unclear> anno <unclear cert="low" resp="#joint">1617</unclear></origDate>.
+<lb n="35"/>gegen <unclear cert="low" resp="#joint">euch</unclear> habendem rechten, biß zuo <unclear cert="medium" resp="#joint">voel=</unclear>
+<lb n="36"/>liger bezahlung, in allweg ohne schaden.
+<lb n="37"/>Welches wir, auf <unclear cert="medium" resp="#joint">des</unclear> <orgName ref="stadtasg-actors-552" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">St</unclear>. <unclear cert="medium" resp="#joint">Spitalherren</unclear></orgName> be=
+<lb n="38"/>geren, <unclear cert="low" resp="#joint">euch</unclear> in <unclear cert="low" resp="#joint">antwurt</unclear> nit verhalten
+<lb n="39"/><unclear cert="low" resp="#joint">wellen</unclear>. <unclear cert="low" resp="#joint">Bevehlen</unclear> <unclear cert="low" resp="#joint">euch</unclear> unser lieb nach=
+<lb n="40"/>baren samt uns dem <unclear cert="medium" resp="#joint">schirm</unclear> des Allmechtig.
+<lb n="41"/><unclear cert="low" resp="#joint">dato</unclear> <origDate when="1617-06-29" resp="#ner">den. 29. <unclear cert="low" resp="#joint">junii</unclear> anno 1617</origDate>.
 <lb n="42"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">B</unclear> <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="low" resp="#joint">R</unclear>.</orgName>
-<lb n="43"/><unclear cert="low" resp="#joint">An</unclear> <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Statthalter</unclear> und <unclear cert="medium" resp="#joint">Raht</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> Arbon</orgName>.
+<lb n="43"/><unclear cert="low" resp="#joint">An</unclear> <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Statthalter</unclear> und <unclear cert="low" resp="#joint">Raht</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> Arbon</orgName>.
 <pb facs="StadtASG_Missive_2055_7689.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2055_7690.jpg" n="4"/>
 </p>

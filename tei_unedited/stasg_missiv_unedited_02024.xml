@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2024</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,55 +20,55 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen informieren Bürgermeister und Rat zu Konstanz über die Messen, die beim Kauf und Verkauf von Leinwandwaren in St. Gallen zugelassen sind. Beim Versenden von Leinwand werden der Leoner Stab und die Nürnberger Elle erlaubt, andere fremde Messen nicht. Die Messgeräte werden den Kaufleuten nicht ausgehändigt, sondern die Ware muss von beauftragten Amtleuten ausgemessen werden. Die Messgeräte sollen den verburgerten Kaufleuten zur Verfügung stehen und auf Anfrage übergeben werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1618-08-06" resp="#regest">6. augusti anno 1618</date></correspAction><correspAction type="received"><name resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat zu Konstanz</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2024_7561.jpg" n="1"/>
-<lb n="1"/>Unser freündt-, nachbarlich und guotwillige dienst zuvor,
-<lb n="2"/>edle, veste, fürsichtige, ehrsame und weise, besonders liebe
-<lb n="3"/>freünd und guote nachbarn.
-<lb n="4"/>Zu begertem bericht, in ihrer vorhabenden reformation,
-<lb n="5"/>ihrer kůlffnergewerber ordnung, geben E. Vst. Fht.
-<lb n="6"/>E. Wht. wir hiemit freündt-, nachbarlich <unclear cert="low" resp="#joint">zuvernemmen</unclear>,
-<lb n="7"/>daß im kauffen und verkauffen unserer lein-
-<lb n="8"/>watwahren wir alhie kein ander, als
-<lb n="9"/>unserer statt gwonlich meß oder elen gstattnen,
-<lb n="10"/>im versenden aber derselbigen lassen wir zu,
-<lb n="11"/>den Leoner stab und die Nuermberger elen,
-<lb n="12"/>und sonsten kein andere <unclear cert="low" resp="#joint">froembde</unclear> <unclear cert="low" resp="#joint">meß</unclear>, <unclear cert="low" resp="#joint">weder</unclear>
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündt</unclear>-, nachbarlich und <unclear cert="medium" resp="#joint">guotwillige</unclear> dienst zuvor,
+<lb n="2"/>edle, veste, fürsichtige, <unclear cert="low" resp="#joint">ehrsame</unclear> und weise, <unclear cert="medium" resp="#joint">besonders</unclear> liebe
+<lb n="3"/><unclear cert="medium" resp="#joint">freünd</unclear> und guote nachbarn.
+<lb n="4"/>Zu <unclear cert="low" resp="#joint">begertem</unclear> bericht, in ihrer <unclear cert="low" resp="#joint">vorhabenden</unclear> reformation,
+<lb n="5"/>ihrer <unclear cert="low" resp="#joint">kůlffnergewerber</unclear> ordnung, geben <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Vst</unclear>. <unclear cert="low" resp="#joint">Fht</unclear>.
+<lb n="6"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. wir hiemit <unclear cert="low" resp="#joint">freündt</unclear>-, nachbarlich zuvernemmen,
+<lb n="7"/>daß <unclear cert="medium" resp="#joint">im</unclear> kauffen und verkauffen <unclear cert="medium" resp="#joint">unserer</unclear> <unclear cert="medium" resp="#joint">lein</unclear>-
+<lb n="8"/><unclear cert="low" resp="#joint">watwahren</unclear> wir alhie kein ander, als
+<lb n="9"/><unclear cert="medium" resp="#joint">unserer</unclear> statt gwonlich <unclear cert="low" resp="#joint">meß</unclear> oder <unclear cert="low" resp="#joint">elen</unclear> gstattnen,
+<lb n="10"/>im <unclear cert="medium" resp="#joint">versenden</unclear> aber <unclear cert="medium" resp="#joint">derselbigen</unclear> lassen wir zu,
+<lb n="11"/><unclear cert="medium" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Leoner</unclear> <unclear cert="medium" resp="#joint">stab</unclear> und die <unclear cert="low" resp="#joint">Nuermberger</unclear> <unclear cert="low" resp="#joint">elen</unclear>,
+<lb n="12"/>und <unclear cert="low" resp="#joint">sonsten</unclear> kein andere froembde <unclear cert="low" resp="#joint">meß</unclear>, weder
 <lb n="13"/><unclear cert="low" resp="#joint">Maylaendisch</unclear>, <unclear cert="low" resp="#joint">Bognonische</unclear>, noch andere.
-<lb n="14"/>Wir pflegen aber auch nit, den unßeren, weder
-<lb n="15"/>den Leoner stab noch die Nuermberger elen
-<lb n="16"/>in ihre haend oder <unclear cert="low" resp="#joint">gewaltsame</unclear> <unclear cert="low" resp="#joint">zugeben</unclear>, <unclear cert="low" resp="#joint">sonderen</unclear>
-<lb n="17"/>was sie versenden woellen, das muessen sie
-<lb n="18"/>durch die darzu verordnete und beeidigte
-<lb n="19"/>amptleüt ußmessen lassen.
-<lb n="20"/>Im übrigen seyen <unclear cert="low" resp="#joint">solte</unclear> <unclear cert="low" resp="#joint">langt</unclear> uns an, daß die
-<lb n="21"/>gemelte Leonisch und Nuermberger elen, bey
-<lb n="22"/>ihren verburgerten wol zubekommen, im
+<lb n="14"/>Wir pflegen aber auch nit, den <unclear cert="low" resp="#joint">unßeren</unclear>, weder
+<lb n="15"/>den <unclear cert="low" resp="#joint">Leoner</unclear> <unclear cert="medium" resp="#joint">stab</unclear> noch die <unclear cert="low" resp="#joint">Nuermberger</unclear> <unclear cert="low" resp="#joint">elen</unclear>
+<lb n="16"/>in ihre <unclear cert="low" resp="#joint">haend</unclear> oder gewaltsame zugeben, <unclear cert="low" resp="#joint">sonderen</unclear>
+<lb n="17"/>was sie <unclear cert="medium" resp="#joint">versenden</unclear> woellen, das <unclear cert="medium" resp="#joint">muessen</unclear> sie
+<lb n="18"/>durch die <unclear cert="medium" resp="#joint">darzu</unclear> <unclear cert="medium" resp="#joint">verordnete</unclear> und <unclear cert="medium" resp="#joint">beeidigte</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">amptleüt</unclear> <unclear cert="low" resp="#joint">ußmessen</unclear> lassen.
+<lb n="20"/>Im übrigen seyen <unclear cert="low" resp="#joint">solte</unclear> langt uns an, daß die
+<lb n="21"/>gemelte <unclear cert="low" resp="#joint">Leonisch</unclear> und <unclear cert="low" resp="#joint">Nuermberger</unclear> <unclear cert="low" resp="#joint">elen</unclear>, bey
+<lb n="22"/>ihren verburgerten wol zubekommen, <unclear cert="medium" resp="#joint">im</unclear>
 <lb n="23"/>mangel aber dessen, und da sie dieselbige
-<lb n="24"/>von uns nochmalen zuempfahen begeren, sollen
-<lb n="25"/>ihnen solche nit verghalten, sonderen auf
-<lb n="26"/>erste erinnerung mit willen übersendt werden.
-<lb n="27"/>Dann E. Vst. und F. E. Wht. freündtliches gefallen
-<lb n="28"/><unclear cert="low" resp="#joint">zuerweisen</unclear> <unclear cert="low" resp="#joint">bleiben</unclear> wir geneigt. Datum
-<lb n="29"/><origDate when="1618-08-06" resp="#ner">6. augusti anno <unclear cert="low" resp="#joint">1618</unclear></origDate>.
-<lb n="30"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">B</unclear>. und <unclear cert="low" resp="#joint">rhat</unclear></orgName>.
-<lb n="31"/><unclear cert="low" resp="#joint">An</unclear> <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">verwalter</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">hauptmanschafft</unclear> <unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">rhat</unclear>
-<lb n="32"/>zu <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName>.
+<lb n="24"/>von uns <unclear cert="low" resp="#joint">nochmalen</unclear> <unclear cert="low" resp="#joint">zuempfahen</unclear> begeren, <unclear cert="medium" resp="#joint">sollen</unclear>
+<lb n="25"/>ihnen <unclear cert="medium" resp="#joint">solche</unclear> nit <unclear cert="low" resp="#joint">verghalten</unclear>, <unclear cert="medium" resp="#joint">sonderen</unclear> auf
+<lb n="26"/>erste erinnerung mit willen <unclear cert="low" resp="#joint">übersendt</unclear> werden.
+<lb n="27"/><unclear cert="medium" resp="#joint">Dann</unclear> <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Vst</unclear>. und <unclear cert="medium" resp="#joint">F</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="medium" resp="#joint">freündtliches</unclear> gefallen
+<lb n="28"/>zuerweisen bleiben wir geneigt. Datum
+<lb n="29"/><origDate when="1618-08-06" resp="#ner">6. augusti anno 1618</origDate>.
+<lb n="30"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">B. und <unclear cert="low" resp="#joint">rhat</unclear></orgName>.
+<lb n="31"/>An <unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">verwalter</unclear> der hauptmanschafft B. und <unclear cert="low" resp="#joint">rhat</unclear>
+<lb n="32"/>zu <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costantz</unclear></placeName>.
 <pb facs="StadtASG_Missive_2024_7562.jpg" n="2"/>
-<lb n="33"/><origDate when="1616-08-06" resp="#ner">6. Augusti 1616</origDate>. gen <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanz</placeName>
-<lb n="34"/>Clag hiesige Leestatt
+<lb n="33"/><origDate when="1616-08-06" resp="#ner">6. Augusti 1616</origDate>. <unclear cert="medium" resp="#joint">gen</unclear> <placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costanz</placeName>
+<lb n="34"/><unclear cert="medium" resp="#joint">Clag</unclear> <unclear cert="medium" resp="#joint">hiesige</unclear> <unclear cert="medium" resp="#joint">Leestatt</unclear>
 </p>
         </body>
     </text>

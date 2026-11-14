@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 923</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,51 +20,51 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Karl, Markgraf zu Baden, bittet Bürgermeister und Rat zu St. Gallen, eine von seinen Eherichtern erlassene Ladung an den Metzgergesellen Hans Teschler zu veröffentlichen und an geeigneten Orten anzuschlagen. Er ersucht zudem, dem Boten eine Urkunde darüber auszustellen. Die Ladung betrifft die Klage der Sabina, Tochter des Georg Gewinner zu Liebenzell, gegen Teschler.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Karl, Markgraf zu Baden und Hachberg</name><placeName resp="#regest">Carlsburg</placeName><date when="1576" cert="medium" resp="#regest">den viij ten junij anno etc. lxxvi</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_923_2703.jpg" n="1"/>
-<lb n="1"/><persName role="issuer" resp="#ner">Karl</persName> von gottes gnaden, marg-
-<lb n="2"/>grave zuo <placeName ref="stadtasg-places-148" cert="medium" resp="#ner">Baden</placeName>, und <placeName resp="#ner">Hachberg</placeName> etc.
-<lb n="3"/>Unsern guenstigen gruoß zuvor, er-
-<lb n="4"/>samen weisen, lieben besondern,
-<lb n="5"/>nachdem unsere verordnete ehe-
-<lb n="6"/>richter, unnd räth, uff demuetig an-
-<lb n="7"/>ruoffen unnd clagen unser angehoerigen
-<lb n="8"/><persName resp="#ner">Sabina</persName>, Georigen gewinners zuo <placeName resp="#ner">Lieben-
-<lb n="9"/>zel</placeName> ehelichen dochter, wider <persName resp="#ner">Hansen
-<lb n="10"/>Teschler</persName>, einen metzger knecht, der sich
-<lb n="11"/>uß euwer statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanndt Gallen</placeName> genent,
-<lb n="12"/>ein citation ad valvas ecclesiae erkhenndt,
-<lb n="13"/>wie ir ab bejligendem original zuo sehen,
-<lb n="14"/>ist darauff an euch unnser guenstigs
-<lb n="15"/>gesinnen unnd begeren, ir woellendt
-<lb n="16"/>zuo befuerderung rechtens, soliche citation
-<lb n="17"/>bej euch publicieren, unnd an gebuerenden
-<lb n="18"/>orten offentlich affigieren unnd anschlagen
-<lb n="19"/>lassen, auch disem botten deßhalb ein
-<lb n="20"/>urkhundt ertheilen, das seind wir
-<lb n="21"/>umb euch guenstiglichen zuo erwidern
-<lb n="22"/>erbittig, unnd daneben mit guenstigem
-<lb n="23"/>guotem willen wolgeneigt. Datum
-<lb n="24"/><origPlace resp="#ner">Carlsburg</origPlace>, <origDate when="1576" cert="medium" resp="#ner">den viij ten junij anno etc.
-<lb n="25"/>lxxvi</origDate>.
+<lb n="1"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Karl</unclear></persName> <unclear cert="low" resp="#joint">von</unclear> gottes gnaden, <unclear cert="medium" resp="#joint">marg</unclear>-
+<lb n="2"/><unclear cert="medium" resp="#joint">grave</unclear> zuo <placeName ref="stadtasg-places-148" cert="medium" resp="#ner">Baden</placeName>, <unclear cert="medium" resp="#joint">und</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Hachberg</unclear></placeName> etc.
+<lb n="3"/><unclear cert="low" resp="#joint">Unsern</unclear> <unclear cert="low" resp="#joint">guenstigen</unclear> <unclear cert="low" resp="#joint">gruoß</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="4"/><unclear cert="low" resp="#joint">samen</unclear> <unclear cert="low" resp="#joint">weisen</unclear>, lieben <unclear cert="medium" resp="#joint">besondern</unclear>,
+<lb n="5"/>nachdem <unclear cert="medium" resp="#joint">unsere</unclear> <unclear cert="medium" resp="#joint">verordnete</unclear> <unclear cert="medium" resp="#joint">ehe</unclear>-
+<lb n="6"/><unclear cert="medium" resp="#joint">richter</unclear>, unnd räth, uff <unclear cert="medium" resp="#joint">demuetig</unclear> an-
+<lb n="7"/><unclear cert="medium" resp="#joint">ruoffen</unclear> unnd clagen <unclear cert="low" resp="#joint">unser</unclear> <unclear cert="low" resp="#joint">angehoerigen</unclear>
+<lb n="8"/><persName resp="#ner"><unclear cert="low" resp="#joint">Sabina</unclear></persName>, <unclear cert="low" resp="#joint">Georigen</unclear> <unclear cert="low" resp="#joint">gewinners</unclear> zuo <placeName resp="#ner">Lieben-
+<lb n="9"/><unclear cert="medium" resp="#joint">zel</unclear></placeName> <unclear cert="medium" resp="#joint">ehelichen</unclear> <unclear cert="medium" resp="#joint">dochter</unclear>, wider <persName resp="#ner">Hansen
+<lb n="10"/><unclear cert="medium" resp="#joint">Teschler</unclear></persName>, <unclear cert="medium" resp="#joint">einen</unclear> <unclear cert="medium" resp="#joint">metzger</unclear> knecht, der sich
+<lb n="11"/><unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">euwer</unclear> statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Sanndt</unclear> <unclear cert="medium" resp="#joint">Gallen</unclear></placeName> <unclear cert="medium" resp="#joint">genent</unclear>,
+<lb n="12"/>ein citation ad valvas <unclear cert="medium" resp="#joint">ecclesiae</unclear> <unclear cert="medium" resp="#joint">erkhenndt</unclear>,
+<lb n="13"/>wie ir <unclear cert="low" resp="#joint">ab</unclear> <unclear cert="low" resp="#joint">bejligendem</unclear> original <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">sehen</unclear>,
+<lb n="14"/>ist <unclear cert="medium" resp="#joint">darauff</unclear> an euch unnser <unclear cert="medium" resp="#joint">guenstigs</unclear>
+<lb n="15"/><unclear cert="medium" resp="#joint">gesinnen</unclear> unnd begeren, ir <unclear cert="low" resp="#joint">woellendt</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">befuerderung</unclear> <unclear cert="low" resp="#joint">rechtens</unclear>, soliche citation
+<lb n="17"/><unclear cert="medium" resp="#joint">bej</unclear> euch publicieren, unnd an <unclear cert="low" resp="#joint">gebuerenden</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">orten</unclear> <unclear cert="low" resp="#joint">offentlich</unclear> <unclear cert="low" resp="#joint">affigieren</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">anschlagen</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">lassen</unclear>, auch <unclear cert="medium" resp="#joint">disem</unclear> botten deßhalb ein
+<lb n="20"/>urkhundt ertheilen, <unclear cert="low" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">seind</unclear> wir
+<lb n="21"/><unclear cert="low" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">guenstiglichen</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">erwidern</unclear>
+<lb n="22"/>erbittig, unnd <unclear cert="medium" resp="#joint">daneben</unclear> mit <unclear cert="medium" resp="#joint">guenstigem</unclear>
+<lb n="23"/>guotem willen <unclear cert="low" resp="#joint">wolgeneigt</unclear>. Datum
+<lb n="24"/><origPlace resp="#ner"><unclear cert="medium" resp="#joint">Carlsburg</unclear></origPlace>, <origDate when="1576" cert="medium" resp="#ner">den <unclear cert="low" resp="#joint">viij</unclear> <unclear cert="low" resp="#joint">ten</unclear> <unclear cert="low" resp="#joint">junij</unclear> anno <unclear cert="medium" resp="#joint">etc</unclear>.
+<lb n="25"/><unclear cert="medium" resp="#joint">lxxvi</unclear></origDate>.
 <pb facs="StadtASG_Missive_923_2704.jpg" n="2"/>
 <pb facs="StadtASG_Missive_923_2705.jpg" n="3"/>
 <pb facs="StadtASG_Missive_923_2706.jpg" n="4"/>
 <lb n="26"/>Den ersamen weisen, unnsern
 <lb n="27"/>lieben besondern <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister,
-<lb n="28"/>unnd rath zuo Sanct Gallen</orgName>.
+<lb n="28"/>unnd rath <unclear cert="medium" resp="#joint">zuo</unclear> Sanct Gallen</orgName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1858</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,55 +20,55 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen ersuchen Landvogt Appolinari Iten im Rheintal, die Erörterung eines Rechtsstreits zwischen Christoph Raa aus Lindau und den Erben des verstorbenen Daniel Schirmann um zwei bis drei Wochen zu verschieben. Der Vormund der Erben, Johannes Schirmann, könne wegen eines schweren Zufalls nicht erscheinen. Es solle ein Vertreter bestellt werden, der die Verhandlung mit dem Kläger fortsetzen und beenden helfe.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1603-09-13" resp="#regest">13. ten. Septembr. 1603</date></correspAction><correspAction type="received"><name resp="#regest">Appolinari Iten, Landvogt im Rheintal</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1858_6901.jpg" n="1"/>
-<lb n="1"/>Unser <unclear cert="low" resp="#joint">frueundt</unclear>, <unclear cert="low" resp="#joint">nachbarlich</unclear> willig dinst, zuovor
-<lb n="2"/>frommer, ehrenvester und weiser, sonders lieber
-<lb n="3"/>herr landtvogt, guoter frueund und nachbar.
+<lb n="1"/>Unser frueundt, nachbarlich willig dinst, zuovor
+<lb n="2"/><unclear cert="medium" resp="#joint">frommer</unclear>, <unclear cert="low" resp="#joint">ehrenvester</unclear> und <unclear cert="medium" resp="#joint">weiser</unclear>, <unclear cert="medium" resp="#joint">sonders</unclear> lieber
+<lb n="3"/>herr landtvogt, <unclear cert="low" resp="#joint">guoter</unclear> <unclear cert="low" resp="#joint">frueund</unclear> und nachbar.
 <lb n="4"/>Nach dem ihr auf anrueffen <persName resp="#ner"><unclear cert="low" resp="#joint">Christoff</unclear> <unclear cert="low" resp="#joint">Raa</unclear></persName>
-<lb n="5"/>von <placeName ref="stadtasg-places-24" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Lindauw</unclear></placeName>, wegen seines an <persName resp="#ner">Joerg Zu=
-<lb n="6"/>satzes</persName> und <persName resp="#ner">Daniel Schirmermans</persName> seligen an=
-<lb n="7"/>sprechenden unkostens, zuo erorterung
-<lb n="8"/>desselben uß eigner einen tag ernamset,
-<lb n="9"/>und aber des gemelten Daniel Schirmermans
-<lb n="10"/>seligen erben vogt und vormuender <persName resp="#ner">Johannes
-<lb n="11"/>Schirmerman</persName>, eines schweren zuofals halber,
-<lb n="12"/><unclear cert="low" resp="#joint">solchen</unclear> <unclear cert="low" resp="#joint">ueweren</unclear> <unclear cert="low" resp="#joint">angesetzten</unclear> tag
-<lb n="13"/>nit kan besuochen, und an sein statt noch
-<lb n="14"/>niemand verordnet worden, der sein
-<lb n="15"/>statt vertreten koendte, So gelangt
-<lb n="16"/>an euch unser <unclear cert="low" resp="#joint">frueundt</unclear>, <unclear cert="low" resp="#joint">nachbarliches</unclear>
-<lb n="17"/><unclear cert="low" resp="#joint">ersuochen</unclear>, <unclear cert="low" resp="#joint">Ihr</unclear> wellent uß gehoerter ursach
-<lb n="18"/>disen handel noch zwo oder drey wuchen
-<lb n="19"/><unclear cert="low" resp="#joint">ufschieben</unclear>,
-<lb n="20"/>so es under deß mit besagtem <persName resp="#ner">Johanes
-<lb n="21"/>Schirmerman</persName> nit <unclear cert="low" resp="#joint">solte</unclear> <unclear cert="low" resp="#joint">besser</unclear> <unclear cert="low" resp="#joint">werden</unclear>, so
-<lb n="22"/>sol jedoch ein andrer an sein statt
+<lb n="5"/>von <placeName ref="stadtasg-places-24" cert="medium" resp="#ner">Lindauw</placeName>, wegen seines an <persName resp="#ner"><unclear cert="medium" resp="#joint">Joerg</unclear> Zu=
+<lb n="6"/><unclear cert="low" resp="#joint">satzes</unclear></persName> und <persName resp="#ner">Daniel <unclear cert="low" resp="#joint">Schirmermans</unclear></persName> seligen an=
+<lb n="7"/><unclear cert="low" resp="#joint">sprechenden</unclear> <unclear cert="low" resp="#joint">unkostens</unclear>, zuo <unclear cert="low" resp="#joint">erorterung</unclear>
+<lb n="8"/>desselben <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="low" resp="#joint">eigner</unclear> <unclear cert="low" resp="#joint">einen</unclear> tag <unclear cert="medium" resp="#joint">ernamset</unclear>,
+<lb n="9"/>und aber des gemelten Daniel <unclear cert="low" resp="#joint">Schirmermans</unclear>
+<lb n="10"/>seligen erben vogt und <unclear cert="low" resp="#joint">vormuender</unclear> <persName resp="#ner">Johannes
+<lb n="11"/><unclear cert="low" resp="#joint">Schirmerman</unclear></persName>, <unclear cert="medium" resp="#joint">eines</unclear> <unclear cert="low" resp="#joint">schweren</unclear> <unclear cert="low" resp="#joint">zuofals</unclear> halber,
+<lb n="12"/>solchen <unclear cert="low" resp="#joint">ueweren</unclear> <unclear cert="low" resp="#joint">angesetzten</unclear> tag
+<lb n="13"/>nit <unclear cert="low" resp="#joint">kan</unclear> <unclear cert="medium" resp="#joint">besuochen</unclear>, und an sein statt noch
+<lb n="14"/>niemand verordnet worden, <unclear cert="medium" resp="#joint">der</unclear> sein
+<lb n="15"/>statt <unclear cert="low" resp="#joint">vertreten</unclear> <unclear cert="low" resp="#joint">koendte</unclear>, So gelangt
+<lb n="16"/>an <unclear cert="low" resp="#joint">euch</unclear> unser frueundt, nachbarliches
+<lb n="17"/>ersuochen, Ihr wellent uß <unclear cert="low" resp="#joint">gehoerter</unclear> ursach
+<lb n="18"/><unclear cert="medium" resp="#joint">disen</unclear> handel noch zwo oder drey wuchen
+<lb n="19"/>ufschieben,
+<lb n="20"/>so <unclear cert="medium" resp="#joint">es</unclear> under deß mit <unclear cert="low" resp="#joint">besagtem</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Johanes</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">Schirmerman</unclear></persName> nit solte besser werden, so
+<lb n="22"/>sol jedoch <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">andrer</unclear> an sein statt
 <lb n="23"/>verordnet werden, der der handlung
-<lb n="24"/><unclear cert="low" resp="#joint">nebet</unclear> <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">Zuosatz</unclear> beywohnen, und
-<lb n="25"/><unclear cert="low" resp="#joint">dieselben</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">endtschafft</unclear> bringen helffen
-<lb n="26"/>solle. Und wie wir uns <unclear cert="low" resp="#joint">keines</unclear>
-<lb n="27"/><unclear cert="low" resp="#joint">abschlags</unclear> <unclear cert="low" resp="#joint">versehen</unclear>, in so <unclear cert="low" resp="#joint">wuogfuegem</unclear>
+<lb n="24"/>nebet dem <unclear cert="low" resp="#joint">Zuosatz</unclear> beywohnen, und
+<lb n="25"/>dieselben zuo endtschafft bringen helffen
+<lb n="26"/><unclear cert="medium" resp="#joint">solle</unclear>. Und wie wir uns keines
+<lb n="27"/>abschlags versehen, in so <unclear cert="low" resp="#joint">wuogfuegem</unclear>
 <lb n="28"/><unclear cert="low" resp="#joint">ansuochen</unclear>, deß begeren wirs
-<lb n="29"/>in gleichem und mehrerem zuerwidern.
-<lb n="30"/>Datum den <origDate when="1603" resp="#ner"><unclear cert="low" resp="#joint">13</unclear>. <unclear cert="low" resp="#joint">ten</unclear>. <unclear cert="low" resp="#joint">Septembr</unclear>. <unclear cert="low" resp="#joint">1603</unclear></origDate>.
-<lb n="31"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">B</unclear>. <unclear cert="low" resp="#joint">u</unclear>. R:</orgName>
+<lb n="29"/>in gleichem und <unclear cert="low" resp="#joint">mehrerem</unclear> <unclear cert="low" resp="#joint">zuerwidern</unclear>.
+<lb n="30"/>Datum den <origDate when="1603" resp="#ner">13. <unclear cert="low" resp="#joint">ten</unclear>. Septembr. 1603</origDate>.
+<lb n="31"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">B. <unclear cert="low" resp="#joint">u</unclear>. <unclear cert="medium" resp="#joint">R</unclear>:</orgName>
 <lb n="32"/>Dem fromen ehrenvesten und weisen
-<lb n="33"/><persName resp="#ner">Appollinari Iten</persName> des <unclear cert="low" resp="#joint">rahts</unclear> <unclear cert="low" resp="#joint">Zug</unclear>, <unclear cert="low" resp="#joint">dzer</unclear>
-<lb n="34"/><unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">landtvogt</unclear> <unclear cert="low" resp="#joint">im</unclear> <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Reintal</unclear></placeName>, <unclear cert="low" resp="#joint">unserem</unclear>
-<lb n="35"/><unclear cert="low" resp="#joint">lieben</unclear> guoten frueund und nachbarn.
+<lb n="33"/><persName resp="#ner"><unclear cert="low" resp="#joint">Appollinari</unclear> <unclear cert="medium" resp="#joint">Iten</unclear></persName> des rahts Zug, <unclear cert="medium" resp="#joint">dzer</unclear>
+<lb n="34"/>zeit landtvogt im <placeName ref="stadtasg-places-64" cert="medium" resp="#ner">Reintal</placeName>, unserem
+<lb n="35"/>lieben <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">frueund</unclear> und nachbarn.
 <pb facs="StadtASG_Missive_1858_6902.jpg" n="2"/>
 <lb n="36"/><origDate when="1613" resp="#ner">13. <unclear cert="low" resp="#joint">7bris</unclear> 1613</origDate>. <unclear cert="low" resp="#joint">An</unclear> <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">H</unclear>. <unclear cert="low" resp="#joint">Vogt</unclear></persName> <unclear cert="low" resp="#joint">im</unclear>
 <lb n="37"/><placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Reinthal</unclear></placeName>.

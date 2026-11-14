@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2423</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,73 +20,73 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Hans Kaspar Heidegger, Vogt der Herrschaft Neunforn, teilt Bürgermeister und Rat zu St. Gallen mit, dass er den Schaffner Hans Schüffelberger angewiesen habe, die Forderung des Appenzellers zu begleichen. Schüffelberger weigere sich jedoch, da das Kalb beim Marktkauf zu hoch bewertet worden sei. Er bitte, den Appenzeller anzuweisen, das Kalb zu behalten, oder Schüffelberger ein gleichwertiges Kalb zu geben, damit die Sache erledigt sei.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hans Kaspar Heidegger, Vogt der Herrschaft Neunforn</name><date when="1623" resp="#regest">4/14 Julij Ao 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2423_9321.jpg" n="1"/>
-<lb n="1"/>Edle, Eerenveste, Fromme, Fürsichtige, Eersamme und Wyse,
-<lb n="2"/>Herr Burgermeister, innsonders gunstige, Eerenden, lieben
-<lb n="3"/>Herren. Dennen seyen myn guotwillige dienst und gruoß, sampt was
-<lb n="4"/>ich Eeren, liebs und guots vermocht alzyts zuvor, Dero gunstig
-<lb n="5"/>an mich gethon schryben, antreffende myn amptsangehoerigen,
-<lb n="6"/><persName resp="#ner">Hannsen Schuffelbärger</persName> von <placeName resp="#ner">Bäschweyl</placeName>, hab ich empfangen,
-<lb n="7"/>unnd alles jnnhalts verstanden, und daruf jmm Schuffelbärg-
-<lb n="8"/>er mit ernst zuogesprochen, demselben nach luth der Herren be-
-<lb n="9"/>geren erstattung zethuond. Dessen er sich aber zum hoechsten
-<lb n="10"/>beschwerdt, mit anzeigung, so er die kalbfähl befunden
-<lb n="11"/>wie der märkt zuogangen, und er mit kundtschafft verwisen,
-<lb n="12"/>wölte er die vor lanngest zuo synen handen genommen, und den
-<lb n="13"/><persName resp="#ner">Appenzeller</persName> darumb bezalt haben, unnd so er die nachmalen
-<lb n="14"/>allso finde, woelle er jnn gern befriden und bezalen. Jm fahl
-<lb n="15"/>er aber nit darzuo kommen möchte, So begäre er by der alhie
-<lb n="16"/>ergangnen urtheil zůverblejben, unnd mög <persName resp="#ner">Appenzeller</persName> mit
-<lb n="17"/>synen fählen hinfaren wo er wölle, und jnne furterhin
-<lb n="18"/>ruewig lassen. Jm fahl er aber nit daran kommen, und Jme
-<lb n="19"/>nit racht beschehen, sölle er jnn suochen wo er sässhafft seye, p.
-<lb n="20"/>hieruf er <persName resp="#ner">Schuffelberger</persName> mich gantz ernstlich gebätten, den
-<lb n="21"/>Herren sölliche syn meinung zuozeschryben, wellches ich jme
-<lb n="22"/>(sonderlich wyl der käuffer s'kalb laeders begärth) nit ver-
-<lb n="23"/>weigeren können. Diewyl dann der märkt umb an-
-<lb n="24"/>dtiert fahl (luth der alhie verhoerdten kunndtschafft) vermögen,
-<lb n="25"/>das söllichs fähl von kalbrösse. Da ieder minder nit als
-<lb n="26"/>7. 8. oder 9 gl. wärt seye, und aber die verordneten die
-<lb n="27"/>fähl allein einfaltig fur waerthafft geschetzt, und nit uff ge-
-<lb n="28"/>dachten wärd oder pryß gesehen. So lanngt deßwegen
-<lb n="29"/>an die Herren myn dienst: und fruntlichs bitten, die
-<lb n="30"/>wöllen jnne <persName resp="#ner">Appenzeller</persName>, nachmalen Oberkeitlich dahin
+<lb n="1"/><unclear cert="medium" resp="#joint">Edle</unclear>, <unclear cert="low" resp="#joint">Eerenveste</unclear>, <unclear cert="medium" resp="#joint">Fromme</unclear>, <unclear cert="low" resp="#joint">Fürsichtige</unclear>, <unclear cert="low" resp="#joint">Eersamme</unclear> und <unclear cert="low" resp="#joint">Wyse</unclear>,
+<lb n="2"/><unclear cert="medium" resp="#joint">Herr</unclear> Burgermeister, innsonders <unclear cert="low" resp="#joint">gunstige</unclear>, <unclear cert="medium" resp="#joint">Eerenden</unclear>, lieben
+<lb n="3"/>Herren. <unclear cert="low" resp="#joint">Dennen</unclear> seyen <unclear cert="low" resp="#joint">myn</unclear> <unclear cert="low" resp="#joint">guotwillige</unclear> dienst und <unclear cert="low" resp="#joint">gruoß</unclear>, sampt was
+<lb n="4"/><unclear cert="medium" resp="#joint">ich</unclear> <unclear cert="medium" resp="#joint">Eeren</unclear>, liebs und guots <unclear cert="medium" resp="#joint">vermocht</unclear> <unclear cert="medium" resp="#joint">alzyts</unclear> zuvor, Dero gunstig
+<lb n="5"/>an mich gethon <unclear cert="low" resp="#joint">schryben</unclear>, <unclear cert="low" resp="#joint">antreffende</unclear> <unclear cert="low" resp="#joint">myn</unclear> <unclear cert="low" resp="#joint">amptsangehoerigen</unclear>,
+<lb n="6"/><persName resp="#ner">Hannsen <unclear cert="low" resp="#joint">Schuffelbärger</unclear></persName> von <placeName resp="#ner"><unclear cert="low" resp="#joint">Bäschweyl</unclear></placeName>, hab ich <unclear cert="low" resp="#joint">empfangen</unclear>,
+<lb n="7"/><unclear cert="medium" resp="#joint">unnd</unclear> alles <unclear cert="low" resp="#joint">jnnhalts</unclear> <unclear cert="low" resp="#joint">verstanden</unclear>, und daruf jmm <unclear cert="low" resp="#joint">Schuffelbärg</unclear>-
+<lb n="8"/>er mit ernst <unclear cert="low" resp="#joint">zuogesprochen</unclear>, demselben nach <unclear cert="low" resp="#joint">luth</unclear> der Herren be-
+<lb n="9"/><unclear cert="medium" resp="#joint">geren</unclear> <unclear cert="medium" resp="#joint">erstattung</unclear> <unclear cert="medium" resp="#joint">zethuond</unclear>. <unclear cert="medium" resp="#joint">Dessen</unclear> <unclear cert="medium" resp="#joint">er</unclear> sich aber zum <unclear cert="medium" resp="#joint">hoechsten</unclear>
+<lb n="10"/>beschwerdt, mit <unclear cert="low" resp="#joint">anzeigung</unclear>, so <unclear cert="medium" resp="#joint">er</unclear> die <unclear cert="low" resp="#joint">kalbfähl</unclear> befunden
+<lb n="11"/>wie der <unclear cert="low" resp="#joint">märkt</unclear> <unclear cert="low" resp="#joint">zuogangen</unclear>, und er mit <unclear cert="low" resp="#joint">kundtschafft</unclear> <unclear cert="low" resp="#joint">verwisen</unclear>,
+<lb n="12"/><unclear cert="low" resp="#joint">wölte</unclear> <unclear cert="low" resp="#joint">er</unclear> die <unclear cert="low" resp="#joint">vor</unclear> <unclear cert="low" resp="#joint">lanngest</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">synen</unclear> <unclear cert="low" resp="#joint">handen</unclear> genommen, und den
+<lb n="13"/><persName resp="#ner">Appenzeller</persName> darumb bezalt haben, unnd so <unclear cert="medium" resp="#joint">er</unclear> die nachmalen
+<lb n="14"/><unclear cert="low" resp="#joint">allso</unclear> <unclear cert="low" resp="#joint">finde</unclear>, <unclear cert="low" resp="#joint">woelle</unclear> er jnn gern <unclear cert="low" resp="#joint">befriden</unclear> und bezalen. Jm fahl
+<lb n="15"/>er aber nit <unclear cert="medium" resp="#joint">darzuo</unclear> kommen <unclear cert="medium" resp="#joint">möchte</unclear>, So <unclear cert="low" resp="#joint">begäre</unclear> er by der alhie
+<lb n="16"/><unclear cert="low" resp="#joint">ergangnen</unclear> urtheil <unclear cert="low" resp="#joint">zůverblejben</unclear>, unnd mög <persName resp="#ner">Appenzeller</persName> mit
+<lb n="17"/><unclear cert="low" resp="#joint">synen</unclear> <unclear cert="low" resp="#joint">fählen</unclear> <unclear cert="low" resp="#joint">hinfaren</unclear> wo er <unclear cert="low" resp="#joint">wölle</unclear>, und <unclear cert="medium" resp="#joint">jnne</unclear> furterhin
+<lb n="18"/>ruewig lassen. Jm fahl er aber nit daran kommen, und <unclear cert="low" resp="#joint">Jme</unclear>
+<lb n="19"/>nit <unclear cert="low" resp="#joint">racht</unclear> <unclear cert="medium" resp="#joint">beschehen</unclear>, <unclear cert="medium" resp="#joint">sölle</unclear> er <unclear cert="medium" resp="#joint">jnn</unclear> <unclear cert="low" resp="#joint">suochen</unclear> wo er <unclear cert="low" resp="#joint">sässhafft</unclear> seye, <unclear cert="low" resp="#joint">p</unclear>.
+<lb n="20"/><unclear cert="medium" resp="#joint">hieruf</unclear> er <persName resp="#ner"><unclear cert="low" resp="#joint">Schuffelberger</unclear></persName> mich gantz ernstlich <unclear cert="low" resp="#joint">gebätten</unclear>, den
+<lb n="21"/>Herren <unclear cert="low" resp="#joint">sölliche</unclear> <unclear cert="medium" resp="#joint">syn</unclear> <unclear cert="medium" resp="#joint">meinung</unclear> <unclear cert="low" resp="#joint">zuozeschryben</unclear>, <unclear cert="low" resp="#joint">wellches</unclear> ich <unclear cert="low" resp="#joint">jme</unclear>
+<lb n="22"/>(sonderlich <unclear cert="medium" resp="#joint">wyl</unclear> der <unclear cert="low" resp="#joint">käuffer</unclear> <unclear cert="low" resp="#joint">s'kalb</unclear> laeders begärth) <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">ver</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">weigeren</unclear> <unclear cert="medium" resp="#joint">können</unclear>. <unclear cert="low" resp="#joint">Diewyl</unclear> dann der <unclear cert="low" resp="#joint">märkt</unclear> umb <unclear cert="low" resp="#joint">an</unclear>-
+<lb n="24"/><unclear cert="low" resp="#joint">dtiert</unclear> fahl (<unclear cert="low" resp="#joint">luth</unclear> der alhie <unclear cert="low" resp="#joint">verhoerdten</unclear> <unclear cert="low" resp="#joint">kunndtschafft</unclear>) <unclear cert="low" resp="#joint">vermögen</unclear>,
+<lb n="25"/>das <unclear cert="low" resp="#joint">söllichs</unclear> <unclear cert="low" resp="#joint">fähl</unclear> von kalbrösse. Da ieder minder nit als
+<lb n="26"/>7. 8. oder 9 gl. wärt seye, und aber die <unclear cert="low" resp="#joint">verordneten</unclear> <unclear cert="low" resp="#joint">die</unclear>
+<lb n="27"/><unclear cert="low" resp="#joint">fähl</unclear> allein einfaltig fur waerthafft geschetzt, und nit uff ge-
+<lb n="28"/>dachten <unclear cert="low" resp="#joint">wärd</unclear> oder <unclear cert="low" resp="#joint">pryß</unclear> gesehen. So lanngt <unclear cert="medium" resp="#joint">deßwegen</unclear>
+<lb n="29"/>an die Herren <unclear cert="low" resp="#joint">myn</unclear> dienst: und <unclear cert="low" resp="#joint">fruntlichs</unclear> bitten, die
+<lb n="30"/><unclear cert="low" resp="#joint">wöllen</unclear> <unclear cert="low" resp="#joint">jnne</unclear> <persName resp="#ner">Appenzeller</persName>, <unclear cert="medium" resp="#joint">nachmalen</unclear> <unclear cert="low" resp="#joint">Oberkeitlich</unclear> dahin
 <pb facs="StadtASG_Missive_2423_9322.jpg" n="2"/>
 <lb n="31"/>verruegen, order <persName resp="#ner">Ime Schuechmacher</persName> derglychen
-<lb n="32"/>fähl an die hanndt gebe, Alß dann er Inne billich
-<lb n="33"/>darumb, nach lut der urtheil, befridigen unnd
-<lb n="34"/>bezalen sol. Damit die sach nun mehr ein mal
-<lb n="35"/>zu end gebracht, unnd fohrenere uerlofene verpuitterte
-<lb n="36"/>Wyber, auch man hinfürther wyter nit bemuehe-
-<lb n="37"/>iget werde etc. Daß wöll die Herren und die
-<lb n="38"/>Jrigen, Inn derglychen und annderm zuerwidern-
-<lb n="39"/>nen, wil ich iederzyt gantz geneigt und guotwillig
-<lb n="40"/>erfunden werden, Unndß damit samptlich Goet-
-<lb n="41"/>licher Allmacht zue gnaden beuelchende. Datum
-<lb n="42"/>den <origDate when="1623-07-14" resp="#ner">4/14 Julij Ao 1623</origDate>.
-<lb n="43"/>Der Herren allzyt ganntz
+<lb n="32"/><unclear cert="low" resp="#joint">fähl</unclear> an die <unclear cert="medium" resp="#joint">hanndt</unclear> <unclear cert="low" resp="#joint">gebe</unclear>, <unclear cert="low" resp="#joint">Alß</unclear> dann er <unclear cert="low" resp="#joint">Inne</unclear> billich
+<lb n="33"/>darumb, nach <unclear cert="low" resp="#joint">lut</unclear> <unclear cert="low" resp="#joint">der</unclear> urtheil, befridigen unnd
+<lb n="34"/><unclear cert="medium" resp="#joint">bezalen</unclear> sol. Damit die sach nun mehr ein mal
+<lb n="35"/>zu end gebracht, unnd <unclear cert="low" resp="#joint">fohrenere</unclear> <unclear cert="low" resp="#joint">uerlofene</unclear> <unclear cert="low" resp="#joint">verpuitterte</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">Wyber</unclear>, <unclear cert="medium" resp="#joint">auch</unclear> man hinfürther wyter nit <unclear cert="low" resp="#joint">bemuehe</unclear>-
+<lb n="37"/>iget <unclear cert="medium" resp="#joint">werde</unclear> etc. Daß wöll die Herren und die
+<lb n="38"/><unclear cert="low" resp="#joint">Jrigen</unclear>, <unclear cert="medium" resp="#joint">Inn</unclear> derglychen und <unclear cert="low" resp="#joint">annderm</unclear> <unclear cert="low" resp="#joint">zuerwidern</unclear>-
+<lb n="39"/><unclear cert="low" resp="#joint">nen</unclear>, <unclear cert="medium" resp="#joint">wil</unclear> <unclear cert="medium" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">iederzyt</unclear> gantz <unclear cert="low" resp="#joint">geneigt</unclear> und guotwillig
+<lb n="40"/>erfunden werden, <unclear cert="low" resp="#joint">Unndß</unclear> damit samptlich <unclear cert="low" resp="#joint">Goet</unclear>-
+<lb n="41"/>licher Allmacht zue gnaden <unclear cert="low" resp="#joint">beuelchende</unclear>. Datum
+<lb n="42"/>den <origDate when="1623-07-14" resp="#ner">4/14 <unclear cert="medium" resp="#joint">Julij</unclear> <unclear cert="medium" resp="#joint">Ao</unclear> 1623</origDate>.
+<lb n="43"/>Der Herren allzyt <unclear cert="low" resp="#joint">ganntz</unclear>
 <lb n="44"/>dienst: und guotwilliger.
-<lb n="45"/><persName role="issuer" resp="#ner">Hanns Caspar Heidegger</persName> Vogt
-<lb n="46"/>der herschafft <placeName resp="#ner">Nüunforn</placeName> etc.
+<lb n="45"/><persName role="issuer" resp="#ner">Hanns Caspar <unclear cert="medium" resp="#joint">Heidegger</unclear></persName> Vogt
+<lb n="46"/>der <unclear cert="low" resp="#joint">herschafft</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Nüunforn</unclear></placeName> etc.
 <pb facs="StadtASG_Missive_2423_9323.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2423_9324.jpg" n="4"/>
-<lb n="47"/>Den edlen, ehrnvesten, frommen, fürsichtigen, ersa-
-<lb n="48"/>men unnd wyßen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd
-<lb n="49"/>Rath der Statt S. Gallen</orgName>, mynen insonders
-<lb n="50"/>günstigen, ehrnden, lieben herren.
+<lb n="47"/>Den edlen, <unclear cert="low" resp="#joint">ehrnvesten</unclear>, frommen, fürsichtigen, ersa-
+<lb n="48"/>men unnd wyßen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> <unclear cert="medium" resp="#joint">unnd</unclear>
+<lb n="49"/>Rath der Statt S. Gallen</orgName>, <unclear cert="low" resp="#joint">mynen</unclear> <unclear cert="medium" resp="#joint">insonders</unclear>
+<lb n="50"/><unclear cert="low" resp="#joint">günstigen</unclear>, <unclear cert="low" resp="#joint">ehrnden</unclear>, lieben herren.
 </p>
         </body>
     </text>

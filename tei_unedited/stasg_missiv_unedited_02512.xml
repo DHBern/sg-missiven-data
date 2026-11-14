@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2512</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,66 +20,66 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren St. Gallen über den Durchzug von 1200 französischen Fußsoldaten, einigen hundert Pferden sowie Berner und Walliser Regimenter durch ihr Gebiet zur Unterstützung des französischen Königs. Sie ersuchen St. Gallen, die benachbarte Herrschaft Sax vor möglichen Übergriffen oder Blockaden durch fremde Hilfe zu schützen und im Notfall zu verteidigen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1624-10-23" resp="#regest">Datum den 23.ten Octobris. Anno 1624.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2512_9685.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig dinst, unnd was wir ehren liebs unnd
-<lb n="2"/>guots vermoegend, zuvor. From, fürsichtig, ersam, wyß, inßonders
-<lb n="3"/>guot fründt, und gethrüw lieb Eydtgnoßen. Demnach daß
-<lb n="4"/>volck, so die koe. Mt. inn <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckrych</placeName> unnseren Eydt: unnd Pundts-
-<lb n="5"/>gnoßen inn den Pündten zuo derselben wider ynsatzung inn iren vorig-
-<lb n="6"/>en frygen stand, zuo hilff zeschiken begert, unnd sich inn 1200 ze-
-<lb n="7"/>fuoß, sambt etlich hundert pferdten Frantzosen, belaufft, item ein
-<lb n="8"/>regiment <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Berner</placeName> und ein regiment <placeName resp="#ner">Wallißer</placeName> schon inn üwerer
-<lb n="9"/>unnd unnserer lieben Eydtgnoßen von <placeName ref="stadtasg-places-13" cert="medium" resp="#ner">Bern</placeName> landen im anzug unnd
-<lb n="10"/>durch unnser gebiet (nebent unnserem regiment, weliches hütigen
-<lb n="11"/>zezüchen vorhabens sind, die zum eersisten tagen by uns anlangen
-<lb n="12"/>werdent, alß dene wir nach ußwyßung der mit hoechstgedacht-
-<lb n="13"/>er koe. Mt. inn Franckrych habenden vereinigung und pündtnuß,
-<lb n="14"/>den paß und durchzug auch verwilliget, So habend wir
-<lb n="15"/>nit underlaßen, üch unnser gethrüw lieb Eydtgnoßen hiemit
-<lb n="16"/>eydtgnoeßisch fründtlich zeersuochen, wofehe under diseren gschefft
-<lb n="17"/>unnserer üch vernachberten herrschafft <placeName resp="#ner">Sax</placeName> etwas not ald un-
-<lb n="18"/>gelegenheit bekhaeme ald zuogefuegt wurde, wie dann verlütet
-<lb n="19"/>wirt, daß man soelichen durchzug durch froembde gegenhilff mit
-<lb n="20"/>gwalt versperren, und sich also deß <persName resp="#ner">Schollbergs</persName> und anderer päßen der
-<lb n="21"/>enden bemaechtigen wellen werde, ir wellint üch mit inn all-
-<lb n="22"/>weg grüst und gefaßt halten, unnd ein trüw uffsehen uff gemelte
-<lb n="23"/>unnsere herrschafft haben, undren ouch im fal der noth dieselbig
-<lb n="24"/>(unnserer guoten zuoversicht nach, vor fygendtlichem zuo: und überfal
-<lb n="25"/>retten helffen, wie dann unnser vogt zuo gmeltem <placeName resp="#ner">Sax</placeName> uff den
-<lb n="26"/>gegenfal gegen üch und den üweren ebenmeßig thuon wirt. Daß
-<lb n="27"/>erbietend wir unns umb üch unnser gethrüw lieb Eydtgnoßen
-<lb n="28"/>zur fürfallenheit hinwiderumb eydtgnoeßisch zebeschulden, unnd
-<lb n="29"/>bittend daby Gott den herren, daß er unß by unnsers lieben
-<lb n="30"/>vatterlandts fryheit wyter mit gnaden erhalten welle. Datum
+<lb n="1"/>Unnser fründtlich willig <unclear cert="low" resp="#joint">dinst</unclear>, unnd was wir ehren liebs unnd
+<lb n="2"/>guots <unclear cert="medium" resp="#joint">vermoegend</unclear>, <unclear cert="medium" resp="#joint">zuvor</unclear>. <unclear cert="medium" resp="#joint">From</unclear>, fürsichtig, ersam, wyß, <unclear cert="low" resp="#joint">inßonders</unclear>
+<lb n="3"/>guot fründt, und gethrüw lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear>. Demnach <unclear cert="low" resp="#joint">daß</unclear>
+<lb n="4"/>volck, so die <unclear cert="low" resp="#joint">koe</unclear>. <unclear cert="medium" resp="#joint">Mt</unclear>. inn <placeName ref="stadtasg-places-131" cert="medium" resp="#ner">Franckrych</placeName> <unclear cert="low" resp="#joint">unnseren</unclear> <unclear cert="low" resp="#joint">Eydt</unclear>: unnd <unclear cert="low" resp="#joint">Pundts</unclear>-
+<lb n="5"/><unclear cert="low" resp="#joint">gnoßen</unclear> inn den <unclear cert="medium" resp="#joint">Pündten</unclear> zuo derselben wider <unclear cert="medium" resp="#joint">ynsatzung</unclear> inn iren vorig-
+<lb n="6"/>en <unclear cert="low" resp="#joint">frygen</unclear> stand, zuo hilff <unclear cert="medium" resp="#joint">zeschiken</unclear> <unclear cert="medium" resp="#joint">begert</unclear>, unnd sich inn 1200 <unclear cert="low" resp="#joint">ze</unclear>-
+<lb n="7"/>fuoß, sambt etlich hundert <unclear cert="low" resp="#joint">pferdten</unclear> Frantzosen, <unclear cert="low" resp="#joint">belaufft</unclear>, item ein
+<lb n="8"/>regiment <placeName ref="stadtasg-places-13" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Berner</unclear></placeName> und ein regiment <placeName resp="#ner"><unclear cert="low" resp="#joint">Wallißer</unclear></placeName> schon inn <unclear cert="low" resp="#joint">üwerer</unclear>
+<lb n="9"/>unnd <unclear cert="medium" resp="#joint">unnserer</unclear> lieben <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> von <placeName ref="stadtasg-places-13" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bern</unclear></placeName> landen <unclear cert="medium" resp="#joint">im</unclear> anzug unnd
+<lb n="10"/>durch unnser <unclear cert="medium" resp="#joint">gebiet</unclear> (<unclear cert="low" resp="#joint">nebent</unclear> <unclear cert="medium" resp="#joint">unnserem</unclear> regiment, <unclear cert="medium" resp="#joint">weliches</unclear> <unclear cert="medium" resp="#joint">hütigen</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">zezüchen</unclear> vorhabens sind, die <unclear cert="low" resp="#joint">zum</unclear> <unclear cert="low" resp="#joint">eersisten</unclear> tagen by uns anlangen
+<lb n="12"/><unclear cert="medium" resp="#joint">werdent</unclear>, alß dene wir nach <unclear cert="low" resp="#joint">ußwyßung</unclear> der mit <unclear cert="medium" resp="#joint">hoechstgedacht</unclear>-
+<lb n="13"/>er <unclear cert="low" resp="#joint">koe</unclear>. <unclear cert="medium" resp="#joint">Mt</unclear>. inn Franckrych habenden vereinigung und <unclear cert="low" resp="#joint">pündtnuß</unclear>,
+<lb n="14"/>den <unclear cert="medium" resp="#joint">paß</unclear> und durchzug auch verwilliget, So <unclear cert="low" resp="#joint">habend</unclear> wir
+<lb n="15"/>nit <unclear cert="medium" resp="#joint">underlaßen</unclear>, üch <unclear cert="medium" resp="#joint">unnser</unclear> gethrüw lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> hiemit
+<lb n="16"/>eydtgnoeßisch fründtlich <unclear cert="medium" resp="#joint">zeersuochen</unclear>, <unclear cert="medium" resp="#joint">wofehe</unclear> under <unclear cert="low" resp="#joint">diseren</unclear> <unclear cert="low" resp="#joint">gschefft</unclear>
+<lb n="17"/>unnserer <unclear cert="medium" resp="#joint">üch</unclear> <unclear cert="medium" resp="#joint">vernachberten</unclear> herrschafft <placeName resp="#ner"><unclear cert="medium" resp="#joint">Sax</unclear></placeName> <unclear cert="medium" resp="#joint">etwas</unclear> not ald un-
+<lb n="18"/>gelegenheit <unclear cert="low" resp="#joint">bekhaeme</unclear> ald <unclear cert="low" resp="#joint">zuogefuegt</unclear> wurde, wie dann verlütet
+<lb n="19"/>wirt, daß man soelichen durchzug durch <unclear cert="medium" resp="#joint">froembde</unclear> <unclear cert="low" resp="#joint">gegenhilff</unclear> mit
+<lb n="20"/><unclear cert="low" resp="#joint">gwalt</unclear> <unclear cert="low" resp="#joint">versperren</unclear>, und sich also <unclear cert="medium" resp="#joint">deß</unclear> <persName resp="#ner">Schollbergs</persName> und anderer päßen der
+<lb n="21"/><unclear cert="low" resp="#joint">enden</unclear> bemaechtigen wellen werde, ir wellint üch <unclear cert="medium" resp="#joint">mit</unclear> <unclear cert="medium" resp="#joint">inn</unclear> all-
+<lb n="22"/>weg <unclear cert="low" resp="#joint">grüst</unclear> und <unclear cert="low" resp="#joint">gefaßt</unclear> halten, unnd ein trüw <unclear cert="medium" resp="#joint">uffsehen</unclear> <unclear cert="medium" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">gemelte</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="medium" resp="#joint">herrschafft</unclear> haben, <unclear cert="low" resp="#joint">undren</unclear> ouch im fal der <unclear cert="medium" resp="#joint">noth</unclear> <unclear cert="medium" resp="#joint">dieselbig</unclear>
+<lb n="24"/>(<unclear cert="medium" resp="#joint">unnserer</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">zuoversicht</unclear> nach, vor <unclear cert="medium" resp="#joint">fygendtlichem</unclear> <unclear cert="medium" resp="#joint">zuo</unclear>: und überfal
+<lb n="25"/><unclear cert="low" resp="#joint">retten</unclear> helffen, wie dann <unclear cert="medium" resp="#joint">unnser</unclear> vogt zuo <unclear cert="medium" resp="#joint">gmeltem</unclear> <placeName resp="#ner"><unclear cert="medium" resp="#joint">Sax</unclear></placeName> uff den
+<lb n="26"/><unclear cert="low" resp="#joint">gegenfal</unclear> gegen üch und den <unclear cert="low" resp="#joint">üweren</unclear> <unclear cert="medium" resp="#joint">ebenmeßig</unclear> thuon wirt. Daß
+<lb n="27"/><unclear cert="medium" resp="#joint">erbietend</unclear> wir unns umb üch unnser gethrüw lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">zur</unclear> <unclear cert="low" resp="#joint">fürfallenheit</unclear> <unclear cert="medium" resp="#joint">hinwiderumb</unclear> eydtgnoeßisch <unclear cert="low" resp="#joint">zebeschulden</unclear>, unnd
+<lb n="29"/>bittend daby Gott den herren, <unclear cert="low" resp="#joint">daß</unclear> er unß by <unclear cert="low" resp="#joint">unnsers</unclear> lieben
+<lb n="30"/><unclear cert="medium" resp="#joint">vatterlandts</unclear> <unclear cert="medium" resp="#joint">fryheit</unclear> <unclear cert="medium" resp="#joint">wyter</unclear> mit gnaden erhalten welle. Datum
 <lb n="31"/><origDate when="1624" resp="#ner">den 23.ten Octobris. Anno 1624.</origDate>
 <lb n="32"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="33"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2512_9686.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2512_9687.jpg" n="3"/>
-<lb n="34"/>Den ersammen, fuer-
-<lb n="35"/>sichtigen, wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister
-<lb n="36"/>unnd raut zuo Sant Gallen</orgName>, minen
-<lb n="37"/>insunders gnaedigen unnd guensti-
-<lb n="38"/>gen lieben herren.
+<lb n="34"/>Den <unclear cert="medium" resp="#joint">ersammen</unclear>, <unclear cert="medium" resp="#joint">fuer</unclear>-
+<lb n="35"/><unclear cert="medium" resp="#joint">sichtigen</unclear>, wysen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermaister
+<lb n="36"/><unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">raut</unclear> zuo Sant Gallen</orgName>, minen
+<lb n="37"/><unclear cert="medium" resp="#joint">insunders</unclear> <unclear cert="medium" resp="#joint">gnaedigen</unclear> <unclear cert="medium" resp="#joint">unnd</unclear> <unclear cert="medium" resp="#joint">guensti</unclear>-
+<lb n="38"/><unclear cert="medium" resp="#joint">gen</unclear> lieben herren.
 <pb facs="StadtASG_Missive_2512_9688.jpg" n="4"/>
-<lb n="39"/>Den frommen, fürsichtigen, ersamen,
-<lb n="40"/>wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rath
-<lb n="41"/>der statt St. Gallen</orgName>, unnseren
-<lb n="42"/>innsonnders gueten fründen, und
-<lb n="43"/>getrüwen lieben Eidtgnossen.
+<lb n="39"/>Den frommen, fürsichtigen, <unclear cert="low" resp="#joint">ersamen</unclear>,
+<lb n="40"/><unclear cert="low" resp="#joint">wysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister unnd Rath
+<lb n="41"/>der statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">unnseren</unclear>
+<lb n="42"/><unclear cert="low" resp="#joint">innsonnders</unclear> <unclear cert="low" resp="#joint">gueten</unclear> fründen, und
+<lb n="43"/><unclear cert="low" resp="#joint">getrüwen</unclear> lieben Eidtgnossen.
 </p>
         </body>
     </text>

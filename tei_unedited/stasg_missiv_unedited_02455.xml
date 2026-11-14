@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2455</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,64 +20,64 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren St. Gallen über die Antwort der Eidgenossen an die Regierung zu Einsiedeln. Schaffhausen habe sich der gemeinsamen Antwort verweigert und eine eigene Erklärung abgegeben, während St. Gallen zugestimmt habe. Die gemeinsame Antwort sei ohne Schaffhausen abgesandt worden. Zürich teilt eine Beschwerde Luzerns mit und bittet St. Gallen, sich gegenüber Luzern zu erklären oder die Sache nach eigenem Ermessen zu behandeln.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1624-01-15" resp="#regest">15. t Januarij anno 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2455_9461.jpg" n="1"/>
-<lb n="1"/>Unßer früntlich willig dinst, unnd was wir ehren liebs unnd guots
-<lb n="2"/>vermoegend zuvor, from, fürsichtig erßam wyß, inßonders guot
-<lb n="3"/>fründ und gethrüw lieb <orgName resp="#ner">Eydtgnoßen</orgName>, Nachdem unnßer lieb
-<lb n="4"/><orgName resp="#ner">Eydtgnoßen von</orgName> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName> unns jüngst hinwider, wie es mit dem Iren
-<lb n="5"/>letst <date resp="#ner">verschinenen Decembris</date> inn unnßer Statt alhie der Eydt-
-<lb n="6"/>gnoßischen galarren halben verabscheidet worden, beschaffen, umb be-
-<lb n="7"/>richt ersuocht. Habent wir sy alßbald hinwider ußtrucklich ver-
-<lb n="8"/>stendiget, wie das gesanten unnßer lieb <orgName resp="#ner">Eydtgnoßen</orgName> von <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schaf-
-<lb n="9"/>hußen</placeName> zuo der alhie berathschlagten gmeinen antwort nit bewilliget,
-<lb n="10"/>ßonders ir erclärung gegen der Regirung zuo <placeName resp="#ner">Inßißheim</placeName> für
-<lb n="11"/>sich selbs sonderbar gethaen, Ir aber ir unnßer lieb <orgName resp="#ner">Eydtgnoß-
-<lb n="12"/>en</orgName> der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St Gallen</placeName> zuo den gemeinen antwortschryben auch
-<lb n="13"/>consentiret. Daruf dann die antwort inn gemeinem gemeinen
-<lb n="14"/>namen ußerthalb <placeName ref="stadtasg-places-185" cert="medium" resp="#ner">Schafhußen</placeName>, an wolgedachte Regirung durch
-<lb n="15"/>unns fürderlich verabscheideter maßen by eignem botten ußgefert-
-<lb n="16"/>iget worden, iedoch unns by demselben botten annders nit dann
-<lb n="17"/>ein verschloßen Recepisse zuokommen, auch sithero deßelbigen naher
-<lb n="18"/>wyters nit gevolget. Was nun aber gemelt
-<lb n="19"/>unnßer <orgName resp="#ner">Eydtgnoßen von</orgName> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName> unns hierüber an ietzt ferneres
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">früntlich</unclear> willig <unclear cert="low" resp="#joint">dinst</unclear>, unnd was wir ehren liebs unnd guots
+<lb n="2"/>vermoegend <unclear cert="medium" resp="#joint">zuvor</unclear>, from, fürsichtig <unclear cert="low" resp="#joint">erßam</unclear> wyß, <unclear cert="low" resp="#joint">inßonders</unclear> guot
+<lb n="3"/>fründ und gethrüw lieb <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>, Nachdem <unclear cert="low" resp="#joint">unnßer</unclear> lieb
+<lb n="4"/><orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear> von</orgName> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName> <unclear cert="medium" resp="#joint">unns</unclear> <unclear cert="low" resp="#joint">jüngst</unclear> <unclear cert="low" resp="#joint">hinwider</unclear>, wie es mit dem <unclear cert="low" resp="#joint">Iren</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">letst</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">verschinenen</unclear> <unclear cert="low" resp="#joint">Decembris</unclear></date> <unclear cert="medium" resp="#joint">inn</unclear> unnßer Statt alhie der <unclear cert="low" resp="#joint">Eydt</unclear>-
+<lb n="6"/><unclear cert="low" resp="#joint">gnoßischen</unclear> <unclear cert="low" resp="#joint">galarren</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">verabscheidet</unclear> worden, <unclear cert="medium" resp="#joint">beschaffen</unclear>, umb be-
+<lb n="7"/>richt ersuocht. Habent wir sy <unclear cert="low" resp="#joint">alßbald</unclear> <unclear cert="low" resp="#joint">hinwider</unclear> <unclear cert="low" resp="#joint">ußtrucklich</unclear> <unclear cert="medium" resp="#joint">ver</unclear>-
+<lb n="8"/>stendiget, wie das <unclear cert="low" resp="#joint">gesanten</unclear> <unclear cert="medium" resp="#joint">unnßer</unclear> lieb <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName> von <placeName ref="stadtasg-places-185" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schaf</unclear>-
+<lb n="9"/><unclear cert="low" resp="#joint">hußen</unclear></placeName> zuo der alhie <unclear cert="low" resp="#joint">berathschlagten</unclear> gmeinen antwort nit bewilliget,
+<lb n="10"/>ßonders ir <unclear cert="low" resp="#joint">erclärung</unclear> gegen der <unclear cert="low" resp="#joint">Regirung</unclear> zuo <placeName resp="#ner"><unclear cert="low" resp="#joint">Inßißheim</unclear></placeName> für
+<lb n="11"/>sich selbs sonderbar <unclear cert="low" resp="#joint">gethaen</unclear>, Ir aber ir <unclear cert="medium" resp="#joint">unnßer</unclear> lieb <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoß</unclear>-
+<lb n="12"/><unclear cert="medium" resp="#joint">en</unclear></orgName> der Statt <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">St Gallen</placeName> zuo den gemeinen antwortschryben auch
+<lb n="13"/><unclear cert="low" resp="#joint">consentiret</unclear>. <unclear cert="medium" resp="#joint">Daruf</unclear> dann die antwort inn gemeinem gemeinen
+<lb n="14"/><unclear cert="low" resp="#joint">namen</unclear> <unclear cert="low" resp="#joint">ußerthalb</unclear> <placeName ref="stadtasg-places-185" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schafhußen</unclear></placeName>, an <unclear cert="low" resp="#joint">wolgedachte</unclear> <unclear cert="low" resp="#joint">Regirung</unclear> durch
+<lb n="15"/>unns <unclear cert="medium" resp="#joint">fürderlich</unclear> <unclear cert="low" resp="#joint">verabscheideter</unclear> <unclear cert="medium" resp="#joint">maßen</unclear> by <unclear cert="medium" resp="#joint">eignem</unclear> botten <unclear cert="low" resp="#joint">ußgefert</unclear>-
+<lb n="16"/>iget worden, <unclear cert="low" resp="#joint">iedoch</unclear> unns by <unclear cert="medium" resp="#joint">demselben</unclear> botten annders nit dann
+<lb n="17"/>ein <unclear cert="low" resp="#joint">verschloßen</unclear> Recepisse zuokommen, auch <unclear cert="low" resp="#joint">sithero</unclear> <unclear cert="low" resp="#joint">deßelbigen</unclear> naher
+<lb n="18"/>wyters nit <unclear cert="low" resp="#joint">gevolget</unclear>. Was nun aber gemelt
+<lb n="19"/><unclear cert="medium" resp="#joint">unnßer</unclear> <orgName resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnoßen</unclear> von</orgName> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName> unns hierüber an <unclear cert="medium" resp="#joint">ietzt</unclear> <unclear cert="medium" resp="#joint">ferneres</unclear>
 <lb n="20"/>eben ernstlich zuoschrybend, unnd sich beschwerend, das haben
-<lb n="21"/>ir unnßer lieb Eydtgnoßen uß byligender abscrift mereren in-
-<lb n="22"/>halts zuvernemen, So wir üch der gepür nach nit ver-
-<lb n="23"/>halten unnd daby heimgestelt haben woellen, üch gegen inen unnß-
-<lb n="24"/>eren <orgName resp="#ner">Eydtgnoßen von</orgName> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName> für üch selbs ferneres zuoverant-
-<lb n="25"/>worten, old sonsten den sachen nach üwerem guotduncken zuobe-
-<lb n="26"/>gegnen, Das woellind ir uß des so an unns ge-
-<lb n="27"/>langet von unns im guoten vermercken unnd unns daby
-<lb n="28"/>verehrenen. Das wir üch fürbaß alle <orgName resp="#ner">Eydtgnoßische</orgName>
-<lb n="29"/>thrüw unnd früntschaft zuerwyßen so geneigt sind, alß
+<lb n="21"/>ir <unclear cert="medium" resp="#joint">unnßer</unclear> lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> uß <unclear cert="medium" resp="#joint">byligender</unclear> abscrift <unclear cert="low" resp="#joint">mereren</unclear> <unclear cert="medium" resp="#joint">in</unclear>-
+<lb n="22"/>halts <unclear cert="low" resp="#joint">zuvernemen</unclear>, So wir üch der <unclear cert="low" resp="#joint">gepür</unclear> nach nit ver-
+<lb n="23"/>halten unnd daby <unclear cert="low" resp="#joint">heimgestelt</unclear> haben <unclear cert="medium" resp="#joint">woellen</unclear>, üch gegen <unclear cert="medium" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">unnß</unclear>-
+<lb n="24"/><unclear cert="medium" resp="#joint">eren</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear> von</orgName> <placeName ref="stadtasg-places-69" cert="medium" resp="#ner">Lucern</placeName> für üch selbs ferneres zuoverant-
+<lb n="25"/>worten, <unclear cert="low" resp="#joint">old</unclear> sonsten den sachen nach <unclear cert="low" resp="#joint">üwerem</unclear> guotduncken zuobe-
+<lb n="26"/>gegnen, Das <unclear cert="medium" resp="#joint">woellind</unclear> ir <unclear cert="low" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">des</unclear> so an unns ge-
+<lb n="27"/><unclear cert="medium" resp="#joint">langet</unclear> <unclear cert="medium" resp="#joint">von</unclear> unns <unclear cert="low" resp="#joint">im</unclear> <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="low" resp="#joint">vermercken</unclear> unnd unns daby
+<lb n="28"/><unclear cert="low" resp="#joint">verehrenen</unclear>. Das wir üch <unclear cert="low" resp="#joint">fürbaß</unclear> <unclear cert="low" resp="#joint">alle</unclear> <orgName resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßische</unclear></orgName>
+<lb n="29"/><unclear cert="low" resp="#joint">thrüw</unclear> unnd <unclear cert="low" resp="#joint">früntschaft</unclear> <unclear cert="low" resp="#joint">zuerwyßen</unclear> so <unclear cert="medium" resp="#joint">geneigt</unclear> sind, <unclear cert="low" resp="#joint">alß</unclear>
 <pb facs="StadtASG_Missive_2455_9462.jpg" n="2"/>
-<lb n="30"/>wir Gott bitend, das er unns sambtlig wyter inn synem
-<lb n="31"/>schirm erhalten, unnd ein guots fridsamms glueckseligs jar sambt
-<lb n="32"/>aller wolfahrt verlychen woelle. Datum <origDate when="1624" resp="#ner">den 15. t Januarij
+<lb n="30"/>wir Gott <unclear cert="medium" resp="#joint">bitend</unclear>, das er unns <unclear cert="low" resp="#joint">sambtlig</unclear> wyter <unclear cert="medium" resp="#joint">inn</unclear> <unclear cert="low" resp="#joint">synem</unclear>
+<lb n="31"/><unclear cert="medium" resp="#joint">schirm</unclear> erhalten, unnd ein guots fridsamms glueckseligs jar sambt
+<lb n="32"/>aller wolfahrt <unclear cert="low" resp="#joint">verlychen</unclear> <unclear cert="medium" resp="#joint">woelle</unclear>. Datum <origDate when="1624" resp="#ner">den 15. t Januarij
 <lb n="33"/>anno 1624</origDate>.
-<lb n="34"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister unnd rhat
-<lb n="35"/>der statt Zuerich</orgName>.
+<lb n="34"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister unnd <unclear cert="low" resp="#joint">rhat</unclear>
+<lb n="35"/>der statt <unclear cert="medium" resp="#joint">Zuerich</unclear></orgName>.
 <pb facs="StadtASG_Missive_2455_9463.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2455_9464.jpg" n="4"/>
 <lb n="36"/>Den fromen, fürsichtigen, ehr-
-<lb n="37"/>samen wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="38"/>und Rhat der statt St. Gallen</orgName>,
-<lb n="39"/>unßeren inßonders guoten fründ-
-<lb n="40"/>en, und getrüwen lieben Eidt-
-<lb n="41"/>gnoßen.
+<lb n="37"/>samen <unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Rhat</unclear> der statt St. Gallen</orgName>,
+<lb n="39"/><unclear cert="low" resp="#joint">unßeren</unclear> inßonders guoten fründ-
+<lb n="40"/>en, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">getrüwen</unclear> lieben Eidt-
+<lb n="41"/><unclear cert="medium" resp="#joint">gnoßen</unclear>.
 </p>
         </body>
     </text>

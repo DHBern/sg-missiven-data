@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1768</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat der Stadt Konstanz antworten auf ein Schreiben des St. Galler Rates bezüglich der St. Galler Bürgerin Katharina Nägin und eines Vertrags mit ihren Kindern. Sie erklären, dass Nägin ihren ehelichen Kindern aus der Ehe mit dem verstorbenen Konstanzer Bürger Jacob Wüßerrei 700 Gulden auszahlen wolle. Sie versichern, dass sie sich nicht entgegenstellen werden, wenn Mutter und Kinder diesen Betrag in Empfang nehmen, und fügen dies als Empfangsbestätigung bei.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Verwalter der Hauptmannschaft, Bürgermeister und Rat der Stadt Konstanz</name><date when="1612-05-30" resp="#regest">30ten Maij ao 1612</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,41 +35,41 @@
 <p>
 <pb facs="StadtASG_Missive_1768_6525.jpg" n="1"/>
 <lb n="1"/><unclear cert="low" resp="#joint">Unser</unclear> <unclear cert="low" resp="#joint">frueünd</unclear>: <unclear cert="low" resp="#joint">nachparlich</unclear> und <unclear cert="low" resp="#joint">guot</unclear>-
-<lb n="2"/>willige <unclear cert="medium" resp="#joint">dienst</unclear>, zuvor, Fuersichtige Er-
-<lb n="3"/><unclear cert="medium" resp="#joint">same</unclear> <unclear cert="low" resp="#joint">Weijße</unclear> <unclear cert="low" resp="#joint">besunders</unclear> liebe <unclear cert="low" resp="#joint">frueünd</unclear>
-<lb n="4"/>und <unclear cert="medium" resp="#joint">guote</unclear> <unclear cert="medium" resp="#joint">nachparn</unclear>,
-<lb n="5"/><unclear cert="medium" resp="#joint">Uff</unclear> ewer an <unclear cert="low" resp="#joint">uns</unclear> <unclear cert="low" resp="#joint">wegen</unclear> <unclear cert="low" resp="#joint">Ewer</unclear> <unclear cert="low" resp="#joint">burgerin</unclear>
-<lb n="6"/><persName resp="#ner">Catharina <unclear cert="medium" resp="#joint">Nägin</unclear></persName>, und <unclear cert="medium" resp="#joint">Jres</unclear> mit <unclear cert="low" resp="#joint">jren</unclear>
-<lb n="7"/><unclear cert="low" resp="#joint">Khindern</unclear> getroffnen Contracts halber,
+<lb n="2"/>willige <unclear cert="medium" resp="#joint">dienst</unclear>, zuvor, <unclear cert="medium" resp="#joint">Fuersichtige</unclear> Er-
+<lb n="3"/><unclear cert="low" resp="#joint">same</unclear> <unclear cert="low" resp="#joint">Weijße</unclear> <unclear cert="low" resp="#joint">besunders</unclear> liebe <unclear cert="low" resp="#joint">frueünd</unclear>
+<lb n="4"/>und <unclear cert="low" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">nachparn</unclear>,
+<lb n="5"/><unclear cert="low" resp="#joint">Uff</unclear> ewer an uns wegen Ewer <unclear cert="medium" resp="#joint">burgerin</unclear>
+<lb n="6"/><persName resp="#ner">Catharina <unclear cert="low" resp="#joint">Nägin</unclear></persName>, und <unclear cert="low" resp="#joint">Jres</unclear> mit <unclear cert="low" resp="#joint">jren</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">Khindern</unclear> <unclear cert="medium" resp="#joint">getroffnen</unclear> Contracts halber,
 <lb n="8"/><unclear cert="low" resp="#joint">gthon</unclear> <unclear cert="low" resp="#joint">frueünd</unclear>: nachparlich schreiben,
-<lb n="9"/><unclear cert="low" resp="#joint">Sohlln</unclear> wir <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">frueünd</unclear>: nachpar-
-<lb n="10"/>lichen nit <unclear cert="medium" resp="#joint">verhalten</unclear>, dz <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">uns</unclear>
-<lb n="11"/><unclear cert="medium" resp="#joint">Ewermaßen</unclear> als <unclear cert="medium" resp="#joint">jhr</unclear>, <unclear cert="medium" resp="#joint">nit</unclear> <unclear cert="medium" resp="#joint">entgeg</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">Sohlln</unclear> wir <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">frueünd</unclear>: nachpar-
+<lb n="10"/>lichen nit verhalten, dz wir <unclear cert="low" resp="#joint">uns</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">Ewermaßen</unclear> als <unclear cert="low" resp="#joint">jhr</unclear>, nit <unclear cert="medium" resp="#joint">entgeg</unclear>
 <lb n="12"/>sein laßen <unclear cert="low" resp="#joint">woellen</unclear>, da gedachte <unclear cert="low" resp="#joint">nägin</unclear>
 <lb n="13"/><unclear cert="low" resp="#joint">Jren</unclear> <unclear cert="low" resp="#joint">ehelijplichen</unclear> <unclear cert="low" resp="#joint">Khindern</unclear>, die von
-<lb n="14"/><unclear cert="low" resp="#joint">unßerm</unclear> burger <persName resp="#ner">Jacob <unclear cert="medium" resp="#joint">Wüßerrei</unclear></persName> <unclear cert="medium" resp="#joint">seelig</unclear>,
-<lb n="15"/>seiner <unclear cert="medium" resp="#joint">maß</unclear> <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">gotte</unclear> <unclear cert="medium" resp="#joint">Sijbenhundert</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">unßerm</unclear> burger <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Wüßerrei</unclear></persName> seelig,
+<lb n="15"/>seiner maß <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">vor</unclear> <unclear cert="medium" resp="#joint">gotte</unclear> <unclear cert="medium" resp="#joint">Sijbenhundert</unclear>
 <lb n="16"/><unclear cert="medium" resp="#joint">Guldin</unclear>, <unclear cert="medium" resp="#joint">fürderlich</unclear>, und mit <unclear cert="low" resp="#joint">angezog</unclear>-
-<lb n="17"/>nem beding, <unclear cert="low" resp="#joint">hrueszegeben</unclear> <unclear cert="low" resp="#joint">gewillt</unclear>,
-<lb n="18"/>Werden <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">sije</unclear> <unclear cert="medium" resp="#joint">Muotter</unclear> und <unclear cert="low" resp="#joint">Khinder</unclear>,
-<lb n="19"/><unclear cert="low" resp="#joint">solche</unclear> in <unclear cert="medium" resp="#joint">ijberkhomnuß</unclear> <unclear cert="medium" resp="#joint">züvollzihen</unclear>
-<lb n="20"/>wißen,
-<lb n="21"/><unclear cert="low" resp="#joint">Welches</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">eüch</unclear> Loco <unclear cert="low" resp="#joint">Recepisse</unclear> <unclear cert="low" resp="#joint">frueünd</unclear>:
-<lb n="22"/>nachparlichen <unclear cert="low" resp="#joint">anfueg</unclear> <unclear cert="low" resp="#joint">woellen</unclear>, <unclear cert="low" resp="#joint">Ver</unclear>-
-<lb n="23"/><unclear cert="low" resp="#joint">bleib</unclear> <unclear cert="low" resp="#joint">daneb</unclear> <unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">angenemen</unclear> dienst
-<lb n="24"/>und <unclear cert="medium" resp="#joint">guoter</unclear> nachparschaft, beharrlich wil-
-<lb n="25"/>lig und <unclear cert="medium" resp="#joint">erbietig</unclear>. Datum den
+<lb n="17"/><unclear cert="medium" resp="#joint">nem</unclear> beding, <unclear cert="low" resp="#joint">hrueszegeben</unclear> <unclear cert="low" resp="#joint">gewillt</unclear>,
+<lb n="18"/>Werden <unclear cert="low" resp="#joint">alß</unclear> <unclear cert="low" resp="#joint">sije</unclear> <unclear cert="low" resp="#joint">Muotter</unclear> und <unclear cert="medium" resp="#joint">Khinder</unclear>,
+<lb n="19"/><unclear cert="medium" resp="#joint">solche</unclear> in <unclear cert="low" resp="#joint">ijberkhomnuß</unclear> <unclear cert="low" resp="#joint">züvollzihen</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">wißen</unclear>,
+<lb n="21"/><unclear cert="medium" resp="#joint">Welches</unclear> <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">eüch</unclear> Loco <unclear cert="medium" resp="#joint">Recepisse</unclear> <unclear cert="low" resp="#joint">frueünd</unclear>:
+<lb n="22"/>nachparlichen <unclear cert="low" resp="#joint">anfueg</unclear> <unclear cert="low" resp="#joint">woellen</unclear>, <unclear cert="medium" resp="#joint">Ver</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">bleib</unclear> <unclear cert="low" resp="#joint">daneb</unclear> <unclear cert="medium" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">zue</unclear> <unclear cert="low" resp="#joint">angenemen</unclear> dienst
+<lb n="24"/>und <unclear cert="low" resp="#joint">guoter</unclear> nachparschaft, beharrlich <unclear cert="medium" resp="#joint">wil</unclear>-
+<lb n="25"/>lig und <unclear cert="low" resp="#joint">erbietig</unclear>. Datum den
 <lb n="26"/><origDate when="1612-05-30" resp="#ner">30ten <unclear cert="medium" resp="#joint">Maij</unclear> ao 1612</origDate>.
 <lb n="27"/>Verwalter d <unclear cert="low" resp="#joint">haubt</unclear>-
 <lb n="28"/><unclear cert="low" resp="#joint">manschaft</unclear>, <orgName ref="stadtasg-actors-56" cert="medium" role="issuer" resp="#ner">Burger-
-<lb n="29"/><unclear cert="medium" resp="#joint">meister</unclear> und Rath d
+<lb n="29"/><unclear cert="medium" resp="#joint">meister</unclear> und Rath <unclear cert="medium" resp="#joint">d</unclear>
 <lb n="30"/>Statt <unclear cert="low" resp="#joint">Costantz</unclear></orgName>,
 <pb facs="StadtASG_Missive_1768_6526.jpg" n="2"/>
 <lb n="31"/>[]
 <pb facs="StadtASG_Missive_1768_6527.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1768_6528.jpg" n="4"/>
-<lb n="32"/>Den
-<lb n="33"/>fürsichtigen ersamen <unclear cert="medium" resp="#joint">unnd</unclear> weysen,
+<lb n="32"/><unclear cert="medium" resp="#joint">Den</unclear>
+<lb n="33"/>fürsichtigen ersamen unnd <unclear cert="medium" resp="#joint">weysen</unclear>,
 <lb n="34"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rath zue St. Gallen</orgName>,
 <lb n="35"/>unsern besonders lieben <unclear cert="low" resp="#joint">freundt</unclear> und <unclear cert="low" resp="#joint">gute</unclear>
 <lb n="36"/><unclear cert="low" resp="#joint">nachbaurn</unclear>.

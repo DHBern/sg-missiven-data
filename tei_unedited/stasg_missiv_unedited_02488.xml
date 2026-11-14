@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2488</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,76 +20,76 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich antworten auf das Schreiben St. Gallens bezüglich des Turgauer Abzugs. Sie bestätigen, dass sie den Abzug im vergangenen Jahr vollzogen haben, jedoch mit dem Vorbehalt, dass die Befreiung durch rechtsgültige Briefe und Siegel nachgewiesen werden müsse. Sie haben ihre Gesandten zu den badischen Jahresrechnungen angewiesen, die Beschwerdeführer zu hören. Zürich überlässt St. Gallen die Entscheidung, ob es sich den anderen Turgauer Gerichtsherrn anschliessen oder eigene Gesandte nach Baden schicken will, und versichert eidgenössische Freundschaft.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1624-06-19" resp="#regest">den 19ten junii anno 1624</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2488_9591.jpg" n="1"/>
-<lb n="1"/>Unser fründtlich willig diennst, und was wir ehren, liebs
-<lb n="2"/>und guets vermögend zuvor, fromm fürsichtig, ehrsam
-<lb n="3"/>wyß, innsonders guet fründt, und getrüw lieb <orgName role="recipient" resp="#ner">Eydtgnoßen</orgName>.
-<lb n="4"/>Was ir von deß <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgöw</placeName>ischen abzugs wegen an unß lang-
-<lb n="5"/>en laßen, haben wir uß üwerm schryben mit mehrerm
-<lb n="6"/>verstanden, und daruf üch zuo bgerter antwort eydt-
-<lb n="7"/>gnößisch fründtlich anfüegen wöllen, daß zwar nit
-<lb n="8"/>minder, dann daß wir ferndrigen jars unß gedachten
-<lb n="9"/>abzug vom landtvogt im <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgöw</placeName> unsers theils ouch er-
-<lb n="10"/>volgen laßen, wir haben aber daby den ußtruk-
-<lb n="11"/>lichen anhang gethan, daß wo jemandt die befrygung
-<lb n="12"/>diß abzugs durch ordenliche rechtmeßige authentische
-<lb n="13"/>brieff und sigel zuerwysen hette, daß dieselben noch-
-<lb n="14"/>malen verhoert, und dann darüber mit fernerem gebür-
-<lb n="15"/>endem bescheid begegnet werden sölle. Darby wir
-<lb n="16"/>es dann an jetzo by abfertigung unserer ehrengsandten
-<lb n="17"/>uff bevorstehende Badische jarrächnung nochmalen blyb-
-<lb n="18"/>en laßen, und denselben inn bevelch geben, daß die
-<lb n="19"/>jhenigen so diß abzugs beschwert zesyn, und anders zu-
-<lb n="20"/>erwysen vermeinten, ferners verhoert, und dann nach
+<lb n="1"/><unclear cert="low" resp="#joint">Unser</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> willig <unclear cert="medium" resp="#joint">diennst</unclear>, und was wir ehren, liebs
+<lb n="2"/>und <unclear cert="medium" resp="#joint">guets</unclear> vermögend zuvor, fromm fürsichtig, <unclear cert="low" resp="#joint">ehrsam</unclear>
+<lb n="3"/>wyß, <unclear cert="low" resp="#joint">innsonders</unclear> <unclear cert="medium" resp="#joint">guet</unclear> fründt, und <unclear cert="low" resp="#joint">getrüw</unclear> lieb <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßen</unclear></orgName>.
+<lb n="4"/>Was ir von deß <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Turgöw</placeName>ischen abzugs wegen an unß <unclear cert="medium" resp="#joint">lang</unclear>-
+<lb n="5"/>en <unclear cert="medium" resp="#joint">laßen</unclear>, haben wir <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">üwerm</unclear> schryben mit mehrerm
+<lb n="6"/>verstanden, und daruf üch <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">bgerter</unclear> <unclear cert="medium" resp="#joint">antwort</unclear> <unclear cert="low" resp="#joint">eydt</unclear>-
+<lb n="7"/><unclear cert="low" resp="#joint">gnößisch</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> <unclear cert="low" resp="#joint">anfüegen</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, daß <unclear cert="low" resp="#joint">zwar</unclear> nit
+<lb n="8"/><unclear cert="low" resp="#joint">minder</unclear>, dann daß wir <unclear cert="low" resp="#joint">ferndrigen</unclear> <unclear cert="low" resp="#joint">jars</unclear> <unclear cert="medium" resp="#joint">unß</unclear> gedachten
+<lb n="9"/>abzug <unclear cert="low" resp="#joint">vom</unclear> landtvogt im <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Turgöw</unclear></placeName> <unclear cert="low" resp="#joint">unsers</unclear> <unclear cert="low" resp="#joint">theils</unclear> <unclear cert="low" resp="#joint">ouch</unclear> <unclear cert="medium" resp="#joint">er</unclear>-
+<lb n="10"/>volgen <unclear cert="medium" resp="#joint">laßen</unclear>, wir haben aber daby den <unclear cert="low" resp="#joint">ußtruk</unclear>-
+<lb n="11"/>lichen anhang gethan, daß wo <unclear cert="low" resp="#joint">jemandt</unclear> die <unclear cert="low" resp="#joint">befrygung</unclear>
+<lb n="12"/>diß abzugs durch ordenliche <unclear cert="medium" resp="#joint">rechtmeßige</unclear> <unclear cert="medium" resp="#joint">authentische</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">brieff</unclear> und sigel <unclear cert="low" resp="#joint">zuerwysen</unclear> <unclear cert="low" resp="#joint">hette</unclear>, daß dieselben noch-
+<lb n="14"/><unclear cert="medium" resp="#joint">malen</unclear> <unclear cert="medium" resp="#joint">verhoert</unclear>, und dann darüber mit <unclear cert="low" resp="#joint">fernerem</unclear> gebür-
+<lb n="15"/><unclear cert="medium" resp="#joint">endem</unclear> bescheid begegnet werden sölle. Darby wir
+<lb n="16"/>es dann an <unclear cert="medium" resp="#joint">jetzo</unclear> by abfertigung <unclear cert="low" resp="#joint">unserer</unclear> <unclear cert="low" resp="#joint">ehrengsandten</unclear>
+<lb n="17"/>uff bevorstehende Badische <unclear cert="low" resp="#joint">jarrächnung</unclear> nochmalen <unclear cert="low" resp="#joint">blyb</unclear>-
+<lb n="18"/>en laßen, und <unclear cert="medium" resp="#joint">denselben</unclear> inn <unclear cert="medium" resp="#joint">bevelch</unclear> geben, daß die
+<lb n="19"/><unclear cert="medium" resp="#joint">jhenigen</unclear> so diß <unclear cert="medium" resp="#joint">abzugs</unclear> beschwert <unclear cert="low" resp="#joint">zesyn</unclear>, und <unclear cert="medium" resp="#joint">anders</unclear> zu-
+<lb n="20"/><unclear cert="low" resp="#joint">erwysen</unclear> <unclear cert="medium" resp="#joint">vermeinten</unclear>, <unclear cert="low" resp="#joint">ferners</unclear> <unclear cert="medium" resp="#joint">verhoert</unclear>, und dann nach
 <lb n="21"/>gebür und gstalt der sachen gehandlet werde. Ob nun
-<lb n="22"/>aber ir unser lieb Eydtgnoßen üch inn diserm ge-
-<lb n="23"/>schäfft ouch zuo den anderen Turgöwischen grichtsherren
-<lb n="24"/>schlachen, oder üwer sach noch dißmalen biß uff den fahl,
-<lb n="25"/>daß üch oder den üweren deßwegen wider üwer
-<lb n="26"/>brieff und sigel etwas angefordert wurde, beruowen
-<lb n="27"/>laßen, oder aber üwer rathsbottshafft für üch
-<lb n="28"/>selbs, an jetzo deßhalb ouch gen <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> abordnen wöllind,
-<lb n="29"/>und losen, was der sach halber fürgebracht werden,
-<lb n="30"/>und obs üch ouch berüeren möchte, und dann sonderbar
-<lb n="31"/>by der regierenden Orten ehrengsandten anhalten,
-<lb n="32"/>üch by altem herkommen, habenden vertrag und darüß-
+<lb n="22"/>aber ir <unclear cert="low" resp="#joint">unser</unclear> lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> üch inn <unclear cert="low" resp="#joint">diserm</unclear> ge-
+<lb n="23"/><unclear cert="low" resp="#joint">schäfft</unclear> ouch <unclear cert="medium" resp="#joint">zuo</unclear> den <unclear cert="medium" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">Turgöwischen</unclear> <unclear cert="low" resp="#joint">grichtsherren</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">schlachen</unclear>, oder <unclear cert="medium" resp="#joint">üwer</unclear> sach noch <unclear cert="low" resp="#joint">dißmalen</unclear> biß uff den fahl,
+<lb n="25"/>daß üch oder den <unclear cert="medium" resp="#joint">üweren</unclear> deßwegen wider üwer
+<lb n="26"/><unclear cert="medium" resp="#joint">brieff</unclear> und sigel etwas <unclear cert="medium" resp="#joint">angefordert</unclear> <unclear cert="medium" resp="#joint">wurde</unclear>, <unclear cert="low" resp="#joint">beruowen</unclear>
+<lb n="27"/><unclear cert="medium" resp="#joint">laßen</unclear>, oder aber üwer <unclear cert="low" resp="#joint">rathsbottshafft</unclear> für üch
+<lb n="28"/>selbs, an <unclear cert="medium" resp="#joint">jetzo</unclear> deßhalb ouch gen <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName> abordnen <unclear cert="low" resp="#joint">wöllind</unclear>,
+<lb n="29"/>und <unclear cert="medium" resp="#joint">losen</unclear>, was der sach halber <unclear cert="medium" resp="#joint">fürgebracht</unclear> werden,
+<lb n="30"/>und <unclear cert="low" resp="#joint">obs</unclear> üch ouch <unclear cert="low" resp="#joint">berüeren</unclear> möchte, und dann sonderbar
+<lb n="31"/><unclear cert="medium" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">der</unclear> regierenden <unclear cert="medium" resp="#joint">Orten</unclear> <unclear cert="low" resp="#joint">ehrengsandten</unclear> anhalten,
+<lb n="32"/>üch by <unclear cert="medium" resp="#joint">altem</unclear> <unclear cert="low" resp="#joint">herkommen</unclear>, habenden vertrag und <unclear cert="low" resp="#joint">darüß</unclear>-
 <pb facs="StadtASG_Missive_2488_9592.jpg" n="2"/>
-<lb n="33"/>er erlangten bestaetigung verblyben zelassen und zeschir-
-<lb n="34"/>men. Das alles stellend wir zuo üwerem eignen guot-
-<lb n="35"/>beduncken und gfallen, und wirt üwer rathsbott-
-<lb n="36"/>schafft sich by unnseren und anderen gsandten zuo <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName>,
-<lb n="37"/>was üwerethalb zethuond oder zelassen, allwegen wol
-<lb n="38"/>wyteren bscheids und raths zeerholen wüssen, und
-<lb n="39"/>werden unßere rathsgsandten ir bestes thuon helffen,
-<lb n="40"/>damit ir dißorts by brieff und siglen der gebür
-<lb n="41"/>nach gehandthabt werden mögint. Gstalten dann
-<lb n="42"/>wir üch fürbaß alle eidtgnößische trüw unnd
-<lb n="43"/>fründtschafft zeerwysen so geneigt sind. Alß wir
-<lb n="44"/>unnß sambtlich gotlichem schirm wol befelhend.
-<lb n="45"/>Datum den <origDate when="1624-06-19" resp="#ner">19ten junii anno 1624</origDate>.
+<lb n="33"/>er erlangten bestaetigung verblyben zelassen und <unclear cert="low" resp="#joint">zeschir</unclear>-
+<lb n="34"/>men. Das alles stellend wir zuo <unclear cert="low" resp="#joint">üwerem</unclear> eignen <unclear cert="low" resp="#joint">guot</unclear>-
+<lb n="35"/><unclear cert="medium" resp="#joint">beduncken</unclear> und <unclear cert="medium" resp="#joint">gfallen</unclear>, und <unclear cert="low" resp="#joint">wirt</unclear> <unclear cert="low" resp="#joint">üwer</unclear> <unclear cert="low" resp="#joint">rathsbott</unclear>-
+<lb n="36"/>schafft sich by <unclear cert="medium" resp="#joint">unnseren</unclear> und <unclear cert="medium" resp="#joint">anderen</unclear> <unclear cert="low" resp="#joint">gsandten</unclear> zuo <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName>,
+<lb n="37"/>was üwerethalb zethuond oder <unclear cert="medium" resp="#joint">zelassen</unclear>, <unclear cert="medium" resp="#joint">allwegen</unclear> wol
+<lb n="38"/><unclear cert="low" resp="#joint">wyteren</unclear> <unclear cert="low" resp="#joint">bscheids</unclear> und <unclear cert="medium" resp="#joint">raths</unclear> <unclear cert="low" resp="#joint">zeerholen</unclear> <unclear cert="low" resp="#joint">wüssen</unclear>, und
+<lb n="39"/>werden <unclear cert="low" resp="#joint">unßere</unclear> <unclear cert="low" resp="#joint">rathsgsandten</unclear> ir bestes <unclear cert="medium" resp="#joint">thuon</unclear> <unclear cert="medium" resp="#joint">helffen</unclear>,
+<lb n="40"/>damit ir dißorts by <unclear cert="medium" resp="#joint">brieff</unclear> und siglen der gebür
+<lb n="41"/>nach gehandthabt werden mögint. <unclear cert="low" resp="#joint">Gstalten</unclear> dann
+<lb n="42"/>wir üch fürbaß alle <unclear cert="medium" resp="#joint">eidtgnößische</unclear> <unclear cert="low" resp="#joint">trüw</unclear> unnd
+<lb n="43"/>fründtschafft <unclear cert="low" resp="#joint">zeerwysen</unclear> so geneigt sind. Alß wir
+<lb n="44"/><unclear cert="low" resp="#joint">unnß</unclear> sambtlich gotlichem schirm wol <unclear cert="medium" resp="#joint">befelhend</unclear>.
+<lb n="45"/>Datum den <origDate when="1624-06-19" resp="#ner">19ten <unclear cert="medium" resp="#joint">junii</unclear> anno <unclear cert="medium" resp="#joint">1624</unclear></origDate>.
 <lb n="46"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="47"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_2488_9593.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2488_9594.jpg" n="4"/>
-<lb n="48"/>Den fromen fuersichtigen,
-<lb n="49"/>ehrsamen wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
+<lb n="48"/>Den <unclear cert="medium" resp="#joint">fromen</unclear> <unclear cert="medium" resp="#joint">fuersichtigen</unclear>,
+<lb n="49"/>ehrsamen <unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
 <lb n="50"/>meister und Rath der statt
-<lb n="51"/>Sanct Gallen</orgName>, unseren insond-
-<lb n="52"/>ers gueten fruenden und getruw-
-<lb n="53"/>wen lieben Eydtgnossen.
+<lb n="51"/><unclear cert="medium" resp="#joint">Sanct</unclear> Gallen</orgName>, <unclear cert="low" resp="#joint">unseren</unclear> insond-
+<lb n="52"/>ers <unclear cert="low" resp="#joint">gueten</unclear> fruenden und <unclear cert="low" resp="#joint">getruw</unclear>-
+<lb n="53"/>wen lieben <unclear cert="medium" resp="#joint">Eydtgnossen</unclear>.
 </p>
         </body>
     </text>

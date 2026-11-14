@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2416</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen danken für die Warnung vom 6. Mai über die Anwesenheit österreichischer Truppen am Rhein und Gerüchte über einen Angriff auf die Eidgenossenschaft. Sie teilen mit, dass in Stockach kein Musterplatz abgehalten und keine Truppen angekommen seien, wie es städtische Bürger berichteten. Sie versprechen, weiterhin nachzufragen und St. Gallen über alles zu informieren, was das Vaterland betrifft.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Schaffhausen</name><date when="1623-05-08" resp="#regest">Datum dn. 8. t. Maij a° p 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,63 +35,63 @@
 <p>
 <pb facs="StadtASG_Missive_2416_9291.jpg" n="1"/>
 <lb n="1"/>Unser feundtlich willig dienst, sampt waß wier ehren liebs
-<lb n="2"/>unnd guets vermoegen, zuevor from fuersichtig ehrsam,
-<lb n="3"/>weiß, insunders guet feundt, unnd getreuwe lieb <orgName role="recipient" resp="#ner">Eydtgnosen</orgName>.
-<lb n="4"/>Wier haben eüwer schriben, so den .<date resp="#ner">6. t. diß monats May</date>
-<lb n="5"/>datiert, by zeigerbringern diß empfangen, unnd daraußen,
-<lb n="6"/>daß sich daß enet <placeName resp="#ner">Rhins</placeName> ligendt oestereichisch kriegs volckh
-<lb n="7"/>uß <placeName ref="stadtasg-places-89" cert="medium" resp="#ner">Veldtkirch</placeName> unnd den uebrigen herschafften vorm <placeName resp="#ner">Arl=
-<lb n="8"/>berg</placeName> biß gegen <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregentz</placeName>, je lenger, je mehr sterckhe, unnd
-<lb n="9"/>daß in kuertzem nach zwei regiment frisch volckh zuo jnen
-<lb n="10"/>stosen solte, daß sy sich auch ungescheucht vernemen
-<lb n="11"/>laßen, unnd die gemeine sag unnder jnnen unnd dem
-<lb n="12"/>gemeinen landtvolckh gange, daß es uf ein lobliche
-<lb n="13"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> unnsers geliebtes vaterlandt angesehen,
-<lb n="14"/>auch deßelbigen wegen nicht allein oben by eüch, sonder
-<lb n="15"/>auch unnden am <placeName ref="stadtasg-places-92" cert="medium" resp="#ner">Rhein</placeName> zuo <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>, wie nit weniger zuo
-<lb n="16"/><placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName> (darin man ein große anzal reüterey, daß
-<lb n="17"/><placeName ref="stadtasg-places-103" cert="medium" resp="#ner">Thurgouw</placeName> damit zuobezwingen unnd jnzenemen, einlegen
-<lb n="18"/>woelle) angegriffen werden solte. Unnd daß eben zuo
-<lb n="19"/>dißerem endt albereit acht taußendt man schon zuo +
-<lb n="20"/>+ <placeName ref="stadtasg-places-112" cert="medium" resp="#ner">Straßburg</placeName> ankhomen sein p. ablesendt mit mehrerem vernomen.
-<lb n="21"/>Thuendt unnß deßwegen deß vertrauwlichen avisier=
-<lb n="22"/>ens, feündt: eydtgnoesisch bedanckhen, fuegendt eüch hin=
-<lb n="23"/>widerumb zuovernemen, daß unnß glichwoll der
-<lb n="24"/>gmeinen sag unnd lauffenden zeitungen, nach aller=
-<lb n="25"/>handt avisen unnd warnungen zuolangendt, sonderlich
-<lb n="26"/>aber daß nach zwei regiment volckh sulte geworben und
+<lb n="2"/>unnd guets vermoegen, <unclear cert="low" resp="#joint">zuevor</unclear> from fuersichtig ehrsam,
+<lb n="3"/><unclear cert="low" resp="#joint">weiß</unclear>, insunders <unclear cert="low" resp="#joint">guet</unclear> feundt, unnd getreuwe lieb <orgName role="recipient" resp="#ner">Eydtgnosen</orgName>.
+<lb n="4"/>Wier haben <unclear cert="low" resp="#joint">eüwer</unclear> schriben, so den .<date resp="#ner"><unclear cert="low" resp="#joint">6</unclear>. <unclear cert="low" resp="#joint">t</unclear>. diß <unclear cert="medium" resp="#joint">monats</unclear> <unclear cert="medium" resp="#joint">May</unclear></date>
+<lb n="5"/>datiert, by <unclear cert="medium" resp="#joint">zeigerbringern</unclear> diß empfangen, unnd <unclear cert="low" resp="#joint">daraußen</unclear>,
+<lb n="6"/>daß sich daß <unclear cert="low" resp="#joint">enet</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Rhins</unclear></placeName> <unclear cert="low" resp="#joint">ligendt</unclear> <unclear cert="low" resp="#joint">oestereichisch</unclear> kriegs <unclear cert="low" resp="#joint">volckh</unclear>
+<lb n="7"/>uß <placeName ref="stadtasg-places-89" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Veldtkirch</unclear></placeName> unnd den <unclear cert="low" resp="#joint">uebrigen</unclear> <unclear cert="low" resp="#joint">herschafften</unclear> <unclear cert="low" resp="#joint">vorm</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Arl=</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">berg</unclear></placeName> biß gegen <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bregentz</unclear></placeName>, <unclear cert="low" resp="#joint">je</unclear> lenger, je mehr <unclear cert="low" resp="#joint">sterckhe</unclear>, unnd
+<lb n="9"/>daß in <unclear cert="low" resp="#joint">kuertzem</unclear> nach zwei regiment frisch <unclear cert="low" resp="#joint">volckh</unclear> zuo <unclear cert="low" resp="#joint">jnen</unclear>
+<lb n="10"/>stosen solte, daß sy sich auch <unclear cert="low" resp="#joint">ungescheucht</unclear> <unclear cert="low" resp="#joint">vernemen</unclear>
+<lb n="11"/>laßen, unnd die gemeine sag unnder <unclear cert="low" resp="#joint">jnnen</unclear> unnd <unclear cert="low" resp="#joint">dem</unclear>
+<lb n="12"/><unclear cert="low" resp="#joint">gemeinen</unclear> <unclear cert="low" resp="#joint">landtvolckh</unclear> gange, daß es uf ein lobliche
+<lb n="13"/><orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoschafft</orgName> unnsers <unclear cert="low" resp="#joint">geliebtes</unclear> <unclear cert="low" resp="#joint">vaterlandt</unclear> angesehen,
+<lb n="14"/>auch <unclear cert="low" resp="#joint">deßelbigen</unclear> wegen nicht allein oben by eüch, sonder
+<lb n="15"/>auch <unclear cert="low" resp="#joint">unnden</unclear> am <placeName ref="stadtasg-places-92" cert="medium" resp="#ner">Rhein</placeName> zuo <placeName ref="stadtasg-places-133" cert="medium" resp="#ner">Basel</placeName>, wie nit <unclear cert="low" resp="#joint">weniger</unclear> zuo
+<lb n="16"/><placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName> (darin man ein große <unclear cert="low" resp="#joint">anzal</unclear> <unclear cert="low" resp="#joint">reüterey</unclear>, daß
+<lb n="17"/><placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Thurgouw</unclear></placeName> damit <unclear cert="low" resp="#joint">zuobezwingen</unclear> unnd jnzenemen, einlegen
+<lb n="18"/><unclear cert="low" resp="#joint">woelle</unclear>) angegriffen werden solte. Unnd daß eben zuo
+<lb n="19"/><unclear cert="medium" resp="#joint">dißerem</unclear> <unclear cert="medium" resp="#joint">endt</unclear> <unclear cert="medium" resp="#joint">albereit</unclear> <unclear cert="medium" resp="#joint">acht</unclear> <unclear cert="medium" resp="#joint">taußendt</unclear> man schon zuo <unclear cert="low" resp="#joint">+</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">+</unclear> <placeName ref="stadtasg-places-112" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Straßburg</unclear></placeName> <unclear cert="low" resp="#joint">ankhomen</unclear> sein <unclear cert="low" resp="#joint">p</unclear>. <unclear cert="low" resp="#joint">ablesendt</unclear> mit <unclear cert="low" resp="#joint">mehrerem</unclear> <unclear cert="low" resp="#joint">vernomen</unclear>.
+<lb n="21"/>Thuendt <unclear cert="low" resp="#joint">unnß</unclear> deßwegen deß <unclear cert="low" resp="#joint">vertrauwlichen</unclear> <unclear cert="low" resp="#joint">avisier=</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">ens</unclear>, <unclear cert="low" resp="#joint">feündt</unclear>: <unclear cert="low" resp="#joint">eydtgnoesisch</unclear> <unclear cert="low" resp="#joint">bedanckhen</unclear>, <unclear cert="low" resp="#joint">fuegendt</unclear> eüch hin=
+<lb n="23"/>widerumb zuovernemen, daß <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">glichwoll</unclear> der
+<lb n="24"/><unclear cert="low" resp="#joint">gmeinen</unclear> sag unnd <unclear cert="low" resp="#joint">lauffenden</unclear> <unclear cert="low" resp="#joint">zeitungen</unclear>, nach aller=
+<lb n="25"/>handt <unclear cert="low" resp="#joint">avisen</unclear> unnd <unclear cert="low" resp="#joint">warnungen</unclear> <unclear cert="low" resp="#joint">zuolangendt</unclear>, sonderlich
+<lb n="26"/>aber daß nach zwei regiment <unclear cert="low" resp="#joint">volckh</unclear> <unclear cert="low" resp="#joint">sulte</unclear> <unclear cert="low" resp="#joint">geworben</unclear> und
 <pb facs="StadtASG_Missive_2416_9292.jpg" n="2"/>
-<lb n="27"/>in die Puendt geschikht werden. Waß aber daß ein Muster
-<lb n="28"/>blatz zue <placeName ref="stadtasg-places-165" cert="medium" resp="#ner">Stokhach</placeName> solte gehalten, unnd daselbsten uf daß
-<lb n="29"/>Endtgein schon albereit ettlich taußendt man ankommen
-<lb n="30"/>sein belangt p. haben wier von etlichen unßeren burgeren,
-<lb n="31"/>alß die eben dißer tagen zue bemeltem Stokhach durch
-<lb n="32"/>gereißet, souil bericht empfangen, daß nach der zeith
-<lb n="33"/>kein volkh daselbsten ankommen, auch von kheinem
-<lb n="34"/>musterblatz gar nit geredt, aber daß man uß volkhs,
-<lb n="35"/>so es sich ufziehen werde, erwartendt seige p. Wier
-<lb n="36"/>wöllen aaber nit underlaßen, stetige unnd fleißige er-
-<lb n="37"/>khundigung zepflegen, unnd waß wier jederzeiten,
-<lb n="38"/>so euch unnd daß geliebte vatterlandt berüeren, und
-<lb n="39"/>antreffen möchte, ehisten bij tag unnd nacht vertreüwenlich
-<lb n="40"/>zeaviseren. Mit freundt: eijdtgnößischen pitten, Ir geruchet
-<lb n="41"/>jederzeiten, unßer zu euch gueter gesetzter hofnung nach
-<lb n="42"/>zethuen, ohne beschwerdt sein. In eüer dan den All-
-<lb n="43"/>mechtigen Gott pitten, daß er alle solche anschleg unndt
-<lb n="44"/>bluethdurstige practiken von unß gnedigklich abwenden,
-<lb n="45"/>unnd unnß in unßerem geliebten vatterlandt, in
-<lb n="46"/>guetem friden unnd wolstandt erhalten wölle. Datum
-<lb n="47"/><origDate when="1623" resp="#ner">dn. 8. t. Maij a° p 1623</origDate>.
+<lb n="27"/>in die <unclear cert="medium" resp="#joint">Puendt</unclear> <unclear cert="medium" resp="#joint">geschikht</unclear> <unclear cert="medium" resp="#joint">werden</unclear>. <unclear cert="medium" resp="#joint">Waß</unclear> aber daß ein <unclear cert="medium" resp="#joint">Muster</unclear>
+<lb n="28"/><unclear cert="medium" resp="#joint">blatz</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <placeName ref="stadtasg-places-165" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Stokhach</unclear></placeName> solte <unclear cert="medium" resp="#joint">gehalten</unclear>, unnd daselbsten <unclear cert="low" resp="#joint">uf</unclear> daß
+<lb n="29"/><unclear cert="low" resp="#joint">Endtgein</unclear> schon albereit ettlich taußendt man ankommen
+<lb n="30"/>sein <unclear cert="low" resp="#joint">belangt</unclear> <unclear cert="low" resp="#joint">p</unclear>. haben wier von etlichen <unclear cert="low" resp="#joint">unßeren</unclear> burgeren,
+<lb n="31"/><unclear cert="low" resp="#joint">alß</unclear> die <unclear cert="low" resp="#joint">eben</unclear> <unclear cert="low" resp="#joint">dißer</unclear> tagen <unclear cert="low" resp="#joint">zue</unclear> bemeltem <unclear cert="low" resp="#joint">Stokhach</unclear> durch
+<lb n="32"/><unclear cert="low" resp="#joint">gereißet</unclear>, souil bericht empfangen, daß nach der <unclear cert="low" resp="#joint">zeith</unclear>
+<lb n="33"/><unclear cert="low" resp="#joint">kein</unclear> <unclear cert="low" resp="#joint">volkh</unclear> daselbsten ankommen, auch von <unclear cert="low" resp="#joint">kheinem</unclear>
+<lb n="34"/><unclear cert="low" resp="#joint">musterblatz</unclear> gar nit geredt, aber daß man <unclear cert="medium" resp="#joint">uß</unclear> <unclear cert="medium" resp="#joint">volkhs</unclear>,
+<lb n="35"/>so es sich <unclear cert="low" resp="#joint">ufziehen</unclear> werde, <unclear cert="low" resp="#joint">erwartendt</unclear> seige p. Wier
+<lb n="36"/><unclear cert="low" resp="#joint">wöllen</unclear> <unclear cert="low" resp="#joint">aaber</unclear> nit underlaßen, <unclear cert="low" resp="#joint">stetige</unclear> unnd fleißige er-
+<lb n="37"/>khundigung zepflegen, unnd <unclear cert="medium" resp="#joint">waß</unclear> <unclear cert="medium" resp="#joint">wier</unclear> jederzeiten,
+<lb n="38"/>so euch unnd daß <unclear cert="low" resp="#joint">geliebte</unclear> <unclear cert="low" resp="#joint">vatterlandt</unclear> <unclear cert="low" resp="#joint">berüeren</unclear>, und
+<lb n="39"/><unclear cert="low" resp="#joint">antreffen</unclear> möchte, <unclear cert="medium" resp="#joint">ehisten</unclear> <unclear cert="medium" resp="#joint">bij</unclear> tag unnd nacht <unclear cert="low" resp="#joint">vertreüwenlich</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">zeaviseren</unclear>. Mit freundt: eijdtgnößischen pitten, Ir <unclear cert="medium" resp="#joint">geruchet</unclear>
+<lb n="41"/><unclear cert="medium" resp="#joint">jederzeiten</unclear>, <unclear cert="medium" resp="#joint">unßer</unclear> <unclear cert="medium" resp="#joint">zu</unclear> euch <unclear cert="low" resp="#joint">gueter</unclear> <unclear cert="low" resp="#joint">gesetzter</unclear> <unclear cert="low" resp="#joint">hofnung</unclear> nach
+<lb n="42"/><unclear cert="low" resp="#joint">zethuen</unclear>, ohne <unclear cert="low" resp="#joint">beschwerdt</unclear> sein. <unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">eüer</unclear> dan den All-
+<lb n="43"/>mechtigen Gott <unclear cert="low" resp="#joint">pitten</unclear>, daß er alle <unclear cert="low" resp="#joint">solche</unclear> <unclear cert="low" resp="#joint">anschleg</unclear> <unclear cert="low" resp="#joint">unndt</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">bluethdurstige</unclear> <unclear cert="low" resp="#joint">practiken</unclear> von unß gnedigklich abwenden,
+<lb n="45"/>unnd unnß in unßerem <unclear cert="low" resp="#joint">geliebten</unclear> <unclear cert="low" resp="#joint">vatterlandt</unclear>, in
+<lb n="46"/><unclear cert="low" resp="#joint">guetem</unclear> friden unnd <unclear cert="low" resp="#joint">wolstandt</unclear> erhalten <unclear cert="low" resp="#joint">wölle</unclear>. Datum
+<lb n="47"/><origDate when="1623" resp="#ner"><unclear cert="low" resp="#joint">dn</unclear>. <unclear cert="low" resp="#joint">8</unclear>. <unclear cert="low" resp="#joint">t</unclear>. <unclear cert="low" resp="#joint">Maij</unclear> <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">p</unclear> 1623</origDate>.
 <lb n="48"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermaister und rath
-<lb n="49"/>der stadt Schaffhaußen</orgName>
+<lb n="49"/>der stadt <unclear cert="low" resp="#joint">Schaffhaußen</unclear></orgName>
 <pb facs="StadtASG_Missive_2416_9293.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2416_9294.jpg" n="4"/>
-<lb n="50"/>Den frommen fürsichtigen ehrsamen
+<lb n="50"/>Den frommen fürsichtigen <unclear cert="low" resp="#joint">ehrsamen</unclear>
 <lb n="51"/>unnd wcißen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister
 <lb n="52"/>unnd Rath der stadt St. Gallen</orgName>,
-<lb n="53"/>unnßeren inßunders guoten
-<lb n="54"/>fründen unnd getreüwen lieben
-<lb n="55"/><orgName role="recipient" resp="#ner">Eydtgnossen</orgName>.
+<lb n="53"/>unnßeren inßunders <unclear cert="medium" resp="#joint">guoten</unclear>
+<lb n="54"/>fründen unnd <unclear cert="low" resp="#joint">getreüwen</unclear> lieben
+<lb n="55"/><orgName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Eydtgnossen</unclear></orgName>.
 </p>
         </body>
     </text>

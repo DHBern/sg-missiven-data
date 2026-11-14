@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 781</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,68 +20,68 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau bitten Bürgermeister und Rat zu St. Gallen, ihre Bürgerinnen Anna und Kunigunde Hündlin, die gegen Christoph und Lonckhart Zollikofer vor Gericht standen, bei ihrem Urteil zu handhaben. Die Zollikofer hätten die von den Hündlin vorgeschlagenen Bürgen abgelehnt. Lindau ersucht, die Zollikofer anzuweisen, sich mit einer angemessenen Kaution zu begnügen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1558" cert="medium" resp="#regest">den 10 t. tag Julij anno etc. 58</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_781_2075.JPG" n="1"/>
-<lb n="1"/>Unser <unclear cert="low" resp="#joint">freundtlich</unclear> willig diennst <unclear cert="medium" resp="#joint">zuuor</unclear>. Er=
-<lb n="2"/><unclear cert="medium" resp="#joint">samen</unclear> unnd weisen, <unclear cert="low" resp="#joint">besonndere</unclear> lieben und gueten
-<lb n="3"/><unclear cert="low" resp="#joint">freund</unclear>. Unnser <unclear cert="low" resp="#joint">burgere</unclear> <persName resp="#ner">Anna</persName> unnd <persName resp="#ner"><unclear cert="low" resp="#joint">Künia</unclear></persName>.
-<lb n="4"/>die <persName resp="#ner"><unclear cert="low" resp="#joint">Huendlinn</unclear></persName> <unclear cert="low" resp="#joint">schwestren</unclear>. haben unns ange=
-<lb n="5"/><unclear cert="low" resp="#joint">pracht</unclear>. Wie das sy gegen unnd wider. E: <unclear cert="low" resp="#joint">e</unclear>: <unclear cert="low" resp="#joint">wt</unclear>:
+<lb n="1"/><unclear cert="medium" resp="#joint">Unser</unclear> <unclear cert="medium" resp="#joint">freundtlich</unclear> willig diennst <unclear cert="low" resp="#joint">zuuor</unclear>. Er=
+<lb n="2"/><unclear cert="low" resp="#joint">samen</unclear> unnd weisen, <unclear cert="low" resp="#joint">besonndere</unclear> lieben und gueten
+<lb n="3"/><unclear cert="low" resp="#joint">freund</unclear>. Unnser <unclear cert="medium" resp="#joint">burgere</unclear> <persName resp="#ner">Anna</persName> unnd <persName resp="#ner"><unclear cert="low" resp="#joint">Künia</unclear></persName>.
+<lb n="4"/>die <persName resp="#ner"><unclear cert="low" resp="#joint">Huendlinn</unclear></persName> <unclear cert="low" resp="#joint">schwestren</unclear>. haben unns <unclear cert="medium" resp="#joint">ange=</unclear>
+<lb n="5"/><unclear cert="low" resp="#joint">pracht</unclear>. Wie das <unclear cert="medium" resp="#joint">sy</unclear> gegen unnd wider. E: <unclear cert="low" resp="#joint">e</unclear>: <unclear cert="low" resp="#joint">wt</unclear>:
 <lb n="6"/><unclear cert="low" resp="#joint">mitburgere</unclear>. <persName resp="#ner"><unclear cert="low" resp="#joint">Cristoffen</unclear></persName> und <persName resp="#ner"><unclear cert="medium" resp="#joint">Lonnckhardt</unclear></persName> die
-<lb n="7"/><persName resp="#ner"><unclear cert="low" resp="#joint">Zollikofer</unclear></persName>. vor derselben E: <unclear cert="low" resp="#joint">e</unclear>: <unclear cert="low" resp="#joint">wt</unclear>: in Recht gestanden.
-<lb n="8"/><unclear cert="medium" resp="#joint">und</unclear> gegen ein annder so weit <unclear cert="low" resp="#joint">procediert</unclear>
-<lb n="9"/>haben. Das letstlich zwischen inen, ein <unclear cert="low" resp="#joint">urtl</unclear>
+<lb n="7"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Zollikofer</unclear></persName>. <unclear cert="medium" resp="#joint">vor</unclear> derselben E: <unclear cert="medium" resp="#joint">e</unclear>: <unclear cert="medium" resp="#joint">wt</unclear>: in Recht gestanden.
+<lb n="8"/>und gegen ein annder so weit <unclear cert="low" resp="#joint">procediert</unclear>
+<lb n="9"/>haben. Das letstlich <unclear cert="medium" resp="#joint">zwischen</unclear> inen, <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="low" resp="#joint">urtl</unclear>
 <lb n="10"/><unclear cert="low" resp="#joint">eröfnet</unclear> worden sy. <unclear cert="low" resp="#joint">Dran</unclear> sy nun ires theils
-<lb n="11"/>ein benuegen <unclear cert="low" resp="#joint">hethen</unclear>. sich erbotten. Auch <unclear cert="low" resp="#joint">dor=</unclear>
-<lb n="12"/>auff <unclear cert="low" resp="#joint">alls</unclear> bald <unclear cert="medium" resp="#joint">zuerstatung</unclear> auferlegter
-<lb n="13"/>caution. <unclear cert="medium" resp="#joint">etliche</unclear> E: e: <unclear cert="medium" resp="#joint">wt</unclear>: <unclear cert="medium" resp="#joint">statliche</unclear> burger.
-<lb n="14"/>fürgeschlagen. Welche aber bemelte <persName resp="#ner"><unclear cert="low" resp="#joint">Zollikofer</unclear></persName>.
-<lb n="15"/>neben <unclear cert="low" resp="#joint">verwidrung</unclear> der <unclear cert="low" resp="#joint">letsten</unclear> urtheil.
-<lb n="16"/>nit <unclear cert="low" resp="#joint">annemen</unclear>. Derohalben unnd darmit
-<lb n="17"/>sy dann bej <unclear cert="medium" resp="#joint">beruerter</unclear> urtheil <unclear cert="low" resp="#joint">gehanndthapt</unclear>
-<lb n="18"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">gepuerende</unclear> caution. die sy <unclear cert="low" resp="#joint">wol</unclear>
+<lb n="11"/>ein benuegen <unclear cert="low" resp="#joint">hethen</unclear>. sich <unclear cert="medium" resp="#joint">erbotten</unclear>. Auch <unclear cert="low" resp="#joint">dor=</unclear>
+<lb n="12"/>auff <unclear cert="medium" resp="#joint">alls</unclear> bald <unclear cert="low" resp="#joint">zuerstatung</unclear> auferlegter
+<lb n="13"/>caution. etliche E: e: <unclear cert="low" resp="#joint">wt</unclear>: <unclear cert="low" resp="#joint">statliche</unclear> burger.
+<lb n="14"/>fürgeschlagen. Welche aber <unclear cert="medium" resp="#joint">bemelte</unclear> <persName resp="#ner"><unclear cert="medium" resp="#joint">Zollikofer</unclear></persName>.
+<lb n="15"/>neben <unclear cert="low" resp="#joint">verwidrung</unclear> der <unclear cert="medium" resp="#joint">letsten</unclear> <unclear cert="medium" resp="#joint">urtheil</unclear>.
+<lb n="16"/>nit <unclear cert="medium" resp="#joint">annemen</unclear>. <unclear cert="medium" resp="#joint">Derohalben</unclear> unnd darmit
+<lb n="17"/><unclear cert="medium" resp="#joint">sy</unclear> dann bej <unclear cert="low" resp="#joint">beruerter</unclear> urtheil <unclear cert="medium" resp="#joint">gehanndthapt</unclear>
+<lb n="18"/><unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">gepuerende</unclear> caution. die sy <unclear cert="medium" resp="#joint">wol</unclear>
 <lb n="19"/>bekomen mügen. von inen angenomen
 <lb n="20"/>werde, <unclear cert="low" resp="#joint">Päthen</unclear> sy unns wir <unclear cert="medium" resp="#joint">wölten</unclear> inen
 <lb n="21"/>deßhalb <unclear cert="low" resp="#joint">unnser</unclear> <unclear cert="low" resp="#joint">fürschrift</unclear>. an E: e: <unclear cert="medium" resp="#joint">wt</unclear>: mit=
 <lb n="22"/>theilen unnd geben, Dieweil wir dann.
-<lb n="23"/>die <unclear cert="medium" resp="#joint">unnseren</unclear>. zu aller <unclear cert="medium" resp="#joint">pillicheit</unclear>. <unclear cert="medium" resp="#joint">zu</unclear> <unclear cert="medium" resp="#joint">fürdren</unclear>
+<lb n="23"/>die <unclear cert="medium" resp="#joint">unnseren</unclear>. zu aller pillicheit. zu <unclear cert="low" resp="#joint">fürdren</unclear>
 <pb facs="StadtASG_Missive_781_2076.JPG" n="2"/>
-<lb n="24"/>nit <unclear cert="low" resp="#joint">allein</unclear> schuldig, <unclear cert="low" resp="#joint">sonder</unclear> auch wol geneigt sind,
-<lb n="25"/>so haben wir inen sollich ir <unclear cert="medium" resp="#joint">begern</unclear> <unclear cert="low" resp="#joint">fuegklich</unclear>
+<lb n="24"/>nit <unclear cert="medium" resp="#joint">allein</unclear> schuldig, <unclear cert="low" resp="#joint">sonder</unclear> auch wol <unclear cert="medium" resp="#joint">geneigt</unclear> sind,
+<lb n="25"/>so haben wir inen sollich ir <unclear cert="low" resp="#joint">begern</unclear> <unclear cert="low" resp="#joint">fuegklich</unclear>
 <lb n="26"/>nit <unclear cert="low" resp="#joint">weigern</unclear> <unclear cert="low" resp="#joint">muegen</unclear>, unnd ist <unclear cert="low" resp="#joint">darauff</unclear>
-<lb n="27"/>an dieselb E. E. <unclear cert="low" resp="#joint">Wt</unclear>. unser freundtlich und
-<lb n="28"/>vleissig pitt. Die <unclear cert="medium" resp="#joint">welle</unclear> <unclear cert="medium" resp="#joint">bemelte</unclear> <unclear cert="medium" resp="#joint">unnser</unclear>
-<lb n="29"/><unclear cert="medium" resp="#joint">mittburgere</unclear>, sampt <unclear cert="medium" resp="#joint">iren</unclear> <unclear cert="medium" resp="#joint">mitverwannten</unclear>
-<lb n="30"/>in guenstigem bevelch haben. Sie <unclear cert="medium" resp="#joint">bej</unclear> <unclear cert="low" resp="#joint">irer</unclear>
-<lb n="31"/>selbs letst gegebnen <unclear cert="medium" resp="#joint">urtheil</unclear>. handthaben.
+<lb n="27"/>an dieselb <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="medium" resp="#joint">unser</unclear> freundtlich und
+<lb n="28"/><unclear cert="medium" resp="#joint">vleissig</unclear> pitt. Die <unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">bemelte</unclear> unnser
+<lb n="29"/><unclear cert="low" resp="#joint">mittburgere</unclear>, sampt iren <unclear cert="low" resp="#joint">mitverwannten</unclear>
+<lb n="30"/>in <unclear cert="medium" resp="#joint">guenstigem</unclear> <unclear cert="medium" resp="#joint">bevelch</unclear> haben. Sie bej <unclear cert="medium" resp="#joint">irer</unclear>
+<lb n="31"/>selbs letst gegebnen <unclear cert="low" resp="#joint">urtheil</unclear>. handthaben.
 <lb n="32"/>unnd die <persName resp="#ner"><unclear cert="low" resp="#joint">Zollikofer</unclear></persName> dahin weisen, das sie
-<lb n="33"/>sich mit zimblicher <unclear cert="low" resp="#joint">Cauttion</unclear>, so sie bekomen
+<lb n="33"/>sich mit <unclear cert="medium" resp="#joint">zimblicher</unclear> <unclear cert="low" resp="#joint">Cauttion</unclear>, so sie <unclear cert="medium" resp="#joint">bekomen</unclear>
 <lb n="34"/><unclear cert="low" resp="#joint">muegen</unclear>, benuegen lassen, inn <unclear cert="low" resp="#joint">bedennckhung</unclear>
-<lb n="35"/>das <unclear cert="low" resp="#joint">niemand</unclear> <unclear cert="low" resp="#joint">unmuegliche</unclear> ding auferlegt
-<lb n="36"/>werden soll. Das <unclear cert="low" resp="#joint">wöllen</unclear> umb E. E. <unclear cert="low" resp="#joint">Wt</unclear>.
-<lb n="37"/>wir <unclear cert="low" resp="#joint">inn</unclear> sollichem unnd <unclear cert="low" resp="#joint">mererem</unclear>, gern
+<lb n="35"/><unclear cert="medium" resp="#joint">das</unclear> <unclear cert="low" resp="#joint">niemand</unclear> <unclear cert="low" resp="#joint">unmuegliche</unclear> ding auferlegt
+<lb n="36"/>werden soll. Das <unclear cert="medium" resp="#joint">wöllen</unclear> umb <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>.
+<lb n="37"/>wir <unclear cert="medium" resp="#joint">inn</unclear> sollichem unnd <unclear cert="low" resp="#joint">mererem</unclear>, <unclear cert="medium" resp="#joint">gern</unclear>
 <lb n="38"/>freundtlich und nachparlich beschulden und
 <lb n="39"/>verdienen. Datum den <origDate when="1558" cert="medium" resp="#ner">10 <unclear cert="low" resp="#joint">t</unclear>. tag Julij
 <lb n="40"/>anno etc. 58</origDate>
 <lb n="41"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermeister und
-<lb n="42"/>rath der <unclear cert="medium" resp="#joint">sthat</unclear> <unclear cert="medium" resp="#joint">Lindaw</unclear></orgName>,
+<lb n="42"/>rath der sthat <unclear cert="medium" resp="#joint">Lindaw</unclear></orgName>,
 <pb facs="StadtASG_Missive_781_2077.jpg" n="3"/>
 <pb facs="StadtASG_Missive_781_2078.jpg" n="4"/>
 <lb n="43"/>Den ersamen unnd weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burger:
 <lb n="44"/><unclear cert="low" resp="#joint">maister</unclear> unnd <unclear cert="low" resp="#joint">räthe</unclear> der statt <unclear cert="low" resp="#joint">zuo</unclear> Sandt
-<lb n="45"/>Gallen</orgName>. unnsern besonndern lieben <unclear cert="medium" resp="#joint">unnd</unclear>
+<lb n="45"/>Gallen</orgName>. unnsern besonndern lieben unnd
 <lb n="46"/><unclear cert="low" resp="#joint">guoten</unclear> freünden.
 </p>
         </body>

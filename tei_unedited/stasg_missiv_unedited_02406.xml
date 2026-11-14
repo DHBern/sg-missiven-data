@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2406</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,63 +20,63 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen bitten Bürgermeister und Rat zu St. Gallen, den gegen ihren Untertan Hans Wiggli Haller von Lohningen verhängten Arrest aufzuheben. Die St. Galler Bürger Peter Feer und Hans Jakob Tanner hätten Haller wegen 60 Pfund und 15 Pfund Prozesskosten festnehmen lassen. Haller sei unschuldig und beschwert sich über die Maßnahme. Schaffhausen bittet um Freilassung, damit Haller zu seinem Recht komme.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Schaffhausen</name><date when="1623-04-18" resp="#regest">18 ten Aprilis a° 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2406_9253.jpg" n="1"/>
-<lb n="1"/>Unßer frundtlich willig dinst, sampt waß wir ehren
-<lb n="2"/>liebs unnd guets vermoegen zuvor, fromm, fuersichtig
-<lb n="3"/>ehrsam wiß inßonders guet frundt unnd getruwe
-<lb n="4"/>lieb <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eydgnoßen</orgName>.
-<lb n="5"/>Unnß hat unnßer underthon <persName resp="#ner">Hannß Wiggli Haller</persName> von
-<lb n="6"/><placeName resp="#ner">Loehningen</placeName> underthaenig zuerkennen geben laßen.
-<lb n="7"/>waß maßen ime uwer burger <persName resp="#ner">Peter Feer</persName> bi
-<lb n="8"/>auch uwerm burgern <persName resp="#ner">Hannß Jacob Tannern</persName>, 60. lb.
-<lb n="9"/>vor ursachen, diewil ime alhir von unnß in einer
-<lb n="10"/>gewißen rechtsfertigung, deren er sich vor einem
-<lb n="11"/>ehrsamen stadtgricht alhir rechtlich ingelaßen, unnd
-<lb n="12"/>von demselbigen, fur unnß appellations wiße ge-
-<lb n="13"/>zogen, an costen nit 15. lb zuerkennt unnd gesprochen
-<lb n="14"/>in arrest unnd hafftpot, nemmen unnd legen laßen. Deßen
-<lb n="15"/>dan unnßer underthon <persName resp="#ner">Hannß Wiggli Haller</persName>, in be-
-<lb n="16"/>trachtung daß er deren einiche schuldt tragen thuet, hoech-
-<lb n="17"/>lich beschwerdt. Damit nun der angelegte arrest
-<lb n="18"/>relaxiert unnd er <persName resp="#ner">Haller</persName> zu dem sinigen kommen moechte,
-<lb n="19"/>unnß deßwegen an uch, umb unnßere furschrifft
-<lb n="20"/>deren er wollzugenießen verhofft, underthaenig ge-
-<lb n="21"/>peten, welche wir ime auch nit zuversagen gewußt.
-<lb n="22"/>Ist hieruf an uch, unnßer frundt: unnd eydtgnoßisches
-<lb n="23"/>furpit, ir woellen gestaltsame diß orts, unnßern under-
-<lb n="24"/>thon wolbefohlen haben, unnd den angelegten arrest
-<lb n="25"/>damit er zu dem sinigen gelangen moege, ze relaxieren
-<lb n="26"/>gewillt sin. Daran beschicht unnß gefallens, unnd
-<lb n="27"/>waß sin supplicanten angelegenheit erfordert.
-<lb n="28"/>Welliches wir umb uch unnd die uwerigen uf
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="low" resp="#joint">frundtlich</unclear> willig dinst, sampt <unclear cert="low" resp="#joint">waß</unclear> wir ehren
+<lb n="2"/>liebs unnd guets <unclear cert="medium" resp="#joint">vermoegen</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>, fromm, <unclear cert="medium" resp="#joint">fuersichtig</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">ehrsam</unclear> <unclear cert="low" resp="#joint">wiß</unclear> <unclear cert="low" resp="#joint">inßonders</unclear> <unclear cert="low" resp="#joint">guet</unclear> <unclear cert="medium" resp="#joint">frundt</unclear> unnd <unclear cert="low" resp="#joint">getruwe</unclear>
+<lb n="4"/>lieb <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydgnoßen</unclear></orgName>.
+<lb n="5"/><unclear cert="medium" resp="#joint">Unnß</unclear> hat unnßer underthon <persName resp="#ner">Hannß <unclear cert="low" resp="#joint">Wiggli</unclear> <unclear cert="low" resp="#joint">Haller</unclear></persName> von
+<lb n="6"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Loehningen</unclear></placeName> underthaenig <unclear cert="low" resp="#joint">zuerkennen</unclear> geben laßen.
+<lb n="7"/>waß maßen ime <unclear cert="low" resp="#joint">uwer</unclear> burger <persName resp="#ner">Peter <unclear cert="medium" resp="#joint">Feer</unclear></persName> <unclear cert="medium" resp="#joint">bi</unclear>
+<lb n="8"/><unclear cert="medium" resp="#joint">auch</unclear> <unclear cert="medium" resp="#joint">uwerm</unclear> <unclear cert="medium" resp="#joint">burgern</unclear> <persName resp="#ner">Hannß Jacob <unclear cert="low" resp="#joint">Tannern</unclear></persName>, 60. lb.
+<lb n="9"/>vor ursachen, <unclear cert="low" resp="#joint">diewil</unclear> ime alhir von unnß <unclear cert="low" resp="#joint">in</unclear> einer
+<lb n="10"/>gewißen <unclear cert="low" resp="#joint">rechtsfertigung</unclear>, deren er sich vor einem
+<lb n="11"/>ehrsamen <unclear cert="low" resp="#joint">stadtgricht</unclear> <unclear cert="low" resp="#joint">alhir</unclear> rechtlich <unclear cert="low" resp="#joint">ingelaßen</unclear>, unnd
+<lb n="12"/>von <unclear cert="low" resp="#joint">demselbigen</unclear>, <unclear cert="low" resp="#joint">fur</unclear> unnß appellations <unclear cert="low" resp="#joint">wiße</unclear> ge-
+<lb n="13"/>zogen, <unclear cert="low" resp="#joint">an</unclear> costen <unclear cert="low" resp="#joint">nit</unclear> 15. lb <unclear cert="low" resp="#joint">zuerkennt</unclear> unnd <unclear cert="medium" resp="#joint">gesprochen</unclear>
+<lb n="14"/>in arrest unnd <unclear cert="low" resp="#joint">hafftpot</unclear>, <unclear cert="low" resp="#joint">nemmen</unclear> unnd <unclear cert="medium" resp="#joint">legen</unclear> <unclear cert="medium" resp="#joint">laßen</unclear>. <unclear cert="low" resp="#joint">Deßen</unclear>
+<lb n="15"/>dan unnßer underthon <persName resp="#ner">Hannß <unclear cert="low" resp="#joint">Wiggli</unclear> <unclear cert="low" resp="#joint">Haller</unclear></persName>, <unclear cert="medium" resp="#joint">in</unclear> be-
+<lb n="16"/>trachtung daß er <unclear cert="low" resp="#joint">deren</unclear> <unclear cert="low" resp="#joint">einiche</unclear> <unclear cert="low" resp="#joint">schuldt</unclear> tragen <unclear cert="medium" resp="#joint">thuet</unclear>, <unclear cert="low" resp="#joint">hoech</unclear>-
+<lb n="17"/>lich <unclear cert="medium" resp="#joint">beschwerdt</unclear>. Damit nun der angelegte arrest
+<lb n="18"/>relaxiert unnd er <persName resp="#ner"><unclear cert="low" resp="#joint">Haller</unclear></persName> zu dem <unclear cert="low" resp="#joint">sinigen</unclear> <unclear cert="medium" resp="#joint">kommen</unclear> <unclear cert="low" resp="#joint">moechte</unclear>,
+<lb n="19"/><unclear cert="medium" resp="#joint">unnß</unclear> deßwegen an <unclear cert="low" resp="#joint">uch</unclear>, <unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="low" resp="#joint">unnßere</unclear> <unclear cert="medium" resp="#joint">furschrifft</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">deren</unclear> er <unclear cert="low" resp="#joint">wollzugenießen</unclear> <unclear cert="medium" resp="#joint">verhofft</unclear>, underthaenig ge-
+<lb n="21"/><unclear cert="medium" resp="#joint">peten</unclear>, welche wir <unclear cert="medium" resp="#joint">ime</unclear> auch nit <unclear cert="low" resp="#joint">zuversagen</unclear> <unclear cert="low" resp="#joint">gewußt</unclear>.
+<lb n="22"/>Ist <unclear cert="low" resp="#joint">hieruf</unclear> an <unclear cert="low" resp="#joint">uch</unclear>, unnßer <unclear cert="low" resp="#joint">frundt</unclear>: unnd <unclear cert="low" resp="#joint">eydtgnoßisches</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">furpit</unclear>, ir woellen <unclear cert="low" resp="#joint">gestaltsame</unclear> diß <unclear cert="low" resp="#joint">orts</unclear>, <unclear cert="low" resp="#joint">unnßern</unclear> under-
+<lb n="24"/><unclear cert="medium" resp="#joint">thon</unclear> <unclear cert="low" resp="#joint">wolbefohlen</unclear> <unclear cert="low" resp="#joint">haben</unclear>, unnd den <unclear cert="medium" resp="#joint">angelegten</unclear> arrest
+<lb n="25"/>damit er zu dem <unclear cert="low" resp="#joint">sinigen</unclear> gelangen <unclear cert="medium" resp="#joint">moege</unclear>, <unclear cert="low" resp="#joint">ze</unclear> relaxieren
+<lb n="26"/><unclear cert="low" resp="#joint">gewillt</unclear> sin. Daran beschicht unnß <unclear cert="medium" resp="#joint">gefallens</unclear>, unnd
+<lb n="27"/>waß <unclear cert="low" resp="#joint">sin</unclear> supplicanten <unclear cert="low" resp="#joint">angelegenheit</unclear> erfordert.
+<lb n="28"/><unclear cert="low" resp="#joint">Welliches</unclear> wir umb <unclear cert="low" resp="#joint">uch</unclear> unnd die <unclear cert="medium" resp="#joint">uwerigen</unclear> <unclear cert="medium" resp="#joint">uf</unclear>
 <pb facs="StadtASG_Missive_2406_9254.jpg" n="2"/>
-<lb n="29"/>begebenheit mit gleichmaesiger vergeltung zuerwidren
-<lb n="30"/>unnß befleissen woellen. Unnß damit der allmacht
-<lb n="31"/>Gottes woll empfehlende. Datum den <origDate when="1623-04-18" resp="#ner">18 ten Aprilis a° 1623</origDate>.
+<lb n="29"/><unclear cert="low" resp="#joint">begebenheit</unclear> mit <unclear cert="low" resp="#joint">gleichmaesiger</unclear> <unclear cert="low" resp="#joint">vergeltung</unclear> <unclear cert="low" resp="#joint">zuerwidren</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">befleissen</unclear> <unclear cert="low" resp="#joint">woellen</unclear>. <unclear cert="low" resp="#joint">Unnß</unclear> damit der allmacht
+<lb n="31"/>Gottes <unclear cert="medium" resp="#joint">woll</unclear> <unclear cert="medium" resp="#joint">empfehlende</unclear>. Datum den <origDate when="1623-04-18" resp="#ner"><unclear cert="low" resp="#joint">18</unclear> <unclear cert="low" resp="#joint">ten</unclear> Aprilis <unclear cert="low" resp="#joint">a°</unclear> 1623</origDate>.
 <lb n="32"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermaister unnd rath
 <lb n="33"/>der Statt Schaffhaußen</orgName>.
 <pb facs="StadtASG_Missive_2406_9255.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2406_9256.jpg" n="4"/>
 <lb n="34"/>Den frommen fürsichtigen
-<lb n="35"/>ehrsamen unnd weisen
-<lb n="36"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unndt
+<lb n="35"/><unclear cert="medium" resp="#joint">ehrsamen</unclear> unnd weisen
+<lb n="36"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> unndt
 <lb n="37"/>Rath der Statt St: Gallen</orgName>,
 <lb n="38"/>unnseren innsonders
-<lb n="39"/>guoten freünden unnd ge-
-<lb n="40"/>treüwen lieben <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>.
+<lb n="39"/>guoten <unclear cert="low" resp="#joint">freünden</unclear> unnd ge-
+<lb n="40"/><unclear cert="low" resp="#joint">treüwen</unclear> lieben <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>.
 </p>
         </body>
     </text>

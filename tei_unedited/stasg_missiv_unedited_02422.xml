@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2422</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,72 +20,72 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Hans Caspar Heidegger, Vogt der Herrschaft Grüningen, bittet Bürgermeister und Rat zu St. Gallen, seinem Untertan Jörg Pfenninger behilflich zu sein. Pfenninger habe dem St. Galler Metzger Konrad Künz zwei Rinder verkauft und sei ihm 9,5 Taler schuldig geblieben. Künz habe die Zahlung versprochen, aber nur teilweise und mit ungenügender Münze geleistet. Heidegger bittet, Künz zur vollständigen Zahlung samt Kosten anzuhalten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Hans Caspar Heidegger, Vogt der Herrschaft Grüningen</name><date when="1623-07-01" resp="#regest">den 1 julij. a. 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2422_9317.jpg" n="1"/>
-<lb n="1"/>Edlen, Erenvesten, Fromen, Fuersichtigen, Ersamen unnd Wysen,
-<lb n="2"/>Heren Burgermeister, innsonders guenstigen, hochehrenden Heren,
-<lb n="3"/>Ihnen seyen myn guotwillige dienst und gruoß, sampt was ich eh-
-<lb n="4"/>ren, liebs unnd guots vermocht allzyts zuvor. By mir ist erschin-
-<lb n="5"/>en zeiger diß, myn lieber amptsangehoeriger, <persName resp="#ner">Joerg Pfenninger</persName>
-<lb n="6"/>in <placeName resp="#ner">Gyrenbad</placeName>, unnd mir klagende fuergebracht: wie im der Heren
-<lb n="7"/>burger, m. <persName resp="#ner">Conradt Kuenz</persName> der metzger, onguar 4 wochen vor
-<lb n="8"/>letst verschinner <date resp="#ner">wienacht</date>, umb aberkouffung 2 houpt kuoevich,
-<lb n="9"/>9 1/2 fl. Zrichm schuldig worden, und daruf ime wybel zuo <placeName ref="stadtasg-places-425" cert="medium" resp="#ner">Bae-
+<lb n="1"/>Edlen, Erenvesten, <unclear cert="low" resp="#joint">Fromen</unclear>, Fuersichtigen, Ersamen unnd Wysen,
+<lb n="2"/><unclear cert="low" resp="#joint">Heren</unclear> Burgermeister, <unclear cert="medium" resp="#joint">innsonders</unclear> <unclear cert="medium" resp="#joint">guenstigen</unclear>, <unclear cert="medium" resp="#joint">hochehrenden</unclear> <unclear cert="medium" resp="#joint">Heren</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">Ihnen</unclear> <unclear cert="medium" resp="#joint">seyen</unclear> myn <unclear cert="low" resp="#joint">guotwillige</unclear> dienst und <unclear cert="medium" resp="#joint">gruoß</unclear>, sampt was ich <unclear cert="medium" resp="#joint">eh</unclear>-
+<lb n="4"/><unclear cert="medium" resp="#joint">ren</unclear>, liebs unnd <unclear cert="medium" resp="#joint">guots</unclear> <unclear cert="medium" resp="#joint">vermocht</unclear> <unclear cert="medium" resp="#joint">allzyts</unclear> zuvor. By <unclear cert="medium" resp="#joint">mir</unclear> <unclear cert="medium" resp="#joint">ist</unclear> <unclear cert="medium" resp="#joint">erschin</unclear>-
+<lb n="5"/><unclear cert="medium" resp="#joint">en</unclear> <unclear cert="medium" resp="#joint">zeiger</unclear> <unclear cert="medium" resp="#joint">diß</unclear>, myn lieber <unclear cert="low" resp="#joint">amptsangehoeriger</unclear>, <persName resp="#ner"><unclear cert="low" resp="#joint">Joerg</unclear> <unclear cert="low" resp="#joint">Pfenninger</unclear></persName>
+<lb n="6"/><unclear cert="low" resp="#joint">in</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Gyrenbad</unclear></placeName>, unnd mir <unclear cert="medium" resp="#joint">klagende</unclear> <unclear cert="medium" resp="#joint">fuergebracht</unclear>: wie im der <unclear cert="medium" resp="#joint">Heren</unclear>
+<lb n="7"/>burger, m. <persName resp="#ner">Conradt <unclear cert="medium" resp="#joint">Kuenz</unclear></persName> der <unclear cert="low" resp="#joint">metzger</unclear>, <unclear cert="low" resp="#joint">onguar</unclear> <unclear cert="low" resp="#joint">4</unclear> <unclear cert="low" resp="#joint">wochen</unclear> <unclear cert="low" resp="#joint">vor</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">letst</unclear> <unclear cert="low" resp="#joint">verschinner</unclear> <date resp="#ner"><unclear cert="low" resp="#joint">wienacht</unclear></date>, umb <unclear cert="medium" resp="#joint">aberkouffung</unclear> <unclear cert="medium" resp="#joint">2</unclear> <unclear cert="medium" resp="#joint">houpt</unclear> <unclear cert="medium" resp="#joint">kuoevich</unclear>,
+<lb n="9"/>9 1/2 <unclear cert="medium" resp="#joint">fl</unclear>. <unclear cert="medium" resp="#joint">Zrichm</unclear> schuldig worden, und daruf ime wybel zuo <placeName ref="stadtasg-places-425" cert="medium" resp="#ner">Bae-
 <lb n="10"/>retschwyl</placeName>, im bywessen <persName resp="#ner">Ruodolff Bossharten</persName> deß wierts daselbst,
-<lb n="11"/><persName resp="#ner">Jochym Pfennigers</persName> im <placeName resp="#ner">Gyrenbad</placeName> und <persName resp="#ner">Jacob Kuentzen</persName> ußem
-<lb n="12"/><placeName ref="stadtasg-places-295" cert="medium" resp="#ner">Thal</placeName>, anglobt habe, das er im dennselben gellt, an guoter
-<lb n="13"/><placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zuericher</placeName> muentz unnd waerung, ohne einigen synen costen und schad-
-<lb n="14"/>en, uff <date resp="#ner">Oßren</date> nechstverschinen ußrichten und bezalen woelle.
-<lb n="15"/>Als er aber mit der zalung sye gsumpt, were er derhalben ge-
-<lb n="16"/>trungen worden, ime botten darumb zuozeschicken, da hete
-<lb n="17"/>er by 14 tagen onguar, ime gellt geschickt, aber die summa nit
-<lb n="18"/>allerklichen, zuo dem sye ein Spanische duplon darunder gweß-
-<lb n="19"/>en, so nit waerschafft, item zwo Italienische duplonnen, so er ze
-<lb n="20"/>hoch gezelt. Derhalben und wyl gar kein costen darby geweß-
-<lb n="21"/>en, habe er im das alles wider zuogschickt, der hoffnung er
-<lb n="22"/>ime nechster tagen vollenklich umb sin ansprach, mit sampt dem
-<lb n="23"/>costen, lut synes versprechens, bezalen sölte. Diewyln aber das
-<lb n="24"/>nit beschechen, sye er willends, ime wider ein botten umb be-
-<lb n="25"/>zalung zuozeschicken. Damit er aber nit wyter von ime ufge-
-<lb n="26"/>zogen, sonnder desto ehe vernuegt werden moege, hat er mich
-<lb n="27"/>ganntz ernstlich umb ein intercession schryben an die Heren ge-
+<lb n="11"/><persName resp="#ner">Jochym Pfennigers</persName> im <placeName resp="#ner">Gyrenbad</placeName> und <persName resp="#ner"><unclear cert="low" resp="#joint">Jacob</unclear> <unclear cert="low" resp="#joint">Kuentzen</unclear></persName> <unclear cert="low" resp="#joint">ußem</unclear>
+<lb n="12"/><placeName ref="stadtasg-places-295" cert="medium" resp="#ner">Thal</placeName>, anglobt habe, das er <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">dennselben</unclear> gellt, an guoter
+<lb n="13"/><placeName ref="stadtasg-places-32" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Zuericher</unclear></placeName> <unclear cert="low" resp="#joint">muentz</unclear> unnd <unclear cert="low" resp="#joint">waerung</unclear>, ohne <unclear cert="low" resp="#joint">einigen</unclear> synen costen und schad-
+<lb n="14"/><unclear cert="medium" resp="#joint">en</unclear>, uff <date resp="#ner"><unclear cert="medium" resp="#joint">Oßren</unclear></date> nechstverschinen ußrichten und bezalen <unclear cert="medium" resp="#joint">woelle</unclear>.
+<lb n="15"/>Als er aber mit der zalung sye <unclear cert="low" resp="#joint">gsumpt</unclear>, <unclear cert="low" resp="#joint">were</unclear> er <unclear cert="medium" resp="#joint">derhalben</unclear> ge-
+<lb n="16"/><unclear cert="medium" resp="#joint">trungen</unclear> <unclear cert="medium" resp="#joint">worden</unclear>, <unclear cert="medium" resp="#joint">ime</unclear> <unclear cert="medium" resp="#joint">botten</unclear> darumb <unclear cert="medium" resp="#joint">zuozeschicken</unclear>, da <unclear cert="low" resp="#joint">hete</unclear>
+<lb n="17"/>er by 14 tagen <unclear cert="low" resp="#joint">onguar</unclear>, ime gellt geschickt, aber die summa nit
+<lb n="18"/><unclear cert="low" resp="#joint">allerklichen</unclear>, zuo dem <unclear cert="low" resp="#joint">sye</unclear> ein Spanische <unclear cert="low" resp="#joint">duplon</unclear> darunder gweß-
+<lb n="19"/>en, so nit <unclear cert="low" resp="#joint">waerschafft</unclear>, item zwo <unclear cert="medium" resp="#joint">Italienische</unclear> <unclear cert="medium" resp="#joint">duplonnen</unclear>, so er <unclear cert="low" resp="#joint">ze</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">hoch</unclear> <unclear cert="low" resp="#joint">gezelt</unclear>. <unclear cert="low" resp="#joint">Derhalben</unclear> und <unclear cert="low" resp="#joint">wyl</unclear> gar kein costen darby geweß-
+<lb n="21"/><unclear cert="low" resp="#joint">en</unclear>, habe er im das alles wider <unclear cert="low" resp="#joint">zuogschickt</unclear>, der hoffnung er
+<lb n="22"/>ime nechster tagen vollenklich umb <unclear cert="low" resp="#joint">sin</unclear> ansprach, mit sampt dem
+<lb n="23"/>costen, <unclear cert="low" resp="#joint">lut</unclear> <unclear cert="low" resp="#joint">synes</unclear> <unclear cert="low" resp="#joint">versprechens</unclear>, bezalen <unclear cert="low" resp="#joint">sölte</unclear>. <unclear cert="low" resp="#joint">Diewyln</unclear> aber das
+<lb n="24"/>nit beschechen, <unclear cert="low" resp="#joint">sye</unclear> er <unclear cert="medium" resp="#joint">willends</unclear>, ime wider <unclear cert="medium" resp="#joint">ein</unclear> <unclear cert="medium" resp="#joint">botten</unclear> umb be-
+<lb n="25"/><unclear cert="medium" resp="#joint">zalung</unclear> <unclear cert="medium" resp="#joint">zuozeschicken</unclear>. Damit er aber nit wyter von <unclear cert="low" resp="#joint">ime</unclear> <unclear cert="low" resp="#joint">ufge</unclear>-
+<lb n="26"/>zogen, sonnder desto <unclear cert="low" resp="#joint">ehe</unclear> <unclear cert="low" resp="#joint">vernuegt</unclear> werden moege, hat er mich
+<lb n="27"/>ganntz ernstlich umb ein intercession schryben an die <unclear cert="low" resp="#joint">Heren</unclear> ge-
 <lb n="28"/>bätten, inn hoffnung dessen wol zegeniessen. Wölchs ich ime,
-<lb n="29"/>als nüzit unzimlichs, nit verweigeren können. Gelanngt
-<lb n="30"/>derhalb hiemit an die Heren, myn ganntz flißig bitt, die woell-
-<lb n="31"/>en ime <persName resp="#ner">Joerg Pfenninger</persName>, oder synen botten behielfflich syn,
-<lb n="32"/>das er uffs ehist von ime m. Kuenz, umb sin ußstanndt, sampt
-<lb n="33"/>1 fl. costen, so er hiemit schon haer bezalt, und was der ietzig
-<lb n="34"/>bottenlon syn wirt, mit guoter <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zuericher</placeName> werschaft, clag-
+<lb n="29"/>als <unclear cert="low" resp="#joint">nüzit</unclear> <unclear cert="low" resp="#joint">unzimlichs</unclear>, nit verweigeren können. <unclear cert="low" resp="#joint">Gelanngt</unclear>
+<lb n="30"/>derhalb <unclear cert="medium" resp="#joint">hiemit</unclear> an die <unclear cert="low" resp="#joint">Heren</unclear>, myn ganntz <unclear cert="low" resp="#joint">flißig</unclear> bitt, die <unclear cert="low" resp="#joint">woell</unclear>-
+<lb n="31"/>en ime <persName resp="#ner"><unclear cert="low" resp="#joint">Joerg</unclear> Pfenninger</persName>, oder synen <unclear cert="medium" resp="#joint">botten</unclear> <unclear cert="medium" resp="#joint">behielfflich</unclear> <unclear cert="medium" resp="#joint">syn</unclear>,
+<lb n="32"/>das er uffs <unclear cert="medium" resp="#joint">ehist</unclear> von <unclear cert="medium" resp="#joint">ime</unclear> m. <unclear cert="medium" resp="#joint">Kuenz</unclear>, umb <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">ußstanndt</unclear>, sampt
+<lb n="33"/>1 fl. costen, so er <unclear cert="low" resp="#joint">hiemit</unclear> schon <unclear cert="low" resp="#joint">haer</unclear> bezalt, und was der ietzig
+<lb n="34"/><unclear cert="medium" resp="#joint">bottenlon</unclear> syn wirt, mit guoter <placeName ref="stadtasg-places-32" cert="medium" resp="#ner">Zuericher</placeName> <unclear cert="low" resp="#joint">werschaft</unclear>, <unclear cert="low" resp="#joint">clag</unclear>-
 <pb facs="StadtASG_Missive_2422_9318.jpg" n="2"/>
-<lb n="35"/>synes anlobens, befridigke unnd bezale, unnd nit zuo schwerem
-<lb n="36"/>schaden bringe, daß umb die Herren unnd die yrrigen
-<lb n="37"/>(by neben das soelichs der gebur unnd billigkheit ehnmeeß
-<lb n="38"/>ig) inn derglychen unnd anndern fählen zuoverdienen, weil
-<lb n="39"/>ich iederzyts gannz geneigt unnd guotwillig erfunden werd=
-<lb n="40"/>en, unnß damit samptlich Goetlicher allmacht zuo gnad=
-<lb n="41"/>en beuelhende, datt den <origDate when="1623-07-01" resp="#ner">1 julij. a. 1623</origDate>.
-<lb n="42"/>Der Herren allzytt dienst:
-<lb n="43"/>unnd guotwilliger.
-<lb n="44"/><persName role="issuer" resp="#ner">Hanns Caspar Heidegger</persName>, vogt
-<lb n="45"/>der herrschafft <placeName ref="stadtasg-places-413" cert="medium" resp="#ner">Grueningen</placeName>
+<lb n="35"/>synes anlobens, <unclear cert="low" resp="#joint">befridigke</unclear> unnd <unclear cert="low" resp="#joint">bezale</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> nit zuo <unclear cert="low" resp="#joint">schwerem</unclear>
+<lb n="36"/>schaden bringe, daß umb die <unclear cert="medium" resp="#joint">Herren</unclear> unnd die <unclear cert="low" resp="#joint">yrrigen</unclear>
+<lb n="37"/>(<unclear cert="low" resp="#joint">by</unclear> <unclear cert="low" resp="#joint">neben</unclear> das <unclear cert="medium" resp="#joint">soelichs</unclear> der gebur unnd <unclear cert="low" resp="#joint">billigkheit</unclear> <unclear cert="low" resp="#joint">ehnmeeß</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">ig</unclear>) <unclear cert="medium" resp="#joint">inn</unclear> derglychen unnd anndern <unclear cert="medium" resp="#joint">fählen</unclear> zuoverdienen, weil
+<lb n="39"/><unclear cert="low" resp="#joint">ich</unclear> <unclear cert="low" resp="#joint">iederzyts</unclear> <unclear cert="low" resp="#joint">gannz</unclear> geneigt unnd <unclear cert="low" resp="#joint">guotwillig</unclear> erfunden werd=
+<lb n="40"/>en, <unclear cert="medium" resp="#joint">unnß</unclear> damit <unclear cert="medium" resp="#joint">samptlich</unclear> <unclear cert="low" resp="#joint">Goetlicher</unclear> allmacht zuo gnad=
+<lb n="41"/>en <unclear cert="low" resp="#joint">beuelhende</unclear>, <unclear cert="medium" resp="#joint">datt</unclear> den <origDate when="1623-07-01" resp="#ner">1 <unclear cert="medium" resp="#joint">julij</unclear>. <unclear cert="low" resp="#joint">a</unclear>. <unclear cert="medium" resp="#joint">1623</unclear></origDate>.
+<lb n="42"/>Der Herren <unclear cert="low" resp="#joint">allzytt</unclear> dienst:
+<lb n="43"/>unnd <unclear cert="low" resp="#joint">guotwilliger</unclear>.
+<lb n="44"/><persName role="issuer" resp="#ner">Hanns Caspar <unclear cert="low" resp="#joint">Heidegger</unclear></persName>, vogt
+<lb n="45"/>der <unclear cert="medium" resp="#joint">herrschafft</unclear> <placeName ref="stadtasg-places-413" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Grueningen</unclear></placeName>
 <pb facs="StadtASG_Missive_2422_9319.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2422_9320.jpg" n="4"/>
-<lb n="46"/>Den edlen, eerenvessten, frommen, fuersichtigen, er-
-<lb n="47"/>samen und wyßen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und
-<lb n="48"/>Rhat der statt St. Gallen</orgName>, mynen insonders guen-
-<lb n="49"/>stigen, hochgeehrten, lieben herren.
+<lb n="46"/>Den edlen, <unclear cert="low" resp="#joint">eerenvessten</unclear>, frommen, fuersichtigen, <unclear cert="medium" resp="#joint">er</unclear>-
+<lb n="47"/><unclear cert="medium" resp="#joint">samen</unclear> und <unclear cert="medium" resp="#joint">wyßen</unclear> herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und
+<lb n="48"/><unclear cert="low" resp="#joint">Rhat</unclear> der statt <unclear cert="medium" resp="#joint">St</unclear>. Gallen</orgName>, mynen <unclear cert="low" resp="#joint">insonders</unclear> guen-
+<lb n="49"/><unclear cert="low" resp="#joint">stigen</unclear>, hochgeehrten, lieben herren.
 </p>
         </body>
     </text>

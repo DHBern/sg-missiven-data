@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2543</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,89 +20,89 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten Graf Hugo zu Montfort um ein Paar Hirschkalber für den Stadtturm, da sie durch Unglück um ihr Wild gekommen seien. Sie verweisen auf die Zusage des Grafen, sie mit Hochwild zu versorgen, und bieten im Gegenzug ihre Dienste an.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1625-05-10" resp="#regest">10 May Anno 1625</date></correspAction><correspAction type="received"><name resp="#regest">Hugo Graf zu Montfort und Rottefelß</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2543_9817.jpg" n="1"/>
-<lb n="1"/>Hochwohlgeborner Graffe, E. Gdl. seyen unßer
-<lb n="2"/>beflißne gantzwillige dienst, mit aller eherbiettung zuvor
-<lb n="3"/>gnediger Herr.
-<lb n="4"/>Wir habendt bißhero in unßerem Stattgraben ettlich stukch Gwildts
-<lb n="5"/>von Hirsßen erhallten, sindt aber unlangsten durch unfaehl gantz
-<lb n="6"/>umb die hindenen komen, und unns allein noch zwey hiersß lebendig
+<lb n="1"/><unclear cert="low" resp="#joint">Hochwohlgeborner</unclear> <unclear cert="low" resp="#joint">Graffe</unclear>, <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>. <unclear cert="low" resp="#joint">seyen</unclear> <unclear cert="low" resp="#joint">unßer</unclear>
+<lb n="2"/><unclear cert="low" resp="#joint">beflißne</unclear> gantzwillige dienst, mit <unclear cert="low" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">eherbiettung</unclear> <unclear cert="low" resp="#joint">zuvor</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">gnediger</unclear> <unclear cert="low" resp="#joint">Herr</unclear>.
+<lb n="4"/>Wir habendt bißhero in unßerem Stattgraben ettlich <unclear cert="low" resp="#joint">stukch</unclear> <unclear cert="low" resp="#joint">Gwildts</unclear>
+<lb n="5"/>von <unclear cert="low" resp="#joint">Hirsßen</unclear> <unclear cert="low" resp="#joint">erhallten</unclear>, sindt aber <unclear cert="low" resp="#joint">unlangsten</unclear> durch unfaehl gantz
+<lb n="6"/>umb die <unclear cert="low" resp="#joint">hindenen</unclear> komen, und unns allein noch <unclear cert="low" resp="#joint">zwey</unclear> <unclear cert="low" resp="#joint">hiersß</unclear> lebendig
 <lb n="7"/>verbliben.
-<lb n="8"/>Wann wir dann verstendiget worden, daß E. Gdl.
-<lb n="9"/>inn dero forst und wildtbahn, mit solchem hochgwildt wohl ver:
-<lb n="10"/>sehen, unnd unns die vertroestung gethon worden, da E. Gdl.
+<lb n="8"/>Wann wir dann <unclear cert="low" resp="#joint">verstendiget</unclear> worden, daß <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>.
+<lb n="9"/>inn <unclear cert="medium" resp="#joint">dero</unclear> <unclear cert="medium" resp="#joint">forst</unclear> und <unclear cert="low" resp="#joint">wildtbahn</unclear>, mit solchem <unclear cert="low" resp="#joint">hochgwildt</unclear> wohl ver:
+<lb n="10"/>sehen, unnd unns die vertroestung gethon worden, da <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>.
 <lb n="11"/>wir deßweegen ersuchten, dießelbige unns mit einem
-<lb n="12"/>par hinden kelber zuo widerersezung gedachts unßers Statt=
+<lb n="12"/><unclear cert="low" resp="#joint">par</unclear> <unclear cert="low" resp="#joint">hinden</unclear> <unclear cert="low" resp="#joint">kelber</unclear> zuo <unclear cert="low" resp="#joint">widerersezung</unclear> gedachts <unclear cert="low" resp="#joint">unßers</unclear> Statt=
 <lb n="13"/>grabens gnedig willfahren wurden.
-<lb n="14"/>Alß haben E. Gdl. unßerem zuo dero tragendem dienstlichen
-<lb n="15"/>guotten vertrauwen nach, wir hierumb zuersuochen nicht umbgehn
-<lb n="16"/>koennen.
-<lb n="17"/>Gelangt derohalben an E. Gdl. unßer gantz dienstfleißig
-<lb n="18"/>ersuochen, unns wie angedeüt, ein par hinden kelber jnmasßen
-<lb n="19"/>es daß Waidtwerch bschinen moecht, gnedig zukomen lasßen.
-<lb n="20"/>Wie nun hierin E. Gdl. unns ein sonderbahre gnad erweißen,
-<lb n="21"/>alß sindt umb dießelben wir hinwider ein solchs, wo wir nur
-<lb n="22"/>koenten, mit gantz dienstlichem willen und gemuett zuverdienen bgirig,
-<lb n="23"/>den Allmechtig daß wir Gott bitten, daß er E. Gdl. sampt unns in bharrendem
-<lb n="24"/>wohlstandt, lange zeit wolle erhallten. Datum den <origDate when="1625-05-10" resp="#ner">10 May
-<lb n="25"/>Anno 1625</origDate>.
-<lb n="26"/>E. Gdl.
-<lb n="27"/>Dem hochwohlgebornen Graffen und Herren, Gantz dienstgeflißne
-<lb n="28"/>Herren <persName role="recipient" resp="#ner">Hugo Graffen zuo Montfortt und Rotta=
-<lb n="29"/>felß</persName>, frey herren von <placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregentz</placeName> herren zuo <placeName ref="stadtasg-places-93" cert="medium" resp="#ner">Tettnang</placeName>
-<lb n="30"/>und <placeName ref="stadtasg-places-84" cert="medium" resp="#ner">Argen</placeName>, Roem. Kayß. Mt. auch Ertzfrstl. B. und Rhatt s.
-<lb n="31"/>Ertzhertzogischer Rhatt und Cammerer, unßerem
+<lb n="14"/>Alß haben <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>. <unclear cert="low" resp="#joint">unßerem</unclear> zuo dero tragendem dienstlichen
+<lb n="15"/><unclear cert="low" resp="#joint">guotten</unclear> <unclear cert="low" resp="#joint">vertrauwen</unclear> nach, wir hierumb zuersuochen nicht <unclear cert="low" resp="#joint">umbgehn</unclear>
+<lb n="16"/><unclear cert="low" resp="#joint">koennen</unclear>.
+<lb n="17"/><unclear cert="low" resp="#joint">Gelangt</unclear> <unclear cert="low" resp="#joint">derohalben</unclear> an <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>. unßer gantz dienstfleißig
+<lb n="18"/>ersuochen, unns wie <unclear cert="medium" resp="#joint">angedeüt</unclear>, ein <unclear cert="medium" resp="#joint">par</unclear> <unclear cert="medium" resp="#joint">hinden</unclear> <unclear cert="medium" resp="#joint">kelber</unclear> <unclear cert="medium" resp="#joint">jnmasßen</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">es</unclear> daß <unclear cert="medium" resp="#joint">Waidtwerch</unclear> <unclear cert="medium" resp="#joint">bschinen</unclear> <unclear cert="medium" resp="#joint">moecht</unclear>, gnedig <unclear cert="medium" resp="#joint">zukomen</unclear> <unclear cert="medium" resp="#joint">lasßen</unclear>.
+<lb n="20"/>Wie nun <unclear cert="low" resp="#joint">hierin</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>. unns ein <unclear cert="low" resp="#joint">sonderbahre</unclear> gnad <unclear cert="low" resp="#joint">erweißen</unclear>,
+<lb n="21"/>alß sindt umb dießelben wir hinwider ein solchs, wo wir <unclear cert="low" resp="#joint">nur</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">koenten</unclear>, mit gantz dienstlichem willen und <unclear cert="medium" resp="#joint">gemuett</unclear> zuverdienen <unclear cert="low" resp="#joint">bgirig</unclear>,
+<lb n="23"/><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">Allmechtig</unclear> daß wir Gott bitten, daß <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>. <unclear cert="low" resp="#joint">sampt</unclear> unns in <unclear cert="low" resp="#joint">bharrendem</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">wohlstandt</unclear>, <unclear cert="low" resp="#joint">lange</unclear> <unclear cert="low" resp="#joint">zeit</unclear> <unclear cert="low" resp="#joint">wolle</unclear> <unclear cert="low" resp="#joint">erhallten</unclear>. Datum den <origDate when="1625-05-10" resp="#ner"><unclear cert="low" resp="#joint">10</unclear> May
+<lb n="25"/>Anno <unclear cert="low" resp="#joint">1625</unclear></origDate>.
+<lb n="26"/><unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Gdl</unclear>.
+<lb n="27"/>Dem hochwohlgebornen Graffen und Herren, <unclear cert="low" resp="#joint">Gantz</unclear> <unclear cert="low" resp="#joint">dienstgeflißne</unclear>
+<lb n="28"/><unclear cert="low" resp="#joint">Herren</unclear> <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Hugo</unclear> <unclear cert="low" resp="#joint">Graffen</unclear> zuo Montfortt und <unclear cert="low" resp="#joint">Rotta=</unclear>
+<lb n="29"/><unclear cert="low" resp="#joint">felß</unclear></persName>, <unclear cert="low" resp="#joint">frey</unclear> <unclear cert="low" resp="#joint">herren</unclear> von <placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bregentz</unclear></placeName> <unclear cert="medium" resp="#joint">herren</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-93" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Tettnang</unclear></placeName>
+<lb n="30"/>und <placeName ref="stadtasg-places-84" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Argen</unclear></placeName>, <unclear cert="medium" resp="#joint">Roem</unclear>. <unclear cert="medium" resp="#joint">Kayß</unclear>. <unclear cert="medium" resp="#joint">Mt</unclear>. auch <unclear cert="low" resp="#joint">Ertzfrstl</unclear>. <unclear cert="low" resp="#joint">B</unclear>. und <unclear cert="low" resp="#joint">Rhatt</unclear> <unclear cert="low" resp="#joint">s</unclear>.
+<lb n="31"/><unclear cert="low" resp="#joint">Ertzhertzogischer</unclear> <unclear cert="low" resp="#joint">Rhatt</unclear> <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Cammerer</unclear>, <unclear cert="low" resp="#joint">unßerem</unclear>
 <lb n="32"/>gnedigen Herren.
 <pb facs="StadtASG_Missive_2543_9818.jpg" n="2"/>
-<lb n="33"/><persName role="issuer" resp="#ner">Haugg Graf zue Montfort</persName>, Herr von
-<lb n="34"/><placeName ref="stadtasg-places-60" cert="medium" resp="#ner">Bregentz</placeName> zu <placeName ref="stadtasg-places-93" cert="medium" resp="#ner">Tetenang</placeName> und <placeName ref="stadtasg-places-84" cert="medium" resp="#ner">Argen</placeName> etc.
-<lb n="35"/>Röm. Kayl. Mayt. etc. auch Churfür=
-<lb n="36"/>stlichister Durchl. Hertzog <persName resp="#ner">Maximi=
-<lb n="37"/>liani</persName> in <placeName ref="stadtasg-places-132" cert="medium" resp="#ner">Bayerrn</placeName> etc. Rath und Cammerer.
-<lb n="38"/>Unßern gdl. grueß, und genaigten willen zuvor, wol=
+<lb n="33"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Haugg</unclear> <unclear cert="low" resp="#joint">Graf</unclear> <unclear cert="medium" resp="#joint">zue</unclear> <unclear cert="medium" resp="#joint">Montfort</unclear></persName>, Herr von
+<lb n="34"/><placeName ref="stadtasg-places-60" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Bregentz</unclear></placeName> <unclear cert="medium" resp="#joint">zu</unclear> <placeName ref="stadtasg-places-93" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Tetenang</unclear></placeName> und <placeName ref="stadtasg-places-84" cert="medium" resp="#ner">Argen</placeName> etc.
+<lb n="35"/><unclear cert="medium" resp="#joint">Röm</unclear>. Kayl. Mayt. etc. auch <unclear cert="medium" resp="#joint">Churfür=</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">stlichister</unclear> Durchl. Hertzog <persName resp="#ner">Maximi=
+<lb n="37"/>liani</persName> in <placeName ref="stadtasg-places-132" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bayerrn</unclear></placeName> <unclear cert="low" resp="#joint">etc</unclear>. Rath und <unclear cert="low" resp="#joint">Cammerer</unclear>.
+<lb n="38"/><unclear cert="medium" resp="#joint">Unßern</unclear> <unclear cert="low" resp="#joint">gdl</unclear>. <unclear cert="low" resp="#joint">grueß</unclear>, und <unclear cert="low" resp="#joint">genaigten</unclear> willen zuvor, <unclear cert="low" resp="#joint">wol=</unclear>
 <lb n="39"/>acht, frome, ehrnveste, fürsichtige und weiße, sonders
-<lb n="40"/>liebe Herren und Nachbarenn.
-<lb n="41"/>Deroselben ann unnß abgangen schreiben, ist unnß wol und zue
-<lb n="42"/>recht zuekhomen, und haben ablesendt darauß vernomen,
-<lb n="43"/>wie die Herren an etlichen gwildtstuckhen, sonderlichen von Jungen
-<lb n="44"/>Künnen im mangel stehn, und dergleichen von unnß inen zue=
-<lb n="45"/>thailen begeren, deß haben wür hierüber unverweilt unnßeren
-<lb n="46"/>Vorstmaisteren gdl. bevelch erthailt, ihren möglichen fleiß anzue=
-<lb n="47"/>wenden darmit sye umb ein paar dergleichen ehendist zubekhomen, so
-<lb n="48"/>baldt nun solche zur handt gebracht werden könen, so solle ihnen die
+<lb n="40"/><unclear cert="medium" resp="#joint">liebe</unclear> Herren und <unclear cert="low" resp="#joint">Nachbarenn</unclear>.
+<lb n="41"/><unclear cert="low" resp="#joint">Deroselben</unclear> <unclear cert="medium" resp="#joint">ann</unclear> unnß abgangen schreiben, ist unnß wol und <unclear cert="low" resp="#joint">zue</unclear>
+<lb n="42"/>recht <unclear cert="low" resp="#joint">zuekhomen</unclear>, und <unclear cert="low" resp="#joint">haben</unclear> <unclear cert="low" resp="#joint">ablesendt</unclear> <unclear cert="low" resp="#joint">darauß</unclear> vernomen,
+<lb n="43"/>wie <unclear cert="medium" resp="#joint">die</unclear> Herren an etlichen <unclear cert="low" resp="#joint">gwildtstuckhen</unclear>, sonderlichen von <unclear cert="low" resp="#joint">Jungen</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">Künnen</unclear> im mangel stehn, und dergleichen von unnß inen <unclear cert="low" resp="#joint">zue=</unclear>
+<lb n="45"/><unclear cert="low" resp="#joint">thailen</unclear> begeren, deß haben wür hierüber unverweilt <unclear cert="low" resp="#joint">unnßeren</unclear>
+<lb n="46"/><unclear cert="low" resp="#joint">Vorstmaisteren</unclear> <unclear cert="low" resp="#joint">gdl</unclear>. <unclear cert="medium" resp="#joint">bevelch</unclear> erthailt, <unclear cert="low" resp="#joint">ihren</unclear> <unclear cert="medium" resp="#joint">möglichen</unclear> fleiß <unclear cert="medium" resp="#joint">anzue=</unclear>
+<lb n="47"/>wenden <unclear cert="medium" resp="#joint">darmit</unclear> <unclear cert="medium" resp="#joint">sye</unclear> umb ein paar <unclear cert="low" resp="#joint">dergleichen</unclear> <unclear cert="low" resp="#joint">ehendist</unclear> <unclear cert="low" resp="#joint">zubekhomen</unclear>, so
+<lb n="48"/>baldt nun solche <unclear cert="low" resp="#joint">zur</unclear> handt gebracht werden könen, so <unclear cert="low" resp="#joint">solle</unclear> ihnen die
 <lb n="49"/>alß baldt volgen.
-<lb n="50"/>Am andern, weihl dann wür im bolder, mit
-<lb n="51"/>unnßerem Müntzverwalter Sr. <persName resp="#ner">Pietro Giovanni Farinetti</persName> seelig
-<lb n="52"/>zueschlagen willens, unnd unnß waß er Farinetti zue der Herren
-<lb n="53"/>Müntzstadt, vom <date resp="#ner">1. November a° etc. 1621</date>. ann, biß dato füer silber,
-<lb n="54"/>auß wie hoch eingelifert, und hergegen von ihnen für Müntz inen waß
-<lb n="55"/>pretio eingewechßlet und erhebdt, ermangelt, alß ist unnßer gdl.
-<lb n="56"/>gesinnen an die Herren, sye wollen unnß ohnbeschwerth eß alles
-<lb n="57"/>und in specie umb die gebüer schriftlichen zuekhomen laßen, daß
-<lb n="58"/>stehet unnß, umb dieselbe anderwerts wider nachbarlichen in
-<lb n="59"/>gdl. zueerwideren, denen wür dann ohne daß, mit gdl. wol
-<lb n="60"/>gewogen verbleiben. Datum <origPlace ref="stadtasg-places-93" cert="medium" resp="#ner">Schloß Tettnang</origPlace> den <origDate when="1625-06-05" resp="#ner">5. Junij
+<lb n="50"/><unclear cert="medium" resp="#joint">Am</unclear> andern, <unclear cert="low" resp="#joint">weihl</unclear> dann <unclear cert="low" resp="#joint">wür</unclear> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">bolder</unclear>, mit
+<lb n="51"/><unclear cert="low" resp="#joint">unnßerem</unclear> <unclear cert="medium" resp="#joint">Müntzverwalter</unclear> <unclear cert="low" resp="#joint">Sr</unclear>. <persName resp="#ner">Pietro Giovanni <unclear cert="low" resp="#joint">Farinetti</unclear></persName> <unclear cert="low" resp="#joint">seelig</unclear>
+<lb n="52"/><unclear cert="low" resp="#joint">zueschlagen</unclear> willens, unnd unnß waß er <unclear cert="low" resp="#joint">Farinetti</unclear> zue der Herren
+<lb n="53"/><unclear cert="medium" resp="#joint">Müntzstadt</unclear>, vom <date resp="#ner">1. November <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">etc</unclear>. 1621</date>. ann, biß dato <unclear cert="low" resp="#joint">füer</unclear> silber,
+<lb n="54"/><unclear cert="medium" resp="#joint">auß</unclear> wie hoch <unclear cert="low" resp="#joint">eingelifert</unclear>, und <unclear cert="low" resp="#joint">hergegen</unclear> <unclear cert="medium" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">ihnen</unclear> <unclear cert="medium" resp="#joint">für</unclear> <unclear cert="medium" resp="#joint">Müntz</unclear> <unclear cert="low" resp="#joint">inen</unclear> <unclear cert="low" resp="#joint">waß</unclear>
+<lb n="55"/><unclear cert="medium" resp="#joint">pretio</unclear> <unclear cert="low" resp="#joint">eingewechßlet</unclear> und <unclear cert="low" resp="#joint">erhebdt</unclear>, ermangelt, <unclear cert="low" resp="#joint">alß</unclear> ist <unclear cert="low" resp="#joint">unnßer</unclear> <unclear cert="low" resp="#joint">gdl</unclear>.
+<lb n="56"/><unclear cert="medium" resp="#joint">gesinnen</unclear> an die Herren, sye wollen <unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">ohnbeschwerth</unclear> <unclear cert="low" resp="#joint">eß</unclear> alles
+<lb n="57"/>und in <unclear cert="medium" resp="#joint">specie</unclear> umb die <unclear cert="low" resp="#joint">gebüer</unclear> <unclear cert="low" resp="#joint">schriftlichen</unclear> <unclear cert="low" resp="#joint">zuekhomen</unclear> laßen, daß
+<lb n="58"/><unclear cert="low" resp="#joint">stehet</unclear> unnß, umb dieselbe <unclear cert="low" resp="#joint">anderwerts</unclear> wider nachbarlichen <unclear cert="medium" resp="#joint">in</unclear>
+<lb n="59"/><unclear cert="medium" resp="#joint">gdl</unclear>. <unclear cert="medium" resp="#joint">zueerwideren</unclear>, denen wür dann <unclear cert="medium" resp="#joint">ohne</unclear> <unclear cert="medium" resp="#joint">daß</unclear>, mit <unclear cert="low" resp="#joint">gdl</unclear>. wol
+<lb n="60"/><unclear cert="low" resp="#joint">gewogen</unclear> verbleiben. Datum <origPlace ref="stadtasg-places-93" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schloß</unclear> <unclear cert="low" resp="#joint">Tettnang</unclear></origPlace> den <origDate when="1625-06-05" resp="#ner">5. Junij
 <lb n="61"/>a° 1625</origDate>. Neuen Calenders.
-<lb n="62"/>Den wollgeachten, frommen, ehrnvesten, fürsichti=
-<lb n="63"/>gen und weißen, N. N. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaisteren
-<lb n="64"/>und Rath der Statt St. Gallen</orgName>, unnßern
+<lb n="62"/>Den <unclear cert="low" resp="#joint">wollgeachten</unclear>, frommen, ehrnvesten, fürsichti=
+<lb n="63"/>gen und <unclear cert="low" resp="#joint">weißen</unclear>, <unclear cert="medium" resp="#joint">N</unclear>. <unclear cert="medium" resp="#joint">N</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaisteren</unclear>
+<lb n="64"/>und Rath der Statt St. Gallen</orgName>, <unclear cert="low" resp="#joint">unnßern</unclear>
 <lb n="65"/>sonders lieben Herren Nachbaren.
-<lb n="66"/>Haug Graf zue
+<lb n="66"/><unclear cert="medium" resp="#joint">Haug</unclear> <unclear cert="medium" resp="#joint">Graf</unclear> zue
 <lb n="67"/>Montfort
-<lb n="68"/>mpria.
+<lb n="68"/><unclear cert="low" resp="#joint">mpria</unclear>.
 </p>
         </body>
     </text>

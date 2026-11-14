@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2420</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,46 +20,46 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Statthalter und Rat der Stadt Zürich bitten Bürgermeister und Rat zu St. Gallen, von ihrem Bürger Laurenz Schellen Bericht zu erstatten, wie es mit einem Wechsel über 4000 Gulden bestellt sei, den dieser 1621 mit dem Zürcher Bürger Caspar Santij abgeschlossen habe. Sie ersuchen um schriftliche Auskunft über die Art der Bedienung und die Abzüge, um einen Streit zwischen Santij und dem Zürcher Bürger Christoph Werdmüller zu klären.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Statthalter und Rat der Stadt Zürich</name><date when="1623-06-19" resp="#regest">19. junij anno 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2420_9309.jpg" n="1"/>
-<lb n="1"/>Unßer fründtlich willig dienst, und was wir ehren liebs
-<lb n="2"/>unnd guots vermögend, zuvor, from, fürsichtig, ehrsam,
-<lb n="3"/>wyß, inßunders guot fründ unnd getrüw lieb Eydt=
-<lb n="4"/>gnoßen, demnach sich zwüschent unnßeren
-<lb n="5"/>burgeren, <persName resp="#ner">Christoffel Werdmüllern</persName> unnd <persName resp="#ner">Caspern
-<lb n="6"/>Santij</persName> etwas spanns unnd mißverstandts zuogetragen,
-<lb n="7"/>von wegen deß wechßels so den <date resp="#ner">19. t. junij. ao. 1621.</date>
-<lb n="8"/>der <placeName resp="#ner">Santij</placeName> mit Ime <persName resp="#ner">Werdmüller</persName> umb 4000. fl. nache
-<lb n="9"/><placeName ref="stadtasg-places-21" cert="medium" resp="#ner">Nürnnberg</placeName>, wegen üwers burgers <persName resp="#ner">Laurenz Schellen</persName>
-<lb n="10"/>beschloßen, hat er Werdmüller unns gebet=
-<lb n="11"/>en, zuo erkhundigung der warheit üch deßhalber zuoze=
-<lb n="12"/>schryben unnd zuoersuochen, von üwerem burger dem
-<lb n="13"/><persName resp="#ner">Schellen</persName> grundtlich zeernfahren, mit was sorten und inn
-<lb n="14"/>was pryß er von genantem <placeName resp="#ner">Santij</placeName> vernügt, unnd
-<lb n="15"/>wie vil ime lagio per cento abgezogen worden syge,
-<lb n="16"/>sich demnach desselben zuoerscheinung der warheit zube=
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> fründtlich willig dienst, und was wir ehren liebs
+<lb n="2"/>unnd guots vermögend, zuvor, <unclear cert="medium" resp="#joint">from</unclear>, fürsichtig, <unclear cert="medium" resp="#joint">ehrsam</unclear>,
+<lb n="3"/><unclear cert="medium" resp="#joint">wyß</unclear>, <unclear cert="low" resp="#joint">inßunders</unclear> guot <unclear cert="medium" resp="#joint">fründ</unclear> unnd <unclear cert="low" resp="#joint">getrüw</unclear> lieb <unclear cert="medium" resp="#joint">Eydt=</unclear>
+<lb n="4"/><unclear cert="medium" resp="#joint">gnoßen</unclear>, <unclear cert="medium" resp="#joint">demnach</unclear> sich <unclear cert="low" resp="#joint">zwüschent</unclear> <unclear cert="low" resp="#joint">unnßeren</unclear>
+<lb n="5"/><unclear cert="medium" resp="#joint">burgeren</unclear>, <persName resp="#ner"><unclear cert="medium" resp="#joint">Christoffel</unclear> <unclear cert="low" resp="#joint">Werdmüllern</unclear></persName> unnd <persName resp="#ner"><unclear cert="low" resp="#joint">Caspern</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">Santij</unclear></persName> etwas spanns unnd mißverstandts zuogetragen,
+<lb n="7"/>von wegen deß <unclear cert="medium" resp="#joint">wechßels</unclear> so den <date resp="#ner">19. <unclear cert="medium" resp="#joint">t</unclear>. junij. <unclear cert="medium" resp="#joint">ao</unclear>. 1621.</date>
+<lb n="8"/>der <placeName resp="#ner"><unclear cert="low" resp="#joint">Santij</unclear></placeName> mit <unclear cert="low" resp="#joint">Ime</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Werdmüller</unclear></persName> umb 4000. fl. <unclear cert="low" resp="#joint">nache</unclear>
+<lb n="9"/><placeName ref="stadtasg-places-21" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Nürnnberg</unclear></placeName>, wegen üwers burgers <persName resp="#ner"><unclear cert="low" resp="#joint">Laurenz</unclear> <unclear cert="medium" resp="#joint">Schellen</unclear></persName>
+<lb n="10"/><unclear cert="medium" resp="#joint">beschloßen</unclear>, hat er <unclear cert="low" resp="#joint">Werdmüller</unclear> unns gebet=
+<lb n="11"/><unclear cert="medium" resp="#joint">en</unclear>, zuo <unclear cert="low" resp="#joint">erkhundigung</unclear> der warheit <unclear cert="medium" resp="#joint">üch</unclear> deßhalber zuoze=
+<lb n="12"/>schryben unnd <unclear cert="low" resp="#joint">zuoersuochen</unclear>, von <unclear cert="medium" resp="#joint">üwerem</unclear> burger dem
+<lb n="13"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Schellen</unclear></persName> <unclear cert="medium" resp="#joint">grundtlich</unclear> zeernfahren, mit was <unclear cert="medium" resp="#joint">sorten</unclear> und inn
+<lb n="14"/>was <unclear cert="medium" resp="#joint">pryß</unclear> er von <unclear cert="low" resp="#joint">genantem</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Santij</unclear></placeName> <unclear cert="low" resp="#joint">vernügt</unclear>, unnd
+<lb n="15"/>wie vil <unclear cert="low" resp="#joint">ime</unclear> lagio per cento abgezogen <unclear cert="medium" resp="#joint">worden</unclear> <unclear cert="low" resp="#joint">syge</unclear>,
+<lb n="16"/>sich <unclear cert="medium" resp="#joint">demnach</unclear> <unclear cert="low" resp="#joint">desselben</unclear> <unclear cert="low" resp="#joint">zuoerscheinung</unclear> der warheit <unclear cert="low" resp="#joint">zube=</unclear>
 <lb n="17"/>helffen etc. Unnd wann nun diß begehren zuo
-<lb n="18"/>befürderung der warheit unnd deß rechten gereicht,
-<lb n="19"/>als ist an üch unnßer lieb Eydtgnoßen, unnßer fründt=
-<lb n="20"/>lich bitten, Ir wöllind von gedachtem <persName resp="#ner">Schellen</persName>, wie
-<lb n="21"/>es mit obangeregtem wechßel beschaffen, und darmit
-<lb n="22"/>zuogangen, begehrter maßen von oberkeits wegen be=
-<lb n="23"/>richt ynnemmen, unnd denselben unns schrifftlich zuokhom=
-<lb n="24"/>en laßen, damit alsdann feerners dest baß die
-<lb n="25"/>gebür erfolgen unnd fürgnommen werden khönne,
-<lb n="26"/>das sind wir inn eydtgnößischer fründtschafft zube=
+<lb n="18"/>befürderung der warheit unnd deß rechten <unclear cert="low" resp="#joint">gereicht</unclear>,
+<lb n="19"/>als ist an üch unnßer lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear>, unnßer fründt=
+<lb n="20"/>lich bitten, Ir <unclear cert="medium" resp="#joint">wöllind</unclear> von gedachtem <persName resp="#ner"><unclear cert="medium" resp="#joint">Schellen</unclear></persName>, wie
+<lb n="21"/>es mit obangeregtem <unclear cert="low" resp="#joint">wechßel</unclear> beschaffen, und <unclear cert="medium" resp="#joint">darmit</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">zuogangen</unclear>, begehrter <unclear cert="medium" resp="#joint">maßen</unclear> von <unclear cert="medium" resp="#joint">oberkeits</unclear> wegen be=
+<lb n="23"/>richt <unclear cert="low" resp="#joint">ynnemmen</unclear>, unnd denselben unns schrifftlich <unclear cert="low" resp="#joint">zuokhom=</unclear>
+<lb n="24"/>en laßen, damit alsdann <unclear cert="low" resp="#joint">feerners</unclear> dest baß die
+<lb n="25"/>gebür erfolgen unnd <unclear cert="medium" resp="#joint">fürgnommen</unclear> werden <unclear cert="low" resp="#joint">khönne</unclear>,
+<lb n="26"/>das <unclear cert="medium" resp="#joint">sind</unclear> wir inn <unclear cert="low" resp="#joint">eydtgnößischer</unclear> fründtschafft <unclear cert="low" resp="#joint">zube=</unclear>
 <pb facs="StadtASG_Missive_2420_9310.jpg" n="2"/>
 <lb n="27"/>schulden geneigt. Unnd bevelchend unns sambtlich
 <lb n="28"/>dem schirm Gottes. Date <origDate when="1623-06-19" resp="#ner">den 19.
@@ -69,11 +69,11 @@
 <pb facs="StadtASG_Missive_2420_9311.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2420_9312.jpg" n="4"/>
 <lb n="32"/>Den frommen, fürsichtigen, ehr-
-<lb n="33"/>sammen wyßen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="33"/>sammen <unclear cert="medium" resp="#joint">wyßen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="34"/>unnd Rath der Statt Sanct
-<lb n="35"/>Gallen</orgName>, unnßeren inßonders
-<lb n="36"/>guoten fründen, unnd gethrüwen
-<lb n="37"/>lieben Eydtgenoßen.
+<lb n="35"/>Gallen</orgName>, <unclear cert="medium" resp="#joint">unnßeren</unclear> <unclear cert="low" resp="#joint">inßonders</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">guoten</unclear> fründen, unnd gethrüwen
+<lb n="37"/>lieben <unclear cert="low" resp="#joint">Eydtgenoßen</unclear>.
 </p>
         </body>
     </text>

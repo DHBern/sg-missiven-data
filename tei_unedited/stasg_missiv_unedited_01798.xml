@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1798</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Konsuln und Senat der Reichsstadt Frankfurt am Main bitten Konsuln und Senat der Stadt St. Gallen, für ihre Bürger Johannes du Fay und Johannes de Famars zu intervenieren. Sie ersuchen, dem Boten Stephan de Famars als Mandatar der beiden Bürger bei der Geldübergabe und bei der Erledigung der damit verbundenen Geschäfte durch die Autorität der St. Galler Behörden Glauben zu schenken.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Konsuln und Senat der Reichsstadt Frankfurt am Main</name><date when="1612-09-22" cert="low" resp="#regest">22. Septemb. ao cIɔ, Iɔ, cxII.</date></correspAction><correspAction type="received"><name resp="#regest">Konsuln und Senat der Stadt St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -36,25 +36,25 @@
 <pb facs="StadtASG_Missive_1798_6641.jpg" n="1"/>
 <lb n="1"/>Magnifici, Amplissimi, <unclear cert="medium" resp="#joint">Consultmiq</unclear>. Viri,
 <lb n="2"/>Amici singulares.
-<lb n="3"/><unclear cert="low" resp="#joint">Jterantur</unclear> <unclear cert="low" resp="#joint">ciues</unclear> nostri <persName resp="#ner">Joannes du <unclear cert="medium" resp="#joint">Faÿ</unclear></persName> et
-<lb n="4"/><persName resp="#ner">Joannes de Famars</persName> instantem et submissam
-<lb n="5"/>petitionem, ut illorum nomine apud Amplm
-<lb n="6"/>Vestm intercedere velimus, quo <unclear cert="medium" resp="#joint">praesenti</unclear> <unclear cert="medium" resp="#joint">har</unclear>.
-<lb n="7"/>literarum latori <persName resp="#ner">Stephano de Famars</persName>, <unclear cert="medium" resp="#joint">ceu</unclear>
-<lb n="8"/>ipsorum mandatario non <unclear cert="medium" resp="#joint">modò</unclear> ad recipiendam
+<lb n="3"/><unclear cert="low" resp="#joint">Jterantur</unclear> <unclear cert="low" resp="#joint">ciues</unclear> nostri <persName resp="#ner">Joannes du Faÿ</persName> et
+<lb n="4"/><persName resp="#ner"><unclear cert="medium" resp="#joint">Joannes</unclear> de Famars</persName> instantem et submissam
+<lb n="5"/>petitionem, ut illorum nomine apud <unclear cert="medium" resp="#joint">Amplm</unclear>
+<lb n="6"/><unclear cert="medium" resp="#joint">Vestm</unclear> intercedere velimus, quo <unclear cert="low" resp="#joint">praesenti</unclear> <unclear cert="low" resp="#joint">har</unclear>.
+<lb n="7"/>literarum latori <persName resp="#ner">Stephano de Famars</persName>, <unclear cert="low" resp="#joint">ceu</unclear>
+<lb n="8"/>ipsorum mandatario non modò ad <unclear cert="medium" resp="#joint">recipiendam</unclear>
 <lb n="9"/>pecuniam certa fides habeatur, sed etiam ut
-<lb n="10"/>ad exquisitiorem expeditionem omnium <unclear cert="medium" resp="#joint">illor</unclear>.
-<lb n="11"/><unclear cert="medium" resp="#joint">quaecunq</unclear>. <unclear cert="medium" resp="#joint">ipsi</unclear> ad negotium hoc perficiendum
-<lb n="12"/>necessaria fuerint, interposita <unclear cert="low" resp="#joint">Aplnis</unclear>
-<lb n="13"/>Vestae <unclear cert="medium" resp="#joint">authoritate</unclear> consequi possit. Quodq.
-<lb n="14"/>ut Ampl. Va faciat, non solum rogamus
-<lb n="15"/>verum etiam ijsdem in hisce et similibus
-<lb n="16"/>casibus nostra officia offerimus promptissima.
-<lb n="17"/>Eandem divinae protectioni fideliter <unclear cert="low" resp="#joint">com</unclear>-
-<lb n="18"/><unclear cert="low" resp="#joint">mendantes</unclear>. <unclear cert="low" resp="#joint">Datae</unclear> <origDate resp="#ner">22. Septemb. <unclear cert="low" resp="#joint">ao</unclear>
+<lb n="10"/>ad <unclear cert="medium" resp="#joint">exquisitiorem</unclear> expeditionem omnium illor.
+<lb n="11"/><unclear cert="low" resp="#joint">quaecunq</unclear>. ipsi ad negotium hoc <unclear cert="medium" resp="#joint">perficiendum</unclear>
+<lb n="12"/><unclear cert="medium" resp="#joint">necessaria</unclear> fuerint, interposita <unclear cert="low" resp="#joint">Aplnis</unclear>
+<lb n="13"/><unclear cert="medium" resp="#joint">Vestae</unclear> authoritate consequi possit. <unclear cert="medium" resp="#joint">Quodq</unclear>.
+<lb n="14"/>ut <unclear cert="medium" resp="#joint">Ampl</unclear>. <unclear cert="medium" resp="#joint">Va</unclear> faciat, non solum rogamus
+<lb n="15"/>verum etiam <unclear cert="medium" resp="#joint">ijsdem</unclear> in hisce et similibus
+<lb n="16"/><unclear cert="medium" resp="#joint">casibus</unclear> <unclear cert="medium" resp="#joint">nostra</unclear> officia offerimus <unclear cert="medium" resp="#joint">promptissima</unclear>.
+<lb n="17"/>Eandem <unclear cert="medium" resp="#joint">divinae</unclear> <unclear cert="medium" resp="#joint">protectioni</unclear> fideliter com-
+<lb n="18"/><unclear cert="medium" resp="#joint">mendantes</unclear>. <unclear cert="medium" resp="#joint">Datae</unclear> <origDate resp="#ner">22. Septemb. <unclear cert="low" resp="#joint">ao</unclear>
 <lb n="19"/><unclear cert="low" resp="#joint">cIɔ</unclear>, <unclear cert="low" resp="#joint">Iɔ</unclear>, <unclear cert="low" resp="#joint">cxII</unclear></origDate>.
-<lb n="20"/><orgName role="issuer" resp="#ner">Consules et Senatus <unclear cert="medium" resp="#joint">Ciuitatis</unclear>
-<lb n="21"/><unclear cert="medium" resp="#joint">Imperialïs</unclear> Francofurti ad
+<lb n="20"/><orgName role="issuer" resp="#ner">Consules et Senatus Ciuitatis
+<lb n="21"/>Imperialïs <unclear cert="medium" resp="#joint">Francofurti</unclear> ad
 <lb n="22"/>Moenum</orgName>.
 <pb facs="StadtASG_Missive_1798_6642.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1798_6643.jpg" n="3"/>

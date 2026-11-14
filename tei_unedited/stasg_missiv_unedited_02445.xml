@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2445</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,98 +20,98 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bitten den Landvogt der Grafschaft Baden, ihrem Bürger Sebastian Giger zu helfen. Dieser habe dem Genfer Bürger Amé Bonet Provisionen geliefert, die noch unbezahlt seien. Bonet habe sich verpflichtet, sich in St. Gallen zu stellen, sei aber ausgeblieben. Die St. Galler bitten um ein Schreiben an die Stadt Genf, damit Bonet sich stelle oder zahle.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1623" resp="#regest">30ten Octobris Anno 1623</date></correspAction><correspAction type="received"><name resp="#regest">Hans Gilgen auf der Maur, Landvogt der Grafschaft Baden</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2445_9415.jpg" n="1"/>
-<lb n="1"/>Unßer freündtlich willig dinst, und waß wir ehren
-<lb n="2"/>liebs und guots vermoegend zuovor, edler, fromer, vester
-<lb n="3"/>und wißer, bsonders lieber herr landtvogt, guoter
-<lb n="4"/>freündt und eydtgnoß.
-<lb n="5"/>Vor unß ist erschinen unßer lieber mitburger der
-<lb n="6"/>ehrenvest <persName resp="#ner">Sebastian Giger</persName>, und hat unß underthaenig
-<lb n="7"/>und gehorsamblich zuoerkennen gegeben, waß-
-<lb n="8"/>maßen er jez ungefehr dreij jahr lang herren
-<lb n="9"/><persName resp="#ner">Amÿ Bonet</persName>, burgern zuo <placeName ref="stadtasg-places-169" cert="medium" resp="#ner">Genff</placeName> factoriert, und
-<lb n="10"/>allein umb die provision ihme liriwats ein kaufft
-<lb n="11"/>und dieselben zuogeschickht, darvon ihme dann noch
-<lb n="12"/>2 bälli, jüngst zuogesandt, unbzahlt außstanden,
-<lb n="13"/>wan dann der herr sich noch günstig zuoerinneren
-<lb n="14"/>wißen werde, daß alß an jüngst verschinen
-<lb n="15"/><placeName ref="stadtasg-places-101" cert="medium" resp="#ner">Zürzacher marckht</placeName>, er von ermeltem Bonet, die
-<lb n="16"/>hierum außstehende bezahlung erfordert, der-
-<lb n="17"/>selb zwar sich umb etwaß vermeintlich beschwert, denoch
-<lb n="18"/>aber dem herren, beÿ seinen treüwen an eÿdtß stadt an-
-<lb n="19"/>gelobt, sich deßhalber innerhalb vier wochen alhie in
-<lb n="20"/>unßerer stadt, uff deß unrechtan kosten zuo stellen.
-<lb n="21"/>Dieweil aber derselbig uber solch sein gethon gelübdt
-<lb n="22"/>biß dato ungehorsam ußgebliben, und er dergest-
-<lb n="23"/>eig alßo zuo dem seinigen nit gelangen möge. Dazumahl
+<lb n="1"/>Unßer <unclear cert="medium" resp="#joint">freündtlich</unclear> willig dinst, und <unclear cert="low" resp="#joint">waß</unclear> wir ehren
+<lb n="2"/>liebs und <unclear cert="medium" resp="#joint">guots</unclear> <unclear cert="medium" resp="#joint">vermoegend</unclear> <unclear cert="medium" resp="#joint">zuovor</unclear>, edler, fromer, <unclear cert="medium" resp="#joint">vester</unclear>
+<lb n="3"/>und <unclear cert="low" resp="#joint">wißer</unclear>, <unclear cert="low" resp="#joint">bsonders</unclear> lieber herr landtvogt, <unclear cert="medium" resp="#joint">guoter</unclear>
+<lb n="4"/>freündt und <unclear cert="low" resp="#joint">eydtgnoß</unclear>.
+<lb n="5"/><unclear cert="medium" resp="#joint">Vor</unclear> unß ist <unclear cert="medium" resp="#joint">erschinen</unclear> <unclear cert="low" resp="#joint">unßer</unclear> <unclear cert="medium" resp="#joint">lieber</unclear> mitburger der
+<lb n="6"/><unclear cert="low" resp="#joint">ehrenvest</unclear> <persName resp="#ner">Sebastian <unclear cert="low" resp="#joint">Giger</unclear></persName>, und <unclear cert="low" resp="#joint">hat</unclear> <unclear cert="low" resp="#joint">unß</unclear> underthaenig
+<lb n="7"/>und gehorsamblich <unclear cert="low" resp="#joint">zuoerkennen</unclear> gegeben, waß-
+<lb n="8"/>maßen er <unclear cert="low" resp="#joint">jez</unclear> <unclear cert="low" resp="#joint">ungefehr</unclear> <unclear cert="low" resp="#joint">dreij</unclear> <unclear cert="medium" resp="#joint">jahr</unclear> lang herren
+<lb n="9"/><persName resp="#ner"><unclear cert="low" resp="#joint">Amÿ</unclear> Bonet</persName>, <unclear cert="low" resp="#joint">burgern</unclear> zuo <placeName ref="stadtasg-places-169" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Genff</unclear></placeName> factoriert, und
+<lb n="10"/><unclear cert="low" resp="#joint">allein</unclear> umb die provision <unclear cert="medium" resp="#joint">ihme</unclear> <unclear cert="medium" resp="#joint">liriwats</unclear> ein kaufft
+<lb n="11"/>und <unclear cert="medium" resp="#joint">dieselben</unclear> <unclear cert="low" resp="#joint">zuogeschickht</unclear>, darvon <unclear cert="medium" resp="#joint">ihme</unclear> dann noch
+<lb n="12"/>2 bälli, jüngst zuogesandt, <unclear cert="low" resp="#joint">unbzahlt</unclear> <unclear cert="low" resp="#joint">außstanden</unclear>,
+<lb n="13"/><unclear cert="low" resp="#joint">wan</unclear> dann der herr sich <unclear cert="low" resp="#joint">noch</unclear> <unclear cert="medium" resp="#joint">günstig</unclear> <unclear cert="medium" resp="#joint">zuoerinneren</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">wißen</unclear> <unclear cert="medium" resp="#joint">werde</unclear>, daß alß an jüngst verschinen
+<lb n="15"/><placeName ref="stadtasg-places-101" cert="medium" resp="#ner">Zürzacher marckht</placeName>, er von <unclear cert="medium" resp="#joint">ermeltem</unclear> Bonet, die
+<lb n="16"/><unclear cert="low" resp="#joint">hierum</unclear> <unclear cert="low" resp="#joint">außstehende</unclear> bezahlung <unclear cert="medium" resp="#joint">erfordert</unclear>, der-
+<lb n="17"/>selb zwar sich umb <unclear cert="low" resp="#joint">etwaß</unclear> <unclear cert="medium" resp="#joint">vermeintlich</unclear> <unclear cert="medium" resp="#joint">beschwert</unclear>, denoch
+<lb n="18"/>aber dem herren, <unclear cert="low" resp="#joint">beÿ</unclear> <unclear cert="low" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">treüwen</unclear> an <unclear cert="low" resp="#joint">eÿdtß</unclear> <unclear cert="medium" resp="#joint">stadt</unclear> an-
+<lb n="19"/>gelobt, sich <unclear cert="low" resp="#joint">deßhalber</unclear> <unclear cert="low" resp="#joint">innerhalb</unclear> vier wochen <unclear cert="low" resp="#joint">alhie</unclear> in
+<lb n="20"/>unßerer <unclear cert="medium" resp="#joint">stadt</unclear>, <unclear cert="medium" resp="#joint">uff</unclear> deß <unclear cert="low" resp="#joint">unrechtan</unclear> kosten zuo stellen.
+<lb n="21"/>Dieweil aber derselbig <unclear cert="medium" resp="#joint">uber</unclear> <unclear cert="low" resp="#joint">solch</unclear> sein <unclear cert="low" resp="#joint">gethon</unclear> <unclear cert="low" resp="#joint">gelübdt</unclear>
+<lb n="22"/>biß dato <unclear cert="low" resp="#joint">ungehorsam</unclear> <unclear cert="low" resp="#joint">ußgebliben</unclear>, und er <unclear cert="low" resp="#joint">dergest</unclear>-
+<lb n="23"/><unclear cert="low" resp="#joint">eig</unclear> <unclear cert="low" resp="#joint">alßo</unclear> zuo dem seinigen nit gelangen möge. <unclear cert="low" resp="#joint">Dazumahl</unclear>
 <lb n="24"/>aber, der herr ihme die günstige vertroestung gethon
 <pb facs="StadtASG_Missive_2445_9416.jpg" n="2"/>
-<lb n="25"/>Ihm habe er <persName resp="#ner">Bonet</persName> uff solch Ihme geleistet geluebdt und
-<lb n="26"/>gethanes versprechen Innert der geboetten zeit nicht allein er-
-<lb n="27"/>gehen wuerde, daß der herr Ihme demzu-
-<lb n="28"/>mahl uff deß unseren ferner klag und anrueffen,
-<lb n="29"/>die hilffliche handt dergestalt pietten wolle, daß ver-
-<lb n="30"/>hoffentlich er zu seiner bezahlung wohl werde gelangen,
-<lb n="31"/>Und hatt uns hierauff gantz underthonig und gehorsamb-
-<lb n="32"/>lich gebetten, wir welten Ihme mit unserer Interces-
-<lb n="33"/>sion und fuerschrifft an den herren, deß Innhalts befuerder-
-<lb n="34"/>sam erscheinen, daß der herr sich so guenstig gegen Ihme
-<lb n="35"/>welle erweißen, und deß Bonets obrigkeit, nicht allein seines
-<lb n="36"/>gethanes anlobens berichten, sonder beineben auch fuer Ihne
-<lb n="37"/>dergestalt Intercedieren, daß Er der unßereig umb seinen biß
-<lb n="38"/>dato ußhingebnen ußstandt, ohne weitteren und ferneren uff-
-<lb n="39"/>halt bezahlt werde.
-<lb n="40"/>Obwohlen unß deß herren wohlmeinendt guet eydtgnöß-
-<lb n="41"/>sisches gemuet gegen unß, und den unseren wohlerkandt,
-<lb n="42"/>und unß dahero nicht zweifflet, derselbig ohne daß dem unße-
-<lb n="43"/>ren die hilffliche handt hierinnen zubietten sonders geneigt
-<lb n="44"/>sein werde, So habend wir Jedoch Ihme solch sein begeren
-<lb n="45"/>nicht verweigeren koennen.
-<lb n="46"/>Ist und gelangt derohalben unßer freundtlich eydtgnoeßisch
-<lb n="47"/>ersuechen, Er wolle dem unßeren in dißem seinem zimlichen
-<lb n="48"/>begeren, guenstig willfahren, und Ihme mit einem solchen
+<lb n="25"/>Ihm habe er <persName resp="#ner">Bonet</persName> uff solch Ihme geleistet <unclear cert="low" resp="#joint">geluebdt</unclear> und
+<lb n="26"/><unclear cert="low" resp="#joint">gethanes</unclear> <unclear cert="low" resp="#joint">versprechen</unclear> <unclear cert="medium" resp="#joint">Innert</unclear> der <unclear cert="low" resp="#joint">geboetten</unclear> zeit nicht allein er-
+<lb n="27"/><unclear cert="low" resp="#joint">gehen</unclear> <unclear cert="medium" resp="#joint">wuerde</unclear>, daß der herr <unclear cert="medium" resp="#joint">Ihme</unclear> <unclear cert="low" resp="#joint">demzu</unclear>-
+<lb n="28"/>mahl uff deß <unclear cert="medium" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">ferner</unclear> klag und <unclear cert="low" resp="#joint">anrueffen</unclear>,
+<lb n="29"/><unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">hilffliche</unclear> handt dergestalt <unclear cert="low" resp="#joint">pietten</unclear> <unclear cert="low" resp="#joint">wolle</unclear>, daß ver-
+<lb n="30"/>hoffentlich er zu seiner bezahlung wohl <unclear cert="medium" resp="#joint">werde</unclear> gelangen,
+<lb n="31"/><unclear cert="medium" resp="#joint">Und</unclear> <unclear cert="low" resp="#joint">hatt</unclear> uns <unclear cert="low" resp="#joint">hierauff</unclear> <unclear cert="medium" resp="#joint">gantz</unclear> <unclear cert="low" resp="#joint">underthonig</unclear> und gehorsamb-
+<lb n="32"/>lich <unclear cert="medium" resp="#joint">gebetten</unclear>, <unclear cert="medium" resp="#joint">wir</unclear> <unclear cert="medium" resp="#joint">welten</unclear> Ihme mit <unclear cert="medium" resp="#joint">unserer</unclear> Interces-
+<lb n="33"/>sion und <unclear cert="low" resp="#joint">fuerschrifft</unclear> an den herren, deß <unclear cert="medium" resp="#joint">Innhalts</unclear> <unclear cert="low" resp="#joint">befuerder</unclear>-
+<lb n="34"/><unclear cert="low" resp="#joint">sam</unclear> <unclear cert="medium" resp="#joint">erscheinen</unclear>, daß der herr sich so <unclear cert="medium" resp="#joint">guenstig</unclear> gegen <unclear cert="medium" resp="#joint">Ihme</unclear>
+<lb n="35"/>welle <unclear cert="low" resp="#joint">erweißen</unclear>, und deß Bonets <unclear cert="medium" resp="#joint">obrigkeit</unclear>, nicht allein seines
+<lb n="36"/><unclear cert="low" resp="#joint">gethanes</unclear> anlobens berichten, sonder <unclear cert="low" resp="#joint">beineben</unclear> auch <unclear cert="medium" resp="#joint">fuer</unclear> <unclear cert="medium" resp="#joint">Ihne</unclear>
+<lb n="37"/>dergestalt Intercedieren, daß Er der <unclear cert="low" resp="#joint">unßereig</unclear> umb seinen <unclear cert="medium" resp="#joint">biß</unclear>
+<lb n="38"/>dato <unclear cert="low" resp="#joint">ußhingebnen</unclear> <unclear cert="low" resp="#joint">ußstandt</unclear>, <unclear cert="medium" resp="#joint">ohne</unclear> <unclear cert="low" resp="#joint">weitteren</unclear> und <unclear cert="medium" resp="#joint">ferneren</unclear> uff-
+<lb n="39"/><unclear cert="medium" resp="#joint">halt</unclear> bezahlt werde.
+<lb n="40"/><unclear cert="medium" resp="#joint">Obwohlen</unclear> unß deß herren <unclear cert="medium" resp="#joint">wohlmeinendt</unclear> <unclear cert="low" resp="#joint">guet</unclear> eydtgnöß-
+<lb n="41"/><unclear cert="low" resp="#joint">sisches</unclear> <unclear cert="low" resp="#joint">gemuet</unclear> gegen unß, und <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">unseren</unclear> <unclear cert="low" resp="#joint">wohlerkandt</unclear>,
+<lb n="42"/>und unß <unclear cert="low" resp="#joint">dahero</unclear> nicht <unclear cert="low" resp="#joint">zweifflet</unclear>, derselbig ohne daß dem <unclear cert="medium" resp="#joint">unße</unclear>-
+<lb n="43"/><unclear cert="medium" resp="#joint">ren</unclear> <unclear cert="low" resp="#joint">die</unclear> <unclear cert="low" resp="#joint">hilffliche</unclear> handt <unclear cert="low" resp="#joint">hierinnen</unclear> zubietten sonders geneigt
+<lb n="44"/>sein werde, So habend wir <unclear cert="medium" resp="#joint">Jedoch</unclear> <unclear cert="low" resp="#joint">Ihme</unclear> solch sein <unclear cert="medium" resp="#joint">begeren</unclear>
+<lb n="45"/>nicht <unclear cert="medium" resp="#joint">verweigeren</unclear> <unclear cert="medium" resp="#joint">koennen</unclear>.
+<lb n="46"/>Ist <unclear cert="low" resp="#joint">und</unclear> gelangt derohalben <unclear cert="medium" resp="#joint">unßer</unclear> freundtlich <unclear cert="low" resp="#joint">eydtgnoeßisch</unclear>
+<lb n="47"/><unclear cert="low" resp="#joint">ersuechen</unclear>, Er <unclear cert="medium" resp="#joint">wolle</unclear> dem unßeren in <unclear cert="low" resp="#joint">dißem</unclear> seinem <unclear cert="low" resp="#joint">zimlichen</unclear>
+<lb n="48"/>begeren, <unclear cert="medium" resp="#joint">guenstig</unclear> <unclear cert="medium" resp="#joint">willfahren</unclear>, und Ihme mit <unclear cert="medium" resp="#joint">einem</unclear> solchen
 <pb facs="StadtASG_Missive_2445_9417.jpg" n="3"/>
-<lb n="49"/>schreiben an die stadt <placeName ref="stadtasg-places-169" cert="medium" resp="#ner">Genff</placeName> behilffsam erscheine,
-<lb n="50"/>daß offtgedachter <persName resp="#ner">Bonet</persName>, entweders vermoeg seines ge=
-<lb n="51"/>thanen gelübdts sich alhie stelle, oder aber die würckh=
-<lb n="52"/>liche und unserem erachten schuldige bezahlung erstatte.
-<lb n="53"/>In ansehung daß der unserige (wie er deß furgeben)
-<lb n="54"/>nichts anders inne vor gehalt, als sein gebüerende und
-<lb n="55"/>gewohnliche provision, und sich also unßerem zu Ihme
-<lb n="56"/>tragenden Eydtgnoeßischen wohl vertrawen nach, gegen
-<lb n="57"/>dem unßeren hewinnen erzeigen, daß Er deßen
-<lb n="58"/>unßere fürschrifft genoßen haben, empfindtlich ver=
-<lb n="59"/>spüeren, sich erfrewen, und umb anrümmen moege.
-<lb n="60"/>Daß sindt wir umb den herren hiewiderumb uff alle
-<lb n="61"/>zuetragende begebenheiten, mit guotem freündtlichem
-<lb n="62"/>und Eydtgnoeßischem willen und gemüete zuerwideren
-<lb n="63"/>geneigt und unß anerbietig, als wir Gott pitten
-<lb n="64"/>daß Er uns samptlich in seinen Gnaden Schirm g=
-<lb n="65"/>nedigklich woelle erhalten. Datum den
+<lb n="49"/>schreiben an die stadt <placeName ref="stadtasg-places-169" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Genff</unclear></placeName> <unclear cert="low" resp="#joint">behilffsam</unclear> <unclear cert="medium" resp="#joint">erscheine</unclear>,
+<lb n="50"/>daß offtgedachter <persName resp="#ner"><unclear cert="medium" resp="#joint">Bonet</unclear></persName>, <unclear cert="low" resp="#joint">entweders</unclear> <unclear cert="medium" resp="#joint">vermoeg</unclear> seines ge=
+<lb n="51"/><unclear cert="medium" resp="#joint">thanen</unclear> <unclear cert="low" resp="#joint">gelübdts</unclear> sich <unclear cert="low" resp="#joint">alhie</unclear> stelle, oder aber die <unclear cert="low" resp="#joint">würckh=</unclear>
+<lb n="52"/>liche und <unclear cert="low" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">erachten</unclear> <unclear cert="medium" resp="#joint">schuldige</unclear> bezahlung erstatte.
+<lb n="53"/>In ansehung daß der <unclear cert="low" resp="#joint">unserige</unclear> (wie er <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">furgeben</unclear>)
+<lb n="54"/>nichts anders inne vor gehalt, als sein <unclear cert="low" resp="#joint">gebüerende</unclear> und
+<lb n="55"/>gewohnliche provision, und sich also <unclear cert="low" resp="#joint">unßerem</unclear> zu <unclear cert="medium" resp="#joint">Ihme</unclear>
+<lb n="56"/>tragenden <unclear cert="low" resp="#joint">Eydtgnoeßischen</unclear> wohl vertrawen nach, gegen
+<lb n="57"/>dem unßeren <unclear cert="low" resp="#joint">hewinnen</unclear> erzeigen, daß Er <unclear cert="medium" resp="#joint">deßen</unclear>
+<lb n="58"/><unclear cert="low" resp="#joint">unßere</unclear> <unclear cert="low" resp="#joint">fürschrifft</unclear> <unclear cert="medium" resp="#joint">genoßen</unclear> haben, <unclear cert="medium" resp="#joint">empfindtlich</unclear> ver=
+<lb n="59"/><unclear cert="low" resp="#joint">spüeren</unclear>, sich <unclear cert="low" resp="#joint">erfrewen</unclear>, und umb <unclear cert="low" resp="#joint">anrümmen</unclear> <unclear cert="medium" resp="#joint">moege</unclear>.
+<lb n="60"/>Daß sindt wir umb den herren <unclear cert="low" resp="#joint">hiewiderumb</unclear> uff <unclear cert="low" resp="#joint">alle</unclear>
+<lb n="61"/><unclear cert="low" resp="#joint">zuetragende</unclear> begebenheiten, mit <unclear cert="medium" resp="#joint">guotem</unclear> freündtlichem
+<lb n="62"/>und <unclear cert="low" resp="#joint">Eydtgnoeßischem</unclear> willen und <unclear cert="low" resp="#joint">gemüete</unclear> zuerwideren
+<lb n="63"/><unclear cert="low" resp="#joint">geneigt</unclear> und <unclear cert="low" resp="#joint">unß</unclear> anerbietig, als wir Gott <unclear cert="low" resp="#joint">pitten</unclear>
+<lb n="64"/>daß Er uns <unclear cert="low" resp="#joint">samptlich</unclear> in <unclear cert="medium" resp="#joint">seinen</unclear> Gnaden <unclear cert="low" resp="#joint">Schirm</unclear> g=
+<lb n="65"/><unclear cert="medium" resp="#joint">nedigklich</unclear> <unclear cert="medium" resp="#joint">woelle</unclear> erhalten. Datum den
 <lb n="66"/><origDate when="1623-10-30" resp="#ner">30ten Octobris Anno 1623</origDate>.
-<lb n="67"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und Rhate
+<lb n="67"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und <unclear cert="low" resp="#joint">Rhate</unclear>
 <lb n="68"/>der stadt St. Gallen</orgName>.
 <pb facs="StadtASG_Missive_2445_9418.jpg" n="4"/>
-<lb n="69"/>Dem Edlen ehren Fromen
-<lb n="70"/>Vesten und Weisen <persName role="recipient" resp="#ner">Hans Gilgen</persName>
-<lb n="71"/>auff der Maur, deß Rhats zuo
-<lb n="72"/><placeName ref="stadtasg-places-71" cert="medium" resp="#ner">Schweitz</placeName>, disrer zeit Landtvogt
-<lb n="73"/>der Graffschafft <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName>, unserem
-<lb n="74"/>besonders lieben herren, guoten
-<lb n="75"/>fründt, und Eydtgenoßen.
+<lb n="69"/><unclear cert="medium" resp="#joint">Dem</unclear> Edlen <unclear cert="low" resp="#joint">ehren</unclear> <unclear cert="medium" resp="#joint">Fromen</unclear>
+<lb n="70"/>Vesten und <unclear cert="low" resp="#joint">Weisen</unclear> <persName role="recipient" resp="#ner">Hans <unclear cert="low" resp="#joint">Gilgen</unclear></persName>
+<lb n="71"/>auff der <unclear cert="medium" resp="#joint">Maur</unclear>, <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Rhats</unclear> zuo
+<lb n="72"/><placeName ref="stadtasg-places-71" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schweitz</unclear></placeName>, <unclear cert="low" resp="#joint">disrer</unclear> zeit Landtvogt
+<lb n="73"/>der Graffschafft <placeName ref="stadtasg-places-53" cert="medium" resp="#ner">Baden</placeName>, <unclear cert="low" resp="#joint">unserem</unclear>
+<lb n="74"/>besonders lieben <unclear cert="medium" resp="#joint">herren</unclear>, <unclear cert="medium" resp="#joint">guoten</unclear>
+<lb n="75"/><unclear cert="low" resp="#joint">fründt</unclear>, und <unclear cert="low" resp="#joint">Eydtgenoßen</unclear>.
 </p>
         </body>
     </text>

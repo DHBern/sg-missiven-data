@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2414</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,62 +20,62 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen über drohende Angriffe auf die evangelischen Orte der Eidgenossenschaft durch die Regimenter Sultz, Baldiron und Ladron sowie österreichische und spanische Truppen. Sie bitten die St. Galler, wachsam zu sein, sie unverzüglich über neue Entwicklungen zu informieren und sich auf einen möglichen Beistand vorzubereiten, damit das Vaterland gerettet werden könne.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1623-04-26" resp="#regest">Datum den 26ten Aprilis, Anno 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2414_9283.jpg" n="1"/>
-<lb n="1"/>Unßern fründtlich willig dienst, und was wir ehren, liebs
-<lb n="2"/>und guets vermoegend, zuovor, Fromm Fuersichtig, Ehrsamm
-<lb n="3"/>Wyß, innsonders guet fründt, und getrüw lieb Eydtgnoßen.
-<lb n="4"/>Demnach unß erst allbereit vertruwenliche warnungen
-<lb n="5"/>zuolangend allerley ungueter anschlegen halber so wider
-<lb n="6"/>die Evangelischen Ort der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner">Eydtgnoßschaft</orgName> allbereit vor-
-<lb n="7"/>handen sye, und durh mittel der drygen Regimmenten,
-<lb n="8"/>alß deß Sultzischen, Baldironischen, und Ladronischen,
-<lb n="9"/>ald Mordrutzischen, so von nüwem ergetzt und usgeüegt,
-<lb n="10"/>Item eines nüwen Oesterychischen Ußschutzes, und zuo-
+<lb n="1"/><unclear cert="low" resp="#joint">Unßern</unclear> fründtlich willig dienst, und was wir ehren, liebs
+<lb n="2"/>und <unclear cert="low" resp="#joint">guets</unclear> <unclear cert="medium" resp="#joint">vermoegend</unclear>, <unclear cert="medium" resp="#joint">zuovor</unclear>, Fromm <unclear cert="medium" resp="#joint">Fuersichtig</unclear>, <unclear cert="low" resp="#joint">Ehrsamm</unclear>
+<lb n="3"/><unclear cert="low" resp="#joint">Wyß</unclear>, <unclear cert="low" resp="#joint">innsonders</unclear> <unclear cert="low" resp="#joint">guet</unclear> fründt, und <unclear cert="low" resp="#joint">getrüw</unclear> lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear>.
+<lb n="4"/>Demnach <unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">erst</unclear> <unclear cert="low" resp="#joint">allbereit</unclear> <unclear cert="low" resp="#joint">vertruwenliche</unclear> warnungen
+<lb n="5"/>zuolangend allerley <unclear cert="low" resp="#joint">ungueter</unclear> <unclear cert="low" resp="#joint">anschlegen</unclear> halber so <unclear cert="medium" resp="#joint">wider</unclear>
+<lb n="6"/>die Evangelischen Ort der <orgName ref="stadtasg-actors-750" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnoßschaft</unclear></orgName> <unclear cert="medium" resp="#joint">allbereit</unclear> vor-
+<lb n="7"/><unclear cert="low" resp="#joint">handen</unclear> <unclear cert="low" resp="#joint">sye</unclear>, und durh <unclear cert="medium" resp="#joint">mittel</unclear> der <unclear cert="low" resp="#joint">drygen</unclear> <unclear cert="low" resp="#joint">Regimmenten</unclear>,
+<lb n="8"/>alß <unclear cert="medium" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">Sultzischen</unclear>, <unclear cert="low" resp="#joint">Baldironischen</unclear>, und <unclear cert="low" resp="#joint">Ladronischen</unclear>,
+<lb n="9"/>ald <unclear cert="low" resp="#joint">Mordrutzischen</unclear>, so von <unclear cert="low" resp="#joint">nüwem</unclear> <unclear cert="low" resp="#joint">ergetzt</unclear> und <unclear cert="low" resp="#joint">usgeüegt</unclear>,
+<lb n="10"/><unclear cert="medium" resp="#joint">Item</unclear> <unclear cert="medium" resp="#joint">eines</unclear> <unclear cert="medium" resp="#joint">nüwen</unclear> <unclear cert="low" resp="#joint">Oesterychischen</unclear> <unclear cert="low" resp="#joint">Ußschutzes</unclear>, und <unclear cert="medium" resp="#joint">zuo</unclear>-
 <lb n="11"/>stoßung deß im <placeName resp="#ner">Veltlin</placeName> gelegnen Spanischen volcks,
-<lb n="12"/>mit starcker macht inns werck gesetzt werden, und
-<lb n="13"/>deßwegen auch ein Musterplatz gen <placeName ref="stadtasg-places-165" cert="medium" resp="#ner">Stockach</placeName> ald selbiger
-<lb n="14"/>orten angesehen sye, und zuo söllichem end hin allerley
-<lb n="15"/>unguete troewungen louffen, auch andere kriegspraepa-
+<lb n="12"/>mit starcker macht <unclear cert="low" resp="#joint">inns</unclear> werck gesetzt werden, und
+<lb n="13"/>deßwegen auch ein <unclear cert="low" resp="#joint">Musterplatz</unclear> gen <placeName ref="stadtasg-places-165" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Stockach</unclear></placeName> ald <unclear cert="low" resp="#joint">selbiger</unclear>
+<lb n="14"/>orten <unclear cert="low" resp="#joint">angesehen</unclear> <unclear cert="low" resp="#joint">sye</unclear>, und zuo söllichem end hin allerley
+<lb n="15"/><unclear cert="low" resp="#joint">unguete</unclear> <unclear cert="low" resp="#joint">troewungen</unclear> <unclear cert="low" resp="#joint">louffen</unclear>, auch andere <unclear cert="low" resp="#joint">kriegspraepa</unclear>-
 <lb n="16"/>rationen mehr beschehen söllind. So haben wir nit
-<lb n="17"/>underlaßen wöllen, üch unnser lieb Eydtgnoßen deßen
-<lb n="18"/>vertrüwlich auch zuoverstendigen, Mit Eydtgnoßischen
-<lb n="19"/>fründtlichen ersuochen, Ir wöllind nit allein uff sölliche
-<lb n="20"/>ding flyßige späch und guet sorg und huet halten, und deßen,
-<lb n="21"/>so Ir inn erfahrung bringend, unß yederzyt unver-
-<lb n="22"/>zogenlich berichten, sonnders auch üch desto füwrer gefaßt
-<lb n="23"/>machen, und uff unnß und gemeinen wäsen getrüwes
-<lb n="24"/>uffsehen haben, damit man im fal der not einanderen
-<lb n="25"/>trostlich byspringen, und vermitlest Goetlichen bystandts
-<lb n="26"/>das vaterlandt erretten und erhalten helffen könne,
-<lb n="27"/>Wie wir ein sölliches fürbaß glychergstalt thuon, und daby
-<lb n="28"/>Gott den Allmächtigen bitten wöllend, daß er alle böse
-<lb n="29"/>practicken stürtzen, und unnß wyter mit gnaden schir-
-<lb n="30"/>men und vor unheil bewaahren wölle. Datum den <origDate when="1623-04-26" resp="#ner">26ten
+<lb n="17"/>underlaßen wöllen, üch unnser lieb <unclear cert="low" resp="#joint">Eydtgnoßen</unclear> deßen
+<lb n="18"/><unclear cert="low" resp="#joint">vertrüwlich</unclear> auch <unclear cert="low" resp="#joint">zuoverstendigen</unclear>, Mit <unclear cert="low" resp="#joint">Eydtgnoßischen</unclear>
+<lb n="19"/><unclear cert="medium" resp="#joint">fründtlichen</unclear> ersuochen, Ir wöllind nit allein uff <unclear cert="medium" resp="#joint">sölliche</unclear>
+<lb n="20"/>ding <unclear cert="low" resp="#joint">flyßige</unclear> <unclear cert="low" resp="#joint">späch</unclear> und <unclear cert="low" resp="#joint">guet</unclear> <unclear cert="medium" resp="#joint">sorg</unclear> und <unclear cert="low" resp="#joint">huet</unclear> halten, und deßen,
+<lb n="21"/>so Ir inn <unclear cert="medium" resp="#joint">erfahrung</unclear> <unclear cert="medium" resp="#joint">bringend</unclear>, unß <unclear cert="low" resp="#joint">yederzyt</unclear> unver-
+<lb n="22"/>zogenlich <unclear cert="medium" resp="#joint">berichten</unclear>, sonnders auch üch desto <unclear cert="low" resp="#joint">füwrer</unclear> gefaßt
+<lb n="23"/>machen, und uff <unclear cert="medium" resp="#joint">unnß</unclear> und gemeinen <unclear cert="low" resp="#joint">wäsen</unclear> getrüwes
+<lb n="24"/>uffsehen haben, damit man <unclear cert="low" resp="#joint">im</unclear> fal der not <unclear cert="low" resp="#joint">einanderen</unclear>
+<lb n="25"/>trostlich <unclear cert="medium" resp="#joint">byspringen</unclear>, und <unclear cert="low" resp="#joint">vermitlest</unclear> <unclear cert="low" resp="#joint">Goetlichen</unclear> <unclear cert="low" resp="#joint">bystandts</unclear>
+<lb n="26"/>das <unclear cert="low" resp="#joint">vaterlandt</unclear> erretten und erhalten helffen <unclear cert="low" resp="#joint">könne</unclear>,
+<lb n="27"/>Wie wir ein <unclear cert="medium" resp="#joint">sölliches</unclear> <unclear cert="medium" resp="#joint">fürbaß</unclear> <unclear cert="low" resp="#joint">glychergstalt</unclear> <unclear cert="medium" resp="#joint">thuon</unclear>, und daby
+<lb n="28"/>Gott den <unclear cert="low" resp="#joint">Allmächtigen</unclear> bitten wöllend, daß er alle böse
+<lb n="29"/><unclear cert="medium" resp="#joint">practicken</unclear> stürtzen, und unnß wyter <unclear cert="medium" resp="#joint">mit</unclear> <unclear cert="medium" resp="#joint">gnaden</unclear> <unclear cert="medium" resp="#joint">schir</unclear>-
+<lb n="30"/><unclear cert="medium" resp="#joint">men</unclear> und vor <unclear cert="medium" resp="#joint">unheil</unclear> <unclear cert="low" resp="#joint">bewaahren</unclear> <unclear cert="medium" resp="#joint">wölle</unclear>. <unclear cert="medium" resp="#joint">Datum</unclear> den <origDate when="1623-04-26" resp="#ner">26ten
 <lb n="31"/>Aprilis, Anno 1623</origDate>.
 <lb n="32"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und Rath
-<lb n="33"/>der Statt Züerich</orgName>.
+<lb n="33"/>der Statt <unclear cert="low" resp="#joint">Züerich</unclear></orgName>.
 <pb facs="StadtASG_Missive_2414_9284.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2414_9285.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2414_9286.jpg" n="4"/>
-<lb n="34"/>Den Frommen Fuersichtigen, Er-
-<lb n="35"/>samen Wysen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
+<lb n="34"/>Den Frommen <unclear cert="medium" resp="#joint">Fuersichtigen</unclear>, Er-
+<lb n="35"/><unclear cert="medium" resp="#joint">samen</unclear> <unclear cert="medium" resp="#joint">Wysen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
 <lb n="36"/>und Rath der Statt Sanct
-<lb n="37"/>Gallen</orgName>, unßeren insonders
-<lb n="38"/>gueten fruenden und getruewen
-<lb n="39"/>lieben <orgName role="recipient" resp="#ner">Eidtgnoßen</orgName>.
+<lb n="37"/>Gallen</orgName>, <unclear cert="low" resp="#joint">unßeren</unclear> <unclear cert="medium" resp="#joint">insonders</unclear>
+<lb n="38"/><unclear cert="medium" resp="#joint">gueten</unclear> <unclear cert="medium" resp="#joint">fruenden</unclear> und <unclear cert="low" resp="#joint">getruewen</unclear>
+<lb n="39"/>lieben <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eidtgnoßen</unclear></orgName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1269</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,46 +20,46 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Zürich informieren Bürgermeister und Rat zu St. Gallen, dass sie den aus dem Rheintal stammenden Jakob Balbierer wegen Diebstahls, insbesondere von Leinwand, hinrichten liessen. Auf der Richtstätte bat er, sein jüngstes Kind an die Ehefrau des St. Galler Bürgers Jakob Spregken, Barbara Moßerin, zu geben. Zürich weist der Moßerin das Kind zu und bittet die St. Galler, die Moßerin und ihren Ehemann anzuhalten, das Kind aufzunehmen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Zürich</name><date when="1590-07-15" cert="medium" resp="#regest">den 15 t Julij, anno d 90.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1269_4277.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig <unclear cert="low" resp="#joint">dinst</unclear>, sampt was wir ehren,
-<lb n="2"/>liebs unnd guots vermögend, zuvor, fromm, fürsichtig,
-<lb n="3"/>ersam, wyß, <unclear cert="low" resp="#joint">innsonnders</unclear> guot fründt unnd gethrüw
+<lb n="1"/>Unnser fründtlich willig <unclear cert="low" resp="#joint">dinst</unclear>, sampt was wir <unclear cert="medium" resp="#joint">ehren</unclear>,
+<lb n="2"/>liebs unnd guots vermögend, <unclear cert="medium" resp="#joint">zuvor</unclear>, fromm, fürsichtig,
+<lb n="3"/>ersam, <unclear cert="medium" resp="#joint">wyß</unclear>, <unclear cert="low" resp="#joint">innsonnders</unclear> guot fründt unnd gethrüw
 <lb n="4"/>lieb eydtgnossen. Demnach wir nechst ver-
-<lb n="5"/><unclear cert="low" resp="#joint">ganngner</unclear> tagen, <unclear cert="low" resp="#joint">einen</unclear> der sich genennt <persName resp="#ner">Jacob Bal-
-<lb n="6"/><unclear cert="low" resp="#joint">bierer</unclear></persName> uß dem <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rynthal</unclear></placeName>, so by wenig jaren sich zuo
+<lb n="5"/><unclear cert="medium" resp="#joint">ganngner</unclear> tagen, <unclear cert="low" resp="#joint">einen</unclear> der sich <unclear cert="medium" resp="#joint">genennt</unclear> <persName resp="#ner">Jacob Bal-
+<lb n="6"/><unclear cert="low" resp="#joint">bierer</unclear></persName> <unclear cert="medium" resp="#joint">uß</unclear> dem <placeName ref="stadtasg-places-64" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Rynthal</unclear></placeName>, so by <unclear cert="medium" resp="#joint">wenig</unclear> <unclear cert="medium" resp="#joint">jaren</unclear> sich zuo
 <lb n="7"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Pfretzingen</unclear></placeName> <unclear cert="low" resp="#joint">hußhablich</unclear> enthalten, von diebstals weg-
-<lb n="8"/>en, unnd fürnemblichen das er ein <unclear cert="low" resp="#joint">zimbliche</unclear> anzal
-<lb n="9"/><unclear cert="low" resp="#joint">linwat</unclear> ab der <unclear cert="low" resp="#joint">bleickt</unclear> by <unclear cert="medium" resp="#joint">üch</unclear> <unclear cert="medium" resp="#joint">verstollen</unclear>, mit dem
+<lb n="8"/>en, unnd fürnemblichen das er ein <unclear cert="medium" resp="#joint">zimbliche</unclear> <unclear cert="medium" resp="#joint">anzal</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">linwat</unclear> ab der <unclear cert="low" resp="#joint">bleickt</unclear> by üch <unclear cert="low" resp="#joint">verstollen</unclear>, mit dem
 <lb n="10"/>schwert richten lassen. Hatt er uff der richtstatt,
-<lb n="11"/>unnsern <unclear cert="low" resp="#joint">rychsvogt</unclear> <unclear cert="low" resp="#joint">erenstlich</unclear> gebätten, zuverschaffen,
+<lb n="11"/><unclear cert="medium" resp="#joint">unnsern</unclear> <unclear cert="low" resp="#joint">rychsvogt</unclear> <unclear cert="low" resp="#joint">erenstlich</unclear> gebätten, <unclear cert="medium" resp="#joint">zuverschaffen</unclear>,
 <lb n="12"/>das syn <unclear cert="low" resp="#joint">jüngst</unclear> kind, syner baßen <persName resp="#ner">Barbara <unclear cert="low" resp="#joint">Moßerin</unclear></persName>,
-<lb n="13"/>üwers burgers <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Spregken</unclear></persName> <unclear cert="low" resp="#joint">eewirtin</unclear>, <unclear cert="low" resp="#joint">zuogeschickt</unclear>
-<lb n="14"/>werde. <unclear cert="low" resp="#joint">Welliche</unclear> demselben (<unclear cert="low" resp="#joint">syns</unclear> verhoffens) das
+<lb n="13"/>üwers burgers <persName resp="#ner">Jacob <unclear cert="low" resp="#joint">Spregken</unclear></persName> <unclear cert="low" resp="#joint">eewirtin</unclear>, <unclear cert="medium" resp="#joint">zuogeschickt</unclear>
+<lb n="14"/>werde. <unclear cert="medium" resp="#joint">Welliche</unclear> demselben (<unclear cert="low" resp="#joint">syns</unclear> <unclear cert="medium" resp="#joint">verhoffens</unclear>) das
 <lb n="15"/>best thuon, unnd das <unclear cert="medium" resp="#joint">erziechen</unclear> werde. Uff wellich-
-<lb n="16"/>en empfangnen bericht, wir nit underlaßen wellen,
+<lb n="16"/>en <unclear cert="medium" resp="#joint">empfangnen</unclear> bericht, wir nit <unclear cert="medium" resp="#joint">underlaßen</unclear> wellen,
 <lb n="17"/>genannter <persName resp="#ner"><unclear cert="low" resp="#joint">Moßerin</unclear></persName>, diß kind <unclear cert="low" resp="#joint">zuozewyßen</unclear>. Mitt
-<lb n="18"/>fründtlichem <unclear cert="low" resp="#joint">gesinnen</unclear>, ir wellint unbeschwert <unclear cert="low" resp="#joint">syn</unclear>,
-<lb n="19"/>von oberkeits wegen, <unclear cert="low" resp="#joint">gesagte</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Moßerin</unclear></persName> unnd bemelten
-<lb n="20"/><unclear cert="low" resp="#joint">iren</unclear> eeman, <unclear cert="medium" resp="#joint">zuvermannen</unclear> unnd dahin <unclear cert="low" resp="#joint">zehalten</unclear>, diß
-<lb n="21"/><unclear cert="low" resp="#joint">jüngste</unclear> kind <unclear cert="low" resp="#joint">begerter</unclear> <unclear cert="low" resp="#joint">maßen</unclear> von <unclear cert="medium" resp="#joint">verwandtschafft</unclear> weg-
+<lb n="18"/>fründtlichem <unclear cert="medium" resp="#joint">gesinnen</unclear>, ir wellint unbeschwert <unclear cert="medium" resp="#joint">syn</unclear>,
+<lb n="19"/>von oberkeits wegen, <unclear cert="medium" resp="#joint">gesagte</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Moßerin</unclear></persName> unnd bemelten
+<lb n="20"/><unclear cert="medium" resp="#joint">iren</unclear> <unclear cert="medium" resp="#joint">eeman</unclear>, <unclear cert="low" resp="#joint">zuvermannen</unclear> unnd dahin <unclear cert="medium" resp="#joint">zehalten</unclear>, diß
+<lb n="21"/><unclear cert="low" resp="#joint">jüngste</unclear> kind <unclear cert="low" resp="#joint">begerter</unclear> <unclear cert="low" resp="#joint">maßen</unclear> von verwandtschafft weg-
 <lb n="22"/><unclear cert="low" resp="#joint">en</unclear> <unclear cert="low" resp="#joint">zuerziechen</unclear> <unclear cert="low" resp="#joint">uff</unclear>: unnd <unclear cert="low" resp="#joint">anzenemmen</unclear>. Daran <unclear cert="low" resp="#joint">erwyßen</unclear>
-<lb n="23"/>ir unnd sy ein werck der barmhertzigkeit. <unclear cert="low" resp="#joint">Üch</unclear> <unclear cert="medium" resp="#joint">hie</unclear>-
-<lb n="24"/>nebent bittende, diß von unns im guotem <unclear cert="low" resp="#joint">zuverstaan</unclear>,
-<lb n="25"/>unnd sind daby gott <unclear cert="low" resp="#joint">bevolchen</unclear>. Dat den <origDate when="1590-07-15" cert="medium" resp="#ner">15 <unclear cert="medium" resp="#joint">t</unclear> Julij,
-<lb n="26"/>anno <unclear cert="medium" resp="#joint">d</unclear> 90</origDate>.
+<lb n="23"/>ir unnd sy ein <unclear cert="medium" resp="#joint">werck</unclear> der <unclear cert="medium" resp="#joint">barmhertzigkeit</unclear>. <unclear cert="medium" resp="#joint">Üch</unclear> hie-
+<lb n="24"/>nebent bittende, diß von unns <unclear cert="medium" resp="#joint">im</unclear> guotem <unclear cert="low" resp="#joint">zuverstaan</unclear>,
+<lb n="25"/>unnd sind daby gott <unclear cert="medium" resp="#joint">bevolchen</unclear>. <unclear cert="medium" resp="#joint">Dat</unclear> den <origDate when="1590-07-15" cert="medium" resp="#ner">15 <unclear cert="medium" resp="#joint">t</unclear> Julij,
+<lb n="26"/>anno d 90</origDate>.
 <lb n="27"/><orgName ref="stadtasg-actors-503" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
 <lb n="28"/>der statt Zürich</orgName>.
 <pb facs="StadtASG_Missive_1269_4278.jpg" n="2"/>

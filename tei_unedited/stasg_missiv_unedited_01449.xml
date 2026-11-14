@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1449</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Jakob Füger, Weihbischof und Dompropst zu Konstanz, erinnert Bürgermeister und Rat zu St. Gallen an ein Schreiben des verstorbenen Bischofs Johann Georg vom 14. August 1603. Es geht um einen Streit zwischen dem St. Galler Bürger Zacharias Künzli und dem Arboner Rudolf Tübben wegen verweigerter Pfandrückgabe. Tübben habe das Stift um Hilfe ersucht. Füger bittet die St. Galler, dem früheren Schreiben nachzukommen und die Sache nachbarlich zu regeln, um weitere Beschwerden zu vermeiden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Jakob Füger, Weihbischof und Dompropst zu Konstanz, auch Dekan und gemeinsames Kapitel des hohen Stifts daselbst</name><placeName resp="#regest">Konstanz</placeName><date when="1604-03-04" resp="#regest">den 4. Martii Ao 1604</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -64,23 +64,23 @@
 <lb n="28"/><unclear cert="medium" resp="#joint">zueerinneren</unclear>, <unclear cert="medium" resp="#joint">demselben</unclear> <unclear cert="medium" resp="#joint">gemaeß</unclear> euch in
 <lb n="29"/>diser sach <unclear cert="medium" resp="#joint">willfaehrig</unclear> und nachbarlich
 <pb facs="StadtASG_Missive_1449_5190.jpg" n="2"/>
-<lb n="30"/><unclear cert="medium" resp="#joint">zuegeben</unclear> und <unclear cert="medium" resp="#joint">zuenaigen</unclear>, <unclear cert="medium" resp="#joint">zuemahl</unclear> <unclear cert="medium" resp="#joint">dieweil</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">zuegeben</unclear> und <unclear cert="medium" resp="#joint">zuenaigen</unclear>, <unclear cert="medium" resp="#joint">zuemahl</unclear> <unclear cert="medium" resp="#joint">dieweil</unclear>
 <lb n="31"/><unclear cert="medium" resp="#joint">auß</unclear> <unclear cert="medium" resp="#joint">solcher</unclear> <unclear cert="medium" resp="#joint">vergleichen</unclear> <unclear cert="medium" resp="#joint">verzüglicheit</unclear>
-<lb n="32"/>sich <unclear cert="medium" resp="#joint">allerhandt</unclear> noch mehr beschwerliche
-<lb n="33"/><unclear cert="low" resp="#joint">weitlaeuffigkaiten</unclear> <unclear cert="low" resp="#joint">zwischen</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">partheyen</unclear>
-<lb n="34"/>an tag geben, das <unclear cert="medium" resp="#joint">würdt</unclear> <unclear cert="medium" resp="#joint">uns</unclear> <unclear cert="medium" resp="#joint">von</unclear> euch
-<lb n="35"/>zue <unclear cert="low" resp="#joint">sonderem</unclear> <unclear cert="low" resp="#joint">wolgefallen</unclear> <unclear cert="low" resp="#joint">geraichen</unclear>,
+<lb n="32"/>sich allerhandt noch mehr beschwerliche
+<lb n="33"/><unclear cert="medium" resp="#joint">weitlaeuffigkaiten</unclear> <unclear cert="medium" resp="#joint">zwischen</unclear> <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">partheyen</unclear>
+<lb n="34"/>an tag geben, das würdt uns von euch
+<lb n="35"/>zue <unclear cert="medium" resp="#joint">sonderem</unclear> wolgefallen <unclear cert="low" resp="#joint">geraichen</unclear>,
 <lb n="36"/><unclear cert="low" resp="#joint">wolten</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">euch</unclear> <unclear cert="low" resp="#joint">zue</unclear> unbillich nit ver-
-<lb n="37"/>halten, <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">wir</unclear> sambt und <unclear cert="medium" resp="#joint">sonder</unclear>
-<lb n="38"/>mit <unclear cert="medium" resp="#joint">gst</unclear>. und <unclear cert="medium" resp="#joint">freundlichen</unclear> willen und allem
+<lb n="37"/>halten, <unclear cert="low" resp="#joint">denen</unclear> <unclear cert="low" resp="#joint">wir</unclear> sambt und sonder
+<lb n="38"/>mit <unclear cert="low" resp="#joint">gst</unclear>. und <unclear cert="low" resp="#joint">freundlichen</unclear> willen und allem
 <lb n="39"/><unclear cert="low" resp="#joint">guetem</unclear> <unclear cert="low" resp="#joint">genaigt</unclear> <unclear cert="low" resp="#joint">seien</unclear>. <unclear cert="low" resp="#joint">Dath</unclear> <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costantz</unclear></placeName>
 <lb n="40"/><origDate when="1604-03-04" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">4</unclear>. <unclear cert="low" resp="#joint">Martii</unclear> <unclear cert="low" resp="#joint">Ao</unclear> <unclear cert="low" resp="#joint">1604</unclear></origDate>.
-<lb n="41"/><persName role="issuer" resp="#ner">Jacob <unclear cert="medium" resp="#joint">Fueger</unclear></persName> <unclear cert="medium" resp="#joint">weichbischoff</unclear> und <unclear cert="medium" resp="#joint">thumbprobst</unclear>
-<lb n="42"/>zue <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Costanz</unclear></placeName>, auch <unclear cert="medium" resp="#joint">Decan</unclear> und <unclear cert="low" resp="#joint">gemaine</unclear>
+<lb n="41"/><persName role="issuer" resp="#ner">Jacob <unclear cert="medium" resp="#joint">Fueger</unclear></persName> <unclear cert="medium" resp="#joint">weichbischoff</unclear> und <unclear cert="low" resp="#joint">thumbprobst</unclear>
+<lb n="42"/>zue <placeName ref="stadtasg-places-7" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Costanz</unclear></placeName>, auch <unclear cert="medium" resp="#joint">Decan</unclear> und <unclear cert="low" resp="#joint">gemaine</unclear>
 <lb n="43"/><orgName ref="stadtasg-actors-767" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Capitel</unclear></orgName> <unclear cert="low" resp="#joint">hoher</unclear> <unclear cert="low" resp="#joint">Stifft</unclear> <unclear cert="low" resp="#joint">daselbsten</unclear> <unclear cert="low" resp="#joint">p</unclear>.
 <pb facs="StadtASG_Missive_1449_5191.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1449_5192.jpg" n="4"/>
-<lb n="44"/>Den edlen ernuesten und fuernemen <unclear cert="low" resp="#joint">unsern</unclear>
+<lb n="44"/>Den edlen <unclear cert="medium" resp="#joint">ernuesten</unclear> und <unclear cert="medium" resp="#joint">fuernemen</unclear> <unclear cert="low" resp="#joint">unsern</unclear>
 <lb n="45"/><unclear cert="low" resp="#joint">besunders</unclear> lieben und gueten <unclear cert="medium" resp="#joint">frueinden</unclear>
 <lb n="46"/>und <unclear cert="low" resp="#joint">nachbarn</unclear>, <unclear cert="low" resp="#joint">N</unclear>. <unclear cert="low" resp="#joint">N</unclear>. <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear>
 <lb n="47"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Rate</unclear> der statt Sanct Gallen</orgName>.

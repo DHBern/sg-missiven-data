@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2299</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Landammann und Rat zu Appenzell beklagen die wachsenden Unregelmässigkeiten bei der Bewertung von Silberkronen und Reichsthalern, die zu grossen Nachteilen für den gemeinen Mann führen. Sie fragen Bürgermeister und Rat zu St. Gallen, ob es nützlich wäre, die benachbarten Obrigkeiten zu einer neuen Zusammenkunft zu berufen, um eine einheitliche Währungsbewertung zu finden, oder ob es einen gemeinsamen Kurs gebe, nach dem sich alle richten könnten. Sie bitten um eine schriftliche Antwort.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Landammann und Rat zu Appenzell</name><date when="1621-10-18" resp="#regest">18 octobris Ao 1621</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,60 +35,60 @@
 <p>
 <pb facs="StadtASG_Missive_2299_8763.jpg" n="1"/>
 <lb n="1"/>Unser freundt: nachbarlich willig dienst, und was wir
-<lb n="2"/>ehren liebts und guetts vermoegendt, zuovor, frome, fuer=
-<lb n="3"/>sichtige ehrsame und wyße, Jnßonders guet freundt, und
-<lb n="4"/>getreuewe liebe nachbarn,
-<lb n="5"/>Diewil die ungleichheit, deß <unclear cert="low" resp="#joint">tagx</unclear> <unclear cert="low" resp="#joint">Jn</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">muentz</unclear> <unclear cert="low" resp="#joint">sorten</unclear>,
-<lb n="6"/>sonderlichen der silberkronen, und <unclear cert="low" resp="#joint">reichsthallern</unclear>,
-<lb n="7"/><unclear cert="low" resp="#joint">Jhe</unclear> <unclear cert="low" resp="#joint">lenger</unclear> <unclear cert="low" resp="#joint">Jhe</unclear> <unclear cert="low" resp="#joint">boeßer</unclear> <unclear cert="low" resp="#joint">wirt</unclear>, und wir nit wueßen moegen,
+<lb n="2"/><unclear cert="low" resp="#joint">ehren</unclear> liebts und <unclear cert="low" resp="#joint">guetts</unclear> <unclear cert="medium" resp="#joint">vermoegendt</unclear>, zuovor, <unclear cert="medium" resp="#joint">frome</unclear>, <unclear cert="low" resp="#joint">fuer=</unclear>
+<lb n="3"/>sichtige ehrsame und <unclear cert="low" resp="#joint">wyße</unclear>, <unclear cert="low" resp="#joint">Jnßonders</unclear> <unclear cert="low" resp="#joint">guet</unclear> <unclear cert="low" resp="#joint">freundt</unclear>, und
+<lb n="4"/><unclear cert="low" resp="#joint">getreuewe</unclear> liebe <unclear cert="medium" resp="#joint">nachbarn</unclear>,
+<lb n="5"/>Diewil die ungleichheit, deß <unclear cert="low" resp="#joint">tagx</unclear> Jn den muentz sorten,
+<lb n="6"/>sonderlichen der <unclear cert="low" resp="#joint">silberkronen</unclear>, und reichsthallern,
+<lb n="7"/>Jhe lenger <unclear cert="low" resp="#joint">Jhe</unclear> <unclear cert="low" resp="#joint">boeßer</unclear> <unclear cert="low" resp="#joint">wirt</unclear>, und wir nit <unclear cert="low" resp="#joint">wueßen</unclear> <unclear cert="medium" resp="#joint">moegen</unclear>,
 <lb n="8"/>wie man sich Jn zahlungen gegen ein andern verhalten
-<lb n="9"/>solle, weil, man etliche sorten, nit nur umb etliche
-<lb n="10"/>kreutzer oder batzen, sondern umb ein halben, oder schier
-<lb n="11"/>gantzen guldi, an einem orth hoeher, oder niderer,
-<lb n="12"/>weder an dem andern, ußgibt. wie Jhr dan ohne
-<lb n="13"/>das deßen wol werden berichtet <unclear cert="low" resp="#joint">sin</unclear>, <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">dan</unclear>
-<lb n="14"/>nit allein vilerley unrichtigkeiten, sondern auch, dem
-<lb n="15"/>gemeinen mann, bald nun <unclear cert="low" resp="#joint">mehr</unclear>, <unclear cert="low" resp="#joint">unertraegenliche</unclear>
-<lb n="16"/><unclear cert="low" resp="#joint">beschwerden</unclear>, <unclear cert="low" resp="#joint">entstohnd</unclear>, <unclear cert="low" resp="#joint">deren</unclear> wir, sovil mueglich,
-<lb n="17"/>mit und nebent uch unßern lieben nachbarn, und
-<lb n="18"/>uebrigen benachbarten oberkheiten, gern abhelffen woellten
-<lb n="19"/>wann dan wir nit wueßen moegen, was uch Jn diser
-<lb n="20"/>sach gefellig, <unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">ersprießlich</unclear> <unclear cert="low" resp="#joint">sin</unclear> <unclear cert="low" resp="#joint">moechte</unclear>, das <unclear cert="low" resp="#joint">ge=</unclear>
-<lb n="21"/><unclear cert="low" resp="#joint">meine</unclear> <unclear cert="low" resp="#joint">benachbarte</unclear> <unclear cert="low" resp="#joint">oberkheiten</unclear>, <unclear cert="low" resp="#joint">ehistenster</unclear> <unclear cert="low" resp="#joint">gelegenheit</unclear>,
-<lb n="22"/><unclear cert="low" resp="#joint">sich</unclear> <unclear cert="low" resp="#joint">nochmals</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">samen</unclear> <unclear cert="low" resp="#joint">gethuon</unclear>, und sich aller notthurft
+<lb n="9"/>solle, <unclear cert="medium" resp="#joint">weil</unclear>, man etliche sorten, nit nur umb etliche
+<lb n="10"/><unclear cert="medium" resp="#joint">kreutzer</unclear> oder <unclear cert="medium" resp="#joint">batzen</unclear>, sondern umb ein halben, oder <unclear cert="low" resp="#joint">schier</unclear>
+<lb n="11"/><unclear cert="low" resp="#joint">gantzen</unclear> <unclear cert="low" resp="#joint">guldi</unclear>, an einem <unclear cert="medium" resp="#joint">orth</unclear> <unclear cert="low" resp="#joint">hoeher</unclear>, oder <unclear cert="medium" resp="#joint">niderer</unclear>,
+<lb n="12"/>weder an dem andern, <unclear cert="medium" resp="#joint">ußgibt</unclear>. wie Jhr <unclear cert="medium" resp="#joint">dan</unclear> <unclear cert="medium" resp="#joint">ohne</unclear>
+<lb n="13"/>das <unclear cert="low" resp="#joint">deßen</unclear> wol werden berichtet sin, <unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">dan</unclear>
+<lb n="14"/>nit allein <unclear cert="low" resp="#joint">vilerley</unclear> <unclear cert="medium" resp="#joint">unrichtigkeiten</unclear>, sondern auch, dem
+<lb n="15"/>gemeinen mann, bald nun mehr, <unclear cert="low" resp="#joint">unertraegenliche</unclear>
+<lb n="16"/>beschwerden, entstohnd, deren wir, sovil <unclear cert="low" resp="#joint">mueglich</unclear>,
+<lb n="17"/>mit und <unclear cert="medium" resp="#joint">nebent</unclear> uch <unclear cert="low" resp="#joint">unßern</unclear> lieben <unclear cert="medium" resp="#joint">nachbarn</unclear>, und
+<lb n="18"/><unclear cert="low" resp="#joint">uebrigen</unclear> benachbarten <unclear cert="low" resp="#joint">oberkheiten</unclear>, gern abhelffen <unclear cert="medium" resp="#joint">woellten</unclear>
+<lb n="19"/>wann <unclear cert="medium" resp="#joint">dan</unclear> wir nit <unclear cert="low" resp="#joint">wueßen</unclear> <unclear cert="medium" resp="#joint">moegen</unclear>, was uch Jn diser
+<lb n="20"/>sach gefellig, ob es ersprießlich sin moechte, das <unclear cert="low" resp="#joint">ge=</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">meine</unclear> benachbarte oberkheiten, ehistenster gelegenheit,
+<lb n="22"/>sich <unclear cert="low" resp="#joint">nochmals</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">samen</unclear> <unclear cert="low" resp="#joint">gethuon</unclear>, und sich <unclear cert="medium" resp="#joint">aller</unclear> <unclear cert="low" resp="#joint">notthurft</unclear>
 <lb n="23"/>nach, mit ein andern <unclear cert="low" resp="#joint">underredt</unclear> <unclear cert="low" resp="#joint">hetten</unclear>, wie <unclear cert="low" resp="#joint">etwan</unclear>
-<lb n="24"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">fugklichayt</unclear>, <unclear cert="low" resp="#joint">disers</unclear> <unclear cert="low" resp="#joint">unweßens</unclear> <unclear cert="low" resp="#joint">halben</unclear> <unclear cert="low" resp="#joint">zefinden</unclear> <unclear cert="low" resp="#joint">waere</unclear>,
-<lb n="25"/><unclear cert="low" resp="#joint">oder</unclear> ob sunsten, ein gleicher tag vorhanden, nach
-<lb n="26"/>welichem Jn gantzer obangedeutner nachbarschafft
-<lb n="27"/>man sich gleichfoermig zerichten hette,
+<lb n="24"/><unclear cert="low" resp="#joint">mit</unclear> <unclear cert="low" resp="#joint">fugklichayt</unclear>, disers <unclear cert="low" resp="#joint">unweßens</unclear> halben zefinden waere,
+<lb n="25"/>oder ob sunsten, ein gleicher tag <unclear cert="low" resp="#joint">vorhanden</unclear>, nach
+<lb n="26"/><unclear cert="medium" resp="#joint">welichem</unclear> Jn <unclear cert="medium" resp="#joint">gantzer</unclear> <unclear cert="low" resp="#joint">obangedeutner</unclear> nachbarschafft
+<lb n="27"/>man sich <unclear cert="medium" resp="#joint">gleichfoermig</unclear> <unclear cert="medium" resp="#joint">zerichten</unclear> <unclear cert="medium" resp="#joint">hette</unclear>,
 <pb facs="StadtASG_Missive_2299_8764.jpg" n="2"/>
-<lb n="28"/>was dan üch, und übrigen üweren, und unseren ge=
-<lb n="29"/>trüwen lieben nachbaren gefellig, wöllen wir gern
-<lb n="30"/>unß darzuo bequemen, damit man nun mit besserer
-<lb n="31"/>richtigkeit, mit und gegen ein anderen handlen könne,
-<lb n="32"/>und sol unß orth, und <unclear cert="low" resp="#joint">tag</unclear> <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">zuosamen</unclear> <unclear cert="low" resp="#joint">kunfft</unclear>,
-<lb n="33"/><unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">sye</unclear> under den obangeregten benachbarten Ober=
-<lb n="34"/>keiten, oder an sunst einem anderen gelegnen orth,
-<lb n="35"/>wo man wil, ernambset werde, wöllen wir unß,
-<lb n="36"/>nit allein, nit sonderen, sonderen alles das für
-<lb n="37"/>die hand nemmen helffen, was zuo befüerderung ge=
-<lb n="38"/>meinen wesens dienlich, und nuzlich sin mag,
-<lb n="39"/>und sind hierüber by diserm unserem allein
-<lb n="40"/>deßwegen abgefergtigten leüffers potten, üwer
-<lb n="41"/>schrifftliche antwurt, in einem, oder anderen,
-<lb n="42"/>zuovornemmen gewertig, und thuond unß darmit
-<lb n="43"/>allersyts göttlicher bewahrung wolbefelhen, dat
-<lb n="44"/><origDate when="1621-10-18" resp="#ner">18 octobris Ao 1621</origDate>.
-<lb n="45"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner">Landtamman und Raath
+<lb n="28"/>was <unclear cert="medium" resp="#joint">dan</unclear> üch, und <unclear cert="medium" resp="#joint">übrigen</unclear> <unclear cert="low" resp="#joint">üweren</unclear>, und unseren ge=
+<lb n="29"/>trüwen lieben <unclear cert="medium" resp="#joint">nachbaren</unclear> gefellig, wöllen wir gern
+<lb n="30"/><unclear cert="medium" resp="#joint">unß</unclear> darzuo <unclear cert="medium" resp="#joint">bequemen</unclear>, damit man nun mit <unclear cert="low" resp="#joint">besserer</unclear>
+<lb n="31"/><unclear cert="low" resp="#joint">richtigkeit</unclear>, <unclear cert="medium" resp="#joint">mit</unclear> und gegen ein <unclear cert="medium" resp="#joint">anderen</unclear> handlen <unclear cert="medium" resp="#joint">könne</unclear>,
+<lb n="32"/>und <unclear cert="low" resp="#joint">sol</unclear> unß orth, und tag <unclear cert="low" resp="#joint">der</unclear> <unclear cert="low" resp="#joint">zuosamen</unclear> <unclear cert="low" resp="#joint">kunfft</unclear>,
+<lb n="33"/><unclear cert="low" resp="#joint">es</unclear> <unclear cert="low" resp="#joint">sye</unclear> under den obangeregten <unclear cert="medium" resp="#joint">benachbarten</unclear> <unclear cert="medium" resp="#joint">Ober=</unclear>
+<lb n="34"/><unclear cert="medium" resp="#joint">keiten</unclear>, oder an sunst einem anderen gelegnen <unclear cert="medium" resp="#joint">orth</unclear>,
+<lb n="35"/>wo man wil, <unclear cert="low" resp="#joint">ernambset</unclear> <unclear cert="low" resp="#joint">werde</unclear>, <unclear cert="medium" resp="#joint">wöllen</unclear> wir unß,
+<lb n="36"/>nit allein, nit sonderen, <unclear cert="medium" resp="#joint">sonderen</unclear> alles das für
+<lb n="37"/>die hand <unclear cert="low" resp="#joint">nemmen</unclear> helffen, was <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">befüerderung</unclear> ge=
+<lb n="38"/><unclear cert="low" resp="#joint">meinen</unclear> <unclear cert="medium" resp="#joint">wesens</unclear> dienlich, und <unclear cert="low" resp="#joint">nuzlich</unclear> <unclear cert="medium" resp="#joint">sin</unclear> mag,
+<lb n="39"/>und sind hierüber by <unclear cert="medium" resp="#joint">diserm</unclear> <unclear cert="medium" resp="#joint">unserem</unclear> <unclear cert="low" resp="#joint">allein</unclear>
+<lb n="40"/><unclear cert="low" resp="#joint">deßwegen</unclear> <unclear cert="low" resp="#joint">abgefergtigten</unclear> <unclear cert="low" resp="#joint">leüffers</unclear> <unclear cert="low" resp="#joint">potten</unclear>, üwer
+<lb n="41"/>schrifftliche antwurt, <unclear cert="medium" resp="#joint">in</unclear> einem, oder anderen,
+<lb n="42"/><unclear cert="low" resp="#joint">zuovornemmen</unclear> <unclear cert="medium" resp="#joint">gewertig</unclear>, und <unclear cert="medium" resp="#joint">thuond</unclear> unß darmit
+<lb n="43"/><unclear cert="low" resp="#joint">allersyts</unclear> <unclear cert="medium" resp="#joint">göttlicher</unclear> bewahrung wolbefelhen, dat
+<lb n="44"/><origDate when="1621-10-18" resp="#ner"><unclear cert="low" resp="#joint">18</unclear> octobris <unclear cert="medium" resp="#joint">Ao</unclear> 1621</origDate>.
+<lb n="45"/><orgName ref="stadtasg-actors-506" cert="medium" role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Landtamman</unclear> und <unclear cert="medium" resp="#joint">Raath</unclear>
 <lb n="46"/>zuo Appenzell</orgName>.
 <pb facs="StadtASG_Missive_2299_8765.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2299_8766.jpg" n="4"/>
-<lb n="47"/>Den frommen, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">ersammen</unclear>, unnd
-<lb n="48"/>weißen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister, und Raath der
-<lb n="49"/>Statt Sant Gallen</orgName>, unnsern insonders
-<lb n="50"/>guten freünden, und <unclear cert="low" resp="#joint">getreüwen</unclear> <unclear cert="low" resp="#joint">lieben</unclear>
+<lb n="47"/>Den frommen, fuersichtigen, ersammen, unnd
+<lb n="48"/><unclear cert="low" resp="#joint">weißen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermeister</unclear>, und Raath der
+<lb n="49"/>Statt <unclear cert="medium" resp="#joint">Sant</unclear> Gallen</orgName>, <unclear cert="low" resp="#joint">unnsern</unclear> <unclear cert="medium" resp="#joint">insonders</unclear>
+<lb n="50"/><unclear cert="medium" resp="#joint">guten</unclear> <unclear cert="low" resp="#joint">freünden</unclear>, und <unclear cert="low" resp="#joint">getreüwen</unclear> lieben
 <lb n="51"/>nachbaren.
-<lb n="52"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sant</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
+<lb n="52"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sant Gallen</placeName>.
 </p>
         </body>
     </text>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2036</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,49 +20,49 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Stadtschultheiss und Rat zu Feldkirch bitten Bürgermeister und Rat zu St. Gallen, das Edikt über den angesetzten allgemeinen Rechtstag für den Feldkircher Bürger Hans Ulrich Gerber öffentlich aufzuschlagen. Da auch St. Galler Bürger Gläubiger seien, solle so sichergestellt werden, dass niemand in seinen Rechten gekürzt wird.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Stadtschultheiss und Rat zu Feldkirch</name><date when="1616-12-16" resp="#regest">den 16 Decemb: A°: 1616.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2036_7601.jpg" n="1"/>
-<lb n="1"/>Unser freündtnachberlich und guetwillige deinst
-<lb n="2"/>zuvor, Edl, From, Ersamb, Fürsichtig und weis,
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündtnachberlich</unclear> und <unclear cert="low" resp="#joint">guetwillige</unclear> <unclear cert="low" resp="#joint">deinst</unclear>
+<lb n="2"/>zuvor, Edl, <unclear cert="low" resp="#joint">From</unclear>, <unclear cert="low" resp="#joint">Ersamb</unclear>, <unclear cert="low" resp="#joint">Fürsichtig</unclear> und weis,
 <lb n="3"/>besonders liebe guete freündt und Nachbarn.
-<lb n="4"/>Wir haben gemeinen weylendt unsers burgers
-<lb n="5"/><persName resp="#ner">Hanns Uerichs Gerbers</persName> schuldgläubiger, uff
+<lb n="4"/>Wir haben gemeinen <unclear cert="low" resp="#joint">weylendt</unclear> unsers burgers
+<lb n="5"/><persName resp="#ner"><unclear cert="low" resp="#joint">Hanns</unclear> <unclear cert="low" resp="#joint">Uerichs</unclear> <unclear cert="low" resp="#joint">Gerbers</unclear></persName> <unclear cert="low" resp="#joint">schuldgläubiger</unclear>, <unclear cert="low" resp="#joint">uff</unclear>
 <lb n="6"/>etlich derselben anhalten, einen Allgemeinen
-<lb n="7"/>Rechtstag ernent und angesetzt, wie E. F.
-<lb n="8"/>E. F. W. usser beiverwartem Edict
-<lb n="9"/>zůvernemen haben. Und dieweil dan etliche
-<lb n="10"/>E. E. F. E. W. burger deßhalben auch Inte=
-<lb n="11"/>ressiert und zuo vermeltem <persName resp="#ner">Hanns Uerich Gerbern</persName>
-<lb n="12"/>rechtmeßige vorderung und ansprach haben möchten,
-<lb n="13"/>So bitten wir Sy gantz freündt und Nachberlich,
-<lb n="14"/>Sie wöllen söllich Edict, ihrem habenden gebrauch
-<lb n="15"/>nach, bei Ihnen an gebührenden Orthen offentlich
-<lb n="16"/>uffschlagen und Publiciern lassen, Damit
-<lb n="17"/>ahnsinen Rechten niemandt verkürtzt, noch
-<lb n="18"/>der Unwüssenheit sich zubeklagen Ursach habe,
+<lb n="7"/><unclear cert="low" resp="#joint">Rechtstag</unclear> <unclear cert="low" resp="#joint">ernent</unclear> und angesetzt, wie E. F.
+<lb n="8"/>E. <unclear cert="low" resp="#joint">F</unclear>. W. <unclear cert="medium" resp="#joint">usser</unclear> <unclear cert="medium" resp="#joint">beiverwartem</unclear> Edict
+<lb n="9"/><unclear cert="low" resp="#joint">zůvernemen</unclear> haben. Und dieweil dan etliche
+<lb n="10"/>E. E. F. E. W. burger <unclear cert="low" resp="#joint">deßhalben</unclear> auch Inte=
+<lb n="11"/><unclear cert="low" resp="#joint">ressiert</unclear> und <unclear cert="low" resp="#joint">zuo</unclear> <unclear cert="low" resp="#joint">vermeltem</unclear> <persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Uerich</unclear> <unclear cert="low" resp="#joint">Gerbern</unclear></persName>
+<lb n="12"/><unclear cert="low" resp="#joint">rechtmeßige</unclear> <unclear cert="low" resp="#joint">vorderung</unclear> und <unclear cert="medium" resp="#joint">ansprach</unclear> haben möchten,
+<lb n="13"/>So bitten wir Sy gantz <unclear cert="low" resp="#joint">freündt</unclear> und <unclear cert="low" resp="#joint">Nachberlich</unclear>,
+<lb n="14"/>Sie <unclear cert="low" resp="#joint">wöllen</unclear> söllich Edict, ihrem habenden gebrauch
+<lb n="15"/>nach, bei <unclear cert="medium" resp="#joint">Ihnen</unclear> an gebührenden <unclear cert="low" resp="#joint">Orthen</unclear> offentlich
+<lb n="16"/><unclear cert="low" resp="#joint">uffschlagen</unclear> und Publiciern lassen, Damit
+<lb n="17"/><unclear cert="low" resp="#joint">ahnsinen</unclear> Rechten niemandt <unclear cert="medium" resp="#joint">verkürtzt</unclear>, noch
+<lb n="18"/>der <unclear cert="medium" resp="#joint">Unwüssenheit</unclear> sich zubeklagen Ursach habe,
 <lb n="19"/>Das begeren Umb E. E. F. E. W. Jederzeit
-<lb n="20"/>guetwillig und freündt Nachberlich zuver=
-<lb n="21"/>dinen. Datum, den <origDate when="1616-12-16" resp="#ner">16 Decemb: A°: 1616</origDate>.
-<lb n="22"/><orgName role="issuer" resp="#ner">Stattamman und Rhat
-<lb n="23"/>der Statt Veldkirch</orgName>.
+<lb n="20"/><unclear cert="medium" resp="#joint">guetwillig</unclear> und <unclear cert="low" resp="#joint">freündt</unclear> <unclear cert="low" resp="#joint">Nachberlich</unclear> zuver=
+<lb n="21"/>dinen. Datum, den <origDate when="1616-12-16" resp="#ner"><unclear cert="low" resp="#joint">16</unclear> Decemb: A°: 1616</origDate>.
+<lb n="22"/><orgName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Stattamman</unclear> und Rhat
+<lb n="23"/>der Statt <unclear cert="low" resp="#joint">Veldkirch</unclear></orgName>.
 <pb facs="StadtASG_Missive_2036_7602.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2036_7603.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2036_7604.jpg" n="4"/>
-<lb n="24"/>Den Edlen, Frommen, <unclear cert="medium" resp="#joint">Ehrnvesten</unclear>, Fürsichtigen
-<lb n="25"/>und <unclear cert="medium" resp="#joint">weisen</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat, der
-<lb n="26"/>Statt <unclear cert="medium" resp="#joint">S</unclear>. Gallen</orgName>, unsern <unclear cert="medium" resp="#joint">besonders</unclear> lieben
+<lb n="24"/>Den Edlen, Frommen, <unclear cert="low" resp="#joint">Ehrnvesten</unclear>, Fürsichtigen
+<lb n="25"/>und weisen, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister und Rhat, der
+<lb n="26"/>Statt S. Gallen</orgName>, unsern besonders lieben
 <lb n="27"/>und <unclear cert="medium" resp="#joint">guetten</unclear> Freünden und <unclear cert="medium" resp="#joint">Nachbarn</unclear>.
 </p>
         </body>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1827</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,46 +20,46 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Caspar Graf zu Hohen-Embs und Gallara antwortet auf das Schreiben von Bürgermeister und Rat zu St. Gallen bezüglich der inhaftierten Personen. Diese werden verdächtigt, in St. Gallen in Häuser eingebrochen, diese ausgeraubt und die Bleiche angegriffen zu haben. Der Graf verspricht, die Aussagen und Urteile der Gefangenen nach deren Befragung zu übersenden, und erklärt sich zu nachbarlicher Freundschaft bereit.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Caspar Graf zu Hohen-Embs und Gallara</name><placeName resp="#regest">Embß</placeName><date when="1613-03-26" resp="#regest">26. Martii anno, 1613</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1827_6779.jpg" n="1"/>
-<lb n="1"/><persName role="issuer" resp="#ner">Caspar</persName> grave zu <placeName resp="#ner">Hohen-
-<lb n="2"/>Embs</placeName>, unnd <placeName resp="#ner">Gallara</placeName>
-<lb n="3"/>Unßern grueß, unnd nachpaurlichen willen zuvohr
-<lb n="4"/>frumme fuersichtig, ersam, unnd weiße, sonders liebe
-<lb n="5"/>unnd nachpaurn,
-<lb n="6"/>Wir haben euwr schreiben, darinnen ihr unnß wegen der
-<lb n="7"/>unnß eingebrachten gefangkhnußten persohnen andeutung
-<lb n="8"/>thuet, was <unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">selbige</unclear>, in <unclear cert="low" resp="#joint">dem</unclear> <unclear cert="low" resp="#joint">verdacht</unclear> sein, daß
-<lb n="9"/>von ihr euwre burgerschafft mit einbrechen in <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">heußern</unclear>
-<lb n="10"/><unclear cert="low" resp="#joint">beraubt</unclear>, auch die bleiche alda angegriffen haben solten,
-<lb n="11"/>Was sich nun deßen, unnd anderer ihren begangener miße-
-<lb n="12"/>thaten halber, befinden wierdet, das werden ihre
-<lb n="13"/>außagen unnd urgichten, (die wier euch uff euwr be-
-<lb n="14"/>geren, nach genugsamer unnd ernstlicher befragung,
-<lb n="15"/>ueberschickhen wöllen) mit sich bringen, unnd sein
-<lb n="16"/>euch sonnsten allen nachpaurlichen willen zuerweißen,
-<lb n="17"/>iederzeit geneigt. Geben in unßerm pallast zue
-<lb n="18"/><origPlace resp="#ner">Embß</origPlace> den, <origDate when="1613-03-26" resp="#ner">26. Martii anno, 1613</origDate>.
+<lb n="1"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear></persName> <unclear cert="low" resp="#joint">grave</unclear> zu <placeName resp="#ner"><unclear cert="low" resp="#joint">Hohen</unclear>-
+<lb n="2"/><unclear cert="low" resp="#joint">Embs</unclear></placeName>, unnd <placeName resp="#ner">Gallara</placeName>
+<lb n="3"/>Unßern grueß, unnd nachpaurlichen <unclear cert="low" resp="#joint">willen</unclear> <unclear cert="low" resp="#joint">zuvohr</unclear>
+<lb n="4"/><unclear cert="low" resp="#joint">frumme</unclear> <unclear cert="low" resp="#joint">fuersichtig</unclear>, ersam, unnd weiße, <unclear cert="low" resp="#joint">sonders</unclear> liebe
+<lb n="5"/>unnd <unclear cert="low" resp="#joint">nachpaurn</unclear>,
+<lb n="6"/>Wir haben <unclear cert="low" resp="#joint">euwr</unclear> schreiben, darinnen ihr unnß wegen der
+<lb n="7"/><unclear cert="low" resp="#joint">unnß</unclear> <unclear cert="low" resp="#joint">eingebrachten</unclear> <unclear cert="low" resp="#joint">gefangkhnußten</unclear> <unclear cert="low" resp="#joint">persohnen</unclear> <unclear cert="low" resp="#joint">andeutung</unclear>
+<lb n="8"/>thuet, was maßen selbige, in dem <unclear cert="medium" resp="#joint">verdacht</unclear> sein, daß
+<lb n="9"/><unclear cert="low" resp="#joint">von</unclear> ihr <unclear cert="low" resp="#joint">euwre</unclear> <unclear cert="low" resp="#joint">burgerschafft</unclear> mit <unclear cert="low" resp="#joint">einbrechen</unclear> in <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">heußern</unclear>
+<lb n="10"/><unclear cert="medium" resp="#joint">beraubt</unclear>, auch die <unclear cert="low" resp="#joint">bleiche</unclear> alda <unclear cert="low" resp="#joint">angegriffen</unclear> haben <unclear cert="low" resp="#joint">solten</unclear>,
+<lb n="11"/>Was sich nun <unclear cert="low" resp="#joint">deßen</unclear>, unnd anderer <unclear cert="low" resp="#joint">ihren</unclear> begangener <unclear cert="low" resp="#joint">miße</unclear>-
+<lb n="12"/><unclear cert="low" resp="#joint">thaten</unclear> halber, <unclear cert="low" resp="#joint">befinden</unclear> <unclear cert="low" resp="#joint">wierdet</unclear>, das werden <unclear cert="low" resp="#joint">ihre</unclear>
+<lb n="13"/>außagen unnd <unclear cert="low" resp="#joint">urgichten</unclear>, (die wier euch <unclear cert="low" resp="#joint">uff</unclear> <unclear cert="low" resp="#joint">euwr</unclear> be-
+<lb n="14"/>geren, nach <unclear cert="low" resp="#joint">genugsamer</unclear> unnd ernstlicher <unclear cert="low" resp="#joint">befragung</unclear>,
+<lb n="15"/><unclear cert="low" resp="#joint">ueberschickhen</unclear> wöllen) mit sich bringen, unnd <unclear cert="low" resp="#joint">sein</unclear>
+<lb n="16"/>euch <unclear cert="low" resp="#joint">sonnsten</unclear> allen <unclear cert="low" resp="#joint">nachpaurlichen</unclear> willen <unclear cert="low" resp="#joint">zuerweißen</unclear>,
+<lb n="17"/><unclear cert="low" resp="#joint">iederzeit</unclear> <unclear cert="low" resp="#joint">geneigt</unclear>. Geben in unßerm <unclear cert="low" resp="#joint">pallast</unclear> zue
+<lb n="18"/><origPlace resp="#ner"><unclear cert="low" resp="#joint">Embß</unclear></origPlace> den, <origDate when="1613-03-26" resp="#ner">26. Martii anno, 1613</origDate>.
 <lb n="19"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear></persName> <unclear cert="low" resp="#joint">gf</unclear>.
 <pb facs="StadtASG_Missive_1827_6780.jpg" n="2"/>
 <pb facs="StadtASG_Missive_1827_6781.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1827_6782.jpg" n="4"/>
-<lb n="20"/>Den ehrnvesten fürsichtig ehrsamen unnd weysen,
-<lb n="21"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister unnd Raht, der Statt Sanct Gallen</orgName>
-<lb n="22"/>unsernn lieben unnd <unclear cert="low" resp="#joint">nachparren</unclear>,
-<lb n="23"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></placeName>.
+<lb n="20"/>Den <unclear cert="low" resp="#joint">ehrnvesten</unclear> <unclear cert="medium" resp="#joint">fürsichtig</unclear> ehrsamen unnd weysen,
+<lb n="21"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burgermaister</unclear> unnd <unclear cert="medium" resp="#joint">Raht</unclear>, der Statt <unclear cert="low" resp="#joint">Sanct</unclear> Gallen</orgName>
+<lb n="22"/><unclear cert="medium" resp="#joint">unsernn</unclear> lieben unnd <unclear cert="low" resp="#joint">nachparren</unclear>,
+<lb n="23"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>.
 </p>
         </body>
     </text>

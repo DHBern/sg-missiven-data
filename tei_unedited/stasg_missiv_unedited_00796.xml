@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 796</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,53 +20,53 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau bitten Bürgermeister und Rat zu St. Gallen um schriftliche Auskunft über die Fleischpreise und -schätzung in St. Gallen. Sie möchten erfahren, wie Rind-, Kalb-, Schaf- und Schweinefleisch sowie Innereien und Würste bewertet werden, ob Metzger Innereien unter das Fleisch mischen dürfen und wie viel Fleisch pro Woche pro Metzger erlaubt ist. Lindau wolle sich an den Nachbarn orientieren, um die Preise für die eigenen Metzger anzupassen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1559" cert="medium" resp="#regest">den 21 th tag apprilis anno 59</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_796_2131.jpg" n="1"/>
-<lb n="1"/>Unnser fründtlich willig diennst zuovor. Ersamen unnd
+<lb n="1"/>Unnser <unclear cert="low" resp="#joint">fründtlich</unclear> willig diennst zuovor. Ersamen unnd
 <lb n="2"/>weisen, lieben unnd guoten fründ, unnser metzger,
-<lb n="3"/>haben unns angepracht, welchermassen das flaisch
-<lb n="4"/>in grossen aufschlag erwachsen, dß sy auch dasselbig
-<lb n="5"/>nit mer <unclear cert="low" resp="#joint">wie</unclear> <unclear cert="low" resp="#joint">von</unclear> <unclear cert="low" resp="#joint">allterherr</unclear> <unclear cert="low" resp="#joint">bekomen</unclear>, noch in demselb
-<lb n="6"/>werdt, unnd schatzung, <unclear cert="low" resp="#joint">one</unclear> <unclear cert="low" resp="#joint">irn</unclear> <unclear cert="low" resp="#joint">grossen</unclear> <unclear cert="low" resp="#joint">nachtail</unclear> und
-<lb n="7"/>schaden, hingeben künden, mit vleissigem pitt, wir
+<lb n="3"/>haben unns <unclear cert="low" resp="#joint">angepracht</unclear>, welchermassen das <unclear cert="low" resp="#joint">flaisch</unclear>
+<lb n="4"/>in grossen <unclear cert="low" resp="#joint">aufschlag</unclear> erwachsen, dß <unclear cert="low" resp="#joint">sy</unclear> auch dasselbig
+<lb n="5"/>nit mer <unclear cert="medium" resp="#joint">wie</unclear> <unclear cert="medium" resp="#joint">von</unclear> <unclear cert="medium" resp="#joint">allterherr</unclear> bekomen, noch in <unclear cert="low" resp="#joint">demselb</unclear>
+<lb n="6"/>werdt, unnd schatzung, one <unclear cert="low" resp="#joint">irn</unclear> <unclear cert="low" resp="#joint">grossen</unclear> nachtail und
+<lb n="7"/>schaden, hingeben <unclear cert="low" resp="#joint">künden</unclear>, mit vleissigem pitt, wir
 <lb n="8"/>welten hierinnen <unclear cert="low" resp="#joint">gepürlichs</unclear> <unclear cert="low" resp="#joint">einsehen</unclear> <unclear cert="low" resp="#joint">thuon</unclear>, und inen
-<lb n="9"/>das flaisch etwas <unclear cert="low" resp="#joint">höher</unclear> <unclear cert="low" resp="#joint">zuoverkauffen</unclear> bewilligen, die=
+<lb n="9"/>das <unclear cert="low" resp="#joint">flaisch</unclear> etwas <unclear cert="medium" resp="#joint">höher</unclear> <unclear cert="medium" resp="#joint">zuoverkauffen</unclear> bewilligen, die=
 <lb n="10"/>weil wir aber unns hierinnen gern, unnsern ge=
-<lb n="11"/>nachparten, erbarn stetten, gemäss erzaigen, und
-<lb n="12"/>ungern für anndere aufschlag bewilligen wolten,
-<lb n="13"/>so ist an E. E. Wt. unnser fründtlichs und nachper=
-<lb n="14"/>lich pitt, die welle unbeschwärdt sein, unns in schrifft
-<lb n="15"/>zuoberichten, welchermassen sye in irer statt, <unclear cert="low" resp="#joint">yeder=</unclear>
-<lb n="16"/><unclear cert="low" resp="#joint">ley</unclear> <unclear cert="low" resp="#joint">alls</unclear> <unclear cert="low" resp="#joint">ochsen</unclear>, <unclear cert="low" resp="#joint">rind</unclear>, <unclear cert="low" resp="#joint">kalb</unclear>, <unclear cert="low" resp="#joint">schäfin</unclear>, <unclear cert="low" resp="#joint">kützin</unclear>, <unclear cert="low" resp="#joint">schweinin</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">nachparten</unclear>, <unclear cert="low" resp="#joint">erbarn</unclear> stetten, gemäss <unclear cert="low" resp="#joint">erzaigen</unclear>, und
+<lb n="12"/><unclear cert="low" resp="#joint">ungern</unclear> für anndere <unclear cert="low" resp="#joint">aufschlag</unclear> bewilligen <unclear cert="low" resp="#joint">wolten</unclear>,
+<lb n="13"/>so ist an E. <unclear cert="low" resp="#joint">E</unclear>. Wt. unnser <unclear cert="low" resp="#joint">fründtlichs</unclear> <unclear cert="low" resp="#joint">und</unclear> nachper=
+<lb n="14"/>lich pitt, die <unclear cert="low" resp="#joint">welle</unclear> <unclear cert="low" resp="#joint">unbeschwärdt</unclear> sein, unns in schrifft
+<lb n="15"/>zuoberichten, welchermassen sye in <unclear cert="low" resp="#joint">irer</unclear> statt, <unclear cert="medium" resp="#joint">yeder=</unclear>
+<lb n="16"/><unclear cert="medium" resp="#joint">ley</unclear> <unclear cert="medium" resp="#joint">alls</unclear> <unclear cert="medium" resp="#joint">ochsen</unclear>, <unclear cert="medium" resp="#joint">rind</unclear>, <unclear cert="medium" resp="#joint">kalb</unclear>, <unclear cert="medium" resp="#joint">schäfin</unclear>, <unclear cert="medium" resp="#joint">kützin</unclear>, <unclear cert="medium" resp="#joint">schweinin</unclear>,
 <lb n="17"/>unnd annder <unclear cert="low" resp="#joint">flaisch</unclear> <unclear cert="low" resp="#joint">hingeben</unclear>, <unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">schätzen</unclear> lassen,
 <lb n="18"/>deßgleichen in was gelt die <unclear cert="low" resp="#joint">ingeschlecht</unclear>, auch <unclear cert="low" resp="#joint">kutlen</unclear>,
-<lb n="19"/><unclear cert="low" resp="#joint">leber</unclear>, <unclear cert="low" resp="#joint">prat</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">rosen</unclear>, <unclear cert="low" resp="#joint">oder</unclear> <unclear cert="low" resp="#joint">bluot</unclear> <unclear cert="low" resp="#joint">würst</unclear> <unclear cert="low" resp="#joint">gegeben</unclear>,
-<lb n="20"/><unclear cert="low" resp="#joint">ob</unclear> <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">irn</unclear> <unclear cert="low" resp="#joint">metzgern</unclear> <unclear cert="low" resp="#joint">zuogelassen</unclear> <unclear cert="low" resp="#joint">werde</unclear>, <unclear cert="low" resp="#joint">lungken</unclear>,
-<lb n="21"/><unclear cert="low" resp="#joint">lebern</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">köpff</unclear> <unclear cert="low" resp="#joint">unnd</unclear> dergleichen, unnder dem
-<lb n="22"/>flaisch einzehewenn, unnd <unclear cert="low" resp="#joint">hinzugeben</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">wievil</unclear>
-<lb n="23"/><unclear cert="low" resp="#joint">ainem</unclear> yeden metzger, bey inen, wochenlichen zuo
-<lb n="24"/>metzgen erlaupt sye, dammit wir unns gegen
+<lb n="19"/><unclear cert="low" resp="#joint">leber</unclear>, <unclear cert="low" resp="#joint">prat</unclear>, unnd <unclear cert="medium" resp="#joint">rosen</unclear>, oder <unclear cert="medium" resp="#joint">bluot</unclear> <unclear cert="medium" resp="#joint">würst</unclear> <unclear cert="medium" resp="#joint">gegeben</unclear>,
+<lb n="20"/>ob auch <unclear cert="low" resp="#joint">irn</unclear> <unclear cert="low" resp="#joint">metzgern</unclear> <unclear cert="low" resp="#joint">zuogelassen</unclear> <unclear cert="low" resp="#joint">werde</unclear>, <unclear cert="low" resp="#joint">lungken</unclear>,
+<lb n="21"/><unclear cert="low" resp="#joint">lebern</unclear>, <unclear cert="low" resp="#joint">auch</unclear> <unclear cert="low" resp="#joint">köpff</unclear> unnd dergleichen, unnder dem
+<lb n="22"/>flaisch einzehewenn, unnd <unclear cert="medium" resp="#joint">hinzugeben</unclear>, unnd <unclear cert="medium" resp="#joint">wievil</unclear>
+<lb n="23"/><unclear cert="medium" resp="#joint">ainem</unclear> yeden <unclear cert="low" resp="#joint">metzger</unclear>, bey inen, <unclear cert="low" resp="#joint">wochenlichen</unclear> <unclear cert="low" resp="#joint">zuo</unclear>
+<lb n="24"/><unclear cert="low" resp="#joint">metzgen</unclear> <unclear cert="low" resp="#joint">erlaupt</unclear> <unclear cert="low" resp="#joint">sye</unclear>, <unclear cert="low" resp="#joint">dammit</unclear> wir unns gegen
 <lb n="25"/>den unnsern, auch dester bas hiehinnen zuohalten
-<lb n="26"/>wissen, das wir umb <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wt</unclear>. <unclear cert="low" resp="#joint">unnser</unclear> <unclear cert="low" resp="#joint">lieb</unclear>,
+<lb n="26"/>wissen, das wir umb <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">Wt</unclear>. <unclear cert="medium" resp="#joint">unnser</unclear> lieb,
 <pb facs="StadtASG_Missive_796_2132.jpg" n="2"/>
-<lb n="27"/>unnd <unclear cert="low" resp="#joint">guot</unclear> <unclear cert="low" resp="#joint">freund</unclear>, inn <unclear cert="low" resp="#joint">sollichem</unclear> <unclear cert="low" resp="#joint">unnd</unclear> <unclear cert="low" resp="#joint">mererm</unclear>, <unclear cert="low" resp="#joint">hin=</unclear>
-<lb n="28"/><unclear cert="low" resp="#joint">wider</unclear> <unclear cert="low" resp="#joint">freundtlich</unclear>, unnd nachparlich zubeschulden, unnd
+<lb n="27"/>unnd <unclear cert="medium" resp="#joint">guot</unclear> <unclear cert="medium" resp="#joint">freund</unclear>, inn <unclear cert="medium" resp="#joint">sollichem</unclear> unnd <unclear cert="medium" resp="#joint">mererm</unclear>, hin=
+<lb n="28"/><unclear cert="medium" resp="#joint">wider</unclear> <unclear cert="medium" resp="#joint">freundtlich</unclear>, unnd nachparlich zubeschulden, unnd
 <lb n="29"/>zuverdiennen genaigt, unnd willig sein wellen,
-<lb n="30"/>dat den <origDate when="1559" cert="medium" resp="#ner">21 th tag <unclear cert="medium" resp="#joint">apprilis</unclear> anno 59</origDate>.
-<lb n="31"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister unnd <unclear cert="medium" resp="#joint">rathe</unclear>
-<lb n="32"/>der statt Lijnndow</orgName>.
+<lb n="30"/><unclear cert="medium" resp="#joint">dat</unclear> den <origDate when="1559" cert="medium" resp="#ner">21 th tag <unclear cert="low" resp="#joint">apprilis</unclear> anno 59</origDate>.
+<lb n="31"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermaister</unclear> unnd <unclear cert="medium" resp="#joint">rathe</unclear>
+<lb n="32"/>der statt <unclear cert="low" resp="#joint">Lijnndow</unclear></orgName>.
 <pb facs="StadtASG_Missive_796_2133.jpg" n="3"/>
 <pb facs="StadtASG_Missive_796_2134.jpg" n="4"/>
 <lb n="33"/>Den ersamen und weisen <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermaister

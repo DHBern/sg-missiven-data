@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2297</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,53 +20,53 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Caspar Graf zu Hohenems bittet Bürgermeister und Rat zu St. Gallen, den dortigen Stadtphysikus Sebastian Schöbinger für eine kurze Zeit zu entlassen, damit er dem Grafen bei dessen gesundheitlichen Beschwerden beratend zur Seite stehen könne. Er verspricht, in ähnlichen Fällen St. Gallen zu dienen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Caspar Graf zu Hohenems</name><placeName resp="#regest">Embs</placeName><date when="1625-10-09" resp="#regest">9. octobris. 1625.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2297_8755.jpg" n="1"/>
-<lb n="1"/><persName role="issuer" resp="#ner">Caspar Grave</persName> zue <placeName ref="stadtasg-places-213" cert="medium" resp="#ner">Hochen-
+<lb n="1"/><persName role="issuer" resp="#ner">Caspar Grave</persName> zue <placeName ref="stadtasg-places-213" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Hochen</unclear>-
 <lb n="2"/>Embs</placeName>, <placeName resp="#ner">Gallara</placeName> und <placeName ref="stadtasg-places-31" cert="medium" resp="#ner">Vadutz</placeName>.
-<lb n="3"/>Unsern grues unnd g. nachparlichen willen zuuor,
-<lb n="4"/>edle, ehrnveste, fuersichtig, ersame unnd weise,
+<lb n="3"/>Unsern <unclear cert="low" resp="#joint">grues</unclear> unnd g. nachparlichen willen <unclear cert="medium" resp="#joint">zuuor</unclear>,
+<lb n="4"/><unclear cert="medium" resp="#joint">edle</unclear>, <unclear cert="medium" resp="#joint">ehrnveste</unclear>, fuersichtig, ersame unnd weise,
 <lb n="5"/>besonders liebe unnd nachparn,
-<lb n="6"/>Demnach unns der edel unnd hochgelehrt <persName resp="#ner">Sebasrian
-<lb n="7"/>Schobinger</persName> der artzneÿ doctor ewer mitburger unnd
-<lb n="8"/>bestelter phÿsicus, seiner künsten unnd qualiteten
-<lb n="9"/>halber, sonderlich beruembt ist, unnd wier diser
-<lb n="10"/>lannden dergleichen unnd deme bey soer leibs blödig-
-<lb n="11"/>kheit bekhanndt unnd anzufertt- were nit gehaben
-<lb n="12"/>mögen, Alls ist ahn euch unser nachparlich unnd
-<lb n="13"/>wolmainend ersuechen Ihr wöllen unns zue sonderm
-<lb n="14"/>nachparlichen gefallen besagten doctor <persName resp="#ner">Schobingern</persName>, so
-<lb n="15"/>wier ihne, obberüerter ursachen willen, zue unns not-
-<lb n="16"/>wenndigclich erfordern, guetwilligclich auf ein khleine
-<lb n="17"/>zeit unnd tag erlassen, unnd vergonnen unns in unserm
-<lb n="18"/>ahnligenn rathlich unnd behilflich zuesein, Daran
-<lb n="19"/>beschiht unns ein sonder angenemes belieben, unnd
-<lb n="20"/>wier seind eß umb euch in dergleichen unnd anderer
-<lb n="21"/>occasion zuerwidern gemaint, verbleiben euch auch dabej
+<lb n="6"/>Demnach unns der edel unnd <unclear cert="low" resp="#joint">hochgelehrt</unclear> <persName resp="#ner"><unclear cert="low" resp="#joint">Sebasrian</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">Schobinger</unclear></persName> der <unclear cert="low" resp="#joint">artzneÿ</unclear> doctor ewer mitburger unnd
+<lb n="8"/><unclear cert="low" resp="#joint">bestelter</unclear> <unclear cert="low" resp="#joint">phÿsicus</unclear>, seiner <unclear cert="low" resp="#joint">künsten</unclear> unnd qualiteten
+<lb n="9"/>halber, sonderlich <unclear cert="low" resp="#joint">beruembt</unclear> ist, unnd <unclear cert="low" resp="#joint">wier</unclear> diser
+<lb n="10"/><unclear cert="low" resp="#joint">lannden</unclear> dergleichen unnd <unclear cert="medium" resp="#joint">deme</unclear> bey <unclear cert="low" resp="#joint">soer</unclear> <unclear cert="low" resp="#joint">leibs</unclear> <unclear cert="low" resp="#joint">blödig</unclear>-
+<lb n="11"/>kheit <unclear cert="medium" resp="#joint">bekhanndt</unclear> unnd <unclear cert="low" resp="#joint">anzufertt</unclear>- were nit gehaben
+<lb n="12"/>mögen, <unclear cert="low" resp="#joint">Alls</unclear> ist <unclear cert="medium" resp="#joint">ahn</unclear> <unclear cert="medium" resp="#joint">euch</unclear> <unclear cert="medium" resp="#joint">unser</unclear> nachparlich unnd
+<lb n="13"/><unclear cert="low" resp="#joint">wolmainend</unclear> ersuechen Ihr <unclear cert="low" resp="#joint">wöllen</unclear> unns zue <unclear cert="low" resp="#joint">sonderm</unclear>
+<lb n="14"/>nachparlichen gefallen besagten doctor <persName resp="#ner"><unclear cert="low" resp="#joint">Schobingern</unclear></persName>, so
+<lb n="15"/><unclear cert="medium" resp="#joint">wier</unclear> <unclear cert="medium" resp="#joint">ihne</unclear>, <unclear cert="medium" resp="#joint">obberüerter</unclear> ursachen willen, zue unns not-
+<lb n="16"/><unclear cert="low" resp="#joint">wenndigclich</unclear> erfordern, <unclear cert="low" resp="#joint">guetwilligclich</unclear> auf ein khleine
+<lb n="17"/>zeit unnd tag <unclear cert="medium" resp="#joint">erlassen</unclear>, unnd <unclear cert="low" resp="#joint">vergonnen</unclear> unns in <unclear cert="low" resp="#joint">unserm</unclear>
+<lb n="18"/><unclear cert="low" resp="#joint">ahnligenn</unclear> <unclear cert="low" resp="#joint">rathlich</unclear> unnd <unclear cert="low" resp="#joint">behilflich</unclear> <unclear cert="low" resp="#joint">zuesein</unclear>, Daran
+<lb n="19"/>beschiht <unclear cert="low" resp="#joint">unns</unclear> ein sonder angenemes <unclear cert="low" resp="#joint">belieben</unclear>, unnd
+<lb n="20"/><unclear cert="low" resp="#joint">wier</unclear> seind eß umb euch in dergleichen unnd anderer
+<lb n="21"/>occasion <unclear cert="medium" resp="#joint">zuerwidern</unclear> gemaint, verbleiben euch auch <unclear cert="medium" resp="#joint">dabej</unclear>
 <lb n="22"/>mit gueter nachparschafft unnd g. willen iederzeit
-<lb n="23"/>beÿgethann. Geben in unserm pallast
-<lb n="24"/>zue <origPlace resp="#ner">Embs</origPlace> <origDate when="1625-10-09" resp="#ner">den 9. octobris. 1625.</origDate>
-<lb n="25"/><persName role="issuer" resp="#ner">Caspar graff zu
-<lb n="26"/>Hohen Embs</persName>.
+<lb n="23"/><unclear cert="low" resp="#joint">beÿgethann</unclear>. Geben in <unclear cert="medium" resp="#joint">unserm</unclear> <unclear cert="medium" resp="#joint">pallast</unclear>
+<lb n="24"/>zue <origPlace resp="#ner"><unclear cert="medium" resp="#joint">Embs</unclear></origPlace> <origDate when="1625-10-09" resp="#ner">den 9. octobris. 1625.</origDate>
+<lb n="25"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Caspar</unclear> graff <unclear cert="medium" resp="#joint">zu</unclear>
+<lb n="26"/><unclear cert="medium" resp="#joint">Hohen</unclear> Embs</persName>.
 <pb facs="StadtASG_Missive_2297_8756.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2297_8757.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2297_8758.jpg" n="4"/>
-<lb n="27"/>Den <unclear cert="low" resp="#joint">edlen</unclear>, <unclear cert="low" resp="#joint">vesten</unclear>, <unclear cert="low" resp="#joint">fuersichtigen</unclear>, <unclear cert="low" resp="#joint">ersamen</unclear>, <unclear cert="low" resp="#joint">unnd</unclear> weisen,
+<lb n="27"/>Den edlen, vesten, fuersichtigen, ersamen, unnd weisen,
 <lb n="28"/><unclear cert="low" resp="#joint">Weissen</unclear> <unclear cert="low" resp="#joint">deßelbts</unclear> <unclear cert="low" resp="#joint">loblich</unclear> <unclear cert="low" resp="#joint">eüer</unclear> <unclear cert="low" resp="#joint">Stattgerechtt</unclear>, <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="29"/>unnd Rath der Statt <unclear cert="low" resp="#joint">Santgallen</unclear></orgName>.
-<lb n="30"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Santgallen</unclear></placeName>.
+<lb n="29"/>unnd Rath der Statt Santgallen</orgName>.
+<lb n="30"/><placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Santgallen</placeName>.
 </p>
         </body>
     </text>

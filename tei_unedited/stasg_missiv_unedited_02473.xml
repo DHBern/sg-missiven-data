@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2473</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,71 +20,71 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen bedanken sich bei Landvogt Itel Reding für die Überstellung eines gefangenen Brenners. Sie teilen dessen Geständnis mit, wonach er auf der Bleiche in Konstanz gestohlen habe. Sie bitten um die Rückgabe der entwendeten Sachen oder deren Wert und um die Mitteilung der Aussagen von Hans Bloetschen und seiner Frau, die dem Täter Anlass gegeben haben sollen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1624" resp="#regest">17. martii a° etc. 1624</date></correspAction><correspAction type="received"><name resp="#regest">Itel Reding, Landvogt der oberen und unteren Turgau</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2473_9533.jpg" n="1"/>
-<lb n="1"/>Unser freündt: nachbarlich willig dienst zuvor,
-<lb n="2"/>Edler Vester und weiser, Insonders lieber Herr Landt=
+<lb n="1"/>Unser <unclear cert="low" resp="#joint">freündt</unclear>: nachbarlich willig dienst zuvor,
+<lb n="2"/>Edler <unclear cert="medium" resp="#joint">Vester</unclear> und <unclear cert="low" resp="#joint">weiser</unclear>, Insonders lieber Herr Landt=
 <lb n="3"/>vogt.
-<lb n="4"/>Der nachbarlichen willfährigkeit wegen deß
-<lb n="5"/>gefangnen Brenners, thund wir uns freündt=
+<lb n="4"/><unclear cert="medium" resp="#joint">Der</unclear> nachbarlichen <unclear cert="medium" resp="#joint">willfährigkeit</unclear> wegen deß
+<lb n="5"/>gefangnen <unclear cert="medium" resp="#joint">Brenners</unclear>, thund wir uns freündt=
 <lb n="6"/>nachbarlichen bedanckhen. Was
-<lb n="7"/>nun derselbig so wol güetlich als peinlich bekannt
-<lb n="8"/>das hat der Herr ußer der beylag nach lengs zuver=
-<lb n="9"/>nemmen, welchs wir dem Herren vor disem commu=
-<lb n="10"/>niciret, da wir nit für ein noturfft erachtet hette,
-<lb n="11"/>zuvor ein vollkomne bekanntnus von ihme
-<lb n="12"/>zuheben, Inmaßen dann das jenige so er zu
-<lb n="13"/><placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName> uf der <placeName resp="#ner">Bleichin</placeName> entwendt, darzu komen,
-<lb n="14"/>darauf er an der marter verharret, und weiters
-<lb n="15"/>und mehrers nit bekennen wil.
-<lb n="16"/>Wann wir dann uß unsers Grichtschreibers
-<lb n="17"/>gethaner relation auch under anderem verstanden
+<lb n="7"/>nun derselbig so wol <unclear cert="low" resp="#joint">güetlich</unclear> als <unclear cert="medium" resp="#joint">peinlich</unclear> <unclear cert="low" resp="#joint">bekannt</unclear>
+<lb n="8"/>das hat der Herr <unclear cert="low" resp="#joint">ußer</unclear> der <unclear cert="medium" resp="#joint">beylag</unclear> nach <unclear cert="low" resp="#joint">lengs</unclear> <unclear cert="low" resp="#joint">zuver=</unclear>
+<lb n="9"/><unclear cert="medium" resp="#joint">nemmen</unclear>, <unclear cert="medium" resp="#joint">welchs</unclear> wir dem <unclear cert="medium" resp="#joint">Herren</unclear> <unclear cert="medium" resp="#joint">vor</unclear> disem <unclear cert="low" resp="#joint">commu=</unclear>
+<lb n="10"/>niciret, da wir nit für ein <unclear cert="low" resp="#joint">noturfft</unclear> erachtet <unclear cert="low" resp="#joint">hette</unclear>,
+<lb n="11"/><unclear cert="low" resp="#joint">zuvor</unclear> ein <unclear cert="medium" resp="#joint">vollkomne</unclear> <unclear cert="low" resp="#joint">bekanntnus</unclear> von ihme
+<lb n="12"/><unclear cert="medium" resp="#joint">zuheben</unclear>, Inmaßen dann das jenige so er zu
+<lb n="13"/><placeName ref="stadtasg-places-7" cert="medium" resp="#ner">Costantz</placeName> <unclear cert="low" resp="#joint">uf</unclear> der <placeName resp="#ner">Bleichin</placeName> entwendt, darzu <unclear cert="medium" resp="#joint">komen</unclear>,
+<lb n="14"/>darauf er an der <unclear cert="low" resp="#joint">marter</unclear> <unclear cert="low" resp="#joint">verharret</unclear>, und weiters
+<lb n="15"/>und <unclear cert="medium" resp="#joint">mehrers</unclear> nit <unclear cert="medium" resp="#joint">bekennen</unclear> wil.
+<lb n="16"/>Wann wir dann uß unsers <unclear cert="low" resp="#joint">Grichtschreibers</unclear>
+<lb n="17"/><unclear cert="medium" resp="#joint">gethaner</unclear> relation auch under <unclear cert="medium" resp="#joint">anderem</unclear> <unclear cert="low" resp="#joint">verstanden</unclear>
 <lb n="18"/>daß der Herr sich nachbarlichen anerbotten, die
-<lb n="19"/>entwendte sachen, den jenigen so sie entfrömbdet
-<lb n="20"/>worden auf einen Revershin ebenmeßig ohne
-<lb n="21"/>entgelt verfolgen zulaßen. Alß hat
-<lb n="22"/>der Herr den Revers hiebey zuempfahen, freündt
-<lb n="23"/>nachbarlich pittende hierauf bey seinen amts
-<lb n="24"/>angehörigen, oberkeitliche verfüegung thun zulaßen,
-<lb n="25"/>daß den unsrigen was ihnen entfrömbdet, od
-<lb n="26"/>was schon albereit darvon verwendt doch der
+<lb n="19"/><unclear cert="low" resp="#joint">entwendte</unclear> <unclear cert="medium" resp="#joint">sachen</unclear>, den jenigen so sie <unclear cert="low" resp="#joint">entfrömbdet</unclear>
+<lb n="20"/>worden auf <unclear cert="medium" resp="#joint">einen</unclear> <unclear cert="low" resp="#joint">Revershin</unclear> <unclear cert="low" resp="#joint">ebenmeßig</unclear> ohne
+<lb n="21"/>entgelt verfolgen <unclear cert="low" resp="#joint">zulaßen</unclear>. Alß hat
+<lb n="22"/>der Herr den Revers <unclear cert="medium" resp="#joint">hiebey</unclear> <unclear cert="low" resp="#joint">zuempfahen</unclear>, freündt
+<lb n="23"/>nachbarlich pittende hierauf bey <unclear cert="medium" resp="#joint">seinen</unclear> <unclear cert="low" resp="#joint">amts</unclear>
+<lb n="24"/>angehörigen, <unclear cert="low" resp="#joint">oberkeitliche</unclear> verfüegung thun zulaßen,
+<lb n="25"/>daß den <unclear cert="medium" resp="#joint">unsrigen</unclear> was ihnen <unclear cert="low" resp="#joint">entfrömbdet</unclear>, <unclear cert="medium" resp="#joint">od</unclear>
+<lb n="26"/>was schon <unclear cert="medium" resp="#joint">albereit</unclear> darvon <unclear cert="low" resp="#joint">verwendt</unclear> doch der
 <lb n="27"/>werdt darfür widerumb eingehandiget und
-<lb n="28"/>zugestellt werde, wie es dann die <orgName resp="#ner">Eidtgnößische</orgName>
+<lb n="28"/>zugestellt werde, wie es dann die <orgName resp="#ner"><unclear cert="low" resp="#joint">Eidtgnößische</unclear></orgName>
 <pb facs="StadtASG_Missive_2473_9534.jpg" n="2"/>
-<lb n="29"/>abschid vermügen, und wir uns deß gegenrech-
-<lb n="30"/>tens in unserm revers anerbotten, Wo nun hienach
-<lb n="31"/><persName resp="#ner">Hanns Bloetschen</persName> und sein haußfrow
-<lb n="32"/>uf <placeName resp="#ner">Blatten</placeName>, die dem maleficanten nicht gringe
-<lb n="33"/>ursach, seinem fürgeben nach, zuo solchen diebstählen
-<lb n="34"/>gegeben, in gefangcliche verhafftung getzogen werden
-<lb n="35"/>möchten, bitten wir, uns derselben bekanntnus, mit
-<lb n="36"/>ihme maleficanten desto beßer ferners zuo procedie-
-<lb n="37"/>ren haben, unbeschwaert nachbarlich zuo comuni-
-<lb n="38"/>cieren, Das sind ueb den herren hinwiderumb
-<lb n="39"/>in dergleichen und andern occasionibus nachbar-
-<lb n="40"/>lich zuerwidern willigen anerbietens, Uns
-<lb n="41"/>damit goettlicher treuwer obhalt wolbefelhende.
-<lb n="42"/>Datumb den . <origDate when="1624-03-27" resp="#ner">17 . 27 . martii a° etc. 1624</origDate> .
+<lb n="29"/><unclear cert="medium" resp="#joint">abschid</unclear> vermügen, und wir uns deß <unclear cert="medium" resp="#joint">gegenrech</unclear>-
+<lb n="30"/><unclear cert="medium" resp="#joint">tens</unclear> in <unclear cert="low" resp="#joint">unserm</unclear> <unclear cert="low" resp="#joint">revers</unclear> <unclear cert="low" resp="#joint">anerbotten</unclear>, Wo nun <unclear cert="low" resp="#joint">hienach</unclear>
+<lb n="31"/><persName resp="#ner">Hanns <unclear cert="low" resp="#joint">Bloetschen</unclear></persName> und sein <unclear cert="medium" resp="#joint">haußfrow</unclear>
+<lb n="32"/>uf <placeName resp="#ner">Blatten</placeName>, die dem maleficanten nicht <unclear cert="medium" resp="#joint">gringe</unclear>
+<lb n="33"/>ursach, seinem fürgeben nach, <unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">solchen</unclear> diebstählen
+<lb n="34"/>gegeben, in <unclear cert="low" resp="#joint">gefangcliche</unclear> <unclear cert="low" resp="#joint">verhafftung</unclear> <unclear cert="low" resp="#joint">getzogen</unclear> <unclear cert="low" resp="#joint">werden</unclear>
+<lb n="35"/>möchten, <unclear cert="low" resp="#joint">bitten</unclear> <unclear cert="low" resp="#joint">wir</unclear>, <unclear cert="low" resp="#joint">uns</unclear> derselben <unclear cert="medium" resp="#joint">bekanntnus</unclear>, mit
+<lb n="36"/>ihme maleficanten <unclear cert="medium" resp="#joint">desto</unclear> <unclear cert="medium" resp="#joint">beßer</unclear> <unclear cert="medium" resp="#joint">ferners</unclear> <unclear cert="medium" resp="#joint">zuo</unclear> procedie-
+<lb n="37"/>ren haben, <unclear cert="low" resp="#joint">unbeschwaert</unclear> nachbarlich <unclear cert="medium" resp="#joint">zuo</unclear> comuni-
+<lb n="38"/><unclear cert="medium" resp="#joint">cieren</unclear>, <unclear cert="medium" resp="#joint">Das</unclear> sind <unclear cert="low" resp="#joint">ueb</unclear> den <unclear cert="medium" resp="#joint">herren</unclear> <unclear cert="medium" resp="#joint">hinwiderumb</unclear>
+<lb n="39"/>in <unclear cert="low" resp="#joint">dergleichen</unclear> und andern occasionibus nachbar-
+<lb n="40"/>lich <unclear cert="low" resp="#joint">zuerwidern</unclear> willigen <unclear cert="low" resp="#joint">anerbietens</unclear>, Uns
+<lb n="41"/>damit <unclear cert="low" resp="#joint">goettlicher</unclear> <unclear cert="low" resp="#joint">treuwer</unclear> obhalt wolbefelhende.
+<lb n="42"/>Datumb den . <origDate when="1624-03-27" resp="#ner">17 . <unclear cert="low" resp="#joint">27</unclear> . <unclear cert="low" resp="#joint">martii</unclear> <unclear cert="low" resp="#joint">a°</unclear> <unclear cert="low" resp="#joint">etc</unclear>. 1624</origDate> .
 <lb n="43"/><orgName ref="stadtasg-actors-148" cert="medium" role="issuer" resp="#ner">Burgermeister und rath
-<lb n="44"/>der statt Sanct Gallen</orgName>.
+<lb n="44"/>der statt <unclear cert="low" resp="#joint">Sanct</unclear> Gallen</orgName>.
 <pb facs="StadtASG_Missive_2473_9535.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2473_9536.jpg" n="4"/>
-<lb n="45"/>Dem Edlen vesten und weisen <persName role="recipient" resp="#ner">Itel
-<lb n="46"/>Reding</persName> deß rhahts zuo <placeName ref="stadtasg-places-287" cert="medium" resp="#ner">Schweiz</placeName>, landt-
-<lb n="47"/>vogt der <placeName ref="stadtasg-places-103" cert="medium" resp="#ner">oberen und nideren Turgoeuws</placeName>,
-<lb n="48"/>unserem insonders lieben herren.
+<lb n="45"/>Dem Edlen vesten und <unclear cert="medium" resp="#joint">weisen</unclear> <persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Itel</unclear>
+<lb n="46"/>Reding</persName> deß <unclear cert="low" resp="#joint">rhahts</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-287" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Schweiz</unclear></placeName>, <unclear cert="low" resp="#joint">landt</unclear>-
+<lb n="47"/><unclear cert="low" resp="#joint">vogt</unclear> der <placeName ref="stadtasg-places-103" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">oberen</unclear> und nideren <unclear cert="low" resp="#joint">Turgoeuws</unclear></placeName>,
+<lb n="48"/><unclear cert="low" resp="#joint">unserem</unclear> insonders lieben herren.
 </p>
         </body>
     </text>

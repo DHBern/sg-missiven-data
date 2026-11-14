@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1604</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,43 +20,43 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Lindau antworten auf das Schreiben von Bürgermeister und Rat zu St. Gallen vom Vortag. Sie erklären sich bereit, den St. Gallern 14'000 Dachziegel für den Bau eines Hauses am Hof Siebenach gegen Bezahlung zu liefern. Die Ziegel könnten in Lindau abgeholt werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Lindau</name><date when="1608-04-16" resp="#regest">Datum 16. Aprilis anno. 1608.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1604_5821.jpg" n="1"/>
-<lb n="1"/>Unnser <unclear cert="medium" resp="#joint">freundtlich</unclear> willig <unclear cert="medium" resp="#joint">diennst</unclear> zuvor,
-<lb n="2"/>Ehrsamen unnd <unclear cert="medium" resp="#joint">Weÿsen</unclear>, <unclear cert="low" resp="#joint">besonndern</unclear> lieb
-<lb n="3"/>und <unclear cert="medium" resp="#joint">gueten</unclear> <unclear cert="low" resp="#joint">Freund</unclear>.
-<lb n="4"/>E. E. W. <unclear cert="low" resp="#joint">gesteriges</unclear> tags ahn unns gethanes
+<lb n="1"/>Unnser freundtlich willig diennst zuvor,
+<lb n="2"/>Ehrsamen unnd Weÿsen, <unclear cert="low" resp="#joint">besonndern</unclear> <unclear cert="medium" resp="#joint">lieb</unclear>
+<lb n="3"/>und gueten <unclear cert="medium" resp="#joint">Freund</unclear>.
+<lb n="4"/><unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. <unclear cert="low" resp="#joint">gesteriges</unclear> tags <unclear cert="medium" resp="#joint">ahn</unclear> unns <unclear cert="medium" resp="#joint">gethanes</unclear>
 <lb n="5"/><unclear cert="low" resp="#joint">schreÿben</unclear> und <unclear cert="low" resp="#joint">pitliches</unclear> <unclear cert="low" resp="#joint">ersuechen</unclear>, das wir
 <lb n="6"/>Ihnen, zu Ihrem vorhabenden baw <unclear cert="medium" resp="#joint">aines</unclear>
-<lb n="7"/><unclear cert="medium" resp="#joint">hauß</unclear>, zu Irem hof <placeName resp="#ner">Sibenach</placeName> gehörig, mit
-<lb n="8"/><unclear cert="low" resp="#joint">Jn</unclear>. 14000 tachziegel, gegen <unclear cert="low" resp="#joint">geziemender</unclear>
-<lb n="9"/>bezahlung, verholffen sein wolten, ist uns
-<lb n="10"/>an <unclear cert="low" resp="#joint">heut</unclear> beliefert worden,
-<lb n="11"/>Wie wir <unclear cert="low" resp="#joint">nuhn</unclear> E. E. W. in dem, unnd
-<lb n="12"/><unclear cert="medium" resp="#joint">annderm</unclear> zuwillfahren nachbarlichen ge-
-<lb n="13"/><unclear cert="medium" resp="#joint">naigt</unclear>, alß <unclear cert="low" resp="#joint">wöllen</unclear> wir Inen, mit gemel-
-<lb n="14"/>ter anzahl begerter tach ziegel, <unclear cert="low" resp="#joint">geren</unclear> bedient
+<lb n="7"/><unclear cert="medium" resp="#joint">hauß</unclear>, zu Irem hof <placeName resp="#ner"><unclear cert="medium" resp="#joint">Sibenach</unclear></placeName> gehörig, mit
+<lb n="8"/><unclear cert="low" resp="#joint">Jn</unclear>. 14000 <unclear cert="medium" resp="#joint">tachziegel</unclear>, gegen <unclear cert="low" resp="#joint">geziemender</unclear>
+<lb n="9"/>bezahlung, verholffen sein <unclear cert="medium" resp="#joint">wolten</unclear>, ist uns
+<lb n="10"/>an <unclear cert="low" resp="#joint">heut</unclear> <unclear cert="medium" resp="#joint">beliefert</unclear> worden,
+<lb n="11"/>Wie wir <unclear cert="low" resp="#joint">nuhn</unclear> <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. in dem, unnd
+<lb n="12"/>annderm <unclear cert="medium" resp="#joint">zuwillfahren</unclear> nachbarlichen ge-
+<lb n="13"/><unclear cert="low" resp="#joint">naigt</unclear>, <unclear cert="medium" resp="#joint">alß</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear> wir Inen, mit gemel-
+<lb n="14"/>ter anzahl begerter <unclear cert="medium" resp="#joint">tach</unclear> <unclear cert="medium" resp="#joint">ziegel</unclear>, <unclear cert="low" resp="#joint">geren</unclear> bedient
 <lb n="15"/>sein, die mögen <unclear cert="low" resp="#joint">Sÿ</unclear>, zu Irer <unclear cert="low" resp="#joint">gelegenhait</unclear>,
-<lb n="16"/>wann <unclear cert="medium" resp="#joint">Sÿ</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, <unclear cert="medium" resp="#joint">beÿ</unclear> unns alhie abhollen
+<lb n="16"/><unclear cert="medium" resp="#joint">wann</unclear> Sÿ <unclear cert="medium" resp="#joint">wöllen</unclear>, beÿ unns alhie <unclear cert="medium" resp="#joint">abhollen</unclear>
 <lb n="17"/>lassen,
-<lb n="18"/>Welches E. E. W. auff derselben <unclear cert="low" resp="#joint">freundtlches</unclear>
-<lb n="19"/><unclear cert="medium" resp="#joint">zueschreiben</unclear> und begeren, wir hiemit nachbar-
-<lb n="20"/>lich <unclear cert="low" resp="#joint">beanntworten</unclear> <unclear cert="low" resp="#joint">wöllen</unclear>, unnd thuen, Irer
-<lb n="21"/>derselben darmit lieb und <unclear cert="low" resp="#joint">angenähm</unclear>, uns
-<lb n="22"/><unclear cert="medium" resp="#joint">ains</unclear> <unclear cert="low" resp="#joint">beneben</unclear>, göttlicher <unclear cert="low" resp="#joint">obhand</unclear> <unclear cert="low" resp="#joint">zuegnaden</unclear>
-<lb n="23"/><unclear cert="medium" resp="#joint">getreulich</unclear> <unclear cert="low" resp="#joint">bevelchend</unclear>. Datum <origDate when="1608-04-16" resp="#ner">16. Aprilis
+<lb n="18"/><unclear cert="medium" resp="#joint">Welches</unclear> <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">E</unclear>. <unclear cert="medium" resp="#joint">W</unclear>. auff <unclear cert="medium" resp="#joint">derselben</unclear> <unclear cert="low" resp="#joint">freundtlches</unclear>
+<lb n="19"/><unclear cert="low" resp="#joint">zueschreiben</unclear> und begeren, wir hiemit nachbar-
+<lb n="20"/>lich <unclear cert="low" resp="#joint">beanntworten</unclear> <unclear cert="medium" resp="#joint">wöllen</unclear>, unnd <unclear cert="low" resp="#joint">thuen</unclear>, <unclear cert="low" resp="#joint">Irer</unclear>
+<lb n="21"/>derselben <unclear cert="low" resp="#joint">darmit</unclear> lieb und <unclear cert="low" resp="#joint">angenähm</unclear>, uns
+<lb n="22"/>ains <unclear cert="low" resp="#joint">beneben</unclear>, göttlicher <unclear cert="low" resp="#joint">obhand</unclear> <unclear cert="low" resp="#joint">zuegnaden</unclear>
+<lb n="23"/><unclear cert="low" resp="#joint">getreulich</unclear> <unclear cert="low" resp="#joint">bevelchend</unclear>. Datum <origDate when="1608-04-16" resp="#ner">16. Aprilis
 <lb n="24"/>anno. 1608</origDate>.
 <lb n="25"/><orgName ref="stadtasg-actors-511" cert="medium" role="issuer" resp="#ner">Burgermaister unnd
 <lb n="26"/>Rath zu <unclear cert="low" resp="#joint">Lündaw</unclear></orgName>,

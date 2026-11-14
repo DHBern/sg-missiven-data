@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2527</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,45 +20,45 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Richter und Rat zu Mels bitten Bürgermeister und Rat zu St. Gallen, ihrem Nachbarn Peter Müller bei der Einziehung einer Schuld gegenüber dem St. Galler Bürger Balthasar Schmid zu helfen. Müller habe Schmid Ochsen verkauft, die Zahlung sei aber noch ausstehend. Mels bietet im Gegenzug ähnliche Dienste an.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Richter und Rat zu Mels</name><date when="1625" resp="#regest">Mellaust den 9 Jenner a:o 1625</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2527_9753.jpg" n="1"/>
-<lb n="1"/>Hoch unnd wolgeachte, Edle, Eherenveste, fromme, wyße
-<lb n="2"/>insonders großgünstige wolverthrauwte Liebe Herren
-<lb n="3"/>eüch seÿen unser freündtlich gruoß unnd guotwillig dienst
-<lb n="4"/>zuovor,.
-<lb n="5"/>Es ist für unß in geseßnem rath komen und erschinen
-<lb n="6"/>unser gethreuwer lieber nachpaur, <persName resp="#ner">Peter Müller</persName>,
-<lb n="7"/>unß klags wyß anzeigende, wie er vor etwas zyts
-<lb n="8"/>eüwerem mitburger <persName resp="#ner">Balthasar Schmid</persName>, etliche ochßen
-<lb n="9"/>zekauffen geben habe, da er biß dato zuo der be=
-<lb n="10"/>zalung nit komen mögen, derohalben unß umb dise
-<lb n="11"/>fürdernuß angelangt; gelanget also an eüch wol
-<lb n="12"/>ermelte Herren unser dienst: und freündtlich pith
-<lb n="13"/>Ihr wöllend disem unserem obermeltem nachpaurn
-<lb n="14"/>guot ußricht und gant halten, und zuo der bezalung
-<lb n="15"/>verholffen sein, stoth unß in glichem fal
-<lb n="16"/>und in ander weg dienstlich zuo beschulden, hiemit
-<lb n="17"/>unß alle Goettlicher protection wol befelchende,
-<lb n="18"/>Datum <origPlace resp="#ner">Mellaust</origPlace> <origDate when="1625" resp="#ner">den 9 Jenner a:o 1625</origDate>:
+<lb n="1"/>Hoch <unclear cert="low" resp="#joint">unnd</unclear> wolgeachte, Edle, <unclear cert="medium" resp="#joint">Eherenveste</unclear>, <unclear cert="medium" resp="#joint">fromme</unclear>, <unclear cert="medium" resp="#joint">wyße</unclear>
+<lb n="2"/>insonders großgünstige <unclear cert="medium" resp="#joint">wolverthrauwte</unclear> Liebe Herren
+<lb n="3"/><unclear cert="low" resp="#joint">eüch</unclear> <unclear cert="low" resp="#joint">seÿen</unclear> unser <unclear cert="low" resp="#joint">freündtlich</unclear> <unclear cert="low" resp="#joint">gruoß</unclear> unnd guotwillig dienst
+<lb n="4"/><unclear cert="low" resp="#joint">zuovor</unclear>,.
+<lb n="5"/>Es ist für unß in <unclear cert="low" resp="#joint">geseßnem</unclear> rath komen und erschinen
+<lb n="6"/>unser <unclear cert="low" resp="#joint">gethreuwer</unclear> lieber nachpaur, <persName resp="#ner"><unclear cert="low" resp="#joint">Peter</unclear> Müller</persName>,
+<lb n="7"/>unß klags wyß anzeigende, wie er vor etwas <unclear cert="low" resp="#joint">zyts</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">eüwerem</unclear> <unclear cert="low" resp="#joint">mitburger</unclear> <persName resp="#ner">Balthasar Schmid</persName>, <unclear cert="low" resp="#joint">etliche</unclear> <unclear cert="low" resp="#joint">ochßen</unclear>
+<lb n="9"/><unclear cert="low" resp="#joint">zekauffen</unclear> geben habe, da er biß dato <unclear cert="low" resp="#joint">zuo</unclear> der be=
+<lb n="10"/>zalung nit komen mögen, <unclear cert="low" resp="#joint">derohalben</unclear> unß umb dise
+<lb n="11"/><unclear cert="low" resp="#joint">fürdernuß</unclear> angelangt; gelanget also an <unclear cert="medium" resp="#joint">eüch</unclear> wol
+<lb n="12"/><unclear cert="low" resp="#joint">ermelte</unclear> Herren unser dienst: und <unclear cert="medium" resp="#joint">freündtlich</unclear> <unclear cert="medium" resp="#joint">pith</unclear>
+<lb n="13"/>Ihr <unclear cert="medium" resp="#joint">wöllend</unclear> disem <unclear cert="medium" resp="#joint">unserem</unclear> <unclear cert="medium" resp="#joint">obermeltem</unclear> <unclear cert="medium" resp="#joint">nachpaurn</unclear>
+<lb n="14"/><unclear cert="medium" resp="#joint">guot</unclear> <unclear cert="medium" resp="#joint">ußricht</unclear> und <unclear cert="low" resp="#joint">gant</unclear> halten, und <unclear cert="low" resp="#joint">zuo</unclear> der bezalung
+<lb n="15"/><unclear cert="low" resp="#joint">verholffen</unclear> sein, <unclear cert="low" resp="#joint">stoth</unclear> unß in <unclear cert="low" resp="#joint">glichem</unclear> fal
+<lb n="16"/>und in ander weg dienstlich <unclear cert="low" resp="#joint">zuo</unclear> beschulden, hiemit
+<lb n="17"/>unß alle <unclear cert="low" resp="#joint">Goettlicher</unclear> protection wol befelchende,
+<lb n="18"/>Datum <origPlace resp="#ner"><unclear cert="low" resp="#joint">Mellaust</unclear></origPlace> <origDate when="1625" resp="#ner">den 9 Jenner <unclear cert="low" resp="#joint">a:o</unclear> 1625</origDate>:
 <lb n="19"/>E: W: f:
 <lb n="20"/><orgName role="issuer" resp="#ner">Richter und Rath daselbst</orgName>
 <pb facs="StadtASG_Missive_2527_9754.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2527_9755.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2527_9756.jpg" n="4"/>
-<lb n="21"/>Den hoch und wolgeachten, edlen ehrnvesten
-<lb n="22"/>fuersichtigen und wüsen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Buergermeister
+<lb n="21"/>Den hoch und <unclear cert="medium" resp="#joint">wolgeachten</unclear>, edlen <unclear cert="low" resp="#joint">ehrnvesten</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">fuersichtigen</unclear> und <unclear cert="low" resp="#joint">wüsen</unclear>, <unclear cert="low" resp="#joint">herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Buergermeister</unclear>
 <lb n="23"/>und Rath, der statt Santgallen</orgName>, unseren groß
 <lb n="24"/>guenstigen hochehrenden lieben herren
 <lb n="25"/>und beßten freuenden

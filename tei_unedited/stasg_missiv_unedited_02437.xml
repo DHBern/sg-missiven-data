@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2437</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,74 +20,74 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Stein am Rhein bitten Bürgermeister und Rat zu St. Gallen, der Witwe Verena Scherbinin, Ehefrau des Schultheissen Georg Schmid, den Zehnten-Pfennig-Abzug zu erlassen. Sie verweisen darauf, dass die St. Galler Bürger von den Erblassern der verstorbenen Anna Scherbinin, Schwester der Bittstellerin, bereits von diesem Abzug befreit worden seien. Stein am Rhein bittet um schriftliche Bestätigung dieser Gunstbezeugung.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Stein am Rhein</name><date when="1623-10-04" resp="#regest">4 tag Octobris. Anno 1623</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2437_9383.jpg" n="1"/>
-<lb n="1"/>Edle, Veste, Fromme, Fuernemme, Fuersichtige, Ersame, und
+<lb n="1"/><unclear cert="low" resp="#joint">Edle</unclear>, <unclear cert="low" resp="#joint">Veste</unclear>, <unclear cert="low" resp="#joint">Fromme</unclear>, <unclear cert="low" resp="#joint">Fuernemme</unclear>, <unclear cert="low" resp="#joint">Fuersichtige</unclear>, <unclear cert="low" resp="#joint">Ersame</unclear>, und
 <lb n="2"/>Weÿse Herr Burgermeister, Insonders guenstige Herren,
-<lb n="3"/>guote frundt, unnd Liebe Nachpahren. Denselben seÿen
-<lb n="4"/>unnser frundtlich, Nachparlich, gantz guotwillig
+<lb n="3"/><unclear cert="low" resp="#joint">guote</unclear> <unclear cert="low" resp="#joint">frundt</unclear>, unnd Liebe <unclear cert="low" resp="#joint">Nachpahren</unclear>. Denselben <unclear cert="low" resp="#joint">seÿen</unclear>
+<lb n="4"/>unnser frundtlich, Nachparlich, gantz <unclear cert="low" resp="#joint">guotwillig</unclear>
 <lb n="5"/>diennst, mit erpietung aller ehren zuvor.
-<lb n="6"/>Unnser lieber unnd gethruewer der Ersam, unnd
-<lb n="7"/>weÿse Herr <persName resp="#ner">Georg Schmid</persName>, ditzit Schultheiß alhie,
-<lb n="8"/>hat unß anstat unnd Innamen der Eerenreichen
-<lb n="9"/><persName resp="#ner">Verena Scherbini</persName> siner geliebten Hußfrowen fuer ge-
-<lb n="10"/>bracht, unnd zuerkennen geben. Nach dem un-
-<lb n="11"/>lengsten, von der ouch Eerentugentreichen frowen <persName resp="#ner">Anna
-<lb n="12"/>Scherbini</persName>, deß Edlen, unnd Vesten Junckherr <persName resp="#ner">Ruodolffen
+<lb n="6"/>Unnser lieber unnd <unclear cert="low" resp="#joint">gethruewer</unclear> der <unclear cert="low" resp="#joint">Ersam</unclear>, unnd
+<lb n="7"/><unclear cert="low" resp="#joint">weÿse</unclear> Herr <persName resp="#ner">Georg <unclear cert="low" resp="#joint">Schmid</unclear></persName>, <unclear cert="low" resp="#joint">ditzit</unclear> Schultheiß alhie,
+<lb n="8"/>hat unß anstat unnd <unclear cert="low" resp="#joint">Innamen</unclear> der <unclear cert="low" resp="#joint">Eerenreichen</unclear>
+<lb n="9"/><persName resp="#ner">Verena <unclear cert="medium" resp="#joint">Scherbini</unclear></persName> <unclear cert="medium" resp="#joint">siner</unclear> geliebten <unclear cert="medium" resp="#joint">Hußfrowen</unclear> <unclear cert="medium" resp="#joint">fuer</unclear> ge-
+<lb n="10"/>bracht, unnd <unclear cert="low" resp="#joint">zuerkennen</unclear> geben. Nach dem un-
+<lb n="11"/><unclear cert="low" resp="#joint">lengsten</unclear>, von der ouch <unclear cert="low" resp="#joint">Eerentugentreichen</unclear> frowen <persName resp="#ner">Anna
+<lb n="12"/><unclear cert="low" resp="#joint">Scherbini</unclear></persName>, deß <unclear cert="low" resp="#joint">Edlen</unclear>, unnd Vesten Junckherr <persName resp="#ner">Ruodolffen
 <lb n="13"/>Zollickhoffers</persName>, derselben Mitrahts ehelicher gemahel,
-<lb n="14"/>Irer frundtlichen lieben Schwester seelligen, samdt
-<lb n="15"/>andern Iren Intereßierten, Iro selben uß den genaden
-<lb n="16"/>Gottes, etvas Erblichen aenerstorben. Wann
-<lb n="17"/>dann die selbig sin liebe Hußfrow (vermitlest
-<lb n="18"/>goetlicher allmacht) gesinet, unnd bedacht, voran-
-<lb n="19"/>gezoegten anerstorbenen Erbfahl der endten gebuerender
-<lb n="20"/>maßen erfordern, und er hollen zelaßen, darzuo siro,
-<lb n="21"/>zuo <placeName resp="#ner">Urkhundt</placeName>, unnd schÿn gehaben bedurfftig seÿe, fuer
-<lb n="22"/>zuo weÿsen, daß wir uuß vernahen gegen den burger-
-<lb n="23"/>en zuo <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>, von beruerten personen, deß
-<lb n="24"/>zehenden pfenning abzugs ersettiget, und benuegt
-<lb n="25"/>heindt. Mit frundtlichem piten, wir woltend
-<lb n="26"/>Iro Im lehren fahl ebenmeßigclich wilfahren,
-<lb n="27"/>unnd darneben an Uw. E. E. Wht. Irer mit
-<lb n="28"/>unnserem Interceßion schrÿben ersprießlich sin,
-<lb n="29"/>der guoten hoffnung, daß fruchtbarlich unnd wol
-<lb n="30"/>zuo nießen. Unnd so nuhn Ine zuothragenden fählen,
+<lb n="14"/><unclear cert="low" resp="#joint">Irer</unclear> <unclear cert="low" resp="#joint">frundtlichen</unclear> lieben <unclear cert="low" resp="#joint">Schwester</unclear> <unclear cert="low" resp="#joint">seelligen</unclear>, <unclear cert="low" resp="#joint">samdt</unclear>
+<lb n="15"/>andern Iren Intereßierten, <unclear cert="low" resp="#joint">Iro</unclear> <unclear cert="low" resp="#joint">selben</unclear> uß <unclear cert="medium" resp="#joint">den</unclear> <unclear cert="medium" resp="#joint">genaden</unclear>
+<lb n="16"/><unclear cert="medium" resp="#joint">Gottes</unclear>, <unclear cert="medium" resp="#joint">etvas</unclear> <unclear cert="medium" resp="#joint">Erblichen</unclear> <unclear cert="medium" resp="#joint">aenerstorben</unclear>. Wann
+<lb n="17"/>dann die selbig sin liebe <unclear cert="medium" resp="#joint">Hußfrow</unclear> (vermitlest
+<lb n="18"/><unclear cert="low" resp="#joint">goetlicher</unclear> <unclear cert="low" resp="#joint">allmacht</unclear>) <unclear cert="low" resp="#joint">gesinet</unclear>, unnd bedacht, voran-
+<lb n="19"/><unclear cert="low" resp="#joint">gezoegten</unclear> <unclear cert="low" resp="#joint">anerstorbenen</unclear> <unclear cert="low" resp="#joint">Erbfahl</unclear> der <unclear cert="low" resp="#joint">endten</unclear> <unclear cert="low" resp="#joint">gebuerender</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">maßen</unclear> <unclear cert="low" resp="#joint">erfordern</unclear>, und <unclear cert="low" resp="#joint">er</unclear> <unclear cert="low" resp="#joint">hollen</unclear> <unclear cert="low" resp="#joint">zelaßen</unclear>, <unclear cert="low" resp="#joint">darzuo</unclear> <unclear cert="low" resp="#joint">siro</unclear>,
+<lb n="21"/><unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Urkhundt</unclear></placeName>, unnd <unclear cert="medium" resp="#joint">schÿn</unclear> <unclear cert="medium" resp="#joint">gehaben</unclear> <unclear cert="medium" resp="#joint">bedurfftig</unclear> <unclear cert="medium" resp="#joint">seÿe</unclear>, <unclear cert="medium" resp="#joint">fuer</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">weÿsen</unclear>, daß wir <unclear cert="low" resp="#joint">uuß</unclear> <unclear cert="low" resp="#joint">vernahen</unclear> <unclear cert="low" resp="#joint">gegen</unclear> <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">burger</unclear>-
+<lb n="23"/>en <unclear cert="low" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">Sanct Gallen</placeName>, von <unclear cert="low" resp="#joint">beruerten</unclear> personen, deß
+<lb n="24"/>zehenden <unclear cert="low" resp="#joint">pfenning</unclear> <unclear cert="low" resp="#joint">abzugs</unclear> <unclear cert="low" resp="#joint">ersettiget</unclear>, und benuegt
+<lb n="25"/><unclear cert="low" resp="#joint">heindt</unclear>. Mit <unclear cert="low" resp="#joint">frundtlichem</unclear> <unclear cert="low" resp="#joint">piten</unclear>, <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">woltend</unclear>
+<lb n="26"/><unclear cert="low" resp="#joint">Iro</unclear> Im <unclear cert="low" resp="#joint">lehren</unclear> <unclear cert="low" resp="#joint">fahl</unclear> <unclear cert="low" resp="#joint">ebenmeßigclich</unclear> <unclear cert="low" resp="#joint">wilfahren</unclear>,
+<lb n="27"/>unnd <unclear cert="medium" resp="#joint">darneben</unclear> an <unclear cert="low" resp="#joint">Uw</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">Wht</unclear>. <unclear cert="low" resp="#joint">Irer</unclear> mit
+<lb n="28"/>unnserem <unclear cert="low" resp="#joint">Interceßion</unclear> <unclear cert="low" resp="#joint">schrÿben</unclear> <unclear cert="low" resp="#joint">ersprießlich</unclear> sin,
+<lb n="29"/>der <unclear cert="low" resp="#joint">guoten</unclear> hoffnung, daß fruchtbarlich unnd wol
+<lb n="30"/><unclear cert="medium" resp="#joint">zuo</unclear> <unclear cert="medium" resp="#joint">nießen</unclear>. Unnd so <unclear cert="low" resp="#joint">nuhn</unclear> <unclear cert="low" resp="#joint">Ine</unclear> <unclear cert="low" resp="#joint">zuothragenden</unclear> <unclear cert="low" resp="#joint">fählen</unclear>,
 <pb facs="StadtASG_Missive_2437_9384.jpg" n="2"/>
-<lb n="31"/>die glicheit geacht werden vernuenfftig erheblich.
-<lb n="32"/>Allß dann E. wht. so gelangt an dieselbe unnßer
-<lb n="33"/>gantz dienst. fründt. und nachparlich gesinnen, die
-<lb n="34"/>wollindt sich alß dan unnß veranlaßet auch beschiht,
-<lb n="35"/>gegen Ehrengedachter frow Schererin deß abfendts
-<lb n="36"/>geltung abzugs satigen, und unnß dißes vor
-<lb n="37"/>stehende annerbieten durch schriben erjneren, und
-<lb n="38"/>harin sich gegen Iro der frowen, allß guenstig und
-<lb n="39"/>wilfahrig erzeigen, Inmaßen wir Inzemlichen
-<lb n="40"/>faellen zu geschehen begeren, und wir sovil mueglich
-<lb n="41"/>In derglichen Inn kheine vergeßenheit zestellen,
-<lb n="42"/>Unnß hiemit dienst. und nachparlichen aner-
-<lb n="43"/>pietten, Götlicher Allmacht unß damith
-<lb n="44"/>samptlichen beuelchende. <origDate when="1623" resp="#ner">Datum den 4 tag
+<lb n="31"/><unclear cert="medium" resp="#joint">die</unclear> <unclear cert="medium" resp="#joint">glicheit</unclear> geacht <unclear cert="low" resp="#joint">werden</unclear> <unclear cert="low" resp="#joint">vernuenfftig</unclear> <unclear cert="low" resp="#joint">erheblich</unclear>.
+<lb n="32"/><unclear cert="low" resp="#joint">Allß</unclear> <unclear cert="low" resp="#joint">dann</unclear> E. <unclear cert="low" resp="#joint">wht</unclear>. so gelangt <unclear cert="medium" resp="#joint">an</unclear> <unclear cert="low" resp="#joint">dieselbe</unclear> <unclear cert="low" resp="#joint">unnßer</unclear>
+<lb n="33"/>gantz dienst. <unclear cert="low" resp="#joint">fründt</unclear>. und nachparlich <unclear cert="low" resp="#joint">gesinnen</unclear>, die
+<lb n="34"/><unclear cert="low" resp="#joint">wollindt</unclear> sich alß dan unnß veranlaßet auch <unclear cert="low" resp="#joint">beschiht</unclear>,
+<lb n="35"/>gegen <unclear cert="low" resp="#joint">Ehrengedachter</unclear> frow Schererin deß <unclear cert="low" resp="#joint">abfendts</unclear>
+<lb n="36"/><unclear cert="low" resp="#joint">geltung</unclear> <unclear cert="low" resp="#joint">abzugs</unclear> <unclear cert="low" resp="#joint">satigen</unclear>, und <unclear cert="low" resp="#joint">unnß</unclear> dißes <unclear cert="low" resp="#joint">vor</unclear>
+<lb n="37"/><unclear cert="low" resp="#joint">stehende</unclear> <unclear cert="low" resp="#joint">annerbieten</unclear> durch <unclear cert="low" resp="#joint">schriben</unclear> <unclear cert="low" resp="#joint">erjneren</unclear>, <unclear cert="low" resp="#joint">und</unclear>
+<lb n="38"/><unclear cert="low" resp="#joint">harin</unclear> sich gegen <unclear cert="low" resp="#joint">Iro</unclear> der <unclear cert="medium" resp="#joint">frowen</unclear>, <unclear cert="medium" resp="#joint">allß</unclear> <unclear cert="low" resp="#joint">guenstig</unclear> und
+<lb n="39"/><unclear cert="medium" resp="#joint">wilfahrig</unclear> <unclear cert="medium" resp="#joint">erzeigen</unclear>, <unclear cert="medium" resp="#joint">Inmaßen</unclear> wir <unclear cert="medium" resp="#joint">Inzemlichen</unclear>
+<lb n="40"/><unclear cert="medium" resp="#joint">faellen</unclear> zu <unclear cert="low" resp="#joint">geschehen</unclear> begeren, <unclear cert="medium" resp="#joint">und</unclear> wir sovil mueglich
+<lb n="41"/><unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">derglichen</unclear> Inn <unclear cert="medium" resp="#joint">kheine</unclear> <unclear cert="medium" resp="#joint">vergeßenheit</unclear> <unclear cert="medium" resp="#joint">zestellen</unclear>,
+<lb n="42"/><unclear cert="medium" resp="#joint">Unnß</unclear> hiemit dienst. <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">nachparlichen</unclear> aner-
+<lb n="43"/>pietten, <unclear cert="medium" resp="#joint">Götlicher</unclear> <unclear cert="medium" resp="#joint">Allmacht</unclear> unß <unclear cert="low" resp="#joint">damith</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">samptlichen</unclear> beuelchende. <origDate when="1623" resp="#ner">Datum den 4 tag
 <lb n="45"/>Octobris. Anno 1623</origDate>
-<lb n="46"/><orgName role="issuer" resp="#ner">Burgermeister und rath
-<lb n="47"/>der stadt Stein</orgName>.
+<lb n="46"/><orgName role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Burgermeister</unclear> und rath
+<lb n="47"/>der stadt <unclear cert="medium" resp="#joint">Stein</unclear></orgName>.
 <pb facs="StadtASG_Missive_2437_9385.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2437_9386.jpg" n="4"/>
-<lb n="48"/>Denen edlen, vesten, ehrnvesten, frommen, fürsichtigen,
+<lb n="48"/>Denen edlen, <unclear cert="low" resp="#joint">vesten</unclear>, ehrnvesten, frommen, fürsichtigen,
 <lb n="49"/>ehrsamen, unnd wyßen, herren burgermaister
 <lb n="50"/>unnd rhat der statt Sanct Gallen, unnsern
-<lb n="51"/>innsonnders günstigen herren, guoten fründen und
+<lb n="51"/><unclear cert="low" resp="#joint">innsonnders</unclear> <unclear cert="low" resp="#joint">günstigen</unclear> herren, guoten fründen und
 <lb n="52"/>lieben nachpauren.
 </p>
         </body>

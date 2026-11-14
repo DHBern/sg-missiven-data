@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 869</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Die Unterzeichner bestätigen dem Bürgermeister und Rat zu St. Gallen die Annahme des Bündnisses. Sie versichern, dass die französische Krone die alten Privilegien der St. Galler Bürger und Kaufleute wahren und die Edikte zum Schutz der Religion einhalten werde. Sie bitten, unter dem Namen der Verbündeten keine Nachteile zuzufügen, und empfehlen die Fortsetzung der Freundschaft.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Nde la croix, De laubespine, De la croyx, C. de Lymoges</name><placeName resp="#regest">Fribourg</placeName><date when="1564-12-15" resp="#regest">ce xve decembre 1564</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -37,49 +37,49 @@
 <lb n="1"/>Messieurs nous avons entendu par <unclear cert="low" resp="#joint">voz</unclear> ambassadeurs presens porteurs,
 <lb n="2"/>lacceptation quavez faicte de lalliance, comme pieca nous nous estions
 <lb n="3"/>promis de vous ainsy que de bons et <unclear cert="low" resp="#joint">grandz</unclear> amys qui sur tous les alliez
-<lb n="4"/><unclear cert="low" resp="#joint">nignorent</unclear> pas, combien sa <unclear cert="low" resp="#joint">Maté</unclear>. parmy son Royaulme <unclear cert="low" resp="#joint">faict</unclear> gratiffyer
-<lb n="5"/>et <unclear cert="low" resp="#joint">favoriser</unclear> leurs <unclear cert="medium" resp="#joint">subgectz</unclear>, <unclear cert="low" resp="#joint">marchand</unclear> et bourgeois, <unclear cert="low" resp="#joint">que</unclear> elle fera
+<lb n="4"/><unclear cert="low" resp="#joint">nignorent</unclear> pas, combien sa <unclear cert="low" resp="#joint">Maté</unclear>. parmy son <unclear cert="medium" resp="#joint">Royaulme</unclear> <unclear cert="low" resp="#joint">faict</unclear> <unclear cert="medium" resp="#joint">gratiffyer</unclear>
+<lb n="5"/>et <unclear cert="low" resp="#joint">favoriser</unclear> leurs <unclear cert="low" resp="#joint">subgectz</unclear>, <unclear cert="medium" resp="#joint">marchand</unclear> et bourgeois, <unclear cert="low" resp="#joint">que</unclear> elle fera
 <lb n="6"/>tousjours suivant le traicté de paix et dalliance sans quil soit
-<lb n="7"/>sy <unclear cert="low" resp="#joint">scavoy</unclear> <unclear cert="low" resp="#joint">quelconque</unclear> par son auctorité ne <unclear cert="low" resp="#joint">qmandemens</unclear> contrevenu aulx
+<lb n="7"/>sy <unclear cert="low" resp="#joint">scavoy</unclear> <unclear cert="low" resp="#joint">quelconque</unclear> par son <unclear cert="medium" resp="#joint">auctorité</unclear> ne <unclear cert="medium" resp="#joint">qmandemens</unclear> contrevenu aulx
 <lb n="8"/>privilleges anciens, desquelz vous et ces vre d. debvez <unclear cert="low" resp="#joint">ault</unclear> <unclear cert="low" resp="#joint">Raison</unclear>
 <lb n="9"/>jouyr, suivant la teneur <unclear cert="low" resp="#joint">desd</unclear>. <unclear cert="low" resp="#joint">traictez</unclear>, nayant jamais esté lintention
-<lb n="10"/>de sa <unclear cert="low" resp="#joint">Maté</unclear>. aultre, et nest encores a pns, <unclear cert="medium" resp="#joint">Qui</unclear> est <unclear cert="low" resp="#joint">por</unclear> <unclear cert="low" resp="#joint">Respondre</unclear>
+<lb n="10"/>de sa <unclear cert="low" resp="#joint">Maté</unclear>. aultre, et nest encores a <unclear cert="medium" resp="#joint">pns</unclear>, Qui est <unclear cert="low" resp="#joint">por</unclear> <unclear cert="low" resp="#joint">Respondre</unclear>
 <lb n="11"/>a ce q avez chargé voz ambassadeurs nous dire, pour cest esgard
-<lb n="12"/>affin que ny <unclear cert="low" resp="#joint">faicez</unclear> aulcun doubte, car <unclear cert="medium" resp="#joint">ou</unclear> il y auroit <unclear cert="low" resp="#joint">plainctes</unclear> au <unclear cert="low" resp="#joint">qtraire</unclear>
-<lb n="13"/>venant voz ambassadeurs pour ey brief jurer lalliance avec <unclear cert="low" resp="#joint">Messrs</unclear>.
-<lb n="14"/>des Ligues a la <unclear cert="low" resp="#joint">court</unclear> Il y sera <unclear cert="low" resp="#joint">proveu</unclear> a vres satisfaction et qtentement
-<lb n="15"/>suivant les <unclear cert="low" resp="#joint">traictez</unclear>, Mais aussi vous prions <unclear cert="low" resp="#joint">noz</unclear> <unclear cert="low" resp="#joint">q</unclear> <unclear cert="low" resp="#joint">soubz</unclear> le nom
-<lb n="16"/>de noz alliez Il ne se face par aultres nations ou <unclear cert="low" resp="#joint">associez</unclear> aulcung
-<lb n="17"/>tord, ne fraude par <unclear cert="medium" resp="#joint">ces</unclear> <unclear cert="low" resp="#joint">serviteurs</unclear>, <unclear cert="low" resp="#joint">facteurs</unclear>, et aultres aulx droictz
-<lb n="18"/>de sad. Maté. Quant au second poinct duquel aussi voz ambassadeurs
-<lb n="19"/><unclear cert="low" resp="#joint">nos</unclear> ont faict tant dinstance et dequoy Ilz nos ont demandé ces pntes
-<lb n="20"/>lres, pour <unclear cert="low" resp="#joint">asseurance</unclear>, <unclear cert="low" resp="#joint">consernant</unclear> <unclear cert="low" resp="#joint">lentretien</unclear> des <unclear cert="low" resp="#joint">edictz</unclear> faictz <unclear cert="medium" resp="#joint">ey</unclear>
-<lb n="21"/><placeName ref="stadtasg-places-131" cert="medium" resp="#ner">France</placeName> pour lesgard de la Religion. Cest chose qui nous est aysee
-<lb n="22"/>a vous promectre. Daultant q leurs Matez. avec tous les seigneurs
-<lb n="23"/>et conseil de France sont <unclear cert="low" resp="#joint">ey</unclear> toute Resolution bonne et <unclear cert="low" resp="#joint">vraye</unclear> deliberation
-<lb n="24"/>de guarder lesd. edictz, duquel <unclear cert="low" resp="#joint">despent</unclear> le <unclear cert="low" resp="#joint">Respoz</unclear> du Roy. <unclear cert="low" resp="#joint">ame</unclear> et de
-<lb n="25"/>tous ses <unclear cert="medium" resp="#joint">subgectz</unclear>, Ne <unclear cert="medium" resp="#joint">stant</unclear> point de besoing q vous soyez <unclear cert="medium" resp="#joint">ey</unclear> peinne
-<lb n="26"/>du qtraire Car Il ny a personne a qui Il Importe tant q a nos Et qui aussi
-<lb n="27"/>le desirons plus, Suivant lintention et vollonté de led. Maté.
-<lb n="28"/>Desquelles nos avons monstré aulx porteurs <unclear cert="low" resp="#joint">des</unclear> pntes lres, a <unclear cert="low" resp="#joint">nre</unclear> <unclear cert="low" resp="#joint">Roy</unclear>
-<lb n="29"/>signees de leurs mains, Et sur ceste <unclear cert="low" resp="#joint">asseurance</unclear> <unclear cert="low" resp="#joint">desirons</unclear> q vous
-<lb n="30"/>qservez nre alliance et amytié, Et vous envoyons ceste lres por certitude
-<lb n="31"/>et <unclear cert="low" resp="#joint">asseurance</unclear> de ce que dessus, Et du bon et certain
-<lb n="32"/>establissement <unclear cert="low" resp="#joint">qui</unclear> <unclear cert="low" resp="#joint">est</unclear> pour cest esgard, <unclear cert="low" resp="#joint">dieu</unclear> <unclear cert="low" resp="#joint">mercy</unclear>, parmy
+<lb n="12"/>affin que <unclear cert="medium" resp="#joint">ny</unclear> <unclear cert="low" resp="#joint">faicez</unclear> <unclear cert="medium" resp="#joint">aulcun</unclear> doubte, car ou il y auroit <unclear cert="low" resp="#joint">plainctes</unclear> <unclear cert="medium" resp="#joint">au</unclear> <unclear cert="low" resp="#joint">qtraire</unclear>
+<lb n="13"/>venant <unclear cert="medium" resp="#joint">voz</unclear> ambassadeurs pour <unclear cert="low" resp="#joint">ey</unclear> brief <unclear cert="low" resp="#joint">jurer</unclear> lalliance avec <unclear cert="low" resp="#joint">Messrs</unclear>.
+<lb n="14"/>des <unclear cert="medium" resp="#joint">Ligues</unclear> a la <unclear cert="medium" resp="#joint">court</unclear> Il y sera <unclear cert="low" resp="#joint">proveu</unclear> a vres satisfaction et qtentement
+<lb n="15"/>suivant les <unclear cert="low" resp="#joint">traictez</unclear>, Mais aussi vous prions <unclear cert="medium" resp="#joint">noz</unclear> <unclear cert="medium" resp="#joint">q</unclear> <unclear cert="medium" resp="#joint">soubz</unclear> le nom
+<lb n="16"/>de <unclear cert="medium" resp="#joint">noz</unclear> alliez Il ne se face par aultres nations ou <unclear cert="low" resp="#joint">associez</unclear> aulcung
+<lb n="17"/>tord, ne fraude par ces <unclear cert="low" resp="#joint">serviteurs</unclear>, <unclear cert="low" resp="#joint">facteurs</unclear>, et aultres aulx <unclear cert="medium" resp="#joint">droictz</unclear>
+<lb n="18"/>de sad. <unclear cert="low" resp="#joint">Maté</unclear>. Quant au second poinct duquel aussi <unclear cert="low" resp="#joint">voz</unclear> ambassadeurs
+<lb n="19"/><unclear cert="low" resp="#joint">nos</unclear> ont faict tant dinstance <unclear cert="medium" resp="#joint">et</unclear> <unclear cert="low" resp="#joint">dequoy</unclear> <unclear cert="low" resp="#joint">Ilz</unclear> <unclear cert="low" resp="#joint">nos</unclear> ont demandé <unclear cert="medium" resp="#joint">ces</unclear> <unclear cert="medium" resp="#joint">pntes</unclear>
+<lb n="20"/><unclear cert="medium" resp="#joint">lres</unclear>, pour <unclear cert="low" resp="#joint">asseurance</unclear>, <unclear cert="low" resp="#joint">consernant</unclear> <unclear cert="low" resp="#joint">lentretien</unclear> des <unclear cert="low" resp="#joint">edictz</unclear> <unclear cert="medium" resp="#joint">faictz</unclear> ey
+<lb n="21"/><placeName ref="stadtasg-places-131" cert="medium" resp="#ner">France</placeName> pour <unclear cert="low" resp="#joint">lesgard</unclear> de la Religion. Cest chose qui nous est aysee
+<lb n="22"/>a vous promectre. <unclear cert="low" resp="#joint">Daultant</unclear> q leurs <unclear cert="low" resp="#joint">Matez</unclear>. avec tous les <unclear cert="low" resp="#joint">seigneurs</unclear>
+<lb n="23"/>et conseil de France sont <unclear cert="low" resp="#joint">ey</unclear> toute Resolution bonne et <unclear cert="low" resp="#joint">vraye</unclear> <unclear cert="medium" resp="#joint">deliberation</unclear>
+<lb n="24"/>de <unclear cert="medium" resp="#joint">guarder</unclear> lesd. <unclear cert="low" resp="#joint">edictz</unclear>, <unclear cert="medium" resp="#joint">duquel</unclear> <unclear cert="low" resp="#joint">despent</unclear> le <unclear cert="low" resp="#joint">Respoz</unclear> <unclear cert="medium" resp="#joint">du</unclear> Roy. <unclear cert="low" resp="#joint">ame</unclear> et de
+<lb n="25"/>tous ses subgectz, Ne <unclear cert="low" resp="#joint">stant</unclear> point de besoing q vous soyez <unclear cert="medium" resp="#joint">ey</unclear> peinne
+<lb n="26"/>du <unclear cert="medium" resp="#joint">qtraire</unclear> Car Il ny a personne a qui Il Importe tant <unclear cert="medium" resp="#joint">q</unclear> a nos Et qui aussi
+<lb n="27"/>le <unclear cert="low" resp="#joint">desirons</unclear> plus, Suivant lintention et vollonté de led. Maté.
+<lb n="28"/>Desquelles nos avons monstré aulx porteurs des pntes lres, a <unclear cert="low" resp="#joint">nre</unclear> <unclear cert="low" resp="#joint">Roy</unclear>
+<lb n="29"/><unclear cert="medium" resp="#joint">signees</unclear> de <unclear cert="medium" resp="#joint">leurs</unclear> <unclear cert="medium" resp="#joint">mains</unclear>, Et sur ceste <unclear cert="low" resp="#joint">asseurance</unclear> <unclear cert="low" resp="#joint">desirons</unclear> q vous
+<lb n="30"/>qservez nre alliance et <unclear cert="low" resp="#joint">amytié</unclear>, Et vous envoyons ceste <unclear cert="low" resp="#joint">lres</unclear> <unclear cert="low" resp="#joint">por</unclear> certitude
+<lb n="31"/>et <unclear cert="low" resp="#joint">asseurance</unclear> de ce que dessus, Et du <unclear cert="medium" resp="#joint">bon</unclear> et certain
+<lb n="32"/>establissement qui est pour cest <unclear cert="medium" resp="#joint">esgard</unclear>, <unclear cert="low" resp="#joint">dieu</unclear> <unclear cert="low" resp="#joint">mercy</unclear>, parmy
 <pb facs="StadtASG_Missive_869_2450.jpg" n="2"/>
 <lb n="33"/>tout le <unclear cert="low" resp="#joint">royaulme</unclear>, nous <unclear cert="low" resp="#joint">recommandts</unclear> surce a <unclear cert="low" resp="#joint">voz</unclear> bonnes
-<lb n="34"/>graces, priant dieu vous donner messrs heureuse
-<lb n="35"/>et longue vye. De <origPlace ref="stadtasg-places-197" cert="medium" resp="#ner">Fribourg</origPlace> <origDate when="1564" resp="#ner">ce <unclear cert="low" resp="#joint">xve</unclear> decembre 1564</origDate>.
-<lb n="36"/>Voz bien bons et entiers amys.
-<lb n="37"/><unclear cert="low" resp="#joint">Nde</unclear> <unclear cert="low" resp="#joint">la</unclear> <unclear cert="low" resp="#joint">croix</unclear>. <persName role="issuer" resp="#ner">De <unclear cert="low" resp="#joint">laubespine</unclear></persName>.
+<lb n="34"/>graces, priant dieu vous <unclear cert="low" resp="#joint">donner</unclear> <unclear cert="low" resp="#joint">messrs</unclear> <unclear cert="low" resp="#joint">heureuse</unclear>
+<lb n="35"/>et longue <unclear cert="medium" resp="#joint">vye</unclear>. De <origPlace ref="stadtasg-places-197" cert="medium" resp="#ner">Fribourg</origPlace> <origDate when="1564" resp="#ner">ce <unclear cert="low" resp="#joint">xve</unclear> decembre <unclear cert="medium" resp="#joint">1564</unclear></origDate>.
+<lb n="36"/><unclear cert="medium" resp="#joint">Voz</unclear> bien <unclear cert="medium" resp="#joint">bons</unclear> et entiers amys.
+<lb n="37"/><unclear cert="medium" resp="#joint">Nde</unclear> <unclear cert="medium" resp="#joint">la</unclear> <unclear cert="medium" resp="#joint">croix</unclear>. <persName role="issuer" resp="#ner">De <unclear cert="low" resp="#joint">laubespine</unclear></persName>.
 <lb n="38"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">De</unclear> <unclear cert="low" resp="#joint">la</unclear> <unclear cert="low" resp="#joint">croyx</unclear></persName>. <persName role="issuer" resp="#ner">C. <unclear cert="low" resp="#joint">de</unclear> <unclear cert="low" resp="#joint">Lymoges</unclear></persName>.
 <pb facs="StadtASG_Missive_869_2451.jpg" n="3"/>
 <pb facs="StadtASG_Missive_869_2452.jpg" n="4"/>
 <lb n="39"/>Den edlen vestenn
 <lb n="40"/>fuersichtigen fuernemen und
 <lb n="41"/>wysen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister
-<lb n="42"/>und Rath der Statt <unclear cert="low" resp="#joint">Sant</unclear>
-<lb n="43"/>Gallen</orgName>, <unclear cert="low" resp="#joint">unsren</unclear> guenstigen
+<lb n="42"/>und Rath der Statt <unclear cert="medium" resp="#joint">Sant</unclear>
+<lb n="43"/>Gallen</orgName>, <unclear cert="low" resp="#joint">unsren</unclear> <unclear cert="medium" resp="#joint">guenstigen</unclear>
 <lb n="44"/>lieben unnd guoten fruenden
 </p>
         </body>

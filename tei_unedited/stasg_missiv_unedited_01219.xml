@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1219</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,67 +20,67 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Die Stadt Kuttenberg bittet Bürgermeister und Rat zu St. Gallen um Unterstützung, da sie durch einen Schaden in ein unersetzliches Unglück geraten sei. Zwei Senatoren seien mit einem Eid beauftragt, um Hilfe zu erbitten. Zudem wird gebeten, die beigefügten Briefe zu beglaubigen und abzuschriften. Falls Johannes Klamperus oder seine Gesellen in St. Gallen in die Hände fielen, sollen sie vor Gericht gestellt und die Stadt Kuttenberg darüber informiert werden.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Jan Obecnowsky, Primus Prchorury z Kutny Hory, Konsul und die übrigen Senatoren der Stadt Kuttenberg</name><placeName resp="#regest">Kuttenberg</placeName><date when="1584" cert="medium" resp="#regest">die Martis post festum S. Andreae Ano Dnj reformato 84</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_1219_4037.jpg" n="1"/>
-<lb n="1"/><unclear cert="low" resp="#joint">Clarissimi</unclear> <unclear cert="low" resp="#joint">atq</unclear> praestantissimj viri, nobis in Chro dilectis:
+<lb n="1"/><unclear cert="medium" resp="#joint">Clarissimi</unclear> <unclear cert="low" resp="#joint">atq</unclear> <unclear cert="medium" resp="#joint">praestantissimj</unclear> viri, nobis in Chro dilectis:
 <lb n="2"/>V. P. nra studia offerentes, <unclear cert="low" resp="#joint">obnixe</unclear> precamur, ut has
-<lb n="3"/><unclear cert="low" resp="#joint">psentes</unclear> literas <unclear cert="low" resp="#joint">aequo</unclear> animo legere, seqz benevolam erga
-<lb n="4"/>nos exhibere velit. Non qdem dubium est, quin apertis,
-<lb n="5"/>et lectis literis V. P. probe cognoscere poterit, quomodo
+<lb n="3"/><unclear cert="low" resp="#joint">psentes</unclear> literas <unclear cert="low" resp="#joint">aequo</unclear> animo legere, <unclear cert="medium" resp="#joint">seqz</unclear> benevolam erga
+<lb n="4"/>nos exhibere <unclear cert="medium" resp="#joint">velit</unclear>. Non <unclear cert="medium" resp="#joint">qdem</unclear> dubium est, quin apertis,
+<lb n="5"/>et lectis literis V. P. probe cognoscere <unclear cert="medium" resp="#joint">poterit</unclear>, quomodo
 <lb n="6"/>nos <unclear cert="low" resp="#joint">miserrimi</unclear> homines a Deo castigati, causa <unclear cert="medium" resp="#joint">neqssimo</unclear>
-<lb n="7"/><unclear cert="medium" resp="#joint">hominum</unclear>, et in irreparabile <unclear cert="low" resp="#joint">damnum</unclear> inciderimus, adeo,
+<lb n="7"/><unclear cert="medium" resp="#joint">hominum</unclear>, et in irreparabile <unclear cert="medium" resp="#joint">damnum</unclear> inciderimus, adeo,
 <lb n="8"/>ut quid nobis <unclear cert="low" resp="#joint">incipiendum</unclear>, aut quo pacto illud malum
 <lb n="9"/>( quod Deus a V. P. clementer avertat ) <unclear cert="low" resp="#joint">vincendum</unclear>
 <lb n="10"/>sit, nesciamus. Verumtamen non ignorantes, pluri=
-<lb n="11"/>mos quoqz in simile <unclear cert="low" resp="#joint">damnum</unclear>, utpote p aquam, ignem,
+<lb n="11"/>mos quoqz in simile <unclear cert="medium" resp="#joint">damnum</unclear>, utpote p aquam, ignem,
 <lb n="12"/>et id genus alia <unclear cert="low" resp="#joint">saepissime</unclear> incidisse, et inopia com=
 <lb n="13"/>pulsos a nobis idem auxilium ( quod iuxta posse non
-<lb n="14"/><unclear cert="low" resp="#joint">denegavim</unclear> ) implorasse. Quare hos duos ordinis
-<lb n="15"/>senatorij viros pstito iuramento, in regiones vestras
-<lb n="16"/>et civitates <unclear cert="low" resp="#joint">ablegavim</unclear>, quo V. P. nra miseria,
-<lb n="17"/>tantaqz clade commota nobis auxilio <unclear cert="medium" resp="#joint">ee</unclear>, et ex bonis suis,
-<lb n="18"/><unclear cert="low" resp="#joint">aliqd</unclear> muneris imptire non dedignetur. Talia enim
-<lb n="19"/>in nos collata bnficia, <unclear cert="low" resp="#joint">Deus</unclear> ter Opt: Max: largis=
+<lb n="14"/><unclear cert="low" resp="#joint">denegavim</unclear> ) implorasse. Quare <unclear cert="medium" resp="#joint">hos</unclear> <unclear cert="medium" resp="#joint">duos</unclear> ordinis
+<lb n="15"/><unclear cert="medium" resp="#joint">senatorij</unclear> <unclear cert="medium" resp="#joint">viros</unclear> <unclear cert="medium" resp="#joint">pstito</unclear> iuramento, in regiones vestras
+<lb n="16"/>et civitates <unclear cert="low" resp="#joint">ablegavim</unclear>, quo V. P. <unclear cert="medium" resp="#joint">nra</unclear> miseria,
+<lb n="17"/><unclear cert="medium" resp="#joint">tantaqz</unclear> clade commota nobis auxilio <unclear cert="medium" resp="#joint">ee</unclear>, et ex bonis suis,
+<lb n="18"/><unclear cert="low" resp="#joint">aliqd</unclear> muneris <unclear cert="medium" resp="#joint">imptire</unclear> non dedignetur. Talia enim
+<lb n="19"/>in nos collata <unclear cert="medium" resp="#joint">bnficia</unclear>, <unclear cert="medium" resp="#joint">Deus</unclear> ter Opt: Max: largis=
 <lb n="20"/>sime ( <unclear cert="medium" resp="#joint">ut</unclear> sua habet pmissio ) compensabit.
-<lb n="21"/>Praeterea etiam <unclear cert="medium" resp="#joint">submisse</unclear> rogamus, V. P. ut ad=
-<lb n="22"/>iunctas literas integra potestatem habentes <unclear cert="medium" resp="#joint">plegere</unclear>,
-<lb n="23"/>easqz describere non <unclear cert="medium" resp="#joint">gravetur</unclear>. <unclear cert="medium" resp="#joint">Et</unclear> <unclear cert="medium" resp="#joint">si</unclear> fortassis <unclear cert="low" resp="#joint">Jo=</unclear>
+<lb n="21"/><unclear cert="medium" resp="#joint">Praeterea</unclear> etiam <unclear cert="low" resp="#joint">submisse</unclear> rogamus, V. P. ut ad=
+<lb n="22"/>iunctas literas integra <unclear cert="medium" resp="#joint">potestatem</unclear> habentes plegere,
+<lb n="23"/><unclear cert="medium" resp="#joint">easqz</unclear> describere non gravetur. <unclear cert="medium" resp="#joint">Et</unclear> <unclear cert="medium" resp="#joint">si</unclear> fortassis <unclear cert="low" resp="#joint">Jo=</unclear>
 <pb facs="StadtASG_Missive_1219_4038.jpg" n="2"/>
-<lb n="24"/><persName resp="#ner">annes Klamperus</persName>, vel eius <unclear cert="low" resp="#joint">socii</unclear> in manum vestram
-<lb n="25"/>seu <unclear cert="low" resp="#joint">potestatem</unclear> aliquando venerint, velit V. P.
+<lb n="24"/><persName resp="#ner">annes Klamperus</persName>, vel eius <unclear cert="medium" resp="#joint">socii</unclear> in <unclear cert="medium" resp="#joint">manum</unclear> vestram
+<lb n="25"/><unclear cert="medium" resp="#joint">seu</unclear> <unclear cert="low" resp="#joint">potestatem</unclear> aliquando venerint, velit V. P.
 <lb n="26"/>tantum ex amicitia nobis tribuere, <unclear cert="low" resp="#joint">illosq</unclear> ad
-<lb n="27"/>iudicium compellere: de his quoq ad nos, cum
+<lb n="27"/>iudicium compellere: de his <unclear cert="low" resp="#joint">quoq</unclear> ad nos, cum
 <lb n="28"/>expensis <unclear cert="low" resp="#joint">vris</unclear> quamprimum <unclear cert="low" resp="#joint">rescribere</unclear>. Nos
 <lb n="29"/>vero <unclear cert="low" resp="#joint">onibus</unclear> officiis, V. P. parem gratiam semp
 <lb n="30"/>referre pollicemur. <unclear cert="low" resp="#joint">Data</unclear> <origPlace resp="#ner"><unclear cert="low" resp="#joint">Kuttenbergae</unclear></origPlace> <origDate when="1584" cert="medium" resp="#ner">die
-<lb n="31"/>Martis post festum S. <unclear cert="low" resp="#joint">Andreae</unclear> <unclear cert="low" resp="#joint">Ano</unclear> Dnj
+<lb n="31"/>Martis post festum S. <unclear cert="medium" resp="#joint">Andreae</unclear> <unclear cert="low" resp="#joint">Ano</unclear> <unclear cert="medium" resp="#joint">Dnj</unclear>
 <lb n="32"/>reformato <unclear cert="medium" resp="#joint">84</unclear></origDate>.
 <lb n="33"/>V. P.
 <lb n="34"/>Officiosiss:
 <lb n="35"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Jan</unclear> <unclear cert="low" resp="#joint">Obecnowsky</unclear></persName>
 <lb n="36"/><unclear cert="low" resp="#joint">Primus</unclear> <unclear cert="low" resp="#joint">Prchorury</unclear>
 <lb n="37"/><unclear cert="low" resp="#joint">z</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Kutny</unclear> <unclear cert="low" resp="#joint">Hory</unclear></placeName>
-<lb n="38"/>Consul, caeteriq Senatores
+<lb n="38"/>Consul, <unclear cert="low" resp="#joint">caeteriq</unclear> Senatores
 <lb n="39"/>Reipub: <orgName role="issuer" resp="#ner">Kuttenbergensis</orgName>.
 <lb n="40"/><persName role="issuer" resp="#ner"><unclear cert="low" resp="#joint">Mikulaß</unclear> <unclear cert="low" resp="#joint">Szimes</unclear></persName>
 <lb n="41"/><placeName resp="#ner"><unclear cert="low" resp="#joint">Buringar</unclear></placeName> <unclear cert="low" resp="#joint">mp</unclear>.
 <pb facs="StadtASG_Missive_1219_4039.jpg" n="3"/>
 <lb n="42"/>[]
 <pb facs="StadtASG_Missive_1219_4040.jpg" n="4"/>
-<lb n="43"/>Clarissimis <unclear cert="medium" resp="#joint">atq</unclear> praestantissimis viris, dno
-<lb n="44"/><unclear cert="low" resp="#joint">N</unclear>. consuli, <unclear cert="medium" resp="#joint">ac</unclear> senatui inclytae civitatis <placeName resp="#ner">S.
+<lb n="43"/>Clarissimis atq praestantissimis viris, dno
+<lb n="44"/><unclear cert="medium" resp="#joint">N</unclear>. consuli, ac senatui inclytae civitatis <placeName resp="#ner">S.
 <lb n="45"/>Galli</placeName>, in <placeName resp="#ner">Suevia</placeName>, dnis suis <unclear cert="medium" resp="#joint">observan</unclear>-
 <lb n="46"/>dissimis.
 <lb n="47"/><unclear cert="medium" resp="#joint">zuo</unclear> <placeName ref="stadtasg-places-38" cert="medium" resp="#ner">S. Gallen</placeName>

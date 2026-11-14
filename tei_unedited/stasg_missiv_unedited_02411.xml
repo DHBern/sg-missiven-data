@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 2411</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,52 +20,52 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Schultheiss und Rat zu Winterthur teilen mit, dass der Sohn des verstorbenen Winterthurer Bürgers Bonifaz Brenwald, Hans Heinrich Brenwald, die St. Gallerin Elisabeth Nägeli geheiratet habe. Da Brenwald für die kirchliche Bestätigung der Ehe in St. Gallen einen schriftlichen Nachweis seiner Herkunft benötige, bitten Winterthur um dessen Ausstellung. Sie bestätigen, dass Brenwald ehelich von Bonifaz Brenwald und Barbara Tünkhlerin geboren sei und sich stets ehrlich verhalten habe.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Schultheiss und Rat zu Winterthur</name><date when="1623-04-25" resp="#regest">25.t Aprilis. Anno. 1623.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
 <p>
 <pb facs="StadtASG_Missive_2411_9271.jpg" n="1"/>
-<lb n="1"/>Unßer fründtlich willig dienst und gruoß, sampt was wir Eeren,
-<lb n="2"/>liebs und guots vermoegend zuovor. Edlen, Eeren vesten,
-<lb n="3"/>Fromen, Fürsichtigen, Ersamen, und wÿßen, Herr Burgermeister
-<lb n="4"/>besonders günstigen Herren guoten fründ: und lieben Nachbaren.
-<lb n="5"/>unß hat an hüt dato <persName resp="#ner">Hannß Heinrich Brenwald</persName> unßers lieben
-<lb n="6"/>burgers <persName resp="#ner">Bonifaciÿ Brenwalden</persName> selligen Eelicher Sohn brichtet,
-<lb n="7"/>demnach er sich uß schickhung deß Allmechtigen mit Üwerer
-<lb n="8"/>burgerin <persName resp="#ner">Elisabetha Naeglin</persName> Eelich verhüratet und söllche verleb-
+<lb n="1"/><unclear cert="low" resp="#joint">Unßer</unclear> <unclear cert="medium" resp="#joint">fründtlich</unclear> willig dienst und <unclear cert="low" resp="#joint">gruoß</unclear>, sampt was wir <unclear cert="medium" resp="#joint">Eeren</unclear>,
+<lb n="2"/>liebs und <unclear cert="medium" resp="#joint">guots</unclear> <unclear cert="medium" resp="#joint">vermoegend</unclear> zuovor. Edlen, <unclear cert="low" resp="#joint">Eeren</unclear> vesten,
+<lb n="3"/><unclear cert="low" resp="#joint">Fromen</unclear>, Fürsichtigen, Ersamen, und <unclear cert="low" resp="#joint">wÿßen</unclear>, <unclear cert="medium" resp="#joint">Herr</unclear> Burgermeister
+<lb n="4"/>besonders günstigen Herren <unclear cert="medium" resp="#joint">guoten</unclear> <unclear cert="medium" resp="#joint">fründ</unclear>: und lieben <unclear cert="medium" resp="#joint">Nachbaren</unclear>.
+<lb n="5"/>unß hat an hüt dato <persName resp="#ner">Hannß Heinrich <unclear cert="low" resp="#joint">Brenwald</unclear></persName> <unclear cert="low" resp="#joint">unßers</unclear> lieben
+<lb n="6"/>burgers <persName resp="#ner"><unclear cert="low" resp="#joint">Bonifaciÿ</unclear> <unclear cert="low" resp="#joint">Brenwalden</unclear></persName> selligen Eelicher Sohn <unclear cert="low" resp="#joint">brichtet</unclear>,
+<lb n="7"/>demnach er sich uß <unclear cert="low" resp="#joint">schickhung</unclear> deß <unclear cert="low" resp="#joint">Allmechtigen</unclear> mit <unclear cert="low" resp="#joint">Üwerer</unclear>
+<lb n="8"/>burgerin <persName resp="#ner"><unclear cert="low" resp="#joint">Elisabetha</unclear> <unclear cert="low" resp="#joint">Naeglin</unclear></persName> Eelich <unclear cert="low" resp="#joint">verhüratet</unclear> und <unclear cert="low" resp="#joint">söllche</unclear> verleb-
 <lb n="9"/>nuß vor üwer Christenlichen Gemeind bestettigen zelaßen willens,
-<lb n="10"/>seige Ime uferlegt worden, zuvor von unß schrifftlichen schÿn
-<lb n="11"/>sÿns harkomens zuerzeügen. Mit underthenigem bitten, wir
-<lb n="12"/>woltind Ime den selben uß gnaden mitheilen, wann
-<lb n="13"/>unß nun woll bewüst, daß ernanter Hannß Heinrich Brenwald
-<lb n="14"/>von obgedachtem <persName resp="#ner">Bonifacio Brenwalden</persName> sÿnem vatter und Bar:
-<lb n="15"/>bara Tünkhlerin sÿner muoter, beden selligen Eelich erboren
-<lb n="16"/>er sich darnebent Jederzÿth Erlich und woll gehalten, alß habend
-<lb n="17"/>wir üch, unßere günstige Herren, guote fründ und liebe Nachbaren,
-<lb n="18"/>deßen, zuo willfahrung sÿns begerens brichten: und darbÿ fründt:
-<lb n="19"/>lich bitten wellen, zueverschaffen, daß er nach Christenlichem bruch
-<lb n="20"/>ÿngesegnet werde, und Inne Inn ander weg gnedig und günstig für
-<lb n="21"/>bevolhen zehalten. Statt unß umb üch Jederzÿth fründt: und
+<lb n="10"/><unclear cert="low" resp="#joint">seige</unclear> Ime <unclear cert="low" resp="#joint">uferlegt</unclear> worden, zuvor von unß schrifftlichen <unclear cert="medium" resp="#joint">schÿn</unclear>
+<lb n="11"/><unclear cert="medium" resp="#joint">sÿns</unclear> <unclear cert="medium" resp="#joint">harkomens</unclear> <unclear cert="medium" resp="#joint">zuerzeügen</unclear>. Mit underthenigem bitten, wir
+<lb n="12"/><unclear cert="medium" resp="#joint">woltind</unclear> Ime <unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">selben</unclear> uß gnaden <unclear cert="medium" resp="#joint">mitheilen</unclear>, wann
+<lb n="13"/>unß nun woll <unclear cert="low" resp="#joint">bewüst</unclear>, daß ernanter Hannß Heinrich <unclear cert="low" resp="#joint">Brenwald</unclear>
+<lb n="14"/>von obgedachtem <persName resp="#ner">Bonifacio <unclear cert="low" resp="#joint">Brenwalden</unclear></persName> sÿnem vatter und Bar:
+<lb n="15"/>bara <unclear cert="low" resp="#joint">Tünkhlerin</unclear> sÿner muoter, beden selligen <unclear cert="low" resp="#joint">Eelich</unclear> <unclear cert="low" resp="#joint">erboren</unclear>
+<lb n="16"/>er sich darnebent <unclear cert="low" resp="#joint">Jederzÿth</unclear> Erlich und woll gehalten, alß habend
+<lb n="17"/>wir üch, <unclear cert="low" resp="#joint">unßere</unclear> günstige Herren, <unclear cert="medium" resp="#joint">guote</unclear> fründ und liebe <unclear cert="medium" resp="#joint">Nachbaren</unclear>,
+<lb n="18"/>deßen, zuo willfahrung <unclear cert="low" resp="#joint">sÿns</unclear> begerens <unclear cert="low" resp="#joint">brichten</unclear>: und darbÿ fründt:
+<lb n="19"/>lich bitten wellen, <unclear cert="low" resp="#joint">zueverschaffen</unclear>, daß er nach <unclear cert="low" resp="#joint">Christenlichem</unclear> <unclear cert="low" resp="#joint">bruch</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">ÿngesegnet</unclear> werde, und <unclear cert="medium" resp="#joint">Inne</unclear> Inn ander weg gnedig und günstig für
+<lb n="21"/><unclear cert="medium" resp="#joint">bevolhen</unclear> zehalten. Statt unß <unclear cert="medium" resp="#joint">umb</unclear> <unclear cert="medium" resp="#joint">üch</unclear> <unclear cert="medium" resp="#joint">Jederzÿth</unclear> fründt: und
 <lb n="22"/>Nachbarlich zuoverdienen.
-<lb n="23"/>Dat den. <origDate when="1623" resp="#ner">25.t Aprilis. Anno. 1623</origDate>.
-<lb n="24"/><orgName ref="stadtasg-actors-718" cert="medium" role="issuer" resp="#ner">Schultheiß und Rath der
+<lb n="23"/>Dat den. <origDate when="1623" resp="#ner"><unclear cert="medium" resp="#joint">25.t</unclear> Aprilis. Anno. 1623</origDate>.
+<lb n="24"/><orgName ref="stadtasg-actors-718" cert="medium" role="issuer" resp="#ner"><unclear cert="medium" resp="#joint">Schultheiß</unclear> und Rath der
 <lb n="25"/>Statt Winterthur</orgName>.
 <pb facs="StadtASG_Missive_2411_9272.jpg" n="2"/>
 <pb facs="StadtASG_Missive_2411_9273.jpg" n="3"/>
 <pb facs="StadtASG_Missive_2411_9274.jpg" n="4"/>
-<lb n="26"/>Den edlen, ehrnvesten, frommen, fuersichtigen, er-
-<lb n="27"/>sammen, und wysen, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister und rath
-<lb n="28"/>der statt Sanct Gallen</orgName>, unserenn besonders guenstig
-<lb n="29"/>herren, guoten fründen und lieben nachparen.
+<lb n="26"/>Den edlen, <unclear cert="medium" resp="#joint">ehrnvesten</unclear>, frommen, fuersichtigen, <unclear cert="low" resp="#joint">er</unclear>-
+<lb n="27"/>sammen, und <unclear cert="low" resp="#joint">wysen</unclear>, herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">burgermeister und rath
+<lb n="28"/>der statt Sanct Gallen</orgName>, <unclear cert="medium" resp="#joint">unserenn</unclear> besonders <unclear cert="low" resp="#joint">guenstig</unclear>
+<lb n="29"/>herren, <unclear cert="low" resp="#joint">guoten</unclear> fründen und lieben <unclear cert="low" resp="#joint">nachparen</unclear>.
 </p>
         </body>
     </text>

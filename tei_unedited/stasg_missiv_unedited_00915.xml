@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 915</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu Schaffhausen informieren Bürgermeister und Rat zu St. Gallen, dass der Preis für Korn und Hafer durch den Zuzug ausländischer Kaufleute gestiegen sei. Sie haben eine Verordnung erlassen, die den Kauf und die Ausfuhr begrenzt. Sie bitten die St. Galler, ihre Mitbürger, die auf den Schaffhauser Märkten tätig sind, auf diese Ordnung hinzuweisen und sie zu warnen, sich nicht zu vergriffen, da sie sonst mit Strafe rechnen müssten.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Schaffhausen</name><date when="1569-11-16" resp="#regest">mittwochs am 16. 9b. Novemb. anno 1569</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -37,44 +37,44 @@
 <lb n="1"/>Unnser fründtlich willig diennst, sambt was wir
 <lb n="2"/>eern, liebs, unnd guotz vermögen zuovor, from,
 <lb n="3"/>fürsichtig, ersam, wyß, innsonders, guett fründt,
-<lb n="4"/>unnd gethrüwen, lieben <orgName role="recipient" resp="#ner">Eydtgnossen</orgName>. Nachdem
-<lb n="5"/>jetzt uff etlich unnsern wochen maerckhten, das
-<lb n="6"/>kornn, unnd ouch habern, durch ungepürlich kouffs
-<lb n="7"/>infallen, etlicher frembder ußlaendischer kouff=
+<lb n="4"/>unnd gethrüwen, lieben <orgName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eydtgnossen</unclear></orgName>. Nachdem
+<lb n="5"/>jetzt uff etlich unnsern wochen <unclear cert="low" resp="#joint">maerckhten</unclear>, das
+<lb n="6"/>kornn, unnd ouch habern, durch <unclear cert="low" resp="#joint">ungepürlich</unclear> kouffs
+<lb n="7"/>infallen, etlicher frembder <unclear cert="low" resp="#joint">ußlaendischer</unclear> kouff=
 <lb n="8"/>lüthen, inn hochbeschwerlichen, uffschlag gerathen.
 <lb n="9"/>Hatt unnß, gemainem nutz zuo wolstannd, unnd
-<lb n="10"/>guetem, ansehen wöllen, hierinnen ettwas
-<lb n="11"/>verordnung zethuondt, was unnd wievil
-<lb n="12"/>ain jeder kouffmann diserzeyth kouffen, unnd
-<lb n="13"/>usser unnser statt verfüeren söll, unnd möge.
-<lb n="14"/>Dieweyl dann etliche üwer mittburger, sich
-<lb n="15"/>im kornnkouff, unnserer maerckhten, ouch ge=
-<lb n="16"/>bruchent, so haben wir üch dannocht ain söllichs
-<lb n="17"/>gern berichten, unnd verstendigen wöllen.
+<lb n="10"/><unclear cert="low" resp="#joint">guetem</unclear>, ansehen wöllen, hierinnen ettwas
+<lb n="11"/><unclear cert="low" resp="#joint">verordnung</unclear> zethuondt, was unnd wievil
+<lb n="12"/>ain jeder kouffmann <unclear cert="low" resp="#joint">diserzeyth</unclear> kouffen, unnd
+<lb n="13"/><unclear cert="low" resp="#joint">usser</unclear> unnser statt <unclear cert="low" resp="#joint">verfüeren</unclear> <unclear cert="low" resp="#joint">söll</unclear>, unnd möge.
+<lb n="14"/><unclear cert="low" resp="#joint">Dieweyl</unclear> dann etliche üwer <unclear cert="low" resp="#joint">mittburger</unclear>, sich
+<lb n="15"/>im <unclear cert="low" resp="#joint">kornnkouff</unclear>, unnserer <unclear cert="low" resp="#joint">maerckhten</unclear>, ouch ge=
+<lb n="16"/><unclear cert="low" resp="#joint">bruchent</unclear>, so haben wir üch <unclear cert="low" resp="#joint">dannocht</unclear> ain söllichs
+<lb n="17"/>gern berichten, unnd <unclear cert="low" resp="#joint">verstendigen</unclear> wöllen.
 <lb n="18"/>Unnd ist demnach unnser fründtlichs, unnd
 <lb n="19"/>nachpürlichs pitten, an üch, ir wöllen
-<lb n="20"/>benanndten üwern burgern, die sich unnserer
-<lb n="21"/>maerckhten, also kornns unnd <unclear cert="low" resp="#joint">haber</unclear> <unclear cert="low" resp="#joint">kouffs</unclear>
-<lb n="22"/><unclear cert="low" resp="#joint">gebruchendt</unclear>, söllichs zuowüssen machen, sie
+<lb n="20"/><unclear cert="low" resp="#joint">benanndten</unclear> üwern burgern, die sich <unclear cert="low" resp="#joint">unnserer</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">maerckhten</unclear>, also <unclear cert="low" resp="#joint">kornns</unclear> unnd <unclear cert="medium" resp="#joint">haber</unclear> <unclear cert="medium" resp="#joint">kouffs</unclear>
+<lb n="22"/><unclear cert="medium" resp="#joint">gebruchendt</unclear>, söllichs zuowüssen machen, sie
 <lb n="23"/>dahin halten, unnd vermögen wann sy
-<lb n="24"/>uff unnser maerckht, alher in unnser statt
-<lb n="25"/>khomen, das sy sich diserzeyth angestelter
+<lb n="24"/>uff unnser <unclear cert="low" resp="#joint">maerckht</unclear>, alher in unnser statt
+<lb n="25"/>khomen, das sy sich <unclear cert="low" resp="#joint">diserzeyth</unclear> <unclear cert="low" resp="#joint">angestelter</unclear>
 <lb n="26"/>unnserer ordnung gemaeß haltten, unnd erzaigen
 <lb n="27"/>unnd mitt ungepürlichem kouffs infallen,
 <lb n="28"/>unnd kouffen, demselben unnserm ansehen,
-<lb n="29"/>(wellichs inen durch unnsere mittraeth, unnd
+<lb n="29"/>(<unclear cert="low" resp="#joint">wellichs</unclear> inen durch <unclear cert="low" resp="#joint">unnsere</unclear> <unclear cert="low" resp="#joint">mittraeth</unclear>, unnd
 <pb facs="StadtASG_Missive_915_2672.jpg" n="2"/>
-<lb n="30"/><unclear cert="low" resp="#joint">verordnete</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">kouffhußes</unclear>. zuo kuenfftigen
-<lb n="31"/>marcktstagen. muendtlich geoffnet. unnd fuergehalten.
+<lb n="30"/><unclear cert="low" resp="#joint">verordnete</unclear> <unclear cert="low" resp="#joint">deß</unclear> <unclear cert="low" resp="#joint">kouffhußes</unclear>. <unclear cert="medium" resp="#joint">zuo</unclear> kuenfftigen
+<lb n="31"/><unclear cert="low" resp="#joint">marcktstagen</unclear>. muendtlich geoffnet. unnd fuergehalten.
 <lb n="32"/><unclear cert="low" resp="#joint">wurdet</unclear>). zuwider. sich nitt vergrijffint. annderst
-<lb n="33"/>sij sich donsten gepuerennder straaff. zuogewartten
-<lb n="34"/>haben <unclear cert="low" resp="#joint">wurden</unclear>. Das woellen. (<unclear cert="medium" resp="#joint">pitten</unclear> wir).
-<lb n="35"/>von unns der notturfft. unnd <unclear cert="low" resp="#joint">jetziger</unclear> <unclear cert="low" resp="#joint">zijth</unclear> gelegen=
-<lb n="36"/>hait nach pester <unclear cert="low" resp="#joint">maijnung</unclear> vernemmen. <unclear cert="low" resp="#joint">Vch</unclear> <unclear cert="low" resp="#joint">und</unclear>
-<lb n="37"/>den <unclear cert="low" resp="#joint">uewern</unclear> <unclear cert="medium" resp="#joint">sonnsten</unclear> <unclear cert="low" resp="#joint">muegliche</unclear> diennst. unnd nach=
-<lb n="38"/>puerlichs wolgefallens <unclear cert="low" resp="#joint">zuobewijsen</unclear>. sind wir
-<lb n="39"/><unclear cert="medium" resp="#joint">ganntz</unclear> <unclear cert="low" resp="#joint">beraitth</unclear> unnd guottwillig. Datum
-<lb n="40"/><origDate when="1569" resp="#ner">mittwochs am. 16. 9b. Novemb. anno. 1569</origDate>.
+<lb n="33"/>sij sich donsten gepuerennder straaff. <unclear cert="low" resp="#joint">zuogewartten</unclear>
+<lb n="34"/>haben <unclear cert="low" resp="#joint">wurden</unclear>. Das <unclear cert="medium" resp="#joint">woellen</unclear>. (<unclear cert="medium" resp="#joint">pitten</unclear> wir).
+<lb n="35"/>von <unclear cert="medium" resp="#joint">unns</unclear> der notturfft. unnd <unclear cert="medium" resp="#joint">jetziger</unclear> <unclear cert="medium" resp="#joint">zijth</unclear> gelegen=
+<lb n="36"/><unclear cert="medium" resp="#joint">hait</unclear> nach pester <unclear cert="low" resp="#joint">maijnung</unclear> <unclear cert="medium" resp="#joint">vernemmen</unclear>. <unclear cert="low" resp="#joint">Vch</unclear> <unclear cert="medium" resp="#joint">und</unclear>
+<lb n="37"/>den <unclear cert="low" resp="#joint">uewern</unclear> sonnsten <unclear cert="low" resp="#joint">muegliche</unclear> diennst. unnd nach=
+<lb n="38"/><unclear cert="medium" resp="#joint">puerlichs</unclear> wolgefallens <unclear cert="low" resp="#joint">zuobewijsen</unclear>. sind wir
+<lb n="39"/>ganntz <unclear cert="low" resp="#joint">beraitth</unclear> unnd <unclear cert="medium" resp="#joint">guottwillig</unclear>. Datum
+<lb n="40"/><origDate when="1569" resp="#ner">mittwochs am. 16. <unclear cert="low" resp="#joint">9b</unclear>. <unclear cert="low" resp="#joint">Novemb</unclear>. anno. 1569</origDate>.
 <lb n="41"/><orgName ref="stadtasg-actors-28" cert="medium" role="issuer" resp="#ner">Burgermaister unnd rath
 <lb n="42"/>der statt Schaffhusen</orgName>.
 <pb facs="StadtASG_Missive_915_2673.jpg" n="3"/>

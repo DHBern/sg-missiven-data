@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 1454</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -20,14 +20,14 @@
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract><p resp="#regest">Bürgermeister und Rat zu St. Gallen danken Friedrich Graf zu Fürstenberg für seine Bemühungen in einem Streit ihrer Bürger Christoph Stümen und Georg Käßler mit Juden vor dem Kaiserlichen Rat. Sie bitten ihn, seinen wohlwollenden Willen beizubehalten und mit seiner Autorität zur schnellen Erledigung der Sache beizutragen.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name><date when="1604-04-18" resp="#regest">Datum den 18. Apprellis. A° 1604.</date></correspAction><correspAction type="received"><name resp="#regest">Friedrich Graf zu Fürstenberg</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-13</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-13</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -73,18 +73,18 @@
 <lb n="37"/>der Statt Sanct Gallen</orgName>.
 <pb facs="StadtASG_Missive_1454_5210.jpg" n="2"/>
 <lb n="38"/>Dem hoch. und wolgebornnen herren. herren
-<lb n="39"/><persName role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Fridrichen</unclear> <unclear cert="medium" resp="#joint">Graven</unclear></persName> <unclear cert="medium" resp="#joint">zuo</unclear> <placeName resp="#ner">Fuerstenberg</placeName>. <placeName ref="stadtasg-places-200" cert="medium" resp="#ner">Heillig:
-<lb n="40"/><unclear cert="medium" resp="#joint">enberg</unclear></placeName>. <placeName ref="stadtasg-places-322" cert="medium" resp="#ner"><unclear cert="medium" resp="#joint">Werdenberg</unclear></placeName>. Herren <unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Hausen</unclear></placeName>
+<lb n="39"/><persName role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Fridrichen</unclear> Graven</persName> zuo <placeName resp="#ner">Fuerstenberg</placeName>. <placeName ref="stadtasg-places-200" cert="medium" resp="#ner">Heillig:
+<lb n="40"/><unclear cert="low" resp="#joint">enberg</unclear></placeName>. <placeName ref="stadtasg-places-322" cert="medium" resp="#ner">Werdenberg</placeName>. Herren <unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner">Hausen</placeName>
 <lb n="41"/>im <unclear cert="low" resp="#joint">Kuinziger</unclear> <unclear cert="low" resp="#joint">thail</unclear> <unclear cert="low" resp="#joint">Landtgraven</unclear> <unclear cert="low" resp="#joint">in</unclear> <placeName ref="stadtasg-places-461" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bare</unclear></placeName>.
 <lb n="42"/><unclear cert="low" resp="#joint">Herren</unclear> <unclear cert="low" resp="#joint">zuo</unclear> <placeName resp="#ner"><unclear cert="low" resp="#joint">Lussen</unclear></placeName> <unclear cert="low" resp="#joint">im</unclear> <unclear cert="low" resp="#joint">Kuinzigerthail</unclear>.
-<lb n="43"/>Roem: Kay: <unclear cert="medium" resp="#joint">Mt</unclear>. <unclear cert="medium" resp="#joint">gehaimen</unclear> <unclear cert="medium" resp="#joint">Rath</unclear> und <unclear cert="medium" resp="#joint">obristen</unclear>
-<lb n="44"/><unclear cert="medium" resp="#joint">Reichshofmaistern</unclear> unserm <unclear cert="medium" resp="#joint">insonders</unclear> <unclear cert="medium" resp="#joint">gnedig</unclear>
+<lb n="43"/>Roem: Kay: <unclear cert="medium" resp="#joint">Mt</unclear>. <unclear cert="medium" resp="#joint">gehaimen</unclear> Rath und <unclear cert="low" resp="#joint">obristen</unclear>
+<lb n="44"/><unclear cert="low" resp="#joint">Reichshofmaistern</unclear> unserm <unclear cert="low" resp="#joint">insonders</unclear> <unclear cert="low" resp="#joint">gnedig</unclear>
 <lb n="45"/>herren.
 <pb facs="StadtASG_Missive_1454_5211.jpg" n="3"/>
 <pb facs="StadtASG_Missive_1454_5212.jpg" n="4"/>
 <lb n="46"/><unclear cert="low" resp="#joint">Danckschr</unclear>
-<lb n="47"/><origDate when="1604-04-07" resp="#ner">7. Aprilis 1604</origDate> an <persName role="recipient" resp="#ner">Graff <unclear cert="medium" resp="#joint">Fürstenberg</unclear></persName>
-<lb n="48"/><unclear cert="medium" resp="#joint">füer</unclear> gethane <unclear cert="medium" resp="#joint">befüerderung</unclear>.
+<lb n="47"/><origDate when="1604-04-07" resp="#ner">7. Aprilis 1604</origDate> an <persName role="recipient" resp="#ner">Graff <unclear cert="low" resp="#joint">Fürstenberg</unclear></persName>
+<lb n="48"/><unclear cert="low" resp="#joint">füer</unclear> gethane <unclear cert="low" resp="#joint">befüerderung</unclear>.
 </p>
         </body>
     </text>
