@@ -534,6 +534,22 @@ def link_lines(page: dict, geo: dict, readings: dict[str, dict[str, dict]]) -> N
             entry["ln"] = line_links.align(entry["text"].split("\n"), row_texts)
 
 
+def load_cross_links() -> dict[str, list[dict]]:
+    """Hints to letters in other collections (links/<collection>.json): letter id ->
+    [{collection, viewer, url, kind, de, en}]. Found by hand or by a comparison;
+    each says what the relation is, never more."""
+    out: dict[str, list[dict]] = {}
+    for path in sorted((ROOT / "links").glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for ln in data["links"]:
+            other = ln.get("thun")
+            out.setdefault(ln["letter"], []).append({
+                "collection": path.stem, "kind": ln["kind"], "de": ln["de"], "en": ln["en"],
+                "url": f"{data['viewer']}#/letter/{other}/1" if other else data["viewer"],
+                "target": other})
+    return out
+
+
 def main() -> None:
     letters = read_edition(ROOT / "data")
     for letter in letters:
@@ -563,6 +579,7 @@ def main() -> None:
     linked = {"pages": 0, "lines": 0, "of": 0}
     readers = json.loads((ROOT / "readings" / "readers.json").read_text(encoding="utf-8"))
     (OUT / "letters").mkdir(parents=True, exist_ok=True)
+    cross_links = load_cross_links()
 
     totals = {r: {"edits": 0, "chars": 0, "pages": 0, "per_page": [], "read": 0} for r in readings}
     index = []
@@ -640,6 +657,8 @@ def main() -> None:
                 shutil.copyfile(src, OUT / "tei" / src.name)
                 letter["tei"] = f"{folder}/{src.name}"
                 break
+        if letter["id"] in cross_links:
+            letter["links"] = cross_links[letter["id"]]
         (OUT / "letters" / f"{letter['id']}.json").write_text(
             json.dumps(letter, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         index.append({

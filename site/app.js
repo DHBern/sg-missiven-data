@@ -1498,6 +1498,7 @@
             <span class="kwlab">${T("Keywords (automatic, experimental)", "Schlagwörter (automatisch, experimentell)")}</span>
             ${letter.auto_keywords.map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}`}
           ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
+          ${linksBlock(letter.links)}
           ${modeSelect(page, reader, id, pageNo)}
           <div class="pages"><span class="lbl">${T("Page", "Seite")}</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
@@ -1531,6 +1532,16 @@
         ? `Machine translation of the editors' German regest (${esc(en.model || "a language model")}); not by the editors.`
         : `Machine translation of the German draft (${esc(en.model || "a language model")}).`}</p>
       <details class="orig"><summary class="small">German original</summary><p lang="de">${esc(de)}</p></details>`;
+  }
+
+  /* Hints to letters in other collections (links/*.json): what the relation is, and a link. */
+  function linksBlock(links) {
+    if (!links || !links.length) return "";
+    const name = { thun: T("Thun Missiven (Burgerarchiv Thun)", "Thuner Missiven (Burgerarchiv Thun)") };
+    return `<details class="regest links" open><summary>${T("Related letters in other collections", "Bezüge zu anderen Sammlungen")}</summary>
+      ${links.map((l) => `<p>${esc(LANG === "en" ? l.en : l.de)}<br>
+        <a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(name[l.collection] || l.collection)}${l.target ? ` · ${esc(l.target.replace(/^bat_/, "BAT ").replace(/-/g, ".").replace(/_/, ", Nr. "))}` : ""} ↗</a></p>`).join("")}
+    </details>`;
   }
 
   /* A regest drafted by a language model from a machine reading: always marked as such. */
