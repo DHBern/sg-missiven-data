@@ -73,7 +73,7 @@ def letter_years(reader: str) -> dict[int, int]:
     # the edited letters date the gaps too
     for f in (ROOT / "data").glob("stasg_missiv_*.xml"):
         m = re.search(r'<origDate[^>]*\bwhen="(\d{4})', f.read_text(encoding="utf-8", errors="ignore"))
-        n = re.search(r"(\d+)$", f.stem)
+        n = re.match(r"stasg_missiv_(\d+)", f.stem)
         if m and n:
             years.setdefault(int(n.group(1)), int(m.group(1)))
     return years
@@ -561,7 +561,7 @@ def truth_sets() -> list[dict]:
     occ: dict[str, list[tuple[str, int]]] = collections.defaultdict(list)
     for f in sorted((ROOT / "data").glob("stasg_missiv_*.xml")):
         text = f.read_text(encoding="utf-8", errors="ignore")
-        n = re.search(r"(\d+)$", f.stem)
+        n = re.match(r"stasg_missiv_(\d+)", f.stem)
         if not n:
             continue
         nr = int(n.group(1))
@@ -628,7 +628,114 @@ def cmd_measure(workers: int) -> dict:
     return report
 
 
-def cmd_link(reader: str, workers: int, limit: int | None) -> None:
+def ssrq_truth() -> list[dict]:
+    """Test cases for the SSRQ route: the edition's persons and places that carry an
+    SSRQ id (per…/loc…), as the edited letters spell them, with those letters' years."""
+    from build_site import registers
+    reg = registers()
+    years = letter_years("gemini-4-argon")
+    occ: dict[str, list[tuple[str, int]]] = collections.defaultdict(list)
+    for f in sorted((ROOT / "data").glob("stasg_missiv_*.xml")):
+        text = f.read_text(encoding="utf-8", errors="ignore")
+        n = re.match(r"stasg_missiv_(\d+)", f.stem)
+        if not n:
+            continue
+        for m in re.finditer(r'<(persName|placeName)\b[^>]*\bref="#?([^"\s]+)[^"]*"[^>]*>(.*?)</\1>', text, re.S):
+            occ[m.group(2)].append((" ".join(re.sub(r"<[^>]+>", "", m.group(3)).split()), int(n.group(1))))
+    cases = []
+    for rid, e in reg.items():
+        if e.get("kind") not in ("person", "place") or rid not in occ:
+            continue
+        sid = next((m.group(1) for l in e["links"] for m in [re.search(r"\b((?:per|loc)\d{6})\b", l["url"] or "")] if m), None)
+        if not sid:
+            continue
+        forms = collections.Counter(f for f, _ in occ[rid] if f)
+        ys = sorted(y for y in (year_of(n, years) for _, n in occ[rid]) if y)
+        if forms:
+            cases.append({"id": rid, "type": "per" if e["kind"] == "person" else "place", "name": e["name"],
+                          "forms": forms, "years": [ys[0], ys[-1]] if ys else None, "truth": sid})
+    return cases
+
+
+def ssrq_candidates(g: dict) -> list[dict]:
+    import ssrq_match as S
+    forms = [f for f, _ in g["forms"].most_common(2)] if isinstance(g["forms"], collections.Counter) else g["forms"][:2]
+    if g["type"] == "place":
+        return S.grade_places(S.place_candidates(forms))
+    if g["type"] == "per":
+        cands = []
+        for f in forms:
+            cands += S.person_candidates(f, mcp_call)
+        best: dict[str, dict] = {}
+        for c in cands:
+            if c["score"] > best.get(c["ssrq"], {}).get("score", 0):
+                best[c["ssrq"]] = c
+        return S.grade_persons(g, list(best.values()))
+    out = []
+    for f in forms:
+        out += S.org_candidates(f, mcp_call)
+    return out[:2]
+
+
+def cmd_measure_ssrq(workers: int) -> dict:
+    import ssrq_match as S
+    cases = ssrq_truth()
+    print(f"{len(cases)} edition entries with an SSRQ id ({sum(c['type'] == 'per' for c in cases)} persons, "
+          f"{sum(c['type'] == 'place' for c in cases)} places)", flush=True)
+    done = []
+    with cf.ThreadPoolExecutor(workers) as ex:
+        for c, cands in ex.map(lambda c: (c, ssrq_candidates(c)), cases):
+            done.append((c, cands))
+    res = {t: S.stats([(c, k) for c, k in done if c["type"] == t]) for t in ("per", "place")}
+    rows = [{"entry": c["name"], "type": c["type"], "spelling": c["forms"].most_common(1)[0][0], "truth": c["truth"],
+             "cands": [{k: x.get(k) for k in ("ssrq", "label", "via", "score", "grade", "type", "region", "settlement",
+                                              "near", "first", "last")} for x in k]} for c, k in done]
+    report = {"date": dt.date.today().isoformat(), "results": res, "cases": rows}
+    (ROOT / "registers" / "ssrq_measure.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(json.dumps(res, ensure_ascii=False, indent=1))
+    return report
+
+
+RANK = {"sicher": 0, "wahrscheinlich": 1, "möglich": 2}
+
+
+def merge_ssrq(cands: list[dict], found: list[dict]) -> list[dict]:
+    """Add the SSRQ candidates (scripts/ssrq_match.py) to the others, each with its
+    links: the SSRQ record, and the HLS, GND and ortsnamen.ch ids the SSRQ gives.
+    Every one of them is automatic and uncertain (``uncertain``); a candidate that
+    names the same HLS item as one already there is folded into it."""
+    import ssrq_match as S
+    out = list(cands)
+    for c in found:
+        links = [{"type": "ssrq", "url": S.ssrq_url(c["ssrq"])}]
+        if c.get("hls"):
+            links.append({"type": "hls", "url": url_of("hls", c["hls"])})
+        if c.get("gnd"):
+            links.append({"type": "gnd", "url": url_of("gnd", c["gnd"])})
+        if c.get("ortsnamen"):
+            links.append({"type": "ortsnamen", "url": f"https://search.ortsnamen.ch/record/{c['ortsnamen']}"})
+        desc = " · ".join(x for x in (
+            c.get("type"), c.get("region"),
+            (f"belegt {c['first']}" + (f"–{c['last']}" if c.get("last") and c["last"] != c["first"] else ""))
+            if c.get("first") else "",
+            f"SSRQ-Schreibung «{c['via']}»" if c.get("via") and c.get("via") != c.get("label") else "") if x)
+        new = {"label": c["label"], "desc": desc, "grade": c["grade"], "score": c.get("score"), "source": "ssrq",
+               "ssrq": c["ssrq"], "via": c.get("via"), "hls": c.get("hls"), "gnd": c.get("gnd"),
+               "uncertain": True, "links": links}
+        same = next((o for o in out if new.get("hls") and o.get("hls") == new["hls"]), None)
+        if same:
+            # the same place or person: one candidate, the better grade, all links
+            same["links"] = same.get("links", []) + [l for l in links if l["url"] not in {x["url"] for x in same.get("links", [])}]
+            same["ssrq"], same["uncertain"] = new["ssrq"], True
+            if RANK[new["grade"]] < RANK[same["grade"]]:
+                same["grade"] = new["grade"]
+            continue
+        out.append(new)
+    out.sort(key=lambda c: RANK.get(c["grade"], 3))
+    return out[:4]
+
+
+def cmd_link(reader: str, workers: int, limit: int | None, with_ssrq: bool = True) -> None:
     gs, why = groups(reader)
     # persons first: they go to our own servers, while Wikidata (places,
     # organisations) answers slowly
@@ -637,6 +744,8 @@ def cmd_link(reader: str, workers: int, limit: int | None) -> None:
         gs = gs[:limit]
     measure_path = ROOT / "registers" / "auto_register_measure.json"
     measured = json.loads(measure_path.read_text())["results"] if measure_path.exists() else None
+    ssrq_path = ROOT / "registers" / "ssrq_measure.json"
+    measured_ssrq = json.loads(ssrq_path.read_text())["results"] if ssrq_path.exists() else None
     print(f"{len(gs)} names to look up", flush=True)
     entries: dict[str, dict] = {}
     done = failed = 0
@@ -651,6 +760,12 @@ def cmd_link(reader: str, workers: int, limit: int | None) -> None:
             c["links"] = links_of(c)
             if c["grade"] != "möglich" and g["type"] == "per":
                 c["links"] += metagrid_links(c)
+        if with_ssrq:
+            try:
+                cands = merge_ssrq(cands, ssrq_candidates(g))
+            except Exception as exc:  # noqa: BLE001
+                print(f"  ssrq failed {g['name']}: {exc}", file=sys.stderr, flush=True)
+                return g, None
         return g, cands
     with cf.ThreadPoolExecutor(workers) as ex:
         for g, cands in ex.map(one, gs):
@@ -666,7 +781,8 @@ def cmd_link(reader: str, workers: int, limit: int | None) -> None:
                 "forms": [f for f, _ in g["forms"].most_common(8)], "mentions": g["n"],
                 "letters": [f"stasg_missiv_unedited_{n:05d}" for n in g["letters"]], "years": g["years"],
                 "candidates": [{k: c.get(k) for k in ("label", "desc", "grade", "score", "source", "birth", "death", "km",
-                                                      "hls", "wikidata", "gnd", "links") if c.get(k) is not None}
+                                                      "hls", "wikidata", "gnd", "ssrq", "via", "uncertain", "links")
+                                if c.get(k) is not None}
                                for c in cands],
             }
             done += 1
@@ -677,10 +793,11 @@ def cmd_link(reader: str, workers: int, limit: int | None) -> None:
     OUT.write_text(json.dumps({
         "about": "Register entries generated automatically for names that the automatic tagging found in the letters "
                  "not yet edited and that the edition's registers do not have (issue #12). Not part of the edition; "
-                 "every link is a proposal, graded sicher / wahrscheinlich / möglich.",
+                 "every link is a proposal, graded sicher / wahrscheinlich / möglich. Candidates from the SSRQ "
+                 "(source ssrq) are marked uncertain: never graded sicher.",
         "date": dt.date.today().isoformat(), "reader": reader,
         "rules": {"per": grade_person.__doc__, "place": grade_place.__doc__, "org": grade_org.__doc__},
-        "measured": measured, "dropped": dict(why),
+        "measured": measured, "measured_ssrq": measured_ssrq, "dropped": dict(why),
         "counts": {f"{k}/{g}": n for (k, g), n in sorted(grades.items())},
         "entries": entries}, ensure_ascii=False, indent=0), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}: {len(entries)} entries, {failed} failed (rerun: answers are cached); "
@@ -689,7 +806,7 @@ def cmd_link(reader: str, workers: int, limit: int | None) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["groups", "measure", "prefetch", "link"])
+    ap.add_argument("cmd", choices=["groups", "measure", "measure-ssrq", "prefetch", "link"])
     ap.add_argument("--reader", default="gemini-4-argon")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--limit", type=int)
@@ -705,6 +822,8 @@ def main() -> None:
                 print("   ", len(g["letters"]), g["name"], g["years"])
     elif a.cmd == "measure":
         cmd_measure(a.workers)
+    elif a.cmd == "measure-ssrq":
+        cmd_measure_ssrq(a.workers)
     elif a.cmd == "prefetch":
         cmd_prefetch(a.reader, min(a.workers, 3))
     else:

@@ -276,10 +276,12 @@ def add_auto_register(reg: dict[str, dict], data: dict) -> int:
         for c in e.get("candidates", []):
             life = f"{c.get('birth') or '?'}–{c.get('death') or '?'}" if (c.get("birth") or c.get("death")) else ""
             cands.append({"label": c.get("label", ""), "desc": " · ".join(x for x in (life, c.get("desc", "")) if x),
-                          "km": c.get("km"), "grade": c["grade"], "links": [{"type": l["type"], "url": l["url"]} for l in c.get("links", [])]})
+                          "km": c.get("km"), "grade": c["grade"], "links": [{"type": l["type"], "url": l["url"]} for l in c.get("links", [])]}
+                         | ({"src": "ssrq", "unc": 1} if c.get("source") == "ssrq" or c.get("uncertain") else {}))
         reg[eid] = {"kind": e["kind"], "name": e["name"], "sort": e["key"], "auto": True, "links": [],
                     "forms": e.get("forms", []), "cands": cands}
-    reg["_auto"] = {"kind": "meta", "measured": data.get("measured"), "date": data.get("date")}
+    reg["_auto"] = {"kind": "meta", "measured": data.get("measured"), "measured_ssrq": data.get("measured_ssrq"),
+                    "date": data.get("date")}
     return len(data["entries"])
 
 
