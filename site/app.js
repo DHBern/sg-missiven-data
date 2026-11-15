@@ -382,7 +382,7 @@
       for (const l of c ? c.links : []) {
         const hit = LINK_LABEL.find(([k]) => k === l.type);
         const label = hit ? hit[1] : l.type;
-        if (!seen.has(label)) { seen.add(label); out.push({ label, url: l.url, grade: c.grade }); }
+        if (!seen.has(label)) { seen.add(label); out.push({ label, url: l.url, grade: c.grade, unc: c.unc }); }
       }
       return out;
     }
@@ -397,7 +397,8 @@
     return out;
   }
   const linkChip = (l) => l.grade
-    ? `<a class="graded g-${esc(l.grade)}" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(T(`Proposed automatically by name and dates: ${GRADE[l.grade]}`, `Automatisch nach Name und Daten vorgeschlagen: ${GRADE[l.grade]}`))}">${esc(l.label)} <span class="gr">${esc(GRADE[l.grade])}</span></a>`
+    ? `<a class="graded g-${esc(l.grade)}" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.unc ? T(`Found in the SSRQ by a near spelling; automatic, uncertain: ${GRADE[l.grade]}`, `In der SSRQ über eine ähnliche Schreibung gefunden; automatisch, unsicher: ${GRADE[l.grade]}`)
+      : T(`Proposed automatically by name and dates: ${GRADE[l.grade]}`, `Automatisch nach Name und Daten vorgeschlagen: ${GRADE[l.grade]}`))}">${esc(l.label)} <span class="gr">${esc(GRADE[l.grade])}${l.unc ? T(", uncertain", ", unsicher") : ""}</span></a>`
     : l.added
     ? `<a class="added" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(T(`Added by DH Bern, not by the edition (via ${l.added})`, `Von DH Bern ergänzt, nicht von der Edition (über ${l.added})`))}">${esc(l.label)}<sup>+</sup></a>`
     : `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`;
@@ -496,17 +497,19 @@
 
   /* the head of an entry generated automatically: what it is, and its graded candidates */
   function autoEntryHead(e) {
-    const m = ((state.registers._auto || {}).measured || {})[e.kind === "person" ? "per" : e.kind];
-    const prec = (g) => m && m[g] && m[g].precision != null
-      ? T(` (measured: ${Math.round(m[g].precision * 100)} % right)`, ` (gemessen: ${Math.round(m[g].precision * 100)} % richtig)`) : "";
+    const meta = state.registers._auto || {}, kk = e.kind === "person" ? "per" : e.kind;
+    const m = (meta.measured || {})[kk], ms = (meta.measured_ssrq || {})[kk];
+    const precOf = (mm, g) => mm && mm[g] && mm[g].precision != null
+      ? T(` (measured: ${Math.round(mm[g].precision * 100)} % right)`, ` (gemessen: ${Math.round(mm[g].precision * 100)} % richtig)`) : "";
+    const prec = (g, c) => precOf(c && c.src === "ssrq" ? ms : m, g);
     const cands = e.cands || [];
     return `<p class="note-box">${T(`This entry is not in the edition's register. It was generated automatically for a name that the automatic tagging found only in letters not yet edited${e.forms && e.forms.length > 1 ? ` (spelled ${e.forms.map((f) => "<i>" + esc(f) + "</i>").join(", ")})` : ""}. The candidates below were looked up by name${e.kind === "person" ? " and checked against the letters' years" : ""}; none is checked by a person.`,
         `Dieser Eintrag steht nicht im Register der Edition. Er wurde automatisch generiert für einen Namen, den die automatische Auszeichnung nur in noch nicht edierten Briefen gefunden hat${e.forms && e.forms.length > 1 ? ` (Schreibungen ${e.forms.map((f) => "<i>" + esc(f) + "</i>").join(", ")})` : ""}. Die Kandidaten unten sind nach dem Namen gesucht${e.kind === "person" ? " und an den Jahren der Briefe geprüft" : ""}; keiner ist von einem Menschen geprüft.`)}</p>
       <h2>${T("Candidates", "Kandidaten")}</h2>
       ${cands.length ? `<div class="list cands">${cands.map((c) => `
         <div class="row cand">
-          <span class="grade g-${esc(c.grade)}" title="${esc(T("How sure the rule is", "Wie sicher die Regel ist") + prec(c.grade))}">${esc(GRADE[c.grade] || c.grade)}</span>
-          <span><b>${esc(c.label)}</b>${c.desc || c.km != null ? ` <span class="muted">${esc([c.desc, c.km != null ? T(`${c.km} km from St. Gallen`, `${c.km} km von St. Gallen`) : ""].filter(Boolean).join(" · "))}</span>` : ""}</span>
+          <span class="grade g-${esc(c.grade)}" title="${esc(T("How sure the rule is", "Wie sicher die Regel ist") + prec(c.grade, c))}">${esc(GRADE[c.grade] || c.grade)}</span>
+          <span><b>${esc(c.label)}</b>${c.unc ? ` <span class="badge gen" title="${esc(T("Found in the SSRQ by a near spelling; generated automatically, uncertain", "In der SSRQ über eine ähnliche Schreibung gefunden; automatisch generiert, unsicher"))}">${T("SSRQ · automatic, uncertain", "SSRQ · automatisch, unsicher")}</span>` : ""}${c.desc || c.km != null ? ` <span class="muted">${esc([c.desc, c.km != null ? T(`${c.km} km from St. Gallen`, `${c.km} km von St. Gallen`) : ""].filter(Boolean).join(" · "))}</span>` : ""}</span>
           <span class="ext">${c.links.map((l) => { const hit = LINK_LABEL.find(([k]) => k === l.type); return `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(hit ? hit[1] : l.type)}</a>`; }).join("")}</span>
         </div>`).join("")}</div>
         <p class="muted small">${e.kind === "person"
@@ -518,8 +521,10 @@
           : T("Grades: an organisation is at most <b>possible</b>: a Wikidata item of exactly that name.",
               "Stufen: eine Organisation ist höchstens <b>möglich</b>: ein Wikidata-Eintrag genau dieses Namens.")}
           ${m ? T(`Measured on entries of the edition's register whose identifiers are known: ${["sicher", "wahrscheinlich", "möglich"].filter((g) => m[g] && m[g].precision != null).map((g) => GRADE[g] + prec(g)).join(", ")}.`,
-                  `Gemessen an Einträgen des Editionsregisters mit bekannter Kennung: ${["sicher", "wahrscheinlich", "möglich"].filter((g) => m[g] && m[g].precision != null).map((g) => GRADE[g] + prec(g)).join(", ")}.`) : ""}</p>`
-        : `<p class="muted">${T("No candidate found in HLS, Wikidata or Human Lineage.", "Kein Kandidat in HLS, Wikidata oder Human Lineage gefunden.")}</p>`}`;
+                  `Gemessen an Einträgen des Editionsregisters mit bekannter Kennung: ${["sicher", "wahrscheinlich", "möglich"].filter((g) => m[g] && m[g].precision != null).map((g) => GRADE[g] + prec(g)).join(", ")}.`) : ""}
+          ${ms && cands.some((c) => c.src === "ssrq") ? T(` SSRQ candidates (found by a near spelling in the SSRQ's ${e.kind === "place" ? "place database" : "authority file"}, never graded certain), measured on the edition's entries with an SSRQ id: ${["wahrscheinlich", "möglich"].filter((g) => ms[g] && ms[g].precision != null).map((g) => GRADE[g] + precOf(ms, g)).join(", ")}; for names not in the edition the share is likely lower.`,
+              ` SSRQ-Kandidaten (über eine ähnliche Schreibung ${e.kind === "place" ? "in der Ortsdatenbank" : "im Register"} der SSRQ gefunden, nie «sicher»), gemessen an Einträgen der Edition mit SSRQ-Kennung: ${["wahrscheinlich", "möglich"].filter((g) => ms[g] && ms[g].precision != null).map((g) => GRADE[g] + precOf(ms, g)).join(", ")}; für Namen ausserhalb der Edition ist der Anteil wohl tiefer.`) : ""}</p>`
+        : `<p class="muted">${T("No candidate found in HLS, Wikidata, Human Lineage or the SSRQ.", "Kein Kandidat in HLS, Wikidata, Human Lineage oder der SSRQ gefunden.")}</p>`}`;
   }
 
   function showEntry(id) {
