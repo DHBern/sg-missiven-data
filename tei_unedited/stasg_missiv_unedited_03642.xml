@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3642</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -14,20 +14,21 @@
             <sourceDesc>
                 <msDesc>
                     <msIdentifier>
-                        <idno>StadtASG Missive_3642_14577</idno>
+                        <idno>StadtASG Missive_3642_14577/14580</idno>
                     </msIdentifier>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
         <profileDesc>
-            
+            <abstract xml:lang="de"><p resp="#regest">Bürgermeister und Rat zu Basel ersuchen Bürgermeister und Rat zu St. Gallen, den dortigen Bürgern Robert Mitzens Witwe, Franz Braunweiler und Daniel Mitz eine Attestation zu erteilen. Die Gesuchsteller hätten sich mit einer Supplikation an Basel gewandt, um diese Bestätigung zu erhalten. Basel hält die Angaben für glaubwürdig und bittet St. Gallen, den Gesuchstellern die Attestation zu gewähren.</p></abstract>
+            <abstract xml:lang="en" resp="#mt"><p>Burgomaster and Council of Basel request Burgomaster and Council of St. Gallen to issue an attestation to the citizens of St. Gallen, the widow of Robert Mitz, Franz Braunweiler, and Daniel Mitz. The applicants had turned to Basel with a supplication to obtain this confirmation. Basel considers the statements credible and asks St. Gallen to grant the applicants the attestation.</p></abstract>
             <langUsage>
                 <language ident="deu">Deutsch</language>
             </langUsage>
-            
+            <correspDesc><correspAction type="sent"><name resp="#regest">Bürgermeister und Rat zu Basel</name><date when="1645-05-24" resp="#regest">Den 24.t Maji 1645.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-16</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-16</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-16</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -35,33 +36,42 @@
 <p>
 <pb facs="StadtASG_Missive_3642_14577.jpg" n="1"/>
 <lb n="1"/>Unser freündtlich willig dienst
-<lb n="2"/>sambt waß wir liebs und guets ver-
-<lb n="3"/>mögen zuevor. Fromb, ehrsam weÿß,
+<lb n="2"/><unclear cert="low" resp="#joint">sambt</unclear> <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">liebs</unclear> und <unclear cert="low" resp="#joint">guets</unclear> <unclear cert="low" resp="#joint">ver</unclear>-
+<lb n="3"/><unclear cert="low" resp="#joint">mögen</unclear> <unclear cert="low" resp="#joint">zuevor</unclear>. Fromb, ehrsam weÿß,
 <lb n="4"/>insonders guet freünd, und getreüe
-<lb n="5"/>lieb <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner">Eÿdgnoßen</orgName>.
-<lb n="6"/>Mitgehende supplication gibt in
-<lb n="7"/>mehrem zueerkennen, waß unsere
-<lb n="8"/>burgere <persName resp="#ner">Robert Mitzen</persName> see. wittib,
-<lb n="9"/><persName resp="#ner">Frantz Braunweiler</persName>, und <persName resp="#ner">Daniel
+<lb n="5"/>lieb <orgName ref="stadtasg-actors-750" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Eÿdgnoßen</unclear></orgName>.
+<lb n="6"/><unclear cert="low" resp="#joint">Mitgehende</unclear> supplication gibt <unclear cert="low" resp="#joint">in</unclear>
+<lb n="7"/><unclear cert="low" resp="#joint">mehrem</unclear> <unclear cert="low" resp="#joint">zueerkennen</unclear>, <unclear cert="low" resp="#joint">waß</unclear> <unclear cert="low" resp="#joint">unsere</unclear>
+<lb n="8"/><unclear cert="low" resp="#joint">burgere</unclear> <persName resp="#ner">Robert <unclear cert="low" resp="#joint">Mitzen</unclear></persName> <unclear cert="low" resp="#joint">see</unclear>. <unclear cert="low" resp="#joint">wittib</unclear>,
+<lb n="9"/><persName resp="#ner"><unclear cert="low" resp="#joint">Frantz</unclear> <unclear cert="low" resp="#joint">Braunweiler</unclear></persName>, und <persName resp="#ner">Daniel
 <lb n="10"/>Mitz</persName> die handelsleüth, beÿ uns
 <lb n="11"/>umb gegenwertig beförderungschreiben
 <lb n="12"/>underthänig anzuehalten verursacht habe:
-<lb n="13"/>wann wir dann in keinen zweifel setzen
-<lb n="14"/>dieselbe dem fürgeben nach bewandt,
+<lb n="13"/>wann wir dann in <unclear cert="low" resp="#joint">keinen</unclear> <unclear cert="low" resp="#joint">zweifel</unclear> <unclear cert="low" resp="#joint">setzen</unclear>
+<lb n="14"/><unclear cert="low" resp="#joint">dieselbe</unclear> dem fürgeben nach bewandt,
 <lb n="15"/>und ihnen dahero mit begehrter atte-
 <lb n="16"/>station wohl zue willfahren sein werde:
-<lb n="17"/>so haben eüch unser g. l. E. wir hie-
-<lb n="18"/>mit freündlich ersuechen wollen, zue-
+<lb n="17"/>so haben eüch unser <unclear cert="low" resp="#joint">g</unclear>. <unclear cert="low" resp="#joint">l</unclear>. <unclear cert="low" resp="#joint">E</unclear>. <unclear cert="low" resp="#joint">wir</unclear> <unclear cert="low" resp="#joint">hie</unclear>-
+<lb n="18"/>mit <unclear cert="low" resp="#joint">freündlich</unclear> <unclear cert="low" resp="#joint">ersuechen</unclear> wollen, zue-
 <lb n="19"/>stewr der wahrheit, und beförderung
-<lb n="20"/>der sachen, ihnen solche guetwilliglich
-<lb n="21"/>widerfahren zuelaaßen. Das bleibt
-<lb n="22"/>in andere weg zueverschulden unvergessen.
-<lb n="23"/>Gott walte ob uns allerseits mit
+<lb n="20"/>der sachen, ihnen solche <unclear cert="low" resp="#joint">guetwilliglich</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">widerfahren</unclear> <unclear cert="low" resp="#joint">zuelaaßen</unclear>. Das bleibt
+<lb n="22"/>in <unclear cert="low" resp="#joint">andere</unclear> <unclear cert="low" resp="#joint">weg</unclear> <unclear cert="low" resp="#joint">zueverschulden</unclear> <unclear cert="low" resp="#joint">unvergessen</unclear>.
+<lb n="23"/><unclear cert="low" resp="#joint">Gott</unclear> <unclear cert="low" resp="#joint">walte</unclear> <unclear cert="low" resp="#joint">ob</unclear> uns allerseits mit
 <lb n="24"/>seinen vätterlichen gnaden. <origDate when="1645" resp="#ner">Den 24.t
 <lb n="25"/>Maji 1645</origDate>.
 <lb n="26"/><orgName ref="stadtasg-actors-530" cert="medium" role="issuer" resp="#ner">Burgermeister und
 <lb n="27"/>Rhat der statt
 <lb n="28"/>Basel</orgName>.
+<pb facs="StadtASG_Missive_3642_14578.jpg" n="2"/>
+<pb facs="StadtASG_Missive_3642_14579.jpg" n="3"/>
+<lb n="29"/>[]
+<pb facs="StadtASG_Missive_3642_14580.jpg" n="4"/>
+<lb n="30"/><unclear cert="medium" resp="#joint">Denen</unclear> Frommen, <unclear cert="low" resp="#joint">Ehrsamen</unclear>, <unclear cert="low" resp="#joint">Fuersichtigen</unclear>,
+<lb n="31"/><unclear cert="low" resp="#joint">und</unclear> <unclear cert="low" resp="#joint">Wysen</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">Rhat</unclear> der Statt
+<lb n="32"/><unclear cert="medium" resp="#joint">Sct</unclear>. Gallen</orgName>, Unsern insonders
+<lb n="33"/><unclear cert="medium" resp="#joint">guten</unclear> <unclear cert="medium" resp="#joint">Fruenden</unclear>, <unclear cert="medium" resp="#joint">und</unclear> <unclear cert="medium" resp="#joint">getruewen</unclear> Lieben
+<lb n="34"/><unclear cert="low" resp="#joint">Eydgnossen</unclear>. <origPlace ref="stadtasg-places-13" cert="medium" resp="#ner"><unclear cert="low" resp="#joint">Bern</unclear></origPlace>.
 </p>
         </body>
     </text>

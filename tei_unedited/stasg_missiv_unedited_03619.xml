@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3619</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -28,7 +28,7 @@
             <correspDesc><correspAction type="sent"><name resp="#regest">Gemeinde der französischen Kirche zu Biberwier</name><placeName resp="#regest">Bischw.</placeName><date when="1644-11-30" resp="#regest">ce 30 20 de novembr. 1644.</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-16</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-16</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-16</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -52,17 +52,17 @@
 <lb n="15"/>paix. Entre autres vostre pietè et zele au service
 <lb n="16"/>de Dieu nous donnent la hardiesse de vous supplier tres-
 <lb n="17"/>humblement. Messeigneurs nous vouloir faire quelque
-<lb n="18"/>gratuité pr. le fonds que nous taschons d'affecter à l'entretien du
+<lb n="18"/>gratuité pr. le <unclear cert="low" resp="#joint">fonds</unclear> que nous taschons d'affecter à l'entretien du
 <lb n="19"/>ministere en nostre eglise. Nostre Seigneur J. Christ
-<lb n="20"/>vous remunerera richement le bien que vous nous ferez,
+<lb n="20"/>vous <unclear cert="low" resp="#joint">remunerera</unclear> <unclear cert="low" resp="#joint">richement</unclear> le bien que vous nous ferez,
 <pb facs="StadtASG_Missive_3619_14476.jpg" n="2"/>
 <lb n="21"/>ainsy quil a promis en sa saincte parole, nous
 <lb n="22"/>l'en solliciterons par nos prieres continuelles pour
 <lb n="23"/>vostre conservation et prosperite, comme estants
 <lb n="24"/>Messeigneurs
-<lb n="25"/>de Bischw. ce <origDate when="1644" resp="#ner">30 20 de
+<lb n="25"/>de Bischw. ce <origDate when="1644" resp="#ner">30 <unclear cert="low" resp="#joint">20</unclear> de
 <lb n="26"/>novembr. 1644</origDate>.
-<lb n="27"/>vos tres-humbles et
+<lb n="27"/><unclear cert="low" resp="#joint">vos</unclear> <unclear cert="low" resp="#joint">tres-humbles</unclear> et
 <lb n="28"/>obeyßans serviteurs
 <lb n="29"/><orgName role="issuer" resp="#ner">les gens de l'eglise françoise
 <lb n="30"/>de Bischweyler</orgName> et en leur nom.
@@ -72,11 +72,11 @@
 <lb n="34"/><persName role="issuer" resp="#ner">Pierre Huguenel</persName> diacre
 <pb facs="StadtASG_Missive_3619_14477.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3619_14478.jpg" n="4"/>
-<lb n="35"/>A Messeigneurs
-<lb n="36"/>Messeigneurs les <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Bourgemaistres
-<lb n="37"/>et Senateurs de la Ville et Canton
+<lb n="35"/>A <unclear cert="medium" resp="#joint">Messeigneurs</unclear>
+<lb n="36"/><unclear cert="medium" resp="#joint">Messeigneurs</unclear> les <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="medium" resp="#joint">Bourgemaistres</unclear>
+<lb n="37"/>et Senateurs de la Ville et <unclear cert="medium" resp="#joint">Canton</unclear>
 <lb n="38"/>de St. Gall</orgName>.
-<lb n="39"/>St. Gall.
+<lb n="39"/><unclear cert="low" resp="#joint">St</unclear>. <unclear cert="low" resp="#joint">Gall</unclear>.
 </p>
         </body>
     </text>
