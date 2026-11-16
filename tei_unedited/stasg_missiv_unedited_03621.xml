@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>StadtASG Missive, Nr. 3621</title>
-                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
+                <respStmt xml:id="atr-gemini-4-argon"><resp>Maschinelle Lesung (Transkription), nicht korrigiert</resp><name>Gemini 4 Argon (Google), ganze Seite, Prompt sg_missiven_page_v4</name></respStmt><respStmt xml:id="regest"><resp>Regestentwurf, Absender, Empfänger, Ort und Datum aus der maschinellen Lesung, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest.py)</name></respStmt><respStmt xml:id="mt"><resp>Englische Übersetzung des Regestentwurfs, maschinell, nicht geprüft</resp><name>qwen3.8-27b, GPUStack der Universität Bern (scripts/regest_en.py)</name></respStmt><respStmt xml:id="joint"><resp>Unsichere Wörter: die maschinellen Lesungen gehen hier auseinander (cert="low": weniger als die Hälfte ihres Gewichts hinter dieser Form oder kein anderer Leser hat das Wort; cert="medium": 50–60 %). Abgleich von Gemini 4 Argon, Gemini 3.8 Flash, kraken, TrOCR und den feinjustierten VLMs Qwen3.5-4B und olmOCR</resp><name>scripts/joint_reading.py</name></respStmt><respStmt xml:id="ner"><resp>Automatische Auszeichnung und Verknüpfung mit den Registern, nicht geprüft</resp><name>hmBERT, trainiert auf der Auszeichnung der Edition (scripts/ner.py), und qwen3.8-27b schlagen vor; gpt-oss-120b entscheidet über Auszeichnung, Rolle und Registerverknüpfung (scripts/ner_llm.py; Sprachmodelle auf dem GPUStack der Universität Bern)</name></respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Universität Bern, Digital Humanities</publisher>
@@ -28,7 +28,7 @@
             <correspDesc><correspAction type="sent"><name resp="#regest">Andreas Hindler von Glarus</name><placeName resp="#regest">Schloss Werdenberg</placeName><date when="1644" resp="#regest">den 21 thag windter monedt im 1644 jare</date></correspAction><correspAction type="received"><name resp="#regest">Bürgermeister und Rat zu St. Gallen</name></correspAction></correspDesc>
         </profileDesc>
         <revisionDesc>
-            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-14</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-14</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-14</date></change>
+            <change type="transcription" status="open" who="#atr-gemini-4-argon"><name>Maschinelle Lesung</name><date>2026-11-16</date></change><change type="tagging" status="open" who="#ner"><name>Automatische Auszeichnung</name><date>2026-11-16</date></change><change type="regest" status="open" who="#regest"><name>Regestentwurf</name><date>2026-11-16</date></change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -37,10 +37,10 @@
 <pb facs="StadtASG_Missive_3621_14483.jpg" n="1"/>
 <lb n="1"/>Hochgeachti wolladlj bestrengi frome ehrenvesti wiiße
 <lb n="2"/>besonderß gunstige ehrende liebi <orgName role="recipient" resp="#ner">Alti Eidgnoßen</orgName>
-<lb n="3"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Ratt loblicher stadt Sandt Gallen</orgName>
+<lb n="3"/><orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burgermeister und Ratt loblicher <unclear cert="low" resp="#joint">stadt</unclear> <unclear cert="low" resp="#joint">Sandt</unclear> <unclear cert="low" resp="#joint">Gallen</unclear></orgName>
 <lb n="4"/>den selben seigi mijn frundtlich grutz geneigt
-<lb n="5"/>willige dienst ieder zit bereit zuovoren
-<lb n="6"/>Demnach diß mijn schriben anlangdt, so hab ich
+<lb n="5"/>willige dienst ieder zit bereit <unclear cert="low" resp="#joint">zuovoren</unclear>
+<lb n="6"/><unclear cert="low" resp="#joint">Demnach</unclear> diß mijn schriben anlangdt, so hab ich
 <lb n="7"/>kurtz verschinen thagen, ein jungen knaben allß
 <lb n="8"/>ein landtfarers, in die gefangen schafft legen laßen
 <lb n="9"/>welcher etwaß züg gestollen, den wellchalb dan
@@ -50,29 +50,29 @@
 <lb n="13"/>laßen, ist deßwegen mijn bütt an <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Hrr Burger
 <lb n="14"/>meister und Ratt</orgName>, man wolli gemelten zuchtiger
 <lb n="15"/>bij zeiger dißem abge sandten bodten allhare
-<lb n="16"/>uf mijner gnedigen herren schloß Werdenberg
-<lb n="17"/>schüken, diß ist daß ienige welcheß ich den herren
-<lb n="18"/>in aller kurtzi geschriben, hie mit mehrers nit den
-<lb n="19"/>unß alli sampt Godtß gnedigen schutz und
-<lb n="20"/>schirm gethrülich bewelchendt, geben uf mijner
-<lb n="21"/>gnedigen schloß Werdenberg, dadum <origDate when="1644" resp="#ner">den 21 thag
-<lb n="22"/>windter monedt im 1644 jare</origDate>
+<lb n="16"/>uf mijner gnedigen herren <unclear cert="low" resp="#joint">schloß</unclear> <unclear cert="low" resp="#joint">Werdenberg</unclear>
+<lb n="17"/><unclear cert="low" resp="#joint">schüken</unclear>, diß ist daß ienige welcheß ich den herren
+<lb n="18"/>in aller <unclear cert="low" resp="#joint">kurtzi</unclear> <unclear cert="low" resp="#joint">geschriben</unclear>, <unclear cert="low" resp="#joint">hie</unclear> mit <unclear cert="low" resp="#joint">mehrers</unclear> <unclear cert="low" resp="#joint">nit</unclear> den
+<lb n="19"/><unclear cert="low" resp="#joint">unß</unclear> <unclear cert="low" resp="#joint">alli</unclear> <unclear cert="low" resp="#joint">sampt</unclear> <unclear cert="low" resp="#joint">Godtß</unclear> <unclear cert="low" resp="#joint">gnedigen</unclear> <unclear cert="low" resp="#joint">schutz</unclear> <unclear cert="low" resp="#joint">und</unclear>
+<lb n="20"/><unclear cert="low" resp="#joint">schirm</unclear> <unclear cert="low" resp="#joint">gethrülich</unclear> <unclear cert="low" resp="#joint">bewelchendt</unclear>, <unclear cert="low" resp="#joint">geben</unclear> <unclear cert="low" resp="#joint">uf</unclear> <unclear cert="low" resp="#joint">mijner</unclear>
+<lb n="21"/><unclear cert="low" resp="#joint">gnedigen</unclear> <unclear cert="low" resp="#joint">schloß</unclear> <unclear cert="low" resp="#joint">Werdenberg</unclear>, <unclear cert="low" resp="#joint">dadum</unclear> <origDate when="1644" resp="#ner"><unclear cert="low" resp="#joint">den</unclear> <unclear cert="low" resp="#joint">21</unclear> <unclear cert="low" resp="#joint">thag</unclear>
+<lb n="22"/><unclear cert="low" resp="#joint">windter</unclear> <unclear cert="low" resp="#joint">monedt</unclear> <unclear cert="low" resp="#joint">im</unclear> 1644 jare</origDate>
 <lb n="23"/><persName role="issuer" resp="#ner">Anderreß Hindler</persName> von
-<lb n="24"/>Glaruß itz mall regier-
+<lb n="24"/><unclear cert="low" resp="#joint">Glaruß</unclear> <unclear cert="low" resp="#joint">itz</unclear> <unclear cert="low" resp="#joint">mall</unclear> regier-
 <lb n="25"/>ender landtvogt der
 <lb n="26"/><placeName ref="stadtasg-places-322" cert="medium" resp="#ner">Grafschafft Werdenberg</placeName> und
-<lb n="27"/>Herschafft Wardow.
+<lb n="27"/><unclear cert="low" resp="#joint">Herschafft</unclear> <unclear cert="low" resp="#joint">Wardow</unclear>.
 <pb facs="StadtASG_Missive_3621_14484.jpg" n="2"/>
 <lb n="28"/>[]
 <pb facs="StadtASG_Missive_3621_14485.jpg" n="3"/>
 <pb facs="StadtASG_Missive_3621_14486.jpg" n="4"/>
-<lb n="29"/>Den hochgeachten wollEdlen gestrengen
-<lb n="30"/>frommen vesten vorsichtigen weyßen herren <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner">Burger-
-<lb n="31"/>meistern und rhat loblicher Statt
-<lb n="32"/>Sanct Gallen</orgName>, Minen bederßyts großgünst-
-<lb n="33"/>igen, hochgeehrten herren und getr: l:
-<lb n="34"/>Eydgnoßen, In vertrawen eroeffnen
-<lb n="35"/>Sanct Gallen
+<lb n="29"/>Den <unclear cert="low" resp="#joint">hochgeachten</unclear> <unclear cert="low" resp="#joint">wollEdlen</unclear> <unclear cert="low" resp="#joint">gestrengen</unclear>
+<lb n="30"/><unclear cert="low" resp="#joint">frommen</unclear> <unclear cert="low" resp="#joint">vesten</unclear> <unclear cert="low" resp="#joint">vorsichtigen</unclear> <unclear cert="low" resp="#joint">weyßen</unclear> <unclear cert="low" resp="#joint">herren</unclear> <orgName ref="stadtasg-actors-148" cert="medium" role="recipient" resp="#ner"><unclear cert="low" resp="#joint">Burger</unclear>-
+<lb n="31"/><unclear cert="low" resp="#joint">meistern</unclear> und <unclear cert="low" resp="#joint">rhat</unclear> <unclear cert="low" resp="#joint">loblicher</unclear> Statt
+<lb n="32"/>Sanct Gallen</orgName>, <unclear cert="low" resp="#joint">Minen</unclear> <unclear cert="low" resp="#joint">bederßyts</unclear> <unclear cert="low" resp="#joint">großgünst</unclear>-
+<lb n="33"/><unclear cert="low" resp="#joint">igen</unclear>, <unclear cert="low" resp="#joint">hochgeehrten</unclear> herren und <unclear cert="low" resp="#joint">getr</unclear>: <unclear cert="low" resp="#joint">l</unclear>:
+<lb n="34"/><unclear cert="low" resp="#joint">Eydgnoßen</unclear>, <unclear cert="low" resp="#joint">In</unclear> <unclear cert="low" resp="#joint">vertrawen</unclear> <unclear cert="low" resp="#joint">eroeffnen</unclear>
+<lb n="35"/><unclear cert="low" resp="#joint">Sanct</unclear> <unclear cert="low" resp="#joint">Gallen</unclear>
 </p>
         </body>
     </text>
