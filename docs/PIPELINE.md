@@ -152,7 +152,7 @@ series has 14,385 more (8,088 downloaded, the rest by 14.11.).
      - First reconstruct which edited pages they did *not* train on. Training drew a seeded page split (seed 42, about 90 % train) over all its datasets; the run records in training-atr-models hold or rebuild the lists.
      - Then measure them and the joint reading with them on those pages only.
      - On the new pages they are fair readers, since they never saw those.
-   - **Corrections by the Missiven team** (window 18.11.–01.12.): every corrected page is a better reading of that page and is tagged again at once.
+   - **Corrections by the Missiven team** (window 29.11.–01.12.): every corrected page is a better reading of that page and is tagged again at once.
    - **kraken and TrOCR on the new pages (UBELIX)** are unlikely to lift the joint reading; they did not on the edited pages. Run them for comparison and as readers in the viewer, not for the joint reading.
 3. **When a reader qualifies,** the pipeline re-tags only the pages whose text changed. The tags are then exported to TEI and checked against TEI P5, as now.
 4. **Linking improves on the register side, not the reading side:**
