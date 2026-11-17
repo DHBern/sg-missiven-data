@@ -43,7 +43,7 @@ onto tei's own disk.
 2. In this repository:
 
    ```bash
-   python3 scripts/image_window.py open --from 2026-11-18 --until 2026-12-01
+   python3 scripts/image_window.py open --from 2026-11-29 --until 2026-12-01
    ```
 
    This writes `site/config.json` and `deploy/nginx/sg-missiven-images.conf`.

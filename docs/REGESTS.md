@@ -52,7 +52,7 @@ What the misses are:
 
 The run went ahead on the project's request, with the gate missed and said so.
 The drafts carry the same marks as before: draft, unchecked, names and dates
-may be wrong. The corrections the Missiven team makes from 18.11. are the
+may be wrong. The corrections the Missiven team makes from 29.11. are the
 measure for a second prompt.
 
 **Drafted:** every letter not yet edited that Gemini 4 Argon had read completely
@@ -120,7 +120,7 @@ is produced only after the automatic tagging (`scripts/ner.py`) has run over
 their readings; until then the script refuses (see below).
 
 **After the rerun:**
-- The Missiven team sees the drafts beside the images from 18.11. to 01.12.
+- The Missiven team sees the drafts beside the images from 29.11. to 01.12.
 - Their corrections are the measure for a second prompt (`--redo`).
 - Two faults are known and not yet fixed:
   - The year-start style: the edition normalises to a year beginning on
