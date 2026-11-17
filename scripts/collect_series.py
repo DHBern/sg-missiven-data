@@ -128,8 +128,11 @@ def from_runs(vlm_test: Path, runs: list[str], by_stem: dict[str, str],
                 key = key_for(path.stem, by_stem)
                 if not key:
                     continue
+                text = rec.get("text") or ""
+                if text.strip() == "[]":  # an empty JSON list: the model found no text on the page
+                    text = ""
                 readers.setdefault(rec["model"], {})[key] = {
-                    "key": key, "text": rec.get("text") or "", "truncated": bool(rec.get("truncated")),
+                    "key": key, "text": text, "truncated": bool(rec.get("truncated")),
                     "segmented_by": rec.get("segmented_by"), "gateway_version": rec.get("gateway_version"),
                     "run": run}
                 lines = rec.get("lines") or []
