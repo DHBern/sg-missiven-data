@@ -26,7 +26,7 @@
     document.documentElement.lang = LANG;
     document.title = T("St. Gallen Missives Readings", "St. Galler Missiven: Lesungen");
     const nav = { letters: T("Letters", "Briefe"), search: T("Search", "Suche"), places: T("Places", "Orte"), names: T("Names", "Namen"),
-                  map: T("Map", "Karte"), keywords: T("Keywords", "Schlagwörter"), readers: T("Readers", "Leser"), about: T("About", "Über") };
+                  map: T("Map", "Karte"), corr: T("Correspondence", "Korrespondenz"), keywords: T("Keywords", "Schlagwörter"), readers: T("Readers", "Leser"), about: T("About", "Über") };
     document.querySelectorAll("[data-nav]").forEach((a) => { a.textContent = nav[a.dataset.nav]; });
     const brand = document.querySelector(".brand");
     if (brand) brand.innerHTML = `${T("St. Gallen Missives", "St. Galler Missiven")} <span>· ${T("readings", "Lesungen")}</span>`;
@@ -82,7 +82,8 @@
   }
 
   function setNav(which) {
-    if (!["places", "names", "map"].includes(which)) destroyMaps();
+    if (!["places", "names", "map", "corr"].includes(which)) destroyMaps();
+    if (which !== "corr") corrStop();
     if (which !== "search") clearTimeout(searchTimer);
     document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
   }
@@ -97,6 +98,7 @@
     if (parts[0] === "places") return showRegister("places");
     if (parts[0] === "names") return showRegister("names");
     if (parts[0] === "map") return showMap();
+    if (parts[0] === "correspondence") return showCorrespondence();
     if (parts[0] === "keywords" && parts[1] === "network") return showKeywordNetwork(new URLSearchParams(qs || ""));
     if (parts[0] === "keywords") return showKeywords();
     if (parts[0] === "keyword" && parts[1]) return showKeyword(parts[1], new URLSearchParams(qs || ""));
@@ -165,6 +167,14 @@
   function showList(params) {
     setNav("letters");
     state.edited = params && ["0", "1"].includes(params.get("ed")) ? params.get("ed") : "";
+    // ?who=<partner>: the letters of one correspondence partner (page «Korrespondenz»)
+    const who = params && params.get("who") !== null && params.get("who") !== "" ? +params.get("who") : null;
+    if (who !== null && !state.corr) {
+      json("data/correspondence.json").then((d) => { state.corr = d; route(); }).catch(() => { state.corr = { partners: [], letters: {} }; route(); });
+      app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
+      return;
+    }
+    const partner = who !== null ? (state.corr.partners[who] || null) : null;
     destroyOsd();
     // Edited letters carry a date, unedited ones only an estimated year.
     const yNum = (l) => { const y = parseInt((l.date || String(l.year || "")).slice(0, 4), 10); return Number.isFinite(y) ? y : null; };
@@ -198,12 +208,16 @@
         ${sliderHtml("ly", yMin, yMax, state.from, state.to)}
         <span id="count" class="muted small"></span>
       </div>
+      ${partner ? `<p class="corr-chip">${T("Letters between St. Gallen and", "Briefe zwischen St. Gallen und")} <b>${esc(partner.name)}</b>
+        <span class="muted small">(${esc(partner.forms.slice(0, 2).join("; "))})</span>
+        <a href="#" id="nowho">${T("show all partners", "alle Partner zeigen")}</a> · <a href="#/correspondence">${T("Correspondence", "Korrespondenz")}</a></p>` : ""}
       <div class="list" id="list"></div>`;
     const q = document.getElementById("q");
     const ed = document.getElementById("ed");
     const sync = () => {
       const p = new URLSearchParams();
       if (state.edited) p.set("ed", state.edited);
+      if (partner) p.set("who", who);
       if (state.from > yMin) p.set("from", state.from);
       if (state.to < yMax) p.set("to", state.to);
       const h = "#/" + (p.toString() ? "?" + p : "");
@@ -216,6 +230,7 @@
       const years = [];
       const rows = state.index.filter((l) => {
         if (state.edited && String(+(l.edited !== false)) !== state.edited) return false;
+        if (partner && state.corr.letters[l.id] !== who) return false;
         if (words.length) {
           const hay = [l.title, l.idno, l.date, fmtDate(l.date), l.sender.join(" "), l.recipient.join(" "), l.regest, sndOf(l).join(" "), rcpOf(l).join(" "), regOf(l)].join(" ").toLowerCase();
           if (!words.every((w) => hay.includes(w))) return false;
@@ -239,6 +254,9 @@
         </a>`).join("") + (rows.length > 400 ? `<p class="muted small">${T(`Showing 400 of ${rows.length} — narrow the search.`, `400 von ${rows.length} angezeigt – Suche eingrenzen.`)}</p>` : "");
     };
     q.addEventListener("input", draw);
+    const nw = document.getElementById("nowho");
+    nw && nw.addEventListener("click", (ev) => { ev.preventDefault();
+      const p = new URLSearchParams(location.hash.split("?")[1] || ""); p.delete("who"); location.hash = "#/" + (p.toString() ? "?" + p : ""); });
     bindSlider("ly", (a, b) => { state.from = a; state.to = b; draw(); }, sync);
     bindBars("ly", yMin, yMax, () => [state.from, state.to], (a, b) => { state.from = a; state.to = b; sync(); draw(); });
     ed.addEventListener("click", (ev) => {
@@ -618,6 +636,190 @@
     /* open on the places named in several letters; the far ones are a zoom away */
     const core = geo.filter(([, e]) => lettersOf(e) >= 3);
     m.fitBounds(L.latLngBounds((core.length > 5 ? core : geo).map(([, e]) => e.geo)), { padding: [20, 20] });
+  }
+
+  /* ---------- correspondence: with whom St. Gallen wrote, and when ----------
+     site/data/correspondence.json (scripts/correspondence.py): every letter between
+     St. Gallen and a partner placed by the town its name gives. One time window
+     drives the map, the ranking and the regions; the matrix shows every decade
+     and marks the window. Cells and circles lead to the filtered letter list. */
+  const CORR_REG = ["r1", "r2", "r3"];
+  const corrState = { start: 1520, width: 25, src: "all", mode: "abs", order: "first" };
+  let corrTimer = null;
+  function corrStop() { clearInterval(corrTimer); corrTimer = null; const b = document.getElementById("cplay"); if (b) b.textContent = "▶ " + T("Play", "Abspielen"); }
+  async function showCorrespondence() {
+    setNav("corr");
+    destroyOsd(); destroyMaps(); corrStop();
+    if (!state.corr) {
+      app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
+      try { state.corr = await json("data/correspondence.json"); } catch { app.innerHTML = `<p>${T("The correspondence data is missing.", "Die Daten zur Korrespondenz fehlen.")}</p>`; return; }
+    }
+    const C = state.corr, PS = C.partners, cs = corrState;
+    const regName = (r) => ({ "Eidgenossenschaft und Zugewandte": T("Confederation and allies", "Eidgenossenschaft und Zugewandte"),
+      "Bodensee und Oberschwaben": T("Lake Constance and Upper Swabia", "Bodensee und Oberschwaben"), "Reich und weiter": T("Empire and beyond", "Reich und weiter") }[r] || r);
+    const regCls = (r) => CORR_REG[C.regions.indexOf(r)] || "r3";
+    const nLetters = (src) => C.totals.filter((t) => src === "all" || t[1]).reduce((s, t) => s + t[2], 0);
+    const placed = C.rows.reduce((s, r) => s + r[4], 0);
+    const DEC = []; for (let d = 1410; d < 1700; d += 10) DEC.push(d);
+    app.innerHTML = `
+      <section class="intro">
+        <h1>${T("Correspondence", "Korrespondenz")}</h1>
+        <p>${T(`With whom St. Gallen exchanged letters, and when. Of the ${nLetters("all")} dated letters, ${placed} are placed at a partner's town (“Burgomaster and council of Lindau” → Lindau): ${PS.length} towns. The window below drives the map, the ranking and the regions; the matrix shows every decade. Circles and cells lead to the letters.`,
+          `Mit wem St. Gallen Briefe wechselte, und wann. Von den ${nLetters("all")} datierten Briefen sind ${placed} dem Ort eines Partners zugeordnet («Bürgermeister und Rat zu Lindau» → Lindau): ${PS.length} Orte. Das Zeitfenster steuert Karte, Rangliste und Regionen; die Matrix zeigt alle Jahrzehnte. Kreise und Zellen führen zu den Briefen.`)}</p>
+        <p class="muted small">${T(`Years of letters not yet edited come from their regest drafts and are uncertain, hence decades and windows. A partner is a town: its council, its bishop and its citizens count together. The counts show what the city archive holds, not the whole exchange. ${C.unplaced.letters} letters name a partner without a town (single persons, the federal diet) and are not counted here.`,
+          `Die Jahre der noch nicht edierten Briefe stammen aus den Regestentwürfen und sind unsicher, darum Jahrzehnte und Zeitfenster. Partner ist der Ort: Rat, Bischof und Bürger eines Ortes zählen zusammen. Die Zahlen zeigen, was das Stadtarchiv überliefert, nicht den ganzen Austausch. ${C.unplaced.letters} Briefe nennen einen Partner ohne Ort (Einzelpersonen, eidgenössische Räte) und sind hier nicht gezählt.`)}</p>
+      </section>
+      <div class="corr-bar" role="group" aria-label="${T("Time window", "Zeitfenster")}">
+        <b class="corr-win" id="cwin" aria-live="polite"></b>
+        <button type="button" class="corr-play" id="cplay">▶ ${T("Play", "Abspielen")}</button>
+        <input type="range" id="cyear" min="1410" max="1690" step="5" value="${cs.start}" aria-label="${T("Start of the window", "Beginn des Zeitfensters")}">
+        <label class="small">${T("Window", "Fenster")} <select id="cwidth">${[10, 25, 50].map((w) => `<option value="${w}" ${w === cs.width ? "selected" : ""}>${w} ${T("years", "Jahre")}</option>`).join("")}</select></label>
+        <div class="seg" id="csrc" role="group" aria-label="${T("Letters", "Briefe")}">
+          ${[["all", T("All letters", "Alle Briefe")], ["ed", T("Edited only", "Nur edierte")]].map(([v, l]) =>
+            `<button type="button" data-v="${v}" class="${cs.src === v ? "on" : ""}" aria-pressed="${cs.src === v}">${l}</button>`).join("")}
+        </div>
+      </div>
+      <div class="corr-two">
+        <div id="cmap" class="corr-map" role="region" aria-label="${T("Map of the partners in the window", "Karte der Partner im Zeitfenster")}"></div>
+        <div><h3 class="corr-h">${T("Strongest partners in the window", "Stärkste Partner im Fenster")}</h3><div class="corr-rank" id="crank"></div></div>
+      </div>
+      <p class="legend corr-legend">${C.regions.map((r) => `<span><i class="${regCls(r)}"></i>${esc(regName(r))}</span>`).join("")}<span><i class="sg"></i>St. Gallen</span></p>
+      <h2 class="corr-h2">${T("Partners by decade", "Partner nach Jahrzehnt")}</h2>
+      <div class="filters">
+        <div class="seg" id="cmode" role="group" aria-label="${T("Value", "Wert")}">
+          ${[["abs", T("Letters", "Anzahl")], ["share", T("Share of the decade", "Anteil am Jahrzehnt")]].map(([v, l]) =>
+            `<button type="button" data-v="${v}" class="${cs.mode === v ? "on" : ""}" aria-pressed="${cs.mode === v}">${l}</button>`).join("")}
+        </div>
+        <label class="small">${T("Order", "Reihenfolge")} <select id="corder">
+          ${[["first", T("first letter", "erster Brief")], ["total", T("total", "Summe")], ["km", T("distance", "Entfernung")]].map(([v, l]) => `<option value="${v}" ${cs.order === v ? "selected" : ""}>${l}</option>`).join("")}
+        </select></label>
+        <span class="muted small">${T("The 30 strongest partners. Bars on top: all dated letters of the decade, dark the placed ones.", "Die 30 stärksten Partner. Balken oben: alle datierten Briefe des Jahrzehnts, dunkel die zugeordneten.")}</span>
+      </div>
+      <div class="corr-mx" id="cmx"></div>
+      <h2 class="corr-h2">${T("Regions over time", "Regionen im Verlauf")}</h2>
+      <p class="muted small">${T("Share of the placed letters per decade, by region (decades with at least five).", "Anteil der zugeordneten Briefe je Jahrzehnt nach Region (Jahrzehnte mit mindestens fünf).")}</p>
+      <div class="corr-reg" id="creg"></div>`;
+
+    const useRow = (r) => cs.src === "all" || r[3] === 1;
+    const listHref = (pi, a, b) => `#/?who=${pi}&from=${a}&to=${b}${cs.src === "ed" ? "&ed=1" : ""}`;
+    const winCounts = () => {
+      const a = cs.start, b = cs.start + cs.width, c = new Map();
+      for (const r of C.rows) { if (!useRow(r) || r[1] < a || r[1] >= b) continue;
+        const o = c.get(r[0]) || { n: 0, inn: 0, out: 0 }; o.n += r[4]; if (r[2]) o.out += r[4]; else o.inn += r[4]; c.set(r[0], o); }
+      return [...c.entries()].map(([i, o]) => ({ i, p: PS[i], ...o })).sort((x, y) => y.n - x.n);
+    };
+    const tipHtml = (d) => `<b>${esc(d.p.name)}</b>${d.n} ${P(d.n, "letter", "letters", "Brief", "Briefe")} ${cs.start}–${cs.start + cs.width - 1}<br>
+      <span class="muted">${d.inn} ${T("to St. Gallen", "an St. Gallen")} · ${d.out} ${T("from St. Gallen", "von St. Gallen")} · ${d.p.km} km</span><br><span class="muted">${esc(d.p.forms[0] || "")}</span>`;
+
+    // map
+    let lmap = null, layer = null;
+    if (window.L) {
+      lmap = baseMap("cmap", { scrollWheelZoom: true, zoomSnap: 0.25 });
+      lmap.fitBounds([[46.5, 7.0], [49.0, 11.4]]);
+      // the grid gives the map its width only after layout: measure again, then fit
+      requestAnimationFrame(() => { lmap.invalidateSize(); lmap.fitBounds([[46.5, 7.0], [49.0, 11.4]]); });
+      layer = L.layerGroup().addTo(lmap);
+      L.marker([C.sg.lat, C.sg.lon], { icon: L.divIcon({ className: "corr-sg", iconSize: [12, 12] }), keyboard: false, interactive: false }).addTo(lmap);
+    } else document.getElementById("cmap").innerHTML = `<p class="noimg">${T("The map library did not load.", "Die Kartenbibliothek wurde nicht geladen.")}</p>`;
+
+    function drawWindow() {
+      document.getElementById("cwin").innerHTML = `${cs.start}–${cs.start + cs.width - 1}`;
+      const items = winCounts(), max = Math.max(40, ...items.map((d) => d.n));
+      if (layer) {
+        layer.clearLayers();
+        for (const d of items) L.polyline([[C.sg.lat, C.sg.lon], [d.p.lat, d.p.lon]], { className: "corr-link " + regCls(d.p.region), weight: Math.max(1, 6 * d.n / max), interactive: false }).addTo(layer);
+        for (const d of [...items].reverse())
+          L.circleMarker([d.p.lat, d.p.lon], { radius: Math.max(3, 26 * Math.sqrt(d.n / max)), className: "corr-dot " + regCls(d.p.region), weight: 2, fillOpacity: .8 })
+            .bindTooltip(tipHtml(d)).on("click", () => { location.hash = listHref(d.i, cs.start, cs.start + cs.width - 1); }).addTo(layer);
+      }
+      const top = items.slice(0, 15), m = top.length ? top[0].n : 1;
+      document.getElementById("crank").innerHTML = top.length ? top.map((d) => `
+        <a class="corr-row" href="${listHref(d.i, cs.start, cs.start + cs.width - 1)}"><span>${esc(d.p.name)}</span>
+          <span class="corr-bar-cell"><i class="${regCls(d.p.region)}" style="width:${Math.max(2, 100 * d.n / m)}%"></i></span><span class="n">${d.n}</span></a>`).join("")
+        : `<p class="muted small">${T("No placed letter in this window", "Kein zugeordneter Brief in diesem Fenster")}${cs.src === "ed" ? T(". The edited letters lie mostly in 1417–1500, the 1520s and 1530s and around 1650.", ". Die edierten Briefe liegen vor allem 1417–1500, in den 1520er- und 1530er-Jahren und um 1650.") : "."}</p>`;
+      drawMatrix(); drawRegions();
+    }
+
+    function drawMatrix() {
+      const m = new Map(), tot = new Map(DEC.map((d) => [d, 0])), ptot = new Map(DEC.map((d) => [d, 0]));
+      for (const t of C.totals) { if (cs.src === "ed" && !t[1]) continue; const d = Math.floor(t[0] / 10) * 10; if (tot.has(d)) tot.set(d, tot.get(d) + t[2]); }
+      for (const r of C.rows) { if (!useRow(r)) continue; const d = Math.floor(r[1] / 10) * 10; const k = r[0] + "|" + d; m.set(k, (m.get(k) || 0) + r[4]); if (ptot.has(d)) ptot.set(d, ptot.get(d) + r[4]); }
+      const sum = new Map(), first = new Map();
+      for (const [k, n] of m) { const [i, d] = k.split("|").map(Number); sum.set(i, (sum.get(i) || 0) + n); if (!first.has(i) || d < first.get(i)) first.set(i, d); }
+      let rows = [...sum.keys()].sort((a, b) => sum.get(b) - sum.get(a)).slice(0, 30);
+      if (cs.order === "first") rows.sort((a, b) => first.get(a) - first.get(b) || sum.get(b) - sum.get(a));
+      if (cs.order === "km") rows.sort((a, b) => PS[a].km - PS[b].km);
+      const L0 = 170, TOP = 64, CW = 22, CH = 18, W = L0 + DEC.length * CW + 50, H = TOP + rows.length * CH + 24;
+      const vmax = cs.mode === "abs" ? 60 : 0.35, steps = 7;
+      const step = (v) => Math.min(steps, Math.max(1, Math.ceil(steps * v / vmax)));
+      const tmax = Math.max(1, ...tot.values());
+      const a = cs.start, b = cs.start + cs.width;
+      const xi = (y) => L0 + Math.max(0, Math.min(DEC.length, (y - 1410) / 10)) * CW;
+      let s = `<rect class="corr-hl" x="${xi(a)}" y="0" width="${Math.max(0, xi(b) - xi(a))}" height="${H}"/>`;
+      DEC.forEach((d, j) => {
+        const h = 36 * tot.get(d) / tmax, hp = 36 * ptot.get(d) / tmax, x = L0 + j * CW + 3;
+        s += `<rect class="corr-tot" x="${x}" y="${TOP - 10 - h}" width="${CW - 6}" height="${h}"><title>${d}–${d + 9}: ${tot.get(d)} ${T("letters", "Briefe")}, ${ptot.get(d)} ${T("placed", "zugeordnet")}</title></rect>`;
+        s += `<rect class="corr-ptot" x="${x}" y="${TOP - 10 - hp}" width="${CW - 6}" height="${hp}"><title>${d}–${d + 9}: ${tot.get(d)} ${T("letters", "Briefe")}, ${ptot.get(d)} ${T("placed", "zugeordnet")}</title></rect>`;
+        if (d % 50 === 0) s += `<text x="${L0 + j * CW + CW / 2}" y="${H - 6}" text-anchor="middle">${d}</text>`;
+      });
+      rows.forEach((i, k) => {
+        const y = TOP + k * CH, p = PS[i];
+        s += `<circle class="${regCls(p.region)}" cx="8" cy="${y + CH / 2}" r="4"/>`;
+        s += `<a href="${p.ref ? "#/entry/" + encodeURIComponent(p.ref) : listHref(i, 1410, 1699)}"><text class="corr-name" x="18" y="${y + CH / 2 + 4}">${esc(p.name.length > 21 ? p.name.slice(0, 20) + "…" : p.name)}</text></a>`;
+        DEC.forEach((d, j) => {
+          const n = m.get(i + "|" + d) || 0; if (!n) return;
+          const v = cs.mode === "abs" ? n : n / (ptot.get(d) || 1);
+          s += `<a href="${listHref(i, d, d + 9)}"><rect class="corr-cell q${step(v)}" x="${L0 + j * CW + 1}" y="${y + 1}" width="${CW - 2}" height="${CH - 2}" rx="2"><title>${esc(p.name)}, ${d}–${d + 9}: ${n} ${P(n, "letter", "letters", "Brief", "Briefe")} (${Math.round(100 * n / (ptot.get(d) || 1))} % ${T("of the placed letters", "der zugeordneten Briefe")})</title></rect></a>`;
+        });
+        s += `<text class="corr-sum" x="${L0 + DEC.length * CW + 8}" y="${y + CH / 2 + 4}">${sum.get(i)}</text>`;
+      });
+      const lg = Array.from({ length: steps }, (_, j) => `<rect class="corr-cell q${j + 1}" x="${100 + j * 20}" y="2" width="18" height="11" rx="2"/>`).join("");
+      s += `<g><text x="0" y="12">${cs.mode === "abs" ? T("Letters per cell", "Briefe pro Zelle") : T("Share per cell", "Anteil pro Zelle")}</text>${lg}<text x="${104 + steps * 20}" y="12">${cs.mode === "abs" ? `1 … ${vmax}+` : `${T("up to", "bis")} ${Math.round(vmax * 100)} %+`}</text></g>`;
+      document.getElementById("cmx").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${T("Matrix of partners by decade", "Matrix Partner nach Jahrzehnt")}">${s}</svg>`;
+    }
+
+    function drawRegions() {
+      const by = new Map(DEC.map((d) => [d, C.regions.map(() => 0)]));
+      for (const r of C.rows) { if (!useRow(r)) continue; const d = Math.floor(r[1] / 10) * 10; if (by.has(d)) by.get(d)[C.regions.indexOf(PS[r[0]].region)] += r[4]; }
+      const pts = [...by].map(([d, v]) => ({ d, v, n: v.reduce((a, b) => a + b, 0) })).filter((o) => o.n >= 5);
+      const W = 760, H = 220, l = 40, r = 10, t = 8, bt = 22;
+      const x = (y) => l + (y - 1410) / 290 * (W - l - r), y = (v) => H - bt - v * (H - bt - t);
+      let s = `<rect class="corr-hl" x="${x(cs.start)}" y="${t}" width="${Math.max(0, x(Math.min(1700, cs.start + cs.width)) - x(cs.start))}" height="${H - bt - t}"/>`;
+      if (pts.length > 1) C.regions.forEach((_, k) => {
+        const lo = pts.map((o) => o.v.slice(0, k).reduce((a, b) => a + b, 0) / o.n), hi = pts.map((o, j) => lo[j] + o.v[k] / o.n);
+        const up = pts.map((o, j) => `${x(o.d + 5).toFixed(1)},${y(hi[j]).toFixed(1)}`).join(" L"), down = pts.map((o, j) => `${x(o.d + 5).toFixed(1)},${y(lo[j]).toFixed(1)}`).reverse().join(" L");
+        s += `<path class="corr-area ${CORR_REG[k]}" d="M${up} L${down} Z"/>`;
+      });
+      [0, 0.5, 1].forEach((v) => { s += `<text x="${l - 6}" y="${y(v) + 4}" text-anchor="end">${v * 100} %</text>`; });
+      [1450, 1500, 1550, 1600, 1650].forEach((v) => { s += `<text x="${x(v)}" y="${H - 6}" text-anchor="middle">${v}</text>`; });
+      pts.forEach((o) => { s += `<rect x="${x(o.d)}" y="${t}" width="${x(o.d + 10) - x(o.d)}" height="${H - bt - t}" fill="transparent"><title>${o.d}–${o.d + 9}: ${o.n} ${T("placed letters", "zugeordnete Briefe")}\n${C.regions.map((rg, k) => `${regName(rg)}: ${Math.round(100 * o.v[k] / o.n)} %`).join("\n")}</title></rect>`; });
+      document.getElementById("creg").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${T("Regions over time", "Regionen im Verlauf")}">${s}</svg>`;
+    }
+
+    const yearEl = document.getElementById("cyear");
+    yearEl.addEventListener("input", () => { cs.start = +yearEl.value; drawWindow(); });
+    document.getElementById("cwidth").addEventListener("change", (e) => { cs.width = +e.target.value; drawWindow(); });
+    const seg = (id, key, after) => document.getElementById(id).addEventListener("click", (ev) => {
+      const b = ev.target.closest("button[data-v]"); if (!b) return;
+      cs[key] = b.dataset.v;
+      ev.currentTarget.querySelectorAll("button").forEach((x) => { const on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+      after();
+    });
+    seg("csrc", "src", drawWindow);
+    seg("cmode", "mode", drawMatrix);
+    document.getElementById("corder").addEventListener("change", (e) => { cs.order = e.target.value; drawMatrix(); });
+    document.getElementById("cplay").addEventListener("click", (ev) => {
+      if (corrTimer) return corrStop();
+      if (cs.start >= 1690 - cs.width) cs.start = 1410;
+      ev.currentTarget.textContent = "❚❚ " + T("Pause", "Anhalten");
+      const slow = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      corrTimer = setInterval(() => {
+        if (!document.body.contains(yearEl)) return corrStop();
+        cs.start += 5; if (cs.start >= 1690) { cs.start = 1690; corrStop(); }
+        yearEl.value = cs.start; drawWindow();
+      }, slow ? 1500 : 600);
+    });
+    drawWindow();
   }
 
   /* ---------- search ---------- */
