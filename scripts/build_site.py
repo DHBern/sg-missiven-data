@@ -17,6 +17,7 @@ Outputs (site/data/)
   index_en.json                 letter id -> English regest (machine translation, scripts/regest_en.py)
   readers.json                  readers with corpus scores against the edition
   registers.json                register id -> name and links
+  correspondence.json           partners of St. Gallen by place and year (scripts/correspondence.py)
   letters/<id>.json             one letter: header, pages, every reading
   tei/<id>.xml                  the letter's TEI (data/ for the edition, tei_unedited/ for the rest), for download
 
@@ -45,6 +46,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from tei_pages import NS, local, norm, read_edition  # noqa: E402
 import line_links  # noqa: E402
+import correspondence  # noqa: E402
 
 OUT = ROOT / "site" / "data"
 
@@ -705,6 +707,10 @@ def main() -> None:
     occurrences(letters, reg)
     (OUT / "registers.json").write_text(json.dumps(reg, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     write_missing_geo(reg)
+    corr = correspondence.build(index, reg)
+    (OUT / "correspondence.json").write_text(json.dumps(corr, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"correspondence: {len(corr['partners'])} partner places, {sum(r[4] for r in corr['rows'])} letters placed, "
+          f"{corr['unplaced']['letters']} with a partner but no place", flush=True)
     scored = [r for r in readers if r.get("cer") is not None and r["id"] != "joint"]
     best = min(scored, key=lambda r: r["cer"])["id"] if scored else "gemini-4-argon"
     write_search(letters, index, reg, best)
