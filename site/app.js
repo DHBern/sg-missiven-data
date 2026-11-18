@@ -330,6 +330,8 @@
         <li><b>Entitäten</b>: in der Edition die Auszeichnung der Editorinnen und Editoren; in den Lesungen die automatische Auszeichnung, gelernt aus der Auszeichnung der Edition und mit ihren Registern verknüpft.</li>
         <li><b>Orte, Namen, Karte</b>: die Register der Edition mit allen edierten Briefen, die einen Eintrag nennen; Funde in noch nicht edierten Briefen stehen getrennt und sind automatisch.</li>
       </ul>
+      <h2>Thuner Missiven</h2>
+      <p>Die <a href="https://dhbern.github.io/thun-missiven-data/" target="_blank" rel="noopener">Thuner Missiven</a> (Burgerarchiv Thun, um 1400–1540, nur maschinell gelesen) sind mit diesen Briefen verglichen worden (15. und 18.11.2026): Kein Brief liegt in beiden Sammlungen, keiner antwortet auf einen in der anderen. Wo zwei Briefe dasselbe Ereignis betreffen, steht ein Hinweis beim Brief. In Thun liegt ein Brief von Bürgermeister und Rat zu St. Gallen vom 5. April 1412 (<a href="https://dhbern.github.io/thun-missiven-data/#/letter/bat_663_176/1" target="_blank" rel="noopener">BAT 663, Nr. 176</a>); hier liegt ein Brief aus Thun von 1632 (<a href="#/letter/stasg_missiv_unedited_02887/1">Nr. 2887</a>).</p>
       <h2>Daten und Code</h2>
       <p><a href="https://github.com/DHBern/sg-missiven-data" target="_blank" rel="noopener">github.com/DHBern/sg-missiven-data</a> – die Lesungen liegen in <code>readings/</code>, eine JSON-Zeile pro Seite und Leser.</p>
     </section>` : `<section class="prose">
@@ -347,6 +349,8 @@
         <li><b>Entities</b>: on the edition the editors' tagging; on the machine readings the automatic tagging, learned from the edition's own tagging and linked to its registers.</li>
         <li><b>Places, Names, Map</b>: the edition's registers with every edited letter that names an entry; finds in letters not yet edited are listed apart and are automatic.</li>
       </ul>
+      <h2>Thun Missives</h2>
+      <p>The <a href="https://dhbern.github.io/thun-missiven-data/" target="_blank" rel="noopener">Thun Missives</a> (Burgerarchiv Thun, about 1400–1540, read by machine only) were compared with these letters (15 and 18 November 2026): no letter is in both collections, and none answers one in the other. Where two letters concern the same event, a hint stands with the letter. Thun holds a letter from the mayor and council of St. Gallen of 5 April 1412 (<a href="https://dhbern.github.io/thun-missiven-data/#/letter/bat_663_176/1" target="_blank" rel="noopener">BAT 663, no. 176</a>); this collection holds a letter from Thun of 1632 (<a href="#/letter/stasg_missiv_unedited_02887/1">no. 2887</a>).</p>
       <h2>Data and code</h2>
       <p><a href="https://github.com/DHBern/sg-missiven-data" target="_blank" rel="noopener">github.com/DHBern/sg-missiven-data</a> — the readings are in <code>readings/</code>, one JSON line per page and reader.</p>
     </section>`;
