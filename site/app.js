@@ -1765,7 +1765,8 @@
   function readerLabel(id) { const r = state.readers.find((x) => x.id === id); return r ? loc(r, "label") : (id || T("machine", "Maschine")); }
 
   function readerButtons(page, current) {
-    return state.readers.map((r) => {
+    // the line readers (kraken, TrOCR) read only the edited pages: no button where they never ran
+    return state.readers.filter((r) => r.scope !== "edited_pages" || page.readings[r.id]).map((r) => {
       const has = r.id === "edition" ? !!page.html : !!page.readings[r.id];
       const rd = page.readings[r.id];
       const badge = r.id === "edition" ? "" : rd && rd.cer != null ? `<span class="cer" title="${T("character error rate on this page", "Zeichenfehlerrate auf dieser Seite")}">${pct(rd.cer)}</span>` : rd ? `<span class="cer">${T("not scored", "nicht bewertet")}</span>` : "";
