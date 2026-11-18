@@ -1555,7 +1555,7 @@
     app.innerHTML = `<p class="muted">${T("Loading…", "Wird geladen…")}</p>`;
     const d = await kwData();
     try { await loadD3(); } catch { app.innerHTML = `<p>${T("The network needs the d3 library, which could not be loaded.", "Das Netzwerk braucht die Bibliothek d3, die nicht geladen werden konnte.")}</p>`; return; }
-    const f = state.netView = state.netView || { min: 15 };
+    const f = state.netView = state.netView || { min: 25 };  // as in the Thun viewer
     const focus = params.get("focus") || "";
     if (focus && (d.count.get(focus) || 0) < f.min) f.min = Math.max(3, d.count.get(focus) || 3);
     const g = kwGraph(d, f.min);
@@ -1568,8 +1568,8 @@
       </section>
       <div class="filters">
         <select id="nmin" aria-label="${T("Keywords shown", "Gezeigte Schlagwörter")}">
-          ${[5, 8, 15, 25].map((n) => `<option value="${n}" ${f.min === n ? "selected" : ""}>${T(`keywords in ${n}+ letters`, `Schlagwörter in ${n}+ Briefen`)}</option>`).join("")}
-          ${[5, 8, 15, 25].includes(f.min) ? "" : `<option value="${f.min}" selected>${T(`keywords in ${f.min}+ letters`, `Schlagwörter in ${f.min}+ Briefen`)}</option>`}
+          ${[5, 8, 15, 25, 50].map((n) => `<option value="${n}" ${f.min === n ? "selected" : ""}>${T(`keywords in ${n}+ letters`, `Schlagwörter in ${n}+ Briefen`)}</option>`).join("")}
+          ${[5, 8, 15, 25, 50].includes(f.min) ? "" : `<option value="${f.min}" selected>${T(`keywords in ${f.min}+ letters`, `Schlagwörter in ${f.min}+ Briefen`)}</option>`}
         </select>
         <input id="nq" type="search" placeholder="${T("Find a keyword…", "Schlagwort finden…")}" value="${esc(focus)}" aria-label="${T("Find a keyword", "Schlagwort finden")}" list="nlist">
         <datalist id="nlist">${g.nodes.map((n) => `<option value="${esc(n.name)}">`).join("")}</datalist>
