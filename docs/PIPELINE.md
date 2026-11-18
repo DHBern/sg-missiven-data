@@ -9,9 +9,9 @@ publish it, without a laptop in the loop. Written 13.11.2026.
 | Machine | Role | Today |
 |---|---|---|
 | **tei** | orchestrator: starts the runs, collects, combines, tags, builds, publishes | checkout `~/sg-missiven-data`, venv `~/sg-missiven-venv` (lxml, rapidfuzz), `gh` logged in |
-| idhefix (ATR gateway) | Qwen3.5-4B fine-tuned; kraken and TrOCR on the edited pages | runs started from tei (`atr-batch`) |
+| idhefix (ATR gateway) | Qwen3.5-4B fine-tuned; kraken and TrOCR on the edited pages only | runs started from tei (`atr-batch`) |
 | Gemini API | Argon and Flash | started from tei (`atr-batch --via external`) |
-| UBELIX | olmOCR; kraken and TrOCR on the new pages (below) | output to the research storage, which tei mounts |
+| UBELIX | olmOCR | output to the research storage, which tei mounts |
 | GPUStack | LLM tagging and judge; regest drafts | called from tei over HTTP |
 
 Everything the pipeline reads is on tei's disk or on the research share
@@ -84,7 +84,14 @@ A cycle that finds nothing new commits nothing.
 - **Git growth:** each collection rewrites whole jsonl files; hence two cycles a
   day, not one every two hours.
 
-## kraken and TrOCR on UBELIX for the new pages
+## kraken and TrOCR on UBELIX for the new pages (not done)
+
+**Decision 18.11.2026: kraken and TrOCR read only the 2,047 edited pages.** They
+are not run on the other 14,385 pages of the series. The joint reading of those
+pages is voted on by Flash and the two fine-tuned page models, and the viewer
+shows no kraken or TrOCR button on a page they never read
+(`"scope": "edited_pages"` in `readings/readers.json`). The plan below is kept
+for the record.
 
 The gateway read only the 2,048 edited pages with the four line models. The
 series has 14,385 more (8,088 downloaded, the rest by 14.11.).
