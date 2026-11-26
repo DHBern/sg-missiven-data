@@ -9,7 +9,7 @@ const PAL = ["#2a78d6", "#eb6834", "#1baf7a", "#c8102e", "#9467bd", "#8c564b", "
   "#9c9ede", "#cedb9c", "#e7cb94", "#e7969c", "#de9ed6", "#6baed6", "#fd8d3c"];
 const NONE = "#c9c9c9";
 
-export function mount(host, { T, sel, neighbours }) {
+export function mount(host, { T, sel, neighbours, slider }) {
   const d3 = window.d3;
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const S = { set: "regest", view: "2d", color: "group", y0: null, y1: null, q: "", sel: null };
@@ -22,7 +22,7 @@ export function mount(host, { T, sel, neighbours }) {
       <option value="group">${T("Group", "Gruppe")}</option><option value="period">${T("Period", "Zeitraum")}</option>
       <option value="direction">${T("Direction", "Richtung")}</option><option value="region">${T("Partner region", "Region des Partners")}</option>
       <option value="edited">${T("Regest: edition or draft", "Regest: Edition oder Entwurf")}</option></select></label>
-    <label>${T("Years", "Jahre")} <input type="number" data-k="y0" min="1400" max="1700" step="10" placeholder="${T("from", "von")}"> – <input type="number" data-k="y1" min="1400" max="1700" step="10" placeholder="${T("to", "bis")}"></label>
+    <div class="smyears"></div>
     <label>${T("Search", "Suche")} <input type="search" data-k="q" placeholder="${T("regest, name, place, no.", "Regest, Name, Ort, Nr.")}"></label>
     <span class="smcount muted small"></span>
   </div>
@@ -146,12 +146,20 @@ export function mount(host, { T, sel, neighbours }) {
       const y = F(D.rows[i], "year");
       const p = S.view === "time" ? [D.xy[i][0], y ? (y - ymin) / (ymax - ymin) : -0.08, D.xy[i][1]] : D.xyz[i];
       pos.set([p[0] - 0.5, p[1] - 0.5, p[2] - 0.5], i * 3);
-      const c = new THREE.Color(visible[i] ? colorOf(i) : "#8a8a8a");
+      const c = new THREE.Color(colorOf(i));
       col.set([c.r, c.g, c.b], i * 3);
     }
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
-    const pts = new THREE.Points(geo, new THREE.PointsMaterial({ size: 0.014, vertexColors: true }));
+    // letters inside the filters in colour; the others small and faint, so that they do not cover them
+    const on = d3.range(n).filter((i) => visible[i]), off = d3.range(n).filter((i) => !visible[i]);
+    const cloud = (idx, withColour) => {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.BufferAttribute(Float32Array.from(idx.flatMap((i) => [pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]])), 3));
+      if (withColour) g.setAttribute("color", new THREE.BufferAttribute(Float32Array.from(idx.flatMap((i) => [col[i * 3], col[i * 3 + 1], col[i * 3 + 2]])), 3));
+      return g;
+    };
+    if (off.length) scene.add(new THREE.Points(cloud(off, false),
+      new THREE.PointsMaterial({ size: 0.006, color: 0x9a9a9a, transparent: true, opacity: 0.25, depthWrite: false })));
+    const pts = new THREE.Points(cloud(on, true), new THREE.PointsMaterial({ size: 0.014, vertexColors: true }));
     scene.add(pts);
     if (S.sel != null && rel.length) {
       const P = (i) => new THREE.Vector3(pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]);
@@ -162,9 +170,9 @@ export function mount(host, { T, sel, neighbours }) {
     const mouse = new THREE.Vector2();
     renderer.domElement.addEventListener("mousemove", (ev) => {
       mouse.set(ev.offsetX / W * 2 - 1, -ev.offsetY / H * 2 + 1); ray.setFromCamera(mouse, cam);
-      const hit = ray.intersectObject(pts).find((h) => visible[h.index]);
+      const hit = ray.intersectObject(pts)[0];
       if (!hit) { tip.hidden = true; R3.hover = null; return; }
-      showTip(ev, hit.index); R3.hover = hit.index;
+      showTip(ev, on[hit.index]); R3.hover = on[hit.index];
     });
     renderer.domElement.addEventListener("mouseleave", () => { tip.hidden = true; });
     renderer.domElement.addEventListener("dblclick", () => { if (R3 && R3.hover != null) select(R3.hover); });
@@ -177,21 +185,38 @@ export function mount(host, { T, sel, neighbours }) {
     cv.hidden = !two; box3.hidden = two;
     if (two) { stop3d(); draw2d(); } else build3d();
   }
+  // the year slider (the viewer's own, as in the letter list): the whole range means no filter,
+  // so letters without a year stay; any narrower range shows only letters dated inside it
+  function years() {
+    const box = host.querySelector(".smyears");
+    const ys = D.rows.map((r) => F(r, "year")).filter(Boolean);
+    const min = Math.min(...ys), max = Math.max(...ys);
+    const from = S.y0 ?? min, to = S.y1 ?? max;
+    box.innerHTML = slider.html("smy", min, max, from, to);
+    const paint = (a, b) => slider.paint("smy", D.rows.map((r) => F(r, "year")), min, max, a, b);
+    paint(from, to);
+    const set = (a, b) => { S.y0 = a === min && b === max ? null : a; S.y1 = a === min && b === max ? null : b; };
+    slider.bind("smy", (a, b) => {
+      set(a, b); paint(a, b); filter();
+      if (S.view === "2d") draw2d();   // live while dragging in 2D; 3D is rebuilt when the handle is let go
+    }, () => { if (S.view !== "2d") draw(); });
+  }
   async function load() {
     info.innerHTML = `<p class="muted">${T("Loading the map …", "Karte wird geladen …")}</p>`;
     D = await fetch(`data/similarity/map_${S.set}.json`).then((r) => r.json());
     idx = {}; D.rows.forEach((r, i) => { idx[F(r, "id")] = i; });
     info.innerHTML = "";
+    years();
     recolor(); filter(); size(); fit(); lastW = stage.clientWidth;
     const k = sel != null ? idx[sel] : null;
     if (k != null) select(k); else draw();
   }
   host.querySelectorAll(".smctl [data-k]").forEach((el) => el.addEventListener(el.tagName === "INPUT" ? "input" : "change", () => {
     const k = el.dataset.k;
-    S[k] = k === "y0" || k === "y1" ? (el.value ? +el.value : null) : el.value;
+    S[k] = el.value;
     if (k === "set") { sel = S.sel != null ? F(D.rows[S.sel], "id") : sel; S.sel = null; rel = []; load(); return; }
     if (k === "color") recolor();
-    if (k === "q" || k === "y0" || k === "y1") filter();
+    if (k === "q") filter();
     draw();
   }));
   // size from the stage's own width: it can be 0 while the page is still being laid out or hidden
