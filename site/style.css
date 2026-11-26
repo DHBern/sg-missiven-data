@@ -443,3 +443,21 @@ path.corr-link.r1 { stroke: var(--r1); } path.corr-link.r2 { stroke: var(--r2); 
 .corr-area.r1 { fill: var(--r1); } .corr-area.r2 { fill: var(--r2); } .corr-area.r3 { fill: var(--r3); }
 .corr-chip { background: var(--chip); border-radius: 8px; padding: 8px 12px; margin: 0 0 12px; }
 @media (max-width: 640px) { .corr-bar { top: 0; position: static; } }
+
+/* page «Ähnlichkeit» (site/simmap.js) and «ähnliche Missiven finden» on a letter */
+.simmap { margin: 8px 0 12px; }
+.smctl { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 0 0 8px; }
+.smctl label { display: inline-flex; gap: 6px; align-items: center; }
+.smctl input[type=number] { width: 5.5em; }
+.smctl input[type=search] { width: 14em; max-width: 60vw; }
+.smstage { position: relative; width: 100%; border: 1px solid var(--line, #ddd); border-radius: 8px; overflow: hidden; }
+.smstage canvas { display: block; cursor: crosshair; }
+.smtip { position: absolute; z-index: 5; max-width: 340px; background: var(--bg, #fff); color: inherit; border: 1px solid var(--line, #ccc);
+  border-radius: 6px; padding: 6px 8px; font-size: 13px; line-height: 1.35; pointer-events: none; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.smlegend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 8px 0; font-size: 13px; }
+.smlegend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.smlegend small { color: var(--muted, #777); }
+.sminfo ol.smnb, details.similar ol.simnb { padding-left: 1.4em; margin: 6px 0; }
+.sminfo ol.smnb li, details.similar ol.simnb li { margin: 0 0 8px; }
+details.similar { margin: 8px 0 12px; }
+details.similar > summary { cursor: pointer; font-weight: 600; }
