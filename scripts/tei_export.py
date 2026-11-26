@@ -299,11 +299,14 @@ def main() -> None:
         sys.exit(f"no readings for {order}")
     ents = {r: load_jsonl(ROOT / "entities" / f"{r}.jsonl") for r, _ in readings}
     known = edition_pages()
+    # a page of an edited letter's number that the edition left out (an address leaf) belongs to
+    # that letter, not to a letter of its own (build_site.py shows it there)
+    edited_nrs = {int(m.group(1)) for k in known if (m := FACS.match(k + "."))}
     groups: dict[int, set[str]] = {}
     for _, pages in readings:
         for key in pages:
             m = FACS.match(key)
-            if m and Path(key).stem.lower() not in known:
+            if m and Path(key).stem.lower() not in known and int(m.group(1)) not in edited_nrs:
                 groups.setdefault(int(m.group(1)), set()).add(key)
     tagged_keys = {k for pages in ents.values() for k, rec in pages.items() if rec.get("entities") is not None}
     if not args.allow_untagged:

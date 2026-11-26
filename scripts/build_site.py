@@ -330,7 +330,12 @@ FACS = re.compile(r"^StadtASG_Missive_(\d+)_(\d+)", re.I)
 def unedited_letters(edited: list[dict], readings: dict[str, dict[str, dict]]) -> list[dict]:
     """Pages that some reader has read but the edition does not contain, grouped
     into letters by the letter number in the image name. They have no edited
-    text, so they are read but never scored."""
+    text, so they are read but never scored.
+
+    A page whose letter number belongs to an edited letter (an address leaf the
+    edition left out, like Nr. 152's page 304) joins that letter, marked
+    ``extra``; before 26.11.2026 it became a letter of its own with no date, no
+    sender and no regest."""
     known = {p["facs"].lower() for letter in edited for p in letter["pages"]}
     known_stems = {Path(f).stem for f in known}
     by_letter: dict[int, dict[str, int]] = {}
@@ -342,8 +347,22 @@ def unedited_letters(edited: list[dict], readings: dict[str, dict[str, dict]]) -
             if not m:
                 continue
             by_letter.setdefault(int(m.group(1)), {})[facs] = int(m.group(2))
+    edited_by_nr: dict[int, dict] = {}
+    for letter in edited:
+        for p in letter["pages"]:
+            m = FACS.match(p["facs"])
+            if m:
+                edited_by_nr.setdefault(int(m.group(1)), letter)
     out = []
     for nr, pages in sorted(by_letter.items()):
+        host = edited_by_nr.get(nr)
+        if host:
+            n0 = len(host["pages"])
+            host["pages"] += [{"facs": f, "n": str(n0 + i + 1), "html": "", "text": "", "entities": [], "extra": True}
+                              for i, f in enumerate(sorted(pages, key=pages.get))]
+            num = lambda p: int(FACS.match(p["facs"]).group(2)) if FACS.match(p["facs"]) else 1 << 30
+            host["pages"].sort(key=num)
+            continue
         out.append({
             "id": f"stasg_missiv_unedited_{nr:05d}", "edited": False,
             "title": f"StadtASG Missive, Nr. {nr}", "idno": f"StadtASG Missive_{nr}",
