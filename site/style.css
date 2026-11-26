@@ -448,10 +448,12 @@ path.corr-link.r1 { stroke: var(--r1); } path.corr-link.r2 { stroke: var(--r2); 
 .simmap { margin: 8px 0 12px; }
 .smctl { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 0 0 8px; }
 .smctl label { display: inline-flex; gap: 6px; align-items: center; }
-.smctl input[type=number] { width: 5.5em; }
+.smctl .smyears { flex: 1 1 260px; min-width: 220px; max-width: 420px; }
+.smctl .smyears .yrange { max-width: none; }
 .smctl input[type=search] { width: 14em; max-width: 60vw; }
 .smstage { position: relative; width: 100%; border: 1px solid var(--line, #ddd); border-radius: 8px; overflow: hidden; }
 .smstage canvas { display: block; cursor: crosshair; }
+.smstage [hidden] { display: none !important; }   /* «display: block» above must not undo [hidden]: 2D and 3D swap by it */
 .smtip { position: absolute; z-index: 5; max-width: 340px; background: var(--bg, #fff); color: inherit; border: 1px solid var(--line, #ccc);
   border-radius: 6px; padding: 6px 8px; font-size: 13px; line-height: 1.35; pointer-events: none; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
 .smlegend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 8px 0; font-size: 13px; }

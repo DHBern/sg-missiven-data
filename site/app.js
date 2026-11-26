@@ -1149,7 +1149,8 @@
     try {
       const [, nb, mod] = await Promise.all([loadD3(), simNeighbours(), import("./simmap.js")]);
       if (!location.hash.startsWith("#/similarity")) return;
-      simMap = mod.mount(app.querySelector("#simmap"), { T, sel: params.get("sel"), neighbours: nb });
+      simMap = mod.mount(app.querySelector("#simmap"), { T, sel: params.get("sel"), neighbours: nb,
+        slider: { html: sliderHtml, bind: bindSlider, paint: paintSlider } });
     } catch (e) {
       app.querySelector("#simmap").innerHTML = `<p>${T("The map could not be loaded.", "Die Karte konnte nicht geladen werden.")}</p>`;
     }
