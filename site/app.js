@@ -1666,7 +1666,7 @@
     let reader = state.reader;
     const edited = letter.edited !== false;
     if (reader !== "edition" && !page.readings[reader]) reader = "edition";
-    if (!edited && reader === "edition") {
+    if ((!edited || page.extra) && reader === "edition") {
       // a letter not yet edited opens on a reading; with the entity view on, on the one that has the tags
       const read = state.readers.filter((x) => x.id !== "edition" && page.readings[x.id]);
       const firstRead = (state.mode === "ents" && read.find((x) => hasEnts(page, x.id))) || read[0];
@@ -1824,7 +1824,7 @@
     const mode = modeFor(page, readerId);
     const showEnts = mode === "ents";
     if (readerId === "edition") {
-      if (!page.html) return head + `<p class="empty">${T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
+      if (!page.html) return head + `<p class="empty">${page.extra ? T("The edition does not contain this page (often an address leaf); the machine readings above have read it.", "Die Edition enthält diese Seite nicht (oft ein Adressblatt); die maschinellen Lesungen oben haben sie gelesen.") : T("The edition has no text on this page.", "Die Edition hat auf dieser Seite keinen Text.")}</p>`;
       return head + (showEnts ? legend() : "") + lineNote(page.ln, page) + `<div class="text edition ${showEnts ? "ents" : ""}">${lineify(page.html)}</div>`;
     }
     const rd = page.readings[readerId];
