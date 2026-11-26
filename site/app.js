@@ -26,7 +26,7 @@
     document.documentElement.lang = LANG;
     document.title = T("St. Gallen Missives Readings", "St. Galler Missiven: Lesungen");
     const nav = { letters: T("Letters", "Briefe"), search: T("Search", "Suche"), places: T("Places", "Orte"), names: T("Names", "Namen"),
-                  map: T("Map", "Karte"), corr: T("Correspondence", "Korrespondenz"), keywords: T("Keywords", "Schlagwörter"), readers: T("Readers", "Leser"), about: T("About", "Über") };
+                  map: T("Map", "Karte"), corr: T("Correspondence", "Korrespondenz"), sim: T("Similarity", "Ähnlichkeit"), keywords: T("Keywords", "Schlagwörter"), readers: T("Readers", "Leser"), about: T("About", "Über") };
     document.querySelectorAll("[data-nav]").forEach((a) => { a.textContent = nav[a.dataset.nav]; });
     const brand = document.querySelector(".brand");
     if (brand) brand.innerHTML = `${T("St. Gallen Missives", "St. Galler Missiven")} <span>· ${T("readings", "Lesungen")}</span>`;
@@ -84,6 +84,7 @@
   function setNav(which) {
     if (!["places", "names", "map", "corr"].includes(which)) destroyMaps();
     if (which !== "corr") corrStop();
+    if (which !== "sim" && simMap) { simMap.stop(); simMap = null; }
     if (which !== "search") clearTimeout(searchTimer);
     document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === which));
   }
@@ -99,6 +100,7 @@
     if (parts[0] === "names") return showRegister("names");
     if (parts[0] === "map") return showMap();
     if (parts[0] === "correspondence") return showCorrespondence();
+    if (parts[0] === "similarity") return showSimilarity(new URLSearchParams(qs || ""));
     if (parts[0] === "keywords" && parts[1] === "network") return showKeywordNetwork(new URLSearchParams(qs || ""));
     if (parts[0] === "keywords") return showKeywords();
     if (parts[0] === "keyword" && parts[1]) return showKeyword(parts[1], new URLSearchParams(qs || ""));
@@ -1114,6 +1116,68 @@
     await run();
   }
 
+  /* ---------- similarity: letters near each other by their regest or their text ----------
+     data/similarity/ (scripts/similarity.py): maps in 2D and 3D (site/simmap.js, a module
+     with three.js), and per letter its ten nearest letters. */
+  let simMap = null, simNb = null;
+  function simNeighbours() {
+    simNb = simNb || json("data/similarity/neighbours.json").then((d) => d.neighbours).catch(() => ({}));
+    return simNb;
+  }
+  async function showSimilarity(params) {
+    setNav("sim");
+    destroyOsd();
+    app.innerHTML = `<section class="prose wide">
+      <h1>${T("Similar letters", "Ähnliche Missiven")}</h1>
+      <p>${T(`Every point is a letter. Letters with a similar regest, or a similar text, lie close together: machine
+        embeddings (qwen3-embedding-4b on the University of Bern's GPUStack) brought down to two or three dimensions with
+        UMAP. The groups are formed by machine and named by their typical regest words. Letters not yet edited have a
+        draft regest and a machine reading only. Drag and scroll to move and zoom; click a point (3D: double-click) for the
+        letter and its most similar letters.`,
+        `Jeder Punkt ist ein Brief. Nahe beieinander liegen Briefe mit ähnlichem Regest oder ähnlichem Text: maschinelle
+        Einbettungen (qwen3-embedding-4b auf dem GPUStack der Universität Bern), mit UMAP auf zwei bzw. drei Dimensionen
+        gebracht. Die Gruppen sind maschinell gebildet und nach ihren typischen Regestwörtern benannt. Noch nicht edierte
+        Briefe haben nur einen Regestentwurf und eine maschinelle Lesung. Ziehen und Mausrad: verschieben und zoomen; Klick
+        (3D: Doppelklick) auf einen Punkt zeigt den Brief und die ähnlichsten Briefe.`)}</p>
+      </section><div id="simmap" class="simmap"><p class="muted">${T("Loading …", "Wird geladen …")}</p></div>
+      <p class="muted small">${T(`The axes mean nothing; only nearness counts. «3D with time axis»: position from the 2D map,
+        height = year (letters without a year at the bottom). Edited and draft regests are written by different hands
+        (editors, a language model): colour by «Regest» to see how much of the map that explains.`,
+        `Die Achsen haben keine Bedeutung; nur Nähe zählt. «3D mit Zeitachse»: Lage aus der 2D-Karte, Höhe = Jahr
+        (Briefe ohne Jahr unten). Edierte Regesten und Entwürfe stammen aus verschiedenen Händen (Editorinnen und
+        Editoren, ein Sprachmodell): «Farbe: Regest» zeigt, wie viel der Karte das erklärt.`)}</p>`;
+    try {
+      const [, nb, mod] = await Promise.all([loadD3(), simNeighbours(), import("./simmap.js")]);
+      if (!location.hash.startsWith("#/similarity")) return;
+      simMap = mod.mount(app.querySelector("#simmap"), { T, sel: params.get("sel"), neighbours: nb });
+    } catch (e) {
+      app.querySelector("#simmap").innerHTML = `<p>${T("The map could not be loaded.", "Die Karte konnte nicht geladen werden.")}</p>`;
+    }
+  }
+  function similarBlock(id) {
+    return `<details class="similar"><summary>${T("Find similar letters", "Ähnliche Missiven finden")}</summary>
+      <div class="simlist" data-id="${esc(id)}"><p class="muted small">${T("Loading …", "Wird geladen …")}</p></div></details>`;
+  }
+  async function fillSimilar(box) {
+    const id = box.dataset.id;
+    const nb = (await simNeighbours())[id] || [];
+    const byId = new Map(state.index.map((l) => [l.id, l]));
+    if (!nb.length) { box.innerHTML = `<p class="muted small">${T("No similar letters computed for this letter.", "Für diesen Brief sind keine ähnlichen Briefe berechnet.")}</p>`; return; }
+    box.innerHTML = `<ol class="simnb">${nb.map(([y, a, b]) => {
+      const l = byId.get(y);
+      const yr = l ? (l.date ? l.date.slice(0, 4) : l.year ? `${l.year}?` : "") : "";
+      const who = l ? `${(l.sender || [])[0] || "?"} → ${(l.recipient || [])[0] || "?"}` : "";
+      const reg = l && l.regest ? l.regest.slice(0, 180) + (l.regest.length > 180 ? " …" : "") : "";
+      return `<li><a href="#/letter/${encodeURIComponent(y)}">${esc(l ? nrOf(l) : y)}</a>${yr ? ` <span class="muted">${esc(yr)}</span>` : ""}
+        ${l && l.edited === false ? `<span class="muted small">(${T("draft regest", "Regestentwurf")})</span>` : ""}
+        <span class="small">${esc(who)}</span><div class="small">${esc(reg)}</div>
+        <div class="muted small">${a != null ? `${T("regest", "Regest")} ${a.toFixed(2)}` : ""}${a != null && b != null ? " · " : ""}${b != null ? `${T("text", "Text")} ${b.toFixed(2)}` : ""}</div></li>`;
+    }).join("")}</ol>
+    <p class="muted small">${T("Machine similarity (cosine of qwen3-embedding-4b embeddings, 0–1) of the regests and of the letter texts; ranked by their mean.",
+      "Maschinelle Ähnlichkeit (Kosinus der Einbettungen mit qwen3-embedding-4b, 0–1) der Regesten und der Brieftexte; geordnet nach ihrem Mittel.")}
+      <a href="#/similarity?sel=${encodeURIComponent(id)}">${T("Show on the map", "Auf der Karte zeigen")}</a></p>`;
+  }
+
   /* ---------- keywords ----------
      The edition's keywords (TEI <keywords>, only on edited letters), from the
      search data: per letter its year and keywords. */
@@ -1705,6 +1769,7 @@
             ${letter.auto_keywords.map((k) => `<a href="#/keyword/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>` : ""}`}
           ${edited && letter.auto_regest ? draftBlock(letter.auto_regest, false) : ""}
           ${linksBlock(letter.links)}
+          ${similarBlock(id)}
           ${modeSelect(page, reader, id, pageNo)}
           <div class="pages"><span class="lbl">${T("Page", "Seite")}</span>${pages.map((p, i) =>
             `<a class="pg ${i + 1 === pageNo ? "on" : ""}" href="#/letter/${id}/${i + 1}" ${i + 1 === pageNo ? 'aria-current="page"' : ""}>${i + 1}</a>`).join("")}</div>
@@ -2017,6 +2082,8 @@
     m && m.addEventListener("change", () => { state.mode = m.value; store.set("mode", m.value); route(); });
     const det = app.querySelector("details.regest");
     det && det.addEventListener("toggle", () => store.set("regest", det.open));
+    const simDet = app.querySelector("details.similar");
+    if (simDet) simDet.addEventListener("toggle", () => { const b = simDet.querySelector(".simlist"); if (simDet.open && !b.dataset.done) { b.dataset.done = "1"; fillSimilar(b); } });
     app.querySelector("#reading").addEventListener("mouseover", entTip);
     app.querySelector("#reading").addEventListener("mouseover", onLineHover);
     app.querySelector("#reading").addEventListener("mouseleave", clearRows);

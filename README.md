@@ -29,6 +29,7 @@ eingebettet unter <https://dhbern.github.io/content/projects/missiven-sg/>.
 | `scripts/tei_export.py` | TEI für die noch nicht edierten Briefe in der Form der Edition → `tei_unedited/` (Lesung, Regestentwurf, Auszeichnung; alles mit `@resp`, nichts geprüft; nicht nach `data/` kopieren). Erst nach dem NER-Lauf: schreibt nur getaggte Briefe |
 | `readings/series_pages.txt` | alle 16.434 Bilder der Serie (nur Dateinamen), für Vollständigkeit und Originalnamen |
 | `scripts/correspondence.py` | die Partner St. Gallens nach Ort und Jahr für die Seite «Korrespondenz» (vom Build aufgerufen, [docs/CORRESPONDENCE.md](docs/CORRESPONDENCE.md)) |
+| `scripts/similarity.py`, `similarity/` | ähnliche Briefe: Einbettungen von Regest und Text (qwen3-embedding-4b), Karten in 2D und 3D für die Seite «Ähnlichkeit» und die zehn ähnlichsten Briefe je Brief; von Hand zu starten ([docs/SIMILARITY.md](docs/SIMILARITY.md)) |
 | `scripts/ner.py` | lernt die Auszeichnung aus den TEI-Dateien und wendet sie auf eine Lesung an (5-fach kreuzvalidiert nach Brief) |
 | `site/` | der Viewer (statisch, IIIF-Bilder direkt vom Server der Edition) |
 

@@ -18,6 +18,7 @@ Outputs (site/data/)
   readers.json                  readers with corpus scores against the edition
   registers.json                register id -> name and links
   correspondence.json           partners of St. Gallen by place and year (scripts/correspondence.py)
+  similarity/                   maps and nearest letters (scripts/similarity.py, from similarity/)
   letters/<id>.json             one letter: header, pages, every reading
   tei/<id>.xml                  the letter's TEI (data/ for the edition, tei_unedited/ for the rest), for download
 
@@ -730,6 +731,13 @@ def main() -> None:
     (OUT / "correspondence.json").write_text(json.dumps(corr, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"correspondence: {len(corr['partners'])} partner places, {sum(r[4] for r in corr['rows'])} letters placed, "
           f"{corr['unplaced']['letters']} with a partner but no place", flush=True)
+    # similar letters (scripts/similarity.py, committed in similarity/): copied as they are
+    sim = ROOT / "similarity"
+    if sim.is_dir():
+        (OUT / "similarity").mkdir(parents=True, exist_ok=True)
+        for f in sim.glob("*.json"):
+            shutil.copyfile(f, OUT / "similarity" / f.name)
+        print(f"similarity: {len(list(sim.glob('*.json')))} files copied", flush=True)
     scored = [r for r in readers if r.get("cer") is not None and r["id"] != "joint"]
     best = min(scored, key=lambda r: r["cer"])["id"] if scored else "gemini-4-argon"
     write_search(letters, index, reg, best)
